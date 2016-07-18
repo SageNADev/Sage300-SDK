@@ -1,0 +1,63 @@
+// 
+// Total Tab
+// --------------------------------------------------
+
+.totals-group {
+    padding: 15px @margin-base 15px @margin-base;
+    border: 1px solid @sage-light-gray;
+    background-color: @white;
+    margin: 0 0 @margin-base 0;
+    clear: both;
+    width: 49%; //default size
+    margin-right: 20px;
+
+    table {
+        width: 100%;
+
+        th {
+            vertical-align: middle;
+            padding-bottom: @padding-small-vertical;
+            font-weight: bold;
+        }
+
+        td {
+            vertical-align: middle;
+            padding-bottom: @padding-small-vertical;
+            word-wrap: break-word;
+            position: relative;
+
+            label {
+                margin-bottom: -4px;
+            }
+        }
+
+        .total {
+            font-weight: bold;
+            border-top: 1px solid @hr-border;
+            padding-top: 10px;
+        }
+
+        td:first-child {
+            vertical-align: top;
+            padding-bottom: @padding-small-vertical;
+        }
+
+        td:last-child {
+            width: 15%;
+            vertical-align: top;
+            text-align: right;         
+        }
+
+        hr {
+            margin: 10px 0;
+        }
+
+        .textbox {
+            padding: 0px 5px;
+            height: 24px;
+        }
+    }
+    &.large {
+        width: 100%;
+    }
+}

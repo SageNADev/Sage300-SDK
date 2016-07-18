@@ -1,0 +1,89 @@
+//
+// Summary
+// --------------------------------------------------
+
+
+.summary-group {
+  .clearfix();
+
+  // defined summary panel sized
+  .summary-default {
+    width: 390px;
+    margin-left: 20px;
+  }
+
+  .summary-medium {
+    width: 310px;
+    margin-left: 20px;
+  }
+
+  .summary-small {
+    width:220px;
+    margin-left: 20px;
+  }
+
+    .summary {
+    border: 1px solid @sage-gray;   
+    margin: 0 auto @margin-base auto;
+    background-color: @gray-lighter;
+
+    > .summary-header {
+      margin: 0 @margin-base;
+      padding: @padding-large-vertical 0;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        border-bottom: 1px dotted @hr-border;
+      }
+
+      > h3, h4 { 
+        padding: 0;  
+        margin: 0;  
+        float: none;  
+        display: inline-block;  
+        font-size: 14px;  
+        font-weight: bold;
+        line-height: @line-height-small;
+      }
+    }
+    
+    > .summary-content { 
+      padding: 20px 20px 0 20px; 
+      &:extend(.clearfix all);
+
+      > .static-table {
+          width: 100%;
+
+        td { 
+          padding-bottom: 13px;
+          width: 100%;
+
+          label {
+            margin: 0;
+          }
+
+          &:last-child {
+            vertical-align: top;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// Summary - adaptable
+// --------------------------------------------------
+
+@media screen and (min-width: 1200px) {
+  .summary-group .left + div[class*="summary-"] {
+    width: 44%;
+    float: right !important;
+  }
+}

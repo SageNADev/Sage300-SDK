@@ -1,0 +1,17 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+
+<script type="text/javascript">
+    
+    var postingSequenceGridColumnsResource = {
+        headerSerialNo: '@Html.SageRaw(CommonResx.SerialNo)',
+        headerSequence: '@Html.SageRaw(CommonResx.PostingSequence)',
+        headerSequenceNo: '@Html.SageRaw(CommonResx.PostingSequenceNo)'
+    };
+
+</script>
+
+@Html.KoKendoGrid("gridGLPostingSequence", "glIntegrationUI.glIntegrationModel.GLPostingSequences.Items", "SerialNo", "PostingSequenceGridUtility.glPostingSequenceConfig", true, "gh320 h360")

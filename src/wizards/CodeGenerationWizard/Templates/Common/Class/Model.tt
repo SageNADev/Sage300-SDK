@@ -1,0 +1,179 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var resxName = settings.ResxName;
+    var companyNamespace = settings.CompanyNamespace;
+    var resourceExtension = settings.ResourceExtension;
+    var extension = settings.Extension;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var repositoryType = settings.RepositoryType;
+    var applicationNamespace = (settings.RepositoryType.Equals(RepositoryType.DynamicQuery)) ? "Application" : string.Empty;
+	var enumsCount = view.Enums.Count;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+<#
+    if (repositoryType.Equals(RepositoryType.DynamicQuery))
+    {
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+<#
+    }
+    else
+    {
+#>
+using System;
+using System.ComponentModel.DataAnnotations;
+using Sage.CA.SBS.ERP.Sage300.Common.Models<#=(repositoryType.Equals(RepositoryType.Report) ? extension : string.Empty)#>;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
+using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+
+<#
+        if (!repositoryType.Equals(RepositoryType.Report) && enumsCount > 0)
+        {
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>;
+<#
+        }
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>;
+<#
+    }
+#>
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
+{
+    /// <summary>
+    /// Partial class for <#=modelName#>
+    /// </summary>
+    public partial class <#=modelName#> : <#=applicationNamespace#><#=(repositoryType.Equals(RepositoryType.Report) ? "ReportBase" : "ModelBase")#>
+    {
+<#
+                // Iterate fields collection
+            for (var i = 0; i < view.Fields.Count; i++)
+            {
+                // locals
+                var field = view.Fields[i];
+                var fieldName = field.Name;
+
+                // Naming convention is potentially invalid
+                if (fieldName.All(Char.IsUpper))
+                {
+#>
+        // TODO The naming convention of this property has to be manually evaluated
+<#
+                }
+#>
+        /// <summary>
+        /// Gets or sets <#=fieldName#>
+        /// </summary>
+<#
+                if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
+                {
+                    // Check for Key annotation
+                    var annotation = field.IsKey ? "[Key]" : string.Empty;
+                    if (!annotation.Equals(string.Empty))
+                    {
+#>
+        <#=annotation#>
+<#
+                    }
+
+                    // Check for Required annotation
+                    annotation = field.IsRequired ? string.Format("[Required(ErrorMessageResourceName = \"" + "Required" + "\", ErrorMessageResourceType = typeof(AnnotationsResx))]") : string.Empty;
+                    if (!annotation.Equals(string.Empty))
+                    {
+#>
+        <#=annotation#>
+<#
+                    }
+
+                    // Check for Stringlength annotation
+                    annotation = field.Type.Equals(BusinessDataType.String) ? string.Format("[StringLength({0}, ErrorMessageResourceName = \"" + "MaxLength" + "\",ErrorMessageResourceType = typeof(AnnotationsResx))]", field.Size) : string.Empty;
+                    if (!annotation.Equals(string.Empty))
+                    {
+#>
+        <#=annotation#>
+<#
+                    }
+
+                    // Check for DateTime annotation
+                    if (field.Type.Equals(BusinessDataType.DateTime))
+                    {
+                        annotation = string.Format("[ValidateDateFormat(ErrorMessageResourceName=\"DateFormat\"" + ", ErrorMessageResourceType = typeof(AnnotationsResx))]");
+#>
+        <#=annotation#>
+<#
+                    }
+                }
+
+                if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+                {
+                    // Display attribute
+#>
+        [Display(Name = "<#=fieldName#>", ResourceType = typeof (<#=resxName#>))]
+<#
+                }
+
+                // Property
+#>
+        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? field.Name : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
+
+<#
+            }
+
+            if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
+            {
+#>
+        #region UI Strings
+
+<#
+                // UI access methods
+                foreach (var value in view.Enums.Values)
+                {
+#>
+        /// <summary>
+        /// Gets <#=value.Name#> string value
+        /// </summary>
+        public string <#=value.Name#>String
+        {
+         get { return EnumUtility.GetStringValue(<#=value.Name#>); }
+        }
+
+<#
+                }
+#>
+        #endregion
+<#
+            }
+#>
+    }
+}

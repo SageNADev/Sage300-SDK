@@ -1,0 +1,2815 @@
+﻿/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+q {
+    display: block;
+    padding: 0 10px 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+    q:before {
+        content: '“ ';
+        font-size: 26px;
+    }
+
+    q:after {
+        content: ' „';
+        font-size: 26px;
+        line-height: 0;
+    }
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+
+#main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #6A735E !important;
+    font-size: 0.79em !important;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #6A735E !important;
+    font-size: 0.79em !important;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #6A735E !important;
+    font-size: 0.79em !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #6A735E !important;
+    font-size: 0.79em !important;
+}
+
+input::-ms-clear {
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+a:focus,
+input[type=button]:hover,
+input:focus {
+    border-color: #141011;
+    box-shadow: 0 0 10px #141011;
+}
+
+input[type=button]:enabled {
+    background: rgb(52,53,51);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 8px 25px;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+}
+
+input[type=button]:disabled {
+    background: rgb(238,239,239);
+    color: rgb(206,204,203) !important;
+    font-size: 14px;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 8px 25px;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+}
+
+a:focus img,
+a:hover img {
+    border: 1px solid white;
+}
+
+/* DEFAULTS
+----------------------------------------------------------*/
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('/Content/fonts/helveticaneueltstd-roman.eot');
+    src: url('/Content/fonts/helveticaneueltstd-roman.eot?#iefix') format('embedded-opentype'), url('/Content/fonts/helveticaneueltstd-roman.woff') format('woff'), url('/Content/fonts/helveticaneueltstd-roman.ttf') format('truetype'), url('/Content/fonts/helveticaneueltstd-roman.svg#HelveticaNeueLTStd55Roman') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-weight: bold;
+    src: url('/Content/fonts/helveticaneueltstd-roman.eot');
+    src: url('/Content/fonts/helveticaneueltstd-roman.eot?#iefix') format('embedded-opentype'), url('/Content/fonts/helveticaneueltstd-roman.woff') format('woff'), url('/Content/fonts/helveticaneueltstd-roman.ttf') format('truetype'), url('/Content/fonts/helveticaneueltstd-roman.svg#HelveticaNeueLTStd55Roman') format('svg');
+}
+
+body {
+    background: #ffffff;
+    font-size: .80em;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    margin: 0 auto;
+    padding: 0px;
+    color: #111111;
+}
+
+
+/*****************header starts here*****************/
+
+#header {
+    width: 100%;
+}
+
+#logosection {
+    width: 60px;
+    margin-left: 20px;
+}
+
+#header logo {
+    display: block;
+    width: 60px;
+}
+
+#logo {
+    margin: 0px auto 0 auto;
+    width: 60px !important;
+    height: 10px;
+    float: left;
+}
+
+
+.topbg {
+    background-color: #696969;
+    height: 55px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#topSection {
+    width: 956px;
+    margin: 0 auto;
+}
+
+    #topSection h1 {
+        font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+        font-size: 20px;
+        width: 500px;
+        float: left;
+        text-transform: none;
+        font-weight: 100;
+        color: rgb(37,38,36);
+    }
+
+    #topSection p {
+        margin: 0px;
+        padding: 0px;
+    }
+
+.btnStyle, .btnStyleDisabled, .btnStyle2, .btnStyle3, .btnStyle2Disabled, .btnStyle-Addnew, .btnStyleOnFocus {
+    font-size: 14px;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 8px 25px;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btnStyle {
+    background: rgb(52,53,51) url('../Images/button-down-arrow.png') 95% no-repeat;
+    color: #fff;
+}
+
+.btnStyleDisabled {
+    background: rgb(238,239,239) url('../Images/button-down-arrow-disabled.png') calc(100% - 7px) 50% no-repeat;
+    color: rgb(206,204,203);
+}
+
+.btnStyleDisabled, .btnStyle2Disabled, .Tabdisabled {
+    cursor: auto;
+}
+
+.btnStyle2 {
+    background: rgb(52,53,51);
+    color: #fff;
+}
+
+.btnStyle3 {
+    background: rgb(52,53,51);
+    color: #fff;
+    margin-left: 480px;
+    margin-top: -10px;
+}
+
+.btnStyle3Report {
+    margin-left: 506px !important;
+}
+
+.chkLabelReport {
+    width: 205px !important;
+}
+
+.btnStyle2Disabled {
+    background: rgb(238,239,239);
+    color: rgb(206,204,203) !important;
+}
+
+.Tabdisabled {
+    color: rgb(209,210,212) !important;
+}
+
+.btnStyle-Addnew {
+    background: rgb(52,53,51) url('../Images/button-down-arrow.png') 101px 12px no-repeat;
+    color: #fff;
+    float: right;
+    margin: 0 25px 0 0;
+    padding: 6px 0 8px 0;
+}
+
+
+
+/***************** nav starts here *****************/
+#nav {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+ul#navleft {
+    margin: 15px auto 0px 20px;
+    padding: 0px;
+    list-style: none;
+    float: left;
+    font-size: 24px;
+    color: #000;
+}
+
+    ul#navleft li {
+        float: left;
+        margin: 0px 0px 0px 0px;
+        line-height: 34px;
+    }
+
+        ul#navleft li a {
+            color: #000;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+            ul#navleft li a:hover {
+                color: #fff;
+                font-size: 24px;
+                line-height: 34px;
+                display: block;
+            }
+
+ul#navright {
+    margin: 31px 70px 0px 20px;
+    font-size: 11px;
+    list-style: none;
+    float: right;
+    vertical-align: bottom;
+}
+
+    ul#navright li {
+        float: left;
+        margin: 0px 0px 0px 0px;
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #fff;
+    }
+
+        ul#navright li a {
+            color: #fff;
+            font-size: 11px;
+            text-decoration: none;
+            text-decoration: underline;
+        }
+
+            ul#navright li a:hover {
+                color: #fff;
+                font-size: 11px;
+            }
+
+        ul#navright li.current {
+            color: #fff;
+            font-size: 11px;
+        }
+
+    ul#navright .white {
+        color: #fff;
+    }
+
+
+#breadcrumbnav {
+    width: 956px;
+    margin: 0 auto;
+}
+
+ul#breadcrumbnavleft {
+    margin: 10px auto 0px 0px;
+    padding: 0px;
+    list-style: none;
+    float: left;
+    font-size: 11px;
+    color: #000;
+}
+
+    ul#breadcrumbnavleft li {
+        float: left;
+        margin: 0px 2px 0px 0px;
+        line-height: 16px;
+    }
+
+        ul#breadcrumbnavleft li a {
+            color: rgb(147, 149, 152);
+            font-size: 11px;
+            text-decoration: underline;
+            line-height: 16px;
+        }
+
+            ul#breadcrumbnavleft li a:hover {
+                color: #000;
+                font-size: 11px;
+                line-height: 16px;
+            }
+
+
+/***************** content starts here *****************/
+
+
+
+.btnStyleOnFocus {
+    background: none repeat scroll 0 0 #343533;
+    border: medium double;
+    color: #FFFFFF;
+}
+
+
+.content {
+    width: 956px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.contentTop {
+    width: 955px;
+    margin: 0 auto 15px;
+    background: rgb(238,239,239);
+    border: 1px solid rgb(209,210,212);
+    position: relative;
+    float: left;
+}
+
+.contentHeader {
+    margin: 0 auto;
+    height: 35px;
+    width: 956px;
+    background: rgb(105,105,105);
+}
+
+
+.contentTopPopup {
+    width: 600px;
+    margin: 0 auto 15px;
+    margin-left: 70px;
+    margin-right: 80px;
+    /*background: rgb(238,239,239);*/
+    border: 1px solid rgb(209,210,212);
+    position: relative;
+    float: left;
+}
+
+.contentHeaderPopup {
+    margin: 0 auto;
+    height: 35px;
+    width: 600px;
+    background: rgb(105,105,105);
+}
+
+.contentHeaderPopupPrepay {
+    margin: 0 auto;
+    height: 35px;
+    width: 730px;
+    background: rgb(105,105,105);
+    margin-left: 3px;
+}
+
+.contentHeader label.headLbl {
+    font-size: 14px;
+    color: rgb(255,255,255);
+    float: left;
+    margin-left: 25px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.contentHeader ul {
+    float: right;
+    margin-right: 25px;
+    margin-top: 7px;
+    font-size: 11px;
+    color: rgb(255,255,255);
+    list-style-type: none;
+    height: 21px;
+}
+
+    .contentHeader ul li {
+        display: inline;
+        position: relative;
+    }
+
+.contentHeader .padd23 {
+    padding: 0px 23px 0px 23px;
+}
+
+.contentHeader .BatNumb {
+    padding: 0px 23px 0px 23px;
+    margin: 0px 0px 0px 0px;
+    vertical-align: super;
+    font-size: 18px;
+}
+
+.contentHeader ul li a:link, a:visited, a:active {
+    text-decoration: none;
+    color: rgb(105,105,105);
+    cursor: pointer;
+}
+
+.contentData {
+    width: 956px;
+    margin: 0px auto auto auto;
+    background: #fff;
+    height: auto;
+}
+
+.contentDataHeader {
+    margin: 0 auto;
+    height: 35px;
+    width: 956px;
+    background: rgb(105,105,105);
+}
+
+    .contentDataHeader .InvNumb {
+        padding: 0px 23px 0px 23px;
+        margin: 0px 0px 0px 0px;
+        vertical-align: super;
+        font-size: 18px;
+    }
+
+    .contentDataHeader label.headLbl {
+        font-size: 14px;
+        color: rgb(255,255,255);
+        float: left;
+        margin-left: 25px;
+        margin-top: 10px;
+        text-transform: capitalize;
+    }
+
+    .contentDataHeader ul {
+        float: right;
+        margin-right: 25px;
+        margin-top: 7px;
+        font-size: 11px;
+        color: rgb(255,255,255);
+        list-style-type: none;
+        height: 21px;
+    }
+
+        .contentDataHeader ul li {
+            display: inline;
+        }
+
+            .contentDataHeader ul li a:link, a:visited, a:active {
+                text-decoration: none;
+                color: rgb(105,105,105);
+                cursor: pointer;
+            }
+
+    .contentDataHeader .padd23 {
+        padding: 0px 23px 0px 23px;
+        line-height: 30px;
+    }
+
+.navMenu ul {
+    list-style-type: none;
+    text-align: left;
+    border-bottom: 1px solid rgb(209,210,212);
+    padding: 10px 0 10px 0px;
+    width: 910px;
+    margin: 0 auto;
+}
+
+.contentData h4 {
+    font-size: 12px;
+    float: right;
+    text-transform: lowercase;
+    font-weight: 100;
+    font-family: Helvetica,Helvetica,Arial,Tahoma,sans-serif;
+    color: rgb(154,156,158);
+    vertical-align: super;
+    margin: 10px 20px 0 20px;
+}
+
+.contentData .onHld {
+    float: right;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+
+    .contentData .onHld label {
+        font-size: 11px;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+    }
+
+.navMenu .bBlack {
+    border-bottom: 4px solid rgb(105,105,105);
+    padding-bottom: 8px;
+}
+
+.navMenu ul li {
+    display: inline;
+    padding: 0px 40px 0px 40px;
+    margin: 0 0 0 0;
+}
+
+    .navMenu ul li a:link, a:visited, a:active {
+        text-decoration: none;
+        color: #000;
+    }
+
+.leftCol {
+    width: 600px;
+    margin: 0 auto;
+    float: left;
+    padding: 10px 0px 0px 0px;
+}
+
+
+.toolTip {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('../Images/tooltip.png');
+}
+
+.calenderHolder {
+    position: relative;
+    display: inline-block;
+}
+
+.leftCol ul {
+    display: inline;
+    list-style-type: none;
+    width: 100%;
+    display: block;
+}
+
+    .leftCol ul li {
+        padding: 0.5em 0;
+    }
+
+        .leftCol ul li label {
+            display: inline-block;
+            width: 127px;
+            text-align: right;
+            padding-right: 5px;
+        }
+
+.leftColReport {
+    text-align: left !important;
+}
+
+.button-Taxes {
+    margin-left: 175px;
+}
+
+.rightClose {
+    float: right;
+}
+
+
+
+.leftCol input[type="text"] {
+    border: solid 1px rgb(167,169,172);
+    height: 32px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 25px 0px 12px;
+    width: 103px;
+}
+
+.txtFinderReport {
+    width: 140px !important;
+}
+
+.txtDescReport {
+    width: 240px !important;
+}
+
+
+
+.leftCol input.with-default {
+    width: 115px;
+    padding: 0px 20px 0px 5px;
+}
+
+.leftCol input.invoice-with-default {
+    width: 108px;
+    padding: 0px 20px 0px 12px;
+}
+
+.txtDescExtn {
+    width: 400px !important;
+}
+
+.txtDescExtnInvoice {
+    width: 170px !important;
+}
+
+.txtDesc {
+    width: 254px !important;
+}
+
+.txtDescSmall {
+    width: 114px !important;
+}
+
+.wid100 {
+    width: 100px !important;
+}
+
+.wid200 {
+    width: 200px !important;
+}
+
+
+.wid300 {
+    width: 300px !important;
+}
+
+.wid400 {
+    width: 365px !important;
+}
+
+.wid450 {
+    width: 450px !important;
+}
+
+.wid500 {
+    width: 450px !important;
+}
+
+.wid600 {
+    width: 600px !important;
+}
+
+.FltRight {
+    float: right;
+}
+
+.rightCol {
+    width: 300px;
+    float: right;
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: #000;
+    margin-top: 10px;
+}
+
+    .rightCol h1 {
+        text-decoration: none;
+        font-size: 33px;
+        color: rgb(108,109,107);
+        font-weight: 100;
+        margin-top: 5px;
+    }
+
+    .rightCol h2.capitalize {
+        text-transform: lowercase;
+    }
+
+    .rightCol h2 {
+        font-size: 12px;
+        font-weight: normal;
+        color: rgb(108,109,107);
+        margin-top: 5px;
+    }
+
+.DynTabContent {
+    /*min-height: 600px;*/
+    padding: 0 0 0 0;
+}
+
+.tabCol {
+    margin: 0 0 0 0;
+    float: left;
+    /*padding:0px 0px 0px 0px;*/
+}
+
+    .tabCol p {
+        margin-left: 175px;
+    }
+
+    .tabCol ul {
+        list-style-type: none;
+        /*border-bottom:solid 1px rgb(167,169,172);*/
+        padding: 0px 0 0px 20px;
+        margin-top: 0px;
+    }
+
+        .tabCol ul li {
+            padding: 0px 0 10px 0;
+            margin-top: 0px;
+        }
+
+            .tabCol ul li label {
+                display: inline-block;
+                width: 150px;
+                padding-right: 5px;
+                text-align: right;
+            }
+
+.tableftCol {
+    width: 600px;
+    margin: 0 0 0 0;
+    float: left;
+    /*padding:0px 0px 0px 0px;*/
+}
+
+    .tableftCol p {
+        margin-left: 175px;
+    }
+
+    .tableftCol ul {
+        list-style-type: none;
+        /*border-bottom:solid 1px rgb(167,169,172);*/
+        padding: 0px 0 0px 20px;
+        margin-top: 0px;
+    }
+
+        .tableftCol ul li {
+            padding: 0px 0 10px 0;
+            margin-top: 0px;
+        }
+
+            .tableftCol ul li label {
+                display: inline-block;
+                width: 150px;
+                padding-right: 5px;
+                text-align: right;
+            }
+
+.statistics {
+    display: inline-block;
+    width: 80px !important;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.tableftCol input[type="text"] {
+    border: solid 1px rgb(167,169,172);
+    padding: 0px 5px 0px 5px;
+    height: 32px;
+}
+
+.tableftCol input.search-default {
+    width: 130px;
+    padding: 0 5px 0 5px;
+    margin: 0;
+}
+
+
+a.searchImg {
+    position: relative;
+    top: 4px;
+    margin-left: -25px;
+    margin-right: 3px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    background: url('../Images/search.png');
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+a.finder {
+    position: relative;
+    top: 4px;
+    margin-left: -40px;
+    margin-right: 3px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    background: url('../Images/search.png');
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+a.finder2 {
+    position: relative;
+    top: 4px;
+    margin-left: -25px;
+    margin-right: 3px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    background: url('../Images/search.png');
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+a.searchImgSmall {
+    position: relative;
+    top: 8px;
+    margin-left: -25px;
+    margin-right: 3px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    background: url('../Images/searchsmall.png');
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+a.ListImg {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    right: 28px;
+    cursor: pointer;
+    width: 21px;
+    height: 20px;
+    background: url('../Images/list.png');
+}
+
+
+span.ReqImg {
+    margin: 0 6px 0 -225px;
+    vertical-align: middle;
+    position: absolute;
+    background: url('../Images/Req-Field.png');
+    height: 34px;
+    width: 10px;
+    display: inline-block;
+}
+
+.tableftCol input.list-default {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    width: 215px;
+}
+
+.tableftCol input.path-default {
+    width: 215px;
+}
+
+.tableftCol input.list-default2 {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    width: 215px;
+}
+
+.tableftCol input.reqField-default {
+    width: 205px;
+    padding: 0px 5px 0px 15px;
+    margin: 0px;
+}
+
+.tableftCol input.empField-default {
+    padding-left: 12px;
+    width: 215px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+}
+
+.tableftCol input.empField-default-small {
+    width: 130px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+}
+
+.tableftCol input.wid275 {
+    width: 275px;
+}
+
+.tableftCol select {
+    border: solid 1px rgb(167,169,172);
+    padding: 0px 0px 0px 5px;
+    height: 32px;
+    margin: 0px 0px 0px -3px;
+    width: 227px;
+}
+
+.lastRow {
+    border-bottom: solid 1px rgb(167,169,172);
+}
+
+.tabRightCol {
+    width: 300px;
+    min-height: 390px;
+    float: right;
+    display: block;
+    color: #000;
+}
+
+.tabRightColData {
+    width: 300px;
+    float: right;
+    display: block;
+    color: #000;
+    background-color: rgb(231,232,233);
+    border: solid 1px rgb(167,169,172);
+    margin-right: 20px;
+    padding: 0px 0 20px 0;
+}
+
+    .tabRightColData .calIcon {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 2px;
+        cursor: pointer;
+    }
+
+    .tabRightColData ul {
+        clear: both;
+        list-style-type: none;
+        display: block;
+        margin: 0 0 0 0;
+        padding: 0 0 0 18px;
+    }
+
+        .tabRightColData ul li {
+            display: block;
+            margin: 0;
+            padding: 5px 0;
+        }
+
+            .tabRightColData ul li label {
+                display: inline-block;
+                width: 95px;
+                text-align: right;
+                margin: 0;
+            }
+
+
+    .tabRightColData h3 {
+        font-size: 28px;
+        text-transform: none;
+        color: rgb(108,109,107);
+        float: right;
+        font-weight: 100;
+        padding: 0 20px 10px 0;
+        margin: 0 0 0 0;
+    }
+
+    .tabRightColData h4 {
+        font-size: 14px;
+        text-transform: none;
+        text-decoration: none;
+        color: rgb(108,109,107);
+        float: right;
+        font-weight: 100;
+        padding: 0 20px 8px 0;
+        margin: 20px 0 0 0;
+    }
+
+
+    .tabRightColData input[type="text"] {
+        border: solid 1px rgb(167,169,172);
+        padding: 0px 5px 0px 5px;
+        height: 32px;
+        margin: 0px 0px 0px 8px;
+        width: 125px;
+    }
+
+    .tabRightColData .inStat {
+        text-align: left;
+        margin-left: 7px;
+    }
+
+.chkBx {
+    padding-right: 10px;
+}
+
+.padd20 {
+    width: 20px;
+    float: left;
+}
+
+.gridD {
+    min-height: 100px;
+    background-color: rgb(231,232,233);
+    display: block;
+    color: #000;
+    border: solid 1px rgb(167,169,172);
+}
+
+#unDisAmt {
+    float: right !important;
+    width: 295px;
+    height: 40px;
+    background-color: rgb(231,232,233);
+    padding: 0px 20px 0 20px;
+    border-left: solid 1px rgb(167,169,172);
+    border-right: solid 1px rgb(167,169,172);
+    border-bottom: solid 1px rgb(167,169,172);
+    text-align: right;
+}
+
+    #unDisAmt .amt {
+        float: right;
+        color: red;
+        margin: 0px;
+    }
+
+.saveBtn {
+    float: right;
+    margin: 10px 0 0px 0;
+    padding-bottom: 20px;
+}
+
+.saveBtn-Taxes {
+    float: left;
+}
+
+    .saveBtn-Taxes p {
+        float: left;
+    }
+
+.saveBtn p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.formHr {
+    margin-top: 0;
+    width: 70%;
+}
+
+.formHr-Rates {
+    margin-top: 0;
+    width: 90%;
+}
+/***************** content-Invoice ends here *****************/
+
+
+
+/***************** content-vendor starts here *****************/
+
+.content-vendor {
+    width: 956px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.contentTop-vendor {
+    width: 956px;
+    margin: 0 auto 25px;
+    /*height:0 auto;*/
+    background: rgb(238,239,239);
+    height: 160px;
+    border: 1px solid rgb(209,210,212);
+}
+
+.contentHeader-vendor {
+    margin: 0 auto;
+    height: 35px;
+    width: 956px;
+    background: rgb(105,105,105);
+}
+
+    .contentHeader-vendor label.headLbl {
+        font-size: 14px;
+        color: rgb(255,255,255);
+        float: left;
+        margin-left: 25px;
+        margin-top: 10px;
+        text-transform: capitalize;
+    }
+
+    .contentHeader-vendor ul {
+        float: right;
+        margin-right: 25px;
+        margin-top: 7px;
+        font-size: 11px;
+        color: rgb(255,255,255);
+        list-style-type: none;
+        height: 21px;
+    }
+
+        .contentHeader-vendor ul li {
+            display: inline;
+        }
+
+    .contentHeader-vendor .padd23 {
+        padding: 0px 23px 0px 23px;
+    }
+
+    .contentHeader-vendor .BatNumb {
+        padding: 0px 23px 0px 23px;
+        margin: 0px 0px 0px 0px;
+        vertical-align: super;
+        font-size: 18px;
+    }
+
+    .contentHeader-vendor ul li a:link, a:visited, a:active {
+        text-decoration: none;
+        color: rgb(105,105,105);
+        cursor: pointer;
+    }
+
+.contentData-vendor {
+    width: 956px;
+    margin: 0px auto auto auto;
+    background: #fff;
+    height: auto;
+}
+
+.contentDataHeader-vendor {
+    margin: 0 auto;
+    height: 35px;
+    width: 956px;
+    background: rgb(105,105,105);
+}
+
+    .contentDataHeader-vendor .InvNumb {
+        padding: 0px 23px 0px 23px;
+        margin: 0px 0px 0px 0px;
+        vertical-align: super;
+        font-size: 18px;
+    }
+
+    .contentDataHeader-vendor label.headLbl {
+        font-size: 14px;
+        color: rgb(255,255,255);
+        float: left;
+        margin-left: 25px;
+        margin-top: 10px;
+        text-transform: capitalize;
+    }
+
+    .contentDataHeader-vendor ul {
+        float: right;
+        margin-right: 25px;
+        margin-top: 7px;
+        font-size: 11px;
+        color: rgb(255,255,255);
+        list-style-type: none;
+        height: 21px;
+    }
+
+        .contentDataHeader-vendor ul li {
+            display: inline;
+        }
+
+            .contentDataHeader-vendor ul li a:link, a:visited, a:active {
+                text-decoration: none;
+                color: rgb(105,105,105);
+                cursor: pointer;
+            }
+
+    .contentDataHeader-vendor .padd23 {
+        padding: 0px 23px 0px 23px;
+        line-height: 30px;
+    }
+
+.navMenu-vendor ul {
+    list-style-type: none;
+    text-align: left;
+    border-bottom: 1px solid rgb(209,210,212);
+    padding: 10px 0 10px 0px;
+    width: 910px;
+    margin: 0 auto;
+}
+
+
+.contentData-vendor h4 {
+    font-size: 12px;
+    float: right;
+    text-transform: lowercase;
+    font-weight: 100;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    color: rgb(154,156,158);
+    vertical-align: super;
+    margin: 10px 20px 0 20px;
+}
+
+.contentData-vendor .onHld {
+    float: right;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+    .contentData-vendor .onHld label {
+        font-size: 11px;
+        vertical-align: middle;
+    }
+
+.navMenu-vendor .bBlack {
+    border-bottom: 4px solid rgb(105,105,105);
+    padding-bottom: 8px;
+}
+
+.navMenu-vendor ul li {
+    display: inline;
+    padding: 0px 25px 0px 25px;
+    margin: 0 0 0 0;
+}
+
+    .navMenu-vendor ul li a:link, a:visited, a:active {
+        text-decoration: none;
+        color: #000;
+    }
+
+.leftCol-vendor {
+    width: 600px;
+    margin: 0 auto;
+    float: left;
+    padding: 10px 0px 0px 0px;
+}
+
+
+    .leftCol-vendor .toolTip {
+        position: absolute;
+        padding: 0px 0px 0px 0px;
+    }
+
+.calIcon {
+    position: relative;
+    top: 7px;
+    right: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: -7px 0px 0px 0px;
+    cursor: pointer;
+    background: url('../Images/calender.png') no-repeat;
+    height: 26px;
+    width: 24px;
+    display: inline-block;
+}
+
+.txtDate {
+    width: 100px !important;
+}
+
+.leftCol-vendor ul {
+    display: inline;
+    list-style-type: none;
+    width: 100%;
+    display: block;
+}
+
+    .leftCol-vendor ul li {
+        display: inline;
+        text-align: right;
+    }
+
+        .leftCol-vendor ul li label {
+            display: inline-block;
+            width: 125px;
+            text-align: right;
+            padding-right: 5px;
+        }
+
+.button-Taxes {
+    margin-left: 175px;
+}
+
+.rightClose {
+    float: right;
+}
+
+.margL20 {
+    margin-left: 20px;
+}
+
+.margT5 {
+    margin-top: 5px;
+}
+
+.leftCol-vendor input[type="text"] {
+    border: solid 1px rgb(167,169,172);
+    height: 32px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
+    width: 125px;
+}
+
+.leftCol-vendor input.with-default {
+    width: 130px;
+    padding: 0px 5px 0px 5px;
+    margin: 0 0 0 -3px;
+}
+
+.leftCol-vendor input.vendor-default {
+    width: 256px;
+    padding: 0px 5px 0px 5px;
+    margin: 0 0 0 -3px;
+}
+
+.wid100 {
+    width: 100px !important;
+}
+
+.wid200 {
+    width: 200px !important;
+}
+
+.wid169 {
+    width: 169px !important;
+}
+
+.wid300 {
+    width: 300px !important;
+}
+
+.wid285 {
+    width: 285px !important;
+}
+
+.rightCol-vendor {
+    width: 300px;
+    float: right;
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.rightCol-vendorDetails {
+    width: 250px;
+    float: right;
+    display: block;
+    text-align: left;
+    padding-right: 20px;
+    padding-top: 10px;
+    color: #000;
+}
+
+    .rightCol-vendorDetails p {
+        margin-top: 20px;
+    }
+
+.rightCol-vendor h1 {
+    text-decoration: none;
+    font-size: 33px;
+    color: rgb(108,109,107);
+    font-weight: 100;
+    margin-top: 5px;
+}
+
+.rightCol-vendor h2.capitalize {
+    text-transform: lowercase;
+}
+
+.rightCol-vendor h2 {
+    font-size: 12px;
+    font-weight: normal;
+    color: rgb(108,109,107);
+    margin-top: 5px;
+}
+
+.tableftCol-vendor, .tabRightCol-vendor {
+    width: 470px;
+    margin: 20px 0 0;
+    float: left;
+}
+
+.tabRightCol-vendor {
+    float: right;
+}
+
+    .tableftCol-vendor p, .tabRightCol-vendor p {
+        margin-left: 175px;
+    }
+
+    .tableftCol-vendor ul, .tabRightCol-vendor ul {
+        list-style-type: none;
+        padding: 0px 0 0px 10px;
+        margin-top: 0px;
+    }
+
+        .tableftCol-vendor ul li, .tabRightCol-vendor ul li {
+            padding: 0px 0 10px 0;
+            margin-top: 0px;
+        }
+
+            .tableftCol-vendor ul li.gsepi, .tabRightCol-vendor ul li.gsepi {
+                padding-left: 152px;
+            }
+
+                .tableftCol-vendor ul li.gsepi label, .tabRightCol-vendor ul li.gsepi label {
+                    width: 270px;
+                }
+
+            .tableftCol-vendor ul li label, .tabRightCol-vendor ul li label {
+                display: inline-block;
+                width: 150px;
+                padding-right: 5px;
+                text-align: right;
+            }
+
+    .tableftCol-vendor input[type="text"], .tabRightCol-vendor input[type="text"] {
+        border: solid 1px rgb(167,169,172);
+        padding: 0px 5px 0px 5px;
+        height: 32px;
+    }
+    /*xcs*/
+    .tableftCol-vendor input.search-default, .tabRightCol-vendor input.search-default {
+        width: 130px;
+        padding: 0 5px 0 5px;
+        margin: 0;
+    }
+
+    .tableftCol-vendor input.list-default, .tabRightCol-vendor input.list-default {
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+        width: 265px;
+    }
+
+    .tableftCol-vendor input.path-default, .tabRightCol-vendor input.path-default {
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+        width: 150px;
+    }
+
+    .tableftCol-vendor input.list-default2, .tabRightCol-vendor input.list-default2 {
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+        width: 265px;
+    }
+
+    .tableftCol-vendor input.reqField-default, .tabRightCol-vendor input.reqField-default {
+        background: #fff url('../Images/Req-Field.png') left no-repeat;
+        width: 205px;
+        padding: 0px 5px 0px 15px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-default, .tabRightCol-vendor input.empField-default {
+        padding-left: 12px;
+        width: 215px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-Address, .tabRightCol-vendor input.empField-Address {
+        padding-left: 12px;
+        width: 280px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-Contact, .tabRightCol-vendor input.empField-Contact {
+        padding-left: 12px;
+        width: 406px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-Processing, .tabRightCol-vendor input.empField-Processing {
+        padding-left: 12px;
+        width: 401px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-Invoicing, .tabRightCol-vendor input.empField-Invoicing {
+        padding-left: 12px;
+        width: 401px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.empField-default-small, .tabRightCol-vendor input.empField-default-small {
+        width: 125px;
+        padding: 0px 5px 0px 5px;
+        margin: 0px;
+    }
+
+    .tableftCol-vendor input.wid275, .tabRightCol-vendor input.wid275 {
+        width: 275px;
+    }
+
+    .tableftCol-vendor select, .tabRightCol-vendor select {
+        border: solid 1px rgb(167,169,172);
+        padding: 0px 0px 0px 5px;
+        height: 32px;
+        margin: 0px 0px 0px 0px;
+        width: 227px;
+    }
+
+    .tableftCol-vendor .lastRow, .tabRightCol-vendor .lastRow {
+        border-bottom: 1px solid #A7A9AC;
+    }
+
+.formHr-vendor {
+    color: #fff !important;
+}
+
+.chkBx {
+    padding-right: 10px;
+}
+
+
+/***************** content-vendor ends here *****************/
+
+
+/***************** Taxes Tab Styling starts here *****************/
+.TaxTab {
+    padding: 0px !important;
+    margin-top: 20px !important;
+}
+
+#TotalTax {
+    float: right !important;
+    width: 295px;
+    height: 40px;
+    background-color: rgb(231,232,233);
+    padding: 0px 20px 0 20px;
+    border-left: solid 1px rgb(167,169,172);
+    border-right: solid 1px rgb(167,169,172);
+    border-bottom: solid 1px rgb(167,169,172);
+    text-align: right;
+}
+
+    #TotalTax .tax {
+        float: right;
+        color: red;
+    }
+
+/***************** Taxes Tab Styling ends here *****************/
+
+.tabAlign {
+    margin-left: -10px !important;
+    margin-top: 20px !important;
+}
+
+.TotalsTab {
+    margin-left: -10px !important;
+    margin-top: 20px !important;
+}
+
+.totalLCol {
+    width: 450px !important;
+    min-height: 200px !important;
+    float: left;
+}
+
+    .totalLCol ul {
+        list-style-type: none;
+        padding: 0px 0 0px 20px;
+        margin-top: 0px;
+    }
+
+        .totalLCol ul li {
+            padding: 0px 0 10px 0;
+            margin-top: 0px;
+        }
+
+            .totalLCol ul li label {
+                display: inline-block;
+                width: 150px;
+                padding-right: 5px;
+                text-align: right;
+            }
+
+    .totalLCol input[type="text"] {
+        border: solid 1px rgb(167,169,172);
+        padding: 0px 5px 0px 5px;
+        height: 32px;
+    }
+
+.totalRCol {
+    width: 450px !important;
+    min-height: 200px !important;
+    float: right;
+}
+
+.lastRow {
+    border-bottom: solid 1px rgb(167,169,172);
+}
+
+.totalRCol ul {
+    list-style-type: none;
+    padding: 0px 0 0px 20px;
+    margin-top: 0px;
+}
+
+    .totalRCol ul li {
+        padding: 0px 0 10px 0;
+        margin-top: 0px;
+    }
+
+        .totalRCol ul li label {
+            display: inline-block;
+            width: 150px;
+            padding-right: 5px;
+            text-align: right;
+        }
+
+.totalRCol input[type="text"] {
+    border: solid 1px rgb(167,169,172);
+    padding: 0px 5px 0px 5px;
+    height: 32px;
+}
+/***************** Totals Tab Styling ends here *****************/
+
+
+/***************** Home page styles *****************/
+
+.homePage {
+    margin: 0px auto;
+    padding: 0px;
+    width:940px;
+}
+
+    .homePage header {
+        background: transparent url("../Images/top-bg.png") top right no-repeat;
+        width:100%;
+        margin-bottom:20px;
+    }
+
+            .homePage header .logo span {
+                display: block;
+                font-size: 17px;
+                color: #646464;
+            }
+
+.homePage .homePage-content{
+    margin:0px;
+    padding:0px;
+   /* background: transparent url("../Images/floral_2.png") bottom right no-repeat;*/
+}
+.homePage-content .panel{
+    overflow:hidden;
+    border-bottom:10px solid #fff;
+}
+.homePage-content .panel h1{
+    margin:0px;
+    padding:5px 20px;
+    background-color:#696969;
+    color:#fff;
+    font-weight:normal;
+    font-size:18px;
+}
+.panel ul{
+    margin:0px;
+    padding:0px;
+}
+.panel ul li{
+    list-style:none;
+    background: transparent url("../Images/arrow-right.png") 0px 3px no-repeat;
+    padding-left:30px;
+    width:263px;
+    float:left;
+    margin:20px 0px 20px 20px;
+
+}
+.panel ul li a{
+    color:#003535;
+    font-size:25px;
+    font-weight:normal;
+    margin:0px;
+    padding:0px;
+    text-decoration:none;
+    display:block;
+}
+
+
+
+
+
+
+.homePage .footer {
+        padding: 20px 0px;
+        font-size: 13px;
+        border-top: 1px dotted #ccc;
+        margin-top: 30px;
+    }
+
+/***************** Home page styles ends *****************/
+
+
+/***************** Required fields styles start*****************/
+.required {
+    background-image: url('../Images/Req-Field.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.validationFailure {
+    background-image: url('../Images/corner.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}
+
+.input-validation-error {
+    /*background-image: url('../Images/corner.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding-left: 15px;*/
+}
+
+/***************** Required fields styles Ends*****************/
+
+
+/***************** Alert messages *****************/
+.alertMessage {
+    position: fixed;
+    bottom: 10px;
+    background: rgba(255,247,214,0.8);
+    width: inherit;
+    border: 2px solid rgb(233,212,119);
+    margin-left: -478px;
+    width: 956px;
+    left: 50%;
+    z-index: 9999;
+}
+
+    .alertMessage span, .alertMessage a {
+        display: inline-block;
+        font-size: 15px;
+    }
+
+    .alertMessage span {
+        padding: 20px;
+        float: left;
+    }
+
+    .alertMessage a {
+        float: right;
+        padding: 0px 30px;
+        margin-top: 15px;
+        margin-right: 10px;
+        line-height: 25px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #fff;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -khtml-border-radius: 4px;
+        border-radius: 4px;
+        background: #222;
+        font-weight: bold;
+        background-image: linear-gradient(to bottom, #7D7E7D, #0E0E0E);
+    }
+
+        .alertMessage a:hover {
+            background: #000;
+        }
+
+.msg {
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    margin-left: 135px;
+}
+
+.msgStatistics {
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    margin-left: 0 !important;
+    padding-left: 85px !important;
+    padding-top: 5px;
+}
+
+.msgStatisticsYear {
+    width: 100px;
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    margin-left: 0 !important;
+    padding-left: 90px !important;
+    padding-top: 5px;
+}
+
+.msgInvoice {
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    margin-left: 155px;
+}
+
+.msgInvoiceBatch {
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    margin-left: 130px;
+}
+
+.msgUser {
+    font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+    font-size: 11px;
+    color: red;
+    display: block;
+    padding-top: 2px;
+    margin-left: 130px;
+}
+
+/***************** Alert messages Ends here *****************/
+
+
+/***************** Warning messages starts here *****************/
+.warningMessage {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    background: #fff;
+    border: 1px solid #CCCCCC;
+    /*width: 400px !important;*/
+    /*min-height: 250px;*/
+    z-index: 9999;
+    margin-top: -100px;
+    margin-left: -100px;
+    float: left;
+    padding: 0px;
+}
+
+    .warningMessage .header {
+        width: 100%;
+        background: #696969;
+        height: 40px;
+    }
+
+    .warningMessage .header2 {
+        width: 100%;
+        color: red;
+        height: 10px;
+        font-weight: bold;
+        padding-top: 10px;
+    }
+
+    .warningMessage h3 {
+        width: 100%;
+        text-align: left;
+        font-family: 'HelveticaNeue',Helvetica,Arial,Tahoma,sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    .warningMessage h4 {
+        padding-left: 20px;
+        margin: 0px;
+    }
+
+    .warningMessage ul {
+        display: block;
+        list-style-type: square;
+        /*width: 320px;*/
+        border-bottom: 1px solid #CCCCCC;
+        /*margin-left: 20px;*/
+        padding-bottom: 10px;
+    }
+
+    .warningMessage li {
+        padding-bottom: 5px;
+    }
+
+    .warningMessage .btnArea {
+        /*width: 380px;*/
+        text-align: right;
+        padding-bottom: 10px;
+    }
+
+.colRed {
+    color: red;
+}
+
+
+
+
+/***************** Warning messages ends here *****************/
+
+
+
+
+/*Batch Column Styles starts*/
+.batchCol1 {
+    width: 10px;
+}
+/*Batch Column Styles ends*/
+
+
+.boldGrey {
+    color: #696969;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 11px;
+}
+
+    .boldGrey span {
+        color: #000;
+        margin-left: 10px;
+    }
+
+/*Navigation styles starts here*/
+.recnav {
+    float: right;
+}
+
+.recNavRightArrow {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: url(../Images/white-right-arrow.png) no-repeat center;
+}
+
+    .recNavRightArrow.disabled {
+        background: url(../Images/white-right-arrow-disabled.png) no-repeat center;
+    }
+
+.recNavLeftArrow {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(../Images/white-left-arrow.png) no-repeat center;
+}
+
+    .recNavLeftArrow.disabled {
+        background: url(../Images/white-left-arrow-disabled.png) no-repeat center;
+    }
+
+.crecord, .totalrec, .recnumseperator {
+    font-size: 17px;
+}
+
+
+#tracer {
+    display: none;
+}
+
+/*Navigation styles ends here*/
+
+.disabled {
+    cursor: auto !important;
+}
+
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+/*to hide the close icon on dialog conflict in align with kendo css*/
+.ui-dialog-zindex {
+    z-index: 1;
+}
+
+/*new rule for setting z-index*/
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/*jquery.ui.core.css  width: 100%; height: 100%; */
+.mg-ui-dialog-content {
+    min-width: 550px;
+    min-height: 300px;
+}
+
+/*Batch Column Styles starts*/
+
+.mg-batch-Col1 {
+    width: 100px;
+}
+
+.mg-batch-Col2 {
+    width: 100px;
+}
+
+.mg-batch-Col3 {
+    width: 100px;
+}
+
+.mg-batch-Col4 {
+    width: 100px;
+}
+
+.mg-batch-Col5 {
+    width: 100px;
+}
+
+.mg-batch-Col6 {
+    width: 100px;
+}
+
+.mg-batch-Col7 {
+    width: 100px;
+}
+
+.mg-batch-Col8 {
+    width: 100px;
+}
+
+.mg-batch-Col9 {
+    width: 100px;
+}
+
+.mg-batch-Col10 {
+    width: 100px;
+}
+
+/*Batch Column Styles ends*/
+
+/*Vendor Column Styles ends*/
+.mg-vendor-col1 {
+    width: 90px;
+}
+
+.mg-vendor-col2 {
+    width: 100px;
+}
+
+.mg-vendor-col3 {
+    width: 180px;
+}
+
+.mg-vendor-col4 {
+    width: 60px;
+}
+
+.mg-vendor-col5 {
+    width: 70px;
+}
+
+.mg-vendor-col6 {
+    width: 70px;
+}
+
+.mg-vendor-col7 {
+    width: 150px;
+}
+
+.mg-vendor-col8 {
+    width: 150px;
+}
+
+.mg-vendor-col9 {
+    width: 150px;
+}
+
+.mg-vendor-col10 {
+    width: 150px;
+}
+
+.mg-vendor-col11 {
+    width: 100px;
+}
+
+.mg-vendor-col12 {
+    width: 100px;
+}
+
+.mg-vendor-col13 {
+    width: 100px;
+}
+
+.mg-vendor-col14 {
+    width: 100px;
+}
+
+.mg-vendor-col15 {
+    width: 150px;
+}
+
+.mg-vendor-col16 {
+    width: 100px;
+}
+
+.mg-vendor-col17 {
+    width: 100px;
+}
+
+.mg-vendor-col18 {
+    width: 250px;
+}
+
+.mg-vendor-col19 {
+    width: 130px;
+}
+
+.mg-vendor-col20 {
+    width: 130px;
+}
+
+.mg-vendor-col21 {
+    width: 300px;
+}
+/*Vendor Column Styles ends*/
+
+/*VendorGroup Column Styles ends*/
+.mg-vendorGroup-col1 {
+    width: 90px;
+}
+
+.mg-vendorGroup-col2 {
+    width: 100px;
+}
+
+.mg-vendorGroup-col3 {
+    width: 90px;
+}
+
+.mg-vendorGroup-col4 {
+    width: 150px;
+}
+
+.mg-vendorGroup-col5 {
+    width: 70px;
+}
+
+.mg-vendorGroup-col6 {
+    width: 70px;
+}
+
+.mg-vendorGroup-col7 {
+    width: 150px;
+}
+
+/*VendorGroup Column Styles ends*/
+
+/*VendorTerms Column Styles ends*/
+.mg-vendorTerms-col1 {
+    width: 90px;
+}
+
+.mg-vendorTerms-col2 {
+    width: 100px;
+}
+
+.mg-vendorTerms-col3 {
+    width: 150px;
+}
+
+.mg-vendorTerms-col4 {
+    width: 150px;
+}
+
+/*VendorTerms Column Styles ends*/
+
+/*VendorAccount Column Styles ends*/
+.mg-vendorAccount-col1 {
+    width: 90px;
+}
+
+.mg-vendorAccount-col2 {
+    width: 100px;
+}
+
+.mg-vendorAccount-col3 {
+    width: 150px;
+}
+/*VendorAccount Column Styles ends*/
+
+/*Vendor Tax class Column Styles ends*/
+.mg-vendorTaxClass-col1 {
+    width: 90px;
+}
+
+.mg-vendorTaxClass-col2 {
+    width: 100px;
+}
+
+.mg-vendorTaxClass-col3 {
+    width: 150px;
+}
+/*Vendor Tax class Column Styles ends*/
+
+/*VendorBank Column Styles ends*/
+.mg-vendorBank-col1 {
+    width: 90px;
+}
+
+.mg-vendorBank-col2 {
+    width: 100px;
+}
+
+.mg-vendorBank-col3 {
+    width: 150px;
+}
+
+.mg-vendorBank-col4 {
+    width: 60px;
+}
+
+.mg-vendorBank-col5 {
+    width: 70px;
+}
+
+.mg-vendorBank-col6 {
+    width: 70px;
+}
+
+.mg-vendorBank-col7 {
+    width: 150px;
+}
+
+.mg-vendorBank-col8 {
+    width: 150px;
+}
+
+.mg-vendorBank-col9 {
+    width: 150px;
+}
+
+.mg-vendorBank-col10 {
+    width: 150px;
+}
+
+.mg-vendorBank-col11 {
+    width: 100px;
+}
+
+.mg-vendorBank-col12 {
+    width: 100px;
+}
+
+.mg-vendorBank-col13 {
+    width: 100px;
+}
+
+.mg-vendorBank-col14 {
+    width: 100px;
+}
+
+.mg-vendorBank-col15 {
+    width: 150px;
+}
+
+.mg-vendorBank-col16 {
+    width: 100px;
+}
+
+.mg-vendorBank-col17 {
+    width: 100px;
+}
+
+.mg-vendorBank-col18 {
+    width: 250px;
+}
+
+.mg-vendorBank-col19 {
+    width: 100px;
+}
+
+.mg-vendorBank-col20 {
+    width: 100px;
+}
+
+/*VendorBank Column Styles ends*/
+
+/*VendorPayment Column Styles ends*/
+.mg-vendorPayment-col1 {
+    width: 90px;
+}
+
+.mg-vendorPayment-col2 {
+    width: 100px;
+}
+
+.mg-vendorPayment-col3 {
+    width: 150px;
+}
+
+.mg-vendorPayment-col4 {
+    width: 150px;
+}
+
+/*VendorPayment Column Styles ends*/
+
+.labelFullwidth {
+    width: 267px !important;
+    position: relative;
+    text-align: left;
+}
+
+/*AP Invoice Column Styles ends*/
+.mg-invoicebatch-col1 {
+    width: 80px !important;
+}
+
+.mg-invoicebatch-col2 {
+    width: 130px;
+}
+
+.mg-invoicebatch-col3 {
+    width: 90px;
+}
+
+.mg-invoicebatch-col4 {
+    width: 130px;
+}
+
+.mg-invoicebatch-col5 {
+    width: 80px;
+}
+
+.mg-invoicebatch-col6 {
+    width: 130px;
+}
+
+.mg-invoicebatch-col7 {
+    width: 150px;
+}
+
+.mg-invoicebatch-col8 {
+    width: 120px;
+}
+
+.mg-invoicebatch-col9 {
+    width: 130px;
+}
+
+.mg-invoicebatch-col10 {
+    width: 100px;
+}
+
+.mg-invoicebatch-col11 {
+    width: 90px;
+}
+
+.mg-invoicebatch-col12 {
+    width: 110px;
+}
+
+.mg-invoicebatch-col13 {
+    width: 110px;
+}
+
+.mg-invoicebatch-col14 {
+    width: 110px;
+}
+/*AP Invoice Column Styles ends*/
+
+/*Tax Column Styles ends*/
+.mg-tax-col1 {
+    width: 130px;
+}
+
+.mg-tax-col2 {
+    width: 130px;
+}
+
+.mg-tax-col3 {
+    width: 130px;
+}
+
+.mg-tax-col4 {
+    width: 150px;
+}
+
+.mg-tax-col5 {
+    width: 80px;
+}
+/*Tax Column Styles ends*/
+
+/*Gl Account Styles ends*/
+.mg-GLAccount-col1 {
+    width: 150px;
+}
+
+.mg-GLAccount-col2 {
+    width: 150px;
+}
+
+.mg-GLAccount-col3 {
+    width: 150px;
+}
+
+.mg-GLAccount-col4 {
+    width: 150px;
+}
+
+.mg-GLAccount-col5 {
+    width: 150px;
+}
+
+.mg-GLAccount-col6 {
+    width: 150px;
+}
+
+.mg-GLAccount-col7 {
+    width: 150px;
+}
+
+.mg-GLAccount-col8 {
+    width: 180px;
+}
+/*Gl Account Styles ends*/
+/*VendorTaxGroup Column Styles ends*/
+.mg-vendorTaxGroup-col1 {
+    width: 90px;
+}
+
+.mg-vendorTaxGroup-col2 {
+    width: 100px;
+}
+
+.mg-vendorTaxGroup-col3 {
+    width: 150px;
+}
+
+.mg-vendorTaxGroup-col4 {
+    width: 150px;
+}
+
+.mg-vendorTaxGroup-col5 {
+    width: 150px;
+}
+
+
+/*VendorTaxGroup Column Styles ends*/
+/*RemitToLocation Column Styles ends*/
+.mg-remittolocation-col1 {
+    width: 90px;
+}
+
+.mg-remittolocation-col2 {
+    width: 100px;
+}
+
+.mg-remittolocation-col3 {
+    width: 180px;
+}
+
+.mg-remittolocation-col4 {
+    width: 60px;
+}
+
+.mg-remittolocation-col5 {
+    width: 70px;
+}
+
+.mg-remittolocation-col6 {
+    width: 70px;
+}
+
+.mg-remittolocation-col7 {
+    width: 150px;
+}
+
+.mg-remittolocation-col8 {
+    width: 150px;
+}
+
+.mg-remittolocation-col9 {
+    width: 150px;
+}
+
+.mg-remittolocation-col10 {
+    width: 150px;
+}
+
+.mg-remittolocation-col11 {
+    width: 100px;
+}
+
+.mg-remittolocation-col12 {
+    width: 100px;
+}
+
+.mg-remittolocation-col13 {
+    width: 100px;
+}
+
+.mg-remittolocation-col14 {
+    width: 100px;
+}
+
+.mg-remittolocation-col15 {
+    width: 150px;
+}
+
+.mg-remittolocation-col16 {
+    width: 100px;
+}
+
+.mg-remittolocation-col17 {
+    width: 100px;
+}
+
+.mg-remittolocation-col18 {
+    width: 250px;
+}
+
+.mg-remittolocation-col19 {
+    width: 130px;
+}
+
+.mg-remittolocation-col20 {
+    width: 130px;
+}
+
+.mg-remittolocation-col21 {
+    width: 300px;
+}
+/*RemitToLocation Column Styles ends*/
+
+/*RateType Column Styles ends*/
+.mg-ratetype-col1 {
+    width: 300px;
+}
+
+.mg-ratetype-col2 {
+    width: 300px;
+}
+/*RateType Column Styles ends*/
+
+/*CurrencyRates Column Styles ends*/
+.mg-currencyrates-col1 {
+    width: 150px;
+}
+
+.mg-currencyrates-col2 {
+    width: 150px;
+}
+
+.mg-currencyrates-col3 {
+    width: 150px;
+}
+/*CurrencyRates Column Styles ends*/
+
+/*User Column Styles ends*/
+.mg-user-col1 {
+    width: 50px;
+}
+
+.mg-user-col2 {
+    width: 100px;
+}
+/*User Column Styles ends*/
+
+.rndCorner-b {
+    border-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+}
+
+
+
+#StatisticsGrid .k-grid-content, #ActivityGrid .k-grid-content, #div_finder_grid .k-grid-content, #gridTaxes .k-grid-content, #gridTaxGroup .k-grid-content, #gridDistributions .k-grid-content, #gridOptionalFields .k-grid-content, #gridDistributions .k-grid-content, #gridOptionalFieldsVendor .k-grid-content, #gridDistributions .k-grid-content {
+    min-height: 100px; /* internal bit with the scrollbar */
+}
+
+#gridOptionalFieldsVendor {
+}
+
+/* Exception Styles*/
+.exceptionContent {
+    min-height: 300px;
+    position: relative;
+}
+
+.backBtn {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+.exceptionContent h1 {
+    padding: 10px 0 0 0px;
+}
+
+
+.ui-dialog-zindex {
+    z-index: 1;
+}
+/*new rule for setting z-index*/
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/*jquery.ui.core.css  width: 100%; height: 100%; */
+
+
+.section {
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.invoiceClear ul {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    width: auto !important;
+}
+
+.greyTop {
+    border-top: 1px solid rgb(209,210,212);
+}
+
+.invoiceLabel ul li label {
+    width: 150px !important;
+}
+
+.margL20 {
+    margin-left: 20px;
+}
+
+.margL-4px {
+    margin-left: -4px !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.topmargin5 {
+    margin-top: 5px !important;
+}
+
+.topmargin10 {
+    margin-top: 10px !important;
+}
+
+.topmargin20 {
+    margin-top: 20px !important;
+}
+
+.notoppadding {
+    padding-top: 0 !important;
+}
+
+.btmPadding {
+    padding-bottom: 15px !important;
+}
+
+.widthauto {
+    width: auto !important;
+}
+
+.leftCol.invoiceClear {
+    width: 956px;
+}
+
+.sectionTitle {
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: normal;
+}
+
+.contentInvoice .k-dropdown-wrap.dropdownInvoice {
+    height: 32px !important;
+    padding: 0 0px 0 12px !important;
+    width: 142px !important;
+}
+
+
+
+.tableRecords li {
+    display: table;
+}
+
+.tableCellLeft, .tableCellRight {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tableCellLeft {
+    width: 34%;
+}
+
+.tableCellRight {
+    width: 66%;
+}
+
+.PadL12 {
+    padding-left: 12px;
+}
+
+.height125 {
+    height: 125px;
+}
+
+.mg-grid-dist-ht {
+    min-height: 100px;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.rndCorner-b {
+    display: none;
+    background: white;
+    position: fixed;
+    top: -4px;
+    left: 400px;
+    width: 450px;
+    height: 33px;
+    z-index: 9999;
+    border: 1px solid #007F64;
+}
+
+    .rndCorner-b table {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+/**format**/
+.mg-upcase {
+    text-transform: uppercase;
+}
+
+.mg-lwcase {
+    text-transform: lowercase;
+}
+/**format**/
+
+.k-numerictextbox {
+    border-width: 0px;
+    overflow: visible;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.k-dropdown {
+    border-width: 0px;
+    width: 12.4em;
+    overflow: visible;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.passwordfield {
+    height: 30px;
+    width: 205px !important;
+}
+
+.BatchNo {
+    margin-left: 0px;
+}
+
+.BatchNo {
+    margin-left: 5px;
+}
+
+.sg-visible {
+    visibility: visible;
+}
+
+.sg-hide {
+    visibility: hidden;
+}
+
+.sg-btnAdd {
+    background: url(../Images/add_32.png) no-repeat;
+    cursor: pointer;
+    width: 32px;
+    height: 25px;
+    border: none;
+}

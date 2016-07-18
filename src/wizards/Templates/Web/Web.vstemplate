@@ -1,0 +1,786 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Web</Name>
+    <Description>Web Project Template</Description>
+     <ProjectType>CSharp</ProjectType>
+    <Hidden>true</Hidden>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Web</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="TPA.Web.csproj" File="TPA.Web.csproj" ReplaceParameters="true">
+      <Folder Name="Areas" TargetFolderName="Areas">
+        <Folder Name="Core" TargetFolderName="Core">
+          <Folder Name="Scripts" TargetFolderName="Scripts">
+            <Folder Name="Authentication" TargetFolderName="Authentication">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="ExportImport" TargetFolderName="ExportImport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Upload.js">Sage.CA.SBS.ERP.Sage300.Common.Upload.js</ProjectItem>
+            </Folder>
+            <Folder Name="GLIntegration" TargetFolderName="GLIntegration">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js">Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="NewTenantSetup" TargetFolderName="NewTenantSetup">
+              <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantBehaviour.js">NewTenantBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantRepository.js">NewTenantRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="Process" TargetFolderName="Process">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Common.Process.js">Sage.CA.SBS.Sage300.Common.Process.js</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js">Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Home.js">Sage.CA.SBS.ERP.Sage300.Common.Home.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
+            <Folder Name="Tenant" TargetFolderName="Tenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js">Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js</ProjectItem>
+            </Folder>
+          </Folder>
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="Authentication" TargetFolderName="Authentication">
+              <ProjectItem ReplaceParameters="true" TargetFileName="OnPremiseLogin.cshtml">OnPremiseLogin.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_OnPremiseLogin.cshtml">_OnPremiseLogin.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.cshtml">RedirectToLogin.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="SessionExpired.cshtml">SessionExpired.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Error" TargetFolderName="Error">
+              <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotAvailable.cshtml">AccountNotAvailable.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotProvisioned.cshtml">AccountNotProvisioned.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Error404.cshtml">Error404.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ICTNotAvailable.cshtml">ICTNotAvailable.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="MissingModules.cshtml">MissingModules.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="ExportImport" TargetFolderName="ExportImport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Export.cshtml">Export.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Find" TargetFolderName="Find">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="FiscalYear" TargetFolderName="FiscalYear">
+              <ProjectItem ReplaceParameters="true" TargetFileName="FiscalYearSet.cshtml">FiscalYearSet.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="GLIntegration" TargetFolderName="GLIntegration">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLIntegrationDetail.cshtml">_GLIntegrationDetail.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLPostingSequence.cshtml">_GLPostingSequence.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLReferenceIntegration.cshtml">_GLReferenceIntegration.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLSourceCodes.cshtml">_GLSourceCodes.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_TransactionsOptions.cshtml">_TransactionsOptions.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="Home" TargetFolderName="Home">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Instrumentation" TargetFolderName="Instrumentation">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="NewTenant" TargetFolderName="NewTenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_newtenantsetup.cshtml">_newtenantsetup.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="OptionalFields" TargetFolderName="OptionalFields">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OptionalFields.cshtml">OptionalFields.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenuDisableCheck.cshtml">_OptionsMenuDisableCheck.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="LabelMenuPopup.cshtml">LabelMenuPopup.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Tenant" TargetFolderName="Tenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <Folder Name="Scripts" TargetFolderName="Scripts">
+            <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
+            </Folder>
+            <Folder Name="Report" TargetFolderName="Report">
+              <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
+              </Folder>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Controls.js">Sage.CA.SBS.ERP.Sage300.Common.Controls.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js">Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js">Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js">Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js">Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js">Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js">Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js">Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js">Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.URL.js">Sage.CA.SBS.ERP.Sage300.Common.URL.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Validate.js">Sage.CA.SBS.ERP.Sage300.Common.Validate.js</ProjectItem>
+          </Folder>
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="DocumentHistory.cshtml">DocumentHistory.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="ExportImport" TargetFolderName="ExportImport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Partials" TargetFolderName="Partials">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_AddLineButton.cshtml">_AddLineButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ButtonBase.cshtml">_ButtonBase.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_DeleteButton.cshtml">_DeleteButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_DeleteLineButton.cshtml">_DeleteLineButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GenericButton.cshtml">_GenericButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionalButton.cshtml">_OptionalButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_PrintButton.cshtml">_PrintButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProceedButton.cshtml">_ProceedButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SaveButton.cshtml">_SaveButton.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Report" TargetFolderName="Report">
+              <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLSubledgerTransactionReport.cshtml">_GLSubledgerTransactionReport.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="SalesSplitGrid" TargetFolderName="SalesSplitGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SalesSplitGrid.cshtml">_SalesSplitGrid.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GridActions.cshtml">_GridActions.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayout.cshtml">_LocalizedLayout.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR2.cshtml">_LocalizedLayoutR2.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR3.cshtml">_LocalizedLayoutR3.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingFooter.cshtml">_ProcessingFooter.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ReportFooter.cshtml">_ReportFooter.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SetupFooter.cshtml">_SetupFooter.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="TaxesGrid" TargetFolderName="TaxesGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="TaxesGrid.cshtml">TaxesGrid.cshtml</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="TU" TargetFolderName="$applicationid$">
+          <Folder Name="Constants" TargetFolderName="Constants">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Constant.cs">Constant.cs</ProjectItem>
+          </Folder>
+          <Folder Name="Controllers" TargetFolderName="Controllers">
+            <Folder Name="Finder" TargetFolderName="Finder" />
+          </Folder>
+          <Folder Name="Models" TargetFolderName="Models" />
+          <Folder Name="Scripts" TargetFolderName="Scripts" />
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$Bootstrapper.xml">TUBootstrapper.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$MenuDetails.xml">TUMenuDetails.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AccpacDotNetVersion.props">AccpacDotNetVersion.props</ProjectItem>
+      <Folder Name="Assets" TargetFolderName="Assets">
+        <Folder Name="fonts" TargetFolderName="fonts">
+          <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Bd.otf">HelveticaNeueLTStd-Bd.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.eot">helveticaneueltstd-roman.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Roman.otf">HelveticaNeueLTStd-Roman.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.svg">helveticaneueltstd-roman.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.ttf">helveticaneueltstd-roman.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.woff">helveticaneueltstd-roman.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.eot">sagearmonyeicons.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.svg">sagearmonyeicons.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.ttf">sagearmonyeicons.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
+        </Folder>
+        <Folder Name="images" TargetFolderName="images">
+          <Folder Name="default" TargetFolderName="default">
+            <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
+          </Folder>
+          <Folder Name="home" TargetFolderName="home">
+            <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
+          </Folder>
+          <Folder Name="ui" TargetFolderName="ui">
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_icons.png">sprite_icons.png</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="js" TargetFolderName="js">
+          <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
+        </Folder>
+        <Folder Name="styles" TargetFolderName="styles">
+          <Folder Name="css" TargetFolderName="css">
+            <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="home.min.css">home.min.css</ProjectItem>
+          </Folder>
+          <Folder Name="less" TargetFolderName="less">
+            <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
+            <Folder Name="framework" TargetFolderName="framework">
+              <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="alerts.less">alerts.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="boxed-elements.less">boxed-elements.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="breadcrumbs.less">breadcrumbs.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="buttons.less">buttons.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="close.less">close.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="component-animations.less">component-animations.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="cross-fieldset.less">cross-fieldset.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="dropdowns.less">dropdowns.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="feature-tour.less">feature-tour.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="file-upload.less">file-upload.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="footer.less">footer.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="form-footer.less">form-footer.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="form-header.less">form-header.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="header.less">header.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="hr.less">hr.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="kpi.less">kpi.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="list-group.less">list-group.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="mixins.less">mixins.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="modals.less">modals.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="multi-select.less">multi-select.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="pager.less">pager.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="pagination.less">pagination.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="panels.less">panels.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="popovers.less">popovers.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="progress-bars.less">progress-bars.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="scaffolding.less">scaffolding.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="setup-wizard.less">setup-wizard.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="summary.less">summary.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tables.less">tables.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tabs.less">tabs.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tooltip.less">tooltip.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="totals.less">totals.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="type.less">type.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="utilities.less">utilities.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="variables.less">variables.less</ProjectItem>
+            </Folder>
+            <Folder Name="layouts" TargetFolderName="layouts">
+              <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
+            </Folder>
+            <Folder Name="libs" TargetFolderName="libs">
+              <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons.less">glyphicons.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="kendo.common.less">kendo.common.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="normalize.less">normalize.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="print.less">print.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="theme-template.less">theme-template.less</ProjectItem>
+            </Folder>
+            <Folder Name="mixins" TargetFolderName="mixins">
+              <ProjectItem ReplaceParameters="false" TargetFileName="alerts.less">alerts.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="background-variant.less">background-variant.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="border-radius.less">border-radius.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="buttons.less">buttons.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="center-block.less">center-block.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="clearfix.less">clearfix.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="gradients.less">gradients.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="grid-framework.less">grid-framework.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="hide-text.less">hide-text.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="image.less">image.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="labels.less">labels.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="list-group.less">list-group.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="nav-divider.less">nav-divider.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="nav-vertical-align.less">nav-vertical-align.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="opacity.less">opacity.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="pagination.less">pagination.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="panels.less">panels.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="progress-bar.less">progress-bar.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="reset-filter.less">reset-filter.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="resize.less">resize.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="responsive-visibility.less">responsive-visibility.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="size.less">size.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tab-focus.less">tab-focus.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="table-row.less">table-row.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="text-emphasis.less">text-emphasis.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="text-overflow.less">text-overflow.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="vendor-prefixes.less">vendor-prefixes.less</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="BundleRegistration.cs">BundleRegistration.cs</ProjectItem>
+      <Folder Name="Content" TargetFolderName="Content">
+        <Folder Name="fonts" TargetFolderName="fonts">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Foco-Regular.otf">Foco-Regular.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Foco-Regular.ttf">Foco-Regular.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.eot">focobold.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.ttf">focobold.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.woff">focobold.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.eot">focolight.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.ttf">focolight.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.woff">focolight.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Bd.otf">HelveticaNeueLTStd-Bd.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.eot">helveticaneueltstd-roman.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Roman.otf">HelveticaNeueLTStd-Roman.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.svg">helveticaneueltstd-roman.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.ttf">helveticaneueltstd-roman.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.woff">helveticaneueltstd-roman.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.eot">sagearmonyeicons.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.svg">sagearmonyeicons.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.ttf">sagearmonyeicons.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
+        </Folder>
+        <Folder Name="Images" TargetFolderName="Images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="add_32.png">add_32.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ajax-loader.gif">ajax-loader.gif</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Alert_icon.png">Alert_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="alt.png">alt.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="arrow-right.png">arrow-right.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Ast_Arrows.png">Ast_Arrows.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bar_left.png">bar_left.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bar_middle.png">bar_middle.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bar_right.png">bar_right.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bg_cna.jpg">bg_cna.jpg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bg_mega_menu.png">bg_mega_menu.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu.png">bg_menu.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="button-down-arrow-disabled.png">button-down-arrow-disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="button-down-arrow.png">button-down-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Cale_Prev_Arrow.png">Cale_Prev_Arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Calendar.png">Calendar.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="calender-small.png">calender-small.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="calender.png">calender.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="close.png">close.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="corner.png">corner.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="drop-down-arrow.png">drop-down-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="drop-down-arrow2.png">drop-down-arrow2.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DropDownArrow.png">DropDownArrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-calandar.png">edit-calandar.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-dropdown.png">edit-dropdown.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-find.png">edit-find.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-lookup.png">edit-lookup.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-search.png">edit-search.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-time.png">edit-time.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="edit-up-down.png">edit-up-down.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="floral_2.png">floral_2.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="global_navigation.png">global_navigation.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="grid.png">grid.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="helpSerchIcon.png">helpSerchIcon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inc_exclude.png">inc_exclude.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inc_exclude_disabled.png">inc_exclude_disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inline_validation_icon.png">inline_validation_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ItemWizardWelcome.jpg">ItemWizardWelcome.jpg</ProjectItem>
+          <Folder Name="Kendo" TargetFolderName="Kendo">
+            <Folder Name="Default" TargetFolderName="Default">
+              <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="imagebrowser.png">imagebrowser.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="slider-h.gif">slider-h.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="slider-v.gif">slider-v.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite_2x.png">sprite_2x.png</ProjectItem>
+            </Folder>
+          </Folder>
+          <ProjectItem ReplaceParameters="false" TargetFileName="label-menu-old.png">label-menu-old.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="label-menu.png">label-menu.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="left-arrow.png">left-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="list.png">list.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="logo-img-holder.png">logo-img-holder.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="logo.png">logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="logo2.png">logo2.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="LookupArrow.png">LookupArrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="menu3dLevel.png">menu3dLevel.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Msg_icons.png">Msg_icons.png</ProjectItem>
+          <Folder Name="nav" TargetFolderName="nav">
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_1.jpg">bg_menu_1.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_10.jpg">bg_menu_10.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_11.jpg">bg_menu_11.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_12.jpg">bg_menu_12.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_2.jpg">bg_menu_2.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_3.jpg">bg_menu_3.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_4.jpg">bg_menu_4.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_5.jpg">bg_menu_5.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_6.jpg">bg_menu_6.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_7.jpg">bg_menu_7.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_8.jpg">bg_menu_8.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_9.jpg">bg_menu_9.jpg</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="false" TargetFileName="pencil-icon.png">pencil-icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="QuestionIcon_Default_Dark.png">QuestionIcon_Default_Dark.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="QuestionIcon_Select.png">QuestionIcon_Select.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="reports.png">reports.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="reportsIconwt.png">reportsIconwt.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Req-Field.png">Req-Field.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="required.png">required.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="rq-field.png">rq-field.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.gif">sage_300_logo.gif</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_One.png">sage_One.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="search.png">search.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="search_icon.png">search_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="searchsmall.png">searchsmall.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="spinner_bg.png">spinner_bg.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sprite_mega_menu.png">sprite_mega_menu.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sprite_menu.png">sprite_menu.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sprite1.png">sprite1.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="success.png">success.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="tab_bg_transparent.png">tab_bg_transparent.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="tick.png">tick.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Time_icon.png">Time_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_iconso.png">toolBar_iconso.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="tooltip.png">tooltip.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="top-bg.png">top-bg.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="top_nav_bg.png">top_nav_bg.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="vertical-divider.png">vertical-divider.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="vpf-logo.png">vpf-logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-down-arrow.png">white-down-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-left-arrow-disabled.png">white-left-arrow-disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-left-arrow-t-disabled.png">white-left-arrow-t-disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-left-arrow-t.png">white-left-arrow-t.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-left-arrow.png">white-left-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-right-arrow-disabled.png">white-right-arrow-disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-right-arrow-t-disabled.png">white-right-arrow-t-disabled.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-right-arrow-t.png">white-right-arrow-t.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="white-right-arrow.png">white-right-arrow.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="widget_icon.png">widget_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="widgetHP-img.png">widgetHP-img.png</ProjectItem>
+        </Folder>
+        <Folder Name="IntelligenceGo" TargetFolderName="IntelligenceGo">
+          <Folder Name="en-us" TargetFolderName="en-us">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Balance Sheet S300.xlsx">Financial Balance Sheet S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Cash Flow Summary by Category S300.xlsx">Financial Cash Flow Summary by Category S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Forecasting S300.xlsx">Financial Forecasting S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Income Statement S300.xlsx">Financial Income Statement S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Ratio S300.xlsx">Financial Ratio S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Report Designer S300.xlsx">Report Designer S300.xlsx</ProjectItem>
+          </Folder>
+          <Folder Name="fr-CA" TargetFolderName="fr-CA">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Balance Sheet S300.xlsx">Financial Balance Sheet S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Cash Flow Summary by Category S300.xlsx">Financial Cash Flow Summary by Category S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Forecasting S300.xlsx">Financial Forecasting S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Income Statement S300.xlsx">Financial Income Statement S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Financial Ratio S300.xlsx">Financial Ratio S300.xlsx</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Report Designer S300.xlsx">Report Designer S300.xlsx</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="jasmine" TargetFolderName="jasmine">
+          <ProjectItem ReplaceParameters="true" TargetFileName="jasmine.css">jasmine.css</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="jasmine_favicon.png">jasmine_favicon.png</ProjectItem>
+        </Folder>
+        <Folder Name="Styles" TargetFolderName="Styles">
+          <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
+          <Folder Name="Kendo" TargetFolderName="Kendo">
+            <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="kendo.common.less">kendo.common.less</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="theme-template.less">theme-template.less</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Buttons.css">Sage.CA.SBS.ERP.Sage300.Buttons.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Calendar.css">Sage.CA.SBS.ERP.Sage300.Calendar.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.css">Sage.CA.SBS.ERP.Sage300.Common.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Portal.css">Sage.CA.SBS.ERP.Sage300.Core.Portal.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.css">Sage.CA.SBS.ERP.Sage300.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.DataGrid.css">Sage.CA.SBS.ERP.Sage300.DataGrid.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.DropDown.css">Sage.CA.SBS.ERP.Sage300.DropDown.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.FormControls.css">Sage.CA.SBS.ERP.Sage300.FormControls.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Grid.css">Sage.CA.SBS.ERP.Sage300.Grid.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Reset.css">Sage.CA.SBS.ERP.Sage300.Reset.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Site.css">Sage.CA.SBS.ERP.Sage300.Site.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.StandAlone.css">Sage.CA.SBS.ERP.Sage300.StandAlone.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Tabs.css">Sage.CA.SBS.ERP.Sage300.Tabs.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Vpf.css">Sage.CA.SBS.ERP.Sage300.Vpf.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Widget.css">Sage.CA.SBS.ERP.Sage300.Widget.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Window.css">Sage.CA.SBS.ERP.Sage300.Window.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300datepicker.css">Sage.CA.SBS.ERP.Sage300datepicker.css</ProjectItem>
+        </Folder>
+        <Folder Name="themes" TargetFolderName="themes">
+          <Folder Name="base" TargetFolderName="base">
+            <ProjectItem ReplaceParameters="true" TargetFileName="accordion.css">accordion.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="all.css">all.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="autocomplete.css">autocomplete.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="button.css">button.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="core.css">core.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="datepicker.css">datepicker.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="dialog.css">dialog.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="draggable.css">draggable.css</ProjectItem>
+            <Folder Name="images" TargetFolderName="images">
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.css">jquery-ui.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.css">jquery.ui.accordion.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.all.css">jquery.ui.all.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.css">jquery.ui.autocomplete.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.base.css">jquery.ui.base.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.css">jquery.ui.button.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.css">jquery.ui.core.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.css">jquery.ui.datepicker.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.css">jquery.ui.dialog.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.css">jquery.ui.progressbar.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.css">jquery.ui.resizable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.css">jquery.ui.selectable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.css">jquery.ui.slider.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.css">jquery.ui.tabs.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.css">jquery.ui.theme.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="menu.css">menu.css</ProjectItem>
+            <Folder Name="minified" TargetFolderName="minified">
+              <Folder Name="images" TargetFolderName="images">
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.min.css">jquery-ui.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.min.css">jquery.ui.accordion.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.min.css">jquery.ui.autocomplete.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.min.css">jquery.ui.button.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.min.css">jquery.ui.core.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.min.css">jquery.ui.datepicker.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.min.css">jquery.ui.dialog.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.min.css">jquery.ui.progressbar.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.min.css">jquery.ui.resizable.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.min.css">jquery.ui.selectable.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.min.css">jquery.ui.slider.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.min.css">jquery.ui.tabs.min.css</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.min.css">jquery.ui.theme.min.css</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="progressbar.css">progressbar.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="resizable.css">resizable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="selectable.css">selectable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="selectmenu.css">selectmenu.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="slider.css">slider.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="sortable.css">sortable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="spinner.css">spinner.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="tabs.css">tabs.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="theme.css">theme.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="tooltip.css">tooltip.css</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="Customization" TargetFolderName="Customization">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ScreenDefinitions.xml">ScreenDefinitions.xml</ProjectItem>
+      </Folder>
+      <Folder Name="Enums" TargetFolderName="Enums">
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserInterfaceMode.cs">UserInterfaceMode.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <Folder Name="AjaxQ" TargetFolderName="AjaxQ">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ajaxq.js">ajaxq.js</ProjectItem>
+        </Folder>
+        <Folder Name="DragandDrop" TargetFolderName="DragandDrop">
+          <ProjectItem ReplaceParameters="true" TargetFileName="modernizr.custom.08307.js">modernizr.custom.08307.js</ProjectItem>
+        </Folder>
+        <Folder Name="Help" TargetFolderName="Help">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Help.js">Help.js</ProjectItem>
+        </Folder>
+        <Folder Name="jasmine" TargetFolderName="jasmine">
+          <ProjectItem ReplaceParameters="true" TargetFileName="boot.js">boot.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="console.js">console.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jasmine-html.js">jasmine-html.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jasmine.js">jasmine.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.intellisense.js">jquery-1.11.3.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.js">jquery-1.11.3.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.min.js">jquery-1.11.3.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.min.map">jquery-1.11.3.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-1.2.1.js">jquery-migrate-1.2.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-1.2.1.min.js">jquery-migrate-1.2.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.11.4.js">jquery-ui-1.11.4.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.11.4.min.js">jquery-ui-1.11.4.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js">jquery.form.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js.map">jquery.form.min.js.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+        <Folder Name="JQueryUI" TargetFolderName="JQueryUI">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="iframe-resizer-reports.js">iframe-resizer-reports.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="iframeResizer.js">iframeResizer.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.formparams.js">jquery.formparams.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.json.min.js">jquery.json.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.mask.min.js">jquery.mask.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.menu-aim.js">jquery.menu-aim.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.numeric.js">jquery.numeric.js</ProjectItem>
+        </Folder>
+        <Folder Name="Kendo" TargetFolderName="Kendo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.js">kendo.culture.en-AU.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.js">kendo.culture.en-US.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.js">kendo.culture.en-ZA.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es-ES.min.js">kendo.culture.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr-CA.js">kendo.culture.fr-CA.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hans.js">kendo.culture.zh-Hans.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hant.js">kendo.culture.zh-Hant.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.js">kendo.messages.es-ES.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.js">kendo.messages.fr-CA.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-Hans.js">kendo.messages.zh-Hans.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-Hant.js">kendo.messages.zh-Hant.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-AU.js">kendo.messsages.en-AU.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-US.js">kendo.messsages.en-US.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-ZA.js">kendo.messsages.en-ZA.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.min.js">knockout-kendo.min.js</ProjectItem>
+        </Folder>
+        <Folder Name="knockout" TargetFolderName="knockout">
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.js">knockout-2.1.0.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.min.js">knockout-kendo.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.debug.js">knockout.mapping-latest.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.js">knockout.mapping-latest.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.BindingHandlers.js">Sage.CA.SBS.Sage300.Custom.BindingHandlers.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js">Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendoGrid.js">knockout-kendoGrid.js</ProjectItem>
+        <Folder Name="Less" TargetFolderName="Less">
+          <ProjectItem ReplaceParameters="true" TargetFileName="less-1.6.1.min.js">less-1.6.1.min.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
+        <Folder Name="Portal" TargetFolderName="Portal">
+          <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
+        </Folder>
+        <Folder Name="Report" TargetFolderName="Report">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ReportBehaviour.js">ReportBehaviour.js</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Service References" TargetFolderName="Service References" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$AreaRegistration.cs">TUAreaRegistration.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$WebBootstrapper.cs">TUWebBootstrapper.cs</ProjectItem>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Partials" TargetFolderName="Partials">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_CommonLayout.cshtml">_CommonLayout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_ConfigurePopUp.cshtml">_ConfigurePopUp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_FeatureTour.cshtml">_FeatureTour.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Footer.cshtml">_Footer.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomePageHelp.cshtml">_HomePageHelp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Portal.cshtml">Portal.cshtml</ProjectItem>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_GenericLayout.cshtml">_GenericLayout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="UnsupportedBrowser" TargetFolderName="UnsupportedBrowser">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

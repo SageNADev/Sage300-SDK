@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="Sage300UIWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35b" Version="1.0" Language="en-US" Publisher="Sage" />
+        <DisplayName>Sage 300 UI Wizard Package</DisplayName>
+        <Description xml:space="preserve">This package contains two wizards: Sage 300 Solution Wizard and Sage 300 Code Generation Wizard.
+</Description>
+    </Metadata>
+    <Installation AllUsers="true">
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.Premium" />
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.Ultimate" />
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VSWinExpress" />
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VPDExpress" />
+        <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VWDExpress" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5.1,)" d:InstallSource="Download" />
+        <Dependency d:Source="Project" d:ProjectName="Sage300MenuExtension" Version="[1.0,2.0)" d:InstallSource="Embed" Location="|Sage300MenuExtension;VSIXContainerProjectOutputGroup|" DisplayName="|Sage300MenuExtension;VSIXNameProjectOutputGroup|" Id="|Sage300MenuExtension;VSIXIdentifierProjectOutputGroup|" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\BusinessRepository.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Interfaces.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Models.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Resources.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Services.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Web.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Sage300SolutionTemplate.zip" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="Sage.CA.SBS.ERP.Sage300.SolutionWizard" Path="|Sage.CA.SBS.ERP.Sage300.SolutionWizard|" AssemblyName="|Sage.CA.SBS.ERP.Sage300.SolutionWizard;AssemblyName|" />
+    </Assets>
+</PackageManifest>

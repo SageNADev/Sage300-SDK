@@ -1,0 +1,19 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using System.Web.UI.WebControls
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+
+@{
+    if (Model != null && Model.GetType().GetProperty("UserAccess") != null && Model.UserAccess != null && Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
+    {
+        <div class="toolsBar">
+            @Html.Partial(Shared.AddLineButton, (object)Model, (ViewDataDictionary)ViewData)
+            @Html.Partial(Shared.DeleteLineButton, (object)Model, (ViewDataDictionary)ViewData)
+            <div class="clear-fix"> </div>
+        </div>
+    }
+}

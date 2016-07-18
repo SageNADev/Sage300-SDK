@@ -1,0 +1,16 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using filter = Sage.CA.SBS.ERP.Sage300.Common.Models
+
+@Html.KoSageDropDownList("InitDropdown", null, new { @id = "InitDropdown" })
+@Html.KoSageButton("AddColumn", null, new { @value = CommonResx.Add, @id = "AddColumn" })
+@Html.KoSageButton("RemoveColumn", null, new { @value = CommonResx.Delete, @id = "RemoveColumn" })
+<div id="filterGrid" class="k-content">
+    <div id="advancedFilterGrid"></div>
+</div>
+<div class="margin-top:20px !important;">
+    @Html.KoSageButton("okWindow", null, new { @class = "btn-primary right", @value = CommonResx.OK, @id = "okWindow" })
+</div>
+@Scripts.Render("~/Areas/Core/Scripts/Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js")

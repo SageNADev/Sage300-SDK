@@ -1,0 +1,28 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using GLIntegrationResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+<script>
+    var glReferenceIntegrationGridColumns = {
+        headerTransactionType: '@Html.SageRaw(GLIntegrationResx.TransactionType)',
+        headerEntryDescription: '@Html.SageRaw(GLIntegrationResx.GLEntryDescription)',
+        headerDetailReference: '@Html.SageRaw(GLIntegrationResx.GLDetailReference)',
+        headerDetailDescription: '@Html.SageRaw(GLIntegrationResx.GLDetailDescription)',
+        headerDetailComment: '@Html.SageRaw(GLIntegrationResx.GLDetailComment)'
+    };
+
+</script>
+@Html.Partial(Core.GridPreferences)
+<div class="gridcontrols-group clearfix">
+    @Html.KoSageButton("btnEditGLIntegrationColumns", null, new { @id = "btnEditGLIntegrationColumns", @class = "icons btn-edit", @value = CommonResx.EditColumns })
+</div>
+@Html.KoKendoGrid("gridGLReferenceIntegration", "glIntegrationUI.glIntegrationModel.ReferenceDetails.Items", "SourceTransactionType", "GLReferenceIntegrationUIGrid.GLReferenceIntegrationGridConfig", true, "gh320")
+
+<div id="window">
+    @Html.Partial(Core.GLIntegrationDetail)
+</div>
+@*Kendo work around, fix for Defect D-12563*@
+@Html.KoSageTextBox("txtHiddenKendoTextBox", new { @sagevisible = "false" }, null)

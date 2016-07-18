@@ -1,0 +1,41 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@model Sage.CA.SBS.ERP.Sage300.Shared.Web.Models.Report.GLTransaction.GLTransactionViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.GLSubledgerTransactionReport>
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+
+<div class="form-group">
+    <div class="numeric-go-group" id="divNumericgoGroup">
+        @Html.SageLabelFor(m => m.Data.ThroughPostingSequence)
+        @Html.KoSageTextBoxFor(m => m.Data.ThroughPostingSequence, new { @sagevalue = "Data.ThroughPostingSequence", @sagedisable = "Data.DisableReportControls" }, new { @class = "default align-right" })
+        @Html.KoSageButton("btnBankPostingJournalFinder", new { @sagevisible = "Data.IsFinderVisible", @sagedisable = "Data.DisableReportControls" }, new { @id = "btnBankPostingJournalFinder", @class = "icon btn-finder", @tabindex = "-1" })
+        @Html.ValidationMessageFor(m => m.Data.ThroughPostingSequence)
+    </div>
+</div>
+<div class="form-group">
+    <div class="dropdown-group ">
+        @Html.SageLabelFor(m => m.Data.ReportFormat)
+        @Html.KoSageDropDownList("Data_ReportFormatList", new { @options = "ReportFormatList", @value = "Data.ReportFormat", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "Data_ReportFormatList", @class = "default" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="dropdown-group " data-bind="visible:Data.IsSortByDropDownVisible">
+        @Html.SageLabelFor(m => m.Data.SortBy)
+        @Html.KoSageDropDownList("Data_SortByList", new { @options = "SortByList", @value = "Data.SortBy", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "Data_SortByList", @class = "default" })
+    </div>
+    <div class="input-group" data-bind="visible:Data.IsSortByAmountVisible">
+        @Html.SageLabelFor(m => m.Data.SortBy)
+        @Html.KoSageTextBoxFor(m => m.SortByText, new { @sagevisible = "Data.IsSortByAmountVisible" }, new { @class = "default", @id="Data_SortBy", @disabled = true })
+    </div>
+</div>
+<div class="form-group">
+    <div class="dropdown-group " data-bind="visible:Data.MultiCurrency">
+        @Html.SageLabelFor(m => m.Data.ReportCurrency)
+        @Html.KoSageDropDownList("Data_CurrencyTypeList", new { @options = "CurrencyTypeList", @value = "Data.ReportCurrency", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "Data_CurrencyTypeList", @class = "default" })
+    </div>
+</div>
+
+<section class="footer-group">
+    @Html.KoSageButton("btnPrint", new { @sagedisable = "Data.DisableReportControls" }, new { @id = "btnPrintGLTransaction", @class = "btn-primary", @value = CommonResx.Print })
+</section>

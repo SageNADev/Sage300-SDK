@@ -1,0 +1,65 @@
+﻿// The MIT License (MIT) 
+// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy of 
+// this software and associated documentation files (the "Software"), to deal in 
+// the Software without restriction, including without limitation the rights to use, 
+// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+// Software, and to permit persons to whom the Software is furnished to do so, 
+// subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all 
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#region Namespaces
+using System.Collections.Generic;
+
+#endregion
+
+namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
+{
+    /// <summary> BusinessView class to hold properties for a view </summary>
+    [System.SerializableAttribute]
+    public class BusinessView
+    {
+        #region Public Constants
+        public const string ViewId = "ViewId";
+        public const string ModelName = "ModelName";
+        public const string ModuleId = "ModuleId";
+        public const string EntityName = "EntityName";
+        public const string ReportKey = "ReportKey";
+        public const string ProgramId = "ProgramId";
+        #endregion
+
+        #region Constructor
+        /// <summary> Constructor setting defaults </summary>
+        public BusinessView()
+        {
+            Properties = new Dictionary<string, string>();
+            Fields = new List<BusinessField>();            
+            Enums = new Dictionary<string, EnumHelper>();
+            Keys = new List<string>();
+        }
+        #endregion
+
+        #region Public Properties
+        /// <summary> Properties is the collection of business view properties </summary>
+        public Dictionary<string, string> Properties { get; set; }
+        /// <summary> Fields is the collection of business fields </summary>
+        public List<BusinessField> Fields { get; set; }
+        /// <summary> Enums is the collection of business enumerations </summary>
+        public Dictionary<string, EnumHelper> Enums { get; set; }
+        /// <summary> Keys is the collection of keys </summary>
+        public List<string> Keys { get; set; }
+        #endregion
+
+    }
+
+}

@@ -1,0 +1,23 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using TaxesResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.TaxesResx;
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+
+<script type="text/javascript">
+
+    var taxesGridResources = {
+        TaxAuthority: '@Html.SageRaw(TaxesResx.TaxAuthority)',
+        TaxClass: '@Html.SageRaw(TaxesResx.TaxClass)',
+        TaxIncluded: '@Html.SageRaw(TaxesResx.TaxIncluded)',
+        TaxBase: '@Html.SageRaw(TaxesResx.TaxBase)',
+        TaxAmount: '@Html.SageRaw(TaxesResx.TaxAmount)',
+        TaxReportAmount: '@Html.SageRaw(TaxesResx.TaxReportingAmount)',
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        yes: '@Html.SageRaw(CommonResx.Yes)',
+        no: '@Html.SageRaw(CommonResx.No)',
+    };
+
+
+</script>

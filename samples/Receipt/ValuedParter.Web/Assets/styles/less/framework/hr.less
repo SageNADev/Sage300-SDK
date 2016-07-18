@@ -1,0 +1,22 @@
+//
+// Horizontal rules
+// --------------------------------------------------
+
+
+hr {
+	margin-bottom: 	@line-height-computed;
+	border: 		0;
+	border-top: 	1px solid @hr-border;
+
+	&.dashed {
+	border-top: 	1px dashed @hr-border;
+	}
+
+	&.dotted {
+	border-top: 	1px dotted @hr-border;
+	}
+}
+
+.k-window-content hr {
+    display:		none;
+}

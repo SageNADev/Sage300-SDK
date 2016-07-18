@@ -1,0 +1,39 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using OptionalFieldsResx = Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms.OptionalFieldsResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx;
+
+
+<script type="text/javascript">
+    var optionalFieldsResources = {
+        optionalFieldTitle: '@Html.SageRaw(CommonResx.OptionalField)',
+        optionalFieldDescriptionTitle: '@Html.SageRaw(OptionalFieldsResx.OptionalFieldDescription)',
+        optionalFieldValueTitle: '@Html.SageRaw(OptionalFieldsResx.OptionalFieldValue)',
+        defaultValueTitle: '@Html.SageRaw(OptionalFieldsResx.DefaultValue)',
+        valueTitle: '@Html.SageRaw(OptionalFieldsResx.Value)',
+        defaultValueDescriptionTitle: '@Html.SageRaw(OptionalFieldsResx.DefaultValueDescription)',
+        valueDescriptionTitle: '@Html.SageRaw(OptionalFieldsResx.ValueDescription)',
+        valueSetTitle: '@Html.SageRaw(OptionalFieldsResx.ValueSet)',
+        autoInsertTitle: '@Html.SageRaw(OptionalFieldsResx.AutoInsert)',
+        requiredTitle: '@Html.SageRaw(OptionalFieldsResx.Required)',
+        finderTitle: '@Html.SageRaw(CommonResx.Select)',
+        optionalFieldsTitle: '@Html.SageRaw(OptionalFieldsResx.OptionalFields)',
+        settingsTitle: '@Html.SageRaw(CommonResx.Settings)',
+        InvalidValueSetMsg: '@Html.SageRaw(CommonResx.InvalidValueSetMessage)',
+
+        location: '@Html.SageRaw(OptionalFieldsResx.OptionalFieldsFor)',
+        saveConfirm: '@Html.SageRaw(CommonResx.SaveConfirmMessage)',
+        deleteConfirm: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
+        duplicateMessage: '@Html.SageRaw(CommonResx.DuplicateMessage)',
+        deleteLineConfirm: '@Html.SageRaw(CommonResx.DeleteLineMessage)',
+        deleteLinesConfirm: '@Html.SageRaw(CommonResx.DeleteLinesMessage)',
+        deleteTitle: '@Html.SageRaw(CommonResx.Delete)',
+        yes: '@Html.SageRaw(CommonResx.Yes)',
+        no: '@Html.SageRaw(CommonResx.No)',
+
+        ProcessFailedMessage: '@Html.SageRaw(CommonResx.ProcessFailedMessage)',
+        InvalidInput: '@Html.SageRaw(CommonResx.CannotBeBlankMessage)'
+
+    }
+</script>

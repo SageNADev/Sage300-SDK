@@ -1,0 +1,98 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using CommonModels = Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Auth = Sage.CA.SBS.ERP.Sage300.Common.Models.Authentication
+@using filter = Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Constants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Shared;
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+
+<!DOCTYPE html>
+
+@{
+    Page.Title = @CommonResx.Title;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Page.Title</title>
+    @Styles.Render("~/Content/Styles/localizedLessCssR2")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    @*Commented for automation*@
+    @*@Html.OnlyAllowFromIFrame(Url.Action("index", "Home", new { @area = "Core" }))*@
+ 
+    <!-- Google Analytics -->
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+
+</head>
+<body>
+    <div id="ajaxSpinner" class="ajaxSpinner">
+        <span class="sage_loading"></span>
+    </div>
+    @Html.Partial("~/Views/Partials/_CommonLayout.cshtml")
+    <div ondragstart="return false" draggable="false" class="wraper">
+        @RenderBody()
+    </div>
+
+    <script id="delete-confirmation" type="text/x-kendo-template">
+        <div class="fild_set">
+            <div class="fild-title delete-message" id="del-message">
+                <div id="title-text" />
+            </div>
+            <div class="fild-content">
+                <div id="body-text" />
+
+                <div class="modelBox_controlls">
+                    <input type="button" class="btn-secondary delete-cancelled mr16" id="kendoConfirmationCancelledButton" value=@CommonResx.Cancel />
+                    <input type="button" class="btn-secondary delete-cancel mr16" id="kendoConfirmationCancelButton" value=@CommonResx.No />
+                    <input type="button" class="btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="message-dialog" type="text/x-kendo-template">
+        <div class="fild_set">
+            <div class="fild-title delete-message" id="del-message">
+                <div id="title-text" />
+            </div>
+            <div class="fild-content">
+                <div id="body-text" />
+
+                <div class="modelBox_controlls">
+                    <input type="button" class="btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.OK />
+                </div>
+            </div>
+        </div>
+    </script>
+    <div id="exportImportDialog"></div>
+
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/kendo")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/ajaxQ")
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/shared")
+
+    @{
+        var sessionPreferredLanguage = SessionUtility.Provider.Get<string>(Constants.UserPreferredLanguage);
+        if (sessionPreferredLanguage != null)
+        {
+            var language = sessionPreferredLanguage.Replace("-", "");
+
+            @Scripts.Render(string.Format("~/bundles/kendoCulture{0}", language));
+        }
+    }
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

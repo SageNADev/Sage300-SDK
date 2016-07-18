@@ -1,0 +1,150 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
+@using Sage.CA.SBS.ERP.Sage300.Core.Web.Models;
+
+@{
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenantViewModel<NewTenant>
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("firsttimeloginViewModel", Model);
+</script>
+<div class="tenant-setUp-form">
+   @Html.Partial(Shared.NewTenantSetupLocalization)
+    <div id="success"></div>
+    <div id="message"></div>
+    <div class="firstTenantSetUp">
+        <div class="overlay hide"></div>
+        <div class="message-control multiError-msg confnMsgBox hide">
+            <div class="title"><h3>@CommonResx.Confirmation</h3><span class="icon msgCtrl-close">@CommonResx.Close</span></div>
+            <div class="msg-content">
+                <div class="confnMsgCnt">
+                    <h4>@HomePageResx.NewTenant_ConfirmationPopupText1</h4>
+                    <h3>@HomePageResx.NewTenant_ConfirmationPopupText2</h3>
+                </div>
+                <div class="confnMsgFter">
+                   <input type="button" class="btn-primary yes-btn" id="popupBtnLogout" value="@CommonResx.Yes">
+                   <input type="button" class="btn-primary" id="popupBtnNo" value="@CommonResx.No">
+                </div>
+            </div>
+        </div>
+        <div class="fTSetUpHedingContainer">
+            <div class="container_16">
+                <section class="fTSetUpHeding ">
+                    <h1>
+                    @HomePageResx.NewTenant_Header <span>@CommonResx.Title</span></h1>
+                    <h5>@HomePageResx.NewTenant_Header2</h5>
+                </section>
+            </div>
+        </div>
+        <div class="container_16">
+            <div class="clear-fix"></div>
+            <section class="fTSetUpcontent">
+                <div class="fTSetUpIcon fTSetFsYr"></div>
+                <div class="fTSetUpFsYearcontent">
+                    <h4>@CommonResx.FiscalYear</h4>
+                    <p>
+                        @HomePageResx.NewTenant_Content_FiscalYearSection_Description
+                    </p>
+                    <div class="mt17">
+                        <dixv class="form-group">
+                            <div class="datepicker-group">
+                                <label>@HomePageResx.NewTenant_FiscalYearStartingDate</label>
+                                @Html.KoSageTextBoxFor(model => model.Data.FiscalYearStartingDate, new { @sageDatePicker = "Data.FiscalYearStartingDate", @valueUpdate = "'input'" }, new { @id = "FiscalYearTxtBx", @class = "datepicker default" })
+                                @Html.ValidationMessageFor(model => model.Data.FiscalYearStartingDate, null, new { @class = "" })
+                            </div>
+                            <div class="input-group">
+                                <label>@HomePageResx.NewTenant_OldestFiscalYear</label>
+                                @Html.KoSageTextBoxFor(model => model.Data.OldestFiscalYear, new { @value = "Data.OldestFiscalYear" }, new { @class = "default", @id = "OldestFiscalYearTxtBx", @formatTextbox = "numeric" })
+                                @Html.ValidationMessageFor(model => model.Data.OldestFiscalYear, null, new { @class = "" })
+                            </div>
+                            <div class="input-group">
+                                <label>@HomePageResx.NewTenant_CurrentFiscalYear</label>
+                                @Html.KoSageTextBoxFor(model => model.Data.CurrentFiscalYear, new { @value = "Data.CurrentFiscalYear" }, new { @class = "default", @formatTextbox = "numeric" })
+                                @Html.ValidationMessageFor(model => model.Data.CurrentFiscalYear, null, new { @class = "" })
+                            </div>
+                            <div class="dropdown-group">
+                                <label>@HomePageResx.NewTenant_NoOfFiscalPeriods</label><br />
+                                @Html.SageDropDownList("EnumList", Model.NumFiscalPeriods, null, new { id = "EnumList", @class = "default", onchange = "" }, true)
+
+                            </div>
+                            <div class="dropdown-group Qtr4Periods" style="display: none">
+                                @Html.SageLabel(CompanyProfileResx.Qtr4Periods)
+                                @Html.SageDropDownList("dataQurterWithperiods", Model.QuarterWith4Periods, null, new { id = "dataQurterWithperiods", @class = "default", onchange = "" }, true)
+                            </div>
+                        </dixv>
+                    </div>
+                    <div class="infoBoxmt"><span class="infoBoxmtIcon"></span><span>@HomePageResx.NewTenant_Content_InfoText1</span></div>
+                </div>
+            </section>
+            <div class="clear-fix"></div>
+            <section class="fTSetUpcontent">
+                <div class="fTSetUpIcon fTSetCurcy"></div>
+                <div class="fTSetUpFsYearcontent">
+                    <h4>@HomePageResx.NewTenant_Content_CurrencySection_Title</h4>
+                    <p>@HomePageResx.NewTenant_Content_CurrencySection_Description</p>
+                    <div class="mt20">                       
+                            <div class="controls-group">
+                                <div class="child block">
+                                    @Html.KoSageCheckBoxFor(model => model.Data.MultiCurrency, new { @sagechecked = "Data.MultiCurrency" })
+                                    @Html.SageLabel(CompanyProfileResx.Multicurrency)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="go-group">
+                                    <!--currency code finder -->
+                                    <div class="form-group">
+                                        <div class="search-group">
+                                            <div class="search-group">
+                                                @Html.SageLabel("currencyCode", CommonResx.FunctionalCurrency, new {@class = ""})
+                                                @Html.KoSageTextBoxFor(m => m.Data.FunctionalCurrency, new {@sagevalue = "Data.FunctionalCurrency", @valueUpdate = "'input'"}, new {@id = "txtCurrencyCode", @disable = true, @class = "required txt-upper  default", @formatTextbox = "alphaNumeric", data_val = "true", data_val_required = string.Format(AnnotationsResx.Required, CurrencyCodesResx.CurrencyCode)})
+                                                @Html.KoSageButton("btnLoadCurrencyCodes", null, new {@id = "btnLoadCurrencyCodes", @class = "icon btn-go", @tabindex = "-1"})
+                                                @Html.KoSageButton("btnFinderCurrencyCodes", null, new {@class = "icon btn-search", @id = "btnFinderCurrencyCodes", @tabindex = "-1"})
+                                                @Html.ValidationMessageFor(model => model.Data.FunctionalCurrency, null, new {@class = ""})
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-group defaultratetypecontainer hide">
+                                    @Html.SageLabel(CompanyProfileResx.DefaultRateType)
+                                    @Html.SageDropDownList("CurrencyRateTypeList", Model.CurrencyRateTypes, null, new {id = "CurrencyRateTypeList", @class = "default", onchange = ""}, true)
+                                </div>
+                            </div>
+                    </div>
+                    <div class="infoBoxmt"><span class="infoBoxmtIcon"></span><span>@HomePageResx.NewTenant_Content_InfoText2</span></div>
+                </div>
+            </section>
+            <div class="clear-fix"></div>
+            <section class="footer-group mt40">
+                <input type="button" class="btn-primary" id="saveNewTenantForm" value="@CommonResx.Save">
+                <input type="button" class="btn-secondary" id="cancelNewTenantForm" value="@CommonResx.Cancel">
+            </section>
+        </div>
+       
+    </div>
+    @Html.Partial("~/Views/Partials/_Footer.cshtml")
+</div>
+
+@Scripts.Render("~/bundles/NewTenant")
+@Styles.Render("~/Content/Styles/portalcss")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/kendo")
+
+<div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+    @Html.AntiForgeryToken()
+</div>
+<script>
+    $(document).ready(function () {
+        $('.tenant-setUp-form').each(function () {
+            var iframeHeight = $(window).height() - 40;
+            $(".tenant-setUp-form .firstTenantSetUp").css('min-height', iframeHeight);
+        });
+        $(".footer_container").show();
+    });
+</script>

@@ -1,0 +1,80 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+    var enumsCount = view.Enums.Count;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
+<#
+	if (enumsCount > 0)
+	{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums.Process;
+<#
+	}	
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Resources.Process;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Process
+{
+    /// <summary>
+    /// <#=entityName#> Internal Controller
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>ControllerInternal<T> :
+        ProcessControllerInternal<T, <#=entityName#>ViewModel<T> , I<#=entityName#>Service<T>>
+        where T : <#=modelName#>, new()
+    {
+        #region Constructor
+
+        /// /// <summary>
+        /// Constructor for <#=entityName#>
+        /// /// </summary>
+        /// <param name="context">Context</param>
+        public <#=entityName#>ControllerInternal(Context context)
+            : base(context)
+        {
+        }
+
+        #endregion
+
+    }
+}

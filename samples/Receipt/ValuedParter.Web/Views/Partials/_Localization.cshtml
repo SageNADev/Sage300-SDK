@@ -1,0 +1,31 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using KPICommonResx = Sage.CA.SBS.ERP.Sage300.KPI.Resources.EnumerationsResx
+@using HomeResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.HomePageResx
+@using NavResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.NavigationResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+<script type="text/javascript">
+    var portalBehaviourResources = {
+        ConfigureAgedReceiveableSettings: '@Html.SageRaw(@KPICommonResx.ConfigureARSnapshot)',
+        RenameWidgetTitle: '@Html.SageRaw(@KPICommonResx.EditTitle)',
+        Settings: '@Html.SageRaw(@KPICommonResx.Setting)',
+        ConfigureAgedPayableSettings: '@Html.SageRaw(@KPICommonResx.ConfigureAPSnapshot)',
+        MoreItems: '@Html.SageRaw(@NavResx.Module_More)',
+        SessionSuccessMsg: '@Html.SageRaw(@HomeResx.SessionSuccess)',
+        SessionDateDisabledInfo: '@Html.SageRaw(@HomeResx.SessionDateDisabledInfo)',
+        Report: '@Html.SageRaw(@HomeResx.Report)',
+        PayableAging: '@Html.SageRaw(@HomeResx.PayablesAging)',
+        ReceivableAging: '@Html.SageRaw(@HomeResx.ReceivablesAging)',
+        PageRefreshError: '@Html.SageRaw(@HomeResx.PageRefreshError)',
+        EditTitle: '@Html.SageRaw(@KPICommonResx.EditTitleModalTitle)',
+        Printed: '@Html.SageRaw(@HomeResx.Printed)',
+        SignOut: '@Html.SageRaw(@HomeResx.TopNav_Sign_out)',
+        DomainUrl: '@(Request.ApplicationPath != "/" ? Request.ApplicationPath + Utilities.GetUrlPrefix() : Utilities.GetUrlPrefix())',
+        ReportNameTemplate: '@Html.SageRaw(@KPICommonResx.ReportNameTemplate)',
+        PagetitleInManager: '@Html.SageRaw(@KPICommonResx.PagetitleInManager)',
+        ManageUsers: '@Html.SageRaw(@HomeResx.TopNav_Manage_Users)'
+    }
+</script>
+

@@ -1,0 +1,16 @@
+﻿@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenantViewModel<Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenant>
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CompanyProfileResx = Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms.CompanyProfileResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx;
+@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+   @using (Html.BeginForm(null, null, FormMethod.Post, new { Id = "newTenantForm" }))
+{
+    @Html.Partial(Shared.NewTenantSetup)
+}
+
+   
+@{
+    Layout = Shared.LocalizedLayout;
+}

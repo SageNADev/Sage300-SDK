@@ -1,0 +1,2 @@
+D:\Dev\VB\GL\UIs;gllocal.rc;D:\Dev\VB\GL\UIs\Resources;Common
+D:\Dev\VB\GL\UIs;gl5100.rc;D:\Dev\VB\GL\UIs\Resources;Options

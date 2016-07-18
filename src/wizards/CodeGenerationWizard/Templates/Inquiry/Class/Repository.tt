@@ -1,0 +1,143 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using System;
+using System.Linq.Expressions;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers;
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
+{
+    /// <summary>
+    /// Repository Class for <#=entityName#>
+    /// </summary>
+    /// <typeparam name="T"><#=modelName#></typeparam>
+    public class <#=entityName#>Repository<T> : InquiryRepository<T>, I<#=entityName#>Entity<T>
+        where T : <#=modelName#>, new()
+    {
+        #region Variables
+
+        /// <summary>
+        /// Mapper
+        /// </summary>
+        private ModelMapper<T> _mapper;
+
+        /// <summary>
+        /// Business Entity
+        /// </summary>
+        private IBusinessEntity _businessEntity;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="context">Context</param>
+        public <#=entityName#>Repository(Context context)
+            : base(context, new <#=modelName#>Mapper<T>(context), ActiveFilter)
+        {
+        }
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="context">Context</param>
+        /// <param name="session">Business Entity Session</param>
+        public <#=entityName#>Repository(Context context, IBusinessEntitySession session)
+            : base(context, new <#=modelName#>Mapper<T>(context), ActiveFilter, session)
+        {
+        }
+        #endregion
+
+        #region Protected/public methods
+
+        /// <summary>
+        /// Create entities for repository
+        /// </summary>
+        /// <returns>Business Entity</returns>
+        protected override IBusinessEntity CreateBusinessEntities()
+        {
+            CreateBusinessEntitiesInternal();
+            return _businessEntity;
+        }
+
+        // TODO: Override the below base method if required.
+        // TODO: public override EnumerableResponse<T> Get(PageOptions<T> pageOptions)
+        // TODO: public override EnumerableResponse<T> Get(T model, PageOptions<T> pageOptions)
+
+        #endregion
+
+        #region Private methods
+
+        /// <summary>
+        /// ActiveFilter Condition
+        /// </summary>
+        /// <value>The active filter</value>
+        private static Expression<Func<T, bool>> ActiveFilter
+        {
+            get { return null; }
+        }
+
+        /// <summary>
+        /// Creates the business entities
+        /// </summary>
+        private void CreateBusinessEntitiesInternal()
+        {
+            _businessEntity = OpenEntity(<#=modelName#>.EntityName);
+        }
+
+        /// <summary>
+        /// Set Filter
+        /// </summary>
+        /// <param name="context">Context</param>
+        private void SetFilter(Context context)
+        {
+            _mapper = new <#=modelName#>Mapper<T>(context);
+        }
+   
+        #endregion
+    }
+}

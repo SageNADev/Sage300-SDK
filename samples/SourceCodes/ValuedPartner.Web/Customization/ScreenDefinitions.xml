@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Screens>
+  <!--<Screen Name="SourceCode">
+    <Control Name="sourceCode" Type="" Label="Custom Source Code" Default="AA-BB"/>
+    <Control Name="Data.Description" Type="Sage.CA.SBS.ERP.Sage300.GL.Models.SourceCode.Description" Label="Custom Description" Default="Test"/>
+    <Control Name="btnNewSourceCode" Type="" />
+    <Control Name="btnLoadSourceCode" Type="" />
+    <Control Name="btnFinderSourceCode" Type="" />
+    <Control Name="btnSaveSourceCode" Type="" />
+    <Control Name="btnDeleteSourceCode" Type="" Label="Custom Button" />
+  </Screen>-->
+  <!--<Screen Name="JournalEntries">
+    <Control Name="LineNumber" Hide="true"/>
+    <Control Name="Reference" Label="Custom Reference" Default="Test"/>
+  </Screen>-->
+</Screens>

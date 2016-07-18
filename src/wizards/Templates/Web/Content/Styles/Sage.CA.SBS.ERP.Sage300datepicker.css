@@ -1,0 +1,149 @@
+.icon, .k-icon {
+    background-image: url(../Images/sprite.png);
+    background-repeat: no-repeat;
+}
+
+.k-datepicker {
+    margin: 7px 0 10px;
+    border-radius: 0 !important;
+    width: 100%;
+    padding:0px !important;
+}
+.k-datepicker .datepicker:disabled{
+    border:none;
+}
+.k-picker-wrap {
+        border-radius: 0 !important;
+}
+
+    /*.k-datepicker .k-picker-wrap {
+        border-radius: 0;
+        overflow: hidden;
+        border-color: #9a9b9c;
+        padding: 0;
+    }*/
+
+        .k-datepicker .k-picker-wrap .k-input {
+            border-radius: 0 !important;
+            line-height: 18px;
+            padding: 5px 10px !important;
+            height: auto;
+            text-indent: 0;
+            width: 100% !important;
+            height:28px;
+            /*border: none;
+            font-size: 12px;
+            height: 22px;
+            padding: 0 10px;
+            border-radius:0px;
+            box-shadow:none;*/
+           
+
+             -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+        }
+.k-datepicker .k-picker-wrap {
+        background-image: none !important;
+        background-color: transparent;
+        
+
+}
+
+        .k-datepicker .k-picker-wrap .k-select {
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#f5f5f5),color-stop(1,#eaeaea));
+            background-image: -o-linear-gradient(bottom,#f5f5f5 50%,#eaeaea 100%);
+            background-image: -moz-linear-gradient(bottom,#f5f5f5 50%,#eaeaea 100%);
+            background-image: -webkit-linear-gradient(bottom,#f5f5f5 50%,#eaeaea 100%);
+            background-image: -ms-linear-gradient(bottom,#f5f5f5 50%,#eaeaea 100%);
+            background-image: linear-gradient(to bottom,#f5f5f5 50%,#eaeaea 100%);
+            width: 30px;
+            border-radius:0px;
+        }
+
+            .k-datepicker .k-picker-wrap .k-select:hover {
+                -moz-box-shadow: inset 0 0 5px #9a9b9c;
+                -webkit-box-shadow: inset 0 0 5px #9a9b9c;
+                box-shadow: inset 0 0 5px #9a9b9c;
+            }
+
+           
+
+        .k-datepicker .k-picker-wrap.k-state-disabled .k-input {
+            background-color: #f1f2ed;
+        }
+
+        .k-datepicker .k-picker-wrap.k-state-disabled .k-select {
+            background-color: #f5f5f5;
+        }
+
+            .k-datepicker .k-picker-wrap.k-state-disabled .k-select:hover {
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+
+            .k-edit-cell .k-datepicker .k-picker-wrap.k-state-disabled .k-select .k-i-calendar {
+                background-position: -126px -186px;
+                height:18px;
+                opacity: .5;
+            }
+.k-picker-wrap.k-state-disabled .k-input {
+border:none;
+}
+
+.k-datepicker {
+    background: none !important;
+}
+
+
+.k-treeview .k-icon {
+    background-position: -3px -6px;
+}
+
+.k-minus
+{
+    background-image:url("../Images/sprite.png");
+    background-position: -35px -69px !important;
+}
+
+.k-plus
+{
+    background-image:url("../Images/sprite.png");
+    background-position: -150px -128px !important;
+}
+
+/*.k-state-selected
+{
+    background-color: #4fa935 !important;
+    border-radius:0px !important;
+    
+}
+    */
+.k-state-focused.k-state-selected
+{box-shadow:none !important;}
+
+.k-i-calendar
+{
+	background-position:-158px -187px;
+}
+
+ .k-picker-wrap.k-state-default
+{
+	border-color:#9B9C9E;
+    background-color:none !important;
+}
+
+ .date-containter .k-edit-cell input[type="text"]
+ {padding-left:0px;}
+
+ 
+
+ .k-datepicker .k-picker-wrap .k-select{background-color:#fff !important;}
+
+ .k-datepicker.k-state-border-down{padding-bottom: 0px !important;}
+
+
+ 
+
+

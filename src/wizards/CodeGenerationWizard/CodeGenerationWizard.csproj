@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(SolutionDir)\..\ProjectSettings\Sage.Common.ProjectBuildVersions.props" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4930B6F4-B46A-4F02-98AC-72C54BE7AC6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ai.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(RefAccpacAdvantage)">
+      <SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>
+    </Reference>
+    <Reference Include="$(RefAccpacAdvantageTypes)">
+      <SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>
+    </Reference>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC\EnvDTE\8.0.0.0__b03f5f7f11d50a3a\envdte.dll</HintPath>
+    </Reference>
+    <Reference Include="envdte80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC\EnvDTE80\8.0.0.0__b03f5f7f11d50a3a\envdte80.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessDataType.cs" />
+    <Compile Include="BusinessField.cs" />
+    <Compile Include="BusinessView.cs" />
+    <Compile Include="BusinessViewHelper.cs" />
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="EnumValue.cs" />
+    <Compile Include="Generation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generation.Designer.cs">
+      <DependentUpon>Generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessGeneration.cs" />
+    <Compile Include="CodeGenerationWizard.cs" />
+    <Compile Include="ProjectInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cs" />
+    <Compile Include="RepositoryType.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Templates\Common\Class\Finder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Finder.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\ModelEnums.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEnums.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\ModelFields.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFields.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\ModelMapper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\View\Index.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\Service.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\ServiceInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DynamicQuery\Class\ViewModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\InternalController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalController.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Service.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\ServiceInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\ViewModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Script\Behaviour.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Behaviour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Script\KoExtn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KoExtn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\View\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Script\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\View\Localization.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\InternalController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalController.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\Service.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\ServiceInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Inquiry\Class\ViewModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\Class\InternalController.cs">
+      <DependentUpon>InternalController.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\Controller.cs">
+      <DependentUpon>Controller.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\Repository.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\RepositoryInterface.cs">
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\Service.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\ServiceInterface.cs">
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Class\ViewModel.cs">
+      <DependentUpon>ViewModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\Controller.cs">
+      <DependentUpon>Controller.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\InternalController.cs">
+      <DependentUpon>InternalController.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\Repository.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\RepositoryInterface.cs">
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\Service.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\ServiceInterface.cs">
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Reports\Class\ViewModel.cs">
+      <DependentUpon>ViewModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="WizardStep.cs" />
+    <EmbeddedResource Include="Generation.resx">
+      <DependentUpon>Generation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ai.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Templates\Common\Class\Finder.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Finder.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\ModelEnums.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelEnums.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\ModelFields.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelFields.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\ModelMapper.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelMapper.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\View\Index.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Index.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\Service.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Service.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\ServiceInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\DynamicQuery\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Service.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Service.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\ServiceInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Script\Behaviour.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Behaviour.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Script\KoExtn.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>KoExtn.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\View\Entity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Script\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\View\Localization.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Localization.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\Model.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\Service.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Service.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\ServiceInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Inquiry\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\Service.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Service.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\ServiceInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\Service.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Service.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\ServiceInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Blank24.ico" />
+    <Content Include="Images\Exit24.ico" />
+    <Content Include="Images\Go24.ico" />
+    <Content Include="Images\Help_24.ico" />
+    <Content Include="Images\ImportSetting24.ico" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\ProgressError.ico" />
+    <Content Include="Images\ProgressSuccess.ico" />
+    <Content Include="Images\RowAdd.ico" />
+    <Content Include="Images\RowDelete.ico" />
+    <Content Include="Images\RowsDelete.ico" />
+    <Content Include="Images\sage_300_logo.png" />
+    <Content Include="Images\Sage_All.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\Common\Script\" />
+    <Folder Include="Templates\DynamicQuery\Script\" />
+    <Folder Include="Templates\DynamicQuery\View\" />
+    <Folder Include="Templates\Inquiry\Script\" />
+    <Folder Include="Templates\Inquiry\View\" />
+    <Folder Include="Templates\Process\Script\" />
+    <Folder Include="Templates\Process\View\" />
+    <Folder Include="Templates\Reports\Script\" />
+    <Folder Include="Templates\Reports\View\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

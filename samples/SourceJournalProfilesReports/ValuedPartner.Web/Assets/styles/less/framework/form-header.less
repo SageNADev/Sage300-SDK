@@ -1,0 +1,127 @@
+//
+// Form header
+// --------------------------------------------------
+
+.header-group-1 {
+  margin: 0 auto 20px;
+}
+
+.header-wrapper {
+  border-bottom: 1px solid @sage-gray;
+}
+
+.header-headline {
+  display: table-cell;
+  width: 100%;
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+}
+
+.header-options {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  padding: 0 0 6px 10px;
+  white-space: nowrap;
+}
+
+.header-options input[class*="btn-"]:nth-child(2n), 
+.header-options input[class*="btn-"]:nth-child(3n) {
+    margin: 0 0 0 6px;
+}
+
+/** Header dropdown menu **/
+.options-menu { 
+	list-style: none;
+	margin: 0;
+
+	> li { 
+  	position: relative;  
+  	float: left;
+	}
+
+	.arrow-grey {
+    width: 24px;  
+    height: 24px;
+    position: absolute; 
+    right: 0;
+    top: 0;
+    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -845px 3px;
+    background-size: 1100px 110px;;
+	}
+}
+
+.options-menu > li > a { 
+	padding: 6px 30px 5px 20px;  
+	text-decoration: none;  
+	display: inline-block;  
+	color: @sage-dark-gray;  
+	line-height: @line-height-base;
+}
+
+.options-menu > li:hover > a {  
+	background-color: @sage-mid-gray;  
+	color: @white;
+
+  .arrow-grey {
+    background-position: -845px -40px;
+  }
+}
+
+.options-menu > li:hover .sub-menu {
+  display: block;
+}
+
+.options-menu .sub-menu { 
+	display: none;  
+	position: absolute;
+	border: 1px solid @sage-mid-gray;  
+	min-width: 150px;  
+	z-index: 99999;  
+	background: #fff;  
+	list-style: none;  
+	right: 0;  
+	padding: 0;
+
+	> li > a { 
+  	padding: @padding-small-vertical @padding-small-horizontal;  
+  	display: block;  
+  	color: inherit;  
+  	cursor: pointer;
+    text-align: left;
+
+    &.not-active {
+    pointer-events: none;
+    cursor: default;
+    color: #bababc
+    }
+	}
+
+	a:hover { 
+		background-color: #e8effe;
+    text-decoration: none;
+	}
+}
+
+.flag-required {
+  text-align: right;
+  padding: 10px 0 0 0;
+  color: #7a7b7c;
+}
+
+.header-group-1 > .flag-required {
+  margin-bottom: -20px;
+}
+
+.req-option:before {
+  content: "*";
+  margin-right: 3px;
+  color: #007f64;
+  font-family: Calibri, Arial;
+}
+
+

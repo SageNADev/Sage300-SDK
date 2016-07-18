@@ -1,0 +1,21 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+<div class="container_popUp">
+    <div id="divOperator" class="grid_7 alpha">
+        @Html.KoSageDropDownList("OperatorDropdown1", null, new { @id = "OperatorDropdown1" })
+    </div>
+    <div class="clear-fix"></div>
+
+    <div id="divValue" class="grid_7 alpha pad_top_0 pad_bot_05">
+        @Html.KoSageDropDownList("ValueDropDown1", null, new { @id = "ValueDropDown1", @class = "clsValueDropDown1" })
+        @Html.SageTextBox("ValueTextBox1", null, new { @id = "ValueTextBox1" })
+    </div>
+    <div class="clear-fix"></div>
+
+    <div class="mar_top_1">
+        @Html.KoSageButton("setCriteria", null, new { @class = "btn-primary right", @value = CommonResx.OK, @id = "setCriteria" })
+    </div>
+</div>

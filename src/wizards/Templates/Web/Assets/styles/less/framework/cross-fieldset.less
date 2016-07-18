@@ -1,0 +1,86 @@
+//
+// Cross-fieldset dynamic style
+// --------------------------------------------------
+
+.cross-field {
+  padding: 17px 0;
+  margin: 0 0 20px;
+  border: 1px dotted @hr-border;
+  border-left: none;
+  border-right: none;
+
+  > .sub-section {
+    border-top: none;
+    border-bottom: none;
+    display: table-cell;
+    padding: 0 0 0 20px;
+    vertical-align: top;
+
+    &:first-child {
+      border-right: 1px dotted @hr-border;
+      min-width: 280px;
+      padding: 0 10px 0 0;
+    }
+  }
+
+  .ctrl-group .textbox {
+    padding: 2px 10px;
+    height: 22px;
+    vertical-align: top;
+    margin-top: 0;
+  }
+
+  .ctrl-group .k-dropdown {
+    vertical-align: top;
+
+    // dropdown sizes
+    &.smaller   { width: 100px; }
+    &.small     { width: 160px; }
+    &.large     { width: 460px; }
+    &.larger    { width: 700px; }
+    &.xlarge    { width: 940px; }
+
+    .k-dropdown-wrap.k-state-default {
+      height: 22px;
+    }
+
+    .k-input {
+      padding: 0 10px;
+    }
+  }
+}
+
+.cross-field-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.sub-section + .cross-field { /* to fix the double line issue */
+  border-top: none;
+  padding: 0 0 17px;
+}
+
+.cross-field + .cross-field { /* to fix the double line issue */
+  border-top: none;
+  padding: 0 0 17px;
+}
+
+.cross-field + .footer-group-1 { /* to fix the double line issue */
+  border-top: none;
+  padding: 0;
+}
+
+.sublevel-1 > .cross-field:first-child,
+.tab-content > .cross-field:first-child { /* to fix the double line issue */
+    border-top: none;
+    margin-top: -10px;
+}
+
+.sublevel-1 > .cross-field:last-child,
+.tab-content > .cross-field:last-child { /* to fix the double line issue */
+    border-bottom: none;
+    margin-bottom: 0;
+}

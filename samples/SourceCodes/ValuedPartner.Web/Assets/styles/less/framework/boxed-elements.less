@@ -1,0 +1,45 @@
+//
+// Boxed elements
+// --------------------------------------------------
+
+.sub-section {
+    margin: 0 auto @margin-base auto;
+    border-bottom: 1px dotted @hr-border;
+
+    .section-heading {
+		font-weight: bold;
+		margin: 0 0 15px;
+		line-height: 1.15;
+
+		h3 {
+			margin-top: 0;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	
+		// section heading as checkbox
+		.ctrl-group { 
+			margin-bottom: 0;
+
+			label {
+				font-weight: bold;
+			}
+		}
+	}
+
+	// boxed elements indentation
+	.section-body.indented {
+		margin-left: 29px;
+	}
+}
+
+.form-group + .sub-section {
+	border-top: 1px dotted @hr-border;
+	padding-top: @margin-base;
+}
+
+.modal .sub-section:last-child {
+	border-bottom: 0;
+	margin-bottom: -20px;
+}
+

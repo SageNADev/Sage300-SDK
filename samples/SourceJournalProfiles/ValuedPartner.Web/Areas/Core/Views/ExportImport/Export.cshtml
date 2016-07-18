@@ -1,0 +1,162 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.ExportImportViewModel
+
+@{
+    Layout = null;
+}
+
+
+
+<div style="display:none">
+    <div class="" id="ExportOptions">
+        <ul class="dropDown-Menu">
+            <li>
+                <a>@CommonResx.Options</a>
+                <ul class="sub-menu">
+                    <li>@Html.KoSageAnchor("#", CommonResx.LoadScript, null, new { @id = "btnLoadScript" })</li>
+                    <li>@Html.KoSageAnchor("#", CommonResx.SaveScript, null, new { @id = "btnSaveScript" })</li>
+                </ul>
+            </li>
+
+        </ul>
+        <span class="seperator">|</span>
+    </div>
+</div>
+
+<div id="divLoadScript" style="display:none" class="container_popUp">
+    <div class="mt10">
+        <hr />
+        <form action='@Url.Action("LoadScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="formLoadScript">
+            <div id="loadScriptMessage"></div>
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="browse-group">
+                    <label>@CommonResx.FileLocation</label>
+                    @Html.KoSageTextBox("btnUploadFile", null, new { @id = "btnUploadFile", disabled = "disabled", @class = "medium" })
+                    <div class="btn btn-default fileUpload">
+                        <span>
+                            @CommonResx.Browse
+                        </span>
+                        @Html.KoSageFileButton("File", null, new { @id = "btnFile", @class = "upload", @accept = "text/xml" })
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="name" id="name" value='@Model.ExportRequest.Name' />
+            <section id="buttons" class="footer-group">
+                @Html.KoSageButton("LoadScript", null, new { @class = "btn btn-primary", @value = CommonResx.LoadScript, @id = "loadScriptSubmit" })
+            </section>
+            <div class="fileupload">
+
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container_popUp " id="exportScreen">
+
+    <div id="exportResult" style="display:none" class="clearfix">
+
+        <div>@Html.KoSpan(new { text = "ExportResponse.StatusString()" })</div>
+        <div id="exportResultMessageDiv"></div>
+        <div id="exportMessageDiv">@CommonResx.Processing</div>
+        <div id="resultgrid" style="display:none">
+            @Html.KoKendoGrid("exportResultGrid", "sg.exportHelper.exportModel.ExportResponse.Results", "ProcessResult", "sg.exportHelper.gridOption")
+            <div id="fileNameDiv" style="display:none">@Html.KoSpan(new { text = "ExportResponse.FileName" })</div>
+        </div>
+        <div class="import-export-btns clearfix mt20" >
+            <div id="btnClose" class="right">
+                @Html.KoSageButton("Ok", null, new {@class = "btn btn-primary right", @value = CommonResx.Close, @id = "btnOk"})
+            </div>
+            <div id="lnkDownload" class="right mr10">
+                @Html.KoSageAnchor("#", CommonResx.Download, null, new { @id = "btnDownload", @class = "btn btn-primary " })
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="exportTree">
+        <hr />
+        <form action='@Url.Action("SaveScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="targetId">
+            @Html.AntiForgeryToken()
+            @Html.SageHiddenFor(m => m.ExportRequest.Name)
+            @*<div class="alpha clear-fix "></div>*@
+            <div class="form-group">
+                <div class="dropdown-group">
+                    <label>@CommonResx.FileType</label>
+                    @Html.KoSageDropDownList("FileTypes", new { @options = "ExportRequest.FileTypes", @value = "ExportRequest.FileType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "FileTypes", @class = "default" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="treeview-group" style="width:100%">
+                    <ul id="exportTreeView">
+                        @for (var i = 0; i < Model.ExportRequest.DataMigrationList.Count; i++)
+                        {
+                            <li>
+                                <span class="newcontrol">
+                                    @Html.KoSageCheckBoxFor(model => model.ExportRequest.DataMigrationList[i].Print, new { @sagechecked = "ExportRequest.DataMigrationList()[" + i + "].Print" }, new { @autofocus = "autofocus", @class = "exportImportHeader", @data_sg_index = @i })
+                                </span>
+                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Description, new { @style = "float:left", @for = "ExportRequest_DataMigrationList_" + i + "__Print" })
+                                <ul>
+                                    @for (var k = 0; k < Model.ExportRequest.DataMigrationList[i].Items.Count; k++)
+                                    {
+                                        <li>
+                                            @Html.HiddenFor(model => model.ExportRequest.DataMigrationList[i].Items[k].field)
+                                            @Html.HiddenFor(model => model.ExportRequest.DataMigrationList[i].Items[k].dataType)
+                                            <span class="newcontrol">
+                                                @Html.KoSageCheckBoxFor(model => model.ExportRequest.DataMigrationList[i].Items[k].print, new { @sagechecked = "ExportRequest.DataMigrationList()[" + i + "].Items()[" + k + "].print" }, new { @class = "exportImportDetail" })
+                                            </span>
+
+                                            @if (Model.ExportRequest.DataMigrationList[i].Items[k].IsKey)
+                                            {
+                                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Items[k].title, new { @class = "required", @for = "ExportRequest_DataMigrationList_" + i + "__Items_" + k + "__print" })
+                                            }
+                                            else
+                                            {
+                                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Items[k].title, new { @for = "ExportRequest_DataMigrationList_" + i + "__Items_" + k + "__print" })
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <section class="footer-group" id="buttons">
+                @Html.KoSageButton("Select", null, new { @class = "btn btn-primary right", @value = CommonResx.Export, @id = "btnExport" })
+                @Html.KoSageButton("Cancel", null, new { @class = "btn btn-secondary right", @value = CommonResx.Cancel, @id = "btnCancel" })
+            </section>
+
+        </form>
+    </div>
+
+    <div class="clear-fix"></div>
+</div>
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("exportResultRowNumber", 0);
+    @Html.ConvertToJsVariableUsingNewtonSoft("index", CommonResx.Index);
+    @Html.ConvertToJsVariableUsingNewtonSoft("loadScript", CommonResx.LoadScript);
+    @Html.ConvertToJsVariableUsingNewtonSoft("exportModelData", Model);
+</script>
+<style>
+    .k-widget.k-treeview {
+        height: 232px;
+    }
+
+    #exportTreeView {
+        height: 230px;
+        overflow-y: scroll;
+    }
+
+    .inpt-file-container input[type="text"] {
+        width: 74%;
+    }
+
+    #buttons #loadScriptSubmit {
+        margin: 0;
+        float: right;
+    }
+</style>

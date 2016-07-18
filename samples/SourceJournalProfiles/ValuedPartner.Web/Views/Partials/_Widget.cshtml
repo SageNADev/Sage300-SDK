@@ -1,0 +1,62 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.KPI.Resources
+
+<div>
+    @{Html.RenderPartial(Widget.PortalBehaviourLocalisation);}
+</div>
+<div>
+    <div id="settingsWindow" class="settingsContainer hide">
+        <iframe id="iframeWidgetSettings" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+    </div>
+    <div id="configurationWindow" class="configurationContainer hide">
+        <iframe id="iframeWidgetConfiguration" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+    </div>
+    <div id="configurationWindow1" class="configurationContainer hide">
+        <iframe id="iframeWidgetConfiguration1" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+    </div>
+    <div id="editTitleWindow" class="configurationContainer hide">
+        <iframe id="iframeWidgetEditTitle" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+    </div>
+</div>
+<div class="bodyWidgetContainer">
+    
+    @for (int i = 1; i <= 6; i++)
+    {
+        <div id="widgetSlot@(i)" rank="-1" class="kpi" draggable="true">
+            <div class="btnsettingsPopUp">
+                <button class="navbarToggle  kpi-menu">
+                    <span class="glyphicon glyphicon-menu"></span>
+                </button>
+            </div>
+            <div class="container_popUp Widget widgetList widgetSettings">
+                <h3 class="widget-setting-headline">@EnumerationsResx.KPISetting</h3>
+                <i class="portalIcon closeIcon"></i>
+                <ul>
+                    <li class="btnEditSettings">@EnumerationsResx.Configure</li>
+                    <li class="btnEditTitle">@EnumerationsResx.EditTitle</li>
+                    <li class="btnRefresh">@EnumerationsResx.Refresh</li>
+                    <li class="btnOpenReport">@EnumerationsResx.OpenReport</li>
+                    <li class="btnClose">@EnumerationsResx.Hide</li>
+                </ul>
+            </div>
+            <iframe id="iframeWidget@(i)" class="iframeContainer" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+        </div>
+    }
+
+    <input type="hidden" id="hdnScreenDomain" value="@ViewBag.ScreenDomain" />
+</div>
+<div id="widgetMsgDiv" class="message-control multiInfo-msg hide pFixTop">
+    <div class="title">
+        <span class="icon multiInfo-icon"></span>
+        <h3 id="widgetLabelWarningBackup">@HomePageResx.AddWidgets</h3>
+        <span id="addWidgetBtnProcess" class="icon msgCtrl-close">Close</span>
+    </div>
+    <div class="msg-content">
+        <p>@HomePageResx.AddWidgetWarning</p>
+    </div>
+</div>
+

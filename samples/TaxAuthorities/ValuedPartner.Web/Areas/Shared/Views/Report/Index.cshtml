@@ -1,0 +1,100 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@model Sage.CA.SBS.ERP.Sage300.Shared.Web.Models.ReportViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.GenericReport>
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmReport" }))
+{
+    <div>
+        @Html.ValidationSummary(true)
+    </div>
+    @Html.Hidden("hdnReportId", Model.Data.Id, new { @id = "Report_Id" })
+    <div id="topSection">
+    </div>
+    <div class="container_16">
+        <div class="grid_16 pad_bot_1 alpha">
+            <div class="mod_title">
+                <h3>@Model.Data.LabelText</h3>
+                <div class="top-buttons">
+                    @Html.SageButton("btnPrint", new { @id = "btnPrint", @class = "btn-primary", @value = CommonResx.Print })
+                </div>
+                <div class="clear-fix"></div>
+            </div>
+            <div class="leftCol" id="dvParameters">
+
+                @for (var i = 0; i < Model.Data.Parameters.Count; i++)
+                {
+                    if (Model.Data.Parameters[i].Control == null) { continue; }
+
+                    switch (Model.Data.Parameters[i].Control.ControlType)
+                    {
+                        case ControlType.Finder:
+                            {
+
+                                <div class="grid_3 alpha omega">
+                                    @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_9 left" })
+                                    @Html.SageTextBox(string.Format("txt_{0}", i),
+                                                     Model.Data.Parameters[i].Value,
+                                                new
+                                                {
+                                                    @data_ControlType = "Finder",
+                                                    @data_FinderType = Model.Data.Parameters[i].Control.FinderType.ToString(),
+                                                    @data_FinderDisplayName = Model.Data.Parameters[i].Control.FinderTypeText,
+                                                    @data_ColumnName = Model.Data.Parameters[i].Id,
+                                                    @id = string.Format("txt_{0}", i),
+                                                    @propertyId = Model.Data.Parameters[i].Control.PropertyId
+                                                })
+                                    @Html.ValidationMessage(string.Format("txt_{0}", i))
+
+                                </div>
+                                <div class="grid_1 alpha pad_top_2 mar_rig_040">
+                                    @Html.SageButton(string.Format("finder_{0}", i), new { @id = string.Format("finder_{0}", i), @value = string.Format("{0}", Model.Data.Parameters[i].Control.FinderTypeText), @class = "icon btn_search" })
+                                </div>
+
+                                break;
+                            }
+                        case ControlType.CheckBox:
+                            {
+                                @Html.SageCheckBox(string.Format("chk_{0}", i), false,
+                                                new
+                                                {
+                                                    @data_ColumnName = Model.Data.Parameters[i].Id,
+                                                })
+                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "chkLabelReport" })
+                                break;
+                            }
+                        case ControlType.KendoCalender:
+                            {
+                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 left" })
+                                @Html.SageTextBox(string.Format("txt_{0}", i),
+                                                     Model.Data.Parameters[i].Value,
+                                                new
+                                                {
+                                                    @data_ControlType = "Calendar",
+                                                    @data_ColumnName = Model.Data.Parameters[i].Id,
+                                                })
+                                break;
+                            }
+                        case ControlType.TextBox:
+                            {
+                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 left" })
+                                @Html.SageTextBox(string.Format("txt_{0}", i),
+                                                     Model.Data.Parameters[i].Value,
+                                                new
+                                                {
+                                                    @data_ColumnName = Model.Data.Parameters[i].Id,
+                                                })
+                                break;
+                            }
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/genericreport")
+}

@@ -1,0 +1,36 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@{
+    Layout = Shared.GenericLayout;
+}
+
+<div class="wrapper">
+    <div class="msg msg-warning">
+        <h2 class="msg-heading">@CommonResx.SessionExpired_Header</h2>
+        <div class="msg-body">
+            <p>@CommonResx.SessionExpired_Msg1</p>
+            <p>@CommonResx.SessionExpired_Msg2</p>
+            <div class="button-group">
+                <input class="btn btn-primary" name="btnSignIn" type="button" value="@CommonResx.SessionExipred_SignInButton" onclick="HandleRedirectToLogin()">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    @{
+        var urlHelper = new System.Web.Mvc.UrlHelper(Html.ViewContext.RequestContext);
+    }
+    function HandleRedirectToLogin() {
+        var topWnd = window.top == null ? window : window.top;
+        topWnd.location.href = '@urlHelper.Action("Login", "Authentication")';
+    }
+
+</script>
+
+
+

@@ -1,0 +1,18 @@
+﻿@* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmOnPremiseLogin" }))
+{
+    <div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+        @Html.AntiForgeryToken()
+    </div>
+    @Html.Partial(Core.OnPremiseLogin)
+}
+
+@section scripts{
+    @Scripts.Render(Core.OnPremiseLoginBundle)
+}
+@{
+    Layout = Shared.LocalizedLayout;
+}

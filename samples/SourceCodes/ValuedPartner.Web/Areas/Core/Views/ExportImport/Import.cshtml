@@ -1,0 +1,102 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Core.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.ExportImportViewModel
+
+@{
+    Layout = null;
+}
+<div class="container_popUp" id="importScreen">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "frmImport" }))
+    {
+
+        <div id="importValidationMessageDiv"></div>
+        <div id="importResultMessageDiv"></div>
+
+        <div id="uploadDiv" style="min-width:590px;">
+            <div class="form-group">
+                <div class="dropdown-group">
+                    <label>@CommonResx.FileType</label>
+                    @Html.KoSageDropDownList("FileTypes", new { @options = "ImportRequest.FileTypes", @value = "ImportRequest.FileType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "FileTypes", @class = "default" })
+                </div>
+                <div class="import-chkbox">
+                    <div class="child">
+                        @Html.KoSageCheckBox("isTitle", true, new { @sagechecked = "ImportRequest.IsTitleRecord", @sagedisable = "ImportRequest.IsTitleRecord" }, null)
+                        @Html.SageLabel(CommonResx.TitleRecord, new { @for = "isTitle" })
+                    </div>
+                </div>
+                <div class="dropdown-group">
+                    <label>@CommonResx.ImportType</label>
+                    @Html.KoSageDropDownList("ImportTypes", new { @options = "ImportRequest.ImportTypes", @value = "ImportRequest.ImportType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "ImportTypes", @class = "default" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="browse-group">
+                    <label>@CommonResx.FileLocation</label>
+                    @Html.KoSageTextBox("uploadFileTextBox", null, new { @id = "uploadFileTextBox", disabled = "disabled", @class = "large" })
+                    <div class="btn btn-default fileUpload">
+                        <span>
+                            @CommonResx.Browse
+                        </span>
+                        @Html.KoSageFileButton("File", null, new {@id = "btnFileImport", @class="upload", @accept = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
+                    </div>
+                </div>
+            </div>
+            <div>
+                <section class="footer-group" id="output">
+                    <input id="hiddenFileUploadButton" type="button" value="Upload File" style="display: none" />
+                    @Html.KoSageButton("Select", null, new { @class = "btn btn-primary ", @value = CommonResx.Import, @id = "btnSelect" })
+                    @Html.KoSageButton("Cancel", null, new { @class = "btn btn-secondary ", @value = CommonResx.Cancel, @id = "btnImportCancel" })
+                </section>
+                <div id="output1" style="display: none">
+                    <strong>@CommonResx.FileProperties</strong>
+                    <br />
+                    <p>
+                        @CommonResx.Name: <span id="fileName"></span>
+                    </p>
+                    <p>
+                        @CommonResx.FileSize: <span id="fileSize"></span> bytes.
+                    </p>
+                    <p>
+                        @CommonResx.FileType: <span id="fileType"></span>
+                    </p>
+                    <div id="buttons" style="margin-top: 20px !important;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <div id="uploadResult" style="display:none">
+        <div>@CommonResx.Uploading</div>
+        <div class="progress" id="progressBarForUpload" style="display:none">
+            <div class="progress-bar progress-bar-1 active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                <span class="percentage">0% Complete</span>
+            </div>
+        </div>
+        <p>
+            <strong>@CommonResx.Progress</strong>: <span id="fileUploadProgress">0.00 %</span>
+        </p>
+    </div>
+
+    <div id="importResult" style="display:none">
+        <div>@Html.KoSpan(new { text = "ImportResponse.StatusString" })</div>
+
+        <div id="importMessageDiv">@CommonResx.Processing</div>
+        <div id="resultgrid" style="display:none" class="result-grid-wrapper">
+            @Html.KoKendoGrid("importResultGrid", "sg.importHelper.importModel.ImportResponse.Results", "ProcessResult", "sg.importHelper.gridOption")
+            <div id="fileNameDiv" style="display:none">@Html.KoSpan(new { text = "ImportResponse.FileName" })</div>
+        </div>
+        <div id="btnClose" style="margin-top:20px !important;">
+            @Html.KoSageButton("Ok", null, new { @class = "btn-primary right", @value = CommonResx.Close, @id = "btnImportOk" })
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("importResultRowNumber", 0);
+    @Html.ConvertToJsVariableUsingNewtonSoft("index", CommonResx.Index);
+    @Html.ConvertToJsVariableUsingNewtonSoft("importModelData", @Model);
+</script>
+
+@Scripts.Render("~/bundles/uploadFileToBlob")

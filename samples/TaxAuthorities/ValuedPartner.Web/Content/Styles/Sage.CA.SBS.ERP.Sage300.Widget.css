@@ -1,0 +1,204 @@
+.dotted {
+    border-top: 1px dotted #ccc;
+    margin-bottom: 20px;
+}
+
+.kpi-container {
+    width: 430px;
+    height: 286px;
+    position: relative;
+    color: #4d4f53;
+}
+
+.kpi-container h2 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #41a940;
+  margin-bottom: 16px;
+}
+
+.kpi-container .timestamp {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  font-size: 11px;
+  font-weight: bold;
+  color: #4d4f53;
+}
+
+.kpi-container .kpi-chart {
+  height: 230px;
+  margin: 15px 0;
+  font-size: 12px;
+  overflow-y: auto;
+}
+
+.kpi-container .kpi-pie {
+    height: 280px;
+    margin: -15px 0 0;
+    overflow-y: hidden;
+}
+
+.kpi-container table {
+  width: 100%;
+  line-height: 1.428;
+  color: #4d4f53;
+  table-layout: fixed;
+}
+
+.kpi-container table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.kpi-container table td,
+.kpi-container table th {
+  padding: 2px 0 4px;
+  width: 100%;
+}
+
+.kpi-container table td:nth-of-type(1)  { /*New UI: prevent text wrapping in KPI table*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.kpi-container table .value {
+  text-align: right;
+  width: 60%; /*Defect fix - Income from Operations KPI */ 
+}
+
+.kpi-container table .section td,
+.kpi-container table .total td {
+  border-top: 1px solid #cccccc;
+  padding: 6px 0 4px;
+  margin: 2px 0 0;
+}
+
+.kpi-container table .total td {
+  border-top: 2px solid #cccccc;
+  font-weight: bold;
+}
+
+.kpi-setting-content .footer-group {
+    padding: 20px;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.kpi-setting-content .footer-group input[class*="btn-"] {
+    margin: 0 0 0 10px;
+}
+
+.kpi-setting-content {
+    padding: 20px;
+    color: #4d4f53;
+}
+
+
+/* tab style override for kpi setting window --------------------------------------------- */
+.kpi-setting-content .k-tabstrip-wrapper {
+    margin: 0;
+}
+
+.kpi-setting-content .k-tabstrip .k-content.k-state-active {
+    border-right: none;
+    border-left: none;
+    height: 484px !important;
+}
+
+.kpi-setting-content .k-tabstrip .k-tabstrip-items {
+    padding: 0 0 0 20px;
+}
+
+/* aging custom css copied over from old ------------------------------------------------- */
+.columns-two {
+  clear: both;
+}
+.columns-two .first-column {
+  width: 25%;
+  float: left;
+}
+
+.columns-two .second-column {
+  width: 75%;
+  float: right;
+}
+.section-body {
+    overflow: auto;
+}
+.sub-section:last-child {
+    border-bottom: none;
+}
+
+
+/* fisical calendar custom css copied over from old ------------------------------------------------- */
+.calendar-heading table td.w165.align-right {
+    padding:0px;
+    height:auto;
+}
+.w140 {
+    width:140px;
+}
+.fiscalHeadingLable {
+    padding-top: 0;
+    vertical-align: middle;
+    padding-right: 10px;
+    text-align: right;
+}
+.calendar-heading td.right {
+    float:right;
+}
+.calendar-heading>table {
+    width:100%;
+}
+.calendar-heading > table td.w165 {
+    position: relative;
+    top: -9px;
+}
+.calendar-heading > table td.w140 {
+    position: relative;
+    top: -6px;
+}
+.calendar-heading > table td:first-child {
+    position: relative;
+    top: -3px;
+}
+.calendar-heading {    
+    padding: 10px 10px 12px 10px;    
+    color: #fff;    
+    font-weight: 700;    
+    border-color: #9a9b9c;    
+    background-color: #686c76;    
+    background-image: none;    
+    height: 42px;
+}
+.calendar-heading .f-cal-left {    
+    float: left;    
+    width: 15%;
+}
+.calendar-heading .f-cal-title {    
+    width: 70%;    
+    float: left;    
+    text-align: center;
+}
+.calendar-heading .f-cal-title span.k-widget.k-dropdown.k-header {    
+    width: 50%;    
+    margin-top: -5px;}
+.calendar-heading .f-cal-right {    
+    float: right;    
+    width: 15%;    
+    text-align: right;
+}
+.w13 {
+    width:13px;
+}
+
+/* To fix Fisical Calendar positioning issues ------------------------------------------------- */
+
+.fiscal-group {  
+   position: static;
+}

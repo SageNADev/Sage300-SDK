@@ -1,0 +1,49 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@{
+    ViewBag.Title = CommonResx.SetCriteria;
+    Layout = null;
+
+    var item = new Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport.Filter();
+    var data = new
+    {
+        Column0 = item,
+        Column1 = item,
+        Column2 = item,
+        Column3 = item,
+        Column4 = item,
+        Column5 = item,
+        Column6 = item,
+        Column7 = item,
+        Column8 = item,
+        Column9 = item,
+        Column10 = item,
+        Column11 = item,
+        Column12 = item,
+        Column13 = item,
+        Column14 = item
+    };
+    IList<object> modelData = new List<object>();
+    for (var i = 0; i < 15; i++)
+    {
+        modelData.Add(data);
+    }
+}
+
+<br />
+
+@Html.SageHidden("CriteriaTitle", CommonResx.SetCriteriaLabel)
+@Html.SageHidden("GridModelItem", modelData.ConvertModelToJSon())
+@Html.SageHidden("BaseURLForFilter", Url.Action("AddCriteria", "ExportImport", new { area = "Shared" }))
+@Html.SageHidden("BusinessEntityName", ViewData["entityName"].ToString())
+<input id="InitDropdown" />
+<input type="button" id="AddColumn" value='@CommonResx.Add' />
+<input type="button" id="RemoveColumn" value='@CommonResx.RemoveColumn' />
+<div id="exportGrid" class="k-content">
+    <div id="grid"></div>
+
+</div>
+
+@Scripts.Render("~/Areas/AP/Scripts/Sage.CA.SBS.ERP.Sage300.AP.SetCriteria.js")

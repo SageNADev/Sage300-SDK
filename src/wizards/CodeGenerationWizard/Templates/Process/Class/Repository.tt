@@ -1,0 +1,101 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository.Process;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Process
+{
+    /// <summary>
+    /// Class <#=entityName#> Repository
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>Repository<T> : ProcessingRepository<T>,
+        I<#=entityName#>Entity<T> where T : <#=modelName#>, new()
+    {
+        #region Business Entity
+
+        /// <summary>
+        /// Business Entity
+        /// </summary>
+        private IBusinessEntity _businessEntity;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="context">Context</param>
+        public <#=entityName#>Repository(Context context)
+            : base(context, new <#=modelName#>Mapper<T>(context))
+        {
+        }
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="context">Context</param>
+        /// <param name="session">Business Entity Session</param>
+        public <#=entityName#>Repository(Context context, IBusinessEntitySession session)
+            : base(context, new <#=modelName#>Mapper<T>(context), session)
+        {
+        }
+
+        #endregion
+
+        #region  Abstract methods
+
+        /// <summary>
+        /// Create Business Entity
+        /// </summary>
+        /// <returns>IBusinessEntity</returns>
+        protected override IBusinessEntity CreateBusinessEntities()
+        {
+            _businessEntity = OpenEntity(<#=modelName#>.EntityName);
+            return _businessEntity;
+        }
+
+        #endregion
+
+    }
+}

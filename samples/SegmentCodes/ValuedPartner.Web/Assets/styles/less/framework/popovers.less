@@ -1,0 +1,388 @@
+//
+// Popovers
+// --------------------------------------------------
+
+.k-overlay {
+  background-color: @white;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zindex-popover;
+  display: none;
+  max-width: @popover-max-width;
+  padding: 1px;
+  text-align: left; // Reset given new insertion method
+  background-color: @popover-bg;
+  background-clip: padding-box;
+  border: 1px solid @popover-fallback-border-color;
+  border: 1px solid @popover-border-color;
+  border-radius: @border-radius-large;
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+
+  // Overrides for proper insertion
+  white-space: normal;
+
+  // Offset the popover to account for the popover arrow
+  &.top     { margin-top: -@popover-arrow-width; }
+  &.right   { margin-left: @popover-arrow-width; }
+  &.bottom  { margin-top: @popover-arrow-width; }
+  &.left    { margin-left: -@popover-arrow-width; }
+}
+
+.popover-title {
+  margin: 0; // reset heading margin
+  padding: 8px 14px;
+  font-size: @font-size-base;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: @popover-title-bg;
+  border-bottom: 1px solid darken(@popover-title-bg, 5%);
+  border-radius: (@border-radius-large - 1) (@border-radius-large - 1) 0 0;
+}
+
+.popover-content {
+  padding: 9px 14px;
+}
+
+// Arrows
+//
+// .arrow is outer, .arrow:after is inner
+
+.popover > .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+.popover > .arrow {
+  border-width: @popover-arrow-outer-width;
+}
+.popover > .arrow:after {
+  border-width: @popover-arrow-width;
+  content: "";
+}
+
+.popover {
+  &.top > .arrow {
+    left: 50%;
+    margin-left: -@popover-arrow-outer-width;
+    border-bottom-width: 0;
+    border-top-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-top-color: @popover-arrow-outer-color;
+    bottom: -@popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -@popover-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: @popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    left: -@popover-arrow-outer-width;
+    margin-top: -@popover-arrow-outer-width;
+    border-left-width: 0;
+    border-right-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-right-color: @popover-arrow-outer-color;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -@popover-arrow-width;
+      border-left-width: 0;
+      border-right-color: @popover-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    left: 50%;
+    margin-left: -@popover-arrow-outer-width;
+    border-top-width: 0;
+    border-bottom-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-bottom-color: @popover-arrow-outer-color;
+    top: -@popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -@popover-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: @popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    right: -@popover-arrow-outer-width;
+    margin-top: -@popover-arrow-outer-width;
+    border-right-width: 0;
+    border-left-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-left-color: @popover-arrow-outer-color;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: @popover-arrow-color;
+      bottom: -@popover-arrow-width;
+    }
+  }
+
+}
+
+
+/* Finder Window */
+
+.k-window {
+  padding-top: 40px !important;
+}
+.k-widget.k-window.finder-window {
+    height: 510px !important;
+}
+.finder-window,
+.k-window-titlebar{
+    border-radius:0px;
+}
+.k-window-titlebar{
+    padding: 10px 20px;
+    background: #3c424f;
+    top: 34px;
+    height: auto;
+    .box-sizing(border-box);
+}
+.k-window-titlebar .k-window-title{
+    color: @white;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 13px;
+}
+.k-window-titlebar .k-window-actions{
+    right: 15px;
+    top: -2px;
+    opacity: 1;
+}
+
+.k-window-titlebar .k-window-action {
+  padding: 0;
+}
+.k-window-titlebar .k-window-actions .k-i-close{
+    background-position: -210px -31px;
+    opacity: 1;
+
+    &:hover,
+    &:focus {
+      background-position: -210px -31px;
+      outline: none;
+      border: none;
+    }
+}
+.k-window-titlebar .k-state-hover {
+    background: none;
+    opacity: 1;
+    border-radius: 0;
+    outline: none;
+    border: 0;
+    padding: 0;
+}
+
+.k-window .k-window-content {
+    padding: 0;
+    margin: @margin-base;
+    background: transparent;
+    border-radius: 0px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.finder-window .k-window-content #buttons input[class*="btn-"]{
+  float: right;
+  margin-left: 10px; 
+}
+
+/*Finder misc*/
+
+.finder_popUp #NumericTextBoxDiv .k-widget.k-numerictextbox{ 
+  width: 100%; padding:0;
+}
+#NumericTextBoxDiv .k-numeric-wrap input[type=text]{
+    margin: 0;
+    border: 0;
+    width: 100% !important;
+    height: 28px;
+}
+#NumericTextBoxDiv .k-numeric-wrap.k-state-focused{
+    border-color:#009fda;
+}
+#NumericTextBoxDiv .k-numeric-wrap.k-state-focused input[type=text]:focus{
+    border:0 !important;
+}
+
+.finder-tbl td{
+  vertical-align:top;
+  padding-bottom:20px; 
+}
+.finder-tbl #ValueTextBox{
+   margin:0;
+}
+.finder_popUp .k-datepicker .k-input{
+    margin: 0;
+    border:0;
+    line-height: 16px;
+    height: 100%;
+}
+.finder_popUp #ValueDropDownDiv .k-datepicker{
+    width: 220px;
+}
+.finder_popUp #ValueDropDownDiv .k-datepicker .k-picker-wrap .k-select{
+    padding-left: 1px;
+}
+
+// Options dropdown styles in the header of popover (Export Options)
+
+#ExportOptions {
+  width: 107px;
+  display: inline-block;
+  border: 0px solid orange;
+  float: right;
+  margin-right: 36px;
+  height: 14px;
+  position: absolute;
+  right: 5px;
+
+  .dropDown-Menu {
+    font-size: 14px;
+    float: none;
+    list-style: none;
+    position: relative;
+
+    > li {
+      position: relative;
+      float: left;
+      height: 30px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      a {
+        color: @white;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .arrow-grey {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -30px;
+      top: 0;
+      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -92px -36px;
+      background-size: 900px 90px;
+    }
+
+    .arrow-white {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -30px;
+      top: 0;
+      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -92px -71px;
+      background-size: 900px 90px;
+    }
+  }
+
+  ul.sub-menu {
+    display: none;
+    position: absolute;
+    left: -85px;
+    top: 20px;
+    border: 1px solid @table-border-color;
+    min-width: 150px;
+    z-index: 99999;
+    background: @white;
+    list-style: none;
+    padding: 0;
+
+    > li > a {
+      padding: 5px 10px;
+      margin: 0px;
+      border: 1px;
+      float: none;
+      display: block;
+      color: @text-color;
+      cursor: pointer;
+      text-align: left;
+      font-weight: normal;
+
+      &:hover {
+      background-color: #e8effe;
+      text-decoration: none;
+      }
+    }
+  }
+}
+
+.k-window .seperator {
+  float: right;
+  color: @white;
+  position: relative;
+  top: -1px;
+  font-size: 14px;
+  display: none;
+}
+
+.k-window .popup-iframe {
+  max-height:760px !important;
+  overflow: hidden !important;
+}
+
+
+// Confirmation Popup
+
+.fild_set {
+    margin: 0;
+    padding: 0;
+
+    .fild-title { 
+        color: #333;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 18px;
+    }
+
+    .fild-content { 
+        padding: 10px 0 0;
+        overflow: hidden;
+        border-top: 0px;
+    }
+}
+
+.fildset_postingjournals {
+    padding: 19px 17px 20px;
+    padding-bottom: 15px;
+}
+
+.modelWindow .modelBox_controlls {
+  margin-top: 20px; 
+  text-align: right; 
+
+  input[class*="btn-"] { 
+    margin-right: 6px; 
+
+    &:last-child{ 
+      margin-right: 0;
+    }
+  }
+}

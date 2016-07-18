@@ -1,0 +1,185 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var extension = settings.Extension;
+    var repositoryType = settings.RepositoryType;
+    var generateDynamicEnablement = settings.GenerateDynamicEnablement;
+    var viewId = view.Properties[BusinessView.ViewId];
+    var modelName = view.Properties[BusinessView.ModelName];
+#>
+// <#=copyright#>
+
+#region Namespace
+
+<#
+    if (generateDynamicEnablement)
+    {
+#>
+using System.Collections.Generic;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
+<#
+    }
+#>
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
+{
+    /// <summary>
+    /// Contains list of <#=modelName#> Constants
+    /// </summary>
+    public partial class <#=modelName#>
+    {
+<#
+    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+    {
+#>
+        /// <summary>
+        /// Entity Name
+        /// </summary>
+        public const string EntityName = "<#=viewId#>";
+
+<#
+    }
+#>
+<#
+    if (generateDynamicEnablement)
+    {
+#>
+        /// <summary>
+        /// Dynamic Attributes contain a reverse mapping of field and property
+        /// </summary>
+        [IgnoreExportImport]
+        public static Dictionary<string, string> DynamicAttributes
+        {
+            get
+            {
+                return new Dictionary<string, string>
+                {
+<#
+                // Iterate fields to determine which field(s) have isDynamicEnablement
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Is DynamicEnablement attribute set?
+                    if (field.IsDynamicEnablement)
+                    {
+#>
+                    {"<#=field.ServerFieldName#>", "<#=fieldName#>"},
+<#
+                    }
+                }
+#>
+                };
+            }
+        }
+<#
+    }
+#>
+
+<#
+    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+    {
+#>
+        #region Properties
+
+        /// <summary>
+        /// Contains list of <#=modelName#> Field Constants
+        /// </summary>
+        public class Fields
+        {
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Naming convention is potentially invalid
+                    if (fieldName.All(Char.IsUpper))
+                    {
+#>
+            // TODO The naming convention of this property has to be manually evaluated
+<#
+                    }
+#>
+            /// <summary>
+            /// Property for <#=fieldName#>
+            /// </summary>
+            public const string <#=fieldName#> = "<#=field.ServerFieldName#>";
+
+<#
+                }
+#>
+        }
+
+        #endregion
+<#
+    }
+#>
+        #region Properties
+
+        /// <summary>
+        /// Contains list of <#=modelName#> Index Constants
+        /// </summary>
+        public class Index
+        {
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Naming convention is potentially invalid
+                    if (fieldName.All(Char.IsUpper))
+                    {
+#>
+            // TODO The naming convention of this property has to be manually evaluated
+<#
+                    }
+#>
+            /// <summary>
+            /// Property Indexer for <#=fieldName#>
+            /// </summary>
+            public const int <#=fieldName#> = <#=field.Id#>;
+
+<#
+                }
+#>
+
+        }
+
+        #endregion
+
+    }
+}

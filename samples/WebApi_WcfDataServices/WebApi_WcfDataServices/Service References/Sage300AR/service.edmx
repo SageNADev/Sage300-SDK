@@ -1,0 +1,2369 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="AccountSet">
+        <Key>
+          <PropertyRef Name="AccountSetKey" />
+        </Key>
+        <Property Name="AccountSetKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="ReceivablesControlAccount" Type="Edm.String" />
+        <Property Name="PrepaymentLiabilityAccount" Type="Edm.String" />
+        <Property Name="DiscountsAccount" Type="Edm.String" />
+        <Property Name="WriteOffsAccount" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="UnrealizedExchangeGainAccount" Type="Edm.String" />
+        <Property Name="UnrealizedExchangeLossAccount" Type="Edm.String" />
+        <Property Name="ExchangeGainAccount" Type="Edm.String" />
+        <Property Name="ExchangeLossAccount" Type="Edm.String" />
+        <Property Name="RetainageAccount" Type="Edm.String" />
+        <Property Name="ExchangeRoundingAccount" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="BillingCycle">
+        <Key>
+          <PropertyRef Name="BillingCycleKey" />
+        </Key>
+        <Property Name="BillingCycleKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="DateStatementsLastPrinted" Type="Edm.DateTime" />
+        <Property Name="DateInterestInvoicesLastPosted" Type="Edm.DateTime" />
+        <Property Name="BillingCycleFrequency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemitToName" Type="Edm.String" />
+        <Property Name="RemitToAddress1" Type="Edm.String" />
+        <Property Name="RemitToAddress2" Type="Edm.String" />
+        <Property Name="RemitToAddress3" Type="Edm.String" />
+        <Property Name="RemitToAddress4" Type="Edm.String" />
+        <Property Name="RemitToCity" Type="Edm.String" />
+        <Property Name="RemitToStateProvince" Type="Edm.String" />
+        <Property Name="RemitToZipPostalCode" Type="Edm.String" />
+        <Property Name="RemitToCountry" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="CommentType">
+        <Key>
+          <PropertyRef Name="CommentTypeKey" />
+        </Key>
+        <Property Name="CommentTypeKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="AlertLocation" Type="Edm.String" Nullable="false" />
+        <Property Name="AlertColor" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="CreateGLBatch">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="ProcessReceiptBatch" Type="Edm.String" Nullable="false" />
+        <Property Name="ReceiptThroughPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcessInvoiceBatch" Type="Edm.String" Nullable="false" />
+        <Property Name="InvoiceThroughPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcessAdjustmentBatch" Type="Edm.String" Nullable="false" />
+        <Property Name="AdjustmentThroughPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcessRevaluationBatch" Type="Edm.String" Nullable="false" />
+        <Property Name="RevaluationThroughPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcessRefundBatch" Type="Edm.String" Nullable="false" />
+        <Property Name="RefundThroughPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CreateRecurringCharge">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="RangeType" Type="Edm.String" Nullable="false" />
+        <Property Name="RangeFrom" Type="Edm.String" />
+        <Property Name="RangeThrough" Type="Edm.String" />
+        <Property Name="RunDate" Type="Edm.DateTime" />
+        <Property Name="Mode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="ScheduleKey" Type="Edm.String" />
+        <Property Name="ScheduleLink" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DateGenerationMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchGenerationMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="ForcedInvoiceDate" Type="Edm.DateTime" />
+        <Property Name="AppendToBatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CreateRetainageDocumentBatch">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="RunDate" Type="Edm.DateTime" />
+        <Property Name="Mode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SelectRecordsBy" Type="Edm.String" Nullable="false" />
+        <Property Name="StartingDocumentNumber" Type="Edm.String" />
+        <Property Name="EndingDocumentNumber" Type="Edm.String" />
+        <Property Name="StartingCustomerNumber" Type="Edm.String" />
+        <Property Name="EndingCustomerNumber" Type="Edm.String" />
+        <Property Name="StartingCustomerGroupCode" Type="Edm.String" />
+        <Property Name="EndingCustomerGroupCode" Type="Edm.String" />
+        <Property Name="StartingNationalAccount" Type="Edm.String" />
+        <Property Name="EndingNationalAccount" Type="Edm.String" />
+        <Property Name="IncludeInvoice" Type="Edm.String" Nullable="false" />
+        <Property Name="IncludeDebitNote" Type="Edm.String" Nullable="false" />
+        <Property Name="IncludeCreditNote" Type="Edm.String" Nullable="false" />
+        <Property Name="DaysBeforeRetainageDue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CustomerGroup">
+        <Key>
+          <PropertyRef Name="GroupCode" />
+        </Key>
+        <Property Name="GroupCode" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="AutocashProfile" Type="Edm.String" />
+        <Property Name="BillingCycle" Type="Edm.String" />
+        <Property Name="InterestProfile" Type="Edm.String" />
+        <Property Name="AccountType" Type="Edm.String" Nullable="false" />
+        <Property Name="Terms" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="AllowEditOfCreditLimit" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditLimit1Currency" Type="Edm.String" />
+        <Property Name="CreditLimit1Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditLimit2Currency" Type="Edm.String" />
+        <Property Name="CreditLimit2Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditLimit3Currency" Type="Edm.String" />
+        <Property Name="CreditLimit3Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditLimit4Currency" Type="Edm.String" />
+        <Property Name="CreditLimit4Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditLimit5Currency" Type="Edm.String" />
+        <Property Name="CreditLimit5Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxClassCode1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrintStatements" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckCreditLimit" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckOverdueAmounts" Type="Edm.String" Nullable="false" />
+        <Property Name="DaysOverdue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AmountOverdue1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountOverdue2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountOverdue3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountOverdue4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountOverdue5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerGroupOptionalFieldVa" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CustomerGroupOptionalFieldVa)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="CustomerGroupOptionalFieldVa">
+        <Property Name="CustomerGroup" Type="Edm.String" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="CustomerGroupOptionalFieldVaType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="CustomerNumber" />
+        </Key>
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="ShortName" Type="Edm.String" />
+        <Property Name="GroupCode" Type="Edm.String" />
+        <Property Name="NationalAccount" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="OnHold" Type="Edm.String" Nullable="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" />
+        <Property Name="CreditBureauNumber" Type="Edm.String" />
+        <Property Name="CreditBureauRating" Type="Edm.String" />
+        <Property Name="CreditBureauDate" Type="Edm.DateTime" />
+        <Property Name="CustomerName" Type="Edm.String" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="AddressLine3" Type="Edm.String" />
+        <Property Name="AddressLine4" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvince" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="PhoneNumber" Type="Edm.String" />
+        <Property Name="FaxNumber" Type="Edm.String" />
+        <Property Name="TerritoryCode" Type="Edm.String" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="AutocashProfile" Type="Edm.String" />
+        <Property Name="BillingCycle" Type="Edm.String" />
+        <Property Name="InterestProfile" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="PrintStatements" Type="Edm.String" Nullable="false" />
+        <Property Name="AccountType" Type="Edm.String" Nullable="false" />
+        <Property Name="Terms" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber1" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber2" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber3" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber4" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber5" Type="Edm.String" />
+        <Property Name="TaxClassCode1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreditLimitCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BalanceDueInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BalanceDueInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLastStatement" Type="Edm.DateTime" />
+        <Property Name="LastStatementTotalCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLastBalanceForwardStatement" Type="Edm.DateTime" />
+        <Property Name="BeginningBalanceOnLastStatement" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLastRevaluation" Type="Edm.DateTime" />
+        <Property Name="LastRevaluationBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOpenDocuments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfPaidInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLargestInvoice" Type="Edm.DateTime" />
+        <Property Name="DateOfHighestBalance" Type="Edm.DateTime" />
+        <Property Name="DateOfLargestInvoiceLastYear" Type="Edm.DateTime" />
+        <Property Name="DateOfHighestBalanceLastYear" Type="Edm.DateTime" />
+        <Property Name="DateOfLastActivity" Type="Edm.DateTime" />
+        <Property Name="DateOfLastInvoice" Type="Edm.DateTime" />
+        <Property Name="DateOfLastCreditNote" Type="Edm.DateTime" />
+        <Property Name="DateOfLastDebitNote" Type="Edm.DateTime" />
+        <Property Name="DateOfLastReceipt" Type="Edm.DateTime" />
+        <Property Name="DateOfLastDiscount" Type="Edm.DateTime" />
+        <Property Name="DateOfLastAdjustment" Type="Edm.DateTime" />
+        <Property Name="DateOfLastWriteOff" Type="Edm.DateTime" />
+        <Property Name="DateOfLastReturnedCheck" Type="Edm.DateTime" />
+        <Property Name="DateOfLastInterestCharge" Type="Edm.DateTime" />
+        <Property Name="LargestInvoiceNumber" Type="Edm.String" />
+        <Property Name="LargestInvoiceNumberLastYear" Type="Edm.String" />
+        <Property Name="LargestInvoiceCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighestBalanceCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceLastYearCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighBalanceLastYearCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastCreditNoteAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDebitNoteAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReceiptCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDiscountAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastAdjustmentAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastWriteOffAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReturnedCheckAmountCustomerCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInterestChargeCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighestBalanceFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceLastYearFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighBalanceLastYearFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastCreditNoteAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDebitNoteAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReceiptFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDiscountAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastAdjustmentAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastWriteOffAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReturnedCheckAmountFunctionalCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInterestChargeFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AverageDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerPriceList" Type="Edm.String" />
+        <Property Name="CustomerDiscountType" Type="Edm.String" Nullable="false" />
+        <Property Name="AmountPastDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ContactsEmail" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="WebSite" Type="Edm.String" />
+        <Property Name="BillingMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PaymentCode" Type="Edm.String" />
+        <Property Name="FreeOnBoard" Type="Edm.String" />
+        <Property Name="ShipViaCode" Type="Edm.String" />
+        <Property Name="ShipViaDescription" Type="Edm.String" />
+        <Property Name="DeliveryMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="PrimaryShipToLocation" Type="Edm.String" />
+        <Property Name="ContactsPhone" Type="Edm.String" />
+        <Property Name="ContactsFax" Type="Edm.String" />
+        <Property Name="AllowPartialShipments" Type="Edm.String" Nullable="false" />
+        <Property Name="AllowWebStoreShopping" Type="Edm.String" Nullable="false" />
+        <Property Name="PercentRetained" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DaysRetained" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetainageTermsCode" Type="Edm.String" />
+        <Property Name="AmountRetainedCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountRetainedFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfOpenPrepayments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountPrepaidCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountPrepaidFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLastRefund" Type="Edm.DateTime" />
+        <Property Name="LastRefundAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastRefundAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckLanguage" Type="Edm.String" />
+        <Property Name="NextClientUniqueID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="InventoryLocation" Type="Edm.String" />
+        <Property Name="CheckCreditLimit" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckOverdueAmounts" Type="Edm.String" Nullable="false" />
+        <Property Name="DaysOverdue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AmountOverdue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AllowBackorderQuantities" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckForDuplicatePOs" Type="Edm.String" Nullable="false" />
+        <Property Name="SuppressIntegration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ARVersion" Type="Edm.String" />
+        <Property Name="Database" Type="Edm.String" />
+        <Property Name="Mode" Type="Edm.String" Nullable="false" />
+        <Property Name="SageBillingAndPaymentCustome" Type="Edm.String" Nullable="false" />
+        <Property Name="BusinessRegistrationNumber" Type="Edm.String" />
+        <Property Name="CustomerOptionalFieldValues" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CustomerOptionalFieldValue)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="CustomerOptionalFieldValue">
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="CustomerOptionalFieldValueType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="DistributionCode">
+        <Key>
+          <PropertyRef Name="DistributionCodeKey" />
+        </Key>
+        <Property Name="DistributionCodeKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="RevenueAccount" Type="Edm.String" />
+        <Property Name="InventoryAccount" Type="Edm.String" />
+        <Property Name="CostOfGoodsSoldAccount" Type="Edm.String" />
+        <Property Name="Discountable" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DunningMessage">
+        <Key>
+          <PropertyRef Name="DunningMessageCode" />
+        </Key>
+        <Property Name="DunningMessageCode" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="CurrentMessage" Type="Edm.String" />
+        <Property Name="Period1Message" Type="Edm.String" />
+        <Property Name="Period2Message" Type="Edm.String" />
+        <Property Name="Period3Message" Type="Edm.String" />
+        <Property Name="OverPeriod3Message" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InvoiceBatch">
+        <Key>
+          <PropertyRef Name="BatchNumber" />
+        </Key>
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchDate" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="NumberOfEntries" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchType" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="DefaultInvoiceType" Type="Edm.String" Nullable="false" />
+        <Property Name="LastEntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfErrors" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateLastEdited" Type="Edm.DateTime" />
+        <Property Name="BatchPrintedFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="Invoices" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.Invoice)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="Invoice">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="ShipToLocationCode" Type="Edm.String" />
+        <Property Name="SpecialInstructions" Type="Edm.String" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="TransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="PONumber" Type="Edm.String" />
+        <Property Name="InvoiceDescription" Type="Edm.String" />
+        <Property Name="InvoicePrinted" Type="Edm.String" Nullable="false" />
+        <Property Name="ApplytoDocument" Type="Edm.String" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="AsOfDate" Type="Edm.DateTime" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="RateOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="ExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ApplytoExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Terms" Type="Edm.String" />
+        <Property Name="TermsCodeOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="DueDate" Type="Edm.DateTime" />
+        <Property Name="DiscountDate" Type="Edm.DateTime" />
+        <Property Name="DiscountPercentage" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountAmountAvailable" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDetails" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Taxable" Type="Edm.String" Nullable="false" />
+        <Property Name="DoNotCalculationTax" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxAuthority1" Type="Edm.String" />
+        <Property Name="TaxAuthority2" Type="Edm.String" />
+        <Property Name="TaxAuthority3" Type="Edm.String" />
+        <Property Name="TaxAuthority4" Type="Edm.String" />
+        <Property Name="TaxAuthority5" Type="Edm.String" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NonTaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentTotalBeforeTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrepaymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfScheduledPayments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalPaymentAmountScheduled" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentTotalIncludingTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RecurringChargeCode" Type="Edm.String" />
+        <Property Name="DateGenerated" Type="Edm.DateTime" />
+        <Property Name="PrepaymentNumber" Type="Edm.String" />
+        <Property Name="RecurringBillingCycle" Type="Edm.String" />
+        <Property Name="ShipToLocationName" Type="Edm.String" />
+        <Property Name="ShipToAddressLine1" Type="Edm.String" />
+        <Property Name="ShipToAddressLine2" Type="Edm.String" />
+        <Property Name="ShipToAddressLine3" Type="Edm.String" />
+        <Property Name="ShipToAddressLine4" Type="Edm.String" />
+        <Property Name="ShipToCity" Type="Edm.String" />
+        <Property Name="ShipToStateProvince" Type="Edm.String" />
+        <Property Name="ShipToZipPostalCode" Type="Edm.String" />
+        <Property Name="ShipToCountry" Type="Edm.String" />
+        <Property Name="ShipToContactName" Type="Edm.String" />
+        <Property Name="ShipToPhoneNumber" Type="Edm.String" />
+        <Property Name="ShipToFaxNumber" Type="Edm.String" />
+        <Property Name="RateDate" Type="Edm.DateTime" />
+        <Property Name="CustNatlOverCreditFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="AmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="DrillDownApplicationSource" Type="Edm.String" />
+        <Property Name="DrillDownType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DrillDownLinkNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ForceRereadOfIBSTotals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipViaCode" Type="Edm.String" />
+        <Property Name="ShipViaDescription" Type="Edm.String" />
+        <Property Name="PropertyCode" Type="Edm.String" Nullable="false" />
+        <Property Name="PropertyValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="ErrorBatch" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ErrorEntry" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ShipToEmail" Type="Edm.String" />
+        <Property Name="ShipToContactsPhone" Type="Edm.String" />
+        <Property Name="ShipToContactsFax" Type="Edm.String" />
+        <Property Name="ShipToContactsEmail" Type="Edm.String" />
+        <Property Name="DiscountBaseWithTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountBaseWithoutTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountBase" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoiceType" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageInvoice" Type="Edm.String" Nullable="false" />
+        <Property Name="OriginalDocumentNumber" Type="Edm.String" />
+        <Property Name="HasRetainage" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PercentRetained" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DaysRetained" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetainageDueDate" Type="Edm.DateTime" />
+        <Property Name="RetainageTermsCode" Type="Edm.String" />
+        <Property Name="RetainageDueDateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageAmountOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageExchangeRate" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ARVersionCreatedIn" Type="Edm.String" />
+        <Property Name="TaxStateVersion" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReportRetainageTax" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxReportingCurrencyCode" Type="Edm.String" />
+        <Property Name="TaxReportingCalculateMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingRateType" Type="Edm.String" />
+        <Property Name="TaxReportingRateDate" Type="Edm.DateTime" />
+        <Property Name="TaxReportingRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingRateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionWithTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionWithoutTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalPrepaymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalAmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LabelPrinted" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageAmountFromDetails" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ShipmentNumber" Type="Edm.String" />
+        <Property Name="DoOECostingAndConsolidation" Type="Edm.String" Nullable="false" />
+        <Property Name="EnteredBy" Type="Edm.String" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="InvoiceDetails" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.InvoiceDetail)" Nullable="false" />
+        <Property Name="InvoicePaymentSchedules" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.InvoicePaymentSchedule)" Nullable="false" />
+        <Property Name="InvoiceOptionalFields" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.InvoiceOptionalField)" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Item">
+        <Key>
+          <PropertyRef Name="ItemNumber" />
+        </Key>
+        <Property Name="ItemNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="CommodityCode" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="DistributionCode" Type="Edm.String" />
+        <Property Name="Comment" Type="Edm.String" />
+        <Property Name="Discountable" Type="Edm.String" Nullable="false" />
+        <Property Name="RevenueAccount" Type="Edm.String" />
+        <Property Name="InventoryAccount" Type="Edm.String" />
+        <Property Name="COGSAccount" Type="Edm.String" />
+        <Property Name="ItemPricing" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ItemPricing)" Nullable="false" />
+        <Property Name="ItemTaxClasses" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ItemTaxClasse)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="ItemPricing">
+        <Property Name="ItemNumber" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="UnitOfMeasure" Type="Edm.String" />
+        <Property Name="ItemCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ItemPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase" Type="Edm.Decimal" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ItemTaxClasse">
+        <Property Name="ItemNumber" Type="Edm.String" />
+        <Property Name="TaxAuthority" Type="Edm.String" />
+        <Property Name="TaxClass" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxIncluded" Type="Edm.String" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="ItemStatistic">
+        <Key>
+          <PropertyRef Name="ItemNumber" />
+          <PropertyRef Name="UnitOfMeasure" />
+          <PropertyRef Name="Year" />
+          <PropertyRef Name="Period" />
+        </Key>
+        <Property Name="ItemNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" />
+        <Property Name="Year" Type="Edm.String" Nullable="false" />
+        <Property Name="Period" Type="Edm.String" Nullable="false" />
+        <Property Name="DateOfLastSale" Type="Edm.DateTime" />
+        <Property Name="NumberOfSales" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfReturns" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalAmountSold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalAmountReturned" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCostOfGoodsSold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalGrossMargin" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="QuantitySold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfSales" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfReturns" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalAmountSold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalAmountReturned" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalCostOfGoodsSold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalGrossMargin" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDQuantitySold" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDDateOfLastSale" Type="Edm.DateTime" />
+        <Property Name="EnableYTDCalculations" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="NationalAccount">
+        <Key>
+          <PropertyRef Name="NationalAccountNumber" />
+        </Key>
+        <Property Name="NationalAccountNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="GroupCode" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="OnHold" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditBureauNumber" Type="Edm.String" />
+        <Property Name="CreditBureauRating" Type="Edm.String" />
+        <Property Name="CreditBureauDate" Type="Edm.DateTime" />
+        <Property Name="NationalAccountName" Type="Edm.String" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="AddressLine3" Type="Edm.String" />
+        <Property Name="AddressLine4" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvince" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="PhoneNumber" Type="Edm.String" />
+        <Property Name="FaxNumber" Type="Edm.String" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="AutocashProfile" Type="Edm.String" />
+        <Property Name="BillingCycle" Type="Edm.String" />
+        <Property Name="InterestProfile" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="PrintStatements" Type="Edm.String" Nullable="false" />
+        <Property Name="AccountType" Type="Edm.String" Nullable="false" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="CreditLimit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BalanceDueInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BalanceDueInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLastStatement" Type="Edm.DateTime" />
+        <Property Name="LastStatementTotalCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastStatementTotalFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateBalanceForwardBegins" Type="Edm.DateTime" />
+        <Property Name="BalanceForwardCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BalanceForwardFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOpenDocuments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfPaidInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AverageDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateOfLargestInvoice" Type="Edm.DateTime" />
+        <Property Name="DateOfHighestBalance" Type="Edm.DateTime" />
+        <Property Name="DateOfLargestInvoiceLastYear" Type="Edm.DateTime" />
+        <Property Name="DateOfHighestBalanceLastYear" Type="Edm.DateTime" />
+        <Property Name="DateOfLastActivity" Type="Edm.DateTime" />
+        <Property Name="DateOfLastInvoice" Type="Edm.DateTime" />
+        <Property Name="DateOfLastCreditNote" Type="Edm.DateTime" />
+        <Property Name="DateOfLastDebitNote" Type="Edm.DateTime" />
+        <Property Name="DateOfLastReceipt" Type="Edm.DateTime" />
+        <Property Name="DateOfLastDiscount" Type="Edm.DateTime" />
+        <Property Name="DateOfLastAdjustment" Type="Edm.DateTime" />
+        <Property Name="DateOfLastWriteOff" Type="Edm.DateTime" />
+        <Property Name="DateOfLastReturnedCheck" Type="Edm.DateTime" />
+        <Property Name="DateOfLastInterestCharge" Type="Edm.DateTime" />
+        <Property Name="LargestInvoiceNumber" Type="Edm.String" />
+        <Property Name="LargestInvoiceNumberLastYear" Type="Edm.String" />
+        <Property Name="LargestInvoiceCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighestBalanceCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceLastYearCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighBalanceLastYearCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastCreditNoteAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDebitNoteAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReceiptCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDiscountAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastAdjustmentAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastWriteOffAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReturnedCheckAmountCustomerCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInterestChargeCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighestBalanceFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LargestInvoiceLastYearFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HighBalanceLastYearFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastCreditNoteAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDebitNoteAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReceiptFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastDiscountAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastAdjustmentAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastWriteOffAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastReturnedCheckAmountFunctionalCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInterestChargeFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="WebSite" Type="Edm.String" />
+        <Property Name="ContactsPhone" Type="Edm.String" />
+        <Property Name="ContactsFax" Type="Edm.String" />
+        <Property Name="ContactsEmail" Type="Edm.String" />
+        <Property Name="DeliveryMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="AmountRetainedCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountRetainedFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="DateOfLastRefund" Type="Edm.DateTime" />
+        <Property Name="LastRefundAmountCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastRefundAmountFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckCreditLimit" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckOverdueAmounts" Type="Edm.String" Nullable="false" />
+        <Property Name="DaysOverdue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AmountOverdue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NationalAccountOptionalField" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.NationalAccountOptionalField)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="NationalAccountOptionalField">
+        <Property Name="NationalAccount" Type="Edm.String" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="NationalAccountOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="NationalAccountStatistic">
+        <Key>
+          <PropertyRef Name="NationalAccountNumber" />
+          <PropertyRef Name="Year" />
+          <PropertyRef Name="Period" />
+        </Key>
+        <Property Name="NationalAccountNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="Year" Type="Edm.String" Nullable="false" />
+        <Property Name="Period" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfCreditNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDebitNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfReceipts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDiscounts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfAdjustments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfWriteOffs" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfInterestCharges" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfReturnedChecks" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfInvoicesPaid" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AverageDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInvoicesInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCreditsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDebitsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalReceiptsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDiscountsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalAdjustmentsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalWriteOffsInFunctionalCurren" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInterestInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalReturnedChecksFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInvoicesPaidFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInvoicesInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCreditsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDebitsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalReceiptsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDiscountsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalAdjustmentsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalWriteOffsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInterestInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalReturnedChecksCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInvoicesPaidCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfRefunds" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalRefundsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalRefundsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfCredits" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfDebits" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfReceipts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfDiscounts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfAdjustments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfWriteOffs" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfInterestCharges" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfReturnedChecks" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfInvoicesPaid" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfRefunds" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInvoicesInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDCreditsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDDebitsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDReceiptsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDDiscountsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDAdjustmentsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDWriteOffsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInterestInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDReturnedChecksInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInvoicesPaidInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDRefundsInFunctionalCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInvoicesInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDCreditsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDDebitsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDReceiptsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDDiscountsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDAdjustmentsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDWriteOffsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInterestInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDReturnedChecksInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDInvoicesPaidInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDRefundsInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDAverageDaysToPay" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EnableYTDCalculations" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PaymentCode">
+        <Key>
+          <PropertyRef Name="PaymentCodeKey" />
+        </Key>
+        <Property Name="PaymentCodeKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="PaymentType" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Payment">
+        <Key>
+          <PropertyRef Name="CustomerNumber" />
+          <PropertyRef Name="DocumentNumber" />
+          <PropertyRef Name="SequenceNumber" />
+        </Key>
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="SequenceNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PaymentCode" Type="Edm.String" />
+        <Property Name="PaymentType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="BankCode" Type="Edm.String" />
+        <Property Name="CheckNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="GLAccountTobeCredited" Type="Edm.String" />
+        <Property Name="NameOnCheck" Type="Edm.String" />
+        <Property Name="CheckLanguage" Type="Edm.String" />
+        <Property Name="PaymentCurrency" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="RateDate" Type="Edm.DateTime" />
+        <Property Name="ExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="RateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="PaymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="DateCleared" Type="Edm.DateTime" />
+        <Property Name="DateReversed" Type="Edm.DateTime" />
+        <Property Name="ReasonForReturn" Type="Edm.String" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="ClientUniqueID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="CreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="ProcessingCode" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PostedDocument">
+        <Key>
+          <PropertyRef Name="CustomerNumber" />
+          <PropertyRef Name="DocumentNumber" />
+        </Key>
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckReceiptNumber" Type="Edm.String" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="PONumber" Type="Edm.String" />
+        <Property Name="DueDate" Type="Edm.DateTime" />
+        <Property Name="NationalAccountNumber" Type="Edm.String" />
+        <Property Name="ShipToLocation" Type="Edm.String" />
+        <Property Name="TransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchDate" Type="Edm.DateTime" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="GroupCode" Type="Edm.String" />
+        <Property Name="DocumentDescription" Type="Edm.String" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="AsofDate" Type="Edm.DateTime" />
+        <Property Name="Terms" Type="Edm.String" />
+        <Property Name="DiscountDate" Type="Edm.DateTime" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="RateOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="ExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyAmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyTaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyNonTaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyTaxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyAmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyTaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyNonTaxableAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyTaxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FullyPaid" Type="Edm.String" Nullable="false" />
+        <Property Name="LastActivityDate" Type="Edm.DateTime" />
+        <Property Name="LastStatementDate" Type="Edm.DateTime" />
+        <Property Name="NumberOfScheduledPayments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentNumberOnLastStatement" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastAppliedPaymentSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DoNotCalculationTax" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxAuthority1" Type="Edm.String" />
+        <Property Name="TaxAuthority2" Type="Edm.String" />
+        <Property Name="TaxAuthority3" Type="Edm.String" />
+        <Property Name="TaxAuthority4" Type="Edm.String" />
+        <Property Name="TaxAuthority5" Type="Edm.String" />
+        <Property Name="FunctionalBaseAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalBaseAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalBaseAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalBaseAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalBaseAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerBaseAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerBaseAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerBaseAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerBaseAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerBaseAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="PrepaymentApplytoDocumentNumber" Type="Edm.String" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="RateDate" Type="Edm.DateTime" />
+        <Property Name="RateOperator" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LastActivityYearPeriod" Type="Edm.String" />
+        <Property Name="BankCode" Type="Edm.String" />
+        <Property Name="DepositNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="HasRetainage" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageOutstanding" Type="Edm.String" Nullable="false" />
+        <Property Name="DateRetainageDue" Type="Edm.DateTime" />
+        <Property Name="FunctionalCurrencyOriginalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCurrencyRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyOriginalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTermsCode" Type="Edm.String" />
+        <Property Name="RetainageExchangeRate" Type="Edm.String" Nullable="false" />
+        <Property Name="OriginalDocumentNumber" Type="Edm.String" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ARVersionCreatedIn" Type="Edm.String" />
+        <Property Name="InvoiceType" Type="Edm.String" Nullable="false" />
+        <Property Name="DepositSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DepositLineNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="NumberOfOBLJDetails" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxReportingCurrencyCode" Type="Edm.String" />
+        <Property Name="TaxReportingExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingRateType" Type="Edm.String" />
+        <Property Name="TaxReportingRateDate" Type="Edm.DateTime" />
+        <Property Name="TaxReportingRateOperator" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxReportingRateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="ReportRetainageTax" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxStateVersion" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxReportingCalculateMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ShipmentNumber" Type="Edm.String" />
+        <Property Name="EarliestBackdatedActivityDate" Type="Edm.DateTime" />
+        <Property Name="LastRevaluationDate" Type="Edm.DateTime" />
+        <Property Name="OriginalExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OriginalRateType" Type="Edm.String" />
+        <Property Name="OriginalRateDate" Type="Edm.DateTime" />
+        <Property Name="OriginalRateOperator" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OriginalRateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="DatePaid" Type="Edm.DateTime" />
+        <Property Name="MiscellaneousReceiptFlag" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TerritotyCode" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PostedReceipt">
+        <Key>
+          <PropertyRef Name="BankCode" />
+          <PropertyRef Name="CustomerNumber" />
+          <PropertyRef Name="CheckReceiptNumber" />
+          <PropertyRef Name="DepositSerialNumber" />
+          <PropertyRef Name="DepositLineNumber" />
+          <PropertyRef Name="ReceiptDate" />
+        </Key>
+        <Property Name="BankCode" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckReceiptNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="DepositSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DepositLineNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReceiptDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DepositNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchDate" Type="Edm.DateTime" />
+        <Property Name="CustomerReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentCode" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="BankRateType" Type="Edm.String" />
+        <Property Name="BankExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankRateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="ReasonForReturn" Type="Edm.String" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="LastStatementDate" Type="Edm.DateTime" />
+        <Property Name="AmountOfRoundingError" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankToFunctionalRateDate" Type="Edm.DateTime" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="Payer" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckCleared" Type="Edm.String" Nullable="false" />
+        <Property Name="FunctionalReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateCleared" Type="Edm.DateTime" />
+        <Property Name="DateReturned" Type="Edm.DateTime" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="RateOperator" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PaymentType" Type="Edm.String" Nullable="false" />
+        <Property Name="DrillDownApplicationSource" Type="Edm.String" />
+        <Property Name="DrillDownType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DrillDownLinkNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MiscellaneousReceiptFlag" Type="Edm.Int32" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="InvoiceNumber" Type="Edm.String" />
+        <Property Name="CalculateTax" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxAuthority1" Type="Edm.String" />
+        <Property Name="TaxAuthority2" Type="Edm.String" />
+        <Property Name="TaxAuthority3" Type="Edm.String" />
+        <Property Name="TaxAuthority4" Type="Edm.String" />
+        <Property Name="TaxAuthority5" Type="Edm.String" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingCurrencyCode" Type="Edm.String" />
+        <Property Name="TaxReportingCalculateMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingRateType" Type="Edm.String" />
+        <Property Name="TaxReportingRateDate" Type="Edm.DateTime" />
+        <Property Name="TaxReportingRateOperator" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxReportingAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfAdvanceCreditClaims" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TotalAdvanceCreditClaim" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTotalAdvanceCreditClaim" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="CreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="ProcessingCode" Type="Edm.String" />
+        <Property Name="CardNumber" Type="Edm.String" />
+        <Property Name="CardType" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PostInvoice">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="PostAllBatches" Type="Edm.String" Nullable="false" />
+        <Property Name="PostBatchFrom" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostBatchTo" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PostReceiptsAndAdjustment">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="PostAllBatches" Type="Edm.String" Nullable="false" />
+        <Property Name="PostBatchFrom" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostBatchTo" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PostRefund">
+        <Key>
+          <PropertyRef Name="ActionSelector" />
+        </Key>
+        <Property Name="PostAllBatches" Type="Edm.String" Nullable="false" />
+        <Property Name="PostBatchFrom" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostBatchTo" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ActionSelector" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ReceiptAndAdjustmentBatch">
+        <Key>
+          <PropertyRef Name="BatchRecordType" />
+          <PropertyRef Name="BatchNumber" />
+        </Key>
+        <Property Name="BatchRecordType" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchDate" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="NumberOfEntries" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchType" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="BankCode" Type="Edm.String" />
+        <Property Name="DepositSlipPrinted" Type="Edm.String" Nullable="false" />
+        <Property Name="DefaultBankCurrency" Type="Edm.String" />
+        <Property Name="BankRateDate" Type="Edm.DateTime" />
+        <Property Name="LastEntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankRateType" Type="Edm.String" />
+        <Property Name="BankExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DepositNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DepositSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FunctionalAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalAppliedDocumentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalBatchTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfErrors" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateLastEdited" Type="Edm.DateTime" />
+        <Property Name="BatchTypeClass" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchPrintedFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="BankRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="BankRateOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="DepositDate" Type="Edm.DateTime" />
+        <Property Name="DepositComment" Type="Edm.String" />
+        <Property Name="NumberOfReapplies" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReceiptsAdjustments" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ReceiptsAdjustment)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="ReceiptsAdjustment">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckReceiptNumber" Type="Edm.String" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="ReceiptDateAdjustmentDate" Type="Edm.DateTime" />
+        <Property Name="EntryDescription" Type="Edm.String" />
+        <Property Name="EntryReference" Type="Edm.String" />
+        <Property Name="BankReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerRateOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfDocumentsAppliedto" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerAmountApplied" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentCode" Type="Edm.String" />
+        <Property Name="CustomerCurrencyCode" Type="Edm.String" />
+        <Property Name="BankRateType" Type="Edm.String" />
+        <Property Name="BankExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankRateOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="ReceiptTransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="MatchingDocumentNumber" Type="Edm.String" />
+        <Property Name="LastLineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="Payer" Type="Edm.String" />
+        <Property Name="CustomerRateDate" Type="Edm.DateTime" />
+        <Property Name="CustomerRateType" Type="Edm.String" />
+        <Property Name="CustomerAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankRateDate" Type="Edm.DateTime" />
+        <Property Name="PaymentType" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerUnappliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankUnappliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="FunctionalAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BankRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="TotalFunctionalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalFunctionalDebitAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalFunctionalCreditAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerDebitAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerCreditAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="JobApplyMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="ErrorBatch" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ErrorEntry" Type="Edm.Int64" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="BankCode" Type="Edm.String" />
+        <Property Name="BankCurrencyCode" Type="Edm.String" />
+        <Property Name="DrillDownApplicationSource" Type="Edm.String" />
+        <Property Name="DrillDownType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DrillDownLinkNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReceiptPrinted" Type="Edm.String" Nullable="false" />
+        <Property Name="CalculateTax" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxStateVersion" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxAuthority1" Type="Edm.String" />
+        <Property Name="TaxAuthority2" Type="Edm.String" />
+        <Property Name="TaxAuthority3" Type="Edm.String" />
+        <Property Name="TaxAuthority4" Type="Edm.String" />
+        <Property Name="TaxAuthority5" Type="Edm.String" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DepositSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DepositLineNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxReportingCurrencyCode" Type="Edm.String" />
+        <Property Name="TaxReportingCalculateMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingRateType" Type="Edm.String" />
+        <Property Name="TaxReportingRateDate" Type="Edm.DateTime" />
+        <Property Name="TaxReportingRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingRateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxReportingAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfAdvanceCreditClaims" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TotalAdvanceCreditClaim" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTotalAdvanceCreditClaim" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTotalCustomerAmountApplied" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FuncCustomerUnappliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ARVersionCreatedIn" Type="Edm.String" />
+        <Property Name="EnteredBy" Type="Edm.String" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="PreviousCreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="PreviousCreditCardProcessStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="CurrentCreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="CurrentCreditCardProcessStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="ProcessingCode" Type="Edm.String" />
+        <Property Name="TransactionID" Type="Edm.String" />
+        <Property Name="XMLString" Type="Edm.String" />
+        <Property Name="ResponseIndicator" Type="Edm.String" />
+        <Property Name="ResponseCode" Type="Edm.String" />
+        <Property Name="ResponseMessage" Type="Edm.String" />
+        <Property Name="AuthorizationCode" Type="Edm.String" />
+        <Property Name="AVSResult" Type="Edm.String" />
+        <Property Name="CVVResult" Type="Edm.String" />
+        <Property Name="TransactionDate" Type="Edm.String" />
+        <Property Name="VANReference" Type="Edm.String" />
+        <Property Name="Last4" Type="Edm.String" />
+        <Property Name="PaymentDescription" Type="Edm.String" />
+        <Property Name="PaymentTypeID" Type="Edm.String" />
+        <Property Name="MiscellaneousReceipts" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.MiscellaneousReceipt)" Nullable="false" />
+        <Property Name="AppliedReceiptsAdjustments" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.AppliedReceiptsAdjustment)" Nullable="false" />
+        <Property Name="ReceiptAdjustmentOptionalFiel" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ReceiptAdjustmentOptionalFiel)" Nullable="false" />
+        <Property Name="AdvanceCredits" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.AdvanceCredit)" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="RecurringCharge">
+        <Key>
+          <PropertyRef Name="RecurringChargeCode" />
+          <PropertyRef Name="CustomerNumber" />
+        </Key>
+        <Property Name="RecurringChargeCode" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="LastInvoiceDateGenerated" Type="Edm.DateTime" />
+        <Property Name="EffectiveDate" Type="Edm.DateTime" />
+        <Property Name="ExpirationDate" Type="Edm.DateTime" />
+        <Property Name="MaximumTotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ShipToLocation" Type="Edm.String" />
+        <Property Name="SpecialInstructions" Type="Edm.String" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="PONumber" Type="Edm.String" />
+        <Property Name="InvoiceDescription" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="Terms" Type="Edm.String" />
+        <Property Name="LastLineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Taxable" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxAuthority1" Type="Edm.String" />
+        <Property Name="TaxAuthority2" Type="Edm.String" />
+        <Property Name="TaxAuthority3" Type="Edm.String" />
+        <Property Name="TaxAuthority4" Type="Edm.String" />
+        <Property Name="TaxAuthority5" Type="Edm.String" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceAmountPosted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoiceSubtotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumNumberOfInvoices" Type="Edm.Int32" Nullable="false" />
+        <Property Name="YTDNumberOfInvoices" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Schedule" Type="Edm.String" />
+        <Property Name="ScheduleLink" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExpirationType" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipViaCode" Type="Edm.String" />
+        <Property Name="ShipViaDescription" Type="Edm.String" />
+        <Property Name="InvoiceTotalBeforeTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoiceTotalIncludingTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalTaxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoiceType" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="NextScheduledDate" Type="Edm.DateTime" />
+        <Property Name="UnpostedNumberOfInvoices" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UnpostedTotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostedNumberOfInvoices" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PostedTotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastInvoiceDatePosted" Type="Edm.DateTime" />
+        <Property Name="LastInvoiceNumberPosted" Type="Edm.String" />
+        <Property Name="LastBatchNumberPosted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastEntryNumberPosted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastPostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AccountSet" Type="Edm.String" />
+        <Property Name="RecurringChargeDetails" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RecurringChargeDetail)" Nullable="false" />
+        <Property Name="RecurringChargeOptionalFields" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RecurringChargeOptionalField)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="RecurringChargeDetail">
+        <Property Name="RecurringChargeCode" Type="Edm.String" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ItemNumber" Type="Edm.String" />
+        <Property Name="DistributionCode" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="UnitOfMeasure" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExtendedAmountWithTIP" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="COGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExtendedAmountWithoutTIP" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalTaxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxIncluded1" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded2" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded3" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded4" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded5" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxRate1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RevenueAccount" Type="Edm.String" />
+        <Property Name="DistributedAmountBeforeTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Discountable" Type="Edm.String" Nullable="false" />
+        <Property Name="InventoryAccount" Type="Edm.String" />
+        <Property Name="COGSAccount" Type="Edm.String" />
+        <Property Name="Comments" Type="Edm.String" />
+        <Property Name="PrintComment" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ItemCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="Contract" Type="Edm.String" />
+        <Property Name="Project" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="ProjectCategoryResource" Type="Edm.String" />
+        <Property Name="CostClass" Type="Edm.String" Nullable="false" />
+        <Property Name="RecChargeDetailOptionalFields" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RecChargeDetailOptionalField)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="RecurringChargeOptionalField">
+        <Property Name="RecurringChargeCode" Type="Edm.String" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="RecurringChargeOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="RefundBatch">
+        <Key>
+          <PropertyRef Name="BatchNumber" />
+        </Key>
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchDate" Type="Edm.DateTime" />
+        <Property Name="BatchDescription" Type="Edm.String" />
+        <Property Name="BatchType" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfEntries" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalOfEntries" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LastEntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostingSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfErrors" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateCreated" Type="Edm.DateTime" />
+        <Property Name="DateLastEdited" Type="Edm.DateTime" />
+        <Property Name="BatchPrintedFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfPrintedChecks" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RefundEntries" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RefundEntrie)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="RefundEntrie">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentDescription" Type="Edm.String" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="FiscalYear" Type="Edm.String" />
+        <Property Name="FiscalPeriod" Type="Edm.String" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="RefundAmountCustomer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RefundAmountFunctional" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrency" Type="Edm.String" />
+        <Property Name="RateType" Type="Edm.String" />
+        <Property Name="RateDate" Type="Edm.DateTime" />
+        <Property Name="ExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="RateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="DateCreated" Type="Edm.DateTime" />
+        <Property Name="DateLastEdited" Type="Edm.DateTime" />
+        <Property Name="NumberOfDetails" Type="Edm.Int64" Nullable="false" />
+        <Property Name="JobApplyMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SourceApplication" Type="Edm.String" />
+        <Property Name="ErrorBatch" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ErrorEntry" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CashBankAccount" Type="Edm.String" />
+        <Property Name="CashGLAccount" Type="Edm.String" />
+        <Property Name="CashPaymentCurrency" Type="Edm.String" />
+        <Property Name="CashRateType" Type="Edm.String" />
+        <Property Name="CashRateDate" Type="Edm.DateTime" />
+        <Property Name="CashExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CashRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="CashRateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="CashAmountPayment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CashAmountCustomer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CashAmountFunctional" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckBankAccount" Type="Edm.String" />
+        <Property Name="CheckPrintingRequired" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckHasBeenPrinted" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CheckPaymentCurrency" Type="Edm.String" />
+        <Property Name="CheckRateType" Type="Edm.String" />
+        <Property Name="CheckRateDate" Type="Edm.DateTime" />
+        <Property Name="CheckExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckRateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="CheckAmountPayment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckAmountCustomer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CheckAmountFunctional" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemitToName" Type="Edm.String" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="AddressLine3" Type="Edm.String" />
+        <Property Name="AddressLine4" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvince" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="CheckLanguage" Type="Edm.String" />
+        <Property Name="CreditCardAmountCustomer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="EnteredBy" Type="Edm.String" />
+        <Property Name="PostingDate" Type="Edm.DateTime" />
+        <Property Name="NumberOfSPSCreditCardDetails" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OriginalCreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="PreviousCreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="PreviousCreditCardProcessStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="CurrentCreditCardTransactionNumber" Type="Edm.String" />
+        <Property Name="CurrentCreditCardProcessStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="ProcessingCode" Type="Edm.String" />
+        <Property Name="RefundDetails" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RefundDetail)" Nullable="false" />
+        <Property Name="RefundOptionalFields" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RefundOptionalField)" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Salesperson">
+        <Key>
+          <PropertyRef Name="SalespersonKey" />
+        </Key>
+        <Property Name="SalespersonKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="EmployeeNumber" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="CommissionsPaid" Type="Edm.String" Nullable="false" />
+        <Property Name="AnnualSalesTarget" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumSalesForRate1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumSalesForRate2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumSalesForRate3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumSalesForRate4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionRate1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionRate2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionRate3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionRate4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionRate5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionableSales" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostOfCommissionableSales" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateLastCleared" Type="Edm.DateTime" />
+      </EntityType>
+      <EntityType Name="SalespersonStatistic">
+        <Key>
+          <PropertyRef Name="Salesperson" />
+          <PropertyRef Name="Year" />
+          <PropertyRef Name="Period" />
+        </Key>
+        <Property Name="Salesperson" Type="Edm.String" Nullable="false" />
+        <Property Name="Year" Type="Edm.String" Nullable="false" />
+        <Property Name="Period" Type="Edm.String" Nullable="false" />
+        <Property Name="NumberOfInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfCreditNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDebitNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfReceipts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfDiscounts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfWriteOffs" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCreditNoteAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDebitNoteAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalWriteOffAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfInvoices" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfCreditNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfDebitNotes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfReceipts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfDiscounts" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDNumberOfWriteOffs" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalCreditNoteAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalDebitNoteAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="YTDTotalWriteOffAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EnableYTDCalculations" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ShipToLocation">
+        <Key>
+          <PropertyRef Name="CustomerNumber" />
+          <PropertyRef Name="ShipToLocationKey" />
+        </Key>
+        <Property Name="CustomerNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipToLocationKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="AddressLine3" Type="Edm.String" />
+        <Property Name="AddressLine4" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvince" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="PhoneNumber" Type="Edm.String" />
+        <Property Name="FaxNumber" Type="Edm.String" />
+        <Property Name="TerritoryCode" Type="Edm.String" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber1" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber2" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber3" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber4" Type="Edm.String" />
+        <Property Name="TaxRegistrationNumber5" Type="Edm.String" />
+        <Property Name="TaxClassCode1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClassCode5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SpecialInstructions" Type="Edm.String" />
+        <Property Name="Salesperson1" Type="Edm.String" />
+        <Property Name="Salesperson2" Type="Edm.String" />
+        <Property Name="Salesperson3" Type="Edm.String" />
+        <Property Name="Salesperson4" Type="Edm.String" />
+        <Property Name="Salesperson5" Type="Edm.String" />
+        <Property Name="SalesSplitPercentage1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesSplitPercentage5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerPriceList" Type="Edm.String" />
+        <Property Name="FreeOnBoard" Type="Edm.String" />
+        <Property Name="ShipViaCode" Type="Edm.String" />
+        <Property Name="ShipViaDescription" Type="Edm.String" />
+        <Property Name="PrimaryShipToIndicator" Type="Edm.String" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="ContactsPhone" Type="Edm.String" />
+        <Property Name="ContactsFax" Type="Edm.String" />
+        <Property Name="ContactsEmail" Type="Edm.String" />
+        <Property Name="NumberOfOptionalFields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="InventoryLocation" Type="Edm.String" />
+        <Property Name="SuppressIntegration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ARVersion" Type="Edm.String" />
+        <Property Name="Database" Type="Edm.String" />
+        <Property Name="Mode" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipToLocationsOptionalField" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ShipToLocationsOptionalField)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="ShipToLocationsOptionalField">
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="ShipToLocationCode" Type="Edm.String" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="ShipToLocationsOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="TermsCode">
+        <Key>
+          <PropertyRef Name="TermsCodeKey" />
+        </Key>
+        <Property Name="TermsCodeKey" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="InactiveDate" Type="Edm.DateTime" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="UsePaymentSchedule" Type="Edm.String" Nullable="false" />
+        <Property Name="CalculationBaseForDiscountwithTax" Type="Edm.String" Nullable="false" />
+        <Property Name="DiscountType" Type="Edm.String" Nullable="false" />
+        <Property Name="DiscountTableStartingDay1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableStartingDay2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableStartingDay3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableStartingDay4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableEndingDay1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableEndingDay2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableEndingDay3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableEndingDay4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableMonthsAdded1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableMonthsAdded2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableMonthsAdded3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableMonthsAdded4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableDayOfMonth1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableDayOfMonth2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableDayOfMonth3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountTableDayOfMonth4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateType" Type="Edm.String" Nullable="false" />
+        <Property Name="DueDateTableStartingDay1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableStartingDay2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableStartingDay3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableStartingDay4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableEndingDay1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableEndingDay2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableEndingDay3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableEndingDay4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableMonthsAdded1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableMonthsAdded2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableMonthsAdded3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableMonthsAdded4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableDayOfMonth1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableDayOfMonth2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableDayOfMonth3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDateTableDayOfMonth4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberOfPayments" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalPercentDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TermsPaymentSchedules" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.TermsPaymentSchedule)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="TermsPaymentSchedule">
+        <Property Name="TermsCode" Type="Edm.String" />
+        <Property Name="PaymentNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DateLastMaintained" Type="Edm.DateTime" />
+        <Property Name="PercentDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountNumberOfDays" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountDayOfMonth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueNumberOfDays" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDayOfMonth" Type="Edm.Decimal" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="InvoiceDetail">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ItemNumber" Type="Edm.String" />
+        <Property Name="DistributionCode" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="UnitOfMeasure" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExtendedAmountWithTIP" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="COGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExtendedAmountWithoutTIP" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxIncluded1" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded2" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded3" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded4" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded5" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxRate1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RevenueAccount" Type="Edm.String" />
+        <Property Name="InventoryAccount" Type="Edm.String" />
+        <Property Name="COGSAccount" Type="Edm.String" />
+        <Property Name="Comments" Type="Edm.String" />
+        <Property Name="PrintComment" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ItemCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Contract" Type="Edm.String" />
+        <Property Name="Project" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="ProjectCategoryResource" Type="Edm.String" />
+        <Property Name="TransactionNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CostClass" Type="Edm.String" Nullable="false" />
+        <Property Name="BillingDate" Type="Edm.DateTime" />
+        <Property Name="CommentAttached" Type="Edm.String" Nullable="false" />
+        <Property Name="Discountable" Type="Edm.String" Nullable="false" />
+        <Property Name="OriginalLineIdentifier" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PercentRetained" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DaysRetained" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetainageDueDate" Type="Edm.DateTime" />
+        <Property Name="RetainageDueDateOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageAmountOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="Values" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProcessCommandCode" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageDistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageCOGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageAlternateBaseAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoicedRetainageDistribution" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoicedRetainageCOGS" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoicedRetainageAlternateBas" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCOGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalExtendedAmountWithTIP" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5Total" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrencyRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrencyRetainageDistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrencyCOGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrencyAlternateBaseAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InvoiceDetailOptionalFields" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.InvoiceDetailOptionalField)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="InvoiceDetailOptionalField">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="InvoiceDetailOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="InvoicePaymentSchedule">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DueDate" Type="Edm.DateTime" />
+        <Property Name="AmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountDate" Type="Edm.DateTime" />
+        <Property Name="DiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalAmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="InvoiceOptionalField">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="InvoiceOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="MiscellaneousReceipt">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionCode" Type="Edm.String" />
+        <Property Name="AccountNumber" Type="Edm.String" />
+        <Property Name="GLReference" Type="Edm.String" />
+        <Property Name="GLDescription" Type="Edm.String" />
+        <Property Name="TaxClass1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass3" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass4" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxClass5" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TaxIncluded1" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded2" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded3" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded4" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxIncluded5" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxRate5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDistributionAmountNetOfTaxes" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="COGSAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AlternateTaxBaseAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxReportingTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxBase5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount3" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount4" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxAmount5" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTaxTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Contract" Type="Edm.String" />
+        <Property Name="Project" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="ProjectCategoryResource" Type="Edm.String" />
+        <Property Name="CostClass" Type="Edm.String" Nullable="false" />
+        <Property Name="BillingDate" Type="Edm.DateTime" />
+      </ComplexType>
+      <ComplexType Name="AppliedReceiptsAdjustment">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="PaymentNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="PaymentResolution" Type="Edm.String" />
+        <Property Name="CustomerReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerDiscountAmountTaken" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NextAdjustmentSequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerAdjustmentTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AdjustmentNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Reference" Type="Edm.String" />
+        <Property Name="GeneratedPPUCNumber" Type="Edm.String" />
+        <Property Name="PPMatchingDocumentNumber" Type="Edm.String" />
+        <Property Name="PPMatchingDocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentAmountDue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountAmountAvailable" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentNetBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PendingReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PendingDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PendingAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerDebitAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalCustomerCreditAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="JobTotalPaymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="JobTotalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="JobApplyMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageDebitAmountCustomerCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageCreditAmountCustomerCurr" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageDueDate" Type="Edm.DateTime" />
+        <Property Name="RetainageTermsCode" Type="Edm.String" />
+        <Property Name="RetainageExchangeRate" Type="Edm.String" Nullable="false" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="UnappliedJobPaymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UnappliedJobDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TRXTYPEID" Type="Edm.String" Nullable="false" />
+        <Property Name="ReceiptTransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="HasRetainage" Type="Edm.String" Nullable="false" />
+        <Property Name="RetainageBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OriginalDocumentNumber" Type="Edm.String" />
+        <Property Name="ReceivablesAdjustmentTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OriginalExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="FunctionalReceiptAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTotalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalTotalAdjustmentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentVersionCreatedIn" Type="Edm.String" />
+        <Property Name="CustomerCurrencyCode" Type="Edm.String" />
+        <Property Name="AdjustmentGLDistributions" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.AdjustmentGLDistribution)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="AdjustmentGLDistribution">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TransactionType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DistributionCode" Type="Edm.String" />
+        <Property Name="DistributionGLAccount" Type="Edm.String" />
+        <Property Name="Contract" Type="Edm.String" />
+        <Property Name="Project" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="ProjectCategoryResource" Type="Edm.String" />
+        <Property Name="TransactionNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CostClass" Type="Edm.String" Nullable="false" />
+        <Property Name="DiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AppliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ItemNumber" Type="Edm.String" />
+        <Property Name="UnitOfMeasure" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BillingDate" Type="Edm.DateTime" />
+        <Property Name="RetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetainageDueDate" Type="Edm.DateTime" />
+        <Property Name="HasRetainage" Type="Edm.String" Nullable="false" />
+        <Property Name="FunctionalDistributionAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalAppliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalRetainageAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Reference" Type="Edm.String" />
+        <Property Name="DocumentLineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerCurrencyAmountDue" Type="Edm.Decimal" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ReceiptAdjustmentOptionalFiel">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="ReceiptAdjustmentOptionalFielType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="AdvanceCredit">
+        <Property Name="BatchType" Type="Edm.String" />
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Reference" Type="Edm.String" />
+        <Property Name="ClaimAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FunctionalClaimAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="RecChargeDetailOptionalField">
+        <Property Name="RecurringChargeCode" Type="Edm.String" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="OptionalFieldValue" Type="Edm.String" />
+        <Property Name="RecChargeDetailOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="RefundDetail">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentNumber" Type="Edm.String" />
+        <Property Name="PaymentNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PaymentType" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardBankAccount" Type="Edm.String" />
+        <Property Name="CreditCardBankSerialNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreditCardPaymentCurrency" Type="Edm.String" />
+        <Property Name="CreditCardRateType" Type="Edm.String" />
+        <Property Name="CreditCardRateDate" Type="Edm.DateTime" />
+        <Property Name="CreditCardExchangeRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditCardRateOperator" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardRateOverrideFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="AmountPayment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountCustomer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountFunctional" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="JobRelated" Type="Edm.String" Nullable="false" />
+        <Property Name="JobApplyMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="JobAppliedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentDate" Type="Edm.DateTime" />
+        <Property Name="OriginalAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrentBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PendingBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NetBalance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UnappliedJobAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerNumber" Type="Edm.String" />
+        <Property Name="ProcessCommand" Type="Edm.String" Nullable="false" />
+        <Property Name="ReceiptDocumentNumber" Type="Edm.String" />
+        <Property Name="RefundDetailJobs" Type="Collection(Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RefundDetailJob)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="RefundDetailJob">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SequenceNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OriginalLineNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Contract" Type="Edm.String" />
+        <Property Name="Project" Type="Edm.String" />
+        <Property Name="Category" Type="Edm.String" />
+        <Property Name="ProjectCategoryResource" Type="Edm.String" />
+        <Property Name="TransactionNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CostClass" Type="Edm.String" Nullable="false" />
+        <Property Name="RefundAmountInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AmountDueInCustomerCurrency" Type="Edm.Decimal" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="RefundOptionalField">
+        <Property Name="BatchNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EntryNumber" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OptionalField" Type="Edm.String" />
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="RefundOptionalFieldType" Type="Edm.String" Nullable="false" />
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Decimals" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowBlank" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Validate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ValueSet" Type="Edm.String" Nullable="false" />
+        <Property Name="TypedValueFieldIndex" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TextValue" Type="Edm.String" />
+        <Property Name="AmountValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NumberValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IntegerValue" Type="Edm.Int64" Nullable="false" />
+        <Property Name="YesNoValue" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateValue" Type="Edm.DateTime" />
+        <Property Name="TimeValue" Type="Edm.DateTime" />
+        <Property Name="OptionalFieldDescription" Type="Edm.String" />
+        <Property Name="ValueDescription" Type="Edm.String" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Sage.CA.SBS.ERP.Sage300.Common.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="EntityError">
+        <Property Name="Message" Type="Edm.String" />
+        <Property Name="Priority" Type="Edm.String" Nullable="false" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="AccountSets" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.AccountSet" />
+        <EntitySet Name="BillingCycles" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.BillingCycle" />
+        <EntitySet Name="CommentTypes" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CommentType" />
+        <EntitySet Name="CreateGLBatch" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CreateGLBatch" />
+        <EntitySet Name="CreateRecurringCharge" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CreateRecurringCharge" />
+        <EntitySet Name="CreateRetainageDocumentBatch" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CreateRetainageDocumentBatch" />
+        <EntitySet Name="CustomerGroups" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.CustomerGroup" />
+        <EntitySet Name="Customers" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.Customer" />
+        <EntitySet Name="DistributionCodes" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.DistributionCode" />
+        <EntitySet Name="DunningMessages" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.DunningMessage" />
+        <EntitySet Name="InvoiceBatches" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.InvoiceBatch" />
+        <EntitySet Name="Items" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.Item" />
+        <EntitySet Name="ItemStatistics" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ItemStatistic" />
+        <EntitySet Name="NationalAccounts" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.NationalAccount" />
+        <EntitySet Name="NationalAccountStatistics" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.NationalAccountStatistic" />
+        <EntitySet Name="PaymentCodes" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PaymentCode" />
+        <EntitySet Name="Payments" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.Payment" />
+        <EntitySet Name="PostedDocuments" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PostedDocument" />
+        <EntitySet Name="PostedReceipts" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PostedReceipt" />
+        <EntitySet Name="PostInvoices" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PostInvoice" />
+        <EntitySet Name="PostReceiptsAndAdjustments" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PostReceiptsAndAdjustment" />
+        <EntitySet Name="PostRefunds" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.PostRefund" />
+        <EntitySet Name="ReceiptAndAdjustmentBatches" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ReceiptAndAdjustmentBatch" />
+        <EntitySet Name="RecurringCharges" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RecurringCharge" />
+        <EntitySet Name="RefundBatches" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.RefundBatch" />
+        <EntitySet Name="Salespersons" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.Salesperson" />
+        <EntitySet Name="SalespersonStatistics" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.SalespersonStatistic" />
+        <EntitySet Name="ShipToLocations" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.ShipToLocation" />
+        <EntitySet Name="TermsCodes" EntityType="Sage.CA.SBS.ERP.Sage300.AR.WebApi.Models.TermsCode" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

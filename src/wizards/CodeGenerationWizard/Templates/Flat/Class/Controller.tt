@@ -1,0 +1,235 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var resxName = settings.ResxName;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+    var keyFieldName = view.Keys.FirstOrDefault();
+
+    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+    var enumsCount = view.Enums.Count;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Microsoft.Practices.Unity;
+using System.Web.Mvc;
+using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+<#
+	if (enumsCount > 0)
+	{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums;
+<#
+	}
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
+{
+    /// <summary>
+    /// <#=entityName#> Public Controller
+    /// </summary>
+    /// <typeparam name="T">Where T is type of <see cref="<#=modelName#>"/></typeparam>
+    public class <#=entityName#>Controller<T> : MultitenantControllerBase<<#=entityName#>ViewModel<T>>
+        where T : <#=modelName#>, new()
+    {
+        #region Public variables
+
+        /// <summary>
+        /// Gets or sets the internal controller
+        /// </summary>
+        public <#=entityName#>ControllerInternal<T> ControllerInternal { get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for <#=entityName#>
+        /// </summary>
+        /// <param name="container">Unity Container</param>
+        public <#=entityName#>Controller(IUnityContainer container)
+            : base(container,"<#=moduleId#><#=entityName#>")
+        {
+        }
+
+        #endregion
+
+        #region Initialize MultitenantControllerBase
+
+        /// <summary>
+        /// Override Initialize method
+        /// </summary>
+        /// <param name="requestContext">Request Context</param>
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            ControllerInternal = new <#=entityName#>ControllerInternal<T>(Context);
+        }
+
+        #endregion
+
+        #region Public methods
+
+        /// <summary>
+        /// Load screen
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        public virtual ActionResult Index(string id)
+        {
+            <#=entityName#>ViewModel<T>  viewModel;
+
+            try
+            {
+                viewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id) : ControllerInternal.Create();
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// Get <#=modelName#>
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Get(string id)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(id))
+                {
+                    return JsonNet(ControllerInternal.GetById(id));
+                }
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+
+            return JsonNet(new <#=entityName#>ViewModel<T>());
+        }
+
+        /// <summary>
+        /// Add <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Add(T model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                   ? JsonNet(ControllerInternal.Add(model))
+                   : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+        }
+
+        /// <summary>
+        /// Create <#=modelName#>
+        /// </summary>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Create()
+        {
+            return JsonNet(ControllerInternal.Create());
+        }
+
+        /// <summary>
+        /// Update <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Save(T model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                    ? JsonNet(ControllerInternal.Save(model))
+                    : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        /// <summary>
+        /// Delete <#=modelName#>
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Delete(string id)
+        {
+            try
+            {
+                return JsonNet(ControllerInternal.Delete(id));
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+        }
+
+        #endregion
+    }
+}

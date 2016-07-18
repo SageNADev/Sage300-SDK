@@ -1,0 +1,85 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using Sage.CA.SBS.ERP.Sage300.Web.Models;
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
+
+@model HelpViewModel<MenuHelp>
+
+@{
+    var helpUrl = Utilities.GetHelpUrl("");
+}
+
+<div>
+    <ul>
+        <li class="k-state-default clrBGreen helpSearch">
+            <div class="k-link">
+                <form method="get" action="#" id="helpSearch" class="clrBGreen helpSearch">
+                    @Html.KoSageTextBox("Help", new { @sagevalue = "Help" }, new { @id = "helpSearchfl", @maxlength = "40", @placeholder = HelpResx.Search_Help })
+                    <input type="image" id="helpSearchbtn" src="~/Content/Images/helpSerchIcon.png" />
+                </form>
+            </div>
+        </li>
+
+        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Portal_Articles</span></li>
+        
+        @if (Model.Data.ScreenHelps != null)
+        {
+            foreach (var portalSearchHelp in Model.Data.ScreenHelps)
+            {
+                <li class="k-item k-state-default" role="menuitem">
+                    <span class="k-link">
+                        <a href=@Utilities.GetLearnMoreUrl(portalSearchHelp.CshId) target="_blank">@HelpResx.ResourceManager.GetString(portalSearchHelp.ResourceKey, HelpResx.Culture)</a>
+                    </span>
+                </li>
+            }
+        }
+
+        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Resources</span></li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@Utilities.GetLearnMoreUrl("677001001") target="_blank">@HelpResx.Resources_HelpCenter</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.ContactSupportUrl target="_blank">@HelpResx.Resources_ContactSupport</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.SageCityUrl target="_blank">@HelpResx.Resources_SageCity</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.SageUniversityUrl target="_blank">@HelpResx.Resources_SageUniversity</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.SageShareYourIdeasUrl target="_blank">@HelpResx.Resources_ShareIdeas</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link" id="featureTourLink">
+                <a>@HelpResx.Resources_FeatureTour</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+@Scripts.Render("~/bundles/protalHelp")
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("helpUrl", helpUrl);
+</script>

@@ -1,0 +1,31 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.KPI.Resources
+<div class="container_popUp Widget" id="idConfigureWidget">
+    <div class="grid_7 pad_bot_1">
+        <div class="mod_title">
+            <h3>@EnumerationsResx.Settings</h3>
+            <div class="top-buttons">
+                <span>Close</span>
+            </div>
+        </div>
+        <div class="grid_7">
+            <div class="grid_3">
+                <label>@EnumerationsResx.Year</label>
+                @Html.KoSageTextBox("cashAccountFiscalYear", new { @sagevalue = "Data.SelectedFiscalYear", @valueUpdate = "'input'" }, new { @id = "FiscalYearConfigure", @class = "reqField-default required txt-upper  sg-mask-sourcecode inpt_go", data_val = "true", @maxlength = "4", })
+            </div>
+            <div class="grid_3">
+                <label>@EnumerationsResx.Period</label>
+                @Html.KoSageTextBox("cashAccountFiscalPeriod", new { @sagevalue = "Data.SelectedFiscalPeriod", @valueUpdate = "'input'" }, new { @id = "FiscalPeriodConfigure", @class = "reqField-default required txt-upper  sg-mask-sourcecode inpt_go", data_val = "true", @maxlength = "2", })
+            </div>
+        </div>
+        <div class="clear-fix bor-bot pad_top_1"></div>
+        <div class="grid_7 alpha pad_top_03" id="btnCashAccountConfigure">
+            <div class="row bor-top mar_top_2">
+                @Html.KoSageButton("Save", new { }, new { @id = "btnSaveConfiguration", @class = "btn-primary right " })
+                @Html.KoSageButton("Cancel", new { }, new { @id = "btnCancelConfiguration", @class = "btn-secondary right" })
+            </div>
+        </div>
+    </div>
+</div>

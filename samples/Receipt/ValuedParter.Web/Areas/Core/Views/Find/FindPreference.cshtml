@@ -1,0 +1,20 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@{
+    var fieldsList = ViewBag.AllColumns as Dictionary<string, string>;
+    if (fieldsList != null)
+    {
+        foreach (var item in fieldsList)
+        {
+            <tr id="@item.Key">
+                <td>
+                    <div class="child">
+                        @Html.SageCheckBox("chkFinderPrefCol", false, new { @data_finder_key = item.Key, @value = item.Value, @id = "chkFinderPref" + @item.Key })
+                        @Html.SageLabel(@item.Value, new { @class = "", @for = "chkFinderPref" + @item.Key })
+                        
+                        </div>
+                </td>
+            </tr>
+        }
+    }
+}

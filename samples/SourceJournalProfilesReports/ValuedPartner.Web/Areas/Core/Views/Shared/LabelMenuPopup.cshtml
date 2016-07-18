@@ -1,0 +1,15 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+
+<script>
+    var hamburgerElements = {
+        menuItem: '<li>@Html.SageButton("btnNewHamburgerMenu", new { @id = "btnNewHamburgerMenu", @class = "anchor-btn" })</li>'
+    };
+</script>
+
+<div id="divLabelMenu" class="label-menu-popup">
+    <ul id="lstLabelMenu"></ul>
+</div>

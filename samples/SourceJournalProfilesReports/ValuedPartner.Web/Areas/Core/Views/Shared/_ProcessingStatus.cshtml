@@ -1,0 +1,26 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+<div style="display:none">
+    <div id="statusWindow">
+        <hr/>
+        <div class="progress" id="progressBarForProcessing" style="display:none">
+            <div class="progress-bar progress-bar-1 active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                <span class="percentage">0% Complete</span>
+            </div>
+        </div>
+        <div>@Html.KoSpan(new { text = "ProcessResult.ProgressMeter.Caption" })</div>
+        <div>@Html.KoSpan(new { text = "ProcessResult.ProgressMeter.Label" })</div>
+        <div id="messageDiv"></div>
+        <div class="result-grid-wrapper processingResultGrid-wrapper">
+            @Html.KoKendoGrid("processingResultGrid", "progressUI.progressUIModel.ProcessResult.Results", "ProcessResult", "progressUI.gridOption")
+        </div>
+        @Html.KoSageButton("btnCancel", new { @visible = "ProcessResult.ProgressMeter.ShowCancel" }, new { @id = "btnCancel", @value = CommonResx.Cancel, @class = "btn-primary right" })
+    </div>
+</div>
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("rowNumber", 0);
+</script>

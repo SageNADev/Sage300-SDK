@@ -1,0 +1,1225 @@
+﻿@* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Auth = Sage.CA.SBS.ERP.Sage300.Common.Models.Authentication
+
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.HomeViewModel
+@{
+    Layout = null;
+}
+<link href="~/Content/Styles/Sage.CA.SBS.ERP.Sage300.css" rel="stylesheet" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Columbus NA 2.0</title>
+    @Html.Partial(Shared.CoreLocalization)
+</head>
+<body>
+    @{
+        var userTenantInfo =  Utilities.GetStoredUserSignOnResult();
+    }
+    <div class="homePage">
+        <header>
+            <a href="#" class="logo">
+                <img src="~/Content/Images/logo2.png" alt="Alternate Text" />
+                <span>S300 - Columbus NA 2</span>
+            </a>
+            <div class="topbg">
+                <nav>
+                    <div id="nav">
+                        <ul id="navleft"></ul>
+
+                        <ul id="navright">
+                            <li class="current">
+                                Hello, @if (@userTenantInfo != null && !@userTenantInfo.LoggedInUser.IsGuest)
+                                       {
+                                           @userTenantInfo.LoggedInUser.FirstName @userTenantInfo.LoggedInUser.LastName}
+                                       else
+                                       {
+                                           @Html.Label("Guest User")
+                                       }
+                                |
+                            </li>
+                            @if (@userTenantInfo != null && @userTenantInfo.LoggedInUser != null && !@userTenantInfo.LoggedInUser.IsGuest && @userTenantInfo.LoggedInUser.UserManagementUrl != "")
+                            {
+                                <li><a href="@userTenantInfo.LoggedInUser.UserManagementUrl">Manage Users</a> |</li>
+                            }
+                            <li class="current">Settings |</li>
+                            <li class="current">Help |</li>
+                            @if (@userTenantInfo != null && !@userTenantInfo.LoggedInUser.IsGuest)
+                            {
+                                <li>@Html.ActionLink("Change Tenant", "Index", new { Controller = "Tenant", Area = "Core" }) | </li>
+                                <li>@Html.ActionLink("Logout", "Logout", new { Controller = "Authentication", Area = "Core" })</li>
+                            }
+                            else
+                            {
+                                <li class="current">Logout</li>
+                            }
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        @*@{
+                var isMultiTenantEnabled = ConfigurationHelper.GetConfigValue("IsMultiTenantEnabled");
+
+                if (Convert.ToBoolean(isMultiTenantEnabled))
+                {
+                    <div>
+                        @Html.Partial("~/Areas/Core/Views/Shared/_Tenant.cshtml")
+                    </div>
+                }
+            }*@
+        <div class="homePage-content">
+            <div class="panel">
+                <h1>GL/Account</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Accounts", "Index", "Account", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Account records.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>GL/Setup</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Optional Fields", "Index", "OptionalFields", new { area = "GL" }, null)
+                        <span>Create, Change or Delete OptionalField records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Options", "Index", "Options", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Options records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Account Groups", "Index", "AccountGroup", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Account Groups records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Source Codes", "Index", "SourceCode", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Source Code records.</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Segment Codes", "Index", "SegmentCode", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Segment Code records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Account Structures", "Index", "AccountStructure", new { area = "GL" }, null)
+                        <span>Create, Change or Delete Account Structure records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Recurring Entries", "Index", "RecurringEntry", new { area = "GL" }, null)
+                        <span>Use the G/L Recurring Entries screen to set up journal entries for transactions that recur on a periodic basis.</span>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+
+            <div class="panel">
+                <h1>G/L Transactions</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Batch List", "Index", "BatchList", new { area = "GL" }, null)
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Journal Entry", "Index", "JournalEntry", new { area = "GL" }, null)
+                    </li>
+                    <li>
+                        @Html.ActionLink("Post Batches", "Index", "PostJournal", new { area = "GL" }, null)
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="panel">
+                <h1>G/L Reports</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Chart Of Accounts", "Index", "ChartOfAccount", new { area = "GL" }, null)
+                        <span>G/L Chart Of Accounts.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Trial Balance", "Index", "TrialBalance", new { area = "GL" }, null)
+                        <span>G/L Trial Balance.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Batch Listing", "Index", "BatchListing", new { area = "GL" }, null)
+                        <span>G/L Batch Listing.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Transaction Listing", "Index", "TransactionListing", new { area = "GL" }, null)
+                        <span>G/L Transaction Listing.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Trans. Details Optional Fields", "Index", "TransactionDetailsOptionalField", new { area = "GL" }, null)
+                        <span>G/L Trans. Details Optional Fields.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Source Journals", "Index", "SourceJournal", new { area = "GL" }, null)
+                        <span>Source Journals.</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="panel">
+                <h1>G/L Periodic Processing</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Create New Year", "Index", "CreateNewYear", new { area = "GL" }, null)
+                        <span>Create New Year.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Period End Maintenance", "Index", "PeriodEndMaintenance", new { area = "GL" }, null)
+                        <span>Period End Maintenance.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Create Recurring Entries Batch", "Index", "CreateRecurringEntriesBatch", new { area = "GL" }, null)
+                        <span>Create Recurring Entries Batch.</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>A/R Setup</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Options", "Index", "Options", new { area = "AR" }, null)
+                        <span>A/R Setup</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Payment Code", "Index", "PaymentCode", new { area = "AR" }, null)
+                        <span>Create, Change or Delete PaymentCode records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Distribution Code", "Index", "DistributionCode", new { area = "AR" }, null)
+                        <span>Create, Change or Delete DistributionCode records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Billing Cycle", "Index", "BillingCycle", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Billing Cycle records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Comment Type", "Index", "CommentType", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Comment Type records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Email Messages", "Index", "EmailMessage", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Email Messages.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Dunning Message", "Index", "DunningMessage", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Dunning Message.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Account Sets", "Index", "AccountSet", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Account Sets.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Terms", "Index", "TermsCode", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Terms.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Interest Profiles", "Index", "InterestProfile", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Interest Profiles.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Salespersons", "Index", "Salesperson", new { area = "AR" }, null)
+                        <span>Create, Change or Delete Salespersons.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Optional Fields", "Index", "OptionalField", new { area = "AR" }, null)
+                        <span>Create, Change or Delete OptionalField records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("G/L Integration", "Index", "GLIntegration", new { area = "AR" }, null)
+                        <span>Create, Change or G/L Integration Options.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>A/R Periodic Processing</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Year End", "Index", "ProcessYearEnd", new { area = "AR" }, null)
+                        <span>Processing Year End</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Create G/L Batch", "Index", "CreateGLBatch", new { area = "AR" }, null)
+                        <span>Create G/L Batch</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Create Interest Batch", "Index", "CreateInterestBatch", new { area = "AR" }, null)
+                        <span>Create Interest Batch</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>A/R Customers</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Ship-To Locations", "Index", "ShipToLoc", new { area = "AR" }, null)
+                        <span>Ship-To Locations</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>A/R Transactions</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Post Batches", "Index", "PostBatch", new { area = "AR" }, null)
+                        <span>AR Transaction</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Invoice Entry", "Index", "InvoiceEntry", new { area = "AR" }, null)
+                        <span>Account Receivable Invoice Entry</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Receipt Entry", "Index", "ReceiptEntry", new { area = "AR" }, null)
+                        <span>Customers</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Invoice Batch List", "Index", "InvoiceBatchList", new { area = "AR" }, null)
+                        <span>AR Transaction</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Receipt Batch List", "Index", "ReceiptBatchList", new { area = "AR" }, null)
+                        <span>A/R Receipts Batch List</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>A/R Customer Reports</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Label", "Index", "Label", new { area = "AR" }, null)
+                        <span>AR Label</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Recurring Charges", "Index", "RecurringCharge", new { area = "AR" }, null)
+                        <span>A/R Recurring Charges</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Customers", "Index", "CustomerReport", new { area = "AR" }, null)
+                        <span>A/R Customers</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Statements/Letters/Labels", "Index", "StatementLetterLabel", new { area = "AR" }, null)
+                        <span>A/R Statements/Letters/Labels</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>A/R Transaction Reports</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Invoices", "Index", "Invoice", new { area = "AR" }, null)
+                        <span>Invoices</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Item Sales History", "Index", "ItemSalesHistory", new { area = "AR" }, null)
+                        <span>Item Sales History</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("G/L Transactions", "Index", "GLTransaction", new { area = "AR" }, null)
+                        <span>G/L Transactions</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Posting Errors", "Index", "PostingError", new { area = "AR" }, null)
+                        <span>A/R Posting Errors</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Customer Transaction", "Index", "CustomerTransaction", new { area = "AR" }, null)
+                        <span>A/R Customer Transaction</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Batch Listing", "Index", "BatchListing", new { area = "AR" }, null)
+                        <span>A/R Batch Listing</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Aged Trial Balance", "Index", "AgedTrialBalance", new { area = "AR" }, null)
+                        <span>A/R Aged Trial Balance</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>I/C Setup</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Options", "Index", "ICOptions", new { area = "IC" }, null)
+                        <span>Change Inventory Options after setup, as needed</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Segment Codes", "Index", "ICSegmentCode", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Segment Code records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Units of Measure", "Index", "UnitsOfMeasure", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Units of Measure records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Item Structures", "Index", "ItemStructure", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Item Structure records.</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Account Sets", "Index", "AccountSet", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Account Sets records.</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Optional Fields", "Index", "OptionalField", new { area = "IC" }, null)
+                        <span>Create, Change or Delete OptionalField records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Weight Units of Measure", "Index", "WeightUnitOfMeasure", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Weight Units of Measure records.</span>
+
+                    </li>
+                    <li>
+                        @Html.ActionLink("Categories", "Index", "Category", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Category records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Locations", "Index", "Location", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Location records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Price List Codes", "Index", "PriceListCode", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Price List Codes records.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("G/L Integration", "Index", "GLIntegration", new { area = "IC" }, null)
+                        <span>Create, Change or G/L Integration Options.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>I/C Items and Price Lists</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Items", "Index", "Item", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Items.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Vendor Detail", "Index", "VendorDetail", new { area = "IC" }, null)
+                        <span>Create, Change Vendor Detail</span>
+                    </li>
+                        <li>
+                            @Html.ActionLink("Customer Detail", "Index", "CustomerDetail", new { area = "IC" }, null)
+                            <span>Create, Change Customer Detail</span>
+                        </li>
+                    <li>
+                        @Html.ActionLink("Manufacturers Item", "Index", "ManufacturersItem", new { area = "IC" }, null)
+                        <span>Manufacturer's Item</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Item Pricing", "Index", "ItemPricing", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Item Pricing.</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Update Item Pricing", "Index", "UpdateItemPricing", new { area = "IC" }, null)
+                        <span>Update Item Pricing.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>I/C Periodic Processing</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Day End Processing", "Index", "DayEndProcessing", new { area = "IC" }, null)
+                        <span>Day End Processing</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Create G/L Batch", "Index", "CreateGLBatch", new { area = "IC" }, null)
+                        <span>Create G/L Batch</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>I/C Price/Sales Analysis Reports</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Price Lists", "Index", "PriceList", new { area = "IC" }, null)
+                        <span>Price Lists</span>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        @Html.ActionLink("Posting Journal", "Index", "PostingJournal", new { area = "IC" }, null)
+                        <span>I/C Posting Journal Report</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>I/C Statistics and Inquiries</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Transaction Statistics", "Index", "TransactionStatistics", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Transaction Statistics records.</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Sale Statistics", "Index", "SalesStatistic", new { area = "IC" }, null)
+                        <span> </span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Transaction History Inquiry", "Index", "TransactionHistoryInquiry", new { area = "IC" }, null)
+                        <span> </span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="panel">
+                <h1>I/C Transactions</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Shipments", "Index", "Shipment", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Shipments.</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Receipts", "Index", "Receipt", new { area = "IC" }, null)
+                        <span>Create, Change or Delete Receipts.</span>
+                    </li>
+
+                </ul>
+                
+                <ul>
+                    <li>
+                        @Html.ActionLink("Transaction Listing", "Index", "TransactionListing", new { area = "IC" }, null)
+                        <span>Transaction Listing Report</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="panel">
+                <h1>I/C Physical Inventory</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Inventory Counts", "Index", "InventoryCount", new { area = "IC" }, null)
+                        <span>Inventory Counts</span>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Inventory Worksheet", "Index", "InventoryWorksheet", new { area = "IC" }, null)
+                        <span>Inventory Worksheet</span>
+                    </li>
+                    
+                    <li>
+                        @Html.ActionLink("Inventory Reconciliation", "Index", "InvtReconciliation", new { area = "IC" }, null)
+                        <span>Inventory Reconciliation</span>
+                    </li>
+                    
+                    <li>
+                        @Html.ActionLink("Physical Inventory Quantities", "Index", "PhysicalInvQuantity", new { area = "IC" }, null)
+                        <span>Physical Inventory Quantities</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>AS Setup</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("User Authorization", "Index", "UserAuthorization", new { area = "AS" }, null)
+                        <span>To assign a user to a security group</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Security Groups", "Index", "SecurityGroup", new { area = "AS" }, null)
+                        <span>Create, Change or Delete Security Group</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Restart Maintenance", "Index", "RestartRecord", new { area = "AS" }, null)
+                        <span>Manage Incomplete Processes</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Data Integrity", "Index", "DataIntegrity", new { area = "AS" }, null)
+                        <span>Check the Integrity of Application’s Data</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("User", "Index", "User", new { area = "AS" }, null)
+                        <span>To change a user</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h1>CS Bank</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Bank", "Index", "Bank", new { area = "CS" }, null)
+                        <span>Bank</span>
+                    </li>
+                </ul>
+            </div>
+                    <div class="panel">
+                        <h1>CS Setup</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Bank Options", "Index", "BankOptions", new { area = "CS" }, null)
+                                <span>Bank Options</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Fiscal Calendar", "Index", "FiscalCalendar", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Fiscal Year records.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Currency Rate Types", "Index", "CurrencyRateType", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Currency Rate Types.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Bank Distribution Sets", "Index", "BankDistributionSet", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Distribution Sets.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Bank Distribution Codes", "Index", "BankDistributionCode", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Distribution Code.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Company Profile", "Index", "CompanyProfile", new { area = "CS" }, null)
+                                <span>Add an address and other options for a new company.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Import OFX Statements", "Index", "ImportOFXStatement", new { area = "CS" }, null)
+                                <span>Import the bank or credit card statement downloaded in OFX format for reconciliation .</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tax Authorities", "Index", "TaxAuthority", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Tax Authorities</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tax Rates", "Index", "TaxRate", new { area = "CS" }, null)
+                                <span>Tax Rates</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tax Classes", "Index", "TaxClass", new { area = "CS" }, null)
+                                <span>Tax Classes</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tax Groups", "Index", "TaxGroup", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Tax Groups.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Bank Transfers", "Index", "BankTransfer", new { area = "CS" }, null)
+                                <span>BankTransfer.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Currency Rates", "Index", "CurrencyRate", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Currency Rates.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Currency Codes", "Index", "CurrencyCode", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Currency Codes.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Optional Fields", "Index", "OptionalFields", new { area = "CS" }, null)
+                                <span>Create, Change or Delete Optional Fields.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("G/L Integration", "Index", "BankGLIntegration", new { area = "CS" }, null)
+                                <span>Create, Change or G/L Integration Options.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h1>CS Bank Transactions</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Bank Entry", "Index", "BankEntry", new { area = "CS" }, null)
+                                <span>Create, Change, Delete or Post Bank Entry.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Post Entries", "Index", "PostEntries", new { area = "CS" }, null)
+                                <span>Post Entries</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Post Reconciliation", "Index", "PostReconciliation", new { area = "CS" }, null)
+                                <span>Post Reconciliation</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Reverse Transaction", "Index", "ReverseTransaction", new { area = "CS" }, null)
+                                <span>Reverse Transaction.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Transaction History Inquiry", "Index", "TransactionHistoryInquiry", new { area = "CS" }, null)
+                                <span>Transaction History Inquiry.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h1>CS Payments</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Payment Processing Options", "Index", "PaymentProcessingOptions", new { area = "CS" }, null)
+                                <span> CS Payment Processing Options </span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Payment Processing Codes", "Index", "PaymentProcessingCode", new { area = "CS" }, null)
+                                <span> CS Payment Processing Codes </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="panel">
+                        <h1>CS Tax Reports</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Tax Tracking", "Index", "TaxTracking", new { area = "CS" }, null)
+                                <span> CS Tax Tracking </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="panel">
+                        <h1>CS Bank Transaction Reports</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Deposits Status", "Index", "DepositStatus", new { area = "CS" }, null)
+                                <span> CS Deposit Status </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Transaction Listing", "Index", "TransactionListing", new { area = "CS" }, null)
+                                <span> CS Transaction Listing</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Bank Reconciliation", "Index", "BankReconciliation", new { area = "CS" }, null)
+                                <span>CS Bank Reconciliation </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Withdrawal Status", "Index", "WithdrawalStatus", new { area = "CS" }, null)
+                                <span> Withdrawal Status </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Reconciliation Status", "Index", "ReconciliationStatus", new { area = "CS" }, null)
+                                <span> CS Reconciliation Status </span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Deposit Register", "Index", "DepositRegister", new { area = "CS" }, null)
+                                <span> CS Deposit Register </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Check/Payment Register", "Index", "CheckPaymentRegister", new { area = "CS" }, null)
+                                <span> CS Check/Payment Register </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Bank Entries Posting Journal", "Index", "BankEntryPostingJournal", new { area = "CS" }, null)
+                                <span> CS Bank Entries Posting Journal</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="panel">
+                        <h1>CS Bank Periodic Processing</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Clear History", "Index", "BankClearHistory", new { area = "CS" }, null)
+                                <span> CS Clear History </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Create G/L Batch", "Index", "CreateGLBatch", new { area = "CS" }, null)
+                                <span> CS Clear History </span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h1>A/P Setup</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Options", "Index", "Options", new { area = "AP" }, null)
+                                <span>A/P Setup</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Email Messages", "Index", "EmailMessage", new { area = "AP" }, null)
+                                <span>Email Messages</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Payment Code", "Index", "PaymentCode", new { area = "AP" }, null)
+                                <span>Create, Change or Delete Payment Code.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Distribution Code", "Index", "DistributionCode", new { area = "AP" }, null)
+                                <span>Create, Change or Delete Distribution Code.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("1099/CPRS Code", "Index", "CPRSCode", new { area = "AP" }, null)
+                                <span>Create, Change or Delete 1099/CPRS Code.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Account Set", "Index", "AccountSet", new { area = "AP" }, null)
+                                <span>Create, Change or Delete Account Set.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Distribution Sets", "Index", "DistributionSet", new { area = "AP" }, null)
+                                <span>Create, Change or Delete Distribution Sets.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Terms", "Index", "TermCode", new { area = "AP" }, null)
+                                <span>Create, Change or Delete Terms.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("G/L Integration", "Index", "GLIntegration", new { area = "AP" }, null)
+                                <span>Create, Change or G/L Integration Options.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Optional Fields", "Index", "OptionalField", new { area = "AP" }, null)
+                                <span>Create, Change or Delete OptionalField records.</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>AP Transactions</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Invoice Batch List", "Index", "InvoiceBatchList", new { area = "AP" }, null)
+                                <span>Invoice Batch List</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Payment Batch List", "Index", "PaymentBatchList", new { area = "AP" }, null)
+                                <span>Payment Batch List</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Post Batches", "Index", "PostBatch", new { area = "AP" }, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Payment Inquiry", "Index", "PaymentInquiry", new { area = "AP" }, null)
+                                <span>Payment Inquiry Screen</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Control Payments", "Index", "ControlPayment", new { area = "AP" }, null)
+                                <span>Control Payments</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Create Payment Batch", "Index", "CreatePaymentBatch", new { area = "AP" }, null)
+                                <span>Create Payment Batch</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>A/P Periodic Processing</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Create Recurring Payable Batch", "Index", "CreateRecurringPayableBatch", new { area = "AP" }, null)
+                                <span>Create Recurring Payable Batch.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Year End", "Index", "ProcessYearEnd", new { area = "AP" }, null)
+                                <span>Process Year End.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Create G/L Batch", "Index", "CreateGLBatch", new { area = "AP" }, null)
+                                <span>Create G/L Batch.</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("T5018 (CPRS) Electronic Filing", "Index", "CPRSElectronicFiling", new { area = "AP" }, null)
+                                <span>T5018 (CPRS) Electronic Filing.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("1099 Electronic Filing", "Index", "ElectronicFilingReport", new { area = "AP" }, null)
+                                <span>1099 Electronic Filing.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Delete Inactive Records", "Index", "DeleteInactiveRecord", new { area = "AP" }, null)
+                                <span>Delete Inactive Records.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h1>A/P Transaction Reports</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Check Register", "Index", "CheckRegister", new { area = "AP" }, null)
+                                <span> AP Check register </span>
+                            </li>
+
+                            @*@{ // AP Transaction and Vendor Report Entries - Ends}*@
+
+                            <li>
+                                @Html.ActionLink("Aged Payable", "Index", "AgedPayable", new { area = "AP" }, null)
+                                <span>A/P Aged Payable Report</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Aged Cash Requirement", "Index", "AgedCashRequirement", new { area = "AP" }, null)
+                                <span> A/P Aged Cash Requirement</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Aged Retainage", "Index", "AgedRetainage", new { area = "AP" }, null)
+                                <span> A/P Aged Retainage</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("G/L Transactions", "Index", "GLTransaction", new { area = "AP" }, null)
+                                <span> A/P G/L Transactions</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Posting Errors", "Index", "PostingError", new { area = "AP" }, null)
+                                <span> Posting Errors</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Batch Listing", "Index", "BatchListing", new { area = "AP" }, null)
+                                <span>A/P Batch Listing</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="panel">
+                        <h1>A/P Vendor Reports</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Vendors", "Index", "VendorReport", new { area = "AP" }, null)
+                                <span>A/P Vendors Report</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Letters / Labels", "Index", "LetterAndLabel", new { area = "AP" }, null)
+                                <span>A/P Letters / Labels</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Print T5018 CPRS Report", "Index", "PrintT5018CprsReport", new { area = "AP" }, null)
+                                <span>A/P Print T5018 Cprs Report</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Print 1099/1096 Forms", "Index", "Print10991096Form", new { area = "AP" }, null)
+                                <span>A/P Print 1099/1096 Forms Report</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h1>A/P Vendors</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Recurring Payables", "Index", "RecurringPayable", new { area = "AP" }, null)
+                                <span>Recurring Payables</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Vendor Activity", "Index", "VendorActivity", new { area = "AP" }, null)
+                                <span>Vendor Activity</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Vendors", "Index", "Vendor", new { area = "AP" }, null)
+                                <span>A/P Vendors</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Vendor Groups", "Index", "VendorGroup", new { area = "AP" }, null)
+                                <span>A/P Vendor Groups</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("1099/CPRS Inquiry", "Index", "CPRSInquiry", new { area = "AP" }, null)
+                                <span>1099/CPRS Inquiry.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Remit-To Location", "Index", "RemitToLocation", new { area = "AP" }, null)
+                                <span>A/P Vendor Remit-To Location</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>AR Report</h1>
+                        <ul>
+
+                            <li>
+                                @Html.ActionLink("Receipt", "Index", "Receipt", new { area = "AR" }, null)
+                                <span>Receipt</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>AR Customers</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("National Accounts", "Index", "NationalAccount", new { area = "AR" }, null)
+                                <span>National Accounts</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("ShipToLocation", "Index", "ShipToLocation", new { area = "AR" }, null)
+                                <span>ShipToLocation</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Customer", "Index", "Customer", new { area = "AR" }, null)
+                                <span>Customer</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>IC Price/Sales Analysis Reports</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Contract Pricing", "Index", "ContractPricing", new { area = "IC" }, null)
+                                <span>Contract Pricing</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Selling Price/Margin Analysis", "Index", "SellingPriceMargin", new { area = "IC" }, null)
+                                <span>I/C Selling Price/Margin Analysis Report</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Markup Analysis", "Index", "MarkupAnalysis", new { area = "IC" }, null)
+                                <span>I/C Markup Analysis Report</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>P/O Setup</h1>
+                        <ul>
+                            <li>
+                            @Html.ActionLink("Options", "Index", "Options", new { area = "PO" }, null)
+                            <span>P/O Setup</span>
+                        </li>
+                            <li>
+                                @Html.ActionLink("G/L Integration", "Index", "GLIntegration", new { area = "PO" }, null)
+                                <span>Create, Change or G/L Integration Options.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Ship Via Codes", "Index", "ShipViaCode", new { area = "PO" }, null)
+                                <span>Create, Change or Ship Via Codes.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Vendor Contract Costs", "Index", "VendorContractCost", new { area = "PO" }, null)
+                                <span>Create, Change or Vendor Contract Costs.</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("P/O Template", "Index", "Template", new { area = "PO" }, null)
+                                <span>Create, Change or Delete PO Template</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Additional Cost", "Index", "AdditionalCost", new { area = "PO" }, null)
+                                <span>Additional Costs.</span>
+                            </li>
+			     <li>
+                                @Html.ActionLink("E-mail Messages", "Index", "EmailMessage", new { area = "PO" }, null)
+                                <span>Create, Change or Delete Email Messages</span>
+                            </li>
+                        </ul>
+                    </div>
+            <div class="panel">
+                <h1>P/O Periodic Processing</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Create Batch", "Index", "CreateBatch", new { area = "PO" }, null)
+                        <span>Create Batch</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Clear History", "Index", "ClearHistory", new { area = "PO" }, null)
+                        <span>Clear History</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>P/O Forms</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Return Report", "Index", "ReturnReport", new { area = "PO" }, null)
+                        <span>Return Report</span>
+                    </li>
+                </ul>
+            </div>
+	    <div class="panel">
+                <h1>P/O Create Purchase Orders</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Create POs From Requisition", "Index", "CreatePOsFromRequisition", new { area = "PO" }, null)
+                        <span>Create POs From Requisition</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>P/O Analytical Reports</h1>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Shippable BackOrders", "Index", "ShippableBackOrderReport", new { area = "PO" }, null)
+                        <span>P/O Shippable BackOrders Report</span>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        @Html.ActionLink("Posting Journal", "Index", "PostingJournal", new { area = "PO" }, null)
+                        <span>P/O Posting Journal Report</span>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        @Html.ActionLink("Purchase Order Action", "Index", "PurchaseOrderAction", new { area = "PO" }, null)
+                        <span>P/O Purchase Order Action Report</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="panel">
+                <h1>P/O Transactions</h1>
+                <ul>
+		    <li>
+                        @Html.ActionLink("Receipt Entry", "Index", "ReceiptEntry", new { area = "PO" }, null)
+                        <span>P/O Receipt Entry</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Copy Purchase Orders", "Index", "CopyPurchaseOrder", new { area = "PO" }, null)
+                        <span>P/O Copy Purchase Order</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                        <h1>OE Report</h1>
+                        <ul>
+
+                            <li>
+                                @Html.ActionLink("Sales Statistics", "Index", "SalesStatisticsReport", new { area = "OE" }, null)
+                                <span>Sales Statistics</span>
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Aged Orders", "Index", "AgedOrderReport", new { area = "OE" }, null)
+                                <span>Aged Orders</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Transaction List", "Index", "TransactionListReport", new { area = "OE" }, null)
+                                <span>Transaction List Report</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Sales History", "Index", "SalesHistoryReport", new { area = "OE" }, null)
+                                <span>Sales History Report</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>OE Transactions</h1>
+                        <ul>
+
+                            <li>
+                                @Html.ActionLink("Credit/Debit Note Entry", "Index", "CreditDebitNoteEntry", new { area = "OE" }, null)
+                                <span>Credit/Debit Note Entry</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>IC Stock Control Reports</h1>
+                        <ul>
+
+                            <li>
+                                @Html.ActionLink("Reorder", "Index", "Reorder", new { area = "IC" }, null)
+                                <span>Reorder</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Warranty/Contract List", "Index", "WarrantyContractList", new { area = "IC" }, null)
+                                <span>Warranty/Contract List</span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Serial/Lot Number List", "Index", "SerialLotList", new { area = "IC" }, null)
+                                <span>Serial/Lot Number List</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h1>O/E Periodic Processing</h1>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Create Batch", "Index", "CreateBatch", new { area = "OE" }, null)
+                            </li>
+                        </ul>
+                    </div>
+            <div class="panel">
+                <h1>OE Setup</h1>
+                <ul>
+
+                    <li>
+                        @Html.ActionLink("G/L Integration", "Index", "GLIntegration", new {area = "OE"}, null)
+                        <span>G/L Integration</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("O/E Template", "Index", "Template", new { area = "OE" }, null)
+                        <span>O/E Template</span>
+                    </li>
+                    <li>
+                        @Html.ActionLink("O/E Options", "Index", "OEOptions", new { area = "OE" }, null)
+                        <span>O/E Options</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h1>O/E Statistics and Inquiries</h1>
+              
+                <ul>
+                    <li>
+                        @Html.ActionLink("Sale Statistics", "Index", "SalesStatistic", new { area = "OE" }, null)
+                        <span> </span>
+                    </li>
+                </ul>            
+            </div>
+
+            </div>
+
+            <div class="footer">
+                <span>&copy; 2013 Sage Software, Inc. and its affiliate entities. All rights reserved.</span>
+            </div>
+        </div>
+
+</body>
+</html>
+<script type="text/javascript" id="jsViewBatchModel1">
+    @Html.ConvertToJsVariableUsingNewtonSoft("uiHomeModel", Model)
+</script>

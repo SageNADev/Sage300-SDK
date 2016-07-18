@@ -1,0 +1,186 @@
+.icon {
+	background-image: url(../Images/sprite.png);
+	background-repeat: no-repeat;
+}
+.btn_go, .btn_search,.btn_add {
+	width: 30px;
+	height: 30px;
+	-webkit-min-logical-height: 30px;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+    cursor:pointer;
+	
+}
+
+.btn_go {
+	background-color: #e0e1dd;
+	background-position: -1px -1px;
+	border: 1px solid #9a9b9c;
+	text-indent: -9999px;
+    margin-top: 7px;
+	margin-left: -1px;
+}
+.btn_go:hover,
+.btn_search:hover {
+-moz-box-shadow: inset 0 0 5px #747475;
+	-webkit-box-shadow: inset 0 0 5px #747475;
+	box-shadow: inset 0 0 5px #747475;
+}
+.btn_go:disabled, .btn_search:disabled{
+	opacity:0.4;
+	cursor:default;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	}
+.btn_search {
+	background-color: #9a9b9c;
+	background-position: 1px -30px;
+	border: 0;
+	text-indent: -9999px;
+	margin-left: 10px;
+    margin-top: 8px;
+}
+.btn_add {
+	background-color: #9a9b9c;
+	background-position: -120px -91px;
+	border: 0;
+	text-indent: -9999px;
+	margin-left: 10px;
+    margin-top: 8px;
+}
+.btn-primary, .btn-secondary,.btn-tertiary  {
+	min-width: 130px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 90%;
+	font-weight: 700;
+	line-height: 15px;
+	color: #fff;
+	border: 0;
+	padding: 1px 40px 0 40px;
+	height: 30px;
+     
+}
+.btn-primary {
+	background: #41a940;
+    border:1px solid #41a940;
+}
+.btn-primary:hover {
+	background: #198118;
+	border: 1px solid #379536;
+	/*padding: 4px 39px;*/
+}
+.btn-primary:not(:disabled):active {
+	background: #007f64;
+	border: 1px solid #30832f;
+	padding: 4px 39px;
+	-moz-box-shadow: inset 0 0 3px #30832f;
+	-webkit-box-shadow: inset 0 0 3px #30832f;
+	box-shadow: inset 0 0 3px #30832f;
+}
+.btn-primary:disabled {
+	background: #eaeaea;
+	border: 1px solid #e0e0e0;
+	padding: 4px 39px;
+	color: #c0bebe;
+}
+.btn-secondary {
+	background: #a7a9aa;
+    border:1px solid #a7a9aa;
+}
+.btn-secondary:hover {
+	background: #979898;
+	border: 1px solid #4d4f53;
+	padding: 4px 39px;
+}
+
+.btn-secondary:not(:disabled):active{
+	background: #828283;
+	border: 1px solid #007f64;
+	padding: 4px 39px;
+	-moz-box-shadow: inset 0 0 3px #007f64;
+	-webkit-box-shadow: inset 0 0 3px #007f64;
+	box-shadow: inset 0 0 3px #007f64;
+}
+.btn-secondary:disabled {
+	background: #eaeaea;
+	border: 1px solid #e0e0e0;
+	padding: 4px 39px;
+	color: #c0bebe;
+}
+.btn-tertiary {
+	background: #ededed;
+		border: 1px solid #e0e0e0;
+	padding: 4px 39px;
+}
+.btn-tertiary:hover {
+	background: #dadada;
+	border: 1px solid #a9a9aa;
+	color: #7b7c7d;
+	padding: 4px 39px;
+}
+.btn-tertiary:not(:disabled):active {
+	background: #c1bfbf;
+	border: 1px solid #007f64;
+	padding: 4px 39px;
+	-moz-box-shadow: inset 0 0 3px #007f64;
+	-webkit-box-shadow: inset 0 0 3px #007f64;
+	box-shadow: inset 0 0 3px #007f64;
+}
+.btn-tertiary:disabled {
+	background: #eaeaea;
+	border: 1px solid #e0e0e0;
+	padding: 4px 39px;
+	color: #c0bebe;
+}
+.btn-focus {
+	background: #ff5800;
+}
+.btn-focus:hover {
+	background: #eb5800;
+	border: 1px solid #007f64;
+	padding: 4px 39px;
+}
+.btn-focus:not(:disabled):active {
+	background: #dc5302;
+	border: 1px solid #007f64;
+	padding: 4px 39px;
+	-moz-box-shadow: inset 0 0 3px #007f64;
+	-webkit-box-shadow: inset 0 0 3px #007f64;
+	box-shadow: inset 0 0 3px #007f64;
+}
+.btn-focus:disabled {
+	background: #eaeaea;
+	border: 1px solid #e0e0e0;
+	padding: 4px 39px;
+	color: #c0bebe;
+    
+}
+.btn-primary, .btn-secondary, .btn-tertiary, .btn-focus {
+	margin-left: 20px;
+	margin-right: 0;
+    margin-bottom:20px;
+	float: right;
+    cursor:pointer;
+    font-family:Arial;
+}
+.btn-primary:disabled, .btn-secondary:disabled, .btn-tertiary:disabled, .btn-focus:disabled {
+    cursor:default;
+} 
+
+
+.finder_popUp .btn-primary, .btn-secondary, .btn-tertiary, .btn-focus
+{
+	margin-bottom: 0px !important;
+}
+
+.k-window .btn-primary, .btn-secondary, .btn-tertiary, .btn-focus
+{
+	margin-bottom: 0px !important;
+}
+

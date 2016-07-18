@@ -1,0 +1,36 @@
+//
+// Form footer
+// --------------------------------------------------
+
+.footer-group-1 {
+	margin: 0 auto;
+	border-top: 1px solid @sage-gray;
+	padding-top: 20px;
+	text-align: right;
+    clear: both;
+
+  	input[class*="btn-"] { 
+    margin: 0 0 20px 10px;
+	} 
+}
+
+.footer-group  { 
+    margin: 0 auto;
+	border-top: 1px solid @sage-gray;  
+    padding-top: 20px;
+    clear: both;
+
+    input[class*="btn-"] { 
+    float: right; 
+    margin: 0 0 20px 10px;
+	} 
+}
+
+/* border collapse for footer-group */
+.sub-section + .footer-group,
+.sub-section + .footer-group-1,
+.sub-section +.form-group input[type=""]:disabled + .footer-group-1 {
+    border-top: none;
+    padding-top: 0;
+    margin-bottom: 30px;
+}
