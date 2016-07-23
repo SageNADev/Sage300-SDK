@@ -56,9 +56,3 @@ The following steps are required to add the required Kendo files to the Web proj
 The **Segment Codes** and **Source Journal Profiles** samples have been refactored to utilize the 
 grid enhancement logic. The **Receipt** sample, while having a grid, was not a receipient of the grid 
 enhancement logic. This will be addressed in the next release.
-
-### Patch Files
-
-The Grid Enhancement feature was completed after the Sage 300 2017 Application was code complete.
-Therefore, there are a few steps that must be completed in order to patch the application. See
-the README file in the **patch** folder.
