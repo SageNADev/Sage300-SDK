@@ -117,7 +117,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <returns>IBusinessEntity.</returns>
         protected override IBusinessEntity CreateBusinessEntities()
         {
-            CreateBusinessEntitiesInernal();
+            CreateBusinessEntitiesInternal();
             return _businessEntity;
         }
 
@@ -375,9 +375,9 @@ namespace ValuedPartner.TU.BusinessRepository
         #region Private Method
 
         /// <summary>
-        /// Creates the business entities inernal.
+        /// Creates the business entities
         /// </summary>
-        private void CreateBusinessEntitiesInernal()
+        private void CreateBusinessEntitiesInternal()
         {
             _businessEntity = OpenEntity(SourceJournalProfile.EntityName);
             _businessEntity.Compose(new[] { _businessEntity.View });
