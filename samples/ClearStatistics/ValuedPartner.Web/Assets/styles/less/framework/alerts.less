@@ -1,0 +1,312 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+.msg {
+  margin: 0 0 20px;
+  position: relative;
+  padding: 0 0 0 50px;
+
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    background: @brand-success url('@{image-path}/ui/sprite_icons.png') no-repeat -645px -43px;
+    background-size: 1350px 135px;
+  }
+
+  .heading {
+    background-color: @gray-dark;
+    color: #fff;
+    height: 50px;
+    padding: 16px;
+    margin: 0 0 10px 0;
+  }
+
+  .msg-content {
+    background-color: @white;
+    border: 1px solid @sage-gray;
+    margin: -10px 0 0 -50px;
+    padding: 20px 20px 14px 65px;
+
+    ul, ol {
+    padding: 6px 0 0 15px;
+
+    > li {
+        margin: 0 0 6px;
+      }
+    }
+  }
+  
+  &.msg-info {
+    &:before {
+      background-position: -399px -43px;
+      background-color: @brand-info;
+    }
+  }
+
+  &.msg-warning {
+    &:before {
+      background-position: -449px -43px;
+      background-color: @brand-warning;
+    }
+  }
+
+  &.msg-error {
+    &:before {
+      background-position: -500px -43px;
+      background-color: @brand-danger;
+    }
+  }
+
+  &.msg-box-shadow {
+    box-shadow: rgba(0,0,0,0.45) 0 0 30px;
+    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 30px;
+    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 30px;
+  }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+  .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+.alert-info {
+  .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+}
+.alert-warning {
+  .alert-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+}
+.alert-danger {
+  .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
+
+
+// Message styles to display existing message HTML framework
+//
+// To be deleted when the new HTML framework is coded.
+
+#success { 
+    width: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 99999;
+    .box-sizing(border-box);
+}
+
+#success .success-msg {
+    width: 700px;
+    background-color: #4d4f53;
+    margin: 0 auto;
+    height: 50px; 
+    box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+}
+
+#message {
+    display: block;
+    position: fixed;
+    left: 50%;
+    margin-left: -350px;
+    z-index: 999999;
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+}
+
+.message {
+    text-align: center;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+}
+
+.message-control {
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+    .box-sizing(border-box);
+}
+.message-control .title {
+   overflow: hidden;
+}
+
+.k-window .message-control {
+    margin-bottom: 20px; 
+}
+
+#success .message-control .title {
+    overflow: hidden;
+    position: relative;
+}
+
+.message-control .title h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 70px;
+}
+
+.message-control .msg-content { 
+    padding: 20px 20px 20px 70px;
+    color: #4d4f53;
+    overflow: auto;
+    max-height: 310px;
+    border: 1px solid #9a9b9c;
+    border-top: 0px;
+    background: #fff !important;
+    text-align: left;
+}
+
+.message-control .msg-content>li {
+    line-height: 24px; 
+}
+
+.container_popUp .message-control .msg-content { 
+    margin-bottom: 20px;
+    border: 1px solid #9a9b9c;
+    border-top: 0px;
+}
+
+.message-control .msg-content p {
+    margin-bottom: 17px;
+}
+
+.message-control .msg-content ul, .message-control .msg-content ol {
+   margin-left: 15px;
+   margin-bottom: 12px;
+}
+.message-control .msg-content ul li, .message-control .msg-content ol li {
+    margin-bottom: 7px;
+    margin-left: -40px;
+    padding-top: 3px;
+    padding-left: 0px;
+    list-style-type: disc;
+    
+}
+.k-ff .message-control .msg-content ul li, .k-ff .message-control .msg-content ol li{
+    padding-left:1px;
+    text-indent:0;
+    margin-left: -40px;
+}
+.message-control .footer {
+    padding: 0;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.message-control .footer.right input[class*="btn-"] {
+  margin-left: 6px;
+}
+.notification-msg .icon {
+    background-position: -449px -42px;
+    background-color: #ff5400;
+    background-size: 1350px 135px;
+}
+.error-msg .icon {
+    background-position: -500px -42px;
+    background-color: #ff1e00;
+    background-size: 1350px 135px;
+}
+.info-msg .icon {
+    background-position: -399px -42px;
+    background-color: #00a4cf;
+    background-size: 1350px 135px;
+}
+.msg-content .textBorder {
+    margin-top: 1px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 17px;
+    margin-bottom: 20px;
+}
+
+.msg-content .button-group,
+.msg-body .button-group  {
+    margin-top: 0;
+}
+
+/* hide the close button in success message*/
+.message-control.success-msg .icon.msgCtrl-close {
+    display: none;
+}
+
+.message-control.success-msg .title .success-icon { 
+    background-size: 1350px 135px;
+    background-position: -645px -42px;
+    background-color: #38c72a;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.message-control.success-msg .msg-content {
+   display: none;
+}
+
+.message-control.multiError-msg, .message-control.multiWarn-msg, .message-control.multiInfo-msg {
+    width: 700px;
+}
+
+.message-control.multiError-msg .title, 
+.message-control.multiWarn-msg .title, 
+.message-control.multiInfo-msg .title, 
+.message-control.success-msg .title { 
+   background-color: #3c424f;
+}
+.message-control.multiError-msg .multiError-icon, 
+.message-control.multiWarn-msg .multiWarn-icon, 
+.message-control.multiInfo-msg .multiInfo-icon {
+   width: 50px;
+   min-height: 50px;
+   float: left;
+}
+.message-control.multiError-msg .title .msgCtrl-close, 
+.message-control.multiWarn-msg .title .msgCtrl-close, 
+.message-control.multiInfo-msg .title .msgCtrl-close {
+   position: absolute;
+   margin: 0px;
+   padding: 0px;
+   width: 30px;
+   height: 30px;
+   right: 10px;
+   background-position: -207px -29px;
+   top: 10px;
+   text-indent: 9999px; /* hide Close text */
+}
+
+.msgCtrl-close:hover {
+    cursor: pointer;
+}
+
+#windowmessage .msgCtrl-close {
+    display: none !important;
+}
+
+.message-control.multiError-msg .title .multiError-icon {
+    background-position: -500px -43px;
+    background-color: #ff1e00;
+    background-size: 1350px 135px;
+}
+
+.message-control.multiWarn-msg .title .multiWarn-icon {
+    background-position: -449px -43px;
+    background-color: #ff5400;
+    background-size: 1350px 135px;
+}
+
+.message-control.multiInfo-msg .title .multiInfo-icon {
+    background-position: -399px -43px;
+    background-color: #00a4cf;
+    background-size: 1350px 135px;
+}
+.container_popUp .message-control{width:100%}

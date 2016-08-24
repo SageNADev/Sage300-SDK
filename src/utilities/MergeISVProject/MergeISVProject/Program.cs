@@ -160,11 +160,18 @@ namespace MergeISVProject
 
             var pathBuildBin = Path.Combine(pathBuild, "bin");
             var pathSageBin = Path.Combine(pathSageWeb, @"Online\Web\bin");
+            var pathSageWorker = Path.Combine(pathSageWeb, @"Online\Worker");
 
             string[] ps = { "*.compiled", "App_Web_*.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
             foreach (var pattern in ps)
             {
                 CopyFiles(pathBuildBin, pattern, pathSageBin, true);
+            }
+
+            string[] psWorker = { "*." + moduleId + ".*.dll" };
+            foreach (var pattern in psWorker)
+            {
+                CopyFiles(pathBuildBin, pattern, pathSageWorker, true);
             }
 
             // remove temp deploy build directory
@@ -196,6 +203,7 @@ namespace MergeISVProject
         {
             const string searhPattern = "*bootstrapper.xml";
             var pathWeb = Path.Combine(pathTo, "OnLine", "Web");
+            var pathWorker = Path.Combine(pathTo, "OnLine", "Worker");
             if (!Directory.Exists(pathWeb))
             {
                 WriteErrorFile(pathFrom, "The post-build utility MergeISVProject could not find the Online Web folder for the Web UIs. While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
@@ -213,6 +221,9 @@ namespace MergeISVProject
                     continue;
                 }
                 var desFile = Path.Combine(pathWeb, fileName);
+                File.Copy(srcfile, desFile, true);
+
+                desFile = Path.Combine(pathWorker, fileName);
                 File.Copy(srcfile, desFile, true);
             }
 

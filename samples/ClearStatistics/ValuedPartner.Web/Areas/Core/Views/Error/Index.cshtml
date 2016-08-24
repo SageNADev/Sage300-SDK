@@ -1,0 +1,41 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@model IEnumerable<Sage.CA.SBS.ERP.Sage300.Common.Models.EntityError>
+
+    <link href="~/Content/Styles/Sage.CA.SBS.ERP.Sage300.css" rel="stylesheet" />
+    <div id="message" style="display:block;">
+        <div class="message-control multiError-msg">
+            <div class="title">
+                <span class="icon multiError-icon"></span>
+                <h3>@CommonResx.UnexpectedError:</h3>
+            </div>
+            <div class="msg-content">
+                @if (Model != null && Model.Any())
+                {
+                    if (Model.Count() == 1)
+                    {
+                        <div>
+                            @Model.ToList()[0].Message
+                        </div>
+                    }
+                    else
+                    {
+                        <ul>
+                            @foreach (var item in Model)
+                            {
+                                <li>@item.Message</li>
+                            }
+                        </ul>
+                    }
+                }
+                else
+                {
+                    <ul>
+                        <li>@CommonResx.UnhandledExceptionMessage</li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,333 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: @btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  .button-size(6px; @padding-base-horizontal; 12px; @line-height-base; @border-radius-base);
+  .user-select(none);
+  min-width: 120px;
+  font-weight: 700;
+  color: @sage-mid-gray;
+  .box-sizing(border-box);
+
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      .tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: @btn-default-color;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    //.opacity(.65);
+    .box-shadow(none);
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+.btn-primary:hover {
+  background-color: darken(@btn-primary-bg, 10%);
+}
+.btn-secondary {
+  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+.btn-secondary:hover {
+  background-color: @btn-link-hover-color;
+}
+.btn-tertiary {
+  .button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
+}
+.btn-tertiary:hover {
+  background-color: darken(@btn-default-bg, 5%);
+}
+
+// Success appears as green
+.btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: @link-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+// Data Grid Control Buttons
+// --------------------------------------------------
+
+// Move buttons
+
+.btn-arrow {
+  position: relative;
+  padding: 6px 6px 6px 41px;
+  text-align: left;
+
+  &:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('@{image-path}/ui/sprite_icons.png') no-repeat;
+    background-size: 900px 90px;
+  }
+
+  &.btn-arrow-ff:before {
+    background-position: -112px 4px;
+  }
+
+  &.btn-arrow-ff[disabled]:before {
+    background-position: -112px -66px;
+  }
+
+  &.btn-arrow-f:before {
+    background-position: -162px 4px;
+  }
+
+  &.btn-arrow-f[disabled]:before {
+    background-position: -163px -66px;
+  }
+
+  &.btn-arrow-b:before {
+    background-position: -183px 4px;
+  }
+
+  &.btn-arrow-b[disabled]:before {
+    background-position: -183px -66px;
+  }
+
+  &.btn-arrow-bb:before {
+    background-position: -139px 4px;
+  }
+
+  &.btn-arrow-bb[disabled]:before {
+    background-position: -139px -66px;
+  }
+}
+
+
+// Data grid buttons
+
+.btn-grid-control {
+  position: relative;
+  padding: 4px 10px 4px 15px;
+  margin: 0 6px 10px 0;
+  text-indent: 10px;
+  height: 26px;
+
+  &:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('@{image-path}/ui/sprite_icons.png') no-repeat;
+    background-size: 900px 90px;
+  }
+
+  &.btn-edit-column:before {
+    background-position: -826px 1px;
+  }
+
+  &.btn-edit-column[disabled]:before {
+    background-position: -826px -69px;
+  }
+
+  &.btn-delete:before {
+    background-position: -632px 2px;
+  }
+
+  &.btn-delete[disabled]:before {
+    background-position: -632px -68px;
+  }
+
+  &.btn-add:before {
+    background-position: -493px 3px;
+  }
+
+  &.btn-add[disabled]:before {
+    background-position: -493px -67px
+  }
+}
+
+// Buttons using anchor tag
+
+a[class*="btn-"] {
+  color: @white;
+  cursor: pointer; 
+  padding: 6px 20px 5px;
+  margin-left: 6px;
+  -webkit-appearance:         none;   /* iPad button defects */
+  -moz-appearance:            none;   /* iPad button defects */
+  -webkit-border-radius:      0;      /* iPad button defects */
+  -moz-border-radius:         0;      /* iPad button defects */
+  -o-border-radius:           0;      /* iPad button defects */
+  border-radius:              0;      /* iPad button defects */
+}
+
+a[class*="btn-"]:first-child {
+  margin-left: 0;
+}
+a[class*="btn-"]:link {
+  color: @white;
+  text-decoration: none;
+}
+a[class*="btn-"]:hover {
+  color: @white;
+  text-decoration: none;
+}
+a[class*="btn-"]:visited {
+  color: @white;
+  text-decoration: none;
+}
+a[class*="btn-"].disabled {
+  color: #bababc;
+  background-color: @input-bg-disabled;
+  border: 1px solid darken(@input-bg-disabled, 3%);
+  cursor: default;  
+  .box-shadow(none);
+}
+a[class*="btn-"].disabled:link {
+  cursor: default;
+  color: #bababc; 
+  background-color: @input-bg-disabled;
+  border: 1px solid darken(@input-bg-disabled, 3%);
+  text-decoration: none;
+}
+
+// Add animation to buttons
+
+input[class*="btn-"]:hover,
+.btn:hover {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}

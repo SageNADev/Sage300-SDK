@@ -1,0 +1,22 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+<div class="form-group">
+    <div class="dropdown-group">
+        <label id="lblDeferGLTransactions" for="Data_DeferGLTransactions"></label>
+        @Html.KoSageDropDownList("Data_DeferGLTransactions", new { @options = "GetDeferGLTransactions", @sagevalue = "Data.DeferGLTransactions", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="dropdown-group">
+        <label id="lblCreateGLTransactionsBy" for="Data_CreateGLTransactionsBy"></label>
+        @Html.KoSageDropDownList("Data_CreateGLTransactionsBy", new { @options = "GetCreateGLTransactionsBy", @sagevalue = "Data.CreateGLTransactionsBy", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="dropdown-group">
+        <label id="lblConsolidateGLTransactions" for="Data_ConsolidateGLTransactions"></label>
+        @Html.KoSageDropDownList("Data_ConsolidateGLTransactions", new { @options = "GetConsolidateGLTransactions", @sagevalue = "Data.ConsolidateGLTransactions", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.HomeViewModel
+
+
+@{
+    ViewBag.Title = "Portal";
+}
+
+
+<div>
+    @ViewData["userTenantInfo"]
+</div>
+<div>
+    @Html.ValidationSummary(true)
+</div>
+
+@section username{
+    @Model.UserName
+}
+@section companyName{
+    @Model.CompanyName
+}
+@section sessionDate{
+    @Html.KoSageTextBoxFor(model => model.SessionDate, new { @sageDatePicker = "SessionDate" }, new { @id = "datePicker", @class = "datepicker default" })
+    @Html.ValidationMessageFor(model => model.SessionDate)
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("homeViewModel", Model)    ;
+    
+</script>
+
+<script src="~/Areas/Shared/Scripts/Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js"></script>
+@Html.SetSessionVariables();
+

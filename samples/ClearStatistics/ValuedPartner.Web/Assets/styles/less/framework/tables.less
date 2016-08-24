@@ -1,0 +1,864 @@
+//
+// Tables
+// ---------------------------------------------------
+
+
+table {
+  background-color: @table-bg;
+}
+th {
+  text-align: left;
+}
+
+
+// Baseline styles
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @line-height-computed;
+  font-size: @font-size-small;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-condensed-cell-padding @margin-base;
+        line-height: @line-height-base;
+        vertical-align: top;
+        min-height: 36px;
+        vertical-align: middle;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    background-color: #686c76;
+    color: @white;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid @table-border-color;
+  }
+
+  // Nesting
+  .table {
+    background-color: @body-bg;
+  }
+}
+
+
+// Condensed table w/ half padding
+
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid @table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-left: 1px solid @table-border-color;
+        border-right: 1px solid @table-border-color;
+      }
+    }
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  > tbody > tr:nth-child(odd) {
+    > td,
+    > th {
+      background-color: @table-bg-accent;
+    }
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: @table-bg-hover;
+    }
+  }
+}
+
+
+// Table cell sizing
+//
+// Reset default table behavior
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+// Generate the contextual variants
+.table-row-variant(active; @table-bg-active);
+.table-row-variant(success; @state-success-bg);
+.table-row-variant(info; @state-info-bg);
+.table-row-variant(warning; @state-warning-bg);
+.table-row-variant(danger; @state-danger-bg);
+
+
+// Responsive tables
+//
+// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// by enabling horizontal scrolling. Only applies <768px. Everything above that
+// will display normally.
+
+.table-responsive {
+  @media screen and (max-width: @screen-xs-max) {
+    width: 100%;
+    margin-bottom: (@line-height-computed * 0.75);
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid @table-border-color;
+    -webkit-overflow-scrolling: touch;
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+// Static table - fixed width 
+.staticgrid-group {
+  max-width: 940px;
+}
+
+// Customize input fields
+.staticgrid-group .table .wrapper {
+  position: relative;
+  display: table;
+  width: 100%;
+
+  .k-datepicker {
+    width: 100%;
+  }
+
+  input[type="text"] {
+    font-size: 12px;
+    height: 24px;
+    padding: 0 10px;
+    margin: 0;
+    line-height: @line-height-small;
+    width: 100%;
+
+  &.k-input {
+    height: 22px;
+    padding: 0;
+    }
+  }
+
+  .k-state-default {
+    font-size: 12px;
+    height: 24px;
+    padding: 0 10px;
+    margin: 0;
+    line-height: @line-height-small;
+  }
+
+  .btn-search {
+    margin: 0px;
+    background-color: transparent;
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+    box-shadow: none;
+    border: 0;
+    width: 22px;
+    height: 22px;
+
+    &[disabled] {
+      background-position: 3px -66px;
+    }
+  }
+
+  .k-state-default .k-select {
+    border: none;
+    width: 24px;
+    background-image: none;
+    padding: 0;
+    background-color: @white;
+
+    .k-i-calendar {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      right: 7px;
+      bottom: 2px;
+    }
+  }   
+}
+
+//Kendo grid customization
+
+// grid-control buttons and other options placed here.
+.gridcontrols-group {
+    background-color: #f7f8f8; 
+    display: block; 
+    padding: 10px 10px 0 10px; 
+    margin: 0 auto 0 auto; 
+    border: 1px solid @table-border-color;
+    border-bottom: 0;
+   .clearfix();
+}
+
+// Kendo data-grid
+
+.datagrid-group {
+  margin-bottom: @margin-base;
+
+  // Checkbox positioning inside grid
+  .checkbox {
+    top: 0;
+    margin: 0;
+  }
+}
+
+.k-grid {
+  border-width: 0;
+  font-size: 12px;
+  border: 1px solid @table-border-color;
+
+  .k-grid-header {
+    background-image: none;
+    padding-right: 0 !important; // To override kendo inserting inline padding styles
+
+    > .k-grid-header-wrap {
+      border-right: 0;
+    }
+
+    .k-header {
+      padding: @table-cell-padding 20px;
+      color: @white;
+      font-weight: 700;
+      border-color: @table-border-color;
+      background-color: @table-header-bg;
+      background-image: none;
+      box-sizing: border-box;
+
+      &:focus,
+      &.k-state-focused {
+        box-shadow: none; 
+        -webkit-box-shadow: none; 
+        -moz-box-shadow: none;
+      }
+
+      >.k-link {
+        color: @white;
+      }
+    }
+  }
+
+  tr {
+    background-color: @table-bg-accent;
+
+    &:hover {
+      background-color: @table-bg-active;
+    }
+
+    th {
+      -webkit-transform: translateZ(0);
+
+      &.first-cell { 
+        width: 20px;
+        max-width: 55px;
+        min-width: 20px;
+        text-overflow: clip;
+
+          .checkBox {
+          top: 3px;
+          margin-top: -5px;
+
+          input[type=checkbox] {
+            margin-bottom: -6px;
+          }
+        }
+      }
+    }
+
+    td {
+      border: 0;
+      padding: 0 20px; 
+      line-height: 30px;
+      height: 30px;
+      max-height: 30px;
+      background-color: inherit; 
+      white-space: nowrap;
+      box-sizing: border-box;
+
+      &.first-cell { 
+        width: 20px;
+        max-width: 55px;
+        min-width: 20px;
+        text-overflow: clip;
+      }
+
+      input {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-left: 10px; 
+      }
+    }
+
+    &.k-alt {
+      background-color: @white;
+    }
+
+    &.k-state-selected,
+    &.k-state-active {
+      background-color: @table-bg-active;
+
+      td {
+        color: #000;
+        font-weight: 700;
+        background-color: inherit; 
+
+        &:first-child {
+        border-left: 4px solid @sage-link; 
+        padding-left: 16px; 
+        background: transparent;
+        }
+      }
+    }
+  }
+
+  .k-grid-edit-row td {
+    text-overflow: ellipsis;
+  }
+
+.k-state-focused {
+    box-shadow: none; 
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none;
+  }
+
+  .k-grid-pager {
+    background: #f7f8f8; 
+    border-top: 1px solid @table-border-color;
+    padding-top: 4px;
+
+    .k-icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .k-label { 
+      margin-top: 1px;
+    }
+
+    .k-pager-nav {
+      background-color: @btn-default-bg;
+      border-color: @btn-default-border;
+      .box-sizing(border-box);
+      
+      &:hover {
+        background-color: darken(@btn-default-bg, 5%);
+        border-color: @btn-default-border;
+      }
+
+      &.k-state-disabled {
+        border-color: darken(@input-bg-disabled, 3%);
+        background-color: @input-bg-disabled;
+        opacity: 1;
+
+        &:hover {
+          background-color: @input-bg-disabled;
+          border-color: darken(@input-bg-disabled, 3%);
+        }
+
+        .k-icon {
+          opacity: .3;
+        }
+      }
+
+      .k-i-seek-w,
+      .k-i-seek-w:hover {
+        background-position: -763px 2px;
+      }
+
+      .k-i-arrow-w,
+      .k-i-arrow-w:hover {
+        background-position: -745px 2px;
+      }
+
+      .k-i-arrow-e,
+      .k-i-arrow-e:hover {
+        background-position: -728px 2px;
+      }
+
+      .k-i-seek-e,
+      .k-i-seek-e:hover {
+        background-position: -780px 2px;
+      }
+    }
+  }
+
+  .k-pager-input .k-textbox {
+    border-color: @btn-default-border;
+    text-align: center;
+    padding-top: 4px;
+    margin-top: -2px; 
+    border-radius: @border-radius-base; //override kendo ui
+    height: 26px;
+
+    &:focus {
+      .focus-box-shadow;
+    }
+  }
+
+  .k-pager-wrap .k-pager-refresh {
+    background: none;
+
+    .k-i-refresh {
+      background-position: -465px 4px;
+      width: 26px;
+      height: 26px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &:not(.k-state-disabled):hover {
+      background: none;
+    }
+
+    &not(.k-state-disabled):hover > .k-i-refresh {
+      background-color: none;
+      background-position: -465px -66px;
+    }
+  }
+
+  .k-pager-wrap > .k-link {
+    margin: 0 5px;
+    height: 26px;
+    width: 26px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; 
+    -o-border-radius: 0;
+    border-radius: 0; 
+  }
+}
+
+
+.k-grid {
+
+  input {
+    .box-sizing(border-box);
+  }
+
+  .k-grid-content {
+    min-height: 200px;
+    overflow-y: auto;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn_search {
+    position: absolute;
+  }
+
+  // Pencil Edit
+
+  .pencil-edit, 
+  .pencil-edit-disabled {
+    background-color: transparent;
+    height: 20px;
+    width: 22px;
+    border: none;
+    position: relative;
+    z-index: 10000;
+    vertical-align: middle;
+  }
+
+  .pencil-edit {
+    background-position: -607px -2px;
+    cursor: pointer;
+  }
+
+  .pencil-edit-disabled {
+    background-position: -607px -72px;
+    cursor: default;
+  }
+
+  // Edit cell styles
+  .k-edit-cell {  
+    padding: 0 20px;  
+    position: relative;
+
+    .k-numeric-wrap {
+      border: 0;
+      height: 22px;
+    }
+
+    .k-numerictextbox {
+      .focus-box-shadow;
+    }
+
+    input[type="text"] {
+      height: 24px; 
+      font-size: 12px;
+      border: 1px solid @input-border;
+      padding: 0 5px;
+      background-color: @white;
+      border-radius: 0;
+      margin-top: -2px;
+
+      &.default {
+        width: 100%;
+      }
+    }
+
+    .btn-finder, 
+    .btn-search {  
+      height: 22px;
+      width: 22px;
+      margin: 0;
+      -webkit-min-logical-height: 22px;
+      background-color: transparent;
+      background-position: 0 0;
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      border: none;
+
+      &:focus { 
+        outline: none;  
+        border: none;
+        .box-shadow(none);
+      }
+
+      &:hover{ 
+        .box-shadow(none);  
+        opacity: 0.6;
+      }
+    }
+
+    .k-dropdown {  
+      margin-top: -1px;
+      width: 100%;
+
+      .k-dropdown-wrap {
+        height: 24px;  
+        max-height: 24px; 
+
+        .k-select {
+          border-left: 0;
+          background-color: @white;
+        }
+
+        .k-i-arrow-s { 
+          background-position: -85px 0;
+        }
+
+        .k-input {
+          padding: 0px 10px;
+          line-height: 22px;
+          height:auto;
+        }
+      }
+    }
+
+    // Kendo datagrid datepicker
+
+    .k-datepicker {
+      margin:0;
+
+      .k-picker-wrap {
+        height: 24px;
+
+        input[type="text"],
+        .k-input {
+          height: 22px;
+          border: 0;
+          margin: 0;
+        }
+
+        input[type="text"]:focus {
+          border: 0;
+        }
+
+        .k-select {
+          background-image: none;
+          border: 0;
+          background-color: @white;
+
+          .k-i-calendar {
+            background-position: -55px -1px;
+            width: 20px;
+            height: 22px;
+
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+
+      &.dp-and-finder {
+        margin-right: 10px;
+        width: 95%;
+
+        & + .icon.btn-search {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .k-pager-info, 
+  .k-pager-input .k-label { 
+    position: relative; 
+    top: 1px;
+  }
+}
+
+.k-grid-delete .k-delete {
+  display: none;
+}
+
+.k-dirty {
+  border: none;
+  background: none;
+}
+
+// customize grid
+
+.user-preference {
+  background: @white;
+  border:1px solid #ababab; 
+  max-width: 274px;
+  min-width: 260px;
+  margin-top: 6px;
+  margin-left: 1px;
+
+  table { 
+    word-break: break-all; 
+    margin-bottom: 0;
+    width: 100%;
+
+    .k-header {
+      text-align: center;
+    }
+
+    thead > tr > td {
+      background-color: #686c76;
+      color: @white;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+
+  .table-scroll { 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    min-height: 100px; 
+    height: 155px; 
+
+    table th {
+      border-bottom: 1px solid #ababab;
+      padding: 2px 0 3px 34px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    table td {
+      display: block;
+      background: url(../../../Content/Images/edit-columns-icon.png) no-repeat 10px 14px;
+      cursor: pointer;
+      border-bottom: 1px solid #ababab;
+      padding: 2px 0 3px 34px;
+      vertical-align: top;
+    }
+
+    label { 
+      word-break: break-word; 
+      -ms-word-break: normal;
+      margin-top: 2px;
+      display: inline-block;
+      font-size: 12px;
+      width: 180px;
+    }
+
+    .ctrl-group > div {
+      margin: 0;
+    }
+  }
+
+  input[class*="btn-"] { 
+    float: right;
+    margin: 5px;
+  }
+
+  a { 
+    display: inline-block; 
+    font-size: 12px; 
+    line-height: 10px; 
+    cursor: pointer;
+  }
+
+  tfoot {
+    text-align: center;
+
+    td {
+      padding: 2px 0;
+      border-top: 1px solid @table-border-color;
+    }
+  }
+}
+
+@-moz-document url-prefix() { 
+     .user-preference .child .checkBox + label {
+        word-break: keep-all;
+    }
+}
+
+// Edge specific styles for customize grid
+
+.k-webkit46 .user-preference {
+
+  th > .child {
+    position: relative;
+    top: 4px;
+  }
+
+  .check-all {
+    vertical-align: top;
+    line-height: 2.3;
+  }
+}
+
+// controlling the grid height
+
+.gh180 .k-grid-content {
+  height: 180px !important;
+}
+
+.gh320 .k-grid-content {
+  min-height:317px !important; 
+  max-height:317px !important; 
+  height:317px;
+}
+
+.gh400 .k-grid-content {
+  height: 400px !important;
+}
+
+// status window - massage to be truncated
+
+#statusWindow .k-grid td {
+    white-space: normal;
+}
+
