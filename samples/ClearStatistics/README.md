@@ -33,7 +33,7 @@ the binaries to the Web and Worker folders will be modified to stop the service 
 service once the binaries are copied.
 
 * Access the Services MMC from your desktop (simply type in **Services** in the search feature
-  of the desktop and select the Service MMC.
+  of the desktop) and select the Service MMC.
 * Locate the **Sage.CNA.WindowsService** and select the Stop button
 
 ### Apply Patch files

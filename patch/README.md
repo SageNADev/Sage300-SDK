@@ -22,7 +22,6 @@ The Process Sample Patch contains the following files:
 
 * OnlineWeb\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll
 * OnlineWeb\Sage.CA.SBS.ERP.Sage300.Core.Configuration.dll
-* OnlineWeb\Sage.CA.SBS.ERP.Sage300.Worker.dll
 
 * OnlineWorker\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll
 * OnlineWorker\Sage.CA.SBS.ERP.Sage300.Core.Configuration.dll
@@ -33,7 +32,7 @@ The Process Sample Patch contains the following files:
 The following steps are required to apply this patch:
 
 * Backup files to a safe location first
-  * The three dll files mentioned above in the Sage 300 Online Web's **bin** folder
+  * The two dll files mentioned above in the Sage 300 Online Web's **bin** folder
   * The three dll files mentioned above in the Sage 300 Online Worker's folder
 
 * Copy 

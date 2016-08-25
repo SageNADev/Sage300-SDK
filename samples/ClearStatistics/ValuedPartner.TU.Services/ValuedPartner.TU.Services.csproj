@@ -73,10 +73,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Azure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Azure.dll</HintPath>
-    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Configuration.dll</HintPath>
@@ -95,14 +91,12 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Workflow">
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Workflow, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Workflow.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Workflow.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.Workflow.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Workflow.Models">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Workflow.Models.dll</HintPath>
     </Reference>
     <Reference Include="System" />
