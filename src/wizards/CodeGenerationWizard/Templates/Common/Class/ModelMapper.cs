@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ModelMapper : ModelMapperBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -165,7 +165,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("// ");
             
-            #line 42 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -173,7 +173,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("\r\n\r\n#region Namespace\r\n\r\nusing System;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Mode" +
                     "ls;\r\n");
             
-            #line 48 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (repositoryType.Equals(RepositoryType.Report))
     {
@@ -183,7 +183,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Models.Reports;\r\n");
             
-            #line 53 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -192,7 +192,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;\r\n");
             
-            #line 57 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (!repositoryType.Equals(RepositoryType.Report))
     {
@@ -202,7 +202,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;\r\n");
             
-            #line 62 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -210,7 +210,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line default
             #line hidden
             
-            #line 65 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (repositoryType.Equals(RepositoryType.Report))
     {
@@ -220,21 +220,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using ");
             
-            #line 69 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 69 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n");
             
-            #line 70 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -243,28 +243,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using ");
             
-            #line 73 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 73 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models");
             
-            #line 73 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 74 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (!repositoryType.Equals(RepositoryType.Report) && enumsCount > 0)
     {
@@ -274,28 +274,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("using ");
             
-            #line 78 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 78 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums");
             
-            #line 78 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 79 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -304,63 +304,63 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 85 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 85 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 85 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 85 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".BusinessRepository.Mappers");
             
-            #line 85 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 85 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Class for ");
             
-            #line 88 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 88 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" mapping\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">");
             
-            #line 90 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</typeparam>\r\n    public class ");
             
-            #line 91 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("Mapper<T> : ");
             
-            #line 91 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")));
             
             #line default
             #line hidden
             this.Write("Mapper<T> where T : ");
             
-            #line 91 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(", new ()\r\n    {\r\n");
             
-            #line 93 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (repositoryType.Equals(RepositoryType.Report))
     {
@@ -383,7 +383,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
         /// </summary>
         private const string ReportName = """);
             
-            #line 110 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 110 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reportName));
             
             #line default
@@ -391,7 +391,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("\";\r\n\r\n        /// <summary>\r\n        /// The program identifier\r\n        /// </su" +
                     "mmary>\r\n        private const string ProgramId = \"");
             
-            #line 115 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 115 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(programId));
             
             #line default
@@ -399,7 +399,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("\";\r\n\r\n        /// <summary>\r\n        /// The menu identifier\r\n        /// </summa" +
                     "ry>\r\n        private const string MenuId = \"<MENU ID>\";\r\n\r\n        #endregion\r\n");
             
-            #line 123 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 123 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -410,14 +410,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
                     "set the Context\r\n        /// </summary>\r\n        /// <param name=\"context\">Conte" +
                     "xt</param>\r\n        public ");
             
-            #line 132 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 132 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("Mapper(Context context)\r\n");
             
-            #line 133 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 133 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (!repositoryType.Equals(RepositoryType.Report))
     {
@@ -427,7 +427,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            : base(context)\r\n");
             
-            #line 138 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -436,7 +436,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        {\r\n");
             
-            #line 142 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (repositoryType.Equals(RepositoryType.Report))
     {
@@ -446,7 +446,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            _context = context;\r\n");
             
-            #line 147 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 147 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -455,14 +455,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        }\r\n\r\n        #endregion\r\n\r\n        #region ");
             
-            #line 154 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")));
             
             #line default
             #line hidden
             this.Write("Mapper methods\r\n\r\n");
             
-            #line 156 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (repositoryType.Equals(RepositoryType.Report))
     {
@@ -490,7 +490,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
 
 ");
             
-            #line 178 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 178 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                 // Iterate fields collection
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -505,42 +505,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            var ");
             
-            #line 187 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName.ToLower()));
             
             #line default
             #line hidden
             this.Write(" = SetParameter(");
             
-            #line 187 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(".Fields.");
             
-            #line 187 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(", model.");
             
-            #line 187 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n            report.Parameters.Add(");
             
-            #line 188 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 188 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName.ToLower()));
             
             #line default
             #line hidden
             this.Write(");\r\n\r\n");
             
-            #line 190 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 190 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                 }
 
@@ -578,7 +578,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
 
 ");
             
-            #line 222 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 222 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
     else
@@ -598,7 +598,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
 
 ");
             
-            #line 236 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 236 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                 // Iterate fields collection
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -617,35 +617,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("\t\t\tmodel.");
             
-            #line 249 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 249 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 249 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 249 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(")(entity.GetValue<int>(");
             
-            #line 249 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 249 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(".Index.");
             
-            #line 249 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 249 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 250 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                     }
                     else
@@ -657,35 +657,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            model.");
             
-            #line 256 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" = entity.GetValue<");
             
-            #line 256 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? field.Name : EnumValue.GetValue(field.Type))));
             
             #line default
             #line hidden
             this.Write(">(");
             
-            #line 256 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(".Index.");
             
-            #line 256 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 257 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 257 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                     }
                 }
@@ -710,7 +710,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
 
 ");
             
-            #line 276 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 276 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                 // Iterate fields collection
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -727,35 +727,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            ");
             
-            #line 287 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 287 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(commentChars));
             
             #line default
             #line hidden
             this.Write("entity.SetValue(");
             
-            #line 287 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 287 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(".Index.");
             
-            #line 287 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 287 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(", model.");
             
-            #line 287 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 287 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 288 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 288 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
                 }
 
@@ -766,7 +766,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
                     "        /// <param name=\"model\">Model</param>\r\n        /// <param name=\"entity\">" +
                     "Business Entity</param>\r\n");
             
-            #line 298 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 298 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (string.IsNullOrEmpty(keyFieldName))
     {
@@ -776,7 +776,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <exception cref=\"NotImplementedException\"></exception>\r\n");
             
-            #line 303 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 303 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -786,7 +786,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("        public override void MapKey(T model, IBusinessEntity entity)\r\n        {\r\n" +
                     "");
             
-            #line 308 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 308 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     if (!string.IsNullOrEmpty(keyFieldName))
     {
@@ -796,28 +796,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            entity.SetValue(");
             
-            #line 312 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 312 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(".Index.");
             
-            #line 312 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 312 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", model.");
             
-            #line 312 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 312 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 313 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 313 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
     else
@@ -828,7 +828,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            throw new NotImplementedException();\r\n");
             
-            #line 319 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 319 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
      }
 
@@ -837,7 +837,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        }\r\n\r\n        #endregion\r\n");
             
-            #line 325 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            #line 325 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
     }
 
@@ -848,7 +848,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

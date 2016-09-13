@@ -25,16 +25,8 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 
 BEGIN
-INSERT INTO [dbo].[WorkflowKind](WorkflowKindId, UniqueName, MaxRetries)VALUES (9128, 'TUClearStatistics', 3)
+  INSERT INTO [dbo].[WorkflowKind](WorkflowKindId, UniqueName, MaxRetries) VALUES (CONVERT(uniqueidentifier, 'ab08bb64-73bc-4681-87fd-08dd23af21a9'), 'TUClearStatistics', 3)
+  INSERT INTO [dbo].[UnitOfWorkKind](WorkflowKindId, UniqueName, AssemblyName, TypeName, ExecutionOrder, IsAsynchronous) 
+  VALUES(CONVERT(uniqueidentifier, 'ab08bb64-73bc-4681-87fd-08dd23af21a9'), 'TU Clear Statistics', 'ValuedPartner.TU.Services', 'ValuedPartner.TU.Services.UnitOfWork.ClearStatisticsUow', 1, 1)
 END
-GO
-
-SET IDENTITY_INSERT UnitOfWorkKind ON
-
-BEGIN
-	INSERT INTO [dbo].[UnitOfWorkKind](UnitOfWorkKindId, WorkflowKindId, UniqueName, AssemblyName, TypeName, ExecutionOrder, IsAsynchronous) VALUES(9128, 9128, 'TUClearStatistics', 'ValuedPartner.TU.Services', 'ValuedPartner.TU.Services.UnitOfWork.ClearStatisticsUow', 1, 1)
-END
-GO
-
-SET IDENTITY_INSERT UnitOfWorkKind OFF
 GO

@@ -34,21 +34,20 @@ database or other credentials are required, these files will require modificatio
 
 ## Kendo Files
 
-The sample solutions require certain Kendo files that are not able to be distributed via the
-samples and require the ISV/Partner to have the appropriate Kendo License. Therefore, prior to 
-compiling and running the solution, the required Kendo files will need to be located, copied to 
+The sample solutions requires a certain Kendo file that is not able to be distributed via the
+samples and requires the ISV/Partner to have the appropriate Kendo License. Therefore, prior to 
+compiling and running the solution, the required Kendo file will need to be located, copied to 
 the solution's appropriate folder and added to the Web project within the solution.
 
 ### Steps
 
-The following steps are required to add the required Kendo files to the Web project of the solution:
+The following steps are required to add the required Kendo file to the Web project of the solution:
 
-* Locate the **kendo.all.min.js** and **kendo.custom.min.js** files
-> These files are also located in the Sage 300 Online Web's **Scripts/Kendo** folder
+* Locate the **kendo.all.min.js** file
+> This file is also located in the Sage 300 Online Web's **Scripts/Kendo** folder
 
-* Copy the **kendo.all.min.js** and **kendo.custom.min.js** files to the solution's Web project's 
-**Scripts/Kendo** folder
-* Load solution in Visual Studio and include these two files in the Web project
+* Copy the **kendo.all.min.js** file to the solution's Web project's **Scripts/Kendo** folder
+* Load solution in Visual Studio and include this file in the Web project
 * The solution is now compilable and runnable 
 
 ## Grid Enhancement

@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class RepositoryInterface : RepositoryInterfaceBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -155,7 +155,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
             #line hidden
             this.Write("// ");
             
-            #line 32 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 32 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -163,28 +163,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
             this.Write("\r\n\r\n#region Namespace\r\n\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Reposito" +
                     "ry;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models;\r\nusing ");
             
-            #line 38 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 38 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 38 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 38 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 42 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 42 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -193,28 +193,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
                     "ty\r\n    /// </summary>\r\n\t/// <param name=\"args\">Optional Parameters</param>\r\n   " +
                     " /// <typeparam name=\"T\">");
             
-            #line 48 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</typeparam>\r\n    public interface I");
             
-            #line 49 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Entity<T> : IDynamicQueryRepository<T>, ISecurity where T : ");
             
-            #line 49 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(", new()\r\n    {\r\n        /// <summary>\r\n        /// Gets ");
             
-            #line 52 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -232,7 +232,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.DynamicQuery.Cl
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\DynamicQuery\Class\RepositoryInterface.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

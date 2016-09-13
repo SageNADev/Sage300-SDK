@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Inquiry.Class
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class InternalController : InternalControllerBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Inquiry.Class
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -159,7 +159,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Inquiry.Class
             #line hidden
             this.Write("// ");
             
-            #line 36 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 36 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -177,35 +177,35 @@ using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ");
             
-            #line 47 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 47 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.Services;\r\nusing ");
             
-            #line 48 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 48 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n");
             
-            #line 49 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
 
 	if (enumsCount > 0)
 	{
@@ -215,21 +215,21 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 53 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 53 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums;\r\n");
             
-            #line 54 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
 
 	}	
 
@@ -238,77 +238,77 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 57 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 57 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 58 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 58 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 62 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 62 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// Internal controller for ");
             
-            #line 65 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">");
             
-            #line 67 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</typeparam>\r\n    public class ");
             
-            #line 68 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal<T> : InternalControllerBase<I");
             
-            #line 68 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Service<T>>\r\n        where T : ");
             
-            #line 69 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -317,7 +317,7 @@ using ");
                     "  #region Constructor\r\n\r\n        /// <summary>\r\n        /// New instance of <see" +
                     " cref=\"");
             
-            #line 78 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -325,7 +325,7 @@ using ");
             this.Write("ControllerInternal{T}\"/>\r\n        /// </summary>\r\n        /// <param name=\"contex" +
                     "t\">Context</param>\r\n        public ");
             
-            #line 81 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -334,28 +334,28 @@ using ");
                     "    }\r\n\r\n        #endregion\r\n\r\n        #region Internal methods\r\n\r\n        /// <" +
                     "summary>\r\n        /// Generic routine to return a view model for ");
             
-            #line 91 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <returns>View Model for ");
             
-            #line 93 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 94 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 94 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel<T> Get()\r\n        {\r\n            return new ");
             
-            #line 96 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -364,14 +364,14 @@ using ");
                     ";\r\n        }\r\n\r\n        /// <summary>\r\n        /// Generic routine to return a v" +
                     "iew model for ");
             
-            #line 103 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 103 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 105 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 105 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -380,14 +380,14 @@ using ");
                     "<param name=\"pageSize\">Page Size </param>\r\n        /// <param name=\"filters\">Fil" +
                     "ter Expression </param>\r\n        /// <returns>View Model for ");
             
-            #line 109 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 109 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 110 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 110 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -405,7 +405,7 @@ using ");
 
             return new ");
             
-            #line 121 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+            #line 121 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -416,7 +416,7 @@ using ");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Inquiry\Class\InternalController.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

@@ -1,7 +1,7 @@
 # Clear Statstics Sample
 
 The Clear Statistics Sample provides a working solution that illustrates the Process code
-type. Like the other samples, the Kendo files must be added to the project before compiling
+type. Like the other samples, a Kendo file must be added to the project before compiling
 (these instructions are found in the README file in the Samples folder). This sample has additional
 steps that must be performed prior to running the sample.
 
@@ -9,19 +9,12 @@ steps that must be performed prior to running the sample.
 
 The **ClearStatistics_WorkerRole_Data.sql** script is located in the root of the
 **samples\ClearStatistics** folder. This script includes the INSERT SQL commands for the
-work flow tables of your landlord database. The workflow id of 9128 has been assigned to this sample.
+work flow tables of your landlord database.
 
-### Copy script to Sage 300 runtime folder
+### Copy script to Sage 300 Scripts folder
 
-Copy **ClearStatistics_WorkerRole_Data.sql** to your Sage 300 runtime folder in order for it to 
-be consumed by the **LandlordDatabaseSetup.config** file. This is the file that will be 
-invoked from the Portal button of the Database Setup Screen.
-
-### Modify the config file to include the new script
-
-Edit the **LandlordDatabaseSetup.config** file which is located in your Sage 300 runtime
-folder to include the script **ClearStatistics_WorkerRole_Data.sql**. Thus, when the Portal
-button of the Database Setup Screen is selected, it will insert these records to the workflow tables.
+Copy **ClearStatistics_WorkerRole_Data.sql** to your Sage 300 **runtime\Database\Landlord\Scripts** folder 
+in order for it to be invoked from the Portal button logic of the Database Setup Screen.
 
 ### Stop the Sage CNA Windows Service
 

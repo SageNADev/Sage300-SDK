@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class Repository : RepositoryBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -155,7 +155,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             #line hidden
             this.Write("// ");
             
-            #line 32 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 32 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -174,63 +174,63 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using ");
             
-            #line 44 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 44 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".BusinessRepository.Mappers;\r\nusing ");
             
-            #line 45 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 45 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.BusinessRepository;\r\nusing ");
             
-            #line 46 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 50 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".BusinessRepository\r\n{\r\n    /// <summary>\r\n    /// Class ");
             
-            #line 53 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -238,28 +238,28 @@ using ");
             this.Write(" Repository\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">Where T is type of <" +
                     "see cref=\"");
             
-            #line 55 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 55 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\"/></typeparam>\r\n    public class ");
             
-            #line 56 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Repository<T> : FlatRepository<T>, I");
             
-            #line 56 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Entity<T>\r\n        where T : ");
             
-            #line 57 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -285,7 +285,7 @@ using ");
         /// <summary>
         /// Constructor for ");
             
-            #line 76 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -293,14 +293,14 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"context\">Context</param>\r\n    " +
                     "    public ");
             
-            #line 79 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Repository(Context context)\r\n            : base(context, new ");
             
-            #line 80 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -308,7 +308,7 @@ using ");
             this.Write("Mapper<T>(context), ActiveFilter)\r\n        {\r\n            SetFilter(context);\r\n  " +
                     "      }\r\n\r\n        /// <summary>\r\n        /// Constructor for ");
             
-            #line 86 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -316,7 +316,7 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"context\">Context</param>\r\n    " +
                     "    /// <param name=\"session\">Business Entity Session</param>\r\n        public ");
             
-            #line 90 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -324,7 +324,7 @@ using ");
             this.Write("Repository(Context context, IBusinessEntitySession session)\r\n            : base(c" +
                     "ontext, new ");
             
-            #line 91 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -347,7 +347,7 @@ using ");
             var userAccess = base.GetAccessRights();
             if (SecurityCheck(Security.");
             
-            #line 107 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 107 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -355,7 +355,7 @@ using ");
             this.Write("Import))\r\n            {\r\n                userAccess.SecurityType |= SecurityType." +
                     "Import;\r\n            }\r\n            if (SecurityCheck(Security.");
             
-            #line 111 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 111 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -382,7 +382,7 @@ using ");
         /// </summary>
         /// <param name=""model"">Model for ");
             
-            #line 131 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -391,7 +391,7 @@ using ");
                     "xpression<Func<T, bool>> GetUpdateExpression(T model)\r\n        {\r\n            re" +
                     "turn entity => \r\n");
             
-            #line 136 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
     for (var i = 0; i <  view.Keys.Count; i++)
     {
@@ -406,42 +406,42 @@ using ");
             #line hidden
             this.Write("                ");
             
-            #line 145 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(startLine));
             
             #line default
             #line hidden
             this.Write("entity.");
             
-            #line 145 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 145 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(token));
             
             #line default
             #line hidden
             this.Write("(model.");
             
-            #line 145 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 145 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endLine));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 146 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 146 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
     }
 
@@ -470,7 +470,7 @@ using ");
         {
             _businessEntity = OpenEntity(");
             
-            #line 169 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 169 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -488,7 +488,7 @@ using ");
             ValidRecordFilter = (model => 
 ");
             
-            #line 180 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
     for (var i = 0; i <  view.Keys.Count; i++)
     {
@@ -502,20 +502,20 @@ using ");
             #line hidden
             this.Write("                ");
             
-            #line 188 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 188 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(token));
             
             #line default
             #line hidden
             
-            #line 188 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 188 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endLine));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 189 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 189 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
     }
 
@@ -524,7 +524,7 @@ using ");
             #line hidden
             this.Write("\r\n            _mapper = new ");
             
-            #line 193 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+            #line 193 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -533,7 +533,7 @@ using ");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\Dev-release-2017\Columbus-Framework\Tools\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Repository.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

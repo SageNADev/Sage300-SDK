@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
@@ -302,10 +302,50 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Templates\Process\Class\Uow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Uow.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Process\Class\ViewModel.cs">
       <DependentUpon>ViewModel.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Process\Script\Behaviour.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Behaviour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\Script\KoExtn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KoExtn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\Script\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\Script\Sql.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\View\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\View\Index.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\View\Localization.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Reports\Class\Controller.cs">
       <DependentUpon>Controller.tt</DependentUpon>
@@ -509,9 +549,41 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceInterface.cs</LastGenOutput>
     </None>
+    <None Include="Templates\Process\Class\Uow.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Uow.cs</LastGenOutput>
+    </None>
     <None Include="Templates\Process\Class\ViewModel.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Script\Behaviour.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Behaviour.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Script\KoExtn.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>KoExtn.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Script\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\Script\Sql.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Sql.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\View\Entity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\View\Index.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Index.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Process\View\Localization.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Localization.cs</LastGenOutput>
     </None>
     <None Include="Templates\Reports\Class\Controller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -586,8 +658,6 @@
     <Folder Include="Templates\DynamicQuery\View\" />
     <Folder Include="Templates\Inquiry\Script\" />
     <Folder Include="Templates\Inquiry\View\" />
-    <Folder Include="Templates\Process\Script\" />
-    <Folder Include="Templates\Process\View\" />
     <Folder Include="Templates\Reports\Script\" />
     <Folder Include="Templates\Reports\View\" />
   </ItemGroup>

@@ -49,6 +49,7 @@ using <#=companyNamespace#>.<#=moduleId#>.Models.Enums.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Resources.Process;
 using <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
 
 #endregion

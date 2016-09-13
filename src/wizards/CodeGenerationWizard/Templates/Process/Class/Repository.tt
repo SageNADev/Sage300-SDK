@@ -36,9 +36,11 @@
 using <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 
 #endregion
 
@@ -67,7 +69,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Process
         /// </summary>
         /// <param name="context">Context</param>
         public <#=entityName#>Repository(Context context)
-            : base(context, new <#=modelName#>Mapper<T>(context))
+            : base(context, new <#=modelName#>Mapper<T>(context), ObjectPoolType.Default, BusinessEntitySessionParams.Get(context))
         {
         }
 

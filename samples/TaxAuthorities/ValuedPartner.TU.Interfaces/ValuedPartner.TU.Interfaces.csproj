@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ValuedPartner.TU.Interfaces</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Interfaces</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>

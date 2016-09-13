@@ -97,6 +97,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> SubFolderServicesKey is used as a dictionary key for subfolders </summary>
         public const string SubFolderServicesKey = "Services";
 
+        /// <summary> SubFolderUnitOfWorkKey is used as a dictionary key for subfolders </summary>
+        public const string SubFolderUnitOfWorkKey = "UnitOfWork";
+
         /// <summary> SubFolderResourcesKey is used as a dictionary key for subfolders </summary>
         public const string SubFolderResourcesKey = "Resources";
 
@@ -117,6 +120,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> SubFolderWebScriptsKey is used as a dictionary key for subfolders </summary>
         public const string SubFolderWebScriptsKey = "Scripts";
+
+        /// <summary> SubFolderWebSqlKey is used as a dictionary key for subfolders </summary>
+        public const string SubFolderWebSqlKey = "Sql";
 
         /// <summary> SubFolderNameFields is used as a subfolder name </summary>
         public const string SubFolderNameFields = "Fields";
@@ -141,6 +147,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> SubFolderNameReports is used as a subfolder name </summary>
         public const string SubFolderNameReports = "Reports";
+
+        /// <summary> SubFolderNameUnitOfWork is used as a subfolder name </summary>
+        public const string SubFolderNameUnitOfWork = "UnitOfWork";
 
         /// <summary> SubFolderNameAreas is used as a subfolder name </summary>
         public const string SubFolderNameAreas = "Areas";
@@ -460,8 +469,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="content">File contents</param>
         /// <param name="projectKey">Project Key for Project Info</param>
         /// <param name="subfolderKey">Subfolder Key for Project Info</param>
+        /// <param name="addToProject">True to add to project otherwise false</param>
         /// <returns>True if successful otherwise false</returns>
-        private bool SaveFile(BusinessView view, string fileName, string content, string projectKey, string subfolderKey)
+        private bool SaveFile(BusinessView view, string fileName, string content, string projectKey, 
+            string subfolderKey, bool addToProject)
         {
             // Local
             var retVal = true;
@@ -518,7 +529,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Update project if write was successful
-                if (retVal)
+                if (retVal && addToProject)
                 {
                     // Add to project
                     try
@@ -587,7 +598,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderServicesKey, GetSubfolderName(string.Empty)}
+                    {SubFolderServicesKey, GetSubfolderName(string.Empty)},
+                    {SubFolderUnitOfWorkKey, SubFolderNameUnitOfWork}
                 };
                 project.Value.Subfolders = subfolders;
             }
@@ -642,6 +654,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {SubFolderWebViewModelKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameModels}))},
                     {SubFolderWebControllersKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers}))},
                     {SubFolderWebFinderKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers, SubFolderNameFinder})},
+                    {SubFolderWebSqlKey, BusinessViewHelper.ConcatStrings(new []{project.Value.ProjectFolder, string.Empty})},
                     {SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameScripts, view.Properties[BusinessView.EntityName]})}
                 };
                 project.Value.Subfolders = subfolders;
@@ -1016,9 +1029,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Create _Index.cshtml
             if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
             {
+                var indexTemplate = "Templates.Common.View.Index";
+                if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                {
+                    indexTemplate = "Templates.Process.View.Index";
+                }
+
                 CreateClass(view,
                     "Index.cshtml",
-                    TransformTemplateToText(view, _settings, "Templates.Common.View.Index"),
+                    TransformTemplateToText(view, _settings, indexTemplate),
                     WebKey, SubFolderWebIndexKey);
             }
 
@@ -1026,9 +1045,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Create _Localization.cshtml
             if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
             {
+                var localizationTemplate = "Templates.Common.View.Localization";
+                if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                {
+                    localizationTemplate = "Templates.Process.View.Localization";
+                }
+
                 CreateClass(view,
                     "_Localization.cshtml",
-                    TransformTemplateToText(view, _settings, "Templates.Common.View.Localization"),
+                    TransformTemplateToText(view, _settings, localizationTemplate),
                     WebKey, SubFolderWebLocalizationKey);
             }
 
@@ -1092,7 +1117,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="content">File contents</param>
         /// <param name="projectKey">Project Key for Project Info</param>
         /// <param name="subfolderKey">Subfolder Key for Project Info</param>
-        private void CreateClass(BusinessView view, string fileName, string content, string projectKey, string subfolderKey)
+        /// <param name="addToProject">True to add to project otherwise false</param>
+        private void CreateClass(BusinessView view, string fileName, string content, string projectKey, 
+            string subfolderKey, bool addToProject = true)
         {
             // Update display of file being processed
             if (ProcessingEvent != null)
@@ -1101,7 +1128,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Save the file
-            var success = SaveFile(view, fileName, content, projectKey, subfolderKey);
+            var success = SaveFile(view, fileName, content, projectKey, subfolderKey, addToProject);
 
             // Update status
             LaunchStatusEvent(success, fileName);
@@ -1181,10 +1208,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Register types
             BusinessViewHelper.UpdateFlatBootStrappers(view, _settings);
-            BusinessViewHelper.UpdateFlatBundles(view, _settings);
+            BusinessViewHelper.UpdateBundles(view, _settings);
 
             // set the start page
-            BusinessViewHelper.CreateFlatViewPageUrl(view, _settings);
+            BusinessViewHelper.CreateViewPageUrl(view, _settings);
 
             //Update the plugin menu details
             BusinessViewHelper.UpdateMenuDetails(view, _settings);
@@ -1234,6 +1261,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.Service"),
                 ServicesKey, SubFolderServicesKey);
 
+            // Create the Unit of Work Service Class
+            CreateClass(view,
+                view.Properties[BusinessView.EntityName] + "Uow.cs",
+                TransformTemplateToText(view, _settings, "Templates.Process.Class.Uow"),
+                ServicesKey, SubFolderUnitOfWorkKey);
+
             // Create the ViewModel class
             CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
@@ -1257,6 +1290,53 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 view.Properties[BusinessView.EntityName] + "Repository.cs",
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.Repository"),
                  BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+
+            // Create partial view.cshtml
+            var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
+            CreateClass(view,
+                fileName,
+                TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
+                WebKey, SubFolderWebLocalizationKey);
+
+            // Register types
+            BusinessViewHelper.UpdateProcessBootStrappers(view, _settings);
+            BusinessViewHelper.UpdateBundles(view, _settings);
+
+            // set the start page
+            BusinessViewHelper.CreateViewPageUrl(view, _settings);
+
+            //Update the plugin menu details
+            BusinessViewHelper.UpdateMenuDetails(view, _settings);
+
+            // For javascript files, the project name does not include the .Web segment
+            var projectName =
+                _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+
+            // Create the Behavior JavaScript file
+            CreateClass(view,
+                projectName + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create the Knockout Extension JavaScript file
+            CreateClass(view,
+                projectName + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create the Repository JavaScript file
+            CreateClass(view,
+                projectName + view.Properties[BusinessView.EntityName] + "Repository.js",
+                TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create the SQL script
+            CreateClass(view,
+                view.Properties[BusinessView.EntityName] + "_WorkerRole_Data.sql",
+                TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
+                 WebKey, SubFolderWebSqlKey, 
+                 false);
+
         }
 
         /// <summary> Create Dynamic Query Repository Classes </summary>

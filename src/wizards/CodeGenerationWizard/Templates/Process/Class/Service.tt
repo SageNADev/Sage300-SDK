@@ -28,11 +28,13 @@
     var companyNamespace = settings.CompanyNamespace;
     var modelName = view.Properties[BusinessView.ModelName];
     var entityName = view.Properties[BusinessView.EntityName];
+    var workflowKindId = settings.WorkflowKindId;
 #>
 // <#=copyright#>
 
 #region Namespace
 
+using System;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
@@ -60,7 +62,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Services.Process
         /// </summary>
         /// <param name="context">Request Context</param>
         public <#=entityName#>Service(Context context)
-            : base(context, 9999)
+            : base(context, Guid.Parse("<#=workflowKindId#>"))
         {
         }
 

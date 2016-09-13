@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System;
 using System.Collections.Generic;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -78,6 +79,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public EnumHelper EnumHelper { get; set; }
         /// <summary> Resource keys </summary>
         public List<string> ResourceKeys { get; set; }
+        /// <summary> WorkflowKindId </summary>
+        public Guid WorkflowKindId { get; set; }
         #endregion
     }
 

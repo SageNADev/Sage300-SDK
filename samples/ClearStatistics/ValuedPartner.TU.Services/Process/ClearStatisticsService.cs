@@ -20,6 +20,7 @@
 
 #region Namespace
 
+using System;
 using System.Collections.Generic;
 using ValuedPartner.TU.Interfaces.BusinessRepository.Process;
 using ValuedPartner.TU.Interfaces.Services.Process;
@@ -44,7 +45,7 @@ namespace ValuedPartner.TU.Services.Process
         /// </summary>
         /// <param name="context">Request Context</param>
         public ClearStatisticsService(Context context)
-            : base(context, 9128)
+            : base(context, Guid.Parse("ab08bb64-73bc-4681-87fd-08dd23af21a9"))
         {
         }
 

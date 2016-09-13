@@ -14,7 +14,7 @@
     <RootNamespace>$companynamespace$.Web</RootNamespace>
     <AssemblyName>$companynamespace$.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">$sage300webfolder$</Sage300WebDir>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />

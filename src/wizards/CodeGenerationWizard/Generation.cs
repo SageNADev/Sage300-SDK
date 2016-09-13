@@ -965,7 +965,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CompanyNamespace = _companyNamespace,
                 Extension = GetExtension(repositoryType),
                 ResourceExtension = GetResourceExtension(repositoryType),
-                DoesAreasExist = _doesAreasExist
+                DoesAreasExist = _doesAreasExist,
+                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty
             };
         }
 

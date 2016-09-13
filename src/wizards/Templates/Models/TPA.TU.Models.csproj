@@ -10,7 +10,7 @@
     <RootNamespace>$companynamespace$.$applicationid$.Models</RootNamespace>
     <AssemblyName>$companynamespace$.$applicationid$.Models</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">$sage300webfolder$</Sage300WebDir>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>

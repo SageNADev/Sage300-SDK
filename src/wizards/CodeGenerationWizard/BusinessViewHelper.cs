@@ -53,11 +53,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Update Flat Bundles
+        /// Register types for service/repository
         /// </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">Settings</param>
-        public static void UpdateFlatBundles(BusinessView view, Settings settings)
+        public static void UpdateProcessBootStrappers(BusinessView view, Settings settings)
+        {
+            UpdateProcessWebBootStrapper(view, settings);
+            UpdateProcessBootStrapper(view, settings);
+        }
+
+        /// <summary>
+        /// Update Bundles
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="settings">Settings</param>
+        public static void UpdateBundles(BusinessView view, Settings settings)
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
@@ -90,11 +101,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Update Flat View Page URL
+        /// Update View Page URL
         /// </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">Settings</param>
-        public static void CreateFlatViewPageUrl(BusinessView view, Settings settings)
+        public static void CreateViewPageUrl(BusinessView view, Settings settings)
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
@@ -513,6 +524,137 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         txtLines.Insert(++index, linesToAdded[2]);
                         txtLines.Insert(++index, linesToAdded[3]);
+                    }
+                }
+                File.WriteAllLines(bsFile, txtLines);
+            }
+        }
+
+        /// <summary>
+        /// Register types for controller
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="settings">Settings</param>
+        private static void UpdateProcessWebBootStrapper(BusinessView view, Settings settings)
+        {
+            var moduleId = view.Properties[BusinessView.ModuleId];
+            var entityName = view.Properties[BusinessView.EntityName];
+            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+
+            var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
+
+            var bsName = moduleId + "WebBootstrapper.cs";
+            var bsFile = Path.Combine(pathProj, bsName);
+            if (File.Exists(bsFile))
+            {
+                const string register = "\t\t\tUnityUtil.RegisterType";
+                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
+                var txtLines = File.ReadAllLines(bsFile).ToList();
+                var pos = 1;
+
+                string[] nameSpace =
+                {
+                    "using " + modelProjNs + ";" ,
+                    "using " + webProjNs + ".Areas." + moduleId + ".Controllers.Process;",
+                };
+
+                for (var i = 0; i <= 1; i++)
+                {
+                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    {
+                        txtLines.Insert(++pos, nameSpace[i]);
+                    }
+                }
+
+                string[] tags =
+                {
+                    @"private void RegisterController(IUnityContainer container)",
+                };
+                string[] linesToAdded =
+                {
+                    string.Format(register + "<IController, {0}Controller<{0}>>(container, \"{1}{0}\");", entityName, moduleId)
+                };
+
+                for (var i = 0; i <= 0; i++)
+                {
+                    var index = trimLines.IndexOf(tags[i]) + 1 + i + pos;
+                    txtLines.Insert(index, linesToAdded[i]);
+                }
+                File.WriteAllLines(bsFile, txtLines);
+            }
+        }
+
+        /// <summary>
+        /// Register types for service/repository
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="settings">Settings</param>
+        private static void UpdateProcessBootStrapper(BusinessView view, Settings settings)
+        {
+            var moduleId = view.Properties[BusinessView.ModuleId];
+            var entityName = view.Properties[BusinessView.EntityName];
+            var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
+
+            var businessProjNs = settings.Projects[ProcessGeneration.BusinessRepositoryKey][moduleId].ProjectName + ".Process";
+            var interfacesProjNs = settings.Projects[ProcessGeneration.InterfacesKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
+            var servicesProjNs = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectName + ".Process";
+
+            var bsName = moduleId + "Bootstrapper.cs";
+            var bsFile = Path.Combine(pathProj, bsName);
+
+            if (File.Exists(bsFile))
+            {
+                var register = "\t\t\tUnityUtil.RegisterType";
+                var txtLines = File.ReadAllLines(bsFile).ToList();
+                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
+                var pos = 1;
+
+                string[] nameSpace =
+                {
+                    "using " + businessProjNs + ";",
+                    "using " + interfacesProjNs + ".BusinessRepository.Process;",
+                    "using " + interfacesProjNs + ".Services.Process;",
+                    "using " + modelProjNs + ";",
+                    "using " + servicesProjNs + ";"
+                };
+
+                for (var i = 0; i <= 4; i++)
+                {
+                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    {
+                        txtLines.Insert(++pos, nameSpace[i]);
+                    }
+                }
+
+                string[] tags =
+                {
+                    @"private void RegisterService(IUnityContainer container)",
+                    @"private void RegisterRepositories(IUnityContainer container)"
+                };
+
+                string[] linesToAdded =
+                {
+                    string.Format(register + "<I{0}Service<{0}>, {0}Service<{0}>>(container);", entityName),
+                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{0}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName),
+                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{0}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName)
+                };
+
+
+
+                for (var i = 0; i < 2; i++)
+                {
+                    var index = trimLines.IndexOf(tags[i]) + pos + i;
+                    if (i == 0)
+                    {
+                        index = index + 2;
+                        txtLines.Insert(index, linesToAdded[i]);
+                    }
+                    else
+                    {
+                        txtLines.Insert(++index, linesToAdded[1]);
+                        txtLines.Insert(++index, linesToAdded[2]);
                     }
                 }
                 File.WriteAllLines(bsFile, txtLines);

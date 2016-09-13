@@ -204,9 +204,9 @@
             this.pnlKendo.Controls.Add(this.txtKendoFolder);
             this.pnlKendo.Controls.Add(this.lblKendoFolder);
             this.pnlKendo.Controls.Add(this.chkKendoLicense);
-            this.pnlKendo.Location = new System.Drawing.Point(395, 74);
+            this.pnlKendo.Location = new System.Drawing.Point(366, 61);
             this.pnlKendo.Name = "pnlKendo";
-            this.pnlKendo.Size = new System.Drawing.Size(56, 30);
+            this.pnlKendo.Size = new System.Drawing.Size(200, 45);
             this.pnlKendo.TabIndex = 2;
             // 
             // lblKendoVersionHelp
@@ -215,7 +215,7 @@
             this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
             this.lblKendoVersionHelp.Size = new System.Drawing.Size(293, 36);
             this.lblKendoVersionHelp.TabIndex = 6;
-            this.lblKendoVersionHelp.Text = "The Kendo version used by these projects is v2014.2.1020";
+            this.lblKendoVersionHelp.Text = "The Kendo version used by these projects is v2016.2.714";
             // 
             // lblKendoLink
             // 
@@ -234,7 +234,9 @@
             this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
             this.lblKendoFolderHelp.Size = new System.Drawing.Size(297, 71);
             this.lblKendoFolderHelp.TabIndex = 4;
-            this.lblKendoFolderHelp.Text = resources.GetString("lblKendoFolderHelp.Text");
+            this.lblKendoFolderHelp.Text = "The projects require the kendo.all.min.js file in order to compile successfully. " +
+    "A commercial license must be purchased in order to use this file. The Kendo UI c" +
+    "ommercial license may be obtained at:";
             // 
             // btnKendoDialog
             // 

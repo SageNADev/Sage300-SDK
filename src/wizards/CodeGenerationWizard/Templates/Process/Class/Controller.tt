@@ -36,6 +36,7 @@
 
 #region Namespace
 
+using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
@@ -75,6 +76,20 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Process
                 (context =>new <#=entityName#>ControllerInternal<T>(context)),
                 "<#=moduleId#><#=entityName#>")
         {
+        }
+
+        #endregion
+
+        #region Initialize MultitenantControllerBase
+
+        /// <summary>
+        /// Initializes the specified request context.
+        /// </summary>
+        /// <param name="requestContext">The request context.</param>
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            ControllerInternal = new <#=entityName#>ControllerInternal<T>(Context);
         }
 
         #endregion

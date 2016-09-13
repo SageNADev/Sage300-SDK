@@ -14,7 +14,7 @@
     <RootNamespace>ValuedPartner.Web</RootNamespace>
     <AssemblyName>ValuedPartner.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />

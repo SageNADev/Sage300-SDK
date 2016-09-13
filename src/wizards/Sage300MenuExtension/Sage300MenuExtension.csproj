@@ -19,7 +19,7 @@
     <AssemblyName>Sage300MenuExtension</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -164,7 +164,7 @@
     <Content Include="Resources\Package.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tools\CodeGenerationWizard\CodeGenerationWizard.csproj">
+    <ProjectReference Include="..\CodeGenerationWizard\CodeGenerationWizard.csproj">
       <Project>{4930b6f4-b46a-4f02-98ac-72c54be7ac6d}</Project>
       <Name>CodeGenerationWizard</Name>
     </ProjectReference>

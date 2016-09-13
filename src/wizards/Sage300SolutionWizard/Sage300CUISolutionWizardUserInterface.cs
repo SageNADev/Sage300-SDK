@@ -123,19 +123,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
                     // Add kendo commercial files here
                     var allMinFileSource = Path.Combine(_kendoFolder, "kendo.all.min.js");
-                    var customMinFileSource = Path.Combine(_kendoFolder, "kendo.custom.min.js");
                     var allMinScripts = Path.Combine("Scripts", "Kendo", "kendo.all.min.js"); ;
-                    var customMinScripts = Path.Combine("Scripts", "Kendo", "kendo.custom.min.js"); ;
                     var allMinFileDest = Path.Combine(destFolder, allMinScripts);
-                    var customMinFileDest = Path.Combine(destFolder, customMinScripts); 
 
                     // Copy files
                     File.Copy(allMinFileSource, allMinFileDest);
-                    File.Copy(customMinFileSource, customMinFileDest);
 
                     // Add to project
                     webProject.ProjectItems.AddFromFile(allMinFileDest);
-                    webProject.ProjectItems.AddFromFile(customMinFileDest);
                 }
                 else
                 {
