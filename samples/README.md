@@ -32,7 +32,7 @@ By default, **SAMLTD** is the database and **ADMIN/ADMIN** are the credentials u
 These references are located in the Web project's **web.config** and **Global.asax** files. If a different 
 database or other credentials are required, these files will require modification.
 
-## Kendo Files
+## Kendo File
 
 The sample solutions requires a certain Kendo file that is not able to be distributed via the
 samples and requires the ISV/Partner to have the appropriate Kendo License. Therefore, prior to 
@@ -54,4 +54,4 @@ The following steps are required to add the required Kendo file to the Web proje
 
 The **Segment Codes** and **Source Journal Profiles** samples have been refactored to utilize the 
 grid enhancement logic. The **Receipt** sample, while having a grid, was not a receipient of the grid 
-enhancement logic. This will be addressed in the next release.
+enhancement logic. This will be addressed in a future release.

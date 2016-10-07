@@ -1,0 +1,22 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.Revaluation.RevaluationOptionalFieldValue
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+<div id="windowmessage"></div>
+<hr />
+<div class="sublevel-1">
+    <div class="gridcontrols-group clearfix">
+
+        @Html.KoSageButton("btnAddOptionalFieldLine", null, new { @value = CommonResx.AddLine, @id = "btnAddOptionalFieldLine", @class = "icons btn-add" })
+        @Html.KoSageButton("btnDeleteOptionalFieldLine", null, new { @id = "btnDeleteOptionalFieldLine", @class = "icons btn-delete", value = CommonResx.DeleteLine })
+        @Html.KoSageButton("btnEditOptFieldColumns", null, new { @id = "btnEditOptFieldColumns", @class = "icons btn-edit", @value = CommonResx.EditColumns })
+
+    </div>
+    <div class="datagrid-group">
+        @Html.Partial(Core.OptionalFields)
+        @Html.KoKendoGrid("OptFieldsGrid", "screenUI.viewModel.OptionalFieldsData", "SerialNumber", "optionalFieldUIGrid.optionalFieldConfig(screenSetup.moduleName,'Revaluation','GetOptionalFields', 'OptFieldsGrid', 0, 0, 1,'OptionalFieldsData',null,true)", true)
+    </div>
+</div>

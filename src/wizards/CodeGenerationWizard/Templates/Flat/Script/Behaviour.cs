@@ -352,7 +352,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("() != \"\")) {\r\n                    if (sg.controls.GetString(");
+            this.Write("()) != \"\") {\r\n                    if (sg.controls.GetString(");
             
             #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));

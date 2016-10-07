@@ -519,17 +519,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             case RepositoryType.DynamicQuery:
                                 if (!string.IsNullOrEmpty(txtDynamicQueryName.Text))
                                 {
-                                    defaultName = BusinessViewHelper.Replace(txtDynamicQueryName.Text.Trim()) + "Resx";
+                                    defaultName = txtDynamicQueryName.Text.Trim() + "Resx";
                                 }
                                 break;
                             case RepositoryType.Report:
                                 if (!string.IsNullOrEmpty(txtReportName.Text))
                                 {
-                                    defaultName = BusinessViewHelper.Replace(txtReportName.Text.Trim()) + "Resx";
+                                    defaultName = txtReportName.Text.Trim() + "Resx";
                                 }
                                 break;
                             default:
-                                defaultName = BusinessViewHelper.Replace(txtViewName.Text.Trim()) + "Resx";
+                                defaultName = txtViewName.Text.Trim() + "Resx";
                                 break;
                         }
 

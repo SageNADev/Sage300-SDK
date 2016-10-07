@@ -1,0 +1,83 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Process
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Revaluation
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Models.Process
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@model Sage.CA.SBS.ERP.Sage300.Shared.Web.Models.RevaluationViewModel<RevaluationEntry>
+
+@Html.Partial("~/Areas/Shared/Views/Revaluation/Partials/_Localization.cshtml")
+
+<div id="success"></div>
+<div id="message"></div>
+<div class="container_16">
+
+    @if (Model.IsMultiCurrency)
+    {
+        using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmRevaluation" }))
+        {
+            <!-- The processScreenContent container defines scope for KO binding to the processing viewModel -->
+            <div id="processScreenContent">
+                <div class="form-group">
+                    <div class="ctrl-group">
+                        <div>
+                            @Html.KoSageCheckBox("chkProvisionalRevaluation", false, new { @sagechecked = "Data.ProvisionalRevaluation" }, null)
+                            @Html.SageLabel(RevaluationResx.ProvisionalRevaluation, new { @for = "chkProvisionalRevaluation", @class = " " })
+                        </div>
+                    </div>
+
+                    @Html.Partial(Core.ProcessingStatus)
+
+                </div>
+            </div>
+
+            <!-- The mainScreenContent container defines scope for KO binding to the main viewModel -->
+            <div id="mainScreenContent">
+                <div class="datagrid-group">
+                    @Html.Partial("~/Areas/Shared/Views/Revaluation/Partials/_Details.cshtml", new RevaluationEntry())
+                </div>
+
+                <section class="footer-group-1">
+                    @Html.KoSageButton("btnRefresh", null, new { @id = "btnRefresh", @class = "btn-secondary", @value = CommonResx.Refresh })
+                    @Html.KoSageButton("btnHistory", null, new { @id = "btnHistory", @class = "btn-secondary", @value = RevaluationResx.History })
+                    @Html.KoSageButton("btnProcess", null, new { @id = "btnProcess", @class = "btn-primary", @value = CommonResx.Process })
+                </section>
+
+                <div id="optionalFieldsWindow">
+                    @Html.Partial("~/Areas/Shared/Views/Revaluation/Partials/_DetailsOptionalFields.cshtml", new RevaluationOptionalFieldValue())
+                </div>
+
+            </div>
+        }
+
+        <script type="text/javascript">
+
+            @Html.ConvertToJsVariableUsingNewtonSoft("initialModel", Model);
+            @Html.ConvertToJsVariableUsingNewtonSoft("initialProcessModel", 
+                new ProcessViewModel<RevaluationProcess> {
+                    Data = new RevaluationProcess { ProvisionalRevaluation = false }, 
+                    ProcessResult = new ProcessResult
+                    {
+                        Results = new List<EntityError>(), 
+                        ProgressMeter = new ProgressMeter()
+                    }});
+
+        </script>
+
+    }
+    else
+    {
+        <div class="message-control multiError-msg">
+            <div class="title">
+                <span class="icon multiError-icon"></span>
+                <h3>@CommonResx.Error</h3>
+            </div>
+            <div class="msg-content">
+                @RevaluationResx.SingleCurrency
+            </div>
+        </div>
+    }
+</div>

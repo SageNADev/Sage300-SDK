@@ -1,0 +1,38 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.Revaluation.RevaluationEntry
+
+<script type="text/javascript">
+
+    var gridConfigHeader = {
+        headerCurrencyCode: '@Html.SageGridHeaderFor(model => model.CurrencyCode)',
+        headerThroughDate: '@Html.SageGridHeaderFor(model => model.ThroughDate)',
+        headerRateType: '@Html.SageGridHeaderFor(model => model.RateType)',
+        headerRateDate: '@Html.SageGridHeaderFor(model => model.RateDate)',
+        headerExchangeRate: '@Html.SageGridHeaderFor(model => model.ExchangeRate)',
+        headerOptionalFieldsString: '@Html.SageGridHeaderFor(model => model.OptionalFieldsString)'
+    };
+
+    var gridFields = {
+        txtCurrencyCode: '@Html.SageTextBoxFor(model => model.CurrencyCode, new { @id = "txtCurrencyCode", @class = "txt-upper", @maxlength = "3"})' + '@Html.SageButton("btnCurrencyCode", new { @id = "btnCurrencyCode", @class = "icon btn-search", @tabindex = "-1" })',
+        txtThroughDate: '@Html.SageTextBoxFor(model => model.ThroughDate, new { @id = "txtThroughDate" })',
+        txtRateType: '@Html.SageTextBoxFor(model => model.RateType, new { @id = "txtRateType", @class = "txt-upper", @maxlength = "2" })' + '@Html.SageButton("btnRateType", new { @id = "btnRateType", @class = "icon btn-search", @tabindex = "-1" })',
+        txtRateDate: '@Html.SageTextBoxFor(model => model.RateDate, new { @id = "txtRateDate" })',
+        txtExchangeRate: '@Html.SageTextBoxFor(model => model.ExchangeRate, new { @id = "txtExchangeRate" })' + '@Html.SageButton("btnExchangeRate", new { @id = "btnExchangeRate", @class = "icon btn-search", @tabindex = "-1" })',
+        txtOptionalFieldsString: '@Html.SageTextBoxFor(model => model.OptionalFieldsString, new { @id = "txtOptionalFieldsString", @disabled = "disabled" })' + '@Html.SageButton("btnOptionalFieldsString", new { @id = "btnOptionalFieldsString", @class = "icon btn-search", @tabindex = "-1" })'
+    }
+
+</script>
+
+<section class="gridcontrols-group clearfix">
+    @Html.KoSageButton("btnAddLine", new { }, new { @value = CommonResx.AddLine, @id = "btnAddLine", @class = "icons btn-add"})
+    @Html.KoSageButton("btnDeleteLine", new { }, new { @id = "btnDeleteLine", @class = "icons btn-delete", value = CommonResx.DeleteLine})
+    @Html.KoSageButton("btnEditColumns", null, new { @id = "btnEditColumns", @class = "icons btn-edit", @value = CommonResx.EditColumns })
+</section>
+
+@Html.Partial(Core.GridPreferences)
+@Html.KoKendoGrid("Grid", "screenUI.viewModel.DataList", "InternalId", "gridConfig", true)

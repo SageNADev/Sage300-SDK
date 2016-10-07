@@ -7,6 +7,7 @@ hr {
 	margin-bottom: 	@line-height-computed;
 	border: 		0;
 	border-top: 	1px solid @hr-border;
+	width:			100%;
 
 	&.dashed {
 	border-top: 	1px dashed @hr-border;
@@ -17,6 +18,6 @@ hr {
 	}
 }
 
-.k-window-content hr {
+.k-window-content hr:first-child {
     display:		none;
 }

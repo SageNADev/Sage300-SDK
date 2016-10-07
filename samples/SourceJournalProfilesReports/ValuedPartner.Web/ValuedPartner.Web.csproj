@@ -105,8 +105,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>$(SolutionDir)packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling">
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.TransientFaultHandling.Core, Version=5.1.1209.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,19 +126,24 @@
     <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>$(SolutionDir)packages\Microsoft.Web.Administration.7.0.0.0\lib\net20\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>$(SolutionDir)packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=3.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)packages\WindowsAzure.Storage.3.1.0.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -346,6 +359,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportRepository.js" />
@@ -1480,7 +1495,25 @@
     <Content Include="Assets\crystalreportviewers13\prompting\js\promptengine_strings_zh_TW.js" />
     <Content Include="Assets\crystalreportviewers13\urlreporting\activexviewer.js" />
     <Content Include="Assets\crystalreportviewers13\urlreporting\appletviewer.js" />
+    <Content Include="Assets\images\login\login-bg.jpg" />
+    <Content Include="Assets\images\login\login-bg_admin.jpg" />
+    <Content Include="Assets\images\login\sage300-logo-sq.png" />
+    <Content Include="Content\Images\nav\sprite_global_menu%402x.png" />
+    <Content Include="Content\Images\nav\sprite_global_menu_rev%402x.png" />
+    <Content Include="Content\Images\sage_300_logo_white.png" />
     <Content Include="pageUrl.txt" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-TW.min.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
@@ -1630,7 +1663,6 @@
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
     <Content Include="Scripts\jasmine\jasmine.js" />
-    <Content Include="Areas\Core\Views\Shared\_OptionsMenuDisableCheck.cshtml" />
     <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -1652,35 +1684,15 @@
     <Content Include="Scripts\JQueryUI\_references.js" />
     <Content Include="Scripts\JQueryUI\iframe-resizer-reports.js" />
     <Content Include="Scripts\JQueryUI\iframeResizer.js" />
-    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
     <Content Include="Scripts\JQueryUI\jquery.json.min.js" />
     <Content Include="Scripts\JQueryUI\jquery.mask.min.js" />
     <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
     <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-AU.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-US.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.js" />
     <Content Include="Scripts\Kendo\kendo.culture.en.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.es-ES.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.es-ES.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.zh-Hans.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.zh-Hant.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-AU.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-US.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-ZA.js" />
-    <Content Include="Scripts\Kendo\knockout-kendo.js" />
-    <Content Include="Scripts\Kendo\knockout-kendo.min.js" />
-    <Content Include="Scripts\knockout-kendo.js" />
-    <Content Include="Scripts\knockout-kendoGrid.js" />
     <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout\knockout-2.1.0.js" />
-    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
     <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
-    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
     <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.BindingHandlers.js" />
     <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js" />
     <Content Include="Scripts\Less\less-1.6.1.min.js" />
@@ -2060,10 +2072,8 @@
     <Content Include="Content\IntelligenceGo\fr-CA\Financial Income Statement S300.xlsx" />
     <Content Include="Content\IntelligenceGo\fr-CA\Financial Ratio S300.xlsx" />
     <Content Include="Content\IntelligenceGo\fr-CA\Report Designer S300.xlsx" />
-    <Content Include="Content\Styles\Kendo\common-template.less" />
     <Content Include="Content\Styles\Kendo\kendo.common.less" />
     <Content Include="Content\Styles\Kendo\kendo.default.less" />
-    <Content Include="Content\Styles\Kendo\theme-template.less" />
     <Content Include="Views\Partials\_CommonLayout.cshtml" />
     <Content Include="Views\Partials\_ConfigurePopUp.cshtml" />
     <Content Include="Views\Partials\_FeatureTour.cshtml" />
@@ -2087,6 +2097,41 @@
     <Content Include="Areas\TU\Views\SourceJournalProfile\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\SourceJournalProfile\Partials\_SourceJournalProfile.cshtml" />
     <Content Include="Areas\TU\Views\SourceJournalProfileReport\Partials\_SourceJournalProfileReport.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\GridPage.cshtml" />
+    <Content Include="Content\Styles\Kendo\common\adaptive.less" />
+    <Content Include="Content\Styles\Kendo\common\all.less" />
+    <Content Include="Content\Styles\Kendo\common\base.less" />
+    <Content Include="Content\Styles\Kendo\common\calendar.less" />
+    <Content Include="Content\Styles\Kendo\common\core.less" />
+    <Content Include="Content\Styles\Kendo\common\dataviz.less" />
+    <Content Include="Content\Styles\Kendo\common\editor.less" />
+    <Content Include="Content\Styles\Kendo\common\font-icons.less" />
+    <Content Include="Content\Styles\Kendo\common\forms.less" />
+    <Content Include="Content\Styles\Kendo\common\gantt.less" />
+    <Content Include="Content\Styles\Kendo\common\grid.less" />
+    <Content Include="Content\Styles\Kendo\common\imagebrowser.less" />
+    <Content Include="Content\Styles\Kendo\common\inputs.less" />
+    <Content Include="Content\Styles\Kendo\common\menu.less" />
+    <Content Include="Content\Styles\Kendo\common\mixins.less" />
+    <Content Include="Content\Styles\Kendo\common\notification.less" />
+    <Content Include="Content\Styles\Kendo\common\panelbar.less" />
+    <Content Include="Content\Styles\Kendo\common\pivot.less" />
+    <Content Include="Content\Styles\Kendo\common\progressbar.less" />
+    <Content Include="Content\Styles\Kendo\common\responsivepanel.less" />
+    <Content Include="Content\Styles\Kendo\common\scheduler.less" />
+    <Content Include="Content\Styles\Kendo\common\slider.less" />
+    <Content Include="Content\Styles\Kendo\common\splitter.less" />
+    <Content Include="Content\Styles\Kendo\common\spreadsheet.less" />
+    <Content Include="Content\Styles\Kendo\common\tabstrip.less" />
+    <Content Include="Content\Styles\Kendo\common\toolbar.less" />
+    <Content Include="Content\Styles\Kendo\common\tooltip.less" />
+    <Content Include="Content\Styles\Kendo\common\treelist.less" />
+    <Content Include="Content\Styles\Kendo\common\treeview.less" />
+    <Content Include="Content\Styles\Kendo\common\upload.less" />
+    <Content Include="Content\Styles\Kendo\common\virtuallist.less" />
+    <Content Include="Content\Styles\Kendo\common\window.less" />
+    <Content Include="Content\Styles\Kendo\type-default.less" />
+    <Content Include="Views\Partials\_PluginMenuUrl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

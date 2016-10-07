@@ -64,11 +64,45 @@ body, td, input {
 }
 
 body {
-	background-color: #ebedef;
+    background-color: #ebedef;
+    background-size: cover;
+    background-image: url("../../assets/images/login/login-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+body.admin {
+    background-color: #ebedef;
+    background-size: cover;
+    background-image: url("../../assets/images/login/login-bg_admin.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+body.master-stand-alone {
+    background-color: #fff;
+    background-image: none;
 }
 
 h1, h2, h3, h4 {
 	line-height: 1.15;
+}
+
+.page-header {
+    margin-bottom: 20px;
+    font-family: 'Calibri';
+    font-weight: normal;
+    color: #3c424f;
+}
+
+h1.page-header {
+    font-size: 30px;
+}
+
+h2.page-header {
+    font-size: 22px;
 }
 
 p {
@@ -87,9 +121,8 @@ a:hover {
 
 
 .header {
-	background-color: #fff;
-	height: 120px;
-	padding: 40px 0 0;
+	height: 47px;
+    background-color: #3c414e;
 }
 
 .footer {
@@ -104,21 +137,19 @@ a:hover {
 	padding: 13px 0 0;
 }
 
-.main-body {
-	padding: 40px 0;
-}
-
 .header > .wrapper,
-.footer > .wrapper,
 .main-body > .wrapper {
 	width: 940px;
-	padding: 0 10px;
+	padding: 10px;
 	margin: 0 auto;
 	position: relative;
 }
 
-.header {
-	box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1)
+.footer > .wrapper {
+    width: 940px;
+	padding: 0 10px;
+	margin: 0 auto;
+	position: relative;
 }
 
 .footer .logo-sage {
@@ -251,30 +282,33 @@ input[class*="btn-"] {
 }
 
 .btn-primary:focus { /*New UI: Focus style added for primary button*/
-    border:1px solid #255bc7;
-    box-shadow: 0 0 6px #169fda; 
-    -webkit-box-shadow: 0 0 4px #169fda; 
-    -moz-box-shadow: 0 0 4px #169fda;
+    background-color: #1d479c; 
+    border: 1px solid #255bc7;
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 
 }
 
 .btn-secondary:focus { /*New UI: Focus style added for secondary button*/
+    color: #255bc7;
     border:1px solid #255bc7;
-    box-shadow: 0 0 6px #169fda; 
-    -webkit-box-shadow: 0 0 4px #169fda; 
-    -moz-box-shadow: 0 0 4px #169fda;
+    background-color: #e8effe;
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
 
 }
 
@@ -292,11 +326,6 @@ input[class*="btn-"] {
 
 .dropdown-group .k-dropdown.medium {
 	width: 360px; 
-}
-
-.login .button-group {
-	width: 360px;
-	text-align: right;
 }
 
 .login .button-group .left {
@@ -338,8 +367,6 @@ input[class*="btn-"] {
 .message-control .msg-content {
 	border: none;
 	padding-bottom: 0;
-    border: 1px solid #9a9b9c;
-    border-top: 0px;
 }
 
 div.k-window {
@@ -353,7 +380,6 @@ div.k-window {
     color: #fff;
     border-radius: 0;
     height: 50px;
-    padding: 7px 0 0 0;
 }
 
 .k-window .k-window-titlebar .k-window-actions .k-i-close {
@@ -368,10 +394,6 @@ div.k-window {
 
 .k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover{ 
 	background: none;
-}
-
-.k-window .k-window-titlebar .k-window-actions {
-	top: 0 !important;
 }
 
 #message {
@@ -427,3 +449,161 @@ ol.std-list {
   -webkit-padding-start: 40px;
 }
 
+/* New login styles ----------------------------------------------------------- */
+
+.header.login {
+	width: 340px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	padding-top: 57px;
+	position: relative;
+	left: 66px;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	background: none;
+}
+
+.header.login > .wrapper {
+	width: 340px;
+	padding: 0 15px;
+}
+
+.header.login:after {
+	content: "";
+	opacity: 0.85;
+	background-color: #ebedef;
+	position: fixed;
+	width: 340px;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.header.login .Sage_logo {
+	width: 134px;
+    height: 132px;
+    margin: 0 auto;
+    background-color: #00dc00;
+    border-radius: 3px;
+}
+
+.main-body.login > .wrapper {
+	width: 340px;
+	padding: 0 15px;
+	margin: 0 0 0 66px;
+}
+
+.main-body.login  h1.page-header {
+	font-family: Arial;
+	color: #555;
+	font-size: 20px;
+	font-weight: normal;
+	border: 0;
+    text-align: center;
+    padding: 36px 0 0 0;
+}
+
+.main-body.login .page-header-2 {
+    font-family: Arial;
+    color: #555;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: -10px 0 20px;
+}
+
+.main-body.login .input-group {
+	margin-bottom: 10px;
+}
+
+input[type=text].login, 
+input[type=password].login{
+	width: 310px;
+	height: 36px !important;
+	border-color: #ccc;
+}
+
+input[type=text].login:focus, 
+input[type=password].login:focus {
+    border-color: #66afe9;
+}
+
+.main-body.login .dropdown-group {
+    margin-bottom: 15px;
+    width: 310px;
+}
+
+.main-body.login .dropdown-group .k-dropdown {
+    height: 36px !important;
+    width: 310px;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap {
+	height: 36px;
+    border-color: #ccc;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-default:focus,
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-focused,
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-focused .k-input {
+	border-color: #66afe9;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-select {
+	border-left: 1px solid #ccc;
+	width: 36px;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-input {
+	padding: 8px 10px;
+	height: 34px;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-icon {
+	margin-top: 4px;
+}
+
+.main-body.login .button-group {
+	width: 310px;
+	margin-top: 5px;
+    text-align: right;
+}
+
+.main-body.login .button-group input[class*="btn-login"] {
+	width: 100%;
+	margin: 0;
+	height: 36px;
+    max-width: 310px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+input[type=text]:-webkit-autofill,
+input[type=password]:-webkit-autofill, 
+input[type=text]:-webkit-autofill:focus,
+input[type=password]:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder  { /* WebKit, Blink, Edge */
+    color:    #999;
+}
+input[type=text]:-moz-placeholder,
+input[type=password]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #999;
+   opacity:  1;
+}
+input[type=text]::-moz-placeholder,
+input[type=password]::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #999;
+   opacity:  1;
+}
+input[type=text]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #999;
+}

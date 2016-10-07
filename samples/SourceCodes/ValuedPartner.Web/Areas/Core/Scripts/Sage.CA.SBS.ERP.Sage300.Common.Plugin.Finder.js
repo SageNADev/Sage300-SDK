@@ -409,7 +409,8 @@
         ARRefundEntry: "arrefundentryfinder",
         PreviewAccountFinder: "previewaccountfinder",
         ICBillsOfMaterialComponent: "billsofmaterialcomponent",
-        CreditCardType: "bankcreditcardtypefinder"
+        CreditCardType: "bankcreditcardtypefinder",
+        GLAccountPermissionFinder: "glaccountpermissionfinder"
     };
 
     /* Add all the finders that doesn't require page navigation ie. First Page, Last Page buttons, shoud have the finder name in the below array 

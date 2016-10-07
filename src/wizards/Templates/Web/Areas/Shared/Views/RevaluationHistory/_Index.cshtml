@@ -1,0 +1,37 @@
+﻿    @* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@model Sage.CA.SBS.ERP.Sage300.Shared.Web.Models.RevaluationHistoryViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Revaluation.RevaluationHistory>
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("revaluationHistoryViewModel", Model)
+</script>
+
+@Html.Partial("~/Areas/Shared/Views/RevaluationHistory/Partials/_Localization.cshtml")
+
+<div class="container_16">
+
+    <div class="form-group">
+        <div class="go-group">
+            @Html.SageLabel(RevaluationResx.CurrencyCode)
+            @Html.KoSageTextBoxFor(m => m.CurrencyCode, new { @sagevalue = "CurrencyCode" }, new { @id = "txtCurrencyCode", @maxlength = 24, @class = "smaller txt-upper", @formatTextbox = "alpha" })
+            @Html.SageButton("btnNextItemNumber", new { @id = "btnNextItemNumber", @class = "icon btn-go", @tabindex = "-1" })
+            @Html.SageButton("btnFinder", new { @id = "btnFinder", @class = "icon btn-search", @tabindex = "-1" })
+            @Html.ValidationMessageFor(m => m.CurrencyCode)
+        </div>
+        <div class="input-group">
+            @Html.SageLabel(RevaluationResx.CurrencyDescription)
+            @Html.KoSageTextBoxFor(m => m.CurrencyCodeDescription, new { @sagevalue = "CurrencyCodeDescription" }, new { @id = "txtCurrencyCodeDescription", @class = "large", @disabled = "disabled" })
+        </div>
+    </div>
+
+    @Html.KoKendoGrid("revaluationHistoryGrid", "revaluationHistoryUI.ModelData.DataList", "SequenceNo", "revaluationHistoryGrid.revaluationHistoryConfig", false)
+
+    @*<section class="footer-group-1">
+        @Html.KoSageButton("btnEditItemPricingColumns", null, new { @id = "btnPrint", @class = "btn btn-secondary", @value = APCommonResx.PrintPostingJournal })
+    </section>*@
+
+    <div id="message" />
+</div>

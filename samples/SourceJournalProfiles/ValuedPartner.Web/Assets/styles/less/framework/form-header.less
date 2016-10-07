@@ -124,4 +124,37 @@
   font-family: Calibri, Arial;
 }
 
+.header-view-options {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  width: 100%;
+  padding-left: 10px;
+  white-space: nowrap;
+
+  .btn-view { 
+    width: 30px;
+    max-height: 30px;
+    background-color: #fff;
+    border: 0;
+    margin:0 auto auto -4px; 
+
+    &:hover { 
+      background-color: #e8effe;
+    }
+
+    &.active { 
+      background-color: #e8effe;
+    }
+
+    &.btn-view-expand {
+      background-position: -848px 5px;
+    }
+
+    &.btn-view-simple {
+        background-position: -874px 5px;
+    }
+  }
+}
+
 

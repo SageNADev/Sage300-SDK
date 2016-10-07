@@ -280,10 +280,11 @@ ko.bindingHandlers.sagevalue = {
         if (element.type === "text") {
             if (value) {
 
-                //formatTextbox is used to restrict disallowed character.
-                //When we do copy-paste of disallowed values, we corect the value and change it using javascript, 
-                //and in this scenario Knowkout will never get updated.
-                //Below code will do the truncation of disallowed character and will update the KO correctly
+                // formatTextbox restricts disallowed characters.
+                //
+                // When disallowed values are copy-pasted, the values are corrected using Javascript, 
+                // and in this scenario, Knockout will not be updated. Instead, the code below will 
+                // truncate the disallowed characters and update Knockout correctly.
                 var attr = $(element).attr('formatTextbox');
                 if (attr != undefined) {
                     var invalidChars;
@@ -343,6 +344,38 @@ ko.bindingHandlers.sagevisible = {
     }
 };
 
+/**
+ * This binding handlers may only be used on KoSageNumericBoxFor because it need an valid parent node.
+ */
+ko.bindingHandlers.sageoverridden = {
+    update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+        var unwrap = ko.utils.unwrapObservable;
+        var dataSource = valueAccessor();
+        var currentModelValue = unwrap(dataSource);
+
+        var parentElement = $(element).parent(); //find the parent element. maybe need to improve it in css style file in future.
+
+        if (currentModelValue) {
+            //inject class attrubte.
+            parentElement.addClass("overridden");
+            //register mouse evnets
+            parentElement.mouseout(function () {
+                $(".value-text-indicator").hide();
+            }).mouseover(function () {
+                $(".value-text-indicator").show();
+            });
+        } else {
+            //remove
+            parentElement.removeClass("overridden");
+            parentElement.off("mouseover");
+        }
+
+    }
+};
+
+/**
+ * @summary Custom binding handler for certain Kendo UI-derived elements. (Note: ignores non-Kendo elements!)
+ */
 ko.bindingHandlers.sagedisable = {
     update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
         var result = ko.bindingHandlers.disable.update.apply(this, arguments);
@@ -369,10 +402,10 @@ ko.bindingHandlers.sageenable = {
     }
 };
 
+/**
+ * @summary Date Picker Knockout Custom Binding.
+ */
 
-
-
-//------------------Date Picker Knockout Custom Binding
 ko.bindingHandlers.sageDatePicker = {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
         var unwrap = ko.utils.unwrapObservable;

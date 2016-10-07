@@ -143,9 +143,15 @@
 
 .k-window {
   padding-top: 40px !important;
+  background-color: #fff;
+  padding-bottom: 20px;
 }
 .k-widget.k-window.finder-window {
-    height: 510px !important;
+    height: 550px !important;
+
+     input[type=text] {
+      width: 220px;
+     }
 }
 .finder-window,
 .k-window-titlebar{
@@ -154,7 +160,8 @@
 .k-window-titlebar{
     padding: 10px 20px;
     background: #3c424f;
-    top: 34px;
+    top: 0;
+    margin-top: 0 !important;
     height: auto;
     .box-sizing(border-box);
 }
@@ -162,7 +169,7 @@
     color: @white;
     font-weight: bold;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 24px;
     padding-left: 13px;
 }
 .k-window-titlebar .k-window-actions{
@@ -283,23 +290,23 @@
     }
 
     .arrow-grey {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       position: absolute;
       right: -30px;
-      top: 0;
-      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -92px -36px;
-      background-size: 900px 90px;
+      top: -6px;
+      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -845px -40px;
+      background-size: 1100px 110px;
     }
 
     .arrow-white {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       position: absolute;
       right: -30px;
-      top: 0;
-      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -92px -71px;
-      background-size: 900px 90px;
+      top: -6px;
+      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -845px -40px;
+      background-size: 1100px 110px;
     }
   }
 
@@ -346,6 +353,8 @@
 .k-window .popup-iframe {
   max-height:760px !important;
   overflow: hidden !important;
+  padding: 20px 0;
+  margin: 0;
 }
 
 

@@ -59,6 +59,20 @@
 }
 
 
+// Added media query 
+//
+// for iPad
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) { 
+  .form-screen {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 940px;
+    }
+}
+
 // Normalize non-controls
 //
 // Restyle and baseline non-control form elements.
@@ -129,7 +143,13 @@ input[type="checkbox"] {
 
   /* hide the input, but still clickable */
   opacity: 0;
+  filter:alpha(opacity=0);
   width: 22px;
+
+  &:disabled {
+    opacity:0; 
+    filter:alpha(opacity=0);
+  }
 }
 
 // Set the height of file controls to match text inputs
@@ -204,15 +224,19 @@ textarea {
     -moz-border-radius: 0;
     -o-border-radius: 0;
     border-radius: 0;
+
+    &:disabled {
+      color: @sage-dark-gray;
+    }
 }
 
 // Focus for input and button
 
 .focus-box-shadow {
   outline: none;
-  box-shadow: 0 0 6px @btn-focus-color;
-  -webkit-box-shadow: 0 0 6px @btn-focus-color; 
-  -moz-box-shadow: 0 0 6px @btn-focus-color;
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -221,27 +245,35 @@ textarea {
   transition: all .2s linear;
 }
 
-button:focus,
-input[class*='btn-']:focus, 
+.focus-input-box {
+  outline: none;
+  border-color: @input-border-focus;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  /*background-color: @table-bg-hover;*/
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -kthtml-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
 input[type="text"]:focus, 
+input[type="number"]:focus, 
 input[type=password]:focus,
 textarea:focus,
-.fileUpload:focus,
 .k-datepicker .k-state-focused,
 .k-dropdown .k-state-focused,
+.k-dropdown .k-state-focused .k-input,
 .numeric-group .k-state-focused,
 .k-picker-wrap .k-select:focus {
-  .focus-box-shadow;
+  .focus-input-box;
 }
 
 input:focus,
 .k-state-focused {
   outline: 0;
-}
-
-.k-datepicker .k-picker-wrap:focus,
-.k-dropdown .k-dropdown-wrap:focus {
-    border-right: 1px solid @btn-focus-color;
 }
 
 // Disable box-shadow for k-input
@@ -700,12 +732,14 @@ input[type="checkbox"] {
 .file-upload-group,
 .misc-group,
 .plus-group,
-.fileupload-group {
+.fileupload-group,
+.multiselect-group {
   float: left;
   margin-bottom: @margin-base;
   position: relative;
 
   // Fiscal Year/Period styles 
+
   .leftbox {
     border-right: 0;
     width: 60px;
@@ -746,6 +780,14 @@ input[type="checkbox"] {
   .btn-fiscal-picker[disabled] {
     background-position: -52px -67px;
   }
+}
+
+.fiscal-group {
+  width: 160px; /* Added to set the width for Edge Browser */
+}
+
+.misc-group {
+  width: 200px; /* Added to set the width for Edge Browser */
 }
 
 .form-group > input[type="*"] {
@@ -790,9 +832,9 @@ input[type="checkbox"] {
 .k-column-menu .k-sprite, 
 .k-grid-mobile .k-resize-handle-inner:before, 
 .k-grid-mobile .k-resize-handle-inner:after {
-  background-image: url('@{image-path}/ui/sprite_icons.png');
+  background-image: url('@{image-path}/ui/sprite_icons.png'); 
   background-repeat: no-repeat;
-  background-size: 900px 90px;
+  background-size: 900px 90px; 
   opacity: 1;
 }
 
@@ -804,7 +846,8 @@ input[type="checkbox"] {
   height: 28px;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2) {
+@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
+only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
     .icon, 
     .k-icon, 
     .k-icon:not(.k-loading), 
@@ -848,12 +891,13 @@ input[class*="btn-"] {
     }
 
     &.btn-primary:hover,
-    &.btn-primary:active, {
+    &.btn-primary:active {
       background-color: darken(@btn-primary-bg, 10%);
     }
 
     &.btn-secondary:hover,
-    &.btn-secondary:active {
+    &.btn-secondary:active,
+     &.btn-secondary:focus {
       background-color: @btn-link-hover-color;
     }
 
@@ -876,6 +920,10 @@ input[class*="btn-"] {
   border: 1px solid @btn-default-border;
   text-indent: -9999px;
   background-color: @btn-default-bg;
+
+  &:focus {
+    .focus-input-box;
+  }
 }
 
 .btn-go,
@@ -921,6 +969,8 @@ textarea {
   &:disabled {
     border: 1px solid darken(@input-bg-disabled, 3%);
     background-color: @input-bg-disabled;
+    opacity: 1;
+    filter: alpha(opacity=100);
   }
 }
 
@@ -936,7 +986,7 @@ input.numeric {
 }
 
 .k-numerictextbox {
-  padding: 0;  
+  padding: 0;
 }
 
 
@@ -980,11 +1030,12 @@ textarea,
   }
 
   &.xsmall {
-    width: 40px;
+    width: 60px;
   }  
 }
 
-.input-group.xlarge {
+.input-group.xlarge,
+.textarea-group.xlarge {
   width: 100%;
 }
 
@@ -1025,6 +1076,10 @@ textarea {
       border-radius: @input-border-radius; 
       border-left: 1px solid @sage-mid-gray;
       width: 28px;
+    }
+
+    &.k-state-focused {
+      .focus-input-box;
     }
   }
 
@@ -1103,8 +1158,13 @@ textarea {
     background-color: @white;
 }
 
+.k-list-scroller {
+    overflow-y: auto;
+}
+
 .k-popup .k-list .k-item {
   padding: 2px 10px;
+  border: 0;
 
   &:nth-of-type(odd) {
     background: @table-bg-accent;
@@ -1133,6 +1193,9 @@ textarea {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   padding: 0;
   border: 1px solid @sage-mid-gray;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 120px;
 }
 
 .k-state-selected, 
@@ -1251,12 +1314,6 @@ td.k-state-focused.k-state-selected {
   color: #fff;
 }
 
-.k-popup {
-  -moz-box-shadow: 0 0 30px rgba(0,0,0,0.35);
-    -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.35);
-    box-shadow: 0 0 30px rgba(0,0,0,0.35);
-}
-
 .k-calendar-container .k-calendar .k-header .k-state-hover.k-nav-fast, 
 .k-calendar-container .k-calendar .k-header .k-state-hover { 
   background-color: @sage-link; 
@@ -1271,6 +1328,12 @@ td.k-state-focused.k-state-selected {
   > a {
     color: @text-color;
   } 
+}
+/* Kendo control - Kendo 2016.2 update */
+.k-combobox .k-dropdown-wrap:before, 
+.k-numeric-wrap:before, 
+.k-picker-wrap:before {
+    content: none; 
 }
 
 /* fiscal calendar related */
@@ -1331,6 +1394,7 @@ td.k-state-focused.k-state-selected {
 
   &[disabled] {
       opacity: 0.3;
+      cursor: default;
 
       &:hover .sub-menu {
         display: none;
@@ -1369,12 +1433,11 @@ td.k-state-focused.k-state-selected {
 }
 
 .label-menu-popup{ 
-  border: 1px solid #9a9b9c;
   background: #fff;
+  box-shadow: 0 0 1px #000;
   margin-top: -11px;
   margin-left: 14px;
   top: 25px;
-  left: 0;
   position: absolute;
   z-index: 10003;
 
@@ -1391,12 +1454,14 @@ td.k-state-focused.k-state-selected {
     border: 0;
     background: none; 
     outline: none; 
-    padding: 6px 10px;
+    padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
     min-width: 150px;
     text-align: left;
     color: @sage-link;
+    white-space: pre;
+    width: 100%;
 
       &:hover{
       background-color: #e8effe;
@@ -1501,6 +1566,59 @@ td.k-state-focused.k-state-selected {
   }
 }
 
+.radioBox {
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 22px;
+  background: transparent url('@{image-path}/ui/sprite_form.png') no-repeat -3px -85px;
+  background-size: 110px 110px;
+
+  input[type=radio] {
+    cursor: pointer;
+    opacity: 0;
+    top: -9px;
+  }
+
+  &:hover {
+    background-position: -38px -85px;
+    cursor: pointer;
+  }
+
+  &:focus {
+    background-position: -38px -85px;
+  }
+
+  &.selected {
+    background-position: -3px -58px;
+
+      &.radioBox-hover {
+        background-position: -38px -58px;
+      }
+  }
+
+  &.radio {
+    margin: 0;
+  }
+
+  &.radioBox-disabled {
+    background-position: -73px -85px;
+
+    input[type=radio] {
+      cursor: default;
+    }
+  }
+
+  &.checked-disabled {
+    background-position: -73px -58px;
+
+    input[type=radio] {
+      cursor: default;
+    }
+  }
+}
+
 .input-group.with-checkbox {
     margin-top: -12px;
 
@@ -1511,6 +1629,7 @@ td.k-state-focused.k-state-selected {
 
     label {
       display: inline-block;
+      float: none !important;
     }
 }
 
@@ -1674,3 +1793,120 @@ ul#exportTreeView li ul li {
   }
 }
 
+// Adding margin-left to the second child in the wrapper
+
+.wrapper-group .left.w460:nth-child(2),
+.margin-left-base {
+  margin-left: @margin-base;
+}
+
+// Multi-select 
+
+.multiselect-group .k-multiselect{ 
+  clear: left; 
+  float: left;
+  border-color: #9a9b9c;
+  border-radius: 0;
+
+  &.xlarge {
+    width: 940px;
+  }
+
+  &.larger {
+    width: 700px;
+  }
+
+  &.large {
+    width: 460px;
+  }
+
+  &.medium-large {
+    width: 390px;
+  }
+
+  &.medium {
+    width: 340px;
+  }
+
+  &.default {
+    width: 220px;
+  }
+
+  .k-multiselect-wrap {
+    border-radius: 0;
+
+    .k-select {
+      position: absolute;
+      padding: .1em .2em;
+      right: -10px;
+      top: -1px;
+    }
+
+    li {
+      margin: 1px 5px 1px 1px;
+      padding: 0 10px;
+      float: left;
+      position: relative;
+      border: none;
+      background: none;
+      line-height: 1.9;
+
+      .k-icon {
+        margin-right: .4em;
+        background-position: -210px -1px;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        opacity: 0.5;
+      }
+
+      &:hover .k-icon,
+      &.k-state-hover:hover .k-icon {
+        background-position: -210px -1px;
+      }
+
+      &.k-button:hover {
+        background-color: #fff;
+      }
+    }
+
+    .k-input {
+      height: 26px;
+      padding: 5px;
+    }
+  }
+}
+
+.k-multiselect-wrap>ul>.k-button,
+.k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
+.k-state-focused,
+.k-multiselect-wrap .k-button:focus:not(.k-state-disabled):not([disabled]),
+.k-multiselect-wrap .k-button.k-state-acive:hover,
+.k-multiselect-wrap .k-button.k-state-acive:focus,
+.k-multiselect-wrap .k-button:active:hover,
+.k-multiselect-wrap .k-button:active:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: inherit;
+    background-color: #fff;
+    background: none;
+}
+
+
+.k-list-container .k-list .k-item.k-state-focused,
+.k-multiselect-wrap .k-input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.multiselect-group .k-multiselect.k-state-focused{
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
+}

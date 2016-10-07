@@ -290,7 +290,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             #line hidden
             this.Write(@".Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess)
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
                 <div class=""header-options"">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
@@ -306,29 +306,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
 
     <div class=""form-group"">
         <div class=""search-group"">
-            @Html.SageLabel(""");
+            @Html.SageLabelFor(model => model.Data.");
             
             #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write("\", ");
-            
-            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
-            
-            #line default
-            #line hidden
-            this.Write(".");
+            this.Write(", new { @id = \"lbl");
             
             #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write(", new { @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model" +
-                    ".Data.");
+            this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
+                    ".");
             
             #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));

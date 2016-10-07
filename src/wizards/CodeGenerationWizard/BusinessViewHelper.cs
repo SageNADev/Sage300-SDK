@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -197,7 +198,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 return string.Empty;
             }
-            var newString = value
+
+            // Convert to Pascal Case First
+            var textInfo = new CultureInfo("en-US", false).TextInfo;
+            var pascalCase = textInfo.ToTitleCase(value);
+
+            var newString = pascalCase
                 .Replace("Add'l", "Additional")
                 .Replace("Addt'l", "Additional")
                 .Replace("Ret'd", "Returned")
@@ -270,17 +276,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 .Replace("Pd.", "Paid")
                 .Replace("Yr.", "Year")
                 .Replace("C.C.", "CreditCard")
-
                 .Replace("w/ ", "With")
                 .Replace("w/o ", "Without")
-                .Replace(" to ", "To")
-                .Replace(" from ", "From")
-                .Replace(" for ", "For")
-                .Replace(" and ", "And")
-                .Replace(" is ", "Is")
-                .Replace(" in ", "In")
-                .Replace(" on ", "On")
-                .Replace(" of ", "Of")
                 .Replace("->", "To")
                 .Replace(" ", "")
                 .Replace("/", "")
@@ -307,7 +304,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (newString.Length > 0)
             {
                 var num = newString.ToArray()[0];
-                if (Char.IsNumber(num))
+                if (char.IsNumber(num))
                 {
                     newString = "Num" + newString;
                 }

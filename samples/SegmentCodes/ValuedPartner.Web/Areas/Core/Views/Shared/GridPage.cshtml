@@ -30,10 +30,10 @@
         resizable: true,
         selectable: true,
         reorderable: {4},
-        isServerPaging: true,
         edit: function (e) {{
             this.select(e.container.closest('tr'));
         }},
+        isServerPaging: true,
         // Parameter will be null during Get and will contain the data that needs to be passed to the server on create
         param: null,
         // Column Reorder
@@ -65,13 +65,13 @@
                 ""attributes"": {{ ""class"": ""first-cell  newcontrol"", sg_Customizable: false }},
                 ""headerAttributes"": {{ ""class"": ""first-cell newcontrol"" }},
                 ""template"": ""<span class='icon checkBox'><input type='checkbox' class='selectChk' /></span>"",
-                ""headerTemplate"": ""<span class='icon checkBox'><input type='checkbox' id='selectAllChk' /></span>"",
+                ""headerTemplate"": ""<span class='icon checkBox'><input type='checkbox' id='{0}' /></span>"",
                 ""reorderable"": false,
                 ""editor"": function (container) {{
-                    var grid = $('#{0}').data(""kendoGrid"");
+                    var grid = $('#{1}').data(""kendoGrid"");
                     sg.utls.kndoUI.nonEditable(grid, container);
                 }}
-            }}", Model.GridId);
+            }}", Model.SelectAllCheckboxId, Model.GridId);
             
             @Html.Raw(string.Format("{0}.columns.push({1});\n", Model.GridConfigName, deleteColumn));
         }
@@ -149,7 +149,7 @@
                 @Html.Raw(Model.GridConfigName + string.Format(".editorEvents[\"{0}\"] = {{\"OnChangeEvent\":null}} ;\n", propertyName));
                 @Html.Raw(Model.GridConfigName + string.Format(".editorEvents[\"{0}\"] = {{\"FinderSelect\":null}} ;\n", propertyName));
                 @Html.Raw(Model.GridConfigName + string.Format(".editorEvents[\"{0}\"] = {{\"FinderCancel\":null}} ;\n", propertyName));
-                @Html.Raw(Model.GridConfigName + string.Format(".editorEvents[\"{0}\"] = {{\"FinderFilter\":null}} ;\n", propertyName));
+				@Html.Raw(Model.GridConfigName + string.Format(".editorEvents[\"{0}\"] = {{\"FinderFilter\":null}} ;\n", propertyName));
             }
             @*else
             {
@@ -164,17 +164,17 @@
 <div class="gridcontrols-group">
     @if (Model.AddButtonVisibility)
     {
-        @Html.SageButtonNoName(CommonResx.AddLine, new { @id = "btnAddLine", @class = "btn btn-default btn-grid-control btn-add" })
+        @Html.SageButtonNoName(CommonResx.AddLine, new { @id = Model.AddButtonId, @class = "btn btn-default btn-grid-control btn-add" })
     }
 
     @if (Model.DeleteButtonVisibility)
     {
-        @Html.SageButtonNoName(CommonResx.DeleteLine, new { @id = "btnDeleteLine", @class = "btn btn-default btn-grid-control btn-delete" })
+        @Html.SageButtonNoName(CommonResx.DeleteLine, new { @id = Model.DeleteButtonId, @class = "btn btn-default btn-grid-control btn-delete" })
     }
 
     @if (Model.EditButtonVisibility)
     {
-        @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = "btnEditGridColumns", @class = "btn btn-default btn-grid-control btn-edit-column" })
+        @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = Model.EditButtonId, @class = "btn btn-default btn-grid-control btn-edit-column" })
     }
 </div>
 <div class="datagrid-group">
@@ -256,13 +256,14 @@
                 
                 colConfigStr.AppendLine(
                     string.Format(
-                        "sg.finderHelper.setFinder(\"{0}\", \"{1}\", {2}, {3}, \"{4}\", {5});",
+                        "sg.finderHelper.setFinder(\"{0}\", \"{1}\", {2}, {3}, \"{4}\", {5}, null, {6});",
                             btnName, 
                             gridInfo.FinderName, 
                             string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderSelect"),
                             string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderCancel"),
                             gridInfo.FinderTitle,
-                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderFilter")
+                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderFilter"),
+                            gridInfo.FinderPostbackNotRequired ? "true" : "false"
                     )
                 );
             }

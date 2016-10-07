@@ -31,11 +31,16 @@
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: @btn-default-color;
     text-decoration: none;
     outline: none;
+  }
+
+  &:focus {
+    color: @btn-default-color;
+    text-decoration: none;
+    .focus-box-shadow;
   }
 
   &:active,
@@ -60,6 +65,9 @@
 
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-default:focus {
+  border-color: @input-border-focus;
 }
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
@@ -121,11 +129,13 @@
   &:active {
     border-color: transparent;
   }
-  &:hover,
-  &:focus {
+  &:hover {
     color: @link-hover-color;
     text-decoration: underline;
     background-color: transparent;
+  }
+  &:focus {
+    .focus-box-shadow;
   }
   &[disabled],
   fieldset[disabled] & {
@@ -330,4 +340,30 @@ input[class*="btn-"]:hover,
   transition-duration: 0.3s;
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
+}
+
+
+// Pencil Edit bttons
+
+input.pencil-edit, 
+input.pencil-edit-disabled,
+input.edit-field,  {
+  background-color: transparent !important;
+  height: 20px;
+  width: 22px;
+  border: none;
+  position: relative;
+  z-index: 10000;
+  vertical-align: middle;
+}
+
+.pencil-edit,
+.edit-field {
+  background-position: -607px -2px;
+  cursor: pointer;
+}
+
+.pencil-edit-disabled {
+  background-position: -607px -72px;
+  cursor: default;
 }

@@ -204,9 +204,9 @@
             this.pnlKendo.Controls.Add(this.txtKendoFolder);
             this.pnlKendo.Controls.Add(this.lblKendoFolder);
             this.pnlKendo.Controls.Add(this.chkKendoLicense);
-            this.pnlKendo.Location = new System.Drawing.Point(366, 61);
+            this.pnlKendo.Location = new System.Drawing.Point(366, 68);
             this.pnlKendo.Name = "pnlKendo";
-            this.pnlKendo.Size = new System.Drawing.Size(200, 45);
+            this.pnlKendo.Size = new System.Drawing.Size(191, 42);
             this.pnlKendo.TabIndex = 2;
             // 
             // lblKendoVersionHelp

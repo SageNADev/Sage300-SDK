@@ -269,6 +269,60 @@ $.extend(sg.utls.kndoUI, {
     },
 
     /**
+     * Initialize checkBox selection for multiple grid row deletions
+     * @method multiSelectInit
+     * @param {} gridId - Name of the grid
+     * @param {} selectAllChk - Name of the selectAll checkBox
+     * @param {} selectChk - Name of the delete row checkBox
+     * @param {} btnDeleteId - Name of delete button
+     * @param {} isDisabledDelete - ko.observable to check if delete is allowed
+     */
+    multiSelectInit: function (gridId, selectAllChk, selectChk, btnDeleteId, isDisabledDelete) {
+        if ($("#" + gridId)) {
+            sg.controls.disable("#" + btnDeleteId);
+            $(document).on("change", "#" + selectAllChk, function () {
+
+                var grid = $('#' + gridId).data("kendoGrid");
+                var checkbox = $(this);
+                var rows = grid.tbody.find("tr");
+                rows.find("td:first input")
+                    .prop("checked", checkbox.is(":checked")).applyCheckboxStyle();
+                if ($("#" + selectAllChk).is(":checked") && (!isDisabledDelete || !isDisabledDelete())) {
+                    rows.addClass("k-state-active");
+                    sg.controls.enable("#" + btnDeleteId);
+                } else {
+                    rows.removeClass("k-state-active");
+                    sg.controls.disable("#" + btnDeleteId);
+                }
+            });
+            $(document).on("change", "#" + selectChk, function () {
+                $(this).closest("tr").toggleClass("k-state-active");
+                var grid = $('#' + gridId).data("kendoGrid");
+                var allChecked = true;
+                var hasChecked = false;
+                grid.tbody.find(".selectChk").each(function () {
+                    if (!($(this).is(':checked'))) {
+                        $("#" + selectAllChk).prop("checked", false).applyCheckboxStyle();
+                        allChecked = false;
+                        return;
+                    } else {
+                        hasChecked = true;
+                    }
+                });
+                if (allChecked) {
+                    $("#" + selectAllChk).prop("checked", true).applyCheckboxStyle();
+                }
+
+                if (hasChecked && (!isDisabledDelete || !isDisabledDelete())) {
+                    sg.controls.enable("#" + btnDeleteId);
+                } else {
+                    sg.controls.disable("#" + btnDeleteId);
+                }
+            });
+        }
+    },
+
+    /**
      * Instantiate Numberic text box
      * @method numericTextbox
      * @param {} id

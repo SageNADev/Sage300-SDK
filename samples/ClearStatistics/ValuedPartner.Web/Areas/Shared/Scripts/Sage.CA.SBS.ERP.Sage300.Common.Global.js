@@ -199,6 +199,11 @@ $.extend(sg.utls, {
 
     },
 
+    isMobile: function() {
+        var isMobile = navigator.userAgent.indexOf('Mobile') !== -1;
+        return isMobile;
+    },
+
     refreshContainer: function (container) {
         $(container).find("input[data-val-length-max]").each(function () {
             var $this = $(this);
@@ -379,6 +384,16 @@ $.extend(sg.utls, {
     // Hide the notes center.
     hideNotesCenter: function () {
         var data = { 'hideNotesCenter': true };
+        window.top.postMessage(data, "*");
+    },
+
+    populateCustomReportProfileIdsMultiSelectWidget: function(profileId) {
+        var data = { 'populateCustomReportProfileIdsMultiSelectWidget': profileId };
+        window.top.postMessage(data, "*");
+    },
+
+    refreshCustomReportProfileIdsMultiSelectWidget: function () {
+        var data = { 'refreshCustomReportProfileIdsMultiSelectWidget': true };
         window.top.postMessage(data, "*");
     },
 
@@ -2069,7 +2084,7 @@ $.extend(sg.utls, {
 
     mergeGridConfiguration: function (propertiesArray, targetConfig, sourceConfig) {
         // assign all properties
-        $.each(propertiesArray, function (index, value) {
+        $.each(propertiesArray, function(index, value) {
             targetConfig[value] = sourceConfig[value];
         });
 
@@ -2079,7 +2094,7 @@ $.extend(sg.utls, {
             for (var fieldName in sourceConfig.additionalConfig) {
 
                 // get the one from main grid config
-                var targetColConfig = $.grep(targetConfig.columns, function (e) { return e.field === fieldName; });
+                var targetColConfig = $.grep(targetConfig.columns, function(e) { return e.field === fieldName; });
 
                 // get the addional list of properties
                 var additionalProps = Object.keys(sourceConfig.additionalConfig[fieldName]);
@@ -2090,8 +2105,7 @@ $.extend(sg.utls, {
                 }
             }
         }
-    }
-
+    },
 });
 
 $.extend(sg.utls.ko, {
@@ -2346,6 +2360,11 @@ $(document).on("focusout", "[formatTextbox='time']", function (e) {
 });
 
 window.onerror = function (msg, url, line) {
+    // If the window has closed, sg will be undefined.
+    if (sg === undefined) {
+        return;
+    }
+
     var data = {
         Message: msg,
         Url: url,
@@ -2465,9 +2484,15 @@ $(function () {
 
     };
 
+    // Highlight all the text inside after focusing on a numeric textbox
     $(document).on('focus', '.k-input', function () {
         var input = $(this);
-        setTimeout(function () { input.select(); });
+        //In iPad, highlight is not required but we still need to select to show keyboard
+        if (sg.utls.isMobile()) {
+            input.select();
+        } else {
+            setTimeout(function () { input.select(); });
+        }
     });
 
     function PageUnloadHandler() {
@@ -2516,14 +2541,13 @@ $(function () {
     });
 
 
-    //For Defect D-25134
+    //For some reason, clicking the pencil button in a grid will also trigger a close event in Mac Safari browser
     if (sg.utls.isSafari()) {
-        //For Defect D-25134
-        $(".datagrid-group").bind("mousedown", ".icon.edit-field.pencil-edit", function (e) {
-            console.log("mousedown");
-            e.preventDefault();
-            e.stopImmediatePropagation();
-
+        $(".datagrid-group").bind("mousedown", function (e) {
+            if ($(e.target).is('input:button')) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
         });
     }
 

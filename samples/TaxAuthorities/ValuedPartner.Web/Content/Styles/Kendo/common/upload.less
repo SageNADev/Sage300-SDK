@@ -1,0 +1,211 @@
+/*!
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+                                                                                                                                                                                                       
+
+*/
+/* Upload */
+
+html .k-upload
+{
+    position: relative;
+}
+
+.k-dropzone em,
+.k-upload-button
+{
+    vertical-align: middle;
+}
+
+.k-dropzone,
+.k-file
+{
+    position: relative;
+}
+
+.k-dropzone
+{
+    border-style: solid;
+    border-width: 0;
+    padding: .8em;
+    background-color: transparent;
+}
+
+.k-dropzone em
+{
+    visibility: hidden;
+    margin-left: .6em;
+}
+
+.k-dropzone-active em
+{
+    visibility: visible;
+}
+
+.k-upload-button
+{
+    position: relative;
+    overflow: hidden;
+    direction: ltr;
+}
+
+.k-upload .k-upload-button
+{
+    min-width: 7.167em;
+}
+
+.k-upload-sync .k-upload-button,
+.k-ie8 .k-upload-button,
+.k-ie9 .k-upload-button
+{
+    margin: .8em;
+}
+
+.k-upload-button input
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    font: 170px monospace !important; /* critical for correct operation; larger values lead to ignoring or text layout problems in IE */
+    filter: alpha(opacity=0);
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.k-upload-files
+{
+    margin: 0 0 .6em;
+    line-height: 2.66;
+    border-style: solid;
+    border-width: 1px 0 0;
+}
+
+.k-upload-files .k-button
+{
+    padding: 0;
+}
+
+.k-upload-files .k-button,
+.k-upload-status-total .k-icon
+{
+    margin-left: 8px;
+}
+
+.k-upload .k-fail
+{
+    background-position: -161px -111px;
+}
+
+.k-si-refresh { .sprite-hoverable(10, 8); }
+.k-si-tick, .k-success { .sprite-hoverable(10, 6); }
+.k-si-cancel { .sprite-hoverable(10, 7); }
+
+.k-file
+{
+    border-style: solid;
+    border-width: 0 0 1px;
+    padding: .167em .167em .167em .8em;
+}
+
+.k-file .k-icon
+{
+    position: relative;
+}
+
+.k-file > .k-icon
+{
+    .sprite-hoverable(7, 18);
+}
+
+.k-filename
+{
+    position: relative;
+    display: inline-block;
+    min-width: 10em;
+    max-width: 16.667em;
+    vertical-align: middle;
+    margin-left: 1em;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.k-upload-status
+{
+    position: absolute;
+    right: 12px;
+}
+
+.k-upload-status .k-button,
+.k-upload-status .k-warning
+{
+    vertical-align: text-bottom;
+}
+
+.k-dropzone .k-upload-status
+{
+    line-height: 2.4;
+}
+
+.k-upload-pct {}
+
+.k-ie8 .k-upload-status-total
+{
+    line-height: 29px;
+}
+
+.k-upload-action {
+    line-height: normal;
+}
+
+.k-progress
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.k-upload-selected
+{
+    min-width: 7.167em;
+    margin: 0.25em 0 0;
+
+    .box-sizing(content-box);
+}
+
+.k-upload-selected,
+.k-upload-cancel
+{
+    margin-bottom: .8em;
+}
+
+.k-upload-selected
+{
+    margin-left: .8em;
+    margin-right: .2em;
+}
+
+

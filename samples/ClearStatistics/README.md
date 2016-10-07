@@ -29,16 +29,10 @@ service once the binaries are copied.
   of the desktop) and select the Service MMC.
 * Locate the **Sage.CNA.WindowsService** and select the Stop button
 
-### Apply Patch files
-
-This step will be removed in the 2017.1 release of the SDK. But, in the meantime, certain files
-must be patched in both the Web and Worker folders of the Sage 300 Web Screens. See the README
-file located in the **patch** folder for instructions.
-
 ### Build the Clear Statistics sample
 
 * Load the **ClearStatistics.sln**
-* Be sure to follow the instructions for adding the Kendo min files first
+* Be sure to follow the instructions for adding the Kendo min file first
 * Build the solution in **Debug** mode first to ensure that all builds successfully
 * Change the solution's mode to **Release**
 * Select **Clean Build** to perform a clean first

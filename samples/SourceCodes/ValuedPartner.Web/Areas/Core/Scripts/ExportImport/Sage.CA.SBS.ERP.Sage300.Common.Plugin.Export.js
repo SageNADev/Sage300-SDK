@@ -181,7 +181,8 @@ var kendoWindow = null;
         ARItemsExportImport: "aritems",
         CreateAccountPreview: "createaccountpreview",
         APAdjustmentEntry: "apadjustmententry",
-        CSCreditCardType: "creditcardtype"
+        CSCreditCardType: "creditcardtype",
+        AccountPermissions: "accountpermission"
     };
 
 }(sg = sg || {}, jQuery));

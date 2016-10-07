@@ -62,6 +62,7 @@ $(document).ready(function() {
     var iFrameUrl;
     var isKPI = false;
     var kpiReportName;
+    var menuPinned = true;
 
     //to stop spinner
     $('#screenLayout').children().load(function() {
@@ -81,6 +82,8 @@ $(document).ready(function() {
 
     function onClose(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "1").removeAttr("disabled"); }
 
+    var isPinMenuClicked = false;
+
     /*
     $('#lnkLogo').click(function () {
         $('#dvWindows > div').each(function () {
@@ -89,6 +92,45 @@ $(document).ready(function() {
         ShowHomePage();
     });
     */
+
+    // Collapsible header
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 47) {
+            if (menuPinned) {
+                $('html').addClass('collapsed');
+                $('.feature_nav').removeClass('active');
+                
+            }
+        } else {
+            $('html').removeClass('collapsed');
+        }
+    });
+
+    // Collapsible Header - enabling / disabling toggle
+    //$('#topMenuSettings').click(function () {
+    //    menuPinned = !menuPinned;
+    //});
+
+    $('#pinMainNav').hide(); // by default: pinned, so hide pin menu item
+
+    $('#pinMainNav').click(function () {
+        menuPinned = true;
+        setTimeout(hidePinMenu, 500);
+    });
+    function hidePinMenu() {
+        $('#pinMainNav').hide();
+        $('#unpinMainNav').show();
+    }
+
+    $('#unpinMainNav').click(function () {
+        menuPinned = false;
+        setTimeout(hideUnpinMenu, 500);
+    });
+    function hideUnpinMenu() {
+        $('#pinMainNav').show();
+        $('#unpinMainNav').hide();
+    }
+
 
     $(document).click(function(e) {
         if (!isWidgetEmptyLnkClicked) {
@@ -131,6 +173,7 @@ $(document).ready(function() {
     $(".portalIcon.checkBox span.checkBox").removeClass("icon");
 
     initializeMainMenu();
+    initializeExtraMenu();
 
     // Initialize count of currently open UI windows (it should be 0)
     $('#spWindowCount').text($('#dvWindows').children().length);
@@ -225,6 +268,62 @@ $(document).ready(function() {
         }
     }
 
+    function initializeExtraMenu() {
+        var $menu = $(".navigation .std-menu");
+
+        $menu.menuAim({
+            activate: activateSubmenu,
+            deactivate: deactivateSubmenu,
+            exitMenu: exitSubmenu
+        });
+
+        function activateSubmenu(row) {
+            var $row = $(row),
+                $submenu = $row.find(".sub-menu-wrap"); //,
+
+            // Show the submenu
+            $submenu.css({
+                display: "block"
+            });
+
+            $row.find("span:first").addClass("active");
+        }
+
+        function deactivateSubmenu(row) {
+            var $row = $(row),
+                $submenu = $row.find(".sub-menu-wrap");
+
+            // Hide the submenu and remove the row's highlighted look
+            $submenu.css("display", "none");
+            $row.find("span:first").removeClass("active");
+        }
+
+        function exitSubmenu(row) {
+            var $row = $(row);
+            $row.find(".sub-menu-wrap").hide().eq(0).show();
+        }
+
+        $(".navigation .std-menu li").click(function (e) {
+            e.stopPropagation();
+        });
+
+        $menu.find(".menu-section li:not('.sub-heading')").click(function () {
+            $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
+            $(".nav-menu span.active").removeClass("active");
+        });
+
+        $(".navigation .feature_nav").hover(
+            function () {
+                $(this).find(".active").removeClass("active");
+                $(this).find("li:first span:first").addClass("active");
+                $(this).find(".deactive").removeClass("deactive");
+            },
+            function () {
+                $(this).find("li:first span:first").removeClass("active");
+            }
+        );
+    }
+
     function initializeMainMenu() {
         var $menu = $(".nav-menu .std-menu");
 
@@ -282,9 +381,21 @@ $(document).ready(function() {
     }
 
     $('#homeNav').click(function() {
+        $('.feature_nav').removeClass('active');
+
+        $(this).addClass('active');
+
         $('#dvWindows > div').each(function() {
             $(this).find("span").removeClass('selected');
         });
+    });
+
+    $('.feature_nav').click(function () {
+        $(this).toggleClass('active');
+    });
+
+    $('.global_nav').hover(function () {
+        $('.feature_nav').removeClass('active');
     });
 
     //onload event handling on iframes
@@ -777,6 +888,18 @@ $(document).ready(function() {
                     // We are being asked to show Notes for a given entity (e.g. an AR Customer).
                     openNotesCenter(evt.data.notesOptions);
                 }
+                // This is for closing the notes center.
+                else if (evt.data.hideNotesCenter) {
+                    notesCenterUI.hideNotesCenter();
+                }
+                // Populate multiselect widget on custom profile sliding window when a profile id is selected from UI profile popup
+                else if (evt.data.populateCustomReportProfileIdsMultiSelectWidget) {
+                    CustomReportUI.populateMultiSelectFromPopup(evt.data.populateCustomReportProfileIdsMultiSelectWidget);
+                }
+                // Refresh multiselect widget on custom profile UI when a profile id is added from the UI profile *screen*
+                else if (evt.data.refreshCustomReportProfileIdsMultiSelectWidget) {
+                    CustomReportUI.refreshMultiSelect();
+                }
             }
         }
     }
@@ -932,4 +1055,12 @@ $(document).ready(function() {
         window.open(umURL);
     });
 
+    $("#btnIntelligence").click(function () {
+        // call WebApiProxy to get temp token
+        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true", "", ""), {}, function (result) {
+            if (result && sIRCLocation) {
+                var win = window.open(sIRCLocation + '?tempCode=' + result.TempSessionId, '_blank');
+            }
+        });
+    });
 });

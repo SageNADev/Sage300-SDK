@@ -387,6 +387,16 @@ $.extend(sg.utls, {
         window.top.postMessage(data, "*");
     },
 
+    populateCustomReportProfileIdsMultiSelectWidget: function(profileId) {
+        var data = { 'populateCustomReportProfileIdsMultiSelectWidget': profileId };
+        window.top.postMessage(data, "*");
+    },
+
+    refreshCustomReportProfileIdsMultiSelectWidget: function () {
+        var data = { 'refreshCustomReportProfileIdsMultiSelectWidget': true };
+        window.top.postMessage(data, "*");
+    },
+
     recursiveAjax: function (ajaxUrl, ajaxData, successHandler, abortHandler, dataType, type) {
         var ajaxError = false;
         var data = ajaxData;
@@ -2350,6 +2360,11 @@ $(document).on("focusout", "[formatTextbox='time']", function (e) {
 });
 
 window.onerror = function (msg, url, line) {
+    // If the window has closed, sg will be undefined.
+    if (sg === undefined) {
+        return;
+    }
+
     var data = {
         Message: msg,
         Url: url,

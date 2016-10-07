@@ -173,7 +173,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers.Finder
                     field = "SourceCodeID03",
                     title = SourceJournalProfileResx.SourceCodeID03,
                     attributes = FinderConstant.CssClassGridColumn10,
-                    headerAttributes = " class = mg-vendor-col1 ",
+                    headerAttributes = FinderConstant.CssClassGridColumn10,
                     dataType = FinderConstant.DataTypeString,
                     customAttributes = 
                         new Dictionary<string, string>

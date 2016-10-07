@@ -272,9 +272,9 @@ table.summary td{padding-bottom: 5px;}
     overflow: hidden;
     margin: 0px 0px 10px 10px;
     float:left;
-    padding-top:7px;
     height:30px;
     text-align: center; /*New UI: text centered*/
+    line-height: 2.4;
 }
 
 .fileUploadReport input.upload {
@@ -1132,9 +1132,7 @@ margin: 0 10px;
     width: 100% !important;
     height: 28px;
 }
-#NumericTextBoxDiv .k-numeric-wrap.k-state-focused{
-    border-color:#255bc7;
-}
+
 #NumericTextBoxDiv .k-numeric-wrap.k-state-focused input[type=text]:focus{
     border:0 !important;
 }
@@ -1351,7 +1349,6 @@ margin-bottom: 10px !important;
 }
 .pb7 {
     padding-bottom: 7px !important;
-
 }
 
 .mt5 {
@@ -1365,42 +1362,6 @@ color: #255bc7;
 margin-left: 10px;
 cursor: pointer;
 }
-.label-link {
-font-size: 12px;
-font-family: arial;
-color: #255bc7;
-margin-left: 8px;
-margin-top:-1px !important;
-cursor: pointer;
-display:inline-block;
-float:left;
-}
-.label-link:hover{text-decoration:none;}
-.label-link:focus{ /*New UI: to show event when Tab key is used*/
-    text-decoration: underline;
-} 
-
-a.label-link[disabled] {
-    color:#bababc; pointer-events:none; cursor:default; text-decoration:none;
-}
-
-.label-link.disable, .label-menu.disable { /*New UI: Details disabled styles*/
-    color:#bababc; 
-    pointer-events:none; 
-    cursor:default; 
-    text-decoration:none;
-    background: none;
-}
-
-.label-inline {
-font-size: 12px;
-font-family: arial;
-color: #255bc7;
-margin-left: 8px;
-cursor: pointer;
-display:inline-block;
-}
-.label-inline:hover{text-decoration:none !important;}
 
 /* Grid Edit Class End*/
 /*Help tool tip styles - start*/
@@ -1484,7 +1445,7 @@ div[class*="-group"] > label + .help-icon {
 /*gl batch liting*/
 .custom-batchlisting-tbl{}
 .custom-batchlisting-tbl td{vertical-align: top;}
-.custom-batchlisting-tbl td:first-child{width: 160px;vertical-align: top; padding-top: 7px;}
+.custom-batchlisting-tbl td:first-child{width: 160px;vertical-.label-link : top; padding-top: 7px;}
 .custom-batchlisting-tbl td:nth-child(2){width: 240px; }
 .custom-batchlisting-tbl td:nth-child(2) label{margin-bottom: 2px; display: block;}
 .custom-batchlisting-cb .child{ }
@@ -1527,9 +1488,7 @@ div[class*="-group"] > label + .help-icon {
 .gl-reverse-batch td:nth-child(2){
     width:400px;
 }
-.gl-reverse-batch td:nth-child(2) label{position:relative; top:0 !important;}
-
-
+/*.gl-reverse-batch td:nth-child(2) label{position:relative; top:0 !important;}*/
 
 /*.fiscal-datepicker {
     width: 18px;
@@ -1668,7 +1627,7 @@ div[class*="-group"] > label + .help-icon {
 }
 
 .k-edit-cell .k-dropdown + .edit-field {
-    background-color: #e6f2e6; /* add to hide '...' showing underneath the pencil icon in IE*/
+    background-color: #e8effe; /* add to hide '...' showing underneath the pencil icon in IE*/
 }
 
 @-moz-document url-prefix() {
@@ -1698,7 +1657,7 @@ margin-bottom: 6px;
 /*Company address - Options - all modules*/
 .company-address{ margin-bottom:16px;}
 .company-address p{}
-.company-address label{ display: block;line-height: 1.3;}
+.company-address label{ display: block;line-height: 1.5;}
 .company-address .company-name{font-weight:bold;}
 /**fiscal1**/
 .fgrid{
@@ -1760,6 +1719,7 @@ margin-bottom: 6px;
 .k-ff .fgrid .lockedtext {
     top: -7px;
 }
+
 /*alternative  row bg color*/
 .fgrid .k-grid-content table tr:nth-child(odd) td:nth-child(odd){
     background:#eaeaea;
@@ -2118,7 +2078,7 @@ table.totalsTab td .boxSizing {
 
 /*confirm message popup border issue*/
 /*#div_optionalfields_dialog #importScreen {float:left;}*/
-#div_optionalfields_dialog .container_popUp {display:table-cell;} /*import popup border issue*/
+/*#div_optionalfields_dialog .container_popUp {display:table-cell;}*/ 
 .staticgrid .k-numeric-wrap .k-input.with-finder.align-right{padding-right:25px;}
 .box-group, 
 .box-group-1 {
@@ -2404,20 +2364,29 @@ span.p0{padding:0px;}
 /*Styles by Kim-End*/
 
 /*New Styles After merging R1 n R2 css files - Geetha*/
-div[class*="-group"] .label-menu {   float: left;  position: relative;  top:0px;}
-.controls-group.chk-1 .label-menu  {   float: none !important;  position: relative;  top: 0px; }
+/*div[class*="-group"] .label-menu {   float: left;  position: relative;  top:0px;}*/
+/*.controls-group.chk-1 .label-menu  {   float: none !important;  position: relative;  top: 3px; }*/
 
-.controls-group.chk-1 .child.input-group input[type=text]{clear: none;margin:0px 5px; }
+.controls-group.chk-1 .child.input-group input[type=text]{
+    clear: none;
+    margin:0px 5px; 
+    float: none;
+}
 .controls-group.chk-1 .child.numeric-group .k-widget.k-numerictextbox input[type=text] {margin:0px;}
 .controls-group.rdo-1 .child.numeric-group .k-widget.k-numerictextbox input[type=text] {margin:0px;}
 
 .controls-group.chk-1 .child.input-group label,
-.controls-group.chk-1 .child.numeric-group label{margin-top: 5px;}
+.controls-group.chk-1 .child.numeric-group label{
+    margin-top: 5px;
+    float: none;
+    position: relative;
+    top: -1px;
+}
 .controls-group.chk-1 .child.numeric-group input[type=text]{clear: none;margin: 0px 5px 5px;}
 .controls-group.chk-1 .child.input-group .checkBox,
-.controls-group.chk-1 .child.numeric-group .checkBox{margin-top: 5px;}
+.controls-group.chk-1 .child.numeric-group .checkBox{margin-top: 5px; top:1px;}
 
-.chk-1 .child:last-child {margin-bottom: 11px;}
+.chk-1 .child:last-child {margin-bottom: 0;}
 .rdo-1 .child:last-child {margin-bottom: 10px;}
 
 /*Order Entry- Bhanu*/
@@ -2497,6 +2466,10 @@ div[class*="-group"] .label-menu {   float: left;  position: relative;  top:0px;
 
 .k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding .k-input {
     border:1px solid #9b9c9e !important;
+}
+
+.k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding.k-state-focused .k-input {
+    border:1px solid #00a4cf !important;
 }
 
 .k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding .btn-search.k-input {

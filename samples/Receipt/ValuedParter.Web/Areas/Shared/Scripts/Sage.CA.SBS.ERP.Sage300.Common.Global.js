@@ -23,6 +23,7 @@ sg.utls.portalHeight = 225;
 sg.utls.popupTopPosition = 0;
 sg.utls.GridPrefParentForm = null;
 sg.utls.NotesSearchType = { All: 0, Customers: 1, Vendors: 2, InventoryItems: 3};
+sg.utls.EntityErrorPriority = { SevereError: 0, Message: 1, Warning: 2, Error: 3, Security: 4 };
 
 var fnTimeout = 0;
 
@@ -57,6 +58,15 @@ $.extend(sg.utls, {
     gridPageSize: 10,
     reorderable: false,
     hasTriedToNotify: false,
+    formatFiscalPeriod: function (fiscalPeriod) {
+        if (fiscalPeriod === "14") {
+            return "ADJ";
+        } else if (fiscalPeriod === "15") {
+            return "CLS";
+        } else {
+            return fiscalPeriod;
+        }
+    },
     progressBarControl: function (id, percentageComplete) {
         if (percentageComplete == 0) {
             $(id).hide();
@@ -189,6 +199,11 @@ $.extend(sg.utls, {
 
     },
 
+    isMobile: function() {
+        var isMobile = navigator.userAgent.indexOf('Mobile') !== -1;
+        return isMobile;
+    },
+
     refreshContainer: function (container) {
         $(container).find("input[data-val-length-max]").each(function () {
             var $this = $(this);
@@ -230,6 +245,10 @@ $.extend(sg.utls, {
         var signOutLink = sg.utls.url.buildUrl("Core", "Authentication", "Logout");
         var loginLink = sg.utls.url.buildUrl("Core", "Authentication", "Login");
         var topWnd = window.top == null ? window : window.top;
+
+        // Note: Potential tech debt here as this event will get fired AFTER the login has been redirected
+        // to. Therefore, checks have been placed in the AuthenticationController.Login method to check for this
+        // use case where the data still exists in the IIS cache
 
         $(topWnd).bind('unload', function () {
             sg.utls.destroyPoolForReport(true);
@@ -360,6 +379,22 @@ $.extend(sg.utls, {
             entityID: vendorNumber,
         };
         sg.utls.showNotes(options);
+    },
+    
+    // Hide the notes center.
+    hideNotesCenter: function () {
+        var data = { 'hideNotesCenter': true };
+        window.top.postMessage(data, "*");
+    },
+
+    populateCustomReportProfileIdsMultiSelectWidget: function(profileId) {
+        var data = { 'populateCustomReportProfileIdsMultiSelectWidget': profileId };
+        window.top.postMessage(data, "*");
+    },
+
+    refreshCustomReportProfileIdsMultiSelectWidget: function () {
+        var data = { 'refreshCustomReportProfileIdsMultiSelectWidget': true };
+        window.top.postMessage(data, "*");
     },
 
     recursiveAjax: function (ajaxUrl, ajaxData, successHandler, abortHandler, dataType, type) {
@@ -929,6 +964,7 @@ $.extend(sg.utls, {
         });
     },
     showMessage: function (result, handler, isModal) {
+
         if (result.UserMessage != null) {
             var messageDiv = $("#message");
             var css = "message-control";
@@ -964,6 +1000,20 @@ $.extend(sg.utls, {
                 messageDiv.html(messageHTML);
             }
 
+            //Success
+            if (result.UserMessage.IsSuccess) {
+                clearTimeout(fnTimeout);
+                $("#success").show();
+                messageDiv = $("#success");
+                if (result.UserMessage.Message != undefined) {
+                    messageHTML = sg.utls.isSuccessMessage(sg.utls.htmlEncode(result.UserMessage.Message));
+                    isSuccessMessage = true;
+                } else {
+                    messageHTML = "";
+                }
+                messageDiv.html(messageHTML);
+            }
+
             //Info
             if (result.UserMessage.Info != null && result.UserMessage.Info.length > 0) {
                 $("#message").show();
@@ -984,20 +1034,6 @@ $.extend(sg.utls, {
                     //messageHTML = "<div class='" + css + "'><div class='top'></div><div class='title'><span class='icon success-icon'></span><h3>" + warnHTML + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> </div></div><div class='msg-overlay'></div>";
                     messageHTML = "<div class='" + css + "'>     <div class='title'><span class='icon multiInfo-icon'></span><h3>" + globalResource.Info + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'>" + warnHTML + "</div></div>";
                     //messageHTML = "<div class='" + errorCSS + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + warnHTML + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + errorHTML + " </div></div>";
-                }
-                messageDiv.html(messageHTML);
-            }
-
-            //Success
-            if (result.UserMessage.IsSuccess) {
-                clearTimeout(fnTimeout);
-                $("#success").show();
-                messageDiv = $("#success");
-                if (result.UserMessage.Message != undefined) {
-                    messageHTML = sg.utls.isSuccessMessage(sg.utls.htmlEncode(result.UserMessage.Message));
-                    isSuccessMessage = true;
-                } else {
-                    messageHTML = "";
                 }
                 messageDiv.html(messageHTML);
             }
@@ -1337,7 +1373,9 @@ $.extend(sg.utls, {
             $("#message").html(messageHTML);
         }
     },
-    generateList: function (object, defaultErrorMsg) {
+    //Converts an array to html list
+    //isJSArray is default to false to handle objects in c# viewmodel format; isJSArray is set to true when handling a javascript array
+    generateList: function (object, defaultErrorMsg, isJSArray) {
         var objectHtml = "";
         if (object != null) {
             if (defaultErrorMsg != null && defaultErrorMsg != "") {
@@ -1360,16 +1398,18 @@ $.extend(sg.utls, {
 
         if (object != null) {
             for (i = 0; i < object.length; i++) {
+                var msg = (isJSArray) ? object[i] : object[i].Message;
+                
                 if (defaultErrorMsg != null && defaultErrorMsg != "") {
                     if (object.length >= 1) {
-                        objectHtml = objectHtml + "<li>" + sg.utls.htmlEncode(object[i].Message) + "</li>";
+                        objectHtml = objectHtml + "<li>" + sg.utls.htmlEncode(msg) + "</li>";
                     }
                 }
                 else {
                     if (object.length > 1) {
-                        objectHtml = objectHtml + "<li>" + sg.utls.htmlEncode(object[i].Message) + "</li>";
+                        objectHtml = objectHtml + "<li>" + sg.utls.htmlEncode(msg) + "</li>";
                     } else {
-                        objectHtml = objectHtml + sg.utls.htmlEncode(object[0].Message);
+                        objectHtml = objectHtml + sg.utls.htmlEncode(msg);
                     }
                 }
             }
@@ -1430,25 +1470,27 @@ $.extend(sg.utls, {
         var messageDivId = "#" + divId;
         var messageDiv = $(messageDivId);
         var css = "message-control";
+
+        //Use generateList() to handle multiple errors scenario
+        var encodedMessage = Array.isArray(message) ? sg.utls.generateList(message, null, true) : message;
+
         if (messageType == sg.utls.msgType.ERROR) {
             //To Stop Synchronous Function Calls stored in stack in case of any Error.
             sg.utls.removeStackedCalls();
             css = css + " multiError-msg";
-            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + sg.utls.htmlEncode(message) + " </div></div>";
+            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
         } else if (messageType == sg.utls.msgType.INFO) {
             css = css + " multiInfo-msg";
-            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiInfo-icon'></span><h3>" + globalResource.Info + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + sg.utls.htmlEncode(message) + " </div></div>";
+            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiInfo-icon'></span><h3>" + globalResource.Info + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
         } else if (messageType == sg.utls.msgType.SUCCESS) {
             css = css + " success-msg";
-            messageHTML = "<div class='" + css + "'><div class='top'></div><div class='title'><span class='icon success-icon'></span><h3>" + sg.utls.htmlEncode(message) + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> </div></div><div class='msg-overlay'></div>";
+            messageHTML = "<div class='" + css + "'><div class='top'></div><div class='title'><span class='icon success-icon'></span><h3>" + encodedMessage + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> </div></div><div class='msg-overlay'></div>";
         } else if (messageType == sg.utls.msgType.WARNING) {
             css = css + " multiWarn-msg";
-            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiWarn-icon'></span><h3>" + globalResource.Warning + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + sg.utls.htmlEncode(message) + " </div></div>";
+            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiWarn-icon'></span><h3>" + globalResource.Warning + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
         } else {
             css = css + " success-msg";
         }
-
-        messageHTML = messageHTML.replace(/\n\n/g, '<br/><br/>');
 
         messageDiv.html(messageHTML);
 
@@ -1522,7 +1564,7 @@ $.extend(sg.utls, {
         return val != null ? parseFloat(val) : 0;
     },
     toFixedDown: function (number, digits) {
-        var re = new RegExp("(\\d+\\.\\d{" + digits + "})");
+        var re = new RegExp("(-?\\d+\\.\\d{" + digits + "})");
         var m = number.toString().match(re);
         return m ? parseFloat(m[1]) : parseFloat(number.toFixed(digits));
     },
@@ -2038,7 +2080,32 @@ $.extend(sg.utls, {
         });
 
         window.location.replace("Authentication/SessionExpired");
-    }
+    },
+
+    mergeGridConfiguration: function (propertiesArray, targetConfig, sourceConfig) {
+        // assign all properties
+        $.each(propertiesArray, function(index, value) {
+            targetConfig[value] = sourceConfig[value];
+        });
+
+        //merge addtional config into the main grid configuration
+        //First, loop through all additional fields base on field name
+        if (sourceConfig.additionalConfig) {
+            for (var fieldName in sourceConfig.additionalConfig) {
+
+                // get the one from main grid config
+                var targetColConfig = $.grep(targetConfig.columns, function(e) { return e.field === fieldName; });
+
+                // get the addional list of properties
+                var additionalProps = Object.keys(sourceConfig.additionalConfig[fieldName]);
+
+                // copy values from additional to main grid config
+                for (var j in additionalProps) {
+                    targetColConfig[0][additionalProps[j]] = sourceConfig.additionalConfig[fieldName][additionalProps[j]];
+                }
+            }
+        }
+    },
 });
 
 $.extend(sg.utls.ko, {
@@ -2293,6 +2360,11 @@ $(document).on("focusout", "[formatTextbox='time']", function (e) {
 });
 
 window.onerror = function (msg, url, line) {
+    // If the window has closed, sg will be undefined.
+    if (sg === undefined) {
+        return;
+    }
+
     var data = {
         Message: msg,
         Url: url,
@@ -2412,9 +2484,15 @@ $(function () {
 
     };
 
+    // Highlight all the text inside after focusing on a numeric textbox
     $(document).on('focus', '.k-input', function () {
         var input = $(this);
-        setTimeout(function () { input.select(); });
+        //In iPad, highlight is not required but we still need to select to show keyboard
+        if (sg.utls.isMobile()) {
+            input.select();
+        } else {
+            setTimeout(function () { input.select(); });
+        }
     });
 
     function PageUnloadHandler() {
@@ -2463,14 +2541,13 @@ $(function () {
     });
 
 
-    //For Defect D-25134
+    //For some reason, clicking the pencil button in a grid will also trigger a close event in Mac Safari browser
     if (sg.utls.isSafari()) {
-        //For Defect D-25134
-        $(".datagrid-group").bind("mousedown", ".icon.edit-field.pencil-edit", function (e) {
-            console.log("mousedown");
-            e.preventDefault();
-            e.stopImmediatePropagation();
-
+        $(".datagrid-group").bind("mousedown", function (e) {
+            if ($(e.target).is('input:button')) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
         });
     }
 

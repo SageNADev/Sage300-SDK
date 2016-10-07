@@ -6,10 +6,10 @@
     padding: 15px @margin-base 15px @margin-base;
     border: 1px solid @sage-light-gray;
     background-color: @white;
-    margin: 0 0 @margin-base 0;
+    margin: 0 @margin-base @margin-base 0;
     clear: both;
-    width: 49%; //default size
-    margin-right: 20px;
+    width: 48%; //default size
+    min-width: 460px;
 
     table {
         width: 100%;
@@ -27,7 +27,44 @@
             position: relative;
 
             label {
-                margin-bottom: -4px;
+                display: inline-block;
+            }
+
+            input[type=text] {
+                height: 24px;
+                position: relative;
+                top: -3px;
+            }
+
+            // Numeric text box 
+            .k-numeric-wrap {
+                height: 24px;
+                top: -3px;
+
+                .kendonumeric.k-input {
+                    height: 22px;
+                    top:0;
+                }
+            }
+
+            // Overridden text box 
+
+            .overridden {
+
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-top: 6px solid red;
+                    border-left: 6px solid transparent;
+                    position: absolute;
+                    margin: 0px -6px;
+                }
+
+                .k-input {
+                    background-color: #ffdd4f;
+                    border-radius: 0;
+                }
             }
         }
 
@@ -44,7 +81,6 @@
 
         td:last-child {
             width: 15%;
-            vertical-align: top;
             text-align: right;         
         }
 
@@ -53,8 +89,30 @@
         }
 
         .textbox {
-            padding: 0px 5px;
             height: 24px;
+        }
+
+        .value-text-indicator {
+            position: absolute;
+            right: 0;
+            top: 22px;
+            padding: 3px 10px;
+            color: #fff;
+            font-size: 12px;
+            background-color: #000;
+            z-index: 1;
+            display: none;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                right: 20%;
+                margin-left: 0;
+                border-width: 4px;
+                border-style: solid;
+                border-color: transparent transparent #000 transparent;
+            }
         }
     }
     &.large {

@@ -20,6 +20,7 @@ $(function () {
 var verifySessionDateUrl = sg.utls.url.buildUrl("Core", "Home", "isInvalidSessionDate");
 var warningType = { Inactive: 0, Locked: 1, NotInCalender: 2};
 var sessionDateCookieSetup = sessionDateCookieSetup || {};
+var isDatePickerOpen = false;
 
 // Verification of Sesssion Date Succeeds
 var onSuccess = {
@@ -65,7 +66,7 @@ sessionDateCookieSetup = {
                 var todayDateString = (todayDate.getMonth() + 1 + "/" + todayDate.getDate() + "/" + todayDate.getFullYear() + " " + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds()).toString();
                 var modifiedCookie = sessionDateString + "|" + todayDateString;
                 $("#divDatePicker").hide();
-                $(".last_container").css("margin-top", "26px");
+                //$(".last_container").css("margin-top", "16px");
                 $.cookie.raw = true;
                 var cookieExpiresdate = new Date(9999, 12, 31);
                 $.cookie(sg.utls.SessionCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
@@ -117,16 +118,15 @@ sessionDateCookieSetup = {
         if ($("#sessionDateIcon").hasClass("disabled")) {
             sg.utls.showMessageInfo(sg.utls.msgType.WARNING, portalBehaviourResources.SessionDateDisabledInfo);
         } else {
-            e.stopPropagation();
-            $(".last_container").css("margin-top", "9px");
+            //if DatePicker is open, prevent it from opening again.
+            if (isDatePickerOpen) return;
+
             $("#datePicker").data("kendoDatePicker").value(sessionDateCookieSetup.parseCookieDate());
             $("#datePicker").focus();
 
             if ($("#divDatePicker").css("display") === "none") {
                 sessionDateCookieSetup.openCalendar();
                 sessionDateCookieSetup.calendarClose();
-            } else {
-                $("#datePicker").data("kendoDatePicker").close();
             }
         }
     },
@@ -135,9 +135,6 @@ sessionDateCookieSetup = {
         var datePicker = $("#datePicker").data("kendoDatePicker");
         datePicker.bind("close", function(event) {
             sg.utls.clearValidations("frmPortal");
-            $("#divDatePicker").hide();
-            $(".last_container").css("margin-top", "26px");
-
             var $textBox = $('#datePicker');
             var formValid = $("#frmPortal").valid();
             var value = $textBox.data('currentValue');
@@ -166,12 +163,18 @@ sessionDateCookieSetup = {
                 }
             }
             datePicker.unbind('close');
+            $("#divDatePicker").hide();
+
+            //Delay 300 milliseconds to allow Kendo DatePicker to close properly
+            setTimeout(function () {
+                isDatePickerOpen = false;
+            }, 300);
         })
     },
 
     openCalendar: function () {
 
-        $("#divDatePicker").removeClass('hide').show();
+        $("#divDatePicker").show();
         var datePicker = $("#datePicker").data("kendoDatePicker");
 
         // NOTE!!! Has to be done this way because the session date format in the cookie is fix between server and client, bad design, but oh well ....
@@ -186,5 +189,6 @@ sessionDateCookieSetup = {
             }
         }
         datePicker.open();
+        isDatePickerOpen = true;
     }
 }

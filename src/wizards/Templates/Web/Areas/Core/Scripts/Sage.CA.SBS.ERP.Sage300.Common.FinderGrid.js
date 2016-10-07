@@ -312,12 +312,12 @@ var FinderGridHelper = {
         }
 
         $operatorDropDown.kendoDropDownList({
-            autoBind: false,
+            autoBind: true,
             dataTextField: "Text",
             dataValueField: "Value",
             dataSource: operatorDatasource
         });
-        $operatorDropDown.data('kendoDropDownList').value("=");
+        $operatorDropDown.data('kendoDropDownList').select(0);
     },
     InitValueGridDropdownOrTextBox: function (field, valueDropdownId, valueTextboxId, valueDropdownClass) {
         if (field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0) {

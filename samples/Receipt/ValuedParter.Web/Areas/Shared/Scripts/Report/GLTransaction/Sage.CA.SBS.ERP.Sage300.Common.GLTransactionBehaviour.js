@@ -169,7 +169,7 @@ var onSuccess = {
                 //disable all controls and display information when necessary
                 if (!result.UserMessage.IsSuccess) {
                     GLTransactionUI.disableDropDowns();
-                    sg.utls.showMessageInfo(sg.utls.msgType.INFO, jQuery.validator.format(result.UserMessage.Message));
+                    sg.utls.showMessageInfo(sg.utls.msgType.INFO, result.UserMessage.Message);
                 }
             }
             
@@ -180,7 +180,7 @@ var onSuccess = {
                 //disable all controls and display information when necessary
                 if (!result.UserMessage.IsSuccess) {
                     GLTransactionUI.disableDropDowns();
-                    sg.utls.showMessageInfo(sg.utls.msgType.INFO, jQuery.validator.format(result.UserMessage.Message));
+                    sg.utls.showMessageInfo(sg.utls.msgType.INFO, result.UserMessage.Message);
                 }
             }
         }

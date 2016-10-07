@@ -40,6 +40,18 @@ body {
   padding: 0 30px;
 }
 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .container_12,
+    .container_16,
+    .form-screen {
+      margin-left: 30px;
+      margin-right: 30px;
+      width: 940px;
+      }
+}
+
 /* `Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
 
@@ -679,8 +691,10 @@ body,input,textarea{  font: normal 14px Arial, Helvetica, sans-serif;}
 .icon, .k-icon, .k-tool-icon, .k-grouping-dropclue, .k-drop-hint, .k-column-menu .k-sprite, .k-grid-mobile .k-resize-handle-inner:before, .k-grid-mobile .k-resize-handle-inner:after {
   background-image: url(../Images/sprite.png);
   background-repeat: no-repeat;
+  background-size:auto;
 }
-@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2) {
+@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
+only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
     .icon, 
     .k-icon, 
     .k-icon:not(.k-loading), 
@@ -729,7 +743,7 @@ body,input,textarea{  font: normal 14px Arial, Helvetica, sans-serif;}
 } 
 
 .footer-group-1 input[class*="btn-"] {
-    margin: 0 0 20px 6px;/* New UI : left margin reduced from 20px*/
+    margin: 0 0 20px 10px;/* New UI : left margin reduced from 20px*/
 } 
 
 .k-window-content .footer-group {
@@ -1525,19 +1539,25 @@ textarea:focus,
 .btn-finder:focus, 
 .btn-search:focus,
 .btn-plus:focus,
+.k-state-focused .k-input,
 .k-datepicker .k-state-focused,
-.k-dropdown .k-state-focused,
+.k-dropdown .k-state-focused .k-input,
 .k-numeric-wrap.k-state-default.k-state-focused,
 .k-edit-cell > input[type="text"] { /* New UI : new focus styles*/
-    box-shadow: 0 0 6px #169fda !important;
+    outline: 0;
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    /*box-shadow: 0 0 6px #169fda !important;
     -webkit-box-shadow: 0 0 6px #169fda !important; 
-    -moz-box-shadow: 0 0 6px #169fda !important;
+    -moz-box-shadow: 0 0 6px #169fda !important;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }
 
 .k-datepicker .k-picker-wrap:focus,
@@ -1550,22 +1570,26 @@ textarea:focus,
 .plus-group input:focus + .btn-go, 
 .misc-group input:focus + .btn-go,
 .fiscal-group .rightbox:focus + .btn-fiscal-picker {
-    box-shadow: 0 0 6px #169fda !important;
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    /*box-shadow: 0 0 6px #169fda !important;
     -webkit-box-shadow: 0 0 6px #169fda !important; 
-    -moz-box-shadow: 0 0 6px #169fda !important;
+    -moz-box-shadow: 0 0 6px #169fda !important;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }
 
 .k-state-focused .k-input{border:none !important;}
 .k-edit-cell input[class*="btn-"]:focus{border:none;}
 .staticgrid .k-state-focused .k-input{
     border:none;
-     box-shadow: none !important; 
+    box-shadow: none !important; 
     -webkit-box-shadow: none !important; 
     -moz-box-shadow: none !important;
     height: 22px;
@@ -1585,6 +1609,11 @@ textarea:focus,
     box-shadow: none !important; 
     -webkit-box-shadow: none !important; 
     -moz-box-shadow: none !important;
+}
+
+.k-edit-cell > .k-state-focused > .k-input  {
+    background-color: #fff;
+    border-color: #66afe9;
 }
 
 /** Buttons: New UI styles added **/
@@ -1695,7 +1724,7 @@ button:hover {
     transition: all .3s linear;
 }
 
-input[class*="btn-"]:disabled { cursor:default; -moz-box-shadow: none; -webkit-box-shadow: none;  box-shadow: none;}
+input[class*="btn-"]:disabled { cursor:default; -moz-box-shadow: none; -webkit-box-shadow: none;  box-shadow: none; opacity:1; filter:alpha(opacity=100);}
 /*input[class*="btn-"].small  {padding: 1px 30px 0 30px;}
 input[class*="btn-"].smaller{padding: 1px 20px 0 20px;}
 input[class*="btn-"].xsmall {padding: 1px 10px 0 10px;}*/
@@ -1708,7 +1737,9 @@ input[class*="icon"] {
 .btn-finder,
 .btn-search,
 .btn-plus,
-.btn-fiscal-picker { 
+.btn-fiscal-picker,
+.btn-more,
+.btn-settings { /** Custom Report**/
     width: 30px;
     max-width: 30px;
     max-height: 30px;
@@ -1738,7 +1769,7 @@ input[class*="icon"] {
     border: 1px solid #ececef;
     background-position: -149px -149px;
 }
-.btn-go:hover, .btn-finder:hover, .btn-search:hover, .btn-plus:hover { 
+.btn-go:hover, .btn-finder:hover, .btn-search:hover, .btn-plus:hover, .btn-more:hover, .btn-settings:hover { /** Custom Report**/
     background-color: #dadadd;
 }
 .btn-plus[disabled]:hover {
@@ -1754,6 +1785,30 @@ input[class*="icon"] {
     background-color: #f6f6f6; 
     border:1px solid #ececef;
     background-position: -276px -62px;
+}
+
+.btn-more { /** Custom Report**/
+    background-color: #f1f1f3; 
+    background-position: -277px -91px;
+    border: 1px solid #9a9b9c;
+    margin: 0 0 0 10px;
+}
+.btn-more:disabled { /** Custom Report**/
+    background-color: #f6f6f6; 
+    border: 1px solid #ececef;
+    background-position: -307px -91px;
+}
+
+.btn-settings { /** Custom Report**/
+    background-color: #f1f1f3; 
+    background-position: -245px -121px;
+    border: 1px solid #9a9b9c;
+    margin: 0 0 0 10px;
+}
+.btn-settings:disabled { /** Custom Report**/
+    background-color: #f6f6f6; 
+    border: 1px solid #ececef;
+    background-position: -278px -121px;
 }
 
 .search-group input[disabled] ~ .btn-go,
@@ -1786,22 +1841,24 @@ input[class*="icon"] {
 
 .btn-primary { background: #255bc7; border: 1px solid #255bc7; color: #fff; }
 .btn-primary:hover { 
-    background: #1d479c; 
+    background-color: #1d479c; 
     border: 1px solid #255bc7; 
     color: #fff;
 }
 .btn-primary:focus { 
     color: #fff;
-    border:1px solid #255bc7;
-    box-shadow: 0 0 8px #169fda; 
-    -webkit-box-shadow: 0 0 8px #169fda; 
-    -moz-box-shadow: 0 0 8px #169fda;
+    background-color: #1d479c; 
+    border: 1px solid #255bc7;
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn-secondary { background: #fff; border: 1px solid #255bc7; color: #255bc7; }
 .btn-secondary:hover { 
@@ -1813,29 +1870,34 @@ input[class*="icon"] {
 .btn-secondary:focus { 
     color: #255bc7;
     border:1px solid #255bc7;
-    box-shadow: 0 0 8px #169fda; 
-    -webkit-box-shadow: 0 0 8px #169fda; 
-    -moz-box-shadow: 0 0 8px #169fda;
+    background-color: #e8effe;
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
 }
 .btn-primary:disabled, .btn-secondary:disabled  { background: #f6f6f6; border: 1px solid #ececef; color: #bababc;}
 
 .btn-default:focus { 
-    box-shadow: 0 0 8px #169fda; 
-    -webkit-box-shadow: 0 0 8px #169fda; 
-    -moz-box-shadow: 0 0 8px #169fda;
+    color:#000;
+    border-color: #66afe9;
+    background-color:#dadadd;
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
 }
+
+.btn-info { background: #00a4cf; color: #fff; width: 140px;}
+
 
 @-moz-document url-prefix() { /* Inok: fix Firefox padding bug */
    .btn-primary, .btn-secondary {padding-top:0;}
@@ -1941,15 +2003,17 @@ a[class*="btn-"].disabled:link {
     color:#000;
 }
 .gridcontrols-group input[class*="btn-"][type=button]:focus{
-    box-shadow: 0 0 6px #169fda; 
-    -webkit-box-shadow: 0 0 6px #169fda; 
-    -moz-box-shadow: 0 0 6px #169fda;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    color:#000;
+    border-color: #66afe9;
+    background-color:#dadadd;
 }
 .gridcontrols-group input[class*="btn-"][type=button]:disabled { background-color: #f6f6f6; border: 1px solid #ececef; color: #bababc;}
 .gridcontrols-group .icons{ background-image: url(../Images/toolBar_icons.png);}
@@ -2030,16 +2094,21 @@ a[class*="btn-"].disabled:link {
     box-shadow: none;
 }
 
-.k-autocomplete.k-state-default:focus, .k-picker-wrap.k-state-default:focus, .k-numeric-wrap.k-state-default:focus, .k-dropdown-wrap.k-state-default:focus { /* New UI */
-    box-shadow: 0 0 6px #169fda; 
+.k-autocomplete.k-state-default:focus, .k-picker-wrap.k-state-default:focus, .k-numeric-wrap.k-state-default:focus, .k-dropdown-wrap.k-state-default:focus,
+.k-autocomplete.k-state-focused, .k-picker-wrap.k-state-focused, .k-numeric-wrap.k-state-focused, .k-dropdown-wrap.k-state-focused, .k-numerictextbox.k-state-focused { /* New UI */
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    /*box-shadow: 0 0 6px #169fda; 
     -webkit-box-shadow: 0 0 6px #169fda; 
-    -moz-box-shadow: 0 0 6px #169fda;
+    -moz-box-shadow: 0 0 6px #169fda;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 
 }
 
@@ -2123,7 +2192,12 @@ a[class*="btn-"].disabled:link {
 }
 
 .k-edit-cell .k-dropdown .k-state-disabled .k-input, 
-.k-edit-cell .k-datepicker .k-state-disabled .k-input{ /*mega-merge sept 2015*/
+.k-edit-cell .k-datepicker .k-state-disabled .k-input,
+.k-edit-cell .k-dropdown .k-dropdown-wrap.k-state-focused, 
+.k-edit-cell .k-dropdown-wrap.k-state-focused,
+.k-edit-cell .k-dropdown-wrap.k-state-default:focus,
+.k-edit-cell .k-state-focused .k-input,
+.k-edit-cell .k-state-default:focus .k-input{ /*mega-merge sept 2015*/
     background-color: #fff;
 }
 
@@ -2157,13 +2231,26 @@ a[class*="btn-"].disabled:link {
 }
 
 /** Kendo Dropdown **/
-.k-dropdown{ width: 100%; margin: 0; height: 30px !important;}
+.k-dropdown{ 
+    width: 100%; 
+    margin: 0; 
+    height: 30px !important;
+}
 
 .k-dropdown .k-i-arrow-s { 
     background-position: -37px -68px;
 }
 
-.k-list-container { background: #ffffff; box-shadow: 0px; border-color: #9a9b9c; padding: 0px !important;}
+.k-list-container { 
+    background: #ffffff; 
+    box-shadow: 0px; 
+    border-color: #9a9b9c; 
+    padding: 0px !important;
+}
+
+.k-list-scroller {
+    overflow-y: auto; /*Kendo 2016 update*/
+}
 
 .k-list-container .k-list .k-item { 
     color: #4d4f53; 
@@ -2193,7 +2280,8 @@ a[class*="btn-"].disabled:link {
     box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.25);
 }
 
-.k-list .k-item.k-state-selected.k-state-focused { 
+.k-list .k-item.k-state-selected.k-state-focused,
+.k-list .k-virtual-item.k-item.k-state-selected { 
     background: #e8effe; /* focus color added*/
 }
 
@@ -2223,9 +2311,23 @@ a[class*="btn-"].disabled:link {
     border:0;
 }
 
+.k-combobox .k-dropdown-wrap:before, 
+.k-numeric-wrap:before, 
+.k-picker-wrap:before {
+    content: none; /*Kendo 2016.2 update*/
+}
 /** Kendo Tabs: New UI styles added **/
 
-.k-tabstrip { border-width: 0px;  background: none;}
+.k-tabstrip { 
+    border-width: 0;  
+    background: none;
+}
+
+.k-tabstrip:focus {
+    -webkit-box-shadow: none; /* Kendo 2016.2 update */
+    box-shadow: none; /* Kendo 2016.2 update */
+}
+
 .k-tabstrip > .k-content {
     border: 0;
     margin: 0;
@@ -2253,10 +2355,6 @@ a[class*="btn-"].disabled:link {
 .k-tabstrip .k-tabstrip-items .k-item:hover { 
     color: #000;
     background: #8d9091;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-transition-property: color, background-color;
-    transition-property: color, background-color;
 }
 .k-tabstrip .k-tabstrip-items .k-item .k-link label {
     cursor:pointer;
@@ -2279,7 +2377,6 @@ a[class*="btn-"].disabled:link {
     border-top: 5px solid #255bc7;
     top: -5px;
 }
-
 
 .k-tabstrip .k-content.k-state-active { 
     background: #fff;
@@ -2393,6 +2490,11 @@ a[class*="btn-"].disabled:link {
 .k-grid tr.k-state-selected {
     background-color: #e8effe;
 }
+
+.k-grid td.k-state-selected:hover, 
+.k-grid tr.k-state-selected:hover {
+    background-color: #e8effe; /*Kendo 2016.2 update*/
+}
 .k-grid tr.k-state-selected > td:first-child {
   border-left: 4px solid #255bc7; /*New UI: reduced border-left*/
   padding-left: 16px; /*New UI*/
@@ -2477,15 +2579,19 @@ td.k-state-focused, th.k-state-focused {
 }
 
 .k-grid .k-grid-pager .k-pager-input .k-textbox:focus {
-    box-shadow: 0 0 6px #169fda; 
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6)
+    /*box-shadow: 0 0 6px #169fda; 
     -webkit-box-shadow: 0 0 6px #169fda; 
-    -moz-box-shadow: 0 0 6px #169fda;
+    -moz-box-shadow: 0 0 6px #169fda;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }
 .k-pager-wrap .k-pager-refresh {
   background: none;
@@ -2555,7 +2661,7 @@ td.k-state-focused, th.k-state-focused {
 .k-grid .k-edit-cell input[type="text"] {
     height: 24px; /*New UI: height adjustment*/
     font-size: 12px;
-    border: 1px solid #9b9c9e;
+    border: 1px solid #66afe9;
     padding: 0px  10px;/*margin-top: -2px;*/
     background-color: #fff;
 }
@@ -2960,7 +3066,12 @@ k-ie .child .checkBox + label + .label-link{
   top: -6px;
 }
 
-input[type="checkbox"]:disabled{cursor:default;}
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled{
+  cursor:default;
+  opacity:0; 
+  filter:alpha(opacity=0);
+}
 
 .child .radioBox{
   /*float:left;*/
@@ -3198,7 +3309,8 @@ display:inline-block;
 .file-upload-group,
 .misc-group,
 .plus-group,
-.fileupload-group
+.fileupload-group,
+.multiselect-group /** Custom Report**/
 {
   float: left;
   margin-bottom: 20px;
@@ -3224,6 +3336,8 @@ input[type=text]:disabled, input[type=password]:disabled, textarea:disabled { /*
     border: 1px solid #ececef;
     background-color: #f6f6f6;
     color: #333;
+    opacity: 1; /* iPad */
+    filter: alpha(opacity=100);
 }
 
 .k-window-content .panel input[type=text]:disabled, 
@@ -3292,7 +3406,7 @@ div[class*="-group"] > input[type=text], div[class*="-group"] > input[type=passw
 .input-group .k-link .k-i-arrow-s { background-position: -37px -71px !important; }
 .input-group .k-link .k-i-arrow-n { background-position: -126px -158px !important; }
 
-.input-group .k-numeric-wrap.k-state-focused{  /*New UI: dropdown focus styles*/
+/*.input-group .k-numeric-wrap.k-state-focused{ 
     box-shadow: 0 0 6px #169fda; 
     -webkit-box-shadow: 0 0 6px #169fda; 
     -moz-box-shadow: 0 0 6px #169fda;
@@ -3302,16 +3416,16 @@ div[class*="-group"] > input[type=text], div[class*="-group"] > input[type=passw
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
-}
+}*/
 .input-group .k-state-focused input[type=text]:focus{
     border:0px !important;
 }
 
-.k-state-focused input[type=text]:focus {
+/*.k-state-focused input[type=text]:focus {
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
-}
+}*/
 
 .staticgrid-group .input-group{ width:100%; margin:0;}
 .staticgrid-group .input-group .k-numerictextbox .k-select{width: 22px;}
@@ -3462,16 +3576,17 @@ div[class*="-group"] > input[type=text], div[class*="-group"] > input[type=passw
     opacity: .7;
 }
 .numeric-group .k-numeric-wrap.k-state-focused{  
-    /*border:1px solid #009fda;*/
-    box-shadow: 0 0 6px #169fda; 
+    border-color: #66afe9;
+    /*box-shadow: 0 0 6px #169fda; 
     -webkit-box-shadow: 0 0 6px #169fda; 
-    -moz-box-shadow: 0 0 6px #169fda;
+    -moz-box-shadow: 0 0 6px #169fda;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }
 .numeric-group .k-state-focused input[type=text]:focus{   border:0px !important;}
 
@@ -3511,16 +3626,18 @@ div[class*="-group"] > input[type=text], div[class*="-group"] > input[type=passw
 .numeric-search-group .k-numeric-wrap .k-input{ padding: 5px 10px; height: 28px; /*line-height: 18;*/}
 .k-ie .numeric-search-group .k-numeric-wrap .k-input { padding:2px 10px;}
 .numeric-search-group .k-numeric-wrap.k-state-focused { /* New UI: updated focus style */
+    border-color: #66afe9;
     /*border:1px solid #009fda;*/
-    box-shadow: 0 0 6px #169fda; 
+    /*box-shadow: 0 0 6px #169fda; 
     -webkit-box-shadow: 0 0 6px #169fda; 
-    -moz-box-shadow: 0 0 6px #169fda;
+    -moz-box-shadow: 0 0 6px #169fda;*/
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }
 .numeric-search-group .k-numeric-wrap.k-state-focused   .k-input{border:0 !important;border-color:transparent;}
 /*.sublevel-1 .numeric-search-group .k-numerictextbox.default{width:140px;}
@@ -4513,7 +4630,7 @@ div[class*="-group"]{
 }
 .staticgrid-group .staticgrid .k-dropdown .k-i-arrow-s { background-position: -37px -70px;}
 .staticgrid-group .staticgrid .k-dropdown .k-i-arrow-s:hover { opacity: 0.7;}
-.staticgrid-group .staticgrid .k-dropdown-wrap.k-state-hover{ box-shadow: none; background-color:#fff;}
+.staticgrid-group .staticgrid .k-dropdown-wrap.k-state-hover{ background-color:#fff;}
 .staticgrid-group .staticgrid .k-datepicker{ margin: 0; }
 .staticgrid-group .staticgrid .k-datepicker .k-input{ padding: 0 10px !important; height: 22px;}
 .staticgrid-group .staticgrid .k-datepicker .k-state-default .k-select { 
@@ -4527,6 +4644,10 @@ div[class*="-group"]{
     box-shadow: none; 
     background-color:#fff;
 } 
+
+.staticgrid-group .staticgrid .k-state-default.k-state-focused .k-select {
+    /*background-color: #e8effe;*/
+}
 
 /*.staticgrid-group .staticgrid .k-datepicker .k-i-calendar:hover {
     opacity: 0.6;
@@ -4621,7 +4742,7 @@ div[class*="-group"]{
     overflow:hidden;
 }
 .k-window {
-    /*background: #f5f5f4; New UI*/
+    background-color: #fff;
     padding-top: 0 !important;
     /*padding-bottom: 20px;*/
     /*margin-top: 10px;*/
@@ -4634,6 +4755,7 @@ div[class*="-group"]{
     box-shadow: rgba(0,0,0,0.3) 0 0 20px;
     -webkit-box-shadow: rgba(0,0,0,0.3) 0 0 20px;
     -moz-box-shadow: rgba(0,0,0,0.3) 0 0 20px;
+    background-color: #fff;
 }
 
 .k-window-titlebar {
@@ -4741,6 +4863,11 @@ div[class*="-group"]{
     border-color: #ececef;
     background-color: #f6f6f6;
     color: #333;
+}
+
+.finder-window input[type=text]:focus { /*New UI: disalbed input field*/ 
+    border-color: #66afe9;
+    /*background-color: #e8effe;*/
 }
 
 .finder-window .k-window-content #buttons{text-align: right}
@@ -4897,6 +5024,7 @@ a:active {
   height: 38px;
   line-height: 38px;
   padding: 0 10px;
+  font-size: inherit;
 }
 
 .tab-1 .tab-header .k-dropdown .k-state-focused {
@@ -4917,11 +5045,11 @@ a:active {
   border: none;
 }
 
-.tab-1 .tab-header .k-dropdown .k-state-focused .k-select {
+/*.tab-1 .tab-header .k-dropdown .k-state-focused .k-select {
   -webkit-box-shadow: inset 0 0 6px #007f64;
     -moz-box-shadow: inset 0 0 6px #007f64;
     box-shadow: inset 0 0 6px #007f64;
-}
+}*/
 
 .tab-1 .tab-header .k-dropdown-wrap .k-select:before {
   content: "\25bc";
@@ -4961,7 +5089,8 @@ a:active {
 .tab-group + .footer-group,
 .tab-group + .footer-group-1,
 .datagrid-group + .footer-group,
-.datagrid-group + .footer-group-1 {
+.datagrid-group + .footer-group-1,
+.sub-section + .footer-group-1 {
     border-top: none;
     padding-top: 0;
 }
@@ -5039,13 +5168,12 @@ a:active {
 }
 
 .label-menu-popup{
-  border:1px solid #9a9b9c;
+  box-shadow: 0 0 1px #000; /*D-32590*/
   font-size: 13px;
   background: #fff;
   margin-top: 0;
   margin-left: 14px;
   top: 10px;
-  left: 0;
   position: absolute;
   z-index: 10003;
 }
@@ -5343,11 +5471,6 @@ a:active {
 
 .ctrl-group .input-group input[type=text],.controls-group.rdo-1 .child.input-group input[type=text], .controls-group.rdo-1 .child.numeric-group .k-widget.k-numerictextbox{clear: none;margin: 0 5px;}
 
-.sub-section + .footer-group-1 {
-    border-top: none;
-    padding-top: 0;
-}
-
 .sub-section +.form-group input[type=""]:disabled + .footer-group-1 {
     border-top: none;
     padding-top: 0;
@@ -5388,9 +5511,9 @@ a:active {
   display: inline-block;
 }
 
-.form-basic input[type="button"],
+.form-basic input[type="button"]/*,
 .form-basic input[type="checkbox"],
-.form-basic input[type="radio"] {
+.form-basic input[type="radio"]*/ {
   margin: 0 10px 0 -5px;
   vertical-align: bottom;
 }
@@ -5634,4 +5757,102 @@ a:active {
 #statusWindow .k-grid td {
     white-space: normal;
     line-height: 1.5;
+}
+
+/** Custom Report**/
+.multiselect-group .k-multiselect{ 
+  clear: left; 
+  float: left;
+  border-color: #9a9b9c;
+}
+
+.multiselect-group .k-multiselect.default {
+    width: 220px;
+}
+
+.multiselect-group .k-multiselect.medium {
+    width: 340px;
+}
+
+.k-multiselect-wrap,
+.k-state-hover .k-multiselect-wrap {
+  border-radius: 0;
+}
+
+.k-multiselect-wrap .k-select {
+    position: absolute;
+    padding: .1em .2em;
+    right: -13px;
+}
+
+.k-multiselect-wrap li {
+    margin: 1px 5px 1px 1px;
+    padding: 0 10px;
+    float: left;
+    position: relative;
+    border: none;
+    background: none;
+    line-height: 1.9;
+}
+
+.k-multiselect-wrap>ul>.k-button,
+.k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
+.k-state-focused,
+.k-multiselect-wrap .k-button:focus:not(.k-state-disabled):not([disabled]),
+.k-multiselect-wrap .k-button.k-state-acive:hover,
+.k-multiselect-wrap .k-button.k-state-acive:focus,
+.k-multiselect-wrap .k-button:active:hover,
+.k-multiselect-wrap .k-button:active:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: inherit;
+    background-color: #fff;
+    background: none;
+}
+
+.k-multiselect-wrap li .k-icon {
+    margin-right: .4em;
+    background-position: -67px -68px;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    opacity: 0.5;
+}
+
+.k-multiselect-wrap li:hover .k-icon,
+.k-multiselect-wrap li.k-state-hover:hover .k-icon {
+    background-position: -67px -68px;
+}
+
+.k-button:hover {
+    background-color: #fff;
+}
+
+.k-multiselect-wrap .k-input {
+    height: 26px;
+    padding: 5px;
+}
+
+.k-list-container .k-list .k-item.k-state-focused,
+.k-multiselect-wrap .k-input:focus,
+.k-multiselect-wrap .k-input.k-readonly,
+.k-multiselect.k-state-focused .k-input.k-readonly{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.multiselect-group .k-multiselect.k-state-focused{
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    /*box-shadow: 0 0 6px #169fda; 
+    -webkit-box-shadow: 0 0 6px #169fda; 
+    -moz-box-shadow: 0 0 6px #169fda;*/
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
+    /*background-color: #e8effe;*/
 }

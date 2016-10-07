@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
 $(window).bind("load", function () {
     var iFrameHeight = window.top.$('iframe.screenIframe:visible');
@@ -12,21 +12,18 @@ $(window).bind("load", function () {
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
     // create observer to adjust height
-    if (MutationObserver) {
-        var observer = new MutationObserver(function (mutations) {
-            var visibleIframe = window.top.$('iframe.screenIframe:visible');
-            var padding = 0;
-            // put back old code logic
-            if (visibleIframe.contents().find('#CrystalReportViewerSage300').length) {
-                padding = 10;
-            }
+    var observer = new MutationObserver(function (mutations) {
+        var visibleIframe = window.top.$('iframe.screenIframe:visible');
+        var padding = 0;
+        // put back old code logic
+        if (visibleIframe.contents().find('#CrystalReportViewerSage300').length) {
+            padding = 10;
+        }
 
-            if (typeof sg === "undefined" || !sg.utls.isKendoIframe()) {
-                visibleIframe.css('height', $('body').height() + padding);
-            }
-        });
-    }
-
+        if (typeof sg === "undefined" || !sg.utls.isKendoIframe()) {
+            visibleIframe.css('height', $('body').height() + padding);
+        }
+    });
 
     // put to observe only if it is inside one of the iframe, that's because empty iframe has no content to observe
     if (window.self !== window.top) {

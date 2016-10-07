@@ -60,7 +60,7 @@
                 <div class="header-headline">
                     @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess)
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
                 <div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
@@ -76,7 +76,7 @@
 
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabel("<#=keyFieldName#>", <#=resxName#>.<#=keyFieldName#>, new { @class = "required" })
+            @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
             @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default txt-upper", @formatTextbox = "alphaNumeric" })
             @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
             @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })

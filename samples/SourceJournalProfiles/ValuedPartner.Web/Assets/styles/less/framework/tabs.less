@@ -383,6 +383,12 @@ header + .nav-tabs {
         margin: 0px;  
         padding: 20px 0 0 0; 
         height: auto;
+        overflow: visible;
+    }
+
+    &:focus {
+      -webkit-box-shadow: none; /* Kendo 2016.2 update */
+      box-shadow: none; /* Kendo 2016.2 update */
     }
 }
 
@@ -429,6 +435,10 @@ header + .nav-tabs {
    .k-dropdown-wrap {
     padding: 0 36px 0 0;
     height: 38px;
+
+    .k-input {
+      font-size: inherit;
+    }
 
     .k-select {
       width: 36px;

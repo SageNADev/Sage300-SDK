@@ -1132,9 +1132,7 @@ margin: 0 10px;
     width: 100% !important;
     height: 28px;
 }
-#NumericTextBoxDiv .k-numeric-wrap.k-state-focused{
-    border-color:#255bc7;
-}
+
 #NumericTextBoxDiv .k-numeric-wrap.k-state-focused input[type=text]:focus{
     border:0 !important;
 }
@@ -2468,6 +2466,10 @@ span.p0{padding:0px;}
 
 .k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding .k-input {
     border:1px solid #9b9c9e !important;
+}
+
+.k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding.k-state-focused .k-input {
+    border:1px solid #00a4cf !important;
 }
 
 .k-grid .k-edit-cell span.k-numeric-wrap.k-state-default.k-expand-padding .btn-search.k-input {

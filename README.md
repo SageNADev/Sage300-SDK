@@ -56,8 +56,8 @@ The **patch** folder contains any patches which may be required to be applied to
 
 * Generated solutions
 * Generated projects
-* Local Sage 300 2017 Application folders
-* Customr Sage 300 2017 Application folders
+* Local Sage 300 2017.1 Application folders
+* Customr Sage 300 2017.1 Application folders
 
 A README.md file in the patch folder will explain the patch, the reason for the patch 
 and the action to be taken.

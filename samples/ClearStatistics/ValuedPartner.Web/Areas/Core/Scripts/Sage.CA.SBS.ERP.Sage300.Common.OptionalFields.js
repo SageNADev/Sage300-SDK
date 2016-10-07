@@ -216,11 +216,11 @@ var gridColConfig = {
                         var fldValue = (currentRowGrid.Value === undefined) ? "DefaultValue" : "Value";
                         var fldValueDesc = (currentRowGrid.ValueDescription === undefined) ? "DefaultValueDescription" : "ValueDescription";
                         var isGetValidValue = (optionalFieldUIGrid.modelData.Location !== undefined);
-                        currentRowGrid.set("ValueSet", e.sender._selectedValue);
+                        currentRowGrid.set("ValueSet", e.sender.selectedIndex);
                         var numericType = [optionalFieldEnum.Type.Integer, optionalFieldEnum.Type.Number, optionalFieldEnum.Type.Amount];
-                        var isNumeric = (numericType.indexOf(options.model.Type) > -1) && e.sender._selectedValue == 1;
-                        var isDefaultTime = (options.model.Type == optionalFieldEnum.Type.Time) && e.sender._selectedValue == 1;
-                        if (currentRowGrid.Validate === 1 && e.sender._selectedValue == 1 && isGetValidValue) {
+                        var isNumeric = (numericType.indexOf(options.model.Type) > -1) && e.sender.selectedIndex == 1;
+                        var isDefaultTime = (options.model.Type == optionalFieldEnum.Type.Time) && e.sender.selectedIndex == 1;
+                        if (currentRowGrid.Validate === 1 && e.sender.selectedIndex == 1 && isGetValidValue) {
                             if (optionalFieldUIGrid.getOptionalFieldValue !== null) {
                                 gridColConfig.getValidValue(container, options, false);
                             }
@@ -231,11 +231,11 @@ var gridColConfig = {
                             }
                             currentRowGrid.set(fldValueDesc, "");
                         }
-                        if (currentRowGrid.Validate === 0 && e.sender._selectedValue == 1 && options.model.Type === optionalFieldEnum.Type.Amount) {
+                        if (currentRowGrid.Validate === 0 && e.sender.selectedIndex == 1 && options.model.Type === optionalFieldEnum.Type.Amount) {
                             currentRowGrid.set(fldValue, "0.000");
                         }
                         if (options.model.Type == optionalFieldEnum.Type.YesNo) {
-                            currentRowGrid.set(fldValue, e.sender._selectedValue == 1 ? 0 : null);
+                            currentRowGrid.set(fldValue, e.sender.selectedIndex == 1 ? 0 : null);
                         }
                     }
                 }
@@ -298,7 +298,7 @@ var gridColConfig = {
                     value: $.trim(options.model[options.field]),
                     change: function (e) {
                         if ($('#' + gridId)) {
-                            optionalFieldUIGrid.updateValueInGrid(options.model.OptionalField, e.sender._selectedValue);
+                            optionalFieldUIGrid.updateValueInGrid(options.model.OptionalField, e.sender.selectedIndex);
                         }
                     },
                     open: function (e) {
@@ -382,9 +382,9 @@ var gridColConfig = {
             change: function (e) {
                 var gridId = optionalFieldUIGrid.gridId;
                 var currentRowGrid = sg.utls.kndoUI.getSelectedRowData($('#' + gridId).data("kendoGrid"));
-                currentRowGrid.set(fldName, e.sender._selectedValue);
-                if (fldName === "Required" && e.sender._selectedValue == 1) {
-                    currentRowGrid.set("AutoInsert", e.sender._selectedValue);
+                currentRowGrid.set(fldName, e.sender.selectedIndex);
+                if (fldName === "Required" && e.sender.selectedIndex == 1) {
+                    currentRowGrid.set("AutoInsert", e.sender.selectedIndex);
                 }
             }
         });

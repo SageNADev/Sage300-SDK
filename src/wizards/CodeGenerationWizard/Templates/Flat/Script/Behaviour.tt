@@ -75,7 +75,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
             sg.delayOnBlur("btnFinder<#=keyFieldName#>", function () {
-                if (sg.controls.GetString(modelData.<#=keyFieldName#>() != "")) {
+                if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
                     if (sg.controls.GetString(<#=localEntityName#>UI.<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
                         <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
                     }

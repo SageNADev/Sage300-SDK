@@ -204,6 +204,7 @@ i.reportIcon {display:inline;background: url("../Images/reports.png") no-repeat 
 
 .nav-menu-wrapper { /* added to add position: relative so .nav-menu can use absolute positioning */
     position: relative;
+    min-width: 1000px;
 }
 
 .nav-menu *,
@@ -308,6 +309,9 @@ border-bottom: none;
     margin: 0;
     right: -15px;
     left: -15px;
+    -webkit-transition: left 0.25s ease-in-out;
+    -moz-transition: left 0.25s ease-in-out;
+    transition: left 0.25s ease-in-out;
 }
 
 .nav-menu ul {
@@ -407,18 +411,97 @@ border-bottom: none;
     box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137); /* same as std-menu */
 }
 
-.nav-menu .std-menu .sub-menu-wrap:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -1px;
-    right: -1px;
-    height: 3px;
-    background-color: #255bc7;
+.nav-menu .active + .sub-menu-wrap, 
+.feature_nav.active .feature-menu-wrap, 
+.feature_nav.active .nav-menu.top-menu, 
+.feature_nav.active .nav-menu.top-menu .std-menu, 
+.feature_nav.active .nav-menu.top-menu .sub-menu-wrap {
+    display: block;
 }
 
-.nav-menu .active + .sub-menu-wrap {
-    display: block;
+.feature-menu-wrap {
+    display: none;
+    position: absolute;
+    top: 48px;
+    width: 500px;
+    height: 335px;
+    background: #ffffff url('../Images/nav/bg_menu_6.jpg') no-repeat right bottom;
+    border: 1px solid #e0e1dd;
+    box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);
+    z-index: 1001;
+    background-size: 452px 280px;
+ }
+ 
+ .k-ie .feature-menu-wrap {
+     top: 48px; /*IE only*/
+ }
+ 
+ .feature-menu-header {
+     padding: 10px 15px 15px;
+     background-color: #f5f6f7;
+     font-size: 24px;
+     color: #666;
+     font-weight: normal;
+     font-family: foco;
+ }
+ 
+.feature-menu-header .logo {
+    width: 60px;
+    height: 26px;
+    background: transparent url('../Images/sage_300_logo.png') no-repeat left top;
+    display: inline-block;
+    background-size: 100px;
+    position: relative;
+    top: 6px;
+}
+ 
+ .feature-menu-content {
+     padding: 15px;
+     color: #777777;
+     line-height: 1.5;
+ }
+ 
+.feature-menu-content p {
+    margin-bottom: 14px;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #FFF, 1px 1px 0 #fff;
+    max-width: 360px;
+}
+ 
+.feature-menu-content h4 {
+    font-weight: bold;
+    line-height: 3;
+    color: #333333;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #00a4cf;
+    margin-left: 0 !important;
+    font-size: 12px !important;
+    height: 30px;
+    padding: 6px !important;
+}
+
+.btn-info:hover, 
+.btn-info:focus, 
+.btn-info:active, 
+.btn-info.active {
+    color: #ffffff;
+    background-color: #007c9c;
+    border-color: #007492;
+}
+
+  
+.my-report {
+    line-height: 1.5;
+}
+ 
+.my-report li:after {
+    content:"";
+    padding: 0 10px;
+    vertical-align: baseline;
+    margin: 0 0 0 6px;
+    background: transparent url('../Images/sprite_mega_menu.png') no-repeat left 2px;
 }
 
 .nav-menu .menu-section {
@@ -617,5 +700,66 @@ border-bottom: none;
       content: "&";
     } */
 }
+
+/******************************************************************************************************/
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navigation > ul > li:hover > ul {
+    display: block;
+}
+
+/** SDK menu in top navigation **/
+.nav-menu.top-menu {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 700px;
+    height: 393px;
+    z-index: 1001;
+    border-top: 1px solid #d9dadc;
+}
+
+.top-menu ul.std-menu {
+    top: 0;
+    width: 220px;
+}
+
+.nav-menu.top-menu .std-menu .sub-menu-wrap {
+    display: none;
+    background: #fff none;
+    left: 218px;
+    width: 482px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-rule: 1px dotted #ccc;
+    -moz-column-rule: 1px dotted #ccc;
+    column-rule: 1px dotted #ccc;
+    -moz-column-fill: auto;
+    column-fill: auto;
+}
+
+.nav-menu.top-menu .std-menu:before,
+.nav-menu.top-menu .sub-menu-wrap:after {
+    background-color: #255bc7;
+    height: 0;
+}
+
+.nav-menu.top-menu .std-menu > li {
+    width: 220px;
+}
+
+.nav-menu.top-menu .std-menu .sub-menu-wrap li a {
+    font-size: 12px;
+}
+
 
 

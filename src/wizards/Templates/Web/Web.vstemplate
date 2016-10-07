@@ -51,6 +51,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Home.js">Sage.CA.SBS.ERP.Sage300.Common.Home.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="Tenant" TargetFolderName="Tenant">
@@ -117,7 +118,6 @@
             <Folder Name="Shared" TargetFolderName="Shared">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenuDisableCheck.cshtml">_OptionsMenuDisableCheck.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
@@ -148,6 +148,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Controls.js">Sage.CA.SBS.ERP.Sage300.Common.Controls.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js">Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
@@ -232,7 +233,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$Bootstrapper.xml">TUBootstrapper.xml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$MenuDetails.xml">TUMenuDetails.xml</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="AccpacDotNetVersion.props">AccpacDotNetVersion.props</ProjectItem>
       <Folder Name="Assets" TargetFolderName="Assets">
         <Folder Name="fonts" TargetFolderName="fonts">
           <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Bd.otf">HelveticaNeueLTStd-Bd.otf</ProjectItem>
@@ -253,6 +253,11 @@
           </Folder>
           <Folder Name="home" TargetFolderName="home">
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
+          </Folder>
+          <Folder Name="login" TargetFolderName="login">
+            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-sq.png">sage300-logo-sq.png</ProjectItem>
           </Folder>
           <Folder Name="ui" TargetFolderName="ui">
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
@@ -463,6 +468,8 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_7.jpg">bg_menu_7.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_8.jpg">bg_menu_8.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_9.jpg">bg_menu_9.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
           </Folder>
           <ProjectItem ReplaceParameters="false" TargetFileName="pencil-icon.png">pencil-icon.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
@@ -475,6 +482,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="rq-field.png">rq-field.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.gif">sage_300_logo.gif</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_One.png">sage_One.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search.png">search.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search_icon.png">search_icon.png</ProjectItem>
@@ -538,12 +546,46 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
           <Folder Name="Kendo" TargetFolderName="Kendo">
-            <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>
+            <Folder Name="common" TargetFolderName="common">
+              <ProjectItem ReplaceParameters="false" TargetFileName="adaptive.less">adaptive.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="all.less">all.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="base.less">base.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="calendar.less">calendar.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="core.less">core.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="dataviz.less">dataviz.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="editor.less">editor.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="font-icons.less">font-icons.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="gantt.less">gantt.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="imagebrowser.less">imagebrowser.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="inputs.less">inputs.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="menu.less">menu.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="mixins.less">mixins.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="notification.less">notification.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="panelbar.less">panelbar.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="pivot.less">pivot.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="progressbar.less">progressbar.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="responsivepanel.less">responsivepanel.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="scheduler.less">scheduler.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="slider.less">slider.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="splitter.less">splitter.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="spreadsheet.less">spreadsheet.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tabstrip.less">tabstrip.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="toolbar.less">toolbar.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="tooltip.less">tooltip.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="treelist.less">treelist.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="treeview.less">treeview.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="upload.less">upload.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="virtuallist.less">virtuallist.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="window.less">window.less</ProjectItem>
+            </Folder>
             <ProjectItem ReplaceParameters="false" TargetFileName="kendo.common.less">kendo.common.less</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="theme-template.less">theme-template.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="type-default.less">type-default.less</ProjectItem>
           </Folder>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Buttons.css">Sage.CA.SBS.ERP.Sage300.Buttons.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Calendar.css">Sage.CA.SBS.ERP.Sage300.Calendar.css</ProjectItem>
@@ -699,42 +741,34 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="iframe-resizer-reports.js">iframe-resizer-reports.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="iframeResizer.js">iframeResizer.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.formparams.js">jquery.formparams.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.json.min.js">jquery.json.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.mask.min.js">jquery.mask.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.menu-aim.js">jquery.menu-aim.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.numeric.js">jquery.numeric.js</ProjectItem>
         </Folder>
         <Folder Name="Kendo" TargetFolderName="Kendo">
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.js">kendo.culture.en-AU.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.js">kendo.culture.en-US.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.js">kendo.culture.en-ZA.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.min.js">kendo.culture.en-ZA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es-ES.min.js">kendo.culture.es-ES.min.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr-CA.js">kendo.culture.fr-CA.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hans.js">kendo.culture.zh-Hans.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hant.js">kendo.culture.zh-Hant.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.js">kendo.messages.es-ES.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.js">kendo.messages.fr-CA.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-Hans.js">kendo.messages.zh-Hans.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-Hant.js">kendo.messages.zh-Hant.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-AU.js">kendo.messsages.en-AU.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-US.js">kendo.messsages.en-US.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messsages.en-ZA.js">kendo.messsages.en-ZA.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.min.js">knockout-kendo.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr-CA.min.js">kendo.culture.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hans.min.js">kendo.culture.zh-Hans.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hant.min.js">kendo.culture.zh-Hant.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.min.js">kendo.messages.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.min.js">kendo.messages.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-CN.min.js">kendo.messages.zh-CN.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-TW.min.js">kendo.messages.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
         </Folder>
         <Folder Name="knockout" TargetFolderName="knockout">
           <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.js">knockout-2.1.0.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.min.js">knockout-kendo.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.debug.js">knockout.mapping-latest.debug.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.js">knockout.mapping-latest.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.BindingHandlers.js">Sage.CA.SBS.Sage300.Custom.BindingHandlers.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js">Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js</ProjectItem>
         </Folder>
-        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendoGrid.js">knockout-kendoGrid.js</ProjectItem>
         <Folder Name="Less" TargetFolderName="Less">
           <ProjectItem ReplaceParameters="true" TargetFileName="less-1.6.1.min.js">less-1.6.1.min.js</ProjectItem>
         </Folder>
@@ -764,6 +798,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PluginMenuUrl.cshtml">_PluginMenuUrl.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
@@ -777,6 +812,15 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
         </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <Folder Name="WebForms" TargetFolderName="WebForms">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseWebPage.cs">BaseWebPage.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx">CustomReportViewer.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx.cs">CustomReportViewer.aspx.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx.designer.cs">CustomReportViewer.aspx.designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx">ReportViewer.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx.cs">ReportViewer.aspx.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx.designer.cs">ReportViewer.aspx.designer.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>

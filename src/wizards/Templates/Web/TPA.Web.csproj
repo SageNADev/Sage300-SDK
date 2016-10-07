@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(SolutionDir)\AccpacDotNetVersion.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -46,9 +47,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ACCPAC.Advantage, Version='$(RefVersionAccpacDotNet)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="ACCPAC.Advantage.Types, Version='$(RefVersionAccpacDotNet)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(Sage300WebDir)\web\bin\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.Web.dll</HintPath>
     </Reference>
     <Reference Include="dotless.Core">
       <HintPath>$(SolutionDir)packages\dotless.1.4.0.0\lib\dotless.Core.dll</HintPath>
@@ -82,8 +105,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>$(SolutionDir)packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling">
+      <HintPath>$(SolutionDir)packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.TransientFaultHandling.Core, Version=5.1.1209.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -95,84 +126,81 @@
     <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)packages\Unity.Interception.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>$(SolutionDir)packages\Microsoft.Web.Administration.7.0.0.0\lib\net20\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>$(SolutionDir)packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=3.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)packages\WindowsAzure.Storage.3.1.0.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Resources">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Services">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Services.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Azure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Azure">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Azure.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Cache">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Configuration">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Logging">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Resources">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Services">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Services.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
@@ -247,15 +275,16 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
@@ -284,22 +313,99 @@
     </Compile>
     <Compile Include="Areas\$applicationid$\Constants\Constant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForms\CustomReportViewer.aspx.cs">
+      <DependentUpon>CustomReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\CustomReportViewer.aspx.designer.cs">
+      <DependentUpon>CustomReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\BaseWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="$applicationid$Bootstrapper.xml" />
     <Content Include="$applicationid$MenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
-    <Content Include="AccpacDotNetVersion.props" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js" />
+    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantRepository.js" />
+    <Content Include="Areas\Core\Scripts\Process\Sage.CA.SBS.Sage300.Common.Process.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Home.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js" />
     <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Wizard.js" />
+    <Content Include="Areas\Core\Scripts\Tenant\Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js" />
+    <Content Include="Areas\Core\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\Partials\_OnPremiseLogin.cshtml" />
+    <Content Include="Areas\Core\Views\Find\Find.cshtml" />
+    <Content Include="Areas\Core\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Core\Views\OptionalFields\OptionalFields.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\AddCriteria.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\Filter.cshtml" />
+    <Content Include="Areas\Core\Views\Web.config" />
+    <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Core\Views\Find\FindPreference.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLPostingSequence.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLReferenceIntegration.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLSourceCodes.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_TransactionsOptions.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLIntegrationDetail.cshtml" />
+    <Content Include="Areas\Core\Views\FiscalYear\FiscalYearSet.cshtml" />
+    <Content Include="Areas\Core\Views\OptionalFields\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Error\AccountNotAvailable.cshtml" />
+    <Content Include="Areas\Core\Views\Error\AccountNotProvisioned.cshtml" />
+    <Content Include="Areas\Core\Views\Error\Error404.cshtml" />
+    <Content Include="Areas\Shared\Scripts\DocumentHistory\Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Customization.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Global.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Report.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.URL.js" />
+    <Content Include="Areas\Shared\Views\ExportImport\AddCriteria.cshtml" />
+    <Content Include="Areas\Shared\Views\ExportImport\Filter.cshtml" />
+    <Content Include="Areas\Shared\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\Web.config" />
+    <Content Include="Areas\Shared\Views\_ViewStart.cshtml" />
     <Content Include="Assets\fonts\helveticaneueltstd-roman.svg" />
     <Content Include="Assets\fonts\sagearmonyeicons.svg" />
     <Content Include="Assets\images\default\loading.gif" />
     <Content Include="Assets\images\default\loading_new.gif" />
     <Content Include="Assets\images\home\tour_icon_sprite.png" />
+    <Content Include="Assets\images\login\login-bg.jpg" />
+    <Content Include="Assets\images\login\login-bg_admin.jpg" />
+    <Content Include="Assets\images\login\sage300-logo-sq.png" />
     <Content Include="Assets\images\ui\sprite_form.png" />
     <Content Include="Assets\images\ui\sprite_icons.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
@@ -307,18 +413,104 @@
     <Content Include="Assets\js\input.Checkbox.js" />
     <Content Include="Assets\styles\css\default.min.css" />
     <Content Include="Assets\styles\css\home.min.css" />
-    <Content Include="Content\Images\bar_left.png" />
-    <Content Include="Content\Images\bar_middle.png" />
-    <Content Include="Content\Images\bar_right.png" />
+    <Content Include="Content\fonts\helveticaneueltstd-roman.svg" />
+    <Content Include="Content\fonts\sagearmonyeicons.svg" />
+    <Content Include="Content\Images\alt.png" />
     <Content Include="Content\Images\editor.png" />
+    <Content Include="Content\Images\icon-edit-sprite.png" />
+    <Content Include="Content\Images\inc_exclude_disabled.png" />
     <Content Include="Content\Images\ItemWizardWelcome.jpg" />
     <Content Include="Content\Images\loading_new.gif" />
     <Content Include="Content\Images\logo-img-holder.png" />
+    <Content Include="Content\Images\nav\bg_menu_1.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_10.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_11.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_12.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_2.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_3.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_4.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_5.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_6.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_7.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_8.jpg" />
+    <Content Include="Content\Images\nav\bg_menu_9.jpg" />
+    <Content Include="Content\Images\nav\sprite_global_menu%402x.png" />
+    <Content Include="Content\Images\nav\sprite_global_menu_rev%402x.png" />
+    <Content Include="Content\Images\sage_300_logo.png" />
+    <Content Include="Content\Images\label-menu-old.png" />
+    <Content Include="Content\Images\label-menu.png" />
+    <Content Include="Content\Images\add_32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\ajax-loader.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Alert_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\arrow-right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Ast_Arrows.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\bg_cna.jpg" />
+    <Content Include="Content\Images\bg_mega_menu.png" />
+    <Content Include="Content\Images\bg_menu.png" />
+    <Content Include="Content\Images\browser_icons.png" />
+    <Content Include="Content\Images\button-down-arrow-disabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\button-down-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Calendar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\calender-small.png" />
+    <Content Include="Content\Images\calender.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Cale_Prev_Arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\corner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\drop-down-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\drop-down-arrow2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\DropDownArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\edit-calandar.png" />
+    <Content Include="Content\Images\edit-columns-icon.png" />
+    <Content Include="Content\Images\edit-dropdown.png" />
+    <Content Include="Content\Images\edit-find.png" />
+    <Content Include="Content\Images\edit-lookup.png" />
+    <Content Include="Content\Images\edit-search.png" />
+    <Content Include="Content\Images\edit-time.png" />
+    <Content Include="Content\Images\edit-up-down.png" />
+    <Content Include="Content\Images\sage_300_logo_white.png" />
+    <Content Include="Content\Images\sprite_mega_menu.png" />
+    <Content Include="Content\Images\sprite_msg.png" />
+    <Content Include="Content\Images\toolBar_icons_disabled.png" />
     <Content Include="Content\Images\tour_icon_sprite.png" />
     <Content Include="Content\Images\vpf-logo.png" />
+    <Content Include="Content\Images\widget_icon.png" />
     <Content Include="Content\jasmine\jasmine.css" />
     <Content Include="Content\jasmine\jasmine_favicon.png" />
+    <Content Include="Content\Styles\base.css" />
+    <Content Include="Content\Styles\custom.css" />
     <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Vpf.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.StandAlone.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -339,19 +531,289 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\Images\floral_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\footer_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\global_navigation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\grid.png" />
+    <Content Include="Content\Images\helpSerchIcon.png" />
+    <Content Include="Content\Images\inc_exclude.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\inline_validation_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\editor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\imagebrowser.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\loading-image.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\slider-h.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\slider-v.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Kendo\Default\sprite_2x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\left-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\list.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\logo2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\LookupArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\menu3dLevel.png" />
+    <Content Include="Content\Images\Msg_icons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\pencil-icon.png" />
+    <Content Include="Content\Images\portalSprite.png" />
+    <Content Include="Content\Images\QuestionIcon_Default_Dark.png" />
+    <Content Include="Content\Images\QuestionIcon_Select.png" />
+    <Content Include="Content\Images\reports.png" />
+    <Content Include="Content\Images\reportsIconwt.png" />
+    <Content Include="Content\Images\Req-Field.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\required.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\rq-field.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\sage_300_logo.gif" />
+    <Content Include="Content\Images\sage_One.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\searchsmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\search_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\spinner_bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\sprite1.png" />
+    <Content Include="Content\Images\sprite_menu.png" />
+    <Content Include="Content\Images\startup-sprite.png" />
+    <Content Include="Content\Images\success.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\tab_bg_transparent.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\tick.png" />
+    <Content Include="Content\Images\Time_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\toolBar_icons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\toolBar_iconso.png" />
+    <Content Include="Content\Images\tooltip.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\top-bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\top_nav_bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\vertical-divider.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\white-down-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\white-left-arrow-disabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\white-left-arrow-t-disabled.png" />
+    <Content Include="Content\Images\white-left-arrow-t.png" />
+    <Content Include="Content\Images\white-left-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\white-right-arrow-disabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\white-right-arrow-t-disabled.png" />
+    <Content Include="Content\Images\white-right-arrow-t.png" />
+    <Content Include="Content\Images\white-right-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\widgetHP-img.png" />
+    <Content Include="Content\Styles\default.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Core.Portal.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Grid.css" />
+    <Content Include="Content\Styles\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Styles\Kendo\kendo.default.min.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Reset.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Buttons.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Calendar.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Common.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.DataGrid.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.DropDown.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.FormControls.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Site.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Tabs.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Widget.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Window.css" />
+    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300datepicker.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Customization\ScreenDefinitions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\HelveticaNeueLTStd-Bd.otf" />
+    <Content Include="Content\fonts\helveticaneueltstd-roman.eot" />
+    <Content Include="Content\fonts\HelveticaNeueLTStd-Roman.otf" />
+    <Content Include="Content\fonts\helveticaneueltstd-roman.ttf" />
+    <Content Include="Content\fonts\helveticaneueltstd-roman.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\AjaxQ\ajaxq.js" />
-    <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
-    <Content Include="Scripts\Help\Help.js" />
+    <Content Include="Areas\Shared\Views\Shared\_ProcessingFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_ReportFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_SetupFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_DeleteButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_OptionalButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_PrintButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_ProceedButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_SaveButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_ButtonBase.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayout.cshtml" />
+    <Content Include="Content\IntelligenceGo\en-us\Financial Balance Sheet S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\en-us\Financial Cash Flow Summary by Category S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\en-us\Financial Forecasting S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\en-us\Financial Income Statement S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\en-us\Financial Ratio S300.xlsx" />
+    <Content Include="Content\fonts\Foco-Regular.otf" />
+    <Content Include="Content\fonts\Foco-Regular.ttf" />
+    <Content Include="Content\fonts\focobold.eot" />
+    <Content Include="Content\fonts\focobold.ttf" />
+    <Content Include="Content\fonts\focobold.woff" />
+    <Content Include="Content\fonts\focolight.eot" />
+    <Content Include="Content\fonts\focolight.ttf" />
+    <Content Include="Content\fonts\focolight.woff" />
+    <Content Include="Content\IntelligenceGo\en-us\Report Designer S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Financial Balance Sheet S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Financial Cash Flow Summary by Category S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Financial Forecasting S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Financial Income Statement S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Financial Ratio S300.xlsx" />
+    <Content Include="Content\IntelligenceGo\fr-CA\Report Designer S300.xlsx" />
+    <Content Include="Areas\Shared\Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\RedirectToLogin.cshtml" />
+    <Content Include="Areas\Shared\Views\DocumentHistory\DocumentHistory.cshtml" />
+    <Content Include="Areas\Shared\Views\DocumentHistory\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\TaxesGrid\TaxesGrid.cshtml" />
+    <Content Include="Areas\Shared\Views\TaxesGrid\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\SalesSplitGrid\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\LabelMenuPopup.cshtml" />
+    <Content Include="Content\fonts\sagearmonyeicons.eot" />
+    <Content Include="Content\fonts\sagearmonyeicons.ttf" />
+    <Content Include="Content\fonts\sagearmonyeicons.woff" />
+    <Content Include="Areas\Core\Views\Authentication\SessionExpired.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR3.cshtml" />
-    <Content Include="Assets\fonts\HelveticaNeueLTStd-Bd.otf" />
-    <Content Include="Assets\fonts\helveticaneueltstd-roman.eot" />
-    <Content Include="Assets\fonts\HelveticaNeueLTStd-Roman.otf" />
-    <Content Include="Assets\fonts\helveticaneueltstd-roman.ttf" />
-    <Content Include="Assets\fonts\helveticaneueltstd-roman.woff" />
-    <Content Include="Assets\fonts\sagearmonyeicons.eot" />
-    <Content Include="Assets\fonts\sagearmonyeicons.ttf" />
-    <Content Include="Assets\fonts\sagearmonyeicons.woff" />
+    <Content Include="Areas\Core\Views\Authentication\OnPremiseLogin.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Index.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Partials\_NewTenantSetup.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Error\MissingModules.cshtml" />
+    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
     <Content Include="Assets\styles\less\default.less" />
     <Content Include="Assets\styles\less\framework\aging-period.less" />
     <Content Include="Assets\styles\less\framework\alerts.less" />
@@ -430,310 +892,167 @@
     <Content Include="Assets\styles\less\mixins\text-emphasis.less" />
     <Content Include="Assets\styles\less\mixins\text-overflow.less" />
     <Content Include="Assets\styles\less\mixins\vendor-prefixes.less" />
-    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR3.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_OptionsMenu.cshtml" />
+    <Content Include="Assets\fonts\HelveticaNeueLTStd-Bd.otf" />
+    <Content Include="Assets\fonts\helveticaneueltstd-roman.eot" />
+    <Content Include="Assets\fonts\HelveticaNeueLTStd-Roman.otf" />
+    <Content Include="Assets\fonts\helveticaneueltstd-roman.ttf" />
+    <Content Include="Assets\fonts\helveticaneueltstd-roman.woff" />
+    <Content Include="Assets\fonts\sagearmonyeicons.eot" />
+    <Content Include="Assets\fonts\sagearmonyeicons.ttf" />
+    <Content Include="Assets\fonts\sagearmonyeicons.woff" />
+    <Content Include="Areas\Core\Views\Shared\GridPage.cshtml" />
+    <Content Include="Content\Styles\Kendo\common\adaptive.less" />
+    <Content Include="Content\Styles\Kendo\common\all.less" />
+    <Content Include="Content\Styles\Kendo\common\base.less" />
+    <Content Include="Content\Styles\Kendo\common\calendar.less" />
+    <Content Include="Content\Styles\Kendo\common\core.less" />
+    <Content Include="Content\Styles\Kendo\common\dataviz.less" />
+    <Content Include="Content\Styles\Kendo\common\editor.less" />
+    <Content Include="Content\Styles\Kendo\common\font-icons.less" />
+    <Content Include="Content\Styles\Kendo\common\forms.less" />
+    <Content Include="Content\Styles\Kendo\common\gantt.less" />
+    <Content Include="Content\Styles\Kendo\common\grid.less" />
+    <Content Include="Content\Styles\Kendo\common\imagebrowser.less" />
+    <Content Include="Content\Styles\Kendo\common\inputs.less" />
+    <Content Include="Content\Styles\Kendo\common\menu.less" />
+    <Content Include="Content\Styles\Kendo\common\mixins.less" />
+    <Content Include="Content\Styles\Kendo\common\notification.less" />
+    <Content Include="Content\Styles\Kendo\common\panelbar.less" />
+    <Content Include="Content\Styles\Kendo\common\pivot.less" />
+    <Content Include="Content\Styles\Kendo\common\progressbar.less" />
+    <Content Include="Content\Styles\Kendo\common\responsivepanel.less" />
+    <Content Include="Content\Styles\Kendo\common\scheduler.less" />
+    <Content Include="Content\Styles\Kendo\common\slider.less" />
+    <Content Include="Content\Styles\Kendo\common\splitter.less" />
+    <Content Include="Content\Styles\Kendo\common\spreadsheet.less" />
+    <Content Include="Content\Styles\Kendo\common\tabstrip.less" />
+    <Content Include="Content\Styles\Kendo\common\toolbar.less" />
+    <Content Include="Content\Styles\Kendo\common\tooltip.less" />
+    <Content Include="Content\Styles\Kendo\common\treelist.less" />
+    <Content Include="Content\Styles\Kendo\common\treeview.less" />
+    <Content Include="Content\Styles\Kendo\common\upload.less" />
+    <Content Include="Content\Styles\Kendo\common\virtuallist.less" />
+    <Content Include="Content\Styles\Kendo\common\window.less" />
+    <Content Include="Content\Styles\Kendo\type-default.less" />
+    <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
+    <Content Include="Scripts\Help\Help.js" />
+    <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
     <Content Include="Scripts\jasmine\jasmine.js" />
-    <Content Include="Areas\Core\Views\Shared\_OptionsMenuDisableCheck.cshtml" />
-    <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
-    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
-    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
-    <Content Include="Scripts\jquery-ui-1.11.4.js" />
-    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.form.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.form.min.js.map" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.map" />
-    <Content Include="Scripts\jquery.form.min.js.map" />
-    <Content Include="Scripts\JQueryUI\_references.js" />
     <Content Include="Scripts\JQueryUI\iframe-resizer-reports.js" />
     <Content Include="Scripts\JQueryUI\iframeResizer.js" />
-    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
     <Content Include="Scripts\JQueryUI\jquery.json.min.js" />
     <Content Include="Scripts\JQueryUI\jquery.mask.min.js" />
     <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
-    <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-AU.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-US.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.en.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.es-ES.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.es-ES.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.zh-Hans.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.zh-Hant.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-AU.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-US.js" />
-    <Content Include="Scripts\Kendo\kendo.messsages.en-ZA.js" />
-    <Content Include="Scripts\Kendo\knockout-kendo.js" />
-    <Content Include="Scripts\Kendo\knockout-kendo.min.js" />
-    <Content Include="Scripts\knockout-kendo.js" />
-    <Content Include="Scripts\knockout-kendoGrid.js" />
-    <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" />
-    <Content Include="Scripts\knockout\knockout-2.1.0.js" />
-    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
-    <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
-    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-TW.min.js" />
     <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.BindingHandlers.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js" />
     <Content Include="Scripts\Less\less-1.6.1.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Portal\FeatureTour.js" />
-    <Content Include="Scripts\Portal\SessionDate.js" />
     <Content Include="Scripts\Portal\SessionDateCookie.js" />
+    <Content Include="Scripts\Portal\SessionDate.js" />
     <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb.js" />
     <Content Include="Scripts\Portal\Widget.js" />
     <Content Include="Scripts\Report\ReportBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Upload.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js" />
-    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantRepository.js" />
-    <Content Include="Areas\Core\Scripts\Process\Sage.CA.SBS.Sage300.Common.Process.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Home.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js" />
-    <Content Include="Areas\Core\Scripts\Tenant\Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js" />
-    <Content Include="Areas\Shared\Scripts\DocumentHistory\Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Cache.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Controls.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Customization.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Global.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Report.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.URL.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Validate.js" />
-    <Content Include="Content\fonts\helveticaneueltstd-roman.svg" />
-    <Content Include="Content\fonts\sagearmonyeicons.svg" />
-    <Content Include="Content\Images\add_32.png" />
-    <Content Include="Content\Images\ajax-loader.gif" />
-    <Content Include="Content\Images\Alert_icon.png" />
-    <Content Include="Content\Images\alt.png" />
-    <Content Include="Content\Images\arrow-right.png" />
-    <Content Include="Content\Images\arrow.png" />
-    <Content Include="Content\Images\Ast_Arrows.png" />
-    <Content Include="Content\Images\bg_cna.jpg" />
-    <Content Include="Content\Images\bg_mega_menu.png" />
-    <Content Include="Content\Images\bg_menu.png" />
-    <Content Include="Content\Images\browser_icons.png" />
-    <Content Include="Content\Images\button-down-arrow-disabled.png" />
-    <Content Include="Content\Images\button-down-arrow.png" />
-    <Content Include="Content\Images\Calendar.png" />
-    <Content Include="Content\Images\calender-small.png" />
-    <Content Include="Content\Images\calender.png" />
-    <Content Include="Content\Images\Cale_Prev_Arrow.png" />
-    <Content Include="Content\Images\close.png" />
-    <Content Include="Content\Images\corner.png" />
-    <Content Include="Content\Images\drop-down-arrow.png" />
-    <Content Include="Content\Images\drop-down-arrow2.png" />
-    <Content Include="Content\Images\DropDownArrow.png" />
-    <Content Include="Content\Images\edit-calandar.png" />
-    <Content Include="Content\Images\edit-columns-icon.png" />
-    <Content Include="Content\Images\edit-dropdown.png" />
-    <Content Include="Content\Images\edit-find.png" />
-    <Content Include="Content\Images\edit-lookup.png" />
-    <Content Include="Content\Images\edit-search.png" />
-    <Content Include="Content\Images\edit-time.png" />
-    <Content Include="Content\Images\edit-up-down.png" />
-    <Content Include="Content\Images\floral_2.png" />
-    <Content Include="Content\Images\footer_logo.png" />
-    <Content Include="Content\Images\global_navigation.png" />
-    <Content Include="Content\Images\grid.png" />
-    <Content Include="Content\Images\helpSerchIcon.png" />
-    <Content Include="Content\Images\icon-edit-sprite.png" />
-    <Content Include="Content\Images\inc_exclude.png" />
-    <Content Include="Content\Images\inc_exclude_disabled.png" />
-    <Content Include="Content\Images\inline_validation_icon.png" />
-    <Content Include="Content\Images\Kendo\Default\editor.png" />
-    <Content Include="Content\Images\Kendo\Default\imagebrowser.png" />
-    <Content Include="Content\Images\Kendo\Default\loading-image.gif" />
-    <Content Include="Content\Images\Kendo\Default\loading.gif" />
-    <Content Include="Content\Images\Kendo\Default\slider-h.gif" />
-    <Content Include="Content\Images\Kendo\Default\slider-v.gif" />
-    <Content Include="Content\Images\Kendo\Default\sprite.png" />
-    <Content Include="Content\Images\Kendo\Default\sprite_2x.png" />
-    <Content Include="Content\Images\label-menu-old.png" />
-    <Content Include="Content\Images\label-menu.png" />
-    <Content Include="Content\Images\left-arrow.png" />
-    <Content Include="Content\Images\list.png" />
-    <Content Include="Content\Images\loading.gif" />
-    <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\logo2.png" />
-    <Content Include="Content\Images\LookupArrow.png" />
-    <Content Include="Content\Images\menu3dLevel.png" />
-    <Content Include="Content\Images\Msg_icons.png" />
-    <Content Include="Content\Images\nav\bg_menu_1.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_10.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_11.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_12.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_2.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_3.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_4.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_5.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_6.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_7.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_8.jpg" />
-    <Content Include="Content\Images\nav\bg_menu_9.jpg" />
-    <Content Include="Content\Images\pencil-icon.png" />
-    <Content Include="Content\Images\portalSprite.png" />
-    <Content Include="Content\Images\QuestionIcon_Default_Dark.png" />
-    <Content Include="Content\Images\QuestionIcon_Select.png" />
-    <Content Include="Content\Images\reports.png" />
-    <Content Include="Content\Images\reportsIconwt.png" />
-    <Content Include="Content\Images\Req-Field.png" />
-    <Content Include="Content\Images\required.png" />
-    <Content Include="Content\Images\rq-field.png" />
-    <Content Include="Content\Images\sage_300_logo.gif" />
-    <Content Include="Content\Images\sage_300_logo.png" />
-    <Content Include="Content\Images\sage_One.png" />
-    <Content Include="Content\Images\search.png" />
-    <Content Include="Content\Images\searchsmall.png" />
-    <Content Include="Content\Images\search_icon.png" />
-    <Content Include="Content\Images\spinner_bg.png" />
-    <Content Include="Content\Images\sprite.png" />
-    <Content Include="Content\Images\sprite1.png" />
-    <Content Include="Content\Images\sprite_mega_menu.png" />
-    <Content Include="Content\Images\sprite_menu.png" />
-    <Content Include="Content\Images\sprite_msg.png" />
-    <Content Include="Content\Images\startup-sprite.png" />
-    <Content Include="Content\Images\success.png" />
-    <Content Include="Content\Images\tab_bg_transparent.png" />
-    <Content Include="Content\Images\tick.png" />
-    <Content Include="Content\Images\Time_icon.png" />
-    <Content Include="Content\Images\toolBar_icons.png" />
-    <Content Include="Content\Images\toolBar_iconso.png" />
-    <Content Include="Content\Images\toolBar_icons_disabled.png" />
-    <Content Include="Content\Images\tooltip.png" />
-    <Content Include="Content\Images\top-bg.png" />
-    <Content Include="Content\Images\top_nav_bg.png" />
-    <Content Include="Content\Images\vertical-divider.png" />
-    <Content Include="Content\Images\white-down-arrow.png" />
-    <Content Include="Content\Images\white-left-arrow-disabled.png" />
-    <Content Include="Content\Images\white-left-arrow-t-disabled.png" />
-    <Content Include="Content\Images\white-left-arrow-t.png" />
-    <Content Include="Content\Images\white-left-arrow.png" />
-    <Content Include="Content\Images\white-right-arrow-disabled.png" />
-    <Content Include="Content\Images\white-right-arrow-t-disabled.png" />
-    <Content Include="Content\Images\white-right-arrow-t.png" />
-    <Content Include="Content\Images\white-right-arrow.png" />
-    <Content Include="Content\Images\widgetHP-img.png" />
-    <Content Include="Content\Images\widget_icon.png" />
-    <Content Include="Content\Styles\base.css" />
-    <Content Include="Content\Styles\custom.css" />
-    <Content Include="Content\Styles\default.css" />
-    <Content Include="Content\Styles\Kendo\kendo.common.min.css" />
-    <Content Include="Content\Styles\Kendo\kendo.default.min.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Buttons.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Calendar.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Common.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Core.Portal.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.DataGrid.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.DropDown.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.FormControls.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Grid.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Reset.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Site.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.StandAlone.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Tabs.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Widget.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300.Window.css" />
-    <Content Include="Content\Styles\Sage.CA.SBS.ERP.Sage300datepicker.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Customization\ScreenDefinitions.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="WebForms\CustomReportViewer.aspx" />
+    <Content Include="WebForms\ReportViewer.aspx" />
+    <Content Include="Content\Styles\Kendo\kendo.common.less" />
+    <Content Include="Content\Styles\Kendo\kendo.default.less" />
+    <Content Include="Areas\Core\Views\Shared\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_ProcessingStatus.cshtml" />
+    <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\JQueryUI\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
     </Content>
-    <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Partials\_ConfigurePopUp.cshtml" />
+    <Content Include="Views\Partials\_Widget.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Partials\_MenuUrl.cshtml" />
+    <Content Include="Views\Portal.cshtml" />
+    <Content Include="Views\Partials\_HomePageHelp.cshtml" />
+    <Content Include="Views\Partials\_MenuHelp.cshtml" />
+    <Content Include="Views\Partials\_WidgetUrl.cshtml" />
+    <Content Include="Views\Partials\_Localization.cshtml" />
+    <Content Include="Views\UnsupportedBrowser\Error.cshtml" />
+    <Content Include="Views\Partials\_Footer.cshtml" />
+    <Content Include="Views\Partials\_CommonLayout.cshtml" />
+    <Content Include="Views\Shared\_GenericLayout.cshtml" />
+    <Content Include="Views\Partials\_FeatureTour.cshtml" />
+    <Content Include="Views\Partials\_QuickMenu.cshtml" />
+    <Content Include="Views\Partials\_PluginMenuUrl.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\Export.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\Import.cshtml" />
+    <Content Include="Areas\Core\Views\Instrumentation\Index.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\ExportImportOption.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_ReportOptions.cshtml" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Controls.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Validate.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Upload.js" />
+    <Content Include="Areas\Core\Views\Tenant\Index.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_AddLineButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_DeleteLineButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_GenericButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_GridActions.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\GridPreferences.cshtml" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js" />
+    <Content Include="Areas\Core\Views\Shared\FiscalCalendar.cshtml" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Cache.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -764,133 +1083,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
     <Content Include="Areas\$applicationid$\Views\Web.config" />
     <Content Include="Areas\$applicationid$\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\OnPremiseLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\Partials\_OnPremiseLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\RedirectToLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\SessionExpired.cshtml" />
-    <Content Include="Areas\Core\Views\Error\AccountNotAvailable.cshtml" />
-    <Content Include="Areas\Core\Views\Error\AccountNotProvisioned.cshtml" />
-    <Content Include="Areas\Core\Views\Error\Error404.cshtml" />
-    <Content Include="Areas\Core\Views\Error\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Error\MissingModules.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\Export.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\ExportImportOption.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\Import.cshtml" />
-    <Content Include="Areas\Core\Views\Find\Find.cshtml" />
-    <Content Include="Areas\Core\Views\Find\FindPreference.cshtml" />
-    <Content Include="Areas\Core\Views\FiscalYear\FiscalYearSet.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLIntegrationDetail.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLPostingSequence.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLReferenceIntegration.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLSourceCodes.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_TransactionsOptions.cshtml" />
-    <Content Include="Areas\Core\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Instrumentation\Index.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Index.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Partials\_newtenantsetup.cshtml" />
-    <Content Include="Areas\Core\Views\OptionalFields\OptionalFields.cshtml" />
-    <Content Include="Areas\Core\Views\OptionalFields\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\AddCriteria.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\Filter.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\FiscalCalendar.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\GridPage.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\GridPreferences.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\LabelMenuPopup.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_OptionsMenu.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_ProcessingStatus.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_ReportOptions.cshtml" />
-    <Content Include="Areas\Core\Views\Tenant\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Web.config" />
-    <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Shared\Views\DocumentHistory\DocumentHistory.cshtml" />
-    <Content Include="Areas\Shared\Views\DocumentHistory\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\ExportImport\AddCriteria.cshtml" />
-    <Content Include="Areas\Shared\Views\ExportImport\Filter.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_AddLineButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_ButtonBase.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_DeleteButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_DeleteLineButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_GenericButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_OptionalButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_PrintButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_ProceedButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_SaveButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
-    <Content Include="Areas\Shared\Views\Report\Index.cshtml" />
-    <Content Include="Areas\Shared\Views\SalesSplitGrid\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_GridActions.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayout.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_ProcessingFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_ReportFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_SetupFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\TaxesGrid\TaxesGrid.cshtml" />
-    <Content Include="Areas\Shared\Views\TaxesGrid\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Web.config" />
-    <Content Include="Areas\Shared\Views\_ViewStart.cshtml" />
-    <Content Include="Content\fonts\Foco-Regular.otf" />
-    <Content Include="Content\fonts\Foco-Regular.ttf" />
-    <Content Include="Content\fonts\focobold.eot" />
-    <Content Include="Content\fonts\focobold.ttf" />
-    <Content Include="Content\fonts\focobold.woff" />
-    <Content Include="Content\fonts\focolight.eot" />
-    <Content Include="Content\fonts\focolight.ttf" />
-    <Content Include="Content\fonts\focolight.woff" />
-    <Content Include="Content\fonts\HelveticaNeueLTStd-Bd.otf" />
-    <Content Include="Content\fonts\helveticaneueltstd-roman.eot" />
-    <Content Include="Content\fonts\HelveticaNeueLTStd-Roman.otf" />
-    <Content Include="Content\fonts\helveticaneueltstd-roman.ttf" />
-    <Content Include="Content\fonts\helveticaneueltstd-roman.woff" />
-    <Content Include="Content\fonts\sagearmonyeicons.eot" />
-    <Content Include="Content\fonts\sagearmonyeicons.ttf" />
-    <Content Include="Content\fonts\sagearmonyeicons.woff" />
-    <Content Include="Content\IntelligenceGo\en-us\Financial Balance Sheet S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\en-us\Financial Cash Flow Summary by Category S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\en-us\Financial Forecasting S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\en-us\Financial Income Statement S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\en-us\Financial Ratio S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\en-us\Report Designer S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Financial Balance Sheet S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Financial Cash Flow Summary by Category S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Financial Forecasting S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Financial Income Statement S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Financial Ratio S300.xlsx" />
-    <Content Include="Content\IntelligenceGo\fr-CA\Report Designer S300.xlsx" />
-    <Content Include="Content\Styles\Kendo\common-template.less" />
-    <Content Include="Content\Styles\Kendo\kendo.common.less" />
-    <Content Include="Content\Styles\Kendo\kendo.default.less" />
-    <Content Include="Content\Styles\Kendo\theme-template.less" />
-    <Content Include="Views\Partials\_CommonLayout.cshtml" />
-    <Content Include="Views\Partials\_ConfigurePopUp.cshtml" />
-    <Content Include="Views\Partials\_FeatureTour.cshtml" />
-    <Content Include="Views\Partials\_Footer.cshtml" />
-    <Content Include="Views\Partials\_HomePageHelp.cshtml" />
-    <Content Include="Views\Partials\_Localization.cshtml" />
-    <Content Include="Views\Partials\_MenuHelp.cshtml" />
-    <Content Include="Views\Partials\_MenuUrl.cshtml" />
-    <Content Include="Views\Partials\_Widget.cshtml" />
-    <Content Include="Views\Partials\_WidgetUrl.cshtml" />
-    <Content Include="Views\Portal.cshtml" />
-    <Content Include="Views\Shared\_GenericLayout.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\UnsupportedBrowser\Error.cshtml" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Partials\_QuickMenu.cshtml" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\$applicationid$\Controllers\Finder\" />
