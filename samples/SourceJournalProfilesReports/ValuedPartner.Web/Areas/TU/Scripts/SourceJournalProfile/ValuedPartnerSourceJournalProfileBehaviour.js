@@ -112,12 +112,12 @@ sourceJournalProfileUI = {
     },
 
     // Is Dirty check
-    checkIsDirty: function (funcionToCall, sourceJournalName) {
+    checkIsDirty: function (functionToCall, sourceJournalName) {
         if (sourceJournalProfileUI.sourceJournalProfileModel.isModelDirty.isDirty() && sourceJournalName != null && sourceJournalName != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmSourceJournalProfile");
-                    funcionToCall.call();
+                    functionToCall.call();
                 },
                 function () { // No
                     if (sg.controls.GetString(sourceJournalName) != sg.controls.GetString(modelData.SourceJournalName())) {
@@ -127,7 +127,7 @@ sourceJournalProfileUI = {
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, sourceJournalProfileResources.SourceJournalNameTitle, sourceJournalName));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     }
 

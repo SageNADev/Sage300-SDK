@@ -112,12 +112,12 @@ sourceCodeUI = {
     },
 
     // Is Dirty check
-    checkIsDirty: function (funcionToCall, sourceLedger) {
+    checkIsDirty: function (functionToCall, sourceLedger) {
         if (sourceCodeUI.sourceCodeModel.isModelDirty.isDirty() && sourceLedger != null && sourceLedger != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmSourceCode");
-                    funcionToCall.call();
+                    functionToCall.call();
                 },
                 function () { // No
                     if (sg.controls.GetString(sourceLedger) != sg.controls.GetString(modelData.SourceLedger())) {
@@ -127,7 +127,7 @@ sourceCodeUI = {
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, sourceCodeResources.SourceLedgerTitle, sourceLedger));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     }
 

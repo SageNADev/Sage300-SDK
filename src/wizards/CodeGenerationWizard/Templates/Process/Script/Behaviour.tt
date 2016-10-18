@@ -147,18 +147,18 @@ var onFinderSuccess = {
 };
 
 var <#=localEntityName#>Utility = {   
-    checkIsDirty: function (yesFuncionToCall, noFunctionToCall) {
+    checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty && <#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
-                    yesFuncionToCall.call();
+                    yesFunctionToCall.call();
                 },
                 function () { // No
                     noFunctionToCall.call();
                 },
                 $.validator.format(globalResource.SaveConfirm));
         } else {
-            yesFuncionToCall.call();
+            yesFunctionToCall.call();
         }
     },
 };

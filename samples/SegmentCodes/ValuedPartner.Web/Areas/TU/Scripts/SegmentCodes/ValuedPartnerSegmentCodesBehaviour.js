@@ -151,13 +151,13 @@ segmentCodesUI = {
     },
 
     // Is Dirty check
-    checkIsDirty: function (funcionToCall, segmentNumber) {
+    checkIsDirty: function (functionToCall, segmentNumber) {
         var vm = segmentCodesUI.segmentCodesModel;
         if ((vm.isModelDirty && vm.isModelDirty.isDirty()) || segmentCodesUI.isDelete) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmSegmentCodes");
-                    funcionToCall.call();
+                    functionToCall.call();
                     segmentCodesUI.isDelete = false;
                 },
                 function () { // No
@@ -173,7 +173,7 @@ segmentCodesUI = {
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, segmentCodesResources.SegmentNumberTitle, segmentCodesUI.segmentNumberText));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     },
 

@@ -328,12 +328,12 @@ taxAuthoritiesUI = {
     },
 
     // Is Dirty check
-    checkIsDirty: function (funcionToCall, taxAuthority) {
+    checkIsDirty: function (functionToCall, taxAuthority) {
         if (taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty() && taxAuthority) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmTaxAuthorities");
-                    funcionToCall.call();
+                    functionToCall.call();
                 },
                 function () { // No
                     if (sg.controls.GetString(taxAuthority) !== sg.controls.GetString(modelData.TaxAuthority())) {
@@ -343,7 +343,7 @@ taxAuthoritiesUI = {
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, taxAuthoritiesResources.TaxAuthorityTitle, taxAuthority));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     }
 

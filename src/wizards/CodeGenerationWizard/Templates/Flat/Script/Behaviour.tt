@@ -126,12 +126,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     // Is Dirty check
-    checkIsDirty: function (funcionToCall, <#=localKeyFieldName#>) {
+    checkIsDirty: function (functionToCall, <#=localKeyFieldName#>) {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frm<#=entityName#>");
-                    funcionToCall.call();
+                    functionToCall.call();
                 },
                 function () { // No
                     if (sg.controls.GetString(<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
@@ -141,7 +141,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, <#=localEntityName#>Resources.<#=keyFieldName#>Title, <#=localKeyFieldName#>));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     }
 

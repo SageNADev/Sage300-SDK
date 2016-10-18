@@ -619,7 +619,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line default
             #line hidden
             this.Write("UISuccess.create);\r\n    },\r\n\r\n    // Is Dirty check\r\n    checkIsDirty: function (" +
-                    "funcionToCall, ");
+                    "functionToCall, ");
             
             #line 129 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
@@ -662,8 +662,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("\");\r\n                    funcionToCall.call();\r\n                },\r\n             " +
-                    "   function () { // No\r\n                    if (sg.controls.GetString(");
+            this.Write("\");\r\n                    functionToCall.call();\r\n                },\r\n            " +
+                    "    function () { // No\r\n                    if (sg.controls.GetString(");
             
             #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
@@ -713,8 +713,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("));\r\n        } else {\r\n            funcionToCall.call();\r\n        }\r\n    }\r\n\r\n};\r" +
-                    "\n\r\n// Callbacks\r\nvar ");
+            this.Write("));\r\n        } else {\r\n            functionToCall.call();\r\n        }\r\n    }\r\n\r\n};" +
+                    "\r\n\r\n// Callbacks\r\nvar ");
             
             #line 151 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));

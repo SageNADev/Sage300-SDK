@@ -158,12 +158,12 @@ var sourceJournalProfileUI = {
         }
     },
 
-    checkIsDirty: function (funcionToCall) {
+    checkIsDirty: function (functionToCall) {
         if (sourceJournalProfileUI.sourceJournalModel.isModelDirty.isDirty() && sg.controls.GetString(sourceJournalProfileUI.souceJournalName) != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmSourceJournalProfile");
-                    funcionToCall.call();
+                    functionToCall.call();
                 },
                 function () { // No
                     if (sourceJournalProfileUI.souceJournalName != sg.controls.GetString(sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName())) {
@@ -173,7 +173,7 @@ var sourceJournalProfileUI = {
                 },
                 jQuery.validator.format(globalResource.SaveConfirm, sourceJournalProfileResources.SourceJournalProfile, sourceJournalProfileUI.souceJournalName));
         } else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     },
 };

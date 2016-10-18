@@ -523,8 +523,8 @@ var onSuccess = {
             
             #line default
             #line hidden
-            this.Write("Utility = {   \r\n    checkIsDirty: function (yesFuncionToCall, noFunctionToCall) {" +
-                    "\r\n        if (");
+            this.Write("Utility = {   \r\n    checkIsDirty: function (yesFunctionToCall, noFunctionToCall) " +
+                    "{\r\n        if (");
             
             #line 151 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
@@ -569,14 +569,14 @@ var onSuccess = {
             this.Write(@"Dirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
-                    yesFuncionToCall.call();
+                    yesFunctionToCall.call();
                 },
                 function () { // No
                     noFunctionToCall.call();
                 },
                 $.validator.format(globalResource.SaveConfirm));
         } else {
-            yesFuncionToCall.call();
+            yesFunctionToCall.call();
         }
     },
 };

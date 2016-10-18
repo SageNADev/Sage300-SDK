@@ -604,7 +604,7 @@ receiptUI = {
     },
 
     //Check Is Dirty Functionality
-    checkIsDirty: function (funcionToCall) {
+    checkIsDirty: function (functionToCall) {
         var model = receiptUI.receiptModel;
         var exists = true;
         if (model.UIMode() === sg.utls.OperationMode.NEW && !receiptUI.isFromReceiptFinder) {
@@ -623,7 +623,7 @@ receiptUI = {
             sg.utls.showKendoConfirmationDialog(
             function () { // Yes
                 sg.utls.clearValidations("frmReceipt");
-                funcionToCall.call();
+                functionToCall.call();
             },
             function () { // No
                 if (sg.controls.GetString(receiptUI.receiptNumber) !== sg.controls.GetString(model.Data.ReceiptNumber())) {
@@ -634,7 +634,7 @@ receiptUI = {
             jQuery.validator.format(globalResource.SaveConfirm, receiptResources.Receipt, receiptUI.receiptNumber));
         }
         else {
-            funcionToCall.call();
+            functionToCall.call();
         }
     },
 

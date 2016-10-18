@@ -692,18 +692,18 @@ var onFinderSuccess = {
 };
 
 var clearStatisticsUtility = {   
-    checkIsDirty: function (yesFuncionToCall, noFunctionToCall) {
+    checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
         if (clearStatisticsUI.clearStatisticsModel.IsKoStatisticsDirty && clearStatisticsUI.clearStatisticsModel.IsKoStatisticsDirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
-                    yesFuncionToCall.call();
+                    yesFunctionToCall.call();
                 },
                 function () { // No
                     noFunctionToCall.call();
                 },
                 $.validator.format(globalResource.SaveConfirm));
         } else {
-            yesFuncionToCall.call();
+            yesFunctionToCall.call();
         }
     },
     setFocusToFiscalYear: function () {
