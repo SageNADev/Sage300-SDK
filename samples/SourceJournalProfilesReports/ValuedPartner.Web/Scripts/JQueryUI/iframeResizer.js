@@ -11,6 +11,9 @@ $(window).bind("load", function () {
     // get the observer that work with all browsers
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
+    if (MutationObserver === undefined) {
+        return;
+    }    
     // create observer to adjust height
     var observer = new MutationObserver(function (mutations) {
         var visibleIframe = window.top.$('iframe.screenIframe:visible');
