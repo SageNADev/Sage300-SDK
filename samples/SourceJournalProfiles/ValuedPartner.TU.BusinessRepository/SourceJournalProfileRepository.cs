@@ -380,7 +380,6 @@ namespace ValuedPartner.TU.BusinessRepository
         private void CreateBusinessEntitiesInternal()
         {
             _businessEntity = OpenEntity(SourceJournalProfile.EntityName);
-            _businessEntity.Compose(new[] { _businessEntity.View });
         }
 
         #endregion
