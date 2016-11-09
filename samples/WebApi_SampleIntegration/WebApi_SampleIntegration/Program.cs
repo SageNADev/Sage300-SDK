@@ -42,7 +42,7 @@ namespace WebApi_SampleIntegration
     {
         private static string NewCustomerNumber { get; set; }
         private static string ItemNumber { get; set; }
-        private static string QuantityToOrder { get; set; }
+        private static int QuantityToOrder { get; set; }
 
         /// <summary>
         /// Main program
@@ -50,19 +50,35 @@ namespace WebApi_SampleIntegration
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            string Sage300WebAPIURI = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/";
+
+            Console.WriteLine(@"This sample code demonstrates how a full featured integration with Sage 300 can be created with very little code using the Sage 300 Web API");
+            Console.WriteLine();
+            Console.WriteLine(@"Please confirm the Sage 300 Web API service root URL is http://localhost/Sage300WebApi/v1.0/-/SAMLTD/");
+            Console.WriteLine();
+            Console.Write(@"Enter (Y) to continue. (N) to edit the root URL: ");
+            string answer = Console.ReadLine();
+            if (answer.ToUpper() == "N")
+            {
+                Console.WriteLine();
+                Console.WriteLine(@"Please enter the Sage 300 Web API service root URL (e.g. http://localhost/Sage300WebApi/v1.0/-/SAMLTD/):");
+                Console.WriteLine();
+                Sage300WebAPIURI = Console.ReadLine();
+            }
+
             // Set up the input parameters (can be customized to be passed in externally)
             Console.Write("Enter a new customer number:");
             NewCustomerNumber = Console.ReadLine();
             ItemNumber = @"A1-103/0"; 
-            QuantityToOrder = "2";
+            QuantityToOrder = 2;
 
             // Start the workflow
-            CreateCustomer().Wait();
-            UpdateCustomer().Wait();
-            CreateOEOrder().Wait();
-            InvokeICDayEnd().Wait();
-            PostARInvoice().Wait();
-            CreateGLBatch().Wait();
+            CreateCustomer(Sage300WebAPIURI).Wait();
+            UpdateCustomer(Sage300WebAPIURI).Wait();
+            CreateOEOrder(Sage300WebAPIURI).Wait();
+            InvokeICDayEnd(Sage300WebAPIURI).Wait();
+            PostARInvoice(Sage300WebAPIURI).Wait();
+            CreateGLBatch(Sage300WebAPIURI).Wait();
 
             Console.WriteLine("\nPress any key to end.");
             Console.ReadKey();
@@ -72,7 +88,7 @@ namespace WebApi_SampleIntegration
         /// Demonstrates how to create a simple record
         /// (Creates a customer)
         /// </summary>
-        public static async Task CreateCustomer()
+        public static async Task CreateCustomer(string uri)
         {
             var customer = new
             {
@@ -81,27 +97,27 @@ namespace WebApi_SampleIntegration
                 TaxGroup = "BCTAX",
                 ShortName = "Old Name",
             };
-            await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers", customer);
+            await SendRequest(new HttpMethod("POST"), uri + @"AR/ARCustomers", customer);
         }
 
         /// <summary>
         /// Demonstrates how to update a record
         /// (Updates the customer created previously)
         /// </summary>
-        public static async Task UpdateCustomer()
+        public static async Task UpdateCustomer(string uri)
         {
             var customer = new
             {
                 ShortName = "New Name"
             };
-            await SendRequest(new HttpMethod("PATCH"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('" + NewCustomerNumber + "')", customer);
+            await SendRequest(new HttpMethod("PATCH"), uri + @"AR/ARCustomers('" + NewCustomerNumber + "')", customer);
         }
 
         /// <summary>
         /// Demonstrates how to create a complex record with header and detail relationships and read the resulting response
         /// (Creates an OE Order)
         /// </summary>
-        public static async Task CreateOEOrder()
+        public static async Task CreateOEOrder(string uri)
         {
             var detail = new
             {
@@ -115,7 +131,7 @@ namespace WebApi_SampleIntegration
                 InvoiceWillBeProduced = true,
                 OrderDetails = new[] { detail }
             };
-            dynamic newOrder = await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/OE/Orders", order);
+            dynamic newOrder = await SendRequest(new HttpMethod("POST"), uri + @"OE/OEOrders", order);
 
             Console.WriteLine("Created OE Order Number: {0} with Shipment Number: {1} Invoice Number: {2}", newOrder.OrderNumber, newOrder.LastShipmentNumber, newOrder.LastInvoiceNumber);
         }
@@ -124,40 +140,40 @@ namespace WebApi_SampleIntegration
         /// Demonstrates how to invoke a process endpoint
         /// (Starts IC Day End to generate AR invoices from the OE Order)
         /// </summary>
-        public static async Task InvokeICDayEnd()
+        public static async Task InvokeICDayEnd(string uri)
         {
             var dayendprocess = new
             {
                 ClearHistory = false
             };
-            await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/IC/DayEndProcessing($process)", dayendprocess);
+            await SendRequest(new HttpMethod("POST"), uri + @"IC/ICDayEndProcessing('$process')", dayendprocess);
         }
 
         /// <summary>
         /// Demonstrates how to invoke a process endpoint
         /// (Post the new AR invoices)
         /// </summary>
-        public static async Task PostARInvoice()
+        public static async Task PostARInvoice(string uri)
         {
             var postinvoice = new
             {
                 PostAllBatches = "Postallbatches"
             };
-            await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/PostInvoices($process)", postinvoice);
+            await SendRequest(new HttpMethod("POST"), uri + @"AR/ARPostInvoices('$process')", postinvoice);
         }
 
         /// <summary>
         /// Demonstrates how to invoke a process endpoint
         /// (Create the GL batch)
         /// </summary>
-        public static async Task CreateGLBatch()
+        public static async Task CreateGLBatch(string uri)
         {
             var createglbatch = new
             {
                 ProcessInvoiceBatch = "PostInvoicebatches",
-                InvoiceThroughPostingSequenceNumber = "999999999"
+                InvoiceThroughPostingSequenceNumber = 999999999
             };
-            await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/CreateGLBatch($process)", createglbatch);
+            await SendRequest(new HttpMethod("POST"), uri + @"AR/ARCreateGLBatch('$process')", createglbatch);
         }
 
         /// <summary>
@@ -169,42 +185,56 @@ namespace WebApi_SampleIntegration
         /// <returns></returns>
         public static async Task<object> SendRequest(HttpMethod method, string requestUri, object payload = null)
         {
+            HttpContent content = null;
+
+            string responsePayload = "";
+            // Serialize the payload if one is present
+            if (payload != null)
+            {
+                var payloadString = JsonConvert.SerializeObject(payload);
+                content = new StringContent(payloadString, Encoding.UTF8, "application/json");
+            }
+
             // Create the Web API client with the appropriate authentication
             using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("ADMIN", "ADMIN") })
             using (var httpClient = new HttpClient(httpClientHandler))
             {
-                Console.WriteLine("{0} {1}", method.Method, requestUri);
-
-                string payloadString = null;
-
-                // Serialize the payload if one is present
-                if (payload != null)
-                {
-                    payloadString = JsonConvert.SerializeObject(payload, Formatting.Indented);
-                    Console.WriteLine("{0}", payloadString);
-                }
+                Console.WriteLine("\n{0} {1}", method.Method, requestUri);
 
                 // Create the Web API request
                 var request = new HttpRequestMessage(method, requestUri)
                 {
-                    Content = string.IsNullOrWhiteSpace(payloadString) ? null : new StringContent(payloadString, Encoding.UTF8, "application/json")
+                    Content = content
                 };
 
                 // Send the Web API request
-                var response = await httpClient.SendAsync(request);
-                var responsePayload = await response.Content.ReadAsStringAsync();
-
-                var statusNumber = (int)response.StatusCode;
-                Console.WriteLine("{0} {1}", statusNumber, response.StatusCode);
-
-                if (statusNumber < 200 || statusNumber >= 300)
+                try
                 {
-                    Console.WriteLine(responsePayload);
-                    throw new ApplicationException(statusNumber.ToString());
-                }
+                    var response = await httpClient.SendAsync(request);
+                    responsePayload = await response.Content.ReadAsStringAsync();
 
-                return string.IsNullOrWhiteSpace(responsePayload) ? null : JsonConvert.DeserializeObject(responsePayload);
+                    var statusNumber = (int)response.StatusCode;
+                    Console.WriteLine("\n{0} {1}", statusNumber, response.StatusCode);
+
+                    if (statusNumber < 200 || statusNumber >= 300)
+                    {
+                        Console.WriteLine(responsePayload);
+                        throw new ApplicationException(statusNumber.ToString());
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("\n{0} Exception caught.", e);
+                    Console.WriteLine("\n\nPlease ensure the service root URI entered is valid.");
+                    Console.WriteLine("\n\nPress any key to end.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
             }
+            return string.IsNullOrWhiteSpace(responsePayload) ? null : JsonConvert.DeserializeObject(responsePayload);
         }
     }
 }
+

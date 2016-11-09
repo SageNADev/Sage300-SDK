@@ -38,29 +38,48 @@ namespace WebApi_SystemNetHttpClient
     {
         private const string SampleCustomerNumber = "SAM_CUSTOMER";
 
+        
+
         /// <summary>
         /// Main program
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            GetCustomer().Wait();
+            string Sage300WebAPIURI = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/";
 
-            GetRangeOfCustomers().Wait();
+            Console.WriteLine(@"This sample code demonstrates how Sage 300 Web API can be accessed through the use of System.Net.Http.HttpClient");
+            Console.WriteLine();
+            Console.WriteLine(@"Please confirm the Sage 300 Web API service root URL is http://localhost/Sage300WebApi/v1.0/-/SAMLTD/");
+            Console.WriteLine();
+            Console.Write(@"Enter (Y) to continue. (N) to edit the root URL: ");
+            string answer = Console.ReadLine();
+            if (answer.ToUpper() == "N")
+            {
+                Console.WriteLine();
+                Console.WriteLine(@"Please enter the Sage 300 Web API service root URL (e.g. http://localhost/Sage300WebApi/v1.0/-/SAMLTD/):");
+                Console.WriteLine();
+                Sage300WebAPIURI = Console.ReadLine();
+            }
 
-            GetCustomersWithFilter().Wait();
+            GetCustomer(Sage300WebAPIURI).Wait();
 
-            GetCustomersByKey().Wait();
+            GetRangeOfCustomers(Sage300WebAPIURI).Wait();
 
-            CreateCustomer().Wait();
+            GetCustomersWithFilter(Sage300WebAPIURI).Wait();
 
-            UpdateCustomer().Wait();
+            GetCustomersByKey(Sage300WebAPIURI).Wait();
 
-            DeleteCustomer().Wait();
+            CreateCustomer(Sage300WebAPIURI).Wait();
 
-            CreateInvoice().Wait();
+            UpdateCustomer(Sage300WebAPIURI).Wait();
 
-            GenerateRecurringCharges().Wait();
+            DeleteCustomer(Sage300WebAPIURI).Wait();
+
+            CreateInvoice(Sage300WebAPIURI).Wait();
+
+            
+            GenerateRecurringCharges(Sage300WebAPIURI).Wait();
 
             Console.WriteLine("\nPress any key to end.");
             Console.ReadKey();
@@ -83,50 +102,50 @@ namespace WebApi_SystemNetHttpClient
 
         /// <summary>
         /// Demonstrates how to retrieve the first page of AR Customers
-        /// GET http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers
+        /// GET http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers
         /// </summary>
-        public static async Task GetCustomer()
+        public static async Task GetCustomer(string uri)
         {
-            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers");
+            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), uri + @"AR/ARCustomers");
             DisplayCustomers(customerFeed.value.ToObject<List<dynamic>>());
         }
 
         /// <summary>
         /// Demonstrates how to retrieve AR Customers of a specific range
         /// The same method can be used to retrieve subsequent pages of results
-        /// GET http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers()?$skip=5&$top=2
+        /// GET http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers()?$skip=5&$top=2
         /// </summary>
-        public static async Task GetRangeOfCustomers()
+        public static async Task GetRangeOfCustomers(string uri)
         {
-            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers?$skip=5&$top=2");
+            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), uri + @"AR/ARCustomers?$skip=5&$top=2");
             DisplayCustomers(customerFeed.value.ToObject<List<dynamic>>());
         }
 
         /// <summary>
         /// Demonstrates the use of a filter
-        /// GET http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers()?$filter=City eq 'Los Angeles'
+        /// GET http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/Customers()?$filter=City eq 'Los Angeles'
         /// </summary>
-        public static async Task GetCustomersWithFilter()
+        public static async Task GetCustomersWithFilter(string uri)
         {
-            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers?$filter=City eq 'Los Angeles'");
+            dynamic customerFeed = await SendRequest(new HttpMethod("GET"), uri + @"AR/ARCustomers?$filter=City eq 'Los Angeles'");
             DisplayCustomers(customerFeed.value.ToObject<List<dynamic>>());
         }
 
         /// <summary>
         /// Demonstrates the retrieval of a single Customer using a key value
-        /// GET http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('1100')
+        /// GET http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('1100')
         /// </summary>
-        public static async Task GetCustomersByKey()
+        public static async Task GetCustomersByKey(string uri)
         {
-            dynamic customer = await SendRequest(new HttpMethod("GET"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('1100')");
+            dynamic customer = await SendRequest(new HttpMethod("GET"), uri + @"AR/ARCustomers('1100')");
             DisplayCustomers(new List<dynamic> { customer });
         }
 
         /// <summary>
         /// Demonstrates the creation of a Customer record using a partial payload
-        /// POST http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers
+        /// POST http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/AECustomers
         /// </summary>
-        public static async Task CreateCustomer()
+        public static async Task CreateCustomer(string uri)
         {
             var customer = new
             {
@@ -140,42 +159,42 @@ namespace WebApi_SystemNetHttpClient
                 CustomerName = "Sample Customer Name",
                 City = "Sample City",
             };
-            dynamic newCustomer = await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers", customer);
+            dynamic newCustomer = await SendRequest(new HttpMethod("POST"), uri + @"AR/ARCustomers", customer);
             DisplayCustomers(new List<dynamic> { newCustomer });
         }
 
         /// <summary>
         /// Demonstrates how to update a Customer
-        /// PATCH http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('SAM_CUSTOMER')
+        /// PATCH http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('SAM_CUSTOMER')
         /// </summary>
-        public static async Task UpdateCustomer()
+        public static async Task UpdateCustomer(string uri)
         {
             var customer = new
             {
                 ShortName = "New Name"
             };
-            await SendRequest(new HttpMethod("PATCH"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('" + SampleCustomerNumber + "')", customer);
+            await SendRequest(new HttpMethod("PATCH"), uri + @"AR/ARCustomers('" + SampleCustomerNumber + "')", customer);
         }
 
         /// <summary>
         /// Demonstrates how to delete a Customer
-        /// DELETE http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('SAM_CUSTOMER')
+        /// DELETE http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('SAM_CUSTOMER')
         /// </summary>
-        public static async Task DeleteCustomer()
+        public static async Task DeleteCustomer(string uri)
         {
-            await SendRequest(new HttpMethod("DELETE"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('" + SampleCustomerNumber + "')");
+            await SendRequest(new HttpMethod("DELETE"), uri + @"AR/ARCustomers('" + SampleCustomerNumber + "')");
         }
 
         /// <summary>
         /// Demonstrates how to create records with header and detail relationships (Create an AR Invoice)
-        /// POST http://localhost/Sage300WebApi/-/SAMLTD/AR/InvoiceBatches
+        /// POST http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARInvoiceBatches
         /// </summary>
-        public static async Task CreateInvoice()
+        public static async Task CreateInvoice(string uri)
         {
             var detail = new
             {
                 ItemNumber = "BK-360",
-                Quantity = "2"
+                Quantity = 2
             };
             var invoice = new
             {
@@ -188,18 +207,18 @@ namespace WebApi_SystemNetHttpClient
                 Description = "Sample Invoice Batch",
                 Invoices = new[] { invoice }
             };
-            dynamic newBatch = await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/InvoiceBatches", batch);
+            dynamic newBatch = await SendRequest(new HttpMethod("POST"), uri + @"AR/ARInvoiceBatches", batch);
             Console.WriteLine("AR Invoice Batch {0} was created.", newBatch.BatchNumber);
         }
 
         /// <summary>
         /// Demonstrates how to invoke a process endpoint (Generates a recurring charge)
-        /// POST http://localhost/Sage300WebApi/-/SAMLTD/AR/CreateRecurringCharge($process)
+        /// POST http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/APCreateRecurringPayableBatch('$process')
         /// </summary>
-        public static async Task GenerateRecurringCharges()
+        public static async Task GenerateRecurringCharges(string uri)
         {
             // Get the recurring charge to find next schedule date
-            dynamic recurringCharge = await SendRequest(new HttpMethod("GET"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/RecurringCharges('ONCALL', '1100')");
+            dynamic recurringCharge = await SendRequest(new HttpMethod("GET"), uri + @"AR/ARRecurringCharges('ONCALL', '1100')");
 
             // Generate a recurring charge using the next schedule date
             var createRecurringCharge = new
@@ -211,7 +230,7 @@ namespace WebApi_SystemNetHttpClient
                 DateGenerationMethod = "NextScheduleDate",
                 BatchGenerationMethod = "CreateaNewBatch",
             };
-            await SendRequest(new HttpMethod("POST"), @"http://localhost/Sage300WebApi/-/SAMLTD/AR/CreateRecurringCharge($process)", createRecurringCharge);
+            await SendRequest(new HttpMethod("POST"), uri + @"AR/ARCreateRecurringCharge('$process')", createRecurringCharge);
         }
 
         /// <summary>
@@ -225,6 +244,7 @@ namespace WebApi_SystemNetHttpClient
         {
             HttpContent content = null;
 
+            string responsePayload = "";
             // Serialize the payload if one is present
             if (payload != null)
             {
@@ -236,7 +256,7 @@ namespace WebApi_SystemNetHttpClient
             using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("ADMIN", "ADMIN") })
             using (var httpClient = new HttpClient(httpClientHandler))
             {
-                Console.WriteLine("{0} {1}", method.Method, requestUri);
+                Console.WriteLine("\n{0} {1}", method.Method, requestUri);
 
                 // Create the Web API request
                 var request = new HttpRequestMessage(method, requestUri)
@@ -245,20 +265,32 @@ namespace WebApi_SystemNetHttpClient
                 };
 
                 // Send the Web API request
-                var response = await httpClient.SendAsync(request);
-                var responsePayload = await response.Content.ReadAsStringAsync();
-
-                var statusNumber = (int)response.StatusCode;
-                Console.WriteLine("{0} {1}", statusNumber, response.StatusCode);
-
-                if (statusNumber < 200 || statusNumber >= 300)
+                try
                 {
-                    Console.WriteLine(responsePayload);
-                    throw new ApplicationException(statusNumber.ToString());
-                }
+                    var response = await httpClient.SendAsync(request);
+                    responsePayload = await response.Content.ReadAsStringAsync();
 
-                return string.IsNullOrWhiteSpace(responsePayload) ? null : JsonConvert.DeserializeObject(responsePayload);
+                    var statusNumber = (int)response.StatusCode;
+                    Console.WriteLine("\n{0} {1}", statusNumber, response.StatusCode);
+
+                    if (statusNumber < 200 || statusNumber >= 300)
+                    {
+                        Console.WriteLine(responsePayload);
+                        throw new ApplicationException(statusNumber.ToString());
+                    }
+
+                    
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("\n{0} Exception caught.", e);
+                    Console.WriteLine("\n\nPlease ensure the service root URI entered is valid.");
+                    Console.WriteLine("\n\nPress any key to end.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
             }
+            return string.IsNullOrWhiteSpace(responsePayload) ? null : JsonConvert.DeserializeObject(responsePayload);
         }
     }
 }
