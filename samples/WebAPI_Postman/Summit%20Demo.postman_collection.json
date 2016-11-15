@@ -1,419 +1,296 @@
 {
-	"variables": [],
-	"info": {
-		"name": "Summit Demo",
-		"_postman_id": "2b8dfe03-5403-75c6-3ec9-14a482a9d89b",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
+	"id": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+	"name": "Summit Demo",
+	"description": "",
+	"order": [
+		"a72b6f6d-f7bf-1fea-3b04-4a5614f7b07f",
+		"8d1b4d15-4fc7-ae5b-4b1b-57e582cfc361",
+		"9f898209-ceae-9a27-6ebf-4bfb9ff031e4",
+		"5fdbe2d2-5a5b-e9d8-b06d-11f8ca0b2c1e",
+		"ae4d5346-31bf-19c0-24fe-28240cfbcf82",
+		"6582e73a-d2ca-aa8a-4467-c848f2134580",
+		"f545da97-6971-b13c-4ca7-c97cc16fcdf3",
+		"3d51ca83-7c18-1553-e49e-f816ec483253",
+		"1d20bc34-99fa-6628-bba1-6d2f49928b19",
+		"924e2a19-621a-6b4f-f6cf-33954fd6b200",
+		"217b1c83-c324-cc9c-dc88-acf1be56e783",
+		"989c4ea9-c9d3-3cfa-55b1-0b7c7a7f1d8f"
+	],
+	"folders": [],
+	"owner": "587527",
+	"hasRequests": true,
+	"requests": [
 		{
-			"name": "Get Records",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": "Demonstrates the retrieval of customers (does not return records beyond the first page)"
+			"id": "1d20bc34-99fa-6628-bba1-6d2f49928b19",
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=\n",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARInvoiceBatches",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
 			},
-			"response": []
-		},
-		{
-			"name": "Get Records using a Range",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers?$skip=5&$top=2",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": "Demonstrates the retrieval of a set of customers by specifying the offset and count"
-			},
-			"response": []
-		},
-		{
-			"name": "Get Records using a Filter",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers?$filter=City eq 'San Francisco'",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": "Demonstrates the retrieval of a set of Customers based on a filter"
-			},
-			"response": []
-		},
-		{
-			"name": "Get Records using a Complex Filter",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers?$filter=BalanceDueInCustomerCurrency gt 1000.00m and DateOfLastInvoice gt datetime'2016-12-31T12:00' and AccountType eq 'BalanceForward'",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": "Demonstrates the retrieval of a set of Customers based on a complex filter dealing with a dollar amount, a date and a presentation item."
-			},
-			"response": []
-		},
-		{
-			"name": "Get Record by Key",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('1200')",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": "Demonstrates the retrieval of a Customer using the customer number"
-			},
-			"response": []
-		},
-		{
-			"name": "Create a Record",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"odata.metadata\": \"http://localhost/Sage300WebApi/-/SAMLTD/AR/$metadata#Customers/@Element\",\n  \"CustomerNumber\": \"Z_POSTMAN\",\n  \"ShortName\": \"Old Name\",\n  \"GroupCode\": \"RTL\",\n  \"NationalAccount\": \"\",\n  \"Status\": \"Active\",\n  \"InactiveDate\": null,\n  \"DateLastMaintained\": \"2010-08-18T00:00:00\",\n  \"OnHold\": \"No\",\n  \"StartDate\": \"2009-01-01T00:00:00\",\n  \"CreditBureauNumber\": \"\",\n  \"CreditBureauRating\": \"\",\n  \"CreditBureauDate\": null,\n  \"CustomerName\": \"Mr. Ronald Black\",\n  \"AddressLine1\": \"2820 Wabash Road\",\n  \"AddressLine2\": \"\",\n  \"AddressLine3\": \"\",\n  \"AddressLine4\": \"\",\n  \"City\": \"Los Angeles\",\n  \"StateProvince\": \"CA\",\n  \"ZipPostalCode\": \"90048\",\n  \"Country\": \"USA\",\n  \"ContactName\": \"Mr. Black\",\n  \"PhoneNumber\": \"2135550274\",\n  \"FaxNumber\": \"2135557234\",\n  \"TerritoryCode\": \"CA\",\n  \"AccountSet\": \"USA\",\n  \"AutocashProfile\": \"\",\n  \"BillingCycle\": \"BILLWK\",\n  \"InterestProfile\": \"INTRTL\",\n  \"CurrencyCode\": \"USD\",\n  \"PrintStatements\": \"Yes\",\n  \"AccountType\": \"BalanceForward\",\n  \"Terms\": \"DUETBL\",\n  \"RateType\": \"SP\",\n  \"TaxGroup\": \"CALIF\",\n  \"TaxRegistrationNumber1\": \"18-34601\",\n  \"TaxRegistrationNumber2\": \"76731\",\n  \"TaxRegistrationNumber3\": \"\",\n  \"TaxRegistrationNumber4\": \"\",\n  \"TaxRegistrationNumber5\": \"\",\n  \"TaxClassCode1\": 1,\n  \"TaxClassCode2\": 1,\n  \"TaxClassCode3\": 0,\n  \"TaxClassCode4\": 0,\n  \"TaxClassCode5\": 0,\n  \"CreditLimitCustomerCurrency\": \"20000\",\n  \"BalanceDueInCustomerCurrency\": \"109946.82\",\n  \"BalanceDueInFunctionalCurrency\": \"151032.58\",\n  \"DateOfLastStatement\": null,\n  \"LastStatementTotalCustomerCurrency\": \"0.000\",\n  \"DateOfLastBalanceForwardStatement\": null,\n  \"BeginningBalanceOnLastStatement\": \"0.000\",\n  \"DateOfLastRevaluation\": null,\n  \"LastRevaluationBalance\": \"0.000\",\n  \"NumberOfOpenDocuments\": \"6\",\n  \"NumberOfPaidInvoices\": \"19\",\n  \"NumberOfDaysToPay\": \"1435\",\n  \"DateOfLargestInvoice\": \"2019-01-01T00:00:00\",\n  \"DateOfHighestBalance\": \"2019-01-15T00:00:00\",\n  \"DateOfLargestInvoiceLastYear\": null,\n  \"DateOfHighestBalanceLastYear\": null,\n  \"DateOfLastActivity\": \"2020-07-31T00:00:00\",\n  \"DateOfLastInvoice\": \"2020-07-01T00:00:00\",\n  \"DateOfLastCreditNote\": \"2019-01-16T00:00:00\",\n  \"DateOfLastDebitNote\": \"2019-01-15T00:00:00\",\n  \"DateOfLastReceipt\": \"2020-05-31T00:00:00\",\n  \"DateOfLastDiscount\": \"2019-02-03T00:00:00\",\n  \"DateOfLastAdjustment\": null,\n  \"DateOfLastWriteOff\": null,\n  \"DateOfLastReturnedCheck\": null,\n  \"DateOfLastInterestCharge\": null,\n  \"LargestInvoiceNumber\": \"TR-INV-003\",\n  \"LargestInvoiceNumberLastYear\": \"\",\n  \"LargestInvoiceCustomerCurrency\": \"123235.57\",\n  \"HighestBalanceCustomerCurrency\": \"124286.6\",\n  \"LargestInvoiceLastYearCustomerCurrency\": \"0.000\",\n  \"HighBalanceLastYearCustomerCurrency\": \"0.000\",\n  \"LastInvoiceAmountCustomerCurrency\": \"2338.04\",\n  \"LastCreditNoteAmountCustomerCurrency\": \"-437.88\",\n  \"LastDebitNoteAmountCustomerCurrency\": \"80.78\",\n  \"LastReceiptCustomerCurrency\": \"-97.43\",\n  \"LastDiscountAmountCustomerCurrency\": \"-100\",\n  \"LastAdjustmentAmountCustomerCurrency\": \"0.000\",\n  \"LastWriteOffAmountCustomerCurrency\": \"0.000\",\n  \"LastReturnedCheckAmountCustomerCurr\": \"0.000\",\n  \"LastInterestChargeCustomerCurrency\": \"0.000\",\n  \"LargestInvoiceFunctionalCurrency\": \"168869.7\",\n  \"HighestBalanceFunctionalCurrency\": \"170408.52\",\n  \"LargestInvoiceLastYearFunctionalCurrency\": \"0.000\",\n  \"HighBalanceLastYearFunctionalCurrency\": \"0.000\",\n  \"LastInvoiceAmountFunctionalCurrency\": \"3426.4\",\n  \"LastCreditNoteAmountFunctionalCurrency\": \"-586.41\",\n  \"LastDebitNoteAmountFunctionalCurrency\": \"108.53\",\n  \"LastReceiptFunctionalCurrency\": \"-141.91\",\n  \"LastDiscountAmountFunctionalCurrency\": \"-134.34\",\n  \"LastAdjustmentAmountFunctionalCurrency\": \"0.000\",\n  \"LastWriteOffAmountFunctionalCurrency\": \"0.000\",\n  \"LastReturnedCheckAmountFunctionalCurr\": \"0.000\",\n  \"LastInterestChargeFunctionalCurrency\": \"0.000\",\n  \"Salesperson1\": \"BB\",\n  \"Salesperson2\": \"DS\",\n  \"Salesperson3\": \"\",\n  \"Salesperson4\": \"\",\n  \"Salesperson5\": \"\",\n  \"SalesSplitPercentage1\": \"80\",\n  \"SalesSplitPercentage2\": \"20\",\n  \"SalesSplitPercentage3\": \"0.00000\",\n  \"SalesSplitPercentage4\": \"0.00000\",\n  \"SalesSplitPercentage5\": \"0.00000\",\n  \"AverageDaysToPay\": \"75.5\",\n  \"CustomerPriceList\": \"USA\",\n  \"CustomerDiscountType\": \"Base\",\n  \"AmountPastDue\": \"0.000\",\n  \"ContactsEmail\": \"ronaldblack99@hotmail.com\",\n  \"Email\": \"\",\n  \"WebSite\": \"\",\n  \"BillingMethod\": 0,\n  \"PaymentCode\": \"CHECK\",\n  \"FreeOnBoard\": \"\",\n  \"ShipViaCode\": \"\",\n  \"ShipViaDescription\": \"\",\n  \"DeliveryMethod\": \"Mail\",\n  \"PrimaryShipToLocation\": \"\",\n  \"ContactsPhone\": \"\",\n  \"ContactsFax\": \"\",\n  \"AllowPartialShipments\": \"Yes\",\n  \"AllowWebStoreShopping\": \"No\",\n  \"PercentRetained\": \"0.00000\",\n  \"DaysRetained\": 0,\n  \"RetainageTermsCode\": \"\",\n  \"AmountRetainedCustomerCurrency\": \"0.000\",\n  \"AmountRetainedFunctionalCurrency\": \"0.000\",\n  \"NumberOfOptionalFields\": \"12\",\n  \"ProcessCommandCode\": \"InsertOptionalFields\",\n  \"NumberOfOpenPrepayments\": \"1\",\n  \"AmountPrepaidCustomerCurrency\": \"-50\",\n  \"AmountPrepaidFunctionalCurrency\": \"-73.6\",\n  \"DateOfLastRefund\": null,\n  \"LastRefundAmountCustomerCurrency\": \"0.000\",\n  \"LastRefundAmountFunctionalCurrency\": \"0.000\",\n  \"CheckLanguage\": \"ENG\",\n  \"NextClientUniqueID\": \"1\",\n  \"InventoryLocation\": \"1\",\n  \"CheckCreditLimit\": \"No\",\n  \"CheckOverdueAmounts\": \"No\",\n  \"DaysOverdue\": 0,\n  \"AmountOverdue\": \"0.000\",\n  \"AllowBackorderQuantities\": \"Yes\",\n  \"CheckForDuplicatePOs\": \"None\",\n  \"SuppressIntegration\": false,\n  \"ARVersion\": \"64A\",\n  \"Database\": \"SAMLTD\",\n  \"Mode\": \"NormalMode\",\n  \"SageBillingAndPaymentCustome\": \"No\",\n  \"BusinessRegistrationNumber\": \"\",\n  \"CustomerOptionalFieldValues\": [\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"AC\",\n      \"Value\": \"1200\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 15,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"1200\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"AC#\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"ARCNTCTTYPE\",\n      \"Value\": \"Finance\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 10,\n      \"Decimals\": 0,\n      \"AllowBlank\": true,\n      \"Validate\": true,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"Finance\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Accounts Receivable Contact Type\",\n      \"ValueDescription\": \"Finance\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"CREDTWARNING\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"25\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Customer Credit Warning\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"DISCNTGRACE\",\n      \"Value\": \"20\",\n      \"CustomerOptionalFieldValueType\": \"Integer\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"24\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"20\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Discount Grace Period\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"DUEDATEPRD\",\n      \"Value\": \"10\",\n      \"CustomerOptionalFieldValueType\": \"Integer\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"24\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"10\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Due Date Grace Period\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"NOTE\",\n      \"Value\": \"Allow greater volume discount\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 60,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"Allow greater volume discount\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Note\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"PREFERCUST\",\n      \"Value\": \"                                                           1\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"25\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": true,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Preferred Customer\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"PROSPECT\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"25\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"PROSPECT\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"SICCODE\",\n      \"Value\": \"4516\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 4,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"4516\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"SIC Code\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"TEMPCUSTOMER\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"25\",\n      \"TextValue\": \"\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"Temporary Customer\",\n      \"ValueDescription\": \"\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"UPSZONE\",\n      \"Value\": \"WHI\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 3,\n      \"Decimals\": 0,\n      \"AllowBlank\": true,\n      \"Validate\": true,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"WHI\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"UPS Zone\",\n      \"ValueDescription\": \"White Zone\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"USER\",\n      \"Value\": \"ADMIN\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 60,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": \"21\",\n      \"TextValue\": \"ADMIN\",\n      \"AmountValue\": \"0.000\",\n      \"NumberValue\": \"0\",\n      \"IntegerValue\": \"0\",\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00\",\n      \"OptionalFieldDescription\": \"User\",\n      \"ValueDescription\": \"\"\n    }\n  ]\n}"
-				},
-				"description": "Demonstrates the creation of an AR Customer"
-			},
-			"response": []
-		},
-		{
-			"name": "Update a Record",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('Z_POSTMAN')",
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"ShortName\": \"New Name\"\n}"
-				},
-				"description": "Demonstrates the update of an AR Customer"
-			},
-			"response": []
-		},
-		{
-			"name": "Delete a Record",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('Z_POSTMAN')",
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"description": "Demonstrates the deletion of an AR Customer"
-			},
-			"response": []
-		},
-		{
+			"time": 1479085904439,
 			"name": "Create a Complex Record (Header & Details)",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/InvoiceBatches",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"odata.metadata\": \"http://localhost/Sage300WebApi/-/SAMLTD/AR/$metadata#InvoiceBatches/@Element\",\n  \"BatchNumber\": \"66\",\n  \"BatchDate\": \"2016-07-15T00:00:00\",\n  \"Description\": \"\",\n  \"NumberOfEntries\": \"1\",\n  \"BatchTotal\": \"69.28\",\n  \"BatchType\": \"Entered\",\n  \"BatchStatus\": \"Open\",\n  \"DefaultInvoiceType\": \"Item\",\n  \"LastEntryNumber\": \"1\",\n  \"PostingSequenceNumber\": \"0\",\n  \"NumberOfErrors\": \"0\",\n  \"DateLastEdited\": \"2016-07-15T00:00:00\",\n  \"BatchPrintedFlag\": \"No\",\n  \"SourceApplication\": \"AR\",\n  \"ProcessCommand\": \"UnlockBatchResource\",\n  \"Invoices\": [\n    {\n      \"BatchNumber\": \"66\",\n      \"EntryNumber\": \"1\",\n      \"CustomerNumber\": \"1200\",\n      \"ShipToLocationCode\": \"\",\n      \"SpecialInstructions\": \"\",\n      \"DocumentType\": \"Invoice\",\n      \"TransactionType\": \"InvoiceItemIssued\",\n      \"OrderNumber\": \"\",\n      \"PONumber\": \"\",\n      \"InvoiceDescription\": \"\",\n      \"InvoicePrinted\": \"No\",\n      \"ApplytoDocument\": \"\",\n      \"AccountSet\": \"USA\",\n      \"DocumentDate\": \"2016-07-15T00:00:00\",\n      \"AsOfDate\": \"2016-07-15T00:00:00\",\n      \"FiscalYear\": \"2016\",\n      \"FiscalPeriod\": \"07\",\n      \"CurrencyCode\": \"USD\",\n      \"RateType\": \"SP\",\n      \"RateOverridden\": \"No\",\n      \"ExchangeRate\": \"1.3684\",\n      \"ApplytoExchangeRate\": \"0.0000000\",\n      \"Terms\": \"DUETBL\",\n      \"TermsCodeOverridden\": \"No\",\n      \"DueDate\": \"2016-07-25T00:00:00\",\n      \"DiscountDate\": null,\n      \"DiscountPercentage\": \"0.00000\",\n      \"DiscountAmountAvailable\": \"0.000\",\n      \"NumberOfDetails\": \"2\",\n      \"Salesperson1\": \"BB\",\n      \"Salesperson2\": \"DS\",\n      \"Salesperson3\": \"\",\n      \"Salesperson4\": \"\",\n      \"Salesperson5\": \"\",\n      \"SalesSplitPercentage1\": \"80\",\n      \"SalesSplitPercentage2\": \"20\",\n      \"SalesSplitPercentage3\": \"0.00000\",\n      \"SalesSplitPercentage4\": \"0.00000\",\n      \"SalesSplitPercentage5\": \"0.00000\",\n      \"Taxable\": \"Yes\",\n      \"DoNotCalculationTax\": \"No\",\n      \"TaxGroup\": \"CALIF\",\n      \"TaxAuthority1\": \"STATE\",\n      \"TaxAuthority2\": \"COUNTY\",\n      \"TaxAuthority3\": \"\",\n      \"TaxAuthority4\": \"\",\n      \"TaxAuthority5\": \"\",\n      \"TaxClass1\": 1,\n      \"TaxClass2\": 1,\n      \"TaxClass3\": 0,\n      \"TaxClass4\": 0,\n      \"TaxClass5\": 0,\n      \"TaxBase1\": \"64\",\n      \"TaxBase2\": \"64\",\n      \"TaxBase3\": \"0.000\",\n      \"TaxBase4\": \"0.000\",\n      \"TaxBase5\": \"0.000\",\n      \"TaxAmount1\": \"4\",\n      \"TaxAmount2\": \"1.28\",\n      \"TaxAmount3\": \"0.000\",\n      \"TaxAmount4\": \"0.000\",\n      \"TaxAmount5\": \"0.000\",\n      \"TaxableAmount\": \"64\",\n      \"NonTaxableAmount\": \"0.000\",\n      \"TaxTotal\": \"5.28\",\n      \"DocumentTotalBeforeTax\": \"64\",\n      \"PrepaymentAmount\": \"0.000\",\n      \"NumberOfScheduledPayments\": \"1\",\n      \"TotalPaymentAmountScheduled\": \"69.28\",\n      \"DocumentTotalIncludingTax\": \"69.28\",\n      \"RecurringChargeCode\": \"\",\n      \"DateGenerated\": null,\n      \"PrepaymentNumber\": \"\",\n      \"RecurringBillingCycle\": \"\",\n      \"ShipToLocationName\": \"\",\n      \"ShipToAddressLine1\": \"2820 Wabash Road\",\n      \"ShipToAddressLine2\": \"\",\n      \"ShipToAddressLine3\": \"\",\n      \"ShipToAddressLine4\": \"\",\n      \"ShipToCity\": \"Los Angeles\",\n      \"ShipToStateProvince\": \"CA\",\n      \"ShipToZipPostalCode\": \"90048\",\n      \"ShipToCountry\": \"USA\",\n      \"ShipToContactName\": \"Mr. Black\",\n      \"ShipToPhoneNumber\": \"2135550274\",\n      \"ShipToFaxNumber\": \"2135557234\",\n      \"RateDate\": \"2016-07-15T00:00:00\",\n      \"CustNatlOverCreditFlag\": \"Neitherovercreditlimit\",\n      \"AmountDue\": \"69.28\",\n      \"RateOperator\": \"Multiply\",\n      \"DrillDownApplicationSource\": \"\",\n      \"DrillDownType\": 0,\n      \"DrillDownLinkNumber\": \"0\",\n      \"ForceRereadOfIBSTotals\": 0,\n      \"ProcessCommand\": \"CalculateTaxes\",\n      \"ShipViaCode\": \"\",\n      \"ShipViaDescription\": \"\",\n      \"PropertyCode\": \"ModeNormal1Batch2\",\n      \"PropertyValue\": \"1\",\n      \"JobRelated\": \"No\",\n      \"ErrorBatch\": \"0\",\n      \"ErrorEntry\": \"0\",\n      \"ShipToEmail\": \"\",\n      \"ShipToContactsPhone\": \"\",\n      \"ShipToContactsFax\": \"\",\n      \"ShipToContactsEmail\": \"ronaldblack99@hotmail.com\",\n      \"DiscountBaseWithTax\": \"69.28\",\n      \"DiscountBaseWithoutTax\": \"64\",\n      \"DiscountBase\": \"64\",\n      \"InvoiceType\": \"Item\",\n      \"RetainageInvoice\": \"No\",\n      \"OriginalDocumentNumber\": \"\",\n      \"HasRetainage\": \"No\",\n      \"RetainageAmount\": \"0.000\",\n      \"PercentRetained\": \"0.00000\",\n      \"DaysRetained\": 0,\n      \"RetainageDueDate\": null,\n      \"RetainageTermsCode\": \"\",\n      \"RetainageDueDateOverride\": \"No\",\n      \"RetainageAmountOverride\": \"No\",\n      \"RetainageExchangeRate\": \"UseOriginalDocumentExchangeRate\",\n      \"NumberOfOptionalFields\": \"3\",\n      \"SourceApplication\": \"AR\",\n      \"ARVersionCreatedIn\": \"64A\",\n      \"TaxStateVersion\": \"1\",\n      \"ReportRetainageTax\": 0,\n      \"TaxReportingCurrencyCode\": \"USD\",\n      \"TaxReportingCalculateMethod\": \"Yes\",\n      \"TaxReportingExchangeRate\": \"1\",\n      \"TaxReportingRateType\": \"\",\n      \"TaxReportingRateDate\": null,\n      \"TaxReportingRateOperator\": \"Multiply\",\n      \"TaxReportingRateOverride\": \"No\",\n      \"TaxReportingAmount1\": \"4\",\n      \"TaxReportingAmount2\": \"1.28\",\n      \"TaxReportingAmount3\": \"0.000\",\n      \"TaxReportingAmount4\": \"0.000\",\n      \"TaxReportingAmount5\": \"0.000\",\n      \"TaxReportingTotal\": \"5.28\",\n      \"RetainageTaxBase1\": \"0.000\",\n      \"RetainageTaxBase2\": \"0.000\",\n      \"RetainageTaxBase3\": \"0.000\",\n      \"RetainageTaxBase4\": \"0.000\",\n      \"RetainageTaxBase5\": \"0.000\",\n      \"RetainageTaxAmount1\": \"0.000\",\n      \"RetainageTaxAmount2\": \"0.000\",\n      \"RetainageTaxAmount3\": \"0.000\",\n      \"RetainageTaxAmount4\": \"0.000\",\n      \"RetainageTaxAmount5\": \"0.000\",\n      \"FunctionalTaxBase1\": \"87.58\",\n      \"FunctionalTaxBase2\": \"87.58\",\n      \"FunctionalTaxBase3\": \"0.000\",\n      \"FunctionalTaxBase4\": \"0.000\",\n      \"FunctionalTaxBase5\": \"0.000\",\n      \"FunctionalTaxAmount1\": \"5.47\",\n      \"FunctionalTaxAmount2\": \"1.75\",\n      \"FunctionalTaxAmount3\": \"0.000\",\n      \"FunctionalTaxAmount4\": \"0.000\",\n      \"FunctionalTaxAmount5\": \"0.000\",\n      \"FunctionalDistributionWithTaxTotal\": \"94.8\",\n      \"FunctionalRetainageAmount\": \"0.000\",\n      \"FunctionalDiscountAmount\": \"0.000\",\n      \"FunctionalDistributionWithoutTaxTotal\": \"87.58\",\n      \"FunctionalPrepaymentAmount\": \"0.000\",\n      \"FunctionalAmountDue\": \"94.8\",\n      \"LabelPrinted\": \"No\",\n      \"RetainageTaxTotal\": \"0.000\",\n      \"TaxAmount1Total\": \"4\",\n      \"TaxAmount2Total\": \"1.28\",\n      \"TaxAmount3Total\": \"0.000\",\n      \"TaxAmount4Total\": \"0.000\",\n      \"TaxAmount5Total\": \"0.000\",\n      \"RetainageAmountFromDetails\": \"0.000\",\n      \"ShipmentNumber\": \"\",\n      \"DoOECostingAndConsolidation\": \"No\",\n      \"EnteredBy\": \"ADMIN\",\n      \"PostingDate\": \"2016-07-15T00:00:00\",\n      \"InvoiceDetails\": [\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"LineNumber\": \"20\",\n          \"ItemNumber\": \"MAINT\",\n          \"DistributionCode\": \"LABOR\",\n          \"Description\": \"Maintenance labor\",\n          \"UnitOfMeasure\": \"HRS\",\n          \"Quantity\": \"1\",\n          \"Cost\": \"0.000000\",\n          \"Price\": \"32\",\n          \"ExtendedAmountWithTIP\": \"32\",\n          \"COGSAmount\": \"0.000\",\n          \"ExtendedAmountWithoutTIP\": \"32\",\n          \"TaxTotal\": \"2.64\",\n          \"TaxBase1\": \"32\",\n          \"TaxBase2\": \"32\",\n          \"TaxBase3\": \"0.000\",\n          \"TaxBase4\": \"0.000\",\n          \"TaxBase5\": \"0.000\",\n          \"TaxClass1\": 1,\n          \"TaxClass2\": 1,\n          \"TaxClass3\": 0,\n          \"TaxClass4\": 0,\n          \"TaxClass5\": 0,\n          \"TaxIncluded1\": \"No\",\n          \"TaxIncluded2\": \"No\",\n          \"TaxIncluded3\": \"No\",\n          \"TaxIncluded4\": \"No\",\n          \"TaxIncluded5\": \"No\",\n          \"TaxRate1\": \"6.25\",\n          \"TaxRate2\": \"2\",\n          \"TaxRate3\": \"0.00000\",\n          \"TaxRate4\": \"0.00000\",\n          \"TaxRate5\": \"0.00000\",\n          \"TaxAmount1\": \"2\",\n          \"TaxAmount2\": \"0.64\",\n          \"TaxAmount3\": \"0.000\",\n          \"TaxAmount4\": \"0.000\",\n          \"TaxAmount5\": \"0.000\",\n          \"RevenueAccount\": \"4000\",\n          \"InventoryAccount\": \"1300\",\n          \"COGSAccount\": \"5000\",\n          \"Comments\": \"\",\n          \"PrintComment\": 0,\n          \"ItemCost\": \"0.000\",\n          \"Contract\": \"\",\n          \"Project\": \"\",\n          \"Category\": \"\",\n          \"ProjectCategoryResource\": \"\",\n          \"TransactionNumber\": \"0\",\n          \"CostClass\": \"None\",\n          \"BillingDate\": null,\n          \"CommentAttached\": \"No\",\n          \"Discountable\": \"Yes\",\n          \"OriginalLineIdentifier\": \"0\",\n          \"RetainageAmount\": \"0.000\",\n          \"PercentRetained\": \"0.00000\",\n          \"DaysRetained\": 0,\n          \"RetainageDueDate\": null,\n          \"RetainageDueDateOverride\": \"No\",\n          \"RetainageAmountOverride\": \"No\",\n          \"Values\": \"9\",\n          \"ProcessCommandCode\": \"InsertOptionalFields\",\n          \"RetainageDistributionAmount\": \"0.000\",\n          \"RetainageCOGSAmount\": \"0.000\",\n          \"RetainageAlternateBaseAmount\": \"0.000\",\n          \"InvoicedRetainageDistribution\": \"0.000\",\n          \"InvoicedRetainageCOGS\": \"0.000\",\n          \"InvoicedRetainageAlternateBas\": \"0.000\",\n          \"TaxReportingAmount1\": \"2\",\n          \"TaxReportingAmount2\": \"0.64\",\n          \"TaxReportingAmount3\": \"0.000\",\n          \"TaxReportingAmount4\": \"0.000\",\n          \"TaxReportingAmount5\": \"0.000\",\n          \"TaxReportingTotal\": \"2.64\",\n          \"RetainageTaxBase1\": \"0.000\",\n          \"RetainageTaxBase2\": \"0.000\",\n          \"RetainageTaxBase3\": \"0.000\",\n          \"RetainageTaxBase4\": \"0.000\",\n          \"RetainageTaxBase5\": \"0.000\",\n          \"RetainageTaxAmount1\": \"0.000\",\n          \"RetainageTaxAmount2\": \"0.000\",\n          \"RetainageTaxAmount3\": \"0.000\",\n          \"RetainageTaxAmount4\": \"0.000\",\n          \"RetainageTaxAmount5\": \"0.000\",\n          \"FunctionalTaxBase1\": \"43.79\",\n          \"FunctionalTaxBase2\": \"43.79\",\n          \"FunctionalTaxBase3\": \"0.000\",\n          \"FunctionalTaxBase4\": \"0.000\",\n          \"FunctionalTaxBase5\": \"0.000\",\n          \"FunctionalTaxAmount1\": \"2.74\",\n          \"FunctionalTaxAmount2\": \"0.88\",\n          \"FunctionalTaxAmount3\": \"0.000\",\n          \"FunctionalTaxAmount4\": \"0.000\",\n          \"FunctionalTaxAmount5\": \"0.000\",\n          \"FunctionalRetainageTaxAmount1\": \"0.000\",\n          \"FunctionalRetainageTaxAmount2\": \"0.000\",\n          \"FunctionalRetainageTaxAmount3\": \"0.000\",\n          \"FunctionalRetainageTaxAmount4\": \"0.000\",\n          \"FunctionalRetainageTaxAmount5\": \"0.000\",\n          \"FunctionalDistributionNetOfTaxes\": \"43.79\",\n          \"FunctionalRetainageAmount\": \"0.000\",\n          \"FunctionalCOGSAmount\": \"0.000\",\n          \"FunctionalCost\": \"0.000000\",\n          \"FunctionalPrice\": \"43.7888\",\n          \"FunctionalExtendedAmountWithTIP\": \"43.79\",\n          \"RetainageTaxTotal\": \"0.000\",\n          \"TaxAmount1Total\": \"2\",\n          \"TaxAmount2Total\": \"0.64\",\n          \"TaxAmount3Total\": \"0.000\",\n          \"TaxAmount4Total\": \"0.000\",\n          \"TaxAmount5Total\": \"0.000\",\n          \"CurrencyRetainageAmount\": \"0.000\",\n          \"CurrencyRetainageDistributionAmount\": \"0.000\",\n          \"CurrencyCOGSAmount\": \"0.000\",\n          \"CurrencyAlternateBaseAmount\": \"0.000\",\n          \"InvoiceDetailOptionalFields\": [\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"BACKORDER\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 3,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Backorder\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"COLOR\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 60,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Item's Color\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"EXTWARRANTY\",\n              \"Value\": \"                                                           0\",\n              \"InvoiceDetailOptionalFieldType\": \"YesNo\",\n              \"Length\": 0,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"25\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Extended Warranty Available\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"QUANTITY\",\n              \"Value\": \"0\",\n              \"InvoiceDetailOptionalFieldType\": \"Number\",\n              \"Length\": 0,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"23\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Quantity\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"SALESREP\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 30,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Sales Rep\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"SIZE\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 12,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Item Size\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"SQUAREFT\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 12,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Square Footage\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"UOM\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 10,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"UOM\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"20\",\n              \"OptionalField\": \"WARRANTYPRD\",\n              \"Value\": \"60 Days\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 10,\n              \"Decimals\": 0,\n              \"AllowBlank\": true,\n              \"Validate\": true,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"60 Days\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Warranty Period\",\n              \"ValueDescription\": \"60 Days\"\n            }\n          ]\n        },\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"LineNumber\": \"40\",\n          \"ItemNumber\": \"MAINT\",\n          \"DistributionCode\": \"LABOR\",\n          \"Description\": \"Maintenance labor\",\n          \"UnitOfMeasure\": \"HRS\",\n          \"Quantity\": \"1\",\n          \"Cost\": \"0.000000\",\n          \"Price\": \"32\",\n          \"ExtendedAmountWithTIP\": \"32\",\n          \"COGSAmount\": \"0.000\",\n          \"ExtendedAmountWithoutTIP\": \"32\",\n          \"TaxTotal\": \"2.64\",\n          \"TaxBase1\": \"32\",\n          \"TaxBase2\": \"32\",\n          \"TaxBase3\": \"0.000\",\n          \"TaxBase4\": \"0.000\",\n          \"TaxBase5\": \"0.000\",\n          \"TaxClass1\": 1,\n          \"TaxClass2\": 1,\n          \"TaxClass3\": 0,\n          \"TaxClass4\": 0,\n          \"TaxClass5\": 0,\n          \"TaxIncluded1\": \"No\",\n          \"TaxIncluded2\": \"No\",\n          \"TaxIncluded3\": \"No\",\n          \"TaxIncluded4\": \"No\",\n          \"TaxIncluded5\": \"No\",\n          \"TaxRate1\": \"6.25\",\n          \"TaxRate2\": \"2\",\n          \"TaxRate3\": \"0.00000\",\n          \"TaxRate4\": \"0.00000\",\n          \"TaxRate5\": \"0.00000\",\n          \"TaxAmount1\": \"2\",\n          \"TaxAmount2\": \"0.64\",\n          \"TaxAmount3\": \"0.000\",\n          \"TaxAmount4\": \"0.000\",\n          \"TaxAmount5\": \"0.000\",\n          \"RevenueAccount\": \"4000\",\n          \"InventoryAccount\": \"1300\",\n          \"COGSAccount\": \"5000\",\n          \"Comments\": \"\",\n          \"PrintComment\": 0,\n          \"ItemCost\": \"0.000\",\n          \"Contract\": \"\",\n          \"Project\": \"\",\n          \"Category\": \"\",\n          \"ProjectCategoryResource\": \"\",\n          \"TransactionNumber\": \"0\",\n          \"CostClass\": \"None\",\n          \"BillingDate\": null,\n          \"CommentAttached\": \"No\",\n          \"Discountable\": \"Yes\",\n          \"OriginalLineIdentifier\": \"0\",\n          \"RetainageAmount\": \"0.000\",\n          \"PercentRetained\": \"0.00000\",\n          \"DaysRetained\": 0,\n          \"RetainageDueDate\": null,\n          \"RetainageDueDateOverride\": \"No\",\n          \"RetainageAmountOverride\": \"No\",\n          \"Values\": \"9\",\n          \"ProcessCommandCode\": \"InsertOptionalFields\",\n          \"RetainageDistributionAmount\": \"0.000\",\n          \"RetainageCOGSAmount\": \"0.000\",\n          \"RetainageAlternateBaseAmount\": \"0.000\",\n          \"InvoicedRetainageDistribution\": \"0.000\",\n          \"InvoicedRetainageCOGS\": \"0.000\",\n          \"InvoicedRetainageAlternateBas\": \"0.000\",\n          \"TaxReportingAmount1\": \"2\",\n          \"TaxReportingAmount2\": \"0.64\",\n          \"TaxReportingAmount3\": \"0.000\",\n          \"TaxReportingAmount4\": \"0.000\",\n          \"TaxReportingAmount5\": \"0.000\",\n          \"TaxReportingTotal\": \"2.64\",\n          \"RetainageTaxBase1\": \"0.000\",\n          \"RetainageTaxBase2\": \"0.000\",\n          \"RetainageTaxBase3\": \"0.000\",\n          \"RetainageTaxBase4\": \"0.000\",\n          \"RetainageTaxBase5\": \"0.000\",\n          \"RetainageTaxAmount1\": \"0.000\",\n          \"RetainageTaxAmount2\": \"0.000\",\n          \"RetainageTaxAmount3\": \"0.000\",\n          \"RetainageTaxAmount4\": \"0.000\",\n          \"RetainageTaxAmount5\": \"0.000\",\n          \"FunctionalTaxBase1\": \"43.79\",\n          \"FunctionalTaxBase2\": \"43.79\",\n          \"FunctionalTaxBase3\": \"0.000\",\n          \"FunctionalTaxBase4\": \"0.000\",\n          \"FunctionalTaxBase5\": \"0.000\",\n          \"FunctionalTaxAmount1\": \"2.74\",\n          \"FunctionalTaxAmount2\": \"0.88\",\n          \"FunctionalTaxAmount3\": \"0.000\",\n          \"FunctionalTaxAmount4\": \"0.000\",\n          \"FunctionalTaxAmount5\": \"0.000\",\n          \"FunctionalRetainageTaxAmount1\": \"0.000\",\n          \"FunctionalRetainageTaxAmount2\": \"0.000\",\n          \"FunctionalRetainageTaxAmount3\": \"0.000\",\n          \"FunctionalRetainageTaxAmount4\": \"0.000\",\n          \"FunctionalRetainageTaxAmount5\": \"0.000\",\n          \"FunctionalDistributionNetOfTaxes\": \"43.79\",\n          \"FunctionalRetainageAmount\": \"0.000\",\n          \"FunctionalCOGSAmount\": \"0.000\",\n          \"FunctionalCost\": \"0.000000\",\n          \"FunctionalPrice\": \"43.7888\",\n          \"FunctionalExtendedAmountWithTIP\": \"43.79\",\n          \"RetainageTaxTotal\": \"0.000\",\n          \"TaxAmount1Total\": \"2\",\n          \"TaxAmount2Total\": \"0.64\",\n          \"TaxAmount3Total\": \"0.000\",\n          \"TaxAmount4Total\": \"0.000\",\n          \"TaxAmount5Total\": \"0.000\",\n          \"CurrencyRetainageAmount\": \"0.000\",\n          \"CurrencyRetainageDistributionAmount\": \"0.000\",\n          \"CurrencyCOGSAmount\": \"0.000\",\n          \"CurrencyAlternateBaseAmount\": \"0.000\",\n          \"InvoiceDetailOptionalFields\": [\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"BACKORDER\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 3,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Backorder\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"COLOR\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 60,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Item's Color\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"EXTWARRANTY\",\n              \"Value\": \"                                                           0\",\n              \"InvoiceDetailOptionalFieldType\": \"YesNo\",\n              \"Length\": 0,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"25\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Extended Warranty Available\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"QUANTITY\",\n              \"Value\": \"0\",\n              \"InvoiceDetailOptionalFieldType\": \"Number\",\n              \"Length\": 0,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"23\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Quantity\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"SALESREP\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 30,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Sales Rep\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"SIZE\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 12,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Item Size\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"SQUAREFT\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 12,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Square Footage\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"UOM\",\n              \"Value\": \"\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 10,\n              \"Decimals\": 0,\n              \"AllowBlank\": false,\n              \"Validate\": false,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"UOM\",\n              \"ValueDescription\": \"\"\n            },\n            {\n              \"BatchNumber\": \"66\",\n              \"EntryNumber\": \"1\",\n              \"LineNumber\": \"40\",\n              \"OptionalField\": \"WARRANTYPRD\",\n              \"Value\": \"60 Days\",\n              \"InvoiceDetailOptionalFieldType\": \"Text\",\n              \"Length\": 10,\n              \"Decimals\": 0,\n              \"AllowBlank\": true,\n              \"Validate\": true,\n              \"ValueSet\": \"Yes\",\n              \"TypedValueFieldIndex\": \"21\",\n              \"TextValue\": \"60 Days\",\n              \"AmountValue\": \"0.000\",\n              \"NumberValue\": \"0\",\n              \"IntegerValue\": \"0\",\n              \"YesNoValue\": false,\n              \"DateValue\": null,\n              \"TimeValue\": \"1899-12-30T00:00:00\",\n              \"OptionalFieldDescription\": \"Warranty Period\",\n              \"ValueDescription\": \"60 Days\"\n            }\n          ]\n        }\n      ],\n      \"InvoicePaymentSchedules\": [\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"PaymentNumber\": \"1\",\n          \"DueDate\": \"2016-07-25T00:00:00\",\n          \"AmountDue\": \"69.28\",\n          \"DiscountDate\": null,\n          \"DiscountAmount\": \"0.000\",\n          \"FunctionalAmountDue\": \"94.8\",\n          \"FunctionalDiscountAmount\": \"0.000\"\n        }\n      ],\n      \"InvoiceOptionalFields\": [\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"OptionalField\": \"COURIER\",\n          \"Value\": \"\",\n          \"InvoiceOptionalFieldType\": \"Text\",\n          \"Length\": 4,\n          \"Decimals\": 0,\n          \"AllowBlank\": false,\n          \"Validate\": false,\n          \"ValueSet\": \"Yes\",\n          \"TypedValueFieldIndex\": \"21\",\n          \"TextValue\": \"\",\n          \"AmountValue\": \"0.000\",\n          \"NumberValue\": \"0\",\n          \"IntegerValue\": \"0\",\n          \"YesNoValue\": false,\n          \"DateValue\": null,\n          \"TimeValue\": \"1899-12-30T00:00:00\",\n          \"OptionalFieldDescription\": \"Courier\",\n          \"ValueDescription\": \"\"\n        },\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"OptionalField\": \"WARRANTY\",\n          \"Value\": \"\",\n          \"InvoiceOptionalFieldType\": \"Text\",\n          \"Length\": 3,\n          \"Decimals\": 0,\n          \"AllowBlank\": true,\n          \"Validate\": true,\n          \"ValueSet\": \"Yes\",\n          \"TypedValueFieldIndex\": \"21\",\n          \"TextValue\": \"\",\n          \"AmountValue\": \"0.000\",\n          \"NumberValue\": \"0\",\n          \"IntegerValue\": \"0\",\n          \"YesNoValue\": false,\n          \"DateValue\": null,\n          \"TimeValue\": \"1899-12-30T00:00:00\",\n          \"OptionalFieldDescription\": \"Warranty\",\n          \"ValueDescription\": \"\"\n        },\n        {\n          \"BatchNumber\": \"66\",\n          \"EntryNumber\": \"1\",\n          \"OptionalField\": \"WAYBILLNO\",\n          \"Value\": \"\",\n          \"InvoiceOptionalFieldType\": \"Text\",\n          \"Length\": 12,\n          \"Decimals\": 0,\n          \"AllowBlank\": false,\n          \"Validate\": false,\n          \"ValueSet\": \"Yes\",\n          \"TypedValueFieldIndex\": \"21\",\n          \"TextValue\": \"\",\n          \"AmountValue\": \"0.000\",\n          \"NumberValue\": \"0\",\n          \"IntegerValue\": \"0\",\n          \"YesNoValue\": false,\n          \"DateValue\": null,\n          \"TimeValue\": \"1899-12-30T00:00:00\",\n          \"OptionalFieldDescription\": \"Waybill No\",\n          \"ValueDescription\": \"\"\n        }\n      ]\n    }\n  ]\n}"
-				},
-				"description": "Demonstrates the creation of an AR Invoice Batch"
-			},
-			"response": []
+			"description": "Demonstrates the creation of an AR Invoice Batch",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"responses": [],
+			"rawModeData": "{\n  \"BatchDate\": \"2020-06-20T00:00:00Z\",\n  \"Description\": \"\",\n  \"Invoices\": [\n    {\n      \"CustomerNumber\": \"1200\",\n      \"DocumentType\": \"Invoice\",\n      \"TransactionType\": \"InvoiceSummaryIssued\",\n      \"DocumentDate\": \"2020-06-20T00:00:00Z\",\n      \"AsOfDate\": \"2020-06-20T00:00:00Z\",\n      \"DueDate\": \"2020-06-25T00:00:00Z\",\n      \"InvoiceType\": \"Summary\",\n      \"PostingDate\": \"2020-06-20T00:00:00Z\",\n      \"InvoiceDetails\": [\n        {\n          \"ItemNumber\": \"\",\n          \"DistributionCode\": \"CACCSE\",\n          \"ExtendedAmountWithTIP\": 100\n        }\n      ]\n    }\n  ]\n}"
 		},
 		{
-			"name": "Invoke Process Endpoint",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/CreateGLBatch($process)",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "    {\n      \"ProcessReceiptBatch\": \"PostCashbatches\",\n      \"ReceiptThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessInvoiceBatch\": \"PostInvoicebatches\",\n      \"InvoiceThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessAdjustmentBatch\": \"PostAdjustmentbatches\",\n      \"AdjustmentThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRevaluationBatch\": \"PostRevaluebatches\",\n      \"RevaluationThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRefundBatch\": \"PostRefundbatches\",\n      \"RefundThroughPostingSequenceNumber\": \"999999\"\n    }"
-				},
-				"description": "Demonstrates invoking the \"Create GL Batch\" process in AR"
-			},
-			"response": []
-		},
-		{
+			"id": "217b1c83-c324-cc9c-dc88-acf1be56e783",
 			"name": "Discover Available Resources",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/$metadata",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "    {\n      \"ProcessReceiptBatch\": \"PostCashbatches\",\n      \"ReceiptThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessInvoiceBatch\": \"PostInvoicebatches\",\n      \"InvoiceThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessAdjustmentBatch\": \"PostAdjustmentbatches\",\n      \"AdjustmentThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRevaluationBatch\": \"PostRevaluebatches\",\n      \"RevaluationThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRefundBatch\": \"PostRefundbatches\",\n      \"RefundThroughPostingSequenceNumber\": \"999999\"\n    }"
-				},
-				"description": "Demonstrates retrieving metadata to list all available resources"
+			"description": "Demonstrates retrieving metadata to list all available resources",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "GET",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
 			},
-			"response": []
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "    {\n      \"ProcessReceiptBatch\": \"PostCashbatches\",\n      \"ReceiptThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessInvoiceBatch\": \"PostInvoicebatches\",\n      \"InvoiceThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessAdjustmentBatch\": \"PostAdjustmentbatches\",\n      \"AdjustmentThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRevaluationBatch\": \"PostRevaluebatches\",\n      \"RevaluationThroughPostingSequenceNumber\": \"999999\",\n      \"ProcessRefundBatch\": \"PostRefundbatches\",\n      \"RefundThroughPostingSequenceNumber\": \"999999\"\n    }",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/$metadata",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
 		},
 		{
-			"name": "Dealing with Errors",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "ADMIN",
-						"password": "ADMIN",
-						"saveHelperData": true,
-						"showPassword": false
-					}
-				},
-				"url": "http://localhost/Sage300WebApi/-/SAMLTD/AR/Customers('1200')",
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QURNSU46QURNSU4=",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"InvalidProperty\": \"Some Value\"\n}"
-				},
-				"description": "Demonstrates a typical error message payload"
+			"id": "3d51ca83-7c18-1553-e49e-f816ec483253",
+			"name": "Delete a Record",
+			"description": "Demonstrates the deletion of an AR Customer",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "DELETE",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
 			},
-			"response": []
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('Z_POSTMAN')",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "5fdbe2d2-5a5b-e9d8-b06d-11f8ca0b2c1e",
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=\n",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers?$count=true&$filter=BalanceDueInCustomerCurrency gt 1000.00 and DateOfLastInvoice gt 2016-12-31T12:00:00Z and AccountType eq 'BalanceForward'",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"time": 1479082450088,
+			"name": "Get Records using a Complex Filter",
+			"description": "Demonstrates the retrieval of a set of Customers based on a complex filter dealing with a dollar amount, a date and a presentation item.",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"responses": []
+		},
+		{
+			"id": "6582e73a-d2ca-aa8a-4467-c848f2134580",
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=\n",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"time": 1479087072833,
+			"name": "Create a Record",
+			"description": "Demonstrates the creation of an AR Customer",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"responses": [],
+			"rawModeData": "{\n  \"@odata.context\": \"http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/$metadata#ARCustomers/$entity\",\n  \"CustomerNumber\": \"Z_POSTMAN\",\n  \"ShortName\": \"Old Name\",\n  \"GroupCode\": \"RTL\",\n  \"NationalAccount\": \"\",\n  \"Status\": \"Active\",\n  \"InactiveDate\": null,\n  \"DateLastMaintained\": \"2010-08-18T00:00:00Z\",\n  \"OnHold\": \"No\",\n  \"StartDate\": \"2009-01-01T00:00:00Z\",\n  \"CreditBureauNumber\": \"\",\n  \"CreditBureauRating\": \"\",\n  \"CreditBureauDate\": null,\n  \"CustomerName\": \"Mr. Ronald Black\",\n  \"AddressLine1\": \"2820 Wabash Road\",\n  \"AddressLine2\": \"\",\n  \"AddressLine3\": \"\",\n  \"AddressLine4\": \"\",\n  \"City\": \"Los Angeles\",\n  \"StateProvince\": \"CA\",\n  \"ZipPostalCode\": \"90048\",\n  \"Country\": \"USA\",\n  \"ContactName\": \"Mr. Black\",\n  \"PhoneNumber\": \"2135550274\",\n  \"FaxNumber\": \"2135557234\",\n  \"TerritoryCode\": \"CA\",\n  \"AccountSet\": \"USA\",\n  \"AutocashProfile\": \"\",\n  \"BillingCycle\": \"BILLWK\",\n  \"InterestProfile\": \"INTRTL\",\n  \"CurrencyCode\": \"USD\",\n  \"PrintStatements\": \"Yes\",\n  \"AccountType\": \"BalanceForward\",\n  \"Terms\": \"DUETBL\",\n  \"RateType\": \"SP\",\n  \"TaxGroup\": \"CALIF\",\n  \"TaxRegistrationNumber1\": \"18-34601\",\n  \"TaxRegistrationNumber2\": \"76731\",\n  \"TaxRegistrationNumber3\": \"\",\n  \"TaxRegistrationNumber4\": \"\",\n  \"TaxRegistrationNumber5\": \"\",\n  \"TaxClassCode1\": 1,\n  \"TaxClassCode2\": 1,\n  \"TaxClassCode3\": 0,\n  \"TaxClassCode4\": 0,\n  \"TaxClassCode5\": 0,\n  \"CreditLimitCustomerCurrency\": 20000,\n  \"BalanceDueInCustomerCurrency\": 112544.4,\n  \"BalanceDueInFunctionalCurrency\": 154689.46,\n  \"DateOfLastStatement\": null,\n  \"LastStatementTotalCustomerCurrency\": 0,\n  \"DateOfLastBalanceForwardStatement\": null,\n  \"BeginningBalanceOnLastStatement\": 0,\n  \"DateOfLastRevaluation\": null,\n  \"LastRevaluationBalance\": 0,\n  \"NumberOfOpenDocuments\": 8,\n  \"NumberOfPaidInvoices\": 19,\n  \"NumberOfDaysToPay\": 1435,\n  \"DateOfLargestInvoice\": \"2019-01-01T00:00:00Z\",\n  \"DateOfHighestBalance\": \"2019-01-15T00:00:00Z\",\n  \"DateOfLargestInvoiceLastYear\": null,\n  \"DateOfHighestBalanceLastYear\": null,\n  \"DateOfLastActivity\": \"2020-07-31T00:00:00Z\",\n  \"DateOfLastInvoice\": \"2016-10-30T00:00:00Z\",\n  \"DateOfLastCreditNote\": \"2019-01-16T00:00:00Z\",\n  \"DateOfLastDebitNote\": \"2019-01-15T00:00:00Z\",\n  \"DateOfLastReceipt\": \"2020-05-31T00:00:00Z\",\n  \"DateOfLastDiscount\": \"2019-02-03T00:00:00Z\",\n  \"DateOfLastAdjustment\": null,\n  \"DateOfLastWriteOff\": null,\n  \"DateOfLastReturnedCheck\": null,\n  \"DateOfLastInterestCharge\": null,\n  \"LargestInvoiceNumber\": \"TR-INV-003\",\n  \"LargestInvoiceNumberLastYear\": \"\",\n  \"LargestInvoiceCustomerCurrency\": 123235.57,\n  \"HighestBalanceCustomerCurrency\": 124286.6,\n  \"LargestInvoiceLastYearCustomerCurrency\": 0,\n  \"HighBalanceLastYearCustomerCurrency\": 0,\n  \"LastInvoiceAmountCustomerCurrency\": 1298.79,\n  \"LastCreditNoteAmountCustomerCurrency\": -437.88,\n  \"LastDebitNoteAmountCustomerCurrency\": 80.78,\n  \"LastReceiptCustomerCurrency\": -97.43,\n  \"LastDiscountAmountCustomerCurrency\": -100,\n  \"LastAdjustmentAmountCustomerCurrency\": 0,\n  \"LastWriteOffAmountCustomerCurrency\": 0,\n  \"LastReturnedCheckAmountCustomerCurr\": 0,\n  \"LastInterestChargeCustomerCurrency\": 0,\n  \"LargestInvoiceFunctionalCurrency\": 168869.7,\n  \"HighestBalanceFunctionalCurrency\": 170408.52,\n  \"LargestInvoiceLastYearFunctionalCurrency\": 0,\n  \"HighBalanceLastYearFunctionalCurrency\": 0,\n  \"LastInvoiceAmountFunctionalCurrency\": 1828.44,\n  \"LastCreditNoteAmountFunctionalCurrency\": -586.41,\n  \"LastDebitNoteAmountFunctionalCurrency\": 108.53,\n  \"LastReceiptFunctionalCurrency\": -141.91,\n  \"LastDiscountAmountFunctionalCurrency\": -134.34,\n  \"LastAdjustmentAmountFunctionalCurrency\": 0,\n  \"LastWriteOffAmountFunctionalCurrency\": 0,\n  \"LastReturnedCheckAmountFunctionalCurr\": 0,\n  \"LastInterestChargeFunctionalCurrency\": 0,\n  \"Salesperson1\": \"BB\",\n  \"Salesperson2\": \"DS\",\n  \"Salesperson3\": \"\",\n  \"Salesperson4\": \"\",\n  \"Salesperson5\": \"\",\n  \"SalesSplitPercentage1\": 80,\n  \"SalesSplitPercentage2\": 20,\n  \"SalesSplitPercentage3\": 0,\n  \"SalesSplitPercentage4\": 0,\n  \"SalesSplitPercentage5\": 0,\n  \"AverageDaysToPay\": 75.5,\n  \"CustomerPriceList\": \"USA\",\n  \"CustomerDiscountType\": \"Base\",\n  \"AmountPastDue\": 0,\n  \"ContactsEmail\": \"ronaldblack99@hotmail.com\",\n  \"Email\": \"\",\n  \"WebSite\": \"\",\n  \"BillingMethod\": 0,\n  \"PaymentCode\": \"CHECK\",\n  \"FreeOnBoard\": \"\",\n  \"ShipViaCode\": \"\",\n  \"ShipViaDescription\": \"\",\n  \"DeliveryMethod\": \"Mail\",\n  \"PrimaryShipToLocation\": \"\",\n  \"ContactsPhone\": \"\",\n  \"ContactsFax\": \"\",\n  \"AllowPartialShipments\": \"Yes\",\n  \"AllowWebStoreShopping\": \"No\",\n  \"PercentRetained\": 0,\n  \"DaysRetained\": 0,\n  \"RetainageTermsCode\": \"\",\n  \"AmountRetainedCustomerCurrency\": 0,\n  \"AmountRetainedFunctionalCurrency\": 0,\n  \"NumberOfOptionalFields\": 12,\n  \"ProcessCommandCode\": \"InsertOptionalFields\",\n  \"NumberOfOpenPrepayments\": 1,\n  \"AmountPrepaidCustomerCurrency\": -50,\n  \"AmountPrepaidFunctionalCurrency\": -73.6,\n  \"DateOfLastRefund\": null,\n  \"LastRefundAmountCustomerCurrency\": 0,\n  \"LastRefundAmountFunctionalCurrency\": 0,\n  \"CheckLanguage\": \"ENG\",\n  \"NextClientUniqueID\": 1,\n  \"InventoryLocation\": \"1\",\n  \"CheckCreditLimit\": \"No\",\n  \"CheckOverdueAmounts\": \"No\",\n  \"DaysOverdue\": 0,\n  \"AmountOverdue\": 0,\n  \"AllowBackorderQuantities\": \"Yes\",\n  \"CheckForDuplicatePOs\": \"None\",\n  \"SuppressIntegration\": false,\n  \"ARVersion\": \"64A\",\n  \"Database\": \"SAMLTD\",\n  \"Mode\": \"NormalMode\",\n  \"SageBillingAndPaymentCustomer\": \"No\",\n  \"BusinessRegistrationNumber\": \"\",\n  \"CustomerOptionalFieldValues\": [\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"AC\",\n      \"Value\": \"1200\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 15,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"1200\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"AC#\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"ARCNTCTTYPE\",\n      \"Value\": \"Finance\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 10,\n      \"Decimals\": 0,\n      \"AllowBlank\": true,\n      \"Validate\": true,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"Finance\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Accounts Receivable Contact Type\",\n      \"ValueDescription\": \"Finance\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"CREDTWARNING\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 25,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Customer Credit Warning\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"DISCNTGRACE\",\n      \"Value\": \"20\",\n      \"CustomerOptionalFieldValueType\": \"Integer\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 24,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 20,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Discount Grace Period\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"DUEDATEPRD\",\n      \"Value\": \"10\",\n      \"CustomerOptionalFieldValueType\": \"Integer\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 24,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 10,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Due Date Grace Period\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"NOTE\",\n      \"Value\": \"Allow greater volume discount\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 60,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"Allow greater volume discount\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Note\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"PREFERCUST\",\n      \"Value\": \"                                                           1\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 25,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": true,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Preferred Customer\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"PROSPECT\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 25,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"PROSPECT\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"SICCODE\",\n      \"Value\": \"4516\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 4,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"4516\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"SIC Code\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"TEMPCUSTOMER\",\n      \"Value\": \"                                                           0\",\n      \"CustomerOptionalFieldValueType\": \"YesNo\",\n      \"Length\": 0,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 25,\n      \"TextValue\": \"\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"Temporary Customer\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"UPSZONE\",\n      \"Value\": \"WHI\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 3,\n      \"Decimals\": 0,\n      \"AllowBlank\": true,\n      \"Validate\": true,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"WHI\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"UPS Zone\",\n      \"ValueDescription\": \"White Zone\",\n      \"UpdateOperation\": \"Unspecified\"\n    },\n    {\n      \"CustomerNumber\": \"1200\",\n      \"OptionalField\": \"USER\",\n      \"Value\": \"ADMIN\",\n      \"CustomerOptionalFieldValueType\": \"Text\",\n      \"Length\": 60,\n      \"Decimals\": 0,\n      \"AllowBlank\": false,\n      \"Validate\": false,\n      \"ValueSet\": \"Yes\",\n      \"TypedValueFieldIndex\": 21,\n      \"TextValue\": \"ADMIN\",\n      \"AmountValue\": 0,\n      \"NumberValue\": 0,\n      \"IntegerValue\": 0,\n      \"YesNoValue\": false,\n      \"DateValue\": null,\n      \"TimeValue\": \"1899-12-30T00:00:00Z\",\n      \"OptionalFieldDescription\": \"User\",\n      \"ValueDescription\": \"\",\n      \"UpdateOperation\": \"Unspecified\"\n    }\n  ],\n  \"UpdateOperation\": \"Unspecified\"\n}"
+		},
+		{
+			"id": "8d1b4d15-4fc7-ae5b-4b1b-57e582cfc361",
+			"name": "Get Records using a Range",
+			"description": "Demonstrates the retrieval of a set of customers by specifying the offset and count",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "GET",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": "",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers?$skip=5&$top=2",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "924e2a19-621a-6b4f-f6cf-33954fd6b200",
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=\n",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCreateGLBatch('$process')",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"time": 1479086333573,
+			"name": "Invoke Process Endpoint",
+			"description": "Demonstrates invoking the \"Create GL Batch\" process in AR",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"responses": [],
+			"rawModeData": "    {\n      \"ProcessReceiptBatch\": \"PostCashbatches\",\n      \"ReceiptThroughPostingSequenceNumber\": 999999,\n      \"ProcessInvoiceBatch\": \"PostInvoicebatches\",\n      \"InvoiceThroughPostingSequenceNumber\": 999999,\n      \"ProcessAdjustmentBatch\": \"PostAdjustmentbatches\",\n      \"AdjustmentThroughPostingSequenceNumber\": 999999,\n      \"ProcessRevaluationBatch\": \"PostRevaluebatches\",\n      \"RevaluationThroughPostingSequenceNumber\": 999999,\n      \"ProcessRefundBatch\": \"PostRefundbatches\",\n      \"RefundThroughPostingSequenceNumber\": 999999\n    }"
+		},
+		{
+			"id": "989c4ea9-c9d3-3cfa-55b1-0b7c7a7f1d8f",
+			"name": "Dealing with Errors",
+			"description": "Demonstrates a typical error message payload",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "PATCH",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n \"InvalidProperty\": \"Some Value\"\n}",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('1200')",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "9f898209-ceae-9a27-6ebf-4bfb9ff031e4",
+			"name": "Get Records using a Filter",
+			"description": "Demonstrates the retrieval of a set of Customers based on a filter",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "GET",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": "",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers?$filter=City eq 'San Francisco'",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "a72b6f6d-f7bf-1fea-3b04-4a5614f7b07f",
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=\n",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers?$count=true",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"time": 1479082379902,
+			"name": "Get Records",
+			"description": "Demonstrates the retrieval of customers (does not return records beyond the first page)",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"responses": []
+		},
+		{
+			"id": "ae4d5346-31bf-19c0-24fe-28240cfbcf82",
+			"name": "Get Record by Key",
+			"description": "Demonstrates the retrieval of a Customer using the customer number",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "GET",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": "",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('1200')",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "f545da97-6971-b13c-4ca7-c97cc16fcdf3",
+			"name": "Update a Record",
+			"description": "Demonstrates the update of an AR Customer",
+			"collectionId": "e396bd98-4306-76fa-f368-3f26d9fa22ad",
+			"method": "PUT",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ADMIN",
+				"password": "ADMIN",
+				"saveToRequest": true
+			},
+			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n  \"ShortName\": \"New Name\"\n}",
+			"url": "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARCustomers('Z_POSTMAN')",
+			"responses": [],
+			"preRequestScript": "",
+			"tests": ""
 		}
 	]
 }

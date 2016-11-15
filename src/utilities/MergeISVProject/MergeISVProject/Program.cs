@@ -70,6 +70,10 @@ namespace MergeISVProject
             {
                 CompiledCopyFiles(pathFrom, moduleId, pathSageWeb, pathFramework);
             }
+
+            // copy resource satellite dlls for localization
+            CopyResourceSatelliteFiles(pathFrom, pathSageWeb, moduleId);
+
         }
 
         /// <summary>
@@ -260,6 +264,40 @@ namespace MergeISVProject
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Copy resource satellite dlls to web bin and worker folder
+        /// </summary>
+        /// <param name="pathFrom">source file path</param>
+        /// <param name="pathTo">source file destination path</param>
+        /// <param name="moduleId">module id</param>
+        private static void CopyResourceSatelliteFiles(string pathFrom, string pathTo, string moduleId)
+        {
+            string[] languages = { "es", "fr-CA", "zh-Hans", "zh-Hant"};
+            var pathBinFrom = Path.Combine(pathFrom, "Bin");
+            var pathWebBinTo = Path.Combine(pathTo, @"Online\Web\Bin");
+            var pathWorkerTo = Path.Combine(pathTo, @"Online\Worker");
+            var pattern = "*." + moduleId + ".*.dll";
+
+            foreach (var language in languages)
+            {
+                var fromFolder = Path.Combine(pathBinFrom, language);
+                var toWebFolder = Path.Combine(pathWebBinTo, language);
+                var toWorkerFolder = Path.Combine(pathWorkerTo, language);
+
+                foreach (var file in Directory.GetFiles(fromFolder, pattern))
+                {
+                    var fileName = Path.GetFileName(file);
+                    if (!string.IsNullOrEmpty(fileName))
+                    {
+                        var pathFile = Path.Combine(toWebFolder, fileName);
+                        File.Copy(file, pathFile, true);
+                        pathFile = Path.Combine(toWorkerFolder, fileName);
+                        File.Copy(file, pathFile, true);
+                    }
+                }
+            }
         }
 
         /// <summary>
