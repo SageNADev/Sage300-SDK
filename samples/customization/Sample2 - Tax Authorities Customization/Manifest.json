@@ -1,0 +1,20 @@
+{
+	"BusinessPartnerName" : "ISV1",
+	"PackageId": "Unique_Package_ID_001",
+	"SageCompatibility" : "6.4A+",
+	"Name": "ISV-Customization",
+	"Description": "ISV1's customization for the web screens",
+	"Version": "1.0",
+	"EULA" : "<license file>",
+	"WebScreens": 
+	[
+		{
+			"ScreenName": "TaxAuthorities",
+			"ScreenDescription": "Common Services Tax Authorities",
+			"TargetScreen": "TaxAuthorities",
+			"ControlsConfiguration": "TaxAuthorities_Settings.xml",
+			"ControlsBehavior": "TaxAuthorities_Custom.js",
+			"Module": "TX"
+		}		
+	]
+}
