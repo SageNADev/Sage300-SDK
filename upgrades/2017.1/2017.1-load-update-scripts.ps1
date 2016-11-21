@@ -32,10 +32,14 @@ Get-ChildItem -Recurse *.csproj | Foreach-Object {(Get-Content $_).replace('<Tar
 ################################################################################
 $global:UpdateWebProject = {
 # Clean the existing contents from the web project
-Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object { Get-Content $_ | select-string -pattern 'Content Include="(?:Views|Areas\\Core|Areas\\Shared|Assets|Content|Scripts|Views)\\' -notmatch | Out-File "$webFolderName\tempCsProject1" -Encoding "UTF8" -Width 300 }
-Get-Content "$webFolderName\tempCsProject1" |  ? {-not [string]::IsNullOrWhiteSpace($_) } | Out-File "$webFolderName\tempCsProject2" -Encoding "UTF8" -Width 300
-Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object { $itemName=$_.Name; write-verbose "Rename to: $itemName"; remove-item $_;Rename-Item "$webFolderName\tempCsProject2" "$itemName" }
-Remove-Item "$webFolderName\tempCsProject1"
+Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object {
+  $csprojXml = [xml] (Get-Content $_)
+  $webSubPaths.split(',') | Foreach-Object {
+    & $RemoveXmlElements $csprojXml $_
+  }
+  
+  Format-XML $csprojXml | Out-File -Encoding utf8 $_
+}
 
 # Re-Add Web Artifacts to Web project
 $globalasax='<Content Include="Global.asax" />'
@@ -50,6 +54,35 @@ $globalasax
 "@
 Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object {(Get-Content $_).replace($globalasax,$itemgroupContent)  | Out-File $_ -Encoding "UTF8" -Width 300 }
 }
+
+#######################################
+$global:RemoveXmlElements = {
+  Param ([xml]$xml, [string]$startsWithValue, [string]$xpathFormat = "//ns:Content[starts-with(@Include, '{0}')]" )
+  $xpathSearchRemove = $xpathFormat -f $startsWithValue
+  Write-Verbose "Remove: $xpathSearchRemove"
+  $ns = New-Object System.Xml.XmlNamespaceManager($xml.NameTable)
+  $ns.AddNamespace("ns", $xml.DocumentElement.NamespaceURI)
+
+  $node = $xml.SelectSingleNode($xpathSearchRemove, $ns)
+  while ($node -ne $null) {
+      $node.ParentNode.RemoveChild($node)
+      $node = $xml.SelectSingleNode($xpathSearchRemove, $ns)
+  }
+}
+
+#######################################
+function global:Format-XML ([xml]$xml, $indent=2) 
+{ 
+  $StringWriter = New-Object System.IO.StringWriter 
+  $XmlWriter = New-Object System.XMl.XmlTextWriter $StringWriter 
+  $xmlWriter.Formatting = “indented” 
+  $xmlWriter.Indentation = $Indent 
+  $xml.WriteContentTo($XmlWriter) 
+  $XmlWriter.Flush() 
+  $StringWriter.Flush() 
+  Write-Output $StringWriter.ToString() 
+}
+
 ################################################################################
 # 3.5 Update the Web Artifacts
 ################################################################################
