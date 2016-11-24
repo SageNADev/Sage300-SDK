@@ -25,7 +25,7 @@ Text addition into the *Web.csproj file uses the files Global.asax,
 and BundleRegistration.cs as find/replace points.      
 These script blocks can be run on command line once this script has run successfully.
 
-.PARAMETER tenpSDKWizGenPath
+.PARAMETER tempSDKWizGenPath
 The path to the temporary Sage 300 SDK 2017.1 generated solution
 e.g. "c:\2017pu1SDK-Generated\Sage300CMvcApplication1"
 
@@ -37,12 +37,12 @@ e.g. "ValuedPartner"
 c:\ps> .\2017.1-load-update-scripts.ps1 c:\2017pu1SDK-Generated\Sage300CMvcApplication1 ValuedPartner
 
 .EXAMPLE
-c:\ps> .\2017.1-load-update-scripts.ps1 -tenpSDKWizGenPath c:\2017pu1SDK-Generated\Sage300CMvcApplication1 -webNamespacePrefix ValuedPartner
+c:\ps> .\2017.1-load-update-scripts.ps1 -tempSDKWizGenPath "c:\2017pu1SDK-Generated\Sage300CMvcApplication1" -webNamespacePrefix ValuedPartner
 #>
 Param
 (
   [Parameter(Mandatory=$True,Position=0)]
-  [string] $tenpSDKWizGenPath,
+  [string] $tempSDKWizGenPath,
   
   [Parameter(Mandatory=$True,Position=1)]
   [string] $webNamespacePrefix
@@ -56,11 +56,10 @@ $global:ErrorActionPreference = "Stop"
 ################################################################################
 # The path to the temporary Sage 300 SDK 2017.1 generated solution
 # e.g. "c:\2017pu1SDK-Generated\Sage300CMvcApplication1"
-$global:tempWizardGenPath = $tenpSDKWizGenPath
+$global:tempWizardGenPath = $tempSDKWizGenPath
 # The namespace value before the ".Web" for the Web Projects namespace
 # e.g. "ValuedPartner"
 $global:nameSpaceBeforeWeb = $webNamespacePrefix
-
 
 # Web project
 $global:webFolderName = "$nameSpaceBeforeWeb.Web"
@@ -81,11 +80,11 @@ if ($false -eq (Test-Path $webAssetDirPath))
   Write-Error ($errorMsgFormat -f $webAssetDirPath)
 }
 
+# Web Artifact files
 $global:webSubPaths = 'Areas\Shared,Areas\Core,Views,Scripts,Content,Assets'
-# Webforms
+# Webform namespace related
 $global:replaceWebFormNamespace = 'Inherits="Sage.CA.SBS.ERP.Sage300.Web'
 $global:searchReplaceWebFormNamespace = 'Inherits="' + $webFolderName
-
 
 ################################################################################
 # 3.2 Update the .NET Framework
