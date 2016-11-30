@@ -203,7 +203,7 @@
 
 .k-window .k-window-content {
     padding: 0;
-    margin: @margin-base;
+    margin: @margin-base @margin-base 0 @margin-base;
     background: transparent;
     border-radius: 0px;
     overflow-y:auto;
@@ -392,6 +392,20 @@
 
     &:last-child{ 
       margin-right: 0;
+    }
+  }
+}
+
+// Session Expiary Popup 
+
+.k-window-titleless {
+  padding: 0 !important;
+
+  .k-window-content.modal-msg {
+    margin: 0;
+
+    .message-control {
+      margin-bottom: 0;
     }
   }
 }

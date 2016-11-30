@@ -6,8 +6,8 @@ Customization = {
     html: "<div id='dlgCustomize'> " +
         "<div class='form-group'>" +
         "<div class='plus-group'><label>" + globalResource.CustomizationID + "</label><input type='text' id='commonCustomizationID' value='' class='txt-upper small' formattextbox='alphaNumeric'><input type='button' id='btnCommonCustomizeCreate' class='icon btn-plus' tabindex='-1'><input type='button' id='btnCommonCustomizationIDFinder' class='icon btn-finder' tabindex='-1'></div>" +
-        "<div class='input-group'><label>" + globalResource.CustomizationDescription + "</label><input type='text' id='commonCustomizationDescription' value='' class='default'></div>" +
-        "<div class='multiselect-group'><label>" + globalResource.UIProfiles + "</label><select class='medium multi-select' id='commonCustomizeProfileID' multiple></select><input type='button' id='btnCommonCustomizeUIProfile' class='icon btn-more' tabindex='-1'/></div>" +
+        "<div class='input-group'><label>" + globalResource.CustomizationDescription + "</label><input type='text' id='commonCustomizationDescription' value='' class='medium-large'></div>" +
+        "<div class='multiselect-group'><label>" + globalResource.UIProfiles + "</label><select class='large multi-select' id='commonCustomizeProfileID' multiple></select><input type='button' id='btnCommonCustomizeUIProfile' class='icon btn-more' tabindex='-1'/></div>" +
         "</div>" +
         "<div id='commonCustomizationGrid'></div>" +
         "<section class='footer-group-1'> <input class='btn btn-secondary' id='btnCommonCustomizeCancel' type='button' value='" + globalResource.CancelTitle + "'></input><input class='btn btn-primary' id='btnCommonCustomizeDelete' type='button' value='" + globalResource.DeleteTitle + "'></input><input class='btn btn-primary' id='btnCommonCustomizeSave' type='button' value='" + globalResource.SaveTitle + "'></input></section>" +
@@ -20,16 +20,56 @@ Customization = {
     currentValue: [],
     UIMode: null,
     eTag: "",
+    isModelDirty: false,
+    finderData: null,
+    lastCommonCustomizationID: null,
 
     init: function () {
         Customization.showDialog();
         kendo.ui.plugin(SageNumericTextBoxPlugin);
     },
 
+    initFinders: function () {
+        var finderTitle = jQuery.validator.format(globalResource.FinderTitle, globalResource.CustomizationID);
+        sg.finderHelper.setFinder("btnCommonCustomizationIDFinder", sg.finder.UICustomizationFinder,
+            Customization.customizationFinderSuccess, $.noop, finderTitle,
+            Customization.getCustomizationFilter);
+    },
+
+    customizationFinderSuccess: function (data) {
+        if (data != null) {
+            Customization.finderData = data;
+            Customization.checkIsDirty(Customization.setCustomizationFinderData);
+        }
+    },
+
+    setCustomizationFinderData: function () {
+        $('#commonCustomizationID').val(Customization.finderData.CustomizationID);
+        $('#commonCustomizationDescription').val(Customization.finderData.Description);
+        $("#commonCustomizationID").trigger('change');
+        sg.controls.Focus($("#commonCustomizationDescription"));
+    },
+
+    getCustomizationFilter: function () {
+        var filters = [[]];
+        var customizationName = $("#commonCustomizationID").val().trim().toUpperCase();
+        filters[0][0] = sg.finderHelper.createFilter("CustomizationID", sg.finderOperator.StartsWith, customizationName);
+        return filters;
+    },
+
     initCustomizationMultiSelect: function () {
         var fields = [{ field: "ProfileID", type: "string" }, { field: "ProfileDescription", type: "string" }];
         var model = sg.multiSelectionHelper.getModel("ProfileID", fields);
         sg.multiSelectionHelper.init("commonCustomizeProfileID", model, Customization.getMultiSelectTemplateData, sg.utls.url.buildUrl("AS", "WorkProfile", "GetWorkProfiles"), "PROFILEID", "CSUICSH", Customization.currentMultiSelectValue);
+        var profilesMultiSelect = $("#commonCustomizeProfileID").data("kendoMultiSelect");
+        if (profilesMultiSelect) {
+            profilesMultiSelect.bind("change", Customization.profilesMultiSelectChange);
+            profilesMultiSelect.dataSource.read();
+        }
+    },
+
+    profilesMultiSelectChange: function (e) {
+        Customization.isModelDirty = true;
     },
 
     getMultiSelectTemplateData: function (e) {
@@ -199,6 +239,7 @@ Customization = {
             model.set(colName, checkBox.is(":checked"));
             if (colName && colName === "Show") {
                 Customization.updateControl(model, true);
+                Customization.isModelDirty = true;
             }
         });
 
@@ -257,7 +298,6 @@ Customization = {
     },
 
     updateControl: function (control, byId) {
-        $("#btnCommonCustomizeSave").prop('disabled', false);
         var elem = Customization.getElement(control, byId);
         if (elem.length > 0) {
             elem.css("display", control.Show ? "" : "none");
@@ -297,6 +337,7 @@ Customization = {
         if (e.values.Text != e.model.Text) {
             e.model.Text = e.values.Text;
             Customization.updateControl(e.model, true);
+            Customization.isModelDirty = true;
         }
     },
 
@@ -304,31 +345,55 @@ Customization = {
         $('#btnCustomizeUI').bind('click', Customization.showWindow);
     },
 
+    closeDialog: function () {
+        $.each(Customization.defaultGridData, function () {
+            Customization.updateControl(this, false);
+        });
+
+        $('#dlgCustomize').data("kendoWindow").destroy();
+        $("#dlgCustomize").remove();
+    },
+
     openWindow: function () {
         $('#dlgCustomize').kendoWindow({
             title: globalResource.Customize,
-            height: '620px',
             width: '950px',
             draggable: true,
             show: 'blind',
             hide: 'blind',
             modal: true,
             resizable: false,
+            visible: false,
 
             open: function (e) {
+                Customization.isModelDirty = false;
                 this.wrapper.css({ top: 100 });
             },
 
-            close: function (event, ui) {
-                $.each(Customization.defaultGridData, function () {
-                    Customization.updateControl(this, false);
-                });
-
-                $("#dlgCustomize").remove();
-                this.destroy();
+            close: function (e) {
+                e.preventDefault();
+                $("#commonCustomizationDescription").trigger('blur');
+                var val = $('#commonCustomizationID').val();
+                if (Customization.isModelDirty && val) {
+                    var customizationID = $('#commonCustomizationID').val().trim().toUpperCase();
+                    var message = jQuery.validator.format(globalResource.SaveConfirm2, globalResource.Customization2 + " " + customizationID);
+                    sg.utls.showKendoConfirmationDialog(
+                        function () { // Yes
+                            Customization.closeDialog();
+                        },
+                        function () { // No
+                            return;
+                        },
+                        message);
+                } else {
+                    Customization.closeDialog();
+                }
             }
 
-        }).data("kendoWindow").center().open();
+                });
+
+        var dialog = $('#dlgCustomize').data("kendoWindow");
+        dialog.center().open();
     },
 
     onEdit: function (e) {
@@ -394,28 +459,62 @@ Customization = {
         sg.utls.ajaxPost(sg.utls.url.buildUrl("AS", "UICustomization", "Create"), null, Customization.createCustomizationHandler);
     },
 
+    getCustomization: function () {
+        var value = $("#commonCustomizationID").val().trim().toUpperCase();
+        var data = {
+            customizationID: value
+        };
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("AS", "UICustomization", "GetByID"), data, Customization.getCustomizationHandler);
+    },
+
+    checkIsDirty: function (funcionToCall) {
+        var val = $('#commonCustomizationID').val();
+        if (Customization.isModelDirty && val) {
+            var customizationID = $('#commonCustomizationID').val().trim().toUpperCase();
+
+            if ( Customization.lastCommonCustomizationID !== null &&
+                 customizationID != Customization.lastCommonCustomizationID ) {
+                 customizationID = Customization.lastCommonCustomizationID
+            }
+
+            var message = jQuery.validator.format(globalResource.SaveConfirm2, globalResource.Customization2 + " " + customizationID);
+            sg.utls.showKendoConfirmationDialog(
+                function () { // Yes 
+                    Customization.isModelDirty = false;
+                    funcionToCall.call();
+                },
+                function () { // No
+                    if ( Customization.lastCommonCustomizationID !== null ) {
+                        customizationID = Customization.lastCommonCustomizationID;
+                        $('#commonCustomizationID').val(customizationID)
+                    }
+                    return;
+                },
+                message);
+        } else {
+            funcionToCall.call();
+        }
+    },
+
     showWindow: function () {
 
         $("body").append(Customization.html);
-        //$("#btnCommonCustomizeSave").prop('disabled', true);
 
         Customization.UIMode = sg.utls.OperationMode.NEW;
 
-        $("#commonCustomizationID").bind('change', function (e) {
-            if (e.target.value !== "") {
-                sg.delayOnChange("btnCommonCustomizationIDFinder", $('#commonCustomizationID'), function () {
-                    var value = e.target.value.trim().toUpperCase();
-                    var data = {
-                        customizationID: value
-                    };
-                    sg.utls.ajaxPost(sg.utls.url.buildUrl("AS", "UICustomization", "GetByID"), data, Customization.getCustomizationHandler);
+        Customization.initFinders();
 
-                });
-            }
+        $("#commonCustomizationDescription").bind('change', function (e) {
+            Customization.isModelDirty = true;
+        });
+
+        $("#commonCustomizationID").bind('change', function (e) {
+            Customization.checkIsDirty(Customization.getCustomization);
+            Customization.isModelDirty = true;
         });
 
         $("#btnCommonCustomizeSave").bind('click', function (e) {
-            
+
             var profileData = $("#commonCustomizeProfileID").data("kendoMultiSelect").dataItems();
             var profiles = [];
 
@@ -436,7 +535,7 @@ Customization = {
                 ds.push(r);
             }
 
-            var customizationID = $('#commonCustomizationID').val();
+            var customizationID = $('#commonCustomizationID').val().trim().toUpperCase();
             var customizationDescription = $('#commonCustomizationDescription').val();
 
             var data = {
@@ -457,13 +556,13 @@ Customization = {
         });
 
         $("#btnCommonCustomizeCreate").bind('click', function (e) {
-            Customization.createNewCustomization();
+            Customization.checkIsDirty(Customization.createNewCustomization);
         });
 
         $("#btnCommonCustomizeDelete").bind('click', function (e) {
-            var message = jQuery.validator.format(globalResource.DeleteConfirm, globalResource.Customization);
+            var customizationID = $('#commonCustomizationID').val().trim().toUpperCase();
+            var message = jQuery.validator.format(globalResource.DeleteConfirm, globalResource.Customization2 + " " + customizationID);
             sg.utls.showKendoConfirmationDialog(function () {
-                var customizationID = $('#commonCustomizationID').val();
                 var data = {
                     customizationID: customizationID
                 };
@@ -478,7 +577,7 @@ Customization = {
         $("#btnCommonCustomizeUIProfile").bind('click', function (e) {
             var url = sg.utls.url.buildUrl("AS", "WorkProfile", "Index") + "?guid=" + sg.utls.guid();
 
-            sg.utls.iFrameHelper.openWindow("popupCustomizationUiProfile", "", url);
+            sg.utls.iFrameHelper.openWindow("popupCustomizationUiProfile", "", url, 650, 1020);
         });
 
         Customization.initCustomizationMultiSelect();
@@ -490,6 +589,7 @@ Customization = {
 
     createCustomizationHandler: function (jsonResult) {
         Customization.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+        Customization.isModelDirty = false;
         sg.controls.Focus($("#commonCustomizationID"));
     },
 
@@ -500,6 +600,8 @@ Customization = {
             } else {
                 Customization.UIMode = sg.utls.OperationMode.NEW;
             }
+            
+            Customization.lastCommonCustomizationID = $('#commonCustomizationID').val().trim().toUpperCase();
             sg.controls.Select($("#commonCustomizationDescription"));
         }
         sg.utls.showMessage(jsonResult);
@@ -509,6 +611,7 @@ Customization = {
     updateCustomizationHandler: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             Customization.UIMode = sg.utls.OperationMode.SAVE;
+            Customization.isModelDirty = false;
         }
         sg.utls.showMessage(jsonResult);
     },
@@ -517,18 +620,29 @@ Customization = {
     deleteCustomizationHandler: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             Customization.UIMode = sg.utls.OperationMode.NEW;
+            Customization.isModelDirty = false;
+            // clear the fields we just deleted
+            $('#commonCustomizationID').val("");
+            $('#commonCustomizationDescription').val("");
+            var multiSelect = $("#commonCustomizeProfileID").data("kendoMultiSelect");
+            multiSelect.value([]);
+            var grid = $("#commonCustomizationGrid").data("kendoGrid");
+            $.each(grid.dataSource.data(), function () {
+                    this['Show'] = true;
+            });
+            grid.refresh();
         }
         sg.utls.showMessage(jsonResult);
     },
 
     displayResult: function (jsonResult, uiMode) {
         if (jsonResult != null) {
+            Customization.isModelDirty = false;
             Customization.UIMode = uiMode;
             var customizationModel = jsonResult.Data;
             Customization.eTag = customizationModel.ETag;
             $('#commonCustomizationID').val(customizationModel.CustomizationID);
             $('#commonCustomizationDescription').val(customizationModel.Description);
-
             $("#commonCustomizeProfileID").data("kendoMultiSelect").value(customizationModel.UIProfiles);
 
             // Reset both the grid and screen controls

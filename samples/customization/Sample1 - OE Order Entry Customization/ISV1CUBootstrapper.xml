@@ -1,5 +1,0 @@
-<bootstrapper>
-  <assemblies>
-    <add assembly="ISV1.web.dll" />	
-  </assemblies>
-</bootstrapper>

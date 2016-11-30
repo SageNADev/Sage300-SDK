@@ -90,13 +90,9 @@ var optFldGridUtils = {
                 gridData.set(prefix + "NumberValue", rowdata.DefaultNumberValue || 0);
                 break;
             case optionalFieldEnum.Type.Date:
-                if (rowdata.DefaultValue != null) {
-                    gridData.set(prefix + "DateValue", rowdata.DefaultDateValue);
-                    gridData.set(prefix + "Value", rowdata.DefaultDateValue);
-                } else {
-                    gridData.set(prefix + "DateValue", null);
-                    gridData.set(prefix + "Value", null);
-                }
+                //Because we do not have default date value for web screen 
+                gridData.set(prefix + "DateValue", null);
+                gridData.set(prefix + "Value", null);
                 break;
             case optionalFieldEnum.Type.YesNo:
                 gridData.set(prefix + "YesOrNoValue", rowdata.DefaultYesOrNoValue);
@@ -552,6 +548,7 @@ var optionalFieldUIGrid =
     messageDivId: null,
     disableButtons: false,
     isAddNewLineInClientSide: true,
+    hasErrorMessage: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -852,7 +849,9 @@ var optionalFieldUIGrid =
 
         var grid = $('#' + optionalFieldUIGrid.gridId).data("kendoGrid");
         var data = grid.dataSource.data();
-        data = data.filter(function (value) { return (value.IsNewLine || value.HasChanged) && value.Validate && !value.Value && !value.AllowBlank; });
+        data = data.filter(function (value) {
+            return (value.IsNewLine || value.HasChanged) && value.Validate && !value.Value && !value.AllowBlank;
+        });
         if (data && data.length > 0 && optionalFieldUIGrid.isPopUp && $("#windowmessage")) {
             var message = $.validator.format(optionalFieldsResources.InvalidInput, data[0].OptionalField);
             optionalFieldUIGrid.showMessage(message);
@@ -1057,7 +1056,7 @@ var optionalFieldUIGrid =
         } else {
             sg.controls.enable("#" + chkAllId);
         }
-        if (grid._data.length < grid.dataSource.total()) {
+        if (grid._data.length <= grid.dataSource.total()) {
             var pageNumber = grid.dataSource.page();
             var pageSize = grid.dataSource.pageSize();
             var retrievePage = pageNumber - 1;
@@ -1125,13 +1124,20 @@ var optionalFieldUIGrid =
         modelData = (typeof modelData.Items === "function") ? modelData.Items() : modelData.Items;
         modelData = ko.mapping.toJS(modelData);
         modelData = modelData.filter(function (value) { return value.IsDeleted; });
-        for (var i = 0, len = modelData.length; i < len; i++) {
-            data.push(modelData[i]);
-        }
 
-        var hasUpdates = ko.utils.arrayFirst(data, function (item) {
-            return item.HasChanged || item.IsNewLine || item.IsDeleted;
-        });
+        //Add this function to fixed the contiune push the elements into array even the data has already delete from server. 
+        var hasUpdates;
+        if (modelData && optionalFieldUIGrid.deleteFromServer) {
+            hasUpdates = true;
+        }
+        else {// the origenal function inside else
+            for (var i = 0, len = modelData.length; i < len; i++) {
+                data.push(modelData[i]);
+            }
+            hasUpdates = ko.utils.arrayFirst(data, function (item) {
+                return item.HasChanged || item.IsNewLine || item.IsDeleted;
+            });
+        }
 
         if (hasUpdates && optionalFieldUIGrid.saveOptionalField !== null) {
             var nullItem = ko.utils.arrayFirst(data, function (item) {
@@ -1235,7 +1241,7 @@ var optionalFieldUIGrid =
     },
 
     OnOptionalFieldSelection: function (rowdata) {
-        if ($("#windowmessage")) { $("#windowmessage").empty();}
+        if ($("#windowmessage")) { $("#windowmessage").empty(); }
         if ($("#windowmessage1")) { $("#windowmessage1").empty(); }
 
         var gridId = optionalFieldUIGrid.gridId;
@@ -1252,12 +1258,6 @@ var optionalFieldUIGrid =
             selectRow.set("Type", rowdata.Type);
             selectRow.set("Length", rowdata.Length);
             selectRow.set("Decimals", rowdata.Decimals);
-            if (rowdata.ValueSet !== undefined) {
-                selectRow.set("ValueSet", rowdata.ValueSet);
-                selectRow.set("ValueSetString", rowdata.ValueSet);
-            } else {
-                selectRow.set("ValueSet", 0);
-            }
             var fldValue = (selectRow.DefaultValue === undefined) ? "Value" : "DefaultValue";
             if (rowdata.DefaultValue) {
                 selectRow.set(fldValue, rowdata.DefaultValue);
@@ -1274,8 +1274,15 @@ var optionalFieldUIGrid =
             } else {
                 selectRow.set(fldValueDesc, "");
             }
+            var valueSet = rowdata.ValueSet;
+            var allowBlank;
             if (rowdata.Type != optionalFieldEnum.Type.YesNo) {
-                selectRow.set("AllowBlank", rowdata.AllowBlankValue);
+                //selectRow.set("AllowBlank", rowdata.AllowBlankValue);
+                /// Comments the above line because AllowBlankValue only exists in IC and CS model. 
+                /// However this function also need to handle the other models as OE, AP
+                /// I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this changes
+                allowBlank = rowdata.AllowBlankValue ? rowdata.AllowBlankValue : rowdata.AllowBlank;
+                selectRow.set("AllowBlank", allowBlank);
 
                 var validate;
                 if ((rowdata.IsValidate === undefined) && (rowdata.Validate === undefined)) {
@@ -1285,10 +1292,21 @@ var optionalFieldUIGrid =
                 } else if (rowdata.IsValidate !== undefined) {
                     validate = rowdata.IsValidate ? 1 : 0;
                 }
+                //Just in case we support the integer value as flag. 1: checked, 0: unchecked
+                if (validate <= allowBlank) {
+                    valueSet = 1;
+                }
                 selectRow.set("Validate", validate);
             } else {
                 selectRow.set("AllowBlank", 0);
             }
+            if (valueSet !== undefined) {
+                selectRow.set("ValueSet", valueSet);
+                selectRow.set("ValueSetString", valueSet);
+            } else {
+                selectRow.set("ValueSet", 0);
+            }
+
             optFldGridUtils.setRowData(selectRow, rowdata, (selectRow.Value === undefined) ? "Default" : "");
 
             if (optionalFieldUIGrid.isCheckDuplicateRecord) {
@@ -1430,6 +1448,7 @@ var optionalFieldUIGrid =
                 }
                 grid.dataSource.options.serverPaging = true;
                 if ((successData.UserMessage && successData.UserMessage.IsSuccess) || successData.Items !== undefined) {
+                    optionalFieldUIGrid.hasErrorMessage = false;
                     gridData = [];
 
                     var optionalField = (successData.Data !== undefined) ? successData.Data[modelName] : successData;
@@ -1447,6 +1466,7 @@ var optionalFieldUIGrid =
 
                 } else {
                     if (optionalFieldUIGrid.isPopUp) {
+                        optionalFieldUIGrid.hasErrorMessage = true;
                         sg.utls.showMessagePopupWithoutClose(successData, "#windowmessage");
                     } else {
                         sg.utls.showMessage(successData);
