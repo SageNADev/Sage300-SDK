@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-
-<Screen Name="CopyOrder" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="screenConfig.xsd">
-    <Control ID="txtCustomOrderDesc" Type ="TextBox" Label="ISV1 Order Description" AfterID="txFromCustomerCurrency" Binding="Data.OrderDescription"/>
-    <Control ID="btnCustomCreate1" Type="Button" Label="ISV1 Create" BeforeID="btnCreate"/>
-</Screen >
