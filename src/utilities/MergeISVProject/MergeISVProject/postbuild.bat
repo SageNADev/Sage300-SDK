@@ -3,14 +3,15 @@ setlocal
 set myDir=%~dp0
 set artifactToPub=%myDir%bin\release\MergeISVProject.exe
 
-if not [%1]==[] (
-  set artifactToPub=%1
-)
+REM if not [%1]==[] (
+REM   set artifactToPub=%1
+REM )
 echo artifactToPub=%artifactToPub%
 
 if not exist %artifactToPub% (
   @echo %artifactToPub% does not exist.
-  exit 1
+  @echo Build the RELEASE version to copy MergeISVProject.exe to SDK.
+  exit 0
 )
 call :CopyToPublishLocations %artifactToPub%
 
@@ -26,6 +27,6 @@ goto :EOF
 :RunPS
   setlocal
   @echo on
-  powershell.exe -ExecutionPolicy Bypass -Command "%1"
+  %WINDIR%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command "%1"
   @echo off
   goto :EOF
