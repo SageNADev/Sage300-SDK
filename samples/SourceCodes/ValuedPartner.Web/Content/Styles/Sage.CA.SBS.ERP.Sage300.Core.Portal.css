@@ -529,11 +529,20 @@ div.k-window{border: none !important;}
     margin: 20px 0;
 }
 
+/* Added to fix header expanding issue D-32662*/
+
+#topMenu > li {
+    float: left;
+    position: relative;
+    color: #3c424f; /* hiding menu while javascript loaded*/
+}
+
 /* Kendo topMenu Start*/
 .globalNavigation{
     margin:0;
     width:100%;
     float:right;
+    height: 47px; /*D-32662*/
 }
 #topMenu{background:none;float:left;}
 #topMenu > .k-item > .k-link{ 
@@ -676,6 +685,10 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
 
 
 /* First Time Login Experience: New Feature Tour */
+
+#firstTimeLogin { 
+    display: none; /*D-32662*/
+}
 
 #firstTimeLogin .k-overlay {
     opacity: 0;
@@ -2888,7 +2901,8 @@ table.k-editor {
 }
 
 .create-report .multiselect-group .default { /** Custom Report**/  
-    width: 322px;
+    width: 320px;
+    float: left;
 }
 
 /* Pagination styles for side panel */
@@ -3028,7 +3042,7 @@ table.k-editor {
     opacity: 0;
 }
 
-.header-global .help {
+.header-global .k-link .help {
     margin-top: -14px;
 }
 

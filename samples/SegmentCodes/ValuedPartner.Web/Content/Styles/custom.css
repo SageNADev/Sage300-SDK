@@ -2496,3 +2496,12 @@ span.p0{padding:0px;}
     margin-bottom: 0;
 }
 
+/* iPad - fix for iPad-safari scrollbar defect D-31746*/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .k-safari .k-window .popup-iframe {
+      overflow: auto !important;
+      }
+}

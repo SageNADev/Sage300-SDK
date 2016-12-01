@@ -1539,7 +1539,7 @@ textarea:focus,
 .btn-finder:focus, 
 .btn-search:focus,
 .btn-plus:focus,
-.k-state-focused .k-input,
+.k-state-focused > .k-input,
 .k-datepicker .k-state-focused,
 .k-dropdown .k-state-focused .k-input,
 .k-numeric-wrap.k-state-default.k-state-focused,
@@ -5170,7 +5170,7 @@ a:active {
 .label-menu-popup{
   box-shadow: 0 0 1px #000; /*D-32590*/
   font-size: 13px;
-  background: #fff;
+  background: #f6f6f6;
   margin-top: 0;
   margin-left: 14px;
   top: 10px;
@@ -5182,10 +5182,10 @@ a:active {
 .label-menu-popup ul li:not(:last-child){/*margin-bottom: 10px;*/}
 .label-menu-popup ul li input[type=button].action-btn{
     border: 0;
-    background: none; 
+    background: #fff; 
     outline: none; 
-    color: #255bc7;
     padding: 7px 10px; 
+    color: #3c424f;
     cursor: pointer;
     font-size:14px;
     min-width: 150px; 
@@ -5194,9 +5194,10 @@ a:active {
     -webkit-appearance: none; /*iPad*/
     -moz-appearance: none; /*iPad*/
 }
-.label-menu-popup ul li input[type=button].action-btn:hover{text-decoration: none; background: #e8effe} /*New UI: D-20419 hover action(underline) added*/
-.label-menu-popup ul li input[type=button].action-btn:disabled{ color: #9a9b9c; cursor: default; background-color: #fff;}
-.label-menu-popup ul li input[type=button].action-btn:disabled:hover{ text-decoration: none;}
+
+.label-menu-popup ul li input[type=button].action-btn:hover{text-decoration: none; background: #e8effe; color: #255bc7;} /*New UI: D-20419 hover action(underline) added*/
+.label-menu-popup ul li input[type=button].action-btn:disabled{ color: #9a9b9c; cursor: default; background-color: #f6f6f6;}
+.label-menu-popup ul li input[type=button].action-btn:disabled:hover{ text-decoration: none; color: #9a9b9c; background-color: #f6f6f6;}
 /*.label-menu-popup .icon-close{ background: url(../Images/close.png) center center no-repeat; position: absolute; width: 10px; height: 10px; top: 3px ; right: 3px; cursor: pointer;}*/
 
 /* sub section blocks in application screen */
@@ -5383,7 +5384,7 @@ a:active {
 /* Copied from R2  -------------------------------------------------------------------------- */
 
 .k-window .popup-iframe {
-  max-height:760px !important;
+  max-height:720px !important;
   overflow: hidden !important;
   /*margin-top:0px; mega-merge sept 2015*/
   padding: 20px 0;
@@ -5774,6 +5775,10 @@ a:active {
     width: 340px;
 }
 
+.multiselect-group .k-multiselect.large {
+    width: 460px;
+}
+
 .k-multiselect-wrap,
 .k-state-hover .k-multiselect-wrap {
   border-radius: 0;
@@ -5833,14 +5838,6 @@ a:active {
     padding: 5px;
 }
 
-.k-list-container .k-list .k-item.k-state-focused,
-.k-multiselect-wrap .k-input:focus,
-.k-multiselect-wrap .k-input.k-readonly,
-.k-multiselect.k-state-focused .k-input.k-readonly{
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
 .multiselect-group .k-multiselect.k-state-focused{
     border-color: #66afe9;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -5855,4 +5852,13 @@ a:active {
     -kthtml-transition: all .2s linear;
     transition: all .2s linear;
     /*background-color: #e8effe;*/
+}
+
+.k-list-container .k-list .k-item.k-state-focused,
+.k-multiselect-wrap .k-input:focus,
+.k-multiselect-wrap .k-input.k-readonly,
+.k-multiselect.k-state-focused .k-input.k-readonly,
+.k-state-focused .k-multiselect .k-input{
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
