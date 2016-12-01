@@ -322,7 +322,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
             </Folder>
             <Folder Name="libs" TargetFolderName="libs">
-              <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons.less">glyphicons.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="kendo.common.less">kendo.common.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
@@ -584,7 +583,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="theme-template.less">theme-template.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="type-default.less">type-default.less</ProjectItem>
           </Folder>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Buttons.css">Sage.CA.SBS.ERP.Sage300.Buttons.css</ProjectItem>
@@ -692,9 +690,6 @@
       </Folder>
       <Folder Name="Customization" TargetFolderName="Customization">
         <ProjectItem ReplaceParameters="true" TargetFileName="ScreenDefinitions.xml">ScreenDefinitions.xml</ProjectItem>
-      </Folder>
-      <Folder Name="Enums" TargetFolderName="Enums">
-        <ProjectItem ReplaceParameters="true" TargetFileName="UserInterfaceMode.cs">UserInterfaceMode.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>

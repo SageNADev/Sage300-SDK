@@ -41,11 +41,14 @@
 {
     if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
     {
-        @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content, 
-            NavigationResx.SIR_Title,
-            NavigationResx.SIR_Msg1,
-            NavigationResx.SIR_Msg2,
-            NavigationResx.SIR_Btn)))
+        if(ViewBag.IsGLFinancialReportEnable == true)
+        {
+            @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content, 
+                NavigationResx.SIR_Title,
+                NavigationResx.SIR_Msg1,
+                NavigationResx.SIR_Msg2,
+                NavigationResx.SIR_Btn)))
+        }
     }
     else
     {

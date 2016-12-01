@@ -24,7 +24,7 @@
     WarningTimerHandler: function () {
         SessionManager.ClearAllTimeout();
         SessionManager.WarningTimerId = setTimeout(SessionManager.PageExpiredHandler, SessionManager.WarningMinutes * 60 * 1000);
-        sg.utls.showMessageDialog(SessionManager.ResetWarningTimer, null, globalResource.SessionExpired, sg.utls.DialogBoxType.OK, "", sg.utls.getFormatedDialogHtml());
+        sg.utls.showMessageDialog(SessionManager.ResetWarningTimer, null, globalResource.SessionExpired, sg.utls.DialogBoxType.OK, "", sg.utls.getFormatedDialogHtml("kendoConfirmationAcceptButtonTimeout", "kendoConfirmationCancelledButtonTimeout"), "kendoConfirmationAcceptButtonTimeout", "kendoConfirmationCancelledButtonTimeout");
     },
 
     PageExpiredHandler: function () {
