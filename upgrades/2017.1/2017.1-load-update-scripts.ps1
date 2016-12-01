@@ -193,7 +193,8 @@ Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object {(Get-Content $_).re
 $searchToReplace='<Content Include="Global.asax" />'
 $itemgroupContent = @"
 $searchToReplace
-    <Content Include="WebForms\*.aspx" />
+    <Content Include="WebForms\CustomReportViewer.aspx" />
+    <Content Include="WebForms\ReportViewer.aspx" />
 "@
 Get-ChildItem "$webFolderName\*Web.csproj" | Foreach-Object {(Get-Content $_).replace($searchToReplace,$itemgroupContent)  | Out-File $_ -Encoding "UTF8" -Width 300 }
 
