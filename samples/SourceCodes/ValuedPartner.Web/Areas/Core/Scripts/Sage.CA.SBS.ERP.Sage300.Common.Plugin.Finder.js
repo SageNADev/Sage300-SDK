@@ -410,7 +410,8 @@
         PreviewAccountFinder: "previewaccountfinder",
         ICBillsOfMaterialComponent: "billsofmaterialcomponent",
         CreditCardType: "bankcreditcardtypefinder",
-        GLAccountPermissionFinder: "glaccountpermissionfinder"
+        GLAccountPermissionFinder: "glaccountpermissionfinder",
+        UICustomizationFinder: "asuicustomization"
     };
 
     /* Add all the finders that doesn't require page navigation ie. First Page, Last Page buttons, shoud have the finder name in the below array 

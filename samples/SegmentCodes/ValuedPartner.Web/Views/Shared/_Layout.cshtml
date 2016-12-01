@@ -52,6 +52,20 @@
         var umURL = '@ViewBag.UmURL';
         var isNotesAutoLaunchEnabled = @(ConfigurationHelper.IsNotesAutoLaunchEnabled ? "true" : "false");
         var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
+
+        @functions {
+            public String GetSIRCPort(string path)
+            {
+                var port = "";
+                if (File.Exists(path))
+                {
+                    port = File.ReadAllText(path).Trim();
+                }
+
+                return port;
+            }
+        }
+        var SIRCPort = '@GetSIRCPort(Server.MapPath("~") + ConfigurationHelper.GetConfigValue("SIRCPortFileInfo"))';
     </script>
     <style>
         #companyNameMenu .k-link {

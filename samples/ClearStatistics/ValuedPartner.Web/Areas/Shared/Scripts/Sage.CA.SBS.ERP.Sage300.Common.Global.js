@@ -241,9 +241,12 @@ $.extend(sg.utls, {
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
     },
 
-    logOut: function () {
+    logOut: function (isAdminLogout) {
+
+        var isAdminLogout = (typeof isAdminLogout !== 'undefined') ? isAdminLogout : false;
+
         var signOutLink = sg.utls.url.buildUrl("Core", "Authentication", "Logout");
-        var loginLink = sg.utls.url.buildUrl("Core", "Authentication", "Login");
+        var loginLink = sg.utls.url.buildUrl("Core", "Authentication", isAdminLogout ? "AdminLogin" : "Login");
         var topWnd = window.top == null ? window : window.top;
 
         // Note: Potential tech debt here as this event will get fired AFTER the login has been redirected
@@ -584,7 +587,11 @@ $.extend(sg.utls, {
     getAntiForgeryTokenName: function () {
         return $("#antiforgerytoken_holder[data-antiforgerycookiename]").data("antiforgerycookiename");
     },
-    getFormatedDialogHtml: function () {
+    getFormatedDialogHtml: function (okButtonId, cancelButtonId) {
+
+        var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
+        var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? cancelButtonId : "kendoConfirmationCancelButton";
+
         return "<div id=\"dialogConfirmation\" class=\"modal-msg\">" +
 	        "<div class=\"message-control multiWarn-msg\">" +
 		        "<div class=\"title\">" +
@@ -595,14 +602,18 @@ $.extend(sg.utls, {
 			        "<p id=\"dialogConfirmation_msg1\"></p>" +
 			        "<p id=\"dialogConfirmation_msg2\"></p>" +
 			        "<div class=\"button-group\">" +
-				        "<input class=\"btn btn-primary\" id=\"kendoConfirmationAcceptButton\" type=\"button\" value=\"OK\" />" +
-                        "<input class=\"btn btn-secondary\" id=\"kendoConfirmationCancelButton\" type=\"button\" value=\"Cancel\" />" +
+				        "<input class=\"btn btn-primary\" id=\"" + idOK + "\" type=\"button\" value=\"OK\" />" +
+                        "<input class=\"btn btn-secondary\" id=\"" + idCancel + "\" type=\"button\" value=\"Cancel\" />" +
 			        "</div>" +
 		        "</div>" +
 	        "</div>" +
         "</div>";
     },
-    showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml) {
+    showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId) {
+
+        var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? "#" + okButtonId : "#kendoConfirmationAcceptButton";
+        var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? "#" + cancelButtonId : "#kendoConfirmationCancelButton";
+
         if (dialoghtml === null || dialoghtml === undefined) {
             var kendoWindow = $("<div class='modelWindow' id='" + "dialogConfirmation " + "' />").kendoWindow({
                 title: '',
@@ -647,32 +658,32 @@ $.extend(sg.utls, {
 
         switch (dialogType) {
             case sg.utls.DialogBoxType.YesNo:
-                $("#kendoConfirmationAcceptButton").html(globalResource.Yes);
-                $("#kendoConfirmationCancelButton").html(globalResource.No);
+                $(idOK).html(globalResource.Yes);
+                $(idCancel).html(globalResource.No);
                 break;
             case sg.utls.DialogBoxType.OKCancel:
-                $("#kendoConfirmationAcceptButton").html(globalResource.OK);
-                $("#kendoConfirmationCancelButton").html(globalResource.Cancel);
+                $(idOK).html(globalResource.OK);
+                $(idCancel).html(globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.OK:
                 defaultTitle = globalResource.Info;
-                $("#kendoConfirmationAcceptButton").html(globalResource.OK);
-                $("#kendoConfirmationCancelButton").hide();
+                $(idOK).html(globalResource.OK);
+                $(idCancel).hide();
                 break;
             case sg.utls.DialogBoxType.Close:
                 defaultTitle = globalResource.Error;
-                $("#kendoConfirmationAcceptButton").hide();
-                $("#kendoConfirmationCancelButton").html(globalResource.Close);
+                $(idOK).hide();
+                $(idCancel).html(globalResource.Close);
                 break;
             case sg.utls.DialogBoxType.DeleteCancel:
-                $("#kendoConfirmationAcceptButton").html(globalResource.Delete);
-                $("#kendoConfirmationCancelButton").html(globalResource.Cancel);
+                $(idOK).html(globalResource.Delete);
+                $(idCanel).html(globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.Continue:
                 kendoWindow.find("#dialogConfirmation_header").html(title);
                 kendoWindow.find("#dialogConfirmation_msg1").html(message);
-                $("#kendoConfirmationAcceptButton").hide();
-                $("#kendoConfirmationCancelButton").val(globalResource.Continue);
+                $(idOK).hide();
+                $(idCancel).val(globalResource.Continue);
                 break;
         }
 
@@ -2022,21 +2033,6 @@ $.extend(sg.utls, {
         return obj;
     },
 
-    RedirectToTimeoutLanding: function () {
-        // remove all beforeunload event handler to prevent dialog box block the exist
-        $(window).unbind('beforeunload');
-
-        $.each($('iframe'), function (i, currentIFrame) {
-            var currentWindow = (currentIFrame.contentWindow || currentIFrame.contentDocument);
-            if (currentWindow.$) {
-                // have to use the instance of the JQuery inside that window/iframe
-                currentWindow.$(currentWindow).unbind('beforeunload');
-            }
-        });
-
-        window.location.replace("Authentication/SessionExpired");
-    },
-
     //Function to return the encoded value. 
     textEncode: function (value) {
         value = sg.controls.GetString(value);
@@ -2079,7 +2075,8 @@ $.extend(sg.utls, {
             }
         });
 
-        window.location.replace("Authentication/SessionExpired");
+        // For Admin login, call AdminSessionExpired. Otherwise, SessionExpired. 
+        window.location.replace(sg.utls.url.buildUrl("Core", "Authentication", (typeof customScreenUI !== "undefined" && customScreenUI.adminLogin) ? "AdminSessionExpired" : "SessionExpired"));
     },
 
     mergeGridConfiguration: function (propertiesArray, targetConfig, sourceConfig) {
@@ -2393,8 +2390,9 @@ $(function () {
 
     var coreIndex = window.location.href.indexOf("/Core/");
     var sharedIndex = window.location.href.indexOf("/Shared/");
+    var customAdmin = window.location.href.indexOf("/AS/CustomScreen");
 
-    if ((coreIndex < 0) && sharedIndex < 0) {
+    if ((coreIndex < 0) && sharedIndex < 0 && customAdmin < 0) {
         sg.utls.loadHomeCurrency();
     }
 

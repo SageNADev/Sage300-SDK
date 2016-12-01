@@ -1056,10 +1056,21 @@ $(document).ready(function() {
     });
 
     $("#btnIntelligence").click(function () {
+        var cb = ""; //cachebuster
+        if (sg.utls.isInternetExplorer())
+        {
+            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
+        }
+
         // call WebApiProxy to get temp token
-        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true", "", ""), {}, function (result) {
-            if (result && sIRCLocation) {
-                var win = window.open(sIRCLocation + '?tempCode=' + result.TempSessionId, '_blank');
+        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true"+cb, "", ""), {}, function (result) {
+            if (result) {
+                if (!sIRCLocation) {
+                    // if no SIRC location is defined, assume it would be on the same location with https (ie https://<current server>/)
+                    sIRCLocation = "https://" + location.hostname + ":" + SIRCPort + "/";
+                }
+
+                var win = window.open(sIRCLocation + '?tempCode=' + result.TempSessionId + '&locale=' + result.UserLanguage, '_blank');
             }
         });
     });

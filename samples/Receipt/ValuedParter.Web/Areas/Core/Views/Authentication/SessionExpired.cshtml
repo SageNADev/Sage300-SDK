@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -27,7 +27,7 @@
     }
     function HandleRedirectToLogin() {
         var topWnd = window.top == null ? window : window.top;
-        topWnd.location.href = '@urlHelper.Action("Login", "Authentication")';
+        topWnd.location.href = '@urlHelper.Action(ViewBag.Action, ViewBag.Controller)';
     }
 
 </script>
