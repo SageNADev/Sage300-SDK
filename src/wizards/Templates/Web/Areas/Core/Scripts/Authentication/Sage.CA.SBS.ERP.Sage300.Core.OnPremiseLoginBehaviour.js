@@ -5,9 +5,20 @@
 var loginUI = loginUI || {};
 loginUI = {
     model: {},
+    companyList: [],
+    ddCompanies: [],
 
     // Main routine
     init: function (model) {
+        if (model && model.ForAdmin) {
+            $(document.body).addClass('admin');
+            $("#passwordDiv").show();
+            $("#txtUserId").val('ADMIN');
+            $("#txtUserId").prop("disabled", true);
+            loginUI.companyList = model.Companies;
+            //loginUI.ddCompanies = $('#CompanyId').data("kendoDropDownList").dataSource.data();
+
+        }
 
         // Allow up and down to also alter UI just as change event does
         // NOTE: up/down is regardless of change since change fires AFTER 
@@ -17,6 +28,15 @@ loginUI = {
             loginUI.showPasswordField($(this).val());
         });
 
+        $("#SystemId").kendoDropDownList().bind("change", function (e) {
+            loginUI.updateCompanylist();
+        });
+
+        if (model && model.ForAdmin) {
+            loginUI.ddCompanies = $('#CompanyId').data("kendoDropDownList").dataSource.data();
+            loginUI.updateCompanylist();
+        }
+
         loginUI.initEvents();
         loginUI.initialLoad(model);
 
@@ -24,15 +44,26 @@ loginUI = {
         $("#txtUserId").focus();
     },
 
+    // update company drop down list 
+    updateCompanylist: function() {
+        var ddCompany = $('#CompanyId').data("kendoDropDownList");
+        var ddSystem = $("#SystemId").data("kendoDropDownList");
+        var sysCompanies = loginUI.companyList.filter(function (i) { return i.SystemId == $("#SystemId").val() });
+        var listCompanies = sysCompanies.map(function(i) { return i.Id});
+        //var ddList = ddCompany.dataSource.data();
+        var selectCompanys = loginUI.ddCompanies.filter(function (i) { return listCompanies.indexOf(i.value) > -1; })
+        ddCompany.dataSource.data(selectCompanys);
+        ddCompany.select(0);
+    },
     // Init events
     initEvents: function () {
-
         // Sign in button
         $("#btnLogin").bind('click', function () {
             var data = {
                 company: $("#CompanyId").val(),
                 userId: $("#txtUserId").val(),
-                password: $("#txtPassword").val()
+                password: $("#txtPassword").val(),
+                forAdmin: $("#loginHeader2").is(":visible")
             };
             loginRepository.login(data, loginUICallback.loginResult);
         });
@@ -217,26 +248,31 @@ loginUI = {
 
     // Maps data to controls from model
     initialLoad: function (result) {
+        if (result.ForAdmin) {
+            result.UserId = "ADMIN";
+        }
         loginUI.model = ko.mapping.fromJS(result);
         ko.applyBindings(loginUI.model);
 
         var company = loginUI.model.Company();
 
         // Select company in list
-        $("#CompanyId").data('kendoDropDownList').value(company);
-
+        if (!loginUI.model.ForAdmin()) {
+            $("#CompanyId").data('kendoDropDownList').value(company);
+        }
         // Show the password field for the seleted company?
         loginUI.showPasswordField(company);
     },
 
     // Determines password visibility
     showPasswordField: function (selectedCompany) {
-
+        if (loginUI.model.ForAdmin()) {
+            return;
+        }
         // Iterate companies
         $.each(loginUI.model.Companies(), function (index, company) {
             var id = company.Id();
             var isSecurityEnabled = company.IsSecurityEnabled();
-
             // Match selected company
             if (id === selectedCompany) {
                 // Hide/Show based upon enabled security
@@ -386,7 +422,12 @@ var loginUICallback = {
         if (jsonResult != null) {
             if (jsonResult.IsSuccess) {
                 // Success. Re-direct to home page now that credentials have been set
-                window.location.replace(jsonResult.Url);
+                var url = jsonResult.Url;
+                if (loginUI.model.ForAdmin()) {
+                    var systemId = $("#SystemId").data('kendoDropDownList').value();
+                    url = url.replace("Core/Home", "AS/CustomScreen?id=Import&systemDbId=" + systemId);
+                }
+                window.location.replace(url);
             } else {
                 // Not a success. Display errors/warnings or redirect
                 if (jsonResult.PasswordExpires) {

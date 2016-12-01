@@ -307,7 +307,6 @@
     <Compile Include="$applicationid$AreaRegistration.cs" />
     <Compile Include="$applicationid$WebBootstrapper.cs" />
     <Compile Include="BundleRegistration.cs" />
-    <Compile Include="Enums\UserInterfaceMode.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -347,9 +346,8 @@
     <Content Include="Scripts\**" />
     <Content Include="Content\**" />
     <Content Include="Assets\**" />
-    <None Include="Scripts\jquery-1.11.3.intellisense.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="WebForms\**" />
+    <Content Include="WebForms\CustomReportViewer.aspx" />
+    <Content Include="WebForms\ReportViewer.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
