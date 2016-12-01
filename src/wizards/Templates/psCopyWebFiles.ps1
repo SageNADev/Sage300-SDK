@@ -1,7 +1,10 @@
 # Left TODO after running this script.
+# - Build of MergeISVProject.exe and commit copied artifacts.
+# - Copy Web changes out to sample code
+# If Changed:
 # - Requires manual merge of Global.asax.cs
 # - Requires manual merge of Web.Config
-# - Build of MergeISVProject.exe and commit copied artifacts.
+# - Diff for other code changes...
 
 $verbosepreference = 'continue'
 

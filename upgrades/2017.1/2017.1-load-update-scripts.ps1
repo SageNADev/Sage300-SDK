@@ -160,6 +160,10 @@ $webSubPaths.split(',') | Foreach-Object { get-childitem -path "$webFolderName\$
 
 #Copy Web Artifacts
 $webSubPaths.split(',') | Foreach-Object { robocopy /E "$webAssetDirPath\$_" "$webFolderName\$_" }
+
+#Copy MergeISVProject file
+robocopy /is "$webAssetDirPath" "$webFolderName" MergeISVProject.exe
+
 Write-Verbose "Web files added from generated solution."
 }
 
