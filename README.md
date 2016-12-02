@@ -41,6 +41,7 @@ contribute as well
 The **docs** folder contains the documentation for the SDK and contains the following sub-
 folders in order to segregate the documentation:
 
+* customization
 * development
 * patterns
 * presentations
@@ -56,8 +57,6 @@ The **patch** folder contains any patches which may be required to be applied to
 
 * Generated solutions
 * Generated projects
-* Local Sage 300 2017.1 Application folders
-* Customr Sage 300 2017.1 Application folders
 
 A README.md file in the patch folder will explain the patch, the reason for the patch 
 and the action to be taken.
@@ -65,8 +64,10 @@ and the action to be taken.
 ### samples
 
 The **samples** folder contains sample projects, which are stand-alone, runnable versions of 
-different screens and reports within the Sage 300 application. These samples are to provide 
-implementation knowledge.
+different screens and reports within the Sage 300 application as well as customization samples. 
+These samples are to provide implementation knowledge.
+
+> **The README file in the samples folder is important and contains prerequisites for running samples.
 
 ### src
 
@@ -75,8 +76,6 @@ sub-folders in order to segregate the source:
 
 * utilities
 * wizards
-
-> **The README file in the samples folder is important and contains prerequisites for running samples.
 
 ### upgrades
 
@@ -276,6 +275,30 @@ based upon Version of Visual Studio and installation location
 * In the **Start Options** section, enter the following information into the **Command line arguments** textbox:
   *	/rootsuffix Exp
 * Run the solution to start debugging!
+
+### How to Install the Sage 300 UI Customization Wizard Package
+
+The following steps illustrate how to install the package:
+
+* Locate the **Sage300UICustomizationSolution.vsix** file in the src\wizards\customization
+folder and run this file
+* Select **Yes** to install the plug-in
+
+> **If the package is already installed, it must be uninstalled first**
+
+### How to Uninstall the Sage 300 UI Customization Wizard Package
+
+The following steps illustrate how to uninstall the package from Visual Studio:
+
+* Load Visual Studio
+* Select **Tools\Extensions and Updates…**
+* Search for and select the **Sage 300 UI Customization Wizard**
+* Select the **Uninstall** button
+* Select **Yes** to confirm uninstallation of the package
+* Select **Yes** to re-start Visual Studio
+* The package has been uninstalled
+
+> **This step is only required if the package is installed**
 
 ## License
 

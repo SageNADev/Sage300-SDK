@@ -55,3 +55,9 @@ The following steps are required to add the required Kendo file to the Web proje
 The **Segment Codes** and **Source Journal Profiles** samples have been refactored to utilize the 
 grid enhancement logic. The **Receipt** sample, while having a grid, was not a receipient of the grid 
 enhancement logic. This will be addressed in a future release.
+
+## Web API WCF Data Services
+
+This sample is no longer applicable as the newer version of the OData specification does not allow
+the behavior being demonstated. However, the sample is being left in the SDK merely for reference
+and potential future enhancement.
