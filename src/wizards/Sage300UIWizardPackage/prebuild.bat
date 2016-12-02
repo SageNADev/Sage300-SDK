@@ -1,4 +1,4 @@
-@echo on
+@echo off
 REM
 REM
 REM
@@ -17,12 +17,12 @@ set myDir=%~dp0
 set projectTemplatesPath=%projectTemplatesBaseDir%\ProjectTemplates
 set srcProjectTemplatesDir=%myDir%\..\Templates
 set compressProjectTemplatesCmd=%srcProjectTemplatesDir%\CreateTemplateZipFiles.bat
+set getArtifactsCmd=%srcProjectTemplatesDir%\CopyWebRepoFiles.bat
 
+call :GetArtifacts
 call :CompressProjectTemplates
 
 goto :EOF
-
-
 
 :CompressProjectTemplates
   if not exist %projectTemplatesPath% (
@@ -31,4 +31,18 @@ goto :EOF
   pushd %projectTemplatesPath%
   call %compressProjectTemplatesCmd% %projectTemplatesPath%
   popd
+  goto :EOF
+  
+:GetArtifacts
+  if [%EXTRACT_FROM_REPO%]==[1] (
+    set repoDirName=Columbus-Web
+    set repoDirRelPath=..\..\..\..
+    if exist %myDir%%repoDirRelPath%\%repoDirName% (
+      call %getArtifactsCmd%
+    ) 
+  ) else (
+    echo ==================================================================================
+    echo Set Env Variable [EXTRACT_FROM_REPO] to get artifacts. Requires source code access.
+    echo ==================================================================================
+  )
   goto :EOF

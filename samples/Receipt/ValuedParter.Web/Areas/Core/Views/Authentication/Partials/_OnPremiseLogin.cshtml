@@ -14,52 +14,65 @@
 </script>
 
 @Html.Partial(Core.OnPremiseLocalization)
-
+<div id="success"></div>
+<div id="message" class="k-window"></div>
+<div id="changePassword" class="k-window"></div>
 <section class="header login">
     <div class="wrapper">
         <div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-sq.png" height="132" width="134" alt="Sage 300"></div>
-    </div>
-</section>
-<section class="main-body login">
-    <div>
-        @Html.ValidationSummary(true)
-    </div>
-    <div id="success"></div>
-    <div class="wrapper">
-        <div id="message" class="k-window"></div>
-        <div id="changePassword" class="k-window"></div>
-        <h1 class="page-header" id="loginHeader">Sign In to Sage 300</h1>
-        <h2 class="page-header-2 hide" id="loginHeader2">(Admin Configuration)</h2>
-        <div class="form-group">
-            <div class="input-group">
-                @*@Html.SageLabel("lblUserId", ASCommonResx.UserID, new { @class = "settingsContent" })*@
-                @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "txt-upper login", data_val = "true", @maxlength = "8", @placeholder = ASCommonResx.UserID, @autocomplete = "off" })
+        <div class="main-body login">
+            <div>
+                @Html.ValidationSummary(true)
+            </div>
+
+            <h1 class="page-header" id="loginHeader">@ASCommonResx.SignInSage300</h1>
+            @if (Model.ForAdmin)
+            {
+                <h2 class="page-header-2" id="loginHeader2">@ASCommonResx.SignInSage300Admin</h2>
+            }
+            <div class="form-group">
+                <div class="input-group">
+                    @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "txt-upper login", data_val = "true", @maxlength = "8", @placeholder = ASCommonResx.UserID, @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group" id="passwordDiv">
+                <div class="input-group">
+                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @placeholder = ASCommonResx.Password, @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group">
+                @if (Model.ForAdmin)
+                {
+                    <div class="dropdown-group" style="display: none">
+                        @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
+                    </div>
+                    <div class="dropdown-group">
+                        @Html.SageDropDownListFor(model => model.SystemIdDisplayList, Model.SystemIdDisplayList, new { @class = "login", @id = "SystemId" })
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown-group">
+                        @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
+                    </div>
+                }
+            </div>
+            <div class="button-group">
+                @Html.KoSageButton("btnLogin", new { }, new { @value = ASCommonResx.Login, @id = "btnLogin", @class = "btn btn-primary btn-login" })
+                @if (!Model.ForAdmin)
+                {
+                    <div class="left" id="changePasswordDiv">
+                        <a id="lnkChangePassword" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
+                    </div>
+                }
             </div>
         </div>
-        <div class="form-group" id="passwordDiv">
-            <div class="input-group">
-                @*@Html.SageLabel("lblPassword", ASCommonResx.Password, new { @class = "settingsContent" })*@
-                @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @placeholder = ASCommonResx.Password, @autocomplete = "off" })
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="dropdown-group">
-                @*@Html.SageLabel("lblCompany", ASCommonResx.Company, new { @class = "settingsContent" })*@
-                @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
-            </div>
-        </div>
-        <section class="button-group">
-            @Html.KoSageButton("btnLogin", new { }, new { @value = ASCommonResx.Login, @id = "btnLogin", @class = "btn btn-primary btn-login" })
-            <div class="left" id="changePasswordDiv">
-                <a id="lnkChangePassword" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
-            </div>
-        </section>
     </div>
 </section>
 
 <section class="footer">
     <div class="wrapper">
         <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
-        @string.Format(@CommonResx.GlobalCopyright, @DateTime.Today.Year)
+        @string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)
     </div>
 </section>
