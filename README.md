@@ -36,6 +36,15 @@ contribute as well
 
 ## Folders and Contents
 
+### bin
+
+The **bin** folder contains the assembly (binary) files which have already been compiled and 
+for the SDK utilities and wizards. The folder contains the following sub-folders in order 
+to segregate the files:
+
+* utilities
+* wizards
+
 ### docs
 
 The **docs** folder contains the documentation for the SDK and contains the following sub-
@@ -280,7 +289,7 @@ based upon Version of Visual Studio and installation location
 
 The following steps illustrate how to install the package:
 
-* Locate the **Sage300UICustomizationSolution.vsix** file in the src\wizards\customization
+* Locate the **Sage300UICustomizationSolution.vsix** file in the bin\wizards
 folder and run this file
 * Select **Yes** to install the plug-in
 

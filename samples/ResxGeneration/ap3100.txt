@@ -1,0 +1,2 @@
+D:\Dev\VB\AP\UIs;aplocal.rc;D:\Dev\VB\AP\UIs\Resources;Common
+D:\Dev\VB\AP\UIs;ap3100.rc;D:\Dev\VB\AP\UIs\Resources;PaymentEntry

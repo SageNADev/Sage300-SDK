@@ -12,27 +12,3 @@ Windows Powershell 4.0 can be installed by downloading Windows Management Framew
 
 > Windows Powershell 4.0 is only required by the Wizards for compiling the solution. This is not
 a requirement if the Wizard Package is only installed via the VSIX file.
-
-## How to Install the Sage 300 UI Customization Wizard Package
-
-The following steps illustrate how to install the package:
-
-* Locate the **Sage300UICustomizationSolution.vsix** file in the src\wizards\customization
-folder and run this file.
-* Select **Yes** to install the plug-in
-
-> **If the package is already installed, it must be uninstalled first**
-
-## How to Uninstall the Sage 300 UI Customization Wizard Package
-
-The following steps illustrate how to uninstall the package from Visual Studio:
-
-* Load Visual Studio
-* Select **Tools\Extensions and Updates…**
-* Search for and select the **Sage 300 UI Customization Wizard**
-* Select the **Uninstall** button
-* Select **Yes** to confirm uninstallation of the package
-* Select **Yes** to re-start Visual Studio
-* The package has been uninstalled
-
-> **This step is only required if the package is installed**

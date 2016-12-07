@@ -61,3 +61,9 @@ enhancement logic. This will be addressed in a future release.
 This sample is no longer applicable as the newer version of the OData specification does not allow
 the behavior being demonstated. However, the sample is being left in the SDK merely for reference
 and potential future enhancement.
+
+## Resx Generation
+
+Sample source files are provided as examples of a Resource Information Text File and Settings Text
+File, which can be supplied to the Resx Generation Utility. Refer to the Resx Generation Utility document
+located in the **docs\utilities** folder for details.

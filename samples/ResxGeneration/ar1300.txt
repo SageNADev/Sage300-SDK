@@ -1,0 +1,2 @@
+D:\Dev\VB\AR\UIs;arlocal.rc;D:\Dev\VB\AR\UIs\Resources;Common
+D:\Dev\VB\AR\UIs;ar1300.rc;D:\Dev\VB\AR\UIs\Resources;Customer
