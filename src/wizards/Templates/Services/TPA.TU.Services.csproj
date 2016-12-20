@@ -97,7 +97,7 @@
   <ItemGroup>
     <ProjectReference Include="..\$companynamespace$.$applicationid$.BusinessRepository\$companynamespace$.$applicationid$.BusinessRepository.csproj">
       <Project>{63bd6794-9f07-4a15-9a25-0ea210569830}</Project>
-      <Name>$companynamespace$.$applicationid$BusinessRepository</Name>
+      <Name>$companynamespace$.$applicationid$.BusinessRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\$companynamespace$.$applicationid$.Interfaces\$companynamespace$.$applicationid$.Interfaces.csproj">
       <Project>{7ffa0bdc-c3c9-405a-8d01-a169396ee59f}</Project>
