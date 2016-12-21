@@ -1,10 +1,10 @@
 @echo off
-REM
-REM
-REM
+REM Sage300SolutionWizard prebuild
+REM - copy to \resources the common .props file for project references
 
 REM Usage example:
-REM  Prebuild.bat <ProjectTemplates path base directory>
+REM  Prebuild.bat
+
 setlocal
 set myDir=%~dp0
 
