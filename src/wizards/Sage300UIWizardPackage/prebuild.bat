@@ -1,10 +1,11 @@
 @echo off
-REM
-REM
-REM
+REM Sage300UIWizardPackage prebuild
+REM - get columbus-web artifacts if env variable EXTRACT_FROM_REPO set to 1
+REM - compress to zip the wizard package
 
 REM Usage example:
 REM  Prebuild.bat <ProjectTemplates path base directory>
+
 setlocal
 set projectTemplatesBaseDir=%~dp0
 if not [%1]==[] (
