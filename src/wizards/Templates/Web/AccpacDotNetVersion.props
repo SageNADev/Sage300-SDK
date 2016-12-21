@@ -1,5 +1,0 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition=" '$(RefVersionAccpacDotNet)' == '' ">
-    <RefVersionAccpacDotNet>6.4.0.0</RefVersionAccpacDotNet>
-  </PropertyGroup>
-</Project>
