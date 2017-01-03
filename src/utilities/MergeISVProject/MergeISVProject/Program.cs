@@ -36,6 +36,7 @@ namespace MergeISVProject
         /// <remarks>args[2] is the menu file name (i.e. XXMenuDetails.xml) </remarks>
         /// <remarks>args[3] is the configuration name (i.e. debug or release)</remarks>
         /// <remarks>args[4] is the framework directory containing the aspnet_compile.exe</remarks>
+        /// <remarks>args[5] is the optional parameter /nodeploy</remarks>
         static void Main(string[] args)
         {
             // Check for arguments
@@ -43,41 +44,55 @@ namespace MergeISVProject
             {
                 if (args.Length >= 2)
                 {
-                    WriteErrorFile(args[1], "The post-build utility MergeISVProject must be invoked with these parameters:{solutionFileName} {WebProjectPath} {MenuFileName} {ConfigurationName} {FrameworkDir}");
+                    WriteErrorFile(args[1], "The post-build utility MergeISVProject must be invoked with these parameters: {solutionFileName} {WebProjectPath} {MenuFileName} {ConfigurationName} {FrameworkDir} [/nodeploy]");
                 }
                 // Unsuccessful
                 return;
             }
 
-            var pathFrom = args[1];
+            var pathWebProj = args[1];
             var menuFileName = args[2];
             var configName = args[3];
             var pathFramework = args[4];
             var moduleId = menuFileName.Substring(0, 2);
-            var pathSageWeb = GetSage300OnlinePath();
+            var pathSage300 = GetSage300Path();
+
+
+            var nodeploy = false;  // flag indicating if the files should be deployed [copied] to the Sage 300 online folder
+            if (args.Length == 6)
+            {
+               nodeploy = (args[5].ToLower() == "/nodeploy");
+            }
 
             // Delete Error file, if exists
-            DeleteErrorFile(pathFrom);
+            DeleteErrorFile(pathWebProj);
 
-            // Exit without error IF configuration is nor Release OR Sage Online folder does not exist (Sage 300 Web UI's not installed)
-            if (configName.ToLower() != "release" || string.IsNullOrEmpty(pathSageWeb))
+            // Exit without error IF configuration is not Release OR Sage 300 folder does not exist (Sage 300 not installed).
+            if (configName.ToLower() != "release" || string.IsNullOrEmpty(pathSage300))
             {
                 return;
             }
 
-            // compile the views and copy to sage online web
-            if (CopyFiles(pathFrom, pathSageWeb, menuFileName))
+            // Create [or empty if already present] the Web\Deploy folder
+            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
+            if (Directory.Exists(pathDeploy))
             {
-                CompiledCopyFiles(pathFrom, moduleId, pathSageWeb, pathFramework);
+               Directory.Delete(pathDeploy, true);
             }
+            Directory.CreateDirectory(pathDeploy);
 
-            // copy resource satellite dlls for localization
-            CopyResourceSatelliteFiles(pathFrom, pathSageWeb, moduleId);
-
+            // compile and copy files to web project deploy folder
+            if (StageFiles(pathWebProj, menuFileName, pathFramework))
+            {
+               if (!nodeploy)
+               { 
+                  DeployFiles(pathWebProj, pathSage300, menuFileName);
+               }
+            }
         }
 
         /// <summary>
-        /// Copy files to Sage online web directories
+        /// Copy files from one folder to another.
         /// </summary>
         /// <param name="pathFrom">Source path</param>
         /// <param name="pattern">Copy pattern</param>
@@ -98,37 +113,32 @@ namespace MergeISVProject
         }
 
         /// <summary>
-        /// Compiled the views and copy compiled files to Sage online web directories
+        /// Compile the views and copy compiled files to web project deploy (staging) folder.
         /// </summary>
-        /// <param name="pathFrom">Source path</param>
-        /// <param name="moduleId">Module Id</param>
-        /// <param name="pathSageWeb">Sage web path</param>
+        /// <param name="pathWebProj">Web Project path</param>
+        /// <param name="menuFileName">Menu file name</param>
         /// <param name="pathFramework">Framework path</param>
-        private static void CompiledCopyFiles(string pathFrom, string moduleId, string pathSageWeb, string pathFramework)
+        private static bool StageFiles(string pathWebProj, string menuFileName, string pathFramework)
         {
-            var pathDeploy = Path.Combine(pathFrom, "Deploy");
-            if (Directory.Exists(pathDeploy))
-            {
-                Directory.Delete(pathDeploy, true);
-            }
-            Directory.CreateDirectory(pathDeploy);
-
+            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
             var pathSource = Path.Combine(pathDeploy, "Source");
             var pathBuild = Path.Combine(pathDeploy, "Build");
-            var pathBinFrom = Path.Combine(pathFrom, "Bin");
+            var pathBinFrom = Path.Combine(pathWebProj, "Bin");
             var pathBinTo = Path.Combine(pathSource, "Bin");
             var pathAreas = Path.Combine(pathSource, "Areas");
-            var pathAreaFrom = Path.Combine(pathFrom, @"Areas\" + moduleId + @"\Views");
-            var pathAreaTo = Path.Combine(pathSource, @"Areas\" + moduleId + @"\Views");
+            var moduleId = menuFileName.Substring(0, 2);
+            var pathAreaViewsFrom = Path.Combine(pathWebProj, @"Areas\" + moduleId + @"\Views");
+            var pathAreaViewsTo = Path.Combine(pathSource, @"Areas\" + moduleId + @"\Views");
 
             // prepare compiled directories and files
+            Directory.CreateDirectory(pathBuild);
             Directory.CreateDirectory(pathSource);
             Directory.CreateDirectory(pathBinTo);
             Directory.CreateDirectory(pathAreas);
-            Directory.CreateDirectory(pathAreaTo);
+            Directory.CreateDirectory(pathAreaViewsTo);
 
-            File.Copy(Path.Combine(pathFrom, "Web.config"), Path.Combine(pathSource, "Web.config"));
-            FileSystem.CopyDirectory(pathAreaFrom, pathAreaTo);
+            File.Copy(Path.Combine(pathWebProj, "Web.config"), Path.Combine(pathSource, "Web.config"));
+            FileSystem.CopyDirectory(pathAreaViewsFrom, pathAreaViewsTo);
 
             string[] patterns = { "System.*.dll", "Sage.CA.SBS.ERP.*.dll", "*.Web.Infrastructure.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
             foreach (var pattern in patterns)
@@ -147,46 +157,39 @@ namespace MergeISVProject
             };
             p.Start();
             p.WaitForExit();
+            
+#if _maybe_later
 
-            //copy compiled files to sage online web area and bin directory
-            var pathBuildView = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Views");
-            var pathSageView = Path.Combine(pathSageWeb, @"Online\Web\Areas\" + moduleId + @"\Views");
+            // CONSIDER FOR A FUTURE UPDATE.  
+            // THE IDEA IS TO RETASK THE DEPLOY FOLDER AS A STAGING FOLDER THAT CONTAINS ALL FILES NEEDED 
+            // IN ORDER TO DEPLOY A PROJECT (VIA COPY).
+            // AT PRESENT THE WEB PROJECT DEPLOY FOLDER DOES NOT CONTAIN ALL REQUIRED FILES. 
+            // IT ALSO CONTAINS EXTRA FILES THAT SHOULD NOT BE DEPLOYED WITH AN ISV PROJECT.
+            
+            // Copy bootstrapper file
+            var bootstrapFileName = moduleId + "bootstrapper.xml";
+            File.Copy(Path.Combine(pathWebProj, bootstrapFileName), Path.Combine(pathBuild, bootstrapFileName), true);
 
-            // Do not copy IF compile was not successful (determined by existance of folder)
-            if (!Directory.Exists(pathBuildView))
-            {
-                WriteErrorFile(pathFrom, "The post-build utility MergeISVProject could not compile the razor view(s). While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
-                // Unsuccessful
-                return;
-            }
+            // Copy menu file to App_Data\MenuDetail
+            Directory.CreateDirectory(Path.Combine(pathBuild, "App_Data"));
+            Directory.CreateDirectory(Path.Combine(pathBuild, @"App_Data\MenuDetail"));
+            File.Copy(Path.Combine(pathWebProj, menuFileName), Path.Combine(pathBuild, @"App_Data\MenuDetail", menuFileName), true);
 
-            FileSystem.CopyDirectory(pathBuildView, pathSageView, true);
+            // Copy the scripts folder
+            var pathAreaScriptsFrom = Path.Combine(pathWebProj, @"Areas\" + moduleId + @"\Scripts");
+            var pathAreaScriptsTo = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Scripts");
+            Directory.CreateDirectory(pathAreaScriptsTo);
+            FileSystem.CopyDirectory(pathAreaScriptsFrom, pathAreaScriptsTo);
+#endif
 
-            var pathBuildBin = Path.Combine(pathBuild, "bin");
-            var pathSageBin = Path.Combine(pathSageWeb, @"Online\Web\bin");
-            var pathSageWorker = Path.Combine(pathSageWeb, @"Online\Worker");
-
-            string[] ps = { "*.compiled", "App_Web_*.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
-            foreach (var pattern in ps)
-            {
-                CopyFiles(pathBuildBin, pattern, pathSageBin, true);
-            }
-
-            string[] psWorker = { "*." + moduleId + ".*.dll" };
-            foreach (var pattern in psWorker)
-            {
-                CopyFiles(pathBuildBin, pattern, pathSageWorker, true);
-            }
-
-            // remove temp deploy build directory
-            // Directory.Delete(pathDeploy, true);
+            return true;
         }
 
         /// <summary>
-        /// Get Sage online installed path
+        /// Get Sage 300 install path
         /// </summary>
-        /// <returns>Sage 300 online path</returns>
-        private static string GetSage300OnlinePath()
+        /// <returns>Sage 300 install path</returns>
+        private static string GetSage300Path()
         {
             const string sageRegKey = "SOFTWARE\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
             const string sage64RegKey = "SOFTWARE\\WOW6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
@@ -197,26 +200,27 @@ namespace MergeISVProject
         }
 
         /// <summary>
-        /// Copy bootStrapper, menuDetails and scripts files
+        /// Copy bootStrapper, menuDetails and scripts files to the Sage Online folder
         /// </summary>
-        /// <param name="pathFrom">Source path</param>
-        /// <param name="pathTo">Destination path</param>
-        /// <param name="menuFileName">menu file name</param>
+        /// <param name="pathWebProj">Web Project path</param>
+        /// <param name="pathSage300">Sage 300 folder</param>
+        /// <param name="menuFileName">Menu file name</param>
         /// <returns>True if successful otherwise false</returns>
-        private static bool CopyFiles(string pathFrom, string pathTo, string menuFileName)
+        private static bool DeployFiles(string pathWebProj, string pathSage300, string menuFileName)
         {
-            const string searhPattern = "*bootstrapper.xml";
-            var pathWeb = Path.Combine(pathTo, "OnLine", "Web");
-            var pathWorker = Path.Combine(pathTo, "OnLine", "Worker");
-            if (!Directory.Exists(pathWeb))
+            const string searchPattern = "*bootstrapper.xml";
+            var pathSageOnline = Path.Combine(pathSage300, @"Online");
+            var pathOnlineWeb = Path.Combine(pathSageOnline, "Web");
+            var pathOnlineWorker = Path.Combine(pathSageOnline, "Worker");
+            if (!Directory.Exists(pathOnlineWeb))
             {
-                WriteErrorFile(pathFrom, "The post-build utility MergeISVProject could not find the Online Web folder for the Web UIs. While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
+                WriteErrorFile(pathWebProj, "The post-build utility MergeISVProject could not find the Online Web folder for the Web UIs. While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
                 // Unsuccessful
                 return false;
             }
 
             // Copy bootstrapper.xml file
-            var bootFiles = Directory.GetFiles(pathFrom, searhPattern);
+            var bootFiles = Directory.GetFiles(pathWebProj, searchPattern);
             foreach (var srcfile in bootFiles)
             {
                 var fileName = Path.GetFileName(srcfile);
@@ -224,16 +228,16 @@ namespace MergeISVProject
                 {
                     continue;
                 }
-                var desFile = Path.Combine(pathWeb, fileName);
+                var desFile = Path.Combine(pathOnlineWeb, fileName);
                 File.Copy(srcfile, desFile, true);
 
-                desFile = Path.Combine(pathWorker, fileName);
+                desFile = Path.Combine(pathOnlineWorker, fileName);
                 File.Copy(srcfile, desFile, true);
             }
 
             // Copy menu file to App_Data menuDetails and all sub directory
-            var pathMenuFrom = Path.Combine(pathFrom, menuFileName);
-            var pathMenuDir = Path.Combine(pathWeb, "App_Data", "MenuDetail");
+            var pathMenuFrom = Path.Combine(pathWebProj, menuFileName);
+            var pathMenuDir = Path.Combine(pathOnlineWeb, "App_Data", "MenuDetail");
             var pathMenuTo = Path.Combine(pathMenuDir, menuFileName);
 
             if (Directory.Exists(pathMenuDir))
@@ -247,7 +251,7 @@ namespace MergeISVProject
             }
 
             // Copy areas scripts files
-            var pathAreaDir = Path.Combine(pathFrom, "Areas");
+            var pathAreaDir = Path.Combine(pathWebProj, "Areas");
             if (Directory.Exists(pathAreaDir))
             {
                 foreach (var dir in Directory.GetDirectories(pathAreaDir))
@@ -255,7 +259,7 @@ namespace MergeISVProject
                     if (!dir.EndsWith("Core") && !dir.EndsWith("Shared"))
                     {
                         var paths = dir.Split('\\');
-                        var pathSubArea = Path.Combine(pathWeb, "Areas", paths[paths.Length - 1]);
+                        var pathSubArea = Path.Combine(pathOnlineWeb, "Areas", paths[paths.Length - 1]);
                         var pathFromScripts = Path.Combine(dir, "Scripts");
                         var pathToScripts = Path.Combine(pathSubArea, "Scripts");
                         FileSystem.CopyDirectory(pathFromScripts, pathToScripts, true);
@@ -263,21 +267,57 @@ namespace MergeISVProject
                 }
             }
 
+            //copy compiled files from deploy folder to sage online web area and bin directory
+            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
+            var pathSource = Path.Combine(pathDeploy, "Source");
+            var pathBuild = Path.Combine(pathDeploy, "Build");
+            var moduleId = menuFileName.Substring(0, 2);
+            var pathBuildView = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Views");
+            var pathSageView = Path.Combine(pathSageOnline, @"Web\Areas\" + moduleId + @"\Views");
+
+            // Do not copy IF compile was not successful (determined by existance of folder)
+            if (!Directory.Exists(pathBuildView))
+            {
+               WriteErrorFile(pathWebProj, "The post-build utility MergeISVProject could not compile the razor view(s). While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
+               // Unsuccessful
+               return false;
+            }
+
+            FileSystem.CopyDirectory(pathBuildView, pathSageView, true);
+
+            var pathBuildBin = Path.Combine(pathBuild, "bin");
+            var pathSageBin = Path.Combine(pathOnlineWeb, "bin");
+
+            string[] ps = { "*.compiled", "App_Web_*.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
+            foreach (var pattern in ps)
+            {
+               CopyFiles(pathBuildBin, pattern, pathSageBin, true);
+            }
+
+            string[] psWorker = { "*." + moduleId + ".*.dll" };
+            foreach (var pattern in psWorker)
+            {
+               CopyFiles(pathBuildBin, pattern, pathOnlineWorker, true);
+            }
+
+            // copy resource satellite dlls for localization
+            CopyResourceSatelliteFiles(pathWebProj, pathSage300, moduleId);
+
             return true;
         }
 
         /// <summary>
         /// Copy resource satellite dlls to web bin and worker folder
         /// </summary>
-        /// <param name="pathFrom">source file path</param>
-        /// <param name="pathTo">source file destination path</param>
+        /// <param name="pathWebProj">source file path</param>
+        /// <param name="pathSage300">Sage 300 folder</param>
         /// <param name="moduleId">module id</param>
-        private static void CopyResourceSatelliteFiles(string pathFrom, string pathTo, string moduleId)
+        private static void CopyResourceSatelliteFiles(string pathFrom, string pathSage300, string moduleId)
         {
             string[] languages = { "es", "fr-CA", "zh-Hans", "zh-Hant"};
             var pathBinFrom = Path.Combine(pathFrom, "Bin");
-            var pathWebBinTo = Path.Combine(pathTo, @"Online\Web\Bin");
-            var pathWorkerTo = Path.Combine(pathTo, @"Online\Worker");
+            var pathWebBinTo = Path.Combine(pathSage300, @"Online\Web\Bin");
+            var pathWorkerTo = Path.Combine(pathSage300, @"Online\Worker");
             var pattern = "*." + moduleId + ".*.dll";
 
             foreach (var language in languages)
@@ -334,8 +374,6 @@ namespace MergeISVProject
             {
                 // Ignore error
             }
-
         }
-
     }
 }
