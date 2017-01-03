@@ -2,7 +2,7 @@
 
 using System.Web.Optimization;
 
-namespace $companynamespace$.Web
+namespace $companynamespace$.$applicationid$.Web
 {
     /// <summary>
     /// Class for bundle registration

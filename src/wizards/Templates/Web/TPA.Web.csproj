@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>$companynamespace$.Web</RootNamespace>
-    <AssemblyName>$companynamespace$.Web</AssemblyName>
+    <RootNamespace>$companynamespace$.$applicationid$.Web</RootNamespace>
+    <AssemblyName>$companynamespace$.$applicationid$.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">$sage300webfolder$</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -47,11 +47,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACCPAC.Advantage, Version='$(RefVersionAccpacDotNet)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86">
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="$(RefAccpacAdvantage)">
+      <SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>
     </Reference>
-    <Reference Include="ACCPAC.Advantage.Types, Version='$(RefVersionAccpacDotNet)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="$(RefAccpacAdvantageTypes)">
+      <SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

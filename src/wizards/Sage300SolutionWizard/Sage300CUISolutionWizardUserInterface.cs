@@ -113,14 +113,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 var sourceFilenameAndParameters = csTemplatePath + proj + @".zip\" + templateFilename + "|" + parameters;
                 if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
                 {
-                    var destFolder = Path.Combine(_destinationFolder, _namespace + "." + proj);
+                    var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
 
                     // Before the web project is created, the props file must be manually copied first since the web csproj file attempts
                     // to import it to resolve ACCPAC references
                     File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
-                        Properties.Resources.AccpacDotNetVersion);
+                                            Properties.Resources.AccpacDotNetVersion);
 
-                    sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + proj, false);
+                    sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + _applicationId + "." + proj, false);
 
                     // Newly added web project (first one added)
                     var item = sln.Projects.GetEnumerator();

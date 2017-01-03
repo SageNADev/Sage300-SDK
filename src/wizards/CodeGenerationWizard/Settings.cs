@@ -81,6 +81,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public List<string> ResourceKeys { get; set; }
         /// <summary> WorkflowKindId </summary>
         public Guid WorkflowKindId { get; set; }
+        /// <summary> Web Project Includes Module </summary>
+        public bool WebProjectIncludesModule { get; set; }
         #endregion
     }
 

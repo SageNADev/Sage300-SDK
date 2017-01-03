@@ -31,7 +31,9 @@
     var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.ModelName];
 
-    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+
 #>
 @* <#=copyright#> *@
 
