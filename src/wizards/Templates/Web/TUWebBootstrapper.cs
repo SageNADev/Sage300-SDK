@@ -9,9 +9,9 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
 
-using Constants=$companynamespace$.Web.Areas.$applicationid$.Constants;
+using Constants=$companynamespace$.$applicationid$.Web.Areas.$applicationid$.Constants;
 
-namespace $companynamespace$.Web
+namespace $companynamespace$.$applicationid$.Web
 {
     /// <summary>
     /// $applicationid$ Bootstrapper Class

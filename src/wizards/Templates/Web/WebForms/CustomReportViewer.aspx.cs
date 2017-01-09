@@ -15,7 +15,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Landlord;
 
-namespace $companynamespace$.Web.WebForms
+namespace $companynamespace$.$applicationid$.Web.WebForms
 {
    /// <summary>
    /// Generate Custom Crystal Report

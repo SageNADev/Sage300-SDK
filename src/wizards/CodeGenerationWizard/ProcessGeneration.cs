@@ -1222,19 +1222,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Behavior JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Repository.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
                 WebKey, SubFolderWebScriptsKey);
         }
@@ -1314,19 +1314,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Behavior JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Repository.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
                 WebKey, SubFolderWebScriptsKey);
 

@@ -196,6 +196,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.View
             
             #line default
             #line hidden
+            this.Write(".");
+            
+            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(".");
             
             #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));

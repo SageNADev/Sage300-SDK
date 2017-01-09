@@ -1,6 +1,6 @@
 ﻿/* Copyright (c) $year$ $companyname$.  All rights reserved. */
 
-namespace $companynamespace$.Web.Areas.$applicationid$.Constants
+namespace $companynamespace$.$applicationid$.Web.Areas.$applicationid$.Constants
 {
     /// <summary>
     /// Constants used across $applicationid$ module

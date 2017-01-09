@@ -152,7 +152,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
     var entityName = view.Properties[BusinessView.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
 
-    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+
     var enumsCount = view.Enums.Count;
 
 
@@ -161,7 +163,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("// ");
             
-            #line 38 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -181,35 +183,35 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Finder;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 using ");
             
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.Services;\r\nusing ");
             
-            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n");
             
-            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 55 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
 	if (enumsCount > 0)
 	{
@@ -219,21 +221,21 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums;\r\n");
             
-            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
 	}
 
@@ -242,63 +244,63 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers.Finder\r\n{\r\n    /// <summary>\r\n    /// Finder class for ");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">Where T is type of <see cref=\"");
             
-            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\"/></typeparam>\r\n    public class Find");
             
-            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal<T> : BaseFindControllerInternal<T, I");
             
-            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Service<T>>, IFinder\r\n        where T : ");
             
-            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -306,7 +308,7 @@ using ");
             this.Write(", new()\r\n    {\r\n        #region Private variables\r\n\r\n        #endregion\r\n\r\n      " +
                     "  #region Constructor\r\n\r\n        /// <summary>\r\n        /// Constructor for ");
             
-            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 83 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -314,7 +316,7 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"context\">Context</param>\r\n    " +
                     "    public Find");
             
-            #line 84 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -323,21 +325,21 @@ using ");
                     "    }\r\n\r\n        #endregion\r\n\r\n        #region Public methods\r\n\r\n        /// <su" +
                     "mmary>\r\n        /// Get first or default ");
             
-            #line 94 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 98 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>Get first or default ");
             
-            #line 97 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 99 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -345,7 +347,7 @@ using ");
             this.Write("</returns>\r\n        public virtual ModelBase Get(string id)\r\n        {\r\n         " +
                     "   Expression<Func<T, bool>> filter = param => param.");
             
-            #line 100 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 102 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -369,7 +371,7 @@ using ");
             {
 ");
             
-            #line 117 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 119 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
             // Iterate fields collection
             for (var i = 0; i < view.Fields.Count; i++)
@@ -383,27 +385,27 @@ using ");
             #line hidden
             this.Write("                \"");
             
-            #line 125 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             
-            #line 125 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? "String" : string.Empty)));
             
             #line default
             #line hidden
             this.Write("\"");
             
-            #line 125 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((i.Equals(view.Fields.Count -1) ? string.Empty : ",")));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 126 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
             }
 
@@ -424,7 +426,7 @@ using ");
             {
 ");
             
-            #line 141 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 143 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
             // Iterate fields collection
             for (var i = 0; i < view.Fields.Count; i++)
@@ -439,34 +441,34 @@ using ");
             #line hidden
             this.Write("                new GridField\r\n                {\r\n                    field = \"");
             
-            #line 152 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             
-            #line 152 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? "String" : string.Empty)));
             
             #line default
             #line hidden
             this.Write("\",\r\n                    title = ");
             
-            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                 // Assign attributes based upon type
                 var attributes = field.Type.Equals(BusinessDataType.Decimal) ||
@@ -480,21 +482,21 @@ using ");
             #line hidden
             this.Write("                    attributes = ");
             
-            #line 162 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 164 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attributes));
             
             #line default
             #line hidden
             this.Write(",\r\n                    headerAttributes = ");
             
-            #line 163 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 165 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attributes));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 164 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                 // Assign data type / Presentation List
                 switch (field.Type)
@@ -507,7 +509,7 @@ using ");
             #line hidden
             this.Write("                    dataType = FinderConstant.DataTypeAmount,\r\n");
             
-            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                     case BusinessDataType.Integer:
@@ -518,7 +520,7 @@ using ");
             #line hidden
             this.Write("                    dataType = FinderConstant.DataTypeNumber\r\n");
             
-            #line 178 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                     case BusinessDataType.String:
@@ -531,21 +533,21 @@ using ");
             #line hidden
             this.Write("                    PresentationList = EnumUtility.GetItemsList<");
             
-            #line 185 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(">()");
             
-            #line 185 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(!view.Enums.ContainsKey(fieldName) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 186 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 188 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         }
                         else
@@ -556,14 +558,14 @@ using ");
             #line hidden
             this.Write("                    dataType = FinderConstant.DataTypeString");
             
-            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 193 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(!view.Enums.ContainsKey(fieldName) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 192 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 194 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         }
                         break;
@@ -575,14 +577,14 @@ using ");
             this.Write("                    dataType = FinderConstant.DataTypeDate,\r\n                    " +
                     "template = Utilities.GetGridTemplate(\"");
             
-            #line 198 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 200 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\")\r\n");
             
-            #line 199 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 201 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                     case BusinessDataType.Boolean:
@@ -594,7 +596,7 @@ using ");
                     "  PresentationList = EnumUtility.GetItemsList<Sage.CA.SBS.ERP.Sage300.Common.Mod" +
                     "els.Enums.BooleanType>()\r\n");
             
-            #line 205 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 207 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                     case BusinessDataType.TimeSpan:
@@ -604,7 +606,7 @@ using ");
             #line hidden
             this.Write("                    dataType = FinderConstant.DataTypeTime\r\n");
             
-            #line 210 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 212 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                     default:
@@ -614,14 +616,14 @@ using ");
             #line hidden
             this.Write("                    PresentationList = EnumUtility.GetItemsList<");
             
-            #line 214 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 216 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(">()\r\n");
             
-            #line 215 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 217 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         break;
                 }
@@ -637,7 +639,7 @@ using ");
             this.Write("                    customAttributes = \r\n                        new Dictionary<s" +
                     "tring, string>\r\n                        {\r\n");
             
-            #line 227 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 229 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                     // String attributes
                     if (field.Type.Equals(BusinessDataType.String))
@@ -648,21 +650,21 @@ using ");
             #line hidden
             this.Write("                            {FinderConstant.CustomAttributeMaximumLength, \"");
             
-            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 234 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Size));
             
             #line default
             #line hidden
             this.Write("\"}");
             
-            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 234 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(((field.IsAlphaNumeric || field.IsNumeric || field.IsUpperCase) ? "," : string.Empty)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 233 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 235 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         // Is numeric?
                         if (field.IsNumeric)
@@ -675,14 +677,14 @@ using ");
                     "n},\r\n                            {FinderConstant.CustomAtrributeFormatTextBox, F" +
                     "inderConstant.Numeric}");
             
-            #line 239 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 241 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(((field.IsAlphaNumeric || field.IsUpperCase) ? "," : string.Empty)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 240 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 242 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                         }
 
@@ -695,14 +697,14 @@ using ");
             #line hidden
             this.Write("                            {\"class\", FinderConstant.CssClassTxtUpper}");
             
-            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 249 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(((field.IsAlphaNumeric) ? "," : string.Empty)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 248 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                             // Is alphanumeric?
                             if (field.IsAlphaNumeric)
@@ -714,7 +716,7 @@ using ");
             this.Write("                            {FinderConstant.CustomAtrributeFormatTextBox, FinderC" +
                     "onstant.AlphaNumeric}\r\n");
             
-            #line 254 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                             }
                         }
@@ -732,7 +734,7 @@ using ");
                             {""class"", FinderConstant.CssClassInputNumberRightAlign}
 ");
             
-            #line 266 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 268 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                     }
 
@@ -741,7 +743,7 @@ using ");
             #line hidden
             this.Write("                        }\r\n");
             
-            #line 270 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 272 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
                 }
                 else
@@ -753,14 +755,14 @@ using ");
             #line hidden
             this.Write("                }");
             
-            #line 276 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 278 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((i.Equals(view.Fields.Count - 1) ? string.Empty : ",")));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 277 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
+            #line 279 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Finder.tt"
 
             }
 

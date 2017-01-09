@@ -8,7 +8,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 
-namespace $companynamespace$.Web.WebForms
+namespace $companynamespace$.$applicationid$.Web.WebForms
 {
     /// <summary>
     /// Class BaseWebPage.

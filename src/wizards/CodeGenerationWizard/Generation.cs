@@ -78,6 +78,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Area Structure exists for Web Project </summary>
         private bool _doesAreasExist;
 
+        /// <summary> Web Project includes Module </summary>
+        private bool _webProjectIncludesModule;
         #endregion
 
         #region Delegates
@@ -200,6 +202,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                             // Store for later use in generation
                             _doesAreasExist = areaStructure;
+                            _webProjectIncludesModule = false;
 
                             if (areaStructure)
                             {
@@ -211,6 +214,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                                             select directory.Split('\\'))
                                 {
                                     module = moduleParts[moduleParts.Length - 1];
+                                    
+                                    // Determine if module is in project name
+                                    _webProjectIncludesModule = projectName.Contains("." + module + ".");
+
                                     break;
                                 }
                             }
@@ -966,7 +973,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Extension = GetExtension(repositoryType),
                 ResourceExtension = GetResourceExtension(repositoryType),
                 DoesAreasExist = _doesAreasExist,
-                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty
+                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty,
+                WebProjectIncludesModule = _webProjectIncludesModule
             };
         }
 

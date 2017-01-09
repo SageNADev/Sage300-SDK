@@ -3,7 +3,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace $companynamespace$.Web
+namespace $companynamespace$.$applicationid$.Web
 {
     /// <summary>
     /// Class $applicationid$AreaRegistration.

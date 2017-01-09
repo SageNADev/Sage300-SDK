@@ -19,7 +19,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Logging.Watcher;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
 
-namespace $companynamespace$.Web.WebForms
+namespace $companynamespace$.$applicationid$.Web.WebForms
 {
     /// <summary>
     /// Generate Crystal Report
