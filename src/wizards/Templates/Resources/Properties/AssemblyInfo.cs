@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("$companynamespace$.$applicationid$.Resources")]
-[assembly: AssemblyCopyright("Copyright © $year$ $companyname$")]
+[assembly: AssemblyCopyright("Copyright (c) $year$ $companyname$  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
