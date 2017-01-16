@@ -390,14 +390,33 @@ $(document).ready(function() {
         });
     });
 
-    $('.feature_nav').click(function () {
-        $(this).toggleClass('active');
+    $('#homeNav').hover(function () {
+        $('.feature_nav').removeClass('active');
     });
 
     $('.global_nav').hover(function () {
         $('.feature_nav').removeClass('active');
     });
 
+	$("#btnIntelligence")
+        .click(function () {
+            $('.feature_nav').removeClass("active");
+    });
+
+    $("#SIR")
+        .hover(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
+    });
+
+    $(".feature_nav")
+        .hover(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
+    });
+	
     //onload event handling on iframes
     $('#screenLayout').children().each(function() {
         $(this).load(function(e) {
@@ -672,7 +691,8 @@ $(document).ready(function() {
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
-
+        $('.feature_nav').removeClass("active");
+		
         //Sage Intelligence
         var intelligence = $(this).attr("data-isIntelligence");
         var fileurl = $(this).attr("data-url");
