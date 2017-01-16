@@ -1126,24 +1126,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // btnNext
             // 
             this.btnNext.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnNext.AutoSize = false;
             this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(58, 22);
+            this.btnNext.Size = new System.Drawing.Size(35, 22);
             this.btnNext.Text = "Next";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
             this.btnBack.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnBack.AutoSize = false;
             this.btnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(58, 22);
+            this.btnBack.Size = new System.Drawing.Size(36, 22);
             this.btnBack.Text = "Back";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
