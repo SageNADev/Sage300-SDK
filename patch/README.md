@@ -28,14 +28,17 @@ for the patch files.
   Wizard Package has been added to the **bin** folder.
 * It was discovered that the Customization Document and Sample #1 for Customizations were not
   in-sync. The document has been updated in the **docs/customization** folder and the sample has been
-  updated in the **samples\customization** folder.
+  updated in the **samples/customization** folder.
   
 ### Installation Instructions
 
 * Since the patch files will be copied to the Sage 300 Online folders, the **Sage300** web site must be stopped 
-  via the IIS Manager and the **Sage.CNA.WindowsService"" must be stopped via the Services Manager. 
+  via the IIS Manager and the **Sage.CNA.WindowsService** must be stopped via the Services Manager. 
   You will re-start these after the files have been copied.
 
+> Before copying and overwriting the files listed below, it is recommeneded to copy these files
+  to a safe location before overwriting.
+  
 The following files will need to be copied to the Sage 300 Online folders:
 
 * Copy **patch/TaskDock-Menu-BreadCrumb.js** to your Sage 300 Online Web's **Scripts/Portal** folder
