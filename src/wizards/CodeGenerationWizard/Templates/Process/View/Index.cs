@@ -210,14 +210,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             
             #line default
             #line hidden
-            this.Write(".");
             
             #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
-            this.Write(".");
             
             #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
