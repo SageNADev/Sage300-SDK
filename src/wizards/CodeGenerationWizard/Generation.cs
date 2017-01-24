@@ -81,6 +81,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Web Project includes Module </summary>
         private bool _webProjectIncludesModule;
 
+        /// <summary> Include English Resource </summary>
+        private bool _includeEnglish;
+
+        /// <summary> Include Chinese Simplified Resource </summary>
+        private bool _includeChineseSimplified;
+
+        /// <summary> Include Chinese Traditional Resource </summary>
+        private bool _includeChineseTraditional;
+
+        /// <summary> Include Spanish Resource </summary>
+        private bool _includeSpanish;
+
+        /// <summary> Include French Resource </summary>
+        private bool _includeFrench;
+
         #endregion
 
         #region Delegates
@@ -187,6 +202,41 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         _companyNamespace = projectName.Substring(0,
                             projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
+                    }
+
+                    // Determine which language resources to include
+                    if (key.Equals(ProcessGeneration.ResourcesKey))
+                    {
+                        // Iterate files in resources project
+                        foreach (ProjectItem projectItem in project.ProjectItems)
+                        {
+                            // Add which language files based upon solutions menu files
+                            if (projectItem.Name.Equals("MenuResx.resx"))
+                            {
+                                // Add to project
+                                _includeEnglish = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.zh-Hans.resx"))
+                            {
+                                // Add to project
+                                _includeChineseSimplified = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.zh-Hant.resx"))
+                            {
+                                // Add to project
+                                _includeChineseTraditional = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.es.resx"))
+                            {
+                                // Add to project
+                                _includeSpanish = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.fr-CA.resx"))
+                            {
+                                // Add to project
+                                _includeFrench = true;
+                            }
+                        }
                     }
 
                     // The Web project name is different from other ones. It should be derived from the folder name
@@ -987,7 +1037,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ResourceExtension = GetResourceExtension(repositoryType),
                 DoesAreasExist = _doesAreasExist,
                 WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty,
-                WebProjectIncludesModule = _webProjectIncludesModule
+                WebProjectIncludesModule = _webProjectIncludesModule,
+                includeEnglish = _includeEnglish,
+                includeChineseSimplified = _includeChineseSimplified,
+                includeChineseTraditional = _includeChineseTraditional,
+                includeSpanish = _includeSpanish,
+                includeFrench = _includeFrench
             };
         }
 

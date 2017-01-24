@@ -39,6 +39,13 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblStepDescription = new System.Windows.Forms.Label();
             this.lblStepTitle = new System.Windows.Forms.Label();
+            this.pnlResourceFiles = new System.Windows.Forms.Panel();
+            this.lblResourceFilesHelp = new System.Windows.Forms.Label();
+            this.chkFrench = new System.Windows.Forms.CheckBox();
+            this.chkSpanish = new System.Windows.Forms.CheckBox();
+            this.chkChineseTraditional = new System.Windows.Forms.CheckBox();
+            this.chkChineseSimplified = new System.Windows.Forms.CheckBox();
+            this.chkEnglish = new System.Windows.Forms.CheckBox();
             this.pnlGenerateSolution = new System.Windows.Forms.Panel();
             this.lblGenerateHelp = new System.Windows.Forms.Label();
             this.pnlKendo = new System.Windows.Forms.Panel();
@@ -61,6 +68,7 @@
             this.splitBase.Panel2.SuspendLayout();
             this.splitBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlResourceFiles.SuspendLayout();
             this.pnlGenerateSolution.SuspendLayout();
             this.pnlKendo.SuspendLayout();
             this.tbrMain.SuspendLayout();
@@ -136,6 +144,7 @@
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitBase.Panel2.Controls.Add(this.pnlResourceFiles);
             this.splitBase.Panel2.Controls.Add(this.pnlGenerateSolution);
             this.splitBase.Panel2.Controls.Add(this.pnlKendo);
             this.splitBase.Panel2.Controls.Add(this.tbrMain);
@@ -178,10 +187,85 @@
             this.lblStepTitle.TabIndex = 4;
             this.lblStepTitle.Text = "This is the title of the step";
             // 
+            // pnlResourceFiles
+            // 
+            this.pnlResourceFiles.Controls.Add(this.lblResourceFilesHelp);
+            this.pnlResourceFiles.Controls.Add(this.chkFrench);
+            this.pnlResourceFiles.Controls.Add(this.chkSpanish);
+            this.pnlResourceFiles.Controls.Add(this.chkChineseTraditional);
+            this.pnlResourceFiles.Controls.Add(this.chkChineseSimplified);
+            this.pnlResourceFiles.Controls.Add(this.chkEnglish);
+            this.pnlResourceFiles.Location = new System.Drawing.Point(414, 117);
+            this.pnlResourceFiles.Name = "pnlResourceFiles";
+            this.pnlResourceFiles.Size = new System.Drawing.Size(301, 45);
+            this.pnlResourceFiles.TabIndex = 4;
+            // 
+            // lblResourceFilesHelp
+            // 
+            this.lblResourceFilesHelp.AutoSize = true;
+            this.lblResourceFilesHelp.Location = new System.Drawing.Point(19, 157);
+            this.lblResourceFilesHelp.Name = "lblResourceFilesHelp";
+            this.lblResourceFilesHelp.Size = new System.Drawing.Size(340, 91);
+            this.lblResourceFilesHelp.TabIndex = 5;
+            this.lblResourceFilesHelp.Text = resources.GetString("lblResourceFilesHelp.Text");
+            // 
+            // chkFrench
+            // 
+            this.chkFrench.AutoSize = true;
+            this.chkFrench.Location = new System.Drawing.Point(16, 114);
+            this.chkFrench.Name = "chkFrench";
+            this.chkFrench.Size = new System.Drawing.Size(59, 17);
+            this.chkFrench.TabIndex = 4;
+            this.chkFrench.Text = "French";
+            this.chkFrench.UseVisualStyleBackColor = true;
+            // 
+            // chkSpanish
+            // 
+            this.chkSpanish.AutoSize = true;
+            this.chkSpanish.Location = new System.Drawing.Point(16, 91);
+            this.chkSpanish.Name = "chkSpanish";
+            this.chkSpanish.Size = new System.Drawing.Size(64, 17);
+            this.chkSpanish.TabIndex = 3;
+            this.chkSpanish.Text = "Spanish";
+            this.chkSpanish.UseVisualStyleBackColor = true;
+            // 
+            // chkChineseTraditional
+            // 
+            this.chkChineseTraditional.AutoSize = true;
+            this.chkChineseTraditional.Location = new System.Drawing.Point(16, 68);
+            this.chkChineseTraditional.Name = "chkChineseTraditional";
+            this.chkChineseTraditional.Size = new System.Drawing.Size(116, 17);
+            this.chkChineseTraditional.TabIndex = 2;
+            this.chkChineseTraditional.Text = "Chinese Traditional";
+            this.chkChineseTraditional.UseVisualStyleBackColor = true;
+            // 
+            // chkChineseSimplified
+            // 
+            this.chkChineseSimplified.AutoSize = true;
+            this.chkChineseSimplified.Location = new System.Drawing.Point(16, 45);
+            this.chkChineseSimplified.Name = "chkChineseSimplified";
+            this.chkChineseSimplified.Size = new System.Drawing.Size(111, 17);
+            this.chkChineseSimplified.TabIndex = 1;
+            this.chkChineseSimplified.Text = "Chinese Simplified";
+            this.chkChineseSimplified.UseVisualStyleBackColor = true;
+            // 
+            // chkEnglish
+            // 
+            this.chkEnglish.AutoSize = true;
+            this.chkEnglish.Checked = true;
+            this.chkEnglish.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEnglish.Enabled = false;
+            this.chkEnglish.Location = new System.Drawing.Point(16, 22);
+            this.chkEnglish.Name = "chkEnglish";
+            this.chkEnglish.Size = new System.Drawing.Size(60, 17);
+            this.chkEnglish.TabIndex = 0;
+            this.chkEnglish.Text = "English";
+            this.chkEnglish.UseVisualStyleBackColor = true;
+            // 
             // pnlGenerateSolution
             // 
             this.pnlGenerateSolution.Controls.Add(this.lblGenerateHelp);
-            this.pnlGenerateSolution.Location = new System.Drawing.Point(363, 116);
+            this.pnlGenerateSolution.Location = new System.Drawing.Point(414, 168);
             this.pnlGenerateSolution.Name = "pnlGenerateSolution";
             this.pnlGenerateSolution.Size = new System.Drawing.Size(98, 37);
             this.pnlGenerateSolution.TabIndex = 3;
@@ -204,9 +288,9 @@
             this.pnlKendo.Controls.Add(this.txtKendoFolder);
             this.pnlKendo.Controls.Add(this.lblKendoFolder);
             this.pnlKendo.Controls.Add(this.chkKendoLicense);
-            this.pnlKendo.Location = new System.Drawing.Point(366, 68);
+            this.pnlKendo.Location = new System.Drawing.Point(414, 78);
             this.pnlKendo.Name = "pnlKendo";
-            this.pnlKendo.Size = new System.Drawing.Size(191, 42);
+            this.pnlKendo.Size = new System.Drawing.Size(224, 35);
             this.pnlKendo.TabIndex = 2;
             // 
             // lblKendoVersionHelp
@@ -327,7 +411,7 @@
             this.pnlInfo.Controls.Add(this.lblNamespace);
             this.pnlInfo.Controls.Add(this.txtCompanyName);
             this.pnlInfo.Controls.Add(this.txtApplicationID);
-            this.pnlInfo.Location = new System.Drawing.Point(372, 23);
+            this.pnlInfo.Location = new System.Drawing.Point(414, 23);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(89, 27);
             this.pnlInfo.TabIndex = 0;
@@ -380,6 +464,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
             this.splitBase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlResourceFiles.ResumeLayout(false);
+            this.pnlResourceFiles.PerformLayout();
             this.pnlGenerateSolution.ResumeLayout(false);
             this.pnlKendo.ResumeLayout(false);
             this.pnlKendo.PerformLayout();
@@ -420,5 +506,12 @@
         private System.Windows.Forms.CheckBox chkKendoLicense;
         private System.Windows.Forms.Panel pnlGenerateSolution;
         private System.Windows.Forms.Label lblGenerateHelp;
+        private System.Windows.Forms.Panel pnlResourceFiles;
+        private System.Windows.Forms.Label lblResourceFilesHelp;
+        private System.Windows.Forms.CheckBox chkFrench;
+        private System.Windows.Forms.CheckBox chkSpanish;
+        private System.Windows.Forms.CheckBox chkChineseTraditional;
+        private System.Windows.Forms.CheckBox chkChineseSimplified;
+        private System.Windows.Forms.CheckBox chkEnglish;
     }
 }

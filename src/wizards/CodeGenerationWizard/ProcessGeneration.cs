@@ -1007,12 +1007,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Build the subfolders
             BuildSubfolders(view);
 
-            // Create the Resx Files
-            CreateResx(view, _settings.ResxName + ".resx", true);
-            CreateResx(view, _settings.ResxName + ".es.resx", false);
-            CreateResx(view, _settings.ResxName + ".fr-CA.resx", false);
-            CreateResx(view, _settings.ResxName + ".zh-Hans.resx", false);
-            CreateResx(view, _settings.ResxName + ".zh-Hant.resx", false);
+            // Create the Resx Files if the MenuResx file for that language exists
+            if (_settings.includeEnglish)
+            {
+                CreateResx(view, _settings.ResxName + ".resx", true);
+            }
+            if (_settings.includeSpanish)
+            {
+                CreateResx(view, _settings.ResxName + ".es.resx", false);
+            }
+            if (_settings.includeFrench)
+            {
+                CreateResx(view, _settings.ResxName + ".fr-CA.resx", false);
+            }
+            if (_settings.includeChineseSimplified)
+            {
+                CreateResx(view, _settings.ResxName + ".zh-Hans.resx", false);
+            }
+            if (_settings.includeChineseTraditional)
+            {
+                CreateResx(view, _settings.ResxName + ".zh-Hant.resx", false);
+            }
 
             // Create the Model class
             CreateClass(view,
