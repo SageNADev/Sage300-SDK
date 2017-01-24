@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -98,12 +98,15 @@ namespace MergeISVProject
         /// <param name="pattern">Copy pattern</param>
         /// <param name="pathTo">Destination path</param>
         /// <param name="overwrite">True to overwrite otherwise false</param>
-        private static void CopyFiles(string pathFrom, string pattern, string pathTo, bool overwrite)
+        /// <param name="copyWebFile">True to copy *.web.dll otherwise false</param>
+        private static void CopyFiles(string pathFrom, string pattern, string pathTo, bool overwrite, bool copyWebFile = true)
         {
             foreach (var file in Directory.GetFiles(pathFrom, pattern))
             {
                 var fileName = Path.GetFileName(file);
-                if (fileName == null || fileName.Equals("CrystalDecisions.Web.dll"))
+                if (fileName == null || 
+                    fileName.Equals("CrystalDecisions.Web.dll") ||
+                    (fileName.EndsWith("Web.dll") && !copyWebFile))
                 {
                     continue;
                 }
@@ -297,7 +300,7 @@ namespace MergeISVProject
             string[] psWorker = { "*." + moduleId + ".*.dll" };
             foreach (var pattern in psWorker)
             {
-               CopyFiles(pathBuildBin, pattern, pathOnlineWorker, true);
+               CopyFiles(pathBuildBin, pattern, pathOnlineWorker, true, false);
             }
 
             // copy resource satellite dlls for localization
