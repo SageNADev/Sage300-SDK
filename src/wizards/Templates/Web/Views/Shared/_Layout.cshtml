@@ -13,6 +13,7 @@
 @using NoteConstants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Note;
 @using AsConstants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.AdministrativeService;
 @using WebModel = Sage.CA.SBS.ERP.Sage300.Web.Models;
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models;
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
@@ -83,265 +84,287 @@
     {
         @Html.Partial(Constants.FeatureTour)
         @Html.Partial(Constants.CommonPortalLayout)
-    <header class="header">
-        <div class="header-global">
-            <div class="container_16 wrapper">
-                <div class="globalNavigation">
-                    <div class="top_nav">
-                        <ul id="topMenu" class="k-rtl">
-                            <li id="topMenuUser">
-                                <span>@RenderSection("username", required: false)</span>
-                                <ul>
-                                    @if (!isOnPremise)
-                                    {
-                                        <li id="liManageUsers" class="top_nav_drop_content"></li>
-                                    }
-                                    <li id="liSignOut" class="top_nav_drop_content">
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="companyNameMenu">
-                                @RenderSection("companyName", required: false)
-                            </li>
-                            <li>
-                                <i class="help"><span>Help</span></i>
-                                <ul>
-                                    <li id="searchHelpDiv">
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="topMenuSettings">
-                                <i class="settings" title="Settings"><span>Settings</span></i>
-                                <ul>
-                                    <li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">Unpin Menu</span></li>
-                                    <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">Pin Menu</span></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="pageHeader">
-            <div class="container_16 wrapper">
-                <div class="Sage_logo">
-                    <div id="lnkLogo">
-                        <img src="~/Content/Images/sage_300_logo_white.png" height="25" alt="Sage 300" />
-                    </div>
-                </div>
-                <div class="navigation">
-                    <ul>
-                        <li class="home_nav active" data-menuid="101" id="homeNav"><a>@NavigationResx.Home</a></li>
-                        @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
-                    </ul>
-                </div>
-                <div class="last_container">
-                    <div id="message"></div>
-                    <div id="success"></div>
-                    <span class="glyphicon glyphicon-calendar-1" id="sessionDateIcon"></span>
-                    <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
-                    <span id="spnSessionDate"></span>
-                    <div class="clearfix"></div>
-                    <div id="divDatePicker" class="hide session-date-widget-container">
-                        <div class="session-date-widget">
-                            <div class="form-group">
-                                @RenderSection("sessionDate", required: false)
-                            </div>
-                        </div>
-                    </div>
-                    <div id="msgDiv" class="message-control multiWarn-msg hide addWidget">
-                        <div class="title">
-                            <span class="icon multiWarn-icon"></span>
-                            <h3 id="labelWarningBackup"></h3>
-                        </div>
-                        <div class="msg-content">
-                            <p id="sessionDtMsg"></p>
-                            <div class="footer">
-                                @* FIXME: This input button appears to have hardcoded value text - does it need to go into a resx? *@
-                                <input class="btn-primary right" id="btnProcess" name="btnProcess" type="button" value="Close" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="global_nav">
-            <span class="logo-product-rev"><img src="~/Content/Images/sage_300_logo.png" alt="Sage 300" height="25"></span>
-            <div id="xmlMenuDiv" class="container_16 wrapper" style="display: none">
-                @Html.Partial(Constants.PortalMenu, menuUrlList)
-            </div>
-        </div>
-    </header>
-    <main class="portal-main-body">
-        <div class="wrapper">
-            <div id="breadcrumb" class="hide"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="container_16" style="position: relative">
-            <div class="container_popUp Widget widgetList main" id="addRemoveWidget">
-                <div class="pad_bot_1">
-                    <div class="mod_title widgetList">
-                        <h3>@HomePageResx.Widgets</h3>
-                        <i class="portalIcon closeIcon"></i>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="alpha">
-                        <ul class="showWidget" id="lstWidget">
-                            @foreach (NavigableMenuViewModel<NavigableMenu> item in ViewBag.Widgets)
-                            {
-                                var checkBoxId = "chk" + item.Data.WidgetId;
-                                <li class="widgetItem">
-                                    <span class="icon checkBox omega">
-                                        <input type="checkbox" class="chkWidget" id="@checkBoxId" widgetid="@item.Data.WidgetId" />
-                                    </span>
-                                    <label for="@checkBoxId">@item.Data.MenuName</label>
+        <header class="header">
+            <div class="header-global">
+                <div class="container_16 wrapper">
+                    <div class="globalNavigation">
+                        <div class="top_nav">
+                            <ul id="topMenu" class="k-rtl">
+                                <li id="topMenuUser">
+                                    <span>@RenderSection("username", required: false)</span>
+                                    <ul>
+                                        @if (!isOnPremise)
+                                        {
+                                            <li id="liManageUsers" class="top_nav_drop_content"></li>
+                                        }
+                                        <li id="liSignOut" class="top_nav_drop_content">
+                                        </li>
+                                    </ul>
                                 </li>
-                            }
-                        </ul>
+                                <li id="companyNameMenu">
+                                    @RenderSection("companyName", required: false)
+                                </li>
+                                <li>
+                                    <i class="help"><span>@NavigationResx.Help</span></i>
+                                    <ul>
+                                        <li id="searchHelpDiv">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="topMenuSettings">
+                                    <i class="settings" title="Settings"><span>@NavigationResx.Settings</span></i>
+                                    <ul>
+                                        <li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
+                                        <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="body_container" id="widgetLayout" style="display: none">
-            <div class="main_title">
-                @Html.Partial(Constants.PortalAddWidget, widgetUrlList)
-            </div>
-            <div class="kpi-wrapper">
-                <div class="kpis">
-                    @Html.Partial(Constants.PortalWidget)
+            <div class="clear"></div>
+            <div class="pageHeader">
+                <div class="container_16 wrapper">
+                    <div class="Sage_logo">
+                        <div id="lnkLogo">
+                            <img src="~/Content/Images/sage_300_logo_white.png" height="25" alt="Sage 300" />
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <ul>
+                            <li class="home_nav active" data-menuid="101" id="homeNav"><a>@NavigationResx.Home</a></li>
+                            @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
+                        </ul>
+                    </div>
+                    <div class="last_container">
+                        <div id="message"></div>
+                        <div id="success"></div>
+                        <span class="glyphicon glyphicon-calendar-1" id="sessionDateIcon"></span>
+                        <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
+                        <span id="spnSessionDate"></span>
+                        <div class="clearfix"></div>
+                        <div id="divDatePicker" class="hide session-date-widget-container">
+                            <div class="session-date-widget">
+                                <div class="form-group">
+                                    @RenderSection("sessionDate", required: false)
+                                </div>
+                            </div>
+                        </div>
+                        <div id="msgDiv" class="message-control multiWarn-msg hide addWidget">
+                            <div class="title">
+                                <span class="icon multiWarn-icon"></span>
+                                <h3 id="labelWarningBackup"></h3>
+                            </div>
+                            <div class="msg-content">
+                                <p id="sessionDtMsg"></p>
+                                <div class="footer">
+                                    @* FIXME: This input button appears to have hardcoded value text - does it need to go into a resx? *@
+                                    <input class="btn-primary right" id="btnProcess" name="btnProcess" type="button" value="Close" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="html-classes"></div>
-        <div id="widgetHplayout" class="container_16 hide">
-            <div class="main_title">
-                <div class="addWidgetHL">
-                    <div class="top-buttons addWidgets"><span>@HomePageResx.AddWidgets</span></div>
+            <div class="clear"></div>
+            <div class="global_nav">
+                <span class="logo-product-rev"><img src="~/Content/Images/sage_300_logo.png" alt="Sage 300" height="25"></span>
+                <div id="xmlMenuDiv" class="container_16 wrapper" style="display: none">
+                    @Html.Partial(Constants.PortalMenu, menuUrlList)
                 </div>
             </div>
-            <div class="widgetHpCotainer">
-                <img src="~/Content/Images/widgetHP-img.png" />
-                <h1 class="mt0 mb0" id="lblSeeIntoYourData">
-                    <b> @HomePageResx.SeeIntoYourData</b>
-                </h1>
-                @*@Html.Partial(Constants.PortalAddWidget, widgetUrlList)*@
-                <div class="mt20 mb0">
-                    <span style="cursor: pointer" id="lnkAddWidgets">@HomePageResx.CustomizeWidgetMessage1<br />@HomePageResx.CustomizeWidgetMessage2</span>
-                    <span class="GoArrow"></span>
+        </header>
+        <main class="portal-main-body">
+            <div class="wrapper">
+                <div id="breadcrumb" class="hide"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="container_16" style="position: relative">
+                <div class="container_popUp Widget widgetList main" id="addRemoveWidget">
+                    <div class="pad_bot_1">
+                        <div class="mod_title widgetList">
+                            <h3>@HomePageResx.Widgets</h3>
+                            <i class="portalIcon closeIcon"></i>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="alpha">
+                            <ul class="showWidget" id="lstWidget">
+                                @foreach (NavigableMenuViewModel<NavigableMenu> item in ViewBag.Widgets)
+                                {
+                                    var checkBoxId = "chk" + item.Data.WidgetId;
+                                    <li class="widgetItem">
+                                        <span class="icon checkBox omega">
+                                            <input type="checkbox" class="chkWidget" id="@checkBoxId" widgetid="@item.Data.WidgetId" />
+                                        </span>
+                                        <label for="@checkBoxId">@item.Data.MenuName</label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="body-content-wrapper">
-            <div class="container body_content" id="screenLayout" style="display: none;">
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu1" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu2" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu3" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu4" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu5" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu6" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu7" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu8" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu9" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu10" src="" class="screenIframe"></iframe>
-                <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu11" src="" class="screenIframe"></iframe>
+            <div class="body_container" id="widgetLayout" style="display: none">
+                <div class="main_title">
+                    @Html.Partial(Constants.PortalAddWidget, widgetUrlList)
+                </div>
+                <div class="kpi-wrapper">
+                    <div class="kpis">
+                        @Html.Partial(Constants.PortalWidget)
+                    </div>
+                </div>
             </div>
-        </div>
+            <div id="html-classes"></div>
+            <div id="widgetHplayout" class="container_16 hide">
+                <div class="main_title">
+                    <div class="addWidgetHL">
+                        <div class="top-buttons addWidgets"><span>@HomePageResx.AddWidgets</span></div>
+                    </div>
+                </div>
+                <div class="widgetHpCotainer">
+                    <img src="~/Content/Images/widgetHP-img.png" />
+                    <h1 class="mt0 mb0" id="lblSeeIntoYourData">
+                        <b> @HomePageResx.SeeIntoYourData</b>
+                    </h1>
+                    @*@Html.Partial(Constants.PortalAddWidget, widgetUrlList)*@
+                    <div class="mt20 mb0">
+                        <span style="cursor: pointer" id="lnkAddWidgets">@HomePageResx.CustomizeWidgetMessage1<br />@HomePageResx.CustomizeWidgetMessage2</span>
+                        <span class="GoArrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="body-content-wrapper">
+                <div class="container body_content" id="screenLayout" style="display: none;">
+                    <div id="iframeWrapper1">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu1" src="" class="screenIframe"></iframe>
+                    </div>
+                    <div id="iframeWrapper2">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu2" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper3">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu3" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper4">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu4" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper5">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu5" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper6">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu6" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper7">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu7" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper8">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu8" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper9">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu9" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper10">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu10" src="" class="screenIframe"></iframe>
+                        </div>
+                    <div id="iframeWrapper11">
+                        <iframe scrolling="no" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" id="iFrameMenu11" src="" class="screenIframe"></iframe>
+                        </div>
+                    </div>
+            </div>
+            <div class="clear"></div>
+            @Html.SetClickJackFix()
+            <div class="body_container hide">
+                <div class="container body-content hide">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="clear"></div>
+            @Html.Partial(Constants.PortalFooter)
+        </main>
         <div class="clear"></div>
-        @Html.SetClickJackFix()
-        <div class="body_container hide">
-            <div class="container body-content hide">
-                @RenderBody()
+        <input type="hidden" id="hdnNumberOfActiveWindows" value="@numberOfActiveWindows">
+        <input type="hidden" id="hdnTenantName" value="@ViewBag.TenantName" />
+        <div class="message-control multiInfo-msg pFixTop hide" id="dvWindowsExceedLimitErrorMessage">
+            <div class="title">
+                <span class="icon multiInfo-icon"></span>
+                <h3>@CommonResx.Info</h3>
+                <span class="icon msgCtrl-close">@CommonResx.Close</span>
             </div>
+            <div class="msg-content"> @HomePageResx.MaxWindowExceeded </div>
         </div>
-        <div class="clear"></div>
-        @Html.Partial(Constants.PortalFooter)
-    </main>
-    <div class="clear"></div>
-    <input type="hidden" id="hdnNumberOfActiveWindows" value="@numberOfActiveWindows">
-    <input type="hidden" id="hdnTenantName" value="@ViewBag.TenantName" />
-    <div class="message-control multiInfo-msg pFixTop hide" id="dvWindowsExceedLimitErrorMessage">
-        <div class="title">
-            <span class="icon multiInfo-icon"></span>
-            <h3>@CommonResx.Info</h3>
-            <span class="icon msgCtrl-close">@CommonResx.Close</span>
-        </div>
-        <div class="msg-content"> @HomePageResx.MaxWindowExceeded </div>
-    </div>
     <!--Quick Menu (draggable sidebar)-->
-    @Html.Partial(Constants.QuickMenu)
+        @Html.Partial(Constants.QuickMenu)
 
-    if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
-    {
+        if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+        {
     <!--Note Editor Panel-->
-    @Html.Partial(NoteConstants.NoteEditor, new NoteViewModel<Note>())
+            @Html.Partial(NoteConstants.NoteEditor, new NoteViewModel<Note>())
 
     <!--Notes Center -->
-    @Html.Partial(NoteConstants.NotesCenter, new NotesSearchViewModel<NotesSearch>())
-    @Scripts.Render("~/bundles/note")
-    }
+            @Html.Partial(NoteConstants.NotesCenter, new NotesSearchViewModel<NotesSearch>())
+            @Scripts.Render("~/bundles/note")
+        }
 
     <!--Custom Report-->
-    @Html.Partial(AsConstants.CustomReport, new ViewDataDictionary { { "IsAdmin", ViewBag.isAdmin } })
-    if (ViewBag.isAdmin)
-    {
-    @Html.Partial(AsConstants.CustomAddReport)
-    }
-    @Scripts.Render("~/bundles/CustomReport")
+        @Html.Partial(AsConstants.CustomReport, new ViewDataDictionary { { "IsAdmin", ViewBag.isAdmin } })
+        if (ViewBag.isAdmin)
+        {
+            @Html.Partial(AsConstants.CustomAddReport)
+        }
+        @Scripts.Render("~/bundles/CustomReport")
 
-    <script id="delete-confirmation" type="text/x-kendo-template">
-        <div class="fild_set">
-            <div class="fild-title delete-message" id="del-message">
-                <div id="title-text" />
-            </div>
-            <div class="fild-content">
-                <div id="body-text" />
-                <div class="modelBox_controlls">
-                    <button type="button" class="btn-secondary mar_lef_2 delete-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
-                    <button type="button" class="btn-primary delete-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+        <script id="delete-confirmation" type="text/x-kendo-template">
+            <div class="fild_set">
+                <div class="fild-title delete-message" id="del-message">
+                    <div id="title-text" />
+                </div>
+                <div class="fild-content">
+                    <div id="body-text" />
+                    <div class="modelBox_controlls">
+                        <button type="button" class="btn-secondary mar_lef_2 delete-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
+                        <button type="button" class="btn-primary delete-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </script>
-    <script id="dialog-confirmation" type="text/x-kendo-template">
-        <div class="fild_set">
-            <div class="fild-title dialog-message" id="dialog-message">
-                <div id="title-text" />
-            </div>
-            <div class="fild-content">
-                <div id="body-text" />
-                <div class="modelBox_controlls">
-                    <button type="button" class="btn-secondary mar_lef_2 dialog-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
-                    <button type="button" class="btn-primary dialog-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+        </script>
+        <script id="dialog-confirmation" type="text/x-kendo-template">
+            <div class="fild_set">
+                <div class="fild-title dialog-message" id="dialog-message">
+                    <div id="title-text" />
+                </div>
+                <div class="fild-content">
+                    <div id="body-text" />
+                    <div class="modelBox_controlls">
+                        <button type="button" class="btn-secondary mar_lef_2 dialog-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
+                        <button type="button" class="btn-primary dialog-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </script>
-    
+        </script>
 
-    @Scripts.Render("~/bundles/sessionDateCookie")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/kendo")
-    @Scripts.Render("~/bundles/knockout")
-    @Scripts.Render("~/bundles/ajaxQ")
-    @Scripts.Render("~/bundles/shared")
-    @Scripts.Render("~/bundles/portal")
-    @Scripts.Render("~/bundles/core")
+
+        @Scripts.Render("~/bundles/sessionDateCookie")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/kendo")
+        @Scripts.Render("~/bundles/knockout")
+        @Scripts.Render("~/bundles/ajaxQ")
+        @Scripts.Render("~/bundles/shared")
+        @Scripts.Render("~/bundles/portal")
+        @Scripts.Render("~/bundles/core")
     <!-- put condition for wizard here -->
-    if (ViewBag.NewTenantModel != null)
-    {
-    @Html.Partial(CoreConstants.Wizard, ViewBag.NewTenantModel as Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenantViewModel<Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenant>)
-    @Scripts.Render("~/bundles/Wizard")
-    }
-    var sessionPreferredLanguage = SessionUtility.Provider.Get<string>
-        (Constants.UserPreferredLanguage);
+        if (ViewBag.NewTenantModel != null)
+        {
+            @Html.Partial(CoreConstants.Wizard, ViewBag.NewTenantModel as Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenantViewModel<Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenant>)
+            @Scripts.Render("~/bundles/Wizard")
+        }
+        var sessionPreferredLanguage = SessionUtility.Provider.Get<string>
+            (Constants.UserPreferredLanguage);
         if (sessionPreferredLanguage != null)
         {
-        var language = sessionPreferredLanguage.Replace("-", "");
-        @Scripts.Render(string.Format("~/bundles/kendoCulture{0}", language))
+            var language = sessionPreferredLanguage.Replace("-", "");
+            @Scripts.Render(string.Format("~/bundles/kendoCulture{0}", language))
         }
         @RenderSection("scripts", required: false)
-        }
+    }
 </body>
 </html>

@@ -698,6 +698,7 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     .icon, 
     .k-icon, 
     .k-icon:not(.k-loading), 
+    .k-icon:not(.k-loading):not(.k-i-loading),
     .k-tool-icon, 
     .k-grouping-dropclue, 
     .k-drop-hint, 
@@ -2363,6 +2364,7 @@ a[class*="btn-"].disabled:link {
     background: #fff;
     height: 40px; 
     border-color:  #255bc7;
+    border-bottom-color: transparent;
 }
 .k-tabstrip .k-tabstrip-items .k-item.k-state-active .k-link,
 .k-tabstrip .k-tabstrip-items .k-item.k-state-active .k-link label { 
@@ -2386,6 +2388,7 @@ a[class*="btn-"].disabled:link {
     margin: 0;
     padding: 20px 0 0 0;
     height: auto !important;
+    overflow: visible;
 }
 
 .k-tabstrip .k-tabstrip-items .k-state-disabled, 

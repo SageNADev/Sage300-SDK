@@ -19,6 +19,7 @@
 	border-top: 1px solid @sage-gray;  
     padding-top: 20px;
     clear: both;
+    min-height: 80px;
 
     input[class*="btn-"] { 
     float: right; 
@@ -29,7 +30,9 @@
 /* border collapse for footer-group */
 .sub-section + .footer-group,
 .sub-section + .footer-group-1,
-.sub-section +.form-group input[type=""]:disabled + .footer-group-1 {
+.sub-section +.form-group input[type=""]:disabled + .footer-group-1,
+.panel + .footer-group,
+.panel + .footer-group-1 {
     border-top: none;
     padding-top: 0;
     margin-bottom: 30px;

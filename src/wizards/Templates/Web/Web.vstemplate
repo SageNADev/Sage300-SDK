@@ -101,6 +101,16 @@
             <Folder Name="Home" TargetFolderName="Home">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
+			
+			<Folder Name="Inquiry" TargetFolderName="Inquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Inquiry.cshtml">_Inquiry.cshtml</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="_InquiryGrid.cshtml">_InquiryGrid.cshtml</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="_InquirySecondGrid.cshtml">_InquirySecondGrid.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
             <Folder Name="Instrumentation" TargetFolderName="Instrumentation">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
@@ -129,6 +139,9 @@
             </Folder>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+			<Folder Name="Wizard" TargetFolderName="Wizard">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
           </Folder>
@@ -203,7 +216,7 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayout.cshtml">_LocalizedLayout.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR2.cshtml">_LocalizedLayoutR2.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR3.cshtml">_LocalizedLayoutR3.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GlobalLayout.cshtml">_GlobalLayout.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingFooter.cshtml">_ProcessingFooter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportFooter.cshtml">_ReportFooter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_SetupFooter.cshtml">_SetupFooter.cshtml</ProjectItem>
@@ -308,6 +321,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="setup-wizard.less">setup-wizard.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="summary.less">summary.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="tables.less">tables.less</ProjectItem>
+			  <ProjectItem ReplaceParameters="false" TargetFileName="tables_keybinding.less">tables_keybinding.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="tabs.less">tabs.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="tooltip.less">tooltip.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="totals.less">totals.less</ProjectItem>
@@ -552,6 +566,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="calendar.less">calendar.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="core.less">core.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="dataviz.less">dataviz.less</ProjectItem>
+			  <ProjectItem ReplaceParameters="false" TargetFileName="dialog.less">dialog.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="editor.less">editor.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="font-icons.less">font-icons.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
@@ -559,6 +574,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="imagebrowser.less">imagebrowser.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="inputs.less">inputs.less</ProjectItem>
+			  <ProjectItem ReplaceParameters="false" TargetFileName="mediaplayer.less">mediaplayer.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="menu.less">menu.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="mixins.less">mixins.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="notification.less">notification.less</ProjectItem>
@@ -579,11 +595,20 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="virtuallist.less">virtuallist.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="window.less">window.less</ProjectItem>
             </Folder>
+			<Folder Name="fonts" TargetFolderName="fonts">
+			  <Folder Name="glyphs" TargetFolderName="glyphs">
+				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.eot">KendoUIGlyphs.eot</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
+			  </Folder>
+			</Folder>
             <ProjectItem ReplaceParameters="false" TargetFileName="kendo.common.less">kendo.common.less</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="kendo.default.less">kendo.default.less</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="type-default.less">type-default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="kendo.silver.min.css">kendo.silver.min.css</ProjectItem>
+			<ProjectItem ReplaceParameters="false" TargetFileName="type-default.less">type-default.less</ProjectItem>
           </Folder>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Buttons.css">Sage.CA.SBS.ERP.Sage300.Buttons.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Calendar.css">Sage.CA.SBS.ERP.Sage300.Calendar.css</ProjectItem>

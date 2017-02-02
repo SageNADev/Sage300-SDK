@@ -16,6 +16,9 @@ var reportScreenHelp = 1;
 //Report Screen default Id
 var reportScreenId = " ";
 
+//Inquiry Screen Id for Help purposes
+var inquiryScreenId = 2;
+
 var isWidgetVisible = false;
 
 var widgetDomain;
@@ -33,7 +36,7 @@ String.prototype.format = function () {
 }
 
 function clearIframes() {
-    $('#screenLayout').children().each(function () {
+    $('#screenLayout').children().find("iframe").each(function () {
         $(this).hide();
     });
 };
@@ -46,7 +49,7 @@ function helpSearchForMenuItem(screenId) {
     }, sg.utls.url.buildUrl("Core", "Help", "Index") + "_" + screenId + "_" + globalResource.Culture);
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     widgetDomain = sg.utls.url.baseUrl();
     var numberOfActiveWindows = $('#hdnNumberOfActiveWindows').val();
@@ -65,7 +68,7 @@ $(document).ready(function() {
     var menuPinned = true;
 
     //to stop spinner
-    $('#screenLayout').children().load(function() {
+    $('#screenLayout').children().find("iframe").load(function () {
         $(this).removeClass('screenLoading');
     });
 
@@ -99,7 +102,7 @@ $(document).ready(function() {
             if (menuPinned) {
                 $('html').addClass('collapsed');
                 $('.feature_nav').removeClass('active');
-                
+
             }
         } else {
             $('html').removeClass('collapsed');
@@ -132,14 +135,14 @@ $(document).ready(function() {
     }
 
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
         if (!isWidgetEmptyLnkClicked) {
             $('.container_popUp.Widget.widgetList').hide();
         }
         isWidgetEmptyLnkClicked = false;
     });
 
-    $('#spnCloseWidget').click(function() {
+    $('#spnCloseWidget').click(function () {
         $('#DivWidgetWindow').hide();
     });
 
@@ -147,23 +150,23 @@ $(document).ready(function() {
 
     });
 
-    $(".home_nav").click(function() {
+    $(".home_nav").click(function () {
         ShowHomePage();
     });
 
     $("ul#home_nav li.main").children().addClass("mainNav");
 
-    $('#lnkAddWidgets, .GoArrow,  #lblSeeIntoYourData').click(function() {
+    $('#lnkAddWidgets, .GoArrow,  #lblSeeIntoYourData').click(function () {
         isWidgetEmptyLnkClicked = true;
         $('#addRemoveWidget').show();
     });
 
-    $(".top-buttons.addWidgets").click(function() {
+    $(".top-buttons.addWidgets").click(function () {
         $('#addRemoveWidget').show();
     });
 
     $(".portalIcon.closeIcon").click(function () {
-      $("this").closest(".container_popUp.Widget.widgetList").hide("fast");
+        $("this").closest(".container_popUp.Widget.widgetList").hide("fast");
     });
 
     $("ul#home_nav").children().children().children().addClass("k-iconNone");
@@ -185,13 +188,13 @@ $(document).ready(function() {
     clearIframes();
     $('#dvCloseWindowErrorMessage').hide();
     $('.task_added').hide();
-    $('#topMenu').mouseenter(function() {
+    $('#topMenu').mouseenter(function () {
         if (!$("#helpSearchfl").is(':focus')) {
             helpSearchForMenuItem(screenId);
         }
     });
 
-    $("#windowManager").hover(function() {
+    $("#windowManager").hover(function () {
         if ($('#dvWindows').children().length > 0)
             $("#windowManager > div").show();
 
@@ -199,7 +202,7 @@ $(document).ready(function() {
         $("#dvWindows span").removeClass('selected');
 
         // Find Active Window and AddClass Selected
-        $("#dvWindows span").each(function(index, elem) {
+        $("#dvWindows span").each(function (index, elem) {
             var $iframe = $('#' + $(elem).attr('frameid'));
             if ($iframe.is(':visible')) {
 
@@ -216,16 +219,16 @@ $(document).ready(function() {
             }
         });
 
-    }, function() {
+    }, function () {
         $("#windowManager > div").hide();
     });
 
-    $('.top_nav_drop_content').click(function() {
+    $('.top_nav_drop_content').click(function () {
 
         isReload = false;
     });
 
-    $(window).bind('beforeunload', function() {
+    $(window).bind('beforeunload', function () {
         var numOfOpenScreens = $('#dvWindows').children().length;
         if (isReload && numOfOpenScreens > 0) {
             return sg.utls.htmlDecode(portalBehaviourResources.PageRefreshError);
@@ -247,7 +250,7 @@ $(document).ready(function() {
     }
 
     function AreWidgetVisible() {
-        $(".bodyWidgetContainer > div").each(function() {
+        $(".bodyWidgetContainer > div").each(function () {
             if ($(this).find("iframe").attr('src') != '') {
                 isWidgetVisible = true;
             }
@@ -307,6 +310,10 @@ $(document).ready(function() {
             e.stopPropagation();
         });
 
+        $(".navigation .feature_nav .btn").click(function (e) {
+            $("#SIR").removeClass("active");
+        });
+
         $menu.find(".menu-section li:not('.sub-heading')").click(function () {
             $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
             $(".nav-menu span.active").removeClass("active");
@@ -315,10 +322,12 @@ $(document).ready(function() {
         $(".navigation .feature_nav").hover(
             function () {
                 $(this).find(".active").removeClass("active");
+                $(this).addClass("active");
                 $(this).find("li:first span:first").addClass("active");
                 $(this).find(".deactive").removeClass("deactive");
             },
             function () {
+                $(this).removeClass("active");
                 $(this).find("li:first span:first").removeClass("active");
             }
         );
@@ -359,133 +368,134 @@ $(document).ready(function() {
             $row.find(".sub-menu-wrap").hide().eq(0).show();
         }
 
-        $(".nav-menu .std-menu li").click(function(e) {
+        $(".nav-menu .std-menu li").click(function (e) {
             e.stopPropagation();
         });
 
-        $menu.find(".menu-section li:not('.sub-heading')").click(function() {
+        $menu.find(".menu-section li:not('.sub-heading')").click(function () {
             $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
             $(".nav-menu span.active").removeClass("active");
         });
 
         $(".nav-menu .top-tier").hover(
-            function() {
+            function () {
                 $(this).find(".active").removeClass("active");
                 $(this).find("li:first span:first").addClass("active");
                 $(this).find(".deactive").removeClass("deactive");
             },
-            function() {
+            function () {
                 $(this).find("li:first span:first").removeClass("active");
             }
         );
     }
 
-    $('#homeNav').click(function() {
+    $('#homeNav').click(function () {
         $('.feature_nav').removeClass('active');
 
         $(this).addClass('active');
 
-        $('#dvWindows > div').each(function() {
+        $('#dvWindows > div').each(function () {
             $(this).find("span").removeClass('selected');
         });
     });
 
-    $('.feature_nav').click(function () {
-        $(this).toggleClass('active');
-    });
+    function iFrameLoadEvent(e, $iframe)
+    {
+        if (isIframeClose && $iframe.attr('id') === currentIframeId) {
+            //close the screen
+            if (!($('#widgetLayout').is(":visible"))) {
+                $('#' + currentIframeId).hide();
+            }
+            if (!flag) {
 
-    $('.global_nav').hover(function () {
-        $('.feature_nav').removeClass('active');
-    });
+                //close the maximum number of windows message box
+                $('#dvWindowsExceedLimitErrorMessage').hide();
 
-    //onload event handling on iframes
-    $('#screenLayout').children().each(function() {
-        $(this).load(function(e) {
-            if (isIframeClose && $(this).attr('id') === currentIframeId) {
-                //close the screen
-                if (!($('#widgetLayout').is(":visible"))) {
-                    $('#' + currentIframeId).hide();
+                //remove task from the window
+                $("#" + $("#" + currentDiv + "").attr('id') + "").remove();
+
+                if ($('#dvWindows').children().length > 0) {
+
+                    //keep the task window open
+                    $("#windowManager > div").show();
+                    //display number of open tasks
+                    $('#spWindowCount').text($('#dvWindows').children().length);
+                } else {
+                    //close the task window
+                    $("#windowManager > div").hide();
+                    $('#windowManager').removeClass("zeroTaskCount");
+                    //hide the breadcrumb
+                    $('#breadcrumb').hide();
+
+                    $('#spWindowCount').text("0");
+                    screenId = defaultScreenId;
+
+                    $('#spnSessionDate').removeClass('disabled');
+                    $('#sessionDatelabel').removeClass('disabled');
+                    $('#sessionDateIcon').removeClass('disabled');
+                    $('#sessionDateIcon').removeClass('glyphicon-lock');
+                    $('#sessionDateIcon').addClass('glyphicon-calendar-1');
                 }
-                if (!flag) {
 
-                    //close the maximum number of windows message box
-                    $('#dvWindowsExceedLimitErrorMessage').hide();
+                // Breadcrumb - Load breadcrumb on window management item removal  
+                var lastID = $("#dvWindows span[controltoremove]").last().attr("frameId");
 
-                    //remove task from the window
-                    $("#" + $("#" + currentDiv + "").attr('id') + "").remove();
-
-                    if ($('#dvWindows').children().length > 0) {
-
-                        //keep the task window open
-                        $("#windowManager > div").show();
-                        //display number of open tasks
-                        $('#spWindowCount').text($('#dvWindows').children().length);
-                    } else {
-                        //close the task window
-                        $("#windowManager > div").hide();
-                        $('#windowManager').removeClass("zeroTaskCount");
-                        //hide the breadcrumb
-                        $('#breadcrumb').hide();
-
-                        $('#spWindowCount').text("0");
-                        screenId = defaultScreenId;
-
-                        $('#spnSessionDate').removeClass('disabled');
-                        $('#sessionDatelabel').removeClass('disabled');
-                        $('#sessionDateIcon').removeClass('disabled');
-                        $('#sessionDateIcon').removeClass('glyphicon-lock');
-                        $('#sessionDateIcon').addClass('glyphicon-calendar-1');
-                    }
-
-                    // Breadcrumb - Load breadcrumb on window management item removal  
-                    var lastID = $("#dvWindows span[controltoremove]").last().attr("frameId");
-
-                    if (currentIframeId === lastID) {
-                        var secondLastParentID = $("#dvWindows span[controltoremove]").eq(-2).data("parentid");
-                        loadBreadCrumb(secondLastParentID);
-                    } else {
-                        var getLastWindowParentID = $("#dvWindows span[controltoremove]").last().data("parentid");
-                        loadBreadCrumb(getLastWindowParentID);
-                    }
-
-                    $.each(controls, function(index, element) {
-                        flag = true;
-                        if (!$('#widgetLayout').is(":visible"))
-                            $('#' + element["control"]).hide();
-                        if (parseInt(element["rank"], 10) === currentRank) {
-                            element["rank"] = 0;
-                        }
-                        if (parseInt(element["rank"], 10) !== 0 && parseInt(element["rank"], 10) > currentRank) {
-                            element["rank"]--;
-                        }
-                        $('#' + element["control"]).attr("rank", element["rank"]);
-
-                        if (parseInt(element["rank"], 10) === 1) {
-                            if (element["control"] != 'widgetLayout')
-                                $('#' + element["control"]).show();
-                        }
-                    });
-
-                    $.each(controls, function(index, element) {
-                        if (element) {
-                            if (parseInt(element["rank"], 10) === 0) {
-                                controls.splice(index, 1);
-                            }
-                        }
-                    });
-
-                    //this is to keep active screen selection in the Open Windows popup
-                    $('#windowManager').mouseenter();
-                    isWidgetVisible = false;
-                    AreWidgetVisible();
-                    ShowCorrectLayout();
+                if (currentIframeId === lastID) {
+                    var secondLastParentID = $("#dvWindows span[controltoremove]").eq(-2).data("parentid");
+                    loadBreadCrumb(secondLastParentID);
+                } else {
+                    var getLastWindowParentID = $("#dvWindows span[controltoremove]").last().data("parentid");
+                    loadBreadCrumb(getLastWindowParentID);
                 }
+
+                $.each(controls, function (index, element) {
+                    flag = true;
+                    if (!$('#widgetLayout').is(":visible"))
+                        $('#' + element["control"]).hide();
+                    if (parseInt(element["rank"], 10) === currentRank) {
+                        element["rank"] = 0;
+                    }
+                    if (parseInt(element["rank"], 10) !== 0 && parseInt(element["rank"], 10) > currentRank) {
+                        element["rank"]--;
+                    }
+                    $('#' + element["control"]).attr("rank", element["rank"]);
+
+                    if (parseInt(element["rank"], 10) === 1) {
+                        if (element["control"] != 'widgetLayout')
+                            $('#' + element["control"]).show();
+                    }
+                });
+
+                $.each(controls, function (index, element) {
+                    if (element) {
+                        if (parseInt(element["rank"], 10) === 0) {
+                            controls.splice(index, 1);
+                        }
+                    }
+                });
+
+                //this is to keep active screen selection in the Open Windows popup
+                $('#windowManager').mouseenter();
+                isWidgetVisible = false;
+                AreWidgetVisible();
+                ShowCorrectLayout();
+            }
+
+            if (e) {
                 e.preventDefault();
             }
+        }
+    }
+
+    //onload event handling on iframes
+    $('#screenLayout').children().each(function () {
+        var $iframe = $(this).find("iframe");
+        $iframe.load(function (e) {
+            iFrameLoadEvent(e, $(this));
         });
     });
 
-    $("#dvWindows").on("click", "span", function() {
+    $("#dvWindows").on("click", "span", function () {
         currentIframeId = $(this).attr("frameId");
 
         //Adding Class Selected to the Active Window
@@ -496,13 +506,20 @@ $(document).ready(function() {
             isIframeClose = true;
             currentDiv = ($(this).attr('controlToRemove'));
             flag = false;
-            $.each(controls, function(index, element) {
+            $.each(controls, function (index, element) {
                 if (element["control"] === currentIframeId) {
                     currentRank = element["rank"];
                 }
             });
+            
+            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
+                currentIframeId);
 
-            $("#" + currentIframeId + "").attr("src", "");
+            $("#" + currentIframeId).attr("src", "about:blank");
+            $("#" + currentIframeId).parent().empty().append(iframeHtml);
+
+            iFrameLoadEvent(null, $("#" + currentIframeId));
+
         } else if ($(this).attr('command') === "Add") {
             var currentSelectedRank = $(this).attr("rank");
             if ($('#widgetHplayout').is(":visible")) {
@@ -510,7 +527,7 @@ $(document).ready(function() {
             }
             clearIframes();
             currentDiv = ($(this).attr('frameId'));
-            $.each(controls, function(index, element) {
+            $.each(controls, function (index, element) {
                 if (currentDiv === element["control"]) {
                     element["rank"] = 1;
                 } else if (element["rank"] < currentSelectedRank) {
@@ -526,7 +543,7 @@ $(document).ready(function() {
             $("#" + currentDiv + "").show();
             currentIframe = currentDiv;
 
-            $('#dvWindows').find('span').each(function() {
+            $('#dvWindows').find('span').each(function () {
                 if ($(this).attr('command') == 'Add') {
                     if (currentIframe == $(this).attr('frameid')) {
                         $(this).attr("rank", 1);
@@ -557,7 +574,7 @@ $(document).ready(function() {
         $(".task_added").delay(1800).css({ "right": "77px" }).animate({ "right": "-29px" }, "3000").fadeOut();
     }
 
-    $(".kpi .btnOpenReport").on("click", function(event) {
+    $(".kpi .btnOpenReport").on("click", function (event) {
         clearIframes();
         iFrameUrl = $(this).closest(".kpi").find("iframe").attr("src");
         if (iFrameUrl.indexOf("AgedPayable") > 0) {
@@ -574,7 +591,7 @@ $(document).ready(function() {
     });
 
     var loadOptions = {
-        executeAgedPayableReport: function(result) {
+        executeAgedPayableReport: function (result) {
             if (result != null && result.UserMessage.IsSuccess) {
                 sg.utls.openReport(result.ReportToken);
                 isKPI = true;
@@ -584,7 +601,7 @@ $(document).ready(function() {
                 $(window).scrollTop(0);
             }
         },
-        executeAgedReceivableReport: function(result) {
+        executeAgedReceivableReport: function (result) {
             if (result != null && result.UserMessage.IsSuccess) {
                 sg.utls.openReport(result.ReportToken);
                 isKPI = true;
@@ -596,17 +613,31 @@ $(document).ready(function() {
         },
     };
 
-    function assignUrl(windowText, parentid, menuid) {
+    function assignUrl(windowText, parentid, menuid, isExcludingParameters) {
         var control = {};
         var isIframeOpen = false;
         var isScreenOpen = false;
         if ($('#widgetHplayout').is(":visible")) {
             $('#widgetHplayout').hide();
         }
-        $('#screenLayout').children().each(function() {
+        $('#screenLayout').children().each(function () {
+            var $iframe = $(this).find("iframe");
+            
+            if (isExcludingParameters && sg.utls.getUrlPath($iframe.attr("src")) === sg.utls.getUrlPath(targetUrl)) {
+                // Compare the full URL including the query string.
+                // now that we know the path is the same, check for url with parameter, if they are not the same, lets refresh the screen and display that iframe
+                if ($iframe.attr("src") !== targetUrl) {
+                    $iframe.attr("src", targetUrl);
+                }
+                $iframe.show();
+                isScreenOpen = true;
+
+                //do not display more than one frame.
+                return false;
+            }
             //Compare the full URL including the query string.
-            if ($(this).attr("src") === targetUrl) {
-                $(this).show();
+            else if ($iframe.attr("src") === targetUrl) {
+                $iframe.show();
                 isScreenOpen = true;
 
                 //do not display more than one frame.
@@ -614,34 +645,35 @@ $(document).ready(function() {
             }
         });
 
-        $('#screenLayout').children().each(function() {
-            if (!$(this).is(':visible') && $(this).attr("src") === '' && !isIframeOpen && !isScreenOpen) {
+        $('#screenLayout').children().each(function () {
+            var $iframe = $(this).find("iframe");
+            if (!$iframe.is(':visible') && $iframe.attr("src") === '' && !isIframeOpen && !isScreenOpen) {
                 isIframeOpen = true;
                 isIframeClose = false;
 
-                $(this).addClass('screenLoading');
-                $(this).contents().find('body').html('');
-                $(this).attr("src", targetUrl);
-                $(this).show();
+                $iframe.addClass('screenLoading');
+                $iframe.contents().find('body').html('');
+                $iframe.attr("src", targetUrl);
+                $iframe.show();
 
-                $.each(controls, function(index, element) {
+                $.each(controls, function (index, element) {
                     element["rank"]++;
                     $('#' + element["control"]).attr("rank", element["rank"]);
                 });
-                control["control"] = $(this).attr('id');
-                currentIframe = $(this).attr('id');
+                control["control"] = $iframe.attr('id');
+                currentIframe = $iframe.attr('id');
                 control["rank"] = 1;
                 controls.push(control);
-                $('#dvWindows > div').each(function() { $(this).find("span").removeClass('selected'); });
+                $('#dvWindows > div').each(function () { $iframe.find("span").removeClass('selected'); });
 
-                $('#dvWindows').find('span').each(function() {
+                $('#dvWindows').find('span').each(function () {
 
                     if ($(this).attr('command') == 'Add') {
                         $(this).attr("rank", (parseInt($(this).attr("rank"), 10) + 1));
                     }
                 });
 
-                var $divWindow = $('<div id="dv' + $(this).attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid + '" data-parentid="' + parentid + '" frameId="' + $(this).attr('id') + '" command="Add" rank="1">' + windowText + '</span><span data-parentid="' + parentid + '" frameId="' + $(this).attr('id') + '" command="Remove" controlToRemove="dv' + $(this).attr('id') + '"></span></div>');
+                var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid + '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText + '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
                 $('#dvWindows').append($divWindow);
                 $('#spWindowCount').text($('#dvWindows').children().length);
                 taskAdded();
@@ -668,7 +700,7 @@ $(document).ready(function() {
 
     // TO DO : Move the below piece of code to Index page where you put your frame
     // Invoked from the main menu
-    $(".menu-section a").on("click", function(event) {
+    $(".menu-section a").on("click", function (event) {
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
@@ -709,7 +741,7 @@ $(document).ready(function() {
 
             var windowtext = $(event.target).text();
 
-            $('#dvWindows > div').each(function() { $(this).find("span").removeClass('selected'); });
+            $('#dvWindows > div').each(function () { $(this).find("span").removeClass('selected'); });
 
             if ($(this).attr("data-modulename") !== "" && $.parseHTML($(this).attr("data-modulename")) != null && $(this).attr("data-moduleName") != "null") {
                 windowtext = portalBehaviourResources.PagetitleInManager.format($(this).attr("data-modulename"), $(event.target).text());
@@ -725,20 +757,22 @@ $(document).ready(function() {
         }
 
         //close menu
-        $(".nav-menu .top-tier").each(function() {
+        $(".nav-menu .top-tier").each(function () {
             $(this).find(".active").removeClass("active");
         });
 
+        $(".feature_nav").removeClass("active");
+
     });
 
-    $('.icon.msgCtrl-close').click(function() {
+    $('.icon.msgCtrl-close').click(function () {
         $('#dvWindowsExceedLimitErrorMessage').hide();
     });
 
-    $('#addWidgetBtnProcess').click(function() {
+    $('#addWidgetBtnProcess').click(function () {
         $('#widgetMsgDiv').hide();
     });
-    $('#btnProcess').click(function() {
+    $('#btnProcess').click(function () {
         $('#msgDiv').hide();
     });
 
@@ -748,7 +782,7 @@ $(document).ready(function() {
             //Variables
             var html = [];
             //Add Parent to array
-            jQuery.each(MenuList, function(i, val) {
+            jQuery.each(MenuList, function (i, val) {
                 if (val.Data.MenuId == parentidVal) {
                     var menuName = val.Data.MenuName;
                     if (menuName.indexOf("'") > -1) {
@@ -759,7 +793,7 @@ $(document).ready(function() {
             });
 
             //Add Child items to array
-            jQuery.each(MenuList, function(i, val) {
+            jQuery.each(MenuList, function (i, val) {
                 if (val.Data.ParentMenuId == parentidVal && val.Data.IsGroupHeader == false) {
                     var windowsDockTitle = val.Data.MenuName;
                     //   var title = val.Data.MenuName.length <= 25 ? val.Data.MenuName : val.Data.MenuName.substring(0, 25) + "...";
@@ -777,7 +811,7 @@ $(document).ready(function() {
 
             // Breadcrumb more dropdown menu
             var postsArr = new Array();
-            $('ul.bc').find('li').each(function() { postsArr.push($(this).html()); });
+            $('ul.bc').find('li').each(function () { postsArr.push($(this).html()); });
             var len = postsArr.length;
             var bcContent;
 
@@ -791,19 +825,20 @@ $(document).ready(function() {
                 $("#breadcrumb").html(bcContent);
             }
 
-            $(".innerdd").hover(function() {
+            $(".innerdd").hover(function () {
 
-                    $(this).find("ul").show();
-                },
-                function() {
+                $(this).find("ul").show();
+            },
+                function () {
                     $(this).find("ul").hide();
                 });
 
             //Invoked from breadcrumb menu
-            $('.breadcrumb-page').click(function() {
+            $('.breadcrumb-page').click(function () {
                 var parentWidth = $(document).width();
-                $('#screenLayout').children().each(function() {
-                    $(this).width(parentWidth);
+                $('#screenLayout').children().each(function () {
+                    var $iframe = $(this).find("iframe");
+                    $iframe.width(parentWidth);
                 });
 
                 $('#screenLayout').show();
@@ -837,7 +872,7 @@ $(document).ready(function() {
                 //Get menu id as screenId for Help Menu Search
                 screenId = $(this).attr("data-menuid");
 
-                $('#dvWindows > div').each(function() { $(this).find("span").removeClass('selected'); });
+                $('#dvWindows > div').each(function () { $(this).find("span").removeClass('selected'); });
 
                 if ($(this).attr("data-isreport") === "true" || $(this).attr("data-isreport") === "True") {
                     //title = title.indexOf("Report") < 0 ? title + " " + portalBehaviourResources.Report : title;
@@ -855,8 +890,9 @@ $(document).ready(function() {
     function isScreenAlreadyOpen(url) {
         var result = false;
         //Check if the screen is already open
-        $('#screenLayout').children().each(function() {
-            if ($(this).attr("src") === url) {
+        $('#screenLayout').children().each(function () {
+            var $iframe = $(this).find("iframe");
+            if (sg.utls.getUrlPath($iframe.attr("src")) === sg.utls.getUrlPath(url)) {
                 result = true;
             }
         });
@@ -888,15 +924,15 @@ $(document).ready(function() {
                     // We are being asked to show Notes for a given entity (e.g. an AR Customer).
                     openNotesCenter(evt.data.notesOptions);
                 }
-                // This is for closing the notes center.
+                    // This is for closing the notes center.
                 else if (evt.data.hideNotesCenter) {
-                    notesCenterUI.hideNotesCenter();
+                    hideNotesCenter();
                 }
-                // Populate multiselect widget on custom profile sliding window when a profile id is selected from UI profile popup
+                    // Populate multiselect widget on custom profile sliding window when a profile id is selected from UI profile popup
                 else if (evt.data.populateCustomReportProfileIdsMultiSelectWidget) {
                     CustomReportUI.populateMultiSelectFromPopup(evt.data.populateCustomReportProfileIdsMultiSelectWidget);
                 }
-                // Refresh multiselect widget on custom profile UI when a profile id is added from the UI profile *screen*
+                    // Refresh multiselect widget on custom profile UI when a profile id is added from the UI profile *screen*
                 else if (evt.data.refreshCustomReportProfileIdsMultiSelectWidget) {
                     CustomReportUI.refreshMultiSelect();
                 }
@@ -904,12 +940,46 @@ $(document).ready(function() {
         }
     }
 
+    function createInquiryURLWithParameters(inquiryParameter)
+    {
+        return sg.utls.formatString("{0}/?module={1}&inquiryType={2}&target={3}&value={4}&title={5}",
+            inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value, inquiryParameter.title);
+    }
+
     // Function to handle opening of Reports and Screen as a New Task Window.
     // NOTE: The caller is responsible for checking that evtData (the data from the window
     //       message presumably received from another IFrame) is a string.
     function openNewTask(evtData) {
         // Display Reports as a New Task Doc Item
-        if (evtData.indexOf("isReport") >= 0) {
+        if (evtData.indexOf("isInquiry") >= 0) {
+            var postMessageData = evtData.split(" ");
+            var inquiryParameter = JSON.parse(decodeURI(postMessageData[1]));
+            targetUrl = createInquiryURLWithParameters(inquiryParameter);
+            var screenName, parentId, menuid;
+            
+
+            //Check if maximum number of screens reached
+            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                $('#dvWindowsExceedLimitErrorMessage').show();
+                return;
+            }
+
+            if ($('#dvWindows').children().length <= numberOfActiveWindows) {
+                clearIframes();
+            }
+
+            //do not show the breadcrumb for inquiry reports
+            $('#breadcrumb').hide();
+            
+            postMessageData.splice(postMessageData.length - 1, 1);
+
+            menuid = inquiryScreenId;
+
+            //Method To Load Into Task Doc
+            assignUrl(portalBehaviourResources.Inquiry, parentId, menuid, true);
+
+        } else if (evtData.indexOf("isReport") >= 0) {
 
             var postMessageData = evtData.split(" ");
             targetUrl = postMessageData[1];
@@ -1016,6 +1086,20 @@ $(document).ready(function() {
         }
     }
 
+    // Function to handle hiding (closing) of Notes center.
+    function hideNotesCenter() {
+        // Hide notes center (or make sure it's hidden) for the given entity if this behavior is
+        // enabled and KN is activated.
+        // NOTE: Since there is no simple way in JS to test whether or not KN is activated,
+        //       we will do an indirect test where we test for the existence of the
+        //       notesCenterUI global variable.  This variable will only exist if the notes JS
+        //       bundle was rendered, and that bundle is only rendered when KN is activated
+        //       (as the Notes feature is only available when KN is activated).
+        if (isNotesAutoLaunchEnabled && typeof notesCenterUI !== 'undefined' && notesCenterUI !== null) {
+            notesCenterUI.hideNotesCenter();
+        }
+    }
+
     //Event Listener to handle post message events
     if (window.addEventListener) {
         // For standards-compliant web browsers
@@ -1024,19 +1108,19 @@ $(document).ready(function() {
         window.attachEvent("onmessage", receiveWindowMessage);
     }
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         resizeLayout();
     });
 
     function resizeLayout() {
         //widgets layout container, widgets help layout container
-        $('.body_container,#widgetHplayout').each(function() {
+        $('.body_container,#widgetHplayout').each(function () {
             var iframeHeight = $(window).height() - 184;
             $(this, '#widgetHplayout').css('min-height', iframeHeight);
         });
 
         //first time user layout, screen layout
-        $('#firstTimeLogin').each(function() {
+        $('#firstTimeLogin').each(function () {
             var docHeight = $(document).height();
             $('#firstTimeLogin .overlay').css('min-height', docHeight);
         });
@@ -1047,23 +1131,22 @@ $(document).ready(function() {
     $("#liSignOut").html('<a id="lnkSignOut" href="javascript:void(0);" class="k-link">' + portalBehaviourResources.SignOut + '</a>');
     $("#liManageUsers").html('<a id="lnkUserManagment" href="javascript:void(0)" class="k-link">' + portalBehaviourResources.ManageUsers + '</a>');
 
-    $("#lnkSignOut").bind('click', function() {
+    $("#lnkSignOut").bind('click', function () {
         sg.utls.logOut();
     });
 
-    $("#liManageUsers").bind('click', function() {
+    $("#liManageUsers").bind('click', function () {
         window.open(umURL);
     });
 
     $("#btnIntelligence").click(function () {
         var cb = ""; //cachebuster
-        if (sg.utls.isInternetExplorer())
-        {
+        if (sg.utls.isInternetExplorer()) {
             cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
         }
 
         // call WebApiProxy to get temp token
-        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true"+cb, "", ""), {}, function (result) {
+        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true" + cb, "", ""), {}, function (result) {
             if (result) {
                 if (!sIRCLocation) {
                     // if no SIRC location is defined, assume it would be on the same location with https (ie https://<current server>/)
