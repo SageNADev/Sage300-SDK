@@ -1,12 +1,14 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 
 #region
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Menu;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging;
+using Sage.CA.SBS.ERP.Sage300.Core.Web;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
@@ -95,6 +97,7 @@ namespace $safeprojectname$
 
             AsyncManagerConfig.Register();
 
+            ActiveSessionManager.StartTimer(spanTicks: TimeSpan.FromHours(6).Ticks); // token expire time is 6 hours
         }
 
         /// <summary>
@@ -122,6 +125,28 @@ namespace $safeprojectname$
         }
 
         /// <summary>
+        /// Application EndRequest event handler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            // Enable the cookie's 'secure' flag only if the HTTP protocol is 
+            // detected as secure (using HTTPS).
+            // This is the code alternative to setting the Web.config file
+            // <system.web> with <httpCookies requireSSL="true" />, which is
+            // more restrictive and requires the webscreens to be hosted as HTTPS.
+            if (Request.IsSecureConnection && Response.Cookies.Count > 0)
+            {
+                // Intercept all cookies and set their Secure flag.
+                foreach (string cookieKey in Response.Cookies.AllKeys)
+                {
+                    Response.Cookies[cookieKey].Secure = true;
+                }
+            }
+        }
+
+        /// <summary>
         /// Event triggered when Session expires/ends
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -131,6 +156,8 @@ namespace $safeprojectname$
             //This will never be called if sessions are stored in azure cache
 
             CommonService.DestroyPool(Session.SessionID);
+
+            ActiveSessionManager.RemoveSession(Session.SessionID);
         }
 
         /// <summary>
@@ -141,6 +168,7 @@ namespace $safeprojectname$
         protected void Application_End(object sender, EventArgs e)
         {
             CommonService.ClearSessionLogs();
+            ActiveSessionManager.StopTimer();
         }
     }
 }

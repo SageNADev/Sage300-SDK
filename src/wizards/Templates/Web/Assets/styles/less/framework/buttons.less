@@ -9,7 +9,6 @@
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
-  font-weight: @btn-font-weight;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -19,7 +18,7 @@
   .button-size(6px; @padding-base-horizontal; 12px; @line-height-base; @border-radius-base);
   .user-select(none);
   min-width: 120px;
-  font-weight: 700;
+  font-weight: @btn-font-weight;
   color: @sage-mid-gray;
   .box-sizing(border-box);
 
@@ -57,6 +56,11 @@
     //.opacity(.65);
     .box-shadow(none);
   }
+
+  &.btn-small, 
+  &.small {
+    min-width: 100px;
+  }
 }
 
 
@@ -65,24 +69,35 @@
 
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+  min-width: 120px;
+  font-size: 12px;
 }
 .btn-default:focus {
   border-color: @input-border-focus;
 }
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  min-width: 120px;
+  font-weight: 700;
+  font-size: 12px;
 }
 .btn-primary:hover {
   background-color: darken(@btn-primary-bg, 10%);
 }
 .btn-secondary {
   .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+  min-width: 120px;
+  font-weight: 700;
+  font-size: 12px;
 }
 .btn-secondary:hover {
   background-color: @btn-link-hover-color;
 }
 .btn-tertiary {
   .button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
+  min-width: 120px;
+  font-weight: 700;
+  font-size: 12px;
 }
 .btn-tertiary:hover {
   background-color: darken(@btn-default-bg, 5%);
@@ -260,6 +275,11 @@ input[type="button"] {
     left: 0;
     background: url('@{image-path}/ui/sprite_icons.png') no-repeat;
     background-size: 900px 90px;
+    background-position: 2px 2px;
+  }
+
+  &[disalbed]:before {
+    background-position: 2px -68px;
   }
 
   &.btn-edit-column:before {
@@ -284,6 +304,14 @@ input[type="button"] {
 
   &.btn-add[disabled]:before {
     background-position: -493px -67px
+  }
+
+  &.btn-refresh:before {
+    background-position: -463px 3px;
+  }
+
+  &.btn-refresh[disabled]:before {
+    background-position: -463px -67px
   }
 }
 
@@ -345,9 +373,10 @@ input[class*="btn-"]:hover,
 
 // Pencil Edit bttons
 
-input.pencil-edit, 
-input.pencil-edit-disabled,
-input.edit-field,  {
+.pencil-edit, 
+.pencil-edit-disabled,
+.edit-field,
+.btnOptionalFieldSettings  {
   background-color: transparent !important;
   height: 20px;
   width: 22px;
@@ -358,12 +387,110 @@ input.edit-field,  {
 }
 
 .pencil-edit,
-.edit-field {
+.edit-field,
+.btnOptionalFieldSettings {
   background-position: -607px -2px;
   cursor: pointer;
+  text-indent: -9999px;
 }
 
 .pencil-edit-disabled {
   background-position: -607px -72px;
   cursor: default;
+  text-indent: -9999px;
 }
+
+// Filter buttons 
+
+input.btn-filter-add {
+  background-position: -384px -25px;
+  border-radius: 10px;
+  height: 20px;
+  background-color: #41a940;
+  border: 0;
+  background-size: 700px 70px;
+}
+
+input.btn-filter-delete {
+  background-position: -187px -30px;
+  border-radius: 10px;
+  height: 20px;
+  background-color: #3c414e;
+  border: 0;
+  background-size: 800px 80px;
+}
+
+input.btn-filter-add:hover,
+input.btn-filter-delete:hover {
+  background-color: #a7a9aa;
+}
+
+// Inquiry Button styles
+
+.btn-inquiry {
+  height: 40px;
+  background: transparent;
+  padding-left: 35px;
+  padding: 5px 10px 5px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 1;
+  position: fixed;
+  right: 30px;
+
+  &:disabled {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+  }
+
+  &:before {
+    content: "C";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 30px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    margin-right: 5px;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: @btn-primary-bg;
+    color: @white;
+    -webkit-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -kthtml-transition: all .1s linear;
+    transition: all .1s linear;
+
+    &.k-state-disabled,
+    &:disabled {
+      background: none;
+      cursor: default;
+    }
+  }
+
+  &:focus {
+    background-color: #e8effe;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+
+    &.k-state-disabled,
+    &:disabled {
+      background: none;
+      cursor: default;
+    }
+  }
+}
+
+

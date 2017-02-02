@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Process
@@ -13,7 +13,7 @@
 
 <div id="success"></div>
 <div id="message"></div>
-<div class="container_16">
+<div class="form-screen">
 
     @if (Model.IsMultiCurrency)
     {
@@ -41,9 +41,9 @@
                 </div>
 
                 <section class="footer-group-1">
-                    @Html.KoSageButton("btnRefresh", null, new { @id = "btnRefresh", @class = "btn-secondary", @value = CommonResx.Refresh })
-                    @Html.KoSageButton("btnHistory", null, new { @id = "btnHistory", @class = "btn-secondary", @value = RevaluationResx.History })
-                    @Html.KoSageButton("btnProcess", null, new { @id = "btnProcess", @class = "btn-primary", @value = CommonResx.Process })
+                    @Html.KoSageButton("btnRefresh", null, new { @id = "btnRefresh", @class = "btn btn-secondary", @value = CommonResx.Refresh })
+                    @Html.KoSageButton("btnHistory", null, new { @id = "btnHistory", @class = "btn btn-secondary", @value = RevaluationResx.History })
+                    @Html.KoSageButton("btnProcess", null, new { @id = "btnProcess", @class = "btn btn-primary", @value = CommonResx.Process })
                 </section>
 
                 <div id="optionalFieldsWindow">

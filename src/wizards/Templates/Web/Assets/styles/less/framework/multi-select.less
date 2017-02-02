@@ -10,15 +10,11 @@
   .multilist-parent {
     width: 40%;
 
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
     .multilist {
       border: 1px solid @sage-light-gray;
       height: 200px;
       overflow-y: auto;
+      width: 100%;
       
       .item {
         padding:10px;
@@ -66,4 +62,122 @@
       margin: 5px;
     }
   }
+}
+
+//
+// Kendo Multi-select box cpntrol
+// --------------------------------------------------
+
+.multiselect-group .k-multiselect{ 
+  clear: left; 
+  float: left;
+  border-color: #9a9b9c;
+  border-radius: 0;
+
+  &.xlarge {
+    width: 940px;
+  }
+
+  &.larger {
+    width: 700px;
+  }
+
+  &.large {
+    width: 460px;
+  }
+
+  &.medium-large {
+    width: 390px;
+  }
+
+  &.medium {
+    width: 340px;
+  }
+
+  &.default {
+    width: 220px;
+  }
+
+  .k-multiselect-wrap {
+    border-radius: 0;
+
+    .k-select {
+      position: absolute;
+      padding: .1em .2em;
+      right: -10px;
+      top: -1px;
+    }
+
+    li {
+      margin: 1px 5px 1px 1px;
+      padding: 0 10px;
+      float: left;
+      position: relative;
+      border: none;
+      background: none;
+      line-height: 1.9;
+
+      .k-icon {
+        margin-right: .4em;
+        background-position: -210px -1px;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        opacity: 0.5;
+      }
+
+      &:hover .k-icon,
+      &.k-state-hover:hover .k-icon {
+        background-position: -210px -1px;
+      }
+
+      &.k-button:hover {
+        background-color: #fff;
+      }
+    }
+
+    .k-input {
+      height: 26px;
+      padding: 5px;
+    }
+  }
+}
+
+.k-multiselect-wrap>ul>.k-button,
+.k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
+.k-state-focused,
+.k-multiselect-wrap .k-button:focus:not(.k-state-disabled):not([disabled]),
+.k-multiselect-wrap .k-button.k-state-acive:hover,
+.k-multiselect-wrap .k-button.k-state-acive:focus,
+.k-multiselect-wrap .k-button:active:hover,
+.k-multiselect-wrap .k-button:active:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: inherit;
+    background-color: #fff;
+    background: none;
+}
+
+
+.k-list-container .k-list .k-item.k-state-focused,
+.k-multiselect-wrap .k-input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.multiselect-group .k-multiselect.k-state-focused{
+    border-color: #66afe9;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.k-multiselect.k-state-focused>.k-multiselect-wrap>.k-i-close,
+.k-multiselect.k-state-hover>.k-multiselect-wrap>.k-i-close {
+  display: none;
+}
+
+.accordion .form-group .multiselect-group {
+  position: relative;
+  margin-top: -27px;
+  top: 27px;
 }
