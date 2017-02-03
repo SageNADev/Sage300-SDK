@@ -1,0 +1,145 @@
+﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Core.Web
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.InquiryViewModel
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("InquiryViewModel", Model)
+    var inquiryRazorView = {};
+    inquiryRazorView.funcInquiryPreferences = '@Html.GridPreference(Constants.FuncInquiryGridPreferenceKey)';
+    inquiryRazorView.custInquiryPreferences = '@Html.GridPreference(Constants.CustInquiryGridPreferenceKey)';
+    inquiryRazorView.funcSecondInquiryPreferences = '@Html.GridPreference(Constants.FuncInquirySecondGridPreferenceKey)';
+    inquiryRazorView.custSecondInquiryPreferences = '@Html.GridPreference(Constants.CustInquirySecondGridPreferenceKey)';
+    inquiryRazorView.isOEActive = '@ViewBag.IsOEActive';
+    inquiryRazorView.IsCompanyMultiCurrency = '@ViewBag.IsCompanyMultiCurrency';
+</script>
+
+@Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_Localization.cshtml")
+@Html.Partial(Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.GridPreferences)
+
+<div id="message"></div>
+<div class="form-screen">
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    <h1 id="headlineInquiry">@CommonResx.Inquiry - @Model.Title</h1>
+                </div>
+                @if (ViewBag.IsCompanyMultiCurrency)
+                {
+                    <div class="header-options">
+                        @*@Html.HeaderOptionsListHelper(InquiryResx.currencyListHeader, Model.CurrencyEnum, new { @id = "currencyOptions" })*@
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("currencyOptions", new { @options = "CurrencyEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "default single-select", @id = "currencyOptions" })
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    </header>
+    <div class="panel-group accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="titleFilter">
+                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+                        @InquiryResx.Filter
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="form-group">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("InquiryField", new { @options = "InquiryFields", @value = "Field", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "default single-select", @id = "InquiryField" })
+                        </div>
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = "OperatorField" })
+                        </div>
+                        <div class="finder-group">
+                            @Html.KoSageTextBoxFor(model => model.Value, new { @sagevalue = "Value", @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = "customerNumber", @maxlength = 12 })
+                            @Html.KoSageButton("btnFinderCustomerNumber", new { }, new { @class = "icon btn-search", @id = "btnFinderCustomerNumber", @tabindex = -1 })
+                        </div>
+                        <div class="finder-group" id="toCustomerGroup" style="display: none;">
+                            @Html.KoSageTextBox("toCustomerNumber", new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = "toCustomerNumber", @maxlength = 12  })
+                            @Html.KoSageButton("btnFinderToCustomerNumber", new { }, new { @class = "icon btn-search", @id = "btnFinderToCustomerNumber", @tabindex = -1 })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id="filter2">
+                                <option selected>@InquiryResx.DocumentType</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            <select class="small single-select" id="filter3">
+                                <option selected>@InquiryResx.Includes</option>
+                                @*<option>Excludes</option>*@
+                            </select>
+                        </div>
+                        <div class="multiselect-group">
+                            <!-- use existing KoSageDropDownList format for Multi-Select -->
+                            @Html.KoSageDropDownList("docTypeMultiSelect", new { @options = "ARDocumentTypes", @value = "DocumentType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "medium-large multi-select", multiple = "multiple" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id="filter4">
+                                <option selected>@InquiryResx.FullyPaid</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("filter5", new { @options = "YesNoEnums", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select" })
+                        </div>
+                        @*<div class="multiselect-group">
+                            @Html.KoSageDropDownList("ddl4-3", new { @options = "ARDocumentTypes", @value = "DocumentType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large multi-select", multiple = "multiple" })
+                        </div>*@
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id="NationalAccountFilter">
+                                <option selected>@ARCommonResx.NationalAccountNum</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("OperatorField2", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = "OperatorField2" })
+                        </div>
+                        <div class="finder-group">
+                            @Html.KoSageTextBox("nationalAccountNumber", new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = "nationalAccountNumber", @maxlength = 12 })
+                            @Html.KoSageButton("btnFinderNationalAccountNumber", new { }, new { @class = "icon btn-search", @id = "btnFinderNationalAccountNumber", @tabindex = -1 })
+                        </div>
+                        <div class="finder-group" id="toNationalAccountGroup" style="display: none;">
+                            @Html.KoSageTextBox("toNationalAccountNumber", new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = "toNationalAccountNumber", @maxlength = 12 })
+                            @Html.KoSageButton("btnFinderToNationalAccountNumber", new { }, new { @class = "icon btn-search", @id = "btnFinderToNationalAccountNumber", @tabindex = -1 })
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-basic">
+                        <div class="input-group" id="btnAddFilter">
+                            <input type="button" class="icon btn-filter-add">
+                            <span class="inline-txt">@InquiryResx.AddFilter</span>
+                        </div>
+                    </div>
+                    -->
+                    <section class="footer-group-1">
+                        @*<input class="btn btn-secondary" name="btnReset" type="button" value="@CommonResx.Reset" id="btnReset">*@
+                        <input class="btn btn-primary" name="btnApply" type="button" value="@CommonResx.Apply" id="btnApply">
+                        @*<input class="btn btn-primary" name="btnSave" type="button" value="@CommonResx.Save" id="btnSave">*@
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Need some kind of logic later to hide or show different types of inquiry grid*@
+    @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquiryGrid.cshtml", new Sage.CA.SBS.ERP.Sage300.AR.Models.CustomerDocument())
+
+
+    @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquirySecondGrid.cshtml", new Sage.CA.SBS.ERP.Sage300.AR.Models.DocumentPayment())
+</div>

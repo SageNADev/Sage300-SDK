@@ -93,3 +93,57 @@
     border-bottom-color: @tooltip-arrow-color;
   }
 }
+
+// Kendo Tooltip Customization 
+
+.k-widget.k-tooltip {
+  background-color: @sage-dark-gray;
+  border-radius: 0;
+  font-size: 12px;
+  color: #FFF;
+  font-family: arial;
+  padding: 15px;
+  top: 29px;
+  left: 5px;
+  text-align: left;
+  width: 280px !important;
+  background-image: none;
+  line-height: inherit;
+  box-shadow: none;
+
+  &:before {
+    position: absolute;
+    top: 5px;
+    left: -14px;
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 7px solid @sage-dark-gray;
+    border-color: transparent @sage-dark-gray transparent transparent;
+  }
+
+  .url-link {
+    color: @white;
+  }
+}
+
+.k-callout-w {
+  display: none;
+}
+
+.help-icon {
+  background-image: url(../../images/ui/sprite_icons.png);
+  background-repeat: no-repeat;
+  background-size: 900px 90px;
+  height: 26px;
+  width: 24px;
+  cursor: pointer;
+  display: inline-block;
+}  
+
+div[class*="-group"] > label + .help-icon {
+  background-position: -402px 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -17,7 +17,7 @@
         <div class="result-grid-wrapper processingResultGrid-wrapper">
             @Html.KoKendoGrid("processingResultGrid", "progressUI.progressUIModel.ProcessResult.Results", "ProcessResult", "progressUI.gridOption")
         </div>
-        @Html.KoSageButton("btnCancel", new { @visible = "ProcessResult.ProgressMeter.ShowCancel" }, new { @id = "btnCancel", @value = CommonResx.Cancel, @class = "btn-primary right" })
+        @Html.KoSageButton("btnCancel", new { @visible = "ProcessResult.ProgressMeter.ShowCancel" }, new { @id = "btnCancel", @value = CommonResx.Cancel, @class = "btn btn-primary right" })
     </div>
 </div>
 

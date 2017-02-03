@@ -1,4 +1,4 @@
-﻿@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Core.Web.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -28,7 +28,7 @@
              @Html.KoSageDropDownList("exportImportOption", new { @options = "Options", @value = "SelectedOption", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "exportImportOption", @class="default" })
         </div>
         <div id="buttons" >
-                @Html.KoSageButton("Select", null, new { @class = "btn-primary", @value = @buttonCaption, @id = frmSubmitButtonId })
+                @Html.KoSageButton("Select", null, new { @class = "btn btn-primary", @value = @buttonCaption, @id = frmSubmitButtonId })
         </div>
     </div>  
 </div>

@@ -2,12 +2,19 @@
 // Horizontal rules
 // --------------------------------------------------
 
+.k-window-content hr {
+    border-top: 	0;
+}
 
 hr {
 	margin-bottom: 	@line-height-computed;
 	border: 		0;
 	border-top: 	1px solid @hr-border;
 	width:			100%;
+
+	&.solid {
+	border-top: 	1px solid @hr-border;
+	}
 
 	&.dashed {
 	border-top: 	1px dashed @hr-border;
@@ -16,8 +23,4 @@ hr {
 	&.dotted {
 	border-top: 	1px dotted @hr-border;
 	}
-}
-
-.k-window-content hr:first-child {
-    display:		none;
 }

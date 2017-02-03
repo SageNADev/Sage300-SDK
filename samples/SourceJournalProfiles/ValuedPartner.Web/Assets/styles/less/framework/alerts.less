@@ -105,7 +105,7 @@
     width: 700px;
     background-color: #4d4f53;
     margin: 0 auto;
-    height: 50px; 
+    min-height: 50px; 
     box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
     -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
@@ -118,9 +118,14 @@
     margin-left: -350px;
     z-index: 999999;
     margin-top: 50px;
+    padding-top: 0 !important;
     box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
     -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+
+    .modal-msg h3 {
+      padding:  17px 0 10px; 
+    }
 }
 
 .message {
@@ -156,13 +161,13 @@
     font-size: 14px;
     font-weight: normal;
     margin-left: 70px;
+    text-align: left;
 }
 
 .message-control .msg-content { 
     padding: 20px 20px 20px 70px;
     color: #4d4f53;
     overflow: auto;
-    max-height: 310px;
     border: 1px solid #9a9b9c;
     border-top: 0px;
     background: #fff !important;

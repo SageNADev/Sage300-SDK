@@ -5,6 +5,7 @@
 @using KPICommonResx = Sage.CA.SBS.ERP.Sage300.KPI.Resources.EnumerationsResx
 @using HomeResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.HomePageResx
 @using NavResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.NavigationResx
+@using InquiryResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.InquiryResx
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 <script type="text/javascript">
     var portalBehaviourResources = {
@@ -25,7 +26,8 @@
         DomainUrl: '@(Request.ApplicationPath != "/" ? Request.ApplicationPath + Utilities.GetUrlPrefix() : Utilities.GetUrlPrefix())',
         ReportNameTemplate: '@Html.SageRaw(@KPICommonResx.ReportNameTemplate)',
         PagetitleInManager: '@Html.SageRaw(@KPICommonResx.PagetitleInManager)',
-        ManageUsers: '@Html.SageRaw(@HomeResx.TopNav_Manage_Users)'
+        ManageUsers: '@Html.SageRaw(@HomeResx.TopNav_Manage_Users)',
+        Inquiry: '@Html.SageRaw(@InquiryResx.Inquiry)'
     }
 </script>
 

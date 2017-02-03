@@ -1,10 +1,10 @@
-﻿// Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
 
 using System;
 using System.IO;
 using System.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Authentication;
-using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 
@@ -27,7 +27,7 @@ namespace ValuedPartner.Web.WebForms
         /// <param name="e"></param>
         protected override void OnInit(EventArgs e)
         {
-            AuthenticatedUser = Utilities.GetStoredUserSignOnResult();
+            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult();
             if (ConfigurationHelper.IsOnPremise)
             {
                 var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", HttpContext.Current.Session.SessionID));
@@ -54,7 +54,7 @@ namespace ValuedPartner.Web.WebForms
         /// <returns></returns>
         public static bool IsUserAuthenticated()
         {
-            var userTenantInfo = Utilities.GetStoredUserSignOnResult();
+            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult();
 
             return (userTenantInfo != null);
         }
