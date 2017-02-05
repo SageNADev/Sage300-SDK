@@ -27,6 +27,12 @@
             return { Field: { field: field }, Value: value, Operator: operator, ApplyFilterIfNull: applyFilterIfNull };
         },
 
+        createInquiryFilter: function (field, operator, value, applyFilterIfNull, isAndOperation, logisticGroup) {
+            if (applyFilterIfNull == null || applyFilterIfNull == undefined) {
+                applyFilterIfNull = false;
+            }
+            return { Field: { field: field }, Value: value, SqlOperator: operator, ApplyFilterIfNull: applyFilterIfNull };
+        },
         createDefaultFunction: function (fieldControl, field, operator) {
             var func = function () {
                 if (operator == undefined || operator.length == 0) {
@@ -580,60 +586,82 @@
             });
         },
         _showFinderScreen: function (that, data, dialogId) {
-            $(dialogId).html(data);
-            FinderGridHelper.init();
-            FinderPreferences.Initialize();
-            var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
-            $titleSpan.html(that.options.title);
-            kendoWindow.open();
+            if (data) {
+                $(dialogId).html(data);
+                FinderGridHelper.init();
+                FinderPreferences.Initialize();
+                var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
+                $titleSpan.html(that.options.title);
+                kendoWindow.open();
 
-            $(document).on('click.plugin.finderPref', "#btnFinderPrefApply", function () {
-                sg.isPreferencesPostback = true;
-                that._reload(that, false);
-            });
+                $(document)
+                    .on('click.plugin.finderPref',
+                        "#btnFinderPrefApply",
+                        function() {
+                            sg.isPreferencesPostback = true;
+                            that._reload(that, false);
+                        });
 
-            $(document).on('click.plugin.finderPref', "#btnFinderPrefRestore", function () {
-                sg.isPreferencesPostback = true;
-                that._reload(that, true);
-            });
+                $(document)
+                    .on('click.plugin.finderPref',
+                        "#btnFinderPrefRestore",
+                        function() {
+                            sg.isPreferencesPostback = true;
+                            that._reload(that, true);
+                        });
 
-            $(document).on('click.plugin.finderPref', "#btnFinderPrefEditCols", function () {
-                var prefHtml = $("#tblTBodyFinderPref").html();
-                if (prefHtml !== "") {
-                    FinderPreferences.ShowFieldsWindow();
-                } else {
-                    var data = { searchFinder: that.options.searchFinder };
-                    window.sg.utls.ajaxPostHtmlSync(window.sg.utls.url.buildUrl("Core", "Find", "GetEditableColumns"), data, function (successData) {
-                        $("#tblTBodyFinderPref").html(successData);
-                        FinderPreferences.FinderPreferencesHTML = $("#tblTBodyFinderPref").html();
-                        FinderPreferences.ShowFieldsWindow();
-                    });
-                }
-            });
+                $(document)
+                    .on('click.plugin.finderPref',
+                        "#btnFinderPrefEditCols",
+                        function() {
+                            var prefHtml = $("#tblTBodyFinderPref").html();
+                            if (prefHtml !== "") {
+                                FinderPreferences.ShowFieldsWindow();
+                            } else {
+                                var data = { searchFinder: that.options.searchFinder };
+                                window.sg.utls.ajaxPostHtmlSync(window.sg.utls.url
+                                    .buildUrl("Core", "Find", "GetEditableColumns"),
+                                    data,
+                                    function(successData) {
+                                        $("#tblTBodyFinderPref").html(successData);
+                                        FinderPreferences.FinderPreferencesHTML = $("#tblTBodyFinderPref").html();
+                                        FinderPreferences.ShowFieldsWindow();
+                                    });
+                            }
+                        });
 
-            $("#select").on('click', function () {
-                sg.finderHelper.cancelFuncCall = $.noop;
-                sg.delayVariables.IsInProgress = false;
-                that._getSelectedRow(that);
-            });
+                $("#select")
+                    .on('click',
+                        function() {
+                            sg.finderHelper.cancelFuncCall = $.noop;
+                            sg.delayVariables.IsInProgress = false;
+                            that._getSelectedRow(that);
+                        });
 
-            $("#cancel").on('click', function () {
-                that._triggerChange(that);
-                var cancel = that.options.cancel;
-                if (cancel) {
-                    $(this).on('click', cancel());
-                }
-                var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
-                finderWin.destroy();
+                $("#cancel")
+                    .on('click',
+                        function() {
+                            that._triggerChange(that);
+                            var cancel = that.options.cancel;
+                            if (cancel) {
+                                $(this).on('click', cancel());
+                            }
+                            var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
+                            finderWin.destroy();
+                            sg.utls.isFinderClicked = false;
+                            sg.findEvent = null;
+
+                        });
+                $("#div_finder_grid .k-grid-content")
+                    .delegate("tbody>tr",
+                        "dblclick",
+                        function() {
+                            sg.finderHelper.cancelFuncCall = $.noop;
+                            that._getSelectedRow(that);
+                        });
+            } else {
                 sg.utls.isFinderClicked = false;
-                sg.findEvent = null;
-
-            });
-            $("#div_finder_grid .k-grid-content").delegate("tbody>tr", "dblclick", function () {
-                sg.finderHelper.cancelFuncCall = $.noop;
-                that._getSelectedRow(that);
-            });
-
+            }
         },
 
         _reload: function (that, deleteUserPreference) {

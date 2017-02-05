@@ -7,6 +7,36 @@
 .panel {
   margin-bottom: @line-height-computed;
   background-color: @panel-bg;
+  border-bottom: 1px solid @sage-light-gray;
+
+  h3 {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0 15px;
+  }
+
+  .panel-content {
+
+    .input-group.with-checkbox {
+      margin-top: 0;
+    }
+  }
+
+  &.no-border {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  &.left {
+    margin-bottom: @line-height-computed;
+    border-bottom: 1px solid @sage-light-gray;
+  }
 }
 
 // Panel contents
@@ -225,6 +255,21 @@
       border-bottom: 1px solid @panel-inner-border;
     }
   }
+
+  .form-basic .inline-txt {
+    margin-left: 5px;
+    top: 1px;
+    position: relative;
+  }
+
+  .footer-group-1 {
+    border-top: 0;
+    padding-top: 0;
+
+     input[class*=btn-] {
+      margin-bottom: 0;
+    }
+  }
 }
 
 
@@ -246,4 +291,81 @@
 }
 .panel-danger {
   .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border);
+}
+
+
+// Collapsable panels (for Entry Screens)
+.panel.collapse,
+.panel.un-collapse {
+  margin: 0 auto;
+  background-color: #fff;
+  display: block;
+  border: 0;
+  clear: both;
+
+  .panel-header {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 0;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -1px;
+      border-top: 1px solid #bfbfbf;
+    }
+
+    .panel-icon {
+      background-image: url(../../images/ui/sprite_icons.png);
+      background-repeat: no-repeat;
+      background-size: 900px 90px;
+      opacity: 1;
+      width: 25px;
+      height: 12px;
+      background-position: -557px -3px;
+      display: inline-block;
+
+      &.panel-icon-up {
+        background-position: -583px -4px;
+      }
+    }
+
+    h3 {
+      color: #333;
+      padding: 0;
+      margin: 0 !important;
+      float: none;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.4;
+      position: relative;
+      cursor: pointer;
+
+      label {
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+    }
+
+    .more {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #84868a;
+      font-size: 18px;
+    }
+  }
+
+  .panel-content {
+    padding: 20px 0 0;
+  }
+}
+
+
+.panel.collapse .panel-header.hide + .panel-content {
+    border-top: 1px solid #bfbfbf;
 }

@@ -7,9 +7,7 @@
     border: 1px solid @sage-light-gray;
     background-color: @white;
     margin: 0 @margin-base @margin-base 0;
-    clear: both;
-    width: 48%; //default size
-    min-width: 460px;
+    width: 47%; //default size
 
     table {
         width: 100%;
@@ -28,6 +26,7 @@
 
             label {
                 display: inline-block;
+                margin-bottom: 0;
             }
 
             input[type=text] {
@@ -41,9 +40,11 @@
                 height: 24px;
                 top: -3px;
 
-                .kendonumeric.k-input {
+                .kendonumeric.k-input,
+                .k-input {
                     height: 22px;
                     top:0;
+                    border-radius: 0;
                 }
             }
 
@@ -55,14 +56,14 @@
                     content: "";
                     width: 0;
                     height: 0;
-                    border-top: 6px solid red;
+                    border-top: 6px solid @sage-bright-green;
                     border-left: 6px solid transparent;
                     position: absolute;
                     margin: 0px -6px;
                 }
 
                 .k-input {
-                    background-color: #ffdd4f;
+                    background-color: #e2fbf8;
                     border-radius: 0;
                 }
             }
@@ -88,18 +89,14 @@
             margin: 10px 0;
         }
 
-        .textbox {
-            height: 24px;
-        }
-
         .value-text-indicator {
             position: absolute;
             right: 0;
-            top: 22px;
-            padding: 3px 10px;
-            color: #fff;
+            top: 26px;
+            padding: 3px 12px;
             font-size: 12px;
-            background-color: #000;
+            color: @white;
+            background-color: @sage-dark-gray;
             z-index: 1;
             display: none;
 
@@ -111,11 +108,17 @@
                 margin-left: 0;
                 border-width: 4px;
                 border-style: solid;
-                border-color: transparent transparent #000 transparent;
+                border-color: transparent transparent @sage-dark-gray transparent;
             }
         }
     }
-    &.large {
+
+    &.large,
+    &.w100-percent {
         width: 100%;
+    }
+
+    &.right {
+        margin-right: 0;
     }
 }

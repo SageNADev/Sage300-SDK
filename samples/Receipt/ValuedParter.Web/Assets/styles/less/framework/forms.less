@@ -58,6 +58,11 @@
   margin: 0 30px;
 }
 
+.k-window-content .form-screen {
+  margin: 0;
+}
+
+
 
 // Added media query 
 //
@@ -80,13 +85,25 @@ and (max-device-width : 1024px) {
 input,
 label,
 select,
-button,
-textarea {
+button {
   margin: 0;
   border: 0;
   padding: 0;
   vertical-align: middle;
   white-space: normal;
+  background: none;
+  line-height: @line-height-base;
+  font-size: @font-size-base;
+  font-family: @font-family-base;
+  border-radius: @border-radius-base;
+}
+
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: top;
+  white-space: pre-line;
   background: none;
   line-height: @line-height-base;
   font-size: @font-family-base;
@@ -120,8 +137,11 @@ label {
   display: block;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
-}
 
+  &.disabled {
+    color: @gray-light;
+  }
+}
 
 // Normalize form controls
 //
@@ -150,11 +170,6 @@ input[type="checkbox"] {
     opacity:0; 
     filter:alpha(opacity=0);
   }
-}
-
-// Set the height of file controls to match text inputs
-input[type="file"] {
-  display: block;
 }
 
 // Make range inputs behave like textual form controls
@@ -248,8 +263,7 @@ textarea {
 .focus-input-box {
   outline: none;
   border-color: @input-border-focus;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  .box-shadow(none);
   /*background-color: @table-bg-hover;*/
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -285,6 +299,12 @@ input[class*='k-input']:focus {
 } 
 
 .k-state-disabled {
+
+  input[class*='k-input'] {
+    border-color: darken(@input-bg-disabled, 3%);
+    background-color: @input-bg-disabled;
+    background-image: none;
+  }
 
   input[class*='k-input']:focus {
     box-shadow: none;
@@ -402,33 +422,33 @@ input[type="month"] {
   margin: 0 auto;
   width: 100%;
   .clearfix();
+
+  &.indented {
+    margin-left: @margin-base;
+  }
 }
 
 .form-group div[class*="-group"],
 .form-basic div[class*="-group"] {
-  margin-bottom: @margin-base;
-  margin-right: (@margin-base - 4);
+  margin-bottom: 16px;
+  margin-right: 16px;
   position: relative;
-  white-space: nowrap;
   display: inline-block;
-  float: none;
 
   &:last-child {
     margin-right: 0;
   }
+}
 
-  &.no-label > input[type=text]{ 
-    margin-top: 20px;
+.form-basic {
+
+  div[data-sage300uicontrol] {
+    display: inline-block;
   }
-}
 
-.form-group div[class="ctrl-group"] {
-  margin-bottom: 0;
-  margin-top:-10px;
-}
-
-.form-basic .inline-txt {
-  margin-left: 2px;
+  .inline-txt {
+    margin-left: 2px;
+  }
 }
 
 
@@ -451,16 +471,16 @@ input[type="month"] {
 
 .ctrl-group {
 
+  margin-bottom: 10px !important;
+
   .textbox {
     padding: 2px 10px;
     height: 22px;
-    vertical-align: top;
     margin-top: -2px;
   }
 
   label {
     display: inline-block;
-    padding-left: 5px;
   }
 
   .k-dropdown .k-input {
@@ -487,8 +507,31 @@ input[type="month"] {
     background-position: -83px 0;    
   }
 
+  .k-dropdown .k-state-disabled .k-i-arrow-s { 
+    background-position: -83px -70px;
+  }
+
   .form-group {
     padding: 0 0 0 28px;
+  }
+
+  div[data-bind],
+  div[data-sage300uicontrol] {
+    display: inline-block;
+  }
+
+  .k-numeric-wrap {
+    height: 24px;
+    top: -4px;
+
+    .k-input {
+      margin: 0;
+      height: 22px;
+    }
+  }
+
+  .child.numeric-group {
+    margin-bottom: 0;
   }
 }
 
@@ -734,7 +777,6 @@ input[type="checkbox"] {
 .plus-group,
 .fileupload-group,
 .multiselect-group {
-  float: left;
   margin-bottom: @margin-base;
   position: relative;
 
@@ -749,7 +791,7 @@ input[type="checkbox"] {
 
   .separator, 
   .separator[disabled] {
-    width: 20px;
+    width: 10px;
     clear: none;
     border-left: 0;
     border-right: 0;
@@ -780,10 +822,24 @@ input[type="checkbox"] {
   .btn-fiscal-picker[disabled] {
     background-position: -52px -67px;
   }
+
+  .leftbox:disabled + .separator {
+    background-color: @input-bg-disabled;
+    border-color: darken(@input-bg-disabled, 3%);
+  }
 }
 
 .fiscal-group {
   width: 160px; /* Added to set the width for Edge Browser */
+
+  .k-numerictextbox.rightbox {
+    margin: 0;
+    padding: 0;
+
+    .k-numeric-wrap {
+      border-left: 0;
+    }
+  }
 }
 
 .misc-group {
@@ -813,6 +869,7 @@ input[type="checkbox"] {
   input[type="button"],
   button {
     margin-left: 6px;
+    margin-top: 0;
 
     &:first-child {
       margin-left: 0;
@@ -851,6 +908,7 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     .icon, 
     .k-icon, 
     .k-icon:not(.k-loading), 
+    .k-icon:not(.k-loading):not(.k-i-loading),
     .k-tool-icon, 
     .k-grouping-dropclue, 
     .k-drop-hint, 
@@ -920,6 +978,7 @@ input[class*="btn-"] {
   border: 1px solid @btn-default-border;
   text-indent: -9999px;
   background-color: @btn-default-bg;
+  position: relative;
 
   &:focus {
     .focus-input-box;
@@ -928,16 +987,7 @@ input[class*="btn-"] {
 
 .btn-go,
 .btn-fiscal-picker {
-  margin-left: -34px;
-}
-
-.k-ie .btn-go,
-.k-ie .btn-fiscal-picker {
-  margin-left: -33px; // IE fix
-}
-
-.btn-finder{
-  margin-right: -4px;
+  margin-left: -30px;
 }
 
 .btn-go                     { background-position: -23px 4px; }
@@ -979,14 +1029,28 @@ input.numeric {
 }
 
 .go-group,
-.search-group {
-  input.numeric {
-    padding-right: 40px;
+.search-group,
+.plus-group,
+.numeric-search-group {
+
+  input.numeric,
+  input.align-right {
+    padding-right: 34px;
+  }
+
+  span.k-numerictextbox {
+  padding: 0;
+
+    &.default {
+      width: 220px;
+    }
   }
 }
 
-.k-numerictextbox {
-  padding: 0;
+.numeric-group {
+  span.k-numerictextbox {
+    padding: 0;
+  }  
 }
 
 
@@ -995,14 +1059,16 @@ input,
 textarea,
 .datepicker-group .k-datepicker,
 .numeric-group .k-numerictextbox,
+.numeric-search-group .k-numerictextbox,
 .input-group .k-numerictextbox,
+.input-group .k-dropdown,
 .dropdown-group .k-dropdown {
   &.xlarge {
     width: 100%;
   }
 
   &.larger {
-    width: 700px;
+    width: 680px;
   }
 
   &.large {
@@ -1026,7 +1092,7 @@ textarea,
   }
 
   &.smaller {
-    width: 100px;
+    width: 120px;
   }
 
   &.xsmall {
@@ -1040,9 +1106,34 @@ textarea,
 }
 
 textarea {
-  min-height: 100px; 
+  min-height: 200px; 
   resize: vertical; 
   display: block; 
+}
+
+#EmailTextArea {
+  textarea.xlarge {
+    width: 680px;
+  }
+}
+
+// Align Total Tax input field
+
+.align-right-child div[class*="-group"] {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+// Disabling Go-button next to disabled input field
+
+.search-group input[disabled] ~ .btn-go, 
+.finder-group input[disabled] ~ .btn-go, 
+.plus-group input[disabled] ~ .btn-go {
+    border: 1px solid darken(@input-bg-disabled, 3%);
+    background-color: @input-bg-disabled;
+    background-position: -23px -66px;
+    cursor: default;
 }
 
 // Kendo Customization - dropdown list, numeric text box and datepicker
@@ -1065,6 +1156,11 @@ textarea {
     -webkit-border-radius: 0;
     border-radius: 0;
     font-size: 14px;
+  }
+
+  .k-expand-padding .k-input {
+    height: 28px;
+    border-radius: 0;
   }
 
   &.k-state-default {
@@ -1117,6 +1213,10 @@ textarea {
   .k-link.k-state-selected {
     background-color: #dadadd;
   }
+}
+
+.k-datepicker {
+  padding: 0;
 }
 
 .k-dropdown.k-header {
@@ -1259,7 +1359,7 @@ textarea {
 
   th {
     background-color: @sage-dark-gray;
-    text-align: center;
+    text-align: center !important;
     color: @white;
     font-weight: 700;
     padding: 6px 0;
@@ -1270,9 +1370,20 @@ textarea {
       -webkit-border-radius: 0;
       border-radius: 0;
 
-    &.k-state-focused {
+    &.k-today {
+      -webkit-box-shadow: inset 0 0 0 1px @sage-link;
+      -moz-box-shadow: inset 0 0 0 1px @sage-link;
+      box-shadow: inset 0 0 0 1px @sage-link;
+
+      > .k-link {
+        color: @sage-link;
+      }
+    }
+
+    &.k-state-focused,
+    &.k-state-focused.k-state-selected {
       background-color: @sage-link;
-      .box-shadow(none); // override kendo defualt ui
+      .box-shadow(none) !important; // override kendo defualt ui
       background-image: none;
 
       .k-link {
@@ -1346,7 +1457,7 @@ td.k-state-focused.k-state-selected {
   height: 42px;
   border-right: 1px solid #dbdbde;
   border-left: 1px solid #dbdbde;
-  width: 420px;
+  width: 418px;
 
   > table {
     td:first-child {
@@ -1392,9 +1503,13 @@ td.k-state-focused.k-state-selected {
   cursor: pointer;
   position: relative;
 
-  &[disabled] {
-      opacity: 0.3;
+  &[disabled],
+  &.disabled,
+  &.disable {
+      opacity: 0.5;
       cursor: default;
+      pointer-events: none;
+      text-decoration: none;
 
       &:hover .sub-menu {
         display: none;
@@ -1433,7 +1548,7 @@ td.k-state-focused.k-state-selected {
 }
 
 .label-menu-popup{ 
-  background: #fff;
+  background: @gray-lighter;
   box-shadow: 0 0 1px #000;
   margin-top: -11px;
   margin-left: 14px;
@@ -1446,13 +1561,9 @@ td.k-state-focused.k-state-selected {
   padding: 0; 
   list-style-type: none;
 
-    li:not(:last-child) {
-    margin-bottom: 10px;
-    }
-
     li input[type=button].action-btn {
     border: 0;
-    background: none; 
+    background: @white; 
     outline: none; 
     padding: 5px 10px;
     font-size: 14px;
@@ -1466,15 +1577,18 @@ td.k-state-focused.k-state-selected {
       &:hover{
       background-color: #e8effe;
       text-decoration: none;
+      color: @sage-link;
       } 
 
       &[disabled]  { 
       color: #9a9b9c; 
       cursor: default;
-      background-color: @white;
+      background-color: @gray-lighter;
 
         &:hover {
-          textpdecoration: none;
+          text-decoration: none;
+          color: #9a9b9c;
+          background-color: @gray-lighter;
         }
       }
     }
@@ -1484,6 +1598,39 @@ td.k-state-focused.k-state-selected {
 // Label with menus
 .label-with-menu > label {
     display: inline-block;
+}
+
+.ctrl-group,
+.finder-group,
+.search-group,
+.plus-group,
+.input-group {
+  .label-link {
+    display: inline-block;
+    font-size: 12px;
+    top: -2px;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &.label-menu {
+      top: 0;
+      margin-left: 0;
+    }
+
+    &.disabled,
+    &.disable,
+    &[disabled] { 
+      color: #9a9b9c; 
+      cursor: default;
+      pointer-events: none;
+      text-decoration: none;
+      
+      &:hover {
+      text-decoration: none;
+      }
+    }
+  }
 }
 
 /* extending form */
@@ -1519,9 +1666,9 @@ td.k-state-focused.k-state-selected {
 .checkBox {
   position: relative;
   top: 5px;
-  left: -3px;
+  left: 0;
   display: inline-block;
-  width: 20px;
+  width: 25px;
   height: 20px;
   background: transparent url('@{image-path}/ui/sprite_form.png') no-repeat -3px -31px;
   background-size: 110px 110px;
@@ -1537,14 +1684,16 @@ td.k-state-focused.k-state-selected {
     cursor: pointer;
   }
 
-  &:focus {
+  &:focus,
+  &.focus {
     background-position: -38px -31px;
   }
 
   &.selected {
     background-position: -3px -3px;
 
-      &.cBox-hover {
+      &.cBox-hover,
+      &.focus {
         background-position: -38px -3px;
       }
   }
@@ -1569,25 +1718,25 @@ td.k-state-focused.k-state-selected {
 .radioBox {
   position: relative;
   top: 3px;
+  left: 0;
   display: inline-block;
-  width: 20px;
+  width: 25px;
   height: 22px;
-  background: transparent url('@{image-path}/ui/sprite_form.png') no-repeat -3px -85px;
+  background: transparent url('@{image-path}/ui/sprite_form.png') no-repeat -3px -86px;
   background-size: 110px 110px;
 
   input[type=radio] {
     cursor: pointer;
     opacity: 0;
-    top: -9px;
   }
 
   &:hover {
-    background-position: -38px -85px;
+    background-position: -38px -86px;
     cursor: pointer;
   }
 
   &:focus {
-    background-position: -38px -85px;
+    background-position: -38px -86px;
   }
 
   &.selected {
@@ -1602,8 +1751,9 @@ td.k-state-focused.k-state-selected {
     margin: 0;
   }
 
-  &.radioBox-disabled {
-    background-position: -73px -85px;
+  &.radioBox-disabled,
+  &.rBox-disabled, {
+    background-position: -73px -86px;
 
     input[type=radio] {
       cursor: default;
@@ -1800,113 +1950,21 @@ ul#exportTreeView li ul li {
   margin-left: @margin-base;
 }
 
-// Multi-select 
+.wrapper-group {
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
 
-.multiselect-group .k-multiselect{ 
-  clear: left; 
-  float: left;
-  border-color: #9a9b9c;
-  border-radius: 0;
-
-  &.xlarge {
-    width: 940px;
+  .half-width {
+    width: 48%;
   }
 
-  &.larger {
-    width: 700px;
+  .left:nth-child(2) {
+    margin-right: @margin-base;
   }
 
-  &.large {
-    width: 460px;
-  }
-
-  &.medium-large {
-    width: 390px;
-  }
-
-  &.medium {
-    width: 340px;
-  }
-
-  &.default {
-    width: 220px;
-  }
-
-  .k-multiselect-wrap {
-    border-radius: 0;
-
-    .k-select {
-      position: absolute;
-      padding: .1em .2em;
-      right: -10px;
-      top: -1px;
-    }
-
-    li {
-      margin: 1px 5px 1px 1px;
-      padding: 0 10px;
-      float: left;
-      position: relative;
-      border: none;
-      background: none;
-      line-height: 1.9;
-
-      .k-icon {
-        margin-right: .4em;
-        background-position: -210px -1px;
-        width: 20px;
-        height: 20px;
-        top: 0;
-        opacity: 0.5;
-      }
-
-      &:hover .k-icon,
-      &.k-state-hover:hover .k-icon {
-        background-position: -210px -1px;
-      }
-
-      &.k-button:hover {
-        background-color: #fff;
-      }
-    }
-
-    .k-input {
-      height: 26px;
-      padding: 5px;
-    }
+  .three-quarter-width {
+    width: 78%;
   }
 }
 
-.k-multiselect-wrap>ul>.k-button,
-.k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
-.k-state-focused,
-.k-multiselect-wrap .k-button:focus:not(.k-state-disabled):not([disabled]),
-.k-multiselect-wrap .k-button.k-state-acive:hover,
-.k-multiselect-wrap .k-button.k-state-acive:focus,
-.k-multiselect-wrap .k-button:active:hover,
-.k-multiselect-wrap .k-button:active:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: inherit;
-    background-color: #fff;
-    background: none;
-}
-
-
-.k-list-container .k-list .k-item.k-state-focused,
-.k-multiselect-wrap .k-input:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.multiselect-group .k-multiselect.k-state-focused{
-    border-color: #66afe9;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    -webkit-transition: all .2s linear;
-    -o-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    -ms-transition: all .2s linear;
-    -kthtml-transition: all .2s linear;
-    transition: all .2s linear;
-}

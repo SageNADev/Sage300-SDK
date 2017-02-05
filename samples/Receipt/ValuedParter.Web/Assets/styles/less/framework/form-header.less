@@ -18,6 +18,10 @@
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 21px;
+
+    label {
+      font-size: 21px;
+    }
   }
 }
 
@@ -27,6 +31,19 @@
   vertical-align: middle;
   padding: 0 0 6px 10px;
   white-space: nowrap;
+
+  .dropdown-group {
+    margin-bottom: 0;
+
+    .k-dropdown-wrap {
+      border: 0;
+
+      .k-select {
+      background: none;
+      border: 0;
+      }
+    }
+  } 
 }
 
 .header-options input[class*="btn-"]:nth-child(2n), 
@@ -51,8 +68,18 @@
     right: 0;
     top: 0;
     background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -845px 3px;
-    background-size: 1100px 110px;;
+    background-size: 1100px 110px;
 	}
+
+  .more-icon {
+    width: 24px;  
+    height: 24px;
+    position: absolute; 
+    right: 0;
+    top: 0;
+    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -662px 5px;
+    background-size: 900px 90px;
+  }
 }
 
 .options-menu > li > a { 
@@ -70,6 +97,10 @@
   .arrow-grey {
     background-position: -845px -40px;
   }
+
+  .more-icon {
+    background-position: -662px -30px;
+  }
 }
 
 .options-menu > li:hover .sub-menu {
@@ -80,7 +111,7 @@
 	display: none;  
 	position: absolute;
 	border: 1px solid @sage-mid-gray;  
-	min-width: 150px;  
+	min-width: 180px;  
 	z-index: 99999;  
 	background: #fff;  
 	list-style: none;  
@@ -97,9 +128,32 @@
     &.not-active {
     pointer-events: none;
     cursor: default;
-    color: #bababc
+    color: #bababc;
+    }
+
+    &.selected {
+    color: white;
+    background-color: #255bc7;
     }
 	}
+
+  > li > input {
+    text-align: left;
+    width: 100%;
+    background: none;
+    border: none;
+
+    &:hover {
+      background-color: #e8effe;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: default;
+      color: #bababc;
+    }
+  }
 
 	a:hover { 
 		background-color: #e8effe;

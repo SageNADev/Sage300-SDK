@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
 (function (sg, $) {
@@ -163,6 +163,8 @@ var kendoWindow = null;
         ReorderQuantity: "reorderquantity",
         PurchaseOrderEntry: "purchaseorderentry",
         OEOrderEntry: "oeorderentry",
+        OEInvoiceEntry: "oeinvoiceentry",
+        OEShipmentEntry: "oeshipmententry",
         GLSourceJournalProfile: "glsourcejournalprofile",
         InternalUsage: "icinternalusage",
         CreditDebitNoteEntry: "oecreditdebitnoteentry",

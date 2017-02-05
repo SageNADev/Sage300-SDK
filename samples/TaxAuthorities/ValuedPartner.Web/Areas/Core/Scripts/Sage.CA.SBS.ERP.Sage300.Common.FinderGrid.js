@@ -242,7 +242,7 @@ var FinderGridHelper = {
     },
     InitColumnGrid: function () {
         var dropdownDatasource = $.grep(FinderGridHelper.columns, function (gridField) { return !gridField.IgnorePreferences && gridField.FinderDisplayType !== sg.FinderDisplayType.Grid; });
-        dropdownDatasource = [{ title: ShowAllRecords, field: "" }].concat(dropdownDatasource);
+        dropdownDatasource = [{ title: ShowAllRecords, field: "ShowAllRecords" }].concat(dropdownDatasource);
         $("#ColumnDropdown").kendoDropDownList({
             autoBind: false,
             dataTextField: "title",

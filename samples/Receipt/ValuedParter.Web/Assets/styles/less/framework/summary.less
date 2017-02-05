@@ -74,6 +74,10 @@
         }
       }
     }
+
+    label {
+      margin: 0;
+    }
   }
 }
 
@@ -85,5 +89,33 @@
   .summary-group .left + div[class*="summary-"] {
     width: 44%;
     float: right !important;
+  }
+}
+
+//
+// Summary - custom styles
+// For GL Journal Entry UI
+
+.gl-je-batchinfo-table table { 
+  width: 49%; 
+  margin-bottom: 2px;
+
+  tr td {
+    vertical-align: top; 
+    padding-bottom: 4px;
+    max-width: 180px; 
+    font-size: 13px;
+
+    &:first-child {
+      padding-right: 20px;
+    }
+  }
+
+  &:first-child { 
+    float: left;
+  }
+
+  &:last-child{ 
+    float: right;
   }
 }

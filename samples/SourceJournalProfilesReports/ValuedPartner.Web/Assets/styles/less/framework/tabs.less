@@ -382,8 +382,13 @@ header + .nav-tabs {
         border-top: 1px solid @sage-link;
         margin: 0px;  
         padding: 20px 0 0 0; 
-        height: auto;
+        height: auto !important; //AT-30503
         overflow: visible;
+
+        h3 {
+        margin: 0 0 10px 0;
+        font-weight: bold;
+      }
     }
 
     &:focus {
@@ -394,18 +399,18 @@ header + .nav-tabs {
 
 // Tab label padding control
 .small.k-tabstrip .k-tabstrip-items .k-item { 
-    padding-left: 30px; 
-    padding-right: 30px;
+    padding-left: 10px; 
+    padding-right: 10px;
 }
 
 .smaller.k-tabstrip .k-tabstrip-items .k-item { 
-    padding-left: 20px; 
-    padding-right: 20px;
+    padding-left: 8px; 
+    padding-right: 8px;
 }
 
 .xsmall.k-tabstrip .k-tabstrip-items .k-item { 
-    padding-left: 10px; 
-    padding-right: 10px;
+    padding-left: 5px; 
+    padding-right: 5px;
 }
 
 
@@ -471,3 +476,84 @@ header + .nav-tabs {
 }
 
 
+// Dropdown Tab 
+// --------------------------
+
+.tab-dropdown {
+  padding: 0 !important;
+  margin: 0;
+  border: 0 !important;
+  height: 40px;
+  color: #fff;
+  display: inline-block;
+  float: none;
+  opacity: 1;
+
+  &.k-state-disabled .k-dropdown-wrap.k-state-disabled {
+    margin-top: 6px;
+    height: 34px;
+    opacity: 0.7;
+  }
+
+  .k-dropdown-wrap {
+
+    &.k-state-disabled {
+    border-color: #f6f6f6;
+    height: 40px;
+
+    .k-input {
+      color:#9a9b9c;
+    }
+
+    .k-select {
+      border-left: 0;
+
+      .k-i-arrow-s {
+        height: 38px;
+        background-position: -84px -66px;
+        }
+      }
+    }
+
+    &.k-state-default {
+      background: #a7a9aa;
+      border: 0;
+      height: 40px;
+
+      &.k-state-hover {
+        background-color: #8d9091;
+        cursor: pointer;
+
+        .k-select {
+          background-color: #8d9091;
+          cursor: pointer;
+        }
+      }
+
+      &.k-state-focused,
+      &.k-state-focused .k-input {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+      }
+
+      .k-input {
+        height: 38px;
+        color: #fff;
+        padding: 10px;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+     .k-select {
+        background-color: #a7a9aa;
+        border-radius: 0;
+        border-left: 0;
+
+        .k-i-arrow-s {
+          height: 38px;
+          background-position: -84px -24px;
+        }
+      }
+    }
+  }
+}

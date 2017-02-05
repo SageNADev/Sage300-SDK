@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @model Sage.CA.SBS.ERP.Sage300.Common.Models.UserAccess
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
@@ -14,7 +14,7 @@
 
 @if (export || import || customize)
 {
-    string vClass = (ViewData[OptionsMenu.UseLessCss] != null) ? "options-menu" : "dropDown-Menu";
+    string vClass = (ViewData[OptionsMenu.UseLessCss] != null) ? "options-menu" : "options-menu";
     string sImport = "", sExport = "";
     bool hasHeadOptions = (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
     string headOptions = hasHeadOptions ? "<div class='header-options'>" : "";

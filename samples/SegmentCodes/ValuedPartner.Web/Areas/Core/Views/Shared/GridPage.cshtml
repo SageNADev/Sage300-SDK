@@ -48,14 +48,11 @@
                     }}
                 }}
         }},
-        editable: {{
-            mode: 'incell',
-            confirmation: false
-        }},
+        editable: {6},
         editorEvents: {{}},
     }};", Model.GridConfigName, Model.GridId, Model.GridPreferenceKey, GridInfoConstants.PageSize, 
         GridInfoConstants.ColReorderability.ToString().ToLowerInvariant(),
-        Model.AutoBind.ToString().ToLowerInvariant()))
+        Model.AutoBind.ToString().ToLowerInvariant(), Model.GridEditableMode.ToString().ToLowerInvariant()))
 
     @{
         if (Model.HasDeleteColumn)
@@ -177,9 +174,20 @@
         @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = Model.EditButtonId, @class = "btn btn-default btn-grid-control btn-edit-column" })
     }
 </div>
-<div class="datagrid-group">
-    @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
-</div>
+
+@if (Model.GridSize == Sage.CA.SBS.ERP.Sage300.Core.Web.Models.GridSize.Regular)
+{
+    <div class="datagrid-group">
+        @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
+    </div>
+}
+else
+{
+    <div class="datagrid-group small">
+        @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
+    </div>
+}
+
 @if (!string.IsNullOrEmpty(Model.GridPreferenceKey))
 { 
     @Html.Partial(Core.GridPreferences)
