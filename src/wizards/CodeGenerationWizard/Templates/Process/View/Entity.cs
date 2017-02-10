@@ -243,7 +243,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
 
 @Html.Partial(""~/Areas/Core/Views/Shared/_ProcessingStatus.cshtml"")
 
-<div class=""container_16"">
+<div class=""form-screen"">
     <div id=""message""></div>
     <header>
         <section class=""header-group-1"">
