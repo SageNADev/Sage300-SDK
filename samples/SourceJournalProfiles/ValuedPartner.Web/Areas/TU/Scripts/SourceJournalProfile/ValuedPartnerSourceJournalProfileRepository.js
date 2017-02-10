@@ -52,7 +52,7 @@ var sourceJournalRepository = {
 
     // Delete
     deleteSourceJournal: function (sourceJournalProfile) {
-        var data = { 'sourceJournalName': sourceJournalProfile };
+        var data = { 'id': sourceJournalProfile };
         sourceJournalAjax.call("Delete", data, sourceJournalProfileUISuccess.deleteSourceJournal);
     },
 
