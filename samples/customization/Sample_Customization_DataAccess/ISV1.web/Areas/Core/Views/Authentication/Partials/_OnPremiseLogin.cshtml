@@ -1,0 +1,65 @@
+﻿@* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. *@
+
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.LoginViewModel
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using ASCommonResx = Sage.CA.SBS.ERP.Sage300.AS.Resources.ASCommonResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+
+@Styles.Render("~/Content/Styles/standaloneCss")
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("LoginViewModel", Model)
+</script>
+
+@Html.Partial(Core.OnPremiseLocalization)
+
+<section class="header">
+    <div class="wrapper">
+        <div class="Sage_logo"><img src="~/Content/Images/sage_300_logo.png" height="40" alt="Sage 300"></div>
+    </div>
+</section>
+<section class="main-body login">
+
+    <div>
+        @Html.ValidationSummary(true)
+    </div>
+    <div id="success"></div>
+    <div class="wrapper">
+        <div id="message" class="k-window"></div>
+        <div id="changePassword" class="k-window"></div>
+
+        <div class="form-group">
+            <div class="input-group">
+                @Html.SageLabel("lblUserId", ASCommonResx.UserID, new { @class = "settingsContent" })
+                @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "medium txt-upper", data_val = "true", @maxlength = "8", })
+            </div>
+        </div>
+        <div class="form-group" id="passwordDiv">
+            <div class="input-group">
+                @Html.SageLabel("lblPassword", ASCommonResx.Password, new { @class = "settingsContent" })
+                @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "medium txt-upper", data_val = "true", @maxlength = "64" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="dropdown-group">
+                @Html.SageLabel("lblCompany", ASCommonResx.Company, new { @class = "settingsContent" })
+                @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "medium", @id = "CompanyId" })
+            </div>
+        </div>
+        <section class="button-group">
+            <div class="left" id="changePasswordDiv">
+                <a id="lnkChangePassword" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
+            </div>
+            @Html.KoSageButton("btnLogin", new { }, new { @value = ASCommonResx.Login, @id = "btnLogin", @class = "btn btn-primary right" })
+        </section>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="wrapper">
+        <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
+        &copy; @DateTime.Today.Year, Sage Software Inc., and its affiliated entities.
+    </div>
+</section>

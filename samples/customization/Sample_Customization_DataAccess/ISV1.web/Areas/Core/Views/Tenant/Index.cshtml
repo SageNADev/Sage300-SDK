@@ -1,0 +1,81 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.TenantViewModel
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Auth = Sage.CA.SBS.ERP.Sage300.Common.Models.Authentication
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@CommonResx.Title</title>
+    @Styles.Render("~/Content/Styles/portalcss")
+</head>
+<body class="tenantForm">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { Id = "frmTenantSelection" }))
+    {
+        <div class="firstTenantSetUp">
+            <div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+                @Html.AntiForgeryToken()
+            </div>
+            <div class="fTSetUpHedingContainer">
+                <div class="container_16">
+                    <section class="fTSetUpHeding ">
+                        <h1><span>@HomePageResx.TopNav_Sage</span>@HomePageResx.Sage_Online</h1>
+                    </section>
+                </div>
+            </div>
+            <div class="container_16">
+                <div class="clear-fix"></div>
+                <section class="fTSetUpcontent">
+                    <div class="fTSetUpIcon fTSetCompany"></div>
+                    <div class="fTSetUpFsYearcontent">
+                        <h4>@HomePageResx.Select_Tenant_Title</h4>
+                        <div class="mt25">
+                            <div class="form-group">
+                                <div class="dropdown-group ">
+                                    @Html.SageLabel(CommonResx.Select1)
+                                    @Html.SageDropDownListFor(model => model.TenantDisplayList, Model.TenantDisplayList, HomePageResx.Select_Tenant, new { @class = "default", @id = "TenantId" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="clear-fix"></div>
+                <section class="footer-group mt40">
+                    @Html.SageButton("btnOk", new { @class = "btn-primary", @value = CommonResx.OK, @id = "btnOk" })
+                    @Html.SageButton("btnCancel", new { @class = "btn-secondary", @value = CommonResx.Cancel, @id = "btnCancel" })
+                </section>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Partials/_Footer.cshtml")
+    }
+</body>
+</html>
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/kendo")
+@Scripts.Render("~/bundles/tenantselection")
+<script type="text/javascript">
+    var tenantSelectionElements = {
+        urlToSwitchTenant: "@Url.Action("SwitchTenant", "Tenant", new {area = "Core"})"
+    };
+    $(document).ready(function () {
+        $('body.tenantForm').each(function () {
+            var iframeHeight = $(window).height() - 40;
+            $("body.tenantForm .firstTenantSetUp").css('min-height', iframeHeight);
+        });
+        $(".footer_container").show();
+    });
+</script>

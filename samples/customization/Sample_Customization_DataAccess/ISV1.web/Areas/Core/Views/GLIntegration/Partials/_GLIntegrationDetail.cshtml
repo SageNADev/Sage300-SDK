@@ -1,0 +1,68 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using CommonGLIntegrationResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+
+<script type="text/javascript">
+
+    var glIntegrationDetailResource = {
+        saveConfirm: '@Html.SageRaw(@CommonResx.UnsavedChangesMessage5)',
+        glIntegrationDetailTitle: '@Html.SageRaw(@CommonGLIntegrationResx.GLIntegrationDetail)'
+    };
+
+</script>
+
+<div id="glIntegrationPopupWindow" class="container_16 container_popUp">
+    <div id="windowmessage"></div>
+    <hr/>
+    <div class="form-group">
+        <div class="dropdown-group">
+            <label id="lblSourceTransactionType" for="Data_SourceTransactionType">@CommonGLIntegrationResx.TransactionType</label>
+            @Html.KoSageDropDownList("Data_SourceTransactionType", new { @options = "GetSourceTransactionType", @sagevalue = "Data.koSourceTransactionType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="dropdown-group">
+            <label id="lblGLTransactionField" for="Data_GLTransactionField">@CommonGLIntegrationResx.GLTransactionField</label>
+            @Html.KoSageDropDownList("Data_GLTransactionField", new { @options = "GetGLTransactionField", @sagevalue = "Data.koGLTransactionField", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <label id="lblExample" for="txtExample">@CommonGLIntegrationResx.Example</label>
+            @Html.KoSageTextBox("txtExample", new { @sagevalue = "Data.koExample", @sagedisable = "true" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="dropdown-group">
+            <label id="lblSeparator" for="Data_Separator">@CommonGLIntegrationResx.SegmentSeparator</label>
+            @Html.KoSageDropDownList("Data_Separator", new { @options = "GetSeparator", @sagevalue = "Data.koSeparator", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="multilist-wrapper clearfix">
+        <div class="multilist-parent multilist left">
+            <label id="lblChooseSegmentFromList" for="">@CommonGLIntegrationResx.ChooseSegmentsFromList</label>
+            @Html.KoSageListView("fromSegmentList", "SegmentName")
+        </div>
+        <div class="multilist-controls left">
+            @Html.KoSageButton("btnInclude", null, new { @id = "btnInclude", @class = "icons btn-include", @value = CommonGLIntegrationResx.BtnInclude })
+            @Html.KoSageButton("btnExclude", null, new { @id = "btnExclude", @class = "icons btn-exclude", @value = CommonGLIntegrationResx.BtnExclude })
+        </div>
+        <div class="multilist-parent multilist right">
+            <label id="lblSegmentCurrentlyUsed" for="">@CommonGLIntegrationResx.SegmentCurrentlyUsed</label>
+            @Html.KoSageListView("toSegmentList", "SegmentName")
+        </div>
+    </div>
+
+    <section class="footer-group">
+        @Html.KoSageButton("btnDetailSave", new { @visible = "CanModify" }, new { @id = "btnDetailSave", @class = "btn-primary", @value = CommonResx.Save })
+        @*@Html.KoSageButton("btnDetailClose", null, new { @id = "btnDetailClose", @class = "btn-secondary", @value = CommonResx.Close })*@
+    </section>
+</div>

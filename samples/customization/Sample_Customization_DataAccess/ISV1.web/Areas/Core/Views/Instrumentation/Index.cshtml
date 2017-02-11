@@ -1,0 +1,73 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@Scripts.Render("~/bundles/jquery")
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Instrumentation Data</title>
+    <script type="text/javascript">
+        var urlToGet = "@Url.Action("Get", "Instrumentation")";
+        var instruAjax = {
+            call: function (actionUrl, succussCallBack) {
+                $.ajax({
+                    type: "Post",
+                    url: actionUrl,
+                    data: {},
+                    success: succussCallBack
+                });
+            }
+        };
+
+        var instruSuccess = {
+            get: function (result) {
+                $("#sessionPoolData").text("");
+
+                $("#sessionPoolData").append("Session Pools ( Total : " + result.SessionPools.length + " )  - Sessions ( Total : " + result.TotalSessionCount + " )");
+
+                if (result.SessionPools.length > 0) {
+                    $("#sessionPoolData").append("</br>---------------------------------------------------------------------</br>");
+                    $.each(result.SessionPools, function (index1, session) {
+
+                        $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;Session Id (" + (index1 + 1) + ") : " + session.SessionId + "</br>");
+
+                        $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;BusinessEntity Sessions ( Total : " + session.BusinessEntitySessions.length + " , LastUsedDateTime : " + session.LastUsedDateTime + ")</br>");
+
+                        if (session.BusinessEntitySessions.length > 0) {
+                            $.each(session.BusinessEntitySessions, function (index2, businessEntitySession) {
+                                $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context Token : " + businessEntitySession.ContextToken + "</br>");
+                                $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Use : " + businessEntitySession.IsInUse + "</br>");
+                                $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description : " + businessEntitySession.Description + "</br>");
+
+                                $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BusinessEntities ( Total : " + businessEntitySession.BusinessEntities.length + " )</br>");
+                                if (businessEntitySession.BusinessEntities.length > 0) {
+                                    $.each(businessEntitySession.BusinessEntities, function (index3, businessEntity) {
+                                        $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity : " + businessEntity.Name + " ( " + businessEntity.Description + " ) " + "</br>");
+                                    });
+                                    $("#sessionPoolData").append("</br>");
+                                }
+                            });
+                        }
+                        $("#sessionPoolData").append("---------------------------------------------------------------------</br>");
+                    });
+                }
+            }
+
+        };
+
+        $(function () {
+            instruAjax.call(urlToGet, instruSuccess.get);
+        });
+
+    </script>
+</head>
+<body>
+    <div id="sessionPoolData">
+    </div>
+</body>
+
+</html>
