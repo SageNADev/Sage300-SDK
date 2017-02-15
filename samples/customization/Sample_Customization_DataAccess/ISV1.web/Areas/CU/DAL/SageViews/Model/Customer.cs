@@ -11,6 +11,10 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Model
 {
     public class Customer : ModelBase
     {
+        public Customer()
+        {
+            CustomerOptionalFields = new List<CustomerOptionalField>();
+        }
         [Key]
         public string CustomerNumber { get; set; }
         public string ShortName { get; set; }
@@ -26,6 +30,25 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Model
         public string PhoneNumber { get; set; }
         public string FaxNumber { get; set; }
         public string Email { get; set; }
+
+        public IList<CustomerOptionalField> CustomerOptionalFields { get; set; }
+    }
+
+    public class CustomerOptionalField : ModelBase
+    {
+        [Key]
+        public string CustomerNumber { get; set; }
+        [Key]
+        public string OptionalField { get; set; }
+        public string OptionalFieldDescription { get; set; }
+        public string ValueDescription { get; set; }
+        public string Value { get; set; }
+        public string ValueSet { get; set; }
+        public short Type { get; set; }
+        public short Length { get; set; }
+        public short Decimals { get; set; }
+        public short AllowNull { get; set; }
+        public short Validate { get; set; }
     }
 
     public class FieldsIndex
@@ -49,6 +72,17 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Model
         public const int ZipOrPostalCode = 21;
         public const int PhoneNumber = 24;
         public const int BusinessRegistrationNumber = 174;
+
+        public const int OptionalField = 2;
+        public const int Value = 3;
+        public const int Type = 4;
+        public const int Length = 5;
+        public const int Decimals = 6;
+        public const int AllowNull = 7;
+        public const int Validate = 8;
+        public const int ValueSet = 9;
+        public const int OptionalFieldDescription = 28;
+        public const int ValueDescription = 29;
 
     }
 }

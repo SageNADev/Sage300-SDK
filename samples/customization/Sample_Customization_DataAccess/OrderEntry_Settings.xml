@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Screen Name="OrderEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="screenConfig.xsd">
+  <!--TODO: add elements for customizing the screen. For details, see document and samples-->
+  <Control ID="tabPageCSQuery" Type="TabPage" Label ="CS Query Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="orderNumberList" Type="DropDown" Label="Order Number List"  />
+    <Control ID="txtCustomerNumber" Type ="TextBox" Label="Order Number" Binding="Data.OrderNumber"/>
+    <Control ID="dtOrderCreated" Type="DatePicker" Label="Order Date" Binding ="Data.OrderDate" />
+    <Control ID="txtOrderComments" Type="TextBox" Label="Order Comment"  Binding ="Data.OrderComment" />
+    <Control ID="txtCustomerNumber" Type ="TextBox" Label="Customer Number" Binding="Data.CustomerNumber"/>
+    <Control ID="txtCustomerGroupCode" Type ="TextBox" Label="Customer GroupCode" Binding="Data.CustomerGroupCode"/>
+    <Control ID="txtBillToName" Type ="TextBox" Label="Bill Name" Binding="Data.BillToName"/>
+    <Control ID="txtBillToAddress" Type ="TextBox" Label="Bill Address " Binding="Data.BillToAddressLine1"/>
+    <Control ID="txtShipToName" Type ="TextBox" Label="Ship Name" Binding="Data.ShipToName"/>
+    <Control ID="txtShipToCity" Type ="TextBox" Label="Ship City" Binding="Data.ShipToCity"/>
+    <Control ID="txtShipToContact" Type ="TextBox" Label="Ship Contact" Binding="Data.ShipToContact"/>
+    <Control ID="gridOrderDetail" Type="Grid" />
+  </Control>
+  <Control ID="tabPageSageView" Type="TabPage" Label ="Sage 300 View Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="customerList" Type="DropDown" Label="Customer Number List" />
+    <Control ID="customerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
+    <Control ID="customerGroupCode" Type ="TextBox" Label="Group Code" Binding="Data.GroupCode"/>
+    <Control ID="customerAddress" Type="TextBox" Label="Address" Binding ="Data.AddressLine1" />
+    <Control ID="customerCity" Type="TextBox" Label="City"  Binding ="Data.City" />
+    <Control ID="customerSate" Type="TextBox" Label="Sate"  Binding ="Data.SateOrProv" />
+    <Control ID="customerPostalCode" Type="TextBox" Label="Postal Code"  Binding ="Data.ZipOrPostalCode" />
+    <Control ID="customerCountry" Type="TextBox" Label="Country"  Binding ="Data.Country" />
+    <Control ID="customerContactName" Type="TextBox" Label="Contact Name"  Binding ="Data.ContactName" />
+    <Control ID="customerPhoneNumber" Type="TextBox" Label="Phone Number"  Binding ="Data.PhoneNumber" />
+    <Control ID="customerEmail" Type="TextBox" Label="Email"  Binding ="Data.Email" />
+    <Control ID="gridCustomerOptionalField" Type="Grid" />
+  </Control>
+  <Control ID="tabPageEntityFramework" Type="TabPage" Label ="ADO Entity Framework Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="arCustomerList" Type="DropDown" Label="Customer Number List" />
+    <Control ID="arCustomerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
+    <Control ID="arCustomerEmail" Type="TextBox" Label="Email"  Binding ="Data.Email" />
+    <Control ID="arCustomerContactName" Type="TextBox" Label="Contact Name"  Binding ="Data.ContactName" />
+    <Control ID="arCustomerContactsEmail" Type="TextBox" Label="Contacts Email"  Binding ="Data.ContactsEmail" />
+    <Control ID="arCustomerAccountSet" Type ="TextBox" Label="Account Set" Binding="Data.GroupCode"/>
+    <Control ID="arCustomerWebSite" Type="TextBox" Label="Web Site" Binding ="Data.WebSite" />
+    <Control ID="arCustomerBillMethod" Type="TextBox" Label="Bill Method"  Binding ="Data.BillMethod" />
+    <Control ID="arCustomerSate" Type="TextBox" Label="Sate"  Binding ="Data.SateOrProv" />
+    <Control ID="arCustomerPaymentCode" Type="TextBox" Label="Payment Code"  Binding ="Data.PaymentCode" />
+    <Control ID="gridARCustomerOptionalField" Type="Grid" />
+  </Control>
+
+</Screen >

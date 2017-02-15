@@ -60,6 +60,7 @@ namespace ISV1.web.Areas.CU.DAL.ADO_EF.Model
         [StringLength(12)]
         [Column("PAYMCODE")]
         public string PaymentCode { get; set; }
-        public IEnumerable<ARCustomerOptionalField> ARCustomerOptionalFields { get; set; }
+
+        public IList<ARCustomerOptionalField> ARCustomerOptionalFields { get; set; }
     }
 }

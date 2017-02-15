@@ -47,7 +47,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Model
         [Key]
         public decimal OrderUniquifier { get; set; }
         [Key]
-        public string LineNumber { get; set; }
+        public int LineNumber { get; set; }
         public string Item { get; set; }
         public string Description { get; set; }
         public string ItemAccountSet { get; set; }
@@ -57,7 +57,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Model
     }
     public class OrderFields
     {
-        //Header field constant
+        //Header field constant mapping fields
         public const string OrderUniquifier = "ORDUNIQ";
 
         public const string OrderNumber = "ORDNUMBER";
@@ -152,7 +152,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Model
 
         public const string OrderComment = "COMMENT";
         
-        //Details field constant
+        //Details field constant mapping fields
         public const string LineNumber = "LINENUM";
         
         public const string Item = "ITEM";

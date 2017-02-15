@@ -11,12 +11,11 @@ using System.Web;
 
 namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
 {
-    public class OrderRepository
-    {
-    }
-
     public class OrderRepository<T> : DynamicQueryRepository<T> where T : Order, new()
     {
+        bool _mapHeaderOnly = false;
+        bool _getUniqueHeader = true;
+
         #region Constructors
         /// <summary>
         /// Constructor
@@ -42,18 +41,23 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
             // Init response and items for mapping
             var response = new DynamicQueryEnumerableResponse<T>();
             var items = new List<T>();
-            var fields = typeof(OrderFields).GetFields( BindingFlags.Public | BindingFlags.Static);
-            bool headerMappered = false;
             var model = new T();
+            var fields = typeof(OrderFields).GetFields( BindingFlags.Public | BindingFlags.Static);
+            bool getHeader = true;
 
             // Map business CS query entity value to model value
             while (BusinessEntity.Fetch(false))
             {
+                
                 var fieldValue = "";
                 var propTypeName = "";
-                
+
+                if (!_getUniqueHeader) 
+                {
+                    model = new T();
+                }
                 //Set model(header) value 
-                if (!headerMappered)
+                if (getHeader)
                 {
                     var modelProperties = model.GetType().GetProperties();
                     foreach (var prop in modelProperties)
@@ -66,23 +70,27 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
                             SetModelValue(prop, model, propTypeName, fieldValue);
                         }
                     }
-                    headerMappered = true;
+                    getHeader = ! _getUniqueHeader;
                 }
-                
-                //Set sub model(detail) value
-                var subModel = new OrderDetail();
-                var subModelProperties = subModel.GetType().GetProperties();
-                foreach (var prop in subModelProperties)
+
+                //Set detail model value
+                if (!_mapHeaderOnly)
                 {
-                    var field = fields.Where(f => f.Name == prop.Name).FirstOrDefault();
-                    if (field != null)
+                    var detailModel = new OrderDetail();
+                    var detailModelProperties = detailModel.GetType().GetProperties();
+                    foreach (var prop in detailModelProperties)
                     {
-                        propTypeName = prop.PropertyType.Name;
-                        fieldValue = field.GetRawConstantValue().ToString();
-                        SetModelValue(prop, subModel, propTypeName, fieldValue);
+                        var field = fields.Where(f => f.Name == prop.Name).FirstOrDefault();
+                        if (field != null)
+                        {
+                            propTypeName = prop.PropertyType.Name;
+                            fieldValue = field.GetRawConstantValue().ToString();
+                            SetModelValue(prop, detailModel, propTypeName, fieldValue);
+                        }
                     }
+                    model.OrderDetails.Add(detailModel);
                 }
-                model.OrderDetails.Add(subModel);
+
                 items.Add(model);
             }
 
@@ -97,25 +105,38 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         /// <returns></returns>
         public T GetById(string id)
         {
-            id = "ORD000000000001";
             var model = new T();
             if (!string.IsNullOrEmpty(id))
             {
-                var sql = "select * from  SAMLTD.dbo.OEORDH o inner join SAMLTD.dbo.OEORDD od on o.ORDUNIQ = od.ORDUNIQ where ORDNUMBER = '{0}'";
+                var sql = "select * from  SAMLTD.dbo.OEORDH o inner join SAMLTD.dbo.OEORDD od on o.ordUniq = od.ordUniq where o.ordNumber = '{0}'";
                 var response = ExecuteSQL(sql,id);
                 model = response.Items.Any() ? response.Items.ToList<T>()[0] : model;
             }
             return model;
         }
-        
+
+        public List<string> GetAll()
+        {
+            var sql = "select * from  SAMLTD.dbo.OEORDH";
+            _mapHeaderOnly = true;
+            _getUniqueHeader = false;
+            var response = ExecuteSQL(sql);
+            return response.Items.Select(r => r.OrderNumber).ToList();
+        }
+
         /// <summary>
-        /// Save/Update model
+        /// Save/Update model, for simple just save/update Order Date and Order comment fields 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         public virtual T Save(T model) 
         {
-            return null;
+            if (model != null)
+            {
+                var sql = "update SAMLTD.dbo.OEORDH o set o.ordDate = {1}, o.comment = '{2}' where o.ordNumber = '{0}'";
+                var response = ExecuteSQL(sql, model.OrderNumber, model.OrderDate, model.OrderComment);
+            }
+            return model;
         }
         
         /// <summary>
@@ -123,9 +144,13 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public virtual T Delete(string id) 
+        public virtual void Delete(string id) 
         {
-            return null;
+            if (!string.IsNullOrEmpty(id))
+            {
+                var sql = "delete from SAMLTD.dbo.OEORDH where o.ordNumber = '{0}'";
+                var response = ExecuteSQL(sql, id);
+            }
         }
         /// <summary>
         /// Set model value based on entity fields type
@@ -139,6 +164,12 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
             {
                 case "String":
                     prop.SetValue(model, BusinessEntity.GetValue<string>(fieldValue));
+                    break;
+                case "int":
+                    prop.SetValue(model, BusinessEntity.GetValue<int>(fieldValue));
+                    break;
+                case "Int16":
+                    prop.SetValue(model, BusinessEntity.GetValue<int>(fieldValue));
                     break;
                 case "Int32":
                     prop.SetValue(model, BusinessEntity.GetValue<int>(fieldValue));

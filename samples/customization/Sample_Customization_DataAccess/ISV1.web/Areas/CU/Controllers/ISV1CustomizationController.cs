@@ -4,6 +4,7 @@ using System.Linq;
 
 using Microsoft.Web.Administration;
 using Microsoft.Practices.Unity;
+using System.Data.Entity;
 
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
@@ -51,6 +52,18 @@ namespace ISV1.web.Areas.CU.Controllers
         }
 
         #region Action methods using Sage 300 View
+
+        [HttpGet]
+        public virtual JsonNetResult GetAllBySage300View()
+        {
+            SetUnityContainer(Context);
+
+            var repository = new CustomerRepository<Customer>(Context);
+            var modelData = repository.GetAll();
+
+            return JsonNet(modelData);
+        }
+
         /// <summary>
         /// Get Sage300 Customer Action Method
         /// </summary>
@@ -62,7 +75,7 @@ namespace ISV1.web.Areas.CU.Controllers
             SetUnityContainer(Context);
 
             var repository = new CustomerRepository<Customer>(Context);
-            var modelData = repository.GetById("1200");
+            var modelData = repository.GetById(id);
             
             // Set view model fields
             var customerViewModel = new CustomerViewModel<T>();
@@ -121,7 +134,7 @@ namespace ISV1.web.Areas.CU.Controllers
             SetUnityContainer(Context);
 
             var repository = new OrderRepository<Order>(Context);
-            var modelData = repository.GetById("1200");
+            var modelData = repository.GetById(id);
 
             // Set view model fields
             var customerViewModel = new OrderViewModel<Order>();
@@ -130,6 +143,17 @@ namespace ISV1.web.Areas.CU.Controllers
             customerViewModel.UserMessage = new UserMessage(modelData);
 
             return JsonNet(customerViewModel);
+        }
+
+        [HttpGet]
+        public virtual JsonNetResult GetAllBySage300CSQuery()
+        {
+            SetUnityContainer(Context);
+
+            var repository = new OrderRepository<Order>(Context);
+            var modelData = repository.GetAll();
+
+            return JsonNet(modelData);
         }
 
         [HttpPost]
@@ -163,7 +187,8 @@ namespace ISV1.web.Areas.CU.Controllers
             var repository = new OrderRepository<Order>(Context);
             try
             {
-                return JsonNet(repository.Delete(id));
+                repository.Delete(id);
+                return JsonNet("Delete successfully !");
             }
             catch (BusinessException businessException)
             {
@@ -240,11 +265,19 @@ namespace ISV1.web.Areas.CU.Controllers
         /// <returns></returns>
         public virtual JsonNetResult GetByEntityFramework(string id)
         {
+            //using generic reposity to get data
             var custRepository = new GenericRepository<ARCustomer>();
             var custData = custRepository.GetByID(id);
             var custOptRepository = new GenericRepository<ARCustomerOptionalField>();
             var custOptData = custOptRepository.GetListByFilter(e => e.CustomerNumber == id);
-            custData.ARCustomerOptionalFields = custOptData;
+            custData.ARCustomerOptionalFields = custOptData.ToList();
+            
+            //using Entity Framework API to get Data
+            using(var ctx = new CustomDbContext())
+            {
+                 var data = ctx.ARCustomer.Where(c => c.CustomerNumber == id).Include(e => e.ARCustomerOptionalFields);
+            }
+           
 
             // Set View Model Fields that UI needs
             var customerViewModel = new ARCustomerViewModel<ARCustomer>();
@@ -258,10 +291,11 @@ namespace ISV1.web.Areas.CU.Controllers
         /// Get all table data using Entity Framework direcly access SQL server DB
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public virtual JsonNetResult GetAllByEntityFramework()
         {
             var repository = new GenericRepository<ARCustomer>();
-            var modelData = repository.GetAll();
+            var modelData = repository.GetAll().Select(r=>r.CustomerNumber);
             return JsonNet(modelData);
         }
 
@@ -285,10 +319,11 @@ namespace ISV1.web.Areas.CU.Controllers
             }
         }
 
+
         //[HttpPost]
-        public virtual JsonNetResult SaveByEntityFramework(ARCustomer model)
+        public virtual JsonNetResult SaveByEntityFramework(ARCustomerOptionalField model)
         {
-            var repository = new GenericRepository<ARCustomer>();
+            var repository = new GenericRepository<ARCustomerOptionalField>();
             try
             {
                 repository.Update(model);
