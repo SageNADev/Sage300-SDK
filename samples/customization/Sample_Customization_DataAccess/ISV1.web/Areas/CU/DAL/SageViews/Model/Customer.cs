@@ -19,7 +19,6 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Model
         public string CustomerNumber { get; set; }
         public string ShortName { get; set; }
         public string GroupCode { get; set; }
-        public Status Status { get; set; }
         public string CustomerName { get; set; }
         public string AddressLine1 { get; set; }
         public string City { get; set; }
@@ -31,7 +30,7 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Model
         public string FaxNumber { get; set; }
         public string Email { get; set; }
 
-        public IList<CustomerOptionalField> CustomerOptionalFields { get; set; }
+        public List<CustomerOptionalField> CustomerOptionalFields { get; set; }
     }
 
     public class CustomerOptionalField : ModelBase

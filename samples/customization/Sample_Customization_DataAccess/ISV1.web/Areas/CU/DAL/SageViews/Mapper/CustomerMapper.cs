@@ -30,7 +30,6 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Mapper
             model.CustomerNumber = entity.GetValue<string>(FieldsIndex.CustomerNumber);
             model.ShortName = entity.GetValue<string>(FieldsIndex.ShortName);
             model.GroupCode = entity.GetValue<string>(FieldsIndex.GroupCode);
-            model.Status = EnumUtility.GetEnum<Status>(entity.GetValue<string>(FieldsIndex.Status));
             model.CustomerName = entity.GetValue<string>(FieldsIndex.CustomerName);
             model.AddressLine1 = entity.GetValue<string>(FieldsIndex.AddressLine1);
             model.City = entity.GetValue<string>(FieldsIndex.City);
@@ -40,6 +39,7 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Mapper
             model.ContactName = entity.GetValue<string>(FieldsIndex.ContactName);
             model.PhoneNumber = entity.GetValue<string>(FieldsIndex.PhoneNumber);
             model.FaxNumber = entity.GetValue<string>(FieldsIndex.FaxNumber);
+            model.Email = entity.GetValue<string>(FieldsIndex.Email);
 
             return model;
         }
@@ -54,7 +54,6 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Mapper
             entity.SetValue(FieldsIndex.CustomerNumber, model.CustomerNumber);
             entity.SetValue(FieldsIndex.ShortName, model.ShortName);
             entity.SetValue(FieldsIndex.GroupCode, model.GroupCode);
-            entity.SetValue(FieldsIndex.Status, model.Status);
             entity.SetValue(FieldsIndex.CustomerName, model.CustomerName);
             entity.SetValue(FieldsIndex.AddressLine1, model.AddressLine1);
             entity.SetValue(FieldsIndex.City, model.City);
@@ -64,6 +63,7 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Mapper
             entity.SetValue(FieldsIndex.ContactName, model.ContactName);
             entity.SetValue(FieldsIndex.PhoneNumber, model.PhoneNumber);
             entity.SetValue(FieldsIndex.FaxNumber, model.FaxNumber);
+            entity.SetValue(FieldsIndex.Email, model.Email);
         }
     }
 

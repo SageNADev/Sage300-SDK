@@ -1,4 +1,5 @@
-﻿using ISV1.web.Areas.CU.DAL.SageViews.Mapper;
+﻿using ACCPAC.Advantage;
+using ISV1.web.Areas.CU.DAL.SageViews.Mapper;
 using ISV1.web.Areas.CU.DAL.SageViews.Model;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
@@ -14,7 +15,7 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Repository
 {
     public class CustomerRepository<T> : FlatRepository<T> where T : Customer, new()
     {
-        //entity view IDs
+        // Entity view IDs
         private const string HeaderEntityName = "AR0024";
         private const string DetailEntityName = "AR0400";
 
@@ -39,14 +40,30 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Repository
         /// <returns></returns>
         protected override IBusinessEntity CreateBusinessEntities()
         {
-            _header = OpenEntity(HeaderEntityName);
+            _header = OpenEntity(HeaderEntityName, true);
             _detail = OpenEntity(DetailEntityName);
             _header.Compose(new[] { _detail.View });
             return _header;
         }
 
         /// <summary>
-        /// Get header and related details data by Id
+        /// Get all header records Id(key) list
+        /// </summary>
+        /// <returns></returns>
+        public virtual List<string> GetAll()
+        {
+            var customerEntity = OpenEntity(HeaderEntityName);
+            var list = new List<string>();
+            customerEntity.Top();
+            while (customerEntity.Fetch(false))
+            {
+                list.Add(customerEntity.GetValue<string>(FieldsIndex.CustomerNumber));
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Get header and related details data by Id(key)
         /// </summary>
         /// <typeparam name="TKey"></typeparam>
         /// <param name="key"></param>
@@ -70,30 +87,106 @@ namespace ISV1.web.Areas.CU.DAL.SageViews.Repository
             return headerData;
         }
 
+        /// <summary>
+        /// Save Entity information
+        /// Todo: For insert, need meet business rules and supply valid fields
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public override T Save(T model)
+        {
+            var filter = "(IDCUST = \"" + model.CustomerNumber + "\")";
+            CreateBusinessEntities();
+            // Update/insert header field
+            _header.Browse(filter, true);
+            if (_header.Fetch(false))
+            {
+                _headerMapper.Map(model, _header);
+                _header.Update();
+            } 
+            else
+            {   
+                _headerMapper.Map(model, _header);
+                _header.Insert();
+            }
+
+            //Update/insert detail fields
+            if (model.CustomerOptionalFields != null)
+            {
+                UpdateDetailFields(model);
+            }
+
+            return model;
+        }
+
+        /// <summary>
+        /// Delet header reocord and related details record
+        /// </summary>
+        /// <param name="id"></param>
+        public virtual void Delete(string id)
+        {
+            CreateBusinessEntities();
+            var filter = "(IDCUST = \"" + id + "\")";
+
+            _detail.FilterDelete(filter, ViewFilterStrictness.Simulate);
+            _header.FilterDelete(filter, ViewFilterStrictness.Simulate);
+        }
+
+        /// <summary>
+        /// Update detail entity data, 
+        /// Todo: For insert, need meet business rules and supply valid fields
+        /// </summary>
+        /// <param name="model"></param>
+        private void UpdateDetailFields(T model)
+        {
+            if (model.CustomerOptionalFields != null)
+            {
+                foreach (var item in model.CustomerOptionalFields)
+                {
+                     var filter = "(IDCUST = \"" + item.CustomerNumber + "\") AND (OPTFIELD = \"" + item.OptionalField + "\")";
+                     _detail.Browse(filter, true);
+
+                     if (_detail.Fetch(false))
+                     {
+                         _detailMapper.Map(item, _detail);
+                         if (model.HasChanged)
+                         {
+                             _detail.Update();    
+                         } 
+                         else if (model.IsDeleted)
+                         {
+                             _detail.Delete();
+                         } 
+                     }
+                     else
+                     {
+                         if (model.IsNewLine)
+                         {
+                             _detailMapper.Map(item, _detail);
+                             _detail.Insert();
+                         }
+                     }
+                }                
+            }
+        }
+
+        /// <summary>
+        /// Base class override implementation
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         protected override Expression<Func<T, bool>> GetUpdateExpression(T model)
         {
             return entity => entity.CustomerNumber == model.CustomerNumber;
         }
 
+        /// <summary>
+        /// Base class filter expression
+        /// </summary>
         private static Expression<Func<T, Boolean>> ActiveFilter
         {
             get { return null; }
         }
 
-        /// <summary>
-        /// Get all header records Id list
-        /// </summary>
-        /// <returns></returns>
-        public virtual List<string> GetAll()
-        {
-            var customerEntity = OpenEntity(HeaderEntityName);
-            var list = new List<string>();
-            customerEntity.Top();
-            while (customerEntity.Fetch(false))
-	        {
-                list.Add(customerEntity.GetValue<string>(FieldsIndex.CustomerNumber));
-	        }
-            return list;
-        }
     }
 }

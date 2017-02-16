@@ -25,13 +25,14 @@ using ISV1.web.Areas.CU.DAL.CSQuery.ViewModel;
 using ISV1.web.Areas.CU.DAL.ADO_EF.Model;
 using ISV1.web.Areas.CU.DAL.ADO_EF.Repository;
 using ISV1.web.Areas.CU.DAL.ADO_EF.ViewModel;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Attributes;
 
 
 namespace ISV1.web.Areas.CU.Controllers
 {
     /// <summary>
     /// Controller needs to be registered in CUWebBootstrapper
-    /// TODO: add custom controller actions
+    /// TODO: Add more custom controller actions
     /// </summary>
     public class ISV1CustomizationController<T> : MultitenantControllerBase<CustomerViewModel<T>>
         where T : Customer, new()
@@ -53,6 +54,10 @@ namespace ISV1.web.Areas.CU.Controllers
 
         #region Action methods using Sage 300 View
 
+        /// <summary>
+        /// Get all entities keys by using Sage300c/Custom view
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public virtual JsonNetResult GetAllBySage300View()
         {
@@ -65,7 +70,7 @@ namespace ISV1.web.Areas.CU.Controllers
         }
 
         /// <summary>
-        /// Get Sage300 Customer Action Method
+        /// Get entity by using Sage300c/Custom view
         /// </summary>
         /// <param name="id">customer number</param>
         /// <returns>Customer</returns>
@@ -76,8 +81,8 @@ namespace ISV1.web.Areas.CU.Controllers
 
             var repository = new CustomerRepository<Customer>(Context);
             var modelData = repository.GetById(id);
-            
-            // Set view model fields
+
+            // Set view model fields that required by UI
             var customerViewModel = new CustomerViewModel<T>();
             customerViewModel.Data = (T)modelData;
             customerViewModel.CurrencyCodeDescription = "Canadian Dollar";
@@ -87,8 +92,14 @@ namespace ISV1.web.Areas.CU.Controllers
             return JsonNet(customerViewModel);
         }
 
+        /// <summary>
+        /// Save/Update entity by using Sage300c/Custom view
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
-        public virtual JsonNetResult SaveBySage300View(T model)
+        [NoAntiForgeryCheckAttribute]
+        public virtual JsonNetResult SaveBySage300View(Customer model)
         {
             SetUnityContainer(Context);
             ViewModelBase<ModelBase> viewModel;
@@ -109,7 +120,13 @@ namespace ISV1.web.Areas.CU.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete entity by using Sage300c/Custom view 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
+        [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteBySage300View(string id)
         {
             SetUnityContainer(Context);
@@ -117,7 +134,8 @@ namespace ISV1.web.Areas.CU.Controllers
             var repository = new CustomerRepository<Customer>(Context);
             try
             {
-                return JsonNet(repository.Delete(customer => customer.CustomerNumber == id));
+                repository.Delete(id);
+                return JsonNet("Delete successfully !");
             }
             catch (BusinessException businessException)
             {
@@ -129,6 +147,11 @@ namespace ISV1.web.Areas.CU.Controllers
 
         #region Action Methods using Sage 300 CSQuery
 
+        /// <summary>
+        /// Get Entity using Sage300 CS Query 
+        /// </summary>
+        /// <param name="id">entity id or key </param>
+        /// <returns></returns>
         public virtual JsonNetResult GetBySage300CSQuery(string id)
         {
             SetUnityContainer(Context);
@@ -136,7 +159,7 @@ namespace ISV1.web.Areas.CU.Controllers
             var repository = new OrderRepository<Order>(Context);
             var modelData = repository.GetById(id);
 
-            // Set view model fields
+            // Set view model fields that required by UI
             var customerViewModel = new OrderViewModel<Order>();
             customerViewModel.Data = (Order)modelData;
             customerViewModel.OrderCurrencyCode = "Canadian Dollar";
@@ -145,6 +168,10 @@ namespace ISV1.web.Areas.CU.Controllers
             return JsonNet(customerViewModel);
         }
 
+        /// <summary>
+        /// Get All Entity Keys using Sage300 CS Query 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public virtual JsonNetResult GetAllBySage300CSQuery()
         {
@@ -156,7 +183,13 @@ namespace ISV1.web.Areas.CU.Controllers
             return JsonNet(modelData);
         }
 
+        /// <summary>
+        /// Save/Update Entity using Sage300 CS Query
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
+        [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult SaveBySage300CSQuery(Order model)
         {
             SetUnityContainer(Context);
@@ -178,8 +211,13 @@ namespace ISV1.web.Areas.CU.Controllers
                 return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, "Customer"));
             }
         }
-
+        /// <summary>
+        /// Delete entity using Sage300 CS Query
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
+        [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteBySage300CSQuery(string id)
         {
             SetUnityContainer(Context);
@@ -205,7 +243,7 @@ namespace ISV1.web.Areas.CU.Controllers
             SetUnityContainer(Context);
 
             var repository = new OrderRepository<Order>(Context);
-            var modelData = repository.GetById("1200");
+            var modelData = repository.GetById(id);
 
             // Set view model fields
             var customerViewModel = new OrderViewModel<Order>();
@@ -215,7 +253,9 @@ namespace ISV1.web.Areas.CU.Controllers
 
             return JsonNet(customerViewModel);
         }
+
         [HttpPost]
+        [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult SaveByCustomView(T model)
         {
             SetUnityContainer(Context);
@@ -239,6 +279,7 @@ namespace ISV1.web.Areas.CU.Controllers
         }
 
         [HttpPost]
+        [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteByCustomView(string id)
         {
             SetUnityContainer(Context);
@@ -263,6 +304,7 @@ namespace ISV1.web.Areas.CU.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         public virtual JsonNetResult GetByEntityFramework(string id)
         {
             //using generic reposity to get data
@@ -288,26 +330,27 @@ namespace ISV1.web.Areas.CU.Controllers
         }
 
         /// <summary>
-        /// Get all table data using Entity Framework direcly access SQL server DB
+        /// Get All Entities keys using Entity Framework direcly access SQL server DB
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public virtual JsonNetResult GetAllByEntityFramework()
         {
             var repository = new GenericRepository<ARCustomer>();
-            var modelData = repository.GetAll().Select(r=>r.CustomerNumber);
+            var modelData = repository.GetAll().Select(r => r.CustomerNumber.Trim());
             return JsonNet(modelData);
         }
 
         /// <summary>
-        /// Add entity using Entity Framework direcly access SQL server DB
+        /// Add Entity using Entity Framework direcly access SQL server DB
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        ///[HttpPost]
-        public virtual JsonNetResult AddByEntityFramework(ARCustomerOptionalField model)
+        [HttpPost]
+        [NoAntiForgeryCheckAttribute]
+        public virtual JsonNetResult AddByEntityFramework(ARCustomer model)
         {
-            var repository = new GenericRepository<ARCustomerOptionalField>();
+            var repository = new GenericRepository<ARCustomer>();
             try
             {
                 repository.Insert(model);
@@ -319,11 +362,16 @@ namespace ISV1.web.Areas.CU.Controllers
             }
         }
 
-
-        //[HttpPost]
-        public virtual JsonNetResult SaveByEntityFramework(ARCustomerOptionalField model)
+        /// <summary>
+        /// Save/Update Entity using Entity Framework direcly access SQL server DB
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [NoAntiForgeryCheckAttribute]
+        public virtual JsonNetResult SaveByEntityFramework(ARCustomer model)
         {
-            var repository = new GenericRepository<ARCustomerOptionalField>();
+            var repository = new GenericRepository<ARCustomer>();
             try
             {
                 repository.Update(model);
@@ -335,14 +383,19 @@ namespace ISV1.web.Areas.CU.Controllers
             }
         }
 
-        //[HttpPost]
-        public virtual JsonNetResult DeleteByEntityFramework(ARCustomerOptionalFieldKeys CompositeKey)
+        /// <summary>
+        /// Delete Entity using Entity Framework direcly access SQL server DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [NoAntiForgeryCheckAttribute]
+        public virtual JsonNetResult DeleteByEntityFramework(string id)
         {
-            var repository = new GenericRepository<ARCustomerOptionalField>();
-            string[] keyValues = { CompositeKey.CustomerNumber, CompositeKey.OptionalField };
+            var repository = new GenericRepository<ARCustomer>();
             try
             {
-                repository.Delete(keyValues);
+                repository.Delete(id);
                 return JsonNet("Delete successfully !");
             }
             catch (BusinessException businessException)
@@ -353,6 +406,10 @@ namespace ISV1.web.Areas.CU.Controllers
 
         #endregion 
 
+        /// <summary>
+        /// Set unity container for integrated with sage 300c 
+        /// </summary>
+        /// <param name="Context"></param>
         private void SetUnityContainer(Context Context)
         {
             if (Context != null && Context.Container == null)

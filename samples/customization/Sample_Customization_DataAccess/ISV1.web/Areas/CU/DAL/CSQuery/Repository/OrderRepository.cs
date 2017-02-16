@@ -99,7 +99,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         }
 
         /// <summary>
-        /// Get model by Id
+        /// Get model by Id. For simple, it's join two tables to get data, it can join more tables to get required fields
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -115,6 +115,10 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
             return model;
         }
 
+        /// <summary>
+        /// Get all records, return key column
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetAll()
         {
             var sql = "select * from  SAMLTD.dbo.OEORDH";
@@ -125,7 +129,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         }
 
         /// <summary>
-        /// Save/Update model, for simple just save/update Order Date and Order comment fields 
+        /// Save/Update model. For simple just save/update Order Comment, ShiptoContact and BillToName fields, modify sql query to support more fields update.
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -133,8 +137,8 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         {
             if (model != null)
             {
-                var sql = "update SAMLTD.dbo.OEORDH o set o.ordDate = {1}, o.comment = '{2}' where o.ordNumber = '{0}'";
-                var response = ExecuteSQL(sql, model.OrderNumber, model.OrderDate, model.OrderComment);
+                var sql = "update SAMLTD.dbo.OEORDH set Comment = '{1}', ShpContact = '{2}', BilName = '{3}' where ordNumber = '{0}'";
+                var response = ExecuteSQL(sql, model.OrderNumber, model.OrderComment, model.ShipToContact, model.BillToName);
             }
             return model;
         }
@@ -148,7 +152,7 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
         {
             if (!string.IsNullOrEmpty(id))
             {
-                var sql = "delete from SAMLTD.dbo.OEORDH where o.ordNumber = '{0}'";
+                var sql = "delete from SAMLTD.dbo.OEORDH where ordNumber = '{0}'";
                 var response = ExecuteSQL(sql, id);
             }
         }

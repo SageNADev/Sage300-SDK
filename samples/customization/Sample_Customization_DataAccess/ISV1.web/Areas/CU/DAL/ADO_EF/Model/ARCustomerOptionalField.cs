@@ -13,12 +13,10 @@ namespace ISV1.web.Areas.CU.DAL.ADO_EF.Model
     {
         [Key]
         [Column("IDCUST", Order = 0)]
-        [StringLength(12)]
         public string CustomerNumber { get; set; }
 
         [Key]
         [Column("OPTFIELD", Order = 1)]
-        [StringLength(12)]
         public string OptionalField { get; set; }
 
         [Column("AUDTDATE")]
@@ -33,10 +31,7 @@ namespace ISV1.web.Areas.CU.DAL.ADO_EF.Model
         [Column("AUDTORG")]
         public string AuditOrganization {get;set;}
 
-        [Required]
-        [StringLength(60)]
         [Column("VALUE")]
-
         public string Value { get; set; }
 
         [Column("TYPE")]
