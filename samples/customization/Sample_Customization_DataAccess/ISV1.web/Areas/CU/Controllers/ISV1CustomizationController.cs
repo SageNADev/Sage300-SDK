@@ -34,10 +34,10 @@ using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Attributes;
 
 using ISV1.web.Areas.CU.Models;
-using ISV1.web.Areas.CU.DAL.SageViews;
-using ISV1.web.Areas.CU.DAL.SageViews.Repository;
-using ISV1.web.Areas.CU.DAL.SageViews.Model;
-using ISV1.web.Areas.CU.DAL.SageViews.ViewModel;
+using ISV1.web.Areas.CU.DAL.CustomViews;
+using ISV1.web.Areas.CU.DAL.CustomViews.Repository;
+using ISV1.web.Areas.CU.DAL.CustomViews.Model;
+using ISV1.web.Areas.CU.DAL.CustomViews.ViewModel;
 
 using ISV1.web.Areas.CU.DAL.CSQuery.Repository;
 using ISV1.web.Areas.CU.DAL.CSQuery.Model;
@@ -46,6 +46,11 @@ using ISV1.web.Areas.CU.DAL.CSQuery.ViewModel;
 using ISV1.web.Areas.CU.DAL.ADO_EF.Model;
 using ISV1.web.Areas.CU.DAL.ADO_EF.Repository;
 using ISV1.web.Areas.CU.DAL.ADO_EF.ViewModel;
+
+using Sage.CA.SBS.ERP.Sage300.AP.Models;
+using Sage.CA.SBS.ERP.Sage300.AP.Services;
+using Sage.CA.SBS.ERP.Sage300.AP.Web;
+using Sage.CA.SBS.ERP.Sage300.AP.Web.Controllers;
 
 namespace ISV1.web.Areas.CU.Controllers
 {
@@ -74,41 +79,39 @@ namespace ISV1.web.Areas.CU.Controllers
         #region Action methods using Sage 300 View
 
         /// <summary>
-        /// Get all entities keys by using Sage300c/Custom view
+        /// Get list batch number by using Sage 300c services and endpoints
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public virtual JsonNetResult GetAllBySage300View()
+        public virtual JsonNetResult GetAllBySage300c()
         {
             SetUnityContainer(Context);
 
-            var repository = new CustomerRepository<Customer>(Context);
-            var modelData = repository.GetAll();
-
-            return JsonNet(modelData);
+            //using Sage300c service to get data
+            var apService = new InvoiceBatchListEntityService<InvoiceBatch>(Context);
+            var modelData = apService.Get(0, 50);
+            var batchNumberList = modelData.Items.Select(i => i.BatchNumber);
+ 
+            return JsonNet(batchNumberList);
         }
 
         /// <summary>
-        /// Get entity by using Sage300c/Custom view
+        /// Get entity by using Sage300c service
         /// </summary>
         /// <param name="id">customer number</param>
         /// <returns>Customer</returns>
         [HttpGet]
-        public virtual JsonNetResult GetBySage300View(string id)
+        public virtual JsonNetResult GetBySage300c(string id)
         {
             SetUnityContainer(Context);
 
-            var repository = new CustomerRepository<Customer>(Context);
-            var modelData = repository.GetById(id);
+            //using Sage300c service to get data
+            var apService = new InvoiceBatchListEntityService<InvoiceBatch>(Context);
+            var modelData = apService.GetById(id);
+            var viewModel = new ViewModelBase<InvoiceBatch>();
+            viewModel.Data = modelData;
 
-            // Set view model fields that required by UI
-            var customerViewModel = new CustomerViewModel<T>();
-            customerViewModel.Data = (T)modelData;
-            customerViewModel.CurrencyCodeDescription = "Canadian Dollar";
-            customerViewModel.IsMultiCurrency = true;
-            customerViewModel.UserMessage = new UserMessage(modelData);
-            
-            return JsonNet(customerViewModel);
+            return JsonNet(viewModel);
         }
 
         /// <summary>
@@ -118,7 +121,7 @@ namespace ISV1.web.Areas.CU.Controllers
         /// <returns></returns>
         [HttpPost]
         [NoAntiForgeryCheckAttribute]
-        public virtual JsonNetResult SaveBySage300View(Customer model)
+        public virtual JsonNetResult SaveBySage300c(Customer model)
         {
             SetUnityContainer(Context);
             ViewModelBase<ModelBase> viewModel;
@@ -146,7 +149,7 @@ namespace ISV1.web.Areas.CU.Controllers
         /// <returns></returns>
         [HttpPost]
         [NoAntiForgeryCheckAttribute]
-        public virtual JsonNetResult DeleteBySage300View(string id)
+        public virtual JsonNetResult DeleteBySage300c(string id)
         {
             SetUnityContainer(Context);
 
@@ -257,22 +260,44 @@ namespace ISV1.web.Areas.CU.Controllers
 
         #region Action Methods using Custom View
 
+        /// <summary>
+        /// Get all entities keys by using Custom view
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public virtual JsonNetResult GetAllByCustomView()
+        {
+            SetUnityContainer(Context);
+
+            var repository = new CustomerRepository<Customer>(Context);
+            var modelData = repository.GetAll();
+
+            return JsonNet(modelData);
+        }
+
         public virtual JsonNetResult GetByCustomView(string id)
         {
             SetUnityContainer(Context);
 
-            var repository = new OrderRepository<Order>(Context);
+            var repository = new CustomerRepository<Customer>(Context);
             var modelData = repository.GetById(id);
 
-            // Set view model fields
-            var customerViewModel = new OrderViewModel<Order>();
-            customerViewModel.Data = (Order)modelData;
-            customerViewModel.OrderCurrencyCode = "Canadian Dollar";
+            // Set view model fields that required by UI
+            var customerViewModel = new CustomerViewModel<T>();
+            customerViewModel.Data = (T)modelData;
+            customerViewModel.CurrencyCodeDescription = "Canadian Dollar";
+            customerViewModel.IsMultiCurrency = true;
             customerViewModel.UserMessage = new UserMessage(modelData);
+
 
             return JsonNet(customerViewModel);
         }
 
+        /// <summary>
+        /// Save entity by using Custom View 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult SaveByCustomView(T model)
@@ -297,21 +322,28 @@ namespace ISV1.web.Areas.CU.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete entity by using Custom View 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteByCustomView(string id)
         {
             SetUnityContainer(Context);
-
+ 
             var repository = new CustomerRepository<Customer>(Context);
             try
             {
-                return JsonNet(repository.Delete(customer => customer.CustomerNumber == id));
+                repository.Delete(id);
+                return JsonNet("Delete successfully !");
             }
             catch (BusinessException businessException)
             {
                 return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, "Customer"));
             }
+
         }
 
         #endregion 

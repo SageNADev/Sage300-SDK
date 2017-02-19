@@ -106,11 +106,12 @@ ISV1CustomizationUI = {
                 ISV1CustomizationUI.getById(this.value(), "gridOrderDetail", "GetBySage300CSQuery");
             }
         });
-        //Use Sage 300 view to get data
+
+        //Use Sage 300 Custom view to get data
         $("#customerList").kendoDropDownList({
             change: function (e) {
                 ISV1CustomizationUI.detailModel = "CustomerOptionalFields";
-                ISV1CustomizationUI.getById(this.value(), "gridCustomerOptionalField", "GetBySage300View");
+                ISV1CustomizationUI.getById(this.value(), "gridCustomerOptionalField", "GetByCustomView");
             }
         });
 
@@ -119,6 +120,16 @@ ISV1CustomizationUI = {
             change: function (e) {
                 ISV1CustomizationUI.detailModel = "ARCustomerOptionalFields";
                 ISV1CustomizationUI.getById(this.value(), "gridARCustomerOptionalField", "GetByEntityFramework");
+            }
+        });
+
+        //Use Sage 300c endpoints/service to get data, send ajax call to sage300c endpoints directly to get data
+        $("#batchNumberList").kendoDropDownList({
+            change: function (e) {
+                ISV1CustomizationUI.detailGridId = "gridInvoices";
+                ISV1CustomizationUI.detailModel = "Invoices.InvoiceDetails.Items";
+                var url = sg.utls.url.buildUrl("AP", "InvoiceEntry", "Get");
+                sg.utls.ajaxPost(url, { id: this.value() }, ISV1CustomizationUICallback.getDetails);
             }
         });
     },
@@ -138,6 +149,7 @@ ISV1CustomizationUI = {
         });
 
     },
+
     // Init Date Picker
     initDatePicker: function() {
         $("#dtOrderCreated").kendoDatePicker({
@@ -149,11 +161,11 @@ ISV1CustomizationUI = {
     initFinders: function () {
     },
 
-    //Init CheckBoxs
+    // Init CheckBoxs
     initCheckBoxes: function () {
     },
 
-    //Init kendo Grid
+    // Init kendo Grid
     initGrid: function () {
         var gridSettings = {
             scrollable: true,
@@ -166,15 +178,17 @@ ISV1CustomizationUI = {
         $("#gridOrderDetail").kendoGrid(gridSettings);
         $("#gridCustomerOptionalField").kendoGrid(gridSettings);
         $("#gridARCustomerOptionalField").kendoGrid(gridSettings);
+        $("#gridInvoices").kendoGrid(gridSettings);
     },
 
-    //Init Other type controls
+    // Init Other type controls
     initOtherControls: function () {
         //binding tab page select event       
         var tabStrip = $("#orderEntryTabStrip").kendoTabStrip().data("kendoTabStrip");
         tabStrip.bind("select", ISV1CustomizationUI.tabPageSelect);
     },
 
+    // Table page select init, send ajax call to get data for populate dropdown control
     tabPageSelect: function (e) {
         // set ajax call to get all ids for populate drop down list
         var tabPageId = e.item.id;
@@ -183,21 +197,28 @@ ISV1CustomizationUI = {
         if (tabPageId === "tabPageCSQuery") {
             actionName = "GetAllBySage300CSQuery";
             ISV1CustomizationUI.dropdownListId = "orderNumberList";
-            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-10";
+            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-11";
             ISV1CustomizationUI.deleteActionName = "DeleteBySage300CSQuery";
             ISV1CustomizationUI.saveActionName = "SaveBySage300CSQuery";
         } else if (tabPageId === "tabPageSageView") {
-            actionName = "GetAllBySage300View";
+            actionName = "GetAllByCustomView";
             ISV1CustomizationUI.dropdownListId = "customerList";
-            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-9";
-            ISV1CustomizationUI.deleteActionName = "DeleteBySage300View";
-            ISV1CustomizationUI.saveActionName = "SaveBySage300View";
+            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-10";
+            ISV1CustomizationUI.deleteActionName = "DeleteByCustomView";
+            ISV1CustomizationUI.saveActionName = "SaveByCustomView";
         } else if (tabPageId === "tabPageEntityFramework") {
             actionName = "GetAllByEntityFramework";
             ISV1CustomizationUI.dropdownListId = "arCustomerList";
-            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-8";
+            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-9";
             ISV1CustomizationUI.deleteActionName = "DeleteByEntityFramework";
             ISV1CustomizationUI.saveActionName = "SaveByEntityFramework";
+        } else if (tabPageId === "tabPageSage300EndPoint") {
+            //may not use, can directly call sage300c endpoints(controller action) to perform actions, see $("#batchNumberList").kendoDropDownList({..}) init function for details
+            actionName = "GetAllBySage300c";
+            ISV1CustomizationUI.dropdownListId = "batchNumberList";
+            ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-8";
+            ISV1CustomizationUI.deleteActionName = "DeleteBySage300c";
+            ISV1CustomizationUI.saveActionName = "SaveBySage300c";
         }
 
         if (actionName) {
@@ -206,58 +227,89 @@ ISV1CustomizationUI = {
         }
     },
 
+    // Get by id, send ajax call to get data
     getById : function(id, gridId, actionName ) {
         ISV1CustomizationUI.detailGridId = gridId;
         var url = ISV1CustomizationUI.baseUrl + actionName;
         ISV1CustomizationUI.ajaxCall(url, 'get', { id: id }, ISV1CustomizationUICallback.getDetails);
     },
 
+    // Delete by Id, send ajax call to server
     deleteById: function () {
         var id = $('#' + ISV1CustomizationUI.dropdownListId).val();
         var url = ISV1CustomizationUI.baseUrl + ISV1CustomizationUI.deleteActionName;
         ISV1CustomizationUI.ajaxCall(url, 'post', { id: id }, ISV1CustomizationUICallback.deleteById)
     },
 
+    // Save the information
     save: function (e) {
         var id = $('#' + ISV1CustomizationUI.dropdownListId).val();
         var url = ISV1CustomizationUI.baseUrl + ISV1CustomizationUI.saveActionName;
         var modelData = ko.mapping.toJS(ISV1CustomizationUI.viewModel.Data);
         ISV1CustomizationUI.ajaxCall(url, 'post', { model: modelData }, ISV1CustomizationUICallback.save)
     },
+
 };
 
 // Ajax call back functions
 var ISV1CustomizationUICallback = {
+
+    //call back function, set dropdown list data source, select the first item and load details
     populateDropDownList: function (data) {
-        //set dropdown list data source, select the first item and load details
         var dropdownlist = $('#' + ISV1CustomizationUI.dropdownListId).data("kendoDropDownList");
         dropdownlist.setDataSource(data);
         dropdownlist.select(0);
         dropdownlist.trigger("change")
     },
 
+    //Get datials call back function, get details data apply bindings and set grid data source
     getDetails: function (data) {
         // using Knock out mapping to get observable view model for two way bindings
         var viewModel = ko.mapping.fromJS(data);
-        // apply knock out binding to custom page content 
+
+        // apply knock out binding to custom page details controls 
         ko.applyBindings(viewModel, document.getElementById(ISV1CustomizationUI.tabPageStripId));
         ISV1CustomizationUI.viewModel = viewModel;
+
         // set detail grid data source
         var detailGrid = $('#' + ISV1CustomizationUI.detailGridId).data("kendoGrid");
-        var dataSource = new kendo.data.DataSource({
-            data: data.Data[ISV1CustomizationUI.detailModel]
-        });
-        detailGrid.setDataSource(dataSource);
+        if (data.Data) {
+            if (ISV1CustomizationUI.detailGridId === "gridInvoices") {
+                // too many invoice detail item properties for grid, just get first 8 properties for simple
+                var invoiceItems = data.Data.Invoices.InvoiceDetails.Items;
+                if (!invoiceItems[0]) {
+                    return;
+                }
+                var items = [];
+                var length = invoiceItems.length;
+                var keys = Object.keys(invoiceItems[0]);
+                //get subset of items properties for grid data
+                for (var i = 0; i < length; i++) {
+                    var newItem = {};
+                    for (var j = 0; j < 8; j++) {
+                        newItem[keys[j]] = invoiceItems[i][keys[j]];
+                    }
+                    items[i] = newItem;
+                }
+            }
 
-        // Hide some columns, it's better in server side remove these not required fields
-        var columnCount = detailGrid.columns.length;
-        if (columnCount > 8) {
-            for (var i = 8; i < columnCount; i++) {
-                detailGrid.hideColumn(i);
+            var gridData = (ISV1CustomizationUI.detailGridId === "gridInvoices") ? items : data.Data[ISV1CustomizationUI.detailModel];
+            var dataSource = new kendo.data.DataSource({
+                data: gridData
+            });
+            detailGrid.setDataSource(dataSource);
+
+            // Hide some columns, it's better in server side to remove these fields that not required by UI
+            var columnCount = detailGrid.columns.length;
+            if (columnCount > 8) {
+                for (var i = 8; i < columnCount; i++) {
+                    detailGrid.hideColumn(i);
+                }
             }
         }
     },
 
+    // delete call back function
     deleteById: function (data) {
         if (!data.UserMessage) {
             sg.utls.showMessageInfo(sg.utls.msgType.INFO, data);
@@ -265,17 +317,20 @@ var ISV1CustomizationUICallback = {
             sg.utls.showMessage(data);
         }
 
+        //remove delete item from drop down list
         var value = $('#' + ISV1CustomizationUI.dropdownListId).val();
         var dropdownlist = $('#' + ISV1CustomizationUI.dropdownListId).data("kendoDropDownList");
         var list = dropdownlist.dataSource.data().filter(function (item) {
             return item != value;
         });
-        
         dropdownlist.setDataSource(list);
+
+        //reset the first one as selected and trigger select change to get selected details
         dropdownlist.select(0);
         dropdownlist.trigger("change")
     },
 
+    // save call back function
     save: function (data) {
         if (!data.UserMessage) {
             sg.utls.showMessageInfo(sg.utls.msgType.INFO, "Data save successfully!");
@@ -284,6 +339,7 @@ var ISV1CustomizationUICallback = {
         }
     },
 };
+
 // Initial Entry
 $(function () {
     ISV1CustomizationUI.init();

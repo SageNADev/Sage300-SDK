@@ -33,10 +33,11 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Landlord;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Landlord;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
-using ISV1.web.Areas.CU.DAL.SageViews.Model;
+
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Audit;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
+using ISV1.web.Areas.CU.DAL.CustomViews.Model;
 
 namespace ISV1.web
 {

@@ -19,8 +19,8 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using ACCPAC.Advantage;
-using ISV1.web.Areas.CU.DAL.SageViews.Mapper;
-using ISV1.web.Areas.CU.DAL.SageViews.Model;
+using ISV1.web.Areas.CU.DAL.CustomViews.Mapper;
+using ISV1.web.Areas.CU.DAL.CustomViews.Model;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
@@ -31,7 +31,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace ISV1.web.Areas.CU.DAL.SageViews.Repository
+namespace ISV1.web.Areas.CU.DAL.CustomViews.Repository
 {
     public class CustomerRepository<T> : FlatRepository<T> where T : Customer, new()
     {

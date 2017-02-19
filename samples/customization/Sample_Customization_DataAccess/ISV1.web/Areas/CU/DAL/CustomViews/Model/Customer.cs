@@ -27,7 +27,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ISV1.web.Areas.CU.DAL.SageViews.Model
+namespace ISV1.web.Areas.CU.DAL.CustomViews.Model
 {
     /// <summary>
     /// Customer model class

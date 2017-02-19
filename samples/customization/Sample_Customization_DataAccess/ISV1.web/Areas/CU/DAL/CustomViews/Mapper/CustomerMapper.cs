@@ -24,13 +24,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
-using ISV1.web.Areas.CU.DAL.SageViews.Model;
+using ISV1.web.Areas.CU.DAL.CustomViews.Model;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 
 
-namespace ISV1.web.Areas.CU.DAL.SageViews.Mapper
+namespace ISV1.web.Areas.CU.DAL.CustomViews.Mapper
 {
     public class CustomerMapper<T> : ModelMapper<T> where T : Customer, new()
     {

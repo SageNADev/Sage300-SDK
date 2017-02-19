@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using ISV1.web.Areas.CU.DAL.SageViews.Model;
+using ISV1.web.Areas.CU.DAL.CustomViews.Model;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using System;
@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ISV1.web.Areas.CU.DAL.SageViews.ViewModel
+namespace ISV1.web.Areas.CU.DAL.CustomViews.ViewModel
 {
     public class CustomerViewModel<T> : ViewModelBase<T> where T : Customer, new()
     {

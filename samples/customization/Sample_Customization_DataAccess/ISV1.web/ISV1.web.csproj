@@ -92,6 +92,25 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository">
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Interfaces">
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Resources">
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Services">
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Web">
+      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.dll</HintPath>
@@ -266,10 +285,10 @@
     <Compile Include="Areas\CU\DAL\CSQuery\Model\Order.cs" />
     <Compile Include="Areas\CU\DAL\CSQuery\Repository\OrderRepository.cs" />
     <Compile Include="Areas\CU\DAL\CSQuery\ViewModel\OrderViewModel.cs" />
-    <Compile Include="Areas\CU\DAL\SageViews\Mapper\CustomerMapper.cs" />
-    <Compile Include="Areas\CU\DAL\SageViews\Model\Customer.cs" />
-    <Compile Include="Areas\CU\DAL\SageViews\Repository\CustomerRepository.cs" />
-    <Compile Include="Areas\CU\DAL\SageViews\ViewModel\CustomerViewModel.cs" />
+    <Compile Include="Areas\CU\DAL\CustomViews\Mapper\CustomerMapper.cs" />
+    <Compile Include="Areas\CU\DAL\CustomViews\Model\Customer.cs" />
+    <Compile Include="Areas\CU\DAL\CustomViews\Repository\CustomerRepository.cs" />
+    <Compile Include="Areas\CU\DAL\CustomViews\ViewModel\CustomerViewModel.cs" />
     <Compile Include="Areas\CU\Models\CustomizationViewModel.cs" />
     <Compile Include="CUAreaRegistration.cs" />
     <Compile Include="CUWebBootstrapper.cs" />
@@ -389,7 +408,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\CU\Views\Web.config" />
     <Content Include="Areas\CU\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Core\Views\Authentication\OnPremiseLogin.cshtml" />
@@ -489,12 +510,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\CU\DAL\CustomViews\Mapper\" />
-    <Folder Include="Areas\CU\DAL\CustomViews\Model\" />
-    <Folder Include="Areas\CU\DAL\CustomViews\Repository\" />
-    <Folder Include="Areas\CU\DAL\CustomViews\ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

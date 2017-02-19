@@ -38,7 +38,7 @@
     <Control ID="gridOrderDetail" Type="Grid" />
   </Control>
   <!-- Table Page: Sage 300 View/Custom View controls configurations-->
-  <Control ID="tabPageSageView" Type="TabPage" Label ="Sage 300 View Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+  <Control ID="tabPageSageView" Type="TabPage" Label ="Sage 300c Custom View Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
     <Control ID="customerList" Type="DropDown" Label="Customer Number List" />
     <Control ID="customerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
     <Control ID="customerGroupCode" Type ="TextBox" Label="Group Code" Binding="Data.GroupCode"/>
@@ -65,6 +65,18 @@
     <Control ID="arCustomerPaymentCode" Type="TextBox" Label="Payment Code"  Binding ="Data.PaymentCode" />
     <Control ID="gridARCustomerOptionalField" Type="Grid" />
   </Control>
+   <Control ID="tabPageSage300EndPoint" Type="TabPage" Label ="Sage300c Endpoints Access Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+     <Control ID="batchNumberList" Type="DropDown" Label="batch Number List" />
+     <Control ID="txtBatchNumber" Type ="TextBox" Label="Batch Number" Binding="Data.BatchNumber"/>
+     <Control ID="txtBatchStatus" Type ="TextBox" Label="Batch Status" Binding="Data.BatchStatus"/>
+     <Control ID="txtBatchType" Type="TextBox" Label="Batch Type" Binding ="Data.BatchTypeString" />
+     <Control ID="txtBatchTotal" Type="TextBox" Label="Batch Total" Binding ="Data.BatchTotal" />
+     <Control ID="txtDescription" Type="TextBox" Label="Description"  Binding ="Data.Description" />
+     <Control ID="txtInvoiceType" Type="TextBox" Label="Invoice Type"  Binding ="Data.InvoiceType" />
+     <Control ID="txtProcessCommandCode" Type="TextBox" Label="Process Command Code"  Binding ="Data.ProcessCommandCode" />
+     <Control ID="gridInvoices" Type="Grid" />
+  </Control>
+  
   <!-- Buttons: For Demo Data Access Layer in different ways-->
   <Control ID="btnDemoSave" Type="Button" Label="Demo Save" BeforeID="btnPost"/>
   <Control ID="btnDemoDelete" Type="Button" Label="Demo Delete" BeforeID="btnPost"/>
