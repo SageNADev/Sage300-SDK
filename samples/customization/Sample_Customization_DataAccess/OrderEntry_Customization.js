@@ -84,13 +84,18 @@ ISV1CustomizationUI = {
                 ISV1CustomizationUI.deleteById();
             }, null, "Are you sure to delete?", "Delete record");
         });
-
     },
 
     // Init TextBoxs
     initTextbox: function () {
         $('#txtOrderNumber').prop('disabled', true);
         $('#txtCustomerNumber').prop('disabled', true);
+
+        //set AP invoice batch tab page controls readonly
+        var elements = ['#txtBatchNumber', '#txtBatchStatus', '#txtBatchType', '#txtBatchTotal', '#txtInvoiceType', '#txtProcessCommandCode'];
+        for (var i = 0; i < 6; i++) {
+            $(elements[i]).prop('disabled', true);
+        }
     },
 
     // Init Numeric TextBox
@@ -193,6 +198,7 @@ ISV1CustomizationUI = {
         // set ajax call to get all ids for populate drop down list
         var tabPageId = e.item.id;
         var actionName = "";
+        var btnDeleleteDisabled = false;
 
         if (tabPageId === "tabPageCSQuery") {
             actionName = "GetAllBySage300CSQuery";
@@ -219,8 +225,10 @@ ISV1CustomizationUI = {
             ISV1CustomizationUI.tabPageStripId = "orderEntryTabStrip-8";
             ISV1CustomizationUI.deleteActionName = "DeleteBySage300c";
             ISV1CustomizationUI.saveActionName = "SaveBySage300c";
+            btnDeleleteDisabled = true;
         }
 
+        $("#btnDemoDelete").prop("disabled", btnDeleleteDisabled);
         if (actionName) {
             var url = ISV1CustomizationUI.baseUrl + actionName;
             ISV1CustomizationUI.ajaxCall(url, 'get', {}, ISV1CustomizationUICallback.populateDropDownList);
@@ -244,9 +252,19 @@ ISV1CustomizationUI = {
     // Save the information
     save: function (e) {
         var id = $('#' + ISV1CustomizationUI.dropdownListId).val();
-        var url = ISV1CustomizationUI.baseUrl + ISV1CustomizationUI.saveActionName;
         var modelData = ko.mapping.toJS(ISV1CustomizationUI.viewModel.Data);
-        ISV1CustomizationUI.ajaxCall(url, 'post', { model: modelData }, ISV1CustomizationUICallback.save)
+        var url = ISV1CustomizationUI.baseUrl + ISV1CustomizationUI.saveActionName;
+
+        if (ISV1CustomizationUI.dropdownListId = "batchNumberList") {
+            // directly send ajax call to sage300c endpoints
+            // when call sage300c endpoints directly, it should also meet require business rules, otherwise it will give error message
+            // here just for sample to direct call sage300c endpoint( controll action method) 
+            url = sg.utls.url.buildUrl("AP", "InvoiceEntry", "Save");
+            sg.utls.ajaxPost(url, { model: modelData }, ISV1CustomizationUICallback.save);
+        } else {
+            // call customization controller action
+            ISV1CustomizationUI.ajaxCall(url, 'post', { model: modelData }, ISV1CustomizationUICallback.save)
+        }
     },
 
 };

@@ -83,33 +83,28 @@
       <Private>True</Private>
       <HintPath>$(SolutionDir)packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository">
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.BusinessRepository.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Interfaces">
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Interfaces.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Resources">
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Resources.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Resources.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Services">
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Services.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Services.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Web">
-      <HintPath>..\..\..\..\..\..\Sage300ERP\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Web.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Web.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

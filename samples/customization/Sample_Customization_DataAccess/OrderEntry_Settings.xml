@@ -22,7 +22,7 @@
 <Screen Name="OrderEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="screenConfig.xsd">
   <!--TODO: add elements for customizing the screen. For details, see document and samples-->
   
-  <!-- Table Page: Sage 300 CS Query controls configurations-->
+  <!-- Table Page: Sage 300 CS Query controls configurations -->
   <Control ID="tabPageCSQuery" Type="TabPage" Label ="CS Query Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
     <Control ID="orderNumberList" Type="DropDown" Label="Order Number List"  />
     <Control ID="txtOrderNumber" Type ="TextBox" Label="Order Number" Binding="Data.OrderNumber"/>
@@ -37,7 +37,8 @@
     <Control ID="txtShipToContact" Type ="TextBox" Label="Ship Contact" Binding="Data.ShipToContact"/>
     <Control ID="gridOrderDetail" Type="Grid" />
   </Control>
-  <!-- Table Page: Sage 300 View/Custom View controls configurations-->
+  
+  <!-- Table Page: Sage 300 View/Custom View controls configurations -->
   <Control ID="tabPageSageView" Type="TabPage" Label ="Sage 300c Custom View Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
     <Control ID="customerList" Type="DropDown" Label="Customer Number List" />
     <Control ID="customerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
@@ -52,7 +53,8 @@
     <Control ID="customerEmail" Type="TextBox" Label="Email"  Binding ="Data.Email" />
     <Control ID="gridCustomerOptionalField" Type="Grid" />
   </Control>
-  <!-- Table Page: ADO Entity Framework controls configurations-->
+  
+  <!-- Table Page: ADO Entity Framework controls configurations -->
   <Control ID="tabPageEntityFramework" Type="TabPage" Label ="ADO Entity Framework Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
     <Control ID="arCustomerList" Type="DropDown" Label="Customer Number List" />
     <Control ID="arCustomerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
@@ -65,7 +67,9 @@
     <Control ID="arCustomerPaymentCode" Type="TextBox" Label="Payment Code"  Binding ="Data.PaymentCode" />
     <Control ID="gridARCustomerOptionalField" Type="Grid" />
   </Control>
-   <Control ID="tabPageSage300EndPoint" Type="TabPage" Label ="Sage300c Endpoints Access Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+  
+  <!-- Table Page: Sage 300c Endpoints directly access controls configuration -->
+  <Control ID="tabPageSage300EndPoint" Type="TabPage" Label ="Sage300c Endpoints Access Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
      <Control ID="batchNumberList" Type="DropDown" Label="batch Number List" />
      <Control ID="txtBatchNumber" Type ="TextBox" Label="Batch Number" Binding="Data.BatchNumber"/>
      <Control ID="txtBatchStatus" Type ="TextBox" Label="Batch Status" Binding="Data.BatchStatus"/>

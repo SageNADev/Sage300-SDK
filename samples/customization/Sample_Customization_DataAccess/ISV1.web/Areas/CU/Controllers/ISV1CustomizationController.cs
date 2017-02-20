@@ -22,7 +22,6 @@ using System;
 using System.Web.Mvc;
 using System.Linq;
 
-using Microsoft.Web.Administration;
 using Microsoft.Practices.Unity;
 using System.Data.Entity;
 
@@ -112,57 +111,6 @@ namespace ISV1.web.Areas.CU.Controllers
             viewModel.Data = modelData;
 
             return JsonNet(viewModel);
-        }
-
-        /// <summary>
-        /// Save/Update entity by using Sage300c/Custom view
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [NoAntiForgeryCheckAttribute]
-        public virtual JsonNetResult SaveBySage300c(Customer model)
-        {
-            SetUnityContainer(Context);
-            ViewModelBase<ModelBase> viewModel;
-
-            if (!ValidateModelState(ModelState, out viewModel))
-            {
-                return JsonNet(viewModel);
-            }
-            var repository = new CustomerRepository<Customer>(Context);
-
-            try
-            {
-                return JsonNet(repository.Save(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, "Customer"));
-            }
-        }
-
-        /// <summary>
-        /// Delete entity by using Sage300c/Custom view 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [NoAntiForgeryCheckAttribute]
-        public virtual JsonNetResult DeleteBySage300c(string id)
-        {
-            SetUnityContainer(Context);
-
-            var repository = new CustomerRepository<Customer>(Context);
-            try
-            {
-                repository.Delete(id);
-                return JsonNet("Delete successfully !");
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, "Customer"));
-            }
         }
 
         #endregion Call Sage 300 Controller Actions

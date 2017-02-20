@@ -27,11 +27,11 @@ namespace ISV1.web.Areas.CU.DAL.ADO_EF.Model
 
     public partial class CustomDbContext : DbContext
     {
-        public CustomDbContext()
-            : base("name=CustomDbContext")
+        // ToDo: modify to supply secure connection string
+        const string connectionString = "data source=localhost;initial catalog=SAMLTD;integrated security=True;MultipleActiveResultSets=True;";
+        public CustomDbContext() : base(connectionString)
         {
         }
-
         public virtual DbSet<ARCustomer> ARCustomer { get; set; }
         public virtual DbSet<ARCustomerOptionalField> ARCustomerOptionalField { get; set; }
 
