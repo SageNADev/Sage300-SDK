@@ -255,7 +255,7 @@ ISV1CustomizationUI = {
         var modelData = ko.mapping.toJS(ISV1CustomizationUI.viewModel.Data);
         var url = ISV1CustomizationUI.baseUrl + ISV1CustomizationUI.saveActionName;
 
-        if (ISV1CustomizationUI.dropdownListId = "batchNumberList") {
+        if (ISV1CustomizationUI.dropdownListId === "batchNumberList") {
             // directly send ajax call to sage300c endpoints
             // when call sage300c endpoints directly, it should also meet require business rules, otherwise it will give error message
             // here just for sample to direct call sage300c endpoint( controll action method) 
