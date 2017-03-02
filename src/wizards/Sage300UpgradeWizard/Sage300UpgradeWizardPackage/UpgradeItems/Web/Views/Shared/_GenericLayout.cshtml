@@ -1,0 +1,37 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@CommonResx.Title</title>
+    @Styles.Render("~/Content/Styles/standaloneCss")
+</head>
+<body class="master-stand-alone">
+    <section class="header">
+        <div class="wrapper">
+            <div class="Sage_logo"><img src="~/Content/Images/sage_300_logo_white.png" height="25" alt="Sage 300"></div>
+        </div>
+    </section>
+    <section class="main-body">
+
+        @RenderBody()
+
+    </section>
+
+    <section class="footer">
+        <div class="wrapper">
+            <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
+            @string.Format(@CommonResx.GlobalCopyright, @DateTime.Today.Year)
+        </div>
+    </section>
+    <div id="task_viewnote"></div>
+    <div id="task_createnote"></div>
+
+</body>
+</html>

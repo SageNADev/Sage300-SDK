@@ -1,0 +1,157 @@
+﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
+@using Sage.CA.SBS.ERP.Sage300.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+
+@model List<NavigableMenuViewModel<NavigableMenu>>
+
+@Scripts.Render()
+
+@functions {
+    public static string GetMenuClassName(string menuId)
+    {
+        switch (menuId)
+        {
+            default: return string.Empty;
+        }
+    }
+}
+        
+@{
+    //Home page key constant
+    const string homepageKey = "101";
+
+    //screen url is not available
+    const string notAvailable = "N/A";
+
+    //Get Domain URL according to the enviorment and user
+    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
+
+    //Prepare menu items collections
+    var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
+    var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
+    var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
+}
+
+@*Rendering Menu*@
+@foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
+{
+    if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
+    {
+        if(ViewBag.IsGLFinancialReportEnable == true)
+        {
+            @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content, 
+                NavigationResx.SIR_Title,
+                NavigationResx.SIR_Msg1,
+                NavigationResx.SIR_Msg2,
+                NavigationResx.SIR_Btn)))
+        }
+    }
+    else
+    {
+        @*2nd Level Menu: Start*@
+        var level2ItemId = level2Item.Data.MenuId;
+        <li class="feature_nav @GetMenuClassName(level2ItemId)">
+            <a>@level2Item.Data.MenuName</a>
+            <div class="nav-menu top-menu">
+                <ul class="std-menu">
+
+                    @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
+                    {
+                        @*3rd Level Menu Items: Start*@
+                        var level3ItemId = level3Item.Data.MenuId;
+                        var level3ItemClass = level3Item.Data.IsGroupEnd == true ? "menu-group" : "";
+
+                        <li class="@level3ItemClass">
+
+                            <span data-menuid='@level3Item.Data.MenuId'>
+                                @level3Item.Data.MenuName
+                                @if (level3Item.Data.IsReport == true)
+                                {
+                                    <span class="icon-report"></span>
+                                }
+                            </span>
+
+                            @*4th level block start*@
+                            @if (level3Item.Data.UseColGrouping)
+                            {
+                                var colGroupingList = level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
+                                @:<div class="sub-menu-wrap" style="background-image: none">
+
+                                foreach (var currentColGrouping in colGroupingList)
+                                {
+                                    <div class="menu-section">
+                                        <ul>
+                                            @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
+                                            {
+                                                @CreateMenuItem(level4Item, notAvailable, domainUrl);
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                                @:</div>
+                            }
+                            else
+                            {
+                                <div class="sub-menu-wrap">
+                                    <div class="menu-section">
+                                        <ul>
+                                            @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).OrderBy(m => m.Data.MenuItemOrder))
+                                            {
+                                                @CreateMenuItem(level4Item, notAvailable, domainUrl)
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                            @*4th level block end*@
+
+                        </li>
+                        @*3rd Level Menu Items: End*@
+                    }
+                </ul>
+            </div>
+        </li>
+        @*2nd Level Menu: End*@
+    }
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
+</script>
+
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> level4Item, string notAvailable, string domainUrl)
+{
+    if (level4Item.Data.IsGroupHeader == true)
+    {
+
+        <li class="sub-heading" data-menuid='@level4Item.Data.MenuId' data-modulename='@level4Item.Data.ModuleName'>
+            @level4Item.Data.MenuName
+        </li>
+    }
+
+    if (level4Item.Data.Isintelligence == true)
+    {
+        <li class="k-item">
+            <a data-url='@level4Item.Data.ScreenUrl' data-menuid='@level4Item.Data.MenuId' data-isintelligence='@level4Item.Data.Isintelligence' data-modulename='@level4Item.Data.ModuleName'> @level4Item.Data.MenuName</a>
+        </li>
+    }
+    if (level4Item.Data.IsGroupHeader == false && level4Item.Data.Isintelligence == false)
+    {
+        if (level4Item.Data.ScreenUrl == notAvailable)
+        {
+            <li class="k-item">
+                <a data-url='' data-menuid='@level4Item.Data.MenuId' data-parentid='@level4Item.Data.ParentMenuId' data-modulename='@level4Item.Data.ModuleName' data-isreport="@level4Item.Data.IsReport"> @level4Item.Data.MenuName</a>
+            </li>
+        }
+        else
+        {
+            <li class="k-item">
+                <a data-url='@domainUrl@level4Item.Data.ScreenUrl' data-menuid='@level4Item.Data.MenuId' data-parentid='@level4Item.Data.ParentMenuId' data-modulename='@level4Item.Data.ModuleName' data-isreport="@level4Item.Data.IsReport"> @level4Item.Data.MenuName</a>
+            </li>
+        }
+    }
+}
