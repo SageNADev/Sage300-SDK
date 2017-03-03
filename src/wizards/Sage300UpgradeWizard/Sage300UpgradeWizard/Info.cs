@@ -34,7 +34,8 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 			"Upgrade MergeISVProject",
 			"Resx Files with Blank Values",
 			"Remove Dot in Bundle Name",
-			"Convert Web Project to Module Specific",
+			"Upgrade Accpac.NET library reference",
+			"Convert Web Project to Module Specific"
          };
 
         public static string[] messages = 
@@ -47,7 +48,8 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 			  4. Upgarde MergeISVProject
 			  5. Resx Files with blank values
 			  6. Remove dot in bundle name
-			  7. Convert web project to contain module name
+			  7. Upgrade reference to new Accpac.NET library
+			  8. Convert web project to contain module name
 
 			For upgrade the projects and samples, it's better to backup the original projects and samples.",
            
@@ -61,7 +63,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 			@"In the Areas/{module}/Views razor view (.cshtml file), apply following changes
 
 			  1. Refactoring shared layout with GlobalLayout.cshtml
-			  2. Modify razor view files with new layout, css
+			  2. Modify razor view with new layout, css
 			  3. Modify razor view with new container
 			  4. Modify razor view with new headers group
 			  5. Modify razor view with new fiscal group
@@ -77,7 +79,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 
 			@"Copy new version MergeISVProject to solution web project folder. 
 
-			In the web project property, build Events tab page, the Post-build event command line as:
+			In the web project property, build events tab page, the post-build event command line as:
 
 			Call $(ProjectDir)MergeISVProject.exe $(SolutionPath) $(ProjectDir) {module}MenuDetails.xml $(ConfigurationName) $(FrameworkDir)
             
@@ -108,6 +110,10 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 
 			  1. Bundle name in bundle registration classes 
 			  2. Bundle name in Index.cshtml files",
+
+			@"Upgrade reference to new Accpac.NET library
+			
+			In PU2 the Accpac.NET library in changed, the projects and samples projects need update the project reference to use new version",
 
 			@"Convert web project to module specific web project
             

@@ -68,6 +68,7 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="UpgradeItems\AccpacDotNetVersion.props" />
     <None Include="UpgradeItems\Web.zip" />
   </ItemGroup>
   <ItemGroup>

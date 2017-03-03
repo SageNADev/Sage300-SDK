@@ -151,9 +151,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 			// 
 			this.btnOpenlog.Location = new System.Drawing.Point(306, 460);
 			this.btnOpenlog.Name = "btnOpenlog";
-			this.btnOpenlog.Size = new System.Drawing.Size(109, 30);
+			this.btnOpenlog.Size = new System.Drawing.Size(91, 30);
 			this.btnOpenlog.TabIndex = 3;
-			this.btnOpenlog.Text = "Open log file";
+			this.btnOpenlog.Text = "Show log";
 			this.btnOpenlog.UseVisualStyleBackColor = true;
 			this.btnOpenlog.Visible = false;
 			this.btnOpenlog.Click += new System.EventHandler(this.btnOpenlog_Click);

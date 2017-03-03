@@ -144,13 +144,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         private void ShowStepInfo()
         {
             btnBack.Enabled = (_currentWizardStep > 0);
-            btnNext.Text = (_currentWizardStep == 7) ? "Upgrade" : "Next";
-            chkConvert.Visible = (_currentWizardStep == 7);
+            btnNext.Text = (_currentWizardStep == 8) ? "Upgrade" : "Next";
+            chkConvert.Visible = (_currentWizardStep == 8);
             var format = (_currentWizardStep == 0) ? "{1}" : "Step {0} - {1}"; 
             lblStepTitle.Text = string.Format(format, _currentWizardStep, Info.titles[_currentWizardStep]);
             lblInformation.Text = Info.messages[_currentWizardStep];
-            lblInformation.Height = (_currentWizardStep == 7) ? 140: 444;
-            chkConvert.Top = (_currentWizardStep == 7) ? lblInformation.Bottom + 20 : 470 ;
+            lblInformation.Height = (_currentWizardStep == 8) ? 140: 444;
+            chkConvert.Top = (_currentWizardStep == 8) ? lblInformation.Bottom + 20 : 470 ;
         }
 
         /// <summary>
@@ -163,6 +163,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             UpgradeObsoletedMethods();
             UpgradeMergeISVProject();
             RemoveDotInBundleName();
+			UpgradeAccpacReference();
             ConvertWebProject();
         }
 
@@ -369,6 +370,59 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                 }
             }
         }   
+
+		/// <summary>
+		/// Upgrade project reference for use new verion Accpac.Net
+		/// </summary>
+		private void UpgradeAccpacReference()
+		{
+			var file = Path.Combine(_destinationWebFolder, "AccpacDotNetVersion.props");
+			if (File.Exists(file))
+			{
+				//Copy new AccpacDotNetVersion.props, update the refrence to this props
+				var srcFilePath = Path.Combine(_sourceItems, "AccpacDotNetVersion.props");
+				File.Copy(srcFilePath, file, true);
+				var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
+				foreach (var f in files)
+				{
+					var lines = File.ReadAllLines(f);
+					var isChanged = false;
+					var length = lines.Length;
+					for (int i = 0; i < length; i++)
+					{
+						if (lines[i].Contains("ACCPAC.Advantage,"))
+						{
+							lines[i] = "<Reference Include=\"$(RefAccpacAdvantage)\">";
+							isChanged = true;
+						}
+						if (lines[i].Contains("ACCPAC.Advantage.Types,"))
+						{
+							lines[i] = "<Reference Include=\"$(RefAccpacAdvantageTypes)\">";
+							isChanged = true;
+						}
+					}
+					if (isChanged)
+					{
+						File.WriteAllLines(f, lines);
+						_sbLog.AppendLine("Update the project reference to new Accpac.Net version in project " + file);
+					}
+				}
+			}
+			else
+			{
+				//Update project reference directly, only "ACCPAC.Advantage.dll" version is changed
+				var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
+				foreach (var f in files)
+				{
+					var fileContent = File.ReadAllText(f);
+					if (fileContent.Contains("ACCPAC.Advantage, Version=6.4.0.0"))
+					{
+						File.WriteAllText(f, fileContent.Replace("ACCPAC.Advantage, Version=6.4.0.0", "ACCPAC.Advantage, Version=6.4.0.20"));
+						_sbLog.AppendLine("Update the project reference to new Accpac.Net version in project " + f);
+					}
+				}
+			}	
+		}
 
         /// <summary>
         /// Modele included in web project  
