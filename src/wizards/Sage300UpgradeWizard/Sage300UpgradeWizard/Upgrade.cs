@@ -448,7 +448,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 						var moduleWebDirName = companyName + "." + module + ".Web";
 
 						var files = Directory.EnumerateFiles(_destination, "*.*", SearchOption.AllDirectories).
-							Where(s => s.EndsWith(".cs") || s.EndsWith(".csproj") || s.EndsWith(".sln") || s.EndsWith(".cshtml") || s.EndsWith(".xml") || s.EndsWith(".asax"));
+							Where(s => s.EndsWith(".cs") || s.EndsWith(".csproj") || s.EndsWith(".sln") || s.EndsWith(".cshtml") || s.EndsWith(".xml") || s.EndsWith(".asax") || s.EndsWith(".aspx"));
 						foreach (var file in files)
 						{
 							if (file.Contains(@"\Logs\") || file.Contains(@"\obj\"))
