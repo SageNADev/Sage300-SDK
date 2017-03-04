@@ -34,8 +34,8 @@
     <ProjectGuid>{11818B80-5DFB-4B48-BF62-B001BB081858}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SyncAssembliesWizardPackage</RootNamespace>
-    <AssemblyName>SyncAssembliesWizardPackage</AssemblyName>
+    <RootNamespace>Sage300UpgradeWizardPackage</RootNamespace>
+    <AssemblyName>Sage300UpgradeWizardPackage</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -65,11 +65,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ItemTemplates\UpgradeWebItems.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="UpgradeItems\AccpacDotNetVersion.props" />
-    <None Include="UpgradeItems\Web.zip" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -92,10 +94,9 @@
     <ProjectReference Include="..\Sage300UpgradeWizardMenuExtension\Sage300UpgradeWizardMenuExtension.csproj">
       <Project>{0b06ed0e-c402-48a1-8d09-2a30ab8ed25e}</Project>
       <Name>Sage300UpgradeWizardMenuExtension</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>VSIXContainerProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="UpgradeItems\MergeISVProject.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

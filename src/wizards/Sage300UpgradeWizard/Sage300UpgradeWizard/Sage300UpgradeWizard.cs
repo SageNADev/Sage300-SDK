@@ -21,6 +21,7 @@
 using System.IO;
 using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard;
+using EnvDTE80;
 
 namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 {
@@ -30,7 +31,10 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// <summary> Execute the Sync Assemblies Wizard </summary>
         public void Execute(Solution solution)
         {
-            using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution)))
+			var sln = (Solution2)solution;
+			var templatePath = sln.GetProjectItemTemplate("UpgradeWebItems.zip", "CSharp");
+
+			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath))
             {
                 form.ShowDialog();
             }

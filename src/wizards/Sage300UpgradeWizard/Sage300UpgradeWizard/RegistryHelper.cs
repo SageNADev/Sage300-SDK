@@ -42,8 +42,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
                 var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
                 var configurationKey = baseKey.OpenSubKey(ConfigurationKey);
 
-                // Find path tp shared folder
-                return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web\bin");
+                return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web");
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Sage300UpgradeWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35c" Version="1.0" Language="en-US" Publisher="Sage Software, Inc." />
+    <Identity Id="Sage300UpgradeWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35d" Version="1.0" Language="en-US" Publisher="Sage Software, Inc." />
     <DisplayName>Sage 300 Upgrade Wizard Package</DisplayName>
     <Description xml:space="preserve">This package contains the Sage 300 Upgarde Wizard.
 </Description>
@@ -19,5 +19,6 @@
     <Dependency d:Source="Project" d:ProjectName="Sage300UpgradeWizardMenuExtension" Version="[1.0,2.0)" d:InstallSource="Embed" Location="|Sage300UpgradeWizardMenuExtension;VSIXContainerProjectOutputGroup|" DisplayName="|Sage300UpgradeWizardMenuExtension;VSIXNameProjectOutputGroup|" Id="|Sage300UpgradeWizardMenuExtension;VSIXIdentifierProjectOutputGroup|" />
   </Dependencies>
   <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="ItemTemplates\UpgradeWebItems.zip" />
   </Assets>
 </PackageManifest>

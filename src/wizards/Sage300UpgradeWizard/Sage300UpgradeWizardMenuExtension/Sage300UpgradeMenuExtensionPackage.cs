@@ -31,6 +31,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard;
+using System.IO;
 
 namespace Sage.Sage300UpgradeMenuExtension
 {
@@ -102,10 +103,11 @@ namespace Sage.Sage300UpgradeMenuExtension
         private void MenuItemCallback(object sender, EventArgs e)
         {
             var dte = (DTE2)GetService(typeof(DTE));
-
             // New wizard
             var wizard = new Sage300Upgrade();
             wizard.Execute(dte.Solution);
+
+
         }
 
     }

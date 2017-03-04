@@ -31,6 +31,9 @@ using System.Linq;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Reflection;
+using EnvDTE;
+using EnvDTE80;
 
 //using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard.Properties;
 
@@ -47,12 +50,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         private string _sourceItems = "";
         private string _destinationWebFolder = "";
         private string _viewsFolder = "";
+		private string _templatePath = "";
 
 		private static StringBuilder _sbLog =  new StringBuilder();
-		
-        //private static readonly Logger logger = LogManager.GetLogger("infoLog");
-        //private static readonly Logger logger_error = LogManager.GetLogger("errorLog");
-
         /// <summary> Sage color </summary>
         private readonly Color _sageColor = Color.FromArgb(3, 102, 131); // 3, 130, 104
 
@@ -77,9 +77,10 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// <summary> Synchronization Class </summary>
         /// <param name="destination">Destination Default</param>
         /// <param name="destinationWeb">Destination Web Default</param>
-        public Upgrade(string destination, string destinationWeb)
+		public Upgrade(string destination, string destinationWeb, string templatePath)
         {
             InitializeComponent();
+			_templatePath = templatePath;
             InitWizardSteps(destination, destinationWeb);
         }
 
@@ -133,9 +134,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         {
             _currentWizardStep = 0;
             _destination = destination;
-            var currentDir = System.IO.Directory.GetCurrentDirectory();
-            var packageDir = Directory.GetParent(currentDir).Parent.FullName;
-            _sourceItems = Path.Combine(packageDir, "UpgradeItems");
+			_sourceItems = Path.GetDirectoryName(_templatePath);
+			_destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
+
             picProcess.Visible = false;
 			btnOpenlog.Visible = false;
             ShowStepInfo();
@@ -172,19 +173,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// </summary>
         private void SyncWebFiles()
         {
-			
-            // Extract source web files
-            var webZipFile = Path.Combine(_sourceItems, "Web.zip");
-            var sourceWebFolder = Path.Combine(_sourceItems, "Web");
-            if (Directory.Exists(sourceWebFolder))
-            {
-                Directory.Delete(sourceWebFolder, true);
-            }
-            ZipFile.ExtractToDirectory(webZipFile, sourceWebFolder);
-            
-            // Copy to destination web folder
-            _destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
-            DirectoryCopy(sourceWebFolder, _destinationWebFolder);
+			//Update the web files from Sage300c PU2 Web folder
+			var sourceWebFolder = RegistryHelper.Sage300CWebFolder;
+			string[] upgradeFolders = { @"Areas\Core", @"Areas\Shared", "Assets", "Content", "Scripts", "Views" };
+			foreach (var folder in upgradeFolders)
+			{
+				var srcFolder = Path.Combine(sourceWebFolder, folder);
+				var destFolder = Path.Combine(_destinationWebFolder, folder);
+				DirectoryCopy(srcFolder, destFolder);
+			}
 
             // Update WebForms C# file for report project
             if( Directory.Exists(Path.Combine(_destinationWebFolder, "WebForms")))
@@ -588,7 +585,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         {
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
             DirectoryInfo[] dirs = dir.GetDirectories();
-
             if (!Directory.Exists(destDirName))
             {
                 Directory.CreateDirectory(destDirName);
