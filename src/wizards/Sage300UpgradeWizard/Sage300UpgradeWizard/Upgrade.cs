@@ -47,7 +47,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// <summary> Current Wizard Step </summary>
         private int _currentWizardStep = 0;
         private string _destination = "";
-        private string _sourceItems = "";
+        private string _sourceItemsFolder = "";
         private string _destinationWebFolder = "";
         private string _viewsFolder = "";
 		private string _templatePath = "";
@@ -134,7 +134,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         {
             _currentWizardStep = 0;
             _destination = destination;
-			_sourceItems = Path.GetDirectoryName(_templatePath);
+			_sourceItemsFolder = Path.GetDirectoryName(_templatePath);
 			_destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
 
             picProcess.Visible = false;
@@ -174,15 +174,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         private void SyncWebFiles()
         {
 			//Update the web files from Sage300c PU2 Web folder
-			var sourceWebFolder = RegistryHelper.Sage300CWebFolder;
-			string[] upgradeFolders = { @"Areas\Core", @"Areas\Shared", "Assets", "Content", "Scripts", "Views" };
-			foreach (var folder in upgradeFolders)
-			{
-				var srcFolder = Path.Combine(sourceWebFolder, folder);
-				var destFolder = Path.Combine(_destinationWebFolder, folder);
-				DirectoryCopy(srcFolder, destFolder);
-			}
+			var zipFile = Path.Combine(_sourceItemsFolder, "Web.zip");
+			var sourceWebFolder= Path.Combine(_sourceItemsFolder,"Web");
+			ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
 
+			DirectoryCopy(sourceWebFolder, _destinationWebFolder);
+			
             // Update WebForms C# file for report project
             if( Directory.Exists(Path.Combine(_destinationWebFolder, "WebForms")))
             {
@@ -315,7 +312,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// </summary>
         private void UpgradeMergeISVProject()
         {
-            var sourceFile = Path.Combine(_sourceItems, "MergeISVProject.exe");
+			var sourceFile = Path.Combine(_sourceItemsFolder, "MergeISVProject.exe");
             var destinationFile = Path.Combine(_destinationWebFolder, "MergeISVProject.exe");
             File.Copy(sourceFile, destinationFile, true);
 			_sbLog.AppendLine("Upgrade MergeISVProject.exe file in the " + _destinationWebFolder + " folder");
@@ -377,7 +374,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 			if (File.Exists(file))
 			{
 				//Copy new AccpacDotNetVersion.props, update the refrence to this props
-				var srcFilePath = Path.Combine(_sourceItems, "AccpacDotNetVersion.props");
+				var srcFilePath = Path.Combine(_sourceItemsFolder, "AccpacDotNetVersion.props");
 				File.Copy(srcFilePath, file, true);
 				var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
 				foreach (var f in files)
