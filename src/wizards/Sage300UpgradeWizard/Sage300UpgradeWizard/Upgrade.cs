@@ -166,7 +166,18 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             RemoveDotInBundleName();
 			UpgradeAccpacReference();
             ConvertWebProject();
+			WriteLogFile();
         }
+
+		/// <summary>
+		/// Write log file to upgrade solution folder
+		/// </summary>
+		private void WriteLogFile()
+		{
+			// write log info to file
+			var logFilePath = Path.Combine(_destination, "UpgradeLog.txt");
+			File.WriteAllText(logFilePath, _sbLog.ToString());
+		}
 
         /// <summary>
         /// Synchronization of web project files
@@ -176,8 +187,10 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 			//Update the web files from Sage300c PU2 Web folder
 			var zipFile = Path.Combine(_sourceItemsFolder, "Web.zip");
 			var sourceWebFolder= Path.Combine(_sourceItemsFolder,"Web");
-			ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
-
+			if (!Directory.Exists(sourceWebFolder))
+			{
+				ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
+			}
 			DirectoryCopy(sourceWebFolder, _destinationWebFolder);
 			
             // Update WebForms C# file for report project
@@ -190,8 +203,8 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                     contents = contents.Replace("using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;", "using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;");
                     contents = contents.Replace("Utilities.", "SignOnHelper.");
                     File.WriteAllText(file, contents);
-					_sbLog.AppendLine("Replace namespace 'Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities' with 'Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities' in " + file);
-					_sbLog.AppendLine("Replace object 'Utilities' with 'SignOnHelper' in " + file);
+					_sbLog.AppendLine(DateTime.Now + " Replace namespace 'Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities' with 'Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities' in " + file);
+					_sbLog.AppendLine(DateTime.Now + " Replace object 'Utilities' with 'SignOnHelper' in " + file);
 	            }
             }
         }
@@ -231,7 +244,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                                 {
                                     file = Regex.Replace(file, @"\btextarea-group\b", "textarea-group xlarge", RegexOptions.IgnoreCase);
                                     isFileEdit = true;
-									_sbLog.AppendLine("Replace 'textarea-group' with 'textarea-group xlarge' in " + file );
+									_sbLog.AppendLine(DateTime.Now + " Replace 'textarea-group' with 'textarea-group xlarge' in " + file );
                                 }
                             }
                             //Step 8 Partial Step 8 All wrapper-group should have clearfix
@@ -241,7 +254,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                                 {
                                     file = Regex.Replace(file, @"\bwrapper-group\b", "wrapper-group clearfix", RegexOptions.IgnoreCase);
                                     isFileEdit = true;
-									_sbLog.AppendLine("Replace 'wrapper-group' with 'wrapper-group clearfix' in " + file);
+									_sbLog.AppendLine(DateTime.Now + " Replace 'wrapper-group' with 'wrapper-group clearfix' in " + file);
                                 }
                             }
                             //Step 10
@@ -260,7 +273,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         }
                         catch (Exception ex)
                         {
-							_sbLog.AppendLine("Error in R2/R3 Layout update: " + ex.Message);
+							_sbLog.AppendLine(DateTime.Now + " Error in R2/R3 Layout update: " + ex.Message);
                         }
                         // update the file if it was edited.
                         if (isFileEdit)
@@ -315,7 +328,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 			var sourceFile = Path.Combine(_sourceItemsFolder, "MergeISVProject.exe");
             var destinationFile = Path.Combine(_destinationWebFolder, "MergeISVProject.exe");
             File.Copy(sourceFile, destinationFile, true);
-			_sbLog.AppendLine("Upgrade MergeISVProject.exe file in the " + _destinationWebFolder + " folder");
+			_sbLog.AppendLine(DateTime.Now + " Upgrade MergeISVProject.exe file in the " + _destinationWebFolder + " folder");
         }
 
         /// <summary>
@@ -336,7 +349,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 					var replaceName = bundleName.Replace(".", "");
 					var updatedFileContent = fileContent.Substring(0, indexStart + 9) + replaceName + fileContent.Substring(indexEnd - 1);
 					File.WriteAllText(filePath, updatedFileContent);
-					_sbLog.AppendLine("Remove the dot in bundle name in " + filePath);
+					_sbLog.AppendLine(DateTime.Now + " Remove the dot in bundle name in " + filePath);
 				}
             }
 
@@ -358,7 +371,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 							var replaceLine = line.Substring(0, indexStart) + bundleName.Replace(".", "");
 							lines[indexLine] = replaceLine;
 							File.WriteAllLines(file, lines);
-							_sbLog.AppendLine("Remove the dot in bundle name in " + file);
+							_sbLog.AppendLine(DateTime.Now + " Remove the dot in bundle name in " + file);
 						}
                     }
                 }
@@ -398,7 +411,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 					if (isChanged)
 					{
 						File.WriteAllLines(f, lines);
-						_sbLog.AppendLine("Update the project reference to new Accpac.Net version in project " + file);
+						_sbLog.AppendLine(DateTime.Now + " Update the project reference to new Accpac.Net version in project " + file);
 					}
 				}
 			}
@@ -412,7 +425,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 					if (fileContent.Contains("ACCPAC.Advantage, Version=6.4.0.0"))
 					{
 						File.WriteAllText(f, fileContent.Replace("ACCPAC.Advantage, Version=6.4.0.0", "ACCPAC.Advantage, Version=6.4.0.20"));
-						_sbLog.AppendLine("Update the project reference to new Accpac.Net version in project " + f);
+						_sbLog.AppendLine(DateTime.Now + " Update the project reference to new Accpac.Net version in project " + f);
 					}
 				}
 			}	
@@ -441,6 +454,44 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 						var webDirName = companyName + ".Web";
 						var moduleWebDirName = companyName + "." + module + ".Web";
 
+						// Rename web project folder to contain module
+						var newWebFolder = Path.Combine(_destination, moduleWebDirName);
+						if (!Directory.Exists(newWebFolder))
+						{
+							try
+							{
+								System.Threading.Thread.Sleep(3000);
+								Directory.Move(_destinationWebFolder, newWebFolder);
+								_sbLog.AppendLine(DateTime.Now + " Rename the web project folder as " + newWebFolder + " to contain module name in " + _destination + " folder");
+							}
+							catch (Exception ex)
+							{
+								_sbLog.AppendLine(DateTime.Now + " Error: Rename the web project folder to contain module name " + ex.Message);
+								return;
+							}
+						}
+
+						// Rename web project name to contain module
+						var oldProjFile = Path.Combine(newWebFolder, webDirName + ".csproj");
+						if (File.Exists(oldProjFile))
+						{
+							var newProjFile = Path.Combine(newWebFolder, moduleWebDirName + ".csproj");
+							if (!File.Exists(newProjFile))
+							{
+								try
+								{
+									File.Move(oldProjFile, newProjFile);
+									_sbLog.AppendLine(DateTime.Now + " Rename the web project file name as " + newProjFile + " to contain module name in " + newWebFolder + " folder.");
+
+								}
+								catch (Exception ex)
+								{
+									_sbLog.AppendLine(DateTime.Now + " Error: Rename the web project file name: " + ex.Message);
+									return;
+								}
+							}
+						}
+
 						var files = Directory.EnumerateFiles(_destination, "*.*", SearchOption.AllDirectories).
 							Where(s => s.EndsWith(".cs") || s.EndsWith(".csproj") || s.EndsWith(".sln") || s.EndsWith(".cshtml") || s.EndsWith(".xml") || s.EndsWith(".asax") || s.EndsWith(".aspx"));
 						foreach (var file in files)
@@ -453,36 +504,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 							if (fileContent.Contains(webDirName))
 							{
 								File.WriteAllText(file, fileContent.Replace(webDirName, moduleWebDirName));
-								_sbLog.AppendLine("Update the web project reference to contains modul name in " + file);								
+								_sbLog.AppendLine(DateTime.Now + " Update the web project reference or namespace to contains module name in " + file + " file");
 							}
 						}
 
-						// Rename web project name to contain module
-						var oldProjFile = Path.Combine(_destinationWebFolder, webDirName + ".csproj");
-						if (File.Exists(oldProjFile))
-						{
-							var newProjFile = Path.Combine(_destinationWebFolder, moduleWebDirName + ".csproj");
-							if (!File.Exists(newProjFile))
-							{
-								File.Move(oldProjFile, newProjFile);
-								_sbLog.AppendLine("Rename the web project file name to contain modul name in " + _destinationWebFolder);
-							}
-						}
-
-						// Rename web project folder to contain module
-						var newWebFolder = Path.Combine(_destination, moduleWebDirName);
-						if (!Directory.Exists(newWebFolder))
-						{
-							Directory.Move(_destinationWebFolder, newWebFolder);
-							_sbLog.AppendLine("Rename the web project folder to contain modul name in " + _destination);
-						}
 					}
                 }
             }
-
-			// write log info to file
-			var logFilePath = Path.Combine(_destination, "UpgradeLog.txt");
-			File.WriteAllText(logFilePath, _sbLog.ToString());
         }
         /// <summary> Setup processing display in status bar </summary>
         /// <param name="enableToolbar">True to enable otherwise false</param>
@@ -591,7 +619,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             {
 				var filePath = Path.Combine(destDirName, file.Name);
                 file.CopyTo(filePath, true);
-				_sbLog.AppendLine("Add/Replace file " + filePath);
+				_sbLog.AppendLine(DateTime.Now + " Add/Replace file " + filePath);
             }
 
             foreach (DirectoryInfo subdir in dirs)
@@ -611,24 +639,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                 {
                     file = file.Replace("Shared.LocalizedLayout;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine("Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
                 }
                 else if (file.Contains("Shared.LocalizedLayoutR2;"))
                 {
                     file = file.Replace("Shared.LocalizedLayoutR2;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine("Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
                 }
                 else if (file.Contains("Shared.LocalizedLayoutR3;"))
                 {
                     file = file.Replace("Shared.LocalizedLayoutR3;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine("Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
                 }
             }
             catch (Exception e)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new Shared.GlobalLayout: " + e.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new Shared.GlobalLayout: " + e.Message);
             }
         }
 
@@ -643,13 +671,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                     {
                         file = Regex.Replace(file, @"\bcontainer_16\b", "form-screen", RegexOptions.IgnoreCase);
                         isFileEdit = true;
-						_sbLog.AppendLine("Replace 'container_16' with 'form-screen' in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Replace 'container_16' with 'form-screen' in " + path);
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to replace 'container_16': " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to replace 'container_16': " + ex.Message);
             }
         }
 
@@ -725,7 +753,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             //Remove Required-Group from the file
                             file = file.Replace(containerContent_requiredgroup, string.Empty);
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new header group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new header group in " + path);
                         }
 
                         //Contruct flag-required
@@ -747,13 +775,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 
                         file = file.Replace(containerContent, refactorHeader);
                         isFileEdit = true;
-						_sbLog.AppendLine("Upgarde to use new header group in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new header group in " + path);
 					}
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new header group in : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new header group in : " + ex.Message);
                 //log_error_message(path, "Step_3");
             }
         }
@@ -890,12 +918,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 
                     file = file.Replace(gridControlsGroupContainer, newContainerContent);
                     isFileEdit = true;
-					_sbLog.AppendLine("Upgarde to use new grid buttons in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new grid buttons in " + path);
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new grid buttons in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new grid buttons in " + path + ":" + ex.Message);
             }
         }
 
@@ -929,7 +957,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             file = file.Replace(divContent, newDivContent);
                             divContent = newDivContent; //This is required for local change to next step in accordance to last step.
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new fiscal group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new fiscal group in " + path);
                         }
                     }
 
@@ -943,14 +971,14 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             file = file.Replace(divContent, newDivContent);
                             divContent = newDivContent; //This is required for local change to next step in accordance to last step.
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new fiscal group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new fiscal group in " + path);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new fiscal group in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new fiscal group in " + path + ":" + ex.Message);
             }
         }
         private static void RefactorButtons(ref string file, ref bool isFileEdit, string path)
@@ -967,7 +995,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-primary\b", "btn btn-primary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
                         }
                     }
                     if (buttonContent.Contains("btn-secondary"))
@@ -977,7 +1005,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-secondary\b", "btn btn-secondary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
                         }
                     }
                     if (buttonContent.Contains("btn-default"))
@@ -987,7 +1015,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-default\b", "btn btn-default", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
 						}
                     }
                     if (buttonContent.Contains("btn-tertiary"))
@@ -997,14 +1025,14 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-tertiary\b", "btn btn-tertiary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine("Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new button element in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new button element in " + path + ":" + ex.Message);
             }
         }
         private static void RefactorAlignRight(ref string file, ref bool isFileEdit, string path)
@@ -1027,13 +1055,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         var newMatchContent = match.Replace("align-right", "numeric");
                         file = file.Replace(match, newMatchContent);
                         isFileEdit = true;
-						_sbLog.AppendLine("Upgarde to use new align right css in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new align right css in " + path);
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new align right css in " + path + " : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new align right css in " + path + " : " + ex.Message);
             }
         }
         private static void RefactorLabelTag(ref string file, ref bool isFileEdit, string path)
@@ -1050,13 +1078,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         var new_Label = label.Replace(label_class, newLabel_class);
                         file = file.Replace(label, new_Label);
                         isFileEdit = true;
-						_sbLog.AppendLine("Upgarde to use new label css in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new label css in " + path);
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine("Error: Upgarde to use new label element css in " + path + " : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new label element css in " + path + " : " + ex.Message);
             }
         }
 
