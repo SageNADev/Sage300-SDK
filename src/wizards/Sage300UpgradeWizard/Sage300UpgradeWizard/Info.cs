@@ -44,7 +44,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			  1. Synchronization of Web project files
 			  2. R2/R3 Layout Changes
 			  3. Process obsoleted methods
-			  4. Upgarde MergeISVProject
+			  4. Upgrade MergeISVProject
 			  5. Resx Files with blank values
 			  6. Remove dot in bundle name
 			  7. Upgrade reference to new Accpac.NET library

@@ -63,9 +63,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.tbrMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNext,
             this.btnBack});
-			this.tbrMain.Location = new System.Drawing.Point(0, 615);
+			this.tbrMain.Location = new System.Drawing.Point(0, 611);
 			this.tbrMain.Name = "tbrMain";
-			this.tbrMain.Size = new System.Drawing.Size(632, 25);
+			this.tbrMain.Size = new System.Drawing.Size(632, 29);
 			this.tbrMain.TabIndex = 10;
 			this.tbrMain.Text = "toolStrip2";
 			this.tbrMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tbrMain_Paint);
@@ -78,7 +78,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
 			this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnNext.Name = "btnNext";
-			this.btnNext.Size = new System.Drawing.Size(62, 22);
+			this.btnNext.Size = new System.Drawing.Size(62, 26);
 			this.btnNext.Text = "Next";
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
@@ -90,7 +90,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
 			this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnBack.Name = "btnBack";
-			this.btnBack.Size = new System.Drawing.Size(62, 22);
+			this.btnBack.Size = new System.Drawing.Size(62, 26);
 			this.btnBack.Text = "Back";
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 

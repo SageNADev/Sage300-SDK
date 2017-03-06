@@ -529,7 +529,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Display final step
             picProcess.Visible = false;
             lblStepTitle.Text = @"Upgrade Completed";
-            lblInformation.Text = "Upgrade is completed successfully, you need to reload the solution projects.\r\n\r\nThe Upgarde log is here: \r\n\r\n" + _destination + @"\UpgardeLog.txt";
+            lblInformation.Text = "Upgrade is completed successfully, you need to reload the solution projects.\r\n\r\nThe Upgrade log is here: \r\n\r\n" + _destination + @"\UpgradeLog.txt";
             btnNext.Text = @"Finish";
             btnBack.Enabled = false;
 			btnOpenlog.Location = chkConvert.Location;
@@ -626,24 +626,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 {
                     file = file.Replace("Shared.LocalizedLayout;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgrade to use new Shared.GlobalLayout in " + path);
                 }
                 else if (file.Contains("Shared.LocalizedLayoutR2;"))
                 {
                     file = file.Replace("Shared.LocalizedLayoutR2;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgrade to use new Shared.GlobalLayout in " + path);
                 }
                 else if (file.Contains("Shared.LocalizedLayoutR3;"))
                 {
                     file = file.Replace("Shared.LocalizedLayoutR3;", "Shared.GlobalLayout;");
                     isFileEdit = true;
-					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new Shared.GlobalLayout in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgrade to use new Shared.GlobalLayout in " + path);
                 }
             }
             catch (Exception e)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new Shared.GlobalLayout: " + e.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new Shared.GlobalLayout: " + e.Message);
             }
         }
 
@@ -669,7 +669,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to replace 'container_16': " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to replace 'container_16': " + ex.Message);
             }
         }
 
@@ -750,7 +750,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             //Remove Required-Group from the file
 							file = file.Replace(containerContentRequiredgroup, string.Empty);
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new header group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new header group in " + path);
                         }
 
                         //Contruct flag-required
@@ -772,13 +772,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                         file = file.Replace(containerContent, refactorHeader);
                         isFileEdit = true;
-						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new header group in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgrade to use new header group in " + path);
 					}
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new header group in : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new header group in : " + ex.Message);
             }
         }
 
@@ -914,12 +914,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                     file = file.Replace(gridControlsGroupContainer, newContainerContent);
                     isFileEdit = true;
-					_sbLog.AppendLine(DateTime.Now + " Upgarde to use new grid buttons in " + path);
+					_sbLog.AppendLine(DateTime.Now + " Upgrade to use new grid buttons in " + path);
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new grid buttons in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new grid buttons in " + path + ":" + ex.Message);
             }
         }
 
@@ -960,7 +960,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             file = file.Replace(divContent, newDivContent);
                             divContent = newDivContent; //This is required for local change to next step in accordance to last step.
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new fiscal group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new fiscal group in " + path);
                         }
                     }
 
@@ -974,14 +974,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             file = file.Replace(divContent, newDivContent);
                             divContent = newDivContent; //This is required for local change to next step in accordance to last step.
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new fiscal group in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new fiscal group in " + path);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new fiscal group in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new fiscal group in " + path + ":" + ex.Message);
             }
         }
 
@@ -1005,7 +1005,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-primary\b", "btn btn-primary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new button element in " + path);
                         }
                     }
                     if (buttonContent.Contains("btn-secondary"))
@@ -1015,7 +1015,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-secondary\b", "btn btn-secondary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new button element in " + path);
                         }
                     }
                     if (buttonContent.Contains("btn-default"))
@@ -1025,7 +1025,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-default\b", "btn btn-default", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new button element in " + path);
 						}
                     }
                     if (buttonContent.Contains("btn-tertiary"))
@@ -1035,14 +1035,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             var newButtonContent = Regex.Replace(buttonContent, @"\bbtn-tertiary\b", "btn btn-tertiary", RegexOptions.IgnoreCase);
                             file = file.Replace(buttonContent, newButtonContent);
                             isFileEdit = true;
-							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new button element in " + path);
+							_sbLog.AppendLine(DateTime.Now + " Upgrade to use new button element in " + path);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new button element in " + path + ":" + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new button element in " + path + ":" + ex.Message);
             }
         }
 
@@ -1072,13 +1072,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         var newMatchContent = match.Replace("align-right", "numeric");
                         file = file.Replace(match, newMatchContent);
                         isFileEdit = true;
-						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new align right css in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgrade to use new align right css in " + path);
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new align right css in " + path + " : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new align right css in " + path + " : " + ex.Message);
             }
         }
 
@@ -1102,13 +1102,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 						var newLabel = label.Replace(labelClass, newLabelClass);
                         file = file.Replace(label, newLabel);
                         isFileEdit = true;
-						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new label css in " + path);
+						_sbLog.AppendLine(DateTime.Now + " Upgrade to use new label css in " + path);
                     }
                 }
             }
             catch (Exception ex)
             {
-				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new label element css in " + path + " : " + ex.Message);
+				_sbLog.AppendLine(DateTime.Now + " Error: Upgrade to use new label element css in " + path + " : " + ex.Message);
             }
         }
 
