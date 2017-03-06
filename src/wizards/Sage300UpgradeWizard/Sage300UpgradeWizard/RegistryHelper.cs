@@ -21,7 +21,7 @@
 using System.IO;
 using Microsoft.Win32;
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Registry Helper Class </summary>
     public static class RegistryHelper

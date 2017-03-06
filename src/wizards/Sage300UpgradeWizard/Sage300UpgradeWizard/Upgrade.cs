@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using Sage.CA.SBS.ERP.Sage300.Sage300Upgrade;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,47 +28,26 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Text;
-using System.Reflection;
-using EnvDTE;
-using EnvDTE80;
 
-//using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard.Properties;
-
-namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> UI for Sync Assemblies Wizard </summary>
     public partial class Upgrade : Form
     {
         #region Private Vars
 
-        /// <summary> Current Wizard Step </summary>
-        private int _currentWizardStep = 0;
+        private int _currentWizardStep;
         private string _destination = "";
         private string _sourceItemsFolder = "";
         private string _destinationWebFolder = "";
         private string _viewsFolder = "";
-		private string _templatePath = "";
+		private readonly string _templatePath;
 
-		private static StringBuilder _sbLog =  new StringBuilder();
+		private static readonly  StringBuilder _sbLog =  new StringBuilder();
         /// <summary> Sage color </summary>
         private readonly Color _sageColor = Color.FromArgb(3, 102, 131); // 3, 130, 104
-
-        #endregion
-
-        #region Delegates
-
-        /// <summary> Delegate to update UI with name of file being processed </summary>
-        /// <param name="text">Text for UI</param>
-        private delegate void ProcessingCallback(string text);
-
-        /// <summary> Delegate to update UI with status of file being processed </summary>
-        /// <param name="fileName">File Name</param>
-        /// <param name="statusType">Status Type</param>
-        /// <param name="text">Text for UI</param>
-        //private delegate void StatusCallback(string fileName, Info.StatusType statusType, string text);
 
         #endregion
 
@@ -77,6 +56,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// <summary> Synchronization Class </summary>
         /// <param name="destination">Destination Default</param>
         /// <param name="destinationWeb">Destination Web Default</param>
+		/// <param name="templatePath">Upgrade Web Items template Path </param>
 		public Upgrade(string destination, string destinationWeb, string templatePath)
         {
             InitializeComponent();
@@ -97,21 +77,21 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         private void btnNext_Click(object sender, EventArgs e)
         {
             _currentWizardStep++;
-            if (btnNext.Text == "Next")
+            if (btnNext.Text == @"Next")
             {
                 ShowStepInfo();    
             } 
-            else if (btnNext.Text == "Upgrade")
+            else if (btnNext.Text == @"Upgrade")
             {
                 picProcess.Visible = true;
                 chkConvert.Visible = false;
-                lblStepTitle.Text = "Process Upgrade";
-                lblInformation.Text = "Upgrade ...";
+                lblStepTitle.Text = @"Process Upgrade";
+                lblInformation.Text = @"Upgrade ...";
                 wrkBackground.RunWorkerAsync();
             } 
-            else if (btnNext.Text == "Finish")
+            else if (btnNext.Text == @"Finish")
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -142,6 +122,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             ShowStepInfo();
         }
 
+		/// <summary>
+		/// Show wizard step information
+		/// </summary>
         private void ShowStepInfo()
         {
             btnBack.Enabled = (_currentWizardStep > 0);
@@ -155,14 +138,14 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         }
 
         /// <summary>
-        /// Process PU2 Upgarde
+        /// Process PU2 Upgrade
         /// </summary>
         private void ProcessUpgrade()
         {
             SyncWebFiles();
             ProcessR2R3Changes();
             UpgradeObsoletedMethods();
-            UpgradeMergeISVProject();
+            UpgradeMergeIsvProject();
             RemoveDotInBundleName();
 			UpgradeAccpacReference();
             ConvertWebProject();
@@ -174,7 +157,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 		/// </summary>
 		private void WriteLogFile()
 		{
-			// write log info to file
 			var logFilePath = Path.Combine(_destination, "UpgradeLog.txt");
 			File.WriteAllText(logFilePath, _sbLog.ToString());
 		}
@@ -218,7 +200,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             {
                 var areaFolder = Path.Combine(_destinationWebFolder, "Areas");
                 var folderName = Directory.GetDirectories(areaFolder).FirstOrDefault(dir => !(dir.ToLower().Contains("core") || dir.ToLower().Contains("shared")));
-                _viewsFolder = Path.Combine(folderName, "Views");
+
+				if (string.IsNullOrEmpty(folderName))
+				{
+					return;
+				}
+				_viewsFolder = Path.Combine(folderName, "Views");
 
                 if (Directory.Exists(_viewsFolder))
                 {
@@ -233,11 +220,11 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             RefactorContainer16(ref isFileEdit, ref file, path);
                             RefactorHeadersGroup(ref file, ref isFileEdit, path);
                             RefactorGridButtons(ref file, ref isFileEdit, path);
-                            //Step 6
-                            RefactorPatternMatch(@"\bcontrols-group no-label\b", "ctrl-group", ref file, ref isFileEdit, path);
+
+							RefactorPatternMatch(@"\bcontrols-group no-label\b", "ctrl-group", ref file, ref isFileEdit, path);
                             RefactorPatternMatch(@"\bctrl-group no-label\b", "ctrl-group", ref file, ref isFileEdit, path);
                             RefactorPatternMatch(@"\bcontrols-group\b", "ctrl-group", ref file, ref isFileEdit, path);
-                            //Step 7
+
                             if (Regex.IsMatch(file, @"\btextarea-group\b"))
                             {
                                 if (!Regex.IsMatch(file, @"\btextarea-group xlarge\b"))
@@ -247,7 +234,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 									_sbLog.AppendLine(DateTime.Now + " Replace 'textarea-group' with 'textarea-group xlarge' in " + file );
                                 }
                             }
-                            //Step 8 Partial Step 8 All wrapper-group should have clearfix
+                            //All wrapper-group should have clearfix
                             if (Regex.IsMatch(file, @"\bwrapper-group\b"))
                             {
                                 if (!Regex.IsMatch(file, @"\bwrapper-group clearfix\b"))
@@ -257,30 +244,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 									_sbLog.AppendLine(DateTime.Now + " Replace 'wrapper-group' with 'wrapper-group clearfix' in " + file);
                                 }
                             }
-                            //Step 10
+
                             RefactorFiscalGroup(ref file, ref isFileEdit, path);
-                            //Step 11
                             RefactorButtons(ref file, ref isFileEdit, path);
-                            //Step 12
                             RefactorPatternMatch(@"\bnumeric-group with-checkbox\b", "input-group with-checkbox", ref file, ref isFileEdit, path);
                             RefactorPatternMatch(@"\bgo-group with-checkbox\b", "input-group with-checkbox", ref file, ref isFileEdit, path);
-                            //Step 13
                             RefactorPatternMatch(@"\binput-group no-label\b", "input-group", ref file, ref isFileEdit, path);
-                            //Step 14
                             RefactorAlignRight(ref file, ref isFileEdit, path);
-                            //Step 16
                             RefactorLabelTag(ref file, ref isFileEdit, path);
                         }
                         catch (Exception ex)
                         {
 							_sbLog.AppendLine(DateTime.Now + " Error in R2/R3 Layout update: " + ex.Message);
                         }
-                        // update the file if it was edited.
+                        // Update the file if it was modified.
                         if (isFileEdit)
                         {
                             File.WriteAllText(path, file);
                             isFileEdit = false;
-                            file = string.Empty;
                         }
                     }
                 }
@@ -292,7 +273,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// </summary>
         private void UpgradeObsoletedMethods()
         {
-            //Define dictionary for adding obsolete and replace methods name 
+            //Define dictionary for adding obsoleted and new methods name 
             var methods = new Dictionary<string, string>();
             methods.Add(".ResetLocks()", ".SessionLock()");
             methods.Add(".Unlock()", ".SessionUnlock()");
@@ -323,7 +304,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
         /// <summary>
         /// New version MergeISVProject, add parameter to specify whether compile the views and deploy to local Sage 300c application
         /// </summary>
-        private void UpgradeMergeISVProject()
+        private void UpgradeMergeIsvProject()
         {
 			var sourceFile = Path.Combine(_sourceItemsFolder, "MergeISVProject.exe");
             var destinationFile = Path.Combine(_destinationWebFolder, "MergeISVProject.exe");
@@ -339,9 +320,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             //Remove dot in bundle name in BundleRegistration.cs
             var filePath = Path.Combine(_destinationWebFolder, "BundleRegistration.cs");
             var fileContent = File.ReadAllText(filePath);
-            var indexStart = fileContent.IndexOf("/bundles/");
-            var indexEnd = fileContent.IndexOf(").Include");
-            if(indexEnd > indexStart +  10 )
+			var indexStart = fileContent.IndexOf("/bundles/", StringComparison.CurrentCultureIgnoreCase);
+			var indexEnd = fileContent.IndexOf(").Include", StringComparison.CurrentCultureIgnoreCase);
+			if (indexStart > 0 && indexEnd > indexStart + 10)
             {
                 var bundleName = fileContent.Substring(indexStart + 9, indexEnd - indexStart - 10);
 				if (bundleName.Contains("."))
@@ -364,7 +345,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                     var indexLine = Array.IndexOf(lines, line);
                     if(indexLine > 0)
                     {
-		                indexStart = line.IndexOf("/bundles/");
+		                indexStart = line.IndexOf("/bundles/", StringComparison.CurrentCultureIgnoreCase);
 						var bundleName = line.Substring(indexStart);
 						if (bundleName.Contains("."))
 						{
@@ -432,7 +413,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 		}
 
         /// <summary>
-        /// Modele included in web project  
+        /// Module name included in web project  
         /// </summary>
         private void ConvertWebProject()
         {
@@ -447,10 +428,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                     var companyName = dirName.Split('.')[0];
                     var module = dirName.Split('.')[1];
                     
-                    // Check whether conatins module in web project
+                    // Check whether conatain module name in web project
                     if (!_destinationWebFolder.Contains("."+ module + "."))
 	                {
-						// Replace all file except obj and log files
 						var webDirName = companyName + ".Web";
 						var moduleWebDirName = companyName + "." + module + ".Web";
 
@@ -471,7 +451,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 							}
 						}
 
-						// Rename web project name to contain module
+						// Rename web project name to contain module name
 						var oldProjFile = Path.Combine(newWebFolder, webDirName + ".csproj");
 						if (File.Exists(oldProjFile))
 						{
@@ -492,6 +472,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 							}
 						}
 
+						// Replace all files project references and namespace to use new name except obj and log directory files
 						var files = Directory.EnumerateFiles(_destination, "*.*", SearchOption.AllDirectories).
 							Where(s => s.EndsWith(".cs") || s.EndsWith(".csproj") || s.EndsWith(".sln") || s.EndsWith(".cshtml") || s.EndsWith(".xml") || s.EndsWith(".asax") || s.EndsWith(".aspx"));
 						foreach (var file in files)
@@ -507,7 +488,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 								_sbLog.AppendLine(DateTime.Now + " Update the web project reference or namespace to contains module name in " + file + " file");
 							}
 						}
-
 					}
                 }
             }
@@ -548,9 +528,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             
             // Display final step
             picProcess.Visible = false;
-            lblStepTitle.Text = "Upgrade Completed";
+            lblStepTitle.Text = @"Upgrade Completed";
             lblInformation.Text = "Upgrade is completed successfully, you need to reload the solution projects.\r\n\r\nThe Upgarde log is here: \r\n\r\n" + _destination + @"\UpgardeLog.txt";
-            btnNext.Text = "Finish";
+            btnNext.Text = @"Finish";
             btnBack.Enabled = false;
 			btnOpenlog.Location = chkConvert.Location;
 			btnOpenlog.Visible = true;
@@ -627,10 +607,17 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                 DirectoryCopy(subdir.FullName, Path.Combine(destDirName, subdir.Name));
             }
         }
-     #endregion
+
+		#endregion
 
         #region "R2/R3 Upgrade Methods"
-        //Step_1
+
+		/// <summary>
+		/// Refactoring LocalizedLayout with Shared.GlobalLayout in Razor View
+		/// </summary>
+		/// <param name="isFileEdit"></param>
+		/// <param name="file"></param>
+		/// <param name="path"></param>
         private static void RefactorLocalizedLayout(ref bool isFileEdit, ref string file, string path)
         {
             try
@@ -660,7 +647,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             }
         }
 
-        //Step_2
+        /// <summary>
+		/// Refactoring Container in Razor View
+        /// </summary>
+        /// <param name="isFileEdit"></param>
+        /// <param name="file"></param>
+        /// <param name="path"></param>
         private static void RefactorContainer16(ref bool isFileEdit, ref string file, string path)
         {
             try
@@ -681,19 +673,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             }
         }
 
-        //Step_3
+        /// <summary>
+		/// Refactoring Razor View Headers Group
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="isFileEdit"></param>
+        /// <param name="path"></param>
         private static void RefactorHeadersGroup(ref string file, ref bool isFileEdit, string path)
         {
             try
             {
                 string pattern = "header-group";
-                var idx = file.IndexOf(pattern); //assuming there will be only 1 header group in a file.
+                var idx = file.IndexOf(pattern, StringComparison.CurrentCultureIgnoreCase); //assuming there will be only 1 header group in a file.
                 if (idx != -1)
                 {
                     string content = "";
                     content = file.Substring(idx);
                     var containerContent = GetContainerContent(content, "section");
-                    var indexOfContainerStart = file.LastIndexOf("<section", idx);
+                    var indexOfContainerStart = file.LastIndexOf("<section", idx, StringComparison.CurrentCultureIgnoreCase);
                     var containterStartCont = file.Substring(indexOfContainerStart, idx - indexOfContainerStart);
                     containerContent = containterStartCont + containerContent;
 
@@ -711,7 +708,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         var remainingContent = containerContent.Substring(remainingContStartIdx, remainingContEndIdx - remainingContStartIdx);
 
                         //Contruct header-wrapper
-                        var header_wrapper = "<div class=\"header-wrapper\">\n"
+                        var headerWrapper = "<div class=\"header-wrapper\">\n"
                             + "    <div class=\"header-headline\">\n"
                             + "        " + matches[0].Trim() + "\n"
                             + "    </div>\n";
@@ -722,45 +719,45 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         if (matches2.Count != 0)
                         {
                             remainingContent = remainingContent.Replace(matches2[0], string.Empty);
-                            header_wrapper += "    @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary{{OptionsMenu.CssBinding, true}, {OptionsMenu.UseLessCss, true}})\n";
+							headerWrapper += "    @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary{{OptionsMenu.CssBinding, true}, {OptionsMenu.UseLessCss, true}})\n";
                         }
 
                         if (remainingContent.Trim().Length != 0)
                         {
-                            header_wrapper += "    <div class=\"header-options\">\n"
+							headerWrapper += "    <div class=\"header-options\">\n"
                             + remainingContent.Trim() + "\n"
                             + "    </div>\n";
                         }
 
-                        header_wrapper += "</div>\n";
+						headerWrapper += "</div>\n";
 
                         //required-group
                         var requiredGroupRemainingContent = "";
                         string pattern2 = "required-group";
-                        var idx2 = file.IndexOf(pattern2); //assuming there will be only 1 required group in a file.
+                        var idx2 = file.IndexOf(pattern2, StringComparison.CurrentCulture); //assuming there will be only 1 required group in a file.
                         if (idx2 != -1)
                         {
-                            var content_requiredGroup = file.Substring(idx2);
-                            var containerContent_requiredgroup = GetContainerContent(content_requiredGroup, "section");
-                            var indexOfrequiredgroupContainerStart = file.LastIndexOf("<section", idx2);
+                            var contentRequiredGroup = file.Substring(idx2);
+							var containerContentRequiredgroup = GetContainerContent(contentRequiredGroup, "section");
+                            var indexOfrequiredgroupContainerStart = file.LastIndexOf("<section", idx2, StringComparison.CurrentCulture);
                             var requiredgroupStartCont = file.Substring(indexOfrequiredgroupContainerStart, idx2 - indexOfrequiredgroupContainerStart);
-                            containerContent_requiredgroup = requiredgroupStartCont + containerContent_requiredgroup;
+							containerContentRequiredgroup = requiredgroupStartCont + containerContentRequiredgroup;
 
-                            var requiredGroupContStartIdx = containerContent_requiredgroup.IndexOf('>') + 1;
-                            var requiredGroupContEndIdx = containerContent_requiredgroup.LastIndexOf("</section>");
-                            requiredGroupRemainingContent = containerContent_requiredgroup.Substring(requiredGroupContStartIdx, requiredGroupContEndIdx - requiredGroupContStartIdx);
+							var requiredGroupContStartIdx = containerContentRequiredgroup.IndexOf('>') + 1;
+							var requiredGroupContEndIdx = containerContentRequiredgroup.LastIndexOf("</section>", StringComparison.CurrentCulture);
+							requiredGroupRemainingContent = containerContentRequiredgroup.Substring(requiredGroupContStartIdx, requiredGroupContEndIdx - requiredGroupContStartIdx);
 
                             //Remove Required-Group from the file
-                            file = file.Replace(containerContent_requiredgroup, string.Empty);
+							file = file.Replace(containerContentRequiredgroup, string.Empty);
                             isFileEdit = true;
 							_sbLog.AppendLine(DateTime.Now + " Upgarde to use new header group in " + path);
                         }
 
                         //Contruct flag-required
-                        string flag_required = "";
+                        string flagRequired = "";
                         if (requiredGroupRemainingContent.Trim().Length != 0)
                         {
-                            flag_required = "<div class=\"flag-required\">\n"
+							flagRequired = "<div class=\"flag-required\">\n"
                             + requiredGroupRemainingContent.Trim() + "\n"
                             + "</div>\n";
                         }
@@ -768,8 +765,8 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                         //Contruct Complete Header
                         string refactorHeader = "<header>\n"
                             + "    <section class=\"header-group-1\">\n"
-                            + "        " + header_wrapper
-                            + "        " + flag_required
+							+ "        " + headerWrapper
+							+ "        " + flagRequired
                             + "</section>\n"
                             + "</header>";
 
@@ -782,10 +779,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             catch (Exception ex)
             {
 				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new header group in : " + ex.Message);
-                //log_error_message(path, "Step_3");
             }
         }
 
+		/// <summary>
+		/// Refactoring Grid Buttons in Razor View
+		/// </summary>
+		/// <param name="file"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorGridButtons(ref string file, ref bool isFileEdit, string path)
         {
             try
@@ -793,7 +795,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                 string patternGridControlsGroup = "gridcontrols-group";
                 for (int idx = 0; ; idx += patternGridControlsGroup.Length)
                 {
-                    idx = file.IndexOf(patternGridControlsGroup, idx);
+                    idx = file.IndexOf(patternGridControlsGroup, idx, StringComparison.CurrentCulture);
                     if (idx == -1)
                         break;
 
@@ -807,20 +809,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 
                     string startTag = "<" + typeOfContainer;
                     string endTag = "</" + typeOfContainer + ">";
-                    for (int index = 0, previous = 0; ; index += endTag.Length)
+                    for (int index = 0; ; index += endTag.Length)
                     {
-                        previous = index;
-                        index = content.IndexOf(endTag, index);
+                        var previous = index;
+                        index = content.IndexOf(endTag, index, StringComparison.CurrentCulture);
                         if (index == -1)
                             break;
 
-                        var subContent = "";
-                        subContent = content.Substring((previous == 0) ? startTag.Length : previous, index - previous + endTag.Length);
-                        if (subContent.Contains("<div"))
-                        {
-                            continue;
-                        }
-                        else
+                        var subContent = content.Substring((previous == 0) ? startTag.Length : previous, index - previous + endTag.Length);
+                        if (!subContent.Contains("<div"))
                         {
                             gridControlsGroupContainer = content.Substring(0, index + endTag.Length);
                             break;
@@ -849,17 +846,16 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                             var newClassAttribute = "@class = \"btn btn-default btn-grid-control ";
                             if (!string.IsNullOrEmpty(valueAttribute))
                             {
-                                var ix = valueAttribute.IndexOf("=");
-                                var valueAttribute_value = valueAttribute.Substring(ix + 1).Trim();
+                                var ix = valueAttribute.IndexOf("=", StringComparison.CurrentCulture);
+                                var valueAttributeValue = valueAttribute.Substring(ix + 1).Trim();
 
                                 //updateFirstAttributeOfButton
-                                var ix_openTag = buttonMatch.IndexOf('(');
-                                var ix_seprator = buttonMatch.IndexOf(',');
-                                var firstAttribute = buttonMatch.Substring(ix_openTag + 1, ix_seprator - ix_openTag - 1);
+                                var openTag = buttonMatch.IndexOf('(');
+                                var seprator = buttonMatch.IndexOf(',');
+								var firstAttribute = buttonMatch.Substring(openTag + 1, seprator - openTag - 1);
 
-                                //newButtonMatch = buttonMatch.Replace(firstAttribute, valueAttribute_value); //Only
                                 Regex rg = new Regex(firstAttribute);
-                                newButtonMatch = rg.Replace(buttonMatch, valueAttribute_value, 1);
+								newButtonMatch = rg.Replace(buttonMatch, valueAttributeValue, 1);
 
                                 if (newButtonMatch.Contains(valueAttribute + ","))
                                 {
@@ -870,19 +866,19 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                                     newButtonMatch = newButtonMatch.Replace(valueAttribute, string.Empty);
                                 }
 
-                                if (valueAttribute_value.ToLower().Contains("edit"))
+								if (valueAttributeValue.ToLower().Contains("edit"))
                                 {
                                     newClassAttribute += "btn-edit-column \"";
                                 }
-                                else if (valueAttribute_value.ToLower().Contains("delete"))
+								else if (valueAttributeValue.ToLower().Contains("delete"))
                                 {
                                     newClassAttribute += "btn-delete \"";
                                 }
-                                else if (valueAttribute_value.ToLower().Contains("add"))
+								else if (valueAttributeValue.ToLower().Contains("add"))
                                 {
                                     newClassAttribute += "btn-add \"";
                                 }
-                                else if (valueAttribute_value.ToLower().Contains("refresh"))
+								else if (valueAttributeValue.ToLower().Contains("refresh"))
                                 {
                                     newClassAttribute += "btn-refresh \"";
                                 }
@@ -927,25 +923,32 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             }
         }
 
+		/// <summary>
+		/// Refactoring FiscalGroup in Razor View
+		/// </summary>
+		/// <param name="file"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorFiscalGroup(ref string file, ref bool isFileEdit, string path)
         {
             try
             {
-                //Step 10
                 string pattern10 = "fiscal-group";
                 for (int idx = 0; ; idx += pattern10.Length)
                 {
-                    idx = file.IndexOf(pattern10, idx);
-                    if (idx == -1)
-                        break;
+                    idx = file.IndexOf(pattern10, idx, StringComparison.CurrentCulture);
+	                if (idx == -1)
+	                {
+						break;
+	                }
 
-                    string divContent = "", content = "";
+                    var content = file.Substring(idx);
+                    var divContent = GetContainerContent(content, "div");
 
-                    content = file.Substring(idx);
-                    divContent = GetContainerContent(content, "div");
-
-                    if (string.IsNullOrEmpty(divContent))
-                        break;
+	                if (string.IsNullOrEmpty(divContent))
+	                {
+						break;		                
+	                }
 
                     List<string> buttonMatches = GetRazorPatternMatch(divContent, "@Html.SageTextBox");
                     foreach (var sageTextBoxContent in buttonMatches)
@@ -981,6 +984,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new fiscal group in " + path + ":" + ex.Message);
             }
         }
+
+		/// <summary>
+		/// Refactoring Buttons in Razor View
+		/// </summary>
+		/// <param name="file"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorButtons(ref string file, ref bool isFileEdit, string path)
         {
             try
@@ -1035,22 +1045,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new button element in " + path + ":" + ex.Message);
             }
         }
+
+		/// <summary>
+		/// Refactoring AlignRight in Razor Wiew
+		/// </summary>
+		/// <param name="file"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorAlignRight(ref string file, ref bool isFileEdit, string path)
         {
             try
             {
-                List<string> matches_NumericBox = GetRazorPatternMatch(file, "@Html.KoSageNumericBoxFor");
-                List<string> matches_TexBox = GetRazorPatternMatch(file, "@Html.KoSageTextBoxFor");
-                List<string> matches_TexBox2 = GetRazorPatternMatch(file, "@Html.SageTextBoxFor");
-                List<string> matches_TexBox3 = GetRazorPatternMatch(file, "@Html.SageTextBox");
-                List<string> matches_TexBox4 = GetRazorPatternMatch(file, "@Html.KoSageTextBox");
+                List<string> matchesNumericBox = GetRazorPatternMatch(file, "@Html.KoSageNumericBoxFor");
+                List<string> matchesTexBox = GetRazorPatternMatch(file, "@Html.KoSageTextBoxFor");
+                List<string> matchesTexBox2 = GetRazorPatternMatch(file, "@Html.SageTextBoxFor");
+                List<string> matchesTexBox3 = GetRazorPatternMatch(file, "@Html.SageTextBox");
+                List<string> matchesTexBox4 = GetRazorPatternMatch(file, "@Html.KoSageTextBox");
 
-                var totalMAtches = matches_NumericBox.Concat(matches_TexBox).Concat(matches_TexBox2).Concat(matches_TexBox3).Concat(matches_TexBox4).ToList();
+                var totalMAtches = matchesNumericBox.Concat(matchesTexBox).Concat(matchesTexBox2).Concat(matchesTexBox3).Concat(matchesTexBox4).ToList();
 
                 foreach (var match in totalMAtches)
                 {
-                    var match_classAttribute = GetRazorAttributeMatch(match, "@class");
-                    if (!string.IsNullOrEmpty(match_classAttribute) && match_classAttribute.Contains("align-right"))
+                    var matchClassAttribute = GetRazorAttributeMatch(match, "@class");
+                    if (!string.IsNullOrEmpty(matchClassAttribute) && matchClassAttribute.Contains("align-right"))
                     {
                         var newMatchContent = match.Replace("align-right", "numeric");
                         file = file.Replace(match, newMatchContent);
@@ -1064,6 +1081,13 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 				_sbLog.AppendLine(DateTime.Now + " Error: Upgarde to use new align right css in " + path + " : " + ex.Message);
             }
         }
+
+		/// <summary>
+		/// Refactoring Razor View Label Tag
+		/// </summary>
+		/// <param name="file"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorLabelTag(ref string file, ref bool isFileEdit, string path)
         {
             try
@@ -1071,12 +1095,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
                 var matches = GetRazorPatternMatch(file, "@Html.SageLabel");
                 foreach (var label in matches)
                 {
-                    var label_class = GetRazorAttributeMatch(label, "@class");
-                    if (label_class.Contains("left"))
+                    var labelClass = GetRazorAttributeMatch(label, "@class");
+					if (labelClass.Contains("left"))
                     {
-                        var newLabel_class = label_class.Replace("left", string.Empty);
-                        var new_Label = label.Replace(label_class, newLabel_class);
-                        file = file.Replace(label, new_Label);
+						var newLabelClass = labelClass.Replace("left", string.Empty);
+						var newLabel = label.Replace(labelClass, newLabelClass);
+                        file = file.Replace(label, newLabel);
                         isFileEdit = true;
 						_sbLog.AppendLine(DateTime.Now + " Upgarde to use new label css in " + path);
                     }
@@ -1088,41 +1112,49 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             }
         }
 
-        // Find specified Razor Helper.
+		/// <summary>
+		/// Find Specified Razor Match Helper
+		/// </summary>
+		/// <param name="content"></param>
+		/// <param name="patternSage"></param>
+		/// <returns></returns>
         private static List<string> GetRazorPatternMatch(string content, string patternSage)
         {
             List<string> matches = new List<string>();
 
             for (int ix = 0; ; ix += patternSage.Length)
             {
-                ix = content.IndexOf(patternSage, ix);
+                ix = content.IndexOf(patternSage, ix, StringComparison.CurrentCulture);
                 if (ix == -1)
                     break;
 
                 string sageRazorContent = "";
-                string divContent_subContent = "";
-
-                divContent_subContent = content.Substring(ix);
-                var endIdx = divContent_subContent.IndexOf(')'); //Relative to divContent_subContent
-                sageRazorContent = divContent_subContent.Substring(0, endIdx + 1);
+                var divContentSubContent = content.Substring(ix);
+				var endIdx = divContentSubContent.IndexOf(')');
+				sageRazorContent = divContentSubContent.Substring(0, endIdx + 1);
 
                 matches.Add(sageRazorContent);
             }
             return matches;
         }
 
+		/// <summary>
+		///	Get Razor View Attribute Match Content 
+		/// </summary>
+		/// <param name="content"></param>
+		/// <param name="attribute"></param>
+		/// <returns></returns>
         private static string GetRazorAttributeMatch(string content, string attribute)
         {
             string sageRazorAttributeContent = "";
-            var ix = content.IndexOf(attribute);
+            var ix = content.IndexOf(attribute, StringComparison.CurrentCulture);
             if (ix == -1)
                 return "";
 
-            string divContent_subContent = "";
-            divContent_subContent = content.Substring(ix);
+            var divContentSubContent = content.Substring(ix);
             bool openingTag = false;
 
-            foreach (char c in divContent_subContent)
+            foreach (char c in divContentSubContent)
             {
                 if (c.CompareTo('"') == 0)
                 {
@@ -1146,27 +1178,28 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
 
             return sageRazorAttributeContent;
         }
-
-        // Find Container with specified Type
+		
+		/// <summary>
+		/// Find Container with Specified Type 
+		/// </summary>
+		/// <param name="content"></param>
+		/// <param name="contType"></param>
+		/// <returns></returns>
         private static string GetContainerContent(string content, string contType)
         {
             string contContent = "";
             string contEndTag = "</" + contType + ">"; //Example: </section>
 
-            for (int index = 0, previous = 0; ; index += contEndTag.Length)
+            for (int index = 0; ; index += contEndTag.Length)
             {
-                previous = index;
-                index = content.IndexOf(contEndTag, index);
-                if (index == -1)
-                    break;
-
-                var subContent = "";
-                subContent = content.Substring(previous, index - previous + contEndTag.Length);
-                if (subContent.Contains("<" + contType)) //Example <section
-                {
-                    continue;
-                }
-                else
+                var previous = index;
+                index = content.IndexOf(contEndTag, index,StringComparison.CurrentCulture);
+	            if (index == -1)
+	            {
+					break;		            
+	            }
+                var subContent = content.Substring(previous, index - previous + contEndTag.Length);
+                if (!subContent.Contains("<" + contType))
                 {
                     contContent = content.Substring(0, index + contEndTag.Length);
                     break;
@@ -1176,11 +1209,16 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             return contContent;
         }
 
-        //Helpers
-        private static string GetContainerType(string file, int indexOfLessThan) //indexOflessThan before the container
+        /// <summary>
+		/// Get ContainerType in Razor View
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="indexOfLessThan"></param>
+        /// <returns></returns>
+        private static string GetContainerType(string file, int indexOfLessThan)
         {
             var content = file.Substring(indexOfLessThan);
-            var typeOfContent = "";
+            string typeOfContent;
             switch (content.Split(' ').First().ToLower())
             {
                 case "<div":
@@ -1199,6 +1237,14 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
             return typeOfContent;
         }
 
+		/// <summary>
+		/// Pattern Match Helper method
+		/// </summary>
+		/// <param name="matchPattern"></param>
+		/// <param name="replaceWord"></param>
+		/// <param name="content"></param>
+		/// <param name="isFileEdit"></param>
+		/// <param name="path"></param>
         private static void RefactorPatternMatch(string matchPattern, string replaceWord, ref string content, ref bool isFileEdit, string path)
         {
             if (Regex.IsMatch(content, matchPattern))

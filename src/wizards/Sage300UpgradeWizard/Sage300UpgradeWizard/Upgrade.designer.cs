@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     partial class Upgrade
     {

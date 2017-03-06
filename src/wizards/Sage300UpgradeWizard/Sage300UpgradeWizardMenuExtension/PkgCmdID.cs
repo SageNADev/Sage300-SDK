@@ -20,9 +20,8 @@
 
 // PkgCmdID.cs
 // MUST match PkgCmdID.h
-using System;
 
-namespace Sage.Sage300UpgradeMenuExtension
+namespace Sage300UpgradeWizardMenuExtension
 {
     static class PkgCmdIDList
     {

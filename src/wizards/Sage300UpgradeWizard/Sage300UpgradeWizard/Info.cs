@@ -18,9 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Drawing;
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Information class to hold message information for wizard </summary>
     public class Info
@@ -40,7 +39,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 
         public static string[] messages = 
          {
-			@"This upgrade wizard will upgarde Sage300c PU1 version projects and samples code to PU2 version
+			@"This upgrade wizard will upgrade Sage300c PU1 version projects and samples code to PU2 version. It includes the following steps:
  
 			  1. Synchronization of Web project files
 			  2. R2/R3 Layout Changes
@@ -60,7 +59,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 			  3. Add/update Sage300c web content files
 			  4. Add new GlobalLayout.cshtml",             
 
-			@"In the Areas/{module}/Views razor view (.cshtml file), apply following changes
+			@"In the Areas/{module}/Views razor view (.cshtml file), apply following changes:
 
 			  1. Refactoring shared layout with GlobalLayout.cshtml
 			  2. Modify razor view with new layout, css
@@ -96,7 +95,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
 			  args4 is the framework directory containing the aspnet_compile.exe
 			  args5 is the optional parameter as /nodeploy , default will deploy",
 
-			@"Resx Files with blank values
+			@"Resx Files with blank values.
 
 			In previous version Solution and Code Genaration wizard, it will generate the Menu Resx files and any screen Resx files for all supported languages. But, the values in these non-English Resx files will contain keys, but blank values, which is not ideal for external developers. It must be resolved to contain a value.
 
@@ -104,18 +103,18 @@ namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
  
 			https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/",
 
-			@"Remove dot in bundles name if it contains dot
+			@"Remove dot in bundles name if it contains dot.
 
 			In previouse version wizard to generated projects and samples, it's incorrectly use dot in the bundle name, it need correct this usages
 
 			  1. Bundle name in bundle registration classes 
 			  2. Bundle name in Index.cshtml files",
 
-			@"Upgrade reference to new Accpac.NET library
+			@"Upgrade reference to new Accpac.NET library.
 			
 			In PU2 the Accpac.NET library in changed, the projects and samples projects need update the project reference to use new version",
 
-			@"Convert web project to module specific web project
+			@"Convert web project to module specific web project.
             
 			Using the PU1 and previous vesion solution wizard to generate the projects, the project name like {Company}.{Modlue}.{XXX} except the Web project.
  

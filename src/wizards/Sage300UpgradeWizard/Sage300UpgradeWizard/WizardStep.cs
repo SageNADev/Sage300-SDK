@@ -20,7 +20,7 @@
 
 using System.Windows.Forms;
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Class to hold information for wizard step </summary>
     public class WizardStep

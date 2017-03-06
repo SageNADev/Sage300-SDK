@@ -25,15 +25,10 @@ using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft.Win32;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
-using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard;
-using System.IO;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
 
-namespace Sage.Sage300UpgradeMenuExtension
+namespace Sage300UpgradeWizardMenuExtension
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -88,8 +83,8 @@ namespace Sage.Sage300UpgradeMenuExtension
             if ( null != mcs )
             {
                 // Create the command for the menu item.
-                var menuCommandID = new CommandID(GuidList.guidSage300UpgradeMenuExtensionCmdSet, (int)PkgCmdIDList.cmdidSage300UpgradeWizard);
-                var menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
+                var menuCommandId = new CommandID(GuidList.guidSage300UpgradeMenuExtensionCmdSet, (int)PkgCmdIDList.cmdidSage300UpgradeWizard);
+                var menuItem = new MenuCommand(MenuItemCallback, menuCommandId );
                 mcs.AddCommand( menuItem );
             }
         }
@@ -106,8 +101,6 @@ namespace Sage.Sage300UpgradeMenuExtension
             // New wizard
             var wizard = new Sage300Upgrade();
             wizard.Execute(dte.Solution);
-
-
         }
 
     }

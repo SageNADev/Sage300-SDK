@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade.Properties {
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

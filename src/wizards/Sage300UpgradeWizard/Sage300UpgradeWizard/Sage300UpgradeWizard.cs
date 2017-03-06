@@ -20,10 +20,9 @@
 
 using System.IO;
 using EnvDTE;
-using Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard;
 using EnvDTE80;
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300UpgradeWizard
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Entry Point for Sync Assemblies Wizard </summary>
     public class Sage300Upgrade

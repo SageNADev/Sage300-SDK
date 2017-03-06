@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-namespace Sage.CA.SBS.ERP.Sage300.Sage300Upgrade
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Class to hold information for assmeblies to be synchronized </summary>
     public class AssemblyInfo

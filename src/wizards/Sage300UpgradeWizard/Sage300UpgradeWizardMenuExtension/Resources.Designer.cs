@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sage300UpgradeMenuExtension {
+namespace Sage300UpgradeWizardMenuExtension {
     using System;
     
     
