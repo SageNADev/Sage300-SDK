@@ -38,7 +38,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.lblStepTitle = new System.Windows.Forms.Label();
 			this.picLogo = new System.Windows.Forms.PictureBox();
 			this.splitBase = new System.Windows.Forms.SplitContainer();
-			this.btnOpenlog = new System.Windows.Forms.Button();
+			this.lnkResxBlog = new System.Windows.Forms.LinkLabel();
 			this.picProcess = new System.Windows.Forms.PictureBox();
 			this.lblInformation = new System.Windows.Forms.Label();
 			this.chkConvert = new System.Windows.Forms.CheckBox();
@@ -78,7 +78,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
 			this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnNext.Name = "btnNext";
-			this.btnNext.Size = new System.Drawing.Size(62, 26);
+			this.btnNext.Size = new System.Drawing.Size(80, 26);
 			this.btnNext.Text = "Next";
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
@@ -90,20 +90,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
 			this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnBack.Name = "btnBack";
-			this.btnBack.Size = new System.Drawing.Size(62, 26);
+			this.btnBack.Size = new System.Drawing.Size(80, 26);
 			this.btnBack.Text = "Back";
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 
 			// lblStepTitle
 			// 
-			this.lblStepTitle.AutoSize = true;
 			this.lblStepTitle.BackColor = System.Drawing.Color.Transparent;
-			this.lblStepTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblStepTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
 			this.lblStepTitle.ForeColor = System.Drawing.Color.White;
 			this.lblStepTitle.Location = new System.Drawing.Point(13, 34);
 			this.lblStepTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblStepTitle.Name = "lblStepTitle";
-			this.lblStepTitle.Size = new System.Drawing.Size(139, 25);
+			this.lblStepTitle.Size = new System.Drawing.Size(467, 60);
 			this.lblStepTitle.TabIndex = 2;
 			this.lblStepTitle.Text = "Step {0} - {1}";
 			// 
@@ -138,7 +137,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// splitBase.Panel2
 			// 
 			this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
-			this.splitBase.Panel2.Controls.Add(this.btnOpenlog);
+			this.splitBase.Panel2.Controls.Add(this.lnkResxBlog);
 			this.splitBase.Panel2.Controls.Add(this.picProcess);
 			this.splitBase.Panel2.Controls.Add(this.lblInformation);
 			this.splitBase.Panel2.Controls.Add(this.chkConvert);
@@ -147,16 +146,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.splitBase.SplitterWidth = 5;
 			this.splitBase.TabIndex = 9;
 			// 
-			// btnOpenlog
+			// lnkResxBlog
 			// 
-			this.btnOpenlog.Location = new System.Drawing.Point(306, 460);
-			this.btnOpenlog.Name = "btnOpenlog";
-			this.btnOpenlog.Size = new System.Drawing.Size(91, 30);
-			this.btnOpenlog.TabIndex = 3;
-			this.btnOpenlog.Text = "Show log";
-			this.btnOpenlog.UseVisualStyleBackColor = true;
-			this.btnOpenlog.Visible = false;
-			this.btnOpenlog.Click += new System.EventHandler(this.btnOpenlog_Click);
+			this.lnkResxBlog.AutoSize = true;
+			this.lnkResxBlog.Location = new System.Drawing.Point(27, 446);
+			this.lnkResxBlog.Name = "lnkResxBlog";
+			this.lnkResxBlog.Size = new System.Drawing.Size(513, 17);
+			this.lnkResxBlog.TabIndex = 3;
+			this.lnkResxBlog.TabStop = true;
+			this.lnkResxBlog.Text = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
+			this.lnkResxBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkResxBlog_LinkClicked);
 			// 
 			// picProcess
 			// 
@@ -170,6 +169,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// lblInformation
 			// 
 			this.lblInformation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblInformation.ForeColor = System.Drawing.Color.SteelBlue;
 			this.lblInformation.Location = new System.Drawing.Point(24, 20);
 			this.lblInformation.Name = "lblInformation";
 			this.lblInformation.Size = new System.Drawing.Size(569, 444);
@@ -178,6 +178,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// chkConvert
 			// 
 			this.chkConvert.AutoSize = true;
+			this.chkConvert.ForeColor = System.Drawing.Color.SteelBlue;
 			this.chkConvert.Location = new System.Drawing.Point(27, 467);
 			this.chkConvert.Name = "chkConvert";
 			this.chkConvert.Size = new System.Drawing.Size(272, 21);
@@ -206,7 +207,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.tbrMain.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
 			this.splitBase.Panel1.ResumeLayout(false);
-			this.splitBase.Panel1.PerformLayout();
 			this.splitBase.Panel2.ResumeLayout(false);
 			this.splitBase.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
@@ -228,8 +228,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private System.Windows.Forms.SplitContainer splitBase;
         private System.Windows.Forms.CheckBox chkConvert;
         private System.Windows.Forms.Label lblInformation;
-        private System.Windows.Forms.PictureBox picProcess;
-		private System.Windows.Forms.Button btnOpenlog;
+		private System.Windows.Forms.PictureBox picProcess;
+		private System.Windows.Forms.LinkLabel lnkResxBlog;
     }
 }
 

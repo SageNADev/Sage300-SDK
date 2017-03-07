@@ -26,100 +26,104 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
     {
         public static string[] titles = 
          {
-			"Summary",
+			@"Solution and Projects Upgrade
+			
+			  Sage 2017.1 to Sage 2017.2",
 			"Synchronization of Web Files",
-			"R2/R3 Layout Changes",
-			"Process Obsoleted Methods",
-			"Upgrade MergeISVProject",
-			"Resx Files with Blank Values",
-			"Remove Dot in Bundle Name",
-			"Upgrade Accpac.NET library reference",
-			"Convert Web Project to Module Specific"
+			"Refactor Razor Views to Use the GlobalLayout",
+			"Remove Deprecated Methods",
+			"Address Resx Files For Blank Values",
+			"Ensure Bundle Names are Correct",
+			"Synchronize Accpac Libraries",
+			"Optionally Convert Web Project to Contain Module ID",
+			"Confirmation"
          };
 
         public static string[] messages = 
          {
-			@"This upgrade wizard will upgrade Sage300c PU1 version projects and samples code to PU2 version. It includes the following steps:
+			@"This wizard will upgrade this solution and projects to Sage 300 2017.2 by performing the following steps:
  
-			  1. Synchronization of Web project files
-			  2. R2/R3 Layout Changes
-			  3. Process obsoleted methods
-			  4. Upgrade MergeISVProject
-			  5. Resx Files with blank values
-			  6. Remove dot in bundle name
-			  7. Upgrade reference to new Accpac.NET library
-			  8. Convert web project to contain module name
+			  Step 1: Synchronize of Web Files
+			  Step 2: Refactor Razor Views to Use the GlobalLayout
+			  Step 3: Remove Deprecated Methods
+			  Step 4: Address Resx Files For Blank Values
+			  Step 5: Ensure Bundle Names are Correct
+			  Step 6: Synchronize Accpac Libraries
+			  Step 7: Optionally Convert Web Project to Contain Module ID
+			  Step 8: Conformation	
 
-			For upgrade the projects and samples, it's better to backup the original projects and samples.",
+
+
+			Note:Before proceeding with the upgrade, ensure a backup of this solution and projects has been performed.
+
+
+
+
+			Select 'Next' to view a summary of the individual steps to be performed.",
            
-			@"Synchronization of web project files
+			@"The Synchronization of Web Files step will upgrade the various global files that are part of the solution and which has been included in the solution in order to compile and run the solution.
 
-			  1. Add/update Sage300c common JavaScript files
-			  2. Upgrade third party JavaScript libraries to new version
-			  3. Add/update Sage300c web content files
-			  4. Add new GlobalLayout.cshtml",             
+			These files are maintained by Sage and are potentially modified during the release cycle and therefore require synchronization.
 
-			@"In the Areas/{module}/Views razor view (.cshtml file), apply following changes:
+			The following items are included in this step:
 
-			  1. Refactoring shared layout with GlobalLayout.cshtml
-			  2. Modify razor view with new layout, css
-			  3. Modify razor view with new container
-			  4. Modify razor view with new headers group
-			  5. Modify razor view with new fiscal group
-			  6. Modify razor view with new css for form elements
-			  7. Modify razor view with new css for right alignment", 
+			  * Sync common files in web project
+			  * Add new common JavaScript files 
+			  * Upgrade third party JavaScript libraries
+			  * Sync web content files
+			  * Add new GlobalLayout.cshtml file for refactoring performed by Step 2",             
 
-			@"Iterate/Search through c# code files and find any reference calls to obsoleted methods.
+			@"A combination of 'R2' and 'R3' layouts have been implemented in the razor views. This step will replace any 'R2' and 'R3' layout and replace them with the GlobalLayout.cshtml reference.
 
-			Remove the obsoleted methods, replace with new methods
+			The razor views in the Areas/{module}/Views folder will also be refactored, if needed, for any changes required for the new layout.
 
-			  1. Replace obsoleted method ResetLocks() with SessionLock()
-			  2. Replace obsoleted method UnLocks() with SessionUnLock()",
+			  * Implement new GlobalLayout.cshtml file
+			  * Modify razor views for new layout, CSS changes, container changes, header group changes, fiscal group changes, for element and alignment changes.
+			  
 
-			@"Copy new version MergeISVProject to solution web project folder. 
 
-			In the web project property, build events tab page, the post-build event command line as:
+			Note: Please refer to Gloabl Layout Refactoring document for a detailed explanation of the steps being performed and for any manual refactoring that may not be performed by this step.", 
 
-			Call $(ProjectDir)MergeISVProject.exe $(SolutionPath) $(ProjectDir) {module}MenuDetails.xml $(ConfigurationName) $(FrameworkDir)
-            
-			This file is executed after release build. It will compile the razor views and deploy to local Sage300c for RAD development. New argument is added to specify whether to deploy to Sage 300c when built in release mode.
+			@"Several methods were deprecated this release. While it is unlikely development partner will have used these methods, the code will be scanned and if any methods are discovered, they will be replaced with the new method signatures.
 
-			Usage :
+			  * Replace deprecated ResetLocks() with SessionLock()
+			  * Replace deprecated UnLocks() with SessionUnLock()",
 
-			Call $(ProjectDir)MergeISVProject.exe args0 args1 args2 args3 args4 args5
+			@"Resx Files with blank values can yield unexpected results ranging from blank captions amd labels to 'keys' as opposed to 'values' being displayed in the Web Portal Menus.
 
-			  args0 is the solution file path
-			  args1 is the web project path
-			  args2 is the menu file name (i.e. XXMenuDetails.xml)
-			  args3 is the configuration name (i.e. debug or release)
-			  args4 is the framework directory containing the aspnet_compile.exe
-			  args5 is the optional parameter as /nodeploy , default will deploy",
+			The 2017.2 version of the Solution and Code Genaration Wizards generated all 5 language files and thus if a partner did not provide translations for one of the languages and the langauge was selected in the browser, the unexpected results would be displayed.
 
-			@"Resx Files with blank values.
+			This step is informational only and does not perform any removal of unneeded language files. Please refer to the following article for information on this issue along with the required manual steps to resolve any uneeded Resx files:",
 
-			In previous version Solution and Code Genaration wizard, it will generate the Menu Resx files and any screen Resx files for all supported languages. But, the values in these non-English Resx files will contain keys, but blank values, which is not ideal for external developers. It must be resolved to contain a value.
+			@"JavaScript Bundles Names must not contains the dot('.') character. This is a known Microsoft issue and while Sage 300 bundle names do not include the dot character, a version of the wizard did include the dot character. Thus the JavaScript bundle names will be scanned and the dot character removed if found.
 
-			Details see JT's blog:
- 
-			https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/",
+			  * Scan and correct bundle names in the registration classes 
+			  * Scan and correct bundle names in the Index.cshtml files",
 
-			@"Remove dot in bundles name if it contains dot.
-
-			In previouse version wizard to generated projects and samples, it's incorrectly use dot in the bundle name, it need correct this usages
-
-			  1. Bundle name in bundle registration classes 
-			  2. Bundle name in Index.cshtml files",
-
-			@"Upgrade reference to new Accpac.NET library.
+			@"In the 2017.2 release, the Accpac.Advantage library's reference was incremented from 6.4.0.0 to 6.4.0.20.
 			
-			In PU2 the Accpac.NET library in changed, the projects and samples projects need update the project reference to use new version",
+			In previous releases the Accpac.Advantage and Accpac.Advantage.Types libraries had the same reference. With 2017.2 release this is no longer the case. These versions are represented in the project files via the AccpacDotNetVersion.props, which has been modified this release to included the different reference numbers.
 
-			@"Convert web project to module specific web project.
-            
-			Using the PU1 and previous vesion solution wizard to generate the projects, the project name like {Company}.{Modlue}.{XXX} except the Web project.
- 
-			If you want to convert the web prject from {Company}.Web project to {Company}.{Module}.Web for consistent with other projects, please check
-			the following check box."
+			This step will upgrade the existing props file and the csproj files for the upgraded props file and new reference number.",
+
+			@"The 2017.2 version of the Solution Wizard will generate the web project with the module in the project name(i.e. ValuedPartner.TU.Web). In previous versions, the module was not added and caused issues with partners who have multiple modules.
+
+			This step is optional to convert a web project without the module in the name to include it. However, these is no requirement to do so and may be skipped if not needed or desired.",
+			
+			@"Select 'Upgrade' to run the Sage Upgrade Wizard in order to convert a Sage 2017.1 Solution and Project files to version 2017.2. 
+			
+			A log file will be generated with the results of the upgrade process.
+
+			Note: Please be sure you have a backup of the Solution and Project files before proceeding.",
+
+			@"The Solution and Project Files have been upgrades to version 2017.2!
+
+			Please review the upgrade log by selecting the 'Show Log' button below.
+
+			Please review the upgrade instructions document for any manual steps not be performed by this wizard.
+
+			Please reload this Solution in Visual Studio and re-complile the solution."
+
          };
     }
  }

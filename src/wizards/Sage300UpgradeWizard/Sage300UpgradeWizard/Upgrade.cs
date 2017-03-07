@@ -77,19 +77,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private void btnNext_Click(object sender, EventArgs e)
         {
             _currentWizardStep++;
-            if (btnNext.Text == @"Next")
+            if (btnNext.Text == "Next")
             {
                 ShowStepInfo();    
             } 
-            else if (btnNext.Text == @"Upgrade")
+            else if (btnNext.Text == "Upgrade")
             {
                 picProcess.Visible = true;
                 chkConvert.Visible = false;
                 lblStepTitle.Text = @"Process Upgrade";
                 lblInformation.Text = @"Upgrade ...";
+				btnBack.Visible = false;
+				btnNext.Visible = false;
                 wrkBackground.RunWorkerAsync();
             } 
-            else if (btnNext.Text == @"Finish")
+            else if (btnNext.Text == "Finish")
             {
                 Close();
             }
@@ -101,8 +103,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <remarks>Back wizard step</remarks>
         private void btnBack_Click(object sender, EventArgs e)
         {
-            _currentWizardStep--;
-            ShowStepInfo();
+			if (btnBack.Text == @"Show Log")
+			{
+				var logPath = Path.Combine(_destination, "UpgradeLog.txt");
+				System.Diagnostics.Process.Start(logPath);				
+			} 
+			else
+			{
+				_currentWizardStep--;
+				ShowStepInfo();
+			}
         }
 
         #endregion
@@ -118,7 +128,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			_destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
 
             picProcess.Visible = false;
-			btnOpenlog.Visible = false;
+			lnkResxBlog.Visible = false;
             ShowStepInfo();
         }
 
@@ -127,14 +137,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// </summary>
         private void ShowStepInfo()
         {
-            btnBack.Enabled = (_currentWizardStep > 0);
+            btnBack.Visible = (_currentWizardStep > 0);
             btnNext.Text = (_currentWizardStep == 8) ? "Upgrade" : "Next";
-            chkConvert.Visible = (_currentWizardStep == 8);
+            chkConvert.Visible = (_currentWizardStep == 7);
             var format = (_currentWizardStep == 0) ? "{1}" : "Step {0} - {1}"; 
             lblStepTitle.Text = string.Format(format, _currentWizardStep, Info.titles[_currentWizardStep]);
             lblInformation.Text = Info.messages[_currentWizardStep];
-            lblInformation.Height = (_currentWizardStep == 8) ? 140: 444;
-            chkConvert.Top = (_currentWizardStep == 8) ? lblInformation.Bottom + 20 : 470 ;
+			lnkResxBlog.Visible = (_currentWizardStep == 4);
+			lnkResxBlog.Top = 280;
+            lblInformation.Height = (_currentWizardStep == 7) ? 140: 444;
+            chkConvert.Top = (_currentWizardStep == 7) ? lblInformation.Bottom + 20 : 470 ;
         }
 
         /// <summary>
@@ -529,18 +541,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Display final step
             picProcess.Visible = false;
             lblStepTitle.Text = @"Upgrade Completed";
-            lblInformation.Text = "Upgrade is completed successfully, you need to reload the solution projects.\r\n\r\nThe Upgrade log is here: \r\n\r\n" + _destination + @"\UpgradeLog.txt";
-            btnNext.Text = @"Finish";
-            btnBack.Enabled = false;
-			btnOpenlog.Location = chkConvert.Location;
-			btnOpenlog.Visible = true;
+			lblInformation.Text = Info.messages[_currentWizardStep];  
+			btnNext.Visible = true;
+			btnNext.Text = @"Finish";
+			btnBack.Visible = true;
+            btnBack.Text = @"Show Log";
         }
-
-		private void btnOpenlog_Click(object sender, EventArgs e)
-		{
-			var logPath = Path.Combine(_destination, "UpgradeLog.txt");
-			System.Diagnostics.Process.Start(logPath);
-		}
 
         /// <summary> Add gradient to top panel</summary>
         /// <param name="sender">Sender object </param>
@@ -1255,5 +1261,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         #endregion
+
+		private void lnkResxBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			this.lnkResxBlog.LinkVisited = true;
+			// Navigate to a URL.
+			System.Diagnostics.Process.Start("https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/");
+		}
     }
 }
