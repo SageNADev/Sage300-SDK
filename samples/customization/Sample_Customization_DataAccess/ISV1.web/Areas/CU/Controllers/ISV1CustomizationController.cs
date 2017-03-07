@@ -75,7 +75,7 @@ namespace ISV1.web.Areas.CU.Controllers
             return View();
         }
 
-        #region Action methods using Sage 300 View
+        #region Action Methods Using Sage 300c Service
 
         /// <summary>
         /// Get list batch number by using Sage 300c services and endpoints
