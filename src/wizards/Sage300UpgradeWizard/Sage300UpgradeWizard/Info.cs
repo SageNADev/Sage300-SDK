@@ -89,7 +89,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			  * Replace deprecated ResetLocks() with SessionLock()
 			  * Replace deprecated UnLocks() with SessionUnLock()",
 
-			@"Resx Files with blank values can yield unexpected results ranging from blank captions amd labels to 'keys' as opposed to 'values' being displayed in the Web Portal Menus.
+			@"Resx Files with blank values can yield unexpected results ranging from blank captions and labels to 'keys' as opposed to 'values' being displayed in the Web Portal Menus.
 
 			The 2017.2 version of the Solution and Code Genaration Wizards generated all 5 language files and thus if a partner did not provide translations for one of the languages and the langauge was selected in the browser, the unexpected results would be displayed.
 

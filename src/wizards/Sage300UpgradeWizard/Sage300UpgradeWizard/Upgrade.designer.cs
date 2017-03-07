@@ -207,6 +207,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.tbrMain.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
 			this.splitBase.Panel1.ResumeLayout(false);
+			this.splitBase.Panel1.PerformLayout();
 			this.splitBase.Panel2.ResumeLayout(false);
 			this.splitBase.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
