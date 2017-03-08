@@ -55,6 +55,7 @@ namespace ISV1.web.Areas.CU.DAL.CustomViews.Model
 
         public List<CustomerOptionalField> CustomerOptionalFields { get; set; }
     }
+
     /// <summary>
     /// CustomerOptionalField model class
     /// </summary>
@@ -110,6 +111,5 @@ namespace ISV1.web.Areas.CU.DAL.CustomViews.Model
         public const int ValueSet = 9;
         public const int OptionalFieldDescription = 28;
         public const int ValueDescription = 29;
-
     }
 }

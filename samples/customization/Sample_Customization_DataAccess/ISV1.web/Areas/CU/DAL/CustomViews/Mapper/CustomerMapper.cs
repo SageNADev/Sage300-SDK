@@ -38,11 +38,21 @@ namespace ISV1.web.Areas.CU.DAL.CustomViews.Mapper
         {
         }
 
+		/// <summary>
+		/// Map key from model field to entity field
+		/// </summary>
+		/// <param name="model"></param>
+		/// <param name="entity"></param>
         public override void MapKey(T model, IBusinessEntity entity)
         {
             entity.SetValue(FieldsIndex.CustomerNumber, model.CustomerNumber);
         }
 
+		/// <summary>
+		/// Map fields from entity view to model
+		/// </summary>
+		/// <param name="entity"></param>
+		/// <returns></returns>
         public override T Map(IBusinessEntity entity)
         {
             T model = base.Map(entity);
@@ -94,12 +104,22 @@ namespace ISV1.web.Areas.CU.DAL.CustomViews.Mapper
         {
         }
 
+		/// <summary>
+		/// Map keys from model fields to entity fields
+		/// </summary>
+		/// <param name="model"></param>
+		/// <param name="entity"></param>
         public override void MapKey(T model, IBusinessEntity entity)
         {
             entity.SetValue(FieldsIndex.CustomerNumber, model.CustomerNumber);
             entity.SetValue(FieldsIndex.OptionalField, model.OptionalField);
         }
 
+		/// <summary>
+		/// Map fields from entity view to model
+		/// </summary>
+		/// <param name="entity"></param>
+		/// <returns></returns>
         public override T Map(IBusinessEntity entity)
         {
             T model = base.Map(entity);

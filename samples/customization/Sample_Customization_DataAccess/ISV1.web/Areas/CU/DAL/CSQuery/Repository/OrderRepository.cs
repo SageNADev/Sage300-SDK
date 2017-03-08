@@ -169,8 +169,9 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
                 //IList<object> args =  new List<object>();
                 //var sql = GenerateSqlUpdateStatement(model, "SAMLTD.dbo.OEORDH", "ordUniq = {0} AND ordNumber = '{1}'", args);
                 //var response = ExecuteSQL(sql, args);
-
-                var sql = "update SAMLTD.dbo.OEORDH set Comment = '{1}', ShpContact = '{2}', BilName = '{3}' where ordNumber = '{0}'";
+				
+				// For simple, just update Comment, ShipContact and BillName fields 
+                var sql = "Update SAMLTD.dbo.OEORDH set Comment = '{1}', ShpContact = '{2}', BilName = '{3}' where ordNumber = '{0}'";
                 var response = ExecuteSQL(sql, model.OrderNumber, model.OrderComment, model.ShipToContact, model.BillToName);
             }
             return model;
@@ -241,6 +242,15 @@ namespace ISV1.web.Areas.CU.DAL.CSQuery.Repository
             }
         }
 
+		/// <summary>
+		/// Generate general Update sql statement based on entity model
+		/// ToDo: Extended/Modify it to generate select, insert if needed
+		/// </summary>
+		/// <param name="model"></param>
+		/// <param name="tableName"></param>
+		/// <param name="filterExpr"></param>
+		/// <param name="args"></param>
+		/// <returns></returns>
         private string GenerateSqlUpdateStatement(T model, string tableName, string filterExpr, IList<object> args)
         {
             var sql = "Update {0} Set {1} Where {2}";
