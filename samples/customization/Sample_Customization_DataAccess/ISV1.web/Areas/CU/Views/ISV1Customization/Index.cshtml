@@ -50,21 +50,21 @@
 
 <section class="main-body">
     <div class="wrapper">
-        <h1 class="page-header">Sage 300 UI Customization</h1>
+        <h1 class="page-header">Sage 300 UI Customization Data Access Layer</h1>
         <ul>
-            <li>Open the generated screen settings and JavaScript template file from [Sage 300 shared-data folder]\Customization</li>
-            <li>Edit the settings file to add custom controls to the screen</li>
-            <li>Edit the JavaScript file to add code and implememt custom business logic.</li>
-            <li>Sign in to Sage 300c, <a href= @ViewBag.Sage300Url>Sage 300c</a>, and open the screen you want to customize.</li>
+            <li>This sample code to use Sage SAMLTD database and Order Entry screen to show</li> 
+            <ul>
+                <li>Access Sage300c service and endpoints to get data</li>
+                <li>Access custom view to get data</li>
+                <li>Use Sage 300c common services query to get data</li>
+                <li>Use Entity Framework to get data</li> 
+            </ul>
+            <li>Sign in to Sage 300c, <a href= @ViewBag.Sage300Url>Sage 300c</a>, and open the Order Entry screen</li>
             <ul>
                 <li>Sage 300c parses the settings files to add controls to the screen and view, </li>
                 <li>and to include the JavaScript file in the view.</li>
             </ul>
-            <li>Use this MVC project to add controllers, action methods, and logic in areas\CU\Controllers (called by client side).</li>
-            <li>Rebuild the project in Release Mode.</li>
-            <ul>
-                <li> The bootstrapper configuration file and project assembly are deployed to the Sage300c web directory.</li>
-            </ul>
+            <li>All the DAL code in Areas\CU\DAL and called by ISV1CustomizationController</li>
         </ul>
     </div>
 </section>

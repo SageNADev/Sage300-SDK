@@ -70,7 +70,7 @@
   
   <!-- Table Page: Sage 300c Endpoints directly access controls configuration -->
   <Control ID="tabPageSage300EndPoint" Type="TabPage" Label ="Sage300c Endpoints Access Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
-     <Control ID="batchNumberList" Type="DropDown" Label="batch Number List" />
+     <Control ID="batchNumberList" Type="DropDown" Label="Batch Number List" />
      <Control ID="txtBatchNumber" Type ="TextBox" Label="Batch Number" Binding="Data.BatchNumber"/>
      <Control ID="txtBatchStatus" Type ="TextBox" Label="Batch Status" Binding="Data.BatchStatus"/>
      <Control ID="txtBatchType" Type="TextBox" Label="Batch Type" Binding ="Data.BatchTypeString" />
