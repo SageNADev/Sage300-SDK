@@ -33,7 +33,7 @@ using System.Text;
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
-    /// <summary> UI for Sync Assemblies Wizard </summary>
+    /// <summary> UI for Sage 300 Upgrade Wizard </summary>
     public partial class Upgrade : Form
     {
         #region Private Vars
@@ -53,7 +53,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         #region Constructor
 
-        /// <summary> Synchronization Class </summary>
+        /// <summary> Upgrade Class </summary>
         /// <param name="destination">Destination Default</param>
         /// <param name="destinationWeb">Destination Web Default</param>
 		/// <param name="templatePath">Upgrade Web Items template Path </param>
@@ -73,7 +73,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Next/Upgrade toolbar button </summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
-        /// <remarks>Next wizard step or Generate if last step</remarks>
+        /// <remarks>Next wizard step or Upgrade if last step</remarks>
         private void btnNext_Click(object sender, EventArgs e)
         {
             _currentWizardStep++;
@@ -372,7 +372,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }   
 
 		/// <summary>
-		/// Upgrade project reference for use new verion Accpac.Net
+		/// Upgrade project reference to use new verion Accpac.Net
 		/// </summary>
 		private void UpgradeAccpacReference()
 		{

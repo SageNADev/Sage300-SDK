@@ -24,10 +24,10 @@ using EnvDTE80;
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
-    /// <summary> Entry Point for Sync Assemblies Wizard </summary>
+    /// <summary> Entry Point for Upgrade Wizard </summary>
     public class Sage300Upgrade
     {
-        /// <summary> Execute the Sync Assemblies Wizard </summary>
+		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
 			var sln = (Solution2)solution;

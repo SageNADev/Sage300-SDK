@@ -117,41 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FileName" xml:space="preserve">
-    <value>File Name</value>
-    <comment>Header Desc for FileName column</comment>
-  </data>
-  <data name="StepTitleDestination" xml:space="preserve">
-    <value>Select Destination Folder</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Include" xml:space="preserve">
-    <value>Include</value>
-  </data>
-  <data name="StepTitleSyncAssemblies" xml:space="preserve">
-    <value>Sync Assemblies</value>
-  </data>
-  <data name="InvalidDestinationSetting" xml:space="preserve">
-    <value>The Destination field has either not been specified or is invalid</value>
-  </data>
-  <data name="Finish" xml:space="preserve">
-    <value>Finish</value>
-  </data>
-  <data name="Dash" xml:space="preserve">
-    <value> - </value>
-  </data>
-  <data name="WikiLink" xml:space="preserve">
-    <value />
-    <comment>Link to help on wiki</comment>
-  </data>
-  <data name="InvalidSettings" xml:space="preserve">
-    <value>The input values have either not been specified or are invalid.</value>
-  </data>
-  <data name="InvalidSettingAssembliesCount" xml:space="preserve">
-    <value>At least one assembly pattern is required to be selected.</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,60 +127,8 @@
   <data name="Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Blank24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InitialSync" xml:space="preserve">
-    <value>The Initial Sync has been selected. The destination folders will be replaced with the entire contents from the source. OK to proceed?</value>
-  </data>
-  <data name="StepDescriptionSyncedAssemblies" xml:space="preserve">
-    <value>Assemblies have been copied to the destination folder.</value>
-  </data>
   <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pattern" xml:space="preserve">
-    <value>Pattern</value>
-  </data>
-  <data name="Override" xml:space="preserve">
-    <value>Override</value>
-  </data>
-  <data name="Sync" xml:space="preserve">
-    <value>Sync</value>
-  </data>
-  <data name="StepTitleAssemblies" xml:space="preserve">
-    <value>Select Assembly Patterns</value>
-  </data>
-  <data name="InvalidSettingRequired" xml:space="preserve">
-    <value>Input values have not been specified.</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
-    <comment>Header Desc for Status column</comment>
-  </data>
-  <data name="StepDescriptionAssemblies" xml:space="preserve">
-    <value>At least one assembly pattern must be selected.</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="StepDescriptionDestination" xml:space="preserve">
-    <value>The destination folders must exist!</value>
-  </data>
-  <data name="StepTitleSyncedAssemblies" xml:space="preserve">
-    <value>Synced Assemblies</value>
-  </data>
-  <data name="StepDescriptionSyncAssemblies" xml:space="preserve">
-    <value>Ready to sync assemblies!</value>
-  </data>
-  <data name="Step" xml:space="preserve">
-    <value>Step </value>
-  </data>
-  <data name="StepTitleSourceType" xml:space="preserve">
-    <value>Select Source Type</value>
-  </data>
-  <data name="StepDescriptionSourceType" xml:space="preserve">
-    <value>This wizard will sync assemblies for the Sage 300 application.  </value>
-  </data>
-  <data name="SynchronizingFile" xml:space="preserve">
-    <value>Synchronizing File {0}...</value>
   </data>
   <data name="Browser" xml:space="preserve">
     <value>IEXPLORE.EXE</value>
