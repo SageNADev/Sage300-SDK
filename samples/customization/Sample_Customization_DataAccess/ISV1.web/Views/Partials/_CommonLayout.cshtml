@@ -1,0 +1,25 @@
+﻿@using Constants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Shared;
+@using CommonModels = Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+@Html.Partial(Constants.SharedLocalization)
+<div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+    @Html.AntiForgeryToken()
+</div>
+@{
+    var context = ((CommonModels.Context)HttpContext.Current.Items["Context"]);
+    var screenName = HttpContext.Current.Items["ScreenName"];
+}
+
+@if (@context != null)
+{
+    @Html.Hidden("ContextToken", context.ContextToken)
+    @Html.Hidden("SessionPerPage", ConfigurationHelper.SessionPerPage)
+
+    @Html.Hidden("ProductUserId", context.ProductUserId) @*TODO this has to be removed *@
+    @Html.Hidden("TenantId", context.TenantId) @*TODO this has to be removed *@
+}
+
+@Html.Hidden("ScreenName", screenName)
+@Html.SageUrl(new Dictionary<string, object>() { { "id", "hdnUrl" }, { "name", "hdnUrl" } })

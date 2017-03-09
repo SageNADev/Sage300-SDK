@@ -1,0 +1,38 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.FiscalYearSet
+
+<div id="divFiscalCalendar" style="display:none;" class="w418">
+    <div class="calendar-heading">
+        <table>
+            <tr>
+                <td class="w13"><input id="btnPreviousFiscal" type="image" src="~/Content/Images/white-left-arrow-t.png" alt="" /></td>
+                <td class="w140 fiscalHeadingLable">@Html.SageLabel(CommonResx.FiscalYear)</td>
+                <td class="w165"><div class="fisicaldropdown"><input id="ddlFiscalYear" /></div></td>
+                <td class="w13 right"><input id="btnNextFiscal" type="image" src="~/Content/Images/white-right-arrow-t.png" alt="" /></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <div id="divFiscalCalGrid" class="w418"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    var fiscalControlGridColumns = {
+        headerPeriod: '@Html.SageGridHeaderFor(model => model.Period)',
+        headerStartDate: '@Html.SageGridHeaderFor(model => model.StartDate)',
+        headerEndDate: '@Html.SageGridHeaderFor(model => model.EndDate)',
+        headerStatus: '@Html.SageGridHeaderFor(model => model.Status)'
+    };
+</script>

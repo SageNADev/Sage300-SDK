@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizardPackage", "Sage300UpgradeWizardPackage.csproj", "{11818B80-5DFB-4B48-BF62-B001BB081858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizardMenuExtension", "..\Sage300UpgradeWizardMenuExtension\Sage300UpgradeWizardMenuExtension.csproj", "{0B06ED0E-C402-48A1-8D09-2A30AB8ED25E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizard", "..\Sage300UpgradeWizard\Sage300UpgradeWizard.csproj", "{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11818B80-5DFB-4B48-BF62-B001BB081858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B06ED0E-C402-48A1-8D09-2A30AB8ED25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B06ED0E-C402-48A1-8D09-2A30AB8ED25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B06ED0E-C402-48A1-8D09-2A30AB8ED25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B06ED0E-C402-48A1-8D09-2A30AB8ED25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
