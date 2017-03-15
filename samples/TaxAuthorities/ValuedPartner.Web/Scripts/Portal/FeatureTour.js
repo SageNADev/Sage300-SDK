@@ -22,6 +22,9 @@ function nextSlide(x, y) {
     if (y === 4) {
         $(".completeTour>div").css("margin-left", "250px");
     }
+    if (y === 5) {
+        $(".completeTour>div").css("margin-left", "250px");
+    }
 }
 
 $(function () {

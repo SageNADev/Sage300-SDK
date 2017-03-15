@@ -58,7 +58,9 @@ var optFldGridUtils = {
                 count += 1;
             }
         });
+        optionalFieldUIGrid.retrivableCellOldVal = checkItem.toUpperCase();
         if (count > 1) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             if (optionalFieldUIGrid.isPopUp) {
                 optionalFieldUIGrid.showMessage(errorMsg);
             } else {
@@ -572,6 +574,7 @@ var optionalFieldUIGrid =
     hasErrorMessage: null,
     //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
     optFldSrcName: null,
+    retrivableCellOldVal: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -669,6 +672,7 @@ var optionalFieldUIGrid =
         }
 
         $('#' + btnAddLineId).on("click", function (e) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             sg.utls.SyncExecute(optionalFieldUIGrid.addNewLine);
         });
 

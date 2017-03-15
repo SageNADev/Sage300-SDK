@@ -892,7 +892,7 @@ $(document).ready(function () {
         //Check if the screen is already open
         $('#screenLayout').children().each(function () {
             var $iframe = $(this).find("iframe");
-            if (sg.utls.getUrlPath($iframe.attr("src")) === sg.utls.getUrlPath(url)) {
+            if ($iframe.attr("src") ===url) {
                 result = true;
             }
         });
@@ -956,7 +956,9 @@ $(document).ready(function () {
             var inquiryParameter = JSON.parse(decodeURI(postMessageData[1]));
             targetUrl = createInquiryURLWithParameters(inquiryParameter);
             var screenName, parentId, menuid;
-            
+
+            $('#screenLayout').show();
+            $('#widgetLayout').hide();
 
             //Check if maximum number of screens reached
             var isScreenOpen = isScreenAlreadyOpen(targetUrl);
@@ -977,7 +979,7 @@ $(document).ready(function () {
             menuid = inquiryScreenId;
 
             //Method To Load Into Task Doc
-            assignUrl(portalBehaviourResources.Inquiry, parentId, menuid, true);
+            assignUrl(portalBehaviourResources.Inquiry + " - " + inquiryParameter.title, parentId, menuid);
 
         } else if (evtData.indexOf("isReport") >= 0) {
 

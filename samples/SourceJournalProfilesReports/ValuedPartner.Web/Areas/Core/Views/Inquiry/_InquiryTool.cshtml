@@ -1,0 +1,76 @@
+﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+
+
+<div id="viewInquiries" class="side-panel side-panel-shadow view-inquiry" tabindex="-1">
+    <div class="side-panel-wrapper">
+        <div class="header-container">
+            <h1 class="side-panel-header header-inquiry">@HomePageResx.QuickMenu_Inquiries</h1>
+            <div class="glyphicon glyphicon-close dismiss" title="@HomePageResx.QuickMenu_Dismiss" id="btnInquiryClose"></div>
+        </div>
+        <div class="wrapper">
+
+            <!-- Filter Starts  -->
+            <div id="inquiryTabStrip" class="tab-group">
+                <ul>
+                    <li id="templateTab" class="k-state-active">@NavigationResx.Templates</li>
+                </ul>
+                <div class="tab-pane" id="templateTab">
+                    <ul>
+                        @if (ViewBag.HasARInquiryRight)
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_AccountsReceivable</label>
+                                <ul>
+                                    <li class="inquiry-item" onclick="launchInquiry(this)" data-module="AR" data-feature="100" data-titletemplate="@Html.SageRaw(@HomePageResx.QuickMenu_ARTemplate)">@InquiryResx.Documents</li>
+									<li class="inquiry-item" onclick="launchInquiry(this)" data-module="AR" data-feature="1" data-titletemplate="@Html.SageRaw(@HomePageResx.QuickMenu_ARTemplate)">@HomePageResx.QuickMenu_CustomerDocuments</li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                
+            </div>
+            <!-- Filter Ends  -->
+        </div>
+    </div>
+</div>
+
+<script>
+    function launchInquiry(source)
+    {
+        var parameterData = $(source).data();
+        parameterData["title"] = $.validator.format($(source).data("titletemplate"), $(source).text());
+        parameterData["url"] = sg.utls.url.buildUrl("Core", "Inquiry", "Index");
+
+        var parameterDataString = JSON.stringify(parameterData);
+        window.top.postMessage("isInquiry" + " " + encodeURI(parameterDataString), "*");
+
+        // close the side bar
+        $("#btnInquiryClose").trigger("click");
+    }
+
+    $("li.item-list.inquiry-category").click(function () {
+        $("li.item-list.inquiry-category > ul").slideToggle("slow");
+        $("li.item-list.inquiry-category").toggleClass('collapsed');
+    });
+
+    $("#btnViewInquiries").click(function () {
+        $('#viewInquiries').addClass('slide-in');
+    });
+
+    $('#btnInquiryClose').click(function () {
+        $('#viewInquiries').removeClass("slide-in");
+    });
+
+    $(document).ready(function () {
+        $(".tab-group").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            }
+        });
+    });
+</script>

@@ -1,33 +1,49 @@
-﻿/* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2016-2017 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
-var ARDocumentTypes = { Invoice: 1, DebitNote: 2, CreditNote: 3, Interest: 4, UnappliedCash: 5, Prepayment: 10, Receipt: 11, Refund: 19, MiscReceipt: 20 };
+var ARDocumentTypes = { Invoice: 1, DebitNote: 2, CreditNote: 3, Interest: 4, UnappliedCash: 5, Prepayment: 10, Receipt: 11, Adjustment: 14, Refund: 19 };
+var ARTranTransactionTypes = { WriteOffPosted: 80, AdjustmentPosted: 81 };
+var InquiryTypes = { Documents: "1", Receipts: "2", Refunds: "3", Adjustments: "4", DocumentTransaction: "100", DocumentTransactionDetails: "101" };
+var InvoiceType = { NotApplicable: 0, Item: 1, Summary: 2 };
+var JobRelated = { No: 0, Yes: 1 };
+var HasRetainage = { No: 0, Yes: 1 };
 
 /* Inquiry Grid Helper */
 var InquiryGridHelper = InquiryGridHelper || {};
 InquiryGridHelper = {
-    appendDrillDownLink: function(grid, isOEActive) {
+    appendDrillDownLink: function(grid, inquiryType, isOEActive) {
         var that = this;
         this.popupHeight = 1440;
         this.popupWidth = 1100;
         this.inquiryForm = $("#frmInquiry");
 
-        this.appendDocumentNumberClickEvent = function() {
+        this.appendArDocumentClickEvents = function() {
+            $(document).off('click', 'tbody > tr > td > div > span > input.btnDocumentNumber');
+            $(document).on('click', 'tbody > tr > td > div > span > input.btnDocumentNumber', this.btnDocumentNumberClickHandler);
+
+            $(document).off('click', 'tbody > tr > td > div > span > input.btnOrderNumber');
+            $(document).on('click', 'tbody > tr > td > div > span > input.btnOrderNumber',
+                isOEActive === 'True' ? this.btnOrderNumberClickHandler : this.btnOENotActiveHandler);
+
+            $(document).off('click', 'tbody > tr > td > div > span > input.btnShipmentNumber');
+            $(document).on('click', 'tbody > tr > td > div > span > input.btnShipmentNumber',
+                isOEActive === 'True' ? this.btnShipmentNumberClickHandler : this.btnOENotActiveHandler);
+        };
+
+        this.appendArReceiptClickEvents = function () {
+            $(document).off('click', 'tbody > tr > td > div > span > input.btnDocumentNo');
+            $(document).on('click', 'tbody > tr > td > div > span > input.btnDocumentNo', this.btnDocumentNumberClickHandler);
+        };
+
+        this.appendArRefundClickEvents = function () {
             $(document).off('click', 'tbody > tr > td > div > span > input.btnDocumentNumber');
             $(document).on('click', 'tbody > tr > td > div > span > input.btnDocumentNumber', this.btnDocumentNumberClickHandler);
         };
 
-        this.appendOrderNumberClickEvent = function () {
-            $(document).off('click', 'tbody > tr > td > div > span > input.btnOrderNumber');
-            $(document).on('click', 'tbody > tr > td > div > span > input.btnOrderNumber',
-                isOEActive === 'True' ? this.btnOrderNumberClickHandler : this.btnOENotActiveHandler);
-        };
-
-        this.appendShipmentNumberClickEvent = function () {
-            $(document).off('click', 'tbody > tr > td > div > span > input.btnShipmentNumber');
-            $(document).on('click', 'tbody > tr > td > div > span > input.btnShipmentNumber',
-                isOEActive === 'True' ? this.btnShipmentNumberClickHandler : this.btnOENotActiveHandler);
+        this.appendArAdjustmentClickEvents = function () {
+            $(document).off('click', 'tbody > tr > td > div > span > input.btnReferenceDocumentNo');
+            $(document).on('click', 'tbody > tr > td > div > span > input.btnReferenceDocumentNo', this.btnDocumentNumberClickHandler);
         };
 
         this.getSelectedRowData = function(obj) {
@@ -51,12 +67,21 @@ InquiryGridHelper = {
                 case ARDocumentTypes.Receipt:
                 case ARDocumentTypes.UnappliedCash:
                 case ARDocumentTypes.Prepayment:
-                case ARDocumentTypes.MiscReceipt:
                     that.drillDownToARReceipt(selectedRowData);
                     break;
 
                 case ARDocumentTypes.Refund:
                     that.drillDownToARRefund(selectedRowData);
+                    break;
+                case ARDocumentTypes.Adjustment:
+                    // When transaction type is adjustment and receipt no. is not empty, it means this adjustment
+                    // is generated from Receipt - so open receipt entry instead
+                    if (selectedRowData.TransactionType == ARTranTransactionTypes.AdjustmentPosted &&
+                        selectedRowData.CheckReceiptNo) {
+                        that.drillDownToARReceipt(selectedRowData);
+                    } else {
+                        that.drillDownToARAdjustment(selectedRowData);
+                    }
                     break;
             }
         };
@@ -65,8 +90,18 @@ InquiryGridHelper = {
             that.injectModalToInquiryForm();
 
             var selectedRowData = that.getSelectedRowData($(this));
-            sg.utls.ajaxPost(sg.utls.url.buildUrl("OE", "OrderEntry", "GetById"), { 'id': selectedRowData.OrderNumber }, function (result) {
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("OE", "OrderEntry", "GetById"), { 'id': selectedRowData.OrderNumber, 'isInquireMode': true }, function (result) {
                 var url = sg.utls.url.buildUrl("OE", "OrderEntry", "Index") + "?id=" + selectedRowData.OrderNumber + "&isEditable=false";
+                that.openDrillDownPopup(result, url);
+            });
+        };
+
+        this.btnShipmentNumberClickHandler = function () {
+            that.injectModalToInquiryForm();
+
+            var selectedRowData = that.getSelectedRowData($(this));
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("OE", "ShipmentEntry", "GetById"), { 'id': selectedRowData.ShipmentNumber, 'isInquireMode': true }, function (result) {
+                var url = sg.utls.url.buildUrl("OE", "ShipmentEntry", "Index") + "?id=" + selectedRowData.ShipmentNumber + "&isEditable=false";
                 that.openDrillDownPopup(result, url);
             });
         };
@@ -75,18 +110,8 @@ InquiryGridHelper = {
             sg.utls.showMessageInfo(sg.utls.msgType.ERROR, InquiryResources.NotAuthorizedMessage);
         }
 
-        this.btnShipmentNumberClickHandler = function () {
-            that.injectModalToInquiryForm();
-
-            var selectedRowData = that.getSelectedRowData($(this));
-            sg.utls.ajaxPost(sg.utls.url.buildUrl("OE", "ShipmentEntry", "GetById"), { 'id': selectedRowData.ShipmentNumber }, function (result) {
-                var url = sg.utls.url.buildUrl("OE", "ShipmentEntry", "Index") + "?id=" + selectedRowData.ShipmentNumber + "&isEditable=false";
-                that.openDrillDownPopup(result, url);
-            });
-        };
-
         this.drillDownToARInvoice = function (rowData) {
-            sg.utls.ajaxPost(sg.utls.url.buildUrl("AR", "InvoiceEntry", "GetInvoice"), { 'batchNumber': rowData.BatchNumber, 'entryNumber': rowData.EntryNumber }, function (result) {
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("AR", "InvoiceEntry", "GetByIds"), { 'batchNumber': rowData.BatchNumber, 'entryNumber': rowData.EntryNumber }, function (result) {
                 var url = sg.utls.url.buildUrl("AR", "InvoiceEntry", "Index") + "?batchNumber=" + rowData.BatchNumber + "&entryNumber=" + rowData.EntryNumber + "&actionType=Inquiry";
                 that.openDrillDownPopup(result, url);
             });
@@ -102,6 +127,13 @@ InquiryGridHelper = {
         this.drillDownToARRefund = function (rowData) {
             sg.utls.ajaxPost(sg.utls.url.buildUrl("AR", "RefundEntry", "GetByIds"), { 'batchNumber': rowData.BatchNumber, 'entryNumber': rowData.EntryNumber }, function (result) {
                 var url = sg.utls.url.buildUrl("AR", "RefundEntry", "Index") + "?batchNumber=" + rowData.BatchNumber + "&entryNumber=" + rowData.EntryNumber + "&actionType=Inquiry";
+                that.openDrillDownPopup(result, url);
+            });
+        }
+
+        this.drillDownToARAdjustment = function (rowData) {
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("AR", "AdjustmentEntry", "Get"), { 'batchNumber': rowData.BatchNumber, 'entryNumber': rowData.EntryNumber }, function (result) {
+                var url = sg.utls.url.buildUrl("AR", "AdjustmentEntry", "Index") + "?batchNumber=" + rowData.BatchNumber + "&entryNumber=" + rowData.EntryNumber + "&actionType=Inquiry";
                 that.openDrillDownPopup(result, url);
             });
         }
@@ -131,8 +163,26 @@ InquiryGridHelper = {
             $('#transparentOverlay').remove();
         }
 
-        this.appendDocumentNumberClickEvent(grid);
-        this.appendOrderNumberClickEvent(grid);
-        this.appendShipmentNumberClickEvent(grid);
+        this.init = function() {
+            switch (inquiryType) {
+            case InquiryTypes.Documents:
+            case InquiryTypes.DocumentTransaction:
+                this.appendArDocumentClickEvents();
+                break;
+            case InquiryTypes.Receipts:
+                this.appendArReceiptClickEvents();
+                break;
+            case InquiryTypes.Refunds:
+                this.appendArRefundClickEvents();
+                break;
+            case InquiryTypes.Adjustments:
+                this.appendArAdjustmentClickEvents();
+                break;
+            default:
+                break;
+            }
+        }
+
+        this.init();
     }
 }

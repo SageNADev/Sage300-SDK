@@ -14,28 +14,17 @@
 
 @if (export || import || customize)
 {
-    string vClass = (ViewData[OptionsMenu.UseLessCss] != null) ? "options-menu" : "options-menu";
     string sImport = "", sExport = "";
-    bool hasHeadOptions = (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
+    bool hasHeadOptions = ViewData.Count == 0 || (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
     string headOptions = hasHeadOptions ? "<div class='header-options'>" : "";
     string divEndTag = hasHeadOptions ? "</div>" : "";
     string importId = (ViewData[OptionsMenu.ImportId] == null) ? "btnOptionImport" : ViewData[OptionsMenu.ImportId].ToString();
     string exportId = (ViewData[OptionsMenu.ExportId] == null) ? "btnOptionExport" : ViewData[OptionsMenu.ExportId].ToString();
     
-    if (ViewData[OptionsMenu.CssBinding] != null)
-    {
-        sImport = "<li><a id='{0}' data-bind=\"css: {{'not-active': Data.ImportOptionsDisable }}\">{1}</a></li>";
-        sExport = "<li><a id='{0}' data-bind=\"css: {{'not-active': Data.ExportOptionsDisable }}\">{1}</a></li>";
-    }
-    else if (ViewData[OptionsMenu.EnableBinding] != null)
+    if (ViewData[OptionsMenu.EnableBinding] != null)
     {
         sImport = "<li><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsEnabled' value='{1}'></li>";
         sExport = "<li><input type='button' id='{0}' data-bind='enable: Data.ExportOptionsEnabled' value='{1}'></li>";
-    }
-    else if (ViewData[OptionsMenu.DisableBinding] != null)
-    {
-        sImport = "<li><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsDisable' value='{1}'></li>";
-        sExport = "<li><input type='button' id='{0}' data-bind='enable: Data.ExportOptionsDisable' value='{1}'></li>";
     }
     else
     {
@@ -44,7 +33,7 @@
     }
 
     @Html.Raw(headOptions)
-        @Html.Raw(string.Format("<ul class='{0}'>", vClass))
+    @Html.Raw(string.Format("<ul class='{0}'>", "options-menu"))
             <li>
                 <a>@CommonResx.Options<span class="arrow-grey"></span></a>
                 <ul class="sub-menu">

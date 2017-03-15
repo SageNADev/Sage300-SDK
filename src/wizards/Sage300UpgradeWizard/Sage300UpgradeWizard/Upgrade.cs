@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -47,7 +47,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		private static readonly  StringBuilder _sbLog =  new StringBuilder();
         /// <summary> Sage color </summary>
-        private readonly Color _sageColor = Color.FromArgb(3, 102, 131); // 3, 130, 104
+        private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
 
         #endregion
 
@@ -126,6 +126,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             _destination = destination;
 			_sourceItemsFolder = Path.GetDirectoryName(_templatePath);
 			_destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
+
+            chkConvert.ForeColor = _sageColor;
+            lblInformation.ForeColor = _sageColor;
+
 
             picProcess.Visible = false;
 			lnkResxBlog.Visible = false;

@@ -169,13 +169,13 @@ var saleSplitGridUI = {
                         grid.removeRow(row);
                    
                 });
-                if (i >= 1) {
-                saleSplitGridUI.deletesaleperson(ko.mapping.toJS(saleSplitGridUI.items.Data), ko.mapping.toJS(list));
+                if (i > 0) {
+                    saleSplitGridUI.deletesaleperson(ko.mapping.toJS(saleSplitGridUI.items.Data), ko.mapping.toJS(list));
                 }
 
 
                 // ko.mapping.fromJS(list, {}, saleSplitGridUI.items.SalesSplitDetail.Items);
-                if (grid.dataSource.total() == 0) {
+                if (grid.dataSource.total() === 0) {
                     $("#" + chkAllId).attr("checked", false).parent().attr("class", "icon checkBox");
                     sg.controls.disable("#" + chkAllId);
                     $('#message').empty();
@@ -220,6 +220,7 @@ var saleSplitGridUI = {
         saleSplitGridUI.preferencesTypeId = params.preferencesTypeId;
         saleSplitGridUI.salesperchange = params.salesperchange,
         saleSplitGridUI.deletesaleperson = params.deletesaleperson,
+        saleSplitGridUI.change = params.change,
         saleSplitGridUI.initButton();
         saleSplitGridUI.initsalCheckBox();
     },
@@ -245,7 +246,8 @@ var saleSplitGridUI = {
         var index = optionalFieldUIGrid.gridIds.indexOf(optionalFieldUIGrid.gridId);
 
         $('#' + btnAddLineId).on("click", function (e) {
-            sg.utls.SyncExecute(saleSplitGridUI.addNewSalesLine);
+
+            saleSplitGridUI.addNewSalesLine();
         });
 
         $('#' + btnDeleteLineId).on("click", function (e) {
@@ -451,6 +453,13 @@ var saleSplitGridUI = {
             ],
             dataChange: function (changedData) {
                 saleSplitGridUI.salesperchange(changedData);
+            },
+
+            // Fired when the user selects a table row or cell in the grid
+            change: function (e) {
+                if (saleSplitGridUI && saleSplitGridUI.change) {
+                    saleSplitGridUI.change(e);    
+                }
             }
 
         };

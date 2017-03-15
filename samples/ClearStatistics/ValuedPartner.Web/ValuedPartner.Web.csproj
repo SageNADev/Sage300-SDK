@@ -25,6 +25,7 @@
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -330,9 +331,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Shared\Scripts\IC\Sage.CA.SBS.ERP.Sage300.IC.Common.js" />
+    <Content Include="Areas\Shared\Scripts\ItemQuantity\Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsBehaviour.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsKoExtn.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsRepository.js" />
+    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\knockout-kendo.js" />
+    <Content Include="Scripts\knockout-kendoGrid.js" />
+    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb_DPPMenu.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
@@ -431,7 +451,6 @@
     <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
     <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
     <Content Include="Scripts\JQueryUI\_references.js" />
-    <Content Include="Scripts\Kendo\kendo.all.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.en-AU.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.en-US.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.en-ZA.min.js" />

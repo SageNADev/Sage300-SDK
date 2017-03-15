@@ -702,10 +702,23 @@ $.extend(sg.utls.kndoUI, {
      * @returns {} 
      */
     getPencilIconTemplate: function (field, text) {
-        if (field == null) {
+        if (field == null || field == '') {
             return "";
         }
         return '<div class="pencil-wrapper"><span class="pencil-txt">' + field + '</span><span class="pencil-icon"><input type="button" class="icon edit-field btn' + text + '"/></span></div>';
+    },
+
+    /**
+     * Used for templates in grid with special columns to hide zero value
+     * @param {} field - this value will display on the grid
+     * @returns {} 
+     */
+    getHideZeroTemplate: function(field) {
+        //target both string type and integer type
+        if (field == 0) {
+            return "";
+        }
+        return field;
     },
 
     /**

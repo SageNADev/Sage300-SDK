@@ -25,6 +25,7 @@
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -333,6 +334,18 @@
     <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptRepository.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\knockout-kendo.js" />
+    <Content Include="Scripts\knockout-kendoGrid.js" />
+    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb_DPPMenu.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @model Sage.CA.SBS.ERP.Sage300.Shared.Web.Models.Report.GLTransaction.GLTransactionViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.GLSubledgerTransactionReport>
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -8,7 +8,7 @@
 <div class="form-group">
     <div class="numeric-go-group" id="divNumericgoGroup">
         @Html.SageLabelFor(m => m.Data.ThroughPostingSequence)
-        @Html.KoSageTextBoxFor(m => m.Data.ThroughPostingSequence, new { @sagevalue = "Data.ThroughPostingSequence", @sagedisable = "Data.DisableReportControls" }, new { @class = "default align-right" })
+        @Html.KoSageTextBoxFor(m => m.Data.ThroughPostingSequence, new { @sagevalue = "Data.ThroughPostingSequence", @sagedisable = "Data.DisableReportControls" }, new { @class = "default numeric" })
         @Html.KoSageButton("btnBankPostingJournalFinder", new { @sagevisible = "Data.IsFinderVisible", @sagedisable = "Data.DisableReportControls" }, new { @id = "btnBankPostingJournalFinder", @class = "icon btn-finder", @tabindex = "-1" })
         @Html.ValidationMessageFor(m => m.Data.ThroughPostingSequence)
     </div>
@@ -37,5 +37,5 @@
 </div>
 
 <section class="footer-group">
-    @Html.KoSageButton("btnPrint", new { @sagedisable = "Data.DisableReportControls" }, new { @id = "btnPrintGLTransaction", @class = "btn-primary", @value = CommonResx.Print })
+    @Html.KoSageButton("btnPrint", new { @sagedisable = "Data.DisableReportControls" }, new { @id = "btnPrintGLTransaction", @class = "btn btn-primary", @value = CommonResx.Print })
 </section>

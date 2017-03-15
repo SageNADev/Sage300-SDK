@@ -312,6 +312,21 @@
             @Html.Partial(AsConstants.CustomAddReport)
         }
         @Scripts.Render("~/bundles/CustomReport")
+        
+    <!--Start Inquiries-->
+        if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+         {
+             @Html.Partial("~/Areas/Core/Views/Inquiry/_InquiryTool.cshtml", new ViewDataDictionary
+             {
+                 { "HasARInquiryRight", ViewBag.HasARInquiryRight },
+                 { "HasAPInquiryRight", ViewBag.HasAPInquiryRight },
+                 { "HasGLInquiryRight", ViewBag.HasGLInquiryRight },
+                 { "HasOEInquiryRight", ViewBag.HasOEInquiryRight },
+                 { "HasICInquiryRight", ViewBag.HasICInquiryRight },
+                 { "HasPOInquiryRight", ViewBag.HasPOInquiryRight }
+             })
+         }
+    <!--End Inquiries-->
 
         <script id="delete-confirmation" type="text/x-kendo-template">
             <div class="fild_set">

@@ -47,9 +47,10 @@
                                 if (businessEntitySession.BusinessEntities.length > 0) {
                                     $.each(businessEntitySession.BusinessEntities, function (index3, businessEntity) {
                                         $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity : " + businessEntity.Name + " ( " + businessEntity.Description + " ) " + "</br>");
-                                    });
-                                    $("#sessionPoolData").append("</br>");
+                                    });                                   
                                 }
+
+                                $("#sessionPoolData").append("</br>");
                             });
                         }
                         $("#sessionPoolData").append("---------------------------------------------------------------------</br>");

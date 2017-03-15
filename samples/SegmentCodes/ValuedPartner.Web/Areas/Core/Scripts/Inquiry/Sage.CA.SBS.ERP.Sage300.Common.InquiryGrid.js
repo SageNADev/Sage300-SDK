@@ -1,40 +1,19 @@
-﻿/* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2016-2017 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
-var inquiryGrid = inquiryGrid || {};
-inquiryGrid = {
-    funcCurrencyColumns: [
-        "ExchangeRate", "FuncCurrencyInvoiceAmount", "FuncAppliedAmount", "FuncCurrencyAmountDue",
-        "FuncCurrencyDiscountAmount", "FuncCurrencyTaxAmount", "FuncCurrOrigRtngAmt", "FuncCurrRetainageAmount"
-    ],
-    custCurrencyColumns: [
-        "CustCurrencyInvoiceAmount", "CustAppliedAmount", "CustCurrencyAmountDue", "CustCurrencyDiscountAmount",
-        "CustCurrencyTaxAmount", "CustCurrOrigRtngAmt", "CustCurrRetainageAmount"
-    ],
-    afterDataBindHandler: null,
+function inquiryGrid(dataField, getParameterFunc, pageSize)
+{
+    this.afterDataBindHandler = null;
+    this.changeHandler = null;
+    this.gridInstance = null;
+    this.self = null;
+    this.gridConfigDataField = dataField;
+    this.getParameter = getParameterFunc;
+    this.pageSize = pageSize;
 
-    changeHandler: null,
-
-    gridInstance: function () {
-        return $("#CustomerDocumentGrid").data("kendoGrid");
-    },
-
-    //Hide/show the grid columns depends on the currency type, and also applis the saved user preference
-    displayColumnsByCurrencyType: function (grid, custColumns, funcColumns) {
-        if (inquiryUI.isFunctionalCurrency()) {
-            sg.utls.kndoUI.hideGridColumns(grid, custColumns);
-            sg.utls.kndoUI.showGridColumns(grid, funcColumns);
-        } else {
-            sg.utls.kndoUI.hideGridColumns(grid, funcColumns);
-            sg.utls.kndoUI.showGridColumns(grid, custColumns);
-        }
-        inquiryUI.setUserPreference(grid);
-    },
-
-    getParam: function () {
-        var grid = inquiryGrid.gridInstance();
-
+    this.getParam = function () {
+        var grid = this.self.gridInstance();
         var parameters = {
             pageNumber: grid.dataSource.page() - 1,
             pageSize: grid.dataSource.pageSize(),
@@ -43,54 +22,50 @@ inquiryGrid = {
             inquiryFilters: inquiryUI.generateStaticFilters()
         };
 
-        return parameters;
-    },
+        if ($.isFunction(this.self.getParameter)) {
+            parameters = $.extend(parameters, this.self.getParameter());
+        }
 
-    // Set up for getting  paged Customized Screen Profile Details
-    pageUrl: sg.utls.url.buildUrl("Core", "Inquiry", "Get"),
+        return parameters;
+    };
 
     // Call back function when Get is successful. In this, the data for the grid and the total results count are to be set along with updating knockout
-    buildGridData: function (successData) {
+    this.buildGridData = function(successData) {
         var gridData = null;
+        if (successData) {
+            if (successData.UserMessage !== null && successData.UserMessage.IsSuccess) {
+                gridData = [];
 
-        // ReSharper disable once QualifiedExpressionMaybeNull
-        if (successData !== null) {
-            gridData = [];
+                if (successData[this.self.gridConfigDataField] != null) {
+                    ko.mapping.fromJS(successData[this.self.gridConfigDataField],
+                        {}, inquiryUI.inquiryKoBindingModel[this.self.gridConfigDataField]);
 
-            if (successData.CustomerDocuments != null) {
-                ko.mapping.fromJS(successData.CustomerDocuments, {}, inquiryUI.inquiryKoBindingModel.CustomerDocuments);
-
-                gridData.totalResultsCount = successData.CustomerDocuments.TotalResultsCount;
-                if (gridData.totalResultsCount > 0) {
-                    gridData.data = successData.CustomerDocuments.Items;
+                    gridData.totalResultsCount = successData[this.self.gridConfigDataField].TotalResultsCount;
+                    if (gridData.totalResultsCount > 0) {
+                        gridData.data = successData[this.self.gridConfigDataField].Items;
+                    } else {
+                        // If grid data is empty then set pagenumber into 0.
+                        gridData.data = null;
+                    }
                 }
-                else {
-                    // If grid data is empty then set pagenumber into 0.
-                    gridData.data = null;
-                }
+            } else {
+                sg.utls.showMessage(successData);
             }
         }
-        else {
-            sg.utls.showMessage(successData);
-        }
-        
+
         return gridData;
-    },
+    };
 
-    afterDataBind: function () {
-        if (inquiryGrid.afterDataBindHandler) {
-            inquiryGrid.afterDataBindHandler();
+    this.afterDataBind = function () {
+        if (this.self.afterDataBindHandler) {
+            this.self.afterDataBindHandler();
         }
-    },
+    };
 
-    dataChange: function (changedData) {
-        var selectAllCheckBox = null;
-        //workprofileUI.SerialNumber = changedData.rowData.SerialNumber;
-    },
-
-    change: function (arg) {
-        if (inquiryGrid.changeHandler) {
-            inquiryGrid.changeHandler();
+    this.change = function (arg) {
+        // this is called from kendo, need to get back the config from arg object
+        if (arg.sender.options.self.changeHandler) {
+            arg.sender.options.self.changeHandler();
         }
-    }
+    };
 };

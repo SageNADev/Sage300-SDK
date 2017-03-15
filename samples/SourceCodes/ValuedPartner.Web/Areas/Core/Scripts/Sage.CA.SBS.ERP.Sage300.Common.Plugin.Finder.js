@@ -660,6 +660,7 @@
                             that._getSelectedRow(that);
                         });
             } else {
+                kendoWindow.destroy()
                 sg.utls.isFinderClicked = false;
             }
         },
