@@ -189,8 +189,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			{
 				ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
 			}
-			DirectoryCopy(sourceWebFolder, _destinationWebFolder);
 			
+            DirectoryCopy(sourceWebFolder, _destinationWebFolder);
+			DeleteFiles(_destinationWebFolder);
+
             // Update WebForms C# file for report project
             if( Directory.Exists(Path.Combine(_destinationWebFolder, "WebForms")))
             {
@@ -207,6 +209,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
         }
 
+        /// <summary>
+        /// Delete obsolete files
+        /// </summary>
+        private void DeleteFiles(string webFolder)
+        {
+            string[] filePaths = { @"Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js", @"Areas\Core\Views\Inquiry\Partials\_InquirySecondGrid.cshtml" };
+            foreach (var f in filePaths)
+            {
+                var file = Path.Combine(webFolder, f);
+                if(File.Exists(file))
+                {
+                    File.Delete(file);
+                }
+            }
+        }
         /// <summary>
         /// R2/R3 Layout Changes
         /// </summary>

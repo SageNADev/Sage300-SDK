@@ -122,7 +122,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 			Please review the upgrade instructions document for any manual steps not performed by this wizard.
 
-            The Sage 300 2017.2 Upgrade Wizard may be uninstalled by selecting Tools\Extensions and Updates...
+			The Sage 300 2017.2 Upgrade Wizard may be uninstalled by selecting Tools\Extensions and Updates...
 
 			Please reload and recompile the solution in Visual Studio."
 
