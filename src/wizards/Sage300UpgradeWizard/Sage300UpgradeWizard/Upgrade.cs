@@ -221,6 +221,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 if(File.Exists(file))
                 {
                     File.Delete(file);
+                    _sbLog.AppendLine(DateTime.Now + " Delete obsolete file: " + file);
                 }
             }
         }
