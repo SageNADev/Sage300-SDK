@@ -36,6 +36,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
     /// <summary> UI for Sage 300 Upgrade Wizard </summary>
     public partial class Upgrade : Form
     {
+        
+        #region Const string
+        const string BundleNameBlogUrl = "https://jthomas903.wordpress.com/2017/01/23/sage-300-javascript-bundle-names/";
+        const string ResxBlogUrl = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
+        #endregion
+
         #region Private Vars
 
         private int _currentWizardStep;
@@ -132,7 +138,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 
             picProcess.Visible = false;
-			lnkResxBlog.Visible = false;
+			lnkBlog.Visible = false;
             ShowStepInfo();
         }
 
@@ -147,8 +153,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var format = (_currentWizardStep == 0) ? "{1}" : "Step {0} - {1}"; 
             lblStepTitle.Text = string.Format(format, _currentWizardStep, Info.titles[_currentWizardStep]);
             lblInformation.Text = Info.messages[_currentWizardStep];
-			lnkResxBlog.Visible = (_currentWizardStep == 4);
-			lnkResxBlog.Top = 280;
+            lnkBlog.Visible = (_currentWizardStep == 4 || _currentWizardStep == 5);
+			lnkBlog.Top = 280;
+            lnkBlog.Text = (_currentWizardStep == 4) ? ResxBlogUrl : BundleNameBlogUrl;
             lblInformation.Height = (_currentWizardStep == 7) ? 140: 444;
             chkConvert.Top = (_currentWizardStep == 7) ? lblInformation.Bottom + 20 : 470 ;
         }
@@ -1294,11 +1301,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         #endregion
 
-		private void lnkResxBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		private void lnkBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			this.lnkResxBlog.LinkVisited = true;
-			// Navigate to a URL.
-			System.Diagnostics.Process.Start("https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/");
+			this.lnkBlog.LinkVisited = true;
+            var url = (_currentWizardStep == 4) ? ResxBlogUrl : BundleNameBlogUrl;
+
+			System.Diagnostics.Process.Start(url);
 		}
     }
 }
