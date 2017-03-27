@@ -156,7 +156,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             lnkBlog.Visible = (_currentWizardStep == 4 || _currentWizardStep == 5);
 			lnkBlog.Top = 280;
             lnkBlog.Text = (_currentWizardStep == 4) ? ResxBlogUrl : BundleNameBlogUrl;
-            lblInformation.Height = (_currentWizardStep == 7) ? 140: 444;
+            lblInformation.Height = (_currentWizardStep == 7) ? 180: 444;
             chkConvert.Top = (_currentWizardStep == 7) ? lblInformation.Bottom + 20 : 470 ;
         }
 
