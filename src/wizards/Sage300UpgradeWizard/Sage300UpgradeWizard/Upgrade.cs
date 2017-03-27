@@ -189,9 +189,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			{
 				ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
 			}
-			
+			_sbLog.AppendLine(DateTime.Now + " -- Synchronize web files --" );
             DirectoryCopy(sourceWebFolder, _destinationWebFolder);
+            _sbLog.AppendLine(DateTime.Now + " -- Delete depreciated web files --");
 			DeleteFiles(_destinationWebFolder);
+            _sbLog.AppendLine(DateTime.Now + " -- End of synchronize web files --");
+            _sbLog.AppendLine("");
 
             // Update WebForms C# file for report project
             if( Directory.Exists(Path.Combine(_destinationWebFolder, "WebForms")))
@@ -203,8 +206,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     contents = contents.Replace("using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;", "using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;");
                     contents = contents.Replace("Utilities.", "SignOnHelper.");
                     File.WriteAllText(file, contents);
+                    _sbLog.AppendLine(DateTime.Now + " -- Update web forms class namespace and object method call --");
 					_sbLog.AppendLine(DateTime.Now + " Replace namespace 'Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities' with 'Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities' in " + file);
 					_sbLog.AppendLine(DateTime.Now + " Replace object 'Utilities' with 'SignOnHelper' in " + file);
+                    _sbLog.AppendLine(DateTime.Now + " -- End of update web forms class namespace and object method call --");
 	            }
             }
         }
@@ -245,6 +250,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 {
                     var paths = Directory.GetFiles(_viewsFolder, "*.cshtml", SearchOption.AllDirectories);
                     var isFileEdit = false;
+                    _sbLog.AppendLine(DateTime.Now + " -- Start R2/R3 razor view changes --");
                     foreach (var path in paths)
                     {
                         var file = File.ReadAllText(path);
@@ -298,6 +304,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             isFileEdit = false;
                         }
                     }
+                    _sbLog.AppendLine(DateTime.Now + " -- End of R2/R3 razor view changes --");
                 }
             }
         }
@@ -472,6 +479,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 						var newWebFolder = Path.Combine(_destination, moduleWebDirName);
 						if (!Directory.Exists(newWebFolder))
 						{
+                            _sbLog.AppendLine("");
+                            _sbLog.AppendLine(DateTime.Now + " -- Start to convert web project --");
 							try
 							{
 								System.Threading.Thread.Sleep(3000);
@@ -522,6 +531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 								_sbLog.AppendLine(DateTime.Now + " Update the web project reference or namespace to contains module name in " + file + " file");
 							}
 						}
+                        _sbLog.AppendLine(DateTime.Now + " -- End of converting web project --");
 					}
                 }
             }
