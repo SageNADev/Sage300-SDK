@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 "use strict"
 
@@ -80,7 +80,15 @@ $(document).ready(function () {
     var isWidgetEmptyLnkClicked = false;
 
     var menu = $("#topMenu").kendoMenu({ open: onOpen, close: onClose }).data("kendoMenu");
-
+    menu.bind('activate', function (e) {
+        //This is to fix D-33845
+        //For the menu item that contains a textbox, there is an Kendo issue on Chrome
+        //The workaround is to focus on an input when menu is activated.
+        //https://github.com/telerik/kendo-ui-core/issues/2524
+        if (e.item.is('#helpMenu')) {
+            e.item.find('input').first().focus();
+        }
+    });
     function onOpen(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "0.3").attr("disabled", "disabled"); }
 
     function onClose(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "1").removeAttr("disabled"); }
@@ -226,13 +234,6 @@ $(document).ready(function () {
     $('.top_nav_drop_content').click(function () {
 
         isReload = false;
-    });
-
-    $(window).bind('beforeunload', function () {
-        var numOfOpenScreens = $('#dvWindows').children().length;
-        if (isReload && numOfOpenScreens > 0) {
-            return sg.utls.htmlDecode(portalBehaviourResources.PageRefreshError);
-        }
     });
 
     function ShowHomePage() {
@@ -503,22 +504,30 @@ $(document).ready(function () {
         $(this).addClass('selected');
 
         if ($(this).attr('command') === "Remove") {
-            isIframeClose = true;
-            currentDiv = ($(this).attr('controlToRemove'));
-            flag = false;
-            $.each(controls, function (index, element) {
-                if (element["control"] === currentIframeId) {
-                    currentRank = element["rank"];
-                }
-            });
-            
-            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
-                currentIframeId);
+            var url = $("#" + currentIframeId).attr("src");
+            var isReport = url.indexOf("ReportViewer.aspx?token") > 0;
 
             $("#" + currentIframeId).attr("src", "about:blank");
-            $("#" + currentIframeId).parent().empty().append(iframeHtml);
+            currentDiv = ($(this).attr('controlToRemove'));
 
-            iFrameLoadEvent(null, $("#" + currentIframeId));
+            setTimeout(function () {
+                var isContentWindow = sg.utls.isChrome() || sg.utls.isMozillaFirefox() || sg.utls.isSafari();
+                var iframeWin = isContentWindow ? window[currentIframeId].contentWindow : window[currentIframeId];
+                isIframeClose = (iframeWin.name === "unloadediFrame") || isReport;
+
+                if (isIframeClose) {
+                    flag = false;
+                    $.each(controls, function (index, element) {
+                        if (element["control"] === currentIframeId) {
+                            currentRank = element["rank"];
+                        }
+                    });
+                    var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
+                        currentIframeId);
+                    $("#" + currentIframeId).parent().empty().append(iframeHtml);
+                    iFrameLoadEvent(null, $("#" + currentIframeId));
+                }
+            }, 100);
 
         } else if ($(this).attr('command') === "Add") {
             var currentSelectedRank = $(this).attr("rank");

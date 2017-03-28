@@ -38,7 +38,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.lblStepTitle = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.splitBase = new System.Windows.Forms.SplitContainer();
-            this.lnkResxBlog = new System.Windows.Forms.LinkLabel();
+            this.lnkBlog = new System.Windows.Forms.LinkLabel();
             this.picProcess = new System.Windows.Forms.PictureBox();
             this.lblInformation = new System.Windows.Forms.Label();
             this.chkConvert = new System.Windows.Forms.CheckBox();
@@ -134,7 +134,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitBase.Panel2.Controls.Add(this.lnkResxBlog);
+            this.splitBase.Panel2.Controls.Add(this.lnkBlog);
             this.splitBase.Panel2.Controls.Add(this.picProcess);
             this.splitBase.Panel2.Controls.Add(this.lblInformation);
             this.splitBase.Panel2.Controls.Add(this.chkConvert);
@@ -142,17 +142,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.splitBase.SplitterDistance = 89;
             this.splitBase.TabIndex = 9;
             // 
-            // lnkResxBlog
+            // lnkBlog
             // 
-            this.lnkResxBlog.AutoSize = true;
-            this.lnkResxBlog.Location = new System.Drawing.Point(20, 362);
-            this.lnkResxBlog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnkResxBlog.Name = "lnkResxBlog";
-            this.lnkResxBlog.Size = new System.Drawing.Size(393, 13);
-            this.lnkResxBlog.TabIndex = 3;
-            this.lnkResxBlog.TabStop = true;
-            this.lnkResxBlog.Text = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
-            this.lnkResxBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkResxBlog_LinkClicked);
+            this.lnkBlog.AutoSize = true;
+            this.lnkBlog.Location = new System.Drawing.Point(20, 362);
+            this.lnkBlog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkBlog.Name = "lnkBlog";
+            this.lnkBlog.Size = new System.Drawing.Size(393, 13);
+            this.lnkBlog.TabIndex = 3;
+            this.lnkBlog.TabStop = true;
+            this.lnkBlog.Text = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
+            this.lnkBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBlog_LinkClicked);
             // 
             // picProcess
             // 
@@ -228,7 +228,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private System.Windows.Forms.CheckBox chkConvert;
         private System.Windows.Forms.Label lblInformation;
 		private System.Windows.Forms.PictureBox picProcess;
-		private System.Windows.Forms.LinkLabel lnkResxBlog;
+		private System.Windows.Forms.LinkLabel lnkBlog;
     }
 }
 
