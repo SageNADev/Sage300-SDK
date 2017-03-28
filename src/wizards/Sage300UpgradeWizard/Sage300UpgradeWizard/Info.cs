@@ -108,7 +108,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 			@"The 2017.2 version of the Solution Wizard will generate the web project with the module in the project name (i.e. ValuedPartner.TU.Web). In previous versions, the module was not added and caused issues with partners who have multiple modules.
 
-			This step is optional to convert a web project, without the module in the name, to add the module to the name. However, there is no requirement to do so and this step may be skipped.",
+			This step is optional to convert a web project, without the module in the name, to add the module to the name. However, there is no requirement to do so and this step may be skipped.
+			
+			This step renames the web project folder and modifies some of the files in it, please ensure the web folder or the files in it are not open in another program.",
 			
 			@"Select 'Upgrade' to run the Sage Upgrade Wizard in order to convert the Sage 2017.1 solution and projects to version 2017.2. 
 			
