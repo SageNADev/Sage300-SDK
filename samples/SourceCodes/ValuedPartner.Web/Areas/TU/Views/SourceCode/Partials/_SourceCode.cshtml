@@ -44,7 +44,7 @@
                 <div class="header-headline">
                     @Html.SageHeader1Label("sourceCodeHeader", SourceCodeResx.Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.Customize, false } })
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess)
                 <div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
