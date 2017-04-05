@@ -412,52 +412,40 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// </summary>
 		private void UpgradeAccpacReference()
 		{
-			var file = Path.Combine(_destinationWebFolder, "AccpacDotNetVersion.props");
-			if (File.Exists(file))
+			//Copy new AccpacDotNetVersion.props, update the refrence to this PU2 props
+            var file = Path.Combine(_destinationWebFolder, "AccpacDotNetVersion.props");
+			var srcFilePath = Path.Combine(_sourceItemsFolder, "AccpacDotNetVersion.props");
+			File.Copy(srcFilePath, file, true);
+			var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
+			foreach (var f in files)
 			{
-				//Copy new AccpacDotNetVersion.props, update the refrence to this props
-				var srcFilePath = Path.Combine(_sourceItemsFolder, "AccpacDotNetVersion.props");
-				File.Copy(srcFilePath, file, true);
-				var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
-				foreach (var f in files)
+                var input = File.ReadAllText(f);
+                var isChanged = false;
+
+                var pattern = "<Reference Include=\"ACCPAC.Advantage,(.|\n)*?</Reference>";
+                var replacement = "<Reference Include=\"$(RefAccpacAdvantage)\">\r\n\t\t<SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>\r\n\t</Reference>";
+                var rgx = new Regex(pattern);
+                if (rgx.IsMatch(input))
+	            {
+		            input = rgx.Replace(input, replacement);
+                    isChanged = true;
+	            }
+
+                pattern = "<Reference Include=\"ACCPAC.Advantage.Types,(.|\n)*?</Reference>";
+                replacement = "<Reference Include=\"$(RefAccpacAdvantageTypes)\">\r\n\t\t<SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>\r\n\t</Reference>";
+                rgx = new Regex(pattern);
+                if (rgx.IsMatch(input))
+	            {
+		            input = rgx.Replace(input, replacement);
+                    isChanged = true;
+	            }
+
+				if (isChanged)
 				{
-					var lines = File.ReadAllLines(f);
-					var isChanged = false;
-					var length = lines.Length;
-					for (int i = 0; i < length; i++)
-					{
-						if (lines[i].Contains("ACCPAC.Advantage,"))
-						{
-							lines[i] = "<Reference Include=\"$(RefAccpacAdvantage)\">";
-							isChanged = true;
-						}
-						if (lines[i].Contains("ACCPAC.Advantage.Types,"))
-						{
-							lines[i] = "<Reference Include=\"$(RefAccpacAdvantageTypes)\">";
-							isChanged = true;
-						}
-					}
-					if (isChanged)
-					{
-						File.WriteAllLines(f, lines);
-						_sbLog.AppendLine(DateTime.Now + " Update the project reference to new Accpac.Net version in project " + file);
-					}
+					File.WriteAllText(f,input);
+					_sbLog.AppendLine(DateTime.Now + " Update the project reference to use new Accpac.Net version file in project " + file);
 				}
 			}
-			else
-			{
-				//Update project reference directly, only "ACCPAC.Advantage.dll" version is changed
-				var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
-				foreach (var f in files)
-				{
-					var fileContent = File.ReadAllText(f);
-					if (fileContent.Contains("ACCPAC.Advantage, Version=6.4.0.0"))
-					{
-						File.WriteAllText(f, fileContent.Replace("ACCPAC.Advantage, Version=6.4.0.0", "ACCPAC.Advantage, Version=6.4.0.20"));
-						_sbLog.AppendLine(DateTime.Now + " Update the project reference to new Accpac.Net version in project " + f);
-					}
-				}
-			}	
 		}
 
         /// <summary>
@@ -1308,5 +1296,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 			System.Diagnostics.Process.Start(url);
 		}
+
     }
 }
