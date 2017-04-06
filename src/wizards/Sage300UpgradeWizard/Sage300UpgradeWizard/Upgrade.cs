@@ -416,8 +416,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var file = Path.Combine(_destinationWebFolder, "AccpacDotNetVersion.props");
 			var srcFilePath = Path.Combine(_sourceItemsFolder, "AccpacDotNetVersion.props");
 			File.Copy(srcFilePath, file, true);
-			var files = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
-			foreach (var f in files)
+
+            //Add AccpacDotNetVersion.props item to web project file
+            var webProjFiles = Directory.EnumerateFiles(_destinationWebFolder, "*.csproj", SearchOption.TopDirectoryOnly);
+            if (webProjFiles.Any())
+            {
+                var webProjFile = webProjFiles.FirstOrDefault();
+                var content = File.ReadAllText(webProjFile);
+                if (!content.Contains("AccpacDotNetVersion.props"))
+                {
+                    var updateContent = content.Replace("<Content Include=\"MergeISVProject.exe\" />", "<Content Include=\"MergeISVProject.exe\" />\r\n\t<Content Include=\"AccpacDotNetVersion.props\" />");
+                    File.WriteAllText(webProjFile, updateContent);
+                }
+            }
+            //Change the project file references
+			var projFiles = Directory.EnumerateFiles(_destination, "*.csproj", SearchOption.AllDirectories);
+            foreach (var f in projFiles)
 			{
                 var input = File.ReadAllText(f);
                 var isChanged = false;
