@@ -60,6 +60,12 @@ folders in order to segregate the documentation:
 * webapi
 * wizards
 
+### help
+
+The **help** folder contains the CHM files for the documented assemblies
+
+> **The Common and Core assmblies are documented at this time**
+
 ### patch
 
 The **patch** folder contains any patches which may be required to be applied to:
@@ -76,7 +82,7 @@ The **samples** folder contains sample projects, which are stand-alone, runnable
 different screens and reports within the Sage 300 application as well as customization samples. 
 These samples are to provide implementation knowledge.
 
-> **The README file in the samples folder is important and contains prerequisites for running samples.
+> **The README file in the samples folder is important and contains prerequisites for running samples.**
 
 ### src
 
@@ -85,12 +91,6 @@ sub-folders in order to segregate the source:
 
 * utilities
 * wizards
-
-### upgrades
-
-The **upgrades** folder contains at a minimum the files required to updated any solutions and 
-projects created in a previous version of the SDK to the current version. The documentation
-for any upgrades will be located in the **docs/upgrades** folder.
 
 ### LICENSE.md
 

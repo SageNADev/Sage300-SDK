@@ -13,6 +13,30 @@ Windows Powershell 4.0 can be installed by downloading Windows Management Framew
 > Windows Powershell 4.0 is only required by the Wizards for compiling the solution. This is not
 a requirement if the Wizard Package is only installed via the VSIX file.
 
+## How to Install the Sage 300 UI Wizard Package
+
+The following steps illustrate how to install the package:
+
+* Locate the **Sage300UIWizardPackage.vsix** file in the bin\wizards folder and 
+run this file.
+* Select **Yes** to install the plug-in
+
+> **If the package is already installed, it must be uninstalled first**
+
+## How to Uninstall the Sage 300 UI Wizard Package
+
+The following steps illustrate how to uninstall the package from Visual Studio:
+
+* Load Visual Studio
+* Select **Tools\Extensions and Updates…**
+* Search for and select the **Sage 300 UI Wizard Package**
+* Select the **Uninstall** button
+* Select **Yes** to confirm uninstallation of the package
+* Select **Yes** to re-start Visual Studio
+* The package has been uninstalled
+
+> **This step is only required if the package is installed**
+
 ## How to Install the Sage 300 UI Customization Wizard Package
 
 The following steps illustrate how to install the package:
@@ -36,3 +60,29 @@ The following steps illustrate how to uninstall the package from Visual Studio:
 * The package has been uninstalled
 
 > **This step is only required if the package is installed**
+
+## How to Install the Sage 300 Upgrade Wizard Package
+
+The following steps illustrate how to install the package:
+
+* Locate the **Sage300UpgradeWizardPackage.vsix** file in the bin\wizards folder and 
+run this file.
+* Select **Yes** to install the plug-in
+
+> **If the package is already installed, it must be uninstalled first**
+
+## How to Uninstall the Sage 300 Upgrade Wizard Package
+
+The following steps illustrate how to uninstall the package from Visual Studio:
+
+* Load Visual Studio
+* Select **Tools\Extensions and Updates…**
+* Search for and select the **Sage 300 Upgrade Wizard Package**
+* Select the **Uninstall** button
+* Select **Yes** to confirm uninstallation of the package
+* Select **Yes** to re-start Visual Studio
+* The package has been uninstalled
+
+> **This step is only required if the package is installed**
+
+> **Once the upgrade has been performed, the upgrade wizard should be uninstalled**
