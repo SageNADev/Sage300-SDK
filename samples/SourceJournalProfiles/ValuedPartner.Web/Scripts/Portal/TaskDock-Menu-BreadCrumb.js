@@ -505,7 +505,7 @@ $(document).ready(function () {
 
         if ($(this).attr('command') === "Remove") {
             var url = $("#" + currentIframeId).attr("src");
-            var isReport = url.indexOf("ReportViewer.aspx?token") > 0;
+            var isReport = url.indexOf("ReportViewer.aspx?token") > 0 || url.indexOf("CustomReportViewer.aspx?reportName") > 0 ;
 
             $("#" + currentIframeId).attr("src", "about:blank");
             currentDiv = ($(this).attr('controlToRemove'));
