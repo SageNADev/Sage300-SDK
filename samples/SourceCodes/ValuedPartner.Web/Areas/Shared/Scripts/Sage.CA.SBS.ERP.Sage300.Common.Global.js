@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 var sg = sg || {};
 sg.utls = sg.utls || {};
@@ -2634,6 +2634,9 @@ $(function () {
         }
         else {
             $(window).bind('unload', function () {
+                if (window.location.href.indexOf("OnPremise") > 0) {
+                    window.name = "unloadediFrame";
+                }
                 PageUnloadHandler();
             });
         }

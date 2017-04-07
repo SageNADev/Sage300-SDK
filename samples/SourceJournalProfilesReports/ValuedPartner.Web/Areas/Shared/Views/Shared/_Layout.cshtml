@@ -2,7 +2,6 @@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
-@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -21,6 +20,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@Page.Title</title>
     @Styles.Render("~/Content/Styles/lessCss")
     @Scripts.Render("~/bundles/modernizr")
