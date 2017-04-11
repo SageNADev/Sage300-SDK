@@ -212,11 +212,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             #line hidden
             
             #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("\")\r\n}\r\n\r\n@{\r\n    Layout = Shared.LocalizedLayout;\r\n}\r\n");
+            this.Write("\")\r\n}\r\n\r\n@{\r\n    Layout = Shared.GlobalLayout;\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

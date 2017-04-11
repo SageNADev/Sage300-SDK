@@ -1110,23 +1110,57 @@ var receiptUISuccess = {
         receiptGrid.setFirstLineEditable = false;
     },
 
-    operationSuccess: function (jsonResult) {
+    createSuccess: function (jsonResult) {
+        receiptUI.addLineClicked = false;
+        receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+        receiptUI.receiptModel.isModelDirty.reset();
+        receiptUISuccess.setkey();
+        sg.utls.showMessage(jsonResult);
+        sg.controls.Select($("#txtReceiptNumber"));
+    },
+
+    updateSuccess: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             receiptUI.addLineClicked = false;
-            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW, true);
+            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
             receiptUI.receiptModel.isModelDirty.reset();
             receiptUISuccess.setkey();
-
         }
-        var message = jsonResult.UserMessage.Message;
-        if (message && message.indexOf("\n\n") > 0) {
-            sg.utls.showMessageInfo(sg.utls.msgType.INFO, message);
-        } else {
-            sg.utls.showMessage(jsonResult);    
-        }
-
+        sg.utls.showMessage(jsonResult);
         receiptGrid.setFirstLineEditable = false;
-        sg.controls.Select($("#txtReceiptNumber"));
+    },
+
+    addSuccess: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            receiptUI.addLineClicked = false;
+            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            receiptUI.receiptModel.isModelDirty.reset();
+            receiptUISuccess.setkey();
+        }
+        if (jsonResult.UserMessage.Warnings != null && jsonResult.UserMessage.Warnings != "") {
+            sg.utls.showMessageInfo(sg.utls.msgType.WARNING, jsonResult.UserMessage.Warnings[0].Message);
+        }
+        sg.utls.showMessage(jsonResult);
+        receiptGrid.setFirstLineEditable = false;
+    },
+
+    deleteSuccess: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            receiptUI.receiptModel.isModelDirty.reset();
+            receiptUISuccess.setkey();
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+
+    postSuccess: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            receiptUI.addLineClicked = false;
+            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            receiptUI.receiptModel.isModelDirty.reset();
+            receiptUISuccess.setkey();
+        }
+        sg.utls.showMessage(jsonResult);
     },
 
     getHeaderValues: function (result) {
@@ -1712,13 +1746,20 @@ var receiptUISuccess = {
     getItemValues: function (jsonResult) {
         var grid = $('#ReceiptGrid').data("kendoGrid");
         var currentRowGrid = sg.utls.kndoUI.getRowByKey(grid.dataSource.data(), "DisplayIndex", receiptUI.itemfinderlineNumber);
+        var value = currentRowGrid.QuantityReceived;
 
         if (jsonResult && jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
+            currentRowGrid.set("UnitOfMeasure", sg.controls.GetString(jsonResult.Data.UnitOfMeasure));
             currentRowGrid.set("UnitCost", jsonResult.Data.UnitCost);
             currentRowGrid.set("ExtendedCost", jsonResult.Data.ExtendedCost);
-            if (receiptUI.receiptModel.Data.RequireLabels() === 1 && jsonResult.Data.QuantityReceived) {
-                currentRowGrid.set("Labels", jsonResult.Data.QuantityReceived);
+            currentRowGrid.set("ReturnCost", sg.controls.GetString(jsonResult.Data.ReturnCost));
+            var requireLabel = (receiptUI.receiptModel.Data.RequireLabels() === 1) || $("#chkRequireLabel").prop('checked');
+            if (requireLabel && value) {
+                currentRowGrid.set("Labels", value);
             }
+            //if (receiptUI.receiptModel.Data.RequireLabels() === 1 && jsonResult.Data.QuantityReceived) {
+            //    currentRowGrid.set("Labels", jsonResult.Data.QuantityReceived);
+            //}
         }
     },
 
@@ -2809,13 +2850,15 @@ var receiptGrid = {
                     $("#txtLocation").bind('change', function (e) {
                         var location = e.target.value;
                         $("#message").empty();
-
                         sg.delayOnChange("btnLocationfield", $("#txtLocation"), function () {
+                            receiptUI.cursorField = null;
+                            receiptUI.itemfinderlineNumber = null;
                             var grid = $('#ReceiptGrid').data("kendoGrid");
                             var currentRowGrid = sg.utls.kndoUI.getSelectedRowData(grid);
                             receiptUI.itemfinderlineNumber = currentRowGrid.DisplayIndex;
                             currentRowGrid.set("Location", location);
                             receiptUI.cursorField = "Location";
+                            receiptRepository.setItemValues(currentRowGrid, gridRowFields.Location);
                             return false;
                         });
                     });

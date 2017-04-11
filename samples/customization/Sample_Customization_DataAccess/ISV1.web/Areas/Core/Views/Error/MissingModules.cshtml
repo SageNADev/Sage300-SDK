@@ -1,0 +1,57 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
+@{
+    Layout = Shared.GenericLayout;
+}
+
+<div class="wrapper">
+    <div class="msg msg-error">
+        <h2 class="msg-heading">@AccountMessagesResx.MissingModules_Header</h2>
+        <div class="msg-body">
+            <p>@AccountMessagesResx.MissingModules_Description</p>
+            <p>
+                <ul class="std-list">
+                    <li>
+                        @AccountMessagesResx.MissingModules_Step1
+                    </li>
+                    <li>
+                        @AccountMessagesResx.MissingModules_Step2
+                    </li>
+                    <li>
+                        @AccountMessagesResx.MissingModules_Step3
+                    </li>
+                </ul>
+            </p>
+            <div class="button-group">
+                <input class="btn btn-primary" id="btnSignIn" name="btnSignIn" type="button" value="@AccountMessagesResx.MissingModules_SignIn" onclick="HandleRedirectToLogin()">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/shared")
+
+<script type="text/javascript">
+
+    @{
+        var urlHelper = new System.Web.Mvc.UrlHelper(Html.ViewContext.RequestContext);
+    }
+    function HandleRedirectToLogin() {
+        var topWnd = window.top == null ? window : window.top;
+        topWnd.location.href = '@urlHelper.Action("Login", "Authentication")';
+    }
+
+    $(document).keypress(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            $('#btnSignIn').click();
+        }
+    });
+
+</script>

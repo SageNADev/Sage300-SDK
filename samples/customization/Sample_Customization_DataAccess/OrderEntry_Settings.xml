@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The MIT License (MIT) -->
+<!-- Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved. -->
+<!-- -->
+<!-- Permission is hereby granted, free of charge, to any person obtaining a copy of -->
+<!-- this software and associated documentation files (the "Software"), to deal in -->
+<!-- the Software without restriction, including without limitation the rights to use, -->
+<!-- copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the -->
+<!-- Software, and to permit persons to whom the Software is furnished to do so, -->
+<!-- subject to the following conditions: -->
+<!-- -->
+<!-- The above copyright notice and this permission notice shall be included in all -->
+<!-- copies or substantial portions of the Software. -->
+<!-- -->
+<!-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, -->
+<!-- INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A -->
+<!-- PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT -->
+<!-- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF -->
+<!-- CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE -->
+<!-- OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<Screen Name="OrderEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="screenConfig.xsd">
+  <!--TODO: add elements for customizing the screen. For details, see document and samples-->
+  
+  <!-- Table Page: Sage 300 CS Query controls configurations -->
+  <Control ID="tabPageCSQuery" Type="TabPage" Label ="CS Query Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="orderNumberList" Type="DropDown" Label="Order Number List"  />
+    <Control ID="txtOrderNumber" Type ="TextBox" Label="Order Number" Binding="Data.OrderNumber"/>
+    <Control ID="dtOrderCreated" Type="DatePicker" Label="Order Date" Binding ="Data.OrderDate" />
+    <Control ID="txtOrderComments" Type="TextBox" Label="Order Comment"  Binding ="Data.OrderComment" />
+    <Control ID="txtCustomerNumber" Type ="TextBox" Label="Customer Number" Binding="Data.CustomerNumber"/>
+    <Control ID="txtCustomerGroupCode" Type ="TextBox" Label="Customer GroupCode" Binding="Data.CustomerGroupCode"/>
+    <Control ID="txtBillToName" Type ="TextBox" Label="Bill Name" Binding="Data.BillToName"/>
+    <Control ID="txtBillToAddress" Type ="TextBox" Label="Bill Address " Binding="Data.BillToAddressLine1"/>
+    <Control ID="txtShipToName" Type ="TextBox" Label="Ship Name" Binding="Data.ShipToName"/>
+    <Control ID="txtShipToCity" Type ="TextBox" Label="Ship City" Binding="Data.ShipToCity"/>
+    <Control ID="txtShipToContact" Type ="TextBox" Label="Ship Contact" Binding="Data.ShipToContact"/>
+    <Control ID="gridOrderDetail" Type="Grid" />
+  </Control>
+  
+  <!-- Table Page: Sage 300 View/Custom View controls configurations -->
+  <Control ID="tabPageSageView" Type="TabPage" Label ="Sage 300c Custom View Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="customerList" Type="DropDown" Label="Customer Number List" />
+    <Control ID="customerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
+    <Control ID="customerGroupCode" Type ="TextBox" Label="Group Code" Binding="Data.GroupCode"/>
+    <Control ID="customerAddress" Type="TextBox" Label="Address" Binding ="Data.AddressLine1" />
+    <Control ID="customerCity" Type="TextBox" Label="City"  Binding ="Data.City" />
+    <Control ID="customerSate" Type="TextBox" Label="Sate"  Binding ="Data.StateOrProv" />
+    <Control ID="customerPostalCode" Type="TextBox" Label="Postal Code"  Binding ="Data.ZipOrPostalCode" />
+    <Control ID="customerCountry" Type="TextBox" Label="Country"  Binding ="Data.Country" />
+    <Control ID="customerContactName" Type="TextBox" Label="Contact Name"  Binding ="Data.ContactName" />
+    <Control ID="customerPhoneNumber" Type="TextBox" Label="Phone Number"  Binding ="Data.PhoneNumber" />
+    <Control ID="customerEmail" Type="TextBox" Label="Email"  Binding ="Data.Email" />
+    <Control ID="gridCustomerOptionalField" Type="Grid" />
+  </Control>
+  
+  <!-- Table Page: ADO Entity Framework controls configurations -->
+  <Control ID="tabPageEntityFramework" Type="TabPage" Label ="ADO Entity Framework Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+    <Control ID="arCustomerList" Type="DropDown" Label="Customer Number List" />
+    <Control ID="arCustomerName" Type ="TextBox" Label="Customer Name" Binding="Data.CustomerName"/>
+    <Control ID="arCustomerEmail" Type="TextBox" Label="Email"  Binding ="Data.Email" />
+    <Control ID="arCustomerContactName" Type="TextBox" Label="Contact Name"  Binding ="Data.ContactName" />
+    <Control ID="arCustomerContactsEmail" Type="TextBox" Label="Contacts Email"  Binding ="Data.ContactsEmail" />
+    <Control ID="arCustomerAccountSet" Type ="TextBox" Label="Account Set" Binding="Data.AccountSet"/>
+    <Control ID="arCustomerWebSite" Type="TextBox" Label="Web Site" Binding ="Data.WebSite" />
+    <Control ID="arCustomerBillMethod" Type="TextBox" Label="Bill Method"  Binding ="Data.BillMethod" />
+    <Control ID="arCustomerPaymentCode" Type="TextBox" Label="Payment Code"  Binding ="Data.PaymentCode" />
+    <Control ID="gridARCustomerOptionalField" Type="Grid" />
+  </Control>
+  
+  <!-- Table Page: Sage 300c Endpoints directly access controls configuration -->
+  <Control ID="tabPageSage300EndPoint" Type="TabPage" Label ="Sage300c Endpoints Access Demo" HeaderAfterID="totalTab" DetailAfterID ="orderEntryTabStrip-7" >
+     <Control ID="batchNumberList" Type="DropDown" Label="Batch Number List" />
+     <Control ID="txtBatchNumber" Type ="TextBox" Label="Batch Number" Binding="Data.BatchNumber"/>
+     <Control ID="txtBatchStatus" Type ="TextBox" Label="Batch Status" Binding="Data.BatchStatus"/>
+     <Control ID="txtBatchType" Type="TextBox" Label="Batch Type" Binding ="Data.BatchTypeString" />
+     <Control ID="txtBatchTotal" Type="TextBox" Label="Batch Total" Binding ="Data.BatchTotal" />
+     <Control ID="txtDescription" Type="TextBox" Label="Description"  Binding ="Data.Description" />
+     <Control ID="txtInvoiceType" Type="TextBox" Label="Invoice Type"  Binding ="Data.InvoiceType" />
+     <Control ID="txtProcessCommandCode" Type="TextBox" Label="Process Command Code"  Binding ="Data.ProcessCommandCode" />
+     <Control ID="gridInvoices" Type="Grid" />
+  </Control>
+  
+  <!-- Buttons: For Demo Data Access Layer in different ways-->
+  <Control ID="btnDemoSave" Type="Button" Label="Demo Save" BeforeID="btnPost"/>
+  <Control ID="btnDemoDelete" Type="Button" Label="Demo Delete" BeforeID="btnPost"/>
+  
+</Screen >

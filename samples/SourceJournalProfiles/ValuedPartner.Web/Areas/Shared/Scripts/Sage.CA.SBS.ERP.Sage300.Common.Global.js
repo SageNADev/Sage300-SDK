@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 var sg = sg || {};
 sg.utls = sg.utls || {};
@@ -14,7 +14,16 @@ sg.utls.istabKeyPressed = false;
 sg.utls.isCtrlKeyPressed = false;
 sg.utls.instantUpdateKO = true;
 sg.utls.regExp = sg.utls.regExp || {};
-sg.utls.DialogBoxType = { YesNo: 0, OKCancel: 1, Close: 2, OK: 3, DeleteCancel: 4, Continue: 5};
+
+sg.utls.DialogBoxType = {
+    YesNo: 0,
+    OKCancel: 1,
+    Close: 2,
+    OK: 3,
+    DeleteCancel: 4,
+    Continue: 5
+};
+
 sg.utls.scrollPosition = 0;
 sg.utls.isFinderClicked = false;
 sg.utls.SessionCookieName = "SessionDate";
@@ -22,8 +31,21 @@ sg.utls.screenUnloadHandler = null;
 sg.utls.portalHeight = 225;
 sg.utls.popupTopPosition = 0;
 sg.utls.GridPrefParentForm = null;
-sg.utls.NotesSearchType = { All: 0, Customers: 1, Vendors: 2, InventoryItems: 3};
-sg.utls.EntityErrorPriority = { SevereError: 0, Message: 1, Warning: 2, Error: 3, Security: 4 };
+
+sg.utls.NotesSearchType = {
+    All: 0,
+    Customers: 1,
+    Vendors: 2,
+    InventoryItems: 3
+};
+
+sg.utls.EntityErrorPriority = {
+    SevereError: 0,
+    Message: 1,
+    Warning: 2,
+    Error: 3,
+    Security: 4
+};
 
 var fnTimeout = 0;
 
@@ -48,7 +70,19 @@ $.extend(sg.utls.url, {
         siteUrl += controller.length > 0 ? slash + controller : "";
         siteUrl += action.length > 0 ? slash + action : "";
         return siteUrl;
-    }
+    },
+
+    getParameterByName: function (name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    },
 });
 
 $.extend(sg.utls, {
@@ -168,6 +202,11 @@ $.extend(sg.utls, {
         }
         return fields;
     },
+    /**
+     * Gets a value indicating whether the current browser is Internet Explorer.
+     * 
+     * @returns {boolean} True if the browser is Internet Explorer, otherwise false. 
+     */
     isInternetExplorer: function () {
         var ua = window.navigator.userAgent;
         if ($.browser.msie || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0) {
@@ -175,13 +214,22 @@ $.extend(sg.utls, {
         }
         return false;
     },
+    /**
+     * Gets a value indicating whether the current browser is Mozilla Firefox.
+     * 
+     * @returns {boolean} True if the browser is Mozilla Firefox, otherwise false. 
+     */
     isMozillaFirefox: function () {
         if ($.browser.mozilla && sg.utls.isInternetExplorer() == false) {
             return true;
         }
         return false;
     },
-
+    /**
+     * Gets a value indicating whether the current browser is Google Chrome.
+     * 
+     * @returns {boolean} True if the browser is Google Chrome, otherwise false. 
+     */
     isChrome: function () {
 
         var isChrome = navigator.userAgent.indexOf('Chrome') != -1;
@@ -189,7 +237,11 @@ $.extend(sg.utls, {
         return isChrome;
 
     },
-
+    /**
+     * Gets a value indicating whether the current browser is Apple Safari.
+     * 
+     * @returns {boolean} True if the browser is Apple Safari, otherwise false. 
+     */
     isSafari: function () {
 
         var isSafari = (navigator.userAgent.indexOf('Safari') != -1
@@ -198,8 +250,12 @@ $.extend(sg.utls, {
         return isSafari;
 
     },
-
-    isMobile: function() {
+    /**
+     * Gets a value indicating whether the current browser is operating on a mobile device.
+     * 
+     * @returns {boolean} True if the browser is operating on a mobile device, otherwise false. 
+     */
+    isMobile: function () {
         var isMobile = navigator.userAgent.indexOf('Mobile') !== -1;
         return isMobile;
     },
@@ -383,14 +439,14 @@ $.extend(sg.utls, {
         };
         sg.utls.showNotes(options);
     },
-    
+
     // Hide the notes center.
     hideNotesCenter: function () {
         var data = { 'hideNotesCenter': true };
         window.top.postMessage(data, "*");
     },
 
-    populateCustomReportProfileIdsMultiSelectWidget: function(profileId) {
+    populateCustomReportProfileIdsMultiSelectWidget: function (profileId) {
         var data = { 'populateCustomReportProfileIdsMultiSelectWidget': profileId };
         window.top.postMessage(data, "*");
     },
@@ -451,7 +507,7 @@ $.extend(sg.utls, {
                 sg.utls.showMessagesInViewPort();
             },
             complete: function () {
-               $('#ajaxSpinner').fadeOut(1);
+                $('#ajaxSpinner').fadeOut(1);
                 sg.utls.ajaxRunning = false;
                 sg.utls.isProcessRunning = false;
                 sg.utls.fireStackedCalls();
@@ -465,8 +521,13 @@ $.extend(sg.utls, {
         });
     },
 
-    //This method will execute after 5 ms.
-    //Since all tabout events fire after 1 ms (which calls the finder), this is interval is set to 5 ms.
+    /**
+     * Invokes a specified callback method after a 5 ms delay, to give any tab-out events that fire
+     * (which should happen within roughly 1 ms, after which finders may be called) time to complete their respective execution.
+     * 
+     * @param {function} callbackFunction The callback function to invoke.
+     *
+     */
     SyncExecute: function (callbackFunction) {
         setTimeout(function () {
             if (sg.utls.ajaxRunning === true) {
@@ -857,7 +918,11 @@ $.extend(sg.utls, {
         sg.utls.showMessagesInViewPort();
     },
 
-    // funtion to get unique guid. this may be helpful when we open multiple kendo iframe window, the url should be unique.
+    /**
+     * Creates a unique GUID; intended for use when opening multiple kendo iframe windows, where the url should be unique.
+     *
+     * @returns {String} A string representing a GUID. 
+     */
     guid: function () {
         function _p8(s) {
             var p = (Math.random().toString(16) + "000000000").substr(2, 8);
@@ -866,7 +931,15 @@ $.extend(sg.utls, {
         return _p8() + _p8(true) + _p8(true) + _p8();
     },
 
-    intializeKendoWindowPopup: function (id, title, onClose) {
+    /**
+     * Initializes a Kendo popup window. 
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     *
+     */
+    initializeKendoWindowPopup: function (id, title, onClose) {
         var winH = $(window).height();
         var winW = $(window).width();
         var kendoWindow = $(id).kendoWindow({
@@ -880,11 +953,11 @@ $.extend(sg.utls, {
             minWidth: 960,
             minHeight: 300,
             //maxHeight: 600,
-            // custom function to suppot focus within kendo window
+            // Custom function to support focus within Kendo Window.
             activate: sg.utls.kndoUI.onActivate,
             close: function (data) {
-                // Hiding the Grid Preferences columns list for Popups. 
-                // This is added because div element(columns list) is not hiding while closing the popup which has editable grid.
+                // Hide the Grid Preferences columns list for Popups. 
+                // This is needed because the div element (columns list) is not hiding while closing popups with editable grids.
                 if (GridPreferencesHelper) {
                     GridPreferencesHelper.hide();
                 }
@@ -892,12 +965,27 @@ $.extend(sg.utls, {
                     onClose(data);
                 }
             },
-            //Open Kendo Window in center of the Viewport
+            // Open the Kendo Window in the center of the Viewport.
             open: function () {
                 sg.utls.setKendoWindowPosition(this);
             },
         }).data("kendoWindow");
     },
+
+    /**
+     * Initializes a Kendo popup window. 
+     * 
+     * @deprecated Name is misspelled!
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     *
+     */
+    intializeKendoWindowPopup: function (id, title, onClose) {
+        this.initializeKendoWindowPopup(id, title, onClose);
+    },
+
     openKendoWindowPopup: function (id, data, defaultWidth) {
         var kendoWindow = $(id).data("kendoWindow");
 
@@ -974,7 +1062,7 @@ $.extend(sg.utls, {
             }
         });
     },
-    showMessage: function (result, handler, isModal) {
+    showMessage: function (result, handler, isModal, isModalTransparent) {
 
         if (result.UserMessage != null) {
             var messageDiv = $("#message");
@@ -1060,8 +1148,11 @@ $.extend(sg.utls, {
             }
 
             if (isModal === true) {
-                //Inject an overlay that has higher z-index than kendo widgets
-                messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay' style='z-index: 50000'></div>");
+                //Inject an overlay that has higher z-index than kendo widgets ( handled in css). 
+                messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
+            }
+            if (isModalTransparent === true) {
+                messageDiv.parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
             }
 
             if (handler !== undefined && handler !== null) {
@@ -1410,7 +1501,7 @@ $.extend(sg.utls, {
         if (object != null) {
             for (i = 0; i < object.length; i++) {
                 var msg = (isJSArray) ? object[i] : object[i].Message;
-                
+
                 if (defaultErrorMsg != null && defaultErrorMsg != "") {
                     if (object.length >= 1) {
                         objectHtml = objectHtml + "<li>" + sg.utls.htmlEncode(msg) + "</li>";
@@ -1489,7 +1580,7 @@ $.extend(sg.utls, {
             //To Stop Synchronous Function Calls stored in stack in case of any Error.
             sg.utls.removeStackedCalls();
             css = css + " multiError-msg";
-            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
+            messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close' id='msgCtrlClose'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
         } else if (messageType == sg.utls.msgType.INFO) {
             css = css + " multiInfo-msg";
             messageHTML = messageHTML + "<div class='" + css + "'><div class='title'><span class='icon multiInfo-icon'></span><h3>" + globalResource.Info + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + encodedMessage + " </div></div>";
@@ -2081,7 +2172,7 @@ $.extend(sg.utls, {
 
     mergeGridConfiguration: function (propertiesArray, targetConfig, sourceConfig) {
         // assign all properties
-        $.each(propertiesArray, function(index, value) {
+        $.each(propertiesArray, function (index, value) {
             targetConfig[value] = sourceConfig[value];
         });
 
@@ -2091,7 +2182,7 @@ $.extend(sg.utls, {
             for (var fieldName in sourceConfig.additionalConfig) {
 
                 // get the one from main grid config
-                var targetColConfig = $.grep(targetConfig.columns, function(e) { return e.field === fieldName; });
+                var targetColConfig = $.grep(targetConfig.columns, function (e) { return e.field === fieldName; });
 
                 // get the addional list of properties
                 var additionalProps = Object.keys(sourceConfig.additionalConfig[fieldName]);
@@ -2102,6 +2193,18 @@ $.extend(sg.utls, {
                 }
             }
         }
+    },
+
+    //Note: When changing the parameters, make sure to change the createInquiryURLWithParameters function under TaskDock-Menu-BreadCrumb.js as well
+    getInquiryParameterData: function (url, module, feature, target, value, title) {
+        return sg.utls.formatString("{\"url\":\"{0}\",\"module\":\"{1}\",\"feature\":\"{2}\",\"target\":\"{3}\", \"value\":\"{4}\", \"title\":\"{5}\"}", url, module, feature, target, value, title);
+    },
+
+    getUrlPath: function (url) {
+        var parser = document.createElement('a');
+        parser.href = url;
+
+        return parser.pathname;
     },
 });
 
@@ -2374,6 +2477,9 @@ window.onerror = function (msg, url, line) {
     }
 };
 
+/**
+ * Add Sage-specific functionality to the jQuery namespace.
+ */
 $(function () {
 
     if (sg.utls.isPortalIntegrated()) {
@@ -2415,7 +2521,8 @@ $(function () {
         $("#message").empty();
 
         //Remove injected overlay if exists
-        $("#injectedOverlay").remove()
+        $("#injectedOverlay").remove();
+        $("#injectedOverlayTransparent").remove();
     });
 
     $(document).on("click", ".dropDown-Menu ul.sub-menu > li", function () {
@@ -2441,7 +2548,6 @@ $(function () {
     $(document).bind('mouseup mousedown', function (e) {
         sg.utls.istabKeyPressed = false;
     });
-   
 
     $("input[data-val-length-max]").each(function () {
         var $this = $(this);
@@ -2528,6 +2634,9 @@ $(function () {
         }
         else {
             $(window).bind('unload', function () {
+                if (window.location.href.indexOf("OnPremise") > 0) {
+                    window.name = "unloadediFrame";
+                }
                 PageUnloadHandler();
             });
         }

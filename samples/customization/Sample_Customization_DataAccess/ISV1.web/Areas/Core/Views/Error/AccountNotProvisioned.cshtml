@@ -1,0 +1,22 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@{
+    Layout = Shared.GenericLayout;
+}
+
+<div class="wrapper">
+    <div class="msg msg-info">
+        <h2 class="msg-heading">@AccountMessagesResx.AccountSetupTitle</h2>
+        <div class="msg-body">
+            <p>@AccountMessagesResx.AccountSetupMessage1</p>
+            <p>@AccountMessagesResx.AccountSetupMessage2</p>
+            <p>
+                @Html.ActionLink(AccountMessagesResx.SignIn, "Login", "Authentication", new { area = "Core" }, new { @class = "lnk-inline" })
+                <a class="lnk-inline" href='@Utilities.GetLearnMoreUrl("677001001")' target="_blank">@AccountMessagesResx.VisitHelpCenter</a>
+            </p>
+        </div>
+    </div>
+</div>

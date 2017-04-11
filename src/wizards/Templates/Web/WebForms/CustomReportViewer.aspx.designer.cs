@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace $companynamespace$.Web.WebForms {
+namespace $companynamespace$.$applicationid$.Web.WebForms {
     
     
     public partial class CustomReportViewer {

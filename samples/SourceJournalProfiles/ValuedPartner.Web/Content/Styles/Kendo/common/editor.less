@@ -44,6 +44,7 @@ table.k-editor
     padding: .3em .5em;
     word-wrap: break-word;
     overflow: auto;
+    position: relative;
 }
 
 .k-editortoolbar-dragHandle
@@ -83,7 +84,8 @@ table.k-editor
 
 .k-webkit .k-editor-toolbar,
 .k-ff .k-editor-toolbar,
-.k-ie9 .k-editor-toolbar
+.k-ie9 .k-editor-toolbar,
+.k-edge .k-editor-toolbar
 {
     padding: 0;
 }
@@ -92,7 +94,8 @@ table.k-editor
 .k-safari .k-editor-toolbar li,
 .k-ff .k-editor-toolbar li,
 .k-ie9 .k-editor-toolbar li,
-.k-ie10 .k-editor-toolbar li
+.k-ie10 .k-editor-toolbar li,
+.k-edge .k-editor-toolbar li
 {
     display: inline-block;
     padding: .1em 0;
@@ -190,39 +193,40 @@ table.k-editor
 }
 
 .k-i-move { background-position: -160px -288px; }
-.k-bold { .editor-icon(-240px, 0); }
-.k-italic { .editor-icon(-240px, -24px); }
-.k-underline { .editor-icon(-240px, -48px); }
-.k-strikethrough { .editor-icon(-240px, -72px); }
+.k-bold, .k-i-bold { .editor-icon(-240px, 0); }
+.k-italic, .k-i-italic { .editor-icon(-240px, -24px); }
+.k-underline, .k-i-underline { .editor-icon(-240px, -48px); }
+.k-strikethrough, .k-i-strikethrough { .editor-icon(-240px, -72px); }
 .k-foreColor { .editor-icon(-240px, -96px); }
 .k-backColor { .editor-icon(-240px, -120px); }
 .k-colorpicker .k-foreColor { background-position: -240px -96px; }
 .k-colorpicker .k-backColor { background-position: -240px -120px; }
-.k-justifyLeft { .editor-icon(-240px, -144px); }
-.k-justifyCenter { .editor-icon(-240px, -168px); }
-.k-justifyRight { .editor-icon(-240px, -192px); }
-.k-justifyFull { .editor-icon(-240px, -216px); }
-.k-insertUnorderedList { .editor-icon(-240px, -264px); }
-.k-insertOrderedList { .editor-icon(-240px, -288px); }
-.k-indent, .k-rtl .k-outdent { .editor-icon(-288px, 0); }
-.k-outdent, .k-rtl .k-indent { .editor-icon(-288px, -24px); }
-.k-createLink { .editor-icon(-288px, -48px); }
+.k-justifyLeft, .k-i-justify-left, .k-i-align-left { .editor-icon(-240px, -144px); }
+.k-justifyCenter, .k-i-justify-center, .k-i-align-center { .editor-icon(-240px, -168px); }
+.k-justifyRight, .k-i-justify-right, .k-i-align-right { .editor-icon(-240px, -192px); }
+.k-justifyFull, .k-i-justify-full, .k-i-align-justify { .editor-icon(-240px, -216px); }
+.k-insertUnorderedList, .k-i-insert-unordered-list, .k-i-unordered-list { .editor-icon(-240px, -264px); }
+.k-insertOrderedList, .k-i-insert-ordered-list, .k-i-ordered-list { .editor-icon(-240px, -288px); }
+.k-indent, .k-rtl .k-outdent, .k-i-indent, .k-rtl .k-i-outdent { .editor-icon(-288px, 0); }
+.k-outdent, .k-rtl .k-indent, .k-i-outdent, .k-rtl .k-i-indent { .editor-icon(-288px, -24px); }
+.k-createLink, .k-i-create-link { .editor-icon(-288px, -48px); }
 .k-unlink { .editor-icon(-288px, -72px); }
-.k-insertImage { .editor-icon(-288px, -96px); }
-.k-insertFile { .editor-icon(-288px, -216px); }
-.k-subscript { .editor-icon(-288px, -144px); }
-.k-superscript { .editor-icon(-288px, -168px); }
-.k-cleanFormatting { .editor-icon(-288px, -192px); }
-.k-createTable { .editor-icon(-192px, 0); }
-.k-addColumnLeft { .editor-icon(-192px, -24px); }
-.k-addColumnRight { .editor-icon(-192px, -48px); }
-.k-addRowAbove { .editor-icon(-192px, -72px); }
-.k-addRowBelow { .editor-icon(-192px, -96px); }
-.k-deleteRow { .editor-icon(-192px, -120px); }
-.k-deleteColumn { .editor-icon(-192px, -144px); }
-.k-mergeCells { .editor-icon(-192px, -168px); }
-.k-pdf { .editor-icon(-288px, -240px);}
-.k-print { .editor-icon(-288px, -264px); }
+.k-insertImage, .k-i-insert-image { .editor-icon(-288px, -96px); }
+.k-insertFile, .k-i-insert-file { .editor-icon(-288px, -216px); }
+.k-subscript, .k-i-subscript { .editor-icon(-288px, -144px); }
+.k-superscript, .k-i-superscript { .editor-icon(-288px, -168px); }
+.k-cleanFormatting, .k-i-clean-formatting { .editor-icon(-288px, -192px); }
+.k-createTable, .k-i-create-table { .editor-icon(-192px, 0); }
+.k-addColumnLeft, .k-i-add-column-left { .editor-icon(-192px, -24px); }
+.k-addColumnRight, .k-i-add-column-right { .editor-icon(-192px, -48px); }
+.k-addRowAbove, .k-i-add-row-above { .editor-icon(-192px, -72px); }
+.k-addRowBelow, .k-i-add-row-below { .editor-icon(-192px, -96px); }
+.k-deleteRow, .k-i-delete-row { .editor-icon(-192px, -120px); }
+.k-deleteColumn, .k-i-delete-column { .editor-icon(-192px, -144px); }
+.k-mergeCells, .k-i-merge-cells { .editor-icon(-192px, -168px); }
+.k-pdf, .k-tool-icon .k-i-pdf, .k-tool .k-i-pdf, .k-tool-group .k-tool .k-i-pdf { .editor-icon(-288px, -240px);}
+.k-print, .k-i-print { .editor-icon(-288px, -264px); }
+.k-i-table-wizard, .k-i-table-wizard-insert { .editor-icon(-192px, -192px); }
 
 /* default tool widths */
 .k-fontName { width: 110px; }
@@ -484,3 +488,242 @@ table.k-editor
     display: none;
 }
 
+.k-editor-inline .k-table-resize-handle-wrapper {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    z-index: 100;
+
+    .k-table-resize-handle {
+        width: 100%;
+        height: 100%;
+
+        &.k-resize-east {
+            cursor: e-resize;
+        }
+
+        &.k-resize-north {
+            cursor: n-resize;
+        }
+
+        &.k-resize-northeast {
+            cursor: ne-resize;
+        }
+
+        &.k-resize-northwest {
+            cursor: nw-resize;
+        }
+
+        &.k-resize-south {
+            cursor: s-resize;
+        }
+
+        &.k-resize-southeast {
+            cursor: se-resize;
+        }
+
+        &.k-resize-southwest {
+            cursor: sw-resize;
+        }
+
+        &.k-resize-west {
+            cursor: w-resize;
+        }
+    }
+}
+
+.k-editor-inline .k-column-resize-handle-wrapper {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    cursor: col-resize;
+    z-index: 2;
+
+    .k-column-resize-handle {
+        width: 100%;
+        height: 100%;
+
+        .k-column-resize-marker {
+            width: 2px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #00b0ff;
+            display: none;
+            opacity: 0.8;
+        }
+    }
+}
+
+.k-table.k-table-resizing {
+    opacity: 0.6;
+}
+
+.k-editor-inline .k-row-resize-handle-wrapper {
+    position: absolute;
+    z-index: 2;
+    cursor: row-resize;
+    width: 10px;
+    height: 10px;
+
+    .k-row-resize-handle {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    .k-row-resize-marker-wrapper {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    .k-row-resize-marker {
+        display: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #00b0ff;
+        opacity: 0.8;
+    }
+}
+
+//TableWizard dialog styles
+.k-editor-dialog.k-editor-table-wizard-dialog.k-window-content {
+    overflow: hidden;
+    min-width: 325px;
+    width: 24em;
+    padding: 1em 0;
+}
+
+.k-editor-dialog .k-tabstrip {
+    margin: -1.333em 0 0;
+}
+
+.k-editor-dialog .k-root-tabs {
+    margin: -1em -1em -1.5em;
+    padding: 0.5em 1em 0;
+    border-width: 0;
+}
+
+.k-editor-dialog ul.k-tabstrip-items {
+    padding: 0.5em 1em 0;
+    border-width: 0 0 1px;
+    border-style: solid;
+}
+
+ul.k-tabstrip-items .k-loading {
+    border-top-width: 0;
+}
+
+.k-editor-dialog .k-tabstrip:focus {
+    box-shadow: none;
+}
+
+.k-editor-dialog.k-editor-table-wizard-dialog .k-tabstrip-wrapper .k-content {
+    overflow: hidden;
+    min-height: 440px;
+    height: 35em;
+    margin: 0;
+    padding: 1em 0.5em 0;
+    border-width: 0;
+}
+
+.k-editor-dialog .k-edit-field .k-numerictextbox {
+    width: 10.6em;
+    margin: 0 .35714285em 0 0;
+}
+
+.k-editor-dialog.k-editor-table-wizard-dialog .k-edit-field .k-numerictextbox + .k-dropdown {
+    width: 4em;
+}
+
+.k-editor-dialog.k-editor-table-wizard-dialog .k-edit-field .k-textbox,
+.k-editor-dialog.k-editor-table-wizard-dialog .k-edit-field .k-dropdown {
+    width: 15em;
+}
+
+.k-editor-table-wizard-dialog .k-numerictextbox + .k-dropdown {
+    width: 5.35714285em;
+}
+
+.k-editor-dialog textarea.k-textbox {
+    height: 14.28571428em;
+}
+
+.k-editor-dialog.k-editor-table-wizard-dialog .k-dropdown.k-align {
+    width: 4em;
+}
+
+.k-popup.k-list-container.k-align {
+    padding: 0;
+    text-align: center;
+}
+
+.k-align-group {
+    vertical-align: text-top;
+}
+
+.k-popup.k-align .k-list .k-item {
+    display: inline-block;
+    width: 2.57142857em;
+    height: 2.57142857em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.k-popup.k-align .k-list .k-font-icon {
+    vertical-align: bottom;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.k-popup.k-align .k-list .k-item:last-child {
+    width: auto;
+    display: block;
+    border-width: 1px 0 0;
+    border-style: solid;
+}
+
+.k-popup.k-align .k-list .k-item:before {
+    width: 2.57142857em;
+    height: 2.57142857em;
+    line-height: 2.57142857em;
+}
+
+.k-animation-container .k-editor-toolbar {
+    text-align: center;
+    line-height: 1.3em;
+}
+
+.k-animation-container .k-editor-toolbar .k-tool {
+    display: inline-block;
+    height: 24px;
+    padding: 0 0.5em;
+    text-decoration: none;
+    font-size: 0.85em;
+    color: inherit;
+}
+
+.k-animation-container .k-editor-toolbar .k-i-table-wizard-insert {
+    width: 24px;
+    height: 24px;
+}
+
+.k-animation-container .k-editor-toolbar .k-tool-text {
+    display: inline;
+    vertical-align: sub;
+}
+
+.k-editor-dialog.k-editor-table-wizard-dialog .k-edit-buttons {
+    padding: 1em 0.8em;
+    margin: 0.5em 0 0;
+}
+
+// End - TableWizard dialog styles

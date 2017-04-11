@@ -25,6 +25,7 @@
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -330,9 +331,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Shared\Scripts\IC\Sage.CA.SBS.ERP.Sage300.IC.Common.js" />
+    <Content Include="Areas\Shared\Scripts\ItemQuantity\Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js" />
+    <Content Include="Areas\Shared\Scripts\Revaluation\Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsBehaviour.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsKoExtn.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsRepository.js" />
+    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\knockout-kendo.js" />
+    <Content Include="Scripts\knockout-kendoGrid.js" />
+    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb_DPPMenu.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
@@ -342,10 +362,122 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Shared\**" />
+    <Content Include="Areas\Shared\Scripts\DocumentHistory\Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js" />
+    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Cache.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Controls.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Customization.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Global.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Report.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.URL.js" />
+    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Validate.js" />
+    <Content Include="Areas\Shared\Views\DocumentHistory\DocumentHistory.cshtml" />
+    <Content Include="Areas\Shared\Views\DocumentHistory\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\ExportImport\AddCriteria.cshtml" />
+    <Content Include="Areas\Shared\Views\ExportImport\Filter.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_AddLineButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_ButtonBase.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_DeleteButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_DeleteLineButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_GenericButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_OptionalButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_PrintButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_ProceedButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Partials\_SaveButton.cshtml" />
+    <Content Include="Areas\Shared\Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
+    <Content Include="Areas\Shared\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Shared\Views\SalesSplitGrid\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_GridActions.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayout.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR3.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_ProcessingFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_ReportFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_SetupFooter.cshtml" />
+    <Content Include="Areas\Shared\Views\TaxesGrid\TaxesGrid.cshtml" />
+    <Content Include="Areas\Shared\Views\TaxesGrid\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\Web.config" />
+    <Content Include="Areas\Shared\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Core\**" />
     <Content Include="Views\**" />
-    <Content Include="Scripts\**" />
+    <Content Include="Scripts\AjaxQ\ajaxq.js" />
+    <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
+    <Content Include="Scripts\Help\Help.js" />
+    <Content Include="Scripts\jasmine\boot.js" />
+    <Content Include="Scripts\jasmine\console.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
+    <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.form.min.js.map" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JQueryUI\iframe-resizer-reports.js" />
+    <Content Include="Scripts\JQueryUI\iframeResizer.js" />
+    <Content Include="Scripts\JQueryUI\jquery.json.min.js" />
+    <Content Include="Scripts\JQueryUI\jquery.mask.min.js" />
+    <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
+    <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
+    <Content Include="Scripts\JQueryUI\_references.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-AU.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-TW.min.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.BindingHandlers.js" />
+    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js" />
+    <Content Include="Scripts\Less\less-1.6.1.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Portal\FeatureTour.js" />
+    <Content Include="Scripts\Portal\SessionDate.js" />
+    <Content Include="Scripts\Portal\SessionDateCookie.js" />
+    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb.js" />
+    <Content Include="Scripts\Portal\Widget.js" />
+    <Content Include="Scripts\Report\ReportBehaviour.js" />
     <Content Include="Content\**" />
     <Content Include="Assets\**" />
   </ItemGroup>
@@ -384,6 +516,7 @@
     <Content Include="Areas\TU\Views\ClearStatistics\Index.cshtml" />
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_ClearStatistics.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

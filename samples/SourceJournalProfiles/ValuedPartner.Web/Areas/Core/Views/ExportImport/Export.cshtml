@@ -27,8 +27,6 @@
 </div>
 
 <div id="divLoadScript" style="display:none" class="container_popUp">
-    <div class="mt10">
-        <hr />
         <form action='@Url.Action("LoadScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="formLoadScript">
             <div id="loadScriptMessage"></div>
             @Html.AntiForgeryToken()
@@ -53,7 +51,6 @@
 
             </div>
         </form>
-    </div>
 </div>
 <div class="container_popUp " id="exportScreen">
 
@@ -78,7 +75,6 @@
     </div>
     
     <div id="exportTree">
-        <hr />
         <form action='@Url.Action("SaveScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="targetId">
             @Html.AntiForgeryToken()
             @Html.SageHiddenFor(m => m.ExportRequest.Name)

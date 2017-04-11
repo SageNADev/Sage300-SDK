@@ -127,7 +127,7 @@ taxAuthoritiesUI = {
             sg.delayOnBlur("btnCurrencyFinder", function () {
                 if (currencyCode){
                     currencyCode = currencyCode.toUpperCase();
-                    taxAuthoritiesRepository.getCurrencyDescription({ currencyCode: currencyCode }, taxAuthoritiesUISuccess.displayCurrencyDescription);
+                    taxAuthoritiesRepository.getCurrencyDescription({ id: currencyCode }, taxAuthoritiesUISuccess.displayCurrencyDescription);
                 } else {
                     $('#txtTaxReportingCurrencydesc').val("");
                 }
@@ -139,7 +139,7 @@ taxAuthoritiesUI = {
             taxAuthoritiesUI.acctDescName = "RecoverableTaxAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtTaxRecoverable";
             sg.delayOnChange("btnTaxRecoverableFinder", $('#txtTaxRecoverable'), function () {
-                taxAuthoritiesRepository.getAccountDescription({ accountNumber: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
+                taxAuthoritiesRepository.getAccountDescription({ id: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
             });
         });
         $('#txtTaxLiabilityAccount').bind("change", function () {
@@ -147,7 +147,7 @@ taxAuthoritiesUI = {
             taxAuthoritiesUI.acctDescName = "LiabilityAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtTaxLiabilityAccount";
             sg.delayOnChange("btnLiabilityAccountFinder", $("#txtTaxLiabilityAccount"), function () {
-                taxAuthoritiesRepository.getAccountDescription({ accountNumber: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
+                taxAuthoritiesRepository.getAccountDescription({ id: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
             });
         });
         $("#txtExpenseAccount").bind("change", function () {
@@ -155,7 +155,7 @@ taxAuthoritiesUI = {
             taxAuthoritiesUI.acctDescName = "ExpenseAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtExpenseAccount";
             sg.delayOnChange("btnExpenseAccountFinder", $("#txtExpenseAccount"), function () {
-                taxAuthoritiesRepository.getAccountDescription({ accountNumber: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
+                taxAuthoritiesRepository.getAccountDescription({ id: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
             });
         });
     },

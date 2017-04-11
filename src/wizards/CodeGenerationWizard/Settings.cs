@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -81,6 +81,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public List<string> ResourceKeys { get; set; }
         /// <summary> WorkflowKindId </summary>
         public Guid WorkflowKindId { get; set; }
+        /// <summary> Web Project Includes Module </summary>
+        public bool WebProjectIncludesModule { get; set; }
+        /// <summary> Include English </summary>
+        public bool includeEnglish { get; set; }
+        /// <summary> Include Chinese Simplified </summary>
+        public bool includeChineseSimplified { get; set; }
+        /// <summary> Include Chinese Traditional </summary>
+        public bool includeChineseTraditional { get; set; }
+        /// <summary> Include Spanish </summary>
+        public bool includeSpanish { get; set; }
+        /// <summary> Include French </summary>
+        public bool includeFrench { get; set; }
         #endregion
     }
 

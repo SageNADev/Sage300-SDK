@@ -8,6 +8,10 @@
   filter: alpha(opacity=70);
 }
 
+.k-overlay-transparent {
+  background-color: transparent;
+}
+
 
 .popover {
   position: absolute;
@@ -138,14 +142,15 @@
 
 }
 
-
-/* Finder Window */
-
 .k-window {
   padding-top: 40px !important;
   background-color: #fff;
   padding-bottom: 20px;
+  margin-top: 36px;
 }
+
+/* Finder Window */
+
 .k-widget.k-window.finder-window {
     height: 550px !important;
 
@@ -208,6 +213,15 @@
     border-radius: 0px;
     overflow-y:auto;
     overflow-x:hidden;
+    max-height:560px !important;
+
+    .wrapper-group {
+      clear: both;
+
+      .left:nth-child(2) {
+        margin-right: 0;
+      }
+    }
 }
 
 .finder-window .k-window-content #buttons input[class*="btn-"]{
@@ -351,10 +365,9 @@
 }
 
 .k-window .popup-iframe {
-  max-height:760px !important;
+  max-height:720px !important;
   overflow: hidden !important;
-  padding: 20px 0;
-  margin: 0;
+  margin: 20px 0;
 }
 
 
@@ -409,3 +422,14 @@
     }
   }
 }
+
+/* iPad - fix for iPad-safari scrollbar defect D-31746*/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .k-safari .k-window .popup-iframe {
+      overflow: auto !important;
+      }
+}
+

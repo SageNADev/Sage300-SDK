@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -67,6 +67,12 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private string _namespace;
         private string _sage300Webfolder;
         private string _kendoFolder;
+        private bool _includeEnglish;
+        private bool _includeChineseSimplified;
+        private bool _includeChineseTraditional;
+        private bool _includeSpanish;
+        private bool _includeFrench;
+
 
         /// <summary> Before opening file </summary>
         /// <param name="projectItem">Project Item</param>
@@ -113,14 +119,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 var sourceFilenameAndParameters = csTemplatePath + proj + @".zip\" + templateFilename + "|" + parameters;
                 if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
                 {
-                    var destFolder = Path.Combine(_destinationFolder, _namespace + "." + proj);
+                    var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
 
                     // Before the web project is created, the props file must be manually copied first since the web csproj file attempts
                     // to import it to resolve ACCPAC references
                     File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
-                        Properties.Resources.AccpacDotNetVersion);
+                                            Properties.Resources.AccpacDotNetVersion);
 
-                    sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + proj, false);
+                    sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + _applicationId + "." + proj, false);
 
                     // Newly added web project (first one added)
                     var item = sln.Projects.GetEnumerator();
@@ -142,6 +148,32 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 {
                     sln.AddFromTemplate(sourceFilenameAndParameters, Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj), 
                         _namespace + "." + _applicationId + "." + proj, false);
+
+                    // If project is Resources, remove language resources not selected
+                    if (proj.Equals("Resources"))
+                    {
+                        // Get resources project just added
+                        var item = sln.Projects.GetEnumerator();
+                        for (var i = 0; i < 5; i++)
+                        {
+                            item.MoveNext();
+                        }
+                        var project = (Project)item.Current;
+                        // Iterate files in resources project
+                        foreach (ProjectItem projectItem in project.ProjectItems)
+                        {
+                            // Delete Language file? (English will always be included)
+                            if ((projectItem.Name.Equals("MenuResx.zh-Hans.resx") && !_includeChineseSimplified) ||
+                               (projectItem.Name.Equals("MenuResx.zh-Hant.resx") && !_includeChineseTraditional) ||
+                                (projectItem.Name.Equals("MenuResx.es.resx") && !_includeSpanish) ||
+                                (projectItem.Name.Equals("MenuResx.fr-CA.resx") && !_includeFrench))
+                            {
+                                // remove from project
+                                projectItem.Delete();
+                            }
+                        }
+
+                    }
                     
                 }
             }
@@ -186,6 +218,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 _namespace = inputForm.CompanyNamespace.Trim();
                 _sage300Webfolder = webFolder;
                 _kendoFolder = inputForm.KendoFolder.Trim();
+                _includeEnglish = inputForm.IncludeEnglish;
+                _includeChineseSimplified = inputForm.IncludeChineseSimplified;
+                _includeChineseTraditional = inputForm.IncludeChineseTraditional;
+                _includeSpanish = inputForm.IncludeSpanish;
+                _includeFrench = inputForm.IncludeFrench;
 
                 // Add custom parameters.
                 replacementsDictionary.Add("$companyname$", _companyName);

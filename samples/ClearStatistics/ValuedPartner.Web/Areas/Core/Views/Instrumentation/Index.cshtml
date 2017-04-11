@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>Instrumentation Data</title>
     <script type="text/javascript">
         var urlToGet = "@Url.Action("Get", "Instrumentation")";
@@ -47,9 +48,10 @@
                                 if (businessEntitySession.BusinessEntities.length > 0) {
                                     $.each(businessEntitySession.BusinessEntities, function (index3, businessEntity) {
                                         $("#sessionPoolData").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity : " + businessEntity.Name + " ( " + businessEntity.Description + " ) " + "</br>");
-                                    });
-                                    $("#sessionPoolData").append("</br>");
+                                    });                                   
                                 }
+
+                                $("#sessionPoolData").append("</br>");
                             });
                         }
                         $("#sessionPoolData").append("---------------------------------------------------------------------</br>");

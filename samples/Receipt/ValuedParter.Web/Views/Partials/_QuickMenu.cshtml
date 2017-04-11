@@ -18,6 +18,17 @@
         </div>
         <span class="task_added" style="display: none;"><span aria-hidden="true" class="glyphicon glyphicon-check"></span>@HomePageResx.CNAPortal_Task<br>@HomePageResx.TaskAdded</span>
     </div>
+    <!--Reports button -->
+    <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
+        <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
+    </div>
+    <!--Inquiries -->
+    @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+    {
+        <div class="quick-menu-item quick-menu-inquiry" id="btnViewInquiries">
+            <i class="glyphicon glyphicon-magnifying-glass" title="@HomePageResx.QuickMenu_Inquiries"></i>
+        </div>
+    }
     <!--Notes Center -->
     @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
     {
@@ -25,9 +36,7 @@
             <i class="glyphicon glyphicon-pencil"></i>
         </div>
     }
-    <!--Reports button -->
-    <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
-        <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
-    </div>
+   
 </div>
+
 <!--End Quick Menu (draggable sidebar)-->

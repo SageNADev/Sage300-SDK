@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -29,9 +29,9 @@
 </script>
 
 <section class="gridcontrols-group clearfix">
-    @Html.KoSageButton("btnAddLine", new { }, new { @value = CommonResx.AddLine, @id = "btnAddLine", @class = "icons btn-add"})
-    @Html.KoSageButton("btnDeleteLine", new { }, new { @id = "btnDeleteLine", @class = "icons btn-delete", value = CommonResx.DeleteLine})
-    @Html.KoSageButton("btnEditColumns", null, new { @id = "btnEditColumns", @class = "icons btn-edit", @value = CommonResx.EditColumns })
+    @Html.KoSageButtonNoName(CommonResx.AddLine, new { }, new {  @id = "btnAddLine", @class = "btn btn-default btn-grid-control btn-add "})
+    @Html.KoSageButtonNoName(CommonResx.DeleteLine, new { }, new { @id = "btnDeleteLine", @class = "btn btn-default btn-grid-control btn-delete ", })
+    @Html.KoSageButtonNoName(CommonResx.EditColumns, null, new { @id = "btnEditColumns", @class = "btn btn-default btn-grid-control btn-edit-column ", })
 </section>
 
 @Html.Partial(Core.GridPreferences)

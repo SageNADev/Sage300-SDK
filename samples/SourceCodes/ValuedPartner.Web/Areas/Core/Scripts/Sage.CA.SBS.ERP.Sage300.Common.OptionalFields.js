@@ -12,6 +12,12 @@ optionalFieldEnum.Type = {
     Time: 4
 };
 
+//temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+var optionalFieldSourceEnum = optionalFieldSourceEnum || {}
+optionalFieldSourceEnum = {
+    OE:1,
+}
+
 var optionalFieldColumnName = {
     Delete: "Delete",
     IsDeleted: "IsDeleted",
@@ -52,7 +58,9 @@ var optFldGridUtils = {
                 count += 1;
             }
         });
+        optionalFieldUIGrid.retrivableCellOldVal = checkItem.toUpperCase();
         if (count > 1) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             if (optionalFieldUIGrid.isPopUp) {
                 optionalFieldUIGrid.showMessage(errorMsg);
             } else {
@@ -64,15 +72,22 @@ var optFldGridUtils = {
             return;
         }
         if (dataSource.total() > 10 && optionalFieldUIGrid.isOptionalFieldExists != null) {
-            if (optionalFieldUIGrid.modelData.AccountNumber != undefined) {
-                var accountNumber = optionalFieldUIGrid.modelData.AccountNumber();
-                var data = { fieldName: field, fieldValue: checkItem, accountNumber: accountNumber };
-                optionalFieldUIGrid.isOptionalFieldExists(data);
-            } else if (optionalFieldUIGrid.modelData.Location != undefined) {
-                var location = optionalFieldUIGrid.modelData.Location();
-                optionalFieldUIGrid.isOptionalFieldExists(row.OptionalField, location);
-            } else {
-                optionalFieldUIGrid.isOptionalFieldExists(row);
+            ////temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm. (original code in default) 
+            switch (optionalFieldUIGrid.optFldSrcName) {
+                case optionalFieldSourceEnum.OE:
+                    optionalFieldUIGrid.isOptionalFieldExists(row);
+                    break;
+                default:
+                    if (optionalFieldUIGrid.modelData.AccountNumber != undefined) {
+                        var accountNumber = optionalFieldUIGrid.modelData.AccountNumber();
+                        var data = { fieldName: field, fieldValue: checkItem, accountNumber: accountNumber };
+                        optionalFieldUIGrid.isOptionalFieldExists(data);
+                    } else if (optionalFieldUIGrid.modelData.Location != undefined) {
+                        var location = optionalFieldUIGrid.modelData.Location();
+                        optionalFieldUIGrid.isOptionalFieldExists(row.OptionalField, location);
+                    } else {
+                        optionalFieldUIGrid.isOptionalFieldExists(row);
+                    }
             }
         }
         optionalFieldUIGrid.resetFocus(row, 'OptionalField');
@@ -159,14 +174,22 @@ var gridColConfig = {
             sg.delayOnChange("optFieldFinder", $("#txtoptionalfield"), function () {
                 if (optionalFieldUIGrid.getOptionalFieldData != null) {
                     var location = 0;
-                    if (optionalFieldUIGrid.modelData.Location !== undefined) {
-                        location = optionalFieldUIGrid.modelData.Location();
-                        optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location, options.model);
-                    } else if (optionalFieldUIGrid.modelData.AccountNumber !== undefined) {
-                        location = (optionalFieldUIGrid.isValueSetEditable) ? 1 : 0;
-                        optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location);
-                    } else {
-                        optionalFieldUIGrid.getOptionalFieldData(options.model);
+                    ////temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm. (original code in default) 
+
+                    switch (optionalFieldUIGrid.optFldSrcName) {
+                        case optionalFieldSourceEnum.OE:
+                            optionalFieldUIGrid.getOptionalFieldData(options.model);
+                            break;
+                        default:
+                            if (optionalFieldUIGrid.modelData.Location !== undefined) {
+                                location = optionalFieldUIGrid.modelData.Location();
+                                optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location, options.model);
+                            } else if (optionalFieldUIGrid.modelData.AccountNumber !== undefined) {
+                                location = (optionalFieldUIGrid.isValueSetEditable) ? 1 : 0;
+                                optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location);
+                            } else {
+                                optionalFieldUIGrid.getOptionalFieldData(options.model);
+                            }
                     }
                 }
             });
@@ -549,6 +572,9 @@ var optionalFieldUIGrid =
     disableButtons: false,
     isAddNewLineInClientSide: true,
     hasErrorMessage: null,
+    //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+    optFldSrcName: null,
+    retrivableCellOldVal: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -595,6 +621,9 @@ var optionalFieldUIGrid =
     },
 
     init: function (params, initialize) {
+        //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+        if (!params.optFldSrcName)
+            optionalFieldUIGrid.optFldSrcName = null;
         for (var prop in params) {
             optionalFieldUIGrid[prop] = params[prop];
             if (prop === "gridId") {
@@ -612,19 +641,21 @@ var optionalFieldUIGrid =
     },
 
     initButton: function () {
+        var btnAddLineId;
+        var btnDeleteLineId;
         // Following condition is used for multiple optional field popup
         if (optionalFieldUIGrid.btnAddLineId != "btnAddOptionalFieldLine") {
-            var btnAddLineId = optionalFieldUIGrid.btnAddLineId;
+            btnAddLineId = optionalFieldUIGrid.btnAddLineId;
             optionalFieldUIGrid.btnAddLineId = 'btnAddOptionalFieldLine';
         } else {
-            var btnAddLineId = "btnAddOptionalFieldLine";
+            btnAddLineId = "btnAddOptionalFieldLine";
         }
 
         if (optionalFieldUIGrid.btnDeleteLineId != "btnDeleteOptionalFieldLine") {
-            var btnDeleteLineId = optionalFieldUIGrid.btnDeleteLineId;
+            btnDeleteLineId = optionalFieldUIGrid.btnDeleteLineId;
             optionalFieldUIGrid.btnDeleteLineId = "btnDeleteOptionalFieldLine";
         } else {
-            var btnDeleteLineId = "btnDeleteOptionalFieldLine";
+            btnDeleteLineId = "btnDeleteOptionalFieldLine";
         }
 
         var index = optionalFieldUIGrid.gridIds.indexOf(optionalFieldUIGrid.gridId);
@@ -641,6 +672,7 @@ var optionalFieldUIGrid =
         }
 
         $('#' + btnAddLineId).on("click", function (e) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             sg.utls.SyncExecute(optionalFieldUIGrid.addNewLine);
         });
 
@@ -1032,9 +1064,10 @@ var optionalFieldUIGrid =
 
     deleteLineWithUrl: function (grid, pageUrl) {
         optionalFieldUIGrid.setDeleteLineFlag(grid);
-        grid.tbody.find(":checked").closest("tr").each(function (index) {
-            grid.removeRow($(this));
-        });
+        //Cause delete/add row issue, Becasue the js always pass by ref if the type is object
+        //grid.tbody.find(":checked").closest("tr").each(function (index) {
+        //    grid.removeRow($(this));
+        //});
         if (optionalFieldUIGrid.deleteFromServer) {
             var data = optionalFieldUIGrid.modelData[optionalFieldUIGrid.modelName];
             if (typeof data === "function") {
@@ -1047,6 +1080,11 @@ var optionalFieldUIGrid =
                 pageSize: grid.dataSource.pageSize()
             }
             sg.utls.ajaxPost(pageUrl, modelData, optionalFieldUIGrid.onDeleteSuccess);
+        }
+        else {
+            grid.tbody.find(":checked").closest("tr").each(function (index) {
+                grid.removeRow($(this));
+            });
         }
     },
 

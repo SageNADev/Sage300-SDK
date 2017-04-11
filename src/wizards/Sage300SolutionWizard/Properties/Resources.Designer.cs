@@ -198,11 +198,20 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm the License and select the Kendo folder.
+        ///   Looks up a localized string similar to Confirm the License and select the Kendo folder..
         /// </summary>
         internal static string StepDescriptionKendo {
             get {
                 return ResourceManager.GetString("StepDescriptionKendo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm the Resource Files to create..
+        /// </summary>
+        internal static string StepDescriptionResourceFiles {
+            get {
+                return ResourceManager.GetString("StepDescriptionResourceFiles", resourceCulture);
             }
         }
         
@@ -230,6 +239,15 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         internal static string StepTitleKendo {
             get {
                 return ResourceManager.GetString("StepTitleKendo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Resource Files.
+        /// </summary>
+        internal static string StepTitleResourceFiles {
+            get {
+                return ResourceManager.GetString("StepTitleResourceFiles", resourceCulture);
             }
         }
     }

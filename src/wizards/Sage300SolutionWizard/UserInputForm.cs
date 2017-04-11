@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -50,6 +50,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         public string CompanyNamespace { get; set; }
         public string KendoFolder { get; set; }
         public string KendoDefaultFolder { set { txtKendoFolder.Text = value; }}
+        public bool IncludeEnglish { get; set; }
+        public bool IncludeChineseSimplified { get; set; }
+        public bool IncludeChineseTraditional { get; set; }
+        public bool IncludeSpanish { get; set; }
+        public bool IncludeFrench { get; set; }
         #endregion
 
         #region Constructor
@@ -76,6 +81,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             // Init Panels
             InitPanel(pnlInfo);
             InitPanel(pnlKendo);
+            InitPanel(pnlResourceFiles);
             InitPanel(pnlGenerateSolution);
 
             // Test color for helpful labels
@@ -86,10 +92,13 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             lblKendoFolderHelp.ForeColor = _sageColor;
             lblKendoVersionHelp.ForeColor = _sageColor;
 
+            lblResourceFilesHelp.ForeColor = _sageColor;
+
             lblGenerateHelp.ForeColor = _sageColor;
 
             AddStep(Resources.StepTitleInfo, Resources.StepDescriptionInfo, pnlInfo);
             AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
+            AddStep(Resources.StepTitleResourceFiles, Resources.StepDescriptionResourceFiles, pnlResourceFiles);
             AddStep(Resources.StepTitleGenerate, Resources.StepDescriptionGenerate, pnlGenerateSolution);
 
             // Display first step
@@ -243,6 +252,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 DisplayMessage(Resources.KendoFolderInvalid, MessageBoxIcon.Error);
                 return false;
             }
+
+
+            // Resources
+            IncludeEnglish = chkEnglish.Checked;
+            IncludeChineseSimplified = chkChineseSimplified.Checked;
+            IncludeChineseTraditional = chkChineseTraditional.Checked;
+            IncludeSpanish = chkSpanish.Checked;
+            IncludeFrench = chkFrench.Checked;
 
             // Valid
             return true;

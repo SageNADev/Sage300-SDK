@@ -11,6 +11,28 @@
 @using System.Dynamic;
 @using DA = System.ComponentModel.DataAnnotations
 
+@functions{
+    /// <summary>
+    /// Return array of properties that has GridInfo attributes and with the matching Identity if Model has it defined
+    /// </summary>
+    /// <returns></returns>
+    IEnumerable<PropertyInfo> GetPropertyHelper()
+    {
+        if (Model.TargetIdentity.HasValue)
+        {
+            return Model.GridType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).
+                   Where(p => p.GetCustomAttributes<GridInfo>(false).Any(a => ((GridInfo)a).Identity == Model.TargetIdentity.Value)).
+                   OrderBy(p => p.GetCustomAttributes<GridInfo>(false).FirstOrDefault(a => a.Identity == Model.TargetIdentity.Value).Sequence);
+        }
+        else
+        {
+             return Model.GridType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).
+                    Where(p => p.GetCustomAttributes<GridInfo>(false).Any()).
+                    OrderBy(p => p.GetCustomAttributes<GridInfo>(false).FirstOrDefault().Sequence);
+        }
+    }
+}
+
 <script type="text/javascript">
     @if(!string.IsNullOrEmpty(Model.GridPreferenceKey))
     {
@@ -48,14 +70,20 @@
                     }}
                 }}
         }},
-        editable: {{
-            mode: 'incell',
-            confirmation: false
-        }},
+        editable: {6},
         editorEvents: {{}},
+        initGrid: function () {{
+            {0}.pageUrl = sg.utls.url.buildUrl('{7}', '{8}', '{9}');
+        }},
+        getGridInstance: function () {{
+            return $('#{1}').data('kendoGrid');
+        }}
     }};", Model.GridConfigName, Model.GridId, Model.GridPreferenceKey, GridInfoConstants.PageSize, 
         GridInfoConstants.ColReorderability.ToString().ToLowerInvariant(),
-        Model.AutoBind.ToString().ToLowerInvariant()))
+        Model.AutoBind.ToString().ToLowerInvariant(), Model.GridEditableMode.ToString().ToLowerInvariant(),
+        Model.PageUrl != null && Model.PageUrl.Length == 3? Model.PageUrl[0]: "",
+        Model.PageUrl != null && Model.PageUrl.Length == 3? Model.PageUrl[1]: "",
+        Model.PageUrl != null && Model.PageUrl.Length == 3? Model.PageUrl[2]: ""))
 
     @{
         if (Model.HasDeleteColumn)
@@ -79,14 +107,27 @@
 
     @{
         // get a list of properites that have the GridInfo attributes and sort them base on Sequcne value
-        var gridProp = Model.GridType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).
-            Where(p => p.CustomAttributes.Any(a => a.AttributeType.Equals(typeof (GridInfo)))).
-            OrderBy(p => ((GridInfo) Attribute.GetCustomAttribute(p, typeof (GridInfo))).Sequence);
-
+       var gridProps = GetPropertyHelper();
+        
         //loop through each property and generate the JS portion for Grid configuration
-        foreach (var propertyInfo in gridProp)
+        foreach (var propertyInfo in gridProps)
         {
-            var attr = (GridInfo) Attribute.GetCustomAttribute(propertyInfo, typeof (GridInfo));
+            var attributes = (GridInfo[])Attribute.GetCustomAttributes(propertyInfo, typeof(GridInfo));
+
+            GridInfo attr = null;
+
+            if (attributes.Length > 1 && Model.TargetIdentity.HasValue)
+            {
+                // multiple instance of GridInfo defined
+                attr = (new List<GridInfo>(attributes)).FirstOrDefault<GridInfo>(x => x.Identity == Model.TargetIdentity.Value);
+                //attr = (GridInfo)attributes[0];
+            }
+            else
+            {
+                attr = (GridInfo) attributes[0];
+            }
+            
+            //var attr = (GridInfo) Attribute.GetCustomAttribute(propertyInfo, typeof (GridInfo));
             var stringLengthAttr = (DA.StringLengthAttribute) Attribute.GetCustomAttribute(propertyInfo, typeof (DA.StringLengthAttribute));
 
             var colConfigStr = new StringBuilder("{");
@@ -161,25 +202,39 @@
 
 </script>
 
-<div class="gridcontrols-group">
-    @if (Model.AddButtonVisibility)
-    {
-        @Html.SageButtonNoName(CommonResx.AddLine, new { @id = Model.AddButtonId, @class = "btn btn-default btn-grid-control btn-add" })
-    }
+@if (!Model.IsSkipGridCreation)
+{
+    <div class="gridcontrols-group">
+        @if (Model.AddButtonVisibility)
+        {
+            @Html.SageButtonNoName(CommonResx.AddLine, new { @id = Model.AddButtonId, @class = "btn btn-default btn-grid-control btn-add" })
+        }
 
-    @if (Model.DeleteButtonVisibility)
-    {
-        @Html.SageButtonNoName(CommonResx.DeleteLine, new { @id = Model.DeleteButtonId, @class = "btn btn-default btn-grid-control btn-delete" })
-    }
+        @if (Model.DeleteButtonVisibility)
+        {
+            @Html.SageButtonNoName(CommonResx.DeleteLine, new { @id = Model.DeleteButtonId, @class = "btn btn-default btn-grid-control btn-delete" })
+        }
 
-    @if (Model.EditButtonVisibility)
+        @if (Model.EditButtonVisibility)
+        {
+            @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = Model.EditButtonId, @class = "btn btn-default btn-grid-control btn-edit-column" })
+        }
+    </div>
+    
+    if (Model.GridSize == Sage.CA.SBS.ERP.Sage300.Core.Web.Models.GridSize.Regular)
     {
-        @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = Model.EditButtonId, @class = "btn btn-default btn-grid-control btn-edit-column" })
+        <div class="datagrid-group">
+            @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
+        </div>
     }
-</div>
-<div class="datagrid-group">
-    @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
-</div>
+    else
+    {
+        <div class="datagrid-group small">
+            @Html.KoKendoGrid(Model.GridId, Model.GridDataSource, Model.GridKey, Model.GridConfigName, true)
+        </div>
+    }
+}
+
 @if (!string.IsNullOrEmpty(Model.GridPreferenceKey))
 { 
     @Html.Partial(Core.GridPreferences)

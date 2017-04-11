@@ -731,7 +731,7 @@ border-bottom: none;
 
 .nav-menu.top-menu .std-menu .sub-menu-wrap {
     display: none;
-    background: #fff none;
+    background:  #ffffff url('../Images/nav/bg_menu_2.jpg') no-repeat right top;
     left: 218px;
     width: 482px;
     -webkit-column-count: 2;

@@ -6,7 +6,7 @@ The following copyright is included in all source and documents that are covered
 
 > The MIT License (MIT)
 
-> Copyright © 2016 The Sage Group plc or its licensors. All rights reserved.
+> Copyright © 2017 The Sage Group plc or its licensors. All rights reserved.
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this 
 software and associated documentation files (the “Software”), to deal in the Software 

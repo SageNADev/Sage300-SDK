@@ -49,6 +49,7 @@ GridPreferences = {
             }
         });
 
+        $(document).off('click.gridPref', "#btnGridPrefApply");
         $(document).on('click.gridPref', "#btnGridPrefApply", function () {
             var data = { key: userPreferenceKey, value: GridPreferences.getSelectedColumns(grid) };
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"), data);
@@ -56,6 +57,7 @@ GridPreferences = {
             GridPreferences.hide();
         });
 
+        $(document).off('click.gridPref', "#btnGridPrefRestore");
         $(document).on('click.gridPref', "#btnGridPrefRestore", function () {
             var data = { key: userPreferenceKey };
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "Common", "DeleteUserPreference"), data);

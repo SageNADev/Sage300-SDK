@@ -42,9 +42,9 @@
 }
 
 @section scripts{
-    @Scripts.Render("~/bundles/<#=companyNamespace#><#=entityName#>")
+    @Scripts.Render("~/bundles/<#=companyNamespace#><#=moduleId#><#=entityName#>")
 }
 
 @{
-    Layout = Shared.LocalizedLayout;
+    Layout = Shared.GlobalLayout;
 }

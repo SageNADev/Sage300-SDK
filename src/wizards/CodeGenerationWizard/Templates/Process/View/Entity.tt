@@ -31,7 +31,9 @@
     var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.ModelName];
 
-    var webModuleNamespace = settings.DoesAreasExist ? "Web.Areas." + moduleId : moduleId + ".Web";
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+
 #>
 @* <#=copyright#> *@
 
@@ -48,7 +50,7 @@
 
 @Html.Partial("~/Areas/Core/Views/Shared/_ProcessingStatus.cshtml")
 
-<div class="container_16">
+<div class="form-screen">
     <div id="message"></div>
     <header>
         <section class="header-group-1">

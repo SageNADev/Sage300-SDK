@@ -1,18 +1,43 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
+
+/**
+ * Functionality for formatting, enabling, disabling and selecting controls.
+ */
 (function () {
     $(this).parent().addClass("cBox-disabled");
+
     sg.controls = {
+        /**
+         * Spans a copy of an HTML element (which should be a checkbox input) with the 'checkBox' CSS class.
+         * 
+         * @param {string} checkboxHtml The HTML of the element to span.
+         */
         ApplyCheckboxStyle: function (checkboxHtml) {
             return "<span class='icon checkBox'>" + checkboxHtml + "</span>";
         },
+        /**
+         * Spans a copy of an HTML element with the 'radioboxHtml' CSS class.
+         * 
+         * @param {string} radioboxHtml The HTML of the element to span.
+         */
         ApplyRadioboxStyle: function (radioboxHtml) {
             return "<span class='icon radioBox'>" + radioboxHtml + "</span>";
         },
+        /**
+         * Applies CSS styles for disabled or selected radiobutton elements.
+         *
+         * @param {object} The HTML radiobutton element to disable. 
+         */
         ApplyCheckboxRadioButtonStyle: function (element) {
             sg.controls.ApplyCheckBoxRadioButtonDisable(element);
         },
+        /**
+         * Applies disablement or selection CSS styles to a specified checkbox or radiobutton element.
+         *
+         * @param {object} element The HTML element to which to apply the styles. 
+         */
         ApplyCheckBoxRadioButtonDisable: function (element) {
             sg.controls.RemoveCheckBoxRadioButtonStyle(element);
             if (element.disabled) {
@@ -32,6 +57,11 @@
                 }
             }
         },
+        /**
+         * Removes the disabled and selected styles from a specified checkbox or radiobutton element.
+         *
+         * @param {object} element The HTML element from which to remove the styles. 
+         */
         RemoveCheckBoxRadioButtonStyle: function (element) {
             if (element.type === "checkbox") {
                 $(element).parent().removeClass("cBox-disabled selected checked-disabled");
@@ -40,30 +70,66 @@
                 $(element).parent().removeClass("rBox-disabled selected checked-disabled");
             }
         },
+        /**
+         * Applies the input focus to a specified element.
+         * 
+         * @param {object} element The element to set the focus to.
+         */ 
         Focus: function (element) {
             element.focus();
         },
+        /**
+          * Applies the input focus to the list of a specified Kendo dropdown element.
+          * 
+          * @param {object} element The element to set the focus to.
+          */
         KendoDropDownFocus: function (element) {
             var dropdownlist = element.data("kendoDropDownList");
             dropdownlist.focus();
         },
+        /**
+         * Select the element with the focus.
+          * 
+          * @param {object} element The element to select.
+         */
         Select: function (element) {
             if (element.is(':focus')) {
                 element.select();
             }
         },
+        /**
+         * Coalesce a string. 
+         * 
+         * @returns {string} The string, if non-null, otherwise an empty string.
+         */
         GetString: function (string) {
             if (string == null) {
                 return "";
             }
             return string;
         },
+        /**
+         * Disable a specified element. 
+         *
+         * @param {object} The element to disable.
+         */ 
         disable: function (element) {
             sg.controls.enableDisable(element, true);
         },
+        /**
+         * Enable a specified element. 
+         *
+         * @param {object} The element to enable.
+         */
         enable: function (element) {
             sg.controls.enableDisable(element, false);
         },
+        /**
+         * Adds or removes the 'disabled' attribute from a specified element. 
+         *
+         * @param {object} element The element to update.
+         * @param {boolean} flag True to apply the disabled attribute, otherwise false.
+         */
         enableDisable: function (element, flag) {
             if (flag) {
                 $(element).attr("disabled", "disabled");
@@ -72,6 +138,12 @@
                 $(element).removeAttr("disabled");
             }
         },
+        /**
+         * Enables or disables a specified radiobutton, checkbox, or Kendo element. 
+         *
+         * @param {object} element The element to enable.
+         * @param {boolean} currentModelValue True to enable the element, false to disable it.
+         */
         KendoEnableDisable: function (element, currentModelValue) {
             if (element.type === "radio" || element.type === "checkbox") {
                 sg.controls.ApplyCheckBoxRadioButtonDisable(element);
@@ -81,6 +153,7 @@
                     datePicker.enable(currentModelValue);
                 }
             } else if (element.type === "select-one") {
+                // If this is a single-select Kendo dropdown, enable it.
                 var dropDown = $(element).data('kendoDropDownList');
                 if (dropDown) {
                     dropDown.enable(currentModelValue);
@@ -95,6 +168,12 @@
                 sg.controls.enableDisable(element, !currentModelValue);
             }
         },
+        /**
+         * Sets a specified element's text to a specified numeric value, formatted to the home currency decimals if applicable.
+         *
+         * @param {object} element The element for which to set the value.
+         * @param {number} value The value with which to set the element's text.
+         */
         applyAmountFormat: function(element, value) {
             var value = ko.utils.unwrapObservable(value());
             if (sg.utls.homeCurrency != null)
@@ -106,7 +185,6 @@
         }
     };
 }(this.sg = this.sg || {}, jQuery));
-
 
 $(function () {
     jQuery.fn.extend({
@@ -150,7 +228,6 @@ $(function () {
             .select();
     });
 
-
     $(document).on("focus", 'input[type="checkbox"], input[type="radio"]', function () {
         $(this).parent().addClass("focus");
     });
@@ -158,8 +235,5 @@ $(function () {
     $(document).on("blur", 'input[type="checkbox"], input[type="radio"]', function () {
         $(this).parent().removeClass("focus");
     });
-
-
-
 });
 

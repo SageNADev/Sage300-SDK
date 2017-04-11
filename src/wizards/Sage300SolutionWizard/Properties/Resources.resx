@@ -161,7 +161,7 @@
     <value>The wizard will generate a solution for the Sage 300 application.</value>
   </data>
   <data name="StepDescriptionKendo" xml:space="preserve">
-    <value>Confirm the License and select the Kendo folder</value>
+    <value>Confirm the License and select the Kendo folder.</value>
   </data>
   <data name="StepTitleGenerate" xml:space="preserve">
     <value>Generate Solution</value>
@@ -174,5 +174,11 @@
   </data>
   <data name="AccpacDotNetVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AccpacDotNetVersion.props;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StepDescriptionResourceFiles" xml:space="preserve">
+    <value>Confirm the Resource Files to create.</value>
+  </data>
+  <data name="StepTitleResourceFiles" xml:space="preserve">
+    <value>Select Resource Files</value>
   </data>
 </root>

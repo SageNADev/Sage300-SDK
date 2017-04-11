@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
@@ -7,6 +7,7 @@
 @using filter = Sage.CA.SBS.ERP.Sage300.Common.Models
 @using Constants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Shared;
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 
 <!DOCTYPE html>
@@ -18,6 +19,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@Page.Title</title>
     @Styles.Render("~/Content/Styles/localizedLessCssR2")
     @Scripts.Render("~/bundles/modernizr")
@@ -27,7 +29,7 @@
     @*@Html.OnlyAllowFromIFrame(Url.Action("index", "Home", new { @area = "Core" }))*@
  
     <!-- Google Analytics -->
-    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <!-- <script async src='//www.google-analytics.com/analytics.js'></script> -->
     <!-- End Google Analytics -->
 
 </head>

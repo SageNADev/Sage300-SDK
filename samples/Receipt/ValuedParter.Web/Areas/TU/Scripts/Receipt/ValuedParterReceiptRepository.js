@@ -58,20 +58,20 @@ var receiptRepository = {
 
     create: function (receiptNumber) {
         var data = { 'receiptNumber': receiptNumber }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.operationSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.createSuccess);
     },
 
     deleteReceipt: function (receiptNumber, sequenceNumber) {
         var data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.operationSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.deleteSuccess);
     },
 
     add: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.operationSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.addSuccess);
     },
 
     update: function (data) { 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.operationSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.updateSuccess);
     }, 
 
     getItemType: function (itemNumber) {
@@ -95,7 +95,7 @@ var receiptRepository = {
         var data = {
             'headerModel':ko.mapping.toJS(model), 'sequenceNumber': sequenceNumber, 'yesNo': yesNo
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.operationSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.postSuccess);
     },
 
     checkDate: function (date) {
@@ -188,7 +188,6 @@ var receiptRepository = {
         sg.utls.ajaxPostSync(url, data, receiptUISuccess.getItemValues);
     }, 
 
-    
     getOptionalFieldFinderData: function (optionalField) {
         var data = { 'optionalField': optionalField.OptionalField };
         window.sg.utls.ajaxPost(window.sg.utls.url.buildUrl("TU", "Receipt", "GetOptionalFieldFinderData"), data, receiptUISuccess.fillOptionalFieldFinderData);

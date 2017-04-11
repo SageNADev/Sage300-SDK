@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -35,6 +35,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     class ProcessGeneration
     {
         #region Private Vars
+
         /// <summary> Settings from UI (view id, output file) </summary>
         private Settings _settings;
 
@@ -49,9 +50,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         #endregion
 
         #region Private Constants
+
         #endregion
 
         #region Public Constants
+
         /// <summary> SettingsKey is used as a dictionary key for settings </summary>
         public const string SettingsKey = "settings";
 
@@ -175,6 +178,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         #endregion
 
         #region Public Delegates
+
         /// <summary> Delegate to update UI with name of file being processed </summary>
         /// <param name="text">Text for UI</param>
         public delegate void ProcessingEventHandler(string text);
@@ -184,17 +188,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="statusType">Status Type</param>
         /// <param name="text">Text for UI</param>
         public delegate void StatusEventHandler(string fileName, Info.StatusType statusType, string text);
+
         #endregion
 
         #region Public Events
+
         /// <summary> Event to update UI with name of file being processed </summary>
         public event ProcessingEventHandler ProcessingEvent;
 
         /// <summary> Event to update UI with status of file being processed </summary>
         public event StatusEventHandler StatusEvent;
+
         #endregion
 
         #region Constructor
+
         #endregion
 
         #region Public Methods
@@ -221,6 +229,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
         }
+
         /// <summary> Validate the settings based upon repository type</summary>
         /// <param name="settings">Settings</param>
         /// <param name="view">Business View</param>
@@ -343,8 +352,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             else
             {
                 // Check requirements for validating a view
-                if (settings.ViewId.Equals(string.Empty) || settings.Company.Equals(string.Empty) || settings.Password.Equals(string.Empty) ||
-                    settings.User.Equals(string.Empty) || settings.Version.Equals(string.Empty) || settings.ModuleId.Equals(string.Empty))
+                if (settings.ViewId.Equals(string.Empty) || settings.Company.Equals(string.Empty) ||
+                    settings.Password.Equals(string.Empty) ||
+                    settings.User.Equals(string.Empty) || settings.Version.Equals(string.Empty) ||
+                    settings.ModuleId.Equals(string.Empty))
                 {
                     return Resources.InvalidSettingRequired;
                 }
@@ -355,7 +366,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     if (_session == null)
                     {
                         _session = new Session();
-                        _session.InitEx(null, string.Empty, "WX", "WX1000", settings.Version);
+                        _session.InitEx2(null, string.Empty, "WX", "WX1000", settings.Version, 1);
                         _session.Open(settings.User, settings.Password, settings.Company, DateTime.UtcNow, 0);
                     }
 
@@ -434,26 +445,25 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Locals
             var session = new Session();
-            var retVal = string.Empty;
 
+            session.InitEx2(null, string.Empty, "WX", "WX1000", version, 1);
+            session.Open(user, password, company, DateTime.UtcNow, 0);
+
+            // Attempt to open a view
+            var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
+            var view = dbLink.OpenView(viewId);
+
+            var retVal = MakeItSingular(BusinessViewHelper.Replace(view.Description));
+
+            // Clean up
             try
             {
-                session.InitEx(null, string.Empty, "WX", "WX1000", version);
-                session.Open(user, password, company, DateTime.UtcNow, 0);
-
-                // Attempt to open a view
-                var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
-                var view = dbLink.OpenView(viewId);
-
-                retVal = MakeItSingular(BusinessViewHelper.Replace(view.Description));
-
-                // Clean up
                 view.Dispose();
                 session.Dispose();
             }
-            catch (Exception)
+            catch 
             {
-                // Catch only
+                // Swallow error, if any        
             }
 
             return retVal;
@@ -997,12 +1007,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Build the subfolders
             BuildSubfolders(view);
 
-            // Create the Resx Files
-            CreateResx(view, _settings.ResxName + ".resx", true);
-            CreateResx(view, _settings.ResxName + ".es.resx", false);
-            CreateResx(view, _settings.ResxName + ".fr-CA.resx", false);
-            CreateResx(view, _settings.ResxName + ".zh-Hans.resx", false);
-            CreateResx(view, _settings.ResxName + ".zh-Hant.resx", false);
+            // Create the Resx Files if the MenuResx file for that language exists
+            if (_settings.includeEnglish)
+            {
+                CreateResx(view, _settings.ResxName + ".resx", true);
+            }
+            if (_settings.includeSpanish)
+            {
+                CreateResx(view, _settings.ResxName + ".es.resx", false);
+            }
+            if (_settings.includeFrench)
+            {
+                CreateResx(view, _settings.ResxName + ".fr-CA.resx", false);
+            }
+            if (_settings.includeChineseSimplified)
+            {
+                CreateResx(view, _settings.ResxName + ".zh-Hans.resx", false);
+            }
+            if (_settings.includeChineseTraditional)
+            {
+                CreateResx(view, _settings.ResxName + ".zh-Hant.resx", false);
+            }
 
             // Create the Model class
             CreateClass(view,
@@ -1222,19 +1247,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Behavior JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Repository.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
                 WebKey, SubFolderWebScriptsKey);
         }
@@ -1314,19 +1339,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Behavior JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(view,
-                projectName + view.Properties[BusinessView.EntityName] + "Repository.js",
+                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
                 WebKey, SubFolderWebScriptsKey);
 

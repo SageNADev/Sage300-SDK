@@ -382,10 +382,10 @@ div.k-window {
     height: 50px;
 }
 
-.k-window .k-window-titlebar .k-window-actions .k-i-close {
+/*.k-window .k-window-titlebar .k-window-actions .k-i-close {
 	background-position: -71px -15px;
 	background-image: url('../Images/portalSprite.png');
-}
+}*/
 
 .k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover .k-i-close{
 	border: none;
@@ -408,6 +408,7 @@ div.k-window {
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 9999;
   height: 100vh;
+  display: initial;
 } 
 
 .wrapper-change-password {
@@ -418,6 +419,15 @@ div.k-window {
     width: 400px;
     background-color: #fff;
 }
+
+.wrapper-change-password .k-window-titlebar {
+    margin-top: -50px !important;
+}
+
+.wrapper-change-password .k-window-titlebar .k-window-actions {
+     top: 3px; 
+}
+
 
 /* end login page custom css ----------------------------------------------------------- */
 
@@ -503,6 +513,7 @@ ol.std-list {
 	border: 0;
     text-align: center;
     padding: 36px 0 0 0;
+    margin: 0 0 20px;
 }
 
 .main-body.login .page-header-2 {
@@ -561,6 +572,7 @@ input[type=password].login:focus {
 .main-body.login .dropdown-group .k-dropdown-wrap .k-input {
 	padding: 8px 10px;
 	height: 34px;
+    line-height: 1.5;
 }
 
 .main-body.login .dropdown-group .k-dropdown-wrap .k-icon {

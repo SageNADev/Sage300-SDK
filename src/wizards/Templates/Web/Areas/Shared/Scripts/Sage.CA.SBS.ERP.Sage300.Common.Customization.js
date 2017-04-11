@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var Customization = Customization || {};
@@ -166,6 +166,16 @@ Customization = {
         return (data.Type != "Label" && data.Show) ? template : "";
     },
 
+    getShowColumnTemplate: function (data) {
+        var selected = data? "selected" : "";
+        var checked = data? "checked" : "";
+        var val = $('#commonCustomizationID').val();
+        if (!val)
+            return '<span class="icon checkBox ' + selected + '"><input class="Show" disabled="disabled"  name="Show" type="checkbox"' + checked + ' /> </span>';
+        else
+            return '<span class="icon checkBox ' + selected + '"><input class="Show" name="Show" type="checkbox"' + checked + ' /> </span>';
+    },
+
     configGrid: function (gridData) {
         var grid = $("#commonCustomizationGrid").kendoGrid({
             dataSource: {
@@ -207,7 +217,7 @@ Customization = {
                     title: globalResource.Show,
                     field: "Show",
                     width: 100,
-                    template: '<span class="icon checkBox #=Show?"selected":""# "><input class="Show" name="Show" type="checkbox" #=Show?"checked":""# /> </span>',
+                    template: '#= Customization.getShowColumnTemplate(Show) #',
                     //For testing purpose
                     //headerTemplate: '<input type="checkbox" checked id="showSelectAll" />Show'
                 },
@@ -257,6 +267,8 @@ Customization = {
 
         grid.tbody.on("click", "td", function (e) {
             grid.closeCell();
+            var val = $('#commonCustomizationID').val();
+            if (!val) return;
             var data = grid.dataItem($(e.target).closest("tr"));
             if (data) {
                 if ((data.Type === "Label" || data.Type === "Button") && data.Text != "" && (!$.isNumeric(data.Text)) && e.target.cellIndex === 3) {
@@ -301,7 +313,8 @@ Customization = {
         var elem = Customization.getElement(control, byId);
         if (elem.length > 0) {
             elem.css("display", control.Show ? "" : "none");
-            if (control.Type === "Label" && (!$.isNumeric(control.Text))) {
+            var attribute = elem.attr("data-bind");
+            if (!attribute && control.Type === "Label" && (!$.isNumeric(control.Text))){
                 elem.text(control.Text);
             }
             if (control.Type === "Button") {
@@ -347,7 +360,7 @@ Customization = {
 
     closeDialog: function () {
         $.each(Customization.defaultGridData, function () {
-            Customization.updateControl(this, false);
+            Customization.updateControl(this, true);
         });
 
         $('#dlgCustomize').data("kendoWindow").destroy();
@@ -511,6 +524,13 @@ Customization = {
         $("#commonCustomizationID").bind('change', function (e) {
             Customization.checkIsDirty(Customization.getCustomization);
             Customization.isModelDirty = true;
+            if ($("#commonCustomizationID").val()) {
+                $("#btnCommonCustomizeDelete").attr('disabled', false);
+                $("#btnCommonCustomizeSave").attr('disabled', false);
+            } else {
+                $("#btnCommonCustomizeDelete").attr('disabled', true);
+                $("#btnCommonCustomizeSave").attr('disabled', true);
+            }
         });
 
         $("#btnCommonCustomizeSave").bind('click', function (e) {
@@ -584,6 +604,8 @@ Customization = {
 
         Customization.defaultGridData = Customization.getGridData();
         Customization.grid = Customization.configGrid(Customization.defaultGridData);
+        $("#btnCommonCustomizeDelete").attr('disabled', true);
+        $("#btnCommonCustomizeSave").attr('disabled', true);
         Customization.openWindow();
     },
 
@@ -604,6 +626,7 @@ Customization = {
             Customization.lastCommonCustomizationID = $('#commonCustomizationID').val().trim().toUpperCase();
             sg.controls.Select($("#commonCustomizationDescription"));
         }
+        Customization.grid.refresh();
         sg.utls.showMessage(jsonResult);
     },
 
@@ -649,7 +672,7 @@ Customization = {
             Customization.grid.dataSource.data(Customization.defaultGridData);
             Customization.grid.dataSource.page(1);
             $.each(Customization.grid.dataSource.data(), function () {
-                Customization.updateControl(this, false);
+                Customization.updateControl(this, true);
             });
 
             // update grid and screen controls based on customization detail

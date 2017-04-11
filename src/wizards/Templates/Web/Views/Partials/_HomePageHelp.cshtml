@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -25,7 +25,7 @@
             </div>
         </li>
 
-        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Portal_Articles</span></li>
+        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Portal_Help</span></li>
 
         @if (Model.Data.ScreenHelps != null)
         {
@@ -38,9 +38,13 @@
                 </li>
             }
         }
-
-        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Resources</span></li>
-
+        
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@Utilities.GetLearnMoreUrl("677001008") target="_blank">@HelpResx.Portal_WhatsNew</a>
+            </span>
+        </li>
+        
         <li class="k-item k-state-default" role="menuitem">
             <span class="k-link" id="featureTourLink">
                 <a>@HelpResx.Resources_FeatureTour</a>
@@ -49,19 +53,35 @@
 
         <li class="k-item k-state-default" role="menuitem">
             <span class="k-link">
-                <a href=@Utilities.GetLearnMoreUrl("677001001") target="_blank">@HelpResx.Resources_HelpCenter</a>
+                <a href=@ConfigurationHelper.ProductDocumentsUrl target="_blank">@HelpResx.Portal_ProductDocuments</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.SageSupport</span></li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.KnowledgebaseUrl target="_blank">@HelpResx.SageSupport_Knowledgebase</a>
             </span>
         </li>
 
         <li class="k-item k-state-default" role="menuitem">
             <span class="k-link">
-                <a href=@ConfigurationHelper.ContactSupportUrl target="_blank">@HelpResx.Resources_ContactSupport</a>
+                <a href=@ConfigurationHelper.LiveChatUrl target="_blank">@HelpResx.SageSupport_LiveChat</a>
             </span>
         </li>
 
         <li class="k-item k-state-default" role="menuitem">
             <span class="k-link">
-                <a href=@ConfigurationHelper.SageCityUrl target="_blank">@HelpResx.Resources_SageCity</a>
+                <a href=@ConfigurationHelper.RemoteSupportSessionUrl target="_blank">@HelpResx.SageSupport_Remote</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Resources</span></li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.OnlineCommunityUrl target="_blank">@HelpResx.Resources_OnlineCommunity</a>
             </span>
         </li>
 
@@ -71,9 +91,21 @@
             </span>
         </li>
 
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.OrderChecksFormsUrl target="_blank">@HelpResx.Resources_OrderChecksForms</a>
+            </span>
+        </li>
+
+        <li class="k-item k-state-default" role="menuitem">
+            <span class="k-link">
+                <a href=@ConfigurationHelper.Sage300HomeUrl target="_blank">@HelpResx.Resources_Sage300Home</a>
+            </span>
+        </li>
+
         <li class="k-item k-state-default k-last" role="menuitem">
             <span class="k-link">
-                <a href=@ConfigurationHelper.SageShareYourIdeasUrl target="_blank">@HelpResx.Resources_ShareIdeas</a>
+                <a href=@ConfigurationHelper.SubmitProductIdeaUrl target="_blank">@HelpResx.Resources_SubmitIdea</a>
             </span>
         </li>
     </ul>

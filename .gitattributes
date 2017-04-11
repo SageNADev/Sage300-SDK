@@ -1,0 +1,39 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+###############################################################################
+# VS files, always have CRLF line endings on checkout. 
+###############################################################################
+*.sln        text eol=crlf
+*.csproj     text eol=crlf
+*.vbproj     text eol=crlf
+*.vcxproj    text eol=crlf
+*.vcproj     text eol=crlf
+*.dbproj     text eol=crlf
+*.fsproj     text eol=crlf
+*.lsproj     text eol=crlf
+*.wixproj    text eol=crlf
+*.modelproj  text eol=crlf
+*.sqlproj    text eol=crlf
+*.wmaproj    text eol=crlf
+
+*.xproj      text eol=crlf
+*.props      text eol=crlf
+*.filters    text eol=crlf
+*.vcxitems   text eol=crlf
+
+*.resx       text eol=crlf
+
+###############################################################################
+# other text files
+###############################################################################
+*.ps1        text
+*.psd1       text
+*.psm1       text
+
+###############################################################################
+# other non-text files
+###############################################################################
+*.pdf        binary

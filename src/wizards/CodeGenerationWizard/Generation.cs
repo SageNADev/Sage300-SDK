@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -66,7 +66,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
 
         /// <summary> Projects by Type within a Module </summary>
-        private readonly Dictionary<string, Dictionary<string, ProjectInfo>> _projects = 
+        private readonly Dictionary<string, Dictionary<string, ProjectInfo>> _projects =
             new Dictionary<string, Dictionary<string, ProjectInfo>>();
 
         /// <summary> Single Copyright for generated files </summary>
@@ -77,6 +77,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Area Structure exists for Web Project </summary>
         private bool _doesAreasExist;
+
+        /// <summary> Web Project includes Module </summary>
+        private bool _webProjectIncludesModule;
+
+        /// <summary> Include English Resource </summary>
+        private bool _includeEnglish;
+
+        /// <summary> Include Chinese Simplified Resource </summary>
+        private bool _includeChineseSimplified;
+
+        /// <summary> Include Chinese Traditional Resource </summary>
+        private bool _includeChineseTraditional;
+
+        /// <summary> Include Spanish Resource </summary>
+        private bool _includeSpanish;
+
+        /// <summary> Include French Resource </summary>
+        private bool _includeFrench;
 
         #endregion
 
@@ -145,6 +163,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         #endregion
 
         #region Private Methods/Routines/Events
+
         /// <summary> Determine if the Solution is valid </summary>
         /// <param name="solution">Solution </param>
         /// <returns>True if valid otherwise false</returns>
@@ -153,7 +172,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Validate solution
             return (solution != null);
         }
-        
+
         /// <summary> Determine if Projects in Solution are valid </summary>
         /// <param name="solution">Solution </param>
         /// <returns>True if valid otherwise false</returns>
@@ -181,7 +200,43 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Grab the company namespace from the Business Repository project
                     if (key.Equals(ProcessGeneration.BusinessRepositoryKey))
                     {
-                        _companyNamespace = projectName.Substring(0, projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
+                        _companyNamespace = projectName.Substring(0,
+                            projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
+                    }
+
+                    // Determine which language resources to include
+                    if (key.Equals(ProcessGeneration.ResourcesKey))
+                    {
+                        // Iterate files in resources project
+                        foreach (ProjectItem projectItem in project.ProjectItems)
+                        {
+                            // Add which language files based upon solutions menu files
+                            if (projectItem.Name.Equals("MenuResx.resx"))
+                            {
+                                // Add to project
+                                _includeEnglish = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.zh-Hans.resx"))
+                            {
+                                // Add to project
+                                _includeChineseSimplified = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.zh-Hant.resx"))
+                            {
+                                // Add to project
+                                _includeChineseTraditional = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.es.resx"))
+                            {
+                                // Add to project
+                                _includeSpanish = true;
+                            }
+                            else if (projectItem.Name.Equals("MenuResx.fr-CA.resx"))
+                            {
+                                // Add to project
+                                _includeFrench = true;
+                            }
+                        }
                     }
 
                     // The Web project name is different from other ones. It should be derived from the folder name
@@ -200,17 +255,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                             // Store for later use in generation
                             _doesAreasExist = areaStructure;
+                            _webProjectIncludesModule = false;
 
                             if (areaStructure)
                             {
                                 // Iterate directories looking for the "module folder
                                 var directories = Directory.GetDirectories(areaPath);
                                 foreach (var moduleParts in from directory in directories
-                                                            let modulePath = Path.Combine(directory, "Constants")
-                                                            where Directory.Exists(modulePath)
-                                                            select directory.Split('\\'))
+                                    let modulePath = Path.Combine(directory, "Constants")
+                                    where Directory.Exists(modulePath)
+                                    select directory.Split('\\'))
                                 {
                                     module = moduleParts[moduleParts.Length - 1];
+
+                                    // Determine if module is in project name
+                                    _webProjectIncludesModule = projectName.Contains("." + module + ".");
+
                                     break;
                                 }
                             }
@@ -239,7 +299,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                     else
                     {
-                        _projects.Add(key, new Dictionary<string, ProjectInfo> { { module, projectInfo } });
+                        _projects.Add(key, new Dictionary<string, ProjectInfo> {{module, projectInfo}});
                     }
                 }
 
@@ -273,7 +333,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate 
                 while (item.MoveNext())
                 {
-                    var project = (Project)item.Current;
+                    var project = (Project) item.Current;
 
                     if (project == null)
                     {
@@ -382,7 +442,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var lines = File.ReadAllLines(@fileName);
 
                 // Iterate and search for "AssemblyCopyright attribute
-                foreach (var parsedLine in from line in lines where line.Contains("AssemblyCopyright") select line.Split('"'))
+                foreach (
+                    var parsedLine in from line in lines where line.Contains("AssemblyCopyright") select line.Split('"')
+                )
                 {
                     if (parsedLine.Length > 0)
                     {
@@ -437,7 +499,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void NextStep()
         {
             var repositoryType =
-                (RepositoryType)Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
+                (RepositoryType) Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
 
             // Finished?
             if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGeneratedCode"))
@@ -448,7 +510,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             else
             {
                 // Proceed to next wizard step or start code generation if last step
-                if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateCode"))
+                if (!_currentWizardStep.Equals(-1) &&
+                    _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateCode"))
                 {
                     // Build settings and validate that settings have been selected 
                     // (view, resx name, user, password, version, company))
@@ -547,7 +610,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
 
                     // Update title and text for step
-                    lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
+                    lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                        _wizardSteps[_currentWizardStep].Title;
                     lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
 
                     splitBase.Panel2.Refresh();
@@ -588,7 +652,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
+                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                    _wizardSteps[_currentWizardStep].Title;
                 lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
 
                 splitBase.Panel2.Refresh();
@@ -743,7 +808,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 FlatStyle = FlatStyle.Flat
             };
             // Add enums to drop down list
-            foreach (var businessDataType in Enum.GetValues(typeof(BusinessDataType)).Cast<BusinessDataType>().Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
+            foreach (
+                var businessDataType in
+                Enum.GetValues(typeof(BusinessDataType))
+                    .Cast<BusinessDataType>()
+                    .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
             {
                 column.Items.Add(businessDataType);
             }
@@ -811,7 +880,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="text">Header Text</param>
         /// <param name="visible">True for visible otherwise False</param>
         /// <param name="readOnly">True for read only otherwise False</param>
-        private static void GenericInit(DataGridView grid, int column, int width, string text, bool visible, bool readOnly)
+        private static void GenericInit(DataGridView grid, int column, int width, string text, bool visible,
+            bool readOnly)
         {
             grid.Columns[column].Width = width;
             grid.Columns[column].HeaderText = text;
@@ -908,7 +978,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var businessView = new BusinessView();
             var repositoryType =
-                (RepositoryType) Enum.Parse(typeof (RepositoryType), cboRepositoryType.SelectedIndex.ToString());
+                (RepositoryType) Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
 
             // Dynamic Query is not based upon ACCPAC view
             if (repositoryType.Equals(RepositoryType.DynamicQuery))
@@ -966,7 +1036,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Extension = GetExtension(repositoryType),
                 ResourceExtension = GetResourceExtension(repositoryType),
                 DoesAreasExist = _doesAreasExist,
-                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty
+                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty,
+                WebProjectIncludesModule = _webProjectIncludesModule,
+                includeEnglish = _includeEnglish,
+                includeChineseSimplified = _includeChineseSimplified,
+                includeChineseTraditional = _includeChineseTraditional,
+                includeSpanish = _includeSpanish,
+                includeFrench = _includeFrench
             };
         }
 
@@ -1056,7 +1132,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Background worker will run process</remarks>
         private void wrkBackground_DoWork(object sender, DoWorkEventArgs e)
         {
-            _generation.Process((Settings)e.Argument);
+            _generation.Process((Settings) e.Argument);
         }
 
         /// <summary> Background worker completed event </summary>
@@ -1078,7 +1154,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _wizardSteps[_currentWizardStep].Panel.Visible = true;
 
             // Update title and text for step
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
+            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
 
             splitBase.Panel2.Refresh();
@@ -1113,7 +1190,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             foreach (var row in grdDynamicQueryFields.Rows)
             {
-                grdDynamicQueryFields.Rows.Remove((DataGridViewRow)row);
+                grdDynamicQueryFields.Rows.Remove((DataGridViewRow) row);
             }
         }
 
@@ -1123,7 +1200,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void cboRepositoryType_SelectedIndexChanged(object sender, EventArgs e)
         {
             InitWizardSteps(
-                (RepositoryType) Enum.Parse(typeof (RepositoryType), ((ComboBox) sender).SelectedIndex.ToString()));
+                (RepositoryType) Enum.Parse(typeof(RepositoryType), ((ComboBox) sender).SelectedIndex.ToString()));
         }
 
         /// <summary> Get report info from file </summary>
@@ -1143,7 +1220,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             cboReportKeys.Items.Clear();
             _reportFields.Clear();
             _reports.Clear();
-            
+
 
             try
             {
@@ -1276,7 +1353,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 txtReportProgramId.Text = reportName;
             }
         }
-        
+
         /// <summary> Get Report Info from report.ini file</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
@@ -1333,9 +1410,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void FillGradient(PaintEventArgs e)
         {
             using (var brush = new LinearGradientBrush(ClientRectangle,
-                                                           _sageColor,
-                                                           Color.White,
-                                                           LinearGradientMode.Horizontal))
+                _sageColor,
+                Color.White,
+                LinearGradientMode.Horizontal))
             {
                 e.Graphics.FillRectangle(brush, ClientRectangle);
             }
@@ -1367,10 +1444,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Disable next button</remarks>
         private void txtViewID_Leave(object sender, EventArgs e)
         {
-            txtViewName.Text = ProcessGeneration.GetDefaultName(txtUser.Text.Trim(), txtPassword.Text.Trim(),
-                txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text.Trim().ToUpper());
+            var errorCondition = false;
+
+            try
+            {
+                if (!string.IsNullOrEmpty(txtViewID.Text.Trim()))
+                {
+                    txtViewName.Text = ProcessGeneration.GetDefaultName(txtUser.Text.Trim(), txtPassword.Text.Trim(),
+                        txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text.Trim().ToUpper());
+                }
+            }
+            catch (Exception ex)
+            {
+                // Error received attempting to get view
+                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
+                txtViewName.Text = string.Empty;
+                errorCondition = true;
+            }
 
             btnNext.Enabled = (!string.IsNullOrEmpty(txtViewName.Text));
+
+            // Send back to control?
+            if (!errorCondition)
+            {
+                return;
+            }
+
+            // Clear field and send back to control
+            txtViewID.Text = string.Empty;
+            txtViewID.Focus();
         }
 
         /// <summary> Help Button</summary>

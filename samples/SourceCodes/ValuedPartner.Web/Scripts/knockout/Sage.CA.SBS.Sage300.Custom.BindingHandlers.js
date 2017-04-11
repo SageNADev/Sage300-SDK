@@ -345,7 +345,7 @@ ko.bindingHandlers.sagevisible = {
 };
 
 /**
- * This binding handlers may only be used on KoSageNumericBoxFor because it need an valid parent node.
+ * @summary Binding handler for use only with KoSageNumericBoxFor (because it needs a valid parent node).
  */
 ko.bindingHandlers.sageoverridden = {
     update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
@@ -356,9 +356,9 @@ ko.bindingHandlers.sageoverridden = {
         var parentElement = $(element).parent(); //find the parent element. maybe need to improve it in css style file in future.
 
         if (currentModelValue) {
-            //inject class attrubte.
+            // Inject class attribute.
             parentElement.addClass("overridden");
-            //register mouse evnets
+            // Register mouse events.
             parentElement.mouseout(function () {
                 $(".value-text-indicator").hide();
             }).mouseover(function () {
@@ -405,7 +405,6 @@ ko.bindingHandlers.sageenable = {
 /**
  * @summary Date Picker Knockout Custom Binding.
  */
-
 ko.bindingHandlers.sageDatePicker = {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
         var unwrap = ko.utils.unwrapObservable;

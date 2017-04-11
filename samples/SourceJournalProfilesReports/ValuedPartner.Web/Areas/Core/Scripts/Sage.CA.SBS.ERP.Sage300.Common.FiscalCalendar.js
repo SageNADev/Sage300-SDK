@@ -50,7 +50,7 @@ fiscalCalendarHelper = {
             var container = $('#divFiscalCalendar');
             var ddlFiscalCal = $('#ddlFiscalYear-list');
             // if the target of the click isn't the container... nor a descendant of the container
-            if (!container.is(e.target) && !button.is(e.target) && container.has(e.target).length === 0 && !ddlFiscalCal.is(e.target) && e.target.id !== "ddlFiscalYear_option_selected") {
+            if (!container.is(e.target) && !button.is(e.target) && container.has(e.target).length === 0 && !ddlFiscalCal.is(e.target) && e.target.parentNode.id !== "ddlFiscalYear_listbox") {
                 container.hide();
             }
         });

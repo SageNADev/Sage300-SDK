@@ -1,0 +1,18 @@
+﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@*@Styles.Render("~/Content/Styles/kendoSpreadSheet")*@
+
+@using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "frmInquiry" }))
+{
+    @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_Inquiry.cshtml")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/InquiryUI")
+}
+
+@{
+    Layout = Shared.GlobalLayout;
+}

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -13,12 +13,12 @@
     @Html.Hidden("hdnReportId", Model.Data.Id, new { @id = "Report_Id" })
     <div id="topSection">
     </div>
-    <div class="container_16">
+    <div class="form-screen">
         <div class="grid_16 pad_bot_1 alpha">
             <div class="mod_title">
                 <h3>@Model.Data.LabelText</h3>
                 <div class="top-buttons">
-                    @Html.SageButton("btnPrint", new { @id = "btnPrint", @class = "btn-primary", @value = CommonResx.Print })
+                    @Html.SageButton("btnPrint", new { @id = "btnPrint", @class = "btn btn-primary", @value = CommonResx.Print })
                 </div>
                 <div class="clear-fix"></div>
             </div>
@@ -34,7 +34,7 @@
                             {
 
                                 <div class="grid_3 alpha omega">
-                                    @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_9 left" })
+                                    @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_9 " })
                                     @Html.SageTextBox(string.Format("txt_{0}", i),
                                                      Model.Data.Parameters[i].Value,
                                                 new
@@ -67,7 +67,7 @@
                             }
                         case ControlType.KendoCalender:
                             {
-                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 left" })
+                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 " })
                                 @Html.SageTextBox(string.Format("txt_{0}", i),
                                                      Model.Data.Parameters[i].Value,
                                                 new
@@ -79,7 +79,7 @@
                             }
                         case ControlType.TextBox:
                             {
-                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 left" })
+                                @Html.SageLabel(Model.Data.Parameters[i].LabelText, new { @class = "culm_4 " })
                                 @Html.SageTextBox(string.Format("txt_{0}", i),
                                                      Model.Data.Parameters[i].Value,
                                                 new

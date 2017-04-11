@@ -826,19 +826,6 @@ namespace ValuedParter.TU.BusinessRepository
             }
         }
 
-
-        /// <summary>
-        /// Save Details
-        /// </summary>
-        /// <param name="details">Details</param>
-        /// <returns>true</returns>
-        public override bool SaveDetails(IEnumerable<TU> details)
-        {
-            IsSessionAvailable();
-            SyncDetails(details);
-            return true;
-        }
-
         /// <summary>
         /// Insert Detail records
         /// </summary>
