@@ -15,6 +15,9 @@ namespace $companynamespace$.$applicationid$.Web.Areas.$applicationid$.Constants
       
         #endregion
 
+		/// <summary>
+        /// Module Id
+        /// </summary>
         public const string AppId = "$applicationid$";
 
         #region Grid Preferences
