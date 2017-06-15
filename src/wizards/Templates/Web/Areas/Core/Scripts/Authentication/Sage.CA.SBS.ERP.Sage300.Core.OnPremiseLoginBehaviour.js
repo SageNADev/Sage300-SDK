@@ -63,7 +63,8 @@ loginUI = {
                 company: $("#CompanyId").val(),
                 userId: $("#txtUserId").val(),
                 password: $("#txtPassword").val(),
-                forAdmin: $("#loginHeader2").is(":visible")
+                forAdmin: $("#loginHeader2").is(":visible"),
+                companies: ko.mapping.toJS(loginUI.model.Companies())
             };
             loginRepository.login(data, loginUICallback.loginResult);
         });
@@ -103,7 +104,9 @@ loginUI = {
         var data = {
             company: $("#CompanyId").val(),
             userId: $("#txtUserId").val(),
-            password: $("#txtPassword").val()
+            password: $("#txtPassword").val(),
+            forAdmin: $("#loginHeader2").is(":visible"),
+            companies: ko.mapping.toJS(loginUI.model.Companies())
         };
         loginRepository.login(data, loginUICallback.loginResult);
     },
@@ -209,7 +212,9 @@ loginUI = {
         var data = {
             company: $("#CompanyId").val(),
             userId: $("#txtUserId").val(),
-            password: $("#txtPassword").val()
+            password: $("#txtPassword").val(),
+            forAdmin: $("#loginHeader2").is(":visible"),
+            companies: ko.mapping.toJS(loginUI.model.Companies())
         };
         loginRepository.login(data, loginUICallback.loginResult);
     },
