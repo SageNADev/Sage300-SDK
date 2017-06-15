@@ -418,6 +418,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             } 
         }
 
+        /// <summary>
+        /// Get Vendor details
+        /// </summary>
+        /// <param name="vendorNumber">vendor number</param>
+        /// <returns></returns>
         public JsonNetResult GetVendorDetail(string vendorNumber) 
         {
             try

@@ -33,6 +33,10 @@ using System;
 
 namespace ValuedParter.Web.Areas.TU.Models
 {
+    /// <summary>
+    /// Receipt View Model Class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ReceiptViewModel<T> : ViewModelBase<T> where T : ReceiptHeader, new()
     {
 

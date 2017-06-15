@@ -38,7 +38,9 @@ namespace ValuedPartner.Web.Areas.TU.Models
     public class SegmentCodesViewModel<T> : ViewModelBase<T> 
         where T : SegmentCodes, new()
     {
-
+        /// <summary>
+        /// Segment Codes View Model Class constructor
+        /// </summary>
         public SegmentCodesViewModel()
         {
             Segments = new List<SegmentName>();

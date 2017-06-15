@@ -378,6 +378,9 @@ namespace ValuedParter.TU.Models
         [IgnoreExportImport]
         public string HomeCurrency { get; set; }
 
+        /// <summary>
+        /// Gets or sets Receipt Detail
+        /// </summary>
         [IgnoreExportImport]
         public EnumerableResponse<ReceiptDetail> ReceiptDetail { get; set; }
 

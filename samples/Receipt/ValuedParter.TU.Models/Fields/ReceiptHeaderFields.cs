@@ -556,6 +556,10 @@ namespace ValuedParter.TU.Models
         }
 
         #endregion
+
+        /// <summary>
+        /// Key constant class
+        /// </summary>
         public class Keys
         {
             /// <summary>

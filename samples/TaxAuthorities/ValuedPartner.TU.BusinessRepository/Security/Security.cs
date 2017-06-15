@@ -21,6 +21,9 @@
 
 namespace ValuedPartner.TU.BusinessRepository
 {
+    /// <summary>
+    /// Security Constant Class
+    /// </summary>
     public class Security
     {
         /// <summary>

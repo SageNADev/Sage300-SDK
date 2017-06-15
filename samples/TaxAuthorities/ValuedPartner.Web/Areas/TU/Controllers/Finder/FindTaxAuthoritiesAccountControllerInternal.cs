@@ -29,6 +29,10 @@ using System.Web;
 
 namespace ValuedPartner.Web.Areas.TU.Controllers.Finder
 {
+    /// <summary>
+    /// Account Finder Class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class FindTaxAuthoritiesAccountControllerInternal<T> : FindAccountTypeControllerInternal<T> where T : Account, new()
     {
         /// <summary>

@@ -38,6 +38,9 @@ namespace ValuedPartner.Web.Areas.TU.Constants
 
         #endregion
 
+        /// <summary>
+        /// Module Id
+        /// </summary>
         public const string AppId = "TU";
 
         #region Grid Preferences

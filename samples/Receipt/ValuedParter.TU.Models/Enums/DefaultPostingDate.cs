@@ -24,20 +24,5 @@ using ValuedParter.TU.Resources.Forms;
 
 namespace ValuedParter.TU.Models.Enums
 {
-    /// <summary>
-    /// Enum for Default Posting Date
-    /// </summary>
-    //public enum DefaultPostingDate
-    //{
-    //    /// <summary>
-    //    /// Document Date
-    //    /// </summary>
-    //    [EnumValue("DocumentDate", typeof(ReceiptHeaderResx))]
-    //    DocumentDate = 1,
 
-    //    /// <summary>
-    //    /// Session Date
-    //    /// </summary>
-    //    [EnumValue("SessionDate", typeof (CommonResx))] SessionDate = 2,
-    //}
 }

@@ -20,12 +20,35 @@
 
 namespace ValuedParter.Web.Enums
 {
-    public enum UiMode
+    /* Copyright (c) 2016 Valued Partner.  All rights reserved. */
+
+    namespace ValuedPartner.Web.Enums
     {
-        New = 0,
-        Add = 1,
-        Save = 2,
-        None = 3,
-        Delete = 4
+        /// <summary>
+        /// Ui operation mode enums
+        /// </summary>
+        public enum UiMode
+        {
+            /// <summary>
+            /// New
+            /// </summary>
+            New = 0,
+            /// <summary>
+            /// Add
+            /// </summary>
+            Add = 1,
+            /// <summary>
+            /// Save
+            /// </summary>
+            Save = 2,
+            /// <summary>
+            /// None
+            /// </summary>
+            None = 3,
+            /// <summary>
+            /// Delete
+            /// </summary>
+            Delete = 4
+        }
     }
 }
