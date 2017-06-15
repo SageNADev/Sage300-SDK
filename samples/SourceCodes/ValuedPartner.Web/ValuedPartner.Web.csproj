@@ -16,7 +16,7 @@
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -461,7 +461,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51959</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:34425/</IISUrl>
+          <IISUrl>http://localhost/ValuedPartner.Web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

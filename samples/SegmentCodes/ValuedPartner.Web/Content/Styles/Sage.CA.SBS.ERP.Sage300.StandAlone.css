@@ -146,8 +146,8 @@ a:hover {
 }
 
 .footer > .wrapper {
-    width: 940px;
-	padding: 0 10px;
+    width: 100%;
+    min-width: 940px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -155,7 +155,15 @@ a:hover {
 .footer .logo-sage {
 	position: absolute;
 	top: -4px;
-	left: 10px;
+	left: 64px;
+}
+
+.version {
+    position: absolute;
+    top: -55px;
+    left: 175px;
+    color: #666;
+    font-size: 14px;
 }
 
 /* inline links */

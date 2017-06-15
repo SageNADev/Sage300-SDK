@@ -309,10 +309,16 @@ $.extend(sg.utls, {
         // to. Therefore, checks have been placed in the AuthenticationController.Login method to check for this
         // use case where the data still exists in the IIS cache
 
+        //Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. Just ask the user log out first due to time consuming
+        $('#dvWindows').find('span').each(function (index, element) {
+                var currentIframeId = $(this).attr("frameId");
+                $("#" + currentIframeId).attr("src", "about:blank");
+        });
+
         $(topWnd).bind('unload', function () {
             sg.utls.destroyPoolForReport(true);
             sage.cache.clearAll();
-            sg.utls.ajaxPostSync(signOutLink, {}, function (result) { });
+            sg.utls.ajaxPost(signOutLink);
         });
 
         topWnd.location.href = loginLink + "?logout=true";
@@ -2614,6 +2620,7 @@ $(function () {
         $(window).bind('unload', function () {
             PageUnloadHandler();
             if (globalResource.AllowPageUnloadEvent) {
+                //destroy session after calling compelted
                 sg.utls.destroySessions();
             }
         });
@@ -2634,9 +2641,7 @@ $(function () {
         }
         else {
             $(window).bind('unload', function () {
-                if (window.location.href.indexOf("OnPremise") > 0) {
-                    window.name = "unloadediFrame";
-                }
+                window.name = "unloadediFrame";
                 PageUnloadHandler();
             });
         }
