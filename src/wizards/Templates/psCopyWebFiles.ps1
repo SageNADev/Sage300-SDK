@@ -39,8 +39,8 @@ $scriptsWebSubPath.split(',') | Foreach-Object {
 # Quick Edit Namespaces
 Get-ChildItem "WebForms\**" | Foreach-Object {
   $content = (Get-Content $_);
-  $content = $content.replace('Inherits="Sage.CA.SBS.ERP.Sage300.Web','Inherits="$companynamespace$.Web');
-  $content = $content.replace('namespace Sage.CA.SBS.ERP.Sage300.Web.WebForms','namespace $companynamespace$.Web.WebForms');
+  $content = $content.replace('Inherits="Sage.CA.SBS.ERP.Sage300.Web','Inherits="$companynamespace$.$applicationid$.Web');
+  $content = $content.replace('namespace Sage.CA.SBS.ERP.Sage300.Web.WebForms','namespace $companynamespace$.$applicationid$.Web.WebForms');
   $content = $content.replace(' Common.Models.',' Sage.CA.SBS.ERP.Sage300.Common.Models.');
   $content = $content.replace('(Common.Models.','(Sage.CA.SBS.ERP.Sage300.Common.Models.');
   $content = $content.replace('<Common.Models.','<Sage.CA.SBS.ERP.Sage300.Common.Models.');

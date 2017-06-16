@@ -1,16 +1,16 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Release Version settings --> 
   <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageVersion)' == '' ">
-    <RefBuildAccpacAdvantageVersion>6.4.0.20</RefBuildAccpacAdvantageVersion>
+    <RefBuildAccpacAdvantageVersion>6.5.0.0</RefBuildAccpacAdvantageVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageTypesVersion)' == '' ">
-    <RefBuildAccpacAdvantageTypesVersion>6.4.0.0</RefBuildAccpacAdvantageTypesVersion>
+    <RefBuildAccpacAdvantageTypesVersion>6.5.0.0</RefBuildAccpacAdvantageTypesVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefBuildCOMSVRInteropVersion)' == '' ">
-    <RefBuildCOMSVRInteropVersion>6.4.0.0</RefBuildCOMSVRInteropVersion>
+    <RefBuildCOMSVRInteropVersion>6.5.0.0</RefBuildCOMSVRInteropVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageServerVersion)' == '' ">
-    <RefBuildAccpacAdvantageServerVersion>6.4.0.0</RefBuildAccpacAdvantageServerVersion>
+    <RefBuildAccpacAdvantageServerVersion>6.5.0.0</RefBuildAccpacAdvantageServerVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefInternalVersion)' == '' ">
     <RefInternalVersion>64A</RefInternalVersion>

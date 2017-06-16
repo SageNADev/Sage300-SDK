@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -33,6 +33,10 @@ using System;
 
 namespace ValuedParter.Web.Areas.TU.Models
 {
+    /// <summary>
+    /// Receipt View Model Class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ReceiptViewModel<T> : ViewModelBase<T> where T : ReceiptHeader, new()
     {
 

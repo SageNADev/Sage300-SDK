@@ -1,10 +1,10 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 (function (sage, $) {
     sage.cache = {
         _data: {},
 
-        islocalStorageSupported: function () {
+        isSessionStorageSupported: function () {
             try {
                 return 'sessionStorage' in window && window['sessionStorage'] !== null;
             } catch (e) {
@@ -12,9 +12,18 @@
             }
         },
 
+        // checks supported local cache which persists locally between sessions
+        isLocalStorageSupported: function () {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch (e) {
+                return false;
+            }
+        },
+
         get: function (token) {
             var val;
-            if (sage.cache.islocalStorageSupported()) {
+            if (sage.cache.isSessionStorageSupported()) {
                 val = sessionStorage.getItem(token);
             }
             else {
@@ -25,23 +34,57 @@
                 return JSON.parse(val);
             }
         },
+
+        getLocalStorage: function (token) {
+            var val;
+            if (sage.cache.isLocalStorageSupported()) {
+                val = localStorage.getItem(token);
+            }
+            else {
+                val = this._data[token];
+            }
+
+            if (val != null || typeof (val) == "object") {
+                return JSON.parse(val);
+            }
+        },
+
         set: function (token, payload) {
             var val = JSON.stringify(payload);
-            if (sage.cache.islocalStorageSupported()) {
+            if (sage.cache.isSessionStorageSupported()) {
                 sessionStorage.setItem(token, val);
             } else {
                 this._data[token] = val;
             }
         },
+
+        setLocalStorage: function (token, payload) {
+            var val = JSON.stringify(payload);
+            if (sage.cache.isLocalStorageSupported()) {
+                localStorage.setItem(token, val);
+            } else {
+                this._data[token] = val;
+            }
+        },
+
         clear: function (token) {
-            if (sage.cache.islocalStorageSupported()) {
+            if (sage.cache.isSessionStorageSupported()) {
                 sessionStorage.removeItem(token);
             } else {
                 this._data[token] = undefined;
             }
         },
+
+        removeLocalStorage: function (token) {
+            if (sage.cache.isLocalStorageSupported()) {
+                localStorage.removeItem(token);
+            } else {
+                this._data[token] = undefined;
+            }
+        },
+
         clearAll: function () {
-            if (sage.cache.islocalStorageSupported()) {
+            if (sage.cache.isSessionStorageSupported()) {
                 sessionStorage.clear();
             } else {
                 this._data = {};

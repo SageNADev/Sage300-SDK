@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,8 +26,10 @@ using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using ValuedPartner.TU.BusinessRepository.Mappers;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
@@ -143,6 +145,21 @@ namespace ValuedPartner.TU.BusinessRepository
             return sourceCode =>
                 (sourceCode.SourceLedger == (model.SourceLedger) &&
                 sourceCode.SourceType == (model.SourceType));
+        }
+
+        #endregion
+
+        #region Import/Export methods
+        
+        /// <summary>
+        /// Get export or import business entity property
+        /// </summary>
+        /// <param name="option">export/import option, default to null</param>
+        /// <param name="isExport">true if for export, default to false</param>
+        /// <returns>Business Entity Property</returns>
+        public override BusinessEntityProperty GetExportImportBusinessEntityProperty(string option = null, bool isExport = false)
+        {
+            return new BusinessEntityProperty(SourceCode.EntityName, ViewKeyType.UserSpecified);
         }
 
         #endregion

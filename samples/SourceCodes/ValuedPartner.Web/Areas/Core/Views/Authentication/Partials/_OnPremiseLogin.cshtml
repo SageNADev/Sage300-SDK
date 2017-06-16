@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.LoginViewModel
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -72,6 +72,7 @@
 
 <section class="footer">
     <div class="wrapper">
+        <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
         <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
         @string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)
     </div>

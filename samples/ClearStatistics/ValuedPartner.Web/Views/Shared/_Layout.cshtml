@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -32,6 +32,7 @@
     int numberOfActiveWindows;
     int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows", false), out numberOfActiveWindows);
     var isOnPremise = ConfigurationHelper.IsOnPremise;
+    var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
 }
 <html>
 <head>
@@ -53,7 +54,11 @@
 
         var umURL = '@ViewBag.UmURL';
         var isNotesAutoLaunchEnabled = @(ConfigurationHelper.IsNotesAutoLaunchEnabled ? "true" : "false");
+        var RECENT_WIN_LIMIT_CONST = @ViewBag.RecentWindowsLimit;
+        var LOGGED_IN_USERNAME_CONST = '@Model.UserName'.replace(/\s/g,'');
+        var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
         var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
+        var oAuthLocation = '@oAuthServer';
 
         @functions {
             public String GetSIRCPort(string path)

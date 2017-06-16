@@ -165,17 +165,23 @@
   text-align: right;
   padding: 10px 0 0 0;
   color: #7a7b7c;
+
+  label.required:before,
+  .req-option:before {
+    content: "*";
+    font-family: Calibri,Arial;
+    color: #41a940;
+    margin-right: 3px;
+  }
+
+  label.required:after {
+    content: "";
+    margin-right: -4px;
+  }
 }
 
 .header-group-1 > .flag-required {
   margin-bottom: -20px;
-}
-
-.req-option:before {
-  content: "*";
-  margin-right: 3px;
-  color: #007f64;
-  font-family: Calibri, Arial;
 }
 
 .header-view-options {

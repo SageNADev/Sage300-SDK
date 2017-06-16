@@ -3,7 +3,6 @@
 #region
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
-using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Menu;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
@@ -12,6 +11,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Web;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Http;
@@ -52,7 +52,13 @@ namespace $safeprojectname$
                     Container = BootstrapTaskManager.Container
                 };
 
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context);
+				//Set default company information
+                var companies =  new List<Organization>
+                {
+                    new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
+                };
+				
+                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
@@ -60,7 +66,7 @@ namespace $safeprojectname$
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = "http://" + HttpContext.Current.Request.ServerVariables["HTTP_HOST"] + url;
+                    url = HttpContext.Current.Request.Url.AbsoluteUri + url;
                     Response.Redirect(url);
                 }
             }

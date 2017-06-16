@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -418,6 +418,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             } 
         }
 
+        /// <summary>
+        /// Get Vendor details
+        /// </summary>
+        /// <param name="vendorNumber">vendor number</param>
+        /// <returns></returns>
         public JsonNetResult GetVendorDetail(string vendorNumber) 
         {
             try

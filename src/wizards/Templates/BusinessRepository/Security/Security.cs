@@ -2,6 +2,9 @@
 
 namespace $companynamespace$.$applicationid$.BusinessRepository
 {
+    /// <summary>
+    /// Security Constant Class
+    /// </summary>	
     public class Security
     {
         /// <summary>
