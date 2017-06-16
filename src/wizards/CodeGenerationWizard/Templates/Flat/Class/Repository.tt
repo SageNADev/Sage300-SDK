@@ -41,6 +41,8 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
 using <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
@@ -146,6 +148,21 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 <#
     }
 #>
+        }
+
+        #endregion
+
+        #region Import/Export methods
+        
+        /// <summary>
+        /// Get export or import business entity property
+        /// </summary>
+        /// <param name="option">export/import option, default to null</param>
+        /// <param name="isExport">true if for export, default to false</param>
+        /// <returns>Business Entity Property</returns>
+        public override BusinessEntityProperty GetExportImportBusinessEntityProperty(string option = null, bool isExport = false)
+        {
+            return new BusinessEntityProperty(<#=modelName#>.EntityName, ViewKeyType.UserSpecified);
         }
 
         #endregion
