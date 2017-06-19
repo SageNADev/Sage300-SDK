@@ -13,7 +13,7 @@
     <RefBuildAccpacAdvantageServerVersion>6.5.0.0</RefBuildAccpacAdvantageServerVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefInternalVersion)' == '' ">
-    <RefInternalVersion>64A</RefInternalVersion>
+    <RefInternalVersion>65A</RefInternalVersion>
   </PropertyGroup>
   
   <PropertyGroup>
