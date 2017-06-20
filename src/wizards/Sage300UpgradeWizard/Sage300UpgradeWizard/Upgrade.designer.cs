@@ -41,7 +41,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.lnkBlog = new System.Windows.Forms.LinkLabel();
             this.picProcess = new System.Windows.Forms.PictureBox();
             this.lblInformation = new System.Windows.Forms.Label();
-            this.chkConvert = new System.Windows.Forms.CheckBox();
             this.tbrMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
@@ -63,9 +62,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.tbrMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNext,
             this.btnBack});
-            this.tbrMain.Location = new System.Drawing.Point(0, 491);
+            this.tbrMain.Location = new System.Drawing.Point(0, 611);
             this.tbrMain.Name = "tbrMain";
-            this.tbrMain.Size = new System.Drawing.Size(474, 29);
+            this.tbrMain.Size = new System.Drawing.Size(632, 29);
             this.tbrMain.TabIndex = 10;
             this.tbrMain.Text = "toolStrip2";
             this.tbrMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tbrMain_Paint);
@@ -99,9 +98,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.lblStepTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblStepTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblStepTitle.ForeColor = System.Drawing.Color.White;
-            this.lblStepTitle.Location = new System.Drawing.Point(10, 28);
+            this.lblStepTitle.Location = new System.Drawing.Point(13, 34);
+            this.lblStepTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStepTitle.Name = "lblStepTitle";
-            this.lblStepTitle.Size = new System.Drawing.Size(350, 49);
+            this.lblStepTitle.Size = new System.Drawing.Size(467, 60);
             this.lblStepTitle.TabIndex = 2;
             this.lblStepTitle.Text = "Step {0} - {1}";
             // 
@@ -109,9 +109,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(366, 28);
+            this.picLogo.Location = new System.Drawing.Point(488, 34);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(95, 49);
+            this.picLogo.Size = new System.Drawing.Size(127, 60);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 4;
             this.picLogo.TabStop = false;
@@ -121,6 +122,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.splitBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitBase.IsSplitterFixed = true;
             this.splitBase.Location = new System.Drawing.Point(0, 0);
+            this.splitBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitBase.Name = "splitBase";
             this.splitBase.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -137,30 +139,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.splitBase.Panel2.Controls.Add(this.lnkBlog);
             this.splitBase.Panel2.Controls.Add(this.picProcess);
             this.splitBase.Panel2.Controls.Add(this.lblInformation);
-            this.splitBase.Panel2.Controls.Add(this.chkConvert);
-            this.splitBase.Size = new System.Drawing.Size(474, 520);
-            this.splitBase.SplitterDistance = 89;
+            this.splitBase.Size = new System.Drawing.Size(632, 640);
+            this.splitBase.SplitterDistance = 109;
+            this.splitBase.SplitterWidth = 5;
             this.splitBase.TabIndex = 9;
             // 
             // lnkBlog
             // 
-            this.lnkBlog.AutoSize = true;
-            this.lnkBlog.Location = new System.Drawing.Point(20, 362);
-            this.lnkBlog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkBlog.Location = new System.Drawing.Point(0, 0);
+            this.lnkBlog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkBlog.Name = "lnkBlog";
-            this.lnkBlog.Size = new System.Drawing.Size(393, 13);
-            this.lnkBlog.TabIndex = 3;
-            this.lnkBlog.TabStop = true;
-            this.lnkBlog.Text = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
-            this.lnkBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBlog_LinkClicked);
+            this.lnkBlog.Size = new System.Drawing.Size(133, 28);
+            this.lnkBlog.TabIndex = 0;
             // 
             // picProcess
             // 
             this.picProcess.Image = global::Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties.Resources.loading_new;
-            this.picProcess.Location = new System.Drawing.Point(184, 16);
-            this.picProcess.Margin = new System.Windows.Forms.Padding(2);
+            this.picProcess.Location = new System.Drawing.Point(245, 20);
+            this.picProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picProcess.Name = "picProcess";
-            this.picProcess.Size = new System.Drawing.Size(128, 131);
+            this.picProcess.Size = new System.Drawing.Size(171, 161);
             this.picProcess.TabIndex = 2;
             this.picProcess.TabStop = false;
             // 
@@ -168,34 +166,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // 
             this.lblInformation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblInformation.Location = new System.Drawing.Point(18, 16);
-            this.lblInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInformation.Location = new System.Drawing.Point(24, 20);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(427, 361);
+            this.lblInformation.Size = new System.Drawing.Size(569, 444);
             this.lblInformation.TabIndex = 1;
-            // 
-            // chkConvert
-            // 
-            this.chkConvert.AutoSize = true;
-            this.chkConvert.ForeColor = System.Drawing.Color.SteelBlue;
-            this.chkConvert.Location = new System.Drawing.Point(20, 379);
-            this.chkConvert.Margin = new System.Windows.Forms.Padding(2);
-            this.chkConvert.Name = "chkConvert";
-            this.chkConvert.Size = new System.Drawing.Size(209, 17);
-            this.chkConvert.TabIndex = 0;
-            this.chkConvert.Text = "Convert to module specific web project";
-            this.chkConvert.UseVisualStyleBackColor = true;
             // 
             // Upgrade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 520);
+            this.ClientSize = new System.Drawing.Size(632, 640);
             this.Controls.Add(this.tbrMain);
             this.Controls.Add(this.splitBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Upgrade";
@@ -207,7 +193,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel2.ResumeLayout(false);
-            this.splitBase.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
             this.splitBase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProcess)).EndInit();
@@ -225,7 +210,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private System.Windows.Forms.Label lblStepTitle;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.SplitContainer splitBase;
-        private System.Windows.Forms.CheckBox chkConvert;
         private System.Windows.Forms.Label lblInformation;
 		private System.Windows.Forms.PictureBox picProcess;
 		private System.Windows.Forms.LinkLabel lnkBlog;
