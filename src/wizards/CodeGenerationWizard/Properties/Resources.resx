@@ -478,4 +478,7 @@
   <data name="ViewNameTip" xml:space="preserve">
     <value>Defaulted from the business view and can be overridden</value>
   </data>
+  <data name="CodeGeneration" xml:space="preserve">
+    <value>Code Generation</value>
+  </data>
 </root>

@@ -164,6 +164,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
+            Text = Resources.CodeGeneration;
+
             btnBack.Text = Resources.Back;
             btnNext.Text = Resources.Next;
 

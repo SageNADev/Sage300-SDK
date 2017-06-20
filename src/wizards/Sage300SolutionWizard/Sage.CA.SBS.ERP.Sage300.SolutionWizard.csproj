@@ -94,6 +94,7 @@
     <None Include="Resources\AccpacDotNetVersion.props" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\finder16X.bmp" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
   </ItemGroup>

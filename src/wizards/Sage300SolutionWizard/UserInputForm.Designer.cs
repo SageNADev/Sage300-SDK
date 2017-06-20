@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInputForm));
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblModuleId = new System.Windows.Forms.Label();
@@ -36,18 +37,18 @@
             this.txtNamespace = new System.Windows.Forms.TextBox();
             this.lblNamespace = new System.Windows.Forms.Label();
             this.splitBase = new System.Windows.Forms.SplitContainer();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblStepDescription = new System.Windows.Forms.Label();
             this.lblStepTitle = new System.Windows.Forms.Label();
+            this.splitSteps = new System.Windows.Forms.SplitContainer();
+            this.pnlInfo = new System.Windows.Forms.Panel();
+            this.pnlGenerateSolution = new System.Windows.Forms.Panel();
+            this.lblGenerateHelp = new System.Windows.Forms.Label();
             this.pnlResourceFiles = new System.Windows.Forms.Panel();
-            this.lblResourceFilesHelp = new System.Windows.Forms.Label();
             this.chkFrench = new System.Windows.Forms.CheckBox();
             this.chkSpanish = new System.Windows.Forms.CheckBox();
             this.chkChineseTraditional = new System.Windows.Forms.CheckBox();
             this.chkChineseSimplified = new System.Windows.Forms.CheckBox();
             this.chkEnglish = new System.Windows.Forms.CheckBox();
-            this.pnlGenerateSolution = new System.Windows.Forms.Panel();
-            this.lblGenerateHelp = new System.Windows.Forms.Label();
             this.pnlKendo = new System.Windows.Forms.Panel();
             this.lblKendoVersionHelp = new System.Windows.Forms.Label();
             this.lblKendoLink = new System.Windows.Forms.LinkLabel();
@@ -56,40 +57,42 @@
             this.txtKendoFolder = new System.Windows.Forms.TextBox();
             this.lblKendoFolder = new System.Windows.Forms.Label();
             this.chkKendoLicense = new System.Windows.Forms.CheckBox();
-            this.tbrMain = new System.Windows.Forms.ToolStrip();
-            this.btnNext = new System.Windows.Forms.ToolStripButton();
-            this.btnBack = new System.Windows.Forms.ToolStripButton();
-            this.pnlInfo = new System.Windows.Forms.Panel();
-            this.lblNamespaceHelp = new System.Windows.Forms.Label();
-            this.lblModuleIdHelp = new System.Windows.Forms.Label();
-            this.lblCompanyNameHelp = new System.Windows.Forms.Label();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
             this.splitBase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlResourceFiles.SuspendLayout();
-            this.pnlGenerateSolution.SuspendLayout();
-            this.pnlKendo.SuspendLayout();
-            this.tbrMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).BeginInit();
+            this.splitSteps.Panel1.SuspendLayout();
+            this.splitSteps.Panel2.SuspendLayout();
+            this.splitSteps.SuspendLayout();
             this.pnlInfo.SuspendLayout();
+            this.pnlGenerateSolution.SuspendLayout();
+            this.pnlResourceFiles.SuspendLayout();
+            this.pnlKendo.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(12, 22);
+            this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(5, 25);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(85, 13);
+            this.lblCompanyName.Size = new System.Drawing.Size(90, 13);
             this.lblCompanyName.TabIndex = 1;
             this.lblCompanyName.Text = "Company Name:";
             // 
             // lblModuleId
             // 
             this.lblModuleId.AutoSize = true;
-            this.lblModuleId.Location = new System.Drawing.Point(12, 51);
+            this.lblModuleId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleId.Location = new System.Drawing.Point(31, 51);
             this.lblModuleId.Name = "lblModuleId";
-            this.lblModuleId.Size = new System.Drawing.Size(59, 13);
+            this.lblModuleId.Size = new System.Drawing.Size(64, 13);
             this.lblModuleId.TabIndex = 2;
             this.lblModuleId.Text = "Module ID:";
             // 
@@ -119,9 +122,10 @@
             // lblNamespace
             // 
             this.lblNamespace.AutoSize = true;
-            this.lblNamespace.Location = new System.Drawing.Point(12, 77);
+            this.lblNamespace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamespace.Location = new System.Drawing.Point(27, 77);
             this.lblNamespace.Name = "lblNamespace";
-            this.lblNamespace.Size = new System.Drawing.Size(67, 13);
+            this.lblNamespace.Size = new System.Drawing.Size(68, 13);
             this.lblNamespace.TabIndex = 6;
             this.lblNamespace.Text = "Namespace:";
             // 
@@ -136,42 +140,25 @@
             // splitBase.Panel1
             // 
             this.splitBase.Panel1.BackColor = System.Drawing.Color.White;
-            this.splitBase.Panel1.Controls.Add(this.picLogo);
             this.splitBase.Panel1.Controls.Add(this.lblStepDescription);
             this.splitBase.Panel1.Controls.Add(this.lblStepTitle);
-            this.splitBase.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitBase_Panel1_Paint);
             // 
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitBase.Panel2.Controls.Add(this.pnlResourceFiles);
-            this.splitBase.Panel2.Controls.Add(this.pnlGenerateSolution);
-            this.splitBase.Panel2.Controls.Add(this.pnlKendo);
-            this.splitBase.Panel2.Controls.Add(this.tbrMain);
-            this.splitBase.Panel2.Controls.Add(this.pnlInfo);
-            this.splitBase.Size = new System.Drawing.Size(474, 520);
-            this.splitBase.SplitterDistance = 100;
+            this.splitBase.Panel2.Controls.Add(this.splitSteps);
+            this.splitBase.Size = new System.Drawing.Size(474, 346);
+            this.splitBase.SplitterDistance = 66;
             this.splitBase.TabIndex = 7;
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Image = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage_300_logo;
-            this.picLogo.Location = new System.Drawing.Point(366, 28);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(95, 49);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 6;
-            this.picLogo.TabStop = false;
             // 
             // lblStepDescription
             // 
             this.lblStepDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStepDescription.ForeColor = System.Drawing.Color.White;
+            this.lblStepDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStepDescription.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepDescription.Location = new System.Drawing.Point(12, 40);
             this.lblStepDescription.Name = "lblStepDescription";
-            this.lblStepDescription.Size = new System.Drawing.Size(258, 50);
+            this.lblStepDescription.Size = new System.Drawing.Size(450, 26);
             this.lblStepDescription.TabIndex = 5;
             this.lblStepDescription.Text = "This is the detailed description";
             // 
@@ -179,42 +166,87 @@
             // 
             this.lblStepTitle.AutoSize = true;
             this.lblStepTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStepTitle.ForeColor = System.Drawing.Color.White;
+            this.lblStepTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStepTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepTitle.Location = new System.Drawing.Point(12, 9);
             this.lblStepTitle.Name = "lblStepTitle";
-            this.lblStepTitle.Size = new System.Drawing.Size(218, 20);
+            this.lblStepTitle.Size = new System.Drawing.Size(206, 21);
             this.lblStepTitle.TabIndex = 4;
             this.lblStepTitle.Text = "This is the title of the step";
             // 
+            // splitSteps
+            // 
+            this.splitSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitSteps.IsSplitterFixed = true;
+            this.splitSteps.Location = new System.Drawing.Point(0, 0);
+            this.splitSteps.Name = "splitSteps";
+            this.splitSteps.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitSteps.Panel1
+            // 
+            this.splitSteps.Panel1.Controls.Add(this.pnlInfo);
+            this.splitSteps.Panel1.Controls.Add(this.pnlGenerateSolution);
+            this.splitSteps.Panel1.Controls.Add(this.pnlResourceFiles);
+            this.splitSteps.Panel1.Controls.Add(this.pnlKendo);
+            // 
+            // splitSteps.Panel2
+            // 
+            this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
+            this.splitSteps.Size = new System.Drawing.Size(474, 276);
+            this.splitSteps.SplitterDistance = 237;
+            this.splitSteps.TabIndex = 5;
+            // 
+            // pnlInfo
+            // 
+            this.pnlInfo.Controls.Add(this.lblCompanyName);
+            this.pnlInfo.Controls.Add(this.txtNamespace);
+            this.pnlInfo.Controls.Add(this.lblModuleId);
+            this.pnlInfo.Controls.Add(this.lblNamespace);
+            this.pnlInfo.Controls.Add(this.txtCompanyName);
+            this.pnlInfo.Controls.Add(this.txtApplicationID);
+            this.pnlInfo.Location = new System.Drawing.Point(408, 12);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(295, 33);
+            this.pnlInfo.TabIndex = 0;
+            // 
+            // pnlGenerateSolution
+            // 
+            this.pnlGenerateSolution.Controls.Add(this.lblGenerateHelp);
+            this.pnlGenerateSolution.Location = new System.Drawing.Point(408, 144);
+            this.pnlGenerateSolution.Name = "pnlGenerateSolution";
+            this.pnlGenerateSolution.Size = new System.Drawing.Size(288, 38);
+            this.pnlGenerateSolution.TabIndex = 3;
+            // 
+            // lblGenerateHelp
+            // 
+            this.lblGenerateHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenerateHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblGenerateHelp.Location = new System.Drawing.Point(84, 33);
+            this.lblGenerateHelp.Name = "lblGenerateHelp";
+            this.lblGenerateHelp.Size = new System.Drawing.Size(273, 111);
+            this.lblGenerateHelp.TabIndex = 0;
+            this.lblGenerateHelp.Text = "Select the \'Generate\' button below to generate the solution based upon the inform" +
+    "ation entered and selected in the proceeding steps.";
+            // 
             // pnlResourceFiles
             // 
-            this.pnlResourceFiles.Controls.Add(this.lblResourceFilesHelp);
             this.pnlResourceFiles.Controls.Add(this.chkFrench);
             this.pnlResourceFiles.Controls.Add(this.chkSpanish);
             this.pnlResourceFiles.Controls.Add(this.chkChineseTraditional);
             this.pnlResourceFiles.Controls.Add(this.chkChineseSimplified);
             this.pnlResourceFiles.Controls.Add(this.chkEnglish);
-            this.pnlResourceFiles.Location = new System.Drawing.Point(414, 117);
+            this.pnlResourceFiles.Location = new System.Drawing.Point(408, 97);
             this.pnlResourceFiles.Name = "pnlResourceFiles";
-            this.pnlResourceFiles.Size = new System.Drawing.Size(301, 45);
+            this.pnlResourceFiles.Size = new System.Drawing.Size(271, 25);
             this.pnlResourceFiles.TabIndex = 4;
-            // 
-            // lblResourceFilesHelp
-            // 
-            this.lblResourceFilesHelp.AutoSize = true;
-            this.lblResourceFilesHelp.Location = new System.Drawing.Point(19, 157);
-            this.lblResourceFilesHelp.Name = "lblResourceFilesHelp";
-            this.lblResourceFilesHelp.Size = new System.Drawing.Size(340, 91);
-            this.lblResourceFilesHelp.TabIndex = 5;
-            this.lblResourceFilesHelp.Text = resources.GetString("lblResourceFilesHelp.Text");
             // 
             // chkFrench
             // 
             this.chkFrench.AutoSize = true;
+            this.chkFrench.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkFrench.Location = new System.Drawing.Point(16, 114);
             this.chkFrench.Name = "chkFrench";
-            this.chkFrench.Size = new System.Drawing.Size(59, 17);
+            this.chkFrench.Size = new System.Drawing.Size(61, 17);
             this.chkFrench.TabIndex = 4;
             this.chkFrench.Text = "French";
             this.chkFrench.UseVisualStyleBackColor = true;
@@ -222,9 +254,10 @@
             // chkSpanish
             // 
             this.chkSpanish.AutoSize = true;
+            this.chkSpanish.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSpanish.Location = new System.Drawing.Point(16, 91);
             this.chkSpanish.Name = "chkSpanish";
-            this.chkSpanish.Size = new System.Drawing.Size(64, 17);
+            this.chkSpanish.Size = new System.Drawing.Size(67, 17);
             this.chkSpanish.TabIndex = 3;
             this.chkSpanish.Text = "Spanish";
             this.chkSpanish.UseVisualStyleBackColor = true;
@@ -232,9 +265,10 @@
             // chkChineseTraditional
             // 
             this.chkChineseTraditional.AutoSize = true;
+            this.chkChineseTraditional.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkChineseTraditional.Location = new System.Drawing.Point(16, 68);
             this.chkChineseTraditional.Name = "chkChineseTraditional";
-            this.chkChineseTraditional.Size = new System.Drawing.Size(116, 17);
+            this.chkChineseTraditional.Size = new System.Drawing.Size(124, 17);
             this.chkChineseTraditional.TabIndex = 2;
             this.chkChineseTraditional.Text = "Chinese Traditional";
             this.chkChineseTraditional.UseVisualStyleBackColor = true;
@@ -242,9 +276,10 @@
             // chkChineseSimplified
             // 
             this.chkChineseSimplified.AutoSize = true;
+            this.chkChineseSimplified.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkChineseSimplified.Location = new System.Drawing.Point(16, 45);
             this.chkChineseSimplified.Name = "chkChineseSimplified";
-            this.chkChineseSimplified.Size = new System.Drawing.Size(111, 17);
+            this.chkChineseSimplified.Size = new System.Drawing.Size(121, 17);
             this.chkChineseSimplified.TabIndex = 1;
             this.chkChineseSimplified.Text = "Chinese Simplified";
             this.chkChineseSimplified.UseVisualStyleBackColor = true;
@@ -255,29 +290,13 @@
             this.chkEnglish.Checked = true;
             this.chkEnglish.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEnglish.Enabled = false;
+            this.chkEnglish.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEnglish.Location = new System.Drawing.Point(16, 22);
             this.chkEnglish.Name = "chkEnglish";
-            this.chkEnglish.Size = new System.Drawing.Size(60, 17);
+            this.chkEnglish.Size = new System.Drawing.Size(64, 17);
             this.chkEnglish.TabIndex = 0;
             this.chkEnglish.Text = "English";
             this.chkEnglish.UseVisualStyleBackColor = true;
-            // 
-            // pnlGenerateSolution
-            // 
-            this.pnlGenerateSolution.Controls.Add(this.lblGenerateHelp);
-            this.pnlGenerateSolution.Location = new System.Drawing.Point(414, 168);
-            this.pnlGenerateSolution.Name = "pnlGenerateSolution";
-            this.pnlGenerateSolution.Size = new System.Drawing.Size(98, 37);
-            this.pnlGenerateSolution.TabIndex = 3;
-            // 
-            // lblGenerateHelp
-            // 
-            this.lblGenerateHelp.Location = new System.Drawing.Point(112, 65);
-            this.lblGenerateHelp.Name = "lblGenerateHelp";
-            this.lblGenerateHelp.Size = new System.Drawing.Size(273, 111);
-            this.lblGenerateHelp.TabIndex = 0;
-            this.lblGenerateHelp.Text = "Select the \'Generate\' button below to generate the solution based upon the inform" +
-    "ation entered and selected in the proceeding steps.";
             // 
             // pnlKendo
             // 
@@ -288,23 +307,25 @@
             this.pnlKendo.Controls.Add(this.txtKendoFolder);
             this.pnlKendo.Controls.Add(this.lblKendoFolder);
             this.pnlKendo.Controls.Add(this.chkKendoLicense);
-            this.pnlKendo.Location = new System.Drawing.Point(414, 78);
+            this.pnlKendo.Location = new System.Drawing.Point(408, 53);
             this.pnlKendo.Name = "pnlKendo";
-            this.pnlKendo.Size = new System.Drawing.Size(224, 35);
+            this.pnlKendo.Size = new System.Drawing.Size(233, 34);
             this.pnlKendo.TabIndex = 2;
             // 
             // lblKendoVersionHelp
             // 
-            this.lblKendoVersionHelp.Location = new System.Drawing.Point(109, 203);
+            this.lblKendoVersionHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKendoVersionHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoVersionHelp.Location = new System.Drawing.Point(109, 129);
             this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
             this.lblKendoVersionHelp.Size = new System.Drawing.Size(293, 36);
             this.lblKendoVersionHelp.TabIndex = 6;
-            this.lblKendoVersionHelp.Text = "The Kendo version used by these projects is v2016.2.714";
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2016.2.714";
             // 
             // lblKendoLink
             // 
             this.lblKendoLink.AutoSize = true;
-            this.lblKendoLink.Location = new System.Drawing.Point(107, 168);
+            this.lblKendoLink.Location = new System.Drawing.Point(110, 104);
             this.lblKendoLink.Name = "lblKendoLink";
             this.lblKendoLink.Size = new System.Drawing.Size(348, 13);
             this.lblKendoLink.TabIndex = 5;
@@ -314,22 +335,25 @@
             // 
             // lblKendoFolderHelp
             // 
-            this.lblKendoFolderHelp.Location = new System.Drawing.Point(107, 97);
+            this.lblKendoFolderHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKendoFolderHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoFolderHelp.Location = new System.Drawing.Point(107, 77);
             this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
-            this.lblKendoFolderHelp.Size = new System.Drawing.Size(297, 71);
+            this.lblKendoFolderHelp.Size = new System.Drawing.Size(297, 27);
             this.lblKendoFolderHelp.TabIndex = 4;
-            this.lblKendoFolderHelp.Text = "The projects require the kendo.all.min.js file in order to compile successfully. " +
-    "A commercial license must be purchased in order to use this file. The Kendo UI c" +
-    "ommercial license may be obtained at:";
+            this.lblKendoFolderHelp.Text = "The Kendo UI Commercial License may be obtained at:";
             // 
             // btnKendoDialog
             // 
+            this.btnKendoDialog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKendoDialog.BackgroundImage")));
+            this.btnKendoDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnKendoDialog.Enabled = false;
+            this.btnKendoDialog.FlatAppearance.BorderSize = 0;
+            this.btnKendoDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKendoDialog.Location = new System.Drawing.Point(419, 49);
             this.btnKendoDialog.Name = "btnKendoDialog";
             this.btnKendoDialog.Size = new System.Drawing.Size(27, 20);
             this.btnKendoDialog.TabIndex = 3;
-            this.btnKendoDialog.Text = "...";
             this.btnKendoDialog.UseVisualStyleBackColor = true;
             this.btnKendoDialog.Click += new System.EventHandler(this.btnKendoDialog_Click);
             // 
@@ -354,98 +378,52 @@
             // chkKendoLicense
             // 
             this.chkKendoLicense.AutoSize = true;
+            this.chkKendoLicense.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkKendoLicense.Location = new System.Drawing.Point(16, 21);
             this.chkKendoLicense.Name = "chkKendoLicense";
-            this.chkKendoLicense.Size = new System.Drawing.Size(214, 17);
+            this.chkKendoLicense.Size = new System.Drawing.Size(236, 17);
             this.chkKendoLicense.TabIndex = 0;
-            this.chkKendoLicense.Text = "Purchased Kendo Commercial License?";
+            this.chkKendoLicense.Text = "Purchased Kendo UI Commercial License?";
             this.chkKendoLicense.UseVisualStyleBackColor = true;
             this.chkKendoLicense.CheckedChanged += new System.EventHandler(this.chkKendoLicense_CheckedChanged);
             // 
-            // tbrMain
+            // pnlButtons
             // 
-            this.tbrMain.BackColor = System.Drawing.SystemColors.Control;
-            this.tbrMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbrMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNext,
-            this.btnBack});
-            this.tbrMain.Location = new System.Drawing.Point(0, 391);
-            this.tbrMain.Name = "tbrMain";
-            this.tbrMain.Size = new System.Drawing.Size(474, 25);
-            this.tbrMain.TabIndex = 1;
-            this.tbrMain.Text = "toolStrip1";
-            this.tbrMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tbrMain_Paint);
+            this.pnlButtons.Controls.Add(this.btnNext);
+            this.pnlButtons.Controls.Add(this.btnBack);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 0);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(474, 35);
+            this.pnlButtons.TabIndex = 5;
             // 
             // btnNext
             // 
-            this.btnNext.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(394, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(35, 22);
+            this.btnNext.Size = new System.Drawing.Size(68, 25);
+            this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(318, 3);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(36, 22);
+            this.btnBack.Size = new System.Drawing.Size(68, 25);
+            this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // pnlInfo
-            // 
-            this.pnlInfo.Controls.Add(this.lblNamespaceHelp);
-            this.pnlInfo.Controls.Add(this.lblModuleIdHelp);
-            this.pnlInfo.Controls.Add(this.lblCompanyNameHelp);
-            this.pnlInfo.Controls.Add(this.lblCompanyName);
-            this.pnlInfo.Controls.Add(this.txtNamespace);
-            this.pnlInfo.Controls.Add(this.lblModuleId);
-            this.pnlInfo.Controls.Add(this.lblNamespace);
-            this.pnlInfo.Controls.Add(this.txtCompanyName);
-            this.pnlInfo.Controls.Add(this.txtApplicationID);
-            this.pnlInfo.Location = new System.Drawing.Point(414, 23);
-            this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(89, 27);
-            this.pnlInfo.TabIndex = 0;
-            // 
-            // lblNamespaceHelp
-            // 
-            this.lblNamespaceHelp.Location = new System.Drawing.Point(101, 245);
-            this.lblNamespaceHelp.Name = "lblNamespaceHelp";
-            this.lblNamespaceHelp.Size = new System.Drawing.Size(238, 39);
-            this.lblNamespaceHelp.TabIndex = 9;
-            this.lblNamespaceHelp.Text = "The Namespace is defaulted from the Company Name and may be overwritten. It will " +
-    "be used for the generated code\'s namespace.";
-            // 
-            // lblModuleIdHelp
-            // 
-            this.lblModuleIdHelp.Location = new System.Drawing.Point(101, 186);
-            this.lblModuleIdHelp.Name = "lblModuleIdHelp";
-            this.lblModuleIdHelp.Size = new System.Drawing.Size(226, 37);
-            this.lblModuleIdHelp.TabIndex = 8;
-            this.lblModuleIdHelp.Text = "The Module ID is the two character code used to identify a module.";
-            // 
-            // lblCompanyNameHelp
-            // 
-            this.lblCompanyNameHelp.Location = new System.Drawing.Point(101, 126);
-            this.lblCompanyNameHelp.Name = "lblCompanyNameHelp";
-            this.lblCompanyNameHelp.Size = new System.Drawing.Size(238, 48);
-            this.lblCompanyNameHelp.TabIndex = 7;
-            this.lblCompanyNameHelp.Text = "The Company Name is used to generate  Copyright tags and default the Namespace.";
             // 
             // UserInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 520);
+            this.ClientSize = new System.Drawing.Size(474, 346);
             this.Controls.Add(this.splitBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
@@ -454,25 +432,26 @@
             this.MinimizeBox = false;
             this.Name = "UserInputForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solution Wizard";
+            this.Text = "Solution Generation";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.UserInputForm_HelpButtonClicked);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserInputForm_FormClosed);
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel1.PerformLayout();
             this.splitBase.Panel2.ResumeLayout(false);
-            this.splitBase.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
             this.splitBase.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlResourceFiles.ResumeLayout(false);
-            this.pnlResourceFiles.PerformLayout();
-            this.pnlGenerateSolution.ResumeLayout(false);
-            this.pnlKendo.ResumeLayout(false);
-            this.pnlKendo.PerformLayout();
-            this.tbrMain.ResumeLayout(false);
-            this.tbrMain.PerformLayout();
+            this.splitSteps.Panel1.ResumeLayout(false);
+            this.splitSteps.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).EndInit();
+            this.splitSteps.ResumeLayout(false);
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            this.pnlGenerateSolution.ResumeLayout(false);
+            this.pnlResourceFiles.ResumeLayout(false);
+            this.pnlResourceFiles.PerformLayout();
+            this.pnlKendo.ResumeLayout(false);
+            this.pnlKendo.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -486,16 +465,9 @@
         private System.Windows.Forms.TextBox txtNamespace;
         private System.Windows.Forms.Label lblNamespace;
         private System.Windows.Forms.SplitContainer splitBase;
-        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblStepDescription;
         private System.Windows.Forms.Label lblStepTitle;
         private System.Windows.Forms.Panel pnlInfo;
-        private System.Windows.Forms.ToolStrip tbrMain;
-        private System.Windows.Forms.ToolStripButton btnNext;
-        private System.Windows.Forms.ToolStripButton btnBack;
-        private System.Windows.Forms.Label lblNamespaceHelp;
-        private System.Windows.Forms.Label lblModuleIdHelp;
-        private System.Windows.Forms.Label lblCompanyNameHelp;
         private System.Windows.Forms.Panel pnlKendo;
         private System.Windows.Forms.Label lblKendoVersionHelp;
         private System.Windows.Forms.LinkLabel lblKendoLink;
@@ -507,11 +479,15 @@
         private System.Windows.Forms.Panel pnlGenerateSolution;
         private System.Windows.Forms.Label lblGenerateHelp;
         private System.Windows.Forms.Panel pnlResourceFiles;
-        private System.Windows.Forms.Label lblResourceFilesHelp;
         private System.Windows.Forms.CheckBox chkFrench;
         private System.Windows.Forms.CheckBox chkSpanish;
         private System.Windows.Forms.CheckBox chkChineseTraditional;
         private System.Windows.Forms.CheckBox chkChineseSimplified;
         private System.Windows.Forms.CheckBox chkEnglish;
+        private System.Windows.Forms.SplitContainer splitSteps;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.ToolTip tooltip;
     }
 }

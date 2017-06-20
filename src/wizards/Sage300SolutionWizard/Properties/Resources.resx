@@ -136,7 +136,7 @@
     <value>The Kendo Folder cannot be blank.</value>
   </data>
   <data name="KendoLicenseInvalid" xml:space="preserve">
-    <value>The Kendo License must be checked to continue.</value>
+    <value>The Kendo UI Commercial License must be checked to continue.</value>
   </data>
   <data name="ModuleIdInvalid" xml:space="preserve">
     <value>The Module ID cannot be blank or contain spaces.</value>
@@ -180,5 +180,74 @@
   </data>
   <data name="StepTitleResourceFiles" xml:space="preserve">
     <value>Select Resource Files</value>
+  </data>
+  <data name="ChineseSimplified" xml:space="preserve">
+    <value>Chinese Simplified</value>
+  </data>
+  <data name="ChineseTraditional" xml:space="preserve">
+    <value>Chinese Traditional</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name:</value>
+  </data>
+  <data name="CompanyNameTip" xml:space="preserve">
+    <value>The Company Name is used to generate  the Copyright tags and default the Namespace.</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EnglishTip" xml:space="preserve">
+    <value>English is the default language.</value>
+    <comment>.</comment>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="GenerateTip" xml:space="preserve">
+    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.</value>
+  </data>
+  <data name="KendoFolder" xml:space="preserve">
+    <value>Kendo Folder:</value>
+  </data>
+  <data name="KendoFolderDialog" xml:space="preserve">
+    <value>Lookup the location of the kendo.all.min.js file</value>
+  </data>
+  <data name="KendoFolderLinkTip" xml:space="preserve">
+    <value>The Kendo UI Commercial License may be obtained at:</value>
+  </data>
+  <data name="KendoFolderTip" xml:space="preserve">
+    <value>Enter the folder containing the kendo.all.min.js file</value>
+  </data>
+  <data name="KendoLicense" xml:space="preserve">
+    <value>Purchased Kendo UI Commercial License?</value>
+  </data>
+  <data name="KendoLicenseTip" xml:space="preserve">
+    <value>The generated projects require the kendo.all.min.js file in order to compile successfully. A Kendo UI Commercial License must be purchased in order to use this file.</value>
+  </data>
+  <data name="KendoVersionTip" xml:space="preserve">
+    <value>The Kendo UI version used in these projects is v2016.2.714</value>
+  </data>
+  <data name="ModuleId" xml:space="preserve">
+    <value>Module ID:</value>
+  </data>
+  <data name="ModuleIdTip" xml:space="preserve">
+    <value>The Module ID is the two character code used to identify a module.</value>
+  </data>
+  <data name="NamespaceName" xml:space="preserve">
+    <value>Namespace:</value>
+  </data>
+  <data name="NamespaceNameTip" xml:space="preserve">
+    <value>The Namespace is defaulted from the Company Name and may be overwritten. It will be used for the generated code's namespace.</value>
+  </data>
+  <data name="NonEnglishTip" xml:space="preserve">
+    <value>The {0} language is optional and if selected will be created 
+with keys but no values and must have translated values 
+prior to deployment.</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="SolutionGeneration" xml:space="preserve">
+    <value>Solution Generation</value>
   </data>
 </root>

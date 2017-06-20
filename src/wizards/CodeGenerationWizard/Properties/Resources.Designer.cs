@@ -89,6 +89,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code Generation.
+        /// </summary>
+        internal static string CodeGeneration {
+            get {
+                return ResourceManager.GetString("CodeGeneration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code Type:.
         /// </summary>
         internal static string CodeType {

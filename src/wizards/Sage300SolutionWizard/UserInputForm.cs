@@ -21,8 +21,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties;
 
@@ -36,9 +34,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
         /// <summary> Current Wizard Step </summary>
         private int _currentWizardStep;
-
-        /// <summary> Sage color </summary>
-        private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
 
         /// <summary> Generate </summary>
         private bool _generate = false;
@@ -61,15 +56,65 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         public UserInputForm()
         {
             InitializeComponent();
+            Localize();
             InitWizardSteps();
         }
         #endregion
+
+        /// <summary> Localize </summary>
+        private void Localize()
+        {
+            Text = Resources.SolutionGeneration;
+
+            btnBack.Text = Resources.Back;
+            btnNext.Text = Resources.Next;
+
+            // Main Step
+            lblCompanyName.Text = Resources.CompanyName;
+            tooltip.SetToolTip(lblCompanyName, Resources.CompanyNameTip);
+
+            lblModuleId.Text = Resources.ModuleId;
+            tooltip.SetToolTip(lblModuleId, Resources.ModuleIdTip);
+
+            lblNamespace.Text = Resources.NamespaceName;
+            tooltip.SetToolTip(lblNamespace, Resources.NamespaceNameTip);
+
+            // Kendo Step
+            chkKendoLicense.Text = Resources.KendoLicense;
+            tooltip.SetToolTip(chkKendoLicense, Resources.KendoLicenseTip);
+
+            lblKendoFolder.Text = Resources.KendoFolder;
+            tooltip.SetToolTip(lblKendoFolder, Resources.KendoFolderTip);
+
+            tooltip.SetToolTip(btnKendoDialog, Resources.KendoFolderDialog);
+
+            lblKendoFolderHelp.Text = Resources.KendoFolderLinkTip;
+
+            // Resource Step
+            chkEnglish.Text = Resources.English;
+            tooltip.SetToolTip(chkEnglish, Resources.EnglishTip);
+
+            chkSpanish.Text = Resources.Spanish;
+            tooltip.SetToolTip(chkSpanish, string.Format(Resources.NonEnglishTip, Resources.Spanish));
+
+            chkFrench.Text = Resources.French;
+            tooltip.SetToolTip(chkFrench, string.Format(Resources.NonEnglishTip, Resources.French));
+
+            chkChineseSimplified.Text = Resources.ChineseSimplified;
+            tooltip.SetToolTip(chkChineseSimplified, string.Format(Resources.NonEnglishTip, Resources.ChineseSimplified));
+
+            chkChineseTraditional.Text = Resources.ChineseTraditional;
+            tooltip.SetToolTip(chkChineseTraditional, string.Format(Resources.NonEnglishTip, Resources.ChineseTraditional));
+
+            // Generate Step
+            lblGenerateHelp.Text = Resources.GenerateTip;
+
+        }
 
         /// <summary> Initialize wizard steps </summary>
         private void InitWizardSteps()
         {
             // Default
-            btnNext.Text = Resources.Next;
             btnBack.Enabled = false;
 
             // Current Step
@@ -83,18 +128,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             InitPanel(pnlKendo);
             InitPanel(pnlResourceFiles);
             InitPanel(pnlGenerateSolution);
-
-            // Test color for helpful labels
-            lblCompanyNameHelp.ForeColor = _sageColor;
-            lblModuleIdHelp.ForeColor = _sageColor;
-            lblNamespaceHelp.ForeColor = _sageColor;
-
-            lblKendoFolderHelp.ForeColor = _sageColor;
-            lblKendoVersionHelp.ForeColor = _sageColor;
-
-            lblResourceFilesHelp.ForeColor = _sageColor;
-
-            lblGenerateHelp.ForeColor = _sageColor;
 
             AddStep(Resources.StepTitleInfo, Resources.StepDescriptionInfo, pnlInfo);
             AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
@@ -327,35 +360,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             }
 
             txtKendoFolder.Text = dialog.SelectedPath.Trim();
-        }
-
-        /// <summary> Add gradient</summary>
-        /// <param name="e">Event Args </param>
-        private void FillGradient(PaintEventArgs e)
-        {
-            using (var brush = new LinearGradientBrush(ClientRectangle,
-                                                           _sageColor,
-                                                           Color.White,
-                                                           LinearGradientMode.Horizontal))
-            {
-                e.Graphics.FillRectangle(brush, ClientRectangle);
-            }
-        }
-
-        /// <summary> Add gradient to toolbar</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void tbrMain_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
-
-        /// <summary> Add gradient to top panel</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void splitBase_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
         }
 
         /// <summary> Help Button</summary>
