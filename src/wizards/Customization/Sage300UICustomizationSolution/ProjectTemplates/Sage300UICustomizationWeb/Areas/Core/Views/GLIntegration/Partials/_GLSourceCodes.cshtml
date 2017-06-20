@@ -1,0 +1,21 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonGLIntegrationResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+<script>
+    var sourceCodeGridColumns = {
+        headerSerialNumber: '@Html.SageRaw(CommonGLIntegrationResx.SerialNo)',
+        headerTransactionType: '@Html.SageRaw(CommonGLIntegrationResx.TransactionType)',
+        headerSourceLedger: '@Html.SageRaw(CommonGLIntegrationResx.SourceLedger)',
+        headerSourceType: '@Html.SageRaw(CommonGLIntegrationResx.SourceType)',
+        sourceTypeCannotBeBlankMessage: '@Html.SageRaw(string.Format(CommonResx.CannotBeBlankMessage, CommonGLIntegrationResx.SourceTypeEmptyWarning))',
+    };
+
+</script>
+
+@Html.KoKendoGrid("gridGLSourceCodes", "glIntegrationUI.glIntegrationModel.GLSourceCodes.Items", "SerialNo", "SourceCodeGridUtility.glSourceCodeConfig", true)
+
+

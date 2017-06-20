@@ -1,0 +1,112 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport.Filter
+
+
+@using (Html.BeginForm("AddCriteria", "ExportImport", FormMethod.Post, new { id = "filterForm" }))
+{
+    <div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+        @Html.AntiForgeryToken()
+    </div>
+    @Html.ValidationSummary(true)
+    var operatorId = "Operator_" + Model.BusinessEntityField.DataType;
+    var valueId = "Value_" + Model.BusinessEntityField.DataType;
+    var headerLebal = string.Format(CommonResx.SetCriteriaLabel, Model.BusinessEntityField.Description);
+    const string lessThanEqual = "<=";
+    <div class="content" style="width: auto;">
+        <div class="clear"></div>
+        <section>
+            <div class="contentTop" style="width: auto;">
+                @*<div class="contentHeader">
+                    @Html.SageLabel(headerLebal, new { @class = "headLbl" })
+                    <div id="recordNavigator" class="BatNumb">
+                    </div>
+                </div>*@
+                <div style="display: inline-block; float: left;">
+                    
+
+                        @if (Model.BusinessEntityField.PresentationList != null && Model.BusinessEntityField.PresentationList.Any())
+                        {
+                            
+                                @Html.Hidden(operatorId, "=")
+
+                                <select id='@valueId'>
+                                    @foreach (var item in Model.BusinessEntityField.PresentationList)
+                                    {
+                                        if (string.IsNullOrEmpty(Model.Value) && Convert.ToInt32(item.Value) == Convert.ToInt32(Model.Value))
+                                        {
+                                        <option value='@item.Value' selected="selected">@item.Text</option>
+                                        }
+                                        else
+                                        {
+                                        <option value='@item.Value'>@item.Text</option>
+                                        }
+
+                                    }
+                                </select>
+
+                           
+                        }
+                        else
+                        {
+                            if (Model.BusinessEntityField.DataType == "Bool")
+                            {
+                            
+                                @Html.Hidden(operatorId, "=")
+                            @*</li>
+                            <li>*@
+                                @Html.LabelFor(model => model.Value)
+                                <select id='@valueId'>
+                                    <option value="True" selected='@(Model.Value == "True")'>True</option>
+                                    <option value="False" selected='@(Model.Value == "False")'>False</option>
+                                </select>
+                           
+                            }
+                            else if (Model.BusinessEntityField.DataType == "Date")
+                            {
+                           
+                                @*@Html.LabelFor(model => model.Operator)*@
+
+                                <select id='@operatorId'>
+                                    <option value="=" selected='@(Model.Operator == "=")'>=</option>
+                                    <option value=">" selected='@(Model.Operator == ">")'>></option>
+                                    <option value="<" selected='@(Model.Operator == "<")'><</option>
+                                    <option value=">=" selected='@(Model.Operator == ">=")'>>=</option>
+                                    <option value="<=" selected='@(Model.Operator == "<=")'>@lessThanEqual</option>
+                                    <option value="!=" selected='@(Model.Operator == "!=")'>!=</option>
+                                </select>
+                            @*</li>
+                            <li>*@
+                                @*@Html.LabelFor(model => model.Value)*@
+                                <input type="text" name='@Model.Value' id='@valueId' value='@Model.Value' />
+                           
+                            }
+                            else
+                            {
+                            
+                                @*@Html.SageLabelFor(model => model.Operator)*@
+                                <select id='@operatorId'>
+                                    <option value="=" selected='@(Model.Operator == "=")'>=</option>
+                                    <option value=">" selected='@(Model.Operator == ">")'>></option>
+                                    <option value="<" selected='@(Model.Operator == "<")'><</option>
+                                    <option value=">=" selected='@(Model.Operator == ">=")'>>=</option>
+                                    <option value="<=" selected='@(Model.Operator == "<=")'>@lessThanEqual</option>
+                                    <option value="!=" selected='@(Model.Operator == "!=")'>!=</option>
+                                    <option value="LIKE" selected='@(Model.Operator == "LIKE")'>LIKE</option>
+                                </select>
+                            @*</li>
+                            <li>*@
+                                @*@Html.SageLabelFor(model => model.Value)*@
+                                <input type="text" name='@Model.Value' id='@valueId'  value='@Model.Value'/>
+                           
+                            }
+                        }
+                   
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+}

@@ -1,0 +1,68 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+
+<script>
+    var gridPreferenceElements = {
+        listElement: '<tr><td><div class="child">@Html.SageCheckBox("chkNewGridPref", false)@Html.SageLabel("lblNewGridPref", new {@id = "lblNewGridPref" })</div></td></tr>'
+    };
+</script>
+
+
+<div id="divGridPrefEditCols" class="user-preference" style="display:none">
+    <table>
+        <thead>
+            <tr>
+                <td>@CommonResx.EditColumns</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="table-scroll">
+                        <table border="0" id="tblGridPref">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="child">
+                                            @Html.SageCheckBox("chkGridPrefSelectAll", false, new { @value = CommonResx.All, @id = "chkGridPrefSelectAll" })
+                                            @Html.SageLabel(CommonResx.All, new {  @for = "chkGridPrefSelectAll" })
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblTBodyGridPref"></tbody>
+</table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    
+        <tfoot>
+            <tr>
+                <td>
+                    @Html.KoSageButton("btnGridPrefApply", null, new { @class = "btn btn-primary", @value = CommonResx.Apply, @id = "btnGridPrefApply" })
+                     @Html.KoSageButton("btnGridPrefCancel", null, new { @class = "btn btn-secondary", @value = CommonResx.Cancel, @id = "btnGridPrefCancel" })
+                   
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a id="btnGridPrefRestore">@CommonResx.RestoreTableDefaults</a>
+
+                </td>
+            </tr>
+
+        </tfoot>
+</table>
+</div>
+
+
+
+

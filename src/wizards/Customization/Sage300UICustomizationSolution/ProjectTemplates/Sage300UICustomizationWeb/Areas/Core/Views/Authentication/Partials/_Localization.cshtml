@@ -1,0 +1,24 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using WebGrease.Configuration
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using ASCommonResx = Sage.CA.SBS.ERP.Sage300.AS.Resources.ASCommonResx
+
+<script type="text/javascript">
+
+    var loginResources = {
+        warningMessageTitle: '@Html.SageRaw(CommonResx.Warning)',
+        errorMessageTitle: '@Html.SageRaw(CommonResx.ShowMessageBoxTitle)',
+        OkButton: '@Html.SageRaw(CommonResx.OK)',
+        CancelButton: '@Html.SageRaw(CommonResx.Cancel)',
+        ChangePasswordTitle: '@Html.SageRaw(ASCommonResx.ChangePassword)',
+        UserIdTitle: '@Html.SageRaw(ASCommonResx.UserID)',
+        OldPasswordTitle: '@Html.SageRaw(ASCommonResx.OldPassword)',
+        NewPasswordTitle: '@Html.SageRaw(ASCommonResx.NewPassword)',
+        ConfirmNewPasswordTitle: '@Html.SageRaw(ASCommonResx.ConfirmPassword)',
+        YesButton: '@Html.SageRaw(CommonResx.Yes)',
+        NoButton: '@Html.SageRaw(CommonResx.No)'
+    }
+</script>
+
