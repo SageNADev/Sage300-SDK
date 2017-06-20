@@ -22,7 +22,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -61,9 +60,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Current Wizard Step </summary>
         private int _currentWizardStep;
-
-        /// <summary> Sage color </summary>
-        private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
 
         /// <summary> Projects by Type within a Module </summary>
         private readonly Dictionary<string, Dictionary<string, ProjectInfo>> _projects =
@@ -118,6 +114,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public Generation()
         {
             InitializeComponent();
+            Localize();
             InitWizardSteps(RepositoryType.Flat);
             InitInfo();
             InitDynamicQueryFields();
@@ -164,6 +161,103 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #region Private Methods/Routines/Events
 
+        /// <summary> Localize </summary>
+        private void Localize()
+        {
+            btnBack.Text = Resources.Back;
+            btnNext.Text = Resources.Next;
+
+            // Code Type Step
+            lblRepositoryType.Text = Resources.CodeType;
+            tooltip.SetToolTip(lblRepositoryType, Resources.CodeTypeTip);
+
+            lblCodeTypeDescriptionHelp.Text = Resources.CodeTypeDescriptionTip;
+            lblUnknownCodeTypeFilesHelp.Text = Resources.UnknownCodeFilesTip;
+            lblCodeTypeFilesHelp.Text = Resources.CodeTypeFilesTip;
+
+
+            // Business View Step
+            lblCredentialsHelp.Text = Resources.CredentialsTip;
+
+            lblUser.Text = Resources.User;
+            tooltip.SetToolTip(lblUser, Resources.UserTip);
+
+            lblPassword.Text = Resources.Password;
+            tooltip.SetToolTip(lblPassword, Resources.PasswordTip);
+
+            lblVersion.Text = Resources.Version;
+            tooltip.SetToolTip(lblVersion, Resources.VersionTip);
+
+            lblCompany.Text = Resources.Company;
+            tooltip.SetToolTip(lblCompany, Resources.CompanyTip);
+
+            lblViewID.Text = Resources.ViewId;
+            tooltip.SetToolTip(lblViewID, Resources.ViewIdTip);
+
+            lblViewName.Text = Resources.ViewName;
+            tooltip.SetToolTip(lblViewName, Resources.ViewNameTip);
+
+            lblViewModule.Text = Resources.ViewModule;
+            tooltip.SetToolTip(lblViewModule, Resources.ViewModuleTip);
+
+            // Dynamic Query Step
+            lblDynamicQueryViewID.Text = Resources.DynamicQueryViewId;
+            tooltip.SetToolTip(lblDynamicQueryViewID, Resources.DynamicQueryViewIdTip);
+
+            lblDynamicQueryModule.Text = Resources.DynamicQueryModule;
+            tooltip.SetToolTip(lblDynamicQueryModule, Resources.DynamicQueryModuleTip);
+
+            lblName.Text = Resources.EntityName;
+            tooltip.SetToolTip(lblName, Resources.EntityNameTip);
+
+            lblDynamicQueryDescription.Text = Resources.DynamicQueryDescription;
+            tooltip.SetToolTip(lblDynamicQueryDescription, Resources.DynamicQueryDescriptionTip);
+
+            lblDynamicQueryGridHelp.Text = Resources.DynamicQueryGridTip;
+
+            // Report Step
+            lblReportIniFile.Text = Resources.ReportIniFile;
+            tooltip.SetToolTip(lblReportIniFile, Resources.ReportIniFileTip);
+
+            tooltip.SetToolTip(btnIniDialog, Resources.ReportIniDialogTip);
+
+            lblReportKeys.Text = Resources.ReportKeys;
+            tooltip.SetToolTip(lblReportKeys, Resources.ReportKeysTip);
+
+            lblReportModule.Text = Resources.ReportModule;
+            tooltip.SetToolTip(lblReportModule, Resources.ReportModuleTip);
+
+            lblReportName.Text = Resources.ReportName;
+            tooltip.SetToolTip(lblReportName, Resources.ReportNameTip);
+
+            lblReportModelName.Text = Resources.ReportModelName;
+            tooltip.SetToolTip(lblReportModelName, Resources.ReportModelNameTip);
+
+            lblReportProgramId.Text = Resources.ReportProgramId;
+            tooltip.SetToolTip(lblReportProgramId, Resources.ReportProgramIdTip);
+
+            // Resource Step
+            lblResxName.Text = Resources.ResxName;
+            tooltip.SetToolTip(lblResxName, Resources.ResxNameTip);
+
+            lblResourceNameSuffixHelp.Text = Resources.ResourceNameSuffixTip;
+            lblResourceNameFilesHelp.Text = Resources.ResourceNameFilesTip;
+            lblResourceNameOtherFilesHelp.Text = Resources.ResourceNameOtherTip;
+
+            // Options Step
+            chkGenerateFinder.Text = Resources.GenerateFinder;
+            tooltip.SetToolTip(chkGenerateFinder, Resources.GenerateFinderTip);
+
+            chkGenerateDynamicEnablement.Text = Resources.GenerateDynamicEnablement;
+            tooltip.SetToolTip(chkGenerateDynamicEnablement, Resources.GenerateDynamicEnablementTip);
+
+            chkPromptIfExists.Text = Resources.PromptIfExists;
+            tooltip.SetToolTip(chkPromptIfExists, Resources.PromptIfExistsTip);
+
+            // Generate Step
+            lblGenerateHelp.Text = Resources.GenerateTip;
+
+        }
         /// <summary> Determine if the Solution is valid </summary>
         /// <param name="solution">Solution </param>
         /// <returns>True if valid otherwise false</returns>
@@ -666,7 +760,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void InitWizardSteps(RepositoryType repositoryType)
         {
             // Default
-            btnNext.Text = Resources.Next;
             btnBack.Enabled = false;
 
             // Current Step
@@ -684,39 +777,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             InitPanel(pnlOptions);
             InitPanel(pnlGenerateCode);
             InitPanel(pnlGeneratedCode);
-
-            // Test color for helpful labels
-            lblCodeTypeDescriptionHelp.ForeColor = _sageColor;
-            lblUnknownCodeTypeFilesHelp.ForeColor = _sageColor;
-            lblCodeTypeFilesHelp.ForeColor = _sageColor;
-
-            lblBusinessViewHelp.ForeColor = _sageColor;
-            lblViewModuleHelp.ForeColor = _sageColor;
-            lblCredentialsHelp.ForeColor = _sageColor;
-            lblViewNameHelp.ForeColor = _sageColor;
-
-            lblDynamicQueryViewHelp.ForeColor = _sageColor;
-            lblDynamicQueryModuleHelp.ForeColor = _sageColor;
-            lblDynamicQueryNameHelp.ForeColor = _sageColor;
-            lblDynamicQueryModelNameHelp.ForeColor = _sageColor;
-            lblDynamicQueryGridHelp.ForeColor = _sageColor;
-
-            lblReportsHelp.ForeColor = _sageColor;
-            lblReportModuleHelp.ForeColor = _sageColor;
-            lblReportNameHelp.ForeColor = _sageColor;
-            lblReportModelNameHelp.ForeColor = _sageColor;
-            lblReportProgramNameHelp.ForeColor = _sageColor;
-
-            lblResourceNameDefaultHelp.ForeColor = _sageColor;
-            lblResourceNameSuffixHelp.ForeColor = _sageColor;
-            lblResourceNameFilesHelp.ForeColor = _sageColor;
-            lblResourceNameOtherFilesHelp.ForeColor = _sageColor;
-
-            lblOptionsFinderHelp.ForeColor = _sageColor;
-            lblOptionsDynamicEnableHelp.ForeColor = _sageColor;
-            lblOptionsPrompIfExistsHelp.ForeColor = _sageColor;
-
-            lblGenerateHelp.ForeColor = _sageColor;
 
             // Every repository type will have the first step
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
@@ -900,8 +960,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="enableToolbar">True to enable otherwise false</param>
         private void ProcessingSetup(bool enableToolbar)
         {
-            tbrMain.Enabled = enableToolbar;
-            tbrMain.Refresh();
+            pnlButtons.Enabled = enableToolbar;
+            pnlButtons.Refresh();
         }
 
         /// <summary> Update processing display in status bar </summary>
@@ -909,8 +969,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void Processing(string text)
         {
             lblProcessingFile.Text = string.IsNullOrEmpty(text) ? text : string.Format(Resources.GeneratingFile, text);
-
-            tbrMain.Refresh();
         }
 
         /// <summary> Update processing display </summary>
@@ -1387,35 +1445,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             txtReportIniFile.Text = dialog.FileName.Trim();
             // Get report information from ini file
             AddReports(txtReportIniFile.Text);
-        }
-
-        /// <summary> Add gradient to top panel</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void splitBase_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
-
-        /// <summary> Add gradient to toolbar</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void tbrMain_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
-
-        /// <summary> Add gradient</summary>
-        /// <param name="e">Event Args </param>
-        private void FillGradient(PaintEventArgs e)
-        {
-            using (var brush = new LinearGradientBrush(ClientRectangle,
-                _sageColor,
-                Color.White,
-                LinearGradientMode.Horizontal))
-            {
-                e.Graphics.FillRectangle(brush, ClientRectangle);
-            }
         }
 
         /// <summary> Text Changed for Business View Step</summary>
