@@ -121,20 +121,95 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ProgressError.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Blank24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Browser" xml:space="preserve">
     <value>IEXPLORE.EXE</value>
     <comment>Browser to use</comment>
   </data>
-  <data name="loading_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading_new.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddReplaceFile" xml:space="preserve">
+    <value>Add/Replace file: </value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Dash" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="EnsureBackup" xml:space="preserve">
+    <value>Note: Before proceeding ensure a backup has been performed!</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="FollowingSteps" xml:space="preserve">
+    <value>The following steps will be performed:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ProcessingStep" xml:space="preserve">
+    <value>Processing {0}...</value>
+  </data>
+  <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
+    <value>This step will upgrade the Accpac Libraries references</value>
+  </data>
+  <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
+    <value>This step will upgrade the various global files included in the solution.</value>
+  </data>
+  <data name="ReleaseAllDescConfirmation" xml:space="preserve">
+    <value>Ready to begin the upgrade.</value>
+  </data>
+  <data name="ReleaseAllDescRecompile" xml:space="preserve">
+    <value>The Solution and Project files have been upgraded.</value>
+  </data>
+  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseAllTitleSyncAccpacLibs" xml:space="preserve">
+    <value>Synchronize Accpac Libraries</value>
+  </data>
+  <data name="ReleaseAllTitleSyncWebFiles" xml:space="preserve">
+    <value>Synchronize Web Files</value>
+  </data>
+  <data name="ReleaseAllTitleConfirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="ReleaseAllTitleRecompile" xml:space="preserve">
+    <value>Recompile</value>
+  </data>
+  <data name="ReleaseAllUpgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllUpgrade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseAllUpgraded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllUpgraded.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ShowLog" xml:space="preserve">
+    <value>Show Log</value>
+  </data>
+  <data name="SolutionUpgrade" xml:space="preserve">
+    <value>Solution Upgrade</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="StepDescriptionMain" xml:space="preserve">
+    <value>Upgrade from {0} to {1}</value>
+  </data>
+  <data name="StepTitleMain" xml:space="preserve">
+    <value>Solution and Projects Upgrade</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="UpgradeLibrary" xml:space="preserve">
+    <value>Upgrade library from {0} to {1}</value>
   </data>
 </root>

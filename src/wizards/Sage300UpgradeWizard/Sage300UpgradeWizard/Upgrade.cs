@@ -18,42 +18,64 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Text;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> UI for Sage 300 Upgrade Wizard </summary>
     public partial class Upgrade : Form
     {
-
-        #region Const string
-        const string ImportExportUrl = "https://jthomas903.wordpress.com/2017/01/23/sage-300-javascript-bundle-names/";
-        const string PaginationUrl = "https://jthomas903.wordpress.com/2017/01/24/sage-300-optional-resource-files/";
-        #endregion
-
         #region Private Vars
 
-        private int _currentWizardStep;
-        private string _destination = "";
-        private string _sourceItemsFolder = "";
-        private string _destinationWebFolder = "";
-        private string _viewsFolder = "";
-        private readonly string _templatePath;
+        /// <summary> Process Upgrade logic </summary>
+        private ProcessUpgrade _upgrade;
 
-        private static readonly StringBuilder _sbLog = new StringBuilder();
-        /// <summary> Sage color </summary>
-        private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
+        /// <summary> Wizard Steps </summary>
+        private readonly List<WizardStep> _wizardSteps = new List<WizardStep>();
+
+        /// <summary> Current Wizard Step </summary>
+        private int _currentWizardStep;
+
+        /// <summary> Settings for Processing </summary>
+        private Settings _settings;
+
+        /// <summary> Log file </summary>
+        private readonly StringBuilder _log = new StringBuilder();
+
+        /// <summary> Source Folder </summary>
+        private readonly string _sourceFolder;
+
+        /// <summary> Destination Folder </summary>
+        private readonly string _destinationFolder;
+
+        /// <summary> Destination Web Folder </summary>
+        private readonly string _destinationWebFolder;
+
+        /// <summary> Destination Web </summary>
+        private readonly string _destinationWeb;
+
+        #endregion
+
+        #region Private Constants
+        #endregion
+
+        #region Delegates
+
+        /// <summary> Delegate to update UI with name of the step being processed </summary>
+        /// <param name="text">Text for UI</param>
+        private delegate void ProcessingCallback(string text);
+
+        /// <summary> Delegate to update log with status of the step being processed </summary>
+        /// <param name="text">Text for UI</param>
+        private delegate void LogCallback(string text);
+
 
         #endregion
 
@@ -66,15 +88,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public Upgrade(string destination, string destinationWeb, string templatePath)
         {
             InitializeComponent();
-            _templatePath = templatePath;
-            InitWizardSteps(destination, destinationWeb);
+            Localize();
+            InitWizardSteps();
+            InitEvents();
+            ProcessingSetup(true);
+            Processing("");
+
+            // Setup local vars
+            _destinationFolder = destination;
+            _destinationWeb = destinationWeb;
+            _sourceFolder = Path.GetDirectoryName(templatePath);
+            _destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
+
         }
 
         #endregion
 
-        #region Private Methods/Routines/Events
-
-        #region Toolbar Events
+        #region Button Events
 
         /// <summary> Next/Upgrade toolbar button </summary>
         /// <param name="sender">Sender object </param>
@@ -82,24 +112,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <remarks>Next wizard step or Upgrade if last step</remarks>
         private void btnNext_Click(object sender, EventArgs e)
         {
-            _currentWizardStep++;
-            if (btnNext.Text == "Next")
-            {
-                ShowStepInfo();
-            }
-            else if (btnNext.Text == "Upgrade")
-            {
-                picProcess.Visible = true;
-                lblStepTitle.Text = @"Process Upgrade";
-                lblInformation.Text = @"Upgrade ...";
-				btnBack.Visible = false;
-				btnNext.Visible = false;
-                wrkBackground.RunWorkerAsync();
-            } 
-            else if (btnNext.Text == "Finish")
-            {
-                Close();
-            }
+            NextStep();
         }
 
         /// <summary> Back toolbar button </summary>
@@ -108,56 +121,197 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <remarks>Back wizard step</remarks>
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (btnBack.Text == @"Show Log")
-            {
-                var logPath = Path.Combine(_destination, "UpgradeLog.txt");
-                System.Diagnostics.Process.Start(logPath);
-            }
-            else
-            {
-                _currentWizardStep--;
-                ShowStepInfo();
-            }
+            BackStep();
         }
 
         #endregion
 
+        #region Private Methods/Routines/Events
+
         /// <summary> Initialize wizard steps </summary>
-        /// <param name="destination">Destination Default</param>
-        /// <param name="destinationWeb">Destination Web Default</param>
-        private void InitWizardSteps(string destination, string destinationWeb)
+        private void InitWizardSteps()
         {
-            _currentWizardStep = 0;
-            _destination = destination;
-            _sourceItemsFolder = Path.GetDirectoryName(_templatePath);
-            _destinationWebFolder = Directory.GetDirectories(_destination).FirstOrDefault(dir => dir.ToLower().Contains(".web"));
+            // Default
+            btnBack.Enabled = false;
 
-            lblInformation.ForeColor = _sageColor;
-            picProcess.Visible = false;
-            lnkBlog.Visible = false;
-            ShowStepInfo();
+            // Current Step
+            _currentWizardStep = -1;
+
+            // Init wizard steps
+            _wizardSteps.Clear();
+
+            // Same for all upgrades, but the content will be specific to the release
+            AddStep(Resources.StepTitleMain, string.Format(Resources.StepDescriptionMain, ProcessUpgrade.FromReleaseNumber, ProcessUpgrade.ToReleaseNumber), 
+                BuildMainContentStep());
+            AddStep(Resources.ReleaseAllTitleSyncWebFiles, Resources.ReleaseAllDescSyncWebFiles, 
+                Resources.ReleaseAllSyncWebFiles);
+            // This step can be commented if no accpac update this release
+            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs, Resources.ReleaseAllDescSyncAccpacLibs, 
+                string.Format(Resources.ReleaseAllSyncAccpacLibs, ProcessUpgrade.FromAccpacNumber, ProcessUpgrade.ToAccpacNumber));
+
+            // Specific to release steps go here
+
+
+            // Same for all upgrades, but the content will be specific to the release
+            AddStep(Resources.ReleaseAllTitleConfirmation, Resources.ReleaseAllDescConfirmation,
+                Resources.ReleaseAllUpgrade);
+            AddStep(Resources.ReleaseAllTitleRecompile, Resources.ReleaseAllDescRecompile,
+                string.Format(Resources.ReleaseAllUpgraded, Resources.ShowLog, ProcessUpgrade.ToReleaseNumber));
+
+            // Display first step
+            NextStep();
+
         }
 
-        /// <summary>
-        /// Show wizard step information
-        /// </summary>
-        private void ShowStepInfo()
+        /// <summary> Build Main Content Step </summary>
+        /// <returns>Content for main screen</returns>
+        private static string BuildMainContentStep()
         {
-            btnBack.Visible = (_currentWizardStep > 0);
-            btnNext.Text = (_currentWizardStep == 3) ? "Upgrade" : "Next";
-            var format = (_currentWizardStep == 0) ? "{1}" : "Step {0} - {1}";
-            lblStepTitle.Text = string.Format(format, _currentWizardStep, Info.titles[_currentWizardStep]);
-            lblInformation.Text = Info.messages[_currentWizardStep];
+            var content = new StringBuilder();
+            var step = 0;
+
+            // Same for all upgrades
+            content.AppendLine(Resources.FollowingSteps);
+            content.AppendLine("");
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncWebFiles));
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncAccpacLibs));
+
+            // Specific to release
+
+            // Same for all upgrades
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleConfirmation));
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleRecompile));
+            content.AppendLine("");
+            content.AppendLine(Resources.EnsureBackup);
+
+            return content.ToString();
         }
 
-        /// <summary>
-        /// Process PU2 Upgrade
-        /// </summary>
-        private void ProcessUpgrade()
+        /// <summary> Add wizard step </summary>
+        /// <param name="title">Title for wizard step</param>
+        /// <param name="description">Description for wizard step</param>
+        /// <param name="content">Content for wizard step</param>
+        /// <param name="showCheckbox">Optional. True to show checkbox otherwise false</param>
+        /// <param name="checkboxText">Optional. Checkbox text</param>
+        /// <param name="checkboxValue">Optional. Checkbox value</param>
+        private void AddStep(string title, string description, string content, 
+            bool showCheckbox = false, string checkboxText = "", bool checkboxValue = false)
         {
-            SyncWebFiles();
-            UpgradeAccpacReference();
-            WriteLogFile();
+            _wizardSteps.Add(new WizardStep
+            {
+                Title = title,
+                Description = description,
+                Content = content,
+                ShowCheckbox = showCheckbox,
+                CheckboxText = checkboxText,
+                CheckboxValue = checkboxValue
+            });
+        }
+
+        /// <summary> Next/Generate Navigation </summary>
+        /// <remarks>Next wizard step or Generate if last step</remarks>
+        private void NextStep()
+        {
+            // Finished?
+            if (!_currentWizardStep.Equals(-1) && _currentWizardStep.Equals(_wizardSteps.Count - 1))
+            {
+                Close();
+            }
+            else
+            {
+                // Proceed to next wizard step or start upgrade if upgrade step
+                if (!_currentWizardStep.Equals(-1) &&
+                    _currentWizardStep.Equals(_wizardSteps.Count - 2))
+                {
+                    // Setup display before processing
+                    ProcessingSetup(false);
+
+                    _settings = new Settings
+                    {
+                        WizardSteps = _wizardSteps,
+                        SourceFolder = _sourceFolder,
+                        DestinationWebFolder = _destinationWebFolder
+                    };
+
+                    // Start background worker for processing (async)
+                    wrkBackground.RunWorkerAsync(_settings);
+                }
+                else
+                {
+                    // Proceed to next step
+                    if (!_currentWizardStep.Equals(-1))
+                    {
+                        // Enable back button
+                        btnBack.Enabled = true;
+                    }
+
+                    // Increment step
+                    _currentWizardStep++;
+
+                    // Update title and text for step
+                    UpdateStepPage();
+
+                    // Update text of Next button?
+                    if (_currentWizardStep.Equals(_wizardSteps.Count - 2))
+                    {
+                        btnNext.Text = Resources.Upgrade;
+                    }
+
+                    // Update text of Next and buttons?
+                    if (_currentWizardStep.Equals(_wizardSteps.Count - 1))
+                    {
+                        btnBack.Text = Resources.ShowLog;
+                        btnNext.Text = Resources.Finish;
+                    }
+                }
+            }
+        }
+
+        /// <summary> Back Navigation </summary>
+        /// <remarks>Back wizard step</remarks>
+        private void BackStep()
+        {
+            // Proceed if not on first step
+            if (!_currentWizardStep.Equals(0))
+            {
+                // Show the log
+                if (_currentWizardStep.Equals(_wizardSteps.Count - 1))
+                {
+                    var logPath = Path.Combine(_destinationFolder, ProcessUpgrade.LogFileName);
+                    System.Diagnostics.Process.Start(logPath);
+                    return;
+                }
+
+                btnNext.Text = Resources.Next;
+                _currentWizardStep--;
+
+                // Update title and text for step
+                UpdateStepPage();
+
+                // Enable back button?
+                if (_currentWizardStep.Equals(0))
+                {
+                    btnBack.Enabled = false;
+                    btnNext.Enabled = true;
+                }
+
+            }
+        }
+        
+        /// <summary> Update Step Page with content</summary>
+        private void UpdateStepPage()
+        {
+            // Update title and text for step
+            var step = _currentWizardStep.Equals(0) ? "" : Resources.Step + _currentWizardStep.ToString("#0") + Resources.Dash;
+
+            lblStepTitle.Text = step + _wizardSteps[_currentWizardStep].Title;
+            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
+
+            // Display information
+            lblContent.Text = _wizardSteps[_currentWizardStep].Content;
+            checkBox.Text = _wizardSteps[_currentWizardStep].CheckboxText;
+            checkBox.Checked = _wizardSteps[_currentWizardStep].CheckboxValue;
+            splitStep.Panel2Collapsed = !_wizardSteps[_currentWizardStep].ShowCheckbox;
         }
 
         /// <summary>
@@ -165,57 +319,35 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </summary>
         private void WriteLogFile()
         {
-            var logFilePath = Path.Combine(_destination, "UpgradeLog.txt");
-            File.WriteAllText(logFilePath, _sbLog.ToString());
-        }
-
-        /// <summary>
-        /// Synchronization of web project files
-        /// </summary>
-        private void SyncWebFiles()
-        {
-            //Update the web files
-            var zipFile = Path.Combine(_sourceItemsFolder, "Web.zip");
-            var sourceWebFolder = Path.Combine(_sourceItemsFolder, "Web");
-
-            if (Directory.Exists(sourceWebFolder))
-            {
-                Directory.Delete(sourceWebFolder, true);            
-            }
-
-            ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
-            _sbLog.AppendLine(DateTime.Now + " -- Synchronize web files --");
-            DirectoryCopy(sourceWebFolder, _destinationWebFolder);
-            _sbLog.AppendLine(DateTime.Now + " -- End of synchronize web files --");
-            _sbLog.AppendLine("");
+            var logFilePath = Path.Combine(_destinationFolder, ProcessUpgrade.LogFileName);
+            File.WriteAllText(logFilePath, _log.ToString());
         }
 
 
-        /// <summary>
-        /// Upgrade project reference to use new verion Accpac.Net
-        /// </summary>
-        private void UpgradeAccpacReference()
-        {
-            //Copy new AccpacDotNetVersion.props
-            var file = Path.Combine(_destinationWebFolder, "AccpacDotNetVersion.props");
-            var srcFilePath = Path.Combine(_sourceItemsFolder, "AccpacDotNetVersion.props");
-            File.Copy(srcFilePath, file, true);
-            _sbLog.AppendLine(DateTime.Now + " Update AccpacDotNetVersion.props file");
-        }
-
-        /// <summary> Setup processing display in status bar </summary>
+        /// <summary> Setup processing display </summary>
         /// <param name="enableToolbar">True to enable otherwise false</param>
         private void ProcessingSetup(bool enableToolbar)
         {
-            tbrMain.Enabled = enableToolbar;
-            tbrMain.Refresh();
+            pnlButtons.Enabled = enableToolbar;
+            pnlButtons.Refresh();
         }
 
-        /// <summary> Update processing display in status bar </summary>
+        /// <summary> Update processing display </summary>
         /// <param name="text">Text to display in status bar</param>
         private void Processing(string text)
         {
-            tbrMain.Refresh();
+            lblProcessing.Text = string.IsNullOrEmpty(text) ? text : string.Format(Resources.ProcessingStep, text);
+
+            pnlButtons.Refresh();
+        }
+
+        /// <summary> Update processing display </summary>
+        /// <param name="text">Text to display</param>
+        /// <remarks>Invoked from threaded process</remarks>
+        private void ProcessingEvent(string text)
+        {
+            var callBack = new ProcessingCallback(Processing);
+            Invoke(callBack, text);
         }
 
         /// <summary> Background worker started event </summary>
@@ -224,7 +356,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <remarks>Background worker will run process</remarks>
         private void wrkBackground_DoWork(object sender, DoWorkEventArgs e)
         {
-            ProcessUpgrade();
+            _upgrade.Process((Settings)e.Argument);
         }
 
         /// <summary> Background worker completed event </summary>
@@ -235,45 +367,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         {
             ProcessingSetup(true);
             Processing("");
-            splitBase.Panel2.Refresh();
+
+            _currentWizardStep++;
+
+            // Update title and text for step
+            UpdateStepPage();
 
             // Display final step
-            picProcess.Visible = false;
-            lblStepTitle.Text = @"Upgrade Completed";
-            lblInformation.Text = Info.messages[_currentWizardStep];
-            btnNext.Visible = true;
-            btnNext.Text = @"Finish";
-            btnBack.Visible = true;
-            btnBack.Text = @"Show Log";
-        }
+            btnBack.Text = Resources.ShowLog;
+            btnNext.Text = Resources.Finish;
 
-        /// <summary> Add gradient to top panel</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void splitBase_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
+            // Write out log file with upgrade being complete
+            WriteLogFile();
 
-        /// <summary> Add gradient to toolbar</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void tbrMain_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
-
-        /// <summary> Add gradient</summary>
-        /// <param name="e">Event Args </param>
-        private void FillGradient(PaintEventArgs e)
-        {
-            using (var brush = new LinearGradientBrush(ClientRectangle,
-                                                           _sageColor,
-                                                           Color.White,
-                                                           LinearGradientMode.Horizontal))
-            {
-                e.Graphics.FillRectangle(brush, ClientRectangle);
-            }
         }
 
         /// <summary> Help Button</summary>
@@ -286,33 +392,53 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //System.Diagnostics.Process.Start(Resources.Browser, Resources.WikiLink);
         }
 
-        /// <summary>
-        /// Copy folder and files
-        /// </summary>
-        /// <param name="sourceDirName"></param>
-        /// <param name="destDirName"></param>
-        private static void DirectoryCopy(string sourceDirName, string destDirName)
+        /// <summary> Localize </summary>
+        private void Localize()
         {
-            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            if (!Directory.Exists(destDirName))
-            {
-                Directory.CreateDirectory(destDirName);
-            }
+            Text = Resources.SolutionUpgrade;
 
-            foreach (FileInfo file in dir.GetFiles())
-            {
-                var filePath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(filePath, true);
-                _sbLog.AppendLine(DateTime.Now + " Add/Replace file " + filePath);
-            }
+            btnBack.Text = Resources.Back;
+            btnBack.Enabled = false;
 
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                DirectoryCopy(subdir.FullName, Path.Combine(destDirName, subdir.Name));
-            }
+            btnNext.Text = Resources.Next;
+        }
+
+        /// <summary> Initialize events for process generation class </summary>
+        private void InitEvents()
+        {
+            // Processing Events
+            _upgrade = new ProcessUpgrade();
+            _upgrade.ProcessingEvent += ProcessingEvent;
+            _upgrade.LogEvent += LogEvent;
+        }
+
+        /// <summary> Update Log </summary>
+        /// <param name="text">Text for Log</param>
+        /// <remarks>Invoked from threaded process</remarks>
+        private void Log(string text)
+        {
+            _log.AppendLine(text);
+        }
+
+        /// <summary> Log Event </summary>
+        /// <param name="text">Text for log</param>
+        /// <remarks>Invoked from threaded process</remarks>
+        private void LogEvent(string text)
+        {
+            var callBack = new LogCallback(Log);
+            Invoke(callBack, text);
+        }
+
+        /// <summary> Store value selected in Wizard step</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            // Stores value in step
+            _wizardSteps[_currentWizardStep].CheckboxValue = checkBox.Checked;
         }
 
         #endregion
-    }    
+
+    }
 }

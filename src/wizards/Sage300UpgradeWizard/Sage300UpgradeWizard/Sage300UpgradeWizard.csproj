@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessUpgrade.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,7 +102,7 @@
     <Compile Include="RegistryHelper.cs" />
     <Compile Include="Sage300UpgradeWizard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Info.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Upgrade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,13 +150,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Blank24.ico" />
+    <Content Include="content\ReleaseAllUpgrade.txt" />
+    <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
+    <Content Include="content\ReleaseAllSyncWebFiles.txt" />
+    <Content Include="content\ReleaseAllUpgraded.txt" />
     <Content Include="Images\logo.png" />
-    <Content Include="Images\ProgressError.ico" />
-    <Content Include="Images\ProgressSuccess.ico" />
-    <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
-    <None Include="Resources\loading_new.gif" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

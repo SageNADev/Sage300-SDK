@@ -18,8 +18,6 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Windows.Forms;
-
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Class to hold information for wizard step </summary>
@@ -32,8 +30,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Wizard Step Description </summary>
         public string Description { get; set; }
 
-        /// <summary> Wizard Step Panel </summary>
-        public Panel Panel { get; set; }
+        /// <summary> Wizard Step Content </summary>
+        public string Content { get; set; }
+
+        /// <summary> Wizard Step Show Checkbox </summary>
+        public bool ShowCheckbox { get; set; }
+
+        /// <summary> Wizard Step Checkbox text </summary>
+        public string CheckboxText { get; set; }
+
+        /// <summary> Wizard Step Checkbox Value </summary>
+        public bool CheckboxValue { get; set; }
+
         #endregion
 
         #region Public Methods

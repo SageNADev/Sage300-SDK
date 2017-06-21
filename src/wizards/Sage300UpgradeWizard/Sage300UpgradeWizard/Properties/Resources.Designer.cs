@@ -61,12 +61,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to Add/Replace file: .
         /// </summary>
-        internal static System.Drawing.Icon Blank {
+        internal static string AddReplaceFile {
             get {
-                object obj = ResourceManager.GetObject("Blank", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("AddReplaceFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
             }
         }
         
@@ -80,22 +88,47 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to  - .
         /// </summary>
-        internal static System.Drawing.Icon Error {
+        internal static string Dash {
             get {
-                object obj = ResourceManager.GetObject("Error", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("Dash", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to End.
         /// </summary>
-        internal static System.Drawing.Bitmap loading_new {
+        internal static string End {
             get {
-                object obj = ResourceManager.GetObject("loading_new", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: Before proceeding ensure a backup has been performed!.
+        /// </summary>
+        internal static string EnsureBackup {
+            get {
+                return ResourceManager.GetString("EnsureBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finish.
+        /// </summary>
+        internal static string Finish {
+            get {
+                return ResourceManager.GetString("Finish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The following steps will be performed:.
+        /// </summary>
+        internal static string FollowingSteps {
+            get {
+                return ResourceManager.GetString("FollowingSteps", resourceCulture);
             }
         }
         
@@ -110,12 +143,228 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to Next.
         /// </summary>
-        internal static System.Drawing.Icon Success {
+        internal static string Next {
             get {
-                object obj = ResourceManager.GetObject("Success", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing {0}....
+        /// </summary>
+        internal static string ProcessingStep {
+            get {
+                return ResourceManager.GetString("ProcessingStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready to begin the upgrade..
+        /// </summary>
+        internal static string ReleaseAllDescConfirmation {
+            get {
+                return ResourceManager.GetString("ReleaseAllDescConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Solution and Project files have been upgraded..
+        /// </summary>
+        internal static string ReleaseAllDescRecompile {
+            get {
+                return ResourceManager.GetString("ReleaseAllDescRecompile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will upgrade the Accpac Libraries references.
+        /// </summary>
+        internal static string ReleaseAllDescSyncAccpacLibs {
+            get {
+                return ResourceManager.GetString("ReleaseAllDescSyncAccpacLibs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will upgrade the various global files included in the solution..
+        /// </summary>
+        internal static string ReleaseAllDescSyncWebFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllDescSyncWebFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The versions of the Accpac Libraries are stored in a property file.
+        ///
+        ///Certain projects reference these libraries and the reference number 
+        ///has changed from {0} to {1}. 
+        ///
+        ///This step will upgrade the AccpacDotNetVersion.props file..
+        /// </summary>
+        internal static string ReleaseAllSyncAccpacLibs {
+            get {
+                return ResourceManager.GetString("ReleaseAllSyncAccpacLibs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global files (CSS, CSHTML, JavaScript, etc.) are maintained by Sage.
+        ///
+        ///If these files are modified or enhanced during the release cycle, they
+        ///will require synchronization.
+        ///
+        ///The following files will be evaluated:
+        ///
+        ///     * Existing common files will be updated, if needed
+        ///     * New common files will be added, if any
+        ///     * Third party libraries will be upgraded, if needed
+        ///     * Web content files will be synchronized.
+        /// </summary>
+        internal static string ReleaseAllSyncWebFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllSyncWebFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        internal static string ReleaseAllTitleConfirmation {
+            get {
+                return ResourceManager.GetString("ReleaseAllTitleConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recompile.
+        /// </summary>
+        internal static string ReleaseAllTitleRecompile {
+            get {
+                return ResourceManager.GetString("ReleaseAllTitleRecompile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synchronize Accpac Libraries.
+        /// </summary>
+        internal static string ReleaseAllTitleSyncAccpacLibs {
+            get {
+                return ResourceManager.GetString("ReleaseAllTitleSyncAccpacLibs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synchronize Web Files.
+        /// </summary>
+        internal static string ReleaseAllTitleSyncWebFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllTitleSyncWebFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
+        ///
+        ///Note: Please be sure you have backed up the Solution and Project 
+        ///files before proceeding!
+        ///.
+        /// </summary>
+        internal static string ReleaseAllUpgrade {
+            get {
+                return ResourceManager.GetString("ReleaseAllUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please review the upgrade log file by selecting the {0} button.
+        ///
+        ///Please review the upgrade instructions document for any manual steps 
+        ///still needed to be performed.
+        ///
+        ///The Sage 300 {1} Upgrade Wizard may be uninstalled by selecting 
+        ///Tools\Extensions and Updates... from the Visual Studio Toolbar.
+        ///
+        ///Please reload and recompile the solution.
+        ///.
+        /// </summary>
+        internal static string ReleaseAllUpgraded {
+            get {
+                return ResourceManager.GetString("ReleaseAllUpgraded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Log.
+        /// </summary>
+        internal static string ShowLog {
+            get {
+                return ResourceManager.GetString("ShowLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution Upgrade.
+        /// </summary>
+        internal static string SolutionUpgrade {
+            get {
+                return ResourceManager.GetString("SolutionUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Step.
+        /// </summary>
+        internal static string Step {
+            get {
+                return ResourceManager.GetString("Step", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
+        /// </summary>
+        internal static string StepDescriptionMain {
+            get {
+                return ResourceManager.GetString("StepDescriptionMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution and Projects Upgrade.
+        /// </summary>
+        internal static string StepTitleMain {
+            get {
+                return ResourceManager.GetString("StepTitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade.
+        /// </summary>
+        internal static string Upgrade {
+            get {
+                return ResourceManager.GetString("Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
+        /// </summary>
+        internal static string UpgradeLibrary {
+            get {
+                return ResourceManager.GetString("UpgradeLibrary", resourceCulture);
             }
         }
     }
