@@ -1,0 +1,11 @@
+﻿The generate XML documentation file property determines whether an XML
+file will be generated during compilation. When this option is selected,
+XML documentation is automatically emitted into an XML file, which will 
+have the same name as your project and the .xml extension.
+
+When turn on this property, all the public class, methods, properties, 
+constants, enums should have proper XML documentation comments, otherwise
+it will have warnings or errors when compile project or solution.
+
+You can optional turn on it when upgrade to Sage 300 2018.0 or manually 
+turn on later in the project property build table.

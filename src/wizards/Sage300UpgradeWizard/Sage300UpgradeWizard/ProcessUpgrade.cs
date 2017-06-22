@@ -22,6 +22,8 @@ using System;
 using System.IO;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System.IO.Compression;
+using System.Xml;
+using System.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
@@ -103,7 +105,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         LaunchProcessingEvent(_settings.WizardSteps[index].Title);
                         SyncAccpacLibraries(_settings.WizardSteps[index].Title);
                         break;
-                    // Case n for release specific steps here
+                    case 3:
+                        if (_settings.WizardSteps[index].CheckboxValue)
+                        {
+                            LaunchProcessingEvent(_settings.WizardSteps[index].Title);
+                            TurnOnXMLDocFile(_settings.WizardSteps[index].Title);
+                        }
+                        break;
+                        // Case n for release specific steps here
                 }
             }
         }
@@ -156,6 +165,68 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent(string.Format("{0} {1}", DateTime.Now, 
                 string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber)));
 
+            // Log end of step
+            LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.End, title));
+            LaunchLogEvent("");
+        }
+
+        /// <summary> Turn on solution projects for generate XML documentation file </summary>
+        /// <param name="title">Title of step being processed</param>
+        private void TurnOnXMLDocFile(string title)
+        {
+            // Log start of step
+            LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.Start, title));
+
+            // turn on project generate XML documentation file
+            var slnDir = Directory.GetParent(_settings.DestinationWebFolder);
+            var csprojFiles = slnDir.EnumerateFiles("*.csproj", SearchOption.AllDirectories);
+            foreach (var projFile in csprojFiles)
+            {
+                var xmlDoc = new XmlDocument();
+                xmlDoc.Load(projFile.FullName);
+                var projName = Path.GetFileNameWithoutExtension(projFile.FullName) + ".XML";
+                var nodes = xmlDoc.ChildNodes[1].ChildNodes;
+                var xmlDocFileName = "";
+                var hasChanges = false;
+
+                foreach (XmlNode node in nodes)
+                {
+                    if (node.NodeType == XmlNodeType.Element)
+                    {
+                        var e = (XmlElement)node;
+                        if (e.Name == "PropertyGroup" && e.HasAttributes && e.Attributes[0].Name == "Condition")
+                        {
+                            var hasXmlDocFileName = false;
+                            foreach (XmlElement n in e.ChildNodes)
+                            {
+                                if (n.Name == "OutputPath" && !string.IsNullOrEmpty(n.InnerText))
+                                {
+                                    if (n.InnerText.StartsWith("$"))
+                                    {
+                                        n.InnerText = @"bin\";
+                                    }
+                                    xmlDocFileName = Path.Combine(n.InnerText, projName);
+                                }
+                                if (n.Name == "DocumentationFile")
+                                {
+                                    hasXmlDocFileName = true;
+                                }
+                            }
+                            if (!hasXmlDocFileName && !string.IsNullOrEmpty(xmlDocFileName))
+                            {
+                                e.InnerXml += string.Format("<DocumentationFile>{0}</DocumentationFile>", xmlDocFileName);
+                                hasChanges = true;
+                            }
+                        }
+                    }
+                }
+
+                if (hasChanges)
+                {
+                    xmlDoc.Save(projFile.FullName);
+                    LaunchLogEvent(string.Format("{0} {1} : {2}", DateTime.Now, Resources.TitleTurnonXMLDocFile, projFile.FullName));
+                }
+            }
             // Log end of step
             LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.End, title));
             LaunchLogEvent("");
