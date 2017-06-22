@@ -97,6 +97,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will explain how to use the import/export functionality.
+        /// </summary>
+        internal static string DescImportExport {
+            get {
+                return ResourceManager.GetString("DescImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will allow user to optional turn on project XML documentation file .
+        /// </summary>
+        internal static string DescTurnonXMLDocFile {
+            get {
+                return ResourceManager.GetString("DescTurnonXMLDocFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End.
         /// </summary>
         internal static string End {
@@ -129,6 +147,28 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string FollowingSteps {
             get {
                 return ResourceManager.GetString("FollowingSteps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate XML documentation file.
+        /// </summary>
+        internal static string GenerateXMLDocFile {
+            get {
+                return ResourceManager.GetString("GenerateXMLDocFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage 2018.0 Framework adds import/export common component for web application.
+        ///
+        ///For implementing import/export functionality, it should override some import/export base class and supply BusinessEnityProperty or a hierarchy of BusinessEnityProperty which represents the header/detail kind of composition in Accpac business wiews.  
+        ///
+        ///Details see Sage 300 Import/Export Documentation and sample code for import/export..
+        /// </summary>
+        internal static string ImportExportDesc {
+            get {
+                return ResourceManager.GetString("ImportExportDesc", resourceCulture);
             }
         }
         
@@ -347,6 +387,37 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string StepTitleMain {
             get {
                 return ResourceManager.GetString("StepTitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import/Export support.
+        /// </summary>
+        internal static string TitleImportExport {
+            get {
+                return ResourceManager.GetString("TitleImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn on project XML documentation file.
+        /// </summary>
+        internal static string TitleTurnonXMLDocFile {
+            get {
+                return ResourceManager.GetString("TitleTurnonXMLDocFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn on the XML documentation file
+        ///
+        ///The Generate XML documentation file property determines whether an XML file will be generated during compilation. When this option is selected, XML documentation is automatically emitted into an XML file, which will have the same name as your project and the .xml extension.
+        ///
+        ///When turn on this property, all the public class, methods, properties, constants, enums should have proper XML Documentation Comments, otherwise it will have warnings and errors when compile proje [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TurnOnXMLDocFile {
+            get {
+                return ResourceManager.GetString("TurnOnXMLDocFile", resourceCulture);
             }
         }
         

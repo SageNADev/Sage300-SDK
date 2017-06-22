@@ -212,4 +212,25 @@
   <data name="UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
+  <data name="DescImportExport" xml:space="preserve">
+    <value>This step will explain how to use the import/export functionality</value>
+  </data>
+  <data name="DescTurnonXMLDocFile" xml:space="preserve">
+    <value>This step will allow user to optional turn on project XML documentation file </value>
+  </data>
+  <data name="TitleImportExport" xml:space="preserve">
+    <value>Import/Export support</value>
+  </data>
+  <data name="TitleTurnonXMLDocFile" xml:space="preserve">
+    <value>Turn on project XML documentation file</value>
+  </data>
+  <data name="ImportExportDesc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ImportExportDesc.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TurnOnXMLDocFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\TurnOnXMLDocFile.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GenerateXMLDocFile" xml:space="preserve">
+    <value>Generate XML documentation file</value>
+  </data>
 </root>

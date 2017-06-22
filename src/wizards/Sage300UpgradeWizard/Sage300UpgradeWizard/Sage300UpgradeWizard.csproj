@@ -150,10 +150,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\ImportExportDesc.txt" />
     <Content Include="content\ReleaseAllUpgrade.txt" />
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
+    <Content Include="content\TurnOnXMLDocFile.txt" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
   </ItemGroup>
