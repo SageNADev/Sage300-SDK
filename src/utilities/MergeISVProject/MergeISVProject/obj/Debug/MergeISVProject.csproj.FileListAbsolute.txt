@@ -1,0 +1,6 @@
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\bin\Debug\MergeISVProject.exe.config
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\bin\Debug\MergeISVProject.exe
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\bin\Debug\MergeISVProject.pdb
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\obj\Debug\MergeISVProject.csprojResolveAssemblyReference.cache
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\obj\Debug\MergeISVProject.exe
+C:\Projects\Sage300-SDK\src\utilities\MergeISVProject\MergeISVProject\obj\Debug\MergeISVProject.pdb

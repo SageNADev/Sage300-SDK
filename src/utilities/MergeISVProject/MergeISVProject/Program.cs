@@ -82,7 +82,8 @@ namespace MergeISVProject
             Directory.CreateDirectory(pathDeploy);
 
             // compile and copy files to web project deploy folder
-            if (StageFiles(pathWebProj, menuFileName, pathFramework))
+            string compileResult = string.Empty;
+            if (StageFiles(pathWebProj, menuFileName, pathFramework, ref compileResult))
             {
                if (!nodeploy)
                { 
@@ -121,7 +122,7 @@ namespace MergeISVProject
         /// <param name="pathWebProj">Web Project path</param>
         /// <param name="menuFileName">Menu file name</param>
         /// <param name="pathFramework">Framework path</param>
-        private static bool StageFiles(string pathWebProj, string menuFileName, string pathFramework)
+        private static bool StageFiles(string pathWebProj, string menuFileName, string pathFramework, ref string compileResult)
         {
             var pathDeploy = Path.Combine(pathWebProj, "Deploy");
             var pathSource = Path.Combine(pathDeploy, "Source");
@@ -155,10 +156,14 @@ namespace MergeISVProject
                 StartInfo =
                 {
                     FileName = Path.Combine(pathFramework, "aspnet_compiler.exe"),
-                    Arguments = string.Format(" -v / -p \"{0}\" -fixednames \"{1}\"", pathSource, pathBuild)
+                    Arguments = string.Format(" -v / -p \"{0}\" -fixednames \"{1}\"", pathSource, pathBuild),
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true
                 }
             };
             p.Start();
+            compileResult = p.StandardOutput.ReadToEnd();
+            Console.WriteLine(compileResult);
             p.WaitForExit();
             
 #if _maybe_later
@@ -185,7 +190,7 @@ namespace MergeISVProject
             FileSystem.CopyDirectory(pathAreaScriptsFrom, pathAreaScriptsTo);
 #endif
 
-            return true;
+            return p.ExitCode == 0;
         }
 
         /// <summary>
