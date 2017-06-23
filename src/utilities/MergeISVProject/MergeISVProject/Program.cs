@@ -54,7 +54,7 @@ namespace MergeISVProject
             var menuFileName = args[2];
             var configName = args[3];
             var pathFramework = args[4];
-            var moduleId = menuFileName.Substring(0, 2);
+            var moduleId = menuFileName.Substring(0, menuFileName.IndexOf("MenuDetails.xml"));
             var pathSage300 = GetSage300Path();
 
 
@@ -129,7 +129,7 @@ namespace MergeISVProject
             var pathBinFrom = Path.Combine(pathWebProj, "Bin");
             var pathBinTo = Path.Combine(pathSource, "Bin");
             var pathAreas = Path.Combine(pathSource, "Areas");
-            var moduleId = menuFileName.Substring(0, 2);
+            var moduleId = menuFileName.Substring(0, menuFileName.IndexOf("MenuDetails.xml"));
             var pathAreaViewsFrom = Path.Combine(pathWebProj, @"Areas\" + moduleId + @"\Views");
             var pathAreaViewsTo = Path.Combine(pathSource, @"Areas\" + moduleId + @"\Views");
 
@@ -274,7 +274,7 @@ namespace MergeISVProject
             var pathDeploy = Path.Combine(pathWebProj, "Deploy");
             var pathSource = Path.Combine(pathDeploy, "Source");
             var pathBuild = Path.Combine(pathDeploy, "Build");
-            var moduleId = menuFileName.Substring(0, 2);
+            var moduleId = menuFileName.Substring(0, menuFileName.IndexOf("MenuDetails.xml"));
             var pathBuildView = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Views");
             var pathSageView = Path.Combine(pathSageOnline, @"Web\Areas\" + moduleId + @"\Views");
 

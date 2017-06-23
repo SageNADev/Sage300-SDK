@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Web.Optimization.Less</name>
+    </assembly>
+    <members>
+        <member name="T:System.Web.Optimization.DynamicBundle">
+            <summary>
+                Extends <see cref="T:System.Web.Optimization.Bundle"/> with dynamic cache key functionality.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicBundle.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of <see cref="T:System.Web.Optimization.DynamicBundle"/>
+            </summary>
+            <param name="virtualPath">Virtual path of the bundle</param>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicBundle.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of <see cref="T:System.Web.Optimization.DynamicBundle"/>
+            </summary>
+            <param name="virtualPath">Virtual path of the bundle</param>
+            <param name="cdnPath">CDN path of the bundle</param>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicBundle.#ctor(System.String,System.String,System.Web.Optimization.IBundleTransform[])">
+            <summary>
+                Initializes a new instance of <see cref="T:System.Web.Optimization.DynamicBundle"/>
+            </summary>
+            <param name="virtualPath">Virtual path of the bundle</param>
+            <param name="cdnPath">CDN path of the bundle</param>
+            <param name="transforms">Bundle transforms</param>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicBundle.GetCacheKey(System.Web.Optimization.BundleContext)">
+            <summary>
+                Gets the cache key for the specified bundle context. Takes into account transient files handled by
+                <see cref="T:System.Web.Hosting.VirtualPathProvider"/>.
+            </summary>
+            <param name="context"><see cref="T:System.Web.Optimization.BundleContext"/> instance.</param>
+            <returns>Cache key string.</returns>
+        </member>
+        <member name="T:System.Web.Optimization.DynamicScriptBundle">
+            <summary>
+            The Script bundle with support of transient files implemented with a custom <see cref="T:System.Web.Hosting.VirtualPathProvider"/>.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicScriptBundle.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Web.Optimization.DynamicScriptBundle"/> class.
+            </summary>
+            <param name="virtualPath">
+            The virtual path.
+            </param>
+        </member>
+        <member name="M:System.Web.Optimization.DynamicScriptBundle.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Web.Optimization.DynamicScriptBundle"/> class.
+            </summary>
+            <param name="virtualPath">
+            The virtual path.
+            </param>
+            <param name="cdnPath">
+            The CDN path.
+            </param>
+        </member>
+        <member name="T:System.Web.Optimization.ImportedFilePathResolver">
+            <summary>
+                The imported file path resolver.
+            </summary>
+        </member>
+        <member name="F:System.Web.Optimization.ImportedFilePathResolver._currentDirectory">
+            <summary>
+                The current file directory.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.ImportedFilePathResolver.GetFullPath(System.String)">
+            <summary>
+                Returns the absolute path for the specified imported file path.
+            </summary>
+            <param name="filePath">
+                The imported file path.
+            </param>
+            <returns>
+                The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="P:System.Web.Optimization.ImportedFilePathResolver.CurrentDirectory">
+            <summary>
+                Sets the path to directory of the currently processed file.
+            </summary>
+            <exception cref="T:System.Web.HttpException">
+                <paramref name="value"/> is not a valid virtual path
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="value"/> is null
+            </exception>
+        </member>
+        <member name="T:System.Web.Optimization.LessBundle">
+            <summary>
+                The less bundle.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessBundle.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Web.Optimization.LessBundle"/> class.
+            </summary>
+            <param name="virtualPath">The virtual path. </param>
+        </member>
+        <member name="M:System.Web.Optimization.LessBundle.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Web.Optimization.LessBundle"/> class.
+            </summary>
+            <param name="virtualPath"> The virtual path. </param>
+            <param name="cdnPath"> The CDN path. </param>
+        </member>
+        <member name="T:System.Web.Optimization.DependencyCache">
+            <summary>
+                Stores bundle file dependencies. Takes into account transient files handled by <see cref="T:System.Web.Hosting.VirtualPathProvider"/>.
+            </summary>
+        </member>
+        <member name="F:System.Web.Optimization.DependencyCache._fileDependencies">
+            <summary>
+                Lists of virtual paths of included files by the root less file cache key or virtual path.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.DependencyCache.GetTransientBundleFilesKey(System.Web.Optimization.Bundle,System.Web.Optimization.BundleContext)">
+            <summary>
+                Returns cache key for <paramref name="bundle"/>.
+            </summary>
+            <param name="bundle"><see cref="T:System.Web.Optimization.Bundle"/> to get cache for.</param>
+            <param name="context">Current <see cref="T:System.Web.Optimization.BundleContext"/></param>
+            <returns>Cache key string.</returns>
+        </member>
+        <member name="M:System.Web.Optimization.DependencyCache.SaveFileDependencies(System.String,System.String[])">
+            <summary>
+                Stores file dependency paths, if not saved yet.
+            </summary>
+            <param name="virtualPath">Root file virtual path.</param>
+            <param name="fileDependencies">Included file virtual paths.</param>
+        </member>
+        <member name="M:System.Web.Optimization.DependencyCache.GetFileDependencies(System.Web.Optimization.Bundle,System.String,System.Web.Optimization.BundleContext)">
+            <summary>
+                Returns virtual paths of included files in <paramref name="virtualPath"/>  file, according to
+                <paramref name="context"/>.
+                If not added yet and <see cref="T:System.Web.Optimization.LessTransform"/> included in bundle transforms, executes
+                <see cref="T:System.Web.Optimization.LessTransform"/> transformation for the specified <paramref name="bundle"/>
+                and ensures the dependencies are saved.
+            </summary>
+            <param name="bundle">Bundle to process, if not yet</param>
+            <param name="virtualPath">Root  file to get dependencies for.</param>
+            <param name="context">Current context.</param>
+            <returns>Virtual paths of included files.</returns>
+        </member>
+        <member name="M:System.Web.Optimization.DependencyCache.GetTransientFileKey(System.String)">
+            <summary>
+                Returns file cache key in respect to <see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)"/> results for all dependencies.
+            </summary>
+            <param name="virtualPath">Root  file virtual path.</param>
+            <returns>File cache key.</returns>
+        </member>
+        <member name="M:System.Web.Optimization.DependencyCache.ComposeTransientFilesKey(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Creates a cache key for provided virtual paths that <see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)"/> returns not
+                empty value for, otherwise empty string.
+            </summary>
+            <param name="paths">Virtual paths to pass to <see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)"/> and concat then.</param>
+            <returns>Cache key or empty string.</returns>
+        </member>
+        <member name="T:System.Web.Optimization.LessExtensions">
+            <summary>
+                Specifies dotless related utilities.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessExtensions.SetCurrentFilePath(dotless.Core.Parser.Parser,System.String)">
+            <summary>
+                Informs the LESS parser about the path to the currently processed file.
+                This is done by using a custom <see cref="T:dotless.Core.Input.IPathResolver"/> implementation.
+            </summary>
+            <param name="lessParser">The LESS parser.</param>
+            <param name="currentFilePath">The path to the currently processed file.</param>
+        </member>
+        <member name="M:System.Web.Optimization.LessExtensions.GetPathResolver(dotless.Core.Parser.Parser)">
+            <summary>
+                Returns an <see cref="T:dotless.Core.Input.IPathResolver"/> instance used by the specified LESS lessParser.
+            </summary>
+            <param name="lessParser">
+                The LESS parser.
+            </param>
+            <returns>
+                The <see cref="T:dotless.Core.Input.IPathResolver"/>.
+            </returns>
+        </member>
+        <member name="M:System.Web.Optimization.LessExtensions.GetFileReaderWithResolver(dotless.Core.Parser.Parser)">
+            <summary>
+                Returns <see cref="T:System.Web.Optimization.IFileReaderWithResolver"/> from <see cref="T:dotless.Core.Importers.Importer"/> instance on the
+                <paramref name="lessParser"/>, if any. Otherwise raises exception.
+            </summary>
+            <param name="lessParser"></param>
+            <exception cref="T:System.InvalidOperationException">
+                <see cref="P:dotless.Core.Parser.Parser.Importer"/> or <see cref="P:dotless.Core.Importers.Importer.FileReader"/> are
+                not of expected types.
+            </exception>
+            <returns><see cref="T:System.Web.Optimization.IFileReaderWithResolver"/> instance.</returns>
+        </member>
+        <member name="M:System.Web.Optimization.LessExtensions.ResolveLessEngine(dotless.Core.ILessEngine)">
+            <summary>
+                Un-decorates <see cref="T:dotless.Core.LessEngine"/> from <paramref name="engine"/>. Can process only
+                <see cref="T:dotless.Core.CacheDecorator"/> and <see cref="T:dotless.Core.ParameterDecorator"/>, otherwise raises exception.
+            </summary>
+            <param name="engine">Possibly decorated <see cref="T:dotless.Core.ILessEngine"/></param>
+            <exception cref="T:System.ArgumentException">Unexpected type of <paramref name="engine"/></exception>
+            <returns><see cref="T:dotless.Core.LessEngine"/> instance.</returns>
+        </member>
+        <member name="T:System.Web.Optimization.LessTransform">
+            <summary>
+                The less transform.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessTransform.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
+            <summary>
+                The process.
+            </summary>
+            <param name="context">
+                The context.
+            </param>
+            <param name="bundleResponse">
+                The bundle response.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                Argument NULL Exception
+            </exception>
+        </member>
+        <member name="M:System.Web.Optimization.LessTransform.ConvertUrlsToAbsolute(System.String,System.String)">
+            <summary>
+                Transforms all url rules in <paramref name="content"/> that are not Data URI to absolute.
+                We cannot use <see cref="T:System.Web.Optimization.CssRewriteUrlTransform"/> because it has a bug - it screwes up data uri and virtual
+                directory based urls.
+            </summary>
+            <param name="cssFilePath">File path of the file being bundled</param>
+            <param name="content">The file content to replace URLs in</param>
+            <exception cref="T:System.Web.HttpException">Cannot make an absolute path from '<paramref name="cssFilePath"/>' file location to URL in <paramref name="content"/></exception>
+        </member>
+        <member name="M:System.Web.Optimization.LessTransform.GetFileDependencies(dotless.Core.LessEngine)">
+            <summary>
+                Gets the file dependencies (@imports) of the LESS file being parsed.
+            </summary>
+            <param name="lessEngine">The LESS engine.</param>
+            <returns>An array of file references to the dependent file references.</returns>
+        </member>
+        <member name="T:System.Web.Optimization.IFileReaderWithResolver">
+            <summary>
+                Extends <see cref="T:dotless.Core.Input.IFileReader"/> with features required for resolving virtual file
+                related to the current directory set with <see cref="P:System.Web.Optimization.ImportedFilePathResolver.CurrentDirectory"/>.
+            </summary>
+        </member>
+        <member name="P:System.Web.Optimization.IFileReaderWithResolver.PathResolver">
+            <summary>
+                Gets or sets <see cref="T:System.Web.Optimization.ImportedFilePathResolver"/> instance set for the current file reader.
+            </summary>
+        </member>
+        <member name="T:System.Web.Optimization.LessVirtualFileReader">
+            <summary>
+                Implements <see cref="T:dotless.Core.Input.IFileReader"/> with <see cref="T:System.Web.Optimization.IFileReaderWithResolver"/> extension required
+                for resolving virtual file related to the current directory set with
+                <see cref="P:System.Web.Optimization.ImportedFilePathResolver.CurrentDirectory"/>.
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.#ctor">
+            <summary>
+                Initializes a new instance of <see cref="T:System.Web.Optimization.LessVirtualFileReader"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.#ctor(System.Web.Optimization.ImportedFilePathResolver)">
+            <summary>
+                Initializes a new instance of <see cref="T:System.Web.Optimization.LessVirtualFileReader"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.DoesFileExist(System.String)">
+            <summary>
+                Returns <c>true</c> if the file exists.
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.GetFileContents(System.String)">
+            <summary>
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.GetBinaryFileContents(System.String)">
+            <summary>
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Optimization.LessVirtualFileReader.GetBytes(System.IO.Stream)">
+            <summary>
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:System.Web.Optimization.LessVirtualFileReader.PathResolver">
+            <summary>
+                Gets or sets <see cref="T:System.Web.Optimization.ImportedFilePathResolver"/> instance set for the current file reader.
+            </summary>
+        </member>
+    </members>
+</doc>
