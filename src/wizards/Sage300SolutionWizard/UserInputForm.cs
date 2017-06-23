@@ -39,6 +39,12 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private bool _generate = false;
         #endregion
 
+        #region Private Consts
+        /// <summary> Splitter Distance </summary>
+        private const int SplitterDistance = 237;
+
+        #endregion
+
         #region Public vars
         public string ThirdPartyCompanyName { get; set; }
         public string ThirdPartyApplicationId { get; set; }
@@ -184,14 +190,12 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 {
                     btnBack.Enabled = true;
 
-                    _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                    _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                    ShowStep(false);
                 }
 
                 _currentWizardStep++;
 
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                ShowStep(true);
 
                 // Update text of Next button?
                 if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateSolution"))
@@ -200,10 +204,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
-                lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                splitBase.Panel2.Refresh();
+                ShowStepTitle();
             }
         }
 
@@ -219,13 +220,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                     btnNext.Text = Resources.Next;
                 }
 
-                _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                ShowStep(false);
 
                 _currentWizardStep--;
 
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                ShowStep(true);
 
                 // Enable back button?
                 if (_currentWizardStep.Equals(0))
@@ -235,14 +234,26 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
-                lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                splitBase.Panel2.Refresh();
-
+                ShowStepTitle();
             }
         }
 
+        /// <summary> Show Step </summary>
+        /// <param name="visible">True to show otherwise false </param>
+        private void ShowStep(bool visible)
+        {
+            _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
+            _wizardSteps[_currentWizardStep].Panel.Visible = visible;
+            splitSteps.SplitterDistance = SplitterDistance;
+        }
+
+        /// <summary> Show Step Title</summary>
+        private void ShowStepTitle()
+        {
+            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                _wizardSteps[_currentWizardStep].Title;
+            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
+        }
         /// <summary> Valid Settings </summary>
         /// <returns>True if settings are valid otherwise false</returns>
         private bool ValidSettings()

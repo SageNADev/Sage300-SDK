@@ -176,6 +176,7 @@
             // splitBase
             // 
             this.splitBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitBase.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitBase.IsSplitterFixed = true;
             this.splitBase.Location = new System.Drawing.Point(0, 0);
             this.splitBase.Name = "splitBase";
@@ -795,9 +796,9 @@
             // pnlGenerate
             // 
             this.pnlGenerate.Controls.Add(this.splitGenerate);
-            this.pnlGenerate.Location = new System.Drawing.Point(848, 236);
+            this.pnlGenerate.Location = new System.Drawing.Point(845, 247);
             this.pnlGenerate.Name = "pnlGenerate";
-            this.pnlGenerate.Size = new System.Drawing.Size(601, 53);
+            this.pnlGenerate.Size = new System.Drawing.Size(621, 44);
             this.pnlGenerate.TabIndex = 3;
             // 
             // splitGenerate
@@ -815,13 +816,14 @@
             // splitGenerate.Panel2
             // 
             this.splitGenerate.Panel2.Controls.Add(this.splitGenerateBottom);
-            this.splitGenerate.Size = new System.Drawing.Size(601, 53);
-            this.splitGenerate.SplitterDistance = 25;
+            this.splitGenerate.Size = new System.Drawing.Size(621, 44);
+            this.splitGenerate.SplitterDistance = 29;
             this.splitGenerate.TabIndex = 0;
             // 
             // splitGenerateTop
             // 
             this.splitGenerateTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitGenerateTop.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitGenerateTop.IsSplitterFixed = true;
             this.splitGenerateTop.Location = new System.Drawing.Point(0, 0);
             this.splitGenerateTop.Name = "splitGenerateTop";
@@ -836,19 +838,18 @@
             // 
             this.splitGenerateTop.Panel2.Controls.Add(this.txtManifestToGenerate);
             this.splitGenerateTop.Panel2MinSize = 21;
-            this.splitGenerateTop.Size = new System.Drawing.Size(601, 25);
-            this.splitGenerateTop.SplitterDistance = 25;
+            this.splitGenerateTop.Size = new System.Drawing.Size(618, 29);
+            this.splitGenerateTop.SplitterDistance = 45;
             this.splitGenerateTop.TabIndex = 3;
             // 
             // lblGenerateManifest
             // 
-            this.lblGenerateManifest.AutoSize = true;
-            this.lblGenerateManifest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblGenerateManifest.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblGenerateManifest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerateManifest.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateManifest.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateManifest.Name = "lblGenerateManifest";
-            this.lblGenerateManifest.Size = new System.Drawing.Size(519, 21);
+            this.lblGenerateManifest.Size = new System.Drawing.Size(607, 35);
             this.lblGenerateManifest.TabIndex = 2;
             this.lblGenerateManifest.Text = "The Manifest.json file will be generated with the following content";
             // 
@@ -862,12 +863,13 @@
             this.txtManifestToGenerate.Name = "txtManifestToGenerate";
             this.txtManifestToGenerate.ReadOnly = true;
             this.txtManifestToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtManifestToGenerate.Size = new System.Drawing.Size(601, 25);
+            this.txtManifestToGenerate.Size = new System.Drawing.Size(607, 21);
             this.txtManifestToGenerate.TabIndex = 1;
             // 
             // splitGenerateBottom
             // 
             this.splitGenerateBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitGenerateBottom.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitGenerateBottom.IsSplitterFixed = true;
             this.splitGenerateBottom.Location = new System.Drawing.Point(0, 0);
             this.splitGenerateBottom.Name = "splitGenerateBottom";
@@ -882,19 +884,18 @@
             // 
             this.splitGenerateBottom.Panel2.Controls.Add(this.txtSettingsToGenerate);
             this.splitGenerateBottom.Panel2MinSize = 21;
-            this.splitGenerateBottom.Size = new System.Drawing.Size(601, 25);
-            this.splitGenerateBottom.SplitterDistance = 25;
+            this.splitGenerateBottom.Size = new System.Drawing.Size(618, 30);
+            this.splitGenerateBottom.SplitterDistance = 45;
             this.splitGenerateBottom.TabIndex = 1;
             // 
             // lblGenerateSettings
             // 
-            this.lblGenerateSettings.AutoSize = true;
-            this.lblGenerateSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblGenerateSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblGenerateSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerateSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateSettings.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateSettings.Name = "lblGenerateSettings";
-            this.lblGenerateSettings.Size = new System.Drawing.Size(607, 21);
+            this.lblGenerateSettings.Size = new System.Drawing.Size(607, 33);
             this.lblGenerateSettings.TabIndex = 0;
             this.lblGenerateSettings.Text = "The {screen}_Settimgs.xml file(s) will be generated with the following content:";
             // 
@@ -907,7 +908,7 @@
             this.txtSettingsToGenerate.Name = "txtSettingsToGenerate";
             this.txtSettingsToGenerate.ReadOnly = true;
             this.txtSettingsToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSettingsToGenerate.Size = new System.Drawing.Size(601, 25);
+            this.txtSettingsToGenerate.Size = new System.Drawing.Size(607, 21);
             this.txtSettingsToGenerate.TabIndex = 0;
             // 
             // pnlControls
@@ -1302,13 +1303,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitGenerate)).EndInit();
             this.splitGenerate.ResumeLayout(false);
             this.splitGenerateTop.Panel1.ResumeLayout(false);
-            this.splitGenerateTop.Panel1.PerformLayout();
             this.splitGenerateTop.Panel2.ResumeLayout(false);
             this.splitGenerateTop.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitGenerateTop)).EndInit();
             this.splitGenerateTop.ResumeLayout(false);
             this.splitGenerateBottom.Panel1.ResumeLayout(false);
-            this.splitGenerateBottom.Panel1.PerformLayout();
             this.splitGenerateBottom.Panel2.ResumeLayout(false);
             this.splitGenerateBottom.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitGenerateBottom)).EndInit();

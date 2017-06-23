@@ -94,6 +94,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #endregion
 
+        #region Private Consts
+        /// <summary> Splitter Distance </summary>
+        private const int SplitterDistance = 415;
+
+        #endregion
+
         #region Delegates
 
         /// <summary> Delegate to update UI with name of file being processed </summary>
@@ -642,8 +648,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         btnBack.Enabled = true;
 
-                        _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                        _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                        ShowStep(false);
                     }
 
                     _currentWizardStep++;
@@ -696,8 +701,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         txtResxName.Text = defaultName;
                     }
 
-                    _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                    _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                    ShowStep(true);
 
                     // Update text of Next button?
                     if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateCode"))
@@ -706,11 +710,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
 
                     // Update title and text for step
-                    lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                        _wizardSteps[_currentWizardStep].Title;
-                    lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                    splitBase.Panel2.Refresh();
+                    ShowStepTitle();
                 }
             }
         }
@@ -732,13 +732,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     btnNext.Text = Resources.Next;
                 }
 
-                _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                ShowStep(false);
 
                 _currentWizardStep--;
 
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                ShowStep(true);
 
                 // Enable back button?
                 if (_currentWizardStep.Equals(0))
@@ -748,15 +746,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                    _wizardSteps[_currentWizardStep].Title;
-                lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                splitBase.Panel2.Refresh();
-
+                ShowStepTitle();
             }
         }
 
+        /// <summary> Show Step </summary>
+        /// <param name="visible">True to show otherwise false </param>
+        private void ShowStep(bool visible)
+        {
+            _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
+            _wizardSteps[_currentWizardStep].Panel.Visible = visible;
+            splitSteps.SplitterDistance = SplitterDistance;
+        }
+
+        /// <summary> Show Step Title</summary>
+        private void ShowStepTitle()
+        {
+            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                _wizardSteps[_currentWizardStep].Title;
+            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
+        }
         /// <summary> Initialize wizard steps </summary>
         /// <param name="repositoryType">Repository Type</param>
         private void InitWizardSteps(RepositoryType repositoryType)
@@ -1205,20 +1214,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Processing("");
             _generation.Dispose();
 
-            _wizardSteps[_currentWizardStep].Panel.Visible = false;
-            _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+            ShowStep(false);
 
             _currentWizardStep++;
 
-            _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-            _wizardSteps[_currentWizardStep].Panel.Visible = true;
+            ShowStep(true);
 
             // Update title and text for step
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                _wizardSteps[_currentWizardStep].Title;
-            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-            splitBase.Panel2.Refresh();
+            ShowStepTitle();
 
             // Display final step
             btnNext.Text = Resources.Finish;

@@ -56,6 +56,8 @@ namespace Sage300UICustomizationWizard
         /// <summary> Application Modules </summary>
         private const string ApplicationModules = "AP,AR,AS,BK,TX,CS,GL,IC,OE,PO,";
 
+        /// <summary> Splitter Distance </summary>
+        private const int SplitterDistance = 415;
         #endregion
 
         #region Public vars
@@ -136,15 +138,27 @@ namespace Sage300UICustomizationWizard
 
             _currentWizardStep++;
 
-            _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-            _wizardSteps[_currentWizardStep].Panel.Visible = true;
+            ShowStep(true);
 
             // Update title and text for step
+            ShowStepTitle();
+        }
+
+        /// <summary> Show Step </summary>
+        /// <param name="visible">True to show otherwise false </param>
+        private void ShowStep(bool visible)
+        {
+            _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
+            _wizardSteps[_currentWizardStep].Panel.Visible = visible;
+            splitSteps.SplitterDistance = SplitterDistance;
+        }
+
+        /// <summary> Show Step Title</summary>
+        private void ShowStepTitle()
+        {
             lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
                                 _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-            splitBase.Panel2.Refresh();
         }
 
         /// <summary> Validate Step before proceeding to next step </summary>

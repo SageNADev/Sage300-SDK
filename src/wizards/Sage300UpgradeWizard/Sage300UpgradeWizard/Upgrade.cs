@@ -64,6 +64,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         #endregion
 
         #region Private Constants
+        /// <summary> Splitter Distance </summary>
+        private const int SplitterDistance = 375;
         #endregion
 
         #region Delegates
@@ -259,7 +261,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     _currentWizardStep++;
 
                     // Update title and text for step
-                    UpdateStepPage();
+                    ShowStep();
 
                     // Update text of Next button?
                     if (_currentWizardStep.Equals(_wizardSteps.Count - 2))
@@ -296,7 +298,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 _currentWizardStep--;
 
                 // Update title and text for step
-                UpdateStepPage();
+                ShowStep();
 
                 // Enable back button?
                 if (_currentWizardStep.Equals(0))
@@ -308,8 +310,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
         }
         
-        /// <summary> Update Step Page with content</summary>
-        private void UpdateStepPage()
+        /// <summary> Show Step Page</summary>
+        private void ShowStep()
         {
             // Update title and text for step
             var step = _currentWizardStep.Equals(0) ? "" : Resources.Step + _currentWizardStep.ToString("#0") + Resources.Dash;
@@ -319,9 +321,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Display information
             lblContent.Text = _wizardSteps[_currentWizardStep].Content;
+
+            // Checkbox
             checkBox.Text = _wizardSteps[_currentWizardStep].CheckboxText;
             checkBox.Checked = _wizardSteps[_currentWizardStep].CheckboxValue;
             splitStep.Panel2Collapsed = !_wizardSteps[_currentWizardStep].ShowCheckbox;
+
+            splitSteps.SplitterDistance = SplitterDistance;
         }
 
         /// <summary>
@@ -381,7 +387,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             _currentWizardStep++;
 
             // Update title and text for step
-            UpdateStepPage();
+            ShowStep();
 
             // Display final step
             btnBack.Text = Resources.ShowLog;
