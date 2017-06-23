@@ -149,14 +149,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             AddStep(Resources.ReleaseAllTitleSyncAccpacLibs, Resources.ReleaseAllDescSyncAccpacLibs, 
                 string.Format(Resources.ReleaseAllSyncAccpacLibs, ProcessUpgrade.FromAccpacNumber, ProcessUpgrade.ToAccpacNumber));
 
-            // Specific to release steps go here
-            // 2018.0 Release: Optional turn on project XML comments check box
-            AddStep(Resources.TitleTurnonXMLDocFile, Resources.DescTurnonXMLDocFile,
-                Resources.TurnOnXMLDocFile, true, Resources.GenerateXMLDocFile);
 
+            // Specific to release steps go here
             // 2018.0 Release: Explain how to use import/export functionality
-            AddStep(Resources.TitleImportExport, Resources.DescImportExport,
-                Resources.ImportExportDesc);
+            AddStep(Resources.ReleaseSpecificTitleImportExport, Resources.ReleaseSpecificDescImportExport,
+                Resources.ReleaseSpecificImportExport);
+
+            // 2018.0 Release: Optionally enable XML comments check box
+            AddStep(Resources.ReleaseSpecificTitleEnableXmlProperty, Resources.ReleaseSpecificDescEnableXmlProperty,
+                Resources.ReleaseSpecificEnableXmlProperty, true, Resources.GenerateXMLDocFile);
+
 
             // Same for all upgrades, but the content will be specific to the release
             AddStep(Resources.ReleaseAllTitleConfirmation, Resources.ReleaseAllDescConfirmation,
@@ -183,8 +185,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncAccpacLibs));
 
             // Specific to release
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.TitleImportExport));
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.TitleTurnonXMLDocFile));
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleImportExport));
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleEnableXmlProperty));
 
             // Same for all upgrades
             content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleConfirmation));

@@ -1272,5 +1272,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
                 return ResourceManager.GetString("VersionTip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Customization.
+        /// </summary>
+        internal static string WebCustomization {
+            get {
+                return ResourceManager.GetString("WebCustomization", resourceCulture);
+            }
+        }
     }
 }

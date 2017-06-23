@@ -97,24 +97,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will explain how to use the import/export functionality.
-        /// </summary>
-        internal static string DescImportExport {
-            get {
-                return ResourceManager.GetString("DescImportExport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will allow user to optional turn on project XML documentation file .
-        /// </summary>
-        internal static string DescTurnonXMLDocFile {
-            get {
-                return ResourceManager.GetString("DescTurnonXMLDocFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to End.
         /// </summary>
         internal static string End {
@@ -156,19 +138,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string GenerateXMLDocFile {
             get {
                 return ResourceManager.GetString("GenerateXMLDocFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sage 2018.0 Framework adds import/export common component for web application.
-        ///
-        ///For implementing import/export functionality, it should override some import/export base class and supply BusinessEnityProperty or a hierarchy of BusinessEnityProperty which represents the header/detail kind of composition in Accpac business wiews.  
-        ///
-        ///Details see Sage 300 Import/Export Documentation and sample code for import/export..
-        /// </summary>
-        internal static string ImportExportDesc {
-            get {
-                return ResourceManager.GetString("ImportExportDesc", resourceCulture);
             }
         }
         
@@ -219,7 +188,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the Accpac Libraries references.
+        ///   Looks up a localized string similar to This step will upgrade the Accpac Libraries references..
         /// </summary>
         internal static string ReleaseAllDescSyncAccpacLibs {
             get {
@@ -337,6 +306,80 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will optionally enable the XML documentation file property..
+        /// </summary>
+        internal static string ReleaseSpecificDescEnableXmlProperty {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescEnableXmlProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will require manual modifications..
+        /// </summary>
+        internal static string ReleaseSpecificDescImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;XML documentation file&apos; property determines whether an XML
+        ///file will be generated during compilation. When this option is enabled,
+        ///XML documentation is automatically emitted into an XML file, which will 
+        ///have the same name as the project, but with an .xml extension.
+        ///
+        ///When enabling this property, all public classes, methods, 
+        ///properties, constants, and enums must have proper XML documentation 
+        ///comments, otherwise there will be warnings and/or errors when 
+        ///compiling the projects and solution.
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificEnableXmlProperty {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificEnableXmlProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Framework was enhanced to contain a common component for 
+        ///Import/Export functionality in the web screens.
+        ///
+        ///To implement the import/export functionality, the Business Repository class
+        ///will require modifications to the import/export base class along with 
+        ///supplying a Business Enity Property or a hierarchy of Business
+        ///Enity Properties (for header/detail screens) based upon the composition
+        ///of the business wiews.  
+        ///
+        ///The upgrade wizard is unable to automatically perform these
+        ///modifications and there [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable XML Documentation Property.
+        /// </summary>
+        internal static string ReleaseSpecificTitleEnableXmlProperty {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleEnableXmlProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import/Export Common Component.
+        /// </summary>
+        internal static string ReleaseSpecificTitleImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Log.
         /// </summary>
         internal static string ShowLog {
@@ -387,37 +430,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string StepTitleMain {
             get {
                 return ResourceManager.GetString("StepTitleMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Import/Export support.
-        /// </summary>
-        internal static string TitleImportExport {
-            get {
-                return ResourceManager.GetString("TitleImportExport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn on project XML documentation file.
-        /// </summary>
-        internal static string TitleTurnonXMLDocFile {
-            get {
-                return ResourceManager.GetString("TitleTurnonXMLDocFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn on the XML documentation file
-        ///
-        ///The Generate XML documentation file property determines whether an XML file will be generated during compilation. When this option is selected, XML documentation is automatically emitted into an XML file, which will have the same name as your project and the .xml extension.
-        ///
-        ///When turn on this property, all the public class, methods, properties, constants, enums should have proper XML Documentation Comments, otherwise it will have warnings and errors when compile proje [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string TurnOnXMLDocFile {
-            get {
-                return ResourceManager.GetString("TurnOnXMLDocFile", resourceCulture);
             }
         }
         

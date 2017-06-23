@@ -23,7 +23,6 @@ using System.IO;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System.IO.Compression;
 using System.Xml;
-using System.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
@@ -109,7 +108,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         if (_settings.WizardSteps[index].CheckboxValue)
                         {
                             LaunchProcessingEvent(_settings.WizardSteps[index].Title);
-                            TurnOnXMLDocFile(_settings.WizardSteps[index].Title);
+                            EnableXmlProperty(_settings.WizardSteps[index].Title);
                         }
                         break;
                         // Case n for release specific steps here
@@ -170,9 +169,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
-        /// <summary> Turn on solution projects for generate XML documentation file </summary>
+        /// <summary> Enable XML Documentation file property of projects </summary>
         /// <param name="title">Title of step being processed</param>
-        private void TurnOnXMLDocFile(string title)
+        private void EnableXmlProperty(string title)
         {
             // Log start of step
             LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.Start, title));
@@ -224,7 +223,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 if (hasChanges)
                 {
                     xmlDoc.Save(projFile.FullName);
-                    LaunchLogEvent(string.Format("{0} {1} : {2}", DateTime.Now, Resources.TitleTurnonXMLDocFile, projFile.FullName));
+                    LaunchLogEvent(string.Format("{0} {1} : {2}", DateTime.Now, Resources.ReleaseSpecificTitleEnableXmlProperty, projFile.FullName));
                 }
             }
             // Log end of step

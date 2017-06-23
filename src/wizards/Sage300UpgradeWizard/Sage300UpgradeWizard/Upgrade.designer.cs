@@ -111,6 +111,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // splitSteps
             // 
             this.splitSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitSteps.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitSteps.IsSplitterFixed = true;
             this.splitSteps.Location = new System.Drawing.Point(0, 0);
             this.splitSteps.Name = "splitSteps";
@@ -130,6 +131,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // splitStep
             // 
             this.splitStep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitStep.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitStep.IsSplitterFixed = true;
             this.splitStep.Location = new System.Drawing.Point(0, 0);
             this.splitStep.Name = "splitStep";
@@ -227,7 +229,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             this.MinimizeBox = false;
             this.Name = "Upgrade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sage300 Upgrade Wizard";
+            this.Text = "Solution Upgrade";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Generation_HelpButtonClicked);
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel1.PerformLayout();

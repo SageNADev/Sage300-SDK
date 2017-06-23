@@ -229,4 +229,7 @@
   <data name="VersionTip" xml:space="preserve">
     <value>The verison for the customization (informational only)</value>
   </data>
+  <data name="WebCustomization" xml:space="preserve">
+    <value>Web Customization</value>
+  </data>
 </root>

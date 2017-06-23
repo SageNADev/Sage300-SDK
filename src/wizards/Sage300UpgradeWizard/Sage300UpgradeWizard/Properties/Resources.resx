@@ -153,7 +153,7 @@
     <value>Processing {0}...</value>
   </data>
   <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
-    <value>This step will upgrade the Accpac Libraries references</value>
+    <value>This step will upgrade the Accpac Libraries references.</value>
   </data>
   <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
     <value>This step will upgrade the various global files included in the solution.</value>
@@ -212,25 +212,25 @@
   <data name="UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
-  <data name="DescImportExport" xml:space="preserve">
-    <value>This step will explain how to use the import/export functionality</value>
+  <data name="ReleaseSpecificDescImportExport" xml:space="preserve">
+    <value>This step will require manual modifications.</value>
   </data>
-  <data name="DescTurnonXMLDocFile" xml:space="preserve">
-    <value>This step will allow user to optional turn on project XML documentation file </value>
+  <data name="ReleaseSpecificDescEnableXmlProperty" xml:space="preserve">
+    <value>This step will optionally enable the XML documentation file property.</value>
   </data>
-  <data name="TitleImportExport" xml:space="preserve">
-    <value>Import/Export support</value>
+  <data name="ReleaseSpecificTitleImportExport" xml:space="preserve">
+    <value>Import/Export Common Component</value>
   </data>
-  <data name="TitleTurnonXMLDocFile" xml:space="preserve">
-    <value>Turn on project XML documentation file</value>
-  </data>
-  <data name="ImportExportDesc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ImportExportDesc.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="TurnOnXMLDocFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\TurnOnXMLDocFile.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ReleaseSpecificTitleEnableXmlProperty" xml:space="preserve">
+    <value>Enable XML Documentation Property</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
+  </data>
+  <data name="ReleaseSpecificEnableXmlProperty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificEnableXmlProperty.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificImportExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificImportExport.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

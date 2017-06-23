@@ -632,6 +632,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
+            Text = Resources.WebCustomization;
+
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
             btnBack.Text = Resources.Back;

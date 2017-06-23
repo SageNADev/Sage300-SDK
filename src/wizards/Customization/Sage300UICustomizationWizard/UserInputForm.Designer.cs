@@ -144,6 +144,7 @@ namespace Sage300UICustomizationWizard
             // splitSteps
             // 
             this.splitSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitSteps.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitSteps.IsSplitterFixed = true;
             this.splitSteps.Location = new System.Drawing.Point(0, 0);
             this.splitSteps.Name = "splitSteps";
@@ -187,9 +188,9 @@ namespace Sage300UICustomizationWizard
             this.pnlCreateEdit.Controls.Add(this.btnPackageFinder);
             this.pnlCreateEdit.Controls.Add(this.txtPackageId);
             this.pnlCreateEdit.Controls.Add(this.lblPackageId);
-            this.pnlCreateEdit.Location = new System.Drawing.Point(16, 24);
+            this.pnlCreateEdit.Location = new System.Drawing.Point(35, 25);
             this.pnlCreateEdit.Name = "pnlCreateEdit";
-            this.pnlCreateEdit.Size = new System.Drawing.Size(891, 375);
+            this.pnlCreateEdit.Size = new System.Drawing.Size(827, 375);
             this.pnlCreateEdit.TabIndex = 1;
             // 
             // txtModule

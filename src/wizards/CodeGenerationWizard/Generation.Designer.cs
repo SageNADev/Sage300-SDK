@@ -338,6 +338,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitSteps
             // 
             this.splitSteps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitSteps.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitSteps.IsSplitterFixed = true;
             this.splitSteps.Location = new System.Drawing.Point(0, 0);
             this.splitSteps.Name = "splitSteps";

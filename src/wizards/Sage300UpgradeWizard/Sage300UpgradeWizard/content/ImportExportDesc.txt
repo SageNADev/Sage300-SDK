@@ -1,9 +1,0 @@
-﻿Sage 300 2018.0 Framework adds Import/Export common component for web application.
-
-For implementing import/export functionality, it should override some 
-import/export base class and supply BusinessEnityProperty or a hierarchy 
-of BusinessEnityProperty which represents the header/detail kind of 
-composition in Accpac business wiews.  
-
-Details see Sage 300 Import/Export documentation and sample code 
-for import/export.

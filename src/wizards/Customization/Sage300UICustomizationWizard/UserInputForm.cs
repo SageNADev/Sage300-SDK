@@ -349,6 +349,8 @@ namespace Sage300UICustomizationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
+            Text = Resources.WebCustomization;
+
             btnNext.Text = Resources.Generate;
 
             // Step Create/Edit
