@@ -290,7 +290,7 @@
     <value>Add a control or controls for this customization. Proceed to the next step if no controls are required for this customization.</value>
   </data>
   <data name="StepDescriptionCreateEdit" xml:space="preserve">
-    <value>This will will generate the files for a Customization Package (JSON, XML, JS). If an endpoint is required for the customization, use the Customization Plugin in Visual Studio after these files are generated.</value>
+    <value>This will generate the files for a Customization Package (JSON, XML, JS). If an endpoint is required for the customization, use the Customization Plugin in Visual Studio after these files are generated.</value>
   </data>
   <data name="StepDescriptionGenerate" xml:space="preserve">
     <value>Select 'Generate' to generate the files for this customization based upon the content from the previous steps.</value>

@@ -99,6 +99,7 @@
     <None Include="Sage300Custom.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
   </ItemGroup>

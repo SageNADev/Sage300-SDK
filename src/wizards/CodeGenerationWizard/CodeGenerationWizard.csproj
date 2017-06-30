@@ -637,6 +637,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Blank24.ico" />
+    <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\Exit24.ico" />
     <Content Include="Images\finder16X.bmp" />
     <Content Include="Images\Go24.ico" />

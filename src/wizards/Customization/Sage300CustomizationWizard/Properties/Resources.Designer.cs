@@ -1129,7 +1129,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This will will generate the files for a Customization Package (JSON, XML, JS). If an endpoint is required for the customization, use the Customization Plugin in Visual Studio after these files are generated..
+        ///   Looks up a localized string similar to This will generate the files for a Customization Package (JSON, XML, JS). If an endpoint is required for the customization, use the Customization Plugin in Visual Studio after these files are generated..
         /// </summary>
         internal static string StepDescriptionCreateEdit {
             get {

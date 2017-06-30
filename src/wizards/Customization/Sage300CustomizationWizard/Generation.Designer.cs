@@ -817,7 +817,7 @@
             // 
             this.splitGenerate.Panel2.Controls.Add(this.splitGenerateBottom);
             this.splitGenerate.Size = new System.Drawing.Size(621, 44);
-            this.splitGenerate.SplitterDistance = 29;
+            this.splitGenerate.SplitterDistance = 25;
             this.splitGenerate.TabIndex = 0;
             // 
             // splitGenerateTop
@@ -838,8 +838,8 @@
             // 
             this.splitGenerateTop.Panel2.Controls.Add(this.txtManifestToGenerate);
             this.splitGenerateTop.Panel2MinSize = 21;
-            this.splitGenerateTop.Size = new System.Drawing.Size(618, 29);
-            this.splitGenerateTop.SplitterDistance = 45;
+            this.splitGenerateTop.Size = new System.Drawing.Size(621, 25);
+            this.splitGenerateTop.SplitterDistance = 25;
             this.splitGenerateTop.TabIndex = 3;
             // 
             // lblGenerateManifest
@@ -849,7 +849,7 @@
             this.lblGenerateManifest.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateManifest.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateManifest.Name = "lblGenerateManifest";
-            this.lblGenerateManifest.Size = new System.Drawing.Size(607, 35);
+            this.lblGenerateManifest.Size = new System.Drawing.Size(618, 35);
             this.lblGenerateManifest.TabIndex = 2;
             this.lblGenerateManifest.Text = "The Manifest.json file will be generated with the following content";
             // 
@@ -863,7 +863,7 @@
             this.txtManifestToGenerate.Name = "txtManifestToGenerate";
             this.txtManifestToGenerate.ReadOnly = true;
             this.txtManifestToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtManifestToGenerate.Size = new System.Drawing.Size(607, 21);
+            this.txtManifestToGenerate.Size = new System.Drawing.Size(618, 25);
             this.txtManifestToGenerate.TabIndex = 1;
             // 
             // splitGenerateBottom
@@ -884,8 +884,8 @@
             // 
             this.splitGenerateBottom.Panel2.Controls.Add(this.txtSettingsToGenerate);
             this.splitGenerateBottom.Panel2MinSize = 21;
-            this.splitGenerateBottom.Size = new System.Drawing.Size(618, 30);
-            this.splitGenerateBottom.SplitterDistance = 45;
+            this.splitGenerateBottom.Size = new System.Drawing.Size(621, 25);
+            this.splitGenerateBottom.SplitterDistance = 25;
             this.splitGenerateBottom.TabIndex = 1;
             // 
             // lblGenerateSettings
@@ -895,7 +895,7 @@
             this.lblGenerateSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateSettings.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateSettings.Name = "lblGenerateSettings";
-            this.lblGenerateSettings.Size = new System.Drawing.Size(607, 33);
+            this.lblGenerateSettings.Size = new System.Drawing.Size(618, 33);
             this.lblGenerateSettings.TabIndex = 0;
             this.lblGenerateSettings.Text = "The {screen}_Settimgs.xml file(s) will be generated with the following content:";
             // 
@@ -908,7 +908,7 @@
             this.txtSettingsToGenerate.Name = "txtSettingsToGenerate";
             this.txtSettingsToGenerate.ReadOnly = true;
             this.txtSettingsToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSettingsToGenerate.Size = new System.Drawing.Size(607, 21);
+            this.txtSettingsToGenerate.Size = new System.Drawing.Size(618, 25);
             this.txtSettingsToGenerate.TabIndex = 0;
             // 
             // pnlControls
