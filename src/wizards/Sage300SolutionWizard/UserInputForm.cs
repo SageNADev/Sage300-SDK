@@ -169,25 +169,25 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void NextStep()
         {
-            // Proceed to next wizard step or start code generation if last step
+            // Start code generation if last step
             if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateSolution"))
             {
-                // Validations
-                if (!ValidSettings())
-                {
-                    return;
-                }
-
-                // Valid!
                 _generate = true;
                 DialogResult = DialogResult.OK;
                 Close();
             }
+
+            // Proceed to next wizard step
             else
             {
-                // Proceed to next step
                 if (!_currentWizardStep.Equals(-1))
                 {
+                    // Before proceeding to next step, ensure current step is valid
+                    if (!ValidSettings())
+                    {
+                        return;
+                    }
+
                     btnBack.Enabled = true;
 
                     ShowStep(false);
@@ -254,59 +254,92 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                                 _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
+
         /// <summary> Valid Settings </summary>
         /// <returns>True if settings are valid otherwise false</returns>
         private bool ValidSettings()
+        {
+            var valid = string.Empty;
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlInfo"))
+            {
+                valid = ValidPnlInfo();
+            }
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+            {
+                valid = ValidPnlKendo();
+            }
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlResourceFiles"))
+            {
+                // Not a validation but set flags for language resources
+                IncludeEnglish = chkEnglish.Checked;
+                IncludeChineseSimplified = chkChineseSimplified.Checked;
+                IncludeChineseTraditional = chkChineseTraditional.Checked;
+                IncludeSpanish = chkSpanish.Checked;
+                IncludeFrench = chkFrench.Checked;
+            }
+
+            if (!string.IsNullOrEmpty(valid))
+            {
+                // Something is invalid
+                DisplayMessage(valid, MessageBoxIcon.Error);
+            }
+
+            return string.IsNullOrEmpty(valid);
+        }
+
+        /// <summary>
+        /// Valid first step (Company info and module)
+        /// </summary>
+        /// <returns>Empty string if valid, otherwise the appropriate error message</returns>
+        private string ValidPnlInfo()
         {
             // Company Name Validation
             ThirdPartyCompanyName = txtCompanyName.Text.Trim();
             if (string.IsNullOrEmpty(ThirdPartyCompanyName))
             {
-                DisplayMessage(Resources.CompanyNameInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.CompanyNameInvalid;
             }
 
             // Module ID Validation
             ThirdPartyApplicationId = txtApplicationID.Text.Trim().ToUpper();
             if (string.IsNullOrEmpty(ThirdPartyApplicationId) || ThirdPartyApplicationId.Contains(" "))
             {
-                DisplayMessage(Resources.ModuleIdInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.ModuleIdInvalid;
             }
 
             // Namespace Validation
             CompanyNamespace = txtNamespace.Text.Trim();
             if (string.IsNullOrEmpty(CompanyNamespace) || CompanyNamespace.Contains(" "))
             {
-                DisplayMessage(Resources.NamespaceInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.NamespaceInvalid;
             }
 
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Valid second step (Kendo)
+        /// </summary>
+        /// <returns>Empty string if valid, otherwise the appropriate error message</returns>
+        private string ValidPnlKendo()
+        {
             // Kendo License Validation
             KendoFolder = txtKendoFolder.Text.Trim();
             if (!chkKendoLicense.Checked)
             {
-                DisplayMessage(Resources.KendoLicenseInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.KendoLicenseInvalid;
             }
 
             // Kendo Folder Validation
             if (string.IsNullOrEmpty(KendoFolder))
             {
-                DisplayMessage(Resources.KendoFolderInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.KendoFolderInvalid;
             }
 
-
-            // Resources
-            IncludeEnglish = chkEnglish.Checked;
-            IncludeChineseSimplified = chkChineseSimplified.Checked;
-            IncludeChineseTraditional = chkChineseTraditional.Checked;
-            IncludeSpanish = chkSpanish.Checked;
-            IncludeFrench = chkFrench.Checked;
-
-            // Valid
-            return true;
+            return string.Empty;
         }
 
         /// <summary> Generic routine for displaying a message dialog </summary>
