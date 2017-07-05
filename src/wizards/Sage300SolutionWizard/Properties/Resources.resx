@@ -191,7 +191,7 @@
     <value>Company Name:</value>
   </data>
   <data name="CompanyNameTip" xml:space="preserve">
-    <value>The Company Name is used to generate  the Copyright tags and default the Namespace.</value>
+    <value>The Company Name is used to generate the Copyright tags and default the Namespace.</value>
   </data>
   <data name="English" xml:space="preserve">
     <value>English</value>

@@ -116,7 +116,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Company Name is used to generate  the Copyright tags and default the Namespace..
+        ///   Looks up a localized string similar to The Company Name is used to generate the Copyright tags and default the Namespace..
         /// </summary>
         internal static string CompanyNameTip {
             get {
