@@ -44,13 +44,13 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository
     /// <summary>
     /// Interface for entity
     /// </summary>
-	/// <param name="args">Optional Parameters</param>
     /// <typeparam name="T"><#=modelName#></typeparam>
     public interface I<#=entityName#>Entity<T> : IDynamicQueryRepository<T>, ISecurity where T : <#=modelName#>, new()
     {
         /// <summary>
         /// Gets <#=modelName#>
         /// </summary>
+		/// <param name="args">Optional Parameters</param>
         /// <returns>DynamicQueryEnumerableResponse</returns>
         // TODO: Generic Get routine has been added and will require filter
         // TODO: parameters to be added based upon Dynamic Query requirements
