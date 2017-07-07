@@ -10,6 +10,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Http;
@@ -50,7 +51,13 @@ namespace $safeprojectname$
                     Container = BootstrapTaskManager.Container
                 };
 
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context);
+                //Set default company information
+                var companies = new List<Organization>
+                {
+                    new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
+                };
+
+                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
