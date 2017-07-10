@@ -348,9 +348,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///
         ///To implement the import/export functionality, the Business Repository class
         ///will require modifications to the import/export base class along with 
-        ///supplying a Business Enity Property or a hierarchy of Business
-        ///Enity Properties (for header/detail screens) based upon the composition
-        ///of the business wiews.  
+        ///supplying a Business Entity Property or a hierarchy of Business
+        ///Entity Properties (for header/detail screens) based upon the composition
+        ///of the business views.  
         ///
         ///The upgrade wizard is unable to automatically perform these
         ///modifications and there [rest of string was truncated]&quot;;.
