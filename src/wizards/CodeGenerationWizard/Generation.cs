@@ -664,7 +664,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         chkGenerateFinder.Enabled = (!repositoryType.Equals(RepositoryType.Report) &&
                                                      !repositoryType.Equals(RepositoryType.Process) &&
-                                                     !repositoryType.Equals(RepositoryType.DynamicQuery));
+                                                     !repositoryType.Equals(RepositoryType.DynamicQuery) &&
+                                                     // Inquiry type should be able to generate finder but disable for now
+                                                     !repositoryType.Equals(RepositoryType.Inquiry));
                         // If not enabled, then uncheck it
                         if (!chkGenerateFinder.Enabled)
                         {
