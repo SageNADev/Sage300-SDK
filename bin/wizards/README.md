@@ -17,8 +17,8 @@ a requirement if the Wizard Package is only installed via the VSIX file.
 
 The following steps illustrate how to install the package:
 
-* Locate the **Sage300UIWizardPackage.vsix** file in the bin\wizards folder and 
-run this file.
+* The package must first be built as demonstrated in the prior section
+* Locate the **Sage300UIWizardPackage.vsix** file and run this file
 * Select **Yes** to install the plug-in
 
 > **If the package is already installed, it must be uninstalled first**
@@ -37,17 +37,24 @@ The following steps illustrate how to uninstall the package from Visual Studio:
 
 > **This step is only required if the package is installed**
 
-## How to Install the Sage 300 UI Customization Wizard Package
+## How to Run the Sage 300 UI Customization Wizard Executable (Standalone)
+
+The following steps illustrate how to run the executable:
+
+* Locate the **Sage.CA.SBS.ERP.Sage300.CustomizationWizard.exe** file in the bin\wizards
+folder and run this file
+
+## How to Install the Sage 300 UI Customization Wizard Package (Plug-in)
 
 The following steps illustrate how to install the package:
 
-* Locate the **Sage300UICustomizationSolution.vsix** file in the bin\wizards folder and 
-run this file.
+* Locate the **Sage300UICustomizationSolution.vsix** file in the bin\wizards
+folder and run this file
 * Select **Yes** to install the plug-in
 
 > **If the package is already installed, it must be uninstalled first**
 
-## How to Uninstall the Sage 300 UI Customization Wizard Package
+## How to Uninstall the Sage 300 UI Customization Wizard Package (Plug-in)
 
 The following steps illustrate how to uninstall the package from Visual Studio:
 
