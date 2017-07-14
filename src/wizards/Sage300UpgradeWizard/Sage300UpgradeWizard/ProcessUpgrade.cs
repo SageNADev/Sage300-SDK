@@ -104,7 +104,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         LaunchProcessingEvent(_settings.WizardSteps[index].Title);
                         SyncAccpacLibraries(_settings.WizardSteps[index].Title);
                         break;
-                    case 3:
+                    case 5: //Enable XML property step - if step number changes, this case must change too
                         if (_settings.WizardSteps[index].CheckboxValue)
                         {
                             LaunchProcessingEvent(_settings.WizardSteps[index].Title);

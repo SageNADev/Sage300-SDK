@@ -1203,7 +1203,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 _screens.Add(new Screen
                 {
                     ModuleId = (ModuleType) Enum.Parse(typeof(ModuleType), webScreen.Module),
-                    Category = webScreen.Category ?? "Transactions",
+                    Category = webScreen.Category != null ? webScreen.Category : "Transactions",
                     TargetScreen = webScreen.TargetScreen,
                     Description = webScreen.ScreenDescription,
                     ScreenName = webScreen.ScreenName,
