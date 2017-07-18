@@ -1423,7 +1423,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             txtControlLabel.Enabled = !controlType.Equals(ControlType.Grid);
             txtControlBinding.Enabled =
                 !(controlType.Equals(ControlType.TabPage) || controlType.Equals(ControlType.Panel));
-            txtPlacementID.Enabled = !controlType.Equals(ControlType.TabPage);
+
+            // Placement is not required if a Tab page OR the control being added is in a container control
+            var node = (XElement)_clickedControlTreeNode.Tag;
+            var type = string.Empty;
+            var attribute = node.Attribute(ProcessGeneration.AttributeType);
+            if (attribute != null)
+            {
+                type = attribute.Value;
+            }
+            if (controlType.Equals(ControlType.TabPage))
+            {
+                txtPlacementID.Enabled = false;
+            }
+            else if ((type.Equals(ControlTypeTabPage) || type.Equals(ControlTypePanel)))
+            {
+                txtPlacementID.Enabled = false;
+            }
+            else
+            {
+                txtPlacementID.Enabled = true;
+            }
+            //txtPlacementID.Enabled = !controlType.Equals(ControlType.TabPage);
+
             txtHeaderPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
             txtDetailPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
             chkBeforeID.Enabled = !controlType.Equals(ControlType.TabPage);
