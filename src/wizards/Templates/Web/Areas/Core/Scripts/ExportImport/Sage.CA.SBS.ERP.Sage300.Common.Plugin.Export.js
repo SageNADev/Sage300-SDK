@@ -307,7 +307,8 @@ var kendoWindow = null;
                 },
             }).data("kendoWindow");
 
-            window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "ExportImport", "ExportIndex"), data, function (successData) {
+            var buildUrl = window.sg.utls.url.buildUrl;
+            window.sg.utls.ajaxPostHtml(buildUrl("Core", "ExportImport", "ExportIndex"), data, function (successData) {
                 that._showExportScreen(that, successData, dialogId);
             });
         },
@@ -419,14 +420,26 @@ var kendoWindow = null;
                         treeview.expand(".k-item");
                         var treeData = treeview.dataSource.data();
                         var modelData = result.DataMigrationList;
-                        //synchronize dataSource checked with loaded model print
-                        for (var i = 0, length = treeData.length; i < length; i++) {
-                            treeData[i].checked = modelData[i].Print;
-                            var treeItems = treeData[i].Items;
-                            var modelItems = modelData[i].Items;
-                            var len = treeItems.length;
-                            for (var j = 0; j < len; j++) {
-                                treeItems[j].checked = modelItems[j].print;
+                        var length = modelData.length;
+
+                        //synchronize dataSource checked field with loaded model print field by viewName and item columnName
+                        for (var i = 0; i < length; i++) {
+                            var viewName = modelData[i].ViewName;
+                            var viewData = treeData.filter(function (view) { return view.ViewName == viewName });
+
+                            if (viewData.length > 0 ) {
+                                viewData[0].checked = modelData[i].Print;
+                                var treeItems = viewData[0].Items;
+                                var modelItems = modelData[i].Items;
+                                var itemLength = modelItems.length;
+
+                                for (var j = 0; j < itemLength; j++) {
+                                    var itemName = modelItems[j].columnName;
+                                    var itemData = treeItems.filter(function (item) { return item.columnName == itemName });
+                                    if (itemData.length > 0) {
+                                        itemData[0].checked = modelItems[j].print;
+                                    }
+                                }
                             }
                         }
                         treeview.setDataSource(treeData);
@@ -529,9 +542,10 @@ var kendoWindow = null;
                 exportData[i].Print = (treeData[i].checked == undefined) ? isExport : treeData[i].checked;
 
                 var exportItems = exportData[i].Items;
-                var len = exportItems.length;
                 var treeItems = treeData[i].Items;
-                var subNodeLoaded = treeData[i].Items.length > 0;
+                var len = Math.min(exportItems.length, treeItems.length);
+
+                var subNodeLoaded = treeItems.length > 0;
                 var parentChecked = exportData[i].Print;
 
                 for (var j = 0; j < len; j++) {

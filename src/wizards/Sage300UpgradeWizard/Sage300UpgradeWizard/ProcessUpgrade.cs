@@ -206,7 +206,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                     }
                                     xmlDocFileName = Path.Combine(n.InnerText, projName);
                                 }
-                                if (n.Name == "DocumentationFile")
+                                if (n.Name == "DocumentationFile" && n.InnerText != "")
                                 {
                                     hasXmlDocFileName = true;
                                 }
