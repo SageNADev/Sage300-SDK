@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 
 "use strict"
 
@@ -24,7 +24,6 @@ var isWidgetVisible = false;
 var widgetDomain;
 var tenantName;
 var domain;
-var OAuthWindow;
 
 // Use to do string format, kind of like String.format in C#
 String.prototype.format = function () {
@@ -81,15 +80,7 @@ $(document).ready(function () {
     var isWidgetEmptyLnkClicked = false;
 
     var menu = $("#topMenu").kendoMenu({ open: onOpen, close: onClose }).data("kendoMenu");
-    menu.bind('activate', function (e) {
-        //This is to fix D-33845
-        //For the menu item that contains a textbox, there is an Kendo issue on Chrome
-        //The workaround is to focus on an input when menu is activated.
-        //https://github.com/telerik/kendo-ui-core/issues/2524
-        if (e.item.is('#helpMenu')) {
-            e.item.find('input').first().focus();
-        }
-    });
+
     function onOpen(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "0.3").attr("disabled", "disabled"); }
 
     function onClose(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "1").removeAttr("disabled"); }
@@ -197,9 +188,6 @@ $(document).ready(function () {
     clearIframes();
     $('#dvCloseWindowErrorMessage').hide();
     $('.task_added').hide();
-
-    recentWindowsMenu.onLoadPopulateRecentWindowsListFromStorage();
-
     $('#topMenu').mouseenter(function () {
         if (!$("#helpSearchfl").is(':focus')) {
             helpSearchForMenuItem(screenId);
@@ -235,14 +223,16 @@ $(document).ready(function () {
         $("#windowManager > div").hide();
     });
 
-    $("#recentWindowManager").hover(
-        recentWindowsMenu.hoverOn,
-        recentWindowsMenu.hoverOff
-    );
-
     $('.top_nav_drop_content').click(function () {
 
         isReload = false;
+    });
+
+    $(window).bind('beforeunload', function () {
+        var numOfOpenScreens = $('#dvWindows').children().length;
+        if (isReload && numOfOpenScreens > 0) {
+            return sg.utls.htmlDecode(portalBehaviourResources.PageRefreshError);
+        }
     });
 
     function ShowHomePage() {
@@ -320,10 +310,6 @@ $(document).ready(function () {
             e.stopPropagation();
         });
 
-        $(".navigation .feature_nav .btn").click(function (e) {
-            $("#SIR").removeClass("active");
-        });
-
         $menu.find(".menu-section li:not('.sub-heading')").click(function () {
             $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
             $(".nav-menu span.active").removeClass("active");
@@ -332,12 +318,10 @@ $(document).ready(function () {
         $(".navigation .feature_nav").hover(
             function () {
                 $(this).find(".active").removeClass("active");
-                $(this).addClass("active");
                 $(this).find("li:first span:first").addClass("active");
                 $(this).find(".deactive").removeClass("deactive");
             },
             function () {
-                $(this).removeClass("active");
                 $(this).find("li:first span:first").removeClass("active");
             }
         );
@@ -407,6 +391,33 @@ $(document).ready(function () {
         $('#dvWindows > div').each(function () {
             $(this).find("span").removeClass('selected');
         });
+    });
+
+    $('#homeNav').hover(function () {
+        $('.feature_nav').removeClass('active');
+    });
+
+    $('.global_nav').hover(function () {
+        $('.feature_nav').removeClass('active');
+    });
+
+    $("#btnIntelligence")
+        .click(function () {
+            $('.feature_nav').removeClass("active");
+    });
+
+    $("#SIR")
+        .hover(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
+    });
+
+    $(".feature_nav")
+        .hover(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
     });
 
     function iFrameLoadEvent(e, $iframe)
@@ -513,30 +524,22 @@ $(document).ready(function () {
         $(this).addClass('selected');
 
         if ($(this).attr('command') === "Remove") {
-            var url = $("#" + currentIframeId).attr("src");
-            var isReport = url.indexOf("ReportViewer.aspx?token") > 0 || url.indexOf("CustomReportViewer.aspx?reportName") > 0 ;
+            isIframeClose = true;
+            currentDiv = ($(this).attr('controlToRemove'));
+            flag = false;
+            $.each(controls, function (index, element) {
+                if (element["control"] === currentIframeId) {
+                    currentRank = element["rank"];
+                }
+            });
+            
+            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
+                currentIframeId);
 
             $("#" + currentIframeId).attr("src", "about:blank");
-            currentDiv = ($(this).attr('controlToRemove'));
+            $("#" + currentIframeId).parent().empty().append(iframeHtml);
 
-            setTimeout(function () {
-                var isContentWindow = sg.utls.isChrome() || sg.utls.isMozillaFirefox() || sg.utls.isSafari();
-                var iframeWin = isContentWindow ? window[currentIframeId].contentWindow : window[currentIframeId];
-                isIframeClose = (iframeWin.name === "unloadediFrame") || isReport;
-
-                if (isIframeClose) {
-                    flag = false;
-                    $.each(controls, function (index, element) {
-                        if (element["control"] === currentIframeId) {
-                            currentRank = element["rank"];
-                        }
-                    });
-                    var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
-                        currentIframeId);
-                    $("#" + currentIframeId).parent().empty().append(iframeHtml);
-                    iFrameLoadEvent(null, $("#" + currentIframeId));
-                }
-            }, 100);
+            iFrameLoadEvent(null, $("#" + currentIframeId));
 
         } else if ($(this).attr('command') === "Add") {
             var currentSelectedRank = $(this).attr("rank");
@@ -583,35 +586,6 @@ $(document).ready(function () {
                 screenId = reportScreenHelp;
             }
         }
-    });
-
-    $("#dvRecentWindows").on("click", "span", function () {
-        //Adding Class Selected to the Active Window
-        $('div#dvRecentWindows span').not($(this)).removeClass('selected');
-        $(this).addClass('selected');
-
-        $('#screenLayout').show();
-        $('#widgetLayout').hide();
-
-        targetUrl = $(this).attr('data-url');
-        if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
-
-        if ($('#widgetHplayout').is(":visible")) {
-            $('#widgetHplayout').hide();
-        }
-        $("#" + currentDiv + "").show();
-
-        // Breadcrumb - Load breadcrumb on window management item selection
-        var parentidVal = $(this).data('parentid');
-        loadBreadCrumb(parentidVal);
-        // Menu Help - Load Menu Help on window management item selection
-        screenId = $(this).attr("data-menuid");
-        //Checking the Taskdoc having a generated Report Screen or not
-        if (screenId === reportScreenId) {
-            screenId = reportScreenHelp;
-        }
-        clearIframes();
-        assignUrl(this.innerHTML, parentidVal, screenId);
     });
 
     widgetUI = { NavigableMenuDetail: {} };
@@ -722,9 +696,6 @@ $(document).ready(function () {
 
                 var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid + '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText + '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
                 $('#dvWindows').append($divWindow);
-
-                recentWindowsMenu.populateRecentWindow($iframe, menuid, parentid, targetUrl, windowText);
-
                 $('#spWindowCount').text($('#dvWindows').children().length);
                 taskAdded();
 
@@ -748,22 +719,13 @@ $(document).ready(function () {
     $('#home_nav').kendoMenu();
     var targetUrl = "#";
 
-    function isMaxScreenNumReachedAndNotOpen(targetUrl) {
-        //Check if maximum number of screens reached
-        var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-        if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-            $('#dvWindowsExceedLimitErrorMessage').show();
-            return true;
-        }
-        return false;
-    }
-
     // TO DO : Move the below piece of code to Index page where you put your frame
     // Invoked from the main menu
     $(".menu-section a").on("click", function (event) {
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
+        $('.feature_nav').removeClass("active");
 
         //Sage Intelligence
         var intelligence = $(this).attr("data-isIntelligence");
@@ -780,7 +742,13 @@ $(document).ready(function () {
             if ($(event.target).data('url') != " ")
                 targetUrl = $(event.target).data('url');
 
-            if (isMaxScreenNumReachedAndNotOpen()) return;
+
+            //Check if maximum number of screens reached
+            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                $('#dvWindowsExceedLimitErrorMessage').show();
+                return;
+            }
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -814,8 +782,6 @@ $(document).ready(function () {
         $(".nav-menu .top-tier").each(function () {
             $(this).find(".active").removeClass("active");
         });
-
-        $(".feature_nav").removeClass("active");
 
     });
 
@@ -903,7 +869,12 @@ $(document).ready(function () {
 
                 }
 
-                if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+                //Check if maximum number of screens reached
+                var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+                if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                    $('#dvWindowsExceedLimitErrorMessage').show();
+                    return;
+                }
 
                 if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                     clearIframes();
@@ -941,7 +912,7 @@ $(document).ready(function () {
         //Check if the screen is already open
         $('#screenLayout').children().each(function () {
             var $iframe = $(this).find("iframe");
-            if ($iframe.attr("src") ===url) {
+            if (sg.utls.getUrlPath($iframe.attr("src")) === sg.utls.getUrlPath(url)) {
                 result = true;
             }
         });
@@ -991,8 +962,8 @@ $(document).ready(function () {
 
     function createInquiryURLWithParameters(inquiryParameter)
     {
-        return sg.utls.formatString("{0}/?module={1}&inquiryType={2}&target={3}&value={4}&title={5}",
-            inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value, inquiryParameter.title);
+        return sg.utls.formatString("{0}/?module={1}&inquiryType={2}&target={3}&value={4}",
+            inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value);
     }
 
     // Function to handle opening of Reports and Screen as a New Task Window.
@@ -1005,11 +976,14 @@ $(document).ready(function () {
             var inquiryParameter = JSON.parse(decodeURI(postMessageData[1]));
             targetUrl = createInquiryURLWithParameters(inquiryParameter);
             var screenName, parentId, menuid;
+            
 
-            $('#screenLayout').show();
-            $('#widgetLayout').hide();
-
-            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+            //Check if maximum number of screens reached
+            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                $('#dvWindowsExceedLimitErrorMessage').show();
+                return;
+            }
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -1023,7 +997,7 @@ $(document).ready(function () {
             menuid = inquiryScreenId;
 
             //Method To Load Into Task Doc
-            assignUrl(portalBehaviourResources.Inquiry + " - " + inquiryParameter.title, parentId, menuid);
+            assignUrl(portalBehaviourResources.Inquiry, parentId, menuid, true);
 
         } else if (evtData.indexOf("isReport") >= 0) {
 
@@ -1036,7 +1010,12 @@ $(document).ready(function () {
             var a = $("#xmlMenuDiv li > a[data-url='" + urlParser.pathname + "']");
             var isReport = a.data("isreport");
 
-            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+            //Check if maximum number of screens reached
+            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                $('#dvWindowsExceedLimitErrorMessage').show();
+                return;
+            }
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -1074,7 +1053,12 @@ $(document).ready(function () {
             var postMessageData = evtData.split(" ");
             targetUrl = postMessageData[1];
 
-            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+            //Check if maximum number of screens reached
+            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+                $('#dvWindowsExceedLimitErrorMessage').show();
+                return;
+            }
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -1181,19 +1165,16 @@ $(document).ready(function () {
             cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
         }
 
-        // attemp to signout and start SIRC afterward
-        OAuthWindow = window.open(oAuthLocation + "/connect/endsession");
+        // call WebApiProxy to get temp token
+        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true" + cb, "", ""), {}, function (result) {
+            if (result) {
+                if (!sIRCLocation) {
+                    // if no SIRC location is defined, assume it would be on the same location with https (ie https://<current server>/)
+                    sIRCLocation = "https://" + location.hostname + ":" + SIRCPort + "/";
+                }
+
+                var win = window.open(sIRCLocation + '?tempCode=' + result.TempSessionId + '&locale=' + result.UserLanguage, '_blank');
+            }
+        });
     });
 });
-
-window.addEventListener("message", function (e) {
-    if (e.data === "SignedOut" && OAuthWindow) {
-        OAuthWindow.close();
-        var cb = ""; //cachebuster
-        if (sg.utls.isInternetExplorer()) {
-            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
-        }
-        window.open(sg.utls.url.buildUrl("WebApiProxy?" + cb, "", ""));
-    }
-}, false);
-

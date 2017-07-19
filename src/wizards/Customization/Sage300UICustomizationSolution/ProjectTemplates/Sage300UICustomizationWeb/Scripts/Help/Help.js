@@ -22,6 +22,7 @@ $(document).ready(function () {
     };
 
     $("#featureTourLink").click(function () {
+        scroll(0, 0);
         $("#firstTimeLogin").show();
         $('#screenLayout').hide();
         $('#widgetHplayout').hide();
@@ -29,7 +30,7 @@ $(document).ready(function () {
         $('#breadcrumb').hide();
         $('#widgetLayout').show();
         $('#draggable').animate({
-            top: 30
+            top: 143
         }, 'slow', function () { $(this).removeAttr('style'); }); /* reset the position of #draggable-Quick Menu */
         $('#FeatureTour').show(function () {
             $(this).children().eq(0).addClass('show'); /* add class .show to the first child of #FeatureTour */

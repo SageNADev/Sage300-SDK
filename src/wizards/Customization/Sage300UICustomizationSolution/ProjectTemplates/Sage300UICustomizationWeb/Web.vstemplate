@@ -352,6 +352,38 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.menu-aim.js">jquery.menu-aim.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jquery.numeric.js">jquery.numeric.js</ProjectItem>
         </Folder>
+        <Folder Name="Kendo" TargetFolderName="Kendo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.min.js">kendo.culture.en-ZA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es.min.js">kendo.culture.es.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es-ES.min.js">kendo.culture.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr.min.js">kendo.culture.fr.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr-CA.min.js">kendo.culture.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-CN.min.js">kendo.culture.zh-CN.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hans.min.js">kendo.culture.zh-Hans.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hant.min.js">kendo.culture.zh-Hant.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-HK.min.js">kendo.culture.zh-HK.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-SG.min.js">kendo.culture.zh-SG.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-TW.min.js">kendo.culture.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.min.js">kendo.messages.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.min.js">kendo.messages.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-CN.min.js">kendo.messages.zh-CN.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-HK.min.js">kendo.messages.zh-HK.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-TW.min.js">kendo.messages.zh-TW.min.js</ProjectItem>
+        </Folder>
+        <Folder Name="knockout" TargetFolderName="knockout">
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.debug.js">knockout.mapping-latest.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.js">knockout.mapping-latest.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.js">knockout-2.1.0.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.min.js">knockout-kendo.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.BindingHandlers.js">Sage.CA.SBS.Sage300.Custom.BindingHandlers.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js">Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js</ProjectItem>
+        </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendoGrid.js">knockout-kendoGrid.js</ProjectItem>
         <Folder Name="Less" TargetFolderName="Less">
@@ -360,9 +392,11 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
         <Folder Name="Portal" TargetFolderName="Portal">
           <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RecentWindows.js">RecentWindows.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb_DPPMenu.js">TaskDock-Menu-BreadCrumb_DPPMenu.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
         </Folder>
         <Folder Name="Report" TargetFolderName="Report">

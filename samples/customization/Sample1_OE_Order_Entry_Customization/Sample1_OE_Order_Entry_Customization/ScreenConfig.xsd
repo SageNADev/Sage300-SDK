@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Control">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Control" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="ID" type="xs:string" use="required" />
+      <xs:attribute name="Type" type="ControlType" use="required"/>
+      <xs:attribute name="Label" type="xs:string" />
+      <xs:attribute name="FinderTextId" type="xs:string" />
+      <xs:attribute name="Binding" type="xs:string" />
+      <xs:attribute name="MaxLength" type="xs:string" />
+      <xs:attribute name="Cols" type="xs:string" />
+      <xs:attribute name="Rows" type="xs:string" />
+      <xs:attribute name="AfterID" type="xs:string" />
+      <xs:attribute name="BeforeID" type="xs:string" />
+      <xs:attribute name="HeaderAfterID" type="xs:string" />
+	  <xs:attribute name="HeaderBeforeID" type="xs:string" />
+	  <xs:attribute name="DetailAfterID" type="xs:string" />
+      <xs:attribute name="DetailBeforeID" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ControlType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Label" />
+		<xs:enumeration value="TextBox" />
+		<xs:enumeration value="TextArea" />
+		<xs:enumeration value="Button" />
+		<xs:enumeration value="CheckBox" />
+		<xs:enumeration value="RadioButton" />
+		<xs:enumeration value="Grid" />
+		<xs:enumeration value="Finder" />
+		<xs:enumeration value="DropDown" />
+		<xs:enumeration value="DatePicker" />
+		<xs:enumeration value="Panel" />
+		<xs:enumeration value="TabPage" />
+	</xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Screen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Control" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Control" />
+        <xs:element ref="Screen" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

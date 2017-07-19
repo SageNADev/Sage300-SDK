@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 $(document).ready(function () {
     getUserPreferenceCall();
@@ -20,6 +20,12 @@ function nextSlide(x, y) {
         $(".completeTour>div").css("margin-left", "250px");
     }
     if (y === 4) {
+        $(".completeTour>div").css("margin-left", "250px");
+    }
+    if (y === 5) {
+        $(".completeTour>div").css("margin-left", "250px");
+    }
+    if (y === 6) {
         $(".completeTour>div").css("margin-left", "250px");
     }
 }
