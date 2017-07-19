@@ -36,6 +36,12 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js</ProjectItem>
             </Folder>
+            <Folder Name="Inquiry" TargetFolderName="Inquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js</ProjectItem>
+            </Folder>
             <Folder Name="NewTenantSetup" TargetFolderName="NewTenantSetup">
               <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantBehaviour.js">NewTenantBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantRepository.js">NewTenantRepository.js</ProjectItem>
@@ -45,13 +51,13 @@
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js">Sage.CA.SBS.ERP.Sage300.Common.CurrencyFormatter.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Home.js">Sage.CA.SBS.ERP.Sage300.Common.Home.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="Tenant" TargetFolderName="Tenant">
@@ -101,6 +107,16 @@
             <Folder Name="Home" TargetFolderName="Home">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
+            <Folder Name="Inquiry" TargetFolderName="Inquiry">  
+              <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryTool.cshtml">_InquiryTool.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Inquiry.cshtml">_Inquiry.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryFilter.cshtml">_InquiryFilter.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryGrid.cshtml">_InquiryGrid.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
             <Folder Name="Instrumentation" TargetFolderName="Instrumentation">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
@@ -118,17 +134,20 @@
             <Folder Name="Shared" TargetFolderName="Shared">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenuDisableCheck.cshtml">_OptionsMenuDisableCheck.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="LabelMenuPopup.cshtml">LabelMenuPopup.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Wizard" TargetFolderName="Wizard">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
           </Folder>

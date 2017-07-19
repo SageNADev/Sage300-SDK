@@ -12,6 +12,12 @@ optionalFieldEnum.Type = {
     Time: 4
 };
 
+//temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+var optionalFieldSourceEnum = optionalFieldSourceEnum || {}
+optionalFieldSourceEnum = {
+    OE:1,
+}
+
 var optionalFieldColumnName = {
     Delete: "Delete",
     IsDeleted: "IsDeleted",
@@ -52,7 +58,9 @@ var optFldGridUtils = {
                 count += 1;
             }
         });
+        optionalFieldUIGrid.retrivableCellOldVal = checkItem.toUpperCase();
         if (count > 1) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             if (optionalFieldUIGrid.isPopUp) {
                 optionalFieldUIGrid.showMessage(errorMsg);
             } else {
@@ -64,15 +72,22 @@ var optFldGridUtils = {
             return;
         }
         if (dataSource.total() > 10 && optionalFieldUIGrid.isOptionalFieldExists != null) {
-            if (optionalFieldUIGrid.modelData.AccountNumber != undefined) {
-                var accountNumber = optionalFieldUIGrid.modelData.AccountNumber();
-                var data = { fieldName: field, fieldValue: checkItem, accountNumber: accountNumber };
-                optionalFieldUIGrid.isOptionalFieldExists(data);
-            } else if (optionalFieldUIGrid.modelData.Location != undefined) {
-                var location = optionalFieldUIGrid.modelData.Location();
-                optionalFieldUIGrid.isOptionalFieldExists(row.OptionalField, location);
-            } else {
-                optionalFieldUIGrid.isOptionalFieldExists(row);
+            ////temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm. (original code in default) 
+            switch (optionalFieldUIGrid.optFldSrcName) {
+                case optionalFieldSourceEnum.OE:
+                    optionalFieldUIGrid.isOptionalFieldExists(row);
+                    break;
+                default:
+                    if (optionalFieldUIGrid.modelData.AccountNumber != undefined) {
+                        var accountNumber = optionalFieldUIGrid.modelData.AccountNumber();
+                        var data = { fieldName: field, fieldValue: checkItem, accountNumber: accountNumber };
+                        optionalFieldUIGrid.isOptionalFieldExists(data);
+                    } else if (optionalFieldUIGrid.modelData.Location != undefined) {
+                        var location = optionalFieldUIGrid.modelData.Location();
+                        optionalFieldUIGrid.isOptionalFieldExists(row.OptionalField, location);
+                    } else {
+                        optionalFieldUIGrid.isOptionalFieldExists(row);
+                    }
             }
         }
         optionalFieldUIGrid.resetFocus(row, 'OptionalField');
@@ -90,13 +105,9 @@ var optFldGridUtils = {
                 gridData.set(prefix + "NumberValue", rowdata.DefaultNumberValue || 0);
                 break;
             case optionalFieldEnum.Type.Date:
-                if (rowdata.DefaultValue != null) {
-                    gridData.set(prefix + "DateValue", rowdata.DefaultDateValue);
-                    gridData.set(prefix + "Value", rowdata.DefaultDateValue);
-                } else {
-                    gridData.set(prefix + "DateValue", null);
-                    gridData.set(prefix + "Value", null);
-                }
+                //Because we do not have default date value for web screen 
+                gridData.set(prefix + "DateValue", null);
+                gridData.set(prefix + "Value", null);
                 break;
             case optionalFieldEnum.Type.YesNo:
                 gridData.set(prefix + "YesOrNoValue", rowdata.DefaultYesOrNoValue);
@@ -163,14 +174,22 @@ var gridColConfig = {
             sg.delayOnChange("optFieldFinder", $("#txtoptionalfield"), function () {
                 if (optionalFieldUIGrid.getOptionalFieldData != null) {
                     var location = 0;
-                    if (optionalFieldUIGrid.modelData.Location !== undefined) {
-                        location = optionalFieldUIGrid.modelData.Location();
-                        optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location, options.model);
-                    } else if (optionalFieldUIGrid.modelData.AccountNumber !== undefined) {
-                        location = (optionalFieldUIGrid.isValueSetEditable) ? 1 : 0;
-                        optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location);
-                    } else {
-                        optionalFieldUIGrid.getOptionalFieldData(options.model);
+                    ////temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm. (original code in default) 
+
+                    switch (optionalFieldUIGrid.optFldSrcName) {
+                        case optionalFieldSourceEnum.OE:
+                            optionalFieldUIGrid.getOptionalFieldData(options.model);
+                            break;
+                        default:
+                            if (optionalFieldUIGrid.modelData.Location !== undefined) {
+                                location = optionalFieldUIGrid.modelData.Location();
+                                optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location, options.model);
+                            } else if (optionalFieldUIGrid.modelData.AccountNumber !== undefined) {
+                                location = (optionalFieldUIGrid.isValueSetEditable) ? 1 : 0;
+                                optionalFieldUIGrid.getOptionalFieldData(value.toUpperCase(), location);
+                            } else {
+                                optionalFieldUIGrid.getOptionalFieldData(options.model);
+                            }
                     }
                 }
             });
@@ -216,11 +235,11 @@ var gridColConfig = {
                         var fldValue = (currentRowGrid.Value === undefined) ? "DefaultValue" : "Value";
                         var fldValueDesc = (currentRowGrid.ValueDescription === undefined) ? "DefaultValueDescription" : "ValueDescription";
                         var isGetValidValue = (optionalFieldUIGrid.modelData.Location !== undefined);
-                        currentRowGrid.set("ValueSet", e.sender._selectedValue);
+                        currentRowGrid.set("ValueSet", e.sender.selectedIndex);
                         var numericType = [optionalFieldEnum.Type.Integer, optionalFieldEnum.Type.Number, optionalFieldEnum.Type.Amount];
-                        var isNumeric = (numericType.indexOf(options.model.Type) > -1) && e.sender._selectedValue == 1;
-                        var isDefaultTime = (options.model.Type == optionalFieldEnum.Type.Time) && e.sender._selectedValue == 1;
-                        if (currentRowGrid.Validate === 1 && e.sender._selectedValue == 1 && isGetValidValue) {
+                        var isNumeric = (numericType.indexOf(options.model.Type) > -1) && e.sender.selectedIndex == 1;
+                        var isDefaultTime = (options.model.Type == optionalFieldEnum.Type.Time) && e.sender.selectedIndex == 1;
+                        if (currentRowGrid.Validate === 1 && e.sender.selectedIndex == 1 && isGetValidValue) {
                             if (optionalFieldUIGrid.getOptionalFieldValue !== null) {
                                 gridColConfig.getValidValue(container, options, false);
                             }
@@ -231,11 +250,11 @@ var gridColConfig = {
                             }
                             currentRowGrid.set(fldValueDesc, "");
                         }
-                        if (currentRowGrid.Validate === 0 && e.sender._selectedValue == 1 && options.model.Type === optionalFieldEnum.Type.Amount) {
+                        if (currentRowGrid.Validate === 0 && e.sender.selectedIndex == 1 && options.model.Type === optionalFieldEnum.Type.Amount) {
                             currentRowGrid.set(fldValue, "0.000");
                         }
                         if (options.model.Type == optionalFieldEnum.Type.YesNo) {
-                            currentRowGrid.set(fldValue, e.sender._selectedValue == 1 ? 0 : null);
+                            currentRowGrid.set(fldValue, e.sender.selectedIndex == 1 ? 0 : null);
                         }
                     }
                 }
@@ -298,7 +317,7 @@ var gridColConfig = {
                     value: $.trim(options.model[options.field]),
                     change: function (e) {
                         if ($('#' + gridId)) {
-                            optionalFieldUIGrid.updateValueInGrid(options.model.OptionalField, e.sender._selectedValue);
+                            optionalFieldUIGrid.updateValueInGrid(options.model.OptionalField, e.sender.selectedIndex);
                         }
                     },
                     open: function (e) {
@@ -382,9 +401,9 @@ var gridColConfig = {
             change: function (e) {
                 var gridId = optionalFieldUIGrid.gridId;
                 var currentRowGrid = sg.utls.kndoUI.getSelectedRowData($('#' + gridId).data("kendoGrid"));
-                currentRowGrid.set(fldName, e.sender._selectedValue);
-                if (fldName === "Required" && e.sender._selectedValue == 1) {
-                    currentRowGrid.set("AutoInsert", e.sender._selectedValue);
+                currentRowGrid.set(fldName, e.sender.selectedIndex);
+                if (fldName === "Required" && e.sender.selectedIndex == 1) {
+                    currentRowGrid.set("AutoInsert", e.sender.selectedIndex);
                 }
             }
         });
@@ -552,6 +571,10 @@ var optionalFieldUIGrid =
     messageDivId: null,
     disableButtons: false,
     isAddNewLineInClientSide: true,
+    hasErrorMessage: null,
+    //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+    optFldSrcName: null,
+    retrivableCellOldVal: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -598,6 +621,9 @@ var optionalFieldUIGrid =
     },
 
     init: function (params, initialize) {
+        //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
+        if (!params.optFldSrcName)
+            optionalFieldUIGrid.optFldSrcName = null;
         for (var prop in params) {
             optionalFieldUIGrid[prop] = params[prop];
             if (prop === "gridId") {
@@ -615,19 +641,21 @@ var optionalFieldUIGrid =
     },
 
     initButton: function () {
+        var btnAddLineId;
+        var btnDeleteLineId;
         // Following condition is used for multiple optional field popup
         if (optionalFieldUIGrid.btnAddLineId != "btnAddOptionalFieldLine") {
-            var btnAddLineId = optionalFieldUIGrid.btnAddLineId;
+            btnAddLineId = optionalFieldUIGrid.btnAddLineId;
             optionalFieldUIGrid.btnAddLineId = 'btnAddOptionalFieldLine';
         } else {
-            var btnAddLineId = "btnAddOptionalFieldLine";
+            btnAddLineId = "btnAddOptionalFieldLine";
         }
 
         if (optionalFieldUIGrid.btnDeleteLineId != "btnDeleteOptionalFieldLine") {
-            var btnDeleteLineId = optionalFieldUIGrid.btnDeleteLineId;
+            btnDeleteLineId = optionalFieldUIGrid.btnDeleteLineId;
             optionalFieldUIGrid.btnDeleteLineId = "btnDeleteOptionalFieldLine";
         } else {
-            var btnDeleteLineId = "btnDeleteOptionalFieldLine";
+            btnDeleteLineId = "btnDeleteOptionalFieldLine";
         }
 
         var index = optionalFieldUIGrid.gridIds.indexOf(optionalFieldUIGrid.gridId);
@@ -644,6 +672,7 @@ var optionalFieldUIGrid =
         }
 
         $('#' + btnAddLineId).on("click", function (e) {
+            optionalFieldUIGrid.retrivableCellOldVal = null;
             sg.utls.SyncExecute(optionalFieldUIGrid.addNewLine);
         });
 
@@ -852,7 +881,9 @@ var optionalFieldUIGrid =
 
         var grid = $('#' + optionalFieldUIGrid.gridId).data("kendoGrid");
         var data = grid.dataSource.data();
-        data = data.filter(function (value) { return (value.IsNewLine || value.HasChanged) && value.Validate && !value.Value && !value.AllowBlank; });
+        data = data.filter(function (value) {
+            return (value.IsNewLine || value.HasChanged) && value.Validate && !value.Value && !value.AllowBlank;
+        });
         if (data && data.length > 0 && optionalFieldUIGrid.isPopUp && $("#windowmessage")) {
             var message = $.validator.format(optionalFieldsResources.InvalidInput, data[0].OptionalField);
             optionalFieldUIGrid.showMessage(message);
@@ -1033,9 +1064,10 @@ var optionalFieldUIGrid =
 
     deleteLineWithUrl: function (grid, pageUrl) {
         optionalFieldUIGrid.setDeleteLineFlag(grid);
-        grid.tbody.find(":checked").closest("tr").each(function (index) {
-            grid.removeRow($(this));
-        });
+        //Cause delete/add row issue, Becasue the js always pass by ref if the type is object
+        //grid.tbody.find(":checked").closest("tr").each(function (index) {
+        //    grid.removeRow($(this));
+        //});
         if (optionalFieldUIGrid.deleteFromServer) {
             var data = optionalFieldUIGrid.modelData[optionalFieldUIGrid.modelName];
             if (typeof data === "function") {
@@ -1049,6 +1081,11 @@ var optionalFieldUIGrid =
             }
             sg.utls.ajaxPost(pageUrl, modelData, optionalFieldUIGrid.onDeleteSuccess);
         }
+        else {
+            grid.tbody.find(":checked").closest("tr").each(function (index) {
+                grid.removeRow($(this));
+            });
+        }
     },
 
     updateGrid: function (grid, chkAllId, btnDeleteId) {
@@ -1057,7 +1094,7 @@ var optionalFieldUIGrid =
         } else {
             sg.controls.enable("#" + chkAllId);
         }
-        if (grid._data.length < grid.dataSource.total()) {
+        if (grid._data.length <= grid.dataSource.total()) {
             var pageNumber = grid.dataSource.page();
             var pageSize = grid.dataSource.pageSize();
             var retrievePage = pageNumber - 1;
@@ -1125,13 +1162,20 @@ var optionalFieldUIGrid =
         modelData = (typeof modelData.Items === "function") ? modelData.Items() : modelData.Items;
         modelData = ko.mapping.toJS(modelData);
         modelData = modelData.filter(function (value) { return value.IsDeleted; });
-        for (var i = 0, len = modelData.length; i < len; i++) {
-            data.push(modelData[i]);
-        }
 
-        var hasUpdates = ko.utils.arrayFirst(data, function (item) {
-            return item.HasChanged || item.IsNewLine || item.IsDeleted;
-        });
+        //Add this function to fixed the contiune push the elements into array even the data has already delete from server. 
+        var hasUpdates;
+        if (modelData && optionalFieldUIGrid.deleteFromServer) {
+            hasUpdates = true;
+        }
+        else {// the origenal function inside else
+            for (var i = 0, len = modelData.length; i < len; i++) {
+                data.push(modelData[i]);
+            }
+            hasUpdates = ko.utils.arrayFirst(data, function (item) {
+                return item.HasChanged || item.IsNewLine || item.IsDeleted;
+            });
+        }
 
         if (hasUpdates && optionalFieldUIGrid.saveOptionalField !== null) {
             var nullItem = ko.utils.arrayFirst(data, function (item) {
@@ -1235,7 +1279,7 @@ var optionalFieldUIGrid =
     },
 
     OnOptionalFieldSelection: function (rowdata) {
-        if ($("#windowmessage")) { $("#windowmessage").empty();}
+        if ($("#windowmessage")) { $("#windowmessage").empty(); }
         if ($("#windowmessage1")) { $("#windowmessage1").empty(); }
 
         var gridId = optionalFieldUIGrid.gridId;
@@ -1252,12 +1296,6 @@ var optionalFieldUIGrid =
             selectRow.set("Type", rowdata.Type);
             selectRow.set("Length", rowdata.Length);
             selectRow.set("Decimals", rowdata.Decimals);
-            if (rowdata.ValueSet !== undefined) {
-                selectRow.set("ValueSet", rowdata.ValueSet);
-                selectRow.set("ValueSetString", rowdata.ValueSet);
-            } else {
-                selectRow.set("ValueSet", 0);
-            }
             var fldValue = (selectRow.DefaultValue === undefined) ? "Value" : "DefaultValue";
             if (rowdata.DefaultValue) {
                 selectRow.set(fldValue, rowdata.DefaultValue);
@@ -1274,8 +1312,15 @@ var optionalFieldUIGrid =
             } else {
                 selectRow.set(fldValueDesc, "");
             }
+            var valueSet = rowdata.ValueSet;
+            var allowBlank;
             if (rowdata.Type != optionalFieldEnum.Type.YesNo) {
-                selectRow.set("AllowBlank", rowdata.AllowBlankValue);
+                //selectRow.set("AllowBlank", rowdata.AllowBlankValue);
+                /// Comments the above line because AllowBlankValue only exists in IC and CS model. 
+                /// However this function also need to handle the other models as OE, AP
+                /// I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this changes
+                allowBlank = rowdata.AllowBlankValue ? rowdata.AllowBlankValue : rowdata.AllowBlank;
+                selectRow.set("AllowBlank", allowBlank);
 
                 var validate;
                 if ((rowdata.IsValidate === undefined) && (rowdata.Validate === undefined)) {
@@ -1285,10 +1330,21 @@ var optionalFieldUIGrid =
                 } else if (rowdata.IsValidate !== undefined) {
                     validate = rowdata.IsValidate ? 1 : 0;
                 }
+                //Just in case we support the integer value as flag. 1: checked, 0: unchecked
+                if (validate <= allowBlank) {
+                    valueSet = 1;
+                }
                 selectRow.set("Validate", validate);
             } else {
                 selectRow.set("AllowBlank", 0);
             }
+            if (valueSet !== undefined) {
+                selectRow.set("ValueSet", valueSet);
+                selectRow.set("ValueSetString", valueSet);
+            } else {
+                selectRow.set("ValueSet", 0);
+            }
+
             optFldGridUtils.setRowData(selectRow, rowdata, (selectRow.Value === undefined) ? "Default" : "");
 
             if (optionalFieldUIGrid.isCheckDuplicateRecord) {
@@ -1430,6 +1486,7 @@ var optionalFieldUIGrid =
                 }
                 grid.dataSource.options.serverPaging = true;
                 if ((successData.UserMessage && successData.UserMessage.IsSuccess) || successData.Items !== undefined) {
+                    optionalFieldUIGrid.hasErrorMessage = false;
                     gridData = [];
 
                     var optionalField = (successData.Data !== undefined) ? successData.Data[modelName] : successData;
@@ -1447,6 +1504,7 @@ var optionalFieldUIGrid =
 
                 } else {
                     if (optionalFieldUIGrid.isPopUp) {
+                        optionalFieldUIGrid.hasErrorMessage = true;
                         sg.utls.showMessagePopupWithoutClose(successData, "#windowmessage");
                     } else {
                         sg.utls.showMessage(successData);

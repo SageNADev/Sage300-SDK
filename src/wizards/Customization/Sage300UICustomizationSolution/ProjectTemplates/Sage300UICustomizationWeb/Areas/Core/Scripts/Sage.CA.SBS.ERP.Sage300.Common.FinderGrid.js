@@ -242,7 +242,7 @@ var FinderGridHelper = {
     },
     InitColumnGrid: function () {
         var dropdownDatasource = $.grep(FinderGridHelper.columns, function (gridField) { return !gridField.IgnorePreferences && gridField.FinderDisplayType !== sg.FinderDisplayType.Grid; });
-        dropdownDatasource = [{ title: ShowAllRecords, field: "" }].concat(dropdownDatasource);
+        dropdownDatasource = [{ title: ShowAllRecords, field: "ShowAllRecords" }].concat(dropdownDatasource);
         $("#ColumnDropdown").kendoDropDownList({
             autoBind: false,
             dataTextField: "title",
@@ -312,12 +312,12 @@ var FinderGridHelper = {
         }
 
         $operatorDropDown.kendoDropDownList({
-            autoBind: false,
+            autoBind: true,
             dataTextField: "Text",
             dataValueField: "Value",
             dataSource: operatorDatasource
         });
-        $operatorDropDown.data('kendoDropDownList').value("=");
+        $operatorDropDown.data('kendoDropDownList').select(0);
     },
     InitValueGridDropdownOrTextBox: function (field, valueDropdownId, valueTextboxId, valueDropdownClass) {
         if (field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0) {
