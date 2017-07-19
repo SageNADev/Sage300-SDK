@@ -130,11 +130,15 @@ a:hover {
 	height: 40px;
 	color: #cfcfcf;
 	font-size: 11px;
-	position: fixed;
-	bottom: 0;
+	position: static;
 	width: 100%;
 	text-align: center;
 	padding: 13px 0 0;
+}
+
+.footer.affix-bottom {
+    bottom: 0;
+    position: fixed;
 }
 
 .header > .wrapper,
@@ -484,7 +488,7 @@ ol.std-list {
 
 .header.login > .wrapper {
 	width: 340px;
-	padding: 0 15px;
+	padding: 0 15px 100px;
 }
 
 .header.login:after {

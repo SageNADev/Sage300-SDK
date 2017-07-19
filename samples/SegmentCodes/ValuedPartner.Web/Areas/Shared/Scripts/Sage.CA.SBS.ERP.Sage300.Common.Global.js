@@ -844,7 +844,8 @@ $.extend(sg.utls, {
         kendoWindow.parent().addClass('modelBox');
         kendoWindow.parent().attr('id', 'deleteConfirmationParent');
         var divDeleteConfirmParent = $('#deleteConfirmationParent');
-        divDeleteConfirmParent.css('z-index', '999999');
+        //Removed the line below because if modal is true, the z-index value increasing automatically. we cannot  guarantee 999999 is the largest value on the screen
+        //divDeleteConfirmParent.css('z-index', '999999');
         divDeleteConfirmParent.css('position', 'absolute');
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
 
@@ -2037,7 +2038,7 @@ $.extend(sg.utls, {
     // Set Scrolling Position
     setScrollPosition: function (container) {
         //offsetPixels - Set this variable with the desired height of portal header
-        var offsetPixels = sg.utls.portalHeight - 45;
+        var offsetPixels = sg.utls.portalHeight - 75;
         var offsetY = $(window.top).scrollTop();
 
         if (offsetY > offsetPixels) {
