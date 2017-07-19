@@ -178,7 +178,7 @@ $.extend(sg.utls.iFrameHelper = {
             visible: false,
             iframe: true,
             content: sg.utls.urlEncode(url),
-            minWidth: 800,
+            minWidth: 1020,
             minHeight: 300,
             maxHeight: maxHeight,
             height: height,
@@ -258,7 +258,7 @@ $.extend(sg.utls.iFrameHelper = {
 
                 this.element.addClass("popup-iframe");
                 this.element.closest(".popup-iframe").css({
-                    height: height - 50, // to adjust the height.
+                    height: height - 50, // to adjust the height
                 });
 
                 var leftPos = ($(window.top).innerWidth() - this.wrapper.width()) / 2;

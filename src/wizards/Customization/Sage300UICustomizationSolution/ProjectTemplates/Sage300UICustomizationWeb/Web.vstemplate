@@ -187,6 +187,12 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
             </Folder>
+            <Folder Name="IC" TargetFolderName="IC">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.IC.Common.js">Sage.CA.SBS.ERP.Sage300.IC.Common.js</ProjectItem>
+            </Folder>
+            <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
+            </Folder>
             <Folder Name="Report" TargetFolderName="Report">
               <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js</ProjectItem>
@@ -194,9 +200,15 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
               </Folder>
             </Folder>
+            <Folder Name="Revaluation" TargetFolderName="Revaluation">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js">Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js</ProjectItem>
+            </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Controls.js">Sage.CA.SBS.ERP.Sage300.Common.Controls.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js">Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
@@ -204,6 +216,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js">Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js">Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js">Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js">Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js">Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
