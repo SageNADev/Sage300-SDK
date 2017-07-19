@@ -266,7 +266,6 @@
     <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
     <Content Include="Scripts\Help\Help.js" />
     <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR3.cshtml" />
     <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
@@ -436,10 +435,19 @@
     <Content Include="Areas\Shared\Views\Partials\_PrintButton.cshtml" />
     <Content Include="Areas\Shared\Views\Partials\_ProceedButton.cshtml" />
     <Content Include="Areas\Shared\Views\Partials\_SaveButton.cshtml" />
+    <Content Include="Areas\Shared\Views\QuantityGrid\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\QuantityGrid\_QuantityGrid.cshtml" />
     <Content Include="Areas\Shared\Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
     <Content Include="Areas\Shared\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Shared\Views\Revaluation\Partials\_Details.cshtml" />
+    <Content Include="Areas\Shared\Views\Revaluation\Partials\_DetailsOptionalFields.cshtml" />
+    <Content Include="Areas\Shared\Views\Revaluation\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\Revaluation\_Index.cshtml" />
+    <Content Include="Areas\Shared\Views\RevaluationHistory\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Shared\Views\RevaluationHistory\_Index.cshtml" />
     <Content Include="Areas\Shared\Views\SalesSplitGrid\_Localization.cshtml" />
     <Content Include="Areas\Shared\Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_GridActions.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />

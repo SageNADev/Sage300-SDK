@@ -248,23 +248,41 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProceedButton.cshtml">_ProceedButton.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_SaveButton.cshtml">_SaveButton.cshtml</ProjectItem>
             </Folder>
+            <Folder Name="QuantityGrid" TargetFolderName="QuantityGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_QuantityGrid.cshtml">_QuantityGrid.cshtml</ProjectItem>
+            </Folder>
             <Folder Name="Report" TargetFolderName="Report">
               <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_GLSubledgerTransactionReport.cshtml">_GLSubledgerTransactionReport.cshtml</ProjectItem>
               </Folder>
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
+            <Folder Name="Revaluation" TargetFolderName="Revaluation">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Details.cshtml">_Details.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_DetailsOptionalFields.cshtml">_DetailsOptionalFields.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Index.cshtml">_Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="RevaluationHistory" TargetFolderName="RevaluationHistory">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Index.cshtml">_Index.cshtml</ProjectItem>
+            </Folder>
             <Folder Name="SalesSplitGrid" TargetFolderName="SalesSplitGrid">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_SalesSplitGrid.cshtml">_SalesSplitGrid.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GlobalLayout.cshtml">_GlobalLayout.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_GridActions.cshtml">_GridActions.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayout.cshtml">_LocalizedLayout.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR2.cshtml">_LocalizedLayoutR2.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR3.cshtml">_LocalizedLayoutR3.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingFooter.cshtml">_ProcessingFooter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportFooter.cshtml">_ReportFooter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_SetupFooter.cshtml">_SetupFooter.cshtml</ProjectItem>
