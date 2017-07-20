@@ -265,8 +265,6 @@
     <Content Include="Scripts\AjaxQ\ajaxq.js" />
     <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
     <Content Include="Scripts\Help\Help.js" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
-    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
@@ -412,6 +410,7 @@
     <Content Include="Areas\Core\Views\Error\AccountNotAvailable.cshtml" />
     <Content Include="Areas\Core\Views\Error\AccountNotProvisioned.cshtml" />
     <Content Include="Areas\Core\Views\Error\Error404.cshtml" />
+    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
     <Content Include="Areas\Core\Views\Error\Index.cshtml" />
     <Content Include="Areas\Core\Views\Error\MissingModules.cshtml" />
     <Content Include="Areas\Core\Views\ExportImport\Export.cshtml" />
@@ -482,6 +481,7 @@
     <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_LocalizedLayout.cshtml" />
+    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_ProcessingFooter.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_ReportFooter.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_SetupFooter.cshtml" />
@@ -497,6 +497,8 @@
     <Content Include="Views\Partials\_Localization.cshtml" />
     <Content Include="Views\Partials\_MenuHelp.cshtml" />
     <Content Include="Views\Partials\_MenuUrl.cshtml" />
+    <Content Include="Views\Partials\_PluginMenuUrl.cshtml" />
+    <Content Include="Views\Partials\_QuickMenu.cshtml" />
     <Content Include="Views\Partials\_Widget.cshtml" />
     <Content Include="Views\Partials\_WidgetUrl.cshtml" />
     <Content Include="Views\Portal.cshtml" />
@@ -505,7 +507,6 @@
     <Content Include="Views\UnsupportedBrowser\Error.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Partials\_QuickMenu.cshtml" />
     <Content Include="Areas\$module$\Views\$project$Customization\Index.cshtml" />
 	<Content Include="Areas\$module$\Assets\Images\footer_logo.png" />
 	<Content Include="Areas\$module$\Assets\Images\sage_300_logo_white.png" />

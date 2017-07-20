@@ -415,6 +415,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PluginMenuUrl.cshtml">_PluginMenuUrl.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
