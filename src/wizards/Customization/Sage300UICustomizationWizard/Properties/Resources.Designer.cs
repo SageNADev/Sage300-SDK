@@ -79,6 +79,15 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bootstrapper:.
         /// </summary>
         internal static string Bootstrapper {
@@ -368,11 +377,29 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm the License and select the Kendo folder..
+        /// </summary>
+        internal static string StepDescriptionKendo {
+            get {
+                return ResourceManager.GetString("StepDescriptionKendo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate a Customization Solution.
         /// </summary>
         internal static string StepTitleCreateEdit {
             get {
                 return ResourceManager.GetString("StepTitleCreateEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Kendo Folder.
+        /// </summary>
+        internal static string StepTitleKendo {
+            get {
+                return ResourceManager.GetString("StepTitleKendo", resourceCulture);
             }
         }
         

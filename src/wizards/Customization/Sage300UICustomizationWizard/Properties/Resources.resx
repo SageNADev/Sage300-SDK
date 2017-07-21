@@ -123,6 +123,9 @@
   <data name="AssemblyTip" xml:space="preserve">
     <value>The Assembly file will be created in the Visual Studio Customizard Wizard if an endpoint is needed for this customization</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="Bootstrapper" xml:space="preserve">
     <value>Bootstrapper:</value>
   </data>
@@ -222,6 +225,12 @@
   </data>
   <data name="StepTitleCreateEdit" xml:space="preserve">
     <value>Generate a Customization Solution</value>
+  </data>
+  <data name="StepDescriptionKendo" xml:space="preserve">
+    <value>Confirm the License and select the Kendo folder.</value>
+  </data>
+  <data name="StepTitleKendo" xml:space="preserve">
+    <value>Select Kendo Folder</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Version:</value>

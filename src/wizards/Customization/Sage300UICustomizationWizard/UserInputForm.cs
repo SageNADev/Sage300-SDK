@@ -44,6 +44,9 @@ namespace Sage300UICustomizationWizard
         /// <summary> Panel Name for pnlCreateEdit </summary>
         private const string PanelCreateEdit = "pnlCreateEdit";
 
+        /// <summary> Panel Name for pnlCreateEdit </summary>
+        private const string PanelKendo = "pnlKendo";
+
         /// <summary> Bootstrapper Suffix </summary>
         private const string BootstrapperSuffix = "Bootstrapper.xml";
 
@@ -91,7 +94,7 @@ namespace Sage300UICustomizationWizard
         private void InitWizardSteps()
         {
             // Default
-            btnNext.Text = Resources.Generate;
+            btnBack.Enabled = false;
 
             // Current Step
             _currentWizardStep = -1;
@@ -101,9 +104,11 @@ namespace Sage300UICustomizationWizard
 
             // Init Panels
             InitPanel(pnlCreateEdit);
+            InitPanel(pnlKendo);
 
             // Assign steps for wizard
             AddStep(Resources.StepTitleCreateEdit, Resources.StepDescriptionCreateEdit, pnlCreateEdit);
+            AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
 
             // Display first step
             NextStep();
@@ -114,34 +119,76 @@ namespace Sage300UICustomizationWizard
         private void NextStep()
         {
             // Proceed to next step
-            if (!_currentWizardStep.Equals(-1))
+            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
             {
-                // Before proceeding to next step, ensure current step is valid
-                if (!ValidateStep())
-                {
-                    return;
-                }
-
-                // Set flag indicating wizard screen closed normally as close is flag to run solution creation
-                DialogResult = DialogResult.OK;
-                
                 // Set vars for use in solution creation
                 BusinessPartnerName = txtCompanyName.Text.Trim();
                 ProjectName = txtProject.Text.Trim().Replace(".", "");
                 ModuleName = txtModule.Text.Trim().ToUpper();
                 AssemblyName = txtAssembly.Text.Trim().Replace(".dll", "");
 
-                // Close screen and kick off solution creation
+                // Set flag indicating wizard screen closed normally as close is flag to run solution creation
+                DialogResult = DialogResult.OK;
                 Close();
-                return;
             }
 
-            _currentWizardStep++;
+            else
+            {
+                if (!_currentWizardStep.Equals(-1))
+                {
+                    // Before proceeding to next step, ensure current step is valid
+                    if (!ValidateStep())
+                    {
+                        return;
+                    }
 
-            ShowStep(true);
+                    btnBack.Enabled = true;
 
-            // Update title and text for step
-            ShowStepTitle();
+                    ShowStep(false);
+                }
+
+                _currentWizardStep++;
+
+                ShowStep(true);
+
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                {
+                    btnNext.Text = Resources.Generate;
+                }
+
+                // Update title and text for step
+                ShowStepTitle();
+            }
+        }
+
+        /// <summary> Back Navigation </summary>
+        /// <remarks>Back wizard step</remarks>
+        private void BackStep()
+        {
+            if (!_currentWizardStep.Equals(0))
+            {
+                // Proceed back a step
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                {
+                    btnNext.Text = Resources.Next;
+                }
+
+                ShowStep(false);
+
+                _currentWizardStep--;
+
+                ShowStep(true);
+
+                // Enable back button?
+                if (_currentWizardStep.Equals(0))
+                {
+                    btnBack.Enabled = false;
+                    btnNext.Enabled = true;
+                }
+
+                // Update title and text for step
+                ShowStepTitle();
+            }
         }
 
         /// <summary> Show Step </summary>
@@ -365,7 +412,8 @@ namespace Sage300UICustomizationWizard
         {
             Text = Resources.WebCustomization;
 
-            btnNext.Text = Resources.Generate;
+            btnBack.Text = Resources.Back;
+            btnNext.Text = Resources.Next;
 
             // Step Create/Edit
             lblPackageId.Text = Resources.Package;
@@ -419,6 +467,14 @@ namespace Sage300UICustomizationWizard
             }
         }
 
+        /// <summary>Back button selected</summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            BackStep();
+        }
+
         /// <summary> Next button selected</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
@@ -444,6 +500,5 @@ namespace Sage300UICustomizationWizard
             txtModule.TextChanged += ModuleProjectTextChanged;
             txtProject.TextChanged += ModuleProjectTextChanged;
         }
-
     }
 }
