@@ -1,7 +1,8 @@
-﻿@* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration
 @using Auth = Sage.CA.SBS.ERP.Sage300.Common.Models.Authentication
@@ -20,7 +21,7 @@
 </head>
 <body>
     @{
-        var userTenantInfo =  Utilities.GetStoredUserSignOnResult();
+        var userTenantInfo =  SignOnHelper.GetStoredUserSignOnResult();
     }
     <div class="homePage">
         <header>

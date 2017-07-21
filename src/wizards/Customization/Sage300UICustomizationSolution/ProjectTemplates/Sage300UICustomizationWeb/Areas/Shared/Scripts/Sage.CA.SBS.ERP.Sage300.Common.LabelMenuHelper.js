@@ -16,9 +16,14 @@ LabelMenuHelper = {
 
         LabelMenuHelper.screenModelName = viewModelName;
 
-        // Mouse enter event
-        $("#" + btnHamburger).on('mouseenter.labelMenu', function (e) {
+        //Get UI object view model from viewModelName string, the viewModelName like this "{UIObject}.{viewModelName}" 
+        function getViewModel(viewModelName) {
+            return viewModelName ? viewModelName.split('.').reduce(function (obj, i) { return obj[i]; }, window) : null;
+        };
 
+        var viewModel = getViewModel(viewModelName);
+        // Mouse enter event
+        $("#" + btnHamburger).on('mouseenter.labelMenu', viewModel, function (e) {
             // Load Menu
             var ulMenu = $('#lstLabelMenu');
             ulMenu.empty();
@@ -34,11 +39,14 @@ LabelMenuHelper = {
                     "data-bind": val.koAttributes
                 }).on("click", val.callback);
             }
-            
+
             LabelMenuHelper.ShowMenu($('#divLabelMenu'), $(this));
             $("#divLabelMenu").appendTo($("#" + btnHamburger));
 
-            var viewModel = eval(LabelMenuHelper.screenModelName);
+            if (jQuery.isEmptyObject(viewModel)) {
+                viewModel = getViewModel(LabelMenuHelper.screenModelName);
+            }
+
             if (viewModel) {
                 ko.applyBindings(viewModel, $("#divLabelMenu")[0]);
             }

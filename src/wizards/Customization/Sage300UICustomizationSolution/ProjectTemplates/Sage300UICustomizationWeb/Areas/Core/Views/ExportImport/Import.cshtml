@@ -1,4 +1,4 @@
-﻿@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Core.Web.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -19,12 +19,6 @@
                 <div class="dropdown-group">
                     <label>@CommonResx.FileType</label>
                     @Html.KoSageDropDownList("FileTypes", new { @options = "ImportRequest.FileTypes", @value = "ImportRequest.FileType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "FileTypes", @class = "default" })
-                </div>
-                <div class="import-chkbox">
-                    <div class="child">
-                        @Html.KoSageCheckBox("isTitle", true, new { @sagechecked = "ImportRequest.IsTitleRecord", @sagedisable = "ImportRequest.IsTitleRecord" }, null)
-                        @Html.SageLabel(CommonResx.TitleRecord, new { @for = "isTitle" })
-                    </div>
                 </div>
                 <div class="dropdown-group">
                     <label>@CommonResx.ImportType</label>
@@ -88,7 +82,7 @@
             <div id="fileNameDiv" style="display:none">@Html.KoSpan(new { text = "ImportResponse.FileName" })</div>
         </div>
         <div id="btnClose" style="margin-top:20px !important;">
-            @Html.KoSageButton("Ok", null, new { @class = "btn-primary right", @value = CommonResx.Close, @id = "btnImportOk" })
+            @Html.KoSageButton("Ok", null, new { @class = "btn btn-primary right", @value = CommonResx.Close, @id = "btnImportOk" })
         </div>
     </div>
 </div>

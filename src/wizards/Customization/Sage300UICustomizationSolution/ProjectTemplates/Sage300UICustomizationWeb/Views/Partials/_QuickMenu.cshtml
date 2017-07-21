@@ -1,6 +1,11 @@
 ﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
 
+<script type="text/javascript">
+    var menuUrlList = @Html.Raw(Json.Encode(ViewBag.MenuUrlList));
+</script>
+
+
 <!--Start Quick Menu (draggable sidebar)-->
 <div class="quick-menu ui-draggable ui-draggable-handle" id="draggable">
     <!--Drag -->
@@ -18,16 +23,36 @@
         </div>
         <span class="task_added" style="display: none;"><span aria-hidden="true" class="glyphicon glyphicon-check"></span>@HomePageResx.CNAPortal_Task<br>@HomePageResx.TaskAdded</span>
     </div>
+    <!--Recently used windows-->
+    <div class="quick-menu-item quick-menu-window-history" id="recentWindowManager" title="@HomePageResx.QuickMenu_RecentWindows">
+        <i class="window-history"></i>
+        <div class="open-window" id="recentWindowsPopup">
+            <div class="open-window-header left">@HomePageResx.QuickMenu_RecentWindows</div>
+            <div class="clear-fix"></div>
+            <div class="open-recent-window" id="dvRecentWindows">
+            </div>
+        </div>
+    </div>
+
+
+    <!--Reports button -->
+    <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
+        <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
+    </div>
+    <!--Inquiries -->
+    @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+    {
+        <div class="quick-menu-item quick-menu-inquiry" id="btnViewInquiries">
+            <i class="glyphicon glyphicon-magnifying-glass" title="@HomePageResx.QuickMenu_Inquiries"></i>
+        </div>
+    }
     <!--Notes Center -->
     @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
     {
         <div class="quick-menu-item quick-menu-notes" id="btnViewNotes" title="@HomePageResx.QuickMenu_Notes">
             <i class="glyphicon glyphicon-pencil"></i>
         </div>
-    }
-    <!--Reports button -->
-    <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
-        <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
-    </div>
+    }   
 </div>
+
 <!--End Quick Menu (draggable sidebar)-->

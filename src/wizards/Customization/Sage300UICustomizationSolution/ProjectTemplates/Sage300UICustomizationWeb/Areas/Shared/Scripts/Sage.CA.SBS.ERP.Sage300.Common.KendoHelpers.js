@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -143,10 +143,10 @@ $.extend(sg.utls.kndoUI, {
         })[0];
     },
     /**
-     * Get the row for the data item
+     * Gets the table row element containing a specified uid.
      * @method getRowForDataItem
-     * @param {} dataItem - Data Item
-     * @return CallExpression
+     * @param {} dataItem - An object with a 'uid' property that will be used to match the row.
+     * @return A CallExpression containing the matched table row element.
      */
     getRowForDataItem: function (dataItem) {
         return $("tr[data-uid='" + dataItem.uid + "']");
@@ -265,6 +265,60 @@ $.extend(sg.utls.kndoUI, {
         if (cell.length > 0) {
             grid.current(cell);
             grid.editCell(cell);
+        }
+    },
+
+    /**
+     * Initialize checkBox selection for multiple grid row deletions
+     * @method multiSelectInit
+     * @param {} gridId - Name of the grid
+     * @param {} selectAllChk - Name of the selectAll checkBox
+     * @param {} selectChk - Name of the delete row checkBox
+     * @param {} btnDeleteId - Name of delete button
+     * @param {} isDisabledDelete - ko.observable to check if delete is allowed
+     */
+    multiSelectInit: function (gridId, selectAllChk, selectChk, btnDeleteId, isDisabledDelete) {
+        if ($("#" + gridId)) {
+            sg.controls.disable("#" + btnDeleteId);
+            $(document).on("change", "#" + selectAllChk, function () {
+
+                var grid = $('#' + gridId).data("kendoGrid");
+                var checkbox = $(this);
+                var rows = grid.tbody.find("tr");
+                rows.find("td:first input")
+                    .prop("checked", checkbox.is(":checked")).applyCheckboxStyle();
+                if ($("#" + selectAllChk).is(":checked") && (!isDisabledDelete || !isDisabledDelete())) {
+                    rows.addClass("k-state-active");
+                    sg.controls.enable("#" + btnDeleteId);
+                } else {
+                    rows.removeClass("k-state-active");
+                    sg.controls.disable("#" + btnDeleteId);
+                }
+            });
+            $(document).on("change", "#" + selectChk, function () {
+                $(this).closest("tr").toggleClass("k-state-active");
+                var grid = $('#' + gridId).data("kendoGrid");
+                var allChecked = true;
+                var hasChecked = false;
+                grid.tbody.find(".selectChk").each(function () {
+                    if (!($(this).is(':checked'))) {
+                        $("#" + selectAllChk).prop("checked", false).applyCheckboxStyle();
+                        allChecked = false;
+                        return;
+                    } else {
+                        hasChecked = true;
+                    }
+                });
+                if (allChecked) {
+                    $("#" + selectAllChk).prop("checked", true).applyCheckboxStyle();
+                }
+
+                if (hasChecked && (!isDisabledDelete || !isDisabledDelete())) {
+                    sg.controls.enable("#" + btnDeleteId);
+                } else {
+                    sg.controls.disable("#" + btnDeleteId);
+                }
+            });
         }
     },
 
@@ -484,12 +538,15 @@ $.extend(sg.utls.kndoUI, {
     },
 
     /**
-    * Gets the proper formatted number for decimal
+    * Gets the proper formatted number for decimal with thousand separator
     * @method getFormattedDecimalNumber
     * @param {} val,decimal
     * @return value
     */
     getFormattedDecimalNumber: function (val, decimal) {
+        if (!decimal) {
+            decimal = "0";
+        }
         val = parseFloat(val);
         return kendo.toString(val, "n" + decimal);
     },
@@ -640,6 +697,33 @@ $.extend(sg.utls.kndoUI, {
     getNumberDecimalTemplate: function (field) {
         return "#= sg.utls.kndoUI.getFormattedNumber(" + field + ") #";
     },
+
+    /**
+     * Used for templates in grid with drilldown pencil icon with null check
+     * @param {} field - this value will display on the grid
+     * @param {} text - this text will be append to the button class
+     * @returns {} 
+     */
+    getPencilIconTemplate: function (field, text) {
+        if (field == null || field == '') {
+            return "";
+        }
+        return '<div class="pencil-wrapper"><span class="pencil-txt">' + field + '</span><span class="pencil-icon"><input type="button" class="icon edit-field btn' + text + '"/></span></div>';
+    },
+
+    /**
+     * Used for templates in grid with special columns to hide zero value
+     * @param {} field - this value will display on the grid
+     * @returns {} 
+     */
+    getHideZeroTemplate: function(field) {
+        //target both string type and integer type
+        if (field == 0) {
+            return "";
+        }
+        return field;
+    },
+
     /**
      * Instantiate Kendo tab
      * @method initTab
@@ -721,7 +805,7 @@ $.extend(sg.utls.kndoUI, {
         return inputValue;
     },
     /**
-     * Gets the number with correct decimal places
+     * Gets the number with correct decimal places with thousand separator due to latest chagne
      * @method getFormattedDecimal
      * @param {} amount
      * @param {} decimalPlaces - If decimal places is passed as null, it will use the home currency decimals
@@ -731,9 +815,13 @@ $.extend(sg.utls.kndoUI, {
         if (amount === "" || amount === null)
             amount = 0;
         if (decimalPlaces != null) {
-            return parseFloat(amount).toFixed(decimalPlaces);
+            //Using kendo UI native funciton is better choice, due to it would be easy to handle Culture formating
+            return kendo.toString(amount, "n" + decimalPlaces);
+            //return parseFloat(amount).toFixed(decimalPlaces);
         } else {
-            return parseFloat(amount).toFixed(sg.utls.homeCurrency.Decimals);
+            //Using kendo UI native funciton is better choice, due to it would be easy to handle Culture formating
+            return kendo.toString(amount, "n" + sg.utls.homeCurrency.Decimals);
+            //return parseFloat(amount).toFixed(sg.utls.homeCurrency.Decimals);
         }
     },
 
@@ -1020,6 +1108,21 @@ $.extend(sg.utls.kndoUI, {
         }
         else
             return null;
+    },
+
+    /**
+    * Used to select the row that has been navigated to by pressing Up or Down key
+    * @method gridKeyUpDownNavigation
+    * @param {} grid - grid instance
+    * @return 
+    */
+    gridKeyUpDownNavigation: function (grid) {
+        var arrows = [38, 40];    //38: up arrow, 40: down arrow
+        grid.table.on("keydown", function (e) {
+            if (arrows.indexOf(e.keyCode) >= 0) {
+                grid.select(grid.current().closest("tr"));
+            }
+        });
     }
 
 });
