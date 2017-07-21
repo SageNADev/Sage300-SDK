@@ -25,9 +25,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
+using Microsoft.Win32;
 
 namespace Sage300UICustomizationWizard
 {
+    /// <summary> Registry Helper Class </summary>
+    public static class RegistryHelper
+    {
+        /// <summary>
+        /// The path to the Registry Key where the name of the shared folder is stored
+        /// </summary>
+        private const string ConfigurationKey = "SOFTWARE\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
+
+        /// <summary>
+        /// The name of the Registry Value containing the name of the shared folder
+        /// </summary>
+        public static string Sage300CWebFolder
+        {
+            get
+            {
+                // Get the registry key
+                var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+                var configurationKey = baseKey.OpenSubKey(ConfigurationKey);
+
+                // Find path tp shared folder
+                return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web");
+            }
+        }
+    }
+
     /// <summary> Class for UI Wizard </summary>
     public class Sage300UICustomizationUserInterface : IWizard
     {
@@ -77,6 +103,8 @@ namespace Sage300UICustomizationWizard
         private JObject _customizationManifest;
         /// <summary> Customization File Name </summary>
         private string _customizationFileName;
+        /// <summary> Kendo Folder </summary>
+        private string _kendoFolder;
 
         /// <summary> Solution folder specified by user before wizard appears </summary>
         private string _solutionFolder;
@@ -161,6 +189,11 @@ namespace Sage300UICustomizationWizard
             {
                 // Display Customization Wizard Form
                 var inputForm = new UserInputForm();
+
+                // Default the location for the Kendo folder
+                var webFolder = RegistryHelper.Sage300CWebFolder;
+                inputForm.KendoDefaultFolder = Path.Combine(webFolder, "Scripts", "Kendo");
+
                 var res = inputForm.ShowDialog();
 
                 // Abort wizard if not proceeding with solution generation
@@ -176,6 +209,7 @@ namespace Sage300UICustomizationWizard
                 _assemblyName = inputForm.AssemblyName;
                 _customizationManifest = inputForm.CustomizationManifest;
                 _customizationFileName = inputForm.CustomizationFileName;
+                _kendoFolder = inputForm.KendoFolder.Trim();
 
                 // Add custom parameters for token replacement 
                 replacementsDictionary.Add("$companyname$", _companyName);

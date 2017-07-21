@@ -55,6 +55,13 @@ namespace Sage300UICustomizationWizard
             this.lblStepTitle = new System.Windows.Forms.Label();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
             this.pnlKendo = new System.Windows.Forms.Panel();
+            this.lblKendoVersionHelp = new System.Windows.Forms.Label();
+            this.lblKendoLink = new System.Windows.Forms.LinkLabel();
+            this.lblKendoFolderHelp = new System.Windows.Forms.Label();
+            this.btnKendoDialog = new System.Windows.Forms.Button();
+            this.txtKendoFolder = new System.Windows.Forms.TextBox();
+            this.lblKendoFolder = new System.Windows.Forms.Label();
+            this.chkKendoLicense = new System.Windows.Forms.CheckBox();
             this.pnlCreateEdit = new System.Windows.Forms.Panel();
             this.txtModule = new System.Windows.Forms.TextBox();
             this.lblModule = new System.Windows.Forms.Label();
@@ -86,12 +93,6 @@ namespace Sage300UICustomizationWizard
             this.btnNext = new System.Windows.Forms.Button();
             this.lblProcessingFile = new System.Windows.Forms.Label();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblKendoVersionHelp = new System.Windows.Forms.Label();
-            this.lblKendoLink = new System.Windows.Forms.LinkLabel();
-            this.lblKendoFolderHelp = new System.Windows.Forms.Label();
-            this.txtKendoFolder = new System.Windows.Forms.TextBox();
-            this.lblKendoFolder = new System.Windows.Forms.Label();
-            this.chkKendoLicense = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
@@ -182,6 +183,7 @@ namespace Sage300UICustomizationWizard
             this.pnlKendo.Controls.Add(this.lblKendoVersionHelp);
             this.pnlKendo.Controls.Add(this.lblKendoLink);
             this.pnlKendo.Controls.Add(this.lblKendoFolderHelp);
+            this.pnlKendo.Controls.Add(this.btnKendoDialog);
             this.pnlKendo.Controls.Add(this.txtKendoFolder);
             this.pnlKendo.Controls.Add(this.lblKendoFolder);
             this.pnlKendo.Controls.Add(this.chkKendoLicense);
@@ -189,6 +191,88 @@ namespace Sage300UICustomizationWizard
             this.pnlKendo.Name = "pnlKendo";
             this.pnlKendo.Size = new System.Drawing.Size(963, 392);
             this.pnlKendo.TabIndex = 26;
+            // 
+            // lblKendoVersionHelp
+            // 
+            this.lblKendoVersionHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKendoVersionHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoVersionHelp.Location = new System.Drawing.Point(139, 152);
+            this.lblKendoVersionHelp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
+            this.lblKendoVersionHelp.Size = new System.Drawing.Size(391, 44);
+            this.lblKendoVersionHelp.TabIndex = 13;
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2016.2.714";
+            // 
+            // lblKendoLink
+            // 
+            this.lblKendoLink.AutoSize = true;
+            this.lblKendoLink.Location = new System.Drawing.Point(141, 121);
+            this.lblKendoLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKendoLink.Name = "lblKendoLink";
+            this.lblKendoLink.Size = new System.Drawing.Size(448, 17);
+            this.lblKendoLink.TabIndex = 12;
+            this.lblKendoLink.TabStop = true;
+            this.lblKendoLink.Text = "http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
+            this.lblKendoLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblKendoLink_LinkClicked);
+            // 
+            // lblKendoFolderHelp
+            // 
+            this.lblKendoFolderHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKendoFolderHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoFolderHelp.Location = new System.Drawing.Point(137, 88);
+            this.lblKendoFolderHelp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
+            this.lblKendoFolderHelp.Size = new System.Drawing.Size(396, 33);
+            this.lblKendoFolderHelp.TabIndex = 11;
+            this.lblKendoFolderHelp.Text = "The Kendo UI Commercial License may be obtained at:";
+            // 
+            // btnKendoDialog
+            // 
+            this.btnKendoDialog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKendoDialog.BackgroundImage")));
+            this.btnKendoDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnKendoDialog.Enabled = false;
+            this.btnKendoDialog.FlatAppearance.BorderSize = 0;
+            this.btnKendoDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKendoDialog.Location = new System.Drawing.Point(553, 53);
+            this.btnKendoDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKendoDialog.Name = "btnKendoDialog";
+            this.btnKendoDialog.Size = new System.Drawing.Size(36, 25);
+            this.btnKendoDialog.TabIndex = 10;
+            this.btnKendoDialog.UseVisualStyleBackColor = true;
+            this.btnKendoDialog.Click += new System.EventHandler(this.btnKendoDialog_Click);
+            // 
+            // txtKendoFolder
+            // 
+            this.txtKendoFolder.Enabled = false;
+            this.txtKendoFolder.Location = new System.Drawing.Point(141, 53);
+            this.txtKendoFolder.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKendoFolder.Name = "txtKendoFolder";
+            this.txtKendoFolder.Size = new System.Drawing.Size(403, 22);
+            this.txtKendoFolder.TabIndex = 9;
+            // 
+            // lblKendoFolder
+            // 
+            this.lblKendoFolder.AutoSize = true;
+            this.lblKendoFolder.Enabled = false;
+            this.lblKendoFolder.Location = new System.Drawing.Point(41, 57);
+            this.lblKendoFolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKendoFolder.Name = "lblKendoFolder";
+            this.lblKendoFolder.Size = new System.Drawing.Size(97, 17);
+            this.lblKendoFolder.TabIndex = 8;
+            this.lblKendoFolder.Text = "Kendo Folder:";
+            // 
+            // chkKendoLicense
+            // 
+            this.chkKendoLicense.AutoSize = true;
+            this.chkKendoLicense.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkKendoLicense.Location = new System.Drawing.Point(15, 19);
+            this.chkKendoLicense.Margin = new System.Windows.Forms.Padding(4);
+            this.chkKendoLicense.Name = "chkKendoLicense";
+            this.chkKendoLicense.Size = new System.Drawing.Size(285, 23);
+            this.chkKendoLicense.TabIndex = 7;
+            this.chkKendoLicense.Text = "Purchased Kendo UI Commercial License?";
+            this.chkKendoLicense.UseVisualStyleBackColor = true;
+            this.chkKendoLicense.CheckedChanged += new System.EventHandler(this.chkKendoLicense_CheckedChanged);
             // 
             // pnlCreateEdit
             // 
@@ -527,71 +611,6 @@ namespace Sage300UICustomizationWizard
             this.lblProcessingFile.Size = new System.Drawing.Size(0, 17);
             this.lblProcessingFile.TabIndex = 2;
             // 
-            // lblKendoVersionHelp
-            // 
-            this.lblKendoVersionHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKendoVersionHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblKendoVersionHelp.Location = new System.Drawing.Point(139, 152);
-            this.lblKendoVersionHelp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
-            this.lblKendoVersionHelp.Size = new System.Drawing.Size(391, 44);
-            this.lblKendoVersionHelp.TabIndex = 12;
-            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2016.2.714";
-            // 
-            // lblKendoLink
-            // 
-            this.lblKendoLink.AutoSize = true;
-            this.lblKendoLink.Location = new System.Drawing.Point(141, 121);
-            this.lblKendoLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKendoLink.Name = "lblKendoLink";
-            this.lblKendoLink.Size = new System.Drawing.Size(448, 17);
-            this.lblKendoLink.TabIndex = 11;
-            this.lblKendoLink.TabStop = true;
-            this.lblKendoLink.Text = "http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
-            // 
-            // lblKendoFolderHelp
-            // 
-            this.lblKendoFolderHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKendoFolderHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblKendoFolderHelp.Location = new System.Drawing.Point(137, 88);
-            this.lblKendoFolderHelp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
-            this.lblKendoFolderHelp.Size = new System.Drawing.Size(396, 33);
-            this.lblKendoFolderHelp.TabIndex = 10;
-            this.lblKendoFolderHelp.Text = "The Kendo UI Commercial License may be obtained at:";
-            // 
-            // txtKendoFolder
-            // 
-            this.txtKendoFolder.Enabled = false;
-            this.txtKendoFolder.Location = new System.Drawing.Point(141, 53);
-            this.txtKendoFolder.Margin = new System.Windows.Forms.Padding(4);
-            this.txtKendoFolder.Name = "txtKendoFolder";
-            this.txtKendoFolder.Size = new System.Drawing.Size(403, 22);
-            this.txtKendoFolder.TabIndex = 9;
-            // 
-            // lblKendoFolder
-            // 
-            this.lblKendoFolder.AutoSize = true;
-            this.lblKendoFolder.Enabled = false;
-            this.lblKendoFolder.Location = new System.Drawing.Point(41, 57);
-            this.lblKendoFolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKendoFolder.Name = "lblKendoFolder";
-            this.lblKendoFolder.Size = new System.Drawing.Size(97, 17);
-            this.lblKendoFolder.TabIndex = 8;
-            this.lblKendoFolder.Text = "Kendo Folder:";
-            // 
-            // chkKendoLicense
-            // 
-            this.chkKendoLicense.AutoSize = true;
-            this.chkKendoLicense.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkKendoLicense.Location = new System.Drawing.Point(15, 19);
-            this.chkKendoLicense.Margin = new System.Windows.Forms.Padding(4);
-            this.chkKendoLicense.Name = "chkKendoLicense";
-            this.chkKendoLicense.Size = new System.Drawing.Size(285, 23);
-            this.chkKendoLicense.TabIndex = 7;
-            this.chkKendoLicense.Text = "Purchased Kendo UI Commercial License?";
-            this.chkKendoLicense.UseVisualStyleBackColor = true;
-            // 
             // UserInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -667,6 +686,7 @@ namespace Sage300UICustomizationWizard
         private System.Windows.Forms.Label lblKendoVersionHelp;
         private System.Windows.Forms.LinkLabel lblKendoLink;
         private System.Windows.Forms.Label lblKendoFolderHelp;
+        private System.Windows.Forms.Button btnKendoDialog;
         private System.Windows.Forms.TextBox txtKendoFolder;
         private System.Windows.Forms.Label lblKendoFolder;
         private System.Windows.Forms.CheckBox chkKendoLicense;

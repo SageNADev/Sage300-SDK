@@ -189,6 +189,12 @@
   <data name="InvalidSettingRequiredField" xml:space="preserve">
     <value>The {0} has not been specified.</value>
   </data>
+  <data name="KendoFolderInvalid" xml:space="preserve">
+    <value>The Kendo Folder cannot be blank.</value>
+  </data>
+  <data name="KendoLicenseInvalid" xml:space="preserve">
+    <value>The Kendo UI Commercial License must be checked to continue.</value>
+  </data>
   <data name="Module" xml:space="preserve">
     <value>Module:</value>
   </data>
@@ -223,11 +229,11 @@
   <data name="StepDescriptionCreateEdit" xml:space="preserve">
     <value>This wizard will generate the solution based off of a Customization Manifest (JSON file).</value>
   </data>
-  <data name="StepTitleCreateEdit" xml:space="preserve">
-    <value>Generate a Customization Solution</value>
-  </data>
   <data name="StepDescriptionKendo" xml:space="preserve">
     <value>Confirm the License and select the Kendo folder.</value>
+  </data>
+  <data name="StepTitleCreateEdit" xml:space="preserve">
+    <value>Generate a Customization Solution</value>
   </data>
   <data name="StepTitleKendo" xml:space="preserve">
     <value>Select Kendo Folder</value>

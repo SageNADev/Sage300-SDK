@@ -277,6 +277,24 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Kendo Folder cannot be blank..
+        /// </summary>
+        internal static string KendoFolderInvalid {
+            get {
+                return ResourceManager.GetString("KendoFolderInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Kendo UI Commercial License must be checked to continue..
+        /// </summary>
+        internal static string KendoLicenseInvalid {
+            get {
+                return ResourceManager.GetString("KendoLicenseInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Module:.
         /// </summary>
         internal static string Module {
