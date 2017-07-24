@@ -167,6 +167,22 @@ namespace Sage300UICustomizationWizard
 
             // Write out updated manifest
             File.WriteAllText(_customizationFileName, _customizationManifest.ToString());
+
+            // Newly added web project (first one added)
+            var item = sln.Projects.GetEnumerator();
+            item.MoveNext();
+            var webProject = (Project)item.Current;
+
+            // Add kendo commercial files here
+            var allMinFileSource = Path.Combine(_kendoFolder, "kendo.all.min.js");
+            var allMinScripts = Path.Combine("Scripts", "Kendo", "kendo.all.min.js"); ;
+            var allMinFileDest = Path.Combine(destFolder, allMinScripts);
+
+            // Copy files
+            File.Copy(allMinFileSource, allMinFileDest);
+
+            // Add to project
+            webProject.ProjectItems.AddFromFile(allMinFileDest);
         }
 
         /// <summary> Run started </summary>
