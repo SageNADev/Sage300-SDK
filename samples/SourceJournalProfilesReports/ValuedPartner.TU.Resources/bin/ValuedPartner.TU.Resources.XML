@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ValuedPartner.TU.Resources</name>
+    </assembly>
+    <members>
+        <member name="T:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.Entity">
+            <summary>
+              Looks up a localized string similar to TU SourceJournalProfile.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.RESERVEDFunctionalReportName">
+            <summary>
+              Looks up a localized string similar to RESERVED-Functional Report Name.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.RESERVEDSourceReportName">
+            <summary>
+              Looks up a localized string similar to RESERVED-Source Report Name.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID01">
+            <summary>
+              Looks up a localized string similar to Source Code ID 01.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID02">
+            <summary>
+              Looks up a localized string similar to Source Code ID 02.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID03">
+            <summary>
+              Looks up a localized string similar to Source Code ID 03.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID04">
+            <summary>
+              Looks up a localized string similar to Source Code ID 04.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID05">
+            <summary>
+              Looks up a localized string similar to Source Code ID 05.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID06">
+            <summary>
+              Looks up a localized string similar to Source Code ID 06.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID07">
+            <summary>
+              Looks up a localized string similar to Source Code ID 07.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID08">
+            <summary>
+              Looks up a localized string similar to Source Code ID 08.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID09">
+            <summary>
+              Looks up a localized string similar to Source Code ID 09.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID10">
+            <summary>
+              Looks up a localized string similar to Source Code ID 10.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID11">
+            <summary>
+              Looks up a localized string similar to Source Code ID 11.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID12">
+            <summary>
+              Looks up a localized string similar to Source Code ID 12.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID13">
+            <summary>
+              Looks up a localized string similar to Source Code ID 13.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID14">
+            <summary>
+              Looks up a localized string similar to Source Code ID 14.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID15">
+            <summary>
+              Looks up a localized string similar to Source Code ID 15.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID16">
+            <summary>
+              Looks up a localized string similar to Source Code ID 16.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID17">
+            <summary>
+              Looks up a localized string similar to Source Code ID 17.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID18">
+            <summary>
+              Looks up a localized string similar to Source Code ID 18.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID19">
+            <summary>
+              Looks up a localized string similar to Source Code ID 19.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID20">
+            <summary>
+              Looks up a localized string similar to Source Code ID 20.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID21">
+            <summary>
+              Looks up a localized string similar to Source Code ID 21.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID22">
+            <summary>
+              Looks up a localized string similar to Source Code ID 22.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID23">
+            <summary>
+              Looks up a localized string similar to Source Code ID 23.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID24">
+            <summary>
+              Looks up a localized string similar to Source Code ID 24.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID25">
+            <summary>
+              Looks up a localized string similar to Source Code ID 25.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID26">
+            <summary>
+              Looks up a localized string similar to Source Code ID 26.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID27">
+            <summary>
+              Looks up a localized string similar to Source Code ID 27.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID28">
+            <summary>
+              Looks up a localized string similar to Source Code ID 28.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID29">
+            <summary>
+              Looks up a localized string similar to Source Code ID 29.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID30">
+            <summary>
+              Looks up a localized string similar to Source Code ID 30.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID31">
+            <summary>
+              Looks up a localized string similar to Source Code ID 31.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID32">
+            <summary>
+              Looks up a localized string similar to Source Code ID 32.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID33">
+            <summary>
+              Looks up a localized string similar to Source Code ID 33.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID34">
+            <summary>
+              Looks up a localized string similar to Source Code ID 34.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID35">
+            <summary>
+              Looks up a localized string similar to Source Code ID 35.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID36">
+            <summary>
+              Looks up a localized string similar to Source Code ID 36.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID37">
+            <summary>
+              Looks up a localized string similar to Source Code ID 37.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID38">
+            <summary>
+              Looks up a localized string similar to Source Code ID 38.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID39">
+            <summary>
+              Looks up a localized string similar to Source Code ID 39.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID40">
+            <summary>
+              Looks up a localized string similar to Source Code ID 40.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID41">
+            <summary>
+              Looks up a localized string similar to Source Code ID 41.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID42">
+            <summary>
+              Looks up a localized string similar to Source Code ID 42.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID43">
+            <summary>
+              Looks up a localized string similar to Source Code ID 43.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID44">
+            <summary>
+              Looks up a localized string similar to Source Code ID 44.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID45">
+            <summary>
+              Looks up a localized string similar to Source Code ID 45.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID46">
+            <summary>
+              Looks up a localized string similar to Source Code ID 46.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID47">
+            <summary>
+              Looks up a localized string similar to Source Code ID 47.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID48">
+            <summary>
+              Looks up a localized string similar to Source Code ID 48.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID49">
+            <summary>
+              Looks up a localized string similar to Source Code ID 49.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceCodeID50">
+            <summary>
+              Looks up a localized string similar to Source Code ID 50.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceJournalName">
+            <summary>
+              Looks up a localized string similar to Source Journal Name.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType01">
+            <summary>
+              Looks up a localized string similar to Source Type 01.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType02">
+            <summary>
+              Looks up a localized string similar to Source Type 02.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType03">
+            <summary>
+              Looks up a localized string similar to Source Type 03.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType04">
+            <summary>
+              Looks up a localized string similar to Source Type 04.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType05">
+            <summary>
+              Looks up a localized string similar to Source Type 05.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType06">
+            <summary>
+              Looks up a localized string similar to Source Type 06.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType07">
+            <summary>
+              Looks up a localized string similar to Source Type 07.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType08">
+            <summary>
+              Looks up a localized string similar to Source Type 08.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType09">
+            <summary>
+              Looks up a localized string similar to Source Type 09.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType10">
+            <summary>
+              Looks up a localized string similar to Source Type 10.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType11">
+            <summary>
+              Looks up a localized string similar to Source Type 11.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType12">
+            <summary>
+              Looks up a localized string similar to Source Type 12.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType13">
+            <summary>
+              Looks up a localized string similar to Source Type 13.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType14">
+            <summary>
+              Looks up a localized string similar to Source Type 14.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType15">
+            <summary>
+              Looks up a localized string similar to Source Type 15.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType16">
+            <summary>
+              Looks up a localized string similar to Source Type 16.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType17">
+            <summary>
+              Looks up a localized string similar to Source Type 17.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType18">
+            <summary>
+              Looks up a localized string similar to Source Type 18.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType19">
+            <summary>
+              Looks up a localized string similar to Source Type 19.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType20">
+            <summary>
+              Looks up a localized string similar to Source Type 20.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType21">
+            <summary>
+              Looks up a localized string similar to Source Type 21.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType22">
+            <summary>
+              Looks up a localized string similar to Source Type 22.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType23">
+            <summary>
+              Looks up a localized string similar to Source Type 23.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType24">
+            <summary>
+              Looks up a localized string similar to Source Type 24.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType25">
+            <summary>
+              Looks up a localized string similar to Source Type 25.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType26">
+            <summary>
+              Looks up a localized string similar to Source Type 26.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType27">
+            <summary>
+              Looks up a localized string similar to Source Type 27.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType28">
+            <summary>
+              Looks up a localized string similar to Source Type 28.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType29">
+            <summary>
+              Looks up a localized string similar to Source Type 29.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType30">
+            <summary>
+              Looks up a localized string similar to Source Type 30.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType31">
+            <summary>
+              Looks up a localized string similar to Source Type 31.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType32">
+            <summary>
+              Looks up a localized string similar to Source Type 32.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType33">
+            <summary>
+              Looks up a localized string similar to Source Type 33.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType34">
+            <summary>
+              Looks up a localized string similar to Source Type 34.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType35">
+            <summary>
+              Looks up a localized string similar to Source Type 35.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType36">
+            <summary>
+              Looks up a localized string similar to Source Type 36.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType37">
+            <summary>
+              Looks up a localized string similar to Source Type 37.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType38">
+            <summary>
+              Looks up a localized string similar to Source Type 38.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType39">
+            <summary>
+              Looks up a localized string similar to Source Type 39.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType40">
+            <summary>
+              Looks up a localized string similar to Source Type 40.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType41">
+            <summary>
+              Looks up a localized string similar to Source Type 41.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType42">
+            <summary>
+              Looks up a localized string similar to Source Type 42.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType43">
+            <summary>
+              Looks up a localized string similar to Source Type 43.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType44">
+            <summary>
+              Looks up a localized string similar to Source Type 44.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType45">
+            <summary>
+              Looks up a localized string similar to Source Type 45.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType46">
+            <summary>
+              Looks up a localized string similar to Source Type 46.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType47">
+            <summary>
+              Looks up a localized string similar to Source Type 47.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType48">
+            <summary>
+              Looks up a localized string similar to Source Type 48.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType49">
+            <summary>
+              Looks up a localized string similar to Source Type 49.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Forms.SourceJournalProfileResx.SourceType50">
+            <summary>
+              Looks up a localized string similar to Source Type 50.
+            </summary>
+        </member>
+        <member name="T:ValuedPartner.TU.Resources.MenuResx">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.MenuResx.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.MenuResx.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.MenuResx.MenuKey2000">
+            <summary>
+              Looks up a localized string similar to TU Module.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.MenuResx.MenuKey3000">
+            <summary>
+              Looks up a localized string similar to TU Module Item.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.MenuResx.MenuKey4000">
+            <summary>
+              Looks up a localized string similar to TU Item Caption Header.
+            </summary>
+        </member>
+        <member name="T:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.Entity">
+            <summary>
+              Looks up a localized string similar to TU Source Journal Profile Report.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.Frjrnl">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.FromProfile">
+            <summary>
+              Looks up a localized string similar to From Profile.
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.Tojrnl">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:ValuedPartner.TU.Resources.Reports.SourceJournalProfileReportResx.ToProfile">
+            <summary>
+              Looks up a localized string similar to To Profile.
+            </summary>
+        </member>
+    </members>
+</doc>

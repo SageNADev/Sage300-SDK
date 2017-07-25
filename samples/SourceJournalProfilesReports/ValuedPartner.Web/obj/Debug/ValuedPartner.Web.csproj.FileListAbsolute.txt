@@ -1,0 +1,2 @@
+C:\Projects\Sage300-SDK\samples\SourceJournalProfilesReports\ValuedPartner.Web\obj\Debug\ValuedPartner.Web.csproj.App.config
+C:\Projects\Sage300-SDK\samples\SourceJournalProfilesReports\ValuedPartner.Web\obj\Debug\ValuedPartner.Web.csprojResolveAssemblyReference.cache
