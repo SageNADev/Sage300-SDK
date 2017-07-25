@@ -44,6 +44,9 @@ namespace Sage300UICustomizationWizard
         /// <summary> Panel Name for pnlCreateEdit </summary>
         private const string PanelCreateEdit = "pnlCreateEdit";
 
+        /// <summary> Panel Name for pnlKendo </summary>
+        private const string PanelKendo = "pnlKendo";
+
         /// <summary> Bootstrapper Suffix </summary>
         private const string BootstrapperSuffix = "Bootstrapper.xml";
 
@@ -73,6 +76,10 @@ namespace Sage300UICustomizationWizard
         public JObject CustomizationManifest { get; set; }
         /// <summary> Customization FileName </summary>
         public string CustomizationFileName { get; set; }
+        /// <summary> Kendo Folder </summary>
+        public string KendoFolder { get; set; }
+        /// <summary> Kendo Default Folder </summary>
+        public string KendoDefaultFolder { set { txtKendoFolder.Text = value; } }
 
         #endregion
 
@@ -91,7 +98,7 @@ namespace Sage300UICustomizationWizard
         private void InitWizardSteps()
         {
             // Default
-            btnNext.Text = Resources.Generate;
+            btnBack.Enabled = false;
 
             // Current Step
             _currentWizardStep = -1;
@@ -101,9 +108,11 @@ namespace Sage300UICustomizationWizard
 
             // Init Panels
             InitPanel(pnlCreateEdit);
+            InitPanel(pnlKendo);
 
             // Assign steps for wizard
             AddStep(Resources.StepTitleCreateEdit, Resources.StepDescriptionCreateEdit, pnlCreateEdit);
+            AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
 
             // Display first step
             NextStep();
@@ -114,34 +123,83 @@ namespace Sage300UICustomizationWizard
         private void NextStep()
         {
             // Proceed to next step
-            if (!_currentWizardStep.Equals(-1))
+            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
             {
-                // Before proceeding to next step, ensure current step is valid
+                // For other wizards, we don't normally validate on last step but the Kendo step 
+                // is our last step so we must validate for the customization wizard
                 if (!ValidateStep())
                 {
                     return;
                 }
 
-                // Set flag indicating wizard screen closed normally as close is flag to run solution creation
-                DialogResult = DialogResult.OK;
-                
                 // Set vars for use in solution creation
                 BusinessPartnerName = txtCompanyName.Text.Trim();
                 ProjectName = txtProject.Text.Trim().Replace(".", "");
                 ModuleName = txtModule.Text.Trim().ToUpper();
                 AssemblyName = txtAssembly.Text.Trim().Replace(".dll", "");
 
-                // Close screen and kick off solution creation
+                // Set flag indicating wizard screen closed normally as close is flag to run solution creation
+                DialogResult = DialogResult.OK;
                 Close();
-                return;
             }
 
-            _currentWizardStep++;
+            else
+            {
+                if (!_currentWizardStep.Equals(-1))
+                {
+                    // Before proceeding to next step, ensure current step is valid
+                    if (!ValidateStep())
+                    {
+                        return;
+                    }
 
-            ShowStep(true);
+                    btnBack.Enabled = true;
 
-            // Update title and text for step
-            ShowStepTitle();
+                    ShowStep(false);
+                }
+
+                _currentWizardStep++;
+
+                ShowStep(true);
+
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                {
+                    btnNext.Text = Resources.Generate;
+                }
+
+                // Update title and text for step
+                ShowStepTitle();
+            }
+        }
+
+        /// <summary> Back Navigation </summary>
+        /// <remarks>Back wizard step</remarks>
+        private void BackStep()
+        {
+            if (!_currentWizardStep.Equals(0))
+            {
+                // Proceed back a step
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                {
+                    btnNext.Text = Resources.Next;
+                }
+
+                ShowStep(false);
+
+                _currentWizardStep--;
+
+                ShowStep(true);
+
+                // Enable back button?
+                if (_currentWizardStep.Equals(0))
+                {
+                    btnBack.Enabled = false;
+                    btnNext.Enabled = true;
+                }
+
+                // Update title and text for step
+                ShowStepTitle();
+            }
         }
 
         /// <summary> Show Step </summary>
@@ -171,11 +229,18 @@ namespace Sage300UICustomizationWizard
             // Create/Edit Step
             if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCreateEdit))
             {
-                valid = ValidCreateEditStep();
-                if (!string.IsNullOrEmpty(valid))
-                {
-                    DisplayMessage(valid, MessageBoxIcon.Error);
-                }
+                valid = ValidCreateEditStep();           
+            }
+
+            // Kendo Step
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelKendo))
+            {
+                valid = ValidPnlKendo();
+            }
+
+            if (!string.IsNullOrEmpty(valid))
+            {
+                DisplayMessage(valid, MessageBoxIcon.Error);
             }
 
             return string.IsNullOrEmpty(valid);
@@ -238,6 +303,28 @@ namespace Sage300UICustomizationWizard
             if (string.IsNullOrEmpty(txtProject.Text.Trim()))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.Project.Replace(":", ""));
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Valid second step (Kendo)
+        /// </summary>
+        /// <returns>Empty string if valid, otherwise the appropriate error message</returns>
+        private string ValidPnlKendo()
+        {
+            // Kendo License Validation
+            KendoFolder = txtKendoFolder.Text.Trim();
+            if (!chkKendoLicense.Checked)
+            {
+                return Resources.KendoLicenseInvalid;
+            }
+
+            // Kendo Folder Validation
+            if (string.IsNullOrEmpty(KendoFolder))
+            {
+                return Resources.KendoFolderInvalid;
             }
 
             return string.Empty;
@@ -365,7 +452,8 @@ namespace Sage300UICustomizationWizard
         {
             Text = Resources.WebCustomization;
 
-            btnNext.Text = Resources.Generate;
+            btnBack.Text = Resources.Back;
+            btnNext.Text = Resources.Next;
 
             // Step Create/Edit
             lblPackageId.Text = Resources.Package;
@@ -419,12 +507,62 @@ namespace Sage300UICustomizationWizard
             }
         }
 
+        /// <summary>Back button selected</summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            BackStep();
+        }
+
         /// <summary> Next button selected</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             NextStep();
+        }
+
+        /// <summary> License Checkbox</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void chkKendoLicense_CheckedChanged(object sender, EventArgs e)
+        {
+            lblKendoFolder.Enabled = chkKendoLicense.Checked;
+            txtKendoFolder.Enabled = chkKendoLicense.Checked;
+            btnKendoDialog.Enabled = chkKendoLicense.Checked;
+        }
+
+        /// <summary> Kendo License Link</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void lblKendoLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Specify that the link was visited.
+            lblKendoLink.LinkVisited = true;
+
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(lblKendoLink.Text);
+        }
+
+        /// <summary> Kendo Folder search dialog</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnKendoDialog_Click(object sender, EventArgs e)
+        {
+            // Init dialog
+            var dialog = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = false
+            };
+
+            // Show the dialog and evaluate action
+            if (dialog.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            txtKendoFolder.Text = dialog.SelectedPath.Trim();
         }
 
         /// <summary> Update contents of Bootstrapper and Assembly based upon module/project content</summary>
@@ -444,6 +582,5 @@ namespace Sage300UICustomizationWizard
             txtModule.TextChanged += ModuleProjectTextChanged;
             txtProject.TextChanged += ModuleProjectTextChanged;
         }
-
     }
 }
