@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="Sage300CustomProject.164ce8de-3d21-40cf-ac00-6f0a667e0f25" Version="1.01" Language="en-US" Publisher="Sage Software, Inc." />
     <DisplayName>Sage 300 UI Customization Wizard</DisplayName>
-    <Description xml:space="preserve">This wizard will create Sage 300 Customization Project</Description>
+    <Description xml:space="preserve">This wizard will create a Sage 300 Customization Project</Description>
   </Metadata>
   <Installation AllUsers="true">
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,14.0]" />
