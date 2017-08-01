@@ -254,6 +254,11 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
       <Folder Name="Assets" TargetFolderName="Assets">
         <Folder Name="fonts" TargetFolderName="fonts">
+		  <ProjectItem ReplaceParameters="false" TargetFileName="FontAwesome.otf">FontAwesome.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.eot">fontawesome-webfont.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.ttf">fontawesome-webfont.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.woff">fontawesome-webfont.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.woff2">fontawesome-webfont.woff2</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Bd.otf">HelveticaNeueLTStd-Bd.otf</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="helveticaneueltstd-roman.eot">helveticaneueltstd-roman.eot</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="HelveticaNeueLTStd-Roman.otf">HelveticaNeueLTStd-Roman.otf</ProjectItem>

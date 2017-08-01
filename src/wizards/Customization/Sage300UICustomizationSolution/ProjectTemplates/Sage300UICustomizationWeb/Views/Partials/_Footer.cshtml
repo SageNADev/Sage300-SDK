@@ -1,0 +1,22 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+
+<div class="footer_container">
+    <div class="container_16">
+        <div class="grid_2 footerLogo">
+            <a class ="logo-sage" href="http://na.sage.com" target="_blank">
+                <img src="~/Content/Images/footer_logo.png" />
+            </a>
+        </div>
+        <center class="footer_contant">
+            <a href="@ConfigurationHelper.CopyrightUrl" target="_blank">@HomePageResx.Copyright_Trademarks</a>
+            <a href="@ConfigurationHelper.PolicyUrl" target="_blank">@HomePageResx.Private_Policy</a>
+            <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>©@DateTime.Today.Year, @HomePageResx.Copyright_message
+        </center>
+    </div>
+</div>
+<script>    
+    $(document).ready(function() {
+     $(".footer_container").show();
+    });
+</script>

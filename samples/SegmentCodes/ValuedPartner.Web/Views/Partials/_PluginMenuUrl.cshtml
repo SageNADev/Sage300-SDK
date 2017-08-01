@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -41,7 +41,7 @@
 {
     if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
     {
-        if(ViewBag.IsGLFinancialReportEnable == true)
+        if (ViewBag.IsSIRCEnable == true)
         {
             @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content, 
                 NavigationResx.SIR_Title,

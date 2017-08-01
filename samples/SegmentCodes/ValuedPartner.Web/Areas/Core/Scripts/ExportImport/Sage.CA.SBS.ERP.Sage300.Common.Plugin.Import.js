@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
 (function (sg, $) {
@@ -151,12 +151,12 @@ var kendoWindow = null;
                 title: that.options.title,
                 resizable: false,
                 draggable: false,
-                scrollable: false,
+                scrollable: true,
                 visible: false,
                 navigatable: true,
                 width: 647,
                 minHeight: 220,
-                maxHeight: 400,
+                maxHeight: 640,
                 actions: ["Close"],
                 close: function () {
                     that._destroyKendoWindow();

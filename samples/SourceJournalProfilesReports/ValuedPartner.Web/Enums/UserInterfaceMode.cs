@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,12 +20,30 @@
 
 namespace ValuedPartner.Web.Enums
 {
+    /// <summary>
+    /// Ui operation mode enums
+    /// </summary>
     public enum UiMode
     {
+        /// <summary>
+        /// New
+        /// </summary>
         New = 0,
+        /// <summary>
+        /// Add
+        /// </summary>
         Add = 1,
+        /// <summary>
+        /// Save
+        /// </summary>
         Save = 2,
+        /// <summary>
+        /// None
+        /// </summary>
         None = 3,
+        /// <summary>
+        /// Delete
+        /// </summary>
         Delete = 4
     }
 }

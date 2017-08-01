@@ -219,9 +219,6 @@ li.helpSearch,li.helpSearch:hover,li.helpSearch .k-link{background-color:#d9dadc
 li.helpSearch .k-link form{ padding: 5px 10px;}
 #searchHelpDiv .k-link:hover a{ color: #fff;}
 
-/*Menu CSS*/
-header{ background:url(../Images/menu_bg.png); }
-
 /*Top count_num_con*/
 .count_num_con,.nav_img_con{float:left;color:#fff;background:#ea212d;padding:6px 9px 5px 9px;cursor:pointer;border-right:1px solid #4E4F53;}
 .nav_img_con {background:none;}
@@ -254,7 +251,7 @@ header{ background:url(../Images/menu_bg.png); }
 .navigation > ul > li {
     display: inline-block;
     padding: 16px 30px 0 0;
-    position:relative;
+    /*position:relative;*/ /*D-34789*/
 }
 .navigation li a {color: #333;text-decoration: none;font-size: 14px;font-family: Helvetica, Arial;} /*Arial font face added to fix the font issue (IE doesn't display Helvetica font) on Home button */
 .navigation li.active > a{
@@ -726,9 +723,9 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
     min-height: 220px;
     z-index: 13;
     background-color: #fff;
-    box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.45) 0 0 20px;
+    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 20px;
+    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 20px;
 }
 
 .ft-welcome, 
@@ -737,7 +734,8 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
 .ft-reports,
 .ft-help, 
 .ft-inquiries, 
-.ft-kpi {
+.ft-kpi,
+.ft-recent-window {
     top: 0;
     left: 0;
     right: 0;
@@ -772,18 +770,23 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
     right: 122px;
 }
 
-.feature-tour .ft-notes .wrapper {
-    top: 335px;
-    right: 122px;
-}
-
-.feature-tour .ft-reports .wrapper {
+.feature-tour .ft-recent-window .wrapper {
     top: 225px;
     right: 122px;
 }
 
-.feature-tour .ft-inquiries .wrapper {
+.feature-tour .ft-reports .wrapper {
     top: 280px;
+    right: 122px;
+}
+
+.feature-tour .ft-inquiries .wrapper {
+    top: 335px;
+    right: 122px;
+}
+
+.feature-tour .ft-notes .wrapper {
+    top: 390px;
     right: 122px;
 }
 
@@ -832,6 +835,10 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
 
 .help-icon {
     background-position: -165px 0px;
+}
+
+.recent-window-icon {
+    background-position: -275px 0px;
 }
 
 .tour-font-icon.glyphicon-magnifying-glass {
@@ -976,7 +983,8 @@ li.nav_img_con.k-item.k-state-default.k-state-hover {background:none;}
 .feature-tour .ft-window .connector,
 .feature-tour .ft-notes .connector,
 .feature-tour .ft-reports .connector,
-.feature-tour .ft-inquiries .connector {
+.feature-tour .ft-inquiries .connector,
+.feature-tour .ft-recent-window .connector {
     top: 18px;
     right: -50px;
 }
@@ -2047,6 +2055,7 @@ body.odtd-bwr {background: #f5f6f7;}
 .quick-menu-windows > .glyphicon {
   font-size: 32px;
   top: 8px;
+  left: -1px;
 }
 .quick-menu-notes > .glyphicon {
   font-size: 44px;
@@ -2205,6 +2214,31 @@ body.odtd-bwr {background: #f5f6f7;}
   border: 0;
   padding: 0;
   margin: -10px;
+}
+
+.quick-menu-window-history {
+    background: #007b9b;
+}
+
+.quick-menu-window-history .window-history {
+    background-image: url(../Images/quick-menu-icon_rev.png);
+    background-size: 54px 54px;
+    height: 50px;
+    width: 54px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+}
+
+.collapsed .quick-menu-window-history .window-history {
+    top: 1px;
+    left: 2px;
+    background-size: 28px 28px;
+}
+
+.quick-menu .quick-menu-item .open-recent-window .rcbox > span {
+    width: 278px;
 }
 
 /*Notes Panel*/
@@ -2531,7 +2565,6 @@ body.odtd-bwr {background: #f5f6f7;}
 
 .report-list:hover {
     cursor: pointer;
-    background-color: #e8eaec;
 }
 
 .report-list:before {
@@ -3178,8 +3211,8 @@ table.k-editor {
 }
 
 .collapsed .quick-menu-windows > .glyphicon {
-    font-size: 16px;
-    top: 4px;
+    font-size: 17px;
+    top: 3px;
     left: -1px;
 }
 
@@ -3539,4 +3572,43 @@ table.k-editor {
     font-size: 34px;
     top: 7px;
     left: -1px;
+}
+
+
+.widgetSettings {
+
+    -webkit-animation: fadein 0.5s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s ease-out forwards; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s ease-out forwards; /* Internet Explorer */
+         -o-animation: fadein 0.5s ease-out forwards; /* Opera < 12.1 */
+            animation: fadein 0.5s ease-out forwards;
+}
+
+@keyframes fadein {
+    from { top:-30px; opacity: 0; }
+    to   { top:-1px; opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { top:-30px; opacity: 0; }
+    to   { top:-1px; opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { top:-30px; opacity: 0; }
+    to   { top:-1px; opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { top:-30px; opacity: 0; }
+    to   { top:-1px; opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { top:-30px; opacity: 0; }
+    to   { top:-1px; opacity: 1; }
 }

@@ -439,6 +439,8 @@ table {
 
   // grid with 5 rows
   &.small {
+    padding-bottom: 20px;
+    
     .k-grid .k-grid-content {
     height: 167px !important;
     min-height: 167px !important;
@@ -951,8 +953,13 @@ table {
   border:1px solid #ababab; 
   max-width: 274px;
   min-width: 260px;
-  margin-top: 6px;
-  margin-left: 1px;
+  margin-top: 7px;
+  margin-left: 0;
+
+  &#divFinderPrefEditCols {
+    margin-top: 0;
+    margin-left: 1px;
+  }
 
   table { 
     word-break: break-all; 
@@ -1062,9 +1069,9 @@ table {
 }
 
 .gh320 .k-grid-content {
-  min-height:317px !important; 
-  max-height:317px !important; 
-  height:317px;
+  min-height:321px !important; 
+  max-height:321px !important; 
+  height:321px;
 }
 
 .gh400 .k-grid-content {
@@ -1411,3 +1418,14 @@ div.spreadsheet {
   }
 }
 
+// Import error message table 
+
+.result-grid-wrapper,
+#exportResultGrid { 
+
+   table tr td {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    padding: 5px 20px;
+   } 
+}

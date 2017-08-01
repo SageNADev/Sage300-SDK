@@ -803,7 +803,12 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         #endregion
 
         #region Public Methods
-
+        
+        /// <summary>
+        /// Set Header Details Information
+        /// </summary>
+        /// <param name="source">source object</param>
+        /// <param name="target">target object</param>
         public void SetHeaderDetails(T source, T target)
         {
             if (source == null) return;

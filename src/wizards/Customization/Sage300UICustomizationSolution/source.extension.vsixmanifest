@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="Sage300CustomProject.164ce8de-3d21-40cf-ac00-6f0a667e0f25" Version="1.01" Language="en-US" Publisher="Sage Software, Inc." />
+    <DisplayName>Sage 300 UI Customization Wizard</DisplayName>
+    <Description xml:space="preserve">This wizard will create a Sage 300 Customization Project</Description>
+  </Metadata>
+  <Installation AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,14.0]" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.Premium" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.Ultimate" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VSWinExpress" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VPDExpress" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VWDExpress" />
+    <InstallationTarget Version="[12.0,14.0]" Id="Microsoft.VisualStudio.VSWinDesktopExpress" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,4.6]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="Sage300UICustomizationWizard" Path="|Sage300UICustomizationWizard|" AssemblyName="|Sage300UICustomizationWizard;AssemblyName|" />
+    <Asset d:Source="File" Path="ProjectTemplates" Type="Microsoft.VisualStudio.ProjectTemplate" d:TargetPath="ProjectTemplates\Sage300UICustomizationSolution.zip" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Sage300UICustomizationWeb.zip" />
+  </Assets>
+</PackageManifest>

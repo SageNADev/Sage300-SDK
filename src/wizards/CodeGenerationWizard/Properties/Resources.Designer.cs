@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Blank {
@@ -80,11 +89,83 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code Generation.
+        /// </summary>
+        internal static string CodeGeneration {
+            get {
+                return ResourceManager.GetString("CodeGeneration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Type:.
+        /// </summary>
+        internal static string CodeType {
+            get {
+                return ResourceManager.GetString("CodeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A Code Type is based upon the Repository Type that will be used for the Business View, Report or Dynamic Query..
+        /// </summary>
+        internal static string CodeTypeDescriptionTip {
+            get {
+                return ResourceManager.GetString("CodeTypeDescriptionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated..
+        /// </summary>
+        internal static string CodeTypeFilesTip {
+            get {
+                return ResourceManager.GetString("CodeTypeFilesTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Code Type to generate code.
+        /// </summary>
+        internal static string CodeTypeTip {
+            get {
+                return ResourceManager.GetString("CodeTypeTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company:.
+        /// </summary>
+        internal static string Company {
+            get {
+                return ResourceManager.GetString("Company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 company.
+        /// </summary>
+        internal static string CompanyTip {
+            get {
+                return ResourceManager.GetString("CompanyTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
         internal static string Confirmation {
             get {
                 return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter valid credentials for connecting to the database prior to entering a Business View ID..
+        /// </summary>
+        internal static string CredentialsTip {
+            get {
+                return ResourceManager.GetString("CredentialsTip", resourceCulture);
             }
         }
         
@@ -103,6 +184,87 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model Name:.
+        /// </summary>
+        internal static string DynamicQueryDescription {
+            get {
+                return ResourceManager.GetString("DynamicQueryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter name for the model.
+        /// </summary>
+        internal static string DynamicQueryDescriptionTip {
+            get {
+                return ResourceManager.GetString("DynamicQueryDescriptionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Names and Data Types in the grid below must  match order of the return columns of the SQL Query.
+        /// </summary>
+        internal static string DynamicQueryGridTip {
+            get {
+                return ResourceManager.GetString("DynamicQueryGridTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Module ID:.
+        /// </summary>
+        internal static string DynamicQueryModule {
+            get {
+                return ResourceManager.GetString("DynamicQueryModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a module from the list.
+        /// </summary>
+        internal static string DynamicQueryModuleTip {
+            get {
+                return ResourceManager.GetString("DynamicQueryModuleTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View ID:.
+        /// </summary>
+        internal static string DynamicQueryViewId {
+            get {
+                return ResourceManager.GetString("DynamicQueryViewId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Sage 300 generic business view for a SQL Query.
+        /// </summary>
+        internal static string DynamicQueryViewIdTip {
+            get {
+                return ResourceManager.GetString("DynamicQueryViewIdTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entity Name:.
+        /// </summary>
+        internal static string EntityName {
+            get {
+                return ResourceManager.GetString("EntityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter name for the entity.
+        /// </summary>
+        internal static string EntityNameTip {
+            get {
+                return ResourceManager.GetString("EntityNameTip", resourceCulture);
             }
         }
         
@@ -176,6 +338,51 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Generate {
             get {
                 return ResourceManager.GetString("Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate Dynamic Enablement.
+        /// </summary>
+        internal static string GenerateDynamicEnablement {
+            get {
+                return ResourceManager.GetString("GenerateDynamicEnablement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optionally generate the &apos;DynamicAttributes&apos; property in the Model Fields file. This provides a reverse mapping of the Business View fields to the Model properties for the fields in the Business View which have the &apos;CheckEditable&apos; attribute..
+        /// </summary>
+        internal static string GenerateDynamicEnablementTip {
+            get {
+                return ResourceManager.GetString("GenerateDynamicEnablementTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate Finder.
+        /// </summary>
+        internal static string GenerateFinder {
+            get {
+                return ResourceManager.GetString("GenerateFinder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optionally generate a finder for the Model being generated..
+        /// </summary>
+        internal static string GenerateFinderTip {
+            get {
+                return ResourceManager.GetString("GenerateFinderTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the &apos;Generate&apos; button below to generate code based upon the Code Type and information entered and selected in the proceeding steps..
+        /// </summary>
+        internal static string GenerateTip {
+            get {
+                return ResourceManager.GetString("GenerateTip", resourceCulture);
             }
         }
         
@@ -416,11 +623,209 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 password.
+        /// </summary>
+        internal static string PasswordTip {
+            get {
+                return ResourceManager.GetString("PasswordTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prompt If Exists.
+        /// </summary>
+        internal static string PromptIfExists {
+            get {
+                return ResourceManager.GetString("PromptIfExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prompt if file(s) being generated exist. Unchecked will overwrite without warning..
+        /// </summary>
+        internal static string PromptIfExistsTip {
+            get {
+                return ResourceManager.GetString("PromptIfExistsTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lookup a Sage 300 report .ini file.
+        /// </summary>
+        internal static string ReportIniDialogTip {
+            get {
+                return ResourceManager.GetString("ReportIniDialogTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ini File:.
+        /// </summary>
+        internal static string ReportIniFile {
+            get {
+                return ResourceManager.GetString("ReportIniFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter or select a Sage 300 report .ini file.
+        /// </summary>
+        internal static string ReportIniFileTip {
+            get {
+                return ResourceManager.GetString("ReportIniFileTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reports:.
+        /// </summary>
+        internal static string ReportKeys {
+            get {
+                return ResourceManager.GetString("ReportKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a report from the .ini file.
+        /// </summary>
+        internal static string ReportKeysTip {
+            get {
+                return ResourceManager.GetString("ReportKeysTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model Name:.
+        /// </summary>
+        internal static string ReportModelName {
+            get {
+                return ResourceManager.GetString("ReportModelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter name for the model.
+        /// </summary>
+        internal static string ReportModelNameTip {
+            get {
+                return ResourceManager.GetString("ReportModelNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Module:.
+        /// </summary>
+        internal static string ReportModule {
+            get {
+                return ResourceManager.GetString("ReportModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a module from the list.
+        /// </summary>
+        internal static string ReportModuleTip {
+            get {
+                return ResourceManager.GetString("ReportModuleTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entity Name:.
+        /// </summary>
+        internal static string ReportName {
+            get {
+                return ResourceManager.GetString("ReportName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter name for the entity.
+        /// </summary>
+        internal static string ReportNameTip {
+            get {
+                return ResourceManager.GetString("ReportNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Program ID:.
+        /// </summary>
+        internal static string ReportProgramId {
+            get {
+                return ResourceManager.GetString("ReportProgramId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter name for model mapper.
+        /// </summary>
+        internal static string ReportProgramIdTip {
+            get {
+                return ResourceManager.GetString("ReportProgramIdTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Five Resx files will be generated. The main Resx file will be for English and will contain the descriptions for the Model properties from the Business View..
+        /// </summary>
+        internal static string ResourceNameFilesTip {
+            get {
+                return ResourceManager.GetString("ResourceNameFilesTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The other Resx files will be Spanish (es), French Canadian (fr-CA), Chinese Simplified (zh-Hans) and Chinese Traditional (zh-Hant). These files will contain only keys..
+        /// </summary>
+        internal static string ResourceNameOtherTip {
+            get {
+                return ResourceManager.GetString("ResourceNameOtherTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name must have the &quot;Resx&quot; suffix. If not supplied, it will be appended..
+        /// </summary>
+        internal static string ResourceNameSuffixTip {
+            get {
+                return ResourceManager.GetString("ResourceNameSuffixTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resx.
         /// </summary>
         internal static string Resx {
             get {
                 return ResourceManager.GetString("Resx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resx Name:.
+        /// </summary>
+        internal static string ResxName {
+            get {
+                return ResourceManager.GetString("ResxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name is defaulted from the Business View (if applicable)..
+        /// </summary>
+        internal static string ResxNameTip {
+            get {
+                return ResourceManager.GetString("ResxNameTip", resourceCulture);
             }
         }
         
@@ -620,6 +1025,105 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Code Types will, at a minimum, generate a Model file, a Model Fields file, a Model Mapper file and Enumeration files (based upon Presentation Lists in the Business View)..
+        /// </summary>
+        internal static string UnknownCodeFilesTip {
+            get {
+                return ResourceManager.GetString("UnknownCodeFilesTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User:.
+        /// </summary>
+        internal static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 user.
+        /// </summary>
+        internal static string UserTip {
+            get {
+                return ResourceManager.GetString("UserTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 version.
+        /// </summary>
+        internal static string VersionTip {
+            get {
+                return ResourceManager.GetString("VersionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View ID:.
+        /// </summary>
+        internal static string ViewId {
+            get {
+                return ResourceManager.GetString("ViewId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 business view .
+        /// </summary>
+        internal static string ViewIdTip {
+            get {
+                return ResourceManager.GetString("ViewIdTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Module:.
+        /// </summary>
+        internal static string ViewModule {
+            get {
+                return ResourceManager.GetString("ViewModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a modue from the list.
+        /// </summary>
+        internal static string ViewModuleTip {
+            get {
+                return ResourceManager.GetString("ViewModuleTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        internal static string ViewName {
+            get {
+                return ResourceManager.GetString("ViewName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defaulted from the business view and can be overridden.
+        /// </summary>
+        internal static string ViewNameTip {
+            get {
+                return ResourceManager.GetString("ViewNameTip", resourceCulture);
             }
         }
         

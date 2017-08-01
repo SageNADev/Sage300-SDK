@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="210" xml:space="preserve">
-    <value>SyncAssembliesWizardMenuExtension</value>
+    <value>Sage300UpgradeWizardMenuExtension</value>
   </data>
   <data name="212" xml:space="preserve">
-    <value>A Visual Studio menu extension that launches a wizard to synchronize files for a Sage 300 solution.
+    <value>A Visual Studio menu extension that launches a wizard to upgrade files in a Sage 300 solution.
 </value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />

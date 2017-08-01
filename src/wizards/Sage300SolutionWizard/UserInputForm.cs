@@ -21,8 +21,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties;
 
@@ -37,11 +35,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         /// <summary> Current Wizard Step </summary>
         private int _currentWizardStep;
 
-        /// <summary> Sage color </summary>
-        private readonly Color _sageColor = Color.FromArgb(3, 130, 104);
-
         /// <summary> Generate </summary>
         private bool _generate = false;
+        #endregion
+
+        #region Private Consts
+        /// <summary> Splitter Distance </summary>
+        private const int SplitterDistance = 237;
+
         #endregion
 
         #region Public vars
@@ -61,15 +62,65 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         public UserInputForm()
         {
             InitializeComponent();
+            Localize();
             InitWizardSteps();
         }
         #endregion
+
+        /// <summary> Localize </summary>
+        private void Localize()
+        {
+            Text = Resources.SolutionGeneration;
+
+            btnBack.Text = Resources.Back;
+            btnNext.Text = Resources.Next;
+
+            // Main Step
+            lblCompanyName.Text = Resources.CompanyName;
+            tooltip.SetToolTip(lblCompanyName, Resources.CompanyNameTip);
+
+            lblModuleId.Text = Resources.ModuleId;
+            tooltip.SetToolTip(lblModuleId, Resources.ModuleIdTip);
+
+            lblNamespace.Text = Resources.NamespaceName;
+            tooltip.SetToolTip(lblNamespace, Resources.NamespaceNameTip);
+
+            // Kendo Step
+            chkKendoLicense.Text = Resources.KendoLicense;
+            tooltip.SetToolTip(chkKendoLicense, Resources.KendoLicenseTip);
+
+            lblKendoFolder.Text = Resources.KendoFolder;
+            tooltip.SetToolTip(lblKendoFolder, Resources.KendoFolderTip);
+
+            tooltip.SetToolTip(btnKendoDialog, Resources.KendoFolderDialog);
+
+            lblKendoFolderHelp.Text = Resources.KendoFolderLinkTip;
+
+            // Resource Step
+            chkEnglish.Text = Resources.English;
+            tooltip.SetToolTip(chkEnglish, Resources.EnglishTip);
+
+            chkSpanish.Text = Resources.Spanish;
+            tooltip.SetToolTip(chkSpanish, string.Format(Resources.NonEnglishTip, Resources.Spanish));
+
+            chkFrench.Text = Resources.French;
+            tooltip.SetToolTip(chkFrench, string.Format(Resources.NonEnglishTip, Resources.French));
+
+            chkChineseSimplified.Text = Resources.ChineseSimplified;
+            tooltip.SetToolTip(chkChineseSimplified, string.Format(Resources.NonEnglishTip, Resources.ChineseSimplified));
+
+            chkChineseTraditional.Text = Resources.ChineseTraditional;
+            tooltip.SetToolTip(chkChineseTraditional, string.Format(Resources.NonEnglishTip, Resources.ChineseTraditional));
+
+            // Generate Step
+            lblGenerateHelp.Text = Resources.GenerateTip;
+
+        }
 
         /// <summary> Initialize wizard steps </summary>
         private void InitWizardSteps()
         {
             // Default
-            btnNext.Text = Resources.Next;
             btnBack.Enabled = false;
 
             // Current Step
@@ -83,18 +134,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             InitPanel(pnlKendo);
             InitPanel(pnlResourceFiles);
             InitPanel(pnlGenerateSolution);
-
-            // Test color for helpful labels
-            lblCompanyNameHelp.ForeColor = _sageColor;
-            lblModuleIdHelp.ForeColor = _sageColor;
-            lblNamespaceHelp.ForeColor = _sageColor;
-
-            lblKendoFolderHelp.ForeColor = _sageColor;
-            lblKendoVersionHelp.ForeColor = _sageColor;
-
-            lblResourceFilesHelp.ForeColor = _sageColor;
-
-            lblGenerateHelp.ForeColor = _sageColor;
 
             AddStep(Resources.StepTitleInfo, Resources.StepDescriptionInfo, pnlInfo);
             AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
@@ -130,35 +169,33 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void NextStep()
         {
-            // Proceed to next wizard step or start code generation if last step
+            // Start code generation if last step
             if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateSolution"))
             {
-                // Validations
-                if (!ValidSettings())
-                {
-                    return;
-                }
-
-                // Valid!
                 _generate = true;
                 DialogResult = DialogResult.OK;
                 Close();
             }
+
+            // Proceed to next wizard step
             else
             {
-                // Proceed to next step
                 if (!_currentWizardStep.Equals(-1))
                 {
+                    // Before proceeding to next step, ensure current step is valid
+                    if (!ValidSettings())
+                    {
+                        return;
+                    }
+
                     btnBack.Enabled = true;
 
-                    _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                    _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                    ShowStep(false);
                 }
 
                 _currentWizardStep++;
 
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                ShowStep(true);
 
                 // Update text of Next button?
                 if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateSolution"))
@@ -167,10 +204,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
-                lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                splitBase.Panel2.Refresh();
+                ShowStepTitle();
             }
         }
 
@@ -186,13 +220,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                     btnNext.Text = Resources.Next;
                 }
 
-                _wizardSteps[_currentWizardStep].Panel.Visible = false;
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.None;
+                ShowStep(false);
 
                 _currentWizardStep--;
 
-                _wizardSteps[_currentWizardStep].Panel.Dock = DockStyle.Fill;
-                _wizardSteps[_currentWizardStep].Panel.Visible = true;
+                ShowStep(true);
 
                 // Enable back button?
                 if (_currentWizardStep.Equals(0))
@@ -202,67 +234,112 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 }
 
                 // Update title and text for step
-                lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash + _wizardSteps[_currentWizardStep].Title;
-                lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
-
-                splitBase.Panel2.Refresh();
-
+                ShowStepTitle();
             }
+        }
+
+        /// <summary> Show Step </summary>
+        /// <param name="visible">True to show otherwise false </param>
+        private void ShowStep(bool visible)
+        {
+            _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
+            _wizardSteps[_currentWizardStep].Panel.Visible = visible;
+            splitSteps.SplitterDistance = SplitterDistance;
+        }
+
+        /// <summary> Show Step Title</summary>
+        private void ShowStepTitle()
+        {
+            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+                                _wizardSteps[_currentWizardStep].Title;
+            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
 
         /// <summary> Valid Settings </summary>
         /// <returns>True if settings are valid otherwise false</returns>
         private bool ValidSettings()
         {
+            var valid = string.Empty;
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlInfo"))
+            {
+                valid = ValidPnlInfo();
+            }
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+            {
+                valid = ValidPnlKendo();
+            }
+
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlResourceFiles"))
+            {
+                // Not a validation but set flags for language resources
+                IncludeEnglish = chkEnglish.Checked;
+                IncludeChineseSimplified = chkChineseSimplified.Checked;
+                IncludeChineseTraditional = chkChineseTraditional.Checked;
+                IncludeSpanish = chkSpanish.Checked;
+                IncludeFrench = chkFrench.Checked;
+            }
+
+            if (!string.IsNullOrEmpty(valid))
+            {
+                // Something is invalid
+                DisplayMessage(valid, MessageBoxIcon.Error);
+            }
+
+            return string.IsNullOrEmpty(valid);
+        }
+
+        /// <summary>
+        /// Valid first step (Company info and module)
+        /// </summary>
+        /// <returns>Empty string if valid, otherwise the appropriate error message</returns>
+        private string ValidPnlInfo()
+        {
             // Company Name Validation
             ThirdPartyCompanyName = txtCompanyName.Text.Trim();
             if (string.IsNullOrEmpty(ThirdPartyCompanyName))
             {
-                DisplayMessage(Resources.CompanyNameInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.CompanyNameInvalid;
             }
 
             // Module ID Validation
             ThirdPartyApplicationId = txtApplicationID.Text.Trim().ToUpper();
             if (string.IsNullOrEmpty(ThirdPartyApplicationId) || ThirdPartyApplicationId.Contains(" "))
             {
-                DisplayMessage(Resources.ModuleIdInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.ModuleIdInvalid;
             }
 
             // Namespace Validation
             CompanyNamespace = txtNamespace.Text.Trim();
             if (string.IsNullOrEmpty(CompanyNamespace) || CompanyNamespace.Contains(" "))
             {
-                DisplayMessage(Resources.NamespaceInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.NamespaceInvalid;
             }
 
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Valid second step (Kendo)
+        /// </summary>
+        /// <returns>Empty string if valid, otherwise the appropriate error message</returns>
+        private string ValidPnlKendo()
+        {
             // Kendo License Validation
             KendoFolder = txtKendoFolder.Text.Trim();
             if (!chkKendoLicense.Checked)
             {
-                DisplayMessage(Resources.KendoLicenseInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.KendoLicenseInvalid;
             }
 
             // Kendo Folder Validation
             if (string.IsNullOrEmpty(KendoFolder))
             {
-                DisplayMessage(Resources.KendoFolderInvalid, MessageBoxIcon.Error);
-                return false;
+                return Resources.KendoFolderInvalid;
             }
 
-
-            // Resources
-            IncludeEnglish = chkEnglish.Checked;
-            IncludeChineseSimplified = chkChineseSimplified.Checked;
-            IncludeChineseTraditional = chkChineseTraditional.Checked;
-            IncludeSpanish = chkSpanish.Checked;
-            IncludeFrench = chkFrench.Checked;
-
-            // Valid
-            return true;
+            return string.Empty;
         }
 
         /// <summary> Generic routine for displaying a message dialog </summary>
@@ -327,35 +404,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             }
 
             txtKendoFolder.Text = dialog.SelectedPath.Trim();
-        }
-
-        /// <summary> Add gradient</summary>
-        /// <param name="e">Event Args </param>
-        private void FillGradient(PaintEventArgs e)
-        {
-            using (var brush = new LinearGradientBrush(ClientRectangle,
-                                                           _sageColor,
-                                                           Color.White,
-                                                           LinearGradientMode.Horizontal))
-            {
-                e.Graphics.FillRectangle(brush, ClientRectangle);
-            }
-        }
-
-        /// <summary> Add gradient to toolbar</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void tbrMain_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
-        }
-
-        /// <summary> Add gradient to top panel</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void splitBase_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            FillGradient(e);
         }
 
         /// <summary> Help Button</summary>

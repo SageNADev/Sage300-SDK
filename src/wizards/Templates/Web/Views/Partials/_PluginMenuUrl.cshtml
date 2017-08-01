@@ -41,7 +41,7 @@
 {
     if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
     {
-        if(ViewBag.IsGLFinancialReportEnable == true)
+        if (ViewBag.IsSIRCEnable == true)
         {
             @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content, 
                 NavigationResx.SIR_Title,

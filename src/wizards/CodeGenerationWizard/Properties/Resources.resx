@@ -313,4 +313,172 @@
   <data name="InvalidSettingModel" xml:space="preserve">
     <value>The Fields contain one field with the same name as the Model. Please change the Model Name.</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="CodeType" xml:space="preserve">
+    <value>Code Type:</value>
+  </data>
+  <data name="CodeTypeDescriptionTip" xml:space="preserve">
+    <value>A Code Type is based upon the Repository Type that will be used for the Business View, Report or Dynamic Query.</value>
+  </data>
+  <data name="CodeTypeFilesTip" xml:space="preserve">
+    <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
+  </data>
+  <data name="CodeTypeTip" xml:space="preserve">
+    <value>Select a Code Type to generate code</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="CompanyTip" xml:space="preserve">
+    <value>A valid Sage 300 company</value>
+  </data>
+  <data name="CredentialsTip" xml:space="preserve">
+    <value>Enter valid credentials for connecting to the database prior to entering a Business View ID.</value>
+  </data>
+  <data name="DynamicQueryDescription" xml:space="preserve">
+    <value>Model Name:</value>
+  </data>
+  <data name="DynamicQueryDescriptionTip" xml:space="preserve">
+    <value>Enter name for the model</value>
+  </data>
+  <data name="DynamicQueryGridTip" xml:space="preserve">
+    <value>Field Names and Data Types in the grid below must  match order of the return columns of the SQL Query</value>
+  </data>
+  <data name="DynamicQueryModule" xml:space="preserve">
+    <value>Module ID:</value>
+  </data>
+  <data name="DynamicQueryModuleTip" xml:space="preserve">
+    <value>Select a module from the list</value>
+  </data>
+  <data name="DynamicQueryViewId" xml:space="preserve">
+    <value>View ID:</value>
+  </data>
+  <data name="DynamicQueryViewIdTip" xml:space="preserve">
+    <value>The Sage 300 generic business view for a SQL Query</value>
+  </data>
+  <data name="EntityName" xml:space="preserve">
+    <value>Entity Name:</value>
+  </data>
+  <data name="EntityNameTip" xml:space="preserve">
+    <value>Enter name for the entity</value>
+  </data>
+  <data name="GenerateDynamicEnablement" xml:space="preserve">
+    <value>Generate Dynamic Enablement</value>
+  </data>
+  <data name="GenerateDynamicEnablementTip" xml:space="preserve">
+    <value>Optionally generate the 'DynamicAttributes' property in the Model Fields file. This provides a reverse mapping of the Business View fields to the Model properties for the fields in the Business View which have the 'CheckEditable' attribute.</value>
+  </data>
+  <data name="GenerateFinder" xml:space="preserve">
+    <value>Generate Finder</value>
+  </data>
+  <data name="GenerateFinderTip" xml:space="preserve">
+    <value>Optionally generate a finder for the Model being generated.</value>
+  </data>
+  <data name="GenerateTip" xml:space="preserve">
+    <value>Select the 'Generate' button below to generate code based upon the Code Type and information entered and selected in the proceeding steps.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PasswordTip" xml:space="preserve">
+    <value>A valid Sage 300 password</value>
+  </data>
+  <data name="PromptIfExists" xml:space="preserve">
+    <value>Prompt If Exists</value>
+  </data>
+  <data name="PromptIfExistsTip" xml:space="preserve">
+    <value>Prompt if file(s) being generated exist. Unchecked will overwrite without warning.</value>
+  </data>
+  <data name="ReportIniDialogTip" xml:space="preserve">
+    <value>Lookup a Sage 300 report .ini file</value>
+  </data>
+  <data name="ReportIniFile" xml:space="preserve">
+    <value>Ini File:</value>
+  </data>
+  <data name="ReportIniFileTip" xml:space="preserve">
+    <value>Enter or select a Sage 300 report .ini file</value>
+  </data>
+  <data name="ReportKeys" xml:space="preserve">
+    <value>Reports:</value>
+  </data>
+  <data name="ReportKeysTip" xml:space="preserve">
+    <value>Select a report from the .ini file</value>
+  </data>
+  <data name="ReportModelName" xml:space="preserve">
+    <value>Model Name:</value>
+  </data>
+  <data name="ReportModelNameTip" xml:space="preserve">
+    <value>Enter name for the model</value>
+  </data>
+  <data name="ReportModule" xml:space="preserve">
+    <value>Module:</value>
+  </data>
+  <data name="ReportModuleTip" xml:space="preserve">
+    <value>Select a module from the list</value>
+  </data>
+  <data name="ReportName" xml:space="preserve">
+    <value>Entity Name:</value>
+  </data>
+  <data name="ReportNameTip" xml:space="preserve">
+    <value>Enter name for the entity</value>
+  </data>
+  <data name="ReportProgramId" xml:space="preserve">
+    <value>Program ID:</value>
+  </data>
+  <data name="ReportProgramIdTip" xml:space="preserve">
+    <value>Enter name for model mapper</value>
+  </data>
+  <data name="ResourceNameFilesTip" xml:space="preserve">
+    <value>Five Resx files will be generated. The main Resx file will be for English and will contain the descriptions for the Model properties from the Business View.</value>
+  </data>
+  <data name="ResourceNameOtherTip" xml:space="preserve">
+    <value>The other Resx files will be Spanish (es), French Canadian (fr-CA), Chinese Simplified (zh-Hans) and Chinese Traditional (zh-Hant). These files will contain only keys.</value>
+  </data>
+  <data name="ResourceNameSuffixTip" xml:space="preserve">
+    <value>The name must have the "Resx" suffix. If not supplied, it will be appended.</value>
+  </data>
+  <data name="ResxName" xml:space="preserve">
+    <value>Resx Name:</value>
+  </data>
+  <data name="ResxNameTip" xml:space="preserve">
+    <value>The name is defaulted from the Business View (if applicable).</value>
+  </data>
+  <data name="UnknownCodeFilesTip" xml:space="preserve">
+    <value>All Code Types will, at a minimum, generate a Model file, a Model Fields file, a Model Mapper file and Enumeration files (based upon Presentation Lists in the Business View).</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="UserTip" xml:space="preserve">
+    <value>A valid Sage 300 user</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="VersionTip" xml:space="preserve">
+    <value>A valid Sage 300 version</value>
+  </data>
+  <data name="ViewId" xml:space="preserve">
+    <value>View ID:</value>
+  </data>
+  <data name="ViewIdTip" xml:space="preserve">
+    <value>A valid Sage 300 business view </value>
+  </data>
+  <data name="ViewModule" xml:space="preserve">
+    <value>Module:</value>
+  </data>
+  <data name="ViewModuleTip" xml:space="preserve">
+    <value>Select a modue from the list</value>
+  </data>
+  <data name="ViewName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="ViewNameTip" xml:space="preserve">
+    <value>Defaulted from the business view and can be overridden</value>
+  </data>
+  <data name="CodeGeneration" xml:space="preserve">
+    <value>Code Generation</value>
+  </data>
 </root>

@@ -1,0 +1,97 @@
+﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx;
+@using OperatorsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Utilities.OperatorsResx;
+
+<script type="text/javascript">
+    var globalResource = {
+        ConfirmationTitle: '@CommonResx.Confirmation',
+        SaveTitle: '@CommonResx.Save',
+        AddTitle: '@CommonResx.Add',
+        DeleteTitle: '@CommonResx.Delete',
+        CancelTitle: '@CommonResx.Cancel',
+        NewTitle: '@CommonResx.New',
+        ShowMessageBoxTitle: '@Html.SageRaw(CommonResx.ShowMessageBoxTitle)',
+        From: '@CommonResx.From',
+        To: '@Html.SageRaw(CommonResx.To)',
+        InvalidDate: '@CommonResx.InvalidDate',
+        NoRecordsFound: '@Html.SageRaw(CommonResx.NoRecordsFound)',
+        Error: '@CommonResx.Error',
+        Warning: '@CommonResx.Warning',
+        Info: '@CommonResx.Info',
+        SessionExpired: '@CommonResx.SessionExpired',
+        SessionDateNotInCalendar_Title: '@AccountMessagesResx.SessionDateNotInCalendar_Title',
+        SessionDateinInactiveYear_Title: '@AccountMessagesResx.SessionDateinInactiveYear_Title',
+        SessionDateinLockedPeriod_Title: '@AccountMessagesResx.SessionDateinLockedPeriod_Title',
+
+        GreaterThan: '@(new HtmlString(OperatorsResx.GreaterThan))',
+        GreaterThanOrEqual: '@(new HtmlString(OperatorsResx.GreaterThanOrEqual))',
+        LessThan: '@(new HtmlString(OperatorsResx.LessThan))',
+        LessThanOrEqual: '@(new HtmlString(OperatorsResx.LessThanOrEqual))',
+        NotEqual: '@(new HtmlString(OperatorsResx.NotEqual))',
+        Equal: '@(new HtmlString(OperatorsResx.Equal))',
+        Like: '@(new HtmlString(CommonResx.Like))',
+        StartsWith: '@(new HtmlString(CommonResx.StartsWith))',
+        Contains: '@(new HtmlString(CommonResx.Contains))',
+
+        DeleteConfirm: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
+        DeleteConfirm1: '@Html.SageRaw(CommonResx.DeleteConfirmMessage1)',
+
+        SaveConfirm: '@Html.SageRaw(CommonResx.UnsavedChangesMessage)',
+        SaveConfirm2: '@Html.SageRaw(CommonResx.UnsavedChangesMessage2)',
+        SaveConfirm3: '@Html.SageRaw(CommonResx.UnsavedChangesMessage3)',
+        SaveConfirm4: '@Html.SageRaw(CommonResx.UnsavedChangesMessage4)',
+        DateFormat: '@DateUtil.DateFormat',
+        DatePattern: '@DateUtil.DatePattern',
+        DateSeparator: '@DateUtil.DateSeparator',
+        DisplayDateFormat: '@DateUtil.DateFormat',
+        Culture: '@Utilities.Culture',
+        ExportWindowTitle: '@CommonResx.Export',
+        ImportWindowTitle: '@CommonResx.Import',
+        ImportFileSelectError: '@Html.SageRaw(CommonResx.FileSelectError)',
+        ImportFileTypeSelectError: '@Html.SageRaw(CommonResx.FileTypeSelectError)',
+        Priority: '@Html.SageRaw(CommonResx.Priority)',
+        Description: '@CommonResx.ProcessingDescription',
+        Index: '@CommonResx.Index',
+        AllowPageUnloadEvent: true,
+
+        Yes: '@CommonResx.Yes',
+        No: '@CommonResx.No',
+        OK: '@CommonResx.OK',
+        Cancel: '@CommonResx.Cancel',
+        Close: '@CommonResx.Close',
+        Delete: '@CommonResx.Delete',
+        Continue: '@CommonResx.Continue',
+        Today: '@Html.SageRaw(@CommonResx.Today)',
+
+        ReportUrl: '@ConfigurationHelper.GetConfigValue("ReportUrl", false)',
+        Complete: '@CommonResx.Complete',
+
+        SessionExpiredDialogHeader: '@Html.SageRaw(CommonResx.SessionExpiredDialogHeader)',
+        SessionExpiredDialogMsg1: '@Html.SageRaw(CommonResx.SessionExpiredDialogMsg1)',
+        SessionExpiredDialogMsg2: '@Html.SageRaw(CommonResx.SessionExpiredDialogMsg2)',
+
+        @* Customization popup *@
+        Name: '@Html.SageRaw(CommonResx.Name)',
+        Type: '@Html.SageRaw(CommonResx.Type)',
+        Show: '@Html.SageRaw(CommonResx.Show)',
+        Text: '@Html.SageRaw(CommonResx.Text)',
+        Restore: '@Html.SageRaw(CommonResx.Restore)',
+        RestoreMessage: '@Html.SageRaw(CommonResx.RestoreMessage)',
+        RestoreTitle: '@Html.SageRaw(CommonResx.RestoreTitle)',
+        Customize: '@Html.SageRaw(CommonResx.Customize)',
+        Customization: '@Html.SageRaw(CommonResx.Customization)',
+        Customization2: '@Html.SageRaw(CommonResx.Customization2)',
+        NoResultsFound: '@Html.SageRaw(@CommonResx.NoResultsFound)',
+        CustomizationID: '@Html.SageRaw(@CommonResx.CustomizationID)',
+        CustomizationDescription: '@Html.SageRaw(@CommonResx.CustomizationDescription)',
+        UIProfiles: '@Html.SageRaw(@CommonResx.UIProfiles)',
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+    }
+</script>

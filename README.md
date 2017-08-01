@@ -64,7 +64,7 @@ folders in order to segregate the documentation:
 
 The **help** folder contains the CHM files for the documented assemblies
 
-> **The Common and Core assmblies are documented at this time**
+> **Only the Common and Core assmblies are documented at this time**
 
 ### patch
 
@@ -226,88 +226,8 @@ Application is released.
 ## Wizards
 
 The following sections will cover topics such as building, installing, uninstalling 
-and the debugging of the SDK.
-
-### How to Build the Sage 300 UI Wizard Package
-
-The following steps illustrate how to build the package:
-
-* Load the **Sage300UIWizardPackage** solution
-* Select **Build\Build Solution**
-* The package will be successfully built to the output folder specified by the 
-solution configuration (Debug or Release). The **Sage300UIWizardPackage.vsix** is 
-the artifact that will be used to the install the package.
-
-> **Building the package does not install the package**
-
-### How to Install the Sage 300 UI Wizard Package
-
-The following steps illustrate how to install the package:
-
-* The package must first be built as demonstrated in the prior section
-* Locate the **Sage300UIWizardPackage.vsix** file and run this file
-* Select **Yes** to install the plug-in
-
-> **If the package is already installed, it must be uninstalled first**
-
-### How to Uninstall the Sage 300 UI Wizard Package
-
-The following steps illustrate how to uninstall the package from Visual Studio:
-
-* Load Visual Studio
-* Select **Tools\Extensions and Updates…**
-* Search for and select the **Sage 300 UI Wizard Package**
-* Select the **Uninstall** button
-* Select **Yes** to confirm uninstallation of the package
-* Select **Yes** to re-start Visual Studio
-* The package has been uninstalled
-
-> **This step is only required if the package is installed**
-
-### How to Run the Sage 300 UI Wizard Package in Debug Mode
-
-The following steps illustrate how to run the package in debug mode from within Visual Studio:
-
-* Load the **Sage300MenuExtension** solution
-  *	This a solution which contains both wizard projects and other information to allow 
-the Visual Studio plug-in to be debugged
-* Right-Click on the **Sage300MenuExtension** project in order to display the 
-properties page for this project
-* Select the **Debug** Tab to display the properties for debugging
-* In the **Start Action** section, select the **Start external program** option and enter 
-the following information into the textbox: 
-  *	C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
-
-> Location and version of **devenv.exe** may be different than what is specified above 
-based upon Version of Visual Studio and installation location
-
-* In the **Start Options** section, enter the following information into the **Command line arguments** textbox:
-  *	/rootsuffix Exp
-* Run the solution to start debugging!
-
-### How to Install the Sage 300 UI Customization Wizard Package
-
-The following steps illustrate how to install the package:
-
-* Locate the **Sage300UICustomizationSolution.vsix** file in the bin\wizards
-folder and run this file
-* Select **Yes** to install the plug-in
-
-> **If the package is already installed, it must be uninstalled first**
-
-### How to Uninstall the Sage 300 UI Customization Wizard Package
-
-The following steps illustrate how to uninstall the package from Visual Studio:
-
-* Load Visual Studio
-* Select **Tools\Extensions and Updates…**
-* Search for and select the **Sage 300 UI Customization Wizard**
-* Select the **Uninstall** button
-* Select **Yes** to confirm uninstallation of the package
-* Select **Yes** to re-start Visual Studio
-* The package has been uninstalled
-
-> **This step is only required if the package is installed**
+and the debugging of the SDK. Please refer to the **README** file in the **bin\wizards**
+folder for details.
 
 ## License
 

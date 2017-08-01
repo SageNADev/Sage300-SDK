@@ -544,6 +544,9 @@ $.extend(sg.utls.kndoUI, {
     * @return value
     */
     getFormattedDecimalNumber: function (val, decimal) {
+        if (!decimal) {
+            decimal = "0";
+        }
         val = parseFloat(val);
         return kendo.toString(val, "n" + decimal);
     },

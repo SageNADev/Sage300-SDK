@@ -1,0 +1,27 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+
+@Html.Partial(Core.OptionalFieldLocalization)
+<script>
+    var optionalFieldFields = {
+        txtOptionalField: '<div class="edit-container"> <div class="edit-cell inpt-text"><input class="grid_inpt txt-upper pr25" formatTextbox="alphaNumeric" id="txtoptionalfield" maxlength="12" name="OptionalField" type="text" value="" /></div>',
+        finderOptionalField: '<div class="edit-cell inpt-finder"><input class="icon btn-search" id="optFieldFinder" name="optFieldFinder" type="button"></input></div></div>',
+        txtValue: '<input class="grid_inpt pr25" id="txtOptFieldValue" name="Value" maxlength="60" type="text" value="" />',
+        txtDefaultValue: '<input class="grid_inpt pr25" id="txtOptFieldValue" name="DefaultValue" maxlength="60" type="text" value="" />',
+        finderValue: '<input class="icon btn-search" id="optFieldValueFinder" name="optFieldValueFinder" type="button" />',
+        settingsField: '<div class="edit-cell inpt-finder">@Html.SageButton("btnoptionalfieldsettings", new { @id = "btnoptionalfieldsettings", @class = "icon pencil-edit btnOptionalFieldSettings" })</div></div>',
+    };
+    var optionalFieldFieldsDropdown = {
+        optionalFieldValuesetDrpDown: '<select id="Data_ValueSet" name="valueSet"><option value="0">' + '@CommonResx.No' + '</option><option value="1">' + '@CommonResx.Yes' + '</option></select>',
+        optionalFieldDefaultValueDrpDown: '<select id="DefaultValue" name="defaultValueYesNo"><option value="0">' + '@CommonResx.No' + '</option><option value="1">' + '@CommonResx.Yes' + '</option></select>',
+        optionalFieldValueDrpDown: '<select id="Value" name="ValueYesNo"><option value="0">' + '@CommonResx.No' + '</option><option value="1">' + '@CommonResx.Yes' + '</option></select>',
+        optionalFieldRequiredDrpDown: '<select id="Data_Required" name="required"><option value="0">' + '@CommonResx.No' + '</option><option value="1">' + '@CommonResx.Yes' + '</option></select>',
+        optionalFieldAutoInsertDrpDown: '<select id="Data_AutoInsert" name="autoinsert"><option value="0">' + '@CommonResx.No' + '</option><option value="1">' + '@CommonResx.Yes' + '</option></select>',
+    };
+
+</script>

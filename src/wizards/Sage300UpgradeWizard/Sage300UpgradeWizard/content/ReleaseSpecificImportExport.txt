@@ -1,0 +1,14 @@
+﻿The Framework was enhanced to contain a common component for 
+Import/Export functionality in the web screens.
+
+To implement the import/export functionality, the Business Repository class
+will require modifications to the import/export base class along with 
+supplying a Business Entity Property or a hierarchy of Business
+Entity Properties (for header/detail screens) based upon the composition
+of the business views.
+
+The upgrade wizard is unable to automatically perform these
+modifications and therefore this step will require manual modifications.
+
+Please refer to the Sage 300 Import/Export Documentation in the docs
+folder of the Web SDK. The samples code may also be used as a guide.
