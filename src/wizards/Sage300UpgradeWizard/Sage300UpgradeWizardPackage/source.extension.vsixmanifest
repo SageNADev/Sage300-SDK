@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="Sage300UpgradeWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35d" Version="1.0" Language="en-US" Publisher="Sage Software, Inc." />
     <DisplayName>Sage 300 Upgrade Wizard Package</DisplayName>
-    <Description xml:space="preserve">This package contains the Sage 300 Upgarde Wizard.
+    <Description xml:space="preserve">This package contains the Sage 300 Upgrade Wizard.
 </Description>
   </Metadata>
   <Installation AllUsers="true">

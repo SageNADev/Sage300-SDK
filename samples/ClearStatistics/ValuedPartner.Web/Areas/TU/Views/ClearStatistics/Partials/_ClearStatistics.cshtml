@@ -202,7 +202,7 @@
         </div>
         <div class="section-body indented" data-bind="visible:Data.bClearSalespersonStatistics">
             <div class="form-group">
-                <div class="go-group ">Fsessionuti
+                <div class="go-group ">
                     @Html.SageLabel("lblClearStatistics", CommonResx.From)
                     @Html.KoSageTextBoxFor(model => model.Data.FromSalesPerson, new { @sagevalue = "Data.FromSalesPerson" }, new { @class = "default txt-upper", @id = "Data_FromSalesPerson", @formatTextbox = "alphaNumeric" })
                     @Html.KoSageButton("btnFromSalespersonFinder", null, new { @id = "btnFromSalespersonFinder", @class = "icon btn-finder", @tabindex = "-1" })
