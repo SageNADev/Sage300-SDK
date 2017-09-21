@@ -133,11 +133,8 @@
   <data name="IsCalculated" xml:space="preserve">
     <value>Calculated</value>
   </data>
-  <data name="StepTitleOptions" xml:space="preserve">
-    <value>Select Options</value>
-  </data>
-  <data name="StepTitleBusinessView" xml:space="preserve">
-    <value>Enter View and Credentials</value>
+  <data name="StepTitleEntities" xml:space="preserve">
+    <value>Add/Edit {0} Entities</value>
   </data>
   <data name="Dash" xml:space="preserve">
     <value> - </value>
@@ -187,7 +184,7 @@
     <value>..\Images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StepTitleCodeType" xml:space="preserve">
-    <value>Select Code Type</value>
+    <value>Select Code Type and Credentials</value>
   </data>
   <data name="IsNumeric" xml:space="preserve">
     <value>Numeric</value>
@@ -202,55 +199,31 @@
     <value>Data Type</value>
   </data>
   <data name="StepDescriptionGenerateCode" xml:space="preserve">
-    <value>Ready to generate code!</value>
+    <value>Ready to generate {0} code!</value>
   </data>
   <data name="IsAlphaNumeric" xml:space="preserve">
     <value>Aplhanumeric</value>
   </data>
-  <data name="StepTitleReport" xml:space="preserve">
-    <value>Enter Report Properties</value>
-  </data>
   <data name="ID" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="StepDescriptionBusinessView" xml:space="preserve">
-    <value>The Business View is used to generate code.</value>
+  <data name="StepDescriptionEntities" xml:space="preserve">
+    <value>The {0} Entities are used to generate code.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="StepTitleResource" xml:space="preserve">
-    <value>Enter Resource Name</value>
-  </data>
-  <data name="StepDescriptionDynamicQuery" xml:space="preserve">
-    <value>Dynamic Query code is generated for a generic Business View and SQL Query.</value>
-  </data>
   <data name="IsDynamicEnablement" xml:space="preserve">
     <value>Dynamic Enablement</value>
-  </data>
-  <data name="StepDescriptionResource" xml:space="preserve">
-    <value>The Resource Name property is used to generate the Resx files. </value>
   </data>
   <data name="StepTitleGeneratedCode" xml:space="preserve">
     <value>Generated Code</value>
   </data>
-  <data name="StepDescriptionReport" xml:space="preserve">
-    <value>Report code is generated from a report's ini file (...rpt.ini).</value>
-  </data>
-  <data name="StepTitleDynamicQuery" xml:space="preserve">
-    <value>Enter Dynamic Query Properties</value>
-  </data>
-  <data name="StepDescriptionOptions" xml:space="preserve">
-    <value>Select additional options and wizard behavior.</value>
-  </data>
   <data name="Step" xml:space="preserve">
     <value>Step </value>
   </data>
-  <data name="InvalidSettings" xml:space="preserve">
-    <value>The input values have either not been specified or are invalid</value>
-  </data>
   <data name="StepTitleGenerateCode" xml:space="preserve">
-    <value>Generate Code</value>
+    <value>Generate {0} Code</value>
   </data>
   <data name="Field" xml:space="preserve">
     <value>Property Name</value>
@@ -281,28 +254,13 @@
     <value>The file '{0}' already exists. Overwrite this file?</value>
   </data>
   <data name="InvalidSettingCredentials" xml:space="preserve">
-    <value>Unable to establish connection to Business View with entered credentials.</value>
+    <value>Unable to establish connection with entered credentials.</value>
   </data>
-  <data name="InvalidSettingDynamicQueryCount" xml:space="preserve">
-    <value>At least one field is required for a Dynamic Query.</value>
+  <data name="InvalidCount" xml:space="preserve">
+    <value>At least one field is required.</value>
   </data>
-  <data name="InvalidSettingDynamicQueryFields" xml:space="preserve">
-    <value>The Dynamic Query fields have invalid settings.</value>
-  </data>
-  <data name="InvalidSettingModule" xml:space="preserve">
-    <value>The Module specified does not exist in the destination projects.</value>
-  </data>
-  <data name="InvalidSettingReportCount" xml:space="preserve">
-    <value>At least one field is required for a Report.</value>
-  </data>
-  <data name="InvalidSettingReportFields" xml:space="preserve">
-    <value>The Report fields have invalid settings.</value>
-  </data>
-  <data name="InvalidSettingRequired" xml:space="preserve">
-    <value>Input values have not been specified.</value>
-  </data>
-  <data name="InvalidSettingRequiredResource" xml:space="preserve">
-    <value>The Resource Name has not been specified.</value>
+  <data name="InvalidFields" xml:space="preserve">
+    <value>The fields have invalid settings.</value>
   </data>
   <data name="Finish" xml:space="preserve">
     <value>Finish</value>
@@ -334,29 +292,14 @@
   <data name="CompanyTip" xml:space="preserve">
     <value>A valid Sage 300 company</value>
   </data>
-  <data name="CredentialsTip" xml:space="preserve">
-    <value>Enter valid credentials for connecting to the database prior to entering a Business View ID.</value>
-  </data>
-  <data name="DynamicQueryDescription" xml:space="preserve">
+  <data name="ModelName" xml:space="preserve">
     <value>Model Name:</value>
   </data>
-  <data name="DynamicQueryDescriptionTip" xml:space="preserve">
+  <data name="ModelNameTip" xml:space="preserve">
     <value>Enter name for the model</value>
   </data>
-  <data name="DynamicQueryGridTip" xml:space="preserve">
-    <value>Field Names and Data Types in the grid below must  match order of the return columns of the SQL Query</value>
-  </data>
-  <data name="DynamicQueryModule" xml:space="preserve">
-    <value>Module ID:</value>
-  </data>
-  <data name="DynamicQueryModuleTip" xml:space="preserve">
-    <value>Select a module from the list</value>
-  </data>
-  <data name="DynamicQueryViewId" xml:space="preserve">
-    <value>View ID:</value>
-  </data>
-  <data name="DynamicQueryViewIdTip" xml:space="preserve">
-    <value>The Sage 300 generic business view for a SQL Query</value>
+  <data name="EntityGridTip" xml:space="preserve">
+    <value>For Dynamic Queries, the Field Names and Data Types must match order of the return columns of the SQL Query</value>
   </data>
   <data name="EntityName" xml:space="preserve">
     <value>Entity Name:</value>
@@ -377,19 +320,13 @@
     <value>Optionally generate a finder for the Model being generated.</value>
   </data>
   <data name="GenerateTip" xml:space="preserve">
-    <value>Select the 'Generate' button below to generate code based upon the Code Type and information entered and selected in the proceeding steps.</value>
+    <value>The entities will be generated or referenced based upon the following content:</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password:</value>
   </data>
   <data name="PasswordTip" xml:space="preserve">
     <value>A valid Sage 300 password</value>
-  </data>
-  <data name="PromptIfExists" xml:space="preserve">
-    <value>Prompt If Exists</value>
-  </data>
-  <data name="PromptIfExistsTip" xml:space="preserve">
-    <value>Prompt if file(s) being generated exist. Unchecked will overwrite without warning.</value>
   </data>
   <data name="ReportIniDialogTip" xml:space="preserve">
     <value>Lookup a Sage 300 report .ini file</value>
@@ -406,44 +343,17 @@
   <data name="ReportKeysTip" xml:space="preserve">
     <value>Select a report from the .ini file</value>
   </data>
-  <data name="ReportModelName" xml:space="preserve">
-    <value>Model Name:</value>
-  </data>
-  <data name="ReportModelNameTip" xml:space="preserve">
-    <value>Enter name for the model</value>
-  </data>
-  <data name="ReportModule" xml:space="preserve">
-    <value>Module:</value>
-  </data>
-  <data name="ReportModuleTip" xml:space="preserve">
-    <value>Select a module from the list</value>
-  </data>
-  <data name="ReportName" xml:space="preserve">
-    <value>Entity Name:</value>
-  </data>
-  <data name="ReportNameTip" xml:space="preserve">
-    <value>Enter name for the entity</value>
-  </data>
   <data name="ReportProgramId" xml:space="preserve">
     <value>Program ID:</value>
   </data>
   <data name="ReportProgramIdTip" xml:space="preserve">
     <value>Enter name for model mapper</value>
   </data>
-  <data name="ResourceNameFilesTip" xml:space="preserve">
-    <value>Five Resx files will be generated. The main Resx file will be for English and will contain the descriptions for the Model properties from the Business View.</value>
-  </data>
-  <data name="ResourceNameOtherTip" xml:space="preserve">
-    <value>The other Resx files will be Spanish (es), French Canadian (fr-CA), Chinese Simplified (zh-Hans) and Chinese Traditional (zh-Hant). These files will contain only keys.</value>
-  </data>
-  <data name="ResourceNameSuffixTip" xml:space="preserve">
-    <value>The name must have the "Resx" suffix. If not supplied, it will be appended.</value>
-  </data>
   <data name="ResxName" xml:space="preserve">
     <value>Resx Name:</value>
   </data>
   <data name="ResxNameTip" xml:space="preserve">
-    <value>The name is defaulted from the Business View (if applicable).</value>
+    <value>The name is defaulted from the Business View (if applicable) and must have the "Resx" suffix. If not supplied, it will be appended. The main Resx file will be for English and will contain the descriptions for the Model properties from the Business View. Other Resx files will be generated only if the languages were selected when the solution was created and will only contain keys and no values.</value>
   </data>
   <data name="UnknownCodeFilesTip" xml:space="preserve">
     <value>All Code Types will, at a minimum, generate a Model file, a Model Fields file, a Model Mapper file and Enumeration files (based upon Presentation Lists in the Business View).</value>
@@ -466,10 +376,10 @@
   <data name="ViewIdTip" xml:space="preserve">
     <value>A valid Sage 300 business view </value>
   </data>
-  <data name="ViewModule" xml:space="preserve">
+  <data name="Module" xml:space="preserve">
     <value>Module:</value>
   </data>
-  <data name="ViewModuleTip" xml:space="preserve">
+  <data name="ModuleTip" xml:space="preserve">
     <value>Select a modue from the list</value>
   </data>
   <data name="ViewName" xml:space="preserve">
@@ -480,5 +390,56 @@
   </data>
   <data name="CodeGeneration" xml:space="preserve">
     <value>Code Generation</value>
+  </data>
+  <data name="AddEntity" xml:space="preserve">
+    <value>Add Entity</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DeleteEntities" xml:space="preserve">
+    <value>Delete Entities</value>
+  </data>
+  <data name="DeleteEntity" xml:space="preserve">
+    <value>Delete Entity</value>
+  </data>
+  <data name="EditEntity" xml:space="preserve">
+    <value>Edit Entity</value>
+  </data>
+  <data name="GenerateClientFiles" xml:space="preserve">
+    <value>Generate Client Files (Controllers, Razor Views, JavaScript)</value>
+  </data>
+  <data name="GenerateClientFilesTip" xml:space="preserve">
+    <value>Optionally generate the client files for a business view. This provides the ability to generate a model, mappers, repository, etc. for a business view that do not require these client files.</value>
+  </data>
+  <data name="GenerateEnumsInSingleFile" xml:space="preserve">
+    <value>Generate Enumerations in Single File</value>
+  </data>
+  <data name="GenerateEnumsInSingleFileTip" xml:space="preserve">
+    <value>Optionally generate the enumerations in a single file as opposed to each enumeration having its own file.</value>
+  </data>
+  <data name="GenerateIfExist" xml:space="preserve">
+    <value>Generate if Files Already Exist</value>
+  </data>
+  <data name="GenerateIfExistTip" xml:space="preserve">
+    <value>Optionally generate the files if they already exist in which case they will be overwritten else the existing files will be used.</value>
+  </data>
+  <data name="InvalidEntitiesCount" xml:space="preserve">
+    <value>At least one entity is required.</value>
+  </data>
+  <data name="InvalidResxName" xml:space="preserve">
+    <value>The Resx Name must end with 'Resx'.</value>
+  </data>
+  <data name="InvalidSettingRequiredField" xml:space="preserve">
+    <value>The {0} has not been specified.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="InvalidEntityDuplicate" xml:space="preserve">
+    <value>The entity being added already exists.</value>
+  </data>
+  <data name="EntitiesInstructions" xml:space="preserve">
+    <value>Right-Click on '{0}' below to Add Entity/Delete Entities or any entity listed below to Add Entity (Header-Detail only), Edit Entity or Delete Entity.</value>
   </data>
 </root>

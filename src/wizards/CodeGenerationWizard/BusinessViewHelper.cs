@@ -49,7 +49,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void UpdateFlatBootStrappers(BusinessView view, Settings settings)
         {
-            UpdateWebBootStrapper(view, settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                UpdateWebBootStrapper(view, settings);
+            }
+
             UpdateBootStrapper(view, settings);
         }
 
@@ -60,7 +64,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void UpdateProcessBootStrappers(BusinessView view, Settings settings)
         {
-            UpdateProcessWebBootStrapper(view, settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                UpdateProcessWebBootStrapper(view, settings);
+            }
+
             UpdateProcessBootStrapper(view, settings);
         }
 
@@ -199,9 +207,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return string.Empty;
             }
 
-            // Convert to Pascal Case First
+            // Convert to Pascal Case First, but only if there are spaces in value (else it has already been done)
             var textInfo = new CultureInfo("en-US", false).TextInfo;
-            var pascalCase = textInfo.ToTitleCase(value);
+            var pascalCase = value.Contains(" ") ? textInfo.ToTitleCase(value) : value;
 
             var newString = pascalCase
                 .Replace("Add'l", "Additional")
@@ -469,7 +477,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 for (var i = 0; i <= 2; i++)
                 {
-                    if (!settings.GenerateFinder && i == 1)
+                    if (!view.Options[BusinessView.GenerateFinder] && i == 1)
                     {
                         pos--;
                         continue;
