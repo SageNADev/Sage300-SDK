@@ -233,6 +233,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entity.
+        /// </summary>
+        internal static string Entity {
+            get {
+                return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to For Dynamic Queries, the Field Names and Data Types must match order of the return columns of the SQL Query.
         /// </summary>
         internal static string EntityGridTip {
@@ -256,6 +265,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string EntityNameTip {
             get {
                 return ResourceManager.GetString("EntityNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The fields describe the entity and provide prefixing for the files being created .
+        /// </summary>
+        internal static string EntityTip {
+            get {
+                return ResourceManager.GetString("EntityTip", resourceCulture);
             }
         }
         
@@ -686,6 +704,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string Options {
+            get {
+                return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options for code generation.
+        /// </summary>
+        internal static string OptionsTip {
+            get {
+                return ResourceManager.GetString("OptionsTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password:.
         /// </summary>
         internal static string Password {
@@ -700,6 +736,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string PasswordTip {
             get {
                 return ResourceManager.GetString("PasswordTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties.
+        /// </summary>
+        internal static string Properties {
+            get {
+                return ResourceManager.GetString("Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add, modify, and/or delete property information for most code types.
+        /// </summary>
+        internal static string PropertiesTip {
+            get {
+                return ResourceManager.GetString("PropertiesTip", resourceCulture);
             }
         }
         

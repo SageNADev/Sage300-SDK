@@ -442,4 +442,22 @@
   <data name="EntitiesInstructions" xml:space="preserve">
     <value>Right-Click on '{0}' below to Add Entity/Delete Entities or any entity listed below to Add Entity (Header-Detail only), Edit Entity or Delete Entity.</value>
   </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Entity</value>
+  </data>
+  <data name="EntityTip" xml:space="preserve">
+    <value>The fields describe the entity and provide prefixing for the files being created </value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OptionsTip" xml:space="preserve">
+    <value>Options for code generation</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="PropertiesTip" xml:space="preserve">
+    <value>Add, modify, and/or delete property information for most code types</value>
+  </data>
 </root>

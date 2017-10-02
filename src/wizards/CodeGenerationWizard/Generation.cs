@@ -510,6 +510,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             tooltip.SetToolTip(tbrEntity, Resources.EntityGridTip);
 
+            tabPage1.Text = Resources.Entity;
+            tabPage1.ToolTipText = Resources.EntityTip;
+
+            tabPage2.Text = Resources.Options;
+            tabPage2.ToolTipText = Resources.OptionsTip;
+
+            tabPage3.Text = Resources.Properties;
+            tabPage3.ToolTipText = Resources.PropertiesTip;
+
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
@@ -947,6 +956,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             btnSave.Visible = enable;
             btnCancel.Visible = enable;
             splitEntities.Panel2.Enabled = enable;
+
+            tabEntity.SelectTab(0);
 
             var repositoryType = GetRepositoryType();
 
@@ -1540,13 +1551,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
             splitSteps.SplitterDistance = SplitterDistance;
-
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelEntities) && visible)
-            {
-                // Set split distance
-                splitEntity.IsSplitterFixed = true;
-                splitEntity.SplitterDistance = 470;
-            }
 
         }
 
