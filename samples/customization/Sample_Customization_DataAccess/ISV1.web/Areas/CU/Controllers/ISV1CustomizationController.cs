@@ -64,6 +64,27 @@ namespace ISV1.web.Areas.CU.Controllers
         {
         }
 
+        /// <summary>
+        /// Constructor with container parameter
+        /// </summary>
+        /// <param name="container">The container.</param>
+        public ISV1CustomizationController(IUnityContainer container)
+            : base(container, "CustomizationOrderEntryName")
+        {
+        }
+
+        #region Initialize MultitenantControllerBase
+
+        /// <summary>
+        /// Initializes the specified request context.
+        /// </summary>
+        /// <param name="requestContext">The request context.</param>
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+        }
+
+        #endregion
 
         /// <summary>
         /// Default index view
@@ -84,8 +105,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [HttpGet]
         public virtual JsonNetResult GetAllBySage300c()
         {
-            SetUnityContainer(Context);
-
             //using Sage300c service to get data
             var apService = new InvoiceBatchListEntityService<InvoiceBatch>(Context);
             var modelData = apService.Get(0, 50);
@@ -102,8 +121,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [HttpGet]
         public virtual JsonNetResult GetBySage300c(string id)
         {
-            SetUnityContainer(Context);
-
             //using Sage300c service to get data
             var apService = new InvoiceBatchListEntityService<InvoiceBatch>(Context);
             var modelData = apService.GetById(id);
@@ -124,8 +141,6 @@ namespace ISV1.web.Areas.CU.Controllers
         /// <returns></returns>
         public virtual JsonNetResult GetBySage300CSQuery(string id)
         {
-            SetUnityContainer(Context);
-
             var repository = new OrderRepository<Order>(Context);
             var modelData = repository.GetById(id);
 
@@ -145,8 +160,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [HttpGet]
         public virtual JsonNetResult GetAllBySage300CSQuery()
         {
-            SetUnityContainer(Context);
-
             var repository = new OrderRepository<Order>(Context);
             var modelData = repository.GetAll();
 
@@ -162,8 +175,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult SaveBySage300CSQuery(Order model)
         {
-            SetUnityContainer(Context);
-
             ViewModelBase<ModelBase> viewModel;
 
             if (!ValidateModelState(ModelState, out viewModel))
@@ -190,8 +201,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteBySage300CSQuery(string id)
         {
-            SetUnityContainer(Context);
-
             var repository = new OrderRepository<Order>(Context);
             try
             {
@@ -215,8 +224,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [HttpGet]
         public virtual JsonNetResult GetAllByCustomView()
         {
-            SetUnityContainer(Context);
-
             var repository = new CustomerRepository<Customer>(Context);
             var modelData = repository.GetAll();
 
@@ -225,8 +232,6 @@ namespace ISV1.web.Areas.CU.Controllers
 
         public virtual JsonNetResult GetByCustomView(string id)
         {
-            SetUnityContainer(Context);
-
             var repository = new CustomerRepository<Customer>(Context);
             var modelData = repository.GetById(id);
 
@@ -250,8 +255,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult SaveByCustomView(T model)
         {
-            SetUnityContainer(Context);
-
             ViewModelBase<ModelBase> viewModel;
 
             if (!ValidateModelState(ModelState, out viewModel))
@@ -279,8 +282,6 @@ namespace ISV1.web.Areas.CU.Controllers
         [NoAntiForgeryCheckAttribute]
         public virtual JsonNetResult DeleteByCustomView(string id)
         {
-            SetUnityContainer(Context);
- 
             var repository = new CustomerRepository<Customer>(Context);
             try
             {
@@ -404,17 +405,6 @@ namespace ISV1.web.Areas.CU.Controllers
 
         #endregion 
 
-        /// <summary>
-        /// Set unity container for integrated with sage 300c 
-        /// </summary>
-        /// <param name="Context"></param>
-        private void SetUnityContainer(Context Context)
-        {
-            if (Context != null && Context.Container == null)
-            {
-                Context.Container = BootstrapTaskManager.Container;
-            }
-        }
     }
 
 }

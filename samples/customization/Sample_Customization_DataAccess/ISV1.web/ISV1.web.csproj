@@ -294,7 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ISV1CUBootstrapper.xml" />
-    <Content Include="AccpacDotNetVersion.props" />
+    <Content Include="AccpacDotNetVersion.props">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
     <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Wizard.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
