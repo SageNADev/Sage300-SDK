@@ -28,6 +28,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Http;
@@ -65,10 +66,22 @@ namespace ISV1.web
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
                     ScreenName = "None",
-                    Container = BootstrapTaskManager.Container
+                    Container = BootstrapTaskManager.Container,
+                    ScreenContext = new ScreenContext(),
+                };
+                context.ScreenContext.ScreenName = "None";
+
+                var companies = new List<Organization> {
+                    new Organization() {
+                        Id = "SAMLTD",
+                        Name = "SAMLTD",
+                        System = "Company",
+                        IsSecurityEnabled = false,
+                        SystemId = "SAMSYS"
+                    }
                 };
 
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context);
+                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
