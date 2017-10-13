@@ -2310,7 +2310,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 if (!string.IsNullOrEmpty(txtViewID.Text))
                 {
-                    var businessView = ProcessGeneration.GetBusinessView(txtUser.Text.Trim(), txtPassword.Text.Trim(),
+                    // Get business view from clicked node
+                    var node = _modeType == ModeType.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
+                    var businessView = (BusinessView)node.Tag;
+
+                    ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
                         txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text, cboModule.Text);
 
                     // Assign to entity and model fields

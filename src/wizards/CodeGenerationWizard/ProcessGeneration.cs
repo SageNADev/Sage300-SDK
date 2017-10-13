@@ -295,17 +295,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary> Get business view </summary>
+        /// <param name="businessView">Business View</param>
         /// <param name="user">User Name</param>
         /// <param name="password">User Password</param>
         /// <param name="company">Company</param>
         /// <param name="version">Version</param>
         /// <param name="viewId">View Id</param>
         /// <param name="moduleId">Module Id</param>
-        /// <returns>Business View</returns>
-        public static BusinessView GetBusinessView(string user, string password, string company, string version, string viewId, string moduleId)
+        public static void GetBusinessView(BusinessView businessView, string user, 
+            string password, string company, string version, string viewId, string moduleId)
         {
             // Locals
-            var businessview = new BusinessView();
             var session = new Session();
             var uniqueDescriptions = new Dictionary<string, bool>();
 
@@ -316,17 +316,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
             var view = dbLink.OpenView(viewId);
 
-            businessview.Properties[BusinessView.ViewId] = view.ViewID;
-            businessview.Properties[BusinessView.ModuleId] = moduleId;
+            // Clear out business view except for text
+            businessView.Enums.Clear();
+            businessView.Fields.Clear();
+            businessView.Keys.Clear();
+            businessView.Options.Clear();
+            businessView.Properties.Clear();
+
+            businessView.Properties[BusinessView.ViewId] = view.ViewID;
+            businessView.Properties[BusinessView.ModuleId] = moduleId;
 
             GenerateUniqueDescriptions(view, uniqueDescriptions);
 
             var description = MakeItSingular(BusinessViewHelper.Replace(view.Description));
 
-            businessview.Properties[BusinessView.ModelName] = description;
-            businessview.Properties[BusinessView.EntityName] = description;
+            businessView.Properties[BusinessView.ModelName] = description;
+            businessView.Properties[BusinessView.EntityName] = description;
 
-            GenerateFieldsAndEnums(businessview, view, uniqueDescriptions);
+            GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
 
             // Clean up
             try
@@ -340,7 +347,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Swallow error, if any        
             }
 
-            return businessview;
         }
 
         #endregion
@@ -907,7 +913,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Model class
             CreateClass(view,
-                view.Properties[BusinessView.ModelName] + ".cs",
+                view.Properties[BusinessView.EntityName] + ".cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
                 ModelsKey, SubFolderModelKey);
 
@@ -915,14 +921,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
             {
                 CreateClass(view,
-                    view.Properties[BusinessView.ModelName] + "Mapper.cs",
+                    view.Properties[BusinessView.EntityName] + "Mapper.cs",
                     TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
                     BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
             }
 
             // Create the Model Fields class
             CreateClass(view,
-                view.Properties[BusinessView.ModelName] + "Fields.cs",
+                view.Properties[BusinessView.EntityName] + "Fields.cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
                 ModelsKey, SubFolderModelFieldsKey);
 
