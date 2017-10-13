@@ -26,7 +26,7 @@
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var moduleId = view.Properties[BusinessView.ModuleId];
     var copyright = settings.Copyright;
-    var workflowKindId = settings.WorkflowKindId;
+    var workflowKindId = view.Properties[BusinessView.WorkFlowKindId];
     var companyNamespace = settings.CompanyNamespace;
 
 #>

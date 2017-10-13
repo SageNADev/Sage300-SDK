@@ -28,6 +28,9 @@ using System.Windows.Forms;
 using EnvDTE;
 using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
+using ACCPAC.Advantage;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -42,15 +45,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Information processed </summary>
         private readonly BindingList<Info> _gridInfo = new BindingList<Info>();
 
-        /// <summary> Dynamic Query Infomation </summary>
-        private readonly BindingList<BusinessField> _dynamicQueryFields = new BindingList<BusinessField>();
-
-        /// <summary> Report Infomation </summary>
-        private BindingList<BusinessField> _reportFields = new BindingList<BusinessField>();
+        /// <summary> Entity Fields </summary>
+        private readonly BindingList<BusinessField> _entityFields = new BindingList<BusinessField>();
 
         /// <summary> Reports </summary>
         private readonly Dictionary<string, BindingList<BusinessField>> _reports =
             new Dictionary<string, BindingList<BusinessField>>();
+
+        /// <summary> Entities </summary>
+        private readonly List<BusinessView> _entities = new List<BusinessView>();
 
         /// <summary> Row index for grid </summary>
         private int _rowIndex = -1;
@@ -59,7 +62,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private readonly List<WizardStep> _wizardSteps = new List<WizardStep>();
 
         /// <summary> Current Wizard Step </summary>
-        private int _currentWizardStep;
+        private int _currentWizardStep = -1;
 
         /// <summary> Projects by Type within a Module </summary>
         private readonly Dictionary<string, Dictionary<string, ProjectInfo>> _projects =
@@ -92,12 +95,64 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Include French Resource </summary>
         private bool _includeFrench;
 
+        /// <summary> Menu Item for Add Entity </summary>
+        private readonly MenuItem _addEntityMenuItem = new MenuItem(Resources.AddEntity);
+
+        /// <summary> Menu Item for Edit Entity </summary>
+        private readonly MenuItem _editEntityMenuItem = new MenuItem(Resources.EditEntity);
+
+        /// <summary> Menu Item for Delete Entity </summary>
+        private readonly MenuItem _deleteEntityMenuItem = new MenuItem(Resources.DeleteEntity);
+
+        /// <summary> Menu Item for Delete Entities </summary>
+        private readonly MenuItem _deleteEntitiesMenuItem = new MenuItem(Resources.DeleteEntities);
+
+        /// <summary> Mode Type for Add, Add Above, Add Below, Edit or None </summary>
+        private ModeType _modeType = ModeType.None;
+
+        /// <summary> Clicked Entity Node </summary>
+        private TreeNode _clickedEntityTreeNode;
+
+        /// <summary> Context Menu </summary>
+        private readonly ContextMenu _contextMenu = new ContextMenu();
+
+        /// <summary> XDocument for processing to understand hierarchy </summary>
+        private XDocument _xmlEntities;
+
         #endregion
 
-        #region Private Consts
+        #region Private Constants
         /// <summary> Splitter Distance </summary>
         private const int SplitterDistance = 415;
 
+        /// <summary> Panel Name for pnlCodeType </summary>
+        private const string PanelCodeType = "pnlCodeType";
+
+        /// <summary> Panel Name for pnlEntities </summary>
+        private const string PanelEntities = "pnlEntities";
+
+        /// <summary> Panel Name for pnlGenerated </summary>
+        private const string PanelGenerated = "pnlGeneratedCode";
+        /// <summary> Panel Name for pnlGenerate </summary>
+
+        private const string PanelGenerateCode = "pnlGenerateCode";
+        #endregion
+
+        #region Private Enums
+        /// <summary>
+        /// Enum for Mode Types
+        /// </summary>
+        private enum ModeType
+        {
+            /// <summary> No Mode </summary>
+            None = 0,
+
+            /// <summary> Add Mode </summary>
+            Add = 1,
+
+            /// <summary> Edit Mode</summary>
+            Edit = 2
+        }
         #endregion
 
         #region Delegates
@@ -121,11 +176,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             InitializeComponent();
             Localize();
-            InitWizardSteps(RepositoryType.Flat);
-            InitInfo();
-            InitDynamicQueryFields();
-            InitReportFields();
             InitEvents();
+            InitInfo();
             ProcessingSetup(true);
             Processing("");
 
@@ -167,11 +219,228 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #region Private Methods/Routines/Events
 
+        /// <summary> Setup the entities tree</summary>
+        private void SetupEntitiesTree()
+        {
+            // Ensure all nodes are cleaned up first
+            _entities.Clear();
+
+            // Clear tree first
+            treeEntities.Nodes.Clear();
+
+            // Add top level node
+            var entitiesNode = new TreeNode(ProcessGeneration.ElementEntities) { Name = ProcessGeneration.ElementEntities };
+            treeEntities.Nodes.Add(entitiesNode);
+
+            // Disable entity controls
+            EnableEntityControls(false);
+        }
+
+        /// <summary> Validate Step before proceeding to next step </summary>
+        /// <returns>True for valid step other wise false</returns>
+        private bool ValidateStep()
+        {
+            // Locals
+            var valid = string.Empty;
+
+            // Code Type Step
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCodeType))
+            {
+                valid = ValidCodeTypeStep();
+            }
+
+            // Entities Step
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelEntities))
+            {
+                valid = ValidEntitiesStep();
+            }
+
+            if (!string.IsNullOrEmpty(valid))
+            {
+                // Something is invalid
+                DisplayMessage(valid, MessageBoxIcon.Error);
+            }
+
+            return string.IsNullOrEmpty(valid);
+        }
+
+        /// <summary> Valid CodeType Step</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidCodeTypeStep()
+        {
+            // User ID
+            if (string.IsNullOrEmpty(txtUser.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.User.Replace(":", ""));
+            }
+
+            // Password
+            //if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            //{
+            //    return string.Format(Resources.InvalidSettingRequiredField, Resources.Password.Replace(":", ""));
+            //}
+
+            // Version
+            if (string.IsNullOrEmpty(txtVersion.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Version.Replace(":", ""));
+            }
+
+            // Company
+            if (string.IsNullOrEmpty(txtCompany.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Company.Replace(":", ""));
+            }
+
+            // Module
+            if (string.IsNullOrEmpty(cboModule.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Module.Replace(":", ""));
+            }
+
+            // Session
+            var sessionValid = string.Empty;
+            try
+            {
+                // Init session to see if credentials are valid
+                var session = new Session();
+                session.InitEx2(null, string.Empty, "WX", "WX1000", txtVersion.Text.Trim(), 1);
+                session.Open(txtUser.Text.Trim(), txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow, 0);
+            }
+            catch
+            {
+                sessionValid = Resources.InvalidSettingCredentials;
+            }
+
+            return sessionValid;
+        }
+
+        /// <summary> Valid Entities Step</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidEntitiesStep()
+        {
+            // Since the entity validated when added to the tree, we will just ensure that there is 
+            // at least one entity added in order to proceed
+            if (_entities.Count == 0)
+            {
+                return Resources.InvalidEntitiesCount;
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary> Valid Entity</summary>
+        /// <param name="resxName">The name of the Resx to validate</param>
+        /// <param name="viewId">The name of the View ID to validate</param>
+        /// <param name="entityName">The name of the entity to validate</param>
+        /// <param name="modelName">The name of the model to validate</param>
+        /// <param name="repositoryType">The name of the repository</param>
+        /// <param name="reportKeys">The name of the report to validate if report type</param>
+        /// <param name="programId">The name of the program to validate if report type</param>
+        /// <param name="entityFields">The fields/properties list to validate</param>
+        /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidEntity(string resxName, string viewId, string entityName, string modelName, 
+            RepositoryType repositoryType, string reportKeys, string programId, List<BusinessField> entityFields, Dictionary<string, bool> uniqueDescriptions)
+        {
+            // View ID
+            if (string.IsNullOrEmpty(viewId))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.ViewId.Replace(":", ""));
+            }
+
+            // Entity Name
+            if (string.IsNullOrEmpty(entityName))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.EntityName.Replace(":", ""));
+            }
+
+            // Model Name
+            if (string.IsNullOrEmpty(modelName))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.ModelName.Replace(":", ""));
+            }
+
+            // Report fields only
+            if (repositoryType.Equals(RepositoryType.Report))
+            {
+                // Report
+                if (string.IsNullOrEmpty(reportKeys))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.ReportKeys.Replace(":", ""));
+                }
+
+                // Program ID
+                if (string.IsNullOrEmpty(programId))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.ReportProgramId.Replace(":", ""));
+                }
+            }
+
+            // Resx name
+            if (string.IsNullOrEmpty(resxName))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.ResxName.Replace(":", ""));
+            }
+
+            // Resx name must end with Resx
+            if (!resxName.EndsWith(Resources.Resx))
+            {
+                return Resources.InvalidResxName;
+            }
+
+            // At least one field must be specified
+            if (entityFields.Count == 0)
+            {
+                return Resources.InvalidCount;
+            }
+
+            // Check for dupes only in add mode since in edit mode the view id cannot be changed
+            var dupeFound = false;
+            if (_modeType.Equals(ModeType.Add))
+            {
+                // Iterate existing entities specified thus far
+                foreach (var businessView in _entities)
+                {
+                    if (!businessView.Text.Equals(ProcessGeneration.NewEntityText) && businessView.Properties[BusinessView.EntityName].Equals(entityName))
+                    {
+                        dupeFound = true;
+                        break;
+                    }
+                }
+
+                // If a dupe is found, this is invalid
+                if (dupeFound)
+                {
+                    return Resources.InvalidEntityDuplicate;
+                }
+            }
+
+            // Validate content of fields
+            var validFields = ProcessGeneration.ValidateFields(entityFields, uniqueDescriptions, repositoryType);
+            if (!validFields)
+            {
+                return Resources.InvalidFields;
+            }
+
+            // Ensure model is not named the same as any fields
+            validFields =  !entityFields.ToList().Any(t => t.Name.Equals(modelName));
+            if (!validFields)
+            {
+                return Resources.InvalidSettingModel;
+            }
+
+            return string.Empty;
+        }
+
+
         /// <summary> Localize </summary>
         private void Localize()
         {
             Text = Resources.CodeGeneration;
 
+            btnSave.Text = Resources.Save;
+            btnCancel.Text = Resources.Cancel;
             btnBack.Text = Resources.Back;
             btnNext.Text = Resources.Next;
 
@@ -182,10 +451,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             lblCodeTypeDescriptionHelp.Text = Resources.CodeTypeDescriptionTip;
             lblUnknownCodeTypeFilesHelp.Text = Resources.UnknownCodeFilesTip;
             lblCodeTypeFilesHelp.Text = Resources.CodeTypeFilesTip;
-
-
-            // Business View Step
-            lblCredentialsHelp.Text = Resources.CredentialsTip;
 
             lblUser.Text = Resources.User;
             tooltip.SetToolTip(lblUser, Resources.UserTip);
@@ -199,31 +464,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             lblCompany.Text = Resources.Company;
             tooltip.SetToolTip(lblCompany, Resources.CompanyTip);
 
+            lblModule.Text = Resources.Module;
+            tooltip.SetToolTip(lblModule, Resources.ModuleTip);
+
+            // Entities Step
+            lblEntities.Text = string.Format(Resources.EntitiesInstructions, ProcessGeneration.ElementEntities);
+
             lblViewID.Text = Resources.ViewId;
             tooltip.SetToolTip(lblViewID, Resources.ViewIdTip);
 
-            lblViewName.Text = Resources.ViewName;
-            tooltip.SetToolTip(lblViewName, Resources.ViewNameTip);
-
-            lblViewModule.Text = Resources.ViewModule;
-            tooltip.SetToolTip(lblViewModule, Resources.ViewModuleTip);
-
-            // Dynamic Query Step
-            lblDynamicQueryViewID.Text = Resources.DynamicQueryViewId;
-            tooltip.SetToolTip(lblDynamicQueryViewID, Resources.DynamicQueryViewIdTip);
-
-            lblDynamicQueryModule.Text = Resources.DynamicQueryModule;
-            tooltip.SetToolTip(lblDynamicQueryModule, Resources.DynamicQueryModuleTip);
-
-            lblName.Text = Resources.EntityName;
-            tooltip.SetToolTip(lblName, Resources.EntityNameTip);
-
-            lblDynamicQueryDescription.Text = Resources.DynamicQueryDescription;
-            tooltip.SetToolTip(lblDynamicQueryDescription, Resources.DynamicQueryDescriptionTip);
-
-            lblDynamicQueryGridHelp.Text = Resources.DynamicQueryGridTip;
-
-            // Report Step
             lblReportIniFile.Text = Resources.ReportIniFile;
             tooltip.SetToolTip(lblReportIniFile, Resources.ReportIniFileTip);
 
@@ -232,35 +481,43 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             lblReportKeys.Text = Resources.ReportKeys;
             tooltip.SetToolTip(lblReportKeys, Resources.ReportKeysTip);
 
-            lblReportModule.Text = Resources.ReportModule;
-            tooltip.SetToolTip(lblReportModule, Resources.ReportModuleTip);
-
-            lblReportName.Text = Resources.ReportName;
-            tooltip.SetToolTip(lblReportName, Resources.ReportNameTip);
-
-            lblReportModelName.Text = Resources.ReportModelName;
-            tooltip.SetToolTip(lblReportModelName, Resources.ReportModelNameTip);
-
             lblReportProgramId.Text = Resources.ReportProgramId;
             tooltip.SetToolTip(lblReportProgramId, Resources.ReportProgramIdTip);
 
-            // Resource Step
+            lblEntityName.Text = Resources.EntityName;
+            tooltip.SetToolTip(lblEntityName, Resources.EntityNameTip);
+
+            lblModelName.Text = Resources.ModelName;
+            tooltip.SetToolTip(lblModelName, Resources.ModelNameTip);
+
             lblResxName.Text = Resources.ResxName;
             tooltip.SetToolTip(lblResxName, Resources.ResxNameTip);
 
-            lblResourceNameSuffixHelp.Text = Resources.ResourceNameSuffixTip;
-            lblResourceNameFilesHelp.Text = Resources.ResourceNameFilesTip;
-            lblResourceNameOtherFilesHelp.Text = Resources.ResourceNameOtherTip;
-
-            // Options Step
             chkGenerateFinder.Text = Resources.GenerateFinder;
             tooltip.SetToolTip(chkGenerateFinder, Resources.GenerateFinderTip);
 
             chkGenerateDynamicEnablement.Text = Resources.GenerateDynamicEnablement;
             tooltip.SetToolTip(chkGenerateDynamicEnablement, Resources.GenerateDynamicEnablementTip);
 
-            chkPromptIfExists.Text = Resources.PromptIfExists;
-            tooltip.SetToolTip(chkPromptIfExists, Resources.PromptIfExistsTip);
+            chkGenerateClientFiles.Text = Resources.GenerateClientFiles;
+            tooltip.SetToolTip(chkGenerateClientFiles, Resources.GenerateClientFilesTip);
+
+            chkGenerateIfExist.Text = Resources.GenerateIfExist;
+            tooltip.SetToolTip(chkGenerateIfExist, Resources.GenerateIfExistTip);
+
+            chkGenerateEnumsInSingleFile.Text = Resources.GenerateEnumsInSingleFile;
+            tooltip.SetToolTip(chkGenerateEnumsInSingleFile, Resources.GenerateEnumsInSingleFileTip);
+
+            tooltip.SetToolTip(tbrEntity, Resources.EntityGridTip);
+
+            tabPage1.Text = Resources.Entity;
+            tabPage1.ToolTipText = Resources.EntityTip;
+
+            tabPage2.Text = Resources.Options;
+            tabPage2.ToolTipText = Resources.OptionsTip;
+
+            tabPage3.Text = Resources.Properties;
+            tabPage3.ToolTipText = Resources.PropertiesTip;
 
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
@@ -333,7 +590,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 // Add to project
                                 _includeSpanish = true;
                             }
-                            else if (projectItem.Name.Equals("MenuResx.fr-CA.resx"))
+                            else if (projectItem.Name.Equals("MenuResx.fr.resx"))
                             {
                                 // Add to project
                                 _includeFrench = true;
@@ -570,8 +827,445 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _generation.ProcessingEvent += ProcessingEvent;
             _generation.StatusEvent += StatusEvent;
 
+            // Entity Step Events
+            _addEntityMenuItem.Click += AddEntityMenuItemOnClick;
+            _editEntityMenuItem.Click += EditEntityMenuItemOnClick;
+            _deleteEntityMenuItem.Click += DeleteEntityMenuItemOnClick;
+            _deleteEntitiesMenuItem.Click += DeleteEntitiesMenuItemOnClick;
+
             // Default to Flat Repository
             cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.Flat);
+        }
+
+        /// <summary> New Entity</summary>
+        private static BusinessView NewEntity()
+        {
+            // Build new entity
+            return new BusinessView { Text = ProcessGeneration.NewEntityText };
+        }
+
+        /// <summary> New entity tree node</summary>
+        /// <param name="businessView">Business View</param>
+        private static TreeNode NewEntityTreeNode(BusinessView businessView)
+        {
+            // Build new tree node
+            var name = BuildEntityNodeName(businessView);
+            var text = name;
+            var treeNode = new TreeNode(text)
+            {
+                Tag = businessView,
+                Name = name
+            };
+
+            return treeNode;
+        }
+
+        /// <summary> Build Entity Node Name</summary>
+        /// <param name="businessView">Business View </param>
+        /// <returns>Name for Node</returns>
+        private static string BuildEntityNodeName(BusinessView businessView)
+        {
+            return businessView.Text;
+        }
+
+        /// <summary> Entity Setup</summary>
+        /// <param name="treeNode">Tree node</param>
+        /// <param name="modeType">Mode Type (Add)</param>
+        private void EntitySetup(TreeNode treeNode, ModeType modeType)
+        {
+            // If not edit mode
+            if (!modeType.Equals(ModeType.Edit))
+            {
+                // Expand clicked node
+                _clickedEntityTreeNode.ExpandAll();
+
+                // Add to tree
+                treeEntities.SelectedNode = treeNode;
+            }
+
+            // Set color of node
+            SetNodeColor(treeNode, true);
+
+            // Disable entities controls and related
+            EnableEntitiesControls(false);
+
+            // Set mode type and clear controls
+            _modeType = modeType;
+            ClearEntityControls();
+
+            // Load controls from entity or set defaults
+            LoadEntityControls();
+
+            // Enable entity controls
+            EnableEntityControls(true);
+
+            // Set focus to view
+            txtViewID.Focus();
+        }
+
+        /// <summary> Set node color when tree does not have focuus</summary>
+        /// <param name="treeNode">Tree node to act upon </param>
+        /// <param name="setSelected">true for highligh color otherwise standard color </param>
+        private static void SetNodeColor(TreeNode treeNode, bool setSelected)
+        {
+            if (setSelected)
+            {
+                treeNode.BackColor = Color.FromKnownColor(KnownColor.Highlight);
+                treeNode.ForeColor = Color.FromKnownColor(KnownColor.HighlightText);
+
+            }
+            else
+            {
+                treeNode.BackColor = Color.FromKnownColor(KnownColor.Window);
+                treeNode.ForeColor = Color.FromKnownColor(KnownColor.WindowText);
+            }
+        }
+
+        /// <summary> Enable or disable entities controls</summary>
+        /// <param name="enable">true to enable otherwise false </param>
+        private void EnableEntitiesControls(bool enable)
+        {
+            btnNext.Enabled = enable;
+            btnBack.Enabled = enable;
+        }
+
+        /// <summary> Clear Entity Controls </summary>
+        private void ClearEntityControls()
+        {
+            var repositoryType = GetRepositoryType();
+
+            txtViewID.Clear();
+            
+            txtReportIniFile.Clear();
+            cboReportKeys.Text = string.Empty;
+            cboReportKeys.Items.Clear();
+            txtReportProgramId.Clear();
+            txtEntityName.Clear();
+            txtModelName.Clear();
+            txtResxName.Clear();
+
+            DeleteRows();
+            _reports.Clear();
+
+        }
+
+        /// <summary> Enable or disable entity controls</summary>
+        /// <param name="enable">true to enable otherwise false </param>
+        private void EnableEntityControls(bool enable)
+        {
+            btnSave.Visible = enable;
+            btnCancel.Visible = enable;
+            splitEntities.Panel2.Enabled = enable;
+
+            tabEntity.SelectTab(0);
+
+            var repositoryType = GetRepositoryType();
+
+            var enableReportControls = (repositoryType.Equals(RepositoryType.Report) && enable);
+            txtReportIniFile.Enabled = enableReportControls;
+            cboReportKeys.Enabled = enableReportControls;
+            txtReportProgramId.Enabled = enableReportControls;
+            btnIniDialog.Enabled = enableReportControls;
+
+            txtViewID.Enabled = string.IsNullOrEmpty(txtViewID.Text) && enable;
+
+            chkGenerateFinder.Enabled = (!repositoryType.Equals(RepositoryType.Report) &&
+                                !repositoryType.Equals(RepositoryType.Process) &&
+                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
+                                // Inquiry type should be able to generate finder but disable for now
+                                !repositoryType.Equals(RepositoryType.Inquiry));
+            // If not enabled, then uncheck it
+            if (!chkGenerateFinder.Enabled)
+            {
+                chkGenerateFinder.Checked = false;
+            }
+
+        }
+
+        /// <summary> Load Entity Controls from Business View of node clicked</summary>
+        private void LoadEntityControls()
+        {
+            var repositoryType = GetRepositoryType();
+
+            if (_modeType.Equals(ModeType.Add))
+            {
+                // Set CS0120 for Dynamic Query Repository
+                if (repositoryType.Equals(RepositoryType.DynamicQuery))
+                {
+                    txtViewID.Text = "CS0120";
+                }
+                // Set new guid for Report Repository
+                else if (repositoryType.Equals(RepositoryType.Report))
+                {
+                    txtViewID.Text = Guid.NewGuid().ToString();
+                }
+
+                // Options defaults
+                chkGenerateFinder.Checked = (!repositoryType.Equals(RepositoryType.Report) &&
+                                                !repositoryType.Equals(RepositoryType.Process) &&
+                                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
+                                                // Inquiry type should be able to generate finder but disable for now
+                                                !repositoryType.Equals(RepositoryType.Inquiry));
+
+                chkGenerateDynamicEnablement.Checked = true;
+                chkGenerateClientFiles.Checked = true;
+                chkGenerateIfExist.Checked = true;
+                chkGenerateEnumsInSingleFile.Checked = false;
+
+                return;
+            }
+
+            // Get the node clicked
+            var treeNode = _clickedEntityTreeNode;
+            var businessView = (BusinessView)treeNode.Tag;
+
+            // Assign to controls
+            txtViewID.Text = businessView.Properties[BusinessView.ViewId];
+
+            txtReportIniFile.Text = businessView.Properties[BusinessView.ReportIni];
+            if (repositoryType.Equals(RepositoryType.Report))
+            {
+                AddReports(txtReportIniFile.Text);
+                cboReportKeys.Text = businessView.Properties[BusinessView.ReportKey];
+                txtReportProgramId.Text = businessView.Properties[BusinessView.ProgramId];
+
+                // Delete Rows as the selcetedIndex Change method caused to add also. They will be added below
+                DeleteRows();
+            }
+
+            txtEntityName.Text = businessView.Properties[BusinessView.EntityName];
+            txtModelName.Text = businessView.Properties[BusinessView.ModelName];
+            txtResxName.Text = businessView.Properties[BusinessView.ResxName];
+
+            // Options tab
+            chkGenerateFinder.Checked = businessView.Options[BusinessView.GenerateFinder];
+            chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.GenerateDynamicEnablement];
+            chkGenerateClientFiles.Checked = businessView.Options[BusinessView.GenerateClientFiles];
+            chkGenerateIfExist.Checked = businessView.Options[BusinessView.GenerateIfAlreadyExists];
+            chkGenerateEnumsInSingleFile.Checked = businessView.Options[BusinessView.GenerateEnumsInSingleFile];
+
+            // Assign to the grid
+            foreach (var field in businessView.Fields)
+            {
+                _entityFields.Add(field);
+            }
+
+        }
+
+        /// <summary> Delete Entity Node</summary>
+        /// <param name="treeNode">Tree Node to delete </param>
+        private void DeleteEntityNode(TreeNode treeNode)
+        {
+            // Remove from tree
+            var businessView = (BusinessView)treeNode.Tag;
+
+            // Remove from entities
+            _entities.Remove(businessView);
+
+            // Remove the tree node
+            treeNode.Remove();
+        }
+
+        /// <summary> Delete Entity Nodes</summary>
+        /// <param name="treeNodes">Tree Nodes to delete </param>
+        private void DeleteEntityNodes(TreeNodeCollection treeNodes)
+        {
+            for (var i = treeNodes.Count - 1; i > -1; i--)
+            {
+                DeleteEntityNode(treeNodes[i]);
+            }
+        }
+
+        /// <summary> Cancel any entity changes</summary>
+        private void CancelEntity()
+        {
+            // For added entity, remove last node as this is where the next node was placed
+            if (_modeType == ModeType.Add)
+            {
+                // Remove from entities list first
+                var businessView = (BusinessView)_clickedEntityTreeNode.LastNode.Tag;
+                _entities.Remove(businessView);
+
+                // Remove from tree
+                _clickedEntityTreeNode.Nodes.Remove(_clickedEntityTreeNode.LastNode);
+            }
+
+            // For edit, reset color
+            if (_modeType == ModeType.Edit)
+            {
+                SetNodeColor(_clickedEntityTreeNode, false);
+            }
+
+            // Reset mode
+            _modeType = ModeType.None;
+
+            // Enable entities controls
+            EnableEntitiesControls(true);
+
+            // Clear inidividual entity controls
+            ClearEntityControls();
+
+            // Disable entity controls
+            EnableEntityControls(false);
+
+            // Set focus back to tree
+            treeEntities.Focus();
+        }
+
+        /// <summary> Entity has changed, so update</summary>
+        private void SaveEntity()
+        {
+            // Validation
+            var repositoryType = GetRepositoryType();
+            var uniqueDescriptions = new Dictionary<string, bool>();
+
+            var success = ValidEntity(txtResxName.Text, txtViewID.Text, txtEntityName.Text, txtModelName.Text,
+                repositoryType, cboReportKeys.Text, txtReportProgramId.Text, _entityFields.ToList(), uniqueDescriptions);
+            if (!string.IsNullOrEmpty(success))
+            {
+                DisplayMessage(success, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Get business view from clicked node
+            var node = _modeType == ModeType.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
+            var businessView = (BusinessView)node.Tag;
+
+            // Get valued from controls and add to object
+            businessView.Properties[BusinessView.ModuleId] = cboModule.Text;
+            businessView.Properties[BusinessView.ViewId] = txtViewID.Text;
+            businessView.Properties[BusinessView.ReportIni] = txtReportIniFile.Text;
+            businessView.Properties[BusinessView.ReportKey] = cboReportKeys.Text;
+            businessView.Properties[BusinessView.ProgramId] = txtReportProgramId.Text;
+            businessView.Properties[BusinessView.EntityName] = txtEntityName.Text;
+            businessView.Properties[BusinessView.ModelName] = txtModelName.Text;
+            businessView.Properties[BusinessView.ResxName] = txtResxName.Text;
+
+            businessView.Properties[BusinessView.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
+
+            businessView.Options[BusinessView.GenerateFinder] = chkGenerateFinder.Checked;
+            businessView.Options[BusinessView.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
+            businessView.Options[BusinessView.GenerateClientFiles] = chkGenerateClientFiles.Checked;
+            businessView.Options[BusinessView.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
+            businessView.Options[BusinessView.GenerateEnumsInSingleFile] = chkGenerateEnumsInSingleFile.Checked;
+
+            businessView.Fields = _entityFields.ToList();
+
+            // Add/Update to tree
+            businessView.Text = businessView.Properties[BusinessView.EntityName];
+
+            node.Name = BuildEntityNodeName(businessView);
+            node.Text = BuildEntityText(businessView);
+            node.Tag = businessView;
+
+            // Reset mode
+            _modeType = ModeType.None;
+
+            // Reset selected color
+            SetNodeColor(node, false);
+
+            // Enable entities controls
+            EnableEntitiesControls(true);
+
+            // Clear individual entity controls
+            ClearEntityControls();
+
+            // Disable entity controls
+            EnableEntityControls(false);
+
+            // Set focus back to tree
+            treeEntities.Focus();
+        }
+
+        /// <summary> Build Entity Text from Entity</summary>
+        /// <param name="businessView">Business View to build text from</param>
+        /// <returns>Text</returns>
+        private string BuildEntityText(BusinessView businessView)
+        {
+            var repositoryType = GetRepositoryType();
+
+            var text = ProcessGeneration.PropertyEntity + "=\"" + businessView.Properties[BusinessView.EntityName] + "\" ";
+            text += ProcessGeneration.PropertyModule + "=\"" + businessView.Properties[BusinessView.ModuleId] + "\" ";
+
+            // Show view id if not a report
+            if (!repositoryType.Equals(RepositoryType.Report))
+            {
+                text += ProcessGeneration.PropertyViewId + "=\"" + businessView.Properties[BusinessView.ViewId] + "\" ";
+            }
+
+            // Show program id if a report
+            if (repositoryType.Equals(RepositoryType.Report))
+            {
+                text += ProcessGeneration.PropertyProgramId + "=\"" + businessView.Properties[BusinessView.ProgramId] + "\" ";
+            }
+
+            // Show workflow id if a process
+            if (repositoryType.Equals(RepositoryType.Process))
+            {
+                text += ProcessGeneration.PropertyWorkflowId + "=\"" + businessView.Properties[BusinessView.WorkflowKindId] + "\" ";
+            }
+
+            text += ProcessGeneration.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() + "\" ";
+
+            // Show Finder and Dynamic Enablement if not a report/dynamic query
+            if (!repositoryType.Equals(RepositoryType.Report) && !repositoryType.Equals(RepositoryType.DynamicQuery))
+            {
+                text += ProcessGeneration.PropertyFinder + "=\"" + businessView.Options[BusinessView.GenerateFinder].ToString() + "\" ";
+                text += ProcessGeneration.PropertyEnablement + "=\"" + businessView.Options[BusinessView.GenerateDynamicEnablement].ToString() + "\" ";
+            }
+
+            text += ProcessGeneration.PropertyClientFiles + "=\"" + businessView.Options[BusinessView.GenerateClientFiles].ToString() + "\" ";
+            text += ProcessGeneration.PropertyIfExists + "=\"" + businessView.Options[BusinessView.GenerateIfAlreadyExists].ToString() + "\" ";
+            text += ProcessGeneration.PropertySingleFile + "=\"" + businessView.Options[BusinessView.GenerateEnumsInSingleFile].ToString() + "\" ";
+
+            return text;
+        }
+
+
+        /// <summary> Add Entity</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="eventArgs">Event Args </param>
+        private void AddEntityMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+            // Build new Business View
+            var businessView = NewEntity();
+
+            // Build new tree node
+            var treeNode = NewEntityTreeNode(businessView);
+
+            // Add to entities
+            _entities.Add(businessView);
+            _clickedEntityTreeNode.Nodes.Add(treeNode);
+
+            EntitySetup(treeNode, ModeType.Add);
+        }
+
+        /// <summary> Edit Entity</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="eventArgs">Event Args </param>
+        private void EditEntityMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+            // Setup items for edit of entity
+            EntitySetup(_clickedEntityTreeNode, ModeType.Edit);
+        }
+
+        /// <summary> Delete Entity</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="eventArgs">Event Args </param>
+        private void DeleteEntityMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+           // Delete tree node
+           DeleteEntityNode(_clickedEntityTreeNode);
+        }
+
+        /// <summary> Delete all entities</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="eventArgs">Event Args </param>
+        private void DeleteEntitiesMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+            var treeNodes = _clickedEntityTreeNode.Nodes;
+
+            DeleteEntityNodes(treeNodes);
         }
 
         #region Toolbar Events
@@ -596,56 +1290,54 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #endregion
 
+        /// <summary> Get Repository Type </summary>
+        private RepositoryType GetRepositoryType()
+        {
+            return (RepositoryType)Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
+        }
+
         /// <summary> Next/Generate Navigation </summary>
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void NextStep()
         {
-            var repositoryType =
-                (RepositoryType) Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
+            var repositoryType = GetRepositoryType();
 
             // Finished?
-            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGeneratedCode"))
+            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
             {
                 _generation.Dispose();
                 Close();
             }
             else
             {
-                // Proceed to next wizard step or start code generation if last step
+                // Proceed to next wizard step or start generation if last step
                 if (!_currentWizardStep.Equals(-1) &&
-                    _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateCode"))
+                    _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
                 {
-                    // Build settings and validate that settings have been selected 
-                    // (view, resx name, user, password, version, company))
-                    txtViewID.Text = txtViewID.Text.ToUpper();
-                    txtViewID.Refresh();
-
+                    // Build settings
                     var settings = BuildSettings();
-                    var invalidSetting = ValidSettings(settings);
-                    if (string.IsNullOrEmpty(invalidSetting))
-                    {
-                        // Setup display before processing
-                        _gridInfo.Clear();
-                        ProcessingSetup(false);
-                        grdResourceInfo.DataSource = _gridInfo;
-                        grdResourceInfo.Refresh();
+                    // Setup display before processing
+                    _gridInfo.Clear();
+                    ProcessingSetup(false);
+                    grdResourceInfo.DataSource = _gridInfo;
+                    grdResourceInfo.Refresh();
 
-                        _rowIndex = -1;
+                    _rowIndex = -1;
 
-                        // Start background worker for processing (async)
-                        wrkBackground.RunWorkerAsync(settings);
-                    }
-                    else
-                    {
-                        // Something is invalid
-                        DisplayMessage(invalidSetting, MessageBoxIcon.Error);
-                    }
+                    // Start background worker for processing (async)
+                    wrkBackground.RunWorkerAsync(settings);
                 }
                 else
                 {
                     // Proceed to next step
                     if (!_currentWizardStep.Equals(-1))
                     {
+                        // Before proceeding to next step, ensure current step is valid
+                        if (!ValidateStep())
+                        {
+                            return;
+                        }
+
                         btnBack.Enabled = true;
 
                         ShowStep(false);
@@ -653,60 +1345,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     _currentWizardStep++;
 
-                    // Enable disable the next button for View step
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlBusinessView"))
+                    // if Step is Screens, expand tree control
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelEntities))
                     {
-                        btnNext.Enabled = !string.IsNullOrEmpty(txtViewID.Text);
+                        treeEntities.ExpandAll();
                     }
 
-                    // Enable disable finder option
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlOptions"))
+                    // Create XML if Step is Generate
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
                     {
-                        chkGenerateFinder.Enabled = (!repositoryType.Equals(RepositoryType.Report) &&
-                                                     !repositoryType.Equals(RepositoryType.Process) &&
-                                                     !repositoryType.Equals(RepositoryType.DynamicQuery) &&
-                                                     // Inquiry type should be able to generate finder but disable for now
-                                                     !repositoryType.Equals(RepositoryType.Inquiry));
-                        // If not enabled, then uncheck it
-                        if (!chkGenerateFinder.Enabled)
-                        {
-                            chkGenerateFinder.Checked = false;
-                        }
-                    }
-
-                    // Attempt to default Resx Name
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlResource"))
-                    {
-                        var defaultName = string.Empty;
-
-                        // Resx name based upon type
-                        switch (repositoryType)
-                        {
-                            case RepositoryType.DynamicQuery:
-                                if (!string.IsNullOrEmpty(txtDynamicQueryName.Text))
-                                {
-                                    defaultName = txtDynamicQueryName.Text.Trim() + "Resx";
-                                }
-                                break;
-                            case RepositoryType.Report:
-                                if (!string.IsNullOrEmpty(txtReportName.Text))
-                                {
-                                    defaultName = txtReportName.Text.Trim() + "Resx";
-                                }
-                                break;
-                            default:
-                                defaultName = txtViewName.Text.Trim() + "Resx";
-                                break;
-                        }
-
-                        // Assign to control
-                        txtResxName.Text = defaultName;
+                        _xmlEntities = BuildXDocument();
+                        txtEntitiesToGenerate.Text = _xmlEntities.ToString();
                     }
 
                     ShowStep(true);
 
                     // Update text of Next button?
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGenerateCode"))
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
                     {
                         btnNext.Text = Resources.Generate;
                     }
@@ -717,6 +1372,106 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
+        /// <summary> Recursive routine to build XML from tree nodes </summary>
+        /// <param name="treeNode">Tree node </param>
+        /// <param name="element">XElement </param>
+        /// <param name="repositoryType">Repository Type </param>
+        private void BuildXmlFromTreeNodes(TreeNode treeNode, XElement element, RepositoryType repositoryType)
+        {
+            // Iterate the tree nodes  
+            foreach (TreeNode entityTreeNode in treeNode.Nodes)
+            {
+                // Create element named Entity 
+                var entityElement = new XElement(ProcessGeneration.PropertyEntity);
+                // Get business view from tag so can iterate fields and options
+                var businessView = (BusinessView)entityTreeNode.Tag;
+
+                // Make certain properties into attributes
+                entityElement.Add(new XAttribute(ProcessGeneration.PropertyEntity, businessView.Properties[BusinessView.EntityName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.PropertyModule, businessView.Properties[BusinessView.ModuleId]));
+                
+                // Show view id if not a report
+                if (!repositoryType.Equals(RepositoryType.Report))
+                {
+                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyViewId, businessView.Properties[BusinessView.ViewId]));
+                }
+               
+                // Show program id if a report
+                if (repositoryType.Equals(RepositoryType.Report))
+                {
+                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyProgramId, businessView.Properties[BusinessView.ProgramId]));
+                }
+               
+                // Show workflow id if a process
+                if (repositoryType.Equals(RepositoryType.Process))
+                {
+                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyWorkflowId, businessView.Properties[BusinessView.WorkflowKindId]));
+                }
+
+                entityElement.Add(new XAttribute(ProcessGeneration.PropertyResxName, businessView.Properties[BusinessView.ResxName]));
+
+                // Add Options to this element via the business view's Options
+                var optionsElement = new XElement(ProcessGeneration.PropertyOptions);
+                var optionElement = new XElement(ProcessGeneration.PropertyOption);
+
+                optionElement.Add(new XAttribute(ProcessGeneration.PropertyFinder, businessView.Options[BusinessView.GenerateFinder].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.PropertyEnablement, businessView.Options[BusinessView.GenerateDynamicEnablement].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.PropertyClientFiles, businessView.Options[BusinessView.GenerateClientFiles].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.PropertyIfExists, businessView.Options[BusinessView.GenerateIfAlreadyExists].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.PropertySingleFile, businessView.Options[BusinessView.GenerateEnumsInSingleFile].ToString()));
+
+                optionsElement.Add(optionElement);
+                entityElement.Add(optionsElement);
+
+
+                // Add Fields to this element via the business view's Fields
+                var fieldsElement = new XElement(ProcessGeneration.PropertyFields);
+
+                // Iterate fields
+                foreach (var businessField in businessView.Fields)
+                {
+                    var fieldElement = new XElement(ProcessGeneration.PropertyField);
+
+                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyFieldName, businessField.ServerFieldName));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyPropertyName, businessField.Name));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyType, businessField.Type.ToString()));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertySize, businessField.Size.ToString()));
+
+                    fieldsElement.Add(fieldElement);
+                }
+                entityElement.Add(fieldsElement);
+
+                // If this node has nodes (children), do them recusively
+                if (entityTreeNode.Nodes.Count != 0)
+                {
+                    // Recursion
+                    BuildXmlFromTreeNodes(entityTreeNode, entityElement, repositoryType);
+                }
+
+                // Done with this element so add it to the parent (entered) element
+                element.Add(entityElement);
+            }
+        }
+
+        /// <summary> Build XML Document from tree control </summary>
+        private XDocument BuildXDocument()
+        {
+            var xDocument = new XDocument();
+            var repositoryType = GetRepositoryType();
+
+            // Build XML from tree nodes  
+            foreach (TreeNode treeNode in treeEntities.Nodes)
+            {
+                // The first node is the Entities node
+                var element = new XElement(treeNode.Name);
+                // Start recursion
+                BuildXmlFromTreeNodes(treeNode, element, repositoryType);
+                // Add finally to the XDocument
+                xDocument.Add(element);
+            }
+
+            return xDocument;
+        }
         /// <summary> Back Navigation </summary>
         /// <remarks>Back wizard step</remarks>
         private void BackStep()
@@ -725,7 +1480,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_currentWizardStep.Equals(0))
             {
                 // Proceed back a step
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlGeneratedCode"))
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
                 {
                     btnNext.Text = Resources.Generate;
                 }
@@ -756,67 +1511,117 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="visible">True to show otherwise false </param>
         private void ShowStep(bool visible)
         {
+            // Adjust size
+            if (visible)
+            {
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCodeType))
+                {
+                    // Adjust to smaller size
+                    var location = btnBack.Location;
+                    location.X = 320;
+                    btnBack.Location = location;
+
+                    location = btnNext.Location;
+                    location.X = 394;
+                    btnNext.Location = location;
+
+                    var size = ClientSize;
+                    size.Width = 474;
+                    ClientSize = size;
+                    // CenterToScreen();
+                }
+                else
+                {
+                    // Adjust to larger size
+                    var location = btnBack.Location;
+                    location.X = 805;
+                    btnBack.Location = location;
+
+                    location = btnNext.Location;
+                    location.X = 879;
+                    btnNext.Location = location;
+
+                    var size = ClientSize;
+                    size.Width = 959;
+                    ClientSize = size;
+                    // CenterToScreen();
+                }
+            }
+
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
             splitSteps.SplitterDistance = SplitterDistance;
+
         }
 
         /// <summary> Show Step Title</summary>
         private void ShowStepTitle()
         {
+            var repositoryType = GetRepositoryType().ToString();
+
             lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                _wizardSteps[_currentWizardStep].Title;
-            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
+                                string.Format(_wizardSteps[_currentWizardStep].Title, repositoryType);
+            lblStepDescription.Text = string.Format(_wizardSteps[_currentWizardStep].Description, repositoryType);
         }
         /// <summary> Initialize wizard steps </summary>
-        /// <param name="repositoryType">Repository Type</param>
-        private void InitWizardSteps(RepositoryType repositoryType)
+        private void InitWizardSteps()
         {
+            var repositoryType = GetRepositoryType();
+
+            // Default
+            btnBack.Enabled = false;
+
+            // Do not perform some steps if simply changing the code type and not the initial load
+            if (_currentWizardStep == -1)
+            {
+                // Init wizard steps
+                _wizardSteps.Clear();
+
+                // Init Panels
+                InitPanel(pnlCodeType);
+                InitPanel(pnlEntities);
+                InitPanel(pnlGenerateCode);
+                InitPanel(pnlGeneratedCode);
+
+                // Add steps
+                AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
+                AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
+
+                AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
+                AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
+            }
+
+
+            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report));
+
+            SetupEntitiesTree();
+
+            InitEntityFields(repositoryType);
+
+            // Display first step
+            if (_currentWizardStep == -1)
+            {
+                NextStep();
+            }
+
+        }
+
+        /// <summary> Reset wizard steps </summary>
+        private void ResetWizardSteps()
+        {
+            var repositoryType = GetRepositoryType();
+
             // Default
             btnBack.Enabled = false;
 
             // Current Step
             _currentWizardStep = -1;
 
-            // Init wizard steps
-            _wizardSteps.Clear();
+            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report));
 
-            // Init Panels
-            InitPanel(pnlCodeType);
-            InitPanel(pnlBusinessView);
-            InitPanel(pnlDynamicQuery);
-            InitPanel(pnlReport);
-            InitPanel(pnlResource);
-            InitPanel(pnlOptions);
-            InitPanel(pnlGenerateCode);
-            InitPanel(pnlGeneratedCode);
+            SetupEntitiesTree();
 
-            // Every repository type will have the first step
-            AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
-
-            // Assign steps based upon repository type
-            switch (repositoryType)
-            {
-                case RepositoryType.Flat:
-                case RepositoryType.Inquiry:
-                case RepositoryType.Process:
-                    AddStep(Resources.StepTitleBusinessView, Resources.StepDescriptionBusinessView, pnlBusinessView);
-                    break;
-
-                case RepositoryType.DynamicQuery:
-                    AddStep(Resources.StepTitleDynamicQuery, Resources.StepDescriptionDynamicQuery, pnlDynamicQuery);
-                    break;
-
-                case RepositoryType.Report:
-                    AddStep(Resources.StepTitleReport, Resources.StepDescriptionReport, pnlReport);
-                    break;
-            }
-
-            // Every repository type will have the first step
-            AddStep(Resources.StepTitleResource, Resources.StepDescriptionResource, pnlResource);
-            AddStep(Resources.StepTitleOptions, Resources.StepDescriptionOptions, pnlOptions);
-            AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
-            AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
+            InitEntityFields(repositoryType);
 
             // Display first step
             NextStep();
@@ -858,93 +1663,164 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             grdResourceInfo.Columns[Info.StatusColumnNo].HeaderText = Resources.Status;
         }
 
-        /// <summary> Initialize dynamic query info and modify grid display </summary>
-        private void InitDynamicQueryFields()
+        /// <summary> Initialize entity info and modify grid display </summary>
+        /// <param name="repositoryType">Repository Type</param>
+        private void InitEntityFields(RepositoryType repositoryType)
         {
-            // Assign binding to datasource (two binding)
-            grdDynamicQueryFields.DataSource = _dynamicQueryFields;
+            // Clear data
+            DeleteRows();
+            _reports.Clear();
 
-            // Assign widths and localized text
-            GenericInit(grdDynamicQueryFields, 0, 50, Resources.ID, false, false);
-            GenericInit(grdDynamicQueryFields, 1, 150, Resources.Field, false, false);
-            GenericInit(grdDynamicQueryFields, 2, 150, Resources.Field, true, false);
-            GenericInit(grdDynamicQueryFields, 3, 290, Resources.Description, false, false);
+            if (grdEntityFields.DataSource == null)
+            {
+                // Assign binding to datasource (two binding)
+                grdEntityFields.DataSource = _entityFields;
+                
+                // Assign widths and localized text
+                GenericInit(grdEntityFields, 0, 50, Resources.ID, false, false);
+                GenericInit(grdEntityFields, 1, 125, Resources.ServerField, true, true);
+                GenericInit(grdEntityFields, 2, 150, Resources.Field, true, false);
+                GenericInit(grdEntityFields, 3, 290, Resources.Description, false, false);
 
-            // Remove and re-add as combobox column
-            grdDynamicQueryFields.Columns.Remove("Type");
-            var column = new DataGridViewComboBoxColumn
-            {
-                DataPropertyName = "Type",
-                HeaderText = Resources.Type,
-                DropDownWidth = 100,
-                Width = 75,
-                FlatStyle = FlatStyle.Flat
-            };
-            // Add enums to drop down list
-            foreach (
-                var businessDataType in
-                Enum.GetValues(typeof(BusinessDataType))
-                    .Cast<BusinessDataType>()
-                    .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
-            {
-                column.Items.Add(businessDataType);
+                // Remove and re-add as combobox column
+                grdEntityFields.Columns.Remove("Type");
+                var column = new DataGridViewComboBoxColumn
+                {
+                    DataPropertyName = "Type",
+                    HeaderText = Resources.Type,
+                    DropDownWidth = 100,
+                    Width = 100,
+                    FlatStyle = FlatStyle.Flat
+                };
+                grdEntityFields.Columns.Insert(4, column);
+                grdEntityFields.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grdEntityFields.Columns[4].Visible = !repositoryType.Equals(RepositoryType.Report);
+
+                // Continue with assign widths and localized text
+                GenericInit(grdEntityFields, 5, 40, Resources.Size, true, false);
+                GenericInit(grdEntityFields, 6, 75, Resources.IsReadOnly, false, false);
+                GenericInit(grdEntityFields, 7, 75, Resources.IsCalculated, false, false);
+                GenericInit(grdEntityFields, 8, 75, Resources.IsRequired, false, false);
+                GenericInit(grdEntityFields, 9, 75, Resources.IsKey, false, false);
+                GenericInit(grdEntityFields, 10, 75, Resources.IsUpperCase, false, false);
+                GenericInit(grdEntityFields, 11, 75, Resources.IsAlphaNumeric, false, false);
+                GenericInit(grdEntityFields, 12, 75, Resources.IsNumeric, false, false);
+                GenericInit(grdEntityFields, 13, 75, Resources.IsDynamicEnablement, false, false);
             }
 
-            // Re-add column
-            grdDynamicQueryFields.Columns.Insert(4, column);
-            grdDynamicQueryFields.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // Show/Hide Fieldname based upon code type
+            GenericInit(grdEntityFields, 1, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
 
-            GenericInit(grdDynamicQueryFields, 5, 50, Resources.Size, true, false);
-            GenericInit(grdDynamicQueryFields, 6, 75, Resources.IsReadOnly, false, false);
-            GenericInit(grdDynamicQueryFields, 7, 75, Resources.IsCalculated, false, false);
-            GenericInit(grdDynamicQueryFields, 8, 75, Resources.IsRequired, false, false);
-            GenericInit(grdDynamicQueryFields, 9, 75, Resources.IsKey, false, false);
-            GenericInit(grdDynamicQueryFields, 10, 75, Resources.IsUpperCase, false, false);
-            GenericInit(grdDynamicQueryFields, 11, 75, Resources.IsAlphaNumeric, false, false);
-            GenericInit(grdDynamicQueryFields, 12, 75, Resources.IsNumeric, false, false);
-            GenericInit(grdDynamicQueryFields, 13, 75, Resources.IsDynamicEnablement, false, false);
-        }
+            // Droplist items wmay be different based upon repository type
+            var typeColumn = (DataGridViewComboBoxColumn)grdEntityFields.Columns[4];
+            typeColumn.Items.Clear();
 
-        /// <summary> Initialize report info and modify grid display </summary>
-        private void InitReportFields()
-        {
-            // Assign binding to datasource (two binding)
-            grdReportFields.DataSource = _reportFields;
-
-            // Assign widths and localized text
-            GenericInit(grdReportFields, 0, 50, Resources.ID, false, false);
-            GenericInit(grdReportFields, 1, 150, Resources.ServerField, true, true);
-            GenericInit(grdReportFields, 2, 150, Resources.Field, true, false);
-            GenericInit(grdReportFields, 3, 290, Resources.Description, false, false);
-
-            // Remove and re-add as combobox column
-            grdReportFields.Columns.Remove("Type");
-            var column = new DataGridViewComboBoxColumn
+            // Add data types
+            if (repositoryType.Equals(RepositoryType.Report))
             {
-                DataPropertyName = "Type",
-                HeaderText = Resources.Type,
-                DropDownWidth = 100,
-                Width = 75,
-                FlatStyle = FlatStyle.Flat
-            };
-            // Only add string type
-            column.Items.Add(BusinessDataType.String);
+                // Only add string type
+                typeColumn.Items.Add(BusinessDataType.String);
+            }
+            else if (repositoryType.Equals(RepositoryType.DynamicQuery))
+            {
+                // Add all types but enumeration
+                foreach (
+                    var businessDataType in
+                    Enum.GetValues(typeof(BusinessDataType))
+                        .Cast<BusinessDataType>()
+                        .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
+                {
+                    typeColumn.Items.Add(businessDataType);
+                }
+            }
+            else
+            {
+                // Add all types
+                foreach (
+                    var businessDataType in
+                    Enum.GetValues(typeof(BusinessDataType))
+                        .Cast<BusinessDataType>())
+                {
+                    typeColumn.Items.Add(businessDataType);
+                }
+            }
 
-            // Re-add column
-            grdReportFields.Columns.Insert(4, column);
-            grdReportFields.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grdReportFields.Columns[4].Visible = false;
-
-            GenericInit(grdReportFields, 5, 50, Resources.Size, true, false);
-            GenericInit(grdReportFields, 6, 75, Resources.IsReadOnly, false, false);
-            GenericInit(grdReportFields, 7, 75, Resources.IsCalculated, false, false);
-            GenericInit(grdReportFields, 8, 75, Resources.IsRequired, false, false);
-            GenericInit(grdReportFields, 9, 75, Resources.IsKey, false, false);
-            GenericInit(grdReportFields, 10, 75, Resources.IsUpperCase, false, false);
-            GenericInit(grdReportFields, 11, 75, Resources.IsAlphaNumeric, false, false);
-            GenericInit(grdReportFields, 12, 75, Resources.IsNumeric, false, false);
-            GenericInit(grdReportFields, 13, 75, Resources.IsDynamicEnablement, false, false);
         }
+
+        ///// <summary> Initialize entity info and modify grid display </summary>
+        ///// <param name="repositoryType">Repository Type</param>
+        //private void InitEntityFields(RepositoryType repositoryType)
+        //{
+        //    // Assign binding to datasource (two binding)
+        //    DeleteRows();
+        //    _reports.Clear();
+        //    if (grdEntityFields.DataSource == null)
+        //    {
+        //        grdEntityFields.DataSource = _entityFields;
+        //    }
+
+        //    // Assign widths and localized text
+        //    GenericInit(grdEntityFields, 0, 50, Resources.ID, false, false);
+        //    GenericInit(grdEntityFields, 1, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
+        //    GenericInit(grdEntityFields, 2, 150, Resources.Field, true, false);
+        //    GenericInit(grdEntityFields, 3, 290, Resources.Description, false, false);
+
+        //    // Remove and re-add as combobox column
+        //    grdEntityFields.Columns.Remove("Type");
+        //    var column = new DataGridViewComboBoxColumn
+        //    {
+        //        DataPropertyName = "Type",
+        //        HeaderText = Resources.Type,
+        //        DropDownWidth = 100,
+        //        Width = 100,
+        //        FlatStyle = FlatStyle.Flat
+        //    };
+
+        //    // Add data types
+        //    if (repositoryType.Equals(RepositoryType.Report))
+        //    {
+        //        // Only add string type
+        //        column.Items.Add(BusinessDataType.String);
+        //    }
+        //    else if (repositoryType.Equals(RepositoryType.DynamicQuery))
+        //    {
+        //        // Add all types but enumeration
+        //        foreach (
+        //            var businessDataType in
+        //            Enum.GetValues(typeof(BusinessDataType))
+        //                .Cast<BusinessDataType>()
+        //                .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
+        //        {
+        //            column.Items.Add(businessDataType);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // Add all types
+        //        foreach (
+        //            var businessDataType in
+        //            Enum.GetValues(typeof(BusinessDataType))
+        //                .Cast<BusinessDataType>())
+        //        {
+        //            column.Items.Add(businessDataType);
+        //        }
+        //    }
+
+        //    // Re-add column
+        //    grdEntityFields.Columns.Insert(4, column);
+        //    grdEntityFields.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        //    grdEntityFields.Columns[4].Visible = !repositoryType.Equals(RepositoryType.Report);
+
+        //    GenericInit(grdEntityFields, 5, 40, Resources.Size, true, false);
+        //    GenericInit(grdEntityFields, 6, 75, Resources.IsReadOnly, false, false);
+        //    GenericInit(grdEntityFields, 7, 75, Resources.IsCalculated, false, false);
+        //    GenericInit(grdEntityFields, 8, 75, Resources.IsRequired, false, false);
+        //    GenericInit(grdEntityFields, 9, 75, Resources.IsKey, false, false);
+        //    GenericInit(grdEntityFields, 10, 75, Resources.IsUpperCase, false, false);
+        //    GenericInit(grdEntityFields, 11, 75, Resources.IsAlphaNumeric, false, false);
+        //    GenericInit(grdEntityFields, 12, 75, Resources.IsNumeric, false, false);
+        //    GenericInit(grdEntityFields, 13, 75, Resources.IsDynamicEnablement, false, false);
+        //}
 
         /// <summary> Generic init for grid </summary>
         /// <param name="grid">Grid control</param>
@@ -1047,67 +1923,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>Settings</returns>
         private Settings BuildSettings()
         {
-            var businessView = new BusinessView();
-            var repositoryType =
-                (RepositoryType) Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
-
-            // Dynamic Query is not based upon ACCPAC view
-            if (repositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                businessView.Properties.Add(BusinessView.ViewId, txtDynamicQueryViewID.Text.Trim());
-                businessView.Properties.Add(BusinessView.ModuleId, cboDynamicQueryModule.Text.Trim());
-                businessView.Properties.Add(BusinessView.ModelName, txtDynamicQueryModelName.Text.Trim());
-                businessView.Properties.Add(BusinessView.EntityName, txtDynamicQueryName.Text.Trim());
-                businessView.Fields = _dynamicQueryFields.ToList();
-            }
-
-            // Report is not based upon ACCPAC view
-            else if (repositoryType.Equals(RepositoryType.Report))
-            {
-                var reportKey = cboReportKeys.Text.Trim();
-
-                businessView.Properties.Add(BusinessView.ViewId, Guid.NewGuid().ToString());
-                businessView.Properties.Add(BusinessView.ReportKey, reportKey);
-                businessView.Properties.Add(BusinessView.ModuleId, cboReportModule.Text.Trim());
-                businessView.Properties.Add(BusinessView.ModelName, txtReportModelName.Text.Trim());
-                businessView.Properties.Add(BusinessView.EntityName, txtReportName.Text.Trim());
-                businessView.Properties.Add(BusinessView.ProgramId, txtReportProgramId.Text.Trim().ToUpper());
-                businessView.Fields = _reportFields.ToList();
-            }
-
-            // ACCPAC view
-            else
-            {
-                businessView.Properties.Add(BusinessView.EntityName, txtViewName.Text.Trim());
-            }
-
-            // Append resx suffix if not supplied
-            if (!txtResxName.Text.Trim().EndsWith(Resources.Resx))
-            {
-                txtResxName.Text = txtResxName.Text + Resources.Resx;
-            }
+            var repositoryType = GetRepositoryType();
 
             return new Settings
             {
-                ViewId = txtViewID.Text.Trim(),
+                RepositoryType = repositoryType,
                 User = txtUser.Text.Trim(),
                 Password = txtPassword.Text.Trim(),
                 Version = txtVersion.Text.Trim(),
                 Company = txtCompany.Text.Trim(),
-                GenerateFinder = chkGenerateFinder.Checked,
-                RepositoryType = repositoryType,
-                BusinessView = businessView,
-                GenerateDynamicEnablement = chkGenerateDynamicEnablement.Checked,
-                ResxName = txtResxName.Text.Trim(),
-                PromptIfExists = chkPromptIfExists.Checked,
-                ModuleId = cboViewModule.Text.Trim(),
+                ModuleId = cboModule.Text.Trim(),
+
+                Entities = _entities,
+                XmlEntities = _xmlEntities,
+
+                PromptIfExists = false,
                 Projects = _projects,
                 Copyright = _copyright,
                 CompanyNamespace = _companyNamespace,
                 Extension = GetExtension(repositoryType),
                 ResourceExtension = GetResourceExtension(repositoryType),
                 DoesAreasExist = _doesAreasExist,
-                WorkflowKindId = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid() : Guid.Empty,
                 WebProjectIncludesModule = _webProjectIncludesModule,
                 includeEnglish = _includeEnglish,
                 includeChineseSimplified = _includeChineseSimplified,
@@ -1155,34 +1991,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return extension;
         }
 
-        /// <summary> Validate the settings </summary>
-        /// <param name="settings">Settings</param>
-        /// <returns>Empty if valid otherwise message</returns>
-        private string ValidSettings(Settings settings)
-        {
-            var view = new BusinessView();
-            return _generation.ValidSettings(settings, ref view);
-        }
-
         /// <summary> Build Module Lists </summary>
         private void BuildModules()
         {
             // Clear first
-            cboViewModule.Items.Clear();
-            cboDynamicQueryModule.Items.Clear();
-            cboReportModule.Items.Clear();
+            cboModule.Items.Clear();
 
             // Add empty item at top of list
-            cboViewModule.Items.Add(string.Empty);
-            cboDynamicQueryModule.Items.Add(string.Empty);
-            cboReportModule.Items.Add(string.Empty);
+            cboModule.Items.Add(string.Empty);
 
             // Iterate "Models" project(s) for modules belonging to the solution
             foreach (var projectInfo in _projects[ProcessGeneration.ModelsKey])
             {
-                cboViewModule.Items.Add(projectInfo.Key);
-                cboDynamicQueryModule.Items.Add(projectInfo.Key);
-                cboReportModule.Items.Add(projectInfo.Key);
+                cboModule.Items.Add(projectInfo.Key);
 
                 if (!_projects[ProcessGeneration.ModelsKey].Count.Equals(1))
                 {
@@ -1190,9 +2011,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Default if only 1 module is discovered
-                cboViewModule.SelectedIndex = 1;
-                cboDynamicQueryModule.SelectedIndex = 1;
-                cboReportModule.SelectedIndex = 1;
+                cboModule.SelectedIndex = 1;
             }
 
         }
@@ -1234,7 +2053,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="e">Event Args </param>
         private void btnRowAdd_Click(object sender, EventArgs e)
         {
-            _dynamicQueryFields.Add(new BusinessField());
+            var repositoryType = GetRepositoryType();
+
+            if (!repositoryType.Equals(RepositoryType.Report))
+            {
+                _entityFields.Add(new BusinessField());
+            }
         }
 
         /// <summary> Delete the current row toolbar button </summary>
@@ -1242,9 +2066,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="e">Event Args </param>
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
-            if (grdDynamicQueryFields.CurrentRow != null)
+            var repositoryType = GetRepositoryType();
+
+            if (!repositoryType.Equals(RepositoryType.Report))
             {
-                grdDynamicQueryFields.Rows.Remove(grdDynamicQueryFields.CurrentRow);
+                if (grdEntityFields.CurrentRow != null)
+                {
+                    grdEntityFields.Rows.Remove(grdEntityFields.CurrentRow);
+                }
             }
         }
 
@@ -1253,9 +2082,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="e">Event Args </param>
         private void btnDeleteRows_Click(object sender, EventArgs e)
         {
-            foreach (var row in grdDynamicQueryFields.Rows)
+            var repositoryType = GetRepositoryType();
+
+            if (!repositoryType.Equals(RepositoryType.Report))
             {
-                grdDynamicQueryFields.Rows.Remove((DataGridViewRow) row);
+                DeleteRows();
+            }
+        }
+
+        /// <summary> Delete all rows</summary>
+        private void DeleteRows()
+        {
+            // Iterate grid
+            for (int i = grdEntityFields.Rows.Count - 1; i >= 0; i--)
+            {
+                grdEntityFields.Rows.Remove(grdEntityFields.Rows[i]);
             }
         }
 
@@ -1264,8 +2105,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="e">Event Args </param>
         private void cboRepositoryType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InitWizardSteps(
-                (RepositoryType) Enum.Parse(typeof(RepositoryType), ((ComboBox) sender).SelectedIndex.ToString()));
+            InitWizardSteps();
         }
 
         /// <summary> Get report info from file </summary>
@@ -1283,7 +2123,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Initialize first
             cboReportKeys.Text = string.Empty;
             cboReportKeys.Items.Clear();
-            _reportFields.Clear();
+            DeleteRows();
             _reports.Clear();
 
 
@@ -1413,9 +2253,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (!string.IsNullOrEmpty(reportName))
             {
-                _reportFields = _reports[reportName];
-                grdReportFields.DataSource = _reportFields;
-                txtReportProgramId.Text = reportName;
+                DeleteRows();
+
+                foreach (var businessField in _reports[reportName])
+                {
+                    _entityFields.Add(businessField);
+                }
+                txtReportProgramId.Text = reportName.ToUpper();
             }
         }
 
@@ -1454,27 +2298,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             AddReports(txtReportIniFile.Text);
         }
 
-        /// <summary> Text Changed for Business View Step</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Disable next button</remarks>
-        private new void TextChanged(object sender, EventArgs e)
-        {
-            // Disable Next Button as text is changing in certain controls
-            btnNext.Enabled = false;
-        }
-
-        /// <summary> Text Changed for View Name</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Enable next button</remarks>
-        private void txtViewName_TextChanged(object sender, EventArgs e)
-        {
-            // Enable Next Button as text is changing 
-            btnNext.Enabled = true;
-        }
-
-        /// <summary> Validate the view id and set default view name</summary>
+        /// <summary> Validate the view id and convert it to a business view</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
         /// <remarks>Disable next button</remarks>
@@ -1484,21 +2308,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             try
             {
-                if (!string.IsNullOrEmpty(txtViewID.Text.Trim()))
+                if (!string.IsNullOrEmpty(txtViewID.Text))
                 {
-                    txtViewName.Text = ProcessGeneration.GetDefaultName(txtUser.Text.Trim(), txtPassword.Text.Trim(),
-                        txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text.Trim().ToUpper());
+                    var businessView = ProcessGeneration.GetBusinessView(txtUser.Text.Trim(), txtPassword.Text.Trim(),
+                        txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text, cboModule.Text);
+
+                    // Assign to entity and model fields
+                    txtEntityName.Text = businessView.Properties[BusinessView.EntityName];
+                    txtModelName.Text = businessView.Properties[BusinessView.ModelName];
+
+                    // Assign to control
+                    txtResxName.Text = txtEntityName.Text.Trim() + "Resx";
+
+                    // Clear before assigning
+                    DeleteRows();
+
+                    // Assign to the grid
+                    foreach (var field in businessView.Fields)
+                    {
+                        _entityFields.Add(field);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 // Error received attempting to get view
                 DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
-                txtViewName.Text = string.Empty;
+                txtEntityName.Text = string.Empty;
+                txtModelName.Text = string.Empty;
                 errorCondition = true;
             }
-
-            btnNext.Enabled = (!string.IsNullOrEmpty(txtViewName.Text));
 
             // Send back to control?
             if (!errorCondition)
@@ -1521,9 +2360,94 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // System.Diagnostics.Process.Start(Resources.Browser, Resources.WikiLink);
         }
 
-     #endregion
+        /// <summary> Show menu for entity node clicked</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void treeEntities_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            // Treeview control was not right clicked
+            if (e.Button != MouseButtons.Right)
+            {
+                return;
+            }
 
+            // Do nothing (no context menus) if mode is not none (i.e. it is in an edit or add state)
+            if (!_modeType.Equals(ModeType.None))
+            {
+                return;
+            }
 
+            // Show Add and Delete All menu if Entities was clicked
+            if (e.Node.Name.Equals(ProcessGeneration.ElementEntities))
+            {
+                // Context menu to contain "Add, Delete All"
+                _contextMenu.MenuItems.Clear();
+                _contextMenu.MenuItems.Add(_addEntityMenuItem);
+                _contextMenu.MenuItems.Add(_deleteEntitiesMenuItem);
+            }
+            else
+            {
+                // Show Edit, Delete menu for entity and Add only if code type is header detail
+                var repositoryType = GetRepositoryType();
+
+                _contextMenu.MenuItems.Clear();
+                if (repositoryType.Equals(RepositoryType.HeaderDetail))
+                {
+                    _contextMenu.MenuItems.Add(_addEntityMenuItem);
+                }
+                _contextMenu.MenuItems.Add(_editEntityMenuItem);
+                _contextMenu.MenuItems.Add(_deleteEntityMenuItem);
+            }
+
+            // Save node clicked
+            _clickedEntityTreeNode = e.Node;
+
+            // Show menu
+            _contextMenu.Show(treeEntities, e.Location);
+        }
+
+        /// <summary> Cancel Entity changes</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CancelEntity();
+        }
+
+        /// <summary> Save Entity changes</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveEntity();
+        }
+
+        /// <summary> Replace any invalid chars</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void txtReportProgramId_Leave(object sender, EventArgs e)
+        {
+            txtReportProgramId.Text = BusinessViewHelper.Replace(txtReportProgramId.Text);
+        }
+
+        /// <summary> Replace any invalid chars</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void txtEntityName_Leave(object sender, EventArgs e)
+        {
+            txtEntityName.Text = BusinessViewHelper.Replace(txtEntityName.Text);
+            txtResxName.Text = txtEntityName.Text + "Resx";
+        }
+
+        /// <summary> Replace any invalid chars</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void txtModelName_Leave(object sender, EventArgs e)
+        {
+            txtModelName.Text = BusinessViewHelper.Replace(txtModelName.Text);
+        }
+
+        #endregion
 
     }
 }
