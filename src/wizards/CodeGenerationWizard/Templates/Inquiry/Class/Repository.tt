@@ -77,7 +77,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         /// </summary>
         /// <param name="context">Context</param>
         public <#=entityName#>Repository(Context context)
-            : base(context, new <#=modelName#>Mapper<T>(context), ActiveFilter)
+            : base(context, new <#=entityName#>Mapper<T>(context), ActiveFilter)
         {
         }
 
@@ -87,7 +87,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         /// <param name="context">Context</param>
         /// <param name="session">Business Entity Session</param>
         public <#=entityName#>Repository(Context context, IBusinessEntitySession session)
-            : base(context, new <#=modelName#>Mapper<T>(context), ActiveFilter, session)
+            : base(context, new <#=entityName#>Mapper<T>(context), ActiveFilter, session)
         {
         }
         #endregion
@@ -135,7 +135,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         /// <param name="context">Context</param>
         private void SetFilter(Context context)
         {
-            _mapper = new <#=modelName#>Mapper<T>(context);
+            _mapper = new <#=entityName#>Mapper<T>(context);
         }
    
         #endregion

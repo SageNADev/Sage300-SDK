@@ -36,16 +36,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     {
         #region Private Vars
 
-        /// <summary> Settings from UI (view id, output file) </summary>
+        /// <summary> Settings from UI </summary>
         private Settings _settings;
-
-        /// <summary> View to be used to generated class files </summary>
-        private static View _view;
-
-        private static Session _session;
-        private static DBLink _dbLink;
-
-        private static readonly Dictionary<string, bool> UniqueDescriptions = new Dictionary<string, bool>();
 
         #endregion
 
@@ -175,6 +167,74 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> SubFolderNameScripts is used as a subfolder name </summary>
         public const string SubFolderNameScripts = "Scripts";
 
+        /// <summary> Element Name for Entities </summary>
+        public const string ElementEntities = "entities";
+
+        /// <summary> New Entity Text </summary>
+        public const string NewEntityText = "new";
+
+        /// <summary> Property for Module </summary>
+        public const string PropertyModule = "module";
+
+        /// <summary> Property for ViewId </summary>
+        public const string PropertyViewId = "view";
+
+        /// <summary> Property for Entity </summary>
+        public const string PropertyEntity = "entity";
+        
+        /// <summary> Property for Properties </summary>
+        public const string PropertyProperties = "props";
+
+        /// <summary> Property for Type </summary>
+        public const string PropertyType = "type";
+
+        /// <summary> Property for Program </summary>
+        public const string PropertyProgramId = "program";
+
+        /// <summary> Property for WorkflowId </summary>
+        public const string PropertyWorkflowId = "workflow";
+
+        /// <summary> Property for Report </summary>
+        public const string PropertyReport = "report";
+
+        /// <summary> Property for Finder </summary>
+        public const string PropertyFinder = "genFinder";
+
+        /// <summary> Property for Enablement </summary>
+        public const string PropertyEnablement = "genEnablement";
+
+        /// <summary> Property for ClientFiles </summary>
+        public const string PropertyClientFiles = "genClientFiles";
+
+        /// <summary> Property for IfExists </summary>
+        public const string PropertyIfExists = "genIfExists";
+
+        /// <summary> Property for SingleFile </summary>
+        public const string PropertySingleFile = "genSingleFile";
+
+        /// <summary> Property for Fields </summary>
+        public const string PropertyFields = "fields";
+
+        /// <summary> Property for Field </summary>
+        public const string PropertyField = "field";
+
+        /// <summary> Property for FieldName </summary>
+        public const string PropertyFieldName = "fieldName";
+
+        /// <summary> Property for PropertyName </summary>
+        public const string PropertyPropertyName = "propertyName";
+
+        /// <summary> Property for Size </summary>
+        public const string PropertySize = "size";
+
+        /// <summary> Property for ResxName </summary>
+        public const string PropertyResxName = "resx";
+
+        /// <summary> Property for Options </summary>
+        public const string PropertyOptions = "options";
+
+        /// <summary> Property for Option </summary>
+        public const string PropertyOption = "option";
         #endregion
 
         #region Public Delegates
@@ -210,210 +270,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Cleanup </summary>
         public void Dispose()
         {
-            if (_view != null)
-            {
-                _view.Dispose();
-                _view = null;
-            }
-
-            if (_dbLink != null)
-            {
-                _dbLink.Dispose();
-                _dbLink = null;
-            }
-
-            if (_session != null)
-            {
-                _session.Dispose();
-                _session = null;
-            }
-
-        }
-
-        /// <summary> Validate the settings based upon repository type</summary>
-        /// <param name="settings">Settings</param>
-        /// <param name="view">Business View</param>
-        /// <returns>Empty if valid otherwise message</returns>
-        public string ValidSettings(Settings settings, ref BusinessView view)
-        {
-            string validSetting;
-            var repositoryType = settings.RepositoryType;
-
-            // Check Resx Name regardless of repository type
-            if (settings.ResxName.Equals(string.Empty))
-            {
-                return Resources.InvalidSettingRequiredResource;
-            }
-
-            // Dynamic Query validation
-            if (repositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                // Check ViewId, Module, Model Name and Entity Name
-                if (settings.BusinessView.Properties[BusinessView.ViewId].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ModuleId].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ModelName].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.EntityName].Equals(string.Empty))
-                {
-                    return Resources.InvalidSettingRequired;
-                }
-
-                // Check Fields. There must be at least one field entered
-                if (settings.BusinessView.Fields.Count == 0)
-                {
-                    return Resources.InvalidSettingDynamicQueryCount;
-                }
-
-                // Check Fields. For content
-                var validFields = true;
-                UniqueDescriptions.Clear();
-                for (var i = 0; i < settings.BusinessView.Fields.Count; i++)
-                {
-                    // Locals
-                    var field = settings.BusinessView.Fields[i];
-
-                    // Assign id
-                    field.Id = i + 1;
-
-                    // Check Name
-                    if (field.Name.Trim().Equals(string.Empty))
-                    {
-                        validFields = false;
-                        break;
-                    }
-
-                    // Ensure Name is properly formatted
-                    field.Name = BusinessViewHelper.Replace(field.Name);
-                    field.ServerFieldName = field.Name;
-
-                    // Ensure name is unique
-                    if (UniqueDescriptions.ContainsKey(field.Name))
-                    {
-                        // Duplicate name entered
-                        validFields = false;
-                        break;
-                    }
-
-                    // Add for next check
-                    UniqueDescriptions.Add(field.Name, false);
-                }
-
-                validSetting = (validFields ? string.Empty : Resources.InvalidSettingDynamicQueryFields);
-            }
-
-            // Report Validation
-            else if (repositoryType.Equals(RepositoryType.Report))
-            {
-                // Check ViewId, Module Id, Model Name, Entity Name, ReportKey and ProgramId
-                if (settings.BusinessView.Properties[BusinessView.ViewId].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ModuleId].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ModelName].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.EntityName].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ReportKey].Equals(string.Empty) ||
-                    settings.BusinessView.Properties[BusinessView.ProgramId].Equals(string.Empty))
-                {
-                    return Resources.InvalidSettingRequired;
-                }
-
-                // Check Fields. There must be at least one field entered
-                if (settings.BusinessView.Fields.Count == 0)
-                {
-                    return Resources.InvalidSettingReportCount;
-                }
-
-                // Check Fields. For content
-                var validFields = true;
-                UniqueDescriptions.Clear();
-                foreach (var field in settings.BusinessView.Fields)
-                {
-                    // Check Name
-                    if (field.Name.Trim().Equals(string.Empty))
-                    {
-                        validFields = false;
-                        break;
-                    }
-
-                    // Ensure Name is properly formatted
-                    field.Name = BusinessViewHelper.Replace(field.Name);
-
-                    // Ensure name is unique
-                    if (UniqueDescriptions.ContainsKey(field.Name))
-                    {
-                        // Duplicate name entered
-                        validFields = false;
-                        break;
-                    }
-
-                    // Add for next check
-                    UniqueDescriptions.Add(field.Name, false);
-                }
-
-                validSetting = (validFields ? string.Empty : Resources.InvalidSettingReportFields);
-            }
-            else
-            {
-                // Check requirements for validating a view
-                if (settings.ViewId.Equals(string.Empty) || settings.Company.Equals(string.Empty) ||
-                    settings.Password.Equals(string.Empty) ||
-                    settings.User.Equals(string.Empty) || settings.Version.Equals(string.Empty) ||
-                    settings.ModuleId.Equals(string.Empty))
-                {
-                    return Resources.InvalidSettingRequired;
-                }
-
-                try
-                {
-                    // Init
-                    if (_session == null)
-                    {
-                        _session = new Session();
-                        _session.InitEx2(null, string.Empty, "WX", "WX1000", settings.Version, 1);
-                        _session.Open(settings.User, settings.Password, settings.Company, DateTime.UtcNow, 0);
-                    }
-
-                }
-                catch
-                {
-                    _session = null;
-                }
-
-                if (_session != null)
-                {
-                    try
-                    {
-                        // Clean up first
-                        if (_view != null)
-                        {
-                            _view.Dispose();
-                            _view = null;
-                        }
-
-                        // Attempt to open a view
-                        _dbLink = _session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
-                        _view = _dbLink.OpenView(settings.ViewId);
-                    }
-                    catch
-                    {
-                        _view = null;
-                    }
-                }
-
-                validSetting = (_view != null ? string.Empty : Resources.InvalidSettingCredentials);
-            }
-
-            // Return message if failures thus far
-            if (!string.IsNullOrEmpty(validSetting))
-            {
-                return validSetting;
-            }
-
-            // Init view and validate model
-            Initialize(settings, ref view);
-            if (!ValidModel(view))
-            {
-                validSetting = Resources.InvalidSettingModel;
-            }
-
-            return validSetting;
+            // Anything?
         }
 
         /// <summary> Start the generation process </summary>
@@ -424,8 +281,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 _settings = settings;
 
-                // Iterate View
-                IterateView();
+                // Iterate Views
+                foreach (var businessView in settings.Entities)
+                {
+                    IterateView(businessView);
+                }
             }
             catch
             {
@@ -434,17 +294,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary> Get default view name </summary>
+        /// <summary> Get business view </summary>
+        /// <param name="businessView">Business View</param>
         /// <param name="user">User Name</param>
         /// <param name="password">User Password</param>
         /// <param name="company">Company</param>
         /// <param name="version">Version</param>
         /// <param name="viewId">View Id</param>
-        /// <returns>Default view name</returns>
-        public static string GetDefaultName(string user, string password, string company, string version, string viewId)
+        /// <param name="moduleId">Module Id</param>
+        public static void GetBusinessView(BusinessView businessView, string user, 
+            string password, string company, string version, string viewId, string moduleId)
         {
             // Locals
             var session = new Session();
+            var uniqueDescriptions = new Dictionary<string, bool>();
 
             session.InitEx2(null, string.Empty, "WX", "WX1000", version, 1);
             session.Open(user, password, company, DateTime.UtcNow, 0);
@@ -453,20 +316,37 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
             var view = dbLink.OpenView(viewId);
 
-            var retVal = MakeItSingular(BusinessViewHelper.Replace(view.Description));
+            // Clear out business view except for text
+            businessView.Enums.Clear();
+            businessView.Fields.Clear();
+            businessView.Keys.Clear();
+            businessView.Options.Clear();
+            businessView.Properties.Clear();
+
+            businessView.Properties[BusinessView.ViewId] = view.ViewID;
+            businessView.Properties[BusinessView.ModuleId] = moduleId;
+
+            GenerateUniqueDescriptions(view, uniqueDescriptions);
+
+            var description = MakeItSingular(BusinessViewHelper.Replace(view.Description));
+
+            businessView.Properties[BusinessView.ModelName] = description;
+            businessView.Properties[BusinessView.EntityName] = description;
+
+            GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
 
             // Clean up
             try
             {
                 view.Dispose();
+                dbLink.Dispose();
                 session.Dispose();
             }
-            catch 
+            catch
             {
                 // Swallow error, if any        
             }
 
-            return retVal;
         }
 
         #endregion
@@ -727,12 +607,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// </summary>
         /// <param name="field">The field the name has to be determined</param>
         /// <param name="prefix">Prefix for certain potential values</param>
+        /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
         /// <returns>Name of the field</returns>
-        private static string FieldName(ViewField field, string prefix)
+        private static string FieldName(ViewField field, string prefix, Dictionary<string, bool> uniqueDescriptions)
         {
-            if (UniqueDescriptions != null &&
-                UniqueDescriptions.ContainsKey(field.Description) &&
-                UniqueDescriptions[field.Description] == false)
+            if (uniqueDescriptions != null &&
+                uniqueDescriptions.ContainsKey(field.Description) &&
+                uniqueDescriptions[field.Description] == false)
             {
                 return field.Name;
             }
@@ -741,29 +622,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
 
-        /// <summary>
-        /// Generate unique descriptions
-        /// </summary>
-        private static void GenerateUniqueDescriptions()
+        /// <summary> Generate unique descriptions </summary>
+        /// <param name="view">Accpac Business View</param>
+        /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
+        private static void GenerateUniqueDescriptions(View view, Dictionary<string, bool> uniqueDescriptions)
         {
-            // Clear first
-            UniqueDescriptions.Clear();
+            uniqueDescriptions.Clear();
 
-            for (var i = 0; i < _view.Fields.Count; i++)
+            // Iterate Accpac View
+            for (var i = 0; i < view.Fields.Count; i++)
             {
                 // Ignore those fields having description "RESERVED"
-                if (_view.Fields[i].Description.ToUpper() == "RESERVED")
+                if (view.Fields[i].Description.ToUpper() == "RESERVED")
                 {
                     continue;
                 }
 
-                if (!UniqueDescriptions.ContainsKey(_view.Fields[i].Description))
+                if (!uniqueDescriptions.ContainsKey(view.Fields[i].Description))
                 {
-                    UniqueDescriptions.Add(_view.Fields[i].Description, true);
+                    uniqueDescriptions.Add(view.Fields[i].Description, true);
                 }
                 else
                 {
-                    UniqueDescriptions[_view.Fields[i].Description] = false;
+                    uniqueDescriptions[view.Fields[i].Description] = false;
                 }
             }
         }
@@ -773,20 +654,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// </summary>
         /// <param name="i">Outer Loop</param>
         /// <param name="j">Inner Loop</param>
-        private static Object GetValue(int i, int j)
+        /// <param name="view">Accpac Business View</param>
+        private static Object GetValue(int i, int j, View view)
         {
             int intVal;
             bool boolVal;
-            if (Int32.TryParse(_view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out intVal))
+            if (Int32.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out intVal))
             {
                 return intVal;
             }
-            if (bool.TryParse(_view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out boolVal))
+            if (bool.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out boolVal))
             {
                 return boolVal ? 1 : 0;
             }
 
-            return Convert.ToChar(_view.Fields[i].PresentationList.PredefinedValue(j));
+            return Convert.ToChar(view.Fields[i].PresentationList.PredefinedValue(j));
         }
 
         /// <summary>
@@ -840,25 +722,77 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return BusinessDataType.Double;
         }
 
-        /// <summary>
-        /// Generate enums
-        /// </summary>
-        private static void GenerateFieldsAndEnums(BusinessView businessView)
+        /// <summary> ValidateFields</summary>
+        /// <param name="entityFields">the list of BusinessFields to iterate</param>
+        /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
+        /// <param name="repositoryType">The repository type</param>
+        /// <returns> True if valid otherwise false</returns>
+        public static bool ValidateFields(List<BusinessField> entityFields, Dictionary<string, bool> uniqueDescriptions, RepositoryType repositoryType)
         {
-            for (var i = 0; i < _view.Fields.Count; i++)
-            {
+            var validFields = true;
+            uniqueDescriptions.Clear();
 
+            // Iterate fields
+            for (var i = 0; i < entityFields.Count; i++)
+            {
+                // Locals
+                var field = entityFields[i];
+
+                // Assign id
+                if (repositoryType.Equals(RepositoryType.DynamicQuery))
+                {
+                    field.Id = i + 1;
+                }
+
+                // Check Name
+                if (field.Name.Trim().Equals(string.Empty))
+                {
+                    validFields = false;
+                    break;
+                }
+
+                // Ensure Name is properly formatted
+                field.Name = BusinessViewHelper.Replace(field.Name);
+                if (repositoryType.Equals(RepositoryType.DynamicQuery))
+                {
+                    field.ServerFieldName = field.Name;
+                }
+
+                // Ensure name is unique
+                if (uniqueDescriptions.ContainsKey(field.Name))
+                {
+                    // Duplicate name entered
+                    validFields = false;
+                    break;
+                }
+
+                // Add for next check
+                uniqueDescriptions.Add(field.Name, false);
+            }
+
+            return validFields;
+        }
+
+        /// <summary> Generate enums </summary>
+        /// <param name="businessView">Business View</param>
+        /// <param name="view">Accpadc Business View</param>
+        /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
+        private static void GenerateFieldsAndEnums(BusinessView businessView, View view, Dictionary<string, bool> uniqueDescriptions)
+        {
+            // Iterate Accpac View
+            for (var i = 0; i < view.Fields.Count; i++)
+            {
                 // Ignore those fields having description "RESERVED"
-                if (_view.Fields[i].Description.ToUpper() == "RESERVED")
+                if (view.Fields[i].Description.ToUpper() == "RESERVED")
                 {
                     continue;
                 }
 
-                var field = _view.Fields[i];
+                var field = view.Fields[i];
                 var businessField = new BusinessField
                 {
                     ServerFieldName = field.Name,
-                    Name = FieldName(field, businessView.Properties[BusinessView.EntityName]),
+                    Name = FieldName(field, businessView.Properties[BusinessView.EntityName], uniqueDescriptions),
                     Description = field.Description,
                     Type = FieldType(field),
                     Id = field.ID,
@@ -892,7 +826,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             // thus will need to resolve in enum class when coding
                             var desc = field.PresentationList.PredefinedString(j);
                             var key = BusinessViewHelper.Replace(desc);
-                            var value = GetValue(i, j);
+                            var value = GetValue(i, j, view);
 
                             // If the value coming from the presentation list is blank, assign it to None
                             if (string.IsNullOrEmpty(key))
@@ -914,52 +848,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Add to fields collection
                 businessView.Fields.Add(businessField);
             }
-        }
-
-        /// <summary> Initializes the Business View </summary>
-        /// <param name="settings">Settings</param>
-        /// <param name="view">Business View</param>
-        private static void Initialize(Settings settings, ref BusinessView view)
-        {
-            // Locals
-            string moduleId;
-
-            // Dynamic Query already has business view!
-            if (settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                view = settings.BusinessView;
-
-                moduleId = view.Properties[BusinessView.ModuleId];
-
-                view.Properties[BusinessView.ModelName] = MakeItSingular(BusinessViewHelper.Replace(view.Properties[BusinessView.ModelName]));
-                view.Properties[BusinessView.EntityName] = BusinessViewHelper.Replace(view.Properties[BusinessView.EntityName]);
-            }
-            // Report already has business view!
-            else if (settings.RepositoryType.Equals(RepositoryType.Report))
-            {
-                view = settings.BusinessView;
-
-                moduleId = view.Properties[BusinessView.ModuleId];
-
-                view.Properties[BusinessView.ModelName] = MakeItSingular(BusinessViewHelper.Replace(view.Properties[BusinessView.ModelName]));
-                view.Properties[BusinessView.EntityName] = BusinessViewHelper.Replace(view.Properties[BusinessView.EntityName]);
-                view.Properties[BusinessView.ProgramId] = BusinessViewHelper.Replace(view.Properties[BusinessView.ProgramId]);
-            }
-            else
-            {
-                moduleId = settings.ModuleId;
-
-                view.Properties.Add(BusinessView.ViewId, _view.ViewID);
-                view.Properties.Add(BusinessView.ModelName, settings.BusinessView.Properties[BusinessView.EntityName]);
-                view.Properties.Add(BusinessView.ModuleId, moduleId);
-                view.Properties.Add(BusinessView.EntityName, settings.BusinessView.Properties[BusinessView.EntityName]);
-
-                GenerateUniqueDescriptions();
-                GenerateFieldsAndEnums(view);
-            }
-
-            settings.ModuleId = moduleId;
-
         }
 
         /// <summary>
@@ -993,16 +881,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary> Iterate the view </summary>
-        private void IterateView()
+        /// <param name="view">Business View</param>
+        private void IterateView(BusinessView view)
         {
-            // Locals
-            var view = new BusinessView();
-
-            // Validate the settings which will also instantiate the view
-            if (!string.IsNullOrEmpty(ValidSettings(_settings, ref view)))
-            {
-                return;
-            }
+            // TODO This needs to be investigated now that we are doing n entities (business views)
 
             // Build the subfolders
             BuildSubfolders(view);
@@ -1010,28 +892,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Create the Resx Files if the MenuResx file for that language exists
             if (_settings.includeEnglish)
             {
-                CreateResx(view, _settings.ResxName + ".resx", true);
+                CreateResx(view, view.Properties[BusinessView.ResxName] + ".resx", true);
             }
             if (_settings.includeSpanish)
             {
-                CreateResx(view, _settings.ResxName + ".es.resx", false);
+                CreateResx(view, view.Properties[BusinessView.ResxName] + ".es.resx", false);
             }
             if (_settings.includeFrench)
             {
-                CreateResx(view, _settings.ResxName + ".fr-CA.resx", false);
+                CreateResx(view, view.Properties[BusinessView.ResxName] + ".fr.resx", false);
             }
             if (_settings.includeChineseSimplified)
             {
-                CreateResx(view, _settings.ResxName + ".zh-Hans.resx", false);
+                CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hans.resx", false);
             }
             if (_settings.includeChineseTraditional)
             {
-                CreateResx(view, _settings.ResxName + ".zh-Hant.resx", false);
+                CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hant.resx", false);
             }
 
             // Create the Model class
             CreateClass(view,
-                view.Properties[BusinessView.ModelName] + ".cs",
+                view.Properties[BusinessView.EntityName] + ".cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
                 ModelsKey, SubFolderModelKey);
 
@@ -1039,48 +921,54 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
             {
                 CreateClass(view,
-                    view.Properties[BusinessView.ModelName] + "Mapper.cs",
+                    view.Properties[BusinessView.EntityName] + "Mapper.cs",
                     TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
                     BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
             }
 
-
             // Create the Model Fields class
             CreateClass(view,
-                view.Properties[BusinessView.ModelName] + "Fields.cs",
+                view.Properties[BusinessView.EntityName] + "Fields.cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
                 ModelsKey, SubFolderModelFieldsKey);
 
             // Create _Index.cshtml
-            if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
+            if (view.Options[BusinessView.GenerateClientFiles])
             {
-                var indexTemplate = "Templates.Common.View.Index";
-                if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
                 {
-                    indexTemplate = "Templates.Process.View.Index";
+                    var indexTemplate = "Templates.Common.View.Index";
+                    if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                    {
+                        indexTemplate = "Templates.Process.View.Index";
+                    }
+
+                    CreateClass(view,
+                        "Index.cshtml",
+                        TransformTemplateToText(view, _settings, indexTemplate),
+                        WebKey, SubFolderWebIndexKey);
                 }
-
-                CreateClass(view,
-                    "Index.cshtml",
-                    TransformTemplateToText(view, _settings, indexTemplate),
-                    WebKey, SubFolderWebIndexKey);
             }
-
 
             // Create _Localization.cshtml
-            if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
+            if (view.Options[BusinessView.GenerateClientFiles])
             {
-                var localizationTemplate = "Templates.Common.View.Localization";
-                if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
                 {
-                    localizationTemplate = "Templates.Process.View.Localization";
-                }
+                    var localizationTemplate = "Templates.Common.View.Localization";
+                    if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                    {
+                        localizationTemplate = "Templates.Process.View.Localization";
+                    }
 
-                CreateClass(view,
-                    "_Localization.cshtml",
-                    TransformTemplateToText(view, _settings, localizationTemplate),
-                    WebKey, SubFolderWebLocalizationKey);
+                    CreateClass(view,
+                        "_Localization.cshtml",
+                        TransformTemplateToText(view, _settings, localizationTemplate),
+                        WebKey, SubFolderWebLocalizationKey);
+                }
             }
+
+            // TODO Single Enum file check and logic here
 
             // Create the Model Enumeration class(es)
             foreach (var value in view.Enums.Values)
@@ -1124,7 +1012,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Create class for finder
-            if (_settings.GenerateFinder)
+            if (view.Options[BusinessView.GenerateFinder])
             {
                 CreateClass(view,
                     "Find" + view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
@@ -1201,22 +1089,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ServicesKey, SubFolderServicesKey);
 
             // Create the ViewModel class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
+            }
 
             // Create the Internal Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Class.InternalController"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             // Create the public Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Controller.cs",
                 TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             // Create the Repository class
             CreateClass(view,
@@ -1225,45 +1122,57 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
-            var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
-            CreateClass(view,
-                fileName,
-                TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
-                WebKey, SubFolderWebLocalizationKey);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
+                CreateClass(view,
+                    fileName,
+                    TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
+                    WebKey, SubFolderWebLocalizationKey);
+            }
 
             // Register types
             BusinessViewHelper.UpdateFlatBootStrappers(view, _settings);
-            BusinessViewHelper.UpdateBundles(view, _settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                BusinessViewHelper.UpdateBundles(view, _settings);
+            }
 
             // set the start page
-            BusinessViewHelper.CreateViewPageUrl(view, _settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                BusinessViewHelper.CreateViewPageUrl(view, _settings);
+            }
 
-            //Update the plugin menu details
+            // Update the plugin menu details
             BusinessViewHelper.UpdateMenuDetails(view, _settings);
 
             // For javascript files, the project name does not include the .Web segment
-            var projectName =
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                var projectName =
                 _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
-            // Create the Behavior JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Behavior JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
+                    WebKey, SubFolderWebScriptsKey);
 
-            // Create the Knockout Extension JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Knockout Extension JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
+                    WebKey, SubFolderWebScriptsKey);
 
-            // Create the Repository JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Repository JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
+                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
+                    WebKey, SubFolderWebScriptsKey);
+
+            }
         }
-
         /// <summary> Create Process Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateProcessRepositoryClasses(BusinessView view)
@@ -1293,67 +1202,88 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ServicesKey, SubFolderUnitOfWorkKey);
 
             // Create the ViewModel class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
+            }
 
             // Create the Internal Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.InternalController"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             // Create the public Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Controller.cs",
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.Controller"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
-            //Create the Repository class
+            // Create the Repository class
             CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Repository.cs",
                 TransformTemplateToText(view, _settings, "Templates.Process.Class.Repository"),
                  BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
-            var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
-            CreateClass(view,
-                fileName,
-                TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
-                WebKey, SubFolderWebLocalizationKey);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
+                CreateClass(view,
+                    fileName,
+                    TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
+                    WebKey, SubFolderWebLocalizationKey);
+            }
 
             // Register types
             BusinessViewHelper.UpdateProcessBootStrappers(view, _settings);
-            BusinessViewHelper.UpdateBundles(view, _settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                BusinessViewHelper.UpdateBundles(view, _settings);
+            }
 
             // set the start page
-            BusinessViewHelper.CreateViewPageUrl(view, _settings);
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                BusinessViewHelper.CreateViewPageUrl(view, _settings);
+            }
 
-            //Update the plugin menu details
+            // Update the plugin menu details
             BusinessViewHelper.UpdateMenuDetails(view, _settings);
 
             // For javascript files, the project name does not include the .Web segment
-            var projectName =
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                var projectName =
                 _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
-            // Create the Behavior JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
-                TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Behavior JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
+                    TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
+                    WebKey, SubFolderWebScriptsKey);
 
-            // Create the Knockout Extension JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
-                TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Knockout Extension JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
+                    TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
+                    WebKey, SubFolderWebScriptsKey);
 
-            // Create the Repository JavaScript file
-            CreateClass(view,
-                projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
-                TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
-                WebKey, SubFolderWebScriptsKey);
+                // Create the Repository JavaScript file
+                CreateClass(view,
+                    projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
+                    TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
+                    WebKey, SubFolderWebScriptsKey);
+            }
 
             // Create the SQL script
             CreateClass(view,
@@ -1387,23 +1317,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ServicesKey, SubFolderServicesKey);
 
             // Create the ViewModel class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
                 TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
+            }
 
             // Create the public Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Controller.cs",
                 TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Controller"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
-            //Create the Repository class
+            // Create the Repository class
             CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Repository.cs",
                 TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Repository"),
                 BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
-
         }
 
         /// <summary> Create Report Repository Classes </summary>
@@ -1429,22 +1364,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ServicesKey, SubFolderServicesKey);
 
             // Create the ViewModel class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
                 TransformTemplateToText(view, _settings, "Templates.Reports.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
+            }
 
             // Create the public Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Controller.cs",
                 TransformTemplateToText(view, _settings, "Templates.Reports.Class.Controller"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             // Create the internal Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
                 TransformTemplateToText(view, _settings, "Templates.Reports.Class.InternalController"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             //Create the Repository class
             CreateClass(view,
@@ -1476,24 +1420,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ServicesKey, SubFolderServicesKey);
 
             // Create the ViewModel class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ViewModel.cs",
                 TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
+            }
 
             // Create the Internal Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
                 TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.InternalController"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
             // Create the public Controller class
-            CreateClass(view,
+            if (view.Options[BusinessView.GenerateClientFiles])
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Controller.cs",
                 TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Controller"),
                 WebKey, SubFolderWebControllersKey);
+            }
 
-            //Create the Repository class
+            // Create the Repository class
             CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Repository.cs",
                 TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
@@ -1648,18 +1601,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             return retVal;
-        }
-
-        /// <summary>
-        /// Is model name valid
-        /// </summary>
-        /// <param name="view">Business View</param>
-        /// <returns>True if view does not have a field the same as model name otherwise false</returns>
-        private static bool ValidModel(BusinessView view)
-        {
-            var modelName = view.Properties[BusinessView.ModelName];
-
-            return !view.Fields.Any(t => t.Name.Equals(modelName));
         }
 
         #endregion

@@ -25,7 +25,7 @@
     // Locals
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
-    var resxName = settings.ResxName;
+    var resxName = view.Properties[BusinessView.ResxName];
     var companyNamespace = settings.CompanyNamespace;
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;

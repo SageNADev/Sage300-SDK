@@ -26,7 +26,7 @@
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var resxName = settings.ResxName;
+    var resxName = view.Properties[BusinessView.ResxName];
     var modelName = view.Properties[BusinessView.ModelName];
     var entityName = view.Properties[BusinessView.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
