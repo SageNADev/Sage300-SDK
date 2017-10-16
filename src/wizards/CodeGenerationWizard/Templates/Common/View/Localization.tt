@@ -27,7 +27,7 @@
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
-    var resxName = settings.ResxName;
+    var resxName = view.Properties[BusinessView.ResxName];
     var companyNamespace = settings.CompanyNamespace;
     var resourceExtension = settings.ResourceExtension;
     var keyFieldName = view.Keys.FirstOrDefault();
