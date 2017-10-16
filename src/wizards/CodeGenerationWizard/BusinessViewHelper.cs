@@ -645,9 +645,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 string[] linesToAdded =
                 {
-                    string.Format(register + "<I{0}Service<{0}>, {0}Service<{1}>>(container);", entityName, modelName),
-                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{1}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName, modelName),
-                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{1}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
+                    string.Format(register + "<I{0}Service<{1}>, {0}Service<{1}>>(container);", entityName, modelName),
+                    string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName, modelName),
+                    string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
                 };
 
 
