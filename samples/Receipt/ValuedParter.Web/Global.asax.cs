@@ -68,8 +68,11 @@ namespace ValuedParter.Web
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
                     ScreenName = "None",
+                    ScreenContext = new ScreenContext(),
                     Container = BootstrapTaskManager.Container
                 };
+
+                context.ScreenContext.ScreenName = "None";
 
 				//Set default company information
                 var companies =  new List<Organization>
