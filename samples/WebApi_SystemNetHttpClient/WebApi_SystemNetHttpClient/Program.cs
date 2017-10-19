@@ -38,8 +38,6 @@ namespace WebApi_SystemNetHttpClient
     {
         private const string SampleCustomerNumber = "SAM_CUSTOMER";
 
-        
-
         /// <summary>
         /// Main program
         /// </summary>
@@ -77,8 +75,7 @@ namespace WebApi_SystemNetHttpClient
             DeleteCustomer(Sage300WebAPIURI).Wait();
 
             CreateInvoice(Sage300WebAPIURI).Wait();
-
-            
+          
             GenerateRecurringCharges(Sage300WebAPIURI).Wait();
 
             Console.WriteLine("\nPress any key to end.");
@@ -253,7 +250,7 @@ namespace WebApi_SystemNetHttpClient
             }
 
             // Create the Web API client with the appropriate authentication
-            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("ADMIN", "ADMIN") })
+            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("WEBAPI", "WEBAPI") })
             using (var httpClient = new HttpClient(httpClientHandler))
             {
                 Console.WriteLine("\n{0} {1}", method.Method, requestUri);
