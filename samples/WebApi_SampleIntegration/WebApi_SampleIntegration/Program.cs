@@ -123,7 +123,7 @@ namespace WebApi_SampleIntegration
             {
                 Item = ItemNumber,
                 QuantityOrdered = QuantityToOrder,
-                QuantityShipped = QuantityToOrder,
+                QuantityShipped = QuantityToOrder
             };
             var order = new
             {
@@ -196,7 +196,7 @@ namespace WebApi_SampleIntegration
             }
 
             // Create the Web API client with the appropriate authentication
-            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("ADMIN", "ADMIN") })
+            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("WEBAPI", "WEBAPI") })
             using (var httpClient = new HttpClient(httpClientHandler))
             {
                 Console.WriteLine("\n{0} {1}", method.Method, requestUri);
