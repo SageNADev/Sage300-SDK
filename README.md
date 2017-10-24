@@ -55,6 +55,7 @@ folders in order to segregate the documentation:
 * patterns
 * presentations
 * standards
+* templates
 * upgrades
 * utilities
 * webapi
