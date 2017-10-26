@@ -433,6 +433,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
+            var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
 
             var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
@@ -470,9 +471,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 };
                 string[] linesToAdded =
                 {
-                    string.Format(register + "<IController, {0}Controller<{0}>>(container, \"{1}{0}\");", entityName, moduleId),
-                    string.Format(register + "<IFinder, Find{0}ControllerInternal<{0}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", entityName, moduleId.ToLower(), entityName.ToLower()),
-                    string.Format(register + "<IExportImportController, {0}ControllerInternal<{0}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));",entityName, moduleId.ToLower(), entityName.ToLower())
+                    string.Format(register + "<IController, {0}Controller<{2}>>(container, \"{1}{0}\");", entityName, moduleId, modelName),
+                    string.Format(register + "<IFinder, Find{0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", entityName, moduleId.ToLower(), entityName.ToLower(), modelName),
+                    string.Format(register + "<IExportImportController, {0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));",entityName, moduleId.ToLower(), entityName.ToLower(), modelName)
                 };
 
                 for (var i = 0; i <= 2; i++)
@@ -498,6 +499,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
+            var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
             var bsName = moduleId + "Bootstrapper.cs";
             var bsFile = Path.Combine(pathProj, bsName);
@@ -513,10 +515,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 string[] linesToAdded =
                 {
-                    string.Format(register + "<Interfaces.Services.I{0}Service<Models.{0}>, {0}EntityService<Models.{0}>>(container);",entityName),
-                    string.Format(register + "<IExportImportRepository, BusinessRepository.{2}Repository<Models.{2}>>(container, \"{1}{0}\", new InjectionConstructor(typeof(Context)));", entityName.ToLower(), moduleId.ToLower(), entityName),
-                    string.Format(register + "(container, typeof(Interfaces.BusinessRepository.I{0}Entity<Models.{0}>), typeof(BusinessRepository.{0}Repository<Models.{0}>), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName),
-                    string.Format(register + "(container, typeof(Interfaces.BusinessRepository.I{0}Entity<Models.{0}>), typeof(BusinessRepository.{0}Repository<Models.{0}>), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName)
+                    string.Format(register + "<Interfaces.Services.I{0}Service<Models.{1}>, {0}EntityService<Models.{1}>>(container);",entityName, modelName),
+                    string.Format(register + "<IExportImportRepository, BusinessRepository.{2}Repository<Models.{3}>>(container, \"{1}{0}\", new InjectionConstructor(typeof(Context)));", entityName.ToLower(), moduleId.ToLower(), entityName, modelName),
+                    string.Format(register + "(container, typeof(Interfaces.BusinessRepository.I{0}Entity<Models.{1}>), typeof(BusinessRepository.{0}Repository<Models.{1}>), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName, modelName),
+                    string.Format(register + "(container, typeof(Interfaces.BusinessRepository.I{0}Entity<Models.{1}>), typeof(BusinessRepository.{0}Repository<Models.{1}>), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
                 };
 
                 var txtLines = File.ReadAllLines(bsFile).ToList();
@@ -544,6 +546,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
+            var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
 
             var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
@@ -578,7 +581,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 };
                 string[] linesToAdded =
                 {
-                    string.Format(register + "<IController, {0}Controller<{0}>>(container, \"{1}{0}\");", entityName, moduleId)
+                    string.Format(register + "<IController, {0}Controller<{2}>>(container, \"{1}{0}\");", entityName, moduleId, modelName)
                 };
 
                 for (var i = 0; i <= 0; i++)
@@ -599,6 +602,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var moduleId = view.Properties[BusinessView.ModuleId];
             var entityName = view.Properties[BusinessView.EntityName];
+            var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
 
             var businessProjNs = settings.Projects[ProcessGeneration.BusinessRepositoryKey][moduleId].ProjectName + ".Process";
@@ -641,9 +645,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 string[] linesToAdded =
                 {
-                    string.Format(register + "<I{0}Service<{0}>, {0}Service<{0}>>(container);", entityName),
-                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{0}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName),
-                    string.Format(register + "<I{0}Entity<{0}>, {0}Repository<{0}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName)
+                    string.Format(register + "<I{0}Service<{1}>, {0}Service<{1}>>(container);", entityName, modelName),
+                    string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName, modelName),
+                    string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
                 };
 
 
