@@ -86,6 +86,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool includeSpanish { get; set; }
         /// <summary> Include French </summary>
         public bool includeFrench { get; set; }
+        /// <summary> Entities Container Name </summary>
+        public string EntitiesContainerName { get; set; }
         #endregion
     }
 

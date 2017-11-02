@@ -93,6 +93,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnRowAdd = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteRow = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteRows = new System.Windows.Forms.ToolStripButton();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pnlComposition = new System.Windows.Forms.Panel();
+            this.grdEntityCompositions = new System.Windows.Forms.DataGridView();
+            this.tbrEntityComposition = new System.Windows.Forms.ToolStrip();
+            this.btnAddRowComposition = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteRowComposition = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteRowsComposition = new System.Windows.Forms.ToolStripButton();
             this.pnlGenerateCode = new System.Windows.Forms.Panel();
             this.txtEntitiesToGenerate = new System.Windows.Forms.TextBox();
             this.lblProcessingFile = new System.Windows.Forms.Label();
@@ -130,6 +137,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntityFields)).BeginInit();
             this.tbrEntity.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.pnlComposition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEntityCompositions)).BeginInit();
+            this.tbrEntityComposition.SuspendLayout();
             this.pnlGenerateCode.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
@@ -253,7 +264,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtViewID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtViewID.Location = new System.Drawing.Point(93, 29);
             this.txtViewID.Name = "txtViewID";
-            this.txtViewID.Size = new System.Drawing.Size(209, 20);
+            this.txtViewID.Size = new System.Drawing.Size(209, 22);
             this.txtViewID.TabIndex = 3;
             this.txtViewID.Leave += new System.EventHandler(this.txtViewID_Leave);
             // 
@@ -439,9 +450,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlEntities
             // 
             this.pnlEntities.Controls.Add(this.splitEntities);
-            this.pnlEntities.Location = new System.Drawing.Point(829, 105);
+            this.pnlEntities.Location = new System.Drawing.Point(16, 17);
             this.pnlEntities.Name = "pnlEntities";
-            this.pnlEntities.Size = new System.Drawing.Size(660, 97);
+            this.pnlEntities.Size = new System.Drawing.Size(709, 379);
             this.pnlEntities.TabIndex = 45;
             // 
             // splitEntities
@@ -459,8 +470,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitEntities.Panel2
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
-            this.splitEntities.Size = new System.Drawing.Size(660, 97);
-            this.splitEntities.SplitterDistance = 36;
+            this.splitEntities.Size = new System.Drawing.Size(709, 379);
+            this.splitEntities.SplitterDistance = 139;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -470,7 +481,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(660, 36);
+            this.pnlEntityTree.Size = new System.Drawing.Size(709, 139);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -479,7 +490,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(660, 10);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(709, 113);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -488,7 +499,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(660, 10);
+            this.treeEntities.Size = new System.Drawing.Size(709, 113);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
             // 
@@ -498,7 +509,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntitiesLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEntitiesLabel.Location = new System.Drawing.Point(0, 0);
             this.pnlEntitiesLabel.Name = "pnlEntitiesLabel";
-            this.pnlEntitiesLabel.Size = new System.Drawing.Size(660, 26);
+            this.pnlEntitiesLabel.Size = new System.Drawing.Size(709, 26);
             this.pnlEntitiesLabel.TabIndex = 2;
             // 
             // lblEntities
@@ -508,7 +519,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntities.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblEntities.Location = new System.Drawing.Point(0, 0);
             this.lblEntities.Name = "lblEntities";
-            this.lblEntities.Size = new System.Drawing.Size(660, 13);
+            this.lblEntities.Size = new System.Drawing.Size(709, 13);
             this.lblEntities.TabIndex = 1;
             this.lblEntities.Text = "Right-Click on entities or entity to Add, Edit or Delete";
             // 
@@ -517,11 +528,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Controls.Add(this.tabPage1);
             this.tabEntity.Controls.Add(this.tabPage2);
             this.tabEntity.Controls.Add(this.tabPage3);
+            this.tabEntity.Controls.Add(this.tabPage4);
             this.tabEntity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
             this.tabEntity.SelectedIndex = 0;
-            this.tabEntity.Size = new System.Drawing.Size(660, 57);
+            this.tabEntity.Size = new System.Drawing.Size(709, 236);
             this.tabEntity.TabIndex = 1;
             // 
             // tabPage1
@@ -544,7 +556,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(652, 31);
+            this.tabPage1.Size = new System.Drawing.Size(701, 210);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -553,14 +565,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.txtReportIniFile.Location = new System.Drawing.Point(93, 61);
             this.txtReportIniFile.Name = "txtReportIniFile";
-            this.txtReportIniFile.Size = new System.Drawing.Size(325, 20);
+            this.txtReportIniFile.Size = new System.Drawing.Size(325, 22);
             this.txtReportIniFile.TabIndex = 5;
             // 
             // txtEntityName
             // 
-            this.txtEntityName.Location = new System.Drawing.Point(93, 143);
+            this.txtEntityName.Location = new System.Drawing.Point(545, 61);
             this.txtEntityName.Name = "txtEntityName";
-            this.txtEntityName.Size = new System.Drawing.Size(209, 20);
+            this.txtEntityName.Size = new System.Drawing.Size(209, 22);
             this.txtEntityName.TabIndex = 12;
             this.txtEntityName.Leave += new System.EventHandler(this.txtEntityName_Leave);
             // 
@@ -586,9 +598,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // txtResxName
             // 
-            this.txtResxName.Location = new System.Drawing.Point(93, 193);
+            this.txtResxName.Location = new System.Drawing.Point(545, 111);
             this.txtResxName.Name = "txtResxName";
-            this.txtResxName.Size = new System.Drawing.Size(209, 20);
+            this.txtResxName.Size = new System.Drawing.Size(209, 22);
             this.txtResxName.TabIndex = 16;
             // 
             // lblReportIniFile
@@ -606,7 +618,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtReportProgramId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReportProgramId.Location = new System.Drawing.Point(93, 114);
             this.txtReportProgramId.Name = "txtReportProgramId";
-            this.txtReportProgramId.Size = new System.Drawing.Size(209, 20);
+            this.txtReportProgramId.Size = new System.Drawing.Size(209, 22);
             this.txtReportProgramId.TabIndex = 10;
             this.txtReportProgramId.Leave += new System.EventHandler(this.txtReportProgramId_Leave);
             // 
@@ -614,7 +626,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.lblResxName.AutoSize = true;
             this.lblResxName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResxName.Location = new System.Drawing.Point(22, 196);
+            this.lblResxName.Location = new System.Drawing.Point(474, 114);
             this.lblResxName.Name = "lblResxName";
             this.lblResxName.Size = new System.Drawing.Size(65, 13);
             this.lblResxName.TabIndex = 15;
@@ -632,9 +644,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // txtModelName
             // 
-            this.txtModelName.Location = new System.Drawing.Point(93, 169);
+            this.txtModelName.Location = new System.Drawing.Point(545, 87);
             this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(209, 20);
+            this.txtModelName.Size = new System.Drawing.Size(209, 22);
             this.txtModelName.TabIndex = 14;
             this.txtModelName.Leave += new System.EventHandler(this.txtModelName_Leave);
             // 
@@ -642,7 +654,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.lblModelName.AutoSize = true;
             this.lblModelName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelName.Location = new System.Drawing.Point(12, 172);
+            this.lblModelName.Location = new System.Drawing.Point(464, 90);
             this.lblModelName.Name = "lblModelName";
             this.lblModelName.Size = new System.Drawing.Size(75, 13);
             this.lblModelName.TabIndex = 13;
@@ -665,7 +677,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.lblEntityName.AutoSize = true;
             this.lblEntityName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntityName.Location = new System.Drawing.Point(17, 146);
+            this.lblEntityName.Location = new System.Drawing.Point(469, 64);
             this.lblEntityName.Name = "lblEntityName";
             this.lblEntityName.Size = new System.Drawing.Size(71, 13);
             this.lblEntityName.TabIndex = 11;
@@ -681,7 +693,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(785, 197);
+            this.tabPage2.Size = new System.Drawing.Size(701, 210);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -748,7 +760,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.Controls.Add(this.pnlColumns);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(785, 197);
+            this.tabPage3.Size = new System.Drawing.Size(701, 210);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -760,7 +772,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(785, 197);
+            this.pnlColumns.Size = new System.Drawing.Size(701, 210);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -771,7 +783,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 25);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(785, 172);
+            this.grdEntityFields.Size = new System.Drawing.Size(701, 185);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -782,7 +794,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows});
             this.tbrEntity.Location = new System.Drawing.Point(0, 0);
             this.tbrEntity.Name = "tbrEntity";
-            this.tbrEntity.Size = new System.Drawing.Size(785, 25);
+            this.tbrEntity.Size = new System.Drawing.Size(701, 25);
             this.tbrEntity.TabIndex = 17;
             this.tbrEntity.Text = "toolStrip1";
             // 
@@ -815,6 +827,83 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows.Size = new System.Drawing.Size(23, 22);
             this.btnDeleteRows.Text = "Delete Rows";
             this.btnDeleteRows.Click += new System.EventHandler(this.btnDeleteRows_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pnlComposition);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(701, 210);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Composition";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pnlComposition
+            // 
+            this.pnlComposition.Controls.Add(this.grdEntityCompositions);
+            this.pnlComposition.Controls.Add(this.tbrEntityComposition);
+            this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlComposition.Location = new System.Drawing.Point(0, 0);
+            this.pnlComposition.Name = "pnlComposition";
+            this.pnlComposition.Size = new System.Drawing.Size(701, 210);
+            this.pnlComposition.TabIndex = 0;
+            // 
+            // grdEntityCompositions
+            // 
+            this.grdEntityCompositions.AllowUserToAddRows = false;
+            this.grdEntityCompositions.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.grdEntityCompositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdEntityCompositions.Location = new System.Drawing.Point(0, 25);
+            this.grdEntityCompositions.Name = "grdEntityCompositions";
+            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 185);
+            this.grdEntityCompositions.TabIndex = 1;
+            this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
+            // 
+            // tbrEntityComposition
+            // 
+            this.tbrEntityComposition.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddRowComposition,
+            this.btnDeleteRowComposition,
+            this.btnDeleteRowsComposition});
+            this.tbrEntityComposition.Location = new System.Drawing.Point(0, 0);
+            this.tbrEntityComposition.Name = "tbrEntityComposition";
+            this.tbrEntityComposition.Size = new System.Drawing.Size(701, 25);
+            this.tbrEntityComposition.TabIndex = 0;
+            this.tbrEntityComposition.Text = "toolStrip1";
+            // 
+            // btnAddRowComposition
+            // 
+            this.btnAddRowComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddRowComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRowComposition.Image")));
+            this.btnAddRowComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddRowComposition.Name = "btnAddRowComposition";
+            this.btnAddRowComposition.Size = new System.Drawing.Size(23, 22);
+            this.btnAddRowComposition.Text = "Add Row";
+            this.btnAddRowComposition.ToolTipText = "Add Row";
+            this.btnAddRowComposition.Click += new System.EventHandler(this.btnAddRowComposition_Click);
+            // 
+            // btnDeleteRowComposition
+            // 
+            this.btnDeleteRowComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteRowComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRowComposition.Image")));
+            this.btnDeleteRowComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteRowComposition.Name = "btnDeleteRowComposition";
+            this.btnDeleteRowComposition.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteRowComposition.Text = "Delete Row";
+            this.btnDeleteRowComposition.ToolTipText = "Delete Row";
+            this.btnDeleteRowComposition.Click += new System.EventHandler(this.btnDeleteRowComposition_Click);
+            // 
+            // btnDeleteRowsComposition
+            // 
+            this.btnDeleteRowsComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteRowsComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRowsComposition.Image")));
+            this.btnDeleteRowsComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteRowsComposition.Name = "btnDeleteRowsComposition";
+            this.btnDeleteRowsComposition.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteRowsComposition.Text = "Delete Rows";
+            this.btnDeleteRowsComposition.ToolTipText = "Delete Rows";
+            this.btnDeleteRowsComposition.Click += new System.EventHandler(this.btnDeleteRowsComposition_Click);
             // 
             // pnlGenerateCode
             // 
@@ -873,6 +962,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(731, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 25);
@@ -884,6 +974,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // btnSave
             // 
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(657, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 25);
@@ -921,6 +1012,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 554);
             this.Controls.Add(this.splitBase);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -964,6 +1056,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             ((System.ComponentModel.ISupportInitialize)(this.grdEntityFields)).EndInit();
             this.tbrEntity.ResumeLayout(false);
             this.tbrEntity.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.pnlComposition.ResumeLayout(false);
+            this.pnlComposition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEntityCompositions)).EndInit();
+            this.tbrEntityComposition.ResumeLayout(false);
+            this.tbrEntityComposition.PerformLayout();
             this.pnlGenerateCode.ResumeLayout(false);
             this.pnlGenerateCode.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
@@ -1044,6 +1142,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Label lblEntities;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel pnlColumns;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel pnlComposition;
+        private System.Windows.Forms.ToolStrip tbrEntityComposition;
+        private System.Windows.Forms.ToolStripButton btnAddRowComposition;
+        private System.Windows.Forms.ToolStripButton btnDeleteRowComposition;
+        private System.Windows.Forms.ToolStripButton btnDeleteRowsComposition;
+        private System.Windows.Forms.DataGridView grdEntityCompositions;
     }
 }
 
