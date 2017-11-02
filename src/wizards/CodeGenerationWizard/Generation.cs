@@ -667,6 +667,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             tooltip.SetToolTip(tbrEntityComposition, Resources.EntityCompositionGridTip);
             btnAddRowComposition.ToolTipText = Resources.AddRow;
+            
+            // Disable add button in compositions as developers should not add, but delete is ok
+            btnAddRowComposition.Visible = false;
+
             btnDeleteRowComposition.ToolTipText = Resources.DeleteRow;
             btnDeleteRowsComposition.ToolTipText = Resources.DeleteRows;
 
