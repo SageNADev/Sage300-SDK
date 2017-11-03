@@ -2626,6 +2626,43 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // System.Diagnostics.Process.Start(Resources.Browser, Resources.WikiLink);
         }
 
+        /// <summary> Show edit menu for entity node double clicked</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void treeEntities_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            // Treeview control was not left double clicked
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+
+            // Do nothing (no context menus) if mode is not none (i.e. it is in an edit or add state)
+            if (!_modeType.Equals(ModeType.None))
+            {
+                return;
+            }
+
+            // Double click will enter edit mode
+            if (e.Node.Name.Equals(ProcessGeneration.ElementEntities))
+            {
+                // No edit mode on this node
+                return;
+            }
+            else
+            {
+                // Edit entity
+                _contextMenu.MenuItems.Clear();
+
+                // Save node clicked
+                _clickedEntityTreeNode = e.Node;
+
+                // Setup items for edit of entity
+                EntitySetup(_clickedEntityTreeNode, ModeType.Edit);
+            }
+
+        }
+
         /// <summary> Show menu for entity node clicked</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
@@ -2736,5 +2773,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         #endregion
+
     }
 }

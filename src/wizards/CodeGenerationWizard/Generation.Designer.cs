@@ -471,7 +471,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
             this.splitEntities.Size = new System.Drawing.Size(709, 379);
-            this.splitEntities.SplitterDistance = 139;
+            this.splitEntities.SplitterDistance = 209;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -481,7 +481,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(709, 139);
+            this.pnlEntityTree.Size = new System.Drawing.Size(709, 209);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -490,7 +490,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(709, 113);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(709, 183);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -499,9 +499,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(709, 113);
+            this.treeEntities.Size = new System.Drawing.Size(709, 183);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
+            this.treeEntities.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseDoubleClick);
             // 
             // pnlEntitiesLabel
             // 
@@ -533,7 +534,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
             this.tabEntity.SelectedIndex = 0;
-            this.tabEntity.Size = new System.Drawing.Size(709, 236);
+            this.tabEntity.Size = new System.Drawing.Size(709, 166);
             this.tabEntity.TabIndex = 1;
             // 
             // tabPage1
@@ -556,7 +557,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(701, 210);
+            this.tabPage1.Size = new System.Drawing.Size(701, 140);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
