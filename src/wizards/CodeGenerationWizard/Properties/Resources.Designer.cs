@@ -577,6 +577,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include.
+        /// </summary>
+        internal static string Include {
+            get {
+                return ResourceManager.GetString("Include", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At least one field is required..
         /// </summary>
         internal static string InvalidCount {
@@ -640,38 +649,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The same composition view has been specified more than once.
-        /// </summary>
-        internal static string InvalidSettingCompositionDuplicates {
-            get {
-                return ResourceManager.GetString("InvalidSettingCompositionDuplicates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to A composition view has been specified but an entity for the view has not.
         /// </summary>
         internal static string InvalidSettingCompositionNotAnEntity {
             get {
                 return ResourceManager.GetString("InvalidSettingCompositionNotAnEntity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A composition view has been specified that does not exist.
-        /// </summary>
-        internal static string InvalidSettingCompositionNotExist {
-            get {
-                return ResourceManager.GetString("InvalidSettingCompositionNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A composition view has not been specified in at least one row.
-        /// </summary>
-        internal static string InvalidSettingCompositionNull {
-            get {
-                return ResourceManager.GetString("InvalidSettingCompositionNull", resourceCulture);
             }
         }
         

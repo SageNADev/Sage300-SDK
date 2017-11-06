@@ -128,6 +128,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Entities Container Name </summary>
         private string _entitiesContainerName;
 
+        /// <summary> All compositions checkbox </summary>
+        private CheckBox _allCompositions;
+
+        /// <summary> Skip Click in Compositions header </summary>
+        private bool _skipAllCompositionsClick = false;
         #endregion
 
         #region Private Constants
@@ -376,17 +381,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         // Iternate compositions to ensure the entity for the view exists
                         foreach (var composition in businessView.Compositions)
                         {
-                            // Attempt to locate entity in list
-                            entityName = EntityComposition(composition.ViewId);
-                            // Can stop looking if a view is not matched to an entity
-                            if (string.IsNullOrEmpty(entityName))
+                            if (composition.Include)
                             {
-                                return Resources.InvalidSettingCompositionNotAnEntity;
-                            }
-                            else
-                            {
-                                // Update entity name into composition
-                                composition.EntityName = entityName;
+                                // Attempt to locate entity in list
+                                entityName = EntityComposition(composition.ViewId);
+                                // Can stop looking if a view is not matched to an entity
+                                if (string.IsNullOrEmpty(entityName))
+                                {
+                                    return Resources.InvalidSettingCompositionNotAnEntity;
+                                }
+                                else
+                                {
+                                    // Update entity name into composition
+                                    composition.EntityName = entityName;
+                                }
                             }
                         }
                     }
@@ -523,47 +531,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Entity Compositions
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                // Proceed with validations if any compositions entered
+                // Proceed if any compositions
                 if (entityCompositions.Count > 0)
                 {
-                    // Determine if any dupes in list
-                    var dupes = entityCompositions.GroupBy(x => x.ViewId)
-                                  .Where(g => g.Count() > 1)
-                                  .Select(y => y.Key)
-                                  .ToList();
-                    if (dupes.Count > 0)
-                    {
-                        return Resources.InvalidSettingCompositionDuplicates;
-                    }
-
-                    // Ensure view specified is valid
                     foreach (var composition in entityCompositions)
                     {
-                        // Ensure no blanks have been entered
-                        if (string.IsNullOrEmpty(composition.ViewId))
+                        if (composition.Include)
                         {
-                            return Resources.InvalidSettingCompositionNull;
-                        }
-
-                        // Validate view
-                        try
-                        {
-                            // It's valid if this does not error
-                            var businessView = new BusinessView();
-                            ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
-                                txtCompany.Text.Trim(), txtVersion.Text.Trim(), composition.ViewId, cboModule.Text);
-                        }
-                        catch 
-                        {
-                            return Resources.InvalidSettingCompositionNotExist;
-                        }
-
-                        // Attempt to locate entity in list
-                        var name = EntityComposition(composition.ViewId);
-                        if (!string.IsNullOrEmpty(name))
-                        {
-                            // Update entity name into composition
-                            composition.EntityName = name;
+                            // Attempt to locate entity in list
+                            var name = EntityComposition(composition.ViewId);
+                            if (!string.IsNullOrEmpty(name))
+                            {
+                                // Update entity name into composition
+                                composition.EntityName = name;
+                            }
                         }
                     }
 
@@ -665,15 +646,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabPage4.Text = Resources.Composition;
             tabPage4.ToolTipText = Resources.CompositionTip;
 
-            tooltip.SetToolTip(tbrEntityComposition, Resources.EntityCompositionGridTip);
-            btnAddRowComposition.ToolTipText = Resources.AddRow;
+            tooltip.SetToolTip(grdEntityCompositions, Resources.EntityCompositionGridTip);
             
-            // Disable add button in compositions as developers should not add, but delete is ok
-            btnAddRowComposition.Visible = false;
-
-            btnDeleteRowComposition.ToolTipText = Resources.DeleteRow;
-            btnDeleteRowsComposition.ToolTipText = Resources.DeleteRows;
-
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
@@ -989,6 +963,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _deleteEntitiesMenuItem.Click += DeleteEntitiesMenuItemOnClick;
             _editContainerName.Click += EditContainerNameMenuItemOnClick;
 
+            // Check box for all compositions
+            _allCompositions = new CheckBox();
+            _allCompositions.Checked = true;
+            _allCompositions.CheckedChanged += AllCompositionsCheckedChanged;
+
             // Default to Flat Repository
             cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.Flat);
         }
@@ -1049,14 +1028,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _modeType = modeType;
             ClearEntityControls();
 
-            // Load controls from entity or set defaults
-            LoadEntityControls();
-
             // Enable entity controls
             EnableEntityControls(true);
 
+            // Load controls from entity or set defaults
+            LoadEntityControls();
+
             // Set focus to view
-            txtViewID.Focus();
+            if (txtViewID.Enabled)
+            {
+                txtViewID.Focus();
+            }
         }
 
         /// <summary> Set node color when tree does not have focuus</summary>
@@ -1124,10 +1106,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             btnIniDialog.Enabled = enableReportControls;
 
             var enableCompositionControls = (repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
-            tbrEntityComposition.Enabled = enableCompositionControls;
             grdEntityCompositions.Enabled = enableCompositionControls;
 
-            txtViewID.Enabled = string.IsNullOrEmpty(txtViewID.Text) && enable;
+            txtViewID.Enabled = _modeType.Equals(ModeType.Add) && enable;
 
             chkGenerateFinder.Enabled = (!repositoryType.Equals(RepositoryType.Report) &&
                                 !repositoryType.Equals(RepositoryType.Process) &&
@@ -1166,6 +1147,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                                 !repositoryType.Equals(RepositoryType.DynamicQuery) &&
                                                 // Inquiry type should be able to generate finder but disable for now
                                                 !repositoryType.Equals(RepositoryType.Inquiry));
+                // If not enabled, then uncheck it
+                if (!chkGenerateFinder.Enabled)
+                {
+                    chkGenerateFinder.Checked = false;
+                }
 
                 chkGenerateDynamicEnablement.Checked = true;
                 chkGenerateClientFiles.Checked = true;
@@ -1205,18 +1191,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             chkGenerateIfExist.Checked = businessView.Options[BusinessView.GenerateIfAlreadyExists];
             chkGenerateEnumsInSingleFile.Checked = businessView.Options[BusinessView.GenerateEnumsInSingleFile];
 
+            // Assign to the grids
+            AssignGrids(businessView);
+        }
+
+        /// <summary> Assign grids </summary>
+        /// <param name="businessView">Business View</param>
+        private void AssignGrids(BusinessView businessView)
+        {
+            var repositoryType = GetRepositoryType();
+
             // Assign to the properties grid
             foreach (var field in businessView.Fields)
             {
+                // Add to collection for data binding to grid
                 _entityFields.Add(field);
             }
-            grdEntityFields.Refresh();
 
             // Assign to the compositions grid
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
+                // Determine how to set header included checkbox
+                var allIncluded = true;
+
                 foreach (var composition in businessView.Compositions)
                 {
+                    // If if has not been set to false, someone is not included,
+                    // then keep investigating every row
+                    if (allIncluded)
+                    {
+                        allIncluded = composition.Include;
+                    }
+
                     // Attempt to locate entity in list
                     var name = EntityComposition(composition.ViewId);
                     if (!string.IsNullOrEmpty(name))
@@ -1225,9 +1231,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         composition.EntityName = name;
                     }
 
+                    // Add to collection for data binding to grid
                     _entityCompositions.Add(composition);
                 }
-                grdEntityCompositions.Refresh();
+
+                // Set header included checkbox, if there are any compositions
+                if (businessView.Compositions.Count > 0)
+                {
+                    // If all rows are included, all compositions checkbox will be checked
+                    if (allIncluded)
+                    {
+                        // Only check if it is not already checked
+                        if (!_allCompositions.Checked)
+                        {
+                            _skipAllCompositionsClick = true;
+                            _allCompositions.Checked = true;
+                        }
+                    }
+                    // Since either all are not included or some are, all compositions checkbox will be unchecked
+                    else
+                    {
+                        // Only uncheck if it is not already unchecked
+                        if (_allCompositions.Checked)
+                        {
+                            _skipAllCompositionsClick = true;
+                            _allCompositions.Checked = false;
+                        }
+                    }
+                }
+
+
             }
         }
 
@@ -1400,7 +1433,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Show compositions if a header-detail
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                text += ProcessGeneration.PropertyComps + "=\"" + businessView.Compositions.Count.ToString() + "\" ";
+                text += ProcessGeneration.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
             }
 
             // Show Finder and Dynamic Enablement if not a report/dynamic query
@@ -1458,13 +1491,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void EditContainerNameMenuItemOnClick(object sender, EventArgs eventArgs)
         {
             // Modal form for input
-            var dialog = new ContainerName(_entitiesContainerName);
-            if (dialog.ShowDialog(this) == DialogResult.OK)
-            {
-                _entitiesContainerName = dialog.ContainerNameProperty;
-                var entitiesNode = treeEntities.Nodes[0];
-                entitiesNode.Text = BuildEntitiesText();
-            }
+            EditContainerName();
         }
 
         /// <summary> Edit Entity</summary>
@@ -1516,6 +1543,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         #endregion
+
+        /// <summary> Edit Container Name</summary>
+        private void EditContainerName()
+        {
+            // Modal form for input
+            var dialog = new ContainerName(_entitiesContainerName);
+            if (dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                _entitiesContainerName = dialog.ContainerNameProperty;
+                var entitiesNode = treeEntities.Nodes[0];
+                entitiesNode.Text = BuildEntitiesText();
+            }
+        }
 
         /// <summary> Get Repository Type </summary>
         private RepositoryType GetRepositoryType()
@@ -1681,6 +1721,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                         compositionElement.Add(new XAttribute(ProcessGeneration.PropertyViewId, composition.ViewId));
                         compositionElement.Add(new XAttribute(ProcessGeneration.PropertyEntity, composition.EntityName));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.PropertyInclude, composition.Include.ToString()));
 
                         compositionsElement.Add(compositionElement);
                     }
@@ -2014,8 +2055,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 grdEntityCompositions.ScrollBars = ScrollBars.Both;
 
                 // Assign widths and localized text
-                GenericInit(grdEntityCompositions, 0, 125, Resources.CompositeView, true, false);
-                GenericInit(grdEntityCompositions, 1, 125, Resources.Entity, true, true);
+                GenericInit(grdEntityCompositions, 0, 125, Resources.CompositeView, true, true);
+                GenericInit(grdEntityCompositions, 1, 150, Resources.Entity, true, true);
+                GenericInit(grdEntityCompositions, 2, 125, Resources.Include, true, false);
+
+                // Place checkbox into header
+                //var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
+                _allCompositions.Size = new Size(18, 18);
+                //_allCompositions.Location = rect.Location;
+                grdEntityCompositions.Controls.Add(_allCompositions);
             }
         }
 
@@ -2034,6 +2082,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             grid.Columns[column].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grid.Columns[column].Visible = visible;
             grid.Columns[column].ReadOnly = readOnly;
+            grid.Columns[column].Resizable = DataGridViewTriState.False;
 
             // Show read only in InactiveCaption color
             if (readOnly)
@@ -2259,18 +2308,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary> Add a row toolbar button </summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void btnAddRowComposition_Click(object sender, EventArgs e)
-        {
-            var repositoryType = GetRepositoryType();
-
-            if (repositoryType.Equals(RepositoryType.HeaderDetail))
-            {
-                _entityCompositions.Add(new Composition());
-            }
-        }
 
         /// <summary> Delete the current row toolbar button </summary>
         /// <param name="sender">Sender object </param>
@@ -2288,22 +2325,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary> Delete the current row toolbar button </summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void btnDeleteRowComposition_Click(object sender, EventArgs e)
-        {
-            var repositoryType = GetRepositoryType();
-
-            if (repositoryType.Equals(RepositoryType.HeaderDetail))
-            {
-                if (grdEntityCompositions.CurrentRow != null)
-                {
-                    grdEntityCompositions.Rows.Remove(grdEntityCompositions.CurrentRow);
-                }
-            }
-        }
-
         /// <summary> Delete all rows toolbar button</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
@@ -2314,19 +2335,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!repositoryType.Equals(RepositoryType.Report))
             {
                 DeleteRows();
-            }
-        }
-
-        /// <summary> Delete all rows toolbar button</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void btnDeleteRowsComposition_Click(object sender, EventArgs e)
-        {
-            var repositoryType = GetRepositoryType();
-
-            if (repositoryType.Equals(RepositoryType.HeaderDetail))
-            {
-                DeleteCompositionRows();
             }
         }
 
@@ -2580,20 +2588,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     DeleteRows();
                     DeleteCompositionRows();
 
-                    // Assign to the properties grid
-                    foreach (var field in businessView.Fields)
-                    {
-                        _entityFields.Add(field);
-                    }
-
-                    // Assign to the compositions grid
-                    if (GetRepositoryType().Equals(RepositoryType.HeaderDetail))
-                    {
-                        foreach (var composition in businessView.Compositions)
-                        {
-                            _entityCompositions.Add(composition);
-                        }
-                    }
+                    // Assign to the grids
+                    AssignGrids(businessView);
                 }
             }
             catch (Exception ex)
@@ -2643,11 +2639,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return;
             }
 
+            var repositoryType = GetRepositoryType();
+
             // Double click will enter edit mode
             if (e.Node.Name.Equals(ProcessGeneration.ElementEntities))
             {
-                // No edit mode on this node
-                return;
+                if (repositoryType.Equals(RepositoryType.HeaderDetail))
+                {
+                    // Show modal dialog
+                    EditContainerName();
+                }
+                else
+                {
+                    // No edit mode on this node
+                    return;
+                }
             }
             else
             {
@@ -2768,6 +2774,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     e.Value = e.Value.ToString().ToUpper();
                     e.FormattingApplied = true;
                 }
+            }
+
+        }
+
+        /// <summary> All compositions checkbox changed</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void AllCompositionsCheckedChanged(object sender, EventArgs e)
+        {
+            // Only act on event if user click not programatic click
+            if (!_skipAllCompositionsClick)
+            {
+                // Update all rows to match header
+                for (int row = 0; row < grdEntityCompositions.RowCount; row++)
+                {
+                    grdEntityCompositions[2, row].Value = _allCompositions.Checked;
+                }
+                grdEntityCompositions.EndEdit();
+            }
+            _skipAllCompositionsClick = false;
+        }
+
+        /// <summary> Re-position All compositions checkbox </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void tabEntity_Click(object sender, EventArgs e)
+        {
+            // If compositions tab is selected
+            if (((TabControl)sender).SelectedTab.TabIndex.Equals(3))
+            {
+                // Re-position
+                var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
+                _allCompositions.Location = new Point(rect.Location.X + 18, rect.Location.Y + 2);
             }
 
         }

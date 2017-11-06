@@ -96,10 +96,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pnlComposition = new System.Windows.Forms.Panel();
             this.grdEntityCompositions = new System.Windows.Forms.DataGridView();
-            this.tbrEntityComposition = new System.Windows.Forms.ToolStrip();
-            this.btnAddRowComposition = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteRowComposition = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteRowsComposition = new System.Windows.Forms.ToolStripButton();
             this.pnlGenerateCode = new System.Windows.Forms.Panel();
             this.txtEntitiesToGenerate = new System.Windows.Forms.TextBox();
             this.lblProcessingFile = new System.Windows.Forms.Label();
@@ -140,7 +136,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.SuspendLayout();
             this.pnlComposition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntityCompositions)).BeginInit();
-            this.tbrEntityComposition.SuspendLayout();
             this.pnlGenerateCode.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
@@ -536,6 +531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.SelectedIndex = 0;
             this.tabEntity.Size = new System.Drawing.Size(709, 166);
             this.tabEntity.TabIndex = 1;
+            this.tabEntity.Click += new System.EventHandler(this.tabEntity_Click);
             // 
             // tabPage1
             // 
@@ -694,7 +690,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(701, 210);
+            this.tabPage2.Size = new System.Drawing.Size(701, 140);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -761,7 +757,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.Controls.Add(this.pnlColumns);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(701, 210);
+            this.tabPage3.Size = new System.Drawing.Size(701, 140);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -773,7 +769,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(701, 210);
+            this.pnlColumns.Size = new System.Drawing.Size(701, 140);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -784,7 +780,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 25);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(701, 185);
+            this.grdEntityFields.Size = new System.Drawing.Size(701, 115);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -834,7 +830,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.Controls.Add(this.pnlComposition);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(701, 210);
+            this.tabPage4.Size = new System.Drawing.Size(701, 140);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -842,11 +838,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlComposition
             // 
             this.pnlComposition.Controls.Add(this.grdEntityCompositions);
-            this.pnlComposition.Controls.Add(this.tbrEntityComposition);
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(701, 210);
+            this.pnlComposition.Size = new System.Drawing.Size(701, 140);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -855,56 +850,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.BackgroundColor = System.Drawing.SystemColors.Window;
             this.grdEntityCompositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdEntityCompositions.Location = new System.Drawing.Point(0, 25);
+            this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 185);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 140);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
-            // 
-            // tbrEntityComposition
-            // 
-            this.tbrEntityComposition.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddRowComposition,
-            this.btnDeleteRowComposition,
-            this.btnDeleteRowsComposition});
-            this.tbrEntityComposition.Location = new System.Drawing.Point(0, 0);
-            this.tbrEntityComposition.Name = "tbrEntityComposition";
-            this.tbrEntityComposition.Size = new System.Drawing.Size(701, 25);
-            this.tbrEntityComposition.TabIndex = 0;
-            this.tbrEntityComposition.Text = "toolStrip1";
-            // 
-            // btnAddRowComposition
-            // 
-            this.btnAddRowComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddRowComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRowComposition.Image")));
-            this.btnAddRowComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddRowComposition.Name = "btnAddRowComposition";
-            this.btnAddRowComposition.Size = new System.Drawing.Size(23, 22);
-            this.btnAddRowComposition.Text = "Add Row";
-            this.btnAddRowComposition.ToolTipText = "Add Row";
-            this.btnAddRowComposition.Click += new System.EventHandler(this.btnAddRowComposition_Click);
-            // 
-            // btnDeleteRowComposition
-            // 
-            this.btnDeleteRowComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeleteRowComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRowComposition.Image")));
-            this.btnDeleteRowComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteRowComposition.Name = "btnDeleteRowComposition";
-            this.btnDeleteRowComposition.Size = new System.Drawing.Size(23, 22);
-            this.btnDeleteRowComposition.Text = "Delete Row";
-            this.btnDeleteRowComposition.ToolTipText = "Delete Row";
-            this.btnDeleteRowComposition.Click += new System.EventHandler(this.btnDeleteRowComposition_Click);
-            // 
-            // btnDeleteRowsComposition
-            // 
-            this.btnDeleteRowsComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeleteRowsComposition.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRowsComposition.Image")));
-            this.btnDeleteRowsComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteRowsComposition.Name = "btnDeleteRowsComposition";
-            this.btnDeleteRowsComposition.Size = new System.Drawing.Size(23, 22);
-            this.btnDeleteRowsComposition.Text = "Delete Rows";
-            this.btnDeleteRowsComposition.ToolTipText = "Delete Rows";
-            this.btnDeleteRowsComposition.Click += new System.EventHandler(this.btnDeleteRowsComposition_Click);
             // 
             // pnlGenerateCode
             // 
@@ -1059,10 +1009,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tbrEntity.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.pnlComposition.ResumeLayout(false);
-            this.pnlComposition.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntityCompositions)).EndInit();
-            this.tbrEntityComposition.ResumeLayout(false);
-            this.tbrEntityComposition.PerformLayout();
             this.pnlGenerateCode.ResumeLayout(false);
             this.pnlGenerateCode.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
@@ -1145,10 +1092,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Panel pnlColumns;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel pnlComposition;
-        private System.Windows.Forms.ToolStrip tbrEntityComposition;
-        private System.Windows.Forms.ToolStripButton btnAddRowComposition;
-        private System.Windows.Forms.ToolStripButton btnDeleteRowComposition;
-        private System.Windows.Forms.ToolStripButton btnDeleteRowsComposition;
         private System.Windows.Forms.DataGridView grdEntityCompositions;
     }
 }

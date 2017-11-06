@@ -33,6 +33,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Set defaults
             ViewId = string.Empty;
             EntityName = string.Empty;
+            Include = true;
         }
         #endregion
 
@@ -41,6 +42,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string ViewId { get; set; }
         /// <summary> Entity Name </summary>
         public string EntityName { get; set; }
+        /// <summary> Include in Composition </summary>
+        public bool Include { get; set; }
         #endregion
 
     }

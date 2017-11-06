@@ -182,6 +182,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Property for Entity </summary>
         public const string PropertyEntity = "entity";
 
+        /// <summary> Property for Include </summary>
+        public const string PropertyInclude = "include";
+
         /// <summary> Property for Container </summary>
         public const string PropertyContainer = "container";
 

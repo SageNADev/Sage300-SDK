@@ -493,19 +493,13 @@
   <data name="EntityCompositionGridTip" xml:space="preserve">
     <value>For Header-Detail, the Accpac Views to be composed for the entity</value>
   </data>
-  <data name="InvalidSettingCompositionDuplicates" xml:space="preserve">
-    <value>The same composition view has been specified more than once</value>
-  </data>
   <data name="InvalidSettingCompositionNotAnEntity" xml:space="preserve">
     <value>A composition view has been specified but an entity for the view has not</value>
   </data>
-  <data name="InvalidSettingCompositionNotExist" xml:space="preserve">
-    <value>A composition view has been specified that does not exist</value>
-  </data>
-  <data name="InvalidSettingCompositionNull" xml:space="preserve">
-    <value>A composition view has not been specified in at least one row</value>
-  </data>
   <data name="InvalidSettingContainerName" xml:space="preserve">
     <value>The entities contain one entity with the same name as the Container Name. Please change the Container Name or the Entity Name.</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
   </data>
 </root>
