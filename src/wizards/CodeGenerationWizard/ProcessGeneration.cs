@@ -181,9 +181,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Property for Entity </summary>
         public const string PropertyEntity = "entity";
-        
+
+        /// <summary> Property for Include </summary>
+        public const string PropertyInclude = "include";
+
+        /// <summary> Property for Container </summary>
+        public const string PropertyContainer = "container";
+
         /// <summary> Property for Properties </summary>
         public const string PropertyProperties = "props";
+
+        /// <summary> Property for Compositions </summary>
+        public const string PropertyComps = "comps";
+
+        /// <summary> Property for Compositions </summary>
+        public const string PropertyCompositions = "compositions";
+
+        /// <summary> Property for Composition </summary>
+        public const string PropertyComposition = "composition";
 
         /// <summary> Property for Type </summary>
         public const string PropertyType = "type";
@@ -198,19 +213,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public const string PropertyReport = "report";
 
         /// <summary> Property for Finder </summary>
-        public const string PropertyFinder = "genFinder";
+        public const string PropertyFinder = "finder";
 
         /// <summary> Property for Enablement </summary>
-        public const string PropertyEnablement = "genEnablement";
+        public const string PropertyEnablement = "enablement";
 
         /// <summary> Property for ClientFiles </summary>
-        public const string PropertyClientFiles = "genClientFiles";
+        public const string PropertyClientFiles = "clientFiles";
 
         /// <summary> Property for IfExists </summary>
-        public const string PropertyIfExists = "genIfExists";
+        public const string PropertyIfExists = "ifExists";
 
         /// <summary> Property for SingleFile </summary>
-        public const string PropertySingleFile = "genSingleFile";
+        public const string PropertySingleFile = "singleFile";
 
         /// <summary> Property for Fields </summary>
         public const string PropertyFields = "fields";
@@ -322,6 +337,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Keys.Clear();
             businessView.Options.Clear();
             businessView.Properties.Clear();
+            businessView.Compositions.Clear();
 
             businessView.Properties[BusinessView.ViewId] = view.ViewID;
             businessView.Properties[BusinessView.ModuleId] = moduleId;
@@ -334,6 +350,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties[BusinessView.EntityName] = description;
 
             GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
+
+            // Any compositions
+            if (view.CompositeNames != null)
+            {
+                if (view.CompositeNames.Count() > 0)
+                {
+                    foreach (var compositeView in view.CompositeNames)
+                    {
+                        businessView.Compositions.Add(new Composition() { ViewId = compositeView });
+                    }
+                }
+            }
 
             // Clean up
             try

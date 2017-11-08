@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Row.
+        /// </summary>
+        internal static string AddRow {
+            get {
+                return ResourceManager.GetString("AddRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string Back {
@@ -170,11 +179,65 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Composite View.
+        /// </summary>
+        internal static string CompositeView {
+            get {
+                return ResourceManager.GetString("CompositeView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Composition.
+        /// </summary>
+        internal static string Composition {
+            get {
+                return ResourceManager.GetString("Composition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add, modify, and/or delete composition information for certain code types.
+        /// </summary>
+        internal static string CompositionTip {
+            get {
+                return ResourceManager.GetString("CompositionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
         internal static string Confirmation {
             get {
                 return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Container Name:.
+        /// </summary>
+        internal static string ContainerName {
+            get {
+                return ResourceManager.GetString("ContainerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Container Name Required.
+        /// </summary>
+        internal static string ContainerNameRequired {
+            get {
+                return ResourceManager.GetString("ContainerNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a name to be used as the container name for the entities.
+        /// </summary>
+        internal static string ContainerNameTip {
+            get {
+                return ResourceManager.GetString("ContainerNameTip", resourceCulture);
             }
         }
         
@@ -206,11 +269,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Row.
+        /// </summary>
+        internal static string DeleteRow {
+            get {
+                return ResourceManager.GetString("DeleteRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DeleteRows.
+        /// </summary>
+        internal static string DeleteRows {
+            get {
+                return ResourceManager.GetString("DeleteRows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Container Name.
+        /// </summary>
+        internal static string EditContainerName {
+            get {
+                return ResourceManager.GetString("EditContainerName", resourceCulture);
             }
         }
         
@@ -238,6 +328,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For Header-Detail, the Accpac Views to be composed for the entity.
+        /// </summary>
+        internal static string EntityCompositionGridTip {
+            get {
+                return ResourceManager.GetString("EntityCompositionGridTip", resourceCulture);
             }
         }
         
@@ -478,6 +577,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include.
+        /// </summary>
+        internal static string Include {
+            get {
+                return ResourceManager.GetString("Include", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At least one field is required..
         /// </summary>
         internal static string InvalidCount {
@@ -537,6 +645,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string InvalidResxName {
             get {
                 return ResourceManager.GetString("InvalidResxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A composition view has been specified but an entity for the view has not.
+        /// </summary>
+        internal static string InvalidSettingCompositionNotAnEntity {
+            get {
+                return ResourceManager.GetString("InvalidSettingCompositionNotAnEntity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The entities contain one entity with the same name as the Container Name. Please change the Container Name or the Entity Name..
+        /// </summary>
+        internal static string InvalidSettingContainerName {
+            get {
+                return ResourceManager.GetString("InvalidSettingContainerName", resourceCulture);
             }
         }
         

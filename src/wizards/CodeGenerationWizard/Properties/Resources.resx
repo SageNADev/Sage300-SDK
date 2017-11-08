@@ -460,4 +460,46 @@
   <data name="PropertiesTip" xml:space="preserve">
     <value>Add, modify, and/or delete property information for most code types</value>
   </data>
+  <data name="ContainerNameRequired" xml:space="preserve">
+    <value>Container Name Required</value>
+  </data>
+  <data name="AddRow" xml:space="preserve">
+    <value>Add Row</value>
+  </data>
+  <data name="CompositeView" xml:space="preserve">
+    <value>Composite View</value>
+  </data>
+  <data name="Composition" xml:space="preserve">
+    <value>Composition</value>
+  </data>
+  <data name="CompositionTip" xml:space="preserve">
+    <value>Add, modify, and/or delete composition information for certain code types</value>
+  </data>
+  <data name="ContainerName" xml:space="preserve">
+    <value>Container Name:</value>
+  </data>
+  <data name="ContainerNameTip" xml:space="preserve">
+    <value>Enter a name to be used as the container name for the entities</value>
+  </data>
+  <data name="DeleteRow" xml:space="preserve">
+    <value>Delete Row</value>
+  </data>
+  <data name="DeleteRows" xml:space="preserve">
+    <value>DeleteRows</value>
+  </data>
+  <data name="EditContainerName" xml:space="preserve">
+    <value>Edit Container Name</value>
+  </data>
+  <data name="EntityCompositionGridTip" xml:space="preserve">
+    <value>For Header-Detail, the Accpac Views to be composed for the entity</value>
+  </data>
+  <data name="InvalidSettingCompositionNotAnEntity" xml:space="preserve">
+    <value>A composition view has been specified but an entity for the view has not</value>
+  </data>
+  <data name="InvalidSettingContainerName" xml:space="preserve">
+    <value>The entities contain one entity with the same name as the Container Name. Please change the Container Name or the Entity Name.</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
+  </data>
 </root>

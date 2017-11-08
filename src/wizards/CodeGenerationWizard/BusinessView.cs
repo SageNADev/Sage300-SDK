@@ -56,6 +56,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Enums = new Dictionary<string, EnumHelper>();
             Keys = new List<string>();
             Options = new Dictionary<string, bool>();
+            Compositions = new List<Composition>();
         }
         #endregion
 
@@ -72,6 +73,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string Text { get; set; }
         /// <summary> Options is the collection of business view options </summary>
         public Dictionary<string, bool> Options { get; set; }
+        /// <summary> Compositions is the collection of entity compositions </summary>
+        public List<Composition> Compositions { get; set; }
         #endregion
 
     }
