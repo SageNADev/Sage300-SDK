@@ -1115,10 +1115,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 !repositoryType.Equals(RepositoryType.DynamicQuery) &&
                                 // Inquiry type should be able to generate finder but disable for now
                                 !repositoryType.Equals(RepositoryType.Inquiry));
+
+            chkGenerateDynamicEnablement.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
+            chkGenerateClientFiles.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
+
             // If not enabled, then uncheck it
             if (!chkGenerateFinder.Enabled)
             {
                 chkGenerateFinder.Checked = false;
+            }
+            if (!chkGenerateDynamicEnablement.Enabled)
+            {
+                chkGenerateDynamicEnablement.Checked = false;
+            }
+            if (!chkGenerateClientFiles.Enabled)
+            {
+                chkGenerateClientFiles.Checked = false;
             }
 
         }
@@ -1142,21 +1154,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Options defaults
-                chkGenerateFinder.Checked = (!repositoryType.Equals(RepositoryType.Report) &&
+                chkGenerateFinder.Checked = !repositoryType.Equals(RepositoryType.Report) &&
                                                 !repositoryType.Equals(RepositoryType.Process) &&
                                                 !repositoryType.Equals(RepositoryType.DynamicQuery) &&
                                                 // Inquiry type should be able to generate finder but disable for now
-                                                !repositoryType.Equals(RepositoryType.Inquiry));
+                                                !repositoryType.Equals(RepositoryType.Inquiry) &&
+                                                !repositoryType.Equals(RepositoryType.HeaderDetail);
+
+                chkGenerateDynamicEnablement.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
+                chkGenerateClientFiles.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
+                chkGenerateIfExist.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
+                chkGenerateEnumsInSingleFile.Checked = false;
+
                 // If not enabled, then uncheck it
                 if (!chkGenerateFinder.Enabled)
                 {
                     chkGenerateFinder.Checked = false;
                 }
-
-                chkGenerateDynamicEnablement.Checked = true;
-                chkGenerateClientFiles.Checked = true;
-                chkGenerateIfExist.Checked = true;
-                chkGenerateEnumsInSingleFile.Checked = false;
+                if (!chkGenerateDynamicEnablement.Enabled)
+                {
+                    chkGenerateDynamicEnablement.Checked = false;
+                }
+                if (!chkGenerateClientFiles.Enabled)
+                {
+                    chkGenerateClientFiles.Checked = false;
+                }
 
                 return;
             }
