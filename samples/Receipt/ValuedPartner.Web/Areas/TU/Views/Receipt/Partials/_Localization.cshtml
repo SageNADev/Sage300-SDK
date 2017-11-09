@@ -1,0 +1,88 @@
+﻿@* The MIT License (MIT) *@
+@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+@* *@
+@* Permission is hereby granted, free of charge, to any person obtaining a copy of *@
+@* this software and associated documentation files (the "Software"), to deal in *@
+@* the Software without restriction, including without limitation the rights to use, *@
+@* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the *@
+@* Software, and to permit persons to whom the Software is furnished to do so, *@
+@* subject to the following conditions: *@
+@* *@
+@* The above copyright notice and this permission notice shall be included in all *@
+@* copies or substantial portions of the Software. *@
+@* *@
+@* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, *@
+@* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A *@
+@* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT *@
+@* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF *@
+@* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE *@
+@* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using ReceiptResx = ValuedPartner.TU.Resources.Forms.ReceiptHeaderResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+<script type="text/javascript">
+    var receiptResources = {
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        DeleteConfirmMessage: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
+        ShipmentNumber: '@Html.SageRaw(ReceiptResx.ShipmentNumber)',
+        CustomerNumber: '@Html.SageRaw(ReceiptResx.CustomerNumber)',
+        Currency: '@Html.SageRaw(ReceiptResx.Currency)',
+        PriceList: '@Html.SageRaw(ReceiptResx.PriceList)',
+        DeleteTitle: '@Html.SageRaw(CommonResx.Delete)',
+        LineNumber: '@Html.SageRaw(ReceiptResx.LineNumber)',
+        ItemNumber: '@Html.SageRaw(ReceiptResx.ItemNumber)',
+        ItemDescription: '@Html.SageRaw(ReceiptResx.ItemDescription)',
+        Quantity: '@Html.SageRaw(ReceiptResx.Quantity)',
+        Location: '@Html.SageRaw(ReceiptResx.Location)',
+        UnitOfMeasure: '@Html.SageRaw(ReceiptResx.UnitOfMeasure)',
+        UnitPrice: '@Html.SageRaw(ReceiptResx.UnitPrice)',
+        UnitCost: '@Html.SageRaw(ReceiptResx.UnitCost)',
+        ExtendedCost: '@Html.SageRaw(ReceiptResx.ExtendedCost)',
+        Project: '@Html.SageRaw(ReceiptResx.Project)',
+        Category: '@Html.SageRaw(ReceiptResx.Category)',
+        ManufacturersItemNumber: '@Html.SageRaw(ReceiptResx.ManufacturersItemNumber)',
+        OptionalFields: '@Html.SageRaw(CommonResx.OptionalFields)',
+        OptionalFieldTitle: '@Html.SageRaw(CommonResx.OptionalField)',
+        RateType: '@Html.SageRaw(ReceiptResx.RateType)',
+        ExchangeRate: '@Html.SageRaw(ReceiptResx.ExchangeRate)',
+        QtyReceived: '@Html.SageRaw(ReceiptResx.QuantityReceived)',
+        Labels: '@Html.SageRaw(ReceiptResx.Labels)',
+        Comments: '@Html.SageRaw(ReceiptResx.Comments)',
+        ReceiptNumber: '@Html.SageRaw(ReceiptResx.ReceiptNumber)',
+        VendorNumber: '@Html.SageRaw(ReceiptResx.VendorNumber)',
+        ReceiptCurr: '@Html.SageRaw(ReceiptResx.ReceiptCurrency)',
+        AddCostCurr: '@Html.SageRaw(ReceiptResx.AdditionalCostCurrency)',
+        DeleteLineMessage: '@Html.SageRaw(CommonResx.DeleteLineMessage)',
+        DeleteLinesMessage: '@Html.SageRaw(CommonResx.DeleteLinesMessage)',
+        PostWarning1: '@Html.SageRaw(ReceiptResx.PostWarning1)',
+        PostWarning2: '@Html.SageRaw(ReceiptResx.PostWarning2)',
+        PostWarning3: '@Html.SageRaw(ReceiptResx.PostWarning3)',
+        ReceiptLower: '@Html.SageRaw(ReceiptResx.ReceiptLower)',
+        RecordDoesNotExist: '@Html.SageRaw(CommonResx.RecordDoesNotExist)',
+        ManufacturerItemNumberTitle: '@Html.SageRaw(ReceiptResx.ManItemNumber)',
+        Receipts: '@Html.SageRaw(ReceiptResx.Receipts)',
+        Receipt: '@Html.SageRaw(ReceiptResx.Receipt)',
+        Items: '@Html.SageRaw(ReceiptResx.Items)',
+        UnitsOfMeasure: '@Html.SageRaw(ReceiptResx.UnitsOfMeasure)',
+        QtyReturned: '@Html.SageRaw(ReceiptResx.QuantityReturned)',
+        TotalAdjusted: '@Html.SageRaw(ReceiptResx.TotalAdjusted)',
+        AdjustedCost: '@Html.SageRaw(ReceiptResx.AdjustedCost)',
+        ReturnedCost: '@Html.SageRaw(ReceiptResx.ReturnedCost)',
+        LocationQuantities: '@Html.SageRaw(ReceiptResx.LocationQuantities)',
+        ReceiptHeaders: '@Html.SageRaw(ReceiptResx.ReceiptHeaders)',
+        CurrencyRates: '@Html.SageRaw(ReceiptResx.CurrencyRates)',
+        RateSelection: '@Html.SageRaw(ReceiptResx.RateSelection)',
+        RateTypes: '@Html.SageRaw(ReceiptResx.RateTypes)',
+        ReceiptDetailOptField: '@Html.SageRaw(ReceiptResx.ReceiptDetailOptField)',
+        ReceiptOptField: '@Html.SageRaw(ReceiptResx.ReceiptOptField)',
+        AddOrEditLink: '@Html.SageRaw(CommonResx.AddEditLink)',
+        EnteredBy: '@Html.SageRaw(ReceiptResx.EnteredBy)',
+        EditLink: '@Html.SageRaw(ReceiptResx.Edit)',
+        Finder: '@Html.SageRaw(CommonResx.Finder)',
+        TotalCost: '@Html.SageRaw(ReceiptResx.TotalCost)',
+        TotalReturnCost: '@Html.SageRaw(ReceiptResx.TotalReturnCost)',
+    };
+</script>
+
