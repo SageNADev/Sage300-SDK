@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -34,7 +34,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
      /// <summary>
      /// Class for Receipt Detail Optional Field mapping
      /// </summary>
-     public class ReceiptDetailOptionalFieldMapper<T> : ModelMapper<T> where T : ReceiptDetailOptionalField, new ()
+    public class ReceiptDetailOptionalFieldMapper: ModelMapper<ReceiptDetailOptionalField>  
      {
           #region Constructor
 
@@ -56,7 +56,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="entity">Business Entity</param>
           /// <returns>Mapped Model</returns>
-          public override T Map(IBusinessEntity entity)
+          public override ReceiptDetailOptionalField Map(IBusinessEntity entity)
           {
                var model = base.Map(entity);
 
@@ -89,7 +89,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="model">Model</param>
           /// <param name="entity">Business Entity</param>
-          public override void Map(T model, IBusinessEntity entity)
+          public override void Map(ReceiptDetailOptionalField model, IBusinessEntity entity)
           {
                if (model == null)
                {
@@ -136,7 +136,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="model">Model</param>
           /// <param name="entity">Business Entity</param>
-          public override void MapKey(T model, IBusinessEntity entity)
+          public override void MapKey(ReceiptDetailOptionalField model, IBusinessEntity entity)
           {
                entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, model.SequenceNumber);
                entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, model.LineNumber);

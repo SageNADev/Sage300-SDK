@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,11 +24,11 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using System.ComponentModel.Composition;
-using ValuedPartner.TU.Interfaces.Services;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.BusinessRepository;
 using ValuedPartner.TU.Services;
+using ValuedPartner.TU.Interfaces.Services;
 
 namespace ValuedPartner.TU.Services
 {
@@ -55,8 +55,10 @@ namespace ValuedPartner.TU.Services
         /// <param name="container">The Unity container</param>
         private void RegisterService(IUnityContainer container)
         {
-            UnityUtil.RegisterType<IReceiptService<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>, ReceiptEntityService<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>>(container);
+          UnityUtil.RegisterType<IReceiptHeaderService, ReceiptHeaderEntityService>(container);
+          UnityUtil.RegisterType<IReceiptRepository, ReceiptRepository>(container);
         }
+
 
         /// <summary>
         /// Register repositories 
@@ -64,8 +66,9 @@ namespace ValuedPartner.TU.Services
         /// <param name="container">The Unity container</param>
         private void RegisterRepositories(IUnityContainer container)
         {
-            UnityUtil.RegisterType(container, typeof(IReceiptEntity<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>), typeof(ReceiptRepository<ReceiptHeader,ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));
-            UnityUtil.RegisterType(container, typeof(IReceiptEntity<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>), typeof(ReceiptRepository<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField,ReceiptDetailLotNumber, ReceiptDetailSerialNumber>), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));
+            UnityUtil.RegisterType(container, typeof(IReceiptRepository), typeof(ReceiptRepository), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));
+            UnityUtil.RegisterType(container, typeof(IReceiptHeaderEntity), typeof(ReceiptHeaderRepository), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));
+            UnityUtil.RegisterType(container, typeof(IReceiptHeaderEntity), typeof(ReceiptHeaderRepository), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));
         }
     }
 }

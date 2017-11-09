@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,5 +24,20 @@ using ValuedPartner.TU.Resources.Forms;
 
 namespace ValuedPartner.TU.Models.Enums
 {
+    /// <summary>
+    /// Enum for Default Posting Date
+    /// </summary>
+    //public enum DefaultPostingDate
+    //{
+    //    /// <summary>
+    //    /// Document Date
+    //    /// </summary>
+    //    [EnumValue("DocumentDate", typeof(ReceiptHeaderResx))]
+    //    DocumentDate = 1,
 
+    //    /// <summary>
+    //    /// Session Date
+    //    /// </summary>
+    //    [EnumValue("SessionDate", typeof (CommonResx))] SessionDate = 2,
+    //}
 }

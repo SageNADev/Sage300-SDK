@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -36,7 +36,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
     /// Class for ReceiptDetail mapping
     /// </summary>
     /// <typeparam name="T">ReceiptDetail</typeparam>
-    public class ReceiptDetailMapper<T> : ModelMapper<T> where T : ReceiptDetail, new ()
+    public class ReceiptDetailMapper: ModelMapper<ReceiptDetail>  
     {
         #region Constructor
 
@@ -58,7 +58,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="entity">Business Entity</param>
         /// <returns>Mapped Model</returns>
-        public override T Map(IBusinessEntity entity)
+        public override ReceiptDetail Map(IBusinessEntity entity)
         {
             var model = base.Map(entity);
 
@@ -134,7 +134,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="model">Model</param>
         /// <param name="entity">Business Entity</param>
-        public override void Map(T model, IBusinessEntity entity)
+        public override void Map(ReceiptDetail model, IBusinessEntity entity)
         {
             if (model == null)
             {
@@ -180,7 +180,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="model">Model</param>
         /// <param name="entity">Business Entity</param>
-        public override void MapKey(T model, IBusinessEntity entity)
+        public override void MapKey(ReceiptDetail model, IBusinessEntity entity)
         {
             entity.SetValue(ReceiptDetail.Index.SequenceNumber, model.SequenceNumber);
             entity.SetValue(ReceiptDetail.Index.LineNumber, model.LineNumber);

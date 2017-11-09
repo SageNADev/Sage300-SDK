@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,16 +20,18 @@
 
 using ValuedPartner.TU.Models;
 using ValuedPartner.Web.Areas.TU.Controllers;
+using ValuedPartner.Web.Areas.TU.Controllers.Finder;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
-
-using Constants = ValuedPartner.Web.Areas.TU.Constants;
+using ValuedPartner.Web.Areas.TU.Constants;
 
 namespace ValuedPartner.Web
 {
@@ -57,7 +59,7 @@ namespace ValuedPartner.Web
         /// <param name="container">The Unity container</param>
         private void RegisterController(IUnityContainer container)
         {
-            UnityUtil.RegisterType<IController, ReceiptController<ReceiptHeader, ReceiptDetail, ReceiptOptionalField, ReceiptDetailOptionalField, ReceiptDetailLotNumber, ReceiptDetailSerialNumber>>(container, "TUReceipt");
+            UnityUtil.RegisterType<IController, ReceiptController>(container, "TUReceipt");
         }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace ValuedPartner.Web
         /// <param name="container">The Unity container</param>
         private void RegisterFinder(IUnityContainer container)
         {
+            UnityUtil.RegisterType<IFinder, FindReceiptNumberControllerInternal>(container, Constants.ReceiptFinder, new InjectionConstructor(typeof(Context)));
         }
 
         /// <summary>
@@ -74,6 +77,8 @@ namespace ValuedPartner.Web
         /// <param name="container">The Unity container</param>
         private void RegisterExportImportController(IUnityContainer container)
         {
+            UnityUtil.RegisterType<IExportImportController, ImportExportControllerInternal<IReceiptRepository>>(container, Constants.ReceiptExportImport, new InjectionConstructor(typeof(Context)));
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -63,8 +63,7 @@ loginUI = {
                 company: $("#CompanyId").val(),
                 userId: $("#txtUserId").val(),
                 password: $("#txtPassword").val(),
-                forAdmin: $("#loginHeader2").is(":visible"),
-                companies: ko.mapping.toJS(loginUI.model.Companies())
+                forAdmin: $("#loginHeader2").is(":visible")
             };
             loginRepository.login(data, loginUICallback.loginResult);
         });
@@ -104,9 +103,7 @@ loginUI = {
         var data = {
             company: $("#CompanyId").val(),
             userId: $("#txtUserId").val(),
-            password: $("#txtPassword").val(),
-            forAdmin: $("#loginHeader2").is(":visible"),
-            companies: ko.mapping.toJS(loginUI.model.Companies())
+            password: $("#txtPassword").val()
         };
         loginRepository.login(data, loginUICallback.loginResult);
     },
@@ -212,9 +209,7 @@ loginUI = {
         var data = {
             company: $("#CompanyId").val(),
             userId: $("#txtUserId").val(),
-            password: $("#txtPassword").val(),
-            forAdmin: $("#loginHeader2").is(":visible"),
-            companies: ko.mapping.toJS(loginUI.model.Companies())
+            password: $("#txtPassword").val()
         };
         loginRepository.login(data, loginUICallback.loginResult);
     },
@@ -469,12 +464,3 @@ var loginUICallback = {
 $(function () {
     loginUI.init(LoginViewModel);
 });
-
-affixFooter(); // initialize footer fix if no scrollbar
-$(window).resize(affixFooter);
-
-function affixFooter() {
-    $('.footer').removeClass('affix-bottom').addClass(function () {
-        if (window.innerHeight >= $('body').outerHeight(true)) return 'affix-bottom';
-    });
-}

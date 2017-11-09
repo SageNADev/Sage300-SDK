@@ -1,5 +1,5 @@
-// The MIT License (MIT) 
-// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
+﻿// The MIT License (MIT) 
+// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,31 +18,25 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 #region Namespace
 
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedPartner.TU.Resources.Forms;
+using ValuedPartner.TU.Models;
+using System;
+using System.Linq.Expressions;
 
 #endregion
 
-namespace ValuedPartner.TU.Models.Enums
+namespace ValuedPartner.TU.Interfaces.Services
 {
     /// <summary>
-    /// Enum for RateOverride
+    /// An Interface for TU Receipt service
     /// </summary>
-    public enum RateOverride
+    /// <typeparam name="T">Model of type ReceiptHeader</typeparam>
+    public interface IReceiptHeaderService : IEntityService<ReceiptHeader>, ISecurityService 
     {
-        /// <summary>
-        /// Gets or sets No
-        /// </summary>
-        [EnumValue("No", typeof(ReceiptHeaderResx))]
-        No = 0,
-
-        /// <summary>
-        /// Gets or sets Yes
-        /// </summary>
-        [EnumValue("Yes", typeof(ReceiptHeaderResx))]
-        Yes = 1
-
+       
     }
 }

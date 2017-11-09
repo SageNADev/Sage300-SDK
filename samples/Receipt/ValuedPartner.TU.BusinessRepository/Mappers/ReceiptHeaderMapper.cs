@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -35,8 +35,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
     /// <summary>
     /// Class for ReceiptHeader mapping
     /// </summary>
-    /// <typeparam name="T">ReceiptHeader</typeparam>
-    public class ReceiptHeaderMapper<T> : ModelMapper<T> where T : ReceiptHeader, new ()
+    public class ReceiptHeaderMapper:ModelMapper<ReceiptHeader>  
     {
         #region Constructor
 
@@ -58,7 +57,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="entity">Business Entity</param>
         /// <returns>Mapped Model</returns>
-        public override T Map(IBusinessEntity entity)
+        public override ReceiptHeader Map(IBusinessEntity entity)
         {
             var model = base.Map(entity);
 
@@ -119,7 +118,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="model">Model</param>
         /// <param name="entity">Business Entity</param>
-        public override void Map(T model, IBusinessEntity entity)
+        public override void Map(ReceiptHeader model, IBusinessEntity entity)
         {
             if (model == null)
             {
@@ -162,7 +161,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="model">Model</param>
         /// <param name="entity">Business Entity</param>
-        public override void MapKey(T model, IBusinessEntity entity)
+        public override void MapKey(ReceiptHeader model, IBusinessEntity entity)
         {
             entity.SetValue(ReceiptHeader.Index.SequenceNumber, model.SequenceNumber);
             entity.SetValue(ReceiptHeader.Index.ReceiptNumber, model.ReceiptNumber);

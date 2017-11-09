@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
 (function (sg, $) {
@@ -307,44 +307,20 @@ var kendoWindow = null;
                 },
             }).data("kendoWindow");
 
-            var buildUrl = window.sg.utls.url.buildUrl;
-            window.sg.utls.ajaxPostHtml(buildUrl("Core", "ExportImport", "ExportIndex"), data, function (successData) {
+            window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "ExportImport", "ExportIndex"), data, function (successData) {
                 that._showExportScreen(that, successData, dialogId);
             });
         },
 
-        //show export screen
         _showExportScreen: function (that, data, dialogId) {
             $(dialogId).html(data);
 
             //clear all events;
             $(document).off('.plugin.export');
 
+
             //KO winding within a div (exportScreen) not on DOM
             sg.exportHelper.exportModel = window.ko.mapping.fromJS(exportModelData);
-            var exportDataSource = exportModelData.ExportRequest.DataMigrationList;
-            
-            //map export model print property to tree node checked property, add required fields mark symbol *
-            exportDataSource.forEach(function (obj) {
-                obj.checked = obj.Print;
-                obj.Items.forEach(function(item){
-                    item.checked = item.print;
-                    if (item.IsKey) {
-                        item.title += " *";
-                    }
-                })
-            })
-
-            //create hierarchical data source for kendo tree view
-            var dataSource = new kendo.data.HierarchicalDataSource({
-                data: exportDataSource,
-                schema: {
-                    model: {
-                        children: "Items"
-                    }
-                }
-            });
-
             window.ko.applyBindings(sg.exportHelper.exportModel, $("#exportScreen")[0]);
 
             kendoWindow.open();
@@ -352,27 +328,40 @@ var kendoWindow = null;
             var exportWindowId = dialogId + "_wnd_title";
             $("#ExportOptions").insertAfter($(exportWindowId));
             window.sg.utls.kndoUI.dropDownList("FileTypes");
-
-            $("#exportTreeView").kendoTreeView({
-                checkboxes: {
-                    checkChildren: true
-                },
-                dataSource: dataSource,
-                loadOnDemand: false,
-                dataTextField: ["Description", "title"],
-                dataBound: function (e) {
-                        var element = e.sender.element;
-                        $(element).html($(element).html().replace(/\*/g, "<span class='export-required'>*</span>"));
-                }
-            });
-
-            var treeview = $("#exportTreeView").data("kendoTreeView");
-            treeview.expand(".k-item");
+            $("#exportTreeView").kendoTreeView();
 
             $(document).on('click.plugin.export', '#btnExport', function () {
                 var optionsDiv = $(".k-header").find("#ExportOptions");
                 optionsDiv.remove();
                 that._doExport(that);
+            });
+
+            $(document).on('click.plugin.export', '.exportImportHeader', function () {
+                var headerIndex = $(this).attr("data-sg-index");
+                $.each(sg.exportHelper.exportModel.ExportRequest.DataMigrationList(), function (index, header) {
+                    if (headerIndex == index) {
+                        $.each(header.Items(), function (ind, item) {
+                            if (item.print() != header.Print()) {
+                                item.print(header.Print());
+                            }
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click.plugin.export', '.exportImportDetail', function () {
+                var headerIndex = $(this).closest("ul").closest("li").find("input[type=checkbox]:first").attr("data-sg-index");
+                $.each(sg.exportHelper.exportModel.ExportRequest.DataMigrationList(), function (index, header) {
+                    if (headerIndex == index) {
+                        header.Print(false);
+                        $.each(header.Items(), function (ind, item) {
+                            if (item.print()) {
+                                header.Print(true);
+                                return;
+                            }
+                        });
+                    }
+                });
             });
 
             $(document).on('click.plugin.export', '#btnCancel', function () {
@@ -388,15 +377,7 @@ var kendoWindow = null;
 
             $(document).on('click.plugin.export', '#btnSaveScript', function () {
                 globalResource.AllowPageUnloadEvent = false;
-
-                var data = { viewModel: ko.mapping.toJS(sg.exportHelper.exportModel) };
-                that._exportData(data, false);
-                var treeData = data.viewModel.ExportRequest.DataMigrationList;
-                var strData = JSON.stringify(treeData);
-
-                $("#DataMigrationList").val(strData);
                 $("#targetId").submit();
-              
                 //This is required so that is dirty message defined on beforeunload event will not fire.
                 setTimeout(function () {
                     globalResource.AllowPageUnloadEvent = true;
@@ -408,43 +389,6 @@ var kendoWindow = null;
                 if (result.UserMessage != undefined && result.UserMessage.Errors.length > 0) {
                     window.sg.utls.showMessageInfoInCustomDivWithoutClose(window.sg.utls.msgType.ERROR, result.UserMessage.Errors[0].Message, "loadScriptMessage");
                 } else {
-                    var loadModelName = result.Name;
-                    var screenName = sg.exportHelper.exportModel.ExportRequest.Name();
-                    if (loadModelName !== screenName) {
-                        return;
-                    }
-
-                    var len = result.DataMigrationList.length;
-                    if (len > 0) {
-                        var treeview = $("#exportTreeView").data("kendoTreeView");
-                        treeview.expand(".k-item");
-                        var treeData = treeview.dataSource.data();
-                        var modelData = result.DataMigrationList;
-                        var length = modelData.length;
-
-                        //synchronize dataSource checked field with loaded model print field by viewName and item columnName
-                        for (var i = 0; i < length; i++) {
-                            var viewName = modelData[i].ViewName;
-                            var viewData = treeData.filter(function (view) { return view.ViewName == viewName });
-
-                            if (viewData.length > 0 ) {
-                                viewData[0].checked = modelData[i].Print;
-                                var treeItems = viewData[0].Items;
-                                var modelItems = modelData[i].Items;
-                                var itemLength = modelItems.length;
-
-                                for (var j = 0; j < itemLength; j++) {
-                                    var itemName = modelItems[j].columnName;
-                                    var itemData = treeItems.filter(function (item) { return item.columnName == itemName });
-                                    if (itemData.length > 0) {
-                                        itemData[0].checked = modelItems[j].print;
-                                    }
-                                }
-                            }
-                        }
-                        treeview.setDataSource(treeData);
-                    }
-
                     ko.mapping.fromJS(result.DataMigrationList, {}, sg.exportHelper.exportModel.ExportRequest.DataMigrationList);
                     $("#divLoadScript").data("kendoWindow").close();
                 }
@@ -517,8 +461,6 @@ var kendoWindow = null;
             $(".k-window-action").hide();
 
             var data = { viewModel: ko.mapping.toJS(sg.exportHelper.exportModel) };
-            that._exportData(data, true);
-
             sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "Export"), data, function (result) {
                 ko.mapping.fromJS(result.Data.ExportResponse, {}, sg.exportHelper.exportModel.ExportResponse);
                 var data = { viewModel: ko.mapping.toJS(sg.exportHelper.exportModel) };
@@ -530,30 +472,6 @@ var kendoWindow = null;
                 };
             });
         },
-
-        _exportData: function (data, isExport) {
-            var exportData = data.viewModel.ExportRequest.DataMigrationList;
-            var tree = $("#exportTreeView").data("kendoTreeView");
-            var treeData = tree.dataSource.data();
-            var length = treeData.length;
-
-            //synchronize export data from tree view data source
-            for (var i = 0; i < length; i++) {
-                exportData[i].Print = (treeData[i].checked == undefined) ? isExport : treeData[i].checked;
-
-                var exportItems = exportData[i].Items;
-                var treeItems = treeData[i].Items;
-                var len = Math.min(exportItems.length, treeItems.length);
-
-                var subNodeLoaded = treeItems.length > 0;
-                var parentChecked = exportData[i].Print;
-
-                for (var j = 0; j < len; j++) {
-                    exportItems[j].print = subNodeLoaded ? treeItems[j].checked : parentChecked;
-                }
-            }
-        },
-
         _progress: function (result) {
             ko.mapping.fromJS(result.ExportResponse, {}, sg.exportHelper.exportModel.ExportResponse);
             var model = sg.exportHelper.exportModel;

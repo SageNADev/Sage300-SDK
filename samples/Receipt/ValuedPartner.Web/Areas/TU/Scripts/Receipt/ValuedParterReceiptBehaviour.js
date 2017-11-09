@@ -194,6 +194,9 @@ receiptUI = {
     //Init buttons
     initButtons: function () {
 
+        sg.exportHelper.setExportEvent("btnOptionExport", "tureceipt", false, $.noop);
+        sg.importHelper.setImportEvent("btnOptionImport", "tureceipt", false, $.noop);
+
         $("#btnRefresh").on("click", function () {
             var grid = $('#ReceiptGrid').data("kendoGrid");
             if (!$(this).is(':disabled') && grid.dataSource.data().length > 0) {
@@ -667,7 +670,7 @@ receiptUI = {
     initFinders: function () {
 
         var receiptNumberTitle = jQuery.validator.format(receiptResources.FinderTitle, receiptResources.ReceiptNumber);
-        sg.finderHelper.setFinder("btnReceiptNumberFinder", sg.finder.ReceiptNumberFinder, receiptUISuccess.receiptNumberfinderSuccess, receiptUISuccess.receiptFinderCancel, receiptNumberTitle, receiptFilter.getReceiptFilter, null, false);
+        sg.finderHelper.setFinder("btnReceiptNumberFinder", "tureceiptfinder", receiptUISuccess.receiptNumberfinderSuccess, receiptUISuccess.receiptFinderCancel, receiptNumberTitle, receiptFilter.getReceiptFilter, null, false);
 
         var finderVendorTitle = jQuery.validator.format(receiptResources.FinderTitle, receiptResources.VendorNumber);
         sg.finderHelper.setFinder("btnVendorNumberFinder", sg.finder.Vendor, receiptUISuccess.vendorResult, $.noop, finderVendorTitle,

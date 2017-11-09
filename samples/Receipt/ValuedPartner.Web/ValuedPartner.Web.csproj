@@ -37,7 +37,6 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsNotAsErrors>612,618</WarningsNotAsErrors>
-    <DocumentationFile>bin\ValuedPartner.Web.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,7 +45,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\ValuedPartner.Web.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -319,6 +317,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\TU\Controllers\Finder\FindReceiptNumberControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\ReceiptController.cs" />
     <Compile Include="Areas\TU\Controllers\ReceiptControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\ReceiptViewModel.cs" />
@@ -333,9 +332,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptRepository.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptRepository.js" />
     <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
@@ -471,7 +470,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\TU\Controllers\Finder\" />
     <Folder Include="Areas\TU\Controllers\Process\" />
     <Folder Include="Areas\TU\Controllers\Reports\" />
     <Folder Include="Areas\TU\Models\Process\" />
