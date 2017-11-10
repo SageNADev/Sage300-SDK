@@ -41,12 +41,6 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
-    /// <typeparam name="T">Receipt Header</typeparam>
-    /// <typeparam name="TU">Receipt Detail</typeparam>
-    /// <typeparam name="ReceiptOptionalField">Receipt Optional Field</typeparam>
-    /// <typeparam name="ReceiptDetailOptionalField">Receipt Detail Optional Field</typeparam>
-    /// <typeparam name="TDetail4">Receipt Detail LotNumber</typeparam>
-    /// <typeparam name="TDetail5">Receipt Detail SerialNumber</typeparam>
     public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
     {
         #region Private Variables
@@ -88,17 +82,22 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         #region Actions
 
         /// <summary>
-        ///  Gets default Index Page
+        /// Get default receipt view
         /// </summary>
-        /// <returns>ActionResult.</returns>
+        /// <param name="id">Receipt number Id</param>
+        /// <param name="disableAll">disable screen</param>
+        /// <returns></returns>
         public virtual ActionResult Index(string id = null, bool disableAll = false)
         {
             ReceiptViewModel receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create(); 
             //Added this make the optionalFields uncheck in UI 
             receiptViewModel.Data.OptionalFields = 0;
             receiptViewModel.Attributes = ControllerInternal.GetDynamicAttributesOfHeader();
-            receiptViewModel.UserAccess = ControllerInternal.GetAccessRights();
-            ViewBag.UserAccess = ControllerInternal.GetAccessRights();
+
+            var accessRight = ControllerInternal.GetAccessRights();
+            receiptViewModel.UserAccess = accessRight;
+            ViewBag.UserAccess = accessRight;
+
             receiptViewModel.DisableScreen = disableAll;
             return View(receiptViewModel);
         }
@@ -132,7 +131,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="filters">Filters</param>
         /// <returns>Receipt data</returns>
         [HttpPost]
-        public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+        public virtual JsonNetResult GetReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
         {
             try
             {
@@ -178,7 +177,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException,
+                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException,
                         CommonResx.OptionalField));
             }
         }
@@ -186,19 +185,19 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <summary>
         /// Save detail
         /// </summary>
-        /// <param name="detail">The detail model</param>
+        /// <param name="model">The detail model</param>
         /// <returns>returns  Receipt Viewmodel</returns>
         [HttpPost]
-        public virtual JsonNetResult SaveDetail(ReceiptDetail detail)
+        public virtual JsonNetResult SaveDetail(ReceiptDetail model)
         {
             try
             {
-                return JsonNet(ControllerInternal.SaveDetail(detail));
+                return JsonNet(ControllerInternal.SaveDetail(model));
             }
             catch (BusinessException businessException)
             {
-                var receiptHeader = new ReceiptHeader { ReceiptDetail = new EnumerableResponse<ReceiptDetail> { Items = new List<ReceiptDetail> { detail } } };
-                return JsonNet(BuildErrorModelBase(receiptHeader, CommonResx.RefreshDetailsFailedMessage, businessException, "ReceiptView"));
+                var receiptHeader = new ReceiptHeader { ReceiptDetail = new EnumerableResponse<ReceiptDetail> { Items = new List<ReceiptDetail> { model } } };
+                return JsonNet(BuildErrorModelBase(receiptHeader, CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -412,11 +411,16 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
             } 
         }
 
-        public JsonNetResult GetVendorDetail(string vendorNumber) 
+        /// <summary>
+        /// Get vendor details by vendor number id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonNetResult GetVendorDetail(string id) 
         {
             try
             {
-                return JsonNet(ControllerInternal.GetVendorDetail(vendorNumber));
+                return JsonNet(ControllerInternal.GetVendorDetail(id));
             }
             catch (BusinessException businessException)
             {
@@ -476,16 +480,16 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <summary>
         /// Post Receipt
         /// </summary>
-        /// <param name="headerModel">Receipt Header model</param>
+        /// <param name="model">Receipt Header model</param>
         /// <param name="sequenceNumber">Sequence Number</param>
         /// <param name="yesNo">Check Yes No confirmation selection</param>
         /// <returns>Receipt</returns>
         [HttpPost]
-        public virtual JsonNetResult Post(ReceiptHeader headerModel, long sequenceNumber, bool yesNo)
+        public virtual JsonNetResult Post(ReceiptHeader model, long sequenceNumber, bool yesNo)
         {
             try
             {
-                return JsonNet(ControllerInternal.Post(headerModel, sequenceNumber, yesNo));
+                return JsonNet(ControllerInternal.Post(model, sequenceNumber, yesNo));
             }
             catch (BusinessException businessException)
             {
@@ -496,20 +500,20 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <summary>
         /// Save detail optional field.
         /// </summary>
-        /// <param name="receiptOptionalField">Receipt Optional Field</param>
+        /// <param name="model">Receipt Optional Field</param>
         /// <param name="receiptNumber">Receipt Number</param>
         /// <param name="isDetail">True / False</param>
         /// <returns>Receipt Detail Optional Field</returns>
         [HttpPost]
-        public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> receiptOptionalField, string receiptNumber, bool isDetail)
+        public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> model, string receiptNumber, bool isDetail)
         {
             try
             {
-                return JsonNet(ControllerInternal.SaveOptionalFields(receiptOptionalField, receiptNumber, isDetail));
+                return JsonNet(ControllerInternal.SaveOptionalFields(model, receiptNumber, isDetail));
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException, CommonResx.OptionalField));
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, CommonResx.OptionalField));
             }
         }
 
@@ -521,8 +525,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Enumerable Response of Receipts Optional Field</returns>
         [HttpPost]
-        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
-            int pageSize)
+        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber, int pageSize)
         {
             try
             {
@@ -601,14 +604,14 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <summary>
         /// Set detail to current row
         /// </summary>
-        /// <param name="currentDetail">Current ReceiptDetail model</param>
+        /// <param name="model">Current ReceiptDetail model</param>
         /// <returns>returns ReceiptDetail model</returns>
         [HttpPost]
-        public virtual JsonNetResult SetDetail(ReceiptDetail currentDetail)
+        public virtual JsonNetResult SetDetail(ReceiptDetail model)
         {
             try
             {
-                return JsonNet(ControllerInternal.SetDetail(currentDetail));
+                return JsonNet(ControllerInternal.SetDetail(model));
             }
             catch (BusinessException businessException)
             {
