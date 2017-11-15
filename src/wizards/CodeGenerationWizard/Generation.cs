@@ -129,7 +129,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private string _entitiesContainerName;
 
         /// <summary> Header node in the tree </summary>
-        private XElement headerNode;
+        private XElement _headerNode;
 
         /// <summary> All compositions checkbox </summary>
         private CheckBox _allCompositions;
@@ -1594,54 +1594,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return (RepositoryType)Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
         }
 
-        public static XDocument ToXDocument(XmlDocument xmlDocument)
-        {
-            using (var nodeReader = new XmlNodeReader(xmlDocument))
-            {
-                nodeReader.MoveToContent();
-                return XDocument.Load(nodeReader);
-            }
-        }
-
-        void FindChildEntities(System.Xml.XmlNode node, IList<XmlNode> childNodes)
-        {
-            foreach (System.Xml.XmlNode _node in node.ChildNodes)
-            {
-                if (_node.Name == "entity")
-                {
-                    childNodes.Add(_node);
-                    FindChildEntities(_node, childNodes);
-                }
-            }
-        }
-
-        static bool CheckChildrenExist(System.Xml.XmlNode node)
-        {
-            foreach (System.Xml.XmlNode _node in node.ChildNodes)
-            {
-                if (_node.Name == "entity")
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
+        /// <summary>
+        /// Find the header node in the tree. 
+        /// </summary>
+        /// <param name="doc">The tree in XDocument format</param>
+        /// <returns>If there is one and only one header node defined, return the node otherwise NULL</returns>
         static XElement FindHeaderNode(XDocument doc)
         {
             XElement headerNode = null;
 
             foreach (var x in doc.Root.Elements())
             {
-                if (x.Descendants().Where(e => e.Name == "entity").Count() >= 1)
-                {
-                    if (headerNode != null)
-                    {
-                        return null;
-                    }
-                    headerNode = x;
-                }
+                if (!x.Descendants().Any(e => e.Name == "entity"))
+                    continue;
+
+                if (headerNode != null)
+                    return null;
+
+                headerNode = x;
             }
 
             return headerNode;
@@ -1713,10 +1683,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         if (repositoryType.Equals(RepositoryType.HeaderDetail))
                         {
                             // find the header node
-                            headerNode = FindHeaderNode(_xmlEntities);
+                            _headerNode = FindHeaderNode(_xmlEntities);
 
                             
-                            var headerDetailEntities = headerNode.DescendantsAndSelf().Where(e => e.Name == "entity");
+                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == "entity");
 
                             // mark entity in _entities 
                             foreach (var entity in _entities)
@@ -2303,7 +2273,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 includeSpanish = _includeSpanish,
                 includeFrench = _includeFrench,
                 EntitiesContainerName = _entitiesContainerName,
-                headerNode = this.headerNode
+                HeaderNode = _headerNode
             };
         }
 

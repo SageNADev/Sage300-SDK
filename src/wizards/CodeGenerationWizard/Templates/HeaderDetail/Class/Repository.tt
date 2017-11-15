@@ -29,7 +29,7 @@
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var containerName = settings.EntitiesContainerName;
-    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.headerNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 #>
 // <#=copyright#>
 
@@ -93,7 +93,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 <# // define business entity mappers #>
 <# foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
     {
-        if (settings.headerNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
+        if (settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
         {
             continue;
         }
@@ -127,7 +127,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
             foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
             {
                     // skip an entity that is not part of the header-detail tree
-                    if (settings.headerNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
+                    if (settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
                     {
                         continue;
                     }
@@ -153,7 +153,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         public UserAccess GetAccessRights()
         {
 <#
-            var headerEntityName = String.Format("_{0}Entity", rotoId2EntityVarName[settings.headerNode.Attribute("view").Value]);
+            var headerEntityName = String.Format("_{0}Entity", rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]);
 #>
 
             var userAccess = base.GetAccessRights(<#=headerEntityName#>);
@@ -185,11 +185,11 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 
             WriteLine("");
 
-            ComposeAllViews(settings.headerNode, rotoId2EntityVarName);
+            ComposeAllViews(settings.HeaderNode, rotoId2EntityVarName);
 #>
         }
 <#
-    var headerEntity = rotoId2EntityName[settings.headerNode.Attribute("view").Value];
+    var headerEntity = rotoId2EntityName[settings.HeaderNode.Attribute("view").Value];
 
 #>
 
@@ -203,7 +203,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         {
 <#
 
-var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings.headerNode.Attribute("view").Value]);
+var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]);
 
 #>
             CheckRights(<#=headerEntityName#>, SecurityType.Inquire);
@@ -278,7 +278,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
         {
 <#
             // create all business entity properties
-            foreach (var node in settings.headerNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
+            foreach (var node in settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
             {
                 var viewID = node.Attribute("view").Value;
                 var modelName = settings.Entities.Where(e => e.Properties["ViewId"] == viewID).First().Properties[BusinessView.ModelName];
@@ -289,7 +289,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             WriteLine("");
 
             // for each parent entity, add all its children
-            foreach (var node in settings.headerNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
+            foreach (var node in settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
             {
                 var parentViewID = node.Attribute("view").Value;
 
@@ -302,7 +302,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             }
 
             WriteLine("");
-            WriteLine(String.Format("{0}return {1};", new string(' ', 12), rotoId2EntityVarName[settings.headerNode.Attribute("view").Value]));
+            WriteLine(String.Format("{0}return {1};", new string(' ', 12), rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]));
 #>
         }
 

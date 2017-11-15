@@ -89,7 +89,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Entities Container Name </summary>
         public string EntitiesContainerName { get; set; }
         /// <summary> Root node in the header-detail tree </summary>
-        public XElement headerNode { get; set; }
+        public XElement HeaderNode { get; set; }
         #endregion
     }
 

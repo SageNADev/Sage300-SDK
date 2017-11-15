@@ -296,12 +296,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 _settings = settings;
 
-
                 if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
                 {
                     // Find out the header view and use this view to pass view related information
                     // around to satisfy the parameter requirements for the existing routines.
-                    var headerView = settings.Entities.Where(e => e.Properties["ViewId"] == settings.headerNode.Attribute("view").Value).First();
+                    var headerView = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute(ProcessGeneration.PropertyViewId).Value).First();
 
                     // Build the subfolders
                     BuildSubfolders(headerView);
@@ -1243,115 +1242,118 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary> Create Header-detail Repository Classes </summary>
-        /// <param name="view">Business View</param>
-        private void CreateHeaderDetailRepositoryClasses(BusinessView headerView, Settings _settings)
+        /// <summary>
+        /// Create Header-detail Repository Classes  
+        /// </summary>
+        /// <param name="headerView">the header view</param>
+        /// <param name="settings">settings</param>
+        private void CreateHeaderDetailRepositoryClasses(BusinessView headerView, Settings settings)
         {
             // Create the Business Repository Interface class
-            CreateClass(headerView, "I" + _settings.EntitiesContainerName + "Repository.cs",
-                TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
+            CreateClass(headerView, "I" + settings.EntitiesContainerName + "Repository.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
                 InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Repository class
             CreateClass(headerView,
-                _settings.EntitiesContainerName + "Repository.cs",
-                TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.Class.Repository"),
+                settings.EntitiesContainerName + "Repository.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Repository"),
                 BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create the ViewModel class
             CreateClass(headerView,
-                _settings.EntitiesContainerName + "ViewModel.cs",
-                TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.Class.ViewModel"),
+                settings.EntitiesContainerName + "ViewModel.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.ViewModel"),
                 WebKey, SubFolderWebViewModelKey);
 
             // Create the public Controller class
             CreateClass(headerView,
-            _settings.EntitiesContainerName + "Controller.cs",
-            TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.Class.Controller"),
+            settings.EntitiesContainerName + "Controller.cs",
+            TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Controller"),
             WebKey, SubFolderWebControllersKey);
 
 
             // Create the Internal Controller class
             CreateClass(headerView,
-                _settings.EntitiesContainerName + "ControllerInternal.cs",
-                TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.Class.InternalController"),
+                settings.EntitiesContainerName + "ControllerInternal.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.InternalController"),
                 WebKey, SubFolderWebControllersKey);
 
             // Create partial view.cshtml
-            var fileName = "_" + _settings.EntitiesContainerName + ".cshtml";
+            var fileName = "_" + settings.EntitiesContainerName + ".cshtml";
             CreateClass(headerView,
                 fileName,
-                TransformTemplateToText(headerView, _settings, "Templates.Flat.View.Entity"),
+                TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
                 WebKey, SubFolderWebLocalizationKey);
 
             // Register types
-            BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, _settings);
+            BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
 
-            BusinessViewHelper.UpdateBundles(headerView, _settings);
+            BusinessViewHelper.UpdateBundles(headerView, settings);
 
             // Update security class
-            BusinessViewHelper.UpdateSecurityClass(headerView, _settings);
+            BusinessViewHelper.UpdateSecurityClass(headerView, settings);
 
             // set the start page
-            BusinessViewHelper.CreateViewPageUrl(headerView, _settings);
+            BusinessViewHelper.CreateViewPageUrl(headerView, settings);
 
             // Update the plugin menu details
-            BusinessViewHelper.UpdateMenuDetails(headerView, _settings);
+            BusinessViewHelper.UpdateMenuDetails(headerView, settings);
 
             // For javascript files, the project name does not include the .Web segment
             var projectName =
-            _settings.Projects[WebKey][headerView.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+            settings.Projects[WebKey][headerView.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
             // Create the Behavior JavaScript file
             CreateClass(headerView,
-                projectName + "." + _settings.EntitiesContainerName + "Behaviour.js",
-                TransformTemplateToText(headerView, _settings, "Templates.Flat.Script.Behaviour"),
+                projectName + "." + settings.EntitiesContainerName + "Behaviour.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(headerView,
-                projectName + "." + _settings.EntitiesContainerName + "KoExtn.js",
-                TransformTemplateToText(headerView, _settings, "Templates.Flat.Script.KoExtn"),
+                projectName + "." + settings.EntitiesContainerName + "KoExtn.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.KoExtn"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(headerView,
-                projectName + "." + _settings.EntitiesContainerName + "Repository.js",
-                TransformTemplateToText(headerView, _settings, "Templates.Flat.Script.Repository"),
+                projectName + "." + settings.EntitiesContainerName + "Repository.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Repository"),
                 WebKey, SubFolderWebScriptsKey);
 
             // Create _Index.cshtml
             CreateClass(headerView,
                 "Index.cshtml",
-                TransformTemplateToText(headerView, _settings, "Templates.Common.View.Index"),
+                TransformTemplateToText(headerView, settings, "Templates.Common.View.Index"),
                 WebKey, SubFolderWebIndexKey);
 
             // Create _Localization.cshtml
             var localizationTemplate = "Templates.Common.View.Localization";
             CreateClass(headerView,
                 "_Localization.cshtml",
-                TransformTemplateToText(headerView, _settings, localizationTemplate),
+                TransformTemplateToText(headerView, settings, localizationTemplate),
                 WebKey, SubFolderWebLocalizationKey);
 
-            if (_settings.includeEnglish)
+            if (settings.includeEnglish)
             {
-                CreateHeaderDetailResx(headerView, _settings.EntitiesContainerName + "Resx.resx", true);
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.resx", true);
             }
-            if (_settings.includeSpanish)
+            if (settings.includeSpanish)
             {
-                CreateHeaderDetailResx(headerView, _settings.EntitiesContainerName + "Resx.es.resx", false);
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.es.resx", false);
             }
-            if (_settings.includeFrench)
+            if (settings.includeFrench)
             {
-                CreateHeaderDetailResx(headerView, _settings.EntitiesContainerName + "Resx.fr.resx", false);
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.fr.resx", false);
             }
-            if (_settings.includeChineseSimplified)
+            if (settings.includeChineseSimplified)
             {
-                CreateHeaderDetailResx(headerView, _settings.EntitiesContainerName + "Resx.zh-Hans.resx", false);
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hans.resx", false);
             }
-            if (_settings.includeChineseTraditional)
+            if (settings.includeChineseTraditional)
             {
-                CreateHeaderDetailResx(headerView, _settings.EntitiesContainerName + "Resx.zh-Hant.resx", false);
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hant.resx", false);
             }
         }
 
