@@ -29,8 +29,9 @@ $(document).ready(function () {
         $('#dvAddWidget').show();
         $('#breadcrumb').hide();
         $('#widgetLayout').show();
+        $('html').addClass('home-page');
         $('#draggable').animate({
-            top: 143
+            top: 58
         }, 'slow', function () { $(this).removeAttr('style'); }); /* reset the position of #draggable-Quick Menu */
         $('#FeatureTour').show(function () {
             $(this).children().eq(0).addClass('show'); /* add class .show to the first child of #FeatureTour */

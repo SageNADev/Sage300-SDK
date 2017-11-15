@@ -121,8 +121,9 @@ a:hover {
 
 
 .header {
-	height: 47px;
-    background-color: #3c414e;
+	height: 3.5rem;
+    background-color: #3c424f;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24);
 }
 
 .footer {
@@ -144,7 +145,7 @@ a:hover {
 .header > .wrapper,
 .main-body > .wrapper {
 	width: 940px;
-	padding: 10px;
+	padding: 16px;
 	margin: 0 auto;
 	position: relative;
 }
