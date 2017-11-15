@@ -19,6 +19,7 @@ loginUI = {
             $("#passwordDiv").show();
             $("#txtUserId").val('ADMIN');
             $("#txtUserId").prop("disabled", true);
+            loginUI.companyList = model.Companies;
         }
 
         
@@ -58,10 +59,18 @@ loginUI = {
     updateCompanylist: function() {
         var ddCompany = $('#CompanyId').data("kendoDropDownList");
         var ddSystem = $("#SystemId").data("kendoDropDownList");
-        var sysCompanies = loginUI.companyList.filter(function (i) { return i.SystemId == $("#SystemId").val() });
+        var sysCompanies;
+        if (loginUI.model.CompanyListEnabled && loginUI.model.CompanyListEnabled()) {
+            sysCompanies = loginUI.companyList.filter(function(i) { return i.SystemId == ddSystem.text() });
+        } else {
+            //improve it in future
+            sysCompanies = loginUI.companyList.filter(function (i) { return i.SystemId == $("#SystemId").val() });
+        }
         var listCompanies = sysCompanies.map(function(i) { return i.Id});
         //var ddList = ddCompany.dataSource.data();
-        var selectCompanys = loginUI.ddCompanies.filter(function (i) { return listCompanies.indexOf(i.value) > -1; })
+        var selectCompanys = loginUI.ddCompanies.filter(function (i) {
+            return listCompanies.indexOf(i.value) > -1;
+        });
         ddCompany.dataSource.data(selectCompanys);
         ddCompany.select(0);
     },
@@ -69,8 +78,10 @@ loginUI = {
     initEvents: function () {
         // Sign in button
         $("#btnLogin").bind('click', function () {
+            var company = loginUI.model.ForAdmin() && loginUI.model.CompanyListEnabled() ? $("#SystemId").val() : $("#CompanyId").val();
+
             var data = {
-                company: $("#CompanyId").val(),
+                company: company,
                 userId: $("#txtUserId").val(),
                 password: $("#txtPassword").val(),
                 forAdmin: $("#loginHeader2").is(":visible"),
@@ -367,13 +378,14 @@ loginUI = {
 
     // Determines password visibility
     showPasswordField: function (selectedCompany) {
+        if (loginUI.model.ForAdmin() || !selectedCompany) {
+            return;
+        }
         if (!loginUI.model.CompanyListEnabled()) {
             loginUI.companiesSecureMap[selectedCompany] ? $("#passwordDiv").show() : $("#passwordDiv").hide();
             return;
         }
-        if (loginUI.model.ForAdmin() || !selectedCompany) {
-            return;
-        }
+        
         if (loginUI.companiesSecureMap[selectedCompany] && loginUI.model.SecuredCompanyExists()) {
             $("#passwordDiv").show();
         }
@@ -523,6 +535,42 @@ var loginUIUnities = {
         });
     },
 
+    bindSysCompaniesDropDown: function (companyList, selectedCompanyId) {
+        $('#SystemId').kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+        });
+        loginUI.companyList = companyList;
+        loginUI.companiesSecureMap = {};
+        loginUI.model.Companies = ko.mapping.fromJS(companyList, { arrayUpdate: true, arrayInsert: true });
+
+        var sysCompanies = companyList.map(function(company) {
+            return {
+                systemId: company.SystemId,
+                companyId: company.Id
+            };
+        });
+        var ddCompaniesList = sysCompanies.map(function (company) {
+            return { selected: false, text: company.systemId, value: company.companyId };
+        });
+        var sysIdSet = new Set();
+        var ddCompanyList = [];
+        for (var index in ddCompaniesList) {
+            if (sysIdSet.has(ddCompaniesList[index].text))
+                continue;
+            else{
+                sysIdSet.add(ddCompaniesList[index].text);
+                ddCompanyList.push(ddCompaniesList[index]);
+            }
+        }
+        loginUI.model.CompanyDisplayList = ko.mapping.fromJS(ddCompanyList, { arrayUpdate: true, arrayInsert: true });
+        var ddCompanyId = $('#SystemId').data("kendoDropDownList");
+        ddCompanyId.dataSource.data(ddCompanyList);
+        var selectCompanys = ddCompanyList.filter(function (i) { return sysCompanies.indexOf(i.value) > -1; })
+        loginUI.ddCompanies = $('#CompanyId').data("kendoDropDownList").dataSource.data();
+        ddCompanyId.select(0);
+    },
+
     /**
      * data binding for company drop down list
      * @param {} companyList 
@@ -555,6 +603,10 @@ var loginUICallback = {
      */
     getCompaniesSuccess: function (ret) {
         loginUI.pageInit = false;
+        if (loginUI.model.ForAdmin()) {
+            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+            return;
+        }
         loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
     },
 
@@ -565,6 +617,9 @@ var loginUICallback = {
      */
     getCompaniesFailedWithErrorMsg: function (ret) {
         loginUI.pageInit = true;
+        if (loginUI.model.ForAdmin()) {
+            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+        }
         loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
         $('#CompanyId').data("kendoDropDownList").value(ret.companyId);
         //pop-up the error
@@ -612,7 +667,7 @@ var loginUICallback = {
                 // Success. Re-direct to home page now that credentials have been set
                 var url = jsonResult.Url;
                 if (loginUI.model.ForAdmin()) {
-                    var systemId = $("#SystemId").data('kendoDropDownList').value();
+                    var systemId = $("#SystemId").data('kendoDropDownList').text();
                     url = url.replace("Core/Home", "AS/CustomScreen?id=Import&systemDbId=" + systemId);
                 }
                 window.location.replace(url);

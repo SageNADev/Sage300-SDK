@@ -25,10 +25,7 @@ $(document).ready(function () {
         scroll(0, 0);
         $("#firstTimeLogin").show();
         $('#screenLayout').hide();
-        $('#widgetHplayout').hide();
-        $('#dvAddWidget').show();
         $('#breadcrumb').hide();
-        $('#widgetLayout').show();
         $('html').addClass('home-page');
         $('#draggable').animate({
             top: 58
@@ -36,6 +33,7 @@ $(document).ready(function () {
         $('#FeatureTour').show(function () {
             $(this).children().eq(0).addClass('show'); /* add class .show to the first child of #FeatureTour */
         });
+        updateLayout(false);
     });
 
     $('#FeatureTour').find('.btn-tertiary').click(function () {
