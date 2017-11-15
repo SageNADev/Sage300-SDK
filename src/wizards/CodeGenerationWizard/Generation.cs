@@ -29,7 +29,6 @@ using EnvDTE;
 using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using ACCPAC.Advantage;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -375,7 +374,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
                 // Ensure entity compositions, if specified, are in the list of entities
-                var entityName = string.Empty;
+                string entityName;
                 foreach (var businessView in _entities)
                 {
                     // Proceed if any compositions
@@ -1079,8 +1078,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Clear Entity Controls </summary>
         private void ClearEntityControls()
         {
-            var repositoryType = GetRepositoryType();
-
             txtViewID.Clear();
 
             txtReportIniFile.Clear();
@@ -1599,21 +1596,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// </summary>
         /// <param name="doc">The tree in XDocument format</param>
         /// <returns>If there is one and only one header node defined, return the node otherwise NULL</returns>
-        static XElement FindHeaderNode(XDocument doc)
+        private static XElement FindHeaderNode(XDocument doc)
         {
             XElement headerNode = null;
 
-            foreach (var x in doc.Root.Elements())
+            if (doc.Root == null)
             {
-                if (!x.Descendants().Any(e => e.Name == "entity"))
-                    continue;
-
-                if (headerNode != null)
-                    return null;
-
-                headerNode = x;
+                return null;
             }
 
+            foreach (var x in doc.Root.Elements())
+            {
+                if (!x.Descendants().Any(e => e.Name == ProcessGeneration.PropertyEntity))
+                {
+                    continue;
+                }
+                if (headerNode != null)
+                {
+                    return null;
+                }
+                headerNode = x;
+            }
             return headerNode;
         }
 
@@ -1686,17 +1689,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             _headerNode = FindHeaderNode(_xmlEntities);
 
                             
-                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == "entity");
+                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == ProcessGeneration.PropertyEntity);
 
                             // mark entity in _entities 
                             foreach (var entity in _entities)
                             {
-                                entity.IsPartofHeaderDetailComposition = false;
-
-                                if (headerDetailEntities.Any(p => (p.Attribute(ProcessGeneration.PropertyViewId).Value).Equals(entity.Properties[BusinessView.ViewId])))
-                                {
-                                    entity.IsPartofHeaderDetailComposition = true;
-                                }
+                                // ReSharper disable once PossibleMultipleEnumeration
+                                entity.IsPartofHeaderDetailComposition = headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.PropertyViewId).Value.Equals(entity.Properties[BusinessView.ViewId]));
                             }
                         }
                     }
