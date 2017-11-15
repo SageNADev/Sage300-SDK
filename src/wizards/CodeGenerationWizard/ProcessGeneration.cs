@@ -296,6 +296,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 _settings = settings;
 
+                if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+                {
+                    // Find out the header view and use this view to pass view related information
+                    // around to satisfy the parameter requirements for the existing routines.
+                    var headerView = settings.Entities.First(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute(PropertyViewId).Value);
+
+                    // Build the subfolders
+                    BuildSubfolders(headerView);
+
+                    CreateHeaderDetailRepositoryClasses(headerView, _settings);
+
+                }
+
                 // Iterate Views
                 foreach (var businessView in settings.Entities)
                 {
@@ -317,7 +330,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="version">Version</param>
         /// <param name="viewId">View Id</param>
         /// <param name="moduleId">Module Id</param>
-        public static void GetBusinessView(BusinessView businessView, string user, 
+        public static void GetBusinessView(BusinessView businessView, string user,
             string password, string company, string version, string viewId, string moduleId)
         {
             // Locals
@@ -389,7 +402,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="subfolderKey">Subfolder Key for Project Info</param>
         /// <param name="addToProject">True to add to project otherwise false</param>
         /// <returns>True if successful otherwise false</returns>
-        private bool SaveFile(BusinessView view, string fileName, string content, string projectKey, 
+        private bool SaveFile(BusinessView view, string fileName, string content, string projectKey,
             string subfolderKey, bool addToProject)
         {
             // Local
@@ -565,15 +578,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     path = project.Value.ProjectFolder;
                 }
 
+                var entityName = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? _settings.EntitiesContainerName : view.Properties[BusinessView.EntityName];
+
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderWebIndexKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameViews, view.Properties[BusinessView.EntityName]})},
-                    {SubFolderWebLocalizationKey, BusinessViewHelper.ConcatStrings(new []{path, BusinessViewHelper.ConcatStrings(new []{SubFolderNameViews, view.Properties[BusinessView.EntityName], SubFolderNamePartials})})},
+                    {SubFolderWebIndexKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameViews, entityName})},
+                    {SubFolderWebLocalizationKey, BusinessViewHelper.ConcatStrings(new []{path, BusinessViewHelper.ConcatStrings(new []{SubFolderNameViews, entityName, SubFolderNamePartials})})},
                     {SubFolderWebViewModelKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameModels}))},
                     {SubFolderWebControllersKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers}))},
                     {SubFolderWebFinderKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers, SubFolderNameFinder})},
                     {SubFolderWebSqlKey, BusinessViewHelper.ConcatStrings(new []{project.Value.ProjectFolder, string.Empty})},
-                    {SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameScripts, view.Properties[BusinessView.EntityName]})}
+                    {SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameScripts, entityName})}
                 };
                 project.Value.Subfolders = subfolders;
             }
@@ -918,99 +933,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             BuildSubfolders(view);
 
             // Create the Resx Files if the MenuResx file for that language exists
-            if (_settings.includeEnglish)
+            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
+                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
             {
-                CreateResx(view, view.Properties[BusinessView.ResxName] + ".resx", true);
-            }
-            if (_settings.includeSpanish)
-            {
-                CreateResx(view, view.Properties[BusinessView.ResxName] + ".es.resx", false);
-            }
-            if (_settings.includeFrench)
-            {
-                CreateResx(view, view.Properties[BusinessView.ResxName] + ".fr.resx", false);
-            }
-            if (_settings.includeChineseSimplified)
-            {
-                CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hans.resx", false);
-            }
-            if (_settings.includeChineseTraditional)
-            {
-                CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hant.resx", false);
+                if (_settings.includeEnglish)
+                {
+                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".resx", true);
+                }
+                if (_settings.includeSpanish)
+                {
+                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".es.resx", false);
+                }
+                if (_settings.includeFrench)
+                {
+                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".fr.resx", false);
+                }
+                if (_settings.includeChineseSimplified)
+                {
+                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hans.resx", false);
+                }
+                if (_settings.includeChineseTraditional)
+                {
+                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hant.resx", false);
+                }
             }
 
-            // Create the Model class
-            CreateClass(view,
+            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
+                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
+            {
+                // Create the Model class
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + ".cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
                 ModelsKey, SubFolderModelKey);
+            }
 
-            // Create the Model Mapper class
+            // Create the Model Mapper class. 
             if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
             {
-                CreateClass(view,
-                    view.Properties[BusinessView.EntityName] + "Mapper.cs",
-                    TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
-                    BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
+                if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
+                    _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
+                {
+                    CreateClass(view,
+                        view.Properties[BusinessView.EntityName] + "Mapper.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
+                }
             }
 
             // Create the Model Fields class
-            CreateClass(view,
+            {
+                CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "Fields.cs",
                 TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
                 ModelsKey, SubFolderModelFieldsKey);
-
-            // Create _Index.cshtml
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
-                if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    var indexTemplate = "Templates.Common.View.Index";
-                    if (_settings.RepositoryType.Equals(RepositoryType.Process))
-                    {
-                        indexTemplate = "Templates.Process.View.Index";
-                    }
-
-                    CreateClass(view,
-                        "Index.cshtml",
-                        TransformTemplateToText(view, _settings, indexTemplate),
-                        WebKey, SubFolderWebIndexKey);
-                }
             }
 
-            // Create _Localization.cshtml
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
+                // Create _Index.cshtml
+                if (view.Options[BusinessView.GenerateClientFiles])
                 {
-                    var localizationTemplate = "Templates.Common.View.Localization";
-                    if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                    if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
                     {
-                        localizationTemplate = "Templates.Process.View.Localization";
-                    }
+                        var indexTemplate = "Templates.Common.View.Index";
+                        if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                        {
+                            indexTemplate = "Templates.Process.View.Index";
+                        }
 
-                    CreateClass(view,
-                        "_Localization.cshtml",
-                        TransformTemplateToText(view, _settings, localizationTemplate),
-                        WebKey, SubFolderWebLocalizationKey);
+                        CreateClass(view,
+                            "Index.cshtml",
+                            TransformTemplateToText(view, _settings, indexTemplate),
+                            WebKey, SubFolderWebIndexKey);
+                    }
+                }
+
+                // Create _Localization.cshtml
+                if (view.Options[BusinessView.GenerateClientFiles])
+                {
+                    if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
+                    {
+                        var localizationTemplate = "Templates.Common.View.Localization";
+                        if (_settings.RepositoryType.Equals(RepositoryType.Process))
+                        {
+                            localizationTemplate = "Templates.Process.View.Localization";
+                        }
+
+                        CreateClass(view,
+                            "_Localization.cshtml",
+                            TransformTemplateToText(view, _settings, localizationTemplate),
+                            WebKey, SubFolderWebLocalizationKey);
+                    }
                 }
             }
-
             // TODO Single Enum file check and logic here
 
-            // Create the Model Enumeration class(es)
-            foreach (var value in view.Enums.Values)
+            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
+                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
             {
-                _settings.EnumHelper = value;
-            
-                CreateClass(view,
-                    value.Name + ".cs",
-                    TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
-                    ModelsKey, SubFolderModelEnumsKey);
+                // Create the Model Enumeration class(es)
+                foreach (var value in view.Enums.Values)
+                {
+                    _settings.EnumHelper = value;
+
+                    CreateClass(view,
+                        value.Name + ".cs",
+                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
+                        ModelsKey, SubFolderModelEnumsKey);
+                }
             }
-            
+
             // Create classes for Flat Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.Flat))
+            if (_settings.RepositoryType.Equals(RepositoryType.Flat) ||
+                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition &&
+                view.Options[BusinessView.GenerateFinder])
             {
                 CreateFlatRepositoryClasses(view);
             }
@@ -1048,8 +1085,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     WebKey, SubFolderWebFinderKey);
             }
 
-            // Update security class
-            BusinessViewHelper.UpdateSecurityClass(view, _settings);
+            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+            {
+                // Update security class
+                BusinessViewHelper.UpdateSecurityClass(view, _settings);
+            }
         }
 
         /// <summary> Create the class </summary>
@@ -1059,7 +1099,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="projectKey">Project Key for Project Info</param>
         /// <param name="subfolderKey">Subfolder Key for Project Info</param>
         /// <param name="addToProject">True to add to project otherwise false</param>
-        private void CreateClass(BusinessView view, string fileName, string content, string projectKey, 
+        private void CreateClass(BusinessView view, string fileName, string content, string projectKey,
             string subfolderKey, bool addToProject = true)
         {
             // Update display of file being processed
@@ -1201,6 +1241,122 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             }
         }
+
+        /// <summary>
+        /// Create Header-detail Repository Classes  
+        /// </summary>
+        /// <param name="headerView">the header view</param>
+        /// <param name="settings">settings</param>
+        private void CreateHeaderDetailRepositoryClasses(BusinessView headerView, Settings settings)
+        {
+            // Create the Business Repository Interface class
+            CreateClass(headerView, "I" + settings.EntitiesContainerName + "Repository.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
+                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+
+            // Create the Repository class
+            CreateClass(headerView,
+                settings.EntitiesContainerName + "Repository.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Repository"),
+                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+
+            // Create the ViewModel class
+            CreateClass(headerView,
+                settings.EntitiesContainerName + "ViewModel.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.ViewModel"),
+                WebKey, SubFolderWebViewModelKey);
+
+            // Create the public Controller class
+            CreateClass(headerView,
+            settings.EntitiesContainerName + "Controller.cs",
+            TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Controller"),
+            WebKey, SubFolderWebControllersKey);
+
+
+            // Create the Internal Controller class
+            CreateClass(headerView,
+                settings.EntitiesContainerName + "ControllerInternal.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.InternalController"),
+                WebKey, SubFolderWebControllersKey);
+
+            // Create partial view.cshtml
+            var fileName = "_" + settings.EntitiesContainerName + ".cshtml";
+            CreateClass(headerView,
+                fileName,
+                TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
+                WebKey, SubFolderWebLocalizationKey);
+
+            // Register types
+            BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
+
+            BusinessViewHelper.UpdateBundles(headerView, settings);
+
+            // Update security class
+            BusinessViewHelper.UpdateSecurityClass(headerView, settings);
+
+            // set the start page
+            BusinessViewHelper.CreateViewPageUrl(headerView, settings);
+
+            // Update the plugin menu details
+            BusinessViewHelper.UpdateMenuDetails(headerView, settings);
+
+            // For javascript files, the project name does not include the .Web segment
+            var projectName =
+            settings.Projects[WebKey][headerView.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+
+            // Create the Behavior JavaScript file
+            CreateClass(headerView,
+                projectName + "." + settings.EntitiesContainerName + "Behaviour.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create the Knockout Extension JavaScript file
+            CreateClass(headerView,
+                projectName + "." + settings.EntitiesContainerName + "KoExtn.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.KoExtn"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create the Repository JavaScript file
+            CreateClass(headerView,
+                projectName + "." + settings.EntitiesContainerName + "Repository.js",
+                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Repository"),
+                WebKey, SubFolderWebScriptsKey);
+
+            // Create _Index.cshtml
+            CreateClass(headerView,
+                "Index.cshtml",
+                TransformTemplateToText(headerView, settings, "Templates.Common.View.Index"),
+                WebKey, SubFolderWebIndexKey);
+
+            // Create _Localization.cshtml
+            var localizationTemplate = "Templates.Common.View.Localization";
+            CreateClass(headerView,
+                "_Localization.cshtml",
+                TransformTemplateToText(headerView, settings, localizationTemplate),
+                WebKey, SubFolderWebLocalizationKey);
+
+            if (settings.includeEnglish)
+            {
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.resx", true);
+            }
+            if (settings.includeSpanish)
+            {
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.es.resx", false);
+            }
+            if (settings.includeFrench)
+            {
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.fr.resx", false);
+            }
+            if (settings.includeChineseSimplified)
+            {
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hans.resx", false);
+            }
+            if (settings.includeChineseTraditional)
+            {
+                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hant.resx", false);
+            }
+        }
+
         /// <summary> Create Process Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateProcessRepositoryClasses(BusinessView view)
@@ -1317,7 +1473,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             CreateClass(view,
                 view.Properties[BusinessView.EntityName] + "_WorkerRole_Data.sql",
                 TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
-                 WebKey, SubFolderWebSqlKey, 
+                 WebKey, SubFolderWebSqlKey,
                  false);
 
         }
@@ -1480,6 +1636,114 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
                 BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
         }
+
+        /// <summary>
+        /// Create the HeaderDetail Resx content
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="fileName">Resx File Name</param>
+        /// <param name="addDescription">True to add descriptions otherwise false</param>
+        private void CreateHeaderDetailResx(BusinessView view, string fileName, bool addDescription)
+        {
+            // Update display of file being processed
+            if (ProcessingEvent != null)
+            {
+                ProcessingEvent(fileName);
+            }
+
+            // Vars
+            var retVal = true;
+            var projectInfo = _settings.Projects[ResourcesKey][view.Properties[BusinessView.ModuleId]];
+            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[SubFolderResourcesKey] });
+            var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
+
+            // Determine if exists
+            var exists = File.Exists(fullFileName);
+            var writeFile = true;
+
+            // Prompt if file exists?
+            if (exists && _settings.PromptIfExists)
+            {
+                var result = MessageBox.Show(string.Format(Resources.FileExists, fullFileName),
+                    Resources.Confirmation, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                // Evaluate
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        // Overwrite the file
+                        break;
+                    case DialogResult.No:
+                        // Skip the file
+                        writeFile = false;
+                        break;
+                    case DialogResult.Cancel:
+                        // Abort the wizard
+                        throw new Exception();
+                }
+            }
+
+            // Write the file?
+            if (writeFile)
+            {
+                try
+                {
+                    // Ensure the filepath exists
+                    if (!exists)
+                    {
+                        if (!Directory.Exists(filePath))
+                        {
+                            Directory.CreateDirectory(filePath);
+                        }
+                    }
+
+                    // Create resx file
+                    var resx = new ResXResourceWriter(fullFileName);
+                    var uniqueList = new List<string>();
+
+                    // Add Enity key
+                    resx.AddResource(new ResXDataNode("Entity", addDescription ? view.Properties[BusinessView.ModuleId] +
+                        " " + _settings.EntitiesContainerName : string.Empty));
+
+                    resx.Close();
+                }
+                catch
+                {
+                    retVal = false;
+                }
+
+                // Update project if write was successful
+                if (retVal)
+                {
+                    // Add to project
+                    try
+                    {
+                        var createdItem = projectInfo.Project.ProjectItems.AddFromFile(fullFileName);
+
+                        // Only add code behind file for english resx file
+                        if (addDescription)
+                        {
+                            createdItem.Properties.Item("CustomTool").Value = "PublicResXFileCodeGenerator";
+                        }
+                    }
+                    catch
+                    {
+                        retVal = false;
+                    }
+                }
+
+            }
+            else
+            {
+                retVal = false;
+            }
+
+
+            // Update status
+            LaunchStatusEvent(retVal, fileName);
+        }
+
+
 
         /// <summary>
         /// Create the Resx content

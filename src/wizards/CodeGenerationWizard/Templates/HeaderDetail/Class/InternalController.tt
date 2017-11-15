@@ -1,0 +1,191 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var resxName = view.Properties[BusinessView.ResxName];
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+    var keyFieldName = view.Keys.FirstOrDefault();
+    var containerName = settings.EntitiesContainerName;
+    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+
+    var enumsCount = view.Enums.Count;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using System;
+using System.Linq;
+using Microsoft.Practices.Unity;
+using System.Linq.Expressions;
+using System.Collections.Generic;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
+{
+    /// <summary>
+    /// <#=containerName#> Internal Controller
+    /// </summary>
+    public class <#=containerName#>ControllerInternal : ImportExportControllerInternal<I<#=containerName#>Repository>
+    {
+        #region Private variables
+         
+        /// <summary>
+        /// Variable for storing context.
+        /// </summary>
+        private readonly Context _context;
+
+        private I<#=containerName#>Repository _repository
+        {
+            get {
+                return _context.Container.Resolve<I<#=containerName#>Repository>(new ParameterOverride("context", _context));
+            }
+        }
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// New instance of <see cref="<#=containerName#>ControllerInternal"/>
+        /// </summary>
+        /// <param name="context">Context</param>
+        public <#=containerName#>ControllerInternal(Context context)
+            : base(context)
+        {
+            _context = context;
+        }
+
+        #endregion
+
+        #region Internal methods
+
+        /// <summary>
+        /// Create a <#=modelName#>
+        /// </summary>
+        /// <returns>JSON object for <#=modelName#></returns>
+        internal <#=containerName#>ViewModel Create()
+        {
+            var viewModel = GetViewModel(new <#=headerModelName#>(), null);
+
+            viewModel.UserAccess = GetAccessRights();
+
+            return viewModel;
+        }
+
+        /// <summary>
+        /// Get a <#=modelName#>
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        internal <#=containerName#>ViewModel GetById(string id)
+        {
+            var data = _repository.GetById(id);
+            var userMessage = new UserMessage(data);
+
+            return GetViewModel(data, userMessage);
+        }
+        /// <summary>
+        /// Add a <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        internal <#=containerName#>ViewModel Add(<#=headerModelName#> model)
+        {
+            var data = _repository.Add(model);
+
+            var userMessage = new UserMessage(data,
+                string.Format(CommonResx.AddSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
+
+            return GetViewModel(data, userMessage);
+       }
+
+        /// <summary>
+        /// Update a <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        internal <#=containerName#>ViewModel Save(<#=headerModelName#> model)
+        {
+            var data = _repository.Save(model);
+            var userMessage = new UserMessage(data, CommonResx.SaveSuccessMessage);
+
+            return GetViewModel(data, userMessage);
+        }
+
+        /// <summary>
+        /// Delete a <#=modelName#>
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        internal <#=containerName#>ViewModel Delete(string id)
+        {
+            Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == id;
+            var data = _repository.Delete(filter);
+
+            var userMessage = new UserMessage(data,
+                string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
+
+            return GetViewModel(data, userMessage);
+        }
+
+        #endregion
+
+        #region Private methods
+
+        /// <summary>
+        /// Generic routine to return a view model for <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <param name="userMessage">User Message for <#=modelName#></param>
+        /// <returns>View Model for <#=modelName#></returns>
+        private <#=containerName#>ViewModel GetViewModel(<#=headerModelName#> model, UserMessage userMessage)
+        {
+            return new <#=containerName#>ViewModel
+            {
+                Data = model,
+                UserMessage = userMessage
+            };
+        }
+
+        #endregion
+
+	}
+}

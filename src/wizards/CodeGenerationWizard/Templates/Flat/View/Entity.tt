@@ -24,6 +24,13 @@
 <#
     // Locals
     var entityName = view.Properties[BusinessView.EntityName];
+    var resxName = view.Properties[BusinessView.ResxName];
+
+    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+    {
+        entityName = settings.EntitiesContainerName;
+        resxName = settings.EntitiesContainerName + "Resx";
+    }
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var resxName = view.Properties[BusinessView.ResxName];
@@ -37,7 +44,21 @@
 #>
 @* <#=copyright#> *@
 
+<#
+    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+    {
+#>
+@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
+<#
+}
+else
+{
+#>
 @model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
+<#
+}
+#>
+
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
