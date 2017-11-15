@@ -7,18 +7,20 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.View
+namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Class
 {
     using System.Linq;
+    using System.Xml.Linq;
+    using System.Collections.Generic;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+    #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
-    public partial class Index : IndexBase
+    public partial class RepositoryInterface : RepositoryInterfaceBase
     {
 #line hidden
         /// <summary>
@@ -27,198 +29,292 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.View
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 2 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 3 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 4 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 5 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 6 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 7 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 8 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 9 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 10 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 11 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 12 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 13 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 14 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 15 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 16 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 17 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 18 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 19 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
+            this.Write("\r\n");
             
-            #line 24 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 27 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
-    
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        entityName = settings.EntitiesContainerName;
-    }
-
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
+    var containerName = settings.EntitiesContainerName;
+    var entityName = view.Properties[BusinessView.EntityName];
+    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.headerNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 
             
             #line default
             #line hidden
-            this.Write("@* ");
+            this.Write("// ");
             
-            #line 37 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 36 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write(" *@\r\n\r\n@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants\r\n\r\n@using (Html.Be" +
-                    "ginForm(null, null, FormMethod.Post, new {id = \"frm");
+            this.Write("\r\n\r\n#region Namespace\r\n\r\nusing ");
             
-            #line 41 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("\"}))\r\n{\r\n    <div id=\"antiforgerytoken_holder\">\r\n        @Html.AntiForgeryToken()" +
-                    "\r\n    </div>\r\n    @Html.Partial(\"~/Areas/");
-            
-            #line 46 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write("/Views/");
-            
-            #line 46 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("/Partials/_");
-            
-            #line 46 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write(".cshtml\")\r\n}\r\n\r\n@section scripts{\r\n    @Scripts.Render(\"~/bundles/");
-            
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 40 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
+            this.Write(".");
             
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 40 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
+            this.Write(".Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;\r\nusing Sage" +
+                    ".CA.SBS.ERP.Sage300.Common.Interfaces.Service;\r\nusing System.Linq.Expressions;\r\n" +
+                    "using System;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+            #line 48 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 48 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(".Interfaces.BusinessRepository\r\n{\r\n    /// <summary>\r\n    /// Interface I");
+            
+            #line 51 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            
+            #line default
+            #line hidden
+            this.Write("Respository\r\n    /// </summary>\r\n    public interface I");
+            
+            #line 53 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            
+            #line default
+            #line hidden
+            this.Write("Repository : ISecurity, ISecurityService, IImportExport \r\n    {\r\n        /// <sum" +
+                    "mary>\r\n        /// Get a ");
+            
+            #line 56 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("\")\r\n}\r\n\r\n@{\r\n    Layout = Shared.GlobalLayout;\r\n}\r\n");
+            this.Write(" record by id \r\n        /// </summary>\r\n        /// <typeparam name=\"TKey\"></type" +
+                    "param>\r\n        /// <param name=\"id\">primary key value</param>\r\n        /// <ret" +
+                    "urns>");
+            
+            #line 60 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write("Model</returns>\r\n        ");
+            
+            #line 61 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" GetById<TKey>(TKey id);\r\n\r\n        /// <summary>\r\n        /// Save ");
+            
+            #line 64 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
+            
+            #line 66 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" model</param>\r\n        /// <returns></returns>\r\n        ");
+            
+            #line 68 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" Save(");
+            
+            #line 68 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" model);\r\n\r\n        /// <summary>\r\n        /// Insert ");
+            
+            #line 71 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
+            
+            #line 73 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" model</param>\r\n        /// <returns></returns>\r\n        ");
+            
+            #line 75 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" Add(");
+            
+            #line 75 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" model);\r\n\r\n        /// <summary>\r\n        /// Delete ");
+            
+            #line 78 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"filter\">filter for dele" +
+                    "ting a record</param>\r\n        /// <returns></returns>\r\n        ");
+            
+            #line 82 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" Delete(Expression<Func<");
+            
+            #line 82 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(", Boolean>> filter);\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
+        #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
@@ -300,7 +396,7 @@ if ((settingsValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
-    public class IndexBase
+    public class RepositoryInterfaceBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

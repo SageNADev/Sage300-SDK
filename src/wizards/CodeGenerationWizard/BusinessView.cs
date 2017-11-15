@@ -75,6 +75,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public Dictionary<string, bool> Options { get; set; }
         /// <summary> Compositions is the collection of entity compositions </summary>
         public List<Composition> Compositions { get; set; }
+
+        public bool IsPartofHeaderDetailComposition { get; set; }
+        
         #endregion
 
     }
