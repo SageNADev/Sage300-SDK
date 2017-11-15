@@ -300,7 +300,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     // Find out the header view and use this view to pass view related information
                     // around to satisfy the parameter requirements for the existing routines.
-                    var headerView = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute(ProcessGeneration.PropertyViewId).Value).First();
+                    var headerView = settings.Entities.First(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute(PropertyViewId).Value);
 
                     // Build the subfolders
                     BuildSubfolders(headerView);
