@@ -23,33 +23,37 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
-    
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        entityName = settings.EntitiesContainerName;
-    }
-
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
+    var modelName = view.Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.EntityName];
+    var containerName = settings.EntitiesContainerName;
+
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+    
+    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+
 #>
-@* <#=copyright#> *@
+// <#=copyright#>
 
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+#region Namespace
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new {id = "frm<#=entityName#>"}))
+using System;
+using System.Collections;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
 {
-    <div id="antiforgerytoken_holder">
-        @Html.AntiForgeryToken()
-    </div>
-    @Html.Partial("~/Areas/<#=moduleId#>/Views/<#=entityName#>/Partials/_<#=entityName#>.cshtml")
-}
-
-@section scripts{
-    @Scripts.Render("~/bundles/<#=companyNamespace#><#=moduleId#><#=entityName#>")
-}
-
-@{
-    Layout = Shared.GlobalLayout;
+    /// <summary>
+    /// Class for <#=containerName#>ViewModel
+    /// </summary>
+    public class <#=containerName#>ViewModel : ViewModelBase<<#=headerModelName#>>
+    {
+    }
 }

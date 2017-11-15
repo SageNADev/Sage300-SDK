@@ -88,6 +88,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool includeFrench { get; set; }
         /// <summary> Entities Container Name </summary>
         public string EntitiesContainerName { get; set; }
+        /// <summary> Root node in the header-detail tree </summary>
+        public XElement HeaderNode { get; set; }
         #endregion
     }
 

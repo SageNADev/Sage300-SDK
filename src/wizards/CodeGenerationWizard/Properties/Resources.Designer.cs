@@ -558,6 +558,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Either the header does not have a child view or there is more than one header defined..
+        /// </summary>
+        internal static string HeaderNodeDefinition {
+            get {
+                return ResourceManager.GetString("HeaderNodeDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID.
         /// </summary>
         internal static string ID {
