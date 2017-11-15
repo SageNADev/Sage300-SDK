@@ -502,4 +502,7 @@
   <data name="Include" xml:space="preserve">
     <value>Include</value>
   </data>
+  <data name="HeaderNodeDefinition" xml:space="preserve">
+    <value>Either the header does not have a child view or there is more than one header defined.</value>
+  </data>
 </root>

@@ -25,10 +25,18 @@
     // Locals
     var entityName = view.Properties[BusinessView.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = entityName;
+    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+    {
+        containerName = settings.EntitiesContainerName;
+    }
+
     var moduleId = view.Properties[BusinessView.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
+
+
 #>
 /* <#=copyright#> */
 
@@ -49,7 +57,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     init: function () {
     <#=localEntityName#>UI.initButtons();
     <#=localEntityName#>UI.initFinders();
-    <#=localEntityName#>UISuccess.initialLoad(<#=entityName#>ViewModel);
+    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
     <#=localEntityName#>UISuccess.setkey();
     },
 
@@ -68,8 +76,8 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     // Init Buttons
     initButtons: function () {
         // Import/Export Buttons
-        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", false, $.noop);
-        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", false, $.noop);
+        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
         // Key field with Finder
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
@@ -111,7 +119,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     // Init Finders, if any
     initFinders: function () {
         var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
+        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
     },
 
     // Get

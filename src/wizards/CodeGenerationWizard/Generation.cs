@@ -128,6 +128,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Entities Container Name </summary>
         private string _entitiesContainerName;
 
+        /// <summary> Header node in the tree </summary>
+        private XElement headerNode;
+
         /// <summary> All compositions checkbox </summary>
         private CheckBox _allCompositions;
 
@@ -398,6 +401,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             }
                         }
                     }
+                }
+
+                // find the header node
+                if (FindHeaderNode(BuildXDocument()) == null)
+                {
+                    return Resources.HeaderNodeDefinition;
                 }
             }
 
@@ -1585,6 +1594,59 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return (RepositoryType)Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
         }
 
+        public static XDocument ToXDocument(XmlDocument xmlDocument)
+        {
+            using (var nodeReader = new XmlNodeReader(xmlDocument))
+            {
+                nodeReader.MoveToContent();
+                return XDocument.Load(nodeReader);
+            }
+        }
+
+        void FindChildEntities(System.Xml.XmlNode node, IList<XmlNode> childNodes)
+        {
+            foreach (System.Xml.XmlNode _node in node.ChildNodes)
+            {
+                if (_node.Name == "entity")
+                {
+                    childNodes.Add(_node);
+                    FindChildEntities(_node, childNodes);
+                }
+            }
+        }
+
+        static bool CheckChildrenExist(System.Xml.XmlNode node)
+        {
+            foreach (System.Xml.XmlNode _node in node.ChildNodes)
+            {
+                if (_node.Name == "entity")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        static XElement FindHeaderNode(XDocument doc)
+        {
+            XElement headerNode = null;
+
+            foreach (var x in doc.Root.Elements())
+            {
+                if (x.Descendants().Where(e => e.Name == "entity").Count() >= 1)
+                {
+                    if (headerNode != null)
+                    {
+                        return null;
+                    }
+                    headerNode = x;
+                }
+            }
+
+            return headerNode;
+        }
+
         /// <summary> Next/Generate Navigation </summary>
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void NextStep()
@@ -1619,6 +1681,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 else
                 {
                     // Proceed to next step
+
                     if (!_currentWizardStep.Equals(-1))
                     {
                         // Before proceeding to next step, ensure current step is valid
@@ -1645,6 +1708,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         _xmlEntities = BuildXDocument();
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
+
+                        // for header-detail type, mark each entity in the header-detail tree
+                        if (repositoryType.Equals(RepositoryType.HeaderDetail))
+                        {
+                            // find the header node
+                            headerNode = FindHeaderNode(_xmlEntities);
+
+                            
+                            var headerDetailEntities = headerNode.DescendantsAndSelf().Where(e => e.Name == "entity");
+
+                            // mark entity in _entities 
+                            foreach (var entity in _entities)
+                            {
+                                entity.IsPartofHeaderDetailComposition = false;
+
+                                if (headerDetailEntities.Any(p => (p.Attribute(ProcessGeneration.PropertyViewId).Value).Equals(entity.Properties[BusinessView.ViewId])))
+                                {
+                                    entity.IsPartofHeaderDetailComposition = true;
+                                }
+                            }
+                        }
                     }
 
                     ShowStep(true);
@@ -2218,7 +2302,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 includeChineseTraditional = _includeChineseTraditional,
                 includeSpanish = _includeSpanish,
                 includeFrench = _includeFrench,
-                EntitiesContainerName = _entitiesContainerName
+                EntitiesContainerName = _entitiesContainerName,
+                headerNode = this.headerNode
             };
         }
 
