@@ -8,12 +8,9 @@
 @model  NavigableMenuViewModel<NavigableMenu>
 
 <div id="dvAddWidget" class="top-buttons addWidgets" style="display:none">
-    <span>@HomePageResx.AddWidgets</span>
-    <button class="navbarToggle">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
+    <div class="top-buttons addWidgets">
+        <span>@HomePageResx.AddWidgets</span>
+    </div>
 </div>
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("NavigableMenuDetail", Model);

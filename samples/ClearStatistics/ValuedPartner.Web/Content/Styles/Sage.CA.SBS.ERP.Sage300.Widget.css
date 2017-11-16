@@ -4,33 +4,33 @@
 }
 
 .kpi-container {
-    width: 430px;
-    height: 286px;
+    height: 300px;
     position: relative;
     color: #4d4f53;
 }
 
 .kpi-container h2 {
-  font-size: 14px;
-  font-weight: normal;
-  color: #41a940;
-  margin-bottom: 16px;
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: #64006e;
+    margin-bottom: 1.25rem;
+    margin-top: .25rem;
 }
 
 .kpi-container .timestamp {
-  position: absolute;
-  bottom: 2px;
-  right: 0;
-  font-size: 11px;
-  font-weight: bold;
-  color: #4d4f53;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: .75rem;
+    color: rgba(0, 0, 0, 0.54);
+    text-align: right;
+    margin-top: 1rem;
 }
 
 .kpi-container .kpi-chart {
-  height: 230px;
-  margin: 15px 0;
-  font-size: 12px;
-  overflow-y: auto;
+    height: 235px;
+    font-size: 14px;
+    width: 100%;
 }
 
 .kpi-container .kpi-pie {
@@ -53,8 +53,12 @@
 
 .kpi-container table td,
 .kpi-container table th {
-  padding: 2px 0 4px;
+  padding: 6px 0;
   width: 100%;
+}
+
+.kpi-container .kpi-chart table tr:hover {
+  background-color: #f4f5fa;
 }
 
 .kpi-container table td:nth-of-type(1)  { /*New UI: prevent text wrapping in KPI table*/
@@ -201,4 +205,22 @@
 
 .fiscal-group {  
    position: static;
+}
+
+/* To remove gradient for Tooltips ------------------------------------------------- */
+
+.k-tooltip.k-chart-tooltip {
+    background-image: none;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.kpi-chart .k-chart,
+.kpi-chart .k-stockchart {
+    height: 225px;
+}
+
+#InventoryItemPerformance {
+    margin-top: 30px;
 }
