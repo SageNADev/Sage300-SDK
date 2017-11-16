@@ -38,6 +38,7 @@
         Equal: '@(new HtmlString(OperatorsResx.Equal))',
         Like: '@(new HtmlString(CommonResx.Like))',
         StartsWith: '@(new HtmlString(CommonResx.StartsWith))',
+        EndsWith: '@(new HtmlString(CommonResx.EndsWith))',
         Contains: '@(new HtmlString(CommonResx.Contains))',
 
         DeleteConfirm: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
@@ -60,6 +61,9 @@
         Description: '@CommonResx.ProcessingDescription',
         Index: '@CommonResx.Index',
         AllowPageUnloadEvent: true,
+        ClickAddFilter: '@Html.SageRaw(CommonResx.ClickAddFilter)',
+        AddCriteria: '@Html.SageRaw(CommonResx.AddCriteria)',
+        CreateFilterPopUpTitle: '@Html.SageRaw(CommonResx.CreateFilterPopUpTitle)',
 
         Yes: '@CommonResx.Yes',
         No: '@CommonResx.No',
@@ -93,5 +97,6 @@
         CustomizationDescription: '@Html.SageRaw(@CommonResx.CustomizationDescription)',
         UIProfiles: '@Html.SageRaw(@CommonResx.UIProfiles)',
         FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        ShowMessageTime: '@System.Configuration.ConfigurationManager.AppSettings["ShowMessageTime"]'
     }
 </script>

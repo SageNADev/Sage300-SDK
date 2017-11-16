@@ -1,0 +1,90 @@
+﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.AdhocInquiryViewModel
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+@functions{
+    public static string GetResourceString(string resouceFileName, string resourceName, string defaultName)
+    {
+        if (!string.IsNullOrEmpty(resouceFileName) && !string.IsNullOrEmpty(resourceName))
+        {
+            var resourceType = Type.GetType(resouceFileName);
+            return (string)resourceType.GetProperty(resourceName).GetGetMethod().Invoke(null, null);
+        }
+        return defaultName;
+    }
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("AdhocInquiryViewModel", Model)
+    var localizedName = '@Html.SageRaw(GetResourceString(Model.Data.ResourceType, Model.Data.ResourceKey, Model.Data.Name))';
+    var localizedFeatureName = '@Html.SageRaw(GetResourceString(Model.Data.InquiryFeatureType.ResourceType, Model.Data.InquiryFeatureType.FeatureIdResourceKey, Model.Data.InquiryFeatureType.Id))';
+
+    var nameToDisplayName = {
+        @foreach (var field in Model.Data.InquiryFeatureType.Fields)
+        {
+            @:"@field.Name": "@field.DisplayName",
+        }
+    };
+
+</script>
+
+@Scripts.Render("~/bundles/AdhocInquiry")
+
+@Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_Localization.cshtml")
+
+<div class="form-screen">
+    <div id="message"></div>
+    <div id="success"></div>
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    <h1 id="headTitleInquiry" data-bind="text: LocalizedName"></h1>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <div class="inquiry-panel-body">
+        @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_AdhocInquiryFilterControl.cshtml", Model)
+        
+        <div id="filterControl" data-bind="foreach: {data: Data.InquiryFilters, afterRender: refreshFilterControl}">
+            <div class="form-group" id="additionalFiltering_">
+                <button class="glyphicon glyphicon-quick-close" id="btnDeleteFilter_" data-bind="click: $parent.removeFilter"></button>
+                <div class="dropdown-group">
+                    @Html.KoSageDropDownList("FilterList", new { @options = "$parent.FilterListSelection", @optionsText = "'Text'", @optionsValue = "'Value'", @value = "Field.field" }, new { @class = "default single-select", @id = "filterDdl_" })
+                </div>
+                <div class="inline-div"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="button-group">
+                <button class="glyphicon glyphicon-quick-add" id="btnAddFilter"><label class="btn-label">@InquiryResx.AddFilter</label></button>
+            </div>
+        </div>
+        <section class="buttons-group">
+            <div class="left">
+                @Html.KoSageButton("btnReset", new {}, new {@value = InquiryResx.ResetFilters, @id = "btnReset", @class = "btn btn-secondary"})
+                @Html.KoSageButton("btnApply", new { }, new { @value = InquiryResx.ApplyFilters, @id = "btnApply", @class = "btn btn-primary" })
+            </div>
+            <div class="right">
+                @Html.KoSageButton("btnDelete", new { @disable = "isDeleteDisable" }, new { @value = InquiryResx.DeleteQuery, @id = "btnDelete", @class = "btn btn-secondary" })
+                @Html.KoSageButton("btnSaveQuery", new {}, new {@value = InquiryResx.SaveQuery, @id = "btnSaveQuery", @class = "btn btn-default btn-inquiry-save"})
+            </div>
+        </section>
+    </div>
+
+    <div class="grid-group">
+        <div class="gridcontrols-group clearfix">
+            <button class="btn btn-default btn-grid-control btn-edit-column" type="button">Edit Column</button>
+        </div>
+        <div id="adhocInquiryGrid" class="datagrid-group"></div>
+    </div>
+    
+    <section class="footer-group-1">
+        @Html.KoSageButton("btnPrint", new {}, new {@value = CommonResx.Print, @id = "btnSave", @class = "btn btn-default"})
+        @Html.KoSageButton("btnExport", new {}, new {@value = CommonResx.Export, @id = "btnExport", @class = "btn btn-default"})
+    </section>
+</div>

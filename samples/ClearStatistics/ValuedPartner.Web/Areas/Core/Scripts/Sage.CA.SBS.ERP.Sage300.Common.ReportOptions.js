@@ -17,4 +17,4 @@
 
 };
 
-}(sg = sg || {}, jQuery));
+}(sg || {}, jQuery));

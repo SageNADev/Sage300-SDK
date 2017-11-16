@@ -23,7 +23,8 @@ push-location -path $absWebFolderPath
 # Copy Web Artifact folders
 $webSubPaths.split(',') | Foreach-Object { 
   robocopy /S /E "$webAssetDirPath\$_" "$_" `
-  /xf *.cs,*.csproj,*.user,*.xml,*.Sage300.Revaluation*.js,*.IC.Common.js,_wizard.cshtml,packages.config
+  /xf *.cs *.csproj *.user *.xml *.Sage300.Revaluation*.js *.IC.Common.js _wizard.cshtml packages.config `
+  /xd TU obj
 }
 
 $webSubPathsCopyAll.split(',') | Foreach-Object { 
@@ -32,7 +33,7 @@ $webSubPathsCopyAll.split(',') | Foreach-Object {
 
 $scriptsWebSubPath.split(',') | Foreach-Object { 
   robocopy /S /E "$webAssetDirPath\$_" "$_" `
-  /xf kendo.all*.js,Test_*.js,*TestUtils.js,chutzpah.json 
+  /xf kendo.all*.js Test_*.js *TestUtils.js chutzpah.json 
 }
 # Copy WebForms
 "WebForms" | Foreach-Object { robocopy /E "$webAssetDirPath\$_" "$_" }

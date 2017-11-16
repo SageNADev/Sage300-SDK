@@ -1,0 +1,125 @@
+﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Inquiry
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@using System.Linq
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.AdhocInquiryViewModel
+
+
+@functions{
+    public string GenerateId(string type, int idx, ref List<object> renderedObjects)
+    {
+        string id = string.Format("field{0}_{1}", idx, type);
+        id = "{0}_" + id;
+        renderedObjects.Add(new { objectType = type, Id = id });
+        return id; // This formatter is left as part of feilds to render in rows while in javascript so they are unique
+    }
+
+    /// <summary>
+    /// Return copy of CustomSelectList with Text replaced with localized text
+    /// </summary>
+    /// <param name="options">The origin list of CustomSelectList</param>
+    /// <param name="localizedDictionary">Dictionary contains localized string</param>
+    /// <returns>List of localized version of origin list</returns>
+    public static IReadOnlyList<CustomSelectList> CreateLocalizedOptionsList(IReadOnlyList<CustomSelectList> options, IReadOnlyDictionary<string, string> localizedDictionary)
+    {
+        if(localizedDictionary != null)
+        {
+            return options.Select(x => new CustomSelectList
+            {
+                Selected = x.Selected,
+                Text = localizedDictionary.ContainsKey(x.Text) ? localizedDictionary[x.Text] : x.Text,
+                Value = x.Value
+            }).ToList();
+        }
+
+        return options;
+    }
+}
+
+@{
+    var newFilterObject = new InquiryFilter();
+    var inquiryFieldControlList = new List<object>();
+
+    for (int idx = 1; idx < (Model.Data.InquiryFeatureType.Fields.Count + 1); idx++)
+    {
+        var field = Model.Data.InquiryFeatureType.Fields[idx - 1];
+        var renderedObjects = new List<object>();
+        
+        switch (field.Type)
+        {
+            case FieldType.Finder:
+            {
+                var html = "<div class=\"dropdown-group\">";
+                html += Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = GenerateId("dropdown", idx, ref renderedObjects) }).ToHtmlString();
+                html += "</div>";
+
+                html += "<div class=\"finder-group\">";
+                html += Html.KoSageTextBox("frm" + field.Name, new {@valueUpdate = "'input'"}, new {@class = "medium txt-upper", @id = GenerateId("fromtextbox", idx, ref renderedObjects)}).ToHtmlString();
+                html += Html.KoSageButton("btnFinderFrom" + field.Name, new { }, new { @class = "icon btn-search", @id = GenerateId("fromfinder", idx, ref renderedObjects), @tabindex = -1 }).ToHtmlString();
+                html += "</div>";
+
+                html += "<div class=\"finder-group\" id=\"" + GenerateId("finderGroup", idx, ref renderedObjects) + "\" style=\"display: none;\">";
+                html += Html.KoSageTextBox("to" + field.Name, new {@valueUpdate = "'input'"}, new {@class = "medium txt-upper", @id = GenerateId("totextbox", idx, ref renderedObjects)}).ToHtmlString();
+                html += Html.KoSageButton("btnFinderTo" + field.Name, new { }, new { @class = "icon btn-search", @id = GenerateId("tofinder", idx, ref renderedObjects), @tabindex = -1 }).ToHtmlString();
+                html += "</div>";
+
+                inquiryFieldControlList.Add(new { inquiryField = field, renderedObjList = renderedObjects, fieldHtml = html });
+                break;
+            }
+
+            case FieldType.MultiSelect:
+            {
+                var html = "<div class=\"dropdown-group\">";
+                html += "<select class=\"small single-select\" id=\"" + GenerateId("dropdown", idx, ref renderedObjects) + "\"><option value=\"6\" selected>";
+                html += InquiryResx.Includes;
+                html += "</option></select></div>";
+                html += "<div class=\"multiselect-group\">";
+                html += Html.DropDownListHelper("multiSelect" + field.Name, CreateLocalizedOptionsList(field.Options, Model.LocalizedOptionTextDictionary), null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = GenerateId("multiselect", idx, ref renderedObjects), @class = "medium-large multi-select", multiple = "multiple" });
+                html += "</div>";
+                
+                inquiryFieldControlList.Add(new { inquiryField = field, renderedObjList = renderedObjects, fieldHtml = html });
+                break;
+            }
+
+            case FieldType.Enum:
+            {
+                var html = "<div class=\"dropdown-group\">";
+                html += Html.DropDownListHelper("Enum" + field.Name, CreateLocalizedOptionsList(field.Options, Model.LocalizedOptionTextDictionary), null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new {@id = @GenerateId("dropdown", idx, ref renderedObjects), @class = "small single-select"});
+                html += "</div>";
+                    
+                inquiryFieldControlList.Add(new { inquiryField = field, renderedObjList = renderedObjects, fieldHtml = html });
+                break;
+            }
+
+            case FieldType.Date:
+            {
+                var html = "<div class=\"dropdown-group\">";
+                html += Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = GenerateId("dropdown", idx, ref renderedObjects) }).ToHtmlString();
+                html += "</div>";
+                
+                html += "<div class=\"datepicker-group\">";
+                html += Html.KoSageTextBox("fromdatePicker" + field.Name, new { }, new { @id = @GenerateId("fromdatepicker", idx, ref renderedObjects), @class = "datepicker small" });
+                var errorMessage = string.Format(AnnotationsResx.DateFormat, field.DisplayName);
+                html += "<span class=\"field-validation-error\" data-valmsg-replace=\"true\" id=\"" + GenerateId("fromdatepicker_span", idx, ref renderedObjects) + "\" style=\"display: none;\"><span>"+ errorMessage + "</span></span>";
+                html += "</div>";
+
+                html += "<div class=\"datepicker-group\" id=\"" + GenerateId("datePickerGroup", idx, ref renderedObjects) + "\" style=\"display: none;\">";
+                html += Html.KoSageTextBox("todatePicker" + field.Name, new { }, new { @id = @GenerateId("todatepicker", idx, ref renderedObjects), @class = "datepicker small" });
+                html += "<span class=\"field-validation-error\" data-valmsg-replace=\"true\" id=\"" + GenerateId("todatepicker_span", idx, ref renderedObjects) + "\" style=\"display: none;\"><span>" + errorMessage + "</span></span>";
+                html += "</div>";
+                
+                inquiryFieldControlList.Add(new { inquiryField = field, renderedObjList = renderedObjects, fieldHtml = html });
+                break;
+            }
+        }
+    }
+    
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("InquiryFieldControlList", inquiryFieldControlList)
+    @Html.ConvertToJsVariableUsingNewtonSoft("NewFilterObject", newFilterObject)
+</script>
+

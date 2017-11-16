@@ -67,8 +67,8 @@ namespace ValuedPartner.Web
                     TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
-                    ScreenName = "None",
                     ScreenContext = new ScreenContext(),
+                    ScreenName = "None",
                     Container = BootstrapTaskManager.Container
                 };
 

@@ -947,7 +947,7 @@ input[class*="btn-"].small {
 .glyphicon {
     position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 1rem;
     margin: 0 -3px 0 0;
 }
 
@@ -1303,6 +1303,9 @@ input[class*="btn-"].small {
 .glyphicon-leftright:before {
   content: "\2194";
 }
+.glyphicon-lightning::before {
+    content: "\e9be";
+}
 .glyphicon-logo-facebook:before {
   content: "\e013";
 }
@@ -1350,6 +1353,9 @@ input[class*="btn-"].small {
 }
 .glyphicon-more:before {
   content: "\2026";
+}
+.glyphicon-more-vertical:before {
+    content: "\e9e1";
 }
 .glyphicon-move:before {
   content: "\e023";
@@ -1547,8 +1553,8 @@ textarea:focus,
 .k-edit-cell > input[type="text"] { /* New UI : new focus styles*/
     outline: 0;
     border-color: #66afe9;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);*/
     /*box-shadow: 0 0 6px #169fda !important;
     -webkit-box-shadow: 0 0 6px #169fda !important; 
     -moz-box-shadow: 0 0 6px #169fda !important;*/
@@ -2206,14 +2212,14 @@ a[class*="btn-"].disabled:link {
 .k-calendar-container {padding: 5px !important;}
 .k-calendar-container .k-calendar .k-header {background: rgb(77, 79, 83);}
 .k-calendar-container .k-calendar .k-header .k-nav-fast { color: #fff;}
-.k-calendar-container .k-calendar td.k-state-hover .k-link { color: #2e2e2e;}
+.k-calendar-container .k-calendar td.k-state-hover .k-link { color: #2e2e2e !important;}
 .k-calendar-container .k-calendar .k-header .k-state-hover.k-nav-fast, 
 .k-calendar-container .k-calendar .k-header .k-state-hover { background: #255bc7 none; border-radius: 4; color: #fff; }
 .k-calendar-container .k-calendar td {border-radius: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;}
 .k-calendar-container .k-calendar td.k-today {border:none; background-image: none;}
 .k-calendar-container .k-calendar td.k-state-selected a, .k-calendar-container .k-calendar td.k-state-hover a,.k-calendar-container .k-calendar td.k-state-selected {border-radius: 0px; border: currentColor; color: rgb(255, 255, 255);}
 .k-calendar-container .k-calendar td.k-state-focused {border-radius: 0px; border: currentColor; background-image: none; background-color: #255bc7;}
-.k-calendar-container .k-calendar td.k-state-hover, .k-calendar-container .k-calendar .k-state-hover.k-other-month  {background-image: none; background-color: #e8effe;}
+.k-calendar-container .k-calendar td.k-state-hover, .k-calendar-container .k-calendar .k-state-hover.k-other-month  {background-image: none; background-color: #b1ddf3;}
 .k-calendar-container .k-calendar .k-content thead th {color: rgb(255, 255, 255); padding-left: 5px; background: rgb(77, 79, 83) none;}
 .k-calendar-container .k-i-arrow-w { background-position: -188px -67px !important;}
 .k-calendar-container .k-i-arrow-e {background-position: -217px -67px !important;}
@@ -4221,6 +4227,7 @@ div[class*="-group"]{
     text-align: center; 
     z-index: 99999999;
     left: 50%;
+    margin-top: 100px;
 }
 .sage_loading {
     position: absolute;
@@ -4356,6 +4363,7 @@ div[class*="-group"]{
     /*opacity: 0.9;*/
     position: fixed;
     left: 0;
+    top: 70px;
     z-index: 99999;
 }
 #success .success-msg {
@@ -4363,9 +4371,9 @@ div[class*="-group"]{
     background-color: #4d4f53;
     margin: 0 auto;
     min-height: 50px; /*mega-merge sept 2015*/
-    box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.45) 0 0 15px;
+    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 15px;
+    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 15px;
 }
 
 #message {
@@ -4376,9 +4384,9 @@ div[class*="-group"]{
     /* margin-bottom: 100px; */
     z-index: 999999;
     margin-top: 50px;
-    box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.45) 0 0 15px;
+    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 15px;
+    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 15px;
 }
 
 .message {
@@ -5390,7 +5398,7 @@ a:active {
   max-height:720px !important;
   overflow: hidden !important;
   /*margin-top:0px; mega-merge sept 2015*/
-  padding: 20px 0;
+  padding: 0;
   margin: 0;
 }
 
