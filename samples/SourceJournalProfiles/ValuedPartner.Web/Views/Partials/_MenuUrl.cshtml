@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -16,104 +16,111 @@
             case "104": return "menu-ap";
             case "105": return "menu-ar";
             case "106": return "menu-gl";
-            case "111": return "menu-more";
+            case "111": return "menu-bk";
             case "IC0000": return "menu-ic";
             case "OE0000": return "menu-oe";
             case "PO0000": return "menu-po";
+            case "112": return "menu-more";
+            case "ASMenuID": return "menu-as";
+            case "CSMenuID": return "menu-cs";
+            case "TXMenuID": return "menu-tx";
             default: return string.Empty;
         }
     }
 }
 
 
-<div class="nav-menu-wrapper">
-    <nav class="nav-menu">
-        <ul class="clearfix" id="menu">
-            @{
-                //Home page key constant
-                const string homepageKey = "101";
 
-                //screen url is not available
-                const string notAvailable = "N/A";
+    @{
+        //Home page key constant
+        const string homepageKey = "101";
 
-                //Get Domain URL according to the enviorment and user
-                var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
+        //screen url is not available
+        const string notAvailable = "N/A";
 
-                //Prepare menu items collections
-                var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
-                var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
-                var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
-            }
+        //Get Domain URL according to the enviorment and user
+        var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
 
-            @*Rendering Menu*@
-            @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
-            {
-                @*2nd Level Menu: Start*@
-                var level2ItemId = level2Item.Data.MenuId;
-                <li class="top-tier @GetMenuClassName(level2ItemId)">
-                    <span data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </span>
-                    <ul class="std-menu">
-                        
-                        @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
+        //Prepare menu items collections
+        var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
+        var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
+        var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
+
+        var firstItem = 0;
+        var firstNodeClass = "";
+    }
+
+    @*Rendering Menu*@
+    @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
+    {
+        firstItem = 0;
+        @*2nd Level Menu: Start*@
+        var level2ItemId = level2Item.Data.MenuId;
+        <li class="menu-item top-tier @GetMenuClassName(level2ItemId)">
+            <div class="nav-icon"></div>
+            <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
+            <ul class="std-menu">
+                    <li class="sub-heading">@level2Item.Data.MenuName</li>
+                @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
+                {
+                    @*3rd Level Menu Items: Start*@
+                    var level3ItemId = level3Item.Data.MenuId;
+                    var level3ItemClass = level3Item.Data.IsGroupEnd == true ? "menu-group" : "";
+
+                    if (firstItem == 0) { firstNodeClass = "active"; } else { firstNodeClass = ""; }
+                    firstItem++;
+                    
+                    <li class="@level3ItemClass">
+
+                        <a data-menuid='@level3Item.Data.MenuId' class="@firstNodeClass">
+                            @level3Item.Data.MenuName
+                            @if (level3Item.Data.IsReport == true)
+                            {
+                                <span class="icon-report"></span>
+                            }
+                        </a>
+
+                        @*4th level block start*@
+                        @if (level3Item.Data.UseColGrouping)
                         {
-                            @*3rd Level Menu Items: Start*@
-                            var level3ItemId = level3Item.Data.MenuId;
-                            var level3ItemClass = level3Item.Data.IsGroupEnd == true ? "menu-group" : "";
-                            
-                            <li class="@level3ItemClass">
-
-                                <span data-menuid='@level3Item.Data.MenuId'>
-                                    @level3Item.Data.MenuName
-                                    @if (level3Item.Data.IsReport == true)
-                                    {
-                                        <span class="icon-report"></span>
-                                    }
-                                </span>
-
-                                @*4th level block start*@
-                                @if (level3Item.Data.UseColGrouping)
-                                {
-                                    var colGroupingList = level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
-                                    @:<div class="sub-menu-wrap" style="background-image: none">
+                            var colGroupingList = level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
+                            @:<div class="sub-menu-wrap">
                                         
-                                    foreach (var currentColGrouping in colGroupingList)
-                                    { 
-                                        <div class="menu-section">
-                                        <ul>
-                                            @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
-                                            {
-                                                @CreateMenuItem(level4Item, notAvailable, domainUrl);
-                                            }
-                                        </ul>
-                                        </div>
+                            foreach (var currentColGrouping in colGroupingList)
+                            { 
+                                <div class="menu-section">
+                                <ul>
+                                    @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
+                                    {
+                                        @CreateMenuItem(level4Item, notAvailable, domainUrl);
                                     }
-                                    @:</div>
-                                }
-                                else
-                                {
-                                    <div class="sub-menu-wrap">
-                                        <div class="menu-section">
-                                            <ul>
-                                                @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).OrderBy(m => m.Data.MenuItemOrder))
-                                                {
-                                                    @CreateMenuItem(level4Item, notAvailable, domainUrl)
-                                                }
-                                            </ul>
-                                        </div>
-                                    </div>
-                                }
-                                @*4th level block end*@
-
-                            </li>
-                            @*3rd Level Menu Items: End*@
+                                </ul>
+                                </div>
+                            }
+                            @:</div>
                         }
-                    </ul>
-                </li>
-                @*2nd Level Menu: End*@
-            }
-        </ul>
-    </nav>
-</div>
+                        else
+                        {
+                            <div class="sub-menu-wrap">
+                                <div class="menu-section">
+                                    <ul>
+                                        @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).OrderBy(m => m.Data.MenuItemOrder))
+                                        {
+                                            @CreateMenuItem(level4Item, notAvailable, domainUrl)
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                        @*4th level block end*@
+
+                    </li>
+                    @*3rd Level Menu Items: End*@
+                }
+            </ul>
+        </li>
+        @*2nd Level Menu: End*@
+    }
 
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
