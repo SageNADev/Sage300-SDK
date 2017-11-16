@@ -239,6 +239,15 @@ var FinderGridHelper = {
             $("#ValueTextBox").show();
             $("#NumericTextBox").val("0");
         }
+        //set default select value for drop done list
+        if (!columnDropdown.text()) {
+            columnDropdown.select(0);
+        }
+        var operatorDropdown = $("#OperatorDropdown").data("kendoDropDownList");
+        if (!operatorDropdown.text()) {
+            operatorDropdown.select(0);
+        }
+
     },
     InitColumnGrid: function () {
         var dropdownDatasource = $.grep(FinderGridHelper.columns, function (gridField) { return !gridField.IgnorePreferences && gridField.FinderDisplayType !== sg.FinderDisplayType.Grid; });

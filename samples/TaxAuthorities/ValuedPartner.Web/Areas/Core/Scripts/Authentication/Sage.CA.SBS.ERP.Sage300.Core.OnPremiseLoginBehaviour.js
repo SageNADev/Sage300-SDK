@@ -7,6 +7,10 @@ loginUI = {
     model: {},
     companyList: [],
     ddCompanies: [],
+    companiesSecureMap: {},
+    pageInit: true,
+    userIdUpdated: true,
+    enterToLogin: false,
 
     // Main routine
     init: function (model) {
@@ -16,10 +20,9 @@ loginUI = {
             $("#txtUserId").val('ADMIN');
             $("#txtUserId").prop("disabled", true);
             loginUI.companyList = model.Companies;
-            //loginUI.ddCompanies = $('#CompanyId').data("kendoDropDownList").dataSource.data();
-
         }
 
+        
         // Allow up and down to also alter UI just as change event does
         // NOTE: up/down is regardless of change since change fires AFTER 
         // data has changed
@@ -38,7 +41,15 @@ loginUI = {
         }
 
         loginUI.initEvents();
+        loginUIUnities.initCompaniesDropDown();
+        if (!model.CompanyListEnabled) {
+            for (var index in model.Companies) {
+                var company = model.Companies[index];
+                loginUI.companiesSecureMap[company.Id] = company.IsSecurityEnabled;
+            }
+        }
         loginUI.initialLoad(model);
+
 
         // Set focus
         $("#txtUserId").focus();
@@ -48,10 +59,18 @@ loginUI = {
     updateCompanylist: function() {
         var ddCompany = $('#CompanyId').data("kendoDropDownList");
         var ddSystem = $("#SystemId").data("kendoDropDownList");
-        var sysCompanies = loginUI.companyList.filter(function (i) { return i.SystemId == $("#SystemId").val() });
+        var sysCompanies;
+        if (loginUI.model.CompanyListEnabled && loginUI.model.CompanyListEnabled()) {
+            sysCompanies = loginUI.companyList.filter(function(i) { return i.SystemId == ddSystem.text() });
+        } else {
+            //improve it in future
+            sysCompanies = loginUI.companyList.filter(function (i) { return i.SystemId == $("#SystemId").val() });
+        }
         var listCompanies = sysCompanies.map(function(i) { return i.Id});
         //var ddList = ddCompany.dataSource.data();
-        var selectCompanys = loginUI.ddCompanies.filter(function (i) { return listCompanies.indexOf(i.value) > -1; })
+        var selectCompanys = loginUI.ddCompanies.filter(function (i) {
+            return listCompanies.indexOf(i.value) > -1;
+        });
         ddCompany.dataSource.data(selectCompanys);
         ddCompany.select(0);
     },
@@ -59,14 +78,88 @@ loginUI = {
     initEvents: function () {
         // Sign in button
         $("#btnLogin").bind('click', function () {
+            var company = loginUI.model.ForAdmin() && loginUI.model.CompanyListEnabled() ? $("#SystemId").val() : $("#CompanyId").val();
+
             var data = {
-                company: $("#CompanyId").val(),
+                company: company,
                 userId: $("#txtUserId").val(),
                 password: $("#txtPassword").val(),
                 forAdmin: $("#loginHeader2").is(":visible"),
                 companies: ko.mapping.toJS(loginUI.model.Companies())
             };
             loginRepository.login(data, loginUICallback.loginResult);
+        });
+
+        /**
+         * Register the event for input box of password 
+         */
+        $("#txtPassword").change(function () {
+            if (!loginUI.model.CompanyListEnabled()) {
+                return;
+            }
+            var data = {
+                userId: $("#txtUserId").val(),
+                password: $("#txtPassword").val(),
+            };
+            loginRepository.getUserListOfCompanies(data).then(loginUICallback.getCompaniesSuccess, loginUICallback.getCompaniesFailedWithErrorMsg).then(function () {
+                    if (loginUI.enterToLogin) {
+                        loginUI.enterToLogin = false;
+                        $("#btnLogin").click();
+                    }
+                });
+        });
+
+        /**
+         * Register the event for input context changed at first time
+         */
+        $("#txtUserId").on("input",
+            function () {
+                if ($("#txtPassword").val() && loginUI.userIdUpdated) {
+                    loginUI.userIdUpdated = false;
+                    $("#txtPassword").val("");
+                    setTimeout(function () {
+                        if (!loginUI.model.CompanyListEnabled()) {
+                            return;
+                        }
+                        var pwd = $("#txtPassword").val();
+                        var data = {
+                            userId: $("#txtUserId").val(),
+                            password: pwd,
+                        };
+                        loginRepository.getUserListOfCompanies(data).then(loginUICallback.getCompaniesSuccess, loginUICallback.updatedUserId);
+                    });
+                }
+            })
+
+        /**
+         * Register the event for input box of user name
+         */
+        $("#txtUserId").change(function () {
+            $("#txtPassword").val("");
+            loginUI.userIdUpdated = true;
+            setTimeout(function () {
+                if (!loginUI.model.CompanyListEnabled()) {
+                    return;
+                }
+                var pwd = $("#txtPassword").val();
+                var data = {
+                    userId: $("#txtUserId").val(),
+                    password: pwd,
+                };
+                var ret = loginRepository.getUserListOfCompanies(data);
+                //The password should always be cleared, keep the logic here for feature modify
+                if (pwd) {
+                    ret.then(loginUICallback.getCompaniesSuccess, loginUICallback.getCompaniesFailedWithErrorMsg);
+                }
+                else {
+                    ret.then(loginUICallback.getCompaniesSuccess, loginUICallback.getCompaniesFailedWithoutErrorMsg).then(function () {
+                        if (loginUI.enterToLogin) {
+                            loginUI.enterToLogin = false;
+                            $("#btnLogin").click();
+                        }
+                    });
+                }
+            });
         });
 
         // Allow ENTER to proceed with sign in from any control with the
@@ -80,18 +173,26 @@ loginUI = {
                 if (currentControl === "lnkChangePassword") {
                     loginUI.displayPassword();
                     return false;
-                } else if (currentControl === "" ||
-                    currentControl === "txtUserId" ||
-                    currentControl === "txtPassword") {
+                } else if (currentControl === "") {
                     $("#btnLogin").click();
                     return false;
                 } else if (currentControl === "txtPasswordUserId" ||
                     currentControl === "txtPasswordOld" ||
-                    currentControl === "txtPasswordNew" || 
+                    currentControl === "txtPasswordNew" ||
                     currentControl === "txtPasswordConfirm") {
                     loginUI.changePassword();
                     return false;
-                } else {
+                } else if (currentControl === "txtUserId" ||
+                currentControl === "txtPassword") {
+                    if (!loginUI.model.CompanyListEnabled()) {
+                        $("#btnLogin").click();
+                    } else {
+                        loginUI.enterToLogin = true;
+                        $("#" + currentControl).trigger("change");
+                    }
+                    return false;
+                }
+                else {
                     return true;
                 }
             }
@@ -119,6 +220,7 @@ loginUI = {
 
     // Clear message
     clearMessage: function () {
+        $("#injectedOverlayTransparent").remove();
         $("#message").empty();
     },
 
@@ -126,8 +228,10 @@ loginUI = {
     showMessage: function (html, jsonResult) {
         loginUI.clearSuccess();
         loginUI.clearMessage();
+        $("#frmOnPremiseLogin").keydown(false);
 
         $("#message").html(html);
+        $("#message").parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
         $("#message").show();
 
         // Add Event
@@ -140,7 +244,10 @@ loginUI = {
     // Hide message
     hideMessage: function (jsonResult) {
         // Remove Event
+        $("#injectedOverlayTransparent").remove();
         $("#btnMessage").off('click', loginUI.hideMessage);
+        $("#frmOnPremiseLogin").unbind("keydown");
+        $("#txtPassword").val("").focus();
 
         $("#message").hide();
 
@@ -271,28 +378,23 @@ loginUI = {
 
     // Determines password visibility
     showPasswordField: function (selectedCompany) {
-        if (loginUI.model.ForAdmin()) {
+        if (loginUI.model.ForAdmin() || !selectedCompany) {
             return;
         }
-        // Iterate companies
-        $.each(loginUI.model.Companies(), function (index, company) {
-            var id = company.Id();
-            var isSecurityEnabled = company.IsSecurityEnabled();
-            // Match selected company
-            if (id === selectedCompany) {
-                // Hide/Show based upon enabled security
-                if (isSecurityEnabled) {
-                    $("#passwordDiv").show();
-                    $("#changePasswordDiv").show();
-                } else {
-                    $("#passwordDiv").hide();
-                    $("#changePasswordDiv").hide();
-                }
-            } else {
-                // No match. Therefore, skip
-            }
-        });
-
+        if (!loginUI.model.CompanyListEnabled()) {
+            loginUI.companiesSecureMap[selectedCompany] ? $("#passwordDiv").show() : $("#passwordDiv").hide();
+            return;
+        }
+        
+        if (loginUI.companiesSecureMap[selectedCompany] && loginUI.model.SecuredCompanyExists()) {
+            $("#passwordDiv").show();
+        }
+        else if (loginUI.pageInit && loginUI.model.SecuredCompanyExists()) {
+            $("#passwordDiv").show();
+        }
+        else {
+            $("#passwordDiv").hide();
+        }
     },
 
     // Display error/warning message(s)
@@ -326,6 +428,7 @@ loginUI = {
         html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
+        
 
         // Add html, event and show message
         loginUI.showMessage(html, jsonResult);
@@ -420,7 +523,142 @@ loginUI = {
     }
 };
 
+var loginUIUnities = {
+    /**
+     * Initialize company drop down list
+     * @returns {} 
+     */
+    initCompaniesDropDown: function() {
+        $('#CompanyId').kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+        });
+    },
+
+    bindSysCompaniesDropDown: function (companyList, selectedCompanyId) {
+        $('#SystemId').kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+        });
+        loginUI.companyList = companyList;
+        loginUI.companiesSecureMap = {};
+        loginUI.model.Companies = ko.mapping.fromJS(companyList, { arrayUpdate: true, arrayInsert: true });
+
+        var sysCompanies = companyList.map(function(company) {
+            return {
+                systemId: company.SystemId,
+                companyId: company.Id
+            };
+        });
+        var ddCompaniesList = sysCompanies.map(function (company) {
+            return { selected: false, text: company.systemId, value: company.companyId };
+        });
+        var sysIdSet = new Set();
+        var ddCompanyList = [];
+        for (var index in ddCompaniesList) {
+            if (sysIdSet.has(ddCompaniesList[index].text))
+                continue;
+            else{
+                sysIdSet.add(ddCompaniesList[index].text);
+                ddCompanyList.push(ddCompaniesList[index]);
+            }
+        }
+        loginUI.model.CompanyDisplayList = ko.mapping.fromJS(ddCompanyList, { arrayUpdate: true, arrayInsert: true });
+        var ddCompanyId = $('#SystemId').data("kendoDropDownList");
+        ddCompanyId.dataSource.data(ddCompanyList);
+        var selectCompanys = ddCompanyList.filter(function (i) { return sysCompanies.indexOf(i.value) > -1; })
+        loginUI.ddCompanies = $('#CompanyId').data("kendoDropDownList").dataSource.data();
+        ddCompanyId.select(0);
+    },
+
+    /**
+     * data binding for company drop down list
+     * @param {} companyList 
+     * @returns {} 
+     */
+    bindCompaniesDropDown: function (companyList, selectedCompanyId) {
+        loginUI.companiesSecureMap = {};
+        loginUI.model.Companies = ko.mapping.fromJS(companyList, { arrayUpdate: true, arrayInsert: true });
+        var ddCompanyList = companyList.map(function (company) {
+            loginUI.companiesSecureMap[company.Id] = company.IsSecurityEnabled;
+            return { selected: false, text: company.Name, value: company.Id };
+        });
+        loginUI.model.CompanyDisplayList = ko.mapping.fromJS(ddCompanyList, { arrayUpdate: true, arrayInsert: true });
+        var ddCompanyId = $('#CompanyId').data("kendoDropDownList");
+        ddCompanyId.dataSource.data(ddCompanyList);
+        if (!selectedCompanyId) {
+            ddCompanyId.select(0);
+        } else {
+            ddCompanyId.value(selectedCompanyId);
+            setTimeout(loginUI.showPasswordField(selectedCompanyId));
+        }
+    }
+};
+
 var loginUICallback = {
+    /**
+     * This function is used to bind the companies dropdown list 
+     * @param {} ret is call back data from server 
+     * @returns {} 
+     */
+    getCompaniesSuccess: function (ret) {
+        loginUI.pageInit = false;
+        if (loginUI.model.ForAdmin()) {
+            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+            return;
+        }
+        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+    },
+
+    /**
+     * This function is used to handle the invailed user with error message
+     * @param {} ret 
+     * @returns {} 
+     */
+    getCompaniesFailedWithErrorMsg: function (ret) {
+        loginUI.pageInit = true;
+        if (loginUI.model.ForAdmin()) {
+            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+        }
+        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        $('#CompanyId').data("kendoDropDownList").value(ret.companyId);
+        //pop-up the error
+        if (ret.companyId && !loginUI.companiesSecureMap[ret.companyId] && loginUI.enterToLogin) {
+            $("#btnLogin").click();
+        } else {
+            loginUI.enterToLogin = false;
+            loginUI.displayMessage(ret.UserMessage.Errors);
+        }
+    },
+
+    /**
+     * This function is used to handle the invailed user without error message
+     * @param {} ret 
+     * @returns {} 
+     */
+    getCompaniesFailedWithoutErrorMsg: function (ret) {
+        loginUI.pageInit = true;
+        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        if (ret.companyId && !loginUI.companiesSecureMap[ret.companyId] && loginUI.enterToLogin) {
+            $("#btnLogin").click();
+        } else {
+            loginUI.enterToLogin = false;
+            setTimeout(function() {
+                $("#txtPassword").focus()
+            });
+        }
+    },
+
+    /**
+     * This function is used to handle user Id changed without focus blur
+     * @param {} ret 
+     * @returns {} 
+     */
+    updatedUserId: function (ret) {
+        loginUIUnities.initCompaniesDropDown();
+        loginUI.pageInit = true;
+        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+    },
 
     loginResult: function (jsonResult) {
 
@@ -429,7 +667,7 @@ var loginUICallback = {
                 // Success. Re-direct to home page now that credentials have been set
                 var url = jsonResult.Url;
                 if (loginUI.model.ForAdmin()) {
-                    var systemId = $("#SystemId").data('kendoDropDownList').value();
+                    var systemId = $("#SystemId").data('kendoDropDownList').text();
                     url = url.replace("Core/Home", "AS/CustomScreen?id=Import&systemDbId=" + systemId);
                 }
                 window.location.replace(url);
@@ -465,6 +703,7 @@ var loginUICallback = {
     }
 
 };
+
 
 $(function () {
     loginUI.init(LoginViewModel);

@@ -1,0 +1,20 @@
+@*Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved.*@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
+
+<script type="text/javascript">
+    var revaluationHistoryResources =
+	{
+	    FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+	    CurrencyCode: '@Html.SageRaw(RevaluationResx.CurrencyDescription)',
+	    RevaluationDate: '@Html.SageRaw(RevaluationResx.ThroughDate)',
+	    RateType: '@Html.SageRaw(RevaluationResx.RateType)',
+	    RateDate: '@Html.SageRaw(RevaluationResx.RateDate)',
+	    ExchangeRate: '@Html.SageRaw(RevaluationResx.ExchangeRate)',
+	    PostingSequenceNo: '@Html.SageRaw(RevaluationResx.PostingSequenceNo)',
+	    RevaluationMethod: '@Html.SageRaw(Sage.CA.SBS.ERP.Sage300.Common.Resources.EnumerationsResx.RevaluationMethod)',
+	    RecordDoesNotExist: '@Html.SageRaw(CommonResx.RecordDoesNotExist)',
+	    RecordNotFoundMessage: '@Html.SageRaw(CommonResx.RecordNotFoundMessage)'
+	};
+</script>
