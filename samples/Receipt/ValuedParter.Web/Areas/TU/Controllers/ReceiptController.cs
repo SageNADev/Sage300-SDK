@@ -41,26 +41,14 @@ namespace ValuedParter.Web.Areas.TU.Controllers
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
-    /// <typeparam name="T">Receipt Header</typeparam>
-    /// <typeparam name="TU">Receipt Detail</typeparam>
-    /// <typeparam name="TDetail2">Receipt Optional Field</typeparam>
-    /// <typeparam name="TDetail3">Receipt Detail Optional Field</typeparam>
-    /// <typeparam name="TDetail4">Receipt Detail LotNumber</typeparam>
-    /// <typeparam name="TDetail5">Receipt Detail SerialNumber</typeparam>
-    public class ReceiptController<T, TU, TDetail2, TDetail3, TDetail4, TDetail5> :
-        MultitenantControllerBase<ReceiptViewModel<T>> where T : ReceiptHeader, new()
-        where TU : ReceiptDetail, new()
-        where TDetail2 : ReceiptOptionalField, new()
-        where TDetail3 : ReceiptDetailOptionalField, new()
-        where TDetail4 : ReceiptDetailLotNumber, new()
-        where TDetail5 : ReceiptDetailSerialNumber, new()
+        public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
     {
         #region Private Variables
 
         /// <summary>
         /// Variable for controller internal.
         /// </summary>
-        public ReceiptControllerInternal<T, TU, TDetail2, TDetail3, TDetail4, TDetail5> ControllerInternal;
+        public ReceiptControllerInternal ControllerInternal;
          
 
         #endregion
@@ -86,7 +74,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             base.Initialize(requestContext);
-            ControllerInternal = new ReceiptControllerInternal<T, TU, TDetail2, TDetail3, TDetail4, TDetail5>(Context);
+            ControllerInternal = new ReceiptControllerInternal(Context);
         }
 
         #endregion
@@ -99,7 +87,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <returns>ActionResult.</returns>
         public virtual ActionResult Index(string id = null, bool disableAll = false)
         {
-            ReceiptViewModel<T> receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create(); 
+            ReceiptViewModel receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create(); 
             //Added this make the optionalFields uncheck in UI 
             receiptViewModel.Data.OptionalFields = 0;
             receiptViewModel.Attributes = ControllerInternal.GetDynamicAttributesOfHeader();
@@ -138,7 +126,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="filters">Filters</param>
         /// <returns>Receipt data</returns>
         [HttpPost]
-        public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, T model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+        public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
         {
             try
             {
@@ -195,7 +183,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="detail">The detail model</param>
         /// <returns>returns  Receipt Viewmodel</returns>
         [HttpPost]
-        public virtual JsonNetResult SaveDetail(TU detail)
+        public virtual JsonNetResult SaveDetail(ReceiptDetail detail)
         {
             try
             {
@@ -213,7 +201,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">model</param>
         /// <returns>Refreshed header model</returns>
-        public virtual JsonNetResult Refresh(T model)
+        public virtual JsonNetResult Refresh(ReceiptHeader model)
         {
             try
             {
@@ -231,7 +219,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">Receipt Optional Field model</param>
         /// <returns>Receipt Optional Field model</returns>
         [HttpPost]
-        public virtual JsonNetResult SetOptionalFieldValue(TDetail3 model)
+        public virtual JsonNetResult SetOptionalFieldValue(ReceiptDetailOptionalField model)
         {
             try
             {
@@ -249,7 +237,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">Receipt Detail Optional Field model</param>
         /// <returns>Receipt Detail Optional Field model</returns>
         [HttpPost]
-        public virtual JsonNetResult SetHeaderOptFieldValue(TDetail2 model)
+        public virtual JsonNetResult SetHeaderOptFieldValue(ReceiptOptionalField model)
         {
             try
             {
@@ -268,9 +256,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model"></param>
         /// <param name="setHeaderValue"></param>
         /// <returns></returns>
-        public virtual JsonNetResult ReadHeader(T model, bool setHeaderValue)
+        public virtual JsonNetResult ReadHeader(ReceiptHeader model, bool setHeaderValue)
         {
-            var response = new ViewModelBase<T> { UserMessage = new UserMessage { IsSuccess = true } };
+            var response = new ViewModelBase<ReceiptHeader> { UserMessage = new UserMessage { IsSuccess = true } };
             try
             {
                 response.Data = ControllerInternal.ReadHeader(model, setHeaderValue);
@@ -288,9 +276,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model"></param>
         /// <returns>Receipt View model - that contains the info about the saved details</returns>
         [HttpPost]
-        public virtual JsonNetResult SaveDetails(T model)
+        public virtual JsonNetResult SaveDetails(ReceiptHeader model)
         {
-            var response = new ViewModelBase<T> { UserMessage = new UserMessage { IsSuccess = true } };
+            var response = new ViewModelBase<ReceiptHeader> { UserMessage = new UserMessage { IsSuccess = true } };
             try
             { 
                 return JsonNet(ControllerInternal.SaveDetails(model));
@@ -332,7 +320,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageNumber">Page Number</param>
         /// <returns>Receipt Header</returns>
         [HttpPost]
-        public virtual JsonNetResult CreateDetail(T model, int index, int pageSize, int pageNumber)
+        public virtual JsonNetResult CreateDetail(ReceiptHeader model, int index, int pageSize, int pageNumber)
         {
             try
             {
@@ -353,7 +341,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Receipt View Model</returns>
         [HttpPost]
-        public virtual JsonNetResult DeleteDetails(T model, int pageNumber, int pageSize)
+        public virtual JsonNetResult DeleteDetails(ReceiptHeader model, int pageNumber, int pageSize)
         {
             try
             {
@@ -372,9 +360,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">model</param>
         /// <returns>Receipt view model</returns>
         [HttpPost]
-        public virtual JsonNetResult Add(T model)
+        public virtual JsonNetResult Add(ReceiptHeader model)
         {
-            ViewModelBase<ReceiptViewModel<T>> viewModel;
+            ViewModelBase<ReceiptViewModel> viewModel;
 
             if (!ValidateModelState(ModelState, out viewModel))
             {
@@ -418,11 +406,6 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             } 
         }
 
-        /// <summary>
-        /// Get Vendor details
-        /// </summary>
-        /// <param name="vendorNumber">vendor number</param>
-        /// <returns></returns>
         public JsonNetResult GetVendorDetail(string vendorNumber) 
         {
             try
@@ -464,9 +447,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">model</param>
         /// <returns>Receipt</returns>
         [HttpPost]
-        public virtual JsonNetResult Save(T model)
+        public virtual JsonNetResult Save(ReceiptHeader model)
         {
-            ViewModelBase<ReceiptViewModel<T>> viewModel;
+            ViewModelBase<ReceiptViewModel> viewModel;
 
             if (!ValidateModelState(ModelState, out viewModel))
             {
@@ -492,7 +475,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="yesNo">Check Yes No confirmation selection</param>
         /// <returns>Receipt</returns>
         [HttpPost]
-        public virtual JsonNetResult Post(T headerModel, long sequenceNumber, bool yesNo)
+        public virtual JsonNetResult Post(ReceiptHeader headerModel, long sequenceNumber, bool yesNo)
         {
             try
             {
@@ -512,7 +495,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="isDetail">True / False</param>
         /// <returns>Receipt Detail Optional Field</returns>
         [HttpPost]
-        public virtual JsonNetResult SaveDetailOptFields(List<TDetail3> receiptOptionalField, string receiptNumber, bool isDetail)
+        public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> receiptOptionalField, string receiptNumber, bool isDetail)
         {
             try
             {
@@ -532,7 +515,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Enumerable Response of Receipts Optional Field</returns>
         [HttpPost]
-        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<TDetail3> model, int pageNumber,
+        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
             int pageSize)
         {
             try
@@ -553,7 +536,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Enumerable Response of Receipts Detail Optional Field</returns>
         [HttpPost]
-        public virtual JsonNetResult DeleteDetailOptFields(EnumerableResponse<TDetail3> model, int pageNumber,
+        public virtual JsonNetResult DeleteDetailOptFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
             int pageSize)
         {
             try
@@ -575,7 +558,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">Receipt Detail OptionalField model</param>
         /// <returns>Receipt Detail OptionalFields</returns>
         [HttpPost]
-        public virtual JsonNetResult GetDetailOptFields(int pageNumber, int pageSize, EnumerableResponse<TDetail3> model)
+        public virtual JsonNetResult GetDetailOptFields(int pageNumber, int pageSize, EnumerableResponse<ReceiptDetailOptionalField> model)
         {
             try
             {
@@ -596,7 +579,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">List of ReceiptOptionalField model</param>
         /// <returns>returns Enumerable Response of ReceiptOptionalField</returns>
         [HttpPost]
-        public virtual JsonNetResult GetOptFields(int pageNumber, int pageSize, EnumerableResponse<TDetail3> model)
+        public virtual JsonNetResult GetOptFields(int pageNumber, int pageSize, EnumerableResponse<ReceiptDetailOptionalField> model)
         {
             try
             {
@@ -612,10 +595,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <summary>
         /// Set detail to current row
         /// </summary>
-        /// <param name="currentDetail">Current TU model</param>
-        /// <returns>returns TU model</returns>
+        /// <param name="currentDetail">Current ReceiptDetail model</param>
+        /// <returns>returns ReceiptDetail model</returns>
         [HttpPost]
-        public virtual JsonNetResult SetDetail(TU currentDetail)
+        public virtual JsonNetResult SetDetail(ReceiptDetail currentDetail)
         {
             try
             {
@@ -634,7 +617,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="eventType">Type of event</param>
         /// <returns>Receipt View Model</returns>
         [HttpPost]
-        public virtual JsonNetResult RefreshDetail(TU model, string eventType)
+        public virtual JsonNetResult RefreshDetail(ReceiptDetail model, string eventType)
         {
             try
             {
@@ -670,7 +653,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="id">Receipt Number</param>
         /// <param name="model">A model to save the current data</param>
         /// <returns>Returns a JsonNetResult object</returns>
-        public virtual JsonNetResult Exists(string id, T model)
+        public virtual JsonNetResult Exists(string id, ReceiptHeader model)
         {
             try
             {
@@ -706,13 +689,13 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         }
 
         /// <summary>
-        /// et Receipt Item details for Grid rows based on Item
+        /// Get Receipt Item details for Grid rows based on Item
         /// </summary>
         /// <param name="model"></param>
         /// <param name="eventType"></param>
         /// <returns></returns>
         [HttpPost]
-        public virtual JsonNetResult GetRowValues(TU model, int eventType)
+        public virtual JsonNetResult GetRowValues(ReceiptDetail model, int eventType)
         {
             try
             {
@@ -738,7 +721,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="eventType">eventType</param>
         /// <returns>Receipt view model</returns>
         [HttpPost]
-        public virtual JsonNetResult GetHeaderValues(T model, int eventType)
+        public virtual JsonNetResult GetHeaderValues(ReceiptHeader model, int eventType)
         {
             try
             {

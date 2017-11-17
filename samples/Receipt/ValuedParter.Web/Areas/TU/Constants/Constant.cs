@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,16 +26,20 @@ namespace ValuedParter.Web.Areas.TU.Constants
     public static class Constants
     {
         #region Finder
+        
+        /// <summary>
+        ///  Receipt finder
+        /// </summary>
+        public const string ReceiptFinder = "tureceiptfinder";
 
         #endregion
 
         #region Export/Import
 
+        public const string ReceiptExportImport = "tureceipt";
+        
         #endregion
 
-        /// <summary>
-        /// Module Id
-        /// </summary>
         public const string AppId = "TU";
 
         #region Grid Preferences
@@ -47,31 +51,13 @@ namespace ValuedParter.Web.Areas.TU.Constants
         #endregion
 
         #region Views path
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptViewPath = "~/Areas/TU/Views/Receipt/Partials/_Receipt.cshtml";
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptGridViewPath = "~/Areas/TU/Views/Receipt/Partials/_ReceiptGrid.cshtml";
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_OptionalFieldGrid.cshtml";
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptDetailOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_DetailGridOptionalField.cshtml";
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptExchangeRateViewPath = "~/Areas/TU/Views/Receipt/Partials/_ExchangeRate.cshtml";
-        /// <summary>
-        /// Partial razor view path
-        /// </summary>
-        public const string ReceiptLocalizationPath = "~/Areas/TU/Views/Receipt/Partials/_Localization.cshtml";
 
+        public const string ReceiptViewPath = "~/Areas/TU/Views/Receipt/Partials/_Receipt.cshtml";
+        public const string ReceiptGridViewPath = "~/Areas/TU/Views/Receipt/Partials/_ReceiptGrid.cshtml";
+        public const string ReceiptOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_OptionalFieldGrid.cshtml";
+        public const string ReceiptDetailOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_DetailGridOptionalField.cshtml";
+        public const string ReceiptExchangeRateViewPath = "~/Areas/TU/Views/Receipt/Partials/_ExchangeRate.cshtml";
+        public const string ReceiptLocalizationPath = "~/Areas/TU/Views/Receipt/Partials/_Localization.cshtml";
         #endregion
     }
 }

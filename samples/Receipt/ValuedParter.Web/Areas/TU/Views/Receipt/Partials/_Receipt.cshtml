@@ -18,7 +18,7 @@
 @* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE *@
 @* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. *@
 
-@model ValuedParter.Web.Areas.TU.Models.ReceiptViewModel<ValuedParter.TU.Models.ReceiptHeader>
+@model ValuedParter.Web.Areas.TU.Models.ReceiptViewModel
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -56,6 +56,12 @@
                     <div class="header-headline">
                         @Html.SageHeader1Label("receiptHeader", ReceiptResx.Entity)
                     </div>
+                    @{
+                        var import = Model.UserAccess.SecurityType.HasFlag(SecurityType.Import);
+                        var export = Model.UserAccess.SecurityType.HasFlag(SecurityType.Export);
+                        var customize = Model.UserAccess.SecurityType.HasFlag(SecurityType.Admin);
+                    }
+                    @Html.Partial(Core.OptionsMenu, Model.UserAccess)
                     <div class="header-options">
                         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                         {

@@ -309,16 +309,10 @@ $.extend(sg.utls, {
         // to. Therefore, checks have been placed in the AuthenticationController.Login method to check for this
         // use case where the data still exists in the IIS cache
 
-        //Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. Just ask the user log out first due to time consuming
-        $('#dvWindows').find('span').each(function (index, element) {
-                var currentIframeId = $(this).attr("frameId");
-                $("#" + currentIframeId).attr("src", "about:blank");
-        });
-
         $(topWnd).bind('unload', function () {
             sg.utls.destroyPoolForReport(true);
             sage.cache.clearAll();
-            sg.utls.ajaxPost(signOutLink);
+            sg.utls.ajaxPostSync(signOutLink, {}, function (result) { });
         });
 
         topWnd.location.href = loginLink + "?logout=true";
@@ -844,8 +838,7 @@ $.extend(sg.utls, {
         kendoWindow.parent().addClass('modelBox');
         kendoWindow.parent().attr('id', 'deleteConfirmationParent');
         var divDeleteConfirmParent = $('#deleteConfirmationParent');
-        //Removed the line below because if modal is true, the z-index value increasing automatically. we cannot  guarantee 999999 is the largest value on the screen
-        //divDeleteConfirmParent.css('z-index', '999999');
+        divDeleteConfirmParent.css('z-index', '999999');
         divDeleteConfirmParent.css('position', 'absolute');
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
 
@@ -2038,7 +2031,7 @@ $.extend(sg.utls, {
     // Set Scrolling Position
     setScrollPosition: function (container) {
         //offsetPixels - Set this variable with the desired height of portal header
-        var offsetPixels = sg.utls.portalHeight - 75;
+        var offsetPixels = sg.utls.portalHeight - 45;
         var offsetY = $(window.top).scrollTop();
 
         if (offsetY > offsetPixels) {
@@ -2621,7 +2614,6 @@ $(function () {
         $(window).bind('unload', function () {
             PageUnloadHandler();
             if (globalResource.AllowPageUnloadEvent) {
-                //destroy session after calling compelted
                 sg.utls.destroySessions();
             }
         });
@@ -2642,7 +2634,9 @@ $(function () {
         }
         else {
             $(window).bind('unload', function () {
-                window.name = "unloadediFrame";
+                if (window.location.href.indexOf("OnPremise") > 0) {
+                    window.name = "unloadediFrame";
+                }
                 PageUnloadHandler();
             });
         }

@@ -14,7 +14,7 @@
     position: fixed; 
     display: none; 
     text-align: center; 
-    z-index: 9999;
+    z-index: 99999999;
     left: 50%;
 
     &:before { 
@@ -1549,8 +1549,7 @@ td.k-state-focused.k-state-selected {
 
 .label-menu-popup{ 
   background: @gray-lighter;
-  box-shadow: 0 0 5px #ccc;
-  border: 1px solid #ccc;
+  box-shadow: 0 0 1px #000;
   margin-top: -11px;
   margin-left: 14px;
   top: 25px;
@@ -1812,7 +1811,6 @@ div.k-treeview {
 }
 .k-treeview span.k-in {
     display:inline-block;
-    line-height: 2.7rem;
     
     &.k-state-focused {
       .box-shadow(none);
@@ -1958,7 +1956,7 @@ ul#exportTreeView li ul li {
   width: 100%;
 
   .half-width {
-    width: 47%;
+    width: 48%;
   }
 
   .left:nth-child(2) {
@@ -1970,51 +1968,3 @@ ul#exportTreeView li ul li {
   }
 }
 
-// Adding AwesomeFont styles for tree-view checkboxes
-
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('@{icon-font-path}@{icon-font-name-awesome}.eot');
-  src: url('@{icon-font-path}@{icon-font-name-awesome}.woff') format('woff'),
-       url('@{icon-font-path}@{icon-font-name-awesome}.woff2') format('woff2'),
-       url('@{icon-font-path}@{icon-font-name-awesome}.ttf') format('truetype')
-}
-
-// Kendo checkbox styles override
-
-.k-checkbox:checked+.k-checkbox-label:before {
-    background-color: #fff;
-    border-color: #cacaca;
-    color: #4fa835;
-    font: normal normal normal 13px/1 FontAwesome;
-}
-
-.k-checkbox:focus+.k-checkbox-label:before {
-  box-shadow: 0 0 4px 0 #4fa835;
-  -webkit-box-shadow: 0 0 4px 0 #4fa835;
-  border-color: #9a9b9c;
-}
-
-.k-checkbox:indeterminate+.k-checkbox-label:after,
-.k-checkbox:indeterminate:hover+.k-checkbox-label:after { 
-  background-color: #4fa835;
-  background-image: none;
-  border-color: #4fa835;
-  border-radius: 2px;
-}
-
-.k-checkbox:checked+.k-checkbox-label:before {
-  content: "\f00c";
-}
-
-.k-checkbox-label:hover:before, 
-.k-checkbox:checked+.k-checkbox-label:hover:before {
-    border-color: #9a9b9c;
-    -webkit-box-shadow: 0 0 4px 0 #4fa835;
-    box-shadow: 0 0 4px 0 #4fa835;
-}
-
-.export-required {
-  font-family: Calibri,Arial;
-  color: #41a940;
-}

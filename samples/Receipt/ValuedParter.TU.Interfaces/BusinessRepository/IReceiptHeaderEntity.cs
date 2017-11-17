@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,40 +18,19 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-namespace ValuedParter.TU.Models.Enums
+#region
+
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
+using ValuedParter.TU.Models;
+
+#endregion
+
+namespace ValuedParter.TU.Interfaces.BusinessRepository
 {
     /// <summary>
-    /// Enum for Type 
+    /// An Interface for TU Receipt Finder
     /// </summary>
-    public enum Type
+    public interface IReceiptHeaderEntity: IBusinessRepository<ReceiptHeader>, ISecurity  
     {
-        /// <summary>
-        /// Gets or sets Text 
-        /// </summary>	
-        Text = 1,
-        /// <summary>
-        /// Gets or sets Amount 
-        /// </summary>	
-        Amount = 100,
-        /// <summary>
-        /// Gets or sets Number 
-        /// </summary>	
-        Number = 6,
-        /// <summary>
-        /// Gets or sets Integer 
-        /// </summary>	
-        Integer = 8,
-        /// <summary>
-        /// Gets or sets YesOrNo 
-        /// </summary>	
-        YesOrNo = 9,
-        /// <summary>
-        /// Gets or sets Date 
-        /// </summary>	
-        Date = 3,
-        /// <summary>
-        /// Gets or sets Time 
-        /// </summary>	
-        Time = 4,
     }
 }

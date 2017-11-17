@@ -130,15 +130,11 @@ a:hover {
 	height: 40px;
 	color: #cfcfcf;
 	font-size: 11px;
-	position: static;
+	position: fixed;
+	bottom: 0;
 	width: 100%;
 	text-align: center;
 	padding: 13px 0 0;
-}
-
-.footer.affix-bottom {
-    bottom: 0;
-    position: fixed;
 }
 
 .header > .wrapper,
@@ -150,8 +146,8 @@ a:hover {
 }
 
 .footer > .wrapper {
-    width: 100%;
-    min-width: 940px;
+    width: 940px;
+	padding: 0 10px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -159,15 +155,7 @@ a:hover {
 .footer .logo-sage {
 	position: absolute;
 	top: -4px;
-	left: 64px;
-}
-
-.version {
-    position: absolute;
-    top: -55px;
-    left: 175px;
-    color: #666;
-    font-size: 14px;
+	left: 10px;
 }
 
 /* inline links */
@@ -488,7 +476,7 @@ ol.std-list {
 
 .header.login > .wrapper {
 	width: 340px;
-	padding: 0 15px 100px;
+	padding: 0 15px;
 }
 
 .header.login:after {

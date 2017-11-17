@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -34,7 +34,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
      /// <summary>
      /// Class for Receipt Optional Field mapping
      /// </summary>
-     public class ReceiptOptionalFieldMapper<T> : ModelMapper<T> where T : ReceiptOptionalField, new ()
+     public class ReceiptOptionalFieldMapper: ModelMapper<ReceiptOptionalField> 
      {
           #region Constructor
 
@@ -56,7 +56,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="entity">Business Entity</param>
           /// <returns>Mapped Model</returns>
-          public override T Map(IBusinessEntity entity)
+          public override ReceiptOptionalField Map(IBusinessEntity entity)
           {
                var model = base.Map(entity);
 
@@ -88,7 +88,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="model">Model</param>
           /// <param name="entity">Business Entity</param>
-          public override void Map(T model, IBusinessEntity entity)
+          public override void Map(ReceiptOptionalField model, IBusinessEntity entity)
           {
                if (model == null)
                {
@@ -135,7 +135,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
           /// </summary>
           /// <param name="model">Model</param>
           /// <param name="entity">Business Entity</param>
-          public override void MapKey(T model, IBusinessEntity entity)
+          public override void MapKey(ReceiptOptionalField model, IBusinessEntity entity)
           {
                entity.SetValue(ReceiptOptionalField.Index.SequenceNumber, model.SequenceNumber);
                entity.SetValue(ReceiptOptionalField.Index.OptionalField, model.OptionalField);

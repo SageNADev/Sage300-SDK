@@ -32,7 +32,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
-using ValuedParter.TU.Interfaces.Services;
+using ValuedParter.TU.Interfaces.BusinessRepository;
 using ValuedParter.TU.Models;
 using ValuedParter.TU.Models.Enums;
 using ValuedParter.TU.Resources.Forms;
@@ -54,20 +54,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
-    /// <typeparam name="T">Receipt Header</typeparam>
-    /// <typeparam name="TU">Receipt Detail</typeparam>
-    /// <typeparam name="TDetail2">Receipt Optional Field</typeparam>
-    /// <typeparam name="TDetail3">Receipt Detail Optional Field</typeparam>
-    /// <typeparam name="TDetail4">Receipt Detail LotNumber</typeparam>
-    /// <typeparam name="TDetail5">Receipt Detail SerialNumber</typeparam>
-    public class ReceiptControllerInternal<T, TU, TDetail2, TDetail3, TDetail4, TDetail5> :
-        BaseExportImportControllerInternal<T, IReceiptService<T, TU, TDetail2, TDetail3, TDetail4, TDetail5>>
-        where T : ReceiptHeader, new()
-        where TU : ReceiptDetail, new()
-        where TDetail2 : ReceiptOptionalField, new()
-        where TDetail3 : ReceiptDetailOptionalField, new()
-        where TDetail4 : ReceiptDetailLotNumber, new()
-        where TDetail5 : ReceiptDetailSerialNumber, new()
+    public class ReceiptControllerInternal : ImportExportControllerInternal<IReceiptRepository>
     {
         #region Declaration
 
@@ -93,6 +80,15 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         // ReSharper disable once StaticFieldInGenericType
         private static string _funcDecimals;
 
+        private IReceiptRepository RepoService
+        {
+            get {
+                // return _context.Container.Resolve<IReceiptService>(UnityInjectionType.Default, new ParameterOverride("context", _context));
+                return _context.Container.Resolve<IReceiptRepository>(new ParameterOverride("context", _context));
+
+            }
+        }
+       
         private enum Operation
         {
             Create = 0,
@@ -116,7 +112,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             : base(context)
         {
             _context = context;
-            _detailOptFieldCacheKey = CreateSessionKey<T>(InventoryControl.SessionOptionalField);
+            _detailOptFieldCacheKey = CreateSessionKey<ReceiptHeader>(InventoryControl.SessionOptionalField);
             _options = GetOptions();
             var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context",
                     Context));
@@ -142,21 +138,21 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="oldRecordDeleted">Receipt Number</param>
         /// <param name="isCalledAsPopup">Receipt Number</param>
         /// <returns>Receipt View Model</returns>
-        internal ReceiptViewModel<T> GetById(string id, bool oldRecordDeleted = false, bool isCalledAsPopup = false)
+        internal ReceiptViewModel GetById(string id, bool oldRecordDeleted = false, bool isCalledAsPopup = false)
         {
             var isRecordExists = true;
-            var data = new T();
+            var data = new ReceiptHeader();
 
             if (!string.IsNullOrEmpty(id))
             {
-                data = Service.GetById(id);
+                data = RepoService.GetById(id);
             }
 
             data.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(data.AdditionalCostCurrency));
             data.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(data.ReceiptCurrency));
             if (data.SequenceNumber == 0)
             {
-                data = Service.NewHeader();
+                data = RepoService.NewHeader();
                 data.ReceiptNumber = id;
                 isRecordExists = false;
                 data.Warnings = null;
@@ -171,7 +167,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                         Priority = Priority.Error
                     }
                 };
-                data = Service.NewHeader();
+                data = RepoService.NewHeader();
                 data.Warnings = warnings;
                 isRecordExists = false;
             }
@@ -196,24 +192,24 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model">Receipt Header Model</param>
         /// <param name="filters">Filters</param>
         /// <returns>Receipt details</returns>
-        internal EnumerableResponse<TU> GetPagedDetail(int pageNumber, int pageSize, T model = null, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters = null)
+        internal EnumerableResponse<ReceiptDetail> GetPagedDetail(int pageNumber, int pageSize, ReceiptHeader model = null, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters = null)
         {
             if (model != null && model.ReceiptDetail != null && model.ReceiptDetail.Items != null)
             {
                 var items = model.ReceiptDetail.Items.Where(x => x.ItemNumber != null && !(x.IsDeleted && x.IsNewLine));
                 if (items.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                 {
-                    Service.SaveDetails((IEnumerable<TU>)items);
+                    RepoService.SaveDetails(items);
                 }
             }
 
-            Expression<Func<TU, bool>> filter = null;
+            Expression<Func<ReceiptDetail, bool>> filter = null;
             if (model != null)
             {
                 filter = receipt => receipt.SequenceNumber == model.SequenceNumber;
             }
 
-            var receiptDetail = Service.GetDetail(pageNumber, pageSize, filter);
+            var receiptDetail = RepoService.GetDetail(pageNumber, pageSize, filter);
             if (receiptDetail != null)
             {
                 if (receiptDetail.Items.Any())
@@ -235,12 +231,12 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="detail">The detail model</param>
         /// <returns>returns Receipt Viewmodel</returns>
-        internal ReceiptViewModel<T> SaveDetail(TU detail)
+        internal ReceiptViewModel SaveDetail(ReceiptDetail detail)
         {
             _options = GetOptions();
-            var data = Service.SaveDetail(detail);
+            var data = RepoService.SaveDetail(detail);
 
-            var receiptViewModel = new ReceiptViewModel<T>
+            var receiptViewModel = new ReceiptViewModel
             {
                 Data = data,
                 Attributes = GetDynamicAttributesOfHeader(),
@@ -267,9 +263,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="optionalField">The optional field.</param>
         /// <returns>Header Optional Field model</returns>
-        internal TDetail2 GetOptionalFieldFinderData(string optionalField)
+        internal ReceiptOptionalField GetOptionalFieldFinderData(string optionalField)
         {
-            var updatedOptionalField = Service.GetOptionalFieldFinderData(optionalField);
+            var updatedOptionalField = RepoService.GetOptionalFieldFinderData(optionalField);
             return updatedOptionalField;
         }
 
@@ -278,9 +274,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="optionalField">The optional field.</param>
         /// <returns>Detail Optional Field model</returns>
-        internal TDetail3 GetDetailOptFieldFinderData(string optionalField)
+        internal ReceiptDetailOptionalField GetDetailOptFieldFinderData(string optionalField)
         {
-            var updatedOptionalField = Service.GetDetailOptFieldFinderData(optionalField);
+            var updatedOptionalField = RepoService.GetDetailOptFieldFinderData(optionalField);
             return updatedOptionalField;
         }
 
@@ -288,10 +284,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// Creates a Receipt header 
         /// </summary>
         /// <returns>Receipt View Model</returns>
-        internal ReceiptViewModel<T> Create()
+        internal ReceiptViewModel Create()
         {
 
-            var newData = Service.NewHeader();
+            var newData = RepoService.NewHeader();
             newData.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(newData.AdditionalCostCurrency));
             return GetViewModel(null, newData, "", Operation.Create);
         }
@@ -302,7 +298,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageNumber">Page Number</param>
         /// <param name="pageSize">Page Size</param>
         /// <returns>Receipt View Model</returns>
-        internal ReceiptViewModel<T> DeleteDetails(T model, int pageNumber, int pageSize)
+        internal ReceiptViewModel DeleteDetails(ReceiptHeader model, int pageNumber, int pageSize)
         {
 
             if (model != null)
@@ -313,7 +309,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                     var receiptDetail = items as ReceiptDetail[] ?? items.ToArray();
                     if (receiptDetail.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                     {
-                        Service.SaveDetails((IEnumerable<TU>)receiptDetail);
+                        RepoService.SaveDetails(receiptDetail);
                     }
                 }
             }
@@ -324,7 +320,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 model.ReceiptDetail.Items = pagedDetails.Items;
                 model.ReceiptDetail.TotalResultsCount = pagedDetails.TotalResultsCount;
             }
-            return new ReceiptViewModel<T>
+            return new ReceiptViewModel
             {
                 Data = model,
                 UserMessage = new UserMessage(model)
@@ -339,15 +335,15 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageNumber">Page Number</param>
         /// <param name="pageSize">Page size</param>
         /// <returns>Receipt details data for the SequenceNumber</returns>
-        internal EnumerableResponse<TU> GetReceiptDetail(T model, int pageNumber, int pageSize)
+        internal EnumerableResponse<ReceiptDetail> GetReceiptDetail(ReceiptHeader model, int pageNumber, int pageSize)
         {
-            Expression<Func<TU, bool>> receiptFilter = null;
+            Expression<Func<ReceiptDetail, bool>> receiptFilter = null;
             if (model != null)
             {
                 receiptFilter = receipt => receipt.SequenceNumber == model.SequenceNumber;
             }
 
-            var receiptDetails = Service.GetDetail(pageNumber, pageSize, receiptFilter);
+            var receiptDetails = RepoService.GetDetail(pageNumber, pageSize, receiptFilter);
             var lineNumber = (pageSize * pageNumber) + 1;
             if (receiptDetails != null)
             {
@@ -368,7 +364,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <param name="pageNumber">page Number</param>
         /// <returns>Receipt model</returns>
-        internal T CreateDetail(T model, int index, int pageSize, int pageNumber)
+        internal ReceiptHeader CreateDetail(ReceiptHeader model, int index, int pageSize, int pageNumber)
         {
             var details = model.ReceiptDetail.Items == null ? model.ReceiptDetail.Items as IList<ReceiptDetail> : model.ReceiptDetail.Items.ToList();
             var hasDetails = model.ReceiptDetail.Items != null && model.ReceiptDetail.Items.Any();
@@ -376,14 +372,14 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             if (details != null)
             {
                 var currentRow = hasDetails ? details.Count > index ? details.ElementAt(index) : details.Last() : null;
-                T header;
-                TU data;
+                ReceiptHeader header;
+                ReceiptDetail data;
                 var receiptDetails = new List<ReceiptDetail>();
 
                 // Refresh should be called only once if header model is not mapped with latest model.
                 if (currentRow == null || (!currentRow.IsNewLine))
                 {
-                    Service.Refresh(model);
+                    RepoService.Refresh(model);
                 }
 
                 if (hasDetails)
@@ -392,7 +388,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                     {
                         if (details.Any(x => x.HasChanged))
                         {
-                            if (Service.SaveDetails((IEnumerable<TU>)details))
+                            if (RepoService.SaveDetails(details))
                             {
                                 if (currentRow != null)
                                 {
@@ -404,7 +400,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
 
                         GetPagedDetail(pageNumber, pageSize);
                         header = CreateDetail(model, pageSize, pageNumber, currentRow);
-                        data = (TU)header.ReceiptDetail.Items.FirstOrDefault();
+                        data = header.ReceiptDetail.Items.FirstOrDefault();
 
                         if (data != null)
                         {
@@ -420,7 +416,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                         }
                         if (details.Any(x => x.IsNewLine))
                         {
-                            Service.SaveDetails(details as IEnumerable<TU>);
+                            RepoService.SaveDetails(details);
                         }
                         receiptDetails = model.ReceiptDetail.Items.Take(pageSize - 1).ToList();
                         foreach (var setDetail in receiptDetails)
@@ -442,7 +438,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                     }
                     if (details.Any(x => x.HasChanged))
                     {
-                        if (Service.SaveDetails((IEnumerable<TU>)details))
+                        if (RepoService.SaveDetails(details))
                         {
                             if (currentRow != null)
                             {
@@ -454,7 +450,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                     var pagedDetails = GetPagedDetail(pageNumber, pageSize, model);
                     var totalRecords = pagedDetails.TotalResultsCount;
                     header = CreateDetail(model, pageSize, pageNumber, currentRow);
-                    data = (TU)header.ReceiptDetail.Items.FirstOrDefault();
+                    data = header.ReceiptDetail.Items.FirstOrDefault();
                     receiptDetails = new List<ReceiptDetail>(pagedDetails.Items.ToList());
                     if (data != null)
                     {
@@ -483,7 +479,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                     return header;
                 }
                 header = CreateDetail(model, pageSize, pageNumber, null);
-                data = (TU)header.ReceiptDetail.Items.FirstOrDefault();
+                data = header.ReceiptDetail.Items.FirstOrDefault();
 
                 if (data != null)
                 {
@@ -513,11 +509,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">Modified Receipt view model</param>
         /// <returns>Updated Receipt view model</returns>
-        internal ReceiptViewModel<T> Save(T model)
+        internal ReceiptViewModel Save(ReceiptHeader model)
         {
             model.RecordStatus = RecordStatus.Entered;
-            var data = Service.Save(model);
-            var newData = Service.NewHeader();
+            var data = RepoService.Save(model);
+            var newData = RepoService.NewHeader();
             SessionHelper.Remove(_detailOptFieldCacheKey);
 
             return GetViewModel(data, newData, model.ReceiptNumber, Operation.Save);
@@ -530,12 +526,12 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="id">Receipt Sequence Number</param>
         /// <param name="yesNo">Yes or No Click in confirmation box</param>
         /// <returns>ReceiptViewModel</returns>
-        internal ReceiptViewModel<T> Post(T model, long id, bool yesNo)
+        internal ReceiptViewModel Post(ReceiptHeader model, long id, bool yesNo)
         {
 
-            Expression<Func<T, Boolean>> filter = receipt => receipt.SequenceNumber == id;
-            var data = Service.Post(model, filter, yesNo);
-            var newData = Service.NewHeader();
+            Expression<Func<ReceiptHeader, Boolean>> filter = receipt => receipt.SequenceNumber == id;
+            var data = RepoService.Post(model, filter, yesNo);
+            var newData = RepoService.NewHeader();
 
             return GetViewModel(data, newData, model.ReceiptNumber, Operation.Post);
         }
@@ -545,10 +541,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">Receipt Model</param>
         /// <returns>Receipt View Model</returns>
-        internal ReceiptViewModel<T> Add(T model)
+        internal ReceiptViewModel Add(ReceiptHeader model)
         {
-            var data = Service.Add(model);
-            var newData = Service.NewHeader();
+            var data = RepoService.Add(model);
+            var newData = RepoService.NewHeader();
 
             return GetViewModel(data, newData, model.ReceiptNumber, Operation.Add); 
         }
@@ -559,11 +555,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="receiptNumber">Receipt Number</param>
         /// <param name="sequenceNumber">Receipt Sequence Number</param>
         /// <returns>ReceiptViewModel</returns>
-        internal ReceiptViewModel<T> Delete(string receiptNumber, long sequenceNumber)
+        internal ReceiptViewModel Delete(string receiptNumber, long sequenceNumber)
         {
-            Expression<Func<T, Boolean>> filter = receipt => receipt.ReceiptNumber == receiptNumber;
-            var data = Service.Delete(filter);
-            var newData = Service.NewHeader();
+            Expression<Func<ReceiptHeader, Boolean>> filter = receipt => receipt.ReceiptNumber == receiptNumber;
+            var data = RepoService.Delete(filter);
+            var newData = RepoService.NewHeader();
 
             return GetViewModel(data, newData, "", Operation.Delete);
         }
@@ -574,14 +570,14 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model"></param>
         /// <param name="setHeaderValue"></param>
         /// <returns></returns>
-        internal T ReadHeader(T model, bool setHeaderValue)
+        internal ReceiptHeader ReadHeader(ReceiptHeader model, bool setHeaderValue)
         {
-            T header = null;
+            ReceiptHeader header = null;
             if (setHeaderValue)
             {
                 header = model;
             }
-            header = Service.ReadHeader(header);
+            header = RepoService.ReadHeader(header);
             header.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(header.AdditionalCostCurrency));
             SetHeaderDetails(model, header);
             return header;
@@ -592,10 +588,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns>Receipt Batch Viewmodel - that contains the info about the saved details</returns>
-        internal T SaveDetails(T model)
+        internal ReceiptHeader SaveDetails(ReceiptHeader model)
         {
-            Service.SaveDetails(model.ReceiptDetail.Items as IEnumerable<TU>);
-            var refreshedModel = Service.Refresh(model);
+            RepoService.SaveDetails(model.ReceiptDetail.Items );
+            var refreshedModel = RepoService.Refresh(model);
             refreshedModel.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(refreshedModel.AdditionalCostCurrency));
             if (refreshedModel.ReceiptDetail.Items.Any())
             {
@@ -616,7 +612,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="receiptNumber">Receipt Number</param>
         /// <param name="isDetail">is Detail model</param>
         /// <returns>Receipt optional field with updated info</returns>
-        internal List<TDetail3> SaveOptionalFields(List<TDetail3> optionalFields, string receiptNumber, bool isDetail)
+        internal List<ReceiptDetailOptionalField> SaveOptionalFields(List<ReceiptDetailOptionalField> optionalFields, string receiptNumber, bool isDetail)
         {
             if (optionalFields != null)
             {
@@ -626,7 +622,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 }
             }
 
-            var savedOptionalFields = Service.SaveDetailOptFields(optionalFields, receiptNumber, isDetail);
+            var savedOptionalFields = RepoService.SaveDetailOptFields(optionalFields, receiptNumber, isDetail);
 
             if (!savedOptionalFields) return optionalFields;
             if (optionalFields == null)
@@ -653,10 +649,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model"></param>
         /// <param name="eventType"></param>
         /// <returns></returns>
-        internal TU GetRowValues(TU model, int eventType)
+        internal ReceiptDetail GetRowValues(ReceiptDetail model, int eventType)
         {
-            var result = Service.GetRowValues(model, eventType);
-            if (model.IsNewLine == true)
+            var result = RepoService.GetRowValues(model, eventType);
+            if (model.IsNewLine)
             {
                 result.IsNewLine = true;
             }
@@ -669,9 +665,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="model"></param>
         /// <param name="eventType"></param>
         /// <returns></returns>
-        internal T GetHeaderValues(T model, int eventType)
+        internal ReceiptHeader GetHeaderValues(ReceiptHeader model, int eventType)
         {
-            var modelData = Service.GetHeaderValues(model, eventType);
+            var modelData = RepoService.GetHeaderValues(model, eventType);
             modelData.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(model.AdditionalCostCurrency));
             modelData.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(model.ReceiptCurrency));
             return modelData;
@@ -795,21 +791,16 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="id">Receipt Number</param>
         /// <param name="model">A model to save the current data</param>
         /// <returns>Returns True if exists, False otherwise</returns>
-        internal bool Exists(string id, T model)
+        internal bool Exists(string id, ReceiptHeader model)
         {
-            return Service.Exists(id, model);
+            return RepoService.Exists(id, model);
         }
 
         #endregion
 
         #region Public Methods
-        
-        /// <summary>
-        /// Set Header Details Information
-        /// </summary>
-        /// <param name="source">source object</param>
-        /// <param name="target">target object</param>
-        public void SetHeaderDetails(T source, T target)
+
+        public void SetHeaderDetails(ReceiptHeader source, ReceiptHeader target)
         {
             if (source == null) return;
 
@@ -832,11 +823,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// Set Detail to current detail
         /// </summary>
         /// <param name="currentDetail">Current Selected Detail</param>
-        /// <returns>returns TU model</returns>
-        public virtual TU SetDetail(TU currentDetail)
+        /// <returns>returns ReceiptDetail model</returns>
+        public virtual ReceiptDetail SetDetail(ReceiptDetail currentDetail)
         {
-            var model = Service.SetDetail(currentDetail);
-            return model != null ? model.ReceiptDetail.Items.FirstOrDefault() as TU : null;
+            var model = RepoService.SetDetail(currentDetail);
+            return model?.ReceiptDetail.Items.FirstOrDefault();
         }
 
         /// <summary>
@@ -845,15 +836,15 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="detail">Detail model</param>
         /// <param name="eventType">Type of event</param>
         /// <returns>Receipt View Model</returns>
-        public virtual ReceiptViewModel<T> RefreshDetail(TU detail, string eventType)
+        public virtual ReceiptViewModel RefreshDetail(ReceiptDetail detail, string eventType)
         {
-            var refreshDetail = Service.RefreshDetail(detail, eventType);
+            var refreshDetail = RepoService.RefreshDetail(detail, eventType);
             var receiptDetail = refreshDetail.ReceiptDetail.Items.FirstOrDefault();
             if (receiptDetail != null)
             {
                 receiptDetail.IsNewLine = detail.IsNewLine;
             }
-            var receipt = new T
+            var receipt = new ReceiptHeader
             {
                 ReceiptDetail = new EnumerableResponse<ReceiptDetail>
                 {
@@ -861,7 +852,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 }
             };
 
-            return new ReceiptViewModel<T>
+            return new ReceiptViewModel
             {
                 Data = receipt,
                 UserMessage = new UserMessage(receiptDetail)
@@ -874,7 +865,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <returns>Optional field value</returns>
         public virtual string RefreshOptField()
         {
-            return Service.RefreshOptField();
+            return RepoService.RefreshOptField();
         }
 
         ///<summary>
@@ -882,9 +873,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">model</param>
         /// <returns>Refreshed header model</returns>
-        internal ReceiptViewModel<T> Refresh(T model)
+        internal ReceiptViewModel Refresh(ReceiptHeader model)
         {
-            var data = Service.Refresh(model);
+            var data = RepoService.Refresh(model);
             data.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(model.AdditionalCostCurrency));
             data.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(model.ReceiptCurrency));
             GetExchangeRate(data);
@@ -897,13 +888,13 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">Receipt Optional Field model</param>
         /// <returns>Receipt Optional Field model</returns>
-        public virtual TDetail2 SetOptionalFieldValue(TDetail2 model)
+        public virtual ReceiptOptionalField SetOptionalFieldValue(ReceiptOptionalField model)
         {
             if (model.Type == Type.Date)
             {
                 model.Value = DateUtil.GetShortDate(model.Value, null);
             }
-            var updatedOptionalField = Service.SetOptionalFieldValue(model);
+            var updatedOptionalField = RepoService.SetOptionalFieldValue(model);
             if (updatedOptionalField != null)
             {
                 updatedOptionalField.IsNewLine = model.IsNewLine;
@@ -917,13 +908,13 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="model">Receipt Detail Optional Field model</param>
         /// <returns>Receipt Detail Optional Field model</returns>
-        public virtual TDetail3 SetOptionalFieldValue(TDetail3 model)
+        public virtual ReceiptDetailOptionalField SetOptionalFieldValue(ReceiptDetailOptionalField model)
         {
             if (model.Type == Type.Date)
             {
                 model.Value = DateUtil.GetShortDate(model.Value, null);
             }
-            var updatedOptionalField = Service.SetOptionalFieldValue(model);
+            var updatedOptionalField = RepoService.SetOptionalFieldValue(model);
             if (updatedOptionalField != null)
             {
                 updatedOptionalField.IsNewLine = model.IsNewLine;
@@ -940,16 +931,16 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">PageSize</param>
         /// <param name="isDetail">isDetail model</param>
         /// <returns>Receipt Detail Optional Field model</returns>
-        public virtual EnumerableResponse<TDetail3> DeleteOptionalFields(
-            EnumerableResponse<TDetail3> model, int pageNumber, int pageSize, bool isDetail)
+        public virtual EnumerableResponse<ReceiptDetailOptionalField> DeleteOptionalFields(
+            EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber, int pageSize, bool isDetail)
         {
-            Service.SaveDetailOptFields(model.Items, null, isDetail);
+            RepoService.SaveDetailOptFields(model.Items, null, isDetail);
             if (isDetail)
             {
                 var pagedDetail = GetDetailOptFields(pageNumber, pageSize, model);
-                var refreshedDetail = (List<TDetail3>)pagedDetail.Items;
+                var refreshedDetail = (List<ReceiptDetailOptionalField>)pagedDetail.Items;
                 var totalResultsCount = pagedDetail.TotalResultsCount;
-                var returnDetail = new EnumerableResponse<TDetail3>
+                var returnDetail = new EnumerableResponse<ReceiptDetailOptionalField>
                 {
                     Items = refreshedDetail,
                     TotalResultsCount = totalResultsCount
@@ -959,9 +950,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             else
             {
                 var pagedDetail = GetOptFields(pageNumber, pageSize, model);
-                var refreshedDetail = pagedDetail.Items.Cast<TDetail3>();
+                var refreshedDetail = pagedDetail.Items.Cast<ReceiptDetailOptionalField>();
                 var totalResultsCount = pagedDetail.TotalResultsCount;
-                var returnDetail = new EnumerableResponse<TDetail3>
+                var returnDetail = new EnumerableResponse<ReceiptDetailOptionalField>
                 {
                     Items = refreshedDetail,
                     TotalResultsCount = totalResultsCount
@@ -977,20 +968,20 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">PageSize</param>
         /// <param name="model">Receipt Detail OptionalField model</param>
         /// <returns>Receipt Detail Optional Field</returns>
-        public virtual EnumerableResponse<TDetail3> GetDetailOptFields(int pageNumber, int pageSize,
-            EnumerableResponse<TDetail3> model)
+        public virtual EnumerableResponse<ReceiptDetailOptionalField> GetDetailOptFields(int pageNumber, int pageSize,
+            EnumerableResponse<ReceiptDetailOptionalField> model)
         {
             if (model == null)
             {
-                return Service.GetDetailOptFields(pageNumber, pageSize);
+                return RepoService.GetDetailOptFields(pageNumber, pageSize);
             }
 
             var optionalField = model.Items;
 
-            var optionalFieldDetails = optionalField as IList<TDetail3> ?? optionalField.ToList();
+            var optionalFieldDetails = optionalField as IList<ReceiptDetailOptionalField> ?? optionalField.ToList();
             if (!optionalFieldDetails.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
             {
-                return Service.GetDetailOptFields(pageNumber, pageSize);
+                return RepoService.GetDetailOptFields(pageNumber, pageSize);
             }
 
             if (optionalFieldDetails.Any(x => x.OptionalField != null))
@@ -999,10 +990,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 {
                     FormatDetailOptField(optField);
                 }
-                Service.SaveDetailOptFields(optionalFieldDetails, null, true);
+                RepoService.SaveDetailOptFields(optionalFieldDetails, null, true);
             }
 
-            return Service.GetDetailOptFields(pageNumber, pageSize);
+            return RepoService.GetDetailOptFields(pageNumber, pageSize);
         }
 
         /// <summary>
@@ -1012,17 +1003,17 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">PageSize</param>
         /// <param name="model">List of ReceiptOptionalField model</param>
         /// <returns>returns Enumerable Response of ReceiptOptionalField</returns>
-        public virtual EnumerableResponse<TDetail2> GetOptFields(int pageNumber, int pageSize,
-            EnumerableResponse<TDetail3> model)
+        public virtual EnumerableResponse<ReceiptOptionalField> GetOptFields(int pageNumber, int pageSize,
+            EnumerableResponse<ReceiptDetailOptionalField> model)
         {
             if (model == null)
-                return Service.GetOptFields(pageNumber, pageSize);
+                return RepoService.GetOptFields(pageNumber, pageSize);
             var optionalField = model.Items;
 
-            var optionalFieldDetails = optionalField as IList<TDetail3> ?? optionalField.ToList();
+            var optionalFieldDetails = optionalField as IList<ReceiptDetailOptionalField> ?? optionalField.ToList();
             if (!optionalFieldDetails.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
             {
-                return Service.GetOptFields(pageNumber, pageSize);
+                return RepoService.GetOptFields(pageNumber, pageSize);
             }
 
             if (optionalFieldDetails.Any(x => x.OptionalField != null))
@@ -1031,10 +1022,10 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 {
                     FormatDetailOptField(optField);
                 }
-                Service.SaveDetailOptFields(optionalFieldDetails, null, false);
+                RepoService.SaveDetailOptFields(optionalFieldDetails, null, false);
             }
 
-            return Service.GetOptFields(pageNumber, pageSize);
+            return RepoService.GetOptFields(pageNumber, pageSize);
         }
 
         /// <summary>
@@ -1042,7 +1033,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="currencyCode">The currency code.</param>
         /// <returns></returns>
-        public CurrencyCode GetCurrencyDescription(string currencyCode)
+        private CurrencyCode GetCurrencyDescription(string currencyCode)
         {
             var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
             Expression<Func<CurrencyCode, bool>> filter = code => code.CurrencyCodeId == currencyCode.ToUpper();
@@ -1065,7 +1056,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="additionalCurrencyDescription"></param>
         /// <param name="refreshModel"></param>
         /// <returns></returns>
-        private CurrencyCode CurrencyDescription(out string additionalCurrencyDescription, T refreshModel)
+        private CurrencyCode CurrencyDescription(out string additionalCurrencyDescription, ReceiptHeader refreshModel)
         {
             var receiptcurrencyCode = GetCurrencyDescription(refreshModel.ReceiptCurrency);
             if (refreshModel.ReceiptCurrency == refreshModel.AdditionalCostCurrency)
@@ -1089,9 +1080,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageNumber">Current Page Number</param>
         /// <param name="currentRow">Current tax detail record</param>
         /// <returns>Receipt ViewModel</returns>
-        private T CreateDetail(T model, int pageSize, int pageNumber, ReceiptDetail currentRow)
+        private ReceiptHeader CreateDetail(ReceiptHeader model, int pageSize, int pageNumber, ReceiptDetail currentRow)
         {
-            var data = Service.NewDetail(pageNumber, pageSize, currentRow as TU);
+            var data = RepoService.NewDetail(pageNumber, pageSize, currentRow as ReceiptDetail);
 
             if (model.ReceiptDetail.Items != null)
             {
@@ -1109,7 +1100,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// Format Optional Field Values 
         /// </summary>
         /// <param name="model"></param>
-        private void FormatDetailOptField(TDetail3 model)
+        private void FormatDetailOptField(ReceiptDetailOptionalField model)
         {
             if (model.Type == Type.Date && model.Value != null)
             {
@@ -1138,7 +1129,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// Get ExchangeRate
         /// </summary>
         /// <param name="refreshModel">ExchangeRate</param>
-        private void GetExchangeRate(T refreshModel)
+        private void GetExchangeRate(ReceiptHeader refreshModel)
         {
             if (refreshModel.ReceiptType == ReceiptType.Receipt)
             {
@@ -1159,7 +1150,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <returns>CompositeCurrencyRate</returns>
         private CompositeCurrencyRate ValidateExchangeRate(string rateType, string currencyCode, DateTime rateDate)
         {
-            return Service.GetCurrencyRateComposite(rateType, currencyCode, rateDate);
+            return RepoService.GetCurrencyRateComposite(rateType, currencyCode, rateDate);
         }
 
         /// <summary>
@@ -1174,7 +1165,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             return currency != null ? currency.DecimalPlacesString : "0";
         }
 
-        private void ProcessMessage(T data, out string message )
+        private void ProcessMessage(ReceiptHeader data, out string message )
         {
             var warnings = new List<EntityError>();
             
@@ -1209,10 +1200,9 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="receiptNumber"> receipt number</param>
         /// <param name="operation"> operation</param>
         /// <returns>view model</returns>
-        private ReceiptViewModel<T> GetViewModel(T data, T newData, string receiptNumber, Operation operation)
+        private ReceiptViewModel GetViewModel(ReceiptHeader data, ReceiptHeader newData, string receiptNumber, Operation operation)
         {
-
-            var additionalCurrencyDescription = string.Empty;
+            string additionalCurrencyDescription;
             var currencyCode = CurrencyDescription(out additionalCurrencyDescription, newData);
             var message = string.Empty;
             var defaultReceiptNumber = string.Empty;
@@ -1242,7 +1232,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
                 message = null;
             }
 
-            return new ReceiptViewModel<T> 
+            return new ReceiptViewModel 
             {
                 Data = newData,
                 Attributes = GetDynamicAttributesOfHeader(),

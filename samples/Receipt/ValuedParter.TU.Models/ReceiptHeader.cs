@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -47,8 +47,6 @@ namespace ValuedParter.TU.Models
             ReceiptDetail = new EnumerableResponse<ReceiptDetail>();
             ReceiptOptionalField = new EnumerableResponse<ReceiptOptionalField>();
             ReceiptDetailOptionalField = new EnumerableResponse<ReceiptDetailOptionalField>();
-            ReceiptDetailLotNumber = new EnumerableResponse<ReceiptDetailLotNumber>();
-            ReceiptDetailSerialNumber = new EnumerableResponse<ReceiptDetailSerialNumber>();
             // Casts from List to IList.
         }
 
@@ -378,9 +376,6 @@ namespace ValuedParter.TU.Models
         [IgnoreExportImport]
         public string HomeCurrency { get; set; }
 
-        /// <summary>
-        /// Gets or sets Receipt Detail
-        /// </summary>
         [IgnoreExportImport]
         public EnumerableResponse<ReceiptDetail> ReceiptDetail { get; set; }
 
@@ -395,18 +390,6 @@ namespace ValuedParter.TU.Models
         /// </summary>
         [IgnoreExportImport]
         public EnumerableResponse<ReceiptDetailOptionalField> ReceiptDetailOptionalField { get; set; }
-
-        /// <summary>
-        /// Gets or sets ReceiptDetailLotNumber
-        /// </summary>
-        [IgnoreExportImport]
-        public EnumerableResponse<ReceiptDetailLotNumber> ReceiptDetailLotNumber { get; set; }
-
-        /// <summary>
-        /// Gets or sets ReceiptDetailSerialNumber
-        /// </summary>
-        [IgnoreExportImport]
-        public EnumerableResponse<ReceiptDetailSerialNumber> ReceiptDetailSerialNumber { get; set; }
 
         /// <summary>
         /// IsOptionalFields is for validating the OptionalFields checkbox

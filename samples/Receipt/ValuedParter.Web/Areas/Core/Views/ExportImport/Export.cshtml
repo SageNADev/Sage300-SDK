@@ -27,30 +27,30 @@
 </div>
 
 <div id="divLoadScript" style="display:none" class="container_popUp">
-    <form action='@Url.Action("LoadScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="formLoadScript">
-        <div id="loadScriptMessage"></div>
-        @Html.AntiForgeryToken()
-        <div class="form-group">
-            <div class="browse-group">
-                <label>@CommonResx.FileLocation</label>
-                @Html.KoSageTextBox("btnUploadFile", null, new { @id = "btnUploadFile", disabled = "disabled", @class = "medium" })
-                <div class="btn btn-default fileUpload">
-                    <span>
-                        @CommonResx.Browse
-                    </span>
-                    @Html.KoSageFileButton("File", null, new { @id = "btnFile", @class = "upload", @accept = "text/xml" })
+        <form action='@Url.Action("LoadScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="formLoadScript">
+            <div id="loadScriptMessage"></div>
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="browse-group">
+                    <label>@CommonResx.FileLocation</label>
+                    @Html.KoSageTextBox("btnUploadFile", null, new { @id = "btnUploadFile", disabled = "disabled", @class = "medium" })
+                    <div class="btn btn-default fileUpload">
+                        <span>
+                            @CommonResx.Browse
+                        </span>
+                        @Html.KoSageFileButton("File", null, new { @id = "btnFile", @class = "upload", @accept = "text/xml" })
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <input type="hidden" name="name" id="name" value='@Model.ExportRequest.Name' />
-        <section id="buttons" class="footer-group">
-            @Html.KoSageButton("LoadScript", null, new { @class = "btn btn-primary", @value = CommonResx.LoadScript, @id = "loadScriptSubmit" })
-        </section>
-        <div class="fileupload">
+            <input type="hidden" name="name" id="name" value='@Model.ExportRequest.Name' />
+            <section id="buttons" class="footer-group">
+                @Html.KoSageButton("LoadScript", null, new { @class = "btn btn-primary", @value = CommonResx.LoadScript, @id = "loadScriptSubmit" })
+            </section>
+            <div class="fileupload">
 
-        </div>
-    </form>
+            </div>
+        </form>
 </div>
 <div class="container_popUp " id="exportScreen">
 
@@ -78,10 +78,8 @@
         <form action='@Url.Action("SaveScripts", "ExportImport")' method="post" enctype="multipart/form-data" id="targetId">
             @Html.AntiForgeryToken()
             @Html.SageHiddenFor(m => m.ExportRequest.Name)
-            @Html.HiddenFor(m => m.ExportRequest.DataMigrationList, new { id = "DataMigrationList" })
-
+            @*<div class="alpha clear-fix "></div>*@
             <div class="form-group">
-                <label class="right required">@CommonResx.RequiredLegend</label>
                 <div class="dropdown-group">
                     <label>@CommonResx.FileType</label>
                     @Html.KoSageDropDownList("FileTypes", new { @options = "ExportRequest.FileTypes", @value = "ExportRequest.FileType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "FileTypes", @class = "default" })
@@ -89,7 +87,38 @@
             </div>
             <div class="form-group">
                 <div class="treeview-group" style="width:100%">
-                    <div id="exportTreeView" />
+                    <ul id="exportTreeView">
+                        @for (var i = 0; i < Model.ExportRequest.DataMigrationList.Count; i++)
+                        {
+                            <li>
+                                <span class="newcontrol">
+                                    @Html.KoSageCheckBoxFor(model => model.ExportRequest.DataMigrationList[i].Print, new { @sagechecked = "ExportRequest.DataMigrationList()[" + i + "].Print" }, new { @autofocus = "autofocus", @class = "exportImportHeader", @data_sg_index = @i })
+                                </span>
+                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Description, new { @style = "float:left", @for = "ExportRequest_DataMigrationList_" + i + "__Print" })
+                                <ul>
+                                    @for (var k = 0; k < Model.ExportRequest.DataMigrationList[i].Items.Count; k++)
+                                    {
+                                        <li>
+                                            @Html.HiddenFor(model => model.ExportRequest.DataMigrationList[i].Items[k].field)
+                                            @Html.HiddenFor(model => model.ExportRequest.DataMigrationList[i].Items[k].dataType)
+                                            <span class="newcontrol">
+                                                @Html.KoSageCheckBoxFor(model => model.ExportRequest.DataMigrationList[i].Items[k].print, new { @sagechecked = "ExportRequest.DataMigrationList()[" + i + "].Items()[" + k + "].print" }, new { @class = "exportImportDetail" })
+                                            </span>
+
+                                            @if (Model.ExportRequest.DataMigrationList[i].Items[k].IsKey)
+                                            {
+                                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Items[k].title, new { @class = "required", @for = "ExportRequest_DataMigrationList_" + i + "__Items_" + k + "__print" })
+                                            }
+                                            else
+                                            {
+                                                @Html.SageLabel(Model.ExportRequest.DataMigrationList[i].Items[k].title, new { @for = "ExportRequest_DataMigrationList_" + i + "__Items_" + k + "__print" })
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
             <section class="footer-group" id="buttons">
@@ -113,25 +142,9 @@
         height: 232px;
     }
 
-    span.k-icon.k-i-expand {
-        margin-left: 0;
-    }
-
-    span.k-icon.k-i-collapse {
-        margin-left: 0;
-    }
-
     #exportTreeView {
         height: 230px;
         overflow-y: scroll;
-    }
-
-    #exportTreeView> ul > li > ul >li {
-        padding-left: 50px;
-    }
-
-    input[type="checkbox"] {
-        width: 5px;
     }
 
     .inpt-file-container input[type="text"] {

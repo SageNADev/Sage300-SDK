@@ -282,9 +282,122 @@
     width: 450px;
 }
 
-.center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+//
+// Stand-alone master layout
+// --------------------------------------------------
 
+/* master-stand-alone styles */
+
+.master-stand-alone {
+
+    .header-global {
+        background:#3c424f;
+        height: 47px;
+        position: relative;
+
+        .wrapper {
+            margin: 0 30px 0 30px;
+
+            .Sage_logo {
+                top: 11px;
+                position: relative;
+            }
+
+            .top-nav {
+                position: absolute;
+                right: 30px;
+                top: 0;
+                height: 47px;
+
+                li {
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 14px;
+                    width: 74px;
+                    height: 47px;
+                    text-align: right;
+                    vertical-align: middle;
+
+                    > span {
+                        top: 14px;
+                        position: relative;
+                    }
+
+                    &:hover {
+                        opacity: 0.75;
+                        cursor: pointer;
+                    }
+
+                    .help {
+                        height: 47px;
+                        text-align: center;
+                        min-width: 50px;
+                        background: transparent url(../../images/nav/sprite_global_menu_rev@2x.png) no-repeat center -52px;
+                        background-size: 40px 300px;
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+
+                        > span {
+                            font: normal 10px/1 Arial;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            padding: 34px 10px 0;
+                            position: relative;
+                            color: #fff;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
+    .main-body .wrapper {
+        margin: 0 30px 40px 30px;
+    }
+
+    .quick-links .wrapper {
+        margin: 20px 30px 20px -10px;
+
+        li {
+            display: inline-block;
+
+            .navigation-pipe {
+                color: #ccc;
+                padding: 0 10px;
+            }
+
+            a.active {
+                text-decoration:none;
+                color: #3c424f !important;
+                cursor: default;
+            }
+        }
+    }
+
+    section.footer {
+        background-color: #4d4f53;
+        height: 40px;
+        color: #cfcfcf;
+        font-size: 11px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 13px 0 0;
+
+        .wrapper {
+            margin: 0;
+            min-width: 900px;
+            padding: 0 30px;
+            position: relative;
+
+            .logo-sage {
+                position: absolute;
+                top: -4px;
+                left: 40px;
+            }
+        }
+    }
+}

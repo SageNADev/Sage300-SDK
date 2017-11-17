@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -35,7 +35,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
     /// <summary>
     /// Class for mapping Receipt header and Receipt details.
     /// </summary>
-    public class ReceiptMapper<T> : ModelHierarchyMapper<T> where T : ReceiptHeader , new()
+    public class ReceiptMapper: ModelHierarchyMapper<ReceiptHeader> 
     {
         #region Private Properties
 
@@ -47,12 +47,12 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
         /// <summary>
         /// The _header mapper
         /// </summary>
-        private readonly ReceiptHeaderMapper<ReceiptHeader> _headerMapper;
+        private readonly ReceiptHeaderMapper _headerMapper;
 
         /// <summary>
         /// The _detail mapper
         /// </summary>
-        private readonly ReceiptDetailMapper<ReceiptDetail> _detailMapper;
+        private readonly ReceiptDetailMapper _detailMapper;
 
         #endregion
 
@@ -65,8 +65,8 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
         public ReceiptMapper(Context context)
         {
             Context = context;
-            _headerMapper = new ReceiptHeaderMapper<ReceiptHeader>(Context);
-            _detailMapper = new ReceiptDetailMapper<ReceiptDetail>(Context);
+            _headerMapper = new ReceiptHeaderMapper(Context);
+            _detailMapper = new ReceiptDetailMapper(Context);
         }
 
         #endregion
@@ -78,7 +78,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
         /// </summary>
         /// <param name="model">Receipt Header Model</param>
         /// <param name="entity">Business Entity</param>
-        public override void Map(T model, List<IBusinessEntity> entity)
+        public override void Map(ReceiptHeader model, List<IBusinessEntity> entity)
         {
             _headerMapper.Map(model, entity[0]);
         }
@@ -91,7 +91,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
         /// <param name="detailPageSize">Page Size</param>
         /// <param name="filterCount">Filter Count</param>
         /// <returns>Receipt Header Model</returns> 
-        public override T Map(List<IBusinessEntity> entities, int? detailPageNumber = null, int? detailPageSize = null, int? filterCount = null)
+        public override ReceiptHeader Map(List<IBusinessEntity> entities, int? detailPageNumber = null, int? detailPageSize = null, int? filterCount = null)
         { 
             var model = _headerMapper.Map(entities[0]);
             model.ReceiptDetail = new EnumerableResponse<ReceiptDetail>();
@@ -126,7 +126,7 @@ namespace ValuedParter.TU.BusinessRepository.Mappers
 
             model.ReceiptDetail.Items = receiptDetail;
             model.ReceiptDetail.TotalResultsCount = totalDetailRecords;
-            return (T)model; 
+            return (ReceiptHeader)model; 
         }
 
         #endregion
