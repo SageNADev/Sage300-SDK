@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
 (function (sg, $) {
