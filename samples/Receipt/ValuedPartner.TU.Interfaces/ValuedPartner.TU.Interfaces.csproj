@@ -54,7 +54,7 @@
     <Compile Include="Services\IReceiptHeaderService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ValuedParter.TU.Models\ValuedParter.TU.Models.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Models\ValuedPartner.TU.Models.csproj">
       <Project>{1b84fcae-7113-41ae-8746-9f8b5b635fb9}</Project>
       <Name>ValuedParter.TU.Models</Name>
     </ProjectReference>

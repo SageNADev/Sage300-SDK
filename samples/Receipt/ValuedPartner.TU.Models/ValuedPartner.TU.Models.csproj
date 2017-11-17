@@ -87,7 +87,7 @@
     <Compile Include="ReceiptOptionalField.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ValuedParter.TU.Resources\ValuedParter.TU.Resources.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj">
       <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
       <Name>ValuedParter.TU.Resources</Name>
     </ProjectReference>

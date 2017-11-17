@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(SolutionDir)\ValuedParter.Web\AccpacDotNetVersion.props" />
+  <Import Project="$(SolutionDir)\ValuedPartner.Web\AccpacDotNetVersion.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{63BD6794-9F07-4A15-9A25-0EA210569830}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ValuedParter.TU.BusinessRepository</RootNamespace>
-    <AssemblyName>ValuedParter.TU.BusinessRepository</AssemblyName>
+    <RootNamespace>ValuedPartner.TU.BusinessRepository</RootNamespace>
+    <AssemblyName>ValuedPartner.TU.BusinessRepository</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -128,17 +128,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ValuedParter.TU.Interfaces\ValuedParter.TU.Interfaces.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Interfaces\ValuedPartner.TU.Interfaces.csproj">
       <Project>{7ffa0bdc-c3c9-405a-8d01-a169396ee59f}</Project>
-      <Name>ValuedParter.TU.Interfaces</Name>
+      <Name>ValuedPartner.TU.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Models\ValuedParter.TU.Models.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Models\ValuedPartner.TU.Models.csproj">
       <Project>{1b84fcae-7113-41ae-8746-9f8b5b635fb9}</Project>
-      <Name>ValuedParter.TU.Models</Name>
+      <Name>ValuedPartner.TU.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Resources\ValuedParter.TU.Resources.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj">
       <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
-      <Name>ValuedParter.TU.Resources</Name>
+      <Name>ValuedPartner.TU.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

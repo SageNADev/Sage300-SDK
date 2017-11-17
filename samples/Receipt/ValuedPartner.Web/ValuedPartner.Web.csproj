@@ -427,23 +427,23 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ValuedParter.TU.BusinessRepository\ValuedParter.TU.BusinessRepository.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.BusinessRepository\ValuedPartner.TU.BusinessRepository.csproj">
       <Project>{63bd6794-9f07-4a15-9a25-0ea210569830}</Project>
       <Name>ValuedParter.TU.BusinessRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Interfaces\ValuedParter.TU.Interfaces.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Interfaces\ValuedPartner.TU.Interfaces.csproj">
       <Project>{7ffa0bdc-c3c9-405a-8d01-a169396ee59f}</Project>
       <Name>ValuedParter.TU.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Models\ValuedParter.TU.Models.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Models\ValuedPartner.TU.Models.csproj">
       <Project>{1b84fcae-7113-41ae-8746-9f8b5b635fb9}</Project>
       <Name>ValuedParter.TU.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Resources\ValuedParter.TU.Resources.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj">
       <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
       <Name>ValuedParter.TU.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ValuedParter.TU.Services\ValuedParter.TU.Services.csproj">
+    <ProjectReference Include="..\ValuedPartner.TU.Services\ValuedPartner.TU.Services.csproj">
       <Project>{35eb3451-d6ca-4f8d-a77f-d869f4397e42}</Project>
       <Name>ValuedParter.TU.Services</Name>
     </ProjectReference>
