@@ -67,6 +67,20 @@ The **help** folder contains the CHM files for the documented assemblies
 
 > **Only the Common and Core assmblies are documented at this time**
 
+### maps
+
+The **maps** folder contains the Visual Studio Code Maps for certain entities, controllers, 
+utilities and helper classes and contains the following sub-folders in order to segregate 
+the code maps:
+
+* ap
+* ar
+* framework
+* gl
+* ic
+* oe
+* po
+
 ### patch
 
 The **patch** folder contains any patches which may be required to be applied to:
