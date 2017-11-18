@@ -1,0 +1,765 @@
+/* menu */
+.top-navigation {
+  height: 43px;
+  background-color: #f5f6f7;
+  margin-left:-15px;
+}
+.top-navigation .k-widget * {
+  box-sizing: border-box;
+}
+.top-navigation .k-state-active {
+  background-color: transparent;
+}
+.top-navigation .k-link.k-state-active {
+  background-color: #255bc7;
+}
+
+.top-navigation li li .k-link {
+  background-image: url('../Images/sprite_menu.png');
+  background-repeat: no-repeat;
+  background-position: 99% -54px;
+}
+.top-navigation li li .k-link.k-state-active {
+    background-position: 99% -85px;
+}
+.top-navigation .k-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 316px;
+  background-color: transparent;
+}
+.top-navigation .k-state-hover{
+  background-color: transparent;
+  background-image: none;
+}
+.top-navigation .k-state-hover > .k-link {
+  color: #fff;
+  background-color: #1963f6;
+}
+.top-navigation .k-state-active {
+  color: #fff !important;
+}
+.top-navigation > .k-widget {
+  position: relative;
+  width: 955px;
+  margin: 0 auto;
+  font-size: 14px;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+.top-navigation .k-animation-container {
+  right: 0;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #fff url('../Images/bg_menu.png') repeat-y left top;
+  border: 1px solid #e0e1dd;
+  border-top: 1px solid #255bc7;
+  box-shadow: 20px 20px 20px 0 rgba(0, 0, 0, 0.35);
+  min-height: 220px;
+}
+.top-navigation .k-animation-container:after {  
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  left: -1px;
+  height: 3px;
+  content: "";
+  background: #255bc7;
+}
+.top-navigation > .k-widget > .k-item {
+  position: static;
+  border: none;
+}
+.top-navigation > .k-widget > .k-item .k-icon {
+  display: none;
+}
+.top-navigation > .k-widget > .k-item .k-animation-container .k-menu-group {
+  top: 2px;
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.top-navigation > .k-widget > .k-item > .k-link {
+  height: 43px;
+  padding: 0 15px;
+  line-height: 42px;
+}
+.top-navigation .k-item .k-item {
+  position: static;
+  width: 315px;
+  padding:3px;}
+
+.top-navigation .k-item .k-item .k-content {
+  display: none;
+}
+
+.top-navigation .menu-section {
+  padding: 0 15px 0 15px;
+  min-height: 202px;
+}
+.top-navigation .menu-section ul {
+  padding: 0;
+  margin: 0px;
+}
+.top-navigation .menu-section li {
+  list-style-type: none;
+}
+.top-navigation .template-2-column-std:before,
+.top-navigation .template-2-column-std:after {
+  display: table;
+  content: " ";
+}
+.top-navigation .template-2-column-std:after {
+  clear: both;
+}
+.top-navigation .template-2-column-std .menu-section {
+    border-right: 1px dotted #ccc;
+    float: left;
+    margin: 6px 0 0;
+    width: 319px;
+}
+.top-navigation .template-2-column-std li a{white-space:pre-line;}
+.top-navigation .template-2-column-std .menu-section:last-child { border-right: none;}
+.top-navigation .template-2-column-std .sub-heading {
+  padding: 0 0 3px;
+  margin: 0 0 3px;
+  color: #00a4cf;
+  font-weight:bold;
+}
+.top-navigation .k-menu .k-menu-group .k-item > .k-link {
+  padding: 2px 12px;font-size:12px;white-space: pre-line;
+}
+.top-navigation .k-menu .k-item.menu-group  .k-item > .k-link {
+  padding:5px 0px;
+}
+.top-navigation .k-content li {
+  padding: 3px 0 !important;
+  line-height: 1.34;
+  font-size:12px;
+}
+.top-navigation .k-content a {
+  color: #333;
+}
+.top-navigation .k-content a:hover {
+  color: #255bc7;
+  text-decoration:none;
+}
+
+.top-navigation .k-item .k-item .k-animation-container {
+  left: 315px !important;
+  width: auto !important;
+  min-height: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.top-navigation .k-item .k-item .k-animation-container:after {
+  position: static;
+  border: none;
+}
+.top-navigation .k-item .k-item .k-content {
+  left: 0;
+}
+.top-navigation .k-item .k-item .k-state-active + .k-animation-container,
+.top-navigation .k-item .k-item .k-state-active + .k-animation-container .k-menu-group,
+.top-navigation .k-item .k-item .k-state-active + .k-animation-container .k-content {
+  display: block !important;
+}
+.top-navigation .k-menu .k-item.menu-group {
+  border-bottom: 1px solid #e0e1dd;
+}
+.top-navigation .k-menu .k-menu-group .k-item + .k-item:not(.menu-group) {
+  padding:3px;
+}
+.menu-section li:last-child{ padding-bottom:20px !important; }
+.menu-section li:last-child,#menu .k-animation-container .menu-section li.k-item:last-child{ padding-bottom:22px !important; }
+
+.secondLevelMenu{position:relative !important;}
+.top-navigation .k-state-hover:hover > .portalIcon.menuArrow, .top-navigation .k-state-active.k-link .portalIcon.menuArrow {background-position: 0px -11px;}
+.portalIcon.menuArrow{width: 4px;height: 7px;position: absolute;right: 9px;top:8px;background-position: 0px -22px;padding: 0;margin: 0;display: block;}
+.hasSubMenu .portalIcon.menuArrow{background-position: 0px -11px;}
+i.reportIcon {display:inline;background: url("../Images/reports.png") no-repeat scroll 0 0 / 13px auto rgba(0, 0, 0, 0);height: 11px;margin-left: 10px;margin-top: 4px;position: absolute;width: 15px;}
+.top-navigation .icon-report {
+  padding: 0 10px;
+  vertical-align: baseline;
+  margin: 0 0 0 6px;
+  background: transparent url('../Images/sprite_menu.png') no-repeat left 2px;
+}
+
+.top-navigation .k-state-active .icon-report {
+  background-position: left -29px;
+}
+#menu .k-state-focused {box-shadow: none;}
+
+/* ------------------------------------------------------------------------------------------------- */
+/* new mega menu using jquery-menu-aim plug-in ----------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------- */
+
+.nav-menu-wrapper { /* added to add position: relative so .nav-menu can use absolute positioning */
+    position: relative;
+    min-width: 1000px;
+}
+
+.nav-menu *,
+.std-menu * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.std-menu { /* standard menu banding used in mega menu and global menu in the future */
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 1.35;
+    z-index: 1001;
+    border: 1px solid #e0e1dd;
+    padding: 0;
+    -webkit-box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);
+    -moz-box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);
+    box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);
+}
+
+.std-menu .icon-report {
+    padding: 0 10px;
+    vertical-align: baseline;
+    margin: 0 0 0 6px;
+    background: transparent url('../Images/sprite_mega_menu.png') no-repeat left 2px;
+}
+
+.std-menu > li {
+    list-style-type: none;
+    padding: 3px 3px 0;
+}
+
+.std-menu > li.menu-group {
+    border-bottom: 1px solid #e0e1dd;
+}
+.std-menu > li.menu-group:last-child {
+border-bottom: none;
+}
+
+.std-menu > li + li.menu-group {
+    padding: 3px;
+}
+
+.std-menu > li.menu-group:first-child,
+.std-menu > li:last-child {
+    padding: 3px;
+}
+
+.std-menu > li span,
+.std-menu > li a {
+    height: auto;
+}
+
+.std-menu > li > a,
+.std-menu > li > span {
+    display: block;
+    background: transparent url('../Images/sprite_mega_menu.png') no-repeat 99% -53px;
+    padding: 4px 12px;
+    text-decoration: none;
+}
+
+.std-menu > li:hover > a,
+.std-menu > li:hover > span {
+    color: #fff;
+    background: #255bc7 url('../Images/sprite_mega_menu.png') no-repeat 99% -84px;
+}
+
+.std-menu > li:hover .icon-report {
+    background-position: left -29px;
+}
+
+.std-menu > li > a.active,
+.std-menu > li > span.active {
+    color: #fff !important; /* added to override important in .active class */
+    background: #255bc7 url('../Images/sprite_mega_menu.png') no-repeat 99% -84px;
+}
+
+.std-menu > li > span.active .icon-report,
+.std-menu > li > a.active .icon-report {
+    background-position: left -29px;
+}  
+
+.std-menu  a,
+.std-menu  a:visited {
+    color: inherit;
+}
+
+.std-menu .sub-heading {
+    color: #00a4cf;
+    font-weight: bold;
+    padding: 7px 15px 4px;
+    font-size: 14px; /* New UI: font size increased. */
+}
+
+.nav-menu { /* to eliminate complication, all mega menu elements will be nested under .nav-menu top level class */
+    position: absolute;
+    top: -1px;
+    height: 44px;
+    margin: 0;
+    right: -15px;
+    left: -15px;
+    -webkit-transition: left 0.25s ease-in-out;
+    -moz-transition: left 0.25s ease-in-out;
+    transition: left 0.25s ease-in-out;
+}
+
+.nav-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu > ul > li:hover > ul {
+    display: block;
+}
+
+.nav-menu li > span,
+.nav-menu li > a {
+    height: 44px;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-menu .top-tier {
+    list-style-type: none;
+    display: inline-block;
+    line-height: 1.15;
+    float: left;
+}
+
+.nav-menu .top-tier > span:hover,
+.nav-menu .top-tier > a:hover {
+    background-color: #255bc7;
+    color: #fff;
+    
+}
+
+.nav-menu .top-tier > span,
+.nav-menu .top-tier > a {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 6px 15px;
+}
+
+.nav-menu .std-menu {
+    width: 317px;
+    padding: 3px 0 0;
+    background-color: #f5f5f7;
+    border-top: none;
+    top: 44px;
+    left: 0;
+    min-height: 300px;
+    height: 393px;
+}
+
+.nav-menu .std-menu.deactive {
+	display: none;
+}
+
+.nav-menu .std-menu > li {
+    width: 315px;
+}
+
+.nav-menu .std-menu > li span,
+.nav-menu .std-menu > li a {
+    height: auto;
+}
+
+.nav-menu .std-menu:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+    background-color: #255bc7;
+}
+
+.nav-menu .std-menu .sub-menu-wrap {
+    padding: 10px 15px; /*mega-merge sept 2015*/
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 315px;
+    width: 654px;
+    height: 393px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-rule: 1px dotted #ccc;
+    -moz-column-rule: 1px dotted #ccc;
+    column-rule: 1px dotted #ccc;
+    -moz-column-fill: auto;
+    column-fill: auto;
+    background: #ffffff url('../Images/nav/bg_menu_5.jpg') no-repeat right top;
+    border: 1px solid #e0e1dd;
+    border-top: none;
+    box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137); /* same as std-menu */
+}
+
+.nav-menu .active + .sub-menu-wrap, 
+.feature_nav.active .feature-menu-wrap, 
+.feature_nav.active .nav-menu.top-menu, 
+.feature_nav.active .nav-menu.top-menu .std-menu, 
+.feature_nav.active .nav-menu.top-menu .sub-menu-wrap {
+    display: block;
+}
+
+.feature-menu-wrap {
+    display: none;
+    position: absolute;
+    top: 48px;
+    width: 500px;
+    height: 335px;
+    background: #ffffff url('../Images/nav/bg_menu_6.jpg') no-repeat right bottom;
+    border: 1px solid #e0e1dd;
+    box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);
+    z-index: 1001;
+    background-size: 452px 280px;
+ }
+ 
+ .k-ie .feature-menu-wrap {
+     top: 48px; /*IE only*/
+ }
+ 
+ .feature-menu-header {
+     padding: 10px 15px 15px;
+     background-color: #f5f6f7;
+     font-size: 24px;
+     color: #666;
+     font-weight: normal;
+     font-family: foco;
+ }
+ 
+.feature-menu-header .logo {
+    width: 60px;
+    height: 26px;
+    background: transparent url('../Images/sage_300_logo.png') no-repeat left top;
+    display: inline-block;
+    background-size: 100px;
+    position: relative;
+    top: 6px;
+}
+ 
+ .feature-menu-content {
+     padding: 15px;
+     color: #777777;
+     line-height: 1.5;
+ }
+ 
+.feature-menu-content p {
+    margin-bottom: 14px;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #FFF, 1px 1px 0 #fff;
+    max-width: 360px;
+}
+ 
+.feature-menu-content h4 {
+    font-weight: bold;
+    line-height: 3;
+    color: #333333;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #00a4cf;
+    margin-left: 0 !important;
+    font-size: 12px !important;
+    height: 30px;
+    padding: 6px !important;
+}
+
+.btn-info:hover, 
+.btn-info:focus, 
+.btn-info:active, 
+.btn-info.active {
+    color: #ffffff;
+    background-color: #007c9c;
+    border-color: #007492;
+}
+
+  
+.my-report {
+    line-height: 1.5;
+}
+ 
+.my-report li:after {
+    content:"";
+    padding: 0 10px;
+    vertical-align: baseline;
+    margin: 0 0 0 6px;
+    background: transparent url('../Images/sprite_mega_menu.png') no-repeat left 2px;
+}
+
+.nav-menu .menu-section {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    /*margin: 0 0 12px;*/
+    min-height: 300px; /* 3 column mega-menu */
+}
+
+.nav-menu .menu-section ul {
+    padding: 0;
+}
+
+.nav-menu .menu-section li {
+    list-style-type: none;
+    margin: 0 0 8px;
+}
+
+.nav-menu .menu-section li:last-child {
+    padding-bottom: 0 !important; /* to override important from old menu. remove once old menu code is cleaned up.*/
+}
+
+.nav-menu .menu-section .sub-heading {
+    padding: 5px 0 0 0; /* mega-merge Sept 2015 - top padding reduced. */
+}
+
+.nav-menu .menu-section .sub-heading:first-child {
+    padding-top: 0;
+}
+
+.nav-menu .menu-section a {
+    padding: 0;
+    margin: 0 0 6px;
+}
+
+.nav-menu .menu-section a:hover {
+    color: #255bc7;
+    background-color: transparent;
+}
+
+
+/*New UI*/
+
+
+.nav-menu .std-menu:after {
+    content: "r";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #e0e1dd;
+    font-size: 64px;
+    text-shadow: 1px 1px 0 #fff;
+    z-index: -1;
+}
+
+.nav-menu .std-menu > li > a,
+.nav-menu .std-menu > li > span {
+  padding: 5px 12px; /*New UI*/
+  font-size: 14px;
+  background-position: 99% -50px;
+}
+.nav-menu .std-menu > li > a.active,
+.nav-menu .std-menu > li > span.active {
+  background-position: 99% -81px;
+}
+.nav-menu .menu-ap .std-menu:after {
+  content: "7";
+}
+.nav-menu .menu-ar .std-menu:after {
+  content: "8";
+}
+.nav-menu .menu-gl .std-menu:after {
+  content: "W";
+}
+.nav-menu .menu-ic .std-menu:after {
+  content: "Q";
+}
+.nav-menu .menu-oe .std-menu:after {
+  content: "\a7";
+}
+.nav-menu .menu-more .std-menu:after {
+  content: "J";
+}
+
+.nav-menu .sub-menu-wrap {
+  /*padding: 10px 15px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 315px;
+  width: 654px;
+  height: 395px;
+  background: #ffffff url('../Images/nav/bg_menu_5.jpg') no-repeat right top;
+  border: 1px solid #e0e1dd;
+  border-top: none;
+  box-shadow: 14px 14px 20px 0 rgba(0, 0, 0, 0.137);*/
+  /* same as std-menu */
+}
+.nav-menu .sub-menu-wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.09)), color-stop(100%, rgba(0, 0, 0, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.09) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C */
+}
+.nav-menu .sub-menu-wrap:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  right: -1px;
+  height: 4px;
+  background-color: #255bc7;
+}
+.nav-menu .active + .sub-menu-wrap {
+  display: block;
+}
+.nav-menu .menu-ap .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_5.jpg');
+}
+.nav-menu .menu-ar .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_4.jpg');
+}
+.nav-menu .menu-gl .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_7.jpg');
+}
+.nav-menu .menu-ic .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_6.jpg');
+}
+.nav-menu .menu-oe .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_1.jpg');
+}
+.nav-menu .menu-po .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_9.jpg');
+}
+.nav-menu .menu-more .sub-menu-wrap {
+  background-image: url('../Images/nav/bg_menu_11.jpg');
+}
+.nav-menu .menu-section {
+  position: relative;
+  /* padding: 0 0 0 55px; */
+  margin: 0 0 15px;
+  /* min-height: 55px;
+
+    &:before {
+      content: "r";
+      font-family: "Sage Armonye Icons";
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      speak: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      vertical-align: top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      font-size: 24px;
+      background: #41a940;
+      padding: 10px 10px 10px 11px;
+      height: 44px;
+      width: 44px;
+      border-radius: 22px;
+    }
+
+    &.menu-type-report:before {
+      content: "L";
+    }
+
+    &.menu-type-inquiry:before {
+      content: "&";
+    } */
+}
+
+/******************************************************************************************************/
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navigation > ul > li:hover > ul {
+    display: block;
+}
+
+/** SDK menu in top navigation **/
+.nav-menu.top-menu {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 700px;
+    height: 393px;
+    z-index: 1001;
+    border-top: 1px solid #d9dadc;
+}
+
+.top-menu ul.std-menu {
+    top: 0;
+    width: 220px;
+}
+
+.nav-menu.top-menu .std-menu .sub-menu-wrap {
+    display: none;
+    background:  #ffffff url('../Images/nav/bg_menu_2.jpg') no-repeat right top;
+    left: 218px;
+    width: 482px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-rule: 1px dotted #ccc;
+    -moz-column-rule: 1px dotted #ccc;
+    column-rule: 1px dotted #ccc;
+    -moz-column-fill: auto;
+    column-fill: auto;
+}
+
+.nav-menu.top-menu .std-menu:before,
+.nav-menu.top-menu .sub-menu-wrap:after {
+    background-color: #255bc7;
+    height: 0;
+}
+
+.nav-menu.top-menu .std-menu > li {
+    width: 220px;
+}
+
+.nav-menu.top-menu .std-menu .sub-menu-wrap li a {
+    font-size: 12px;
+}
+
+
+
