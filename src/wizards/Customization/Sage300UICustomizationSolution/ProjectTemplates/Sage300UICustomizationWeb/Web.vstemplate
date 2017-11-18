@@ -156,8 +156,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
@@ -165,9 +163,6 @@
             </Folder>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
-            </Folder>
-            <Folder Name="Wizard" TargetFolderName="Wizard">
-              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
           </Folder>
@@ -207,9 +202,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
             </Folder>
-            <Folder Name="IC" TargetFolderName="IC">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.IC.Common.js">Sage.CA.SBS.ERP.Sage300.IC.Common.js</ProjectItem>
-            </Folder>
             <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
             </Folder>
@@ -219,11 +211,6 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
               </Folder>
-            </Folder>
-            <Folder Name="Revaluation" TargetFolderName="Revaluation">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js">Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
@@ -252,10 +239,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="DocumentHistory.cshtml">DocumentHistory.cshtml</ProjectItem>
-            </Folder>
-            <Folder Name="ExportImport" TargetFolderName="ExportImport">
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Partials" TargetFolderName="Partials">
               <ProjectItem ReplaceParameters="true" TargetFileName="_AddLineButton.cshtml">_AddLineButton.cshtml</ProjectItem>
