@@ -28,6 +28,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+<<<<<<< HEAD
 using ValuedPartner.TU.BusinessRepository.Mappers;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
@@ -35,6 +36,15 @@ using ValuedPartner.TU.Interfaces.BusinessRepository;
 #endregion
 
 namespace ValuedPartner.TU.BusinessRepository
+=======
+using ValuedParter.TU.BusinessRepository.Mappers;
+using ValuedParter.TU.Models;
+using ValuedParter.TU.Interfaces.BusinessRepository;
+
+#endregion
+
+namespace ValuedParter.TU.BusinessRepository
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 {
     /// <summary>
     /// Class Receipt Header Repository

@@ -47,8 +47,6 @@ namespace ValuedPartner.TU.Models
             ReceiptDetail = new EnumerableResponse<ReceiptDetail>();
             ReceiptOptionalField = new EnumerableResponse<ReceiptOptionalField>();
             ReceiptDetailOptionalField = new EnumerableResponse<ReceiptDetailOptionalField>();
-            ReceiptDetailLotNumber = new EnumerableResponse<ReceiptDetailLotNumber>();
-            ReceiptDetailSerialNumber = new EnumerableResponse<ReceiptDetailSerialNumber>();
             // Casts from List to IList.
         }
 
@@ -392,18 +390,6 @@ namespace ValuedPartner.TU.Models
         /// </summary>
         [IgnoreExportImport]
         public EnumerableResponse<ReceiptDetailOptionalField> ReceiptDetailOptionalField { get; set; }
-
-        /// <summary>
-        /// Gets or sets ReceiptDetailLotNumber
-        /// </summary>
-        [IgnoreExportImport]
-        public EnumerableResponse<ReceiptDetailLotNumber> ReceiptDetailLotNumber { get; set; }
-
-        /// <summary>
-        /// Gets or sets ReceiptDetailSerialNumber
-        /// </summary>
-        [IgnoreExportImport]
-        public EnumerableResponse<ReceiptDetailSerialNumber> ReceiptDetailSerialNumber { get; set; }
 
         /// <summary>
         /// IsOptionalFields is for validating the OptionalFields checkbox

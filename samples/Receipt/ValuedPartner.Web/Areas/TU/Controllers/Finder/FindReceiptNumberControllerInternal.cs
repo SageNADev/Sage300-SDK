@@ -21,10 +21,17 @@
 #region Namespace
 
 using Microsoft.Practices.Unity;
+<<<<<<< HEAD
 using ValuedPartner.TU.Interfaces.Services;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Models.Enums;
 using ValuedPartner.TU.Resources.Forms;
+=======
+using ValuedParter.TU.Interfaces.Services;
+using ValuedParter.TU.Models;
+using ValuedParter.TU.Models.Enums;
+using ValuedParter.TU.Resources.Forms;
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Finder;
@@ -41,7 +48,11 @@ using System.Reflection;
 
 #endregion
 
+<<<<<<< HEAD
 namespace ValuedPartner.Web.Areas.TU.Controllers.Finder
+=======
+namespace ValuedParter.Web.Areas.TU.Controllers.Finder
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 {
     /// <summary>
     /// Find Receipt Number Controller Internal
@@ -142,7 +153,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers.Finder
                     title = CommonResx.FiscalPeriod,
                     attributes = FinderConstant.CssClassGridColumn10,
                     headerAttributes = FinderConstant.CssClassGridColumn10,
+<<<<<<< HEAD
                     PresentationList = EnumUtility.GetItemsList<ValuedPartner.TU.Models.Enums.FiscalPeriod>()
+=======
+                    PresentationList = EnumUtility.GetItemsList<ValuedParter.TU.Models.Enums.FiscalPeriod>()
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
                 },
                 
                  new GridField

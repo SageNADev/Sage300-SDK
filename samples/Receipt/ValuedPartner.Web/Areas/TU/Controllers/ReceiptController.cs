@@ -41,7 +41,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
     public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
+=======
+        public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
     {
         #region Private Variables
 
@@ -131,7 +135,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="filters">Filters</param>
         /// <returns>Receipt data</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         public virtual JsonNetResult GetReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+=======
+        public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -188,7 +196,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="model">The detail model</param>
         /// <returns>returns  Receipt Viewmodel</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         public virtual JsonNetResult SaveDetail(ReceiptDetail model)
+=======
+        public virtual JsonNetResult SaveDetail(ReceiptDetail detail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -411,12 +423,16 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
             } 
         }
 
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         /// <summary>
         /// Get vendor details by vendor number id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public JsonNetResult GetVendorDetail(string id) 
+=======
+        public JsonNetResult GetVendorDetail(string vendorNumber) 
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -485,7 +501,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="yesNo">Check Yes No confirmation selection</param>
         /// <returns>Receipt</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         public virtual JsonNetResult Post(ReceiptHeader model, long sequenceNumber, bool yesNo)
+=======
+        public virtual JsonNetResult Post(ReceiptHeader headerModel, long sequenceNumber, bool yesNo)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -505,7 +525,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="isDetail">True / False</param>
         /// <returns>Receipt Detail Optional Field</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> model, string receiptNumber, bool isDetail)
+=======
+        public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> receiptOptionalField, string receiptNumber, bool isDetail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -525,7 +549,12 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Enumerable Response of Receipts Optional Field</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber, int pageSize)
+=======
+        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
+            int pageSize)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -604,10 +633,17 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <summary>
         /// Set detail to current row
         /// </summary>
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         /// <param name="model">Current ReceiptDetail model</param>
         /// <returns>returns ReceiptDetail model</returns>
         [HttpPost]
         public virtual JsonNetResult SetDetail(ReceiptDetail model)
+=======
+        /// <param name="currentDetail">Current ReceiptDetail model</param>
+        /// <returns>returns ReceiptDetail model</returns>
+        [HttpPost]
+        public virtual JsonNetResult SetDetail(ReceiptDetail currentDetail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {

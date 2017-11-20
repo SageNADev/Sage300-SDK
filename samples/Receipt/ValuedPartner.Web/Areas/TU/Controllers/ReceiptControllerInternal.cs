@@ -32,11 +32,19 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Models.Enums;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.Web.Areas.TU.Models;
+=======
+using ValuedParter.TU.Interfaces.BusinessRepository;
+using ValuedParter.TU.Models;
+using ValuedParter.TU.Models.Enums;
+using ValuedParter.TU.Resources.Forms;
+using ValuedParter.Web.Areas.TU.Models;
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -199,7 +207,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                 var items = model.ReceiptDetail.Items.Where(x => x.ItemNumber != null && !(x.IsDeleted && x.IsNewLine));
                 if (items.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                 {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                     RepoService.SaveDetails((IEnumerable<ReceiptDetail>)items);
+=======
+                    RepoService.SaveDetails(items);
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                 }
             }
 
@@ -309,7 +321,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                     var receiptDetail = items as ReceiptDetail[] ?? items.ToArray();
                     if (receiptDetail.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                     {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                         RepoService.SaveDetails((IEnumerable<ReceiptDetail>)receiptDetail);
+=======
+                        RepoService.SaveDetails(receiptDetail);
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                     }
                 }
             }
@@ -388,7 +404,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                     {
                         if (details.Any(x => x.HasChanged))
                         {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                             if (RepoService.SaveDetails((IEnumerable<ReceiptDetail>)details))
+=======
+                            if (RepoService.SaveDetails(details))
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                             {
                                 if (currentRow != null)
                                 {
@@ -400,7 +420,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
 
                         GetPagedDetail(pageNumber, pageSize);
                         header = CreateDetail(model, pageSize, pageNumber, currentRow);
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                         data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
+=======
+                        data = header.ReceiptDetail.Items.FirstOrDefault();
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
 
                         if (data != null)
                         {
@@ -416,7 +440,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                         }
                         if (details.Any(x => x.IsNewLine))
                         {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                             RepoService.SaveDetails(details as IEnumerable<ReceiptDetail>);
+=======
+                            RepoService.SaveDetails(details);
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                         }
                         receiptDetails = model.ReceiptDetail.Items.Take(pageSize - 1).ToList();
                         foreach (var setDetail in receiptDetails)
@@ -438,7 +466,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                     }
                     if (details.Any(x => x.HasChanged))
                     {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                         if (RepoService.SaveDetails((IEnumerable<ReceiptDetail>)details))
+=======
+                        if (RepoService.SaveDetails(details))
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                         {
                             if (currentRow != null)
                             {
@@ -450,7 +482,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                     var pagedDetails = GetPagedDetail(pageNumber, pageSize, model);
                     var totalRecords = pagedDetails.TotalResultsCount;
                     header = CreateDetail(model, pageSize, pageNumber, currentRow);
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                     data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
+=======
+                    data = header.ReceiptDetail.Items.FirstOrDefault();
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                     receiptDetails = new List<ReceiptDetail>(pagedDetails.Items.ToList());
                     if (data != null)
                     {
@@ -479,7 +515,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
                     return header;
                 }
                 header = CreateDetail(model, pageSize, pageNumber, null);
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
                 data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
+=======
+                data = header.ReceiptDetail.Items.FirstOrDefault();
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
 
                 if (data != null)
                 {
@@ -590,7 +630,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <returns>Receipt Batch Viewmodel - that contains the info about the saved details</returns>
         internal ReceiptHeader SaveDetails(ReceiptHeader model)
         {
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
             RepoService.SaveDetails(model.ReceiptDetail.Items as IEnumerable<ReceiptDetail>);
+=======
+            RepoService.SaveDetails(model.ReceiptDetail.Items );
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
             var refreshedModel = RepoService.Refresh(model);
             refreshedModel.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(refreshedModel.AdditionalCostCurrency));
             if (refreshedModel.ReceiptDetail.Items.Any())
@@ -652,7 +696,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         internal ReceiptDetail GetRowValues(ReceiptDetail model, int eventType)
         {
             var result = RepoService.GetRowValues(model, eventType);
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
             if (model.IsNewLine == true)
+=======
+            if (model.IsNewLine)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
             {
                 result.IsNewLine = true;
             }
@@ -827,7 +875,11 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         public virtual ReceiptDetail SetDetail(ReceiptDetail currentDetail)
         {
             var model = RepoService.SetDetail(currentDetail);
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
             return model != null ? model.ReceiptDetail.Items.FirstOrDefault() as ReceiptDetail : null;
+=======
+            return model?.ReceiptDetail.Items.FirstOrDefault();
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptControllerInternal.cs
         }
 
         /// <summary>
@@ -1033,7 +1085,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="currencyCode">The currency code.</param>
         /// <returns></returns>
-        public CurrencyCode GetCurrencyDescription(string currencyCode)
+        private CurrencyCode GetCurrencyDescription(string currencyCode)
         {
             var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
             Expression<Func<CurrencyCode, bool>> filter = code => code.CurrencyCodeId == currencyCode.ToUpper();
@@ -1202,8 +1254,7 @@ namespace ValuedPartner.Web.Areas.TU.Controllers
         /// <returns>view model</returns>
         private ReceiptViewModel GetViewModel(ReceiptHeader data, ReceiptHeader newData, string receiptNumber, Operation operation)
         {
-
-            var additionalCurrencyDescription = string.Empty;
+            string additionalCurrencyDescription;
             var currencyCode = CurrencyDescription(out additionalCurrencyDescription, newData);
             var message = string.Empty;
             var defaultReceiptNumber = string.Empty;

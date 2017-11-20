@@ -19,6 +19,15 @@
       <Folder Name="Areas" TargetFolderName="Areas">
         <Folder Name="Core" TargetFolderName="Core">
           <Folder Name="Scripts" TargetFolderName="Scripts">
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js</ProjectItem>
+            </Folder>
             <Folder Name="Authentication" TargetFolderName="Authentication">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
@@ -58,6 +67,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js">Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js</ProjectItem>
@@ -65,6 +75,16 @@
           </Folder>
           <Folder Name="Views" TargetFolderName="Views">
             <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiry.cshtml">_AdhocInquiry.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiryFilterControl.cshtml">_AdhocInquiryFilterControl.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SavedTab.cshtml">_SavedTab.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SaveQueryPanel.cshtml">_SaveQueryPanel.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
             <Folder Name="Authentication" TargetFolderName="Authentication">
               <ProjectItem ReplaceParameters="true" TargetFileName="OnPremiseLogin.cshtml">OnPremiseLogin.cshtml</ProjectItem>
               <Folder Name="Partials" TargetFolderName="Partials">
@@ -136,8 +156,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
@@ -145,9 +163,6 @@
             </Folder>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
-            </Folder>
-			<Folder Name="Wizard" TargetFolderName="Wizard">
-              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
           </Folder>
@@ -190,10 +205,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="DocumentHistory.cshtml">DocumentHistory.cshtml</ProjectItem>
-            </Folder>
-            <Folder Name="ExportImport" TargetFolderName="ExportImport">
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Partials" TargetFolderName="Partials">
               <ProjectItem ReplaceParameters="true" TargetFileName="_AddLineButton.cshtml">_AddLineButton.cshtml</ProjectItem>
@@ -279,9 +290,17 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
           </Folder>
           <Folder Name="login" TargetFolderName="login">
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_chrome.png">browser_chrome.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_ff.png">browser_ff.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_ie.png">browser_ie.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_o.png">browser_o.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_gray.png">sage_300_logo_gray.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-sq.png">sage300-logo-sq.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           </Folder>
           <Folder Name="ui" TargetFolderName="ui">
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
@@ -300,6 +319,7 @@
           </Folder>
           <Folder Name="less" TargetFolderName="less">
             <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="default-home.less">default-home.less</ProjectItem>
             <Folder Name="framework" TargetFolderName="framework">
               <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="alerts.less">alerts.less</ProjectItem>
@@ -330,6 +350,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="progress-bars.less">progress-bars.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="scaffolding.less">scaffolding.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="setup-wizard.less">setup-wizard.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="side-nav.less">side-nav.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="summary.less">summary.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="tables.less">tables.less</ProjectItem>
 			  <ProjectItem ReplaceParameters="false" TargetFileName="tables_keybinding.less">tables_keybinding.less</ProjectItem>
@@ -345,6 +366,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             </Folder>
             <Folder Name="libs" TargetFolderName="libs">
               <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons.less">glyphicons.less</ProjectItem>
@@ -454,6 +476,10 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="inc_exclude.png">inc_exclude.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="inc_exclude_disabled.png">inc_exclude_disabled.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="inline_validation_icon.png">inline_validation_icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inquiry-type.png">inquiry-type.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inquiry-type-inquiry.png">inquiry-type-inquiry.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inquiry-type-private.png">inquiry-type-private.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="inquiry-type-template.png">inquiry-type-template.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="ItemWizardWelcome.jpg">ItemWizardWelcome.jpg</ProjectItem>
           <Folder Name="Kendo" TargetFolderName="Kendo">
             <Folder Name="Default" TargetFolderName="Default">
@@ -480,25 +506,39 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="menu3dLevel.png">menu3dLevel.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Msg_icons.png">Msg_icons.png</ProjectItem>
           <Folder Name="nav" TargetFolderName="nav">
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_1.jpg">bg_menu_1.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_10.jpg">bg_menu_10.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_11.jpg">bg_menu_11.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_12.jpg">bg_menu_12.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_2.jpg">bg_menu_2.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_3.jpg">bg_menu_3.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_4.jpg">bg_menu_4.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_5.jpg">bg_menu_5.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_6.jpg">bg_menu_6.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_7.jpg">bg_menu_7.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_8.jpg">bg_menu_8.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_9.jpg">bg_menu_9.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-1.jpg">bg-menu-1.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-10.jpg">bg-menu-10.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-11.jpg">bg-menu-11.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-12.jpg">bg-menu-12.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-13.jpg">bg-menu-12.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-2.jpg">bg-menu-2.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-3.jpg">bg-menu-3.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-4.jpg">bg-menu-4.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-5.jpg">bg-menu-5.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-6.jpg">bg-menu-6.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-7.jpg">bg-menu-7.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-8.jpg">bg-menu-8.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-9.jpg">bg-menu-9.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_1.png">icon_sdk_1.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_10.png">icon_sdk_10.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_2.png">icon_sdk_2.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_3.png">icon_sdk_3.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_4.png">icon_sdk_4.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_5.png">icon_sdk_5.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_6.png">icon_sdk_6.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_7.png">icon_sdk_7.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_8.png">icon_sdk_8.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_9.png">icon_sdk_9.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
           </Folder>
           <ProjectItem ReplaceParameters="false" TargetFileName="pencil-icon.png">pencil-icon.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="QuestionIcon_Default_Dark.png">QuestionIcon_Default_Dark.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="QuestionIcon_Select.png">QuestionIcon_Select.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="quick-menu-icon.png">quick-menu-icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="quick-menu-icon_rev.png">quick-menu-icon_rev.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="reports.png">reports.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="reportsIconwt.png">reportsIconwt.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Req-Field.png">Req-Field.png</ProjectItem>
@@ -507,6 +547,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.gif">sage_300_logo.gif</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo.png">sage_logo.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_One.png">sage_One.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search.png">search.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search_icon.png">search_icon.png</ProjectItem>
@@ -529,6 +570,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="top-bg.png">top-bg.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="top_nav_bg.png">top_nav_bg.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="vertical-divider.png">vertical-divider.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="vpf-logo.png">vpf-logo.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="white-down-arrow.png">white-down-arrow.png</ProjectItem>
@@ -569,6 +611,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
           <Folder Name="Kendo" TargetFolderName="Kendo">
             <Folder Name="common" TargetFolderName="common">
               <ProjectItem ReplaceParameters="false" TargetFileName="adaptive.less">adaptive.less</ProjectItem>
@@ -606,7 +649,38 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="virtuallist.less">virtuallist.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="window.less">window.less</ProjectItem>
             </Folder>
+            <Folder Name="default" TargetFolderName="default">
+              <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="imagebrowser.png">imagebrowser.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="indeterminate.gif">indeterminate.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading_2x.gif">loading_2x.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="markers.png">markers.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="markers_2x.png">markers_2x.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="slider-h.gif">slider-h.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="slider-v.gif">slider-v.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite_2x.png">sprite_2x.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite_kpi.png">sprite_kpi.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sprite_kpi_2x.png">sprite_kpi_2x.png</ProjectItem>
+            </Folder>
 			<Folder Name="fonts" TargetFolderName="fonts">
+        <Folder Name="DejaVu" TargetFolderName="DejaVu">
+				  <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans.ttf">DejaVuSans.ttf</ProjectItem>
+				  <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Bold.ttf">DejaVuSans-Bold.ttf</ProjectItem>
+				  <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-BoldOblique.ttf">DejaVuSans-BoldOblique.ttf</ProjectItem>
+				  <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-ExtraLight.ttf">DejaVuSans-ExtraLight.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono.ttf">DejaVuSansMono.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Bold.ttf">DejaVuSansMono-Bold.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-BoldOblique.ttf">DejaVuSansMono-BoldOblique.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Oblique.ttf">DejaVuSansMono-Oblique.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Oblique.ttf">DejaVuSans-Oblique.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif.ttf">DejaVuSerif.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Bold.ttf">DejaVuSerif-Bold.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-BoldItalic.ttf">DejaVuSerif-BoldItalic.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Italic.ttf">DejaVuSerif-Italic.ttf</ProjectItem>
+			  </Folder>
 			  <Folder Name="glyphs" TargetFolderName="glyphs">
 				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.eot">KendoUIGlyphs.eot</ProjectItem>
 				<ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
@@ -779,6 +853,7 @@
         </Folder>
         <Folder Name="Kendo" TargetFolderName="Kendo">
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-CA.min.js">kendo.culture.en-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.min.js">kendo.culture.en-ZA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
@@ -792,13 +867,14 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-HK.min.js">kendo.culture.zh-HK.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-SG.min.js">kendo.culture.zh-SG.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-TW.min.js">kendo.culture.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-CA.min.js">kendo.messages.en-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.min.js">kendo.messages.es-ES.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.min.js">kendo.messages.fr-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-CN.min.js">kendo.messages.zh-CN.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-HK.min.js">kendo.messages.zh-HK.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-TW.min.js">kendo.messages.zh-TW.min.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
         </Folder>
         <Folder Name="knockout" TargetFolderName="knockout">
           <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
@@ -813,6 +889,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
         <Folder Name="Portal" TargetFolderName="Portal">
           <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RecentWindows.js">RecentWindows.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>

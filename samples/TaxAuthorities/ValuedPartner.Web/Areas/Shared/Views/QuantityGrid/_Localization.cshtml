@@ -1,0 +1,26 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using QuantityCommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.QuantityCommonResx;
+@using CommonResx=Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx;
+
+<script type="text/javascript">
+
+    var quantityGridResources = {
+        ExpectedShipDate: '@Html.SageRaw(QuantityCommonResx.ExpectedShipDate)',
+        ExpectedArrivalDate: '@Html.SageRaw(QuantityCommonResx.ExpectedArrivalDate)',
+        Location: '@Html.SageRaw(QuantityCommonResx.Location)',
+        Date: '@Html.SageRaw(QuantityCommonResx.Date)',
+        Quantity: '@Html.SageRaw(QuantityCommonResx.Quantity)',
+        CustomerNumber: '@Html.SageRaw(QuantityCommonResx.CustomerNumber)',
+        CustomerName: '@Html.SageRaw(QuantityCommonResx.CustomerName)',
+        VendorNumber: '@Html.SageRaw(QuantityCommonResx.VendorNumber)',
+        VendorName: '@Html.SageRaw(QuantityCommonResx.VendorName)',
+        OrderNumber: '@Html.SageRaw(QuantityCommonResx.OrderNumber)',
+        PONumber: '@Html.SageRaw(QuantityCommonResx.PoNumber)',
+        QuantityonSoTitle: '@Html.SageRaw(QuantityCommonResx.QuantityonSo)',
+        QuantityonPoTitle: '@Html.SageRaw(QuantityCommonResx.QuantityonPo)',
+        QuantityCommittedTitle: '@Html.SageRaw(QuantityCommonResx.QuantityCommitted)',
+        DetailTitle: '@Html.SageRaw(CommonResx.Detail)',
+    };
+</script>

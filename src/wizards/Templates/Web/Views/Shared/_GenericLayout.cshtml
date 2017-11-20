@@ -25,7 +25,7 @@
 
     </section>
 
-    <section class="footer">
+    <section class="footer affix-bottom">
         <div class="wrapper">
             <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
             @string.Format(@CommonResx.GlobalCopyright, @DateTime.Today.Year)
@@ -34,5 +34,12 @@
     <div id="task_viewnote"></div>
     <div id="task_createnote"></div>
 
+<script>
+    function affixFooter() {
+        $('.footer').removeClass('affix-bottom').addClass(function () {
+            if (window.innerHeight >= $('body').outerHeight(true)) return 'affix-bottom';
+        });
+    }
+</script>
 </body>
 </html>

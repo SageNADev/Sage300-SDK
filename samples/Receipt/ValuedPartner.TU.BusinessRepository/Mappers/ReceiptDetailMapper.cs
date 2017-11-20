@@ -35,7 +35,10 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
     /// <summary>
     /// Class for ReceiptDetail mapping
     /// </summary>
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.TU.BusinessRepository/Mappers/ReceiptDetailMapper.cs
     /// <typeparam name="T">ReceiptDetail</typeparam>
+=======
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.TU.BusinessRepository/Mappers/ReceiptDetailMapper.cs
     public class ReceiptDetailMapper: ModelMapper<ReceiptDetail>  
     {
         #region Constructor

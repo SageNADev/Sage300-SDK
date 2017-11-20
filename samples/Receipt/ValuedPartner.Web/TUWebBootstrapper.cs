@@ -18,10 +18,17 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/TUWebBootstrapper.cs
 using ValuedPartner.TU.Models;
 using ValuedPartner.Web.Areas.TU.Controllers;
 using ValuedPartner.Web.Areas.TU.Controllers.Finder;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
+=======
+using ValuedParter.TU.Models;
+using ValuedParter.Web.Areas.TU.Controllers;
+using ValuedParter.Web.Areas.TU.Controllers.Finder;
+using ValuedParter.TU.Interfaces.BusinessRepository;
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/TUWebBootstrapper.cs
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
@@ -31,9 +38,15 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/TUWebBootstrapper.cs
 using ValuedPartner.Web.Areas.TU.Constants;
 
 namespace ValuedPartner.Web
+=======
+using ValuedParter.Web.Areas.TU.Constants;
+
+namespace ValuedParter.Web
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/TUWebBootstrapper.cs
 {
     /// <summary>
     /// TU Bootstrapper Class

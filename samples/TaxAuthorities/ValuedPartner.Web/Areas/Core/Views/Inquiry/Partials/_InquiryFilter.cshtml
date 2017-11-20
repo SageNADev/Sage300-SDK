@@ -5,10 +5,10 @@
 @model List<Sage.CA.SBS.ERP.Sage300.Common.Models.InquiryFilterControl>
 
 @functions{
-    public string GenerateId(string type, int idx, string field, ref List<object> renderedObjects, string evt = null)
+    public string GenerateId(string type, int idx, string field, ref List<object> renderedObjects)
     {
         string id = string.Format("filter_{0}_{1}{2}", idx, type, field);
-        renderedObjects.Add(new { objectType = type, Id = id, Event = evt });
+        renderedObjects.Add(new { objectType = type, Id = id});
         return id;
     }
 }
@@ -28,16 +28,6 @@
                     var fromTextBoxId = GenerateId("fromtextbox", idx, control.Field, ref renderedObjects);
                     var toTextBoxId = GenerateId("totextbox", idx, control.Field, ref renderedObjects);
                     var toFinderGroup = GenerateId("finderGroup", idx, control.Field, ref renderedObjects);
-                    var objEvent = String.Format("var onChangeFunc = function () {{"
-                        + "if(condition) {{"
-                        + "$(\"#{0}\").show();"
-                        + "$(\"#{1}\").attr('placeholder', 'First');"
-                        + "$(\"#{2}\").attr('placeholder', 'Last');"
-                        + "}} else {{"
-                        + "$(\"#{0}\").val(\"\").hide();"
-                        + "$(\"#{1}\").removeAttr('placeholder');"
-                        + "$(\"#{2}\").removeAttr('placeholder');" + "}}"
-                        + " }}; onChangeFunc();", toFinderGroup, fromTextBoxId, toTextBoxId);
                     <div class="form-group">
                         <div class="dropdown-group">
                             <select class="default single-select" id=@GenerateId("dropdown", idx, control.Field, ref renderedObjects)>
@@ -45,7 +35,7 @@
                             </select>
                         </div>
                         <div class="dropdown-group">
-                            @Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = GenerateId("dropdown", idx, "OperatorField", ref renderedObjects, objEvent) })
+                            @Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = GenerateId("dropdown", idx, "OperatorField", ref renderedObjects) })
                         </div>
                         <div class="finder-group">
                             @Html.KoSageTextBox("frm" + control.Field, new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = fromTextBoxId, @maxlength = control.FieldMaxLength })

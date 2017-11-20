@@ -116,10 +116,8 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappers\ReceiptDetailLotNumberMapper.cs" />
     <Compile Include="Mappers\ReceiptDetailMapper.cs" />
     <Compile Include="Mappers\ReceiptDetailOptionalFieldMapper.cs" />
-    <Compile Include="Mappers\ReceiptDetailSerialNumberMapper.cs" />
     <Compile Include="Mappers\ReceiptHeaderMapper.cs" />
     <Compile Include="Mappers\ReceiptMapper.cs" />
     <Compile Include="Mappers\ReceiptOptionalFieldMapper.cs" />
