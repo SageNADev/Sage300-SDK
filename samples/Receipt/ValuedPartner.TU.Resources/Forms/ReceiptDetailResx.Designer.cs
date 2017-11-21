@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ValuedParter.TU.Resources.Forms {
+namespace ValuedPartner.TU.Resources.Forms {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ValuedParter.TU.Resources.Forms {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ValuedParter.TU.Resources.Forms.ReceiptDetailResx", typeof(ReceiptDetailResx).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ValuedPartner.TU.Resources.Forms.ReceiptDetailResx", typeof(ReceiptDetailResx).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -3,11 +3,13 @@
 // --------------------------------------------------
 
 .header-group-1 {
-  margin: 0 auto 20px;
+  margin: -16px -16px 20px;
 }
 
 .header-wrapper {
   border-bottom: 1px solid @sage-gray;
+  background-color: #ebedef;
+  padding: 16px 16px 0;
 }
 
 .header-headline {
@@ -18,6 +20,8 @@
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 21px;
+    color: #64006e;
+    font-weight: bold;
 
     label {
       font-size: 21px;
@@ -36,7 +40,6 @@
     margin-bottom: 0;
 
     .k-dropdown-wrap {
-      border: 0;
 
       .k-select {
       background: none;
@@ -163,27 +166,34 @@
 
 .flag-required {
   text-align: right;
-  padding: 10px 0 0 0;
+  padding: 10px 0 2px 0;
   color: #7a7b7c;
+  margin-right: 16px;
+
+  label.required:before,
+  .req-option:before {
+    content: "*";
+    font-family: Calibri,Arial;
+    color: #41a940;
+    margin-right: 3px;
+  }
+
+  label.required:after {
+    content: "";
+    margin-right: -4px;
+  }
 }
 
 .header-group-1 > .flag-required {
   margin-bottom: -20px;
 }
 
-.req-option:before {
-  content: "*";
-  margin-right: 3px;
-  color: #007f64;
-  font-family: Calibri, Arial;
-}
-
 .header-view-options {
   display: table-cell;
   text-align: right;
-  vertical-align: middle;
   width: 100%;
   padding-left: 10px;
+  padding-bottom: 10px;
   white-space: nowrap;
 
   .btn-view { 
@@ -198,7 +208,7 @@
     }
 
     &.active { 
-      background-color: #e8effe;
+      background-color: #b1ddf3;
     }
 
     &.btn-view-expand {
@@ -210,5 +220,4 @@
     }
   }
 }
-
 

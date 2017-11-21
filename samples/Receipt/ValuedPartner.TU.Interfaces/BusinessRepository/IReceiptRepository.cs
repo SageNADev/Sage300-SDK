@@ -24,14 +24,14 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository.Base.Statefull;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedParter.TU.Models;
+using ValuedPartner.TU.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
 #endregion
 
-namespace ValuedParter.TU.Interfaces.BusinessRepository
+namespace ValuedPartner.TU.Interfaces.BusinessRepository
 {
     /// <summary>
     ///  Interface for IReceipt Entity 

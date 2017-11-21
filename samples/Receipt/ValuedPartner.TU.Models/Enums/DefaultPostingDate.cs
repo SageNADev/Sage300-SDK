@@ -20,8 +20,8 @@
 
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Resources.Forms;
 
-namespace ValuedParter.TU.Models.Enums
+namespace ValuedPartner.TU.Models.Enums
 {
 }

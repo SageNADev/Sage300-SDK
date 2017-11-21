@@ -25,7 +25,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 
 #endregion
 
-namespace ValuedParter.TU.Models.Enums
+namespace ValuedPartner.TU.Models.Enums
 {
     /// <summary>
     /// Enum for Validate

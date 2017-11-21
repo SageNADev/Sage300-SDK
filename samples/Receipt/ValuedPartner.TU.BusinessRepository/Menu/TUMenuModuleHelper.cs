@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
-namespace ValuedParter.BusinessRepository.Menu
+namespace ValuedPartner.BusinessRepository.Menu
 {
     /// <summary>
     /// TU Menu Module helper

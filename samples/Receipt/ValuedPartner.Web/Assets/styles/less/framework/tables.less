@@ -439,6 +439,8 @@ table {
 
   // grid with 5 rows
   &.small {
+    padding-bottom: 20px;
+    
     .k-grid .k-grid-content {
     height: 167px !important;
     min-height: 167px !important;
@@ -508,7 +510,7 @@ table {
     background-color: @table-bg-accent;
 
     &:hover {
-      background-color: @table-bg-active;
+      background-color: @table-bg-hover;
     }
 
     th {
@@ -548,6 +550,11 @@ table {
         -moz-box-shadow: inset 0 0 0 1px #00a4cf; 
       }
 
+      &.k-state-selected:hover {
+        background-color: @table-bg-active;
+        background-image: none;
+      }
+
       &.first-cell { 
         width: 50px;
         max-width: 55px;
@@ -570,7 +577,7 @@ table {
       background-color: @white;
 
       &:hover {
-        background-color: @table-bg-active;
+        background-color: @table-bg-hover;
       }
     }
 
@@ -951,8 +958,13 @@ table {
   border:1px solid #ababab; 
   max-width: 274px;
   min-width: 260px;
-  margin-top: 6px;
-  margin-left: 1px;
+  margin-top: 7px;
+  margin-left: 0;
+
+  &#divFinderPrefEditCols {
+    margin-top: 0;
+    margin-left: 1px;
+  }
 
   table { 
     word-break: break-all; 
@@ -1035,6 +1047,136 @@ table {
     }
 }
 
+// customize grid - Adhoc Inquiry and Finder specific
+.grid-inquiry,
+.grid-finder {
+  
+  .gridcontrols-group {
+    border: 0;
+    background-color: #fff;
+    padding: 0 10px;
+
+    button[class*=pagesize-] {
+      position: relative;
+      padding: 7px 5px;
+      font-size: 12px;
+    }
+
+    button[class*=pagesize-]:hover,
+    button[class*=pagesize-].active {
+      background-color: #f5f5f5;
+      color: #255bc7;
+    }
+
+    button[class*=pagesize-].active:after {
+      content: "";
+      position: absolute;
+      top: 29px;
+      left: 0;
+      right: 0;
+      border-top: 2px solid #255bc7;
+    }
+
+    button[class*=pagesize-]:focus,
+    button[class*=pagesize-]:active {
+      outline: none;
+    }
+
+    .btn-edit-column {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      color: #255bc7;
+      min-width: initial;
+      margin-left: 30px;
+
+      &:focus {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      }
+
+      &:before {
+        content: "\2217";
+        background: none;
+        font-family: "Sage Armonye Icons";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        font-size: 1.75rem;
+        top: 0px;
+        left: -22px;
+      }
+    }
+  }
+
+
+  // user-preference popup
+
+  .user-preference {
+    display: none;
+    top: 22px;
+    right: -10px;
+    position: absolute;
+    z-index: 10000;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+
+    table thead>tr>td {
+      padding: 6px 0;
+      font-weight: bold;
+    }
+
+    .table-scroll {
+      min-height: 300px;
+      position: relative;
+
+      label {
+        text-align: left;
+        padding-left: 0;
+        color: #2e2e2e;
+      }
+
+      thead label {
+        padding-left: 8px;
+      }
+
+      table td {
+        background: none;
+
+        &:before {
+        position: absolute;
+        content: "\e023";
+        font-family: Sage Armonye Icons;
+        color: #bbb;
+        font-size: 18px;
+        left: -1px;
+        line-height: 1.4;
+        }
+      }
+
+      .checkbox {
+        margin: 3px 0 3px;
+      }
+    }
+
+    input[class*=btn-] {
+      float: right;
+      margin: 4px;
+    }
+
+    a {
+      display: block;
+      line-height: 20px;
+    }
+  }
+}
+
+
 // Edge specific styles for customize grid
 
 .k-webkit46 .user-preference {
@@ -1062,9 +1204,9 @@ table {
 }
 
 .gh320 .k-grid-content {
-  min-height:317px !important; 
-  max-height:317px !important; 
-  height:317px;
+  min-height:321px !important; 
+  max-height:321px !important; 
+  height:321px;
 }
 
 .gh400 .k-grid-content {
@@ -1411,3 +1553,14 @@ div.spreadsheet {
   }
 }
 
+// Import error message table 
+
+.result-grid-wrapper,
+#exportResultGrid { 
+
+   table tr td {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    padding: 5px 20px;
+   } 
+}

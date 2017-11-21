@@ -1,6 +1,6 @@
 ﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 
-"use strict"
+//"use strict"
 
 var widgetUI = widgetUI || {};
 

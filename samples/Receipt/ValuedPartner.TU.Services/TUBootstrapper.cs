@@ -24,13 +24,13 @@ using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using System.ComponentModel.Composition;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Interfaces.BusinessRepository;
-using ValuedParter.TU.BusinessRepository;
-using ValuedParter.TU.Services;
-using ValuedParter.TU.Interfaces.Services;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.BusinessRepository;
+using ValuedPartner.TU.Services;
+using ValuedPartner.TU.Interfaces.Services;
 
-namespace ValuedParter.TU.Services
+namespace ValuedPartner.TU.Services
 {
     /// <summary>
     /// TU Bootstrapper Class

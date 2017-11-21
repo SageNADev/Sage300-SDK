@@ -24,14 +24,14 @@ using System.Linq;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System;
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Models
+namespace ValuedPartner.Web.Areas.TU.Models
 {
     public class ReceiptViewModel : ViewModelBase<ReceiptHeader>  
     {

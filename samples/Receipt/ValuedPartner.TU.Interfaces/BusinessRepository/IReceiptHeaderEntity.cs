@@ -21,11 +21,11 @@
 #region
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
-using ValuedParter.TU.Models;
+using ValuedPartner.TU.Models;
 
 #endregion
 
-namespace ValuedParter.TU.Interfaces.BusinessRepository
+namespace ValuedPartner.TU.Interfaces.BusinessRepository
 {
     /// <summary>
     /// An Interface for TU Receipt Finder

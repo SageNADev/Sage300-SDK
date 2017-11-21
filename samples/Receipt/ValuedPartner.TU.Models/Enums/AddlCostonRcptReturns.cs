@@ -19,10 +19,10 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Resources.Forms;
 
 
-namespace ValuedParter.TU.Models.Enums
+namespace ValuedPartner.TU.Models.Enums
 {
     /// <summary>
     /// Enum for Add costing recipt returns

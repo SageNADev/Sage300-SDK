@@ -21,7 +21,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace ValuedParter.Web
+namespace ValuedPartner.Web
 {
     /// <summary>
     /// Class TUAreaRegistration.

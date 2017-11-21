@@ -21,10 +21,10 @@
 #region Namespace
 
 using Microsoft.Practices.Unity;
-using ValuedParter.TU.Interfaces.Services;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Interfaces.Services;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
+using ValuedPartner.TU.Resources.Forms;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Finder;
@@ -41,7 +41,7 @@ using System.Reflection;
 
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Controllers.Finder
+namespace ValuedPartner.Web.Areas.TU.Controllers.Finder
 {
     /// <summary>
     /// Find Receipt Number Controller Internal
@@ -142,7 +142,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers.Finder
                     title = CommonResx.FiscalPeriod,
                     attributes = FinderConstant.CssClassGridColumn10,
                     headerAttributes = FinderConstant.CssClassGridColumn10,
-                    PresentationList = EnumUtility.GetItemsList<ValuedParter.TU.Models.Enums.FiscalPeriod>()
+                    PresentationList = EnumUtility.GetItemsList<ValuedPartner.TU.Models.Enums.FiscalPeriod>()
                 },
                 
                  new GridField

@@ -1,6 +1,7 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
+var importResultRowNumber = 0;
 (function (sg, $) {
     sg.importHelper = {
         importModel: {},
@@ -39,6 +40,7 @@ var kendoWindow = null;
             if (model.ImportResponse.Results().length == 1) {
                 var messageType = model.ImportResponse.Results()[0].Priority();
                 var message = model.ImportResponse.Results()[0].Message();
+                $("#resultgrid").hide();
                 window.sg.utls.showProcessMessageInfo(messageType, message, 'importResultMessageDiv');
             } else {
                 $("#resultgrid").show();
@@ -47,9 +49,10 @@ var kendoWindow = null;
         }
     };
 
-}(sg = sg || {}, jQuery));
+}(sg || {}, jQuery));
 
 (function ($, window, document, undefined) {
+    var processImportTimer;
     $.widget("sageuiwidgets.Import", {
         divImportDialogId: '',
 
@@ -151,12 +154,12 @@ var kendoWindow = null;
                 title: that.options.title,
                 resizable: false,
                 draggable: false,
-                scrollable: false,
+                scrollable: true,
                 visible: false,
                 navigatable: true,
                 width: 647,
                 minHeight: 220,
-                maxHeight: 400,
+                maxHeight: 640,
                 actions: ["Close"],
                 close: function () {
                     that._destroyKendoWindow();
@@ -233,20 +236,33 @@ var kendoWindow = null;
             $("#importResult").show();
             $("#btnClose").hide();
             $(".k-window-action").hide();
+
+            processImportTimer = sg.utls.showProgressBar("#progressBarForImport");
+
             sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "Import"), data, function (result) {
                 ko.mapping.fromJS(result.Data.ImportResponse, {}, sg.importHelper.importModel.ImportResponse);
                 var data = { viewModel: ko.mapping.toJS(sg.importHelper.importModel) };
                 window.sg.utls.recursiveAjaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "ImportProgress"), data, that._progress, that._abort);
             });
         },
+
         _progress: function (result) {
             ko.mapping.fromJS(result.ImportResponse, {}, sg.importHelper.importModel.ImportResponse);
             var model = sg.importHelper.importModel;
 
             if (model.ImportResponse.Status() === 2 || model.ImportResponse.Status() === 3) { //Error or Completed
+                clearInterval(processImportTimer);
+                sg.utls.progressBarControl("#progressBarForImport", 100);
                 sg.importHelper.showImportResult();
+            } else {
+                if (result.ImportResponse.Results.length > 0) {
+                    $("#resultgrid").show();
+                } else {
+                    $("#resultgrid").hide();
+                }
             }
         },
+
         _abort: function (that) {
             return sg.importHelper.abortPolling;
         }

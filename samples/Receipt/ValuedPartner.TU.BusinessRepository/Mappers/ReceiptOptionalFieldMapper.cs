@@ -23,13 +23,13 @@
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedParter.TU.Models;
-using Enums = ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.Models;
+using Enums = ValuedPartner.TU.Models.Enums;
 using System;
 
 #endregion
 
-namespace ValuedParter.TU.BusinessRepository.Mappers
+namespace ValuedPartner.TU.BusinessRepository.Mappers
 {
      /// <summary>
      /// Class for Receipt Optional Field mapping

@@ -23,13 +23,13 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Resources.Forms;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace ValuedParter.TU.Models
+namespace ValuedPartner.TU.Models
 {
      /// <summary>
      /// Partial class for Receipt OptionalField

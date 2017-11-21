@@ -1,9 +1,9 @@
 ﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
 #region Namespace
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Interfaces.Services;
-using ValuedParter.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Interfaces.Services;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services.Base;
 using System;
@@ -11,7 +11,7 @@ using System.Linq.Expressions;
 
 #endregion
 
-namespace ValuedParter.TU.Interfaces.Services
+namespace ValuedPartner.TU.Interfaces.Services
 {
     /// <summary>
     /// A Class for TU Receipt service.

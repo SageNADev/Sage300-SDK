@@ -20,10 +20,10 @@
 
 <bootstrapper>
   <assemblies>
-    <add assembly="ValuedParter.TU.*.dll" />
-    <add assembly="ValuedParter.Web.dll" />	
+    <add assembly="ValuedPartner.TU.*.dll" />
+    <add assembly="ValuedPartner.Web.dll" />	
   </assemblies>
   <menuresx>
-    <add assembly="ValuedParter.TU.Resources" name="MenuResx" />
+    <add assembly="ValuedPartner.TU.Resources" name="MenuResx" />
   </menuresx>
 </bootstrapper>

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ValuedParter.Web</RootNamespace>
-    <AssemblyName>ValuedParter.Web</AssemblyName>
+    <RootNamespace>ValuedPartner.Web</RootNamespace>
+    <AssemblyName>ValuedPartner.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -332,9 +332,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\Receipt\ValuedParterReceiptRepository.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptRepository.js" />
     <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
@@ -429,23 +429,23 @@
   <ItemGroup>
     <ProjectReference Include="..\ValuedPartner.TU.BusinessRepository\ValuedPartner.TU.BusinessRepository.csproj">
       <Project>{63bd6794-9f07-4a15-9a25-0ea210569830}</Project>
-      <Name>ValuedParter.TU.BusinessRepository</Name>
+      <Name>ValuedPartner.TU.BusinessRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValuedPartner.TU.Interfaces\ValuedPartner.TU.Interfaces.csproj">
       <Project>{7ffa0bdc-c3c9-405a-8d01-a169396ee59f}</Project>
-      <Name>ValuedParter.TU.Interfaces</Name>
+      <Name>ValuedPartner.TU.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValuedPartner.TU.Models\ValuedPartner.TU.Models.csproj">
       <Project>{1b84fcae-7113-41ae-8746-9f8b5b635fb9}</Project>
-      <Name>ValuedParter.TU.Models</Name>
+      <Name>ValuedPartner.TU.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj">
       <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
-      <Name>ValuedParter.TU.Resources</Name>
+      <Name>ValuedPartner.TU.Resources</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValuedPartner.TU.Services\ValuedPartner.TU.Services.csproj">
       <Project>{35eb3451-d6ca-4f8d-a77f-d869f4397e42}</Project>
-      <Name>ValuedParter.TU.Services</Name>
+      <Name>ValuedPartner.TU.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
