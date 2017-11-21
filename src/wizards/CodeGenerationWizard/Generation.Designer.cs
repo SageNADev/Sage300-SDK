@@ -859,7 +859,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlGenerateCode
             // 
             this.pnlGenerateCode.Controls.Add(this.txtEntitiesToGenerate);
-            this.pnlGenerateCode.Controls.Add(this.lblProcessingFile);
             this.pnlGenerateCode.Controls.Add(this.lblGenerateHelp);
             this.pnlGenerateCode.Location = new System.Drawing.Point(829, 233);
             this.pnlGenerateCode.Name = "pnlGenerateCode";
@@ -883,7 +882,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblProcessingFile.AutoSize = true;
             this.lblProcessingFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessingFile.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblProcessingFile.Location = new System.Drawing.Point(74, 176);
+            this.lblProcessingFile.Location = new System.Drawing.Point(17, 10);
             this.lblProcessingFile.Name = "lblProcessingFile";
             this.lblProcessingFile.Size = new System.Drawing.Size(0, 13);
             this.lblProcessingFile.TabIndex = 1;
@@ -902,6 +901,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlButtons
             // 
             this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Controls.Add(this.lblProcessingFile);
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Controls.Add(this.btnNext);
             this.pnlButtons.Controls.Add(this.btnBack);
@@ -1013,6 +1013,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlGenerateCode.ResumeLayout(false);
             this.pnlGenerateCode.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
+            this.pnlButtons.PerformLayout();
             this.ResumeLayout(false);
 
         }
