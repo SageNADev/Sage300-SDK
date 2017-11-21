@@ -135,6 +135,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Skip Click in Compositions header </summary>
         private bool _skipAllCompositionsClick = false;
+
+        /// <summary> Processing in progress </summary>
+        private bool _processingInProgress = false;
         #endregion
 
         #region Private Constants
@@ -149,8 +152,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Panel Name for pnlGenerated </summary>
         private const string PanelGenerated = "pnlGeneratedCode";
-        /// <summary> Panel Name for pnlGenerate </summary>
 
+        /// <summary> Panel Name for pnlGenerate </summary>
         private const string PanelGenerateCode = "pnlGenerateCode";
         #endregion
 
@@ -194,7 +197,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Localize();
             InitEvents();
             InitInfo();
-            ProcessingSetup(true);
+            //ProcessingSetup(true);
             Processing("");
 
             cboRepositoryType.Focus();
@@ -1558,7 +1561,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void btnNext_Click(object sender, EventArgs e)
         {
-            NextStep();
+            if (!_processingInProgress)
+            {
+                NextStep();
+            }
         }
 
         /// <summary> Back toolbar button </summary>
@@ -1567,7 +1573,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Back wizard step</remarks>
         private void btnBack_Click(object sender, EventArgs e)
         {
-            BackStep();
+            if (!_processingInProgress)
+            {
+                BackStep();
+            }
         }
 
         #endregion
@@ -1642,7 +1651,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var settings = BuildSettings();
                     // Setup display before processing
                     _gridInfo.Clear();
-                    ProcessingSetup(false);
+                    _processingInProgress = true;
+                    //ProcessingSetup(false);
                     grdResourceInfo.DataSource = _gridInfo;
                     grdResourceInfo.Refresh();
 
@@ -2354,7 +2364,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Background worker has completed process</remarks>
         private void wrkBackground_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ProcessingSetup(true);
+            _processingInProgress = false;
+            // ProcessingSetup(true);
             Processing("");
             _generation.Dispose();
 
