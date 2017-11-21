@@ -157,7 +157,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=containerName#>ViewModel Delete(string id)
         {
-            Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == id;
+            Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#>.ToString() == id;
             var data = _repository.Delete(filter);
 
             var userMessage = new UserMessage(data,

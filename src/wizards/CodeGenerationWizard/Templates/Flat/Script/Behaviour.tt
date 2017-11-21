@@ -36,7 +36,6 @@
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
 
-
 #>
 /* <#=copyright#> */
 
@@ -272,7 +271,8 @@ var <#=localEntityName#>Filter = {
     getFilter: function () {
         var filters = [[]];
         var <#=localEntityName#>Name = $("#txt<#=keyFieldName#>").val();
-        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", sg.finderOperator.StartsWith, <#=localEntityName#>Name);
+		var operator = (isNaN(<#=localEntityName#>Name)) ? sg.finderOperator.StartsWith : sg.finderOperator.Equal;
+        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", operator, <#=localEntityName#>Name);
         return filters;
     }
 };

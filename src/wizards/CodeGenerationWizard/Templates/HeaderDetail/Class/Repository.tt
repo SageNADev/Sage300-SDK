@@ -344,7 +344,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
                     Write(String.Format("{0}_{1}Entity.View", new string(' ', 16), rotoId2EntityVarName[viewID]));
                 }
                 else
-                    Write(String.Format("{0}{1}.View", new string(' ', 16), "null"));
+                    Write(String.Format("{0}{1}", new string(' ', 16), "null"));
                     
                 bFirst = false;
             }

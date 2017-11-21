@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+    #line 1 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class Behaviour : BehaviourBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 1 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 2 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 3 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 4 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 5 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 6 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 7 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 8 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 9 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 10 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 11 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 12 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 13 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 14 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 15 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 16 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 17 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 18 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 19 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 24 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.EntityName];
@@ -158,48 +158,47 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
 
 
-
             
             #line default
             #line hidden
             this.Write("/* ");
             
-            #line 41 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 40 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
             this.Write(" */\r\n\r\n\"use strict\";\r\n\r\nvar modelData;\r\nvar ");
             
-            #line 46 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 45 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = ");
             
-            #line 46 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 45 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI || {};\r\n\r\n");
             
-            #line 48 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 47 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = {\r\n    ");
             
-            #line 49 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 48 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model: {},\r\n    ignoreIsDirtyProperties: [\"");
             
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 49 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -207,63 +206,63 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("\"],\r\n    computedProperties: [\"UIMode\"],\r\n    hasKoBindingApplied: false,\r\n    is" +
                     "KendoControlNotInitialised: false,\r\n    ");
             
-            #line 54 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 53 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(": null,\r\n\r\n    // Init\r\n    init: function () {\r\n    ");
             
-            #line 58 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 57 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initButtons();\r\n    ");
             
-            #line 59 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 58 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initFinders();\r\n    ");
             
-            #line 60 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 59 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.initialLoad(");
             
-            #line 60 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 59 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel);\r\n    ");
             
-            #line 61 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 60 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setkey();\r\n    },\r\n\r\n    // Save\r\n    save");
             
-            #line 65 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 64 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(": function () {\r\n        if ($(\"#frm");
             
-            #line 66 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 65 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\").valid()) {\r\n            var data = sg.utls.ko.toJS(modelData, ");
             
-            #line 67 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 66 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -271,28 +270,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UI.computedProperties);\r\n            if (modelData.UIMode() === sg.utls.Operation" +
                     "Mode.SAVE) {\r\n                ");
             
-            #line 69 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 68 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.update(data, ");
             
-            #line 69 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 68 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.update);\r\n            } else {\r\n                ");
             
-            #line 71 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 70 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.add(data, ");
             
-            #line 71 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 70 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -301,110 +300,110 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "initButtons: function () {\r\n        // Import/Export Buttons\r\n        sg.exportH" +
                     "elper.setExportEvent(\"btnOptionExport\", \"");
             
-            #line 79 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 78 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 79 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 78 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
             #line hidden
             this.Write("\", false, $.noop);\r\n        sg.importHelper.setImportEvent(\"btnOptionImport\", \"");
             
-            #line 80 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 79 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 80 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 79 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
             #line hidden
             this.Write("\", false, $.noop);\r\n\r\n        // Key field with Finder\r\n        $(\"#txt");
             
-            #line 83 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 82 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\").bind(\'blur\', function (e) {\r\n            modelData.");
             
-            #line 84 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 83 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("($(\"#txt");
             
-            #line 84 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 83 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\").val());\r\n            sg.delayOnBlur(\"btnFinder");
             
-            #line 85 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 84 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", function () {\r\n                if (sg.controls.GetString(modelData.");
             
-            #line 86 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 85 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("()) != \"\") {\r\n                    if (sg.controls.GetString(");
             
-            #line 87 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 86 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 87 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 86 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(") != sg.controls.GetString(modelData.");
             
-            #line 87 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 86 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("())) {\r\n                        ");
             
-            #line 88 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 87 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.checkIsDirty(");
             
-            #line 88 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 87 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.get, ");
             
-            #line 88 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 87 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 88 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 87 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -413,28 +412,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "     // Create New Button\r\n        $(\"#btnNew\").bind(\'click\', function () {\r\n   " +
                     "         ");
             
-            #line 96 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 95 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.checkIsDirty(");
             
-            #line 96 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 95 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.create, ");
             
-            #line 96 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 95 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 96 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 95 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -442,14 +441,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write(");\r\n        });\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").bind(\'click\', fu" +
                     "nction () {\r\n            sg.utls.SyncExecute(");
             
-            #line 101 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 100 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.save");
             
-            #line 101 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 100 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -457,35 +456,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write(");\r\n        });\r\n\r\n        // Delete Button\r\n        $(\"#btnDelete\").bind(\'click\'" +
                     ", function () {\r\n            if ($(\"#frm");
             
-            #line 106 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 105 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\").valid()) {\r\n                var message = jQuery.validator.format(");
             
-            #line 107 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 106 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.DeleteConfirmMessage, ");
             
-            #line 107 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 106 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 107 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 106 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("Title, modelData.");
             
-            #line 107 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 106 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -493,35 +492,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("());\r\n                sg.utls.showKendoConfirmationDialog(function () {\r\n        " +
                     "            sg.utls.clearValidations(\"frm");
             
-            #line 109 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 108 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\");\r\n                    ");
             
-            #line 110 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 109 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.delete(modelData.");
             
-            #line 110 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 109 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(), ");
             
-            #line 110 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 109 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.delete);\r\n                }, null, message, ");
             
-            #line 111 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 110 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -530,76 +529,76 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "downs here\r\n\r\n    // Init Finders, if any\r\n    initFinders: function () {\r\n     " +
                     "   var title = jQuery.validator.format(");
             
-            #line 121 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 120 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.FinderTitle, ");
             
-            #line 121 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 120 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 121 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 120 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("Title);\r\n        sg.finderHelper.setFinder(\"btnFinder");
             
-            #line 122 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 121 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 122 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 121 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 122 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 121 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(view.Properties[BusinessView.EntityName].ToLower()));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 122 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 121 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.finderSuccess, $.noop, title, ");
             
-            #line 122 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 121 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Filter.getFilter);\r\n    },\r\n\r\n    // Get\r\n    get: function () {\r\n        ");
             
-            #line 127 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 126 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.get(modelData.");
             
-            #line 127 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 126 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(), ");
             
-            #line 127 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 126 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -607,21 +606,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.get);\r\n    },\r\n\r\n    // Create\r\n    create: function () {\r\n        sg.u" +
                     "tls.clearValidations(\"frm");
             
-            #line 132 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 131 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\");\r\n        ");
             
-            #line 133 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 132 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.create(");
             
-            #line 133 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 132 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -629,35 +628,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.create);\r\n    },\r\n\r\n    // Is Dirty check\r\n    checkIsDirty: function (" +
                     "functionToCall, ");
             
-            #line 137 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 136 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(") {\r\n        if (");
             
-            #line 138 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 137 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 138 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 137 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.isDirty() && ");
             
-            #line 138 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 137 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(" != null && ");
             
-            #line 138 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 137 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -665,7 +664,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write(" != \"\") {\r\n            sg.utls.showKendoConfirmationDialog(\r\n                func" +
                     "tion () { // Yes\r\n                    sg.utls.clearValidations(\"frm");
             
-            #line 141 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 140 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -673,28 +672,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("\");\r\n                    functionToCall.call();\r\n                },\r\n            " +
                     "    function () { // No\r\n                    if (sg.controls.GetString(");
             
-            #line 145 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 144 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(") != sg.controls.GetString(modelData.");
             
-            #line 145 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 144 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("())) {\r\n                        modelData.");
             
-            #line 146 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 145 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 146 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 145 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -702,21 +701,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write(");\r\n                   }\r\n                   return;\r\n                },\r\n       " +
                     "         jQuery.validator.format(globalResource.SaveConfirm, ");
             
-            #line 150 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 149 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 150 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 149 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("Title, ");
             
-            #line 150 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 149 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -724,28 +723,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("));\r\n        } else {\r\n            functionToCall.call();\r\n        }\r\n    }\r\n\r\n};" +
                     "\r\n\r\n// Callbacks\r\nvar ");
             
-            #line 159 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 158 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess = {\r\n\r\n    // Setkey\r\n    setkey: function () {\r\n        ");
             
-            #line 163 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 162 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 163 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 162 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(" = modelData.");
             
-            #line 163 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 162 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -754,7 +753,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "lt.UserMessage && jsonResult.UserMessage.IsSuccess) {\r\n            if (jsonResul" +
                     "t.Data != null) {\r\n                ");
             
-            #line 170 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 169 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -763,7 +762,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "lse {\r\n                modelData.UIMode(sg.utls.OperationMode.NEW);\r\n           " +
                     " }\r\n            ");
             
-            #line 174 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 173 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -771,14 +770,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.setkey();\r\n        }\r\n    },\r\n\r\n    // Update\r\n    update: function (js" +
                     "onResult) {\r\n        if (jsonResult.UserMessage.IsSuccess) {\r\n            ");
             
-            #line 181 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 180 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);\r\n            ");
             
-            #line 182 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 181 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -786,35 +785,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.setkey();\r\n        }\r\n        sg.utls.showMessage(jsonResult);\r\n    },\r" +
                     "\n\r\n    // Create\r\n    create: function (jsonResult) {\r\n        ");
             
-            #line 189 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 188 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);\r\n        ");
             
-            #line 190 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 189 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 190 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 189 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.reset();\r\n        ");
             
-            #line 191 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 190 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setkey();\r\n        sg.controls.Focus($(\"#txt");
             
-            #line 192 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 191 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -822,28 +821,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("\"));\r\n    },\r\n\r\n    // Delete\r\n    delete: function (jsonResult) {\r\n        if (j" +
                     "sonResult.UserMessage.IsSuccess) {\r\n            ");
             
-            #line 198 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 197 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);\r\n            ");
             
-            #line 199 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 198 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 199 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 198 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.reset();\r\n            ");
             
-            #line 200 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 199 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -852,112 +851,112 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "\n\r\n    // Display Result\r\n    displayResult: function (jsonResult, uiMode) {\r\n  " +
                     "      if (jsonResult != null) {\r\n            if (!");
             
-            #line 208 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 207 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.hasKoBindingApplied) {\r\n                ");
             
-            #line 209 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 208 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 209 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 208 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model = ko.mapping.fromJS(jsonResult);\r\n                ");
             
-            #line 210 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 209 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.hasKoBindingApplied = true;\r\n                modelData = ");
             
-            #line 211 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 210 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 211 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 210 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.Data;\r\n                ");
             
-            #line 212 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 211 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("ObservableExtension(");
             
-            #line 212 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 211 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 212 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 211 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model, uiMode);\r\n                ");
             
-            #line 213 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 212 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 213 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 212 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty = new ko.dirtyFlag(modelData, ");
             
-            #line 213 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 212 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.ignoreIsDirtyProperties);\r\n                ko.applyBindings(");
             
-            #line 214 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 213 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 214 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 213 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model);\r\n            } else {\r\n                ko.mapping.fromJS(jsonResult, ");
             
-            #line 216 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 215 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 216 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 215 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -965,14 +964,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Model);\r\n                modelData.UIMode(uiMode);\r\n                if (uiMode !=" +
                     " sg.utls.OperationMode.NEW) {\r\n                    ");
             
-            #line 219 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 218 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 219 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 218 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -980,14 +979,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Model.isModelDirty.reset();\r\n                }\r\n            }\r\n\r\n            if (" +
                     "!");
             
-            #line 223 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 222 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.isKendoControlNotInitialised) {\r\n                ");
             
-            #line 224 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 223 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -996,7 +995,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     " \r\n            }\r\n        }\r\n    },\r\n\r\n    // Initial Load\r\n    initialLoad: fun" +
                     "ction (result) {\r\n        if (result) {\r\n            ");
             
-            #line 234 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 233 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1004,14 +1003,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.displayResult(result, sg.utls.OperationMode.NEW);\r\n        } else {\r\n  " +
                     "          sg.utls.showMessageInfo(sg.utls.msgType.ERROR, ");
             
-            #line 236 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 235 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.ProcessFailedMessage);\r\n        }\r\n        sg.controls.Focus($(\"#txt");
             
-            #line 238 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 237 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1019,35 +1018,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("\"));\r\n    },\r\n\r\n    // Finder Success\r\n    finderSuccess: function (data) {\r\n    " +
                     "    if (data != null) {\r\n            ");
             
-            #line 244 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 243 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.finderData = data;\r\n            ");
             
-            #line 245 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 244 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.checkIsDirty(");
             
-            #line 245 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 244 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setFinderData, ");
             
-            #line 245 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 244 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 245 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 244 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -1055,21 +1054,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write(");\r\n        }\r\n    },\r\n\r\n    // Set Finder\r\n    setFinderData: function () {\r\n   " +
                     "     var data = ");
             
-            #line 251 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 250 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.finderData;\r\n        sg.utls.clearValidations(\"frm");
             
-            #line 252 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 251 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\");\r\n        ko.mapping.fromJS(data, {}, modelData);\r\n        ");
             
-            #line 254 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 253 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1077,21 +1076,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UI.finderData = null;\r\n        modelData.UIMode(sg.utls.OperationMode.SAVE);\r\n   " +
                     "     ");
             
-            #line 256 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 255 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 256 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 255 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.reset();\r\n        ");
             
-            #line 257 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 256 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1099,7 +1098,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UISuccess.setkey();\r\n    },\r\n\r\n    // Is New\r\n    isNew: function (model) {\r\n    " +
                     "    if (model.");
             
-            #line 262 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 261 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1107,7 +1106,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("() === null) {\r\n           return true;\r\n        }\r\n        return false;\r\n    }\r" +
                     "\n\r\n};\r\n\r\n// Finder Filter\r\nvar ");
             
-            #line 271 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 270 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1115,28 +1114,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Filter = {\r\n    getFilter: function () {\r\n        var filters = [[]];\r\n        va" +
                     "r ");
             
-            #line 274 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 273 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Name = $(\"#txt");
             
-            #line 274 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 273 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write("\").val();\r\n        filters[0][0] = sg.finderHelper.createFilter(\"");
+            this.Write("\").val();\r\n\t\tvar operator = (isNaN(");
             
-            #line 275 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 274 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("Name)) ? sg.finderOperator.StartsWith : sg.finderOperator.Equal;\r\n        filters" +
+                    "[0][0] = sg.finderHelper.createFilter(\"");
+            
+            #line 275 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write("\", sg.finderOperator.StartsWith, ");
+            this.Write("\", operator, ");
             
-            #line 275 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 275 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1144,7 +1151,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Name);\r\n        return filters;\r\n    }\r\n};\r\n\r\n// Initial Entry\r\n$(function () {\r\n" +
                     "    ");
             
-            #line 282 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 282 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1152,14 +1159,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("UI.init();\r\n    $(window).bind(\'beforeunload\', function () {\r\n        if (globalR" +
                     "esource.AllowPageUnloadEvent && ");
             
-            #line 284 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 284 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 284 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 284 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1167,14 +1174,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Model.isModelDirty.isDirty()) {\r\n            return jQuery(\'<div />\').html(jQuery" +
                     ".validator.format(globalResource.SaveConfirm2, ");
             
-            #line 285 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 285 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 285 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            #line 285 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1183,7 +1190,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+        #line 1 "C:\CNA2Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
