@@ -14,8 +14,9 @@
     position: fixed; 
     display: none; 
     text-align: center; 
-    z-index: 99999999;
+    z-index: 9999;
     left: 50%;
+    margin-top: 100px;
 
     &:before { 
       position: absolute;
@@ -55,28 +56,34 @@
 }
 
 .form-screen {
-  margin: 0 30px;
+  margin: 16px 16px 0 ;
 }
 
 .k-window-content .form-screen {
   margin: 0;
 }
 
+// Added media query    
+//    
+// for iPad   
+    
+@media only screen    
+and (min-device-width : 768px)    
+and (max-device-width : 1024px) {  
 
+  .form-screen {   
+    width: 992px;
 
-// Added media query 
-//
-// for iPad
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) { 
-  .form-screen {
-    margin-left: 30px;
-    margin-right: 30px;
-    width: 940px;
+    .header-group-1 .header-wrapper {
+      padding-right: 32px;
     }
+
+    .header-group-1 .flag-required {
+      padding-right: 20px;
+    }
+  }
 }
+
 
 // Normalize non-controls
 //
@@ -242,6 +249,7 @@ textarea {
 
     &:disabled {
       color: @sage-dark-gray;
+      -webkit-text-fill-color: @sage-dark-gray; /*added for iPad*/ 
     }
 }
 
@@ -1072,7 +1080,7 @@ textarea,
   }
 
   &.large {
-    width: 460px;
+    width: 440px;
   }
 
   &.medium-large {
@@ -1084,7 +1092,7 @@ textarea,
   }
 
   &.default {
-    width: 220px;
+    width: 210px;
   }
 
   &.small {
@@ -1117,6 +1125,14 @@ textarea {
   }
 }
 
+.search-group > input[type="text"] {
+
+  &.default {
+    width: 206px;
+  }
+  
+}
+
 // Align Total Tax input field
 
 .align-right-child div[class*="-group"] {
@@ -1134,6 +1150,58 @@ textarea {
     background-color: @input-bg-disabled;
     background-position: -23px -66px;
     cursor: default;
+}
+
+// Data Records Navigation
+
+.search-with-navigation > label {
+  display: inline-block;
+}
+
+.search-with-navigation .glyphicon {
+  width: 18px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:before {
+      color: #999;
+    }
+  }
+
+  &:active {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:before {
+      color: #333;
+    }
+  }
+
+  &:before {
+    font-size: 20px;
+    color: #757575;
+    line-height: 0.7;
+  }
+  
+  &.glyphicon-caret-first {
+    margin-left: 5px;
+  }
+
+  &.disabled {
+    &:hover {
+    cursor: default;
+
+    &:before {
+      color: #ddd;
+    }
+  }
+
+  &:before {
+    color: #ddd;
+    }
+  }
 }
 
 // Kendo Customization - dropdown list, numeric text box and datepicker
@@ -1549,7 +1617,8 @@ td.k-state-focused.k-state-selected {
 
 .label-menu-popup{ 
   background: @gray-lighter;
-  box-shadow: 0 0 1px #000;
+  box-shadow: 0 0 5px #ccc;
+  border: 1px solid #ccc;
   margin-top: -11px;
   margin-left: 14px;
   top: 25px;
@@ -1811,6 +1880,7 @@ div.k-treeview {
 }
 .k-treeview span.k-in {
     display:inline-block;
+    line-height: 2.7rem;
     
     &.k-state-focused {
       .box-shadow(none);
@@ -1956,7 +2026,7 @@ ul#exportTreeView li ul li {
   width: 100%;
 
   .half-width {
-    width: 48%;
+    width: 47%;
   }
 
   .left:nth-child(2) {
@@ -1966,5 +2036,75 @@ ul#exportTreeView li ul li {
   .three-quarter-width {
     width: 78%;
   }
+
+  .left.w460 {
+    width: unset;
+  }
 }
 
+// Adding AwesomeFont styles for tree-view checkboxes
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('@{icon-font-path}@{icon-font-name-awesome}.eot');
+  src: url('@{icon-font-path}@{icon-font-name-awesome}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name-awesome}.woff2') format('woff2'),
+       url('@{icon-font-path}@{icon-font-name-awesome}.ttf') format('truetype')
+}
+
+// Kendo checkbox styles override
+
+.k-checkbox:checked+.k-checkbox-label:before {
+    background-color: #fff;
+    border-color: #cacaca;
+    color: #4fa835;
+    font: normal normal normal 13px/1 FontAwesome;
+}
+
+.k-checkbox:focus+.k-checkbox-label:before {
+  box-shadow: 0 0 4px 0 #4fa835;
+  -webkit-box-shadow: 0 0 4px 0 #4fa835;
+  border-color: #9a9b9c;
+}
+
+.k-checkbox:indeterminate+.k-checkbox-label:after,
+.k-checkbox:indeterminate:hover+.k-checkbox-label:after { 
+  background-color: #4fa835;
+  background-image: none;
+  border-color: #4fa835;
+  border-radius: 2px;
+}
+
+.k-checkbox:checked+.k-checkbox-label:before {
+  content: "\f00c";
+}
+
+.k-checkbox-label:hover:before, 
+.k-checkbox:checked+.k-checkbox-label:hover:before {
+    border-color: #9a9b9c;
+    -webkit-box-shadow: 0 0 4px 0 #4fa835;
+    box-shadow: 0 0 4px 0 #4fa835;
+}
+
+.export-required {
+  font-family: Calibri,Arial;
+  color: #41a940;
+}
+
+// Inquiry Tool styles
+
+.inquiry-panel-body {
+  padding: 16px;
+  background-color: #ebedef;
+  border-radius: 4px;
+  margin-bottom: 20px;
+
+  .finder-group input[type="text"].default {
+    width: 180px;
+  }
+
+  .additionalFiltering {
+    display: none;
+    margin-top: 9px;
+  }
+}

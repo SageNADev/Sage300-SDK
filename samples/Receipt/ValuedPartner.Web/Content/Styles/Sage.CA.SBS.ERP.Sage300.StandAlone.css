@@ -121,8 +121,9 @@ a:hover {
 
 
 .header {
-	height: 47px;
-    background-color: #3c414e;
+	height: 3.5rem;
+    background-color: #3c424f;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24);
 }
 
 .footer {
@@ -130,24 +131,28 @@ a:hover {
 	height: 40px;
 	color: #cfcfcf;
 	font-size: 11px;
-	position: fixed;
-	bottom: 0;
+	position: static;
 	width: 100%;
 	text-align: center;
 	padding: 13px 0 0;
 }
 
+.footer.affix-bottom {
+    bottom: 0;
+    position: fixed;
+}
+
 .header > .wrapper,
 .main-body > .wrapper {
 	width: 940px;
-	padding: 10px;
+	padding: 16px;
 	margin: 0 auto;
 	position: relative;
 }
 
 .footer > .wrapper {
-    width: 940px;
-	padding: 0 10px;
+    width: 100%;
+    min-width: 940px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -155,7 +160,15 @@ a:hover {
 .footer .logo-sage {
 	position: absolute;
 	top: -4px;
-	left: 10px;
+	left: 64px;
+}
+
+.version {
+    position: absolute;
+    top: -55px;
+    left: 175px;
+    color: #666;
+    font-size: 14px;
 }
 
 /* inline links */
@@ -476,7 +489,7 @@ ol.std-list {
 
 .header.login > .wrapper {
 	width: 340px;
-	padding: 0 15px;
+	padding: 0 15px 100px;
 }
 
 .header.login:after {

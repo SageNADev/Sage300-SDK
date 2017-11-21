@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
 "use strict";
 (function (sg, $) {
     sg.finderHelper = {
@@ -430,6 +430,7 @@
 }(this.sg = this.sg || {}, jQuery));
 
 (function ($, window, document, undefined) {
+    var kendoWindow;
     $.widget("sageuiwidgets.Finder", {
         divFinderDialogId: '',
         options: {

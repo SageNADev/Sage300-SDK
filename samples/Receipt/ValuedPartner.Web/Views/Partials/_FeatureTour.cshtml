@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
@@ -31,6 +31,7 @@
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
                             @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
                             {
                                 <li class="step-indicator"></li>
@@ -50,7 +51,7 @@
         </section>
 
         <section class="ft-kpi ft-step">
-            <!--second step: Wigets -->
+            <!--second step: Widgets -->
             <div class="wrapper">
                 <div class="connector animated bounce">
                     <div class="top-arrow"></div>
@@ -68,6 +69,7 @@
                         <ul>
                             <li class="step-indicator"></li>
                             <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
@@ -110,6 +112,47 @@
                             <li class="step-indicator"></li>
                             <li class="step-indicator active"></li>
                             <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-recent-window ft-step">
+            <!--fourth step: Recently Used Windows -->
+            <div class="wrapper">
+                <div class="connector animated bounceRight">
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-icon recent-window-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideRecentWindows <strong>@HomePageResx.FeatureTourSlideRecentWindows1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideRecentWindows2</p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
                             @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
                             {
                                 <li class="step-indicator"></li>
@@ -129,7 +172,7 @@
         </section>
 
         <section class="ft-reports ft-step">
-            <!--fourth step: Reports -->
+            <!--fifth step: Reports -->
             <div class="wrapper">
                 <div class="connector animated bounceRight">
                     <div class="right-arrow"></div>
@@ -145,6 +188,7 @@
                 <div class="msg-footer">
                     <div class="step-indicator-group">
                         <ul>
+                            <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
@@ -169,7 +213,7 @@
         @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
         {
         <section class="ft-inquiries ft-step">
-            <!--fifth step: Inquiries -->
+            <!--sixth step: Inquiries -->
             <div class="wrapper">
                 <div class="connector animated bounceRight">
                     <div class="right-arrow"></div>
@@ -185,6 +229,7 @@
                 <div class="msg-footer">
                     <div class="step-indicator-group">
                         <ul>
+                            <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
@@ -207,13 +252,13 @@
         @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
         {
         <section class="ft-notes ft-step">
-            <!--sixth step: Notes -->
+            <!--seventh step: Notes -->
             <div class="wrapper">
                 <div class="connector animated bounceRight">
                     <div class="right-arrow"></div>
                 </div>
                 <div class="title">
-                    <span class="tour-font-icon glyphicon glyphicon-pencil"></span>
+                    <span class="tour-font-icon glyphicon glyphicon-note"></span>
                     <h3>@HomePageResx.FeatureTourSlideNotes <strong>@HomePageResx.FeatureTourSlideNotes1</strong></h3>
                     <span class="icon msgCtrl-close"></span>
                 </div>
@@ -223,6 +268,7 @@
                 <div class="msg-footer">
                     <div class="step-indicator-group">
                         <ul>
+                            <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
@@ -265,6 +311,7 @@
                 <div class="msg-footer">
                     <div class="step-indicator-group">
                         <ul>
+                            <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>

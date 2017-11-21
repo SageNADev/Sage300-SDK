@@ -24,6 +24,7 @@ var isWidgetVisible = false;
 var widgetDomain;
 var tenantName;
 var domain;
+var OAuthWindow;
 
 // Use to do string format, kind of like String.format in C#
 String.prototype.format = function () {
@@ -65,21 +66,18 @@ $(document).ready(function () {
     var iFrameUrl;
     var isKPI = false;
     var kpiReportName;
-    var menuPinned = true;
-
-    //to stop spinner
-    $('#screenLayout').children().find("iframe").load(function () {
-        $(this).removeClass('screenLoading');
-    });
+    var MenuLayoutCookieName = "MenuLayoutCookie";
 
     screenId = defaultScreenId;
     $('#searchHelpDiv').show();
 
-    $('#xmlMenuDiv').show();
+    // Home button, Tools button active state
+    $('#homeNav > a').addClass('active');
+    $('#topMenuTools').addClass('active');
 
     var isWidgetEmptyLnkClicked = false;
 
-    var menu = $("#topMenu").kendoMenu({ open: onOpen, close: onClose }).data("kendoMenu");
+    var menu = $("#topMenu").kendoMenu({ openOnClick: true, closeOnClick: true }).data("kendoMenu");
     menu.bind('activate', function (e) {
         //This is to fix D-33845
         //For the menu item that contains a textbox, there is an Kendo issue on Chrome
@@ -89,59 +87,120 @@ $(document).ready(function () {
             e.item.find('input').first().focus();
         }
     });
-    function onOpen(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "0.3").attr("disabled", "disabled"); }
 
-    function onClose(e) { if ($(e.item).children(".k-link").text() == '') $(".main-search input").css("opacity", "1").removeAttr("disabled"); }
+    function showMenuExpandButton() {
+        $('#btnExpandMenu, #btnExpandMenuAlt').show();
+        $('#btnCollapseMenu, #btnCollapseMenuAlt').hide();
+    }
 
-    var isPinMenuClicked = false;
+    function showMenuCollapseButton() {
+        $('#btnExpandMenu, #btnExpandMenuAlt').hide();
+        $('#btnCollapseMenu, #btnCollapseMenuAlt').show();
+    }
 
-    /*
-    $('#lnkLogo').click(function () {
-        $('#dvWindows > div').each(function () {
-            $(this).find("span").removeClass('selected');
-        });
-        ShowHomePage();
-    });
-    */
+    showMenuExpandButton(); // by default: menu is collapsed, so show expand button
 
-    // Collapsible header
-    $(window).scroll(function () {
-        if ($(this).scrollTop() >= 47) {
-            if (menuPinned) {
-                $('html').addClass('collapsed');
-                $('.feature_nav').removeClass('active');
+    
+    /* Page Layout for Menu Expanded */
+    /* ---------------------------------------------------------- */
+    function menuLayoutExpanded() {
+        showMenuCollapseButton();
+        $('html').removeClass('page-collapsed').addClass('page-expanded');
+        $('#navbarSide').removeClass('side-nav-collapsed').addClass('active');
 
+        var modifiedCookie = "expanded";
+        var cookieExpiresdate = new Date(9999, 12, 31);
+        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+
+        // Reload/refresh widget layout 
+        updateLayout(false);
+    };
+
+    $('#btnExpandMenu, #btnExpandMenuAlt').click(menuLayoutExpanded);
+
+    /* Page Layout for Menu Collapsed */
+    /* ---------------------------------------------------------- */
+
+    function menuLayoutCollapsed() {
+        showMenuExpandButton();
+        $('html').removeClass('page-expanded').addClass('page-collapsed');
+        $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.std-menu.active').removeClass('active');
+
+        var modifiedCookie = "collapsed";
+        var cookieExpiresdate = new Date(9999, 12, 31);
+        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+
+        // Reload/refresh widget layout 
+        updateLayout(false);
+    };
+
+    $('#btnCollapseMenu, #btnCollapseMenuAlt').click(menuLayoutCollapsed);
+
+    /* Initialize Cookie for Side Menu Setting (Collapsed/Expanded) */
+    /* ---------------------------------------------------------- */
+
+    initSideMenu();
+
+    function initSideMenu() {
+        var menuCookie = $.cookie(MenuLayoutCookieName);
+        if(menuCookie)
+        {
+            if (menuCookie === "expanded")
+            {
+                menuLayoutExpanded();
             }
-        } else {
-            $('html').removeClass('collapsed');
+            else if (menuCookie === "collapsed"){
+                menuLayoutCollapsed();
+            }
         }
-    });
+    };
+   
+    /* open menu */
+    /* ---------------------------------------------------------- */
 
-    // Collapsible Header - enabling / disabling toggle
-    //$('#topMenuSettings').click(function () {
-    //    menuPinned = !menuPinned;
-    //});
+    $("#listPrimary").hover(
+      function () {
+          if ($('html').hasClass('page-collapsed')) {
+              $('#navbarSide').removeClass('side-nav-collapsed').addClass('active');
+          } else {
+              $('#navbarSide').addClass('active');
+          }
+      });
 
-    $('#pinMainNav').hide(); // by default: pinned, so hide pin menu item
+    $(".menu-item.top-tier").click(
+      function () {
+          if ($('html').hasClass('page-collapsed')) {
+              $(this).parents('#navbarSide').removeClass('side-nav-collapsed').addClass('active').closest('.std-menu').addClass('active');
+          } else {
+              $(this).parents('#navbarSide').addClass('active').closest('.std-menu.active').removeClass('active');
+          }
+      }
+    );
+    
+    /* close menu */
+    /* ---------------------------------------------------------- */
 
-    $('#pinMainNav').click(function () {
-        menuPinned = true;
-        setTimeout(hidePinMenu, 500);
-    });
-    function hidePinMenu() {
-        $('#pinMainNav').hide();
-        $('#unpinMainNav').show();
-    }
+    $(".portal-main-body, header, #draggable").hover(
+        function () {
+            if ($('html').hasClass('page-collapsed')) {
+                $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
+            } else {
+                $('#navbarSide').addClass('active').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
+            }
+        }
+    );
 
-    $('#unpinMainNav').click(function () {
-        menuPinned = false;
-        setTimeout(hideUnpinMenu, 500);
-    });
-    function hideUnpinMenu() {
-        $('#pinMainNav').show();
-        $('#unpinMainNav').hide();
-    }
+    //close submenu after opening a screen
 
+    $(".menu-section a").click(
+        function () {
+            if ($('html').hasClass('page-collapsed')) {
+                $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
+            } else {
+                $('#navbarSide').find('.top-tier').removeClass('open').find('.std-menu').removeClass('active');
+            }
+        }
+    );
 
     $(document).click(function (e) {
         if (!isWidgetEmptyLnkClicked) {
@@ -154,15 +213,6 @@ $(document).ready(function () {
         $('#DivWidgetWindow').hide();
     });
 
-    $("#home_nav").kendoMenu({
-
-    });
-
-    $(".home_nav").click(function () {
-        ShowHomePage();
-    });
-
-    $("ul#home_nav li.main").children().addClass("mainNav");
 
     $('#lnkAddWidgets, .GoArrow,  #lblSeeIntoYourData').click(function () {
         isWidgetEmptyLnkClicked = true;
@@ -174,11 +224,9 @@ $(document).ready(function () {
     });
 
     $(".portalIcon.closeIcon").click(function () {
-        $("this").closest(".container_popUp.Widget.widgetList").hide("fast");
+        $(this).closest(".container_popUp.Widget.widgetList").hide("fast");
     });
-
-    $("ul#home_nav").children().children().children().addClass("k-iconNone");
-
+    
     $(".portalIcon.checkBox span.checkBox").addClass("portalIcon");
 
     $(".portalIcon.checkBox span.checkBox").removeClass("icon");
@@ -192,10 +240,13 @@ $(document).ready(function () {
     firstControl["control"] = "widgetLayout";
     firstControl["rank"] = 1;
     controls.push(firstControl);
-    $("#draggable").draggable({ axis: "y", containment: "window" });
+    $("#draggable").draggable({ axis: "y", containment: "window", scroll: false });
     clearIframes();
     $('#dvCloseWindowErrorMessage').hide();
     $('.task_added').hide();
+
+    recentWindowsMenu.onLoadPopulateRecentWindowsListFromStorage();
+
     $('#topMenu').mouseenter(function () {
         if (!$("#helpSearchfl").is(':focus')) {
             helpSearchForMenuItem(screenId);
@@ -231,24 +282,39 @@ $(document).ready(function () {
         $("#windowManager > div").hide();
     });
 
+    $("#recentWindowManager").hover(
+        recentWindowsMenu.hoverOn,
+        recentWindowsMenu.hoverOff
+    );
+
     $('.top_nav_drop_content').click(function () {
 
         isReload = false;
     });
 
     function ShowHomePage() {
+        window.scrollTo(0, 0);
+        $('html').addClass('home-page');
+        $('#homeNav > a').addClass('active');
         $('#screenLayout').hide();
-        $('#widgetLayout').show();
+        $('#widgetlayout').show();
+        $('#widgetHplayout').hide();
 
         //When footer logo is clicked
         screenId = defaultScreenId;
 
         $('#breadcrumb').hide();
 
+        updateLayout(true);
+
         if (!$('#screenLayout').is(":visible")) {
-            updateLayout();
+
+            if ($('#widgetlayout').is(":visible")) {
+                $('#widgetHplayout').hide();
+            }
         }
     }
+
 
     function AreWidgetVisible() {
         $(".bodyWidgetContainer > div").each(function () {
@@ -273,7 +339,7 @@ $(document).ready(function () {
     }
 
     function initializeExtraMenu() {
-        var $menu = $(".navigation .std-menu");
+        var $menu = $(".side-nav .std-menu");
 
         $menu.menuAim({
             activate: activateSubmenu,
@@ -290,52 +356,27 @@ $(document).ready(function () {
                 display: "block"
             });
 
-            $row.find("span:first").addClass("active");
+            $row.find("a:first").addClass("active");
         }
 
         function deactivateSubmenu(row) {
             var $row = $(row),
                 $submenu = $row.find(".sub-menu-wrap");
-
-            // Hide the submenu and remove the row's highlighted look
-            $submenu.css("display", "none");
-            $row.find("span:first").removeClass("active");
         }
 
         function exitSubmenu(row) {
             var $row = $(row);
-            $row.find(".sub-menu-wrap").hide().eq(0).show();
         }
 
-        $(".navigation .std-menu li").click(function (e) {
+        $(".side-nav .std-menu li").click(function (e) {
             e.stopPropagation();
+            window.scrollTo(0, 0);
         });
 
-        $(".navigation .feature_nav .btn").click(function (e) {
-            $("#SIR").removeClass("active");
-        });
-
-        $menu.find(".menu-section li:not('.sub-heading')").click(function () {
-            $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
-            $(".nav-menu span.active").removeClass("active");
-        });
-
-        $(".navigation .feature_nav").hover(
-            function () {
-                $(this).find(".active").removeClass("active");
-                $(this).addClass("active");
-                $(this).find("li:first span:first").addClass("active");
-                $(this).find(".deactive").removeClass("deactive");
-            },
-            function () {
-                $(this).removeClass("active");
-                $(this).find("li:first span:first").removeClass("active");
-            }
-        );
     }
 
     function initializeMainMenu() {
-        var $menu = $(".nav-menu .std-menu");
+        var $menu = $(".side-nav .std-menu");
 
         $menu.menuAim({
             activate: activateSubmenu,
@@ -347,57 +388,60 @@ $(document).ready(function () {
             var $row = $(row),
                 $submenu = $row.find(".sub-menu-wrap"); //,
 
+            $row.not('.sub-heading').siblings().find('.sub-menu-wrap').hide();
+
             // Show the submenu
             $submenu.css({
-                display: "block"
+                display: 'block'
             });
 
-            $row.find("span:first").addClass("active");
+            if ($row.hasClass('sub-heading') == false) {
+                $row.find('a:first').addClass('active').end().siblings().find('a:first').removeClass('active');
+            }
         }
 
         function deactivateSubmenu(row) {
             var $row = $(row),
                 $submenu = $row.find(".sub-menu-wrap");
-
-            // Hide the submenu and remove the row's highlighted look
-            $submenu.css("display", "none");
-            $row.find("span:first").removeClass("active");
         }
 
         function exitSubmenu(row) {
             var $row = $(row);
-            $row.find(".sub-menu-wrap").hide().eq(0).show();
         }
 
-        $(".nav-menu .std-menu li").click(function (e) {
+        $(".side-nav .std-menu li").click(function (e) {
             e.stopPropagation();
         });
 
-        $menu.find(".menu-section li:not('.sub-heading')").click(function () {
-            $(".std-menu").addClass("deactive").find("> li:not(:first-child) .sub-menu-wrap").css("display", "none");
-            $(".nav-menu span.active").removeClass("active");
+        $('.side-nav .menu-item').children('label, a, .nav-icon').click(function () {
+            $(this).parent('.menu-item').toggleClass('open').find('.std-menu').toggleClass('active');
+            $(this).parent('.menu-item').siblings().removeClass('open').find('.std-menu').removeClass('active');
         });
-
-        $(".nav-menu .top-tier").hover(
-            function () {
-                $(this).find(".active").removeClass("active");
-                $(this).find("li:first span:first").addClass("active");
-                $(this).find(".deactive").removeClass("deactive");
-            },
-            function () {
-                $(this).find("li:first span:first").removeClass("active");
-            }
-        );
     }
+    
+    $("#homeNav, .logo-product").click(
+        function () {
+            
+            if ($('html').hasClass('page-collapsed')) {
+                $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
+            } else {
+                $('#navbarSide').find('.top-tier').removeClass('open').find('.std-menu').removeClass('active');
+            }
 
-    $('#homeNav').click(function () {
-        $('.feature_nav').removeClass('active');
+            ShowHomePage();
+            updateLayout(false);
+        }
+    );
 
-        $(this).addClass('active');
 
-        $('#dvWindows > div').each(function () {
-            $(this).find("span").removeClass('selected');
-        });
+    $('.std-menu').click(function (event) {
+        event.stopPropagation();
+    });
+
+    $('#topMenuTools .k-link').click(function () {
+        $('.quick-menu').toggle();
+        $(this).parent('.menu-item-with-icon').toggleClass('active').toggleClass('inactive')
+        return false;
     });
 
     function iFrameLoadEvent(e, $iframe)
@@ -421,6 +465,7 @@ $(document).ready(function () {
                     $("#windowManager > div").show();
                     //display number of open tasks
                     $('#spWindowCount').text($('#dvWindows').children().length);
+                    
                 } else {
                     //close the task window
                     $("#windowManager > div").hide();
@@ -431,11 +476,18 @@ $(document).ready(function () {
                     $('#spWindowCount').text("0");
                     screenId = defaultScreenId;
 
+                    $('#screenLayout').hide();
+
                     $('#spnSessionDate').removeClass('disabled');
                     $('#sessionDatelabel').removeClass('disabled');
                     $('#sessionDateIcon').removeClass('disabled');
                     $('#sessionDateIcon').removeClass('glyphicon-lock');
                     $('#sessionDateIcon').addClass('glyphicon-calendar-1');
+
+                    // show background
+                    $('html').addClass('home-page');
+                    // show home button as activated
+                    $('#homeNav').addClass('active').children("a").addClass('active');
                 }
 
                 // Breadcrumb - Load breadcrumb on window management item removal  
@@ -480,6 +532,7 @@ $(document).ready(function () {
                 isWidgetVisible = false;
                 AreWidgetVisible();
                 ShowCorrectLayout();
+                updateLayout(false);
             }
 
             if (e) {
@@ -493,6 +546,7 @@ $(document).ready(function () {
         var $iframe = $(this).find("iframe");
         $iframe.load(function (e) {
             iFrameLoadEvent(e, $(this));
+            window.scrollTo(0, 0);
         });
     });
 
@@ -504,16 +558,17 @@ $(document).ready(function () {
         $(this).addClass('selected');
 
         if ($(this).attr('command') === "Remove") {
-            var url = $("#" + currentIframeId).attr("src");
+            var $currentIframeId = $("#" + currentIframeId);
+            var url = $currentIframeId.attr("src");
             var isReport = url.indexOf("ReportViewer.aspx?token") > 0 || url.indexOf("CustomReportViewer.aspx?reportName") > 0 ;
 
-            $("#" + currentIframeId).attr("src", "about:blank");
+            $currentIframeId.attr("src", "about:blank");
             currentDiv = ($(this).attr('controlToRemove'));
 
             setTimeout(function () {
                 var isContentWindow = sg.utls.isChrome() || sg.utls.isMozillaFirefox() || sg.utls.isSafari();
                 var iframeWin = isContentWindow ? window[currentIframeId].contentWindow : window[currentIframeId];
-                isIframeClose = (iframeWin.name === "unloadediFrame") || isReport;
+                isIframeClose = isReport || (iframeWin.name === "unloadediFrame");
 
                 if (isIframeClose) {
                     flag = false;
@@ -524,11 +579,15 @@ $(document).ready(function () {
                     });
                     var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
                         currentIframeId);
-                    $("#" + currentIframeId).parent().empty().append(iframeHtml);
-                    iFrameLoadEvent(null, $("#" + currentIframeId));
+                    $currentIframeId.parent().empty().append(iframeHtml);
+                    iFrameLoadEvent(null, $currentIframeId);
+                } else {
+                    //keep the original src url, used with check whether the screen is still opened(isScreenAlreadyOpen) as select "stay" option in confirmation prompt  
+                    if (!$currentIframeId.prop("originalSrc")) {
+                        $currentIframeId.prop("originalSrc", url);
+                    }
                 }
             }, 100);
-
         } else if ($(this).attr('command') === "Add") {
             var currentSelectedRank = $(this).attr("rank");
             if ($('#widgetHplayout').is(":visible")) {
@@ -548,6 +607,8 @@ $(document).ready(function () {
 
             $('#screenLayout').show();
             $('#widgetLayout').hide();
+            // remove background
+            $('html').removeClass('home-page');
 
             $("#" + currentDiv + "").show();
             currentIframe = currentDiv;
@@ -574,6 +635,41 @@ $(document).ready(function () {
                 screenId = reportScreenHelp;
             }
         }
+    });
+
+    $("#dvRecentWindows").on("click", "span", function () {
+
+        // remove background when screenLayout is visible 
+        $('html').removeClass('home-page');
+
+        //Adding Class Selected to the Active Window
+        $('div#dvRecentWindows span').not($(this)).removeClass('selected');
+        $(this).addClass('selected');
+
+        $('#screenLayout').show();
+        $('#widgetLayout').hide();
+
+        targetUrl = $(this).attr('data-url');
+
+        if (isScreenAlreadyOpen(targetUrl)) return;
+        if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+
+        if ($('#widgetHplayout').is(":visible")) {
+            $('#widgetHplayout').hide();
+        }
+        $("#" + currentDiv + "").show();
+
+        // Breadcrumb - Load breadcrumb on window management item selection
+        var parentidVal = $(this).data('parentid');
+        loadBreadCrumb(parentidVal);
+        // Menu Help - Load Menu Help on window management item selection
+        screenId = $(this).attr("data-menuid");
+        //Checking the Taskdoc having a generated Report Screen or not
+        if (screenId === reportScreenId) {
+            screenId = reportScreenHelp;
+        }
+        clearIframes();
+        assignUrl(this.innerHTML, parentidVal, screenId);
     });
 
     widgetUI = { NavigableMenuDetail: {} };
@@ -659,10 +755,13 @@ $(document).ready(function () {
             if (!$iframe.is(':visible') && $iframe.attr("src") === '' && !isIframeOpen && !isScreenOpen) {
                 isIframeOpen = true;
                 isIframeClose = false;
-
                 $iframe.addClass('screenLoading');
                 $iframe.contents().find('body').html('');
                 $iframe.attr("src", targetUrl);
+                $iframe.load(function () {
+                    // remove the loading/spinner after the page is loaded
+                    $(this).removeClass('screenLoading');
+                });
                 $iframe.show();
 
                 $.each(controls, function (index, element) {
@@ -684,14 +783,21 @@ $(document).ready(function () {
 
                 var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid + '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText + '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
                 $('#dvWindows').append($divWindow);
+
+                recentWindowsMenu.populateRecentWindow($iframe, menuid, parentid, targetUrl, windowText);
+
                 $('#spWindowCount').text($('#dvWindows').children().length);
                 taskAdded();
+
+                $('html').removeClass('home-page');
 
                 $('#spnSessionDate').addClass('disabled');
                 $('#sessionDatelabel').addClass('disabled');
                 $('#sessionDateIcon').addClass('disabled');
                 $('#sessionDateIcon').removeClass('glyphicon-calendar-1');
                 $('#sessionDateIcon').addClass('glyphicon-lock');
+
+                window.scrollTo(0, 0);
 
                 //called help according to screenId i.e menuid
                 //Checking the Taskdoc having a generated Report Screen or not
@@ -704,12 +810,26 @@ $(document).ready(function () {
         });
     }
 
-    $('#home_nav').kendoMenu();
+    $('#nav-home').kendoMenu();
     var targetUrl = "#";
+
+    function isMaxScreenNumReachedAndNotOpen(targetUrl) {
+        //Check if maximum number of screens reached
+        var isScreenOpen = isScreenAlreadyOpen(targetUrl);
+        if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
+            $('#dvWindowsExceedLimitErrorMessage').show();
+            return true;
+        }
+        return false;
+    }
 
     // TO DO : Move the below piece of code to Index page where you put your frame
     // Invoked from the main menu
     $(".menu-section a").on("click", function (event) {
+
+        // remove home button activated style
+        $('#homeNav').removeClass('active').children("a").removeClass('active');
+        $('html').removeClass('home-page');
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
@@ -726,20 +846,17 @@ $(document).ready(function () {
         } else {
             $('#screenLayout').show();
             $('#widgetLayout').hide();
+            window.scrollTo(0, 0);
+
             if ($(event.target).data('url') != " ")
                 targetUrl = $(event.target).data('url');
-
-
-            //Check if maximum number of screens reached
-            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-                $('#dvWindowsExceedLimitErrorMessage').show();
-                return;
-            }
+            if (isScreenAlreadyOpen(targetUrl)) return;
+            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
             }
+
             // Load breadcrumb on menu item click and add item to windows dock
             var parentidVal = $(this).data('parentid');
 
@@ -765,14 +882,22 @@ $(document).ready(function () {
                 assignUrl(windowtext, parentidVal, screenId);
         }
 
-        //close menu
-        $(".nav-menu .top-tier").each(function () {
-            $(this).find(".active").removeClass("active");
-        });
-
-        $(".feature_nav").removeClass("active");
-
     });
+
+    // Mouseover (or hover) styles on touch devices 
+
+    //$('.side-nav .menu-item').children('label, a, .nav-icon').on('touchstart', function (e) {
+    //    'use strict'; //satisfy code inspectors
+    //    var link = $(this); //preselect the link
+    //    if (link.hasClass('hover')) {
+    //        return true;
+    //    } else {
+    //        link.addClass('hover');
+    //        $('.side-nav .menu-item').children('label, a, .nav-icon').not(this).removeClass('hover');
+    //        e.preventDefault();
+    //        return false; //extra, and to make sure the function has consistent return points
+    //    }
+    //});
 
     $('.icon.msgCtrl-close').click(function () {
         $('#dvWindowsExceedLimitErrorMessage').hide();
@@ -858,12 +983,8 @@ $(document).ready(function () {
 
                 }
 
-                //Check if maximum number of screens reached
-                var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-                if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-                    $('#dvWindowsExceedLimitErrorMessage').show();
-                    return;
-                }
+                if (isScreenAlreadyOpen(targetUrl)) return;
+                if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
                 if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                     clearIframes();
@@ -895,14 +1016,18 @@ $(document).ready(function () {
 
         }
     };
-
+    //Check whether the screen is opened, use currently src url and original url 
     function isScreenAlreadyOpen(url) {
         var result = false;
         //Check if the screen is already open
         $('#screenLayout').children().each(function () {
             var $iframe = $(this).find("iframe");
-            if ($iframe.attr("src") ===url) {
-                result = true;
+            var srcUrl = $iframe.attr("src");
+            var originalUrl = $iframe.prop("originalSrc");
+            result = (srcUrl === url) || (originalUrl && originalUrl === url);
+            if (result) {
+                $("#dvWindows span[command='Add'][frameid='" + $iframe[0].id + "']").trigger("click");
+                return false;
             }
         });
 
@@ -951,8 +1076,8 @@ $(document).ready(function () {
 
     function createInquiryURLWithParameters(inquiryParameter)
     {
-        return sg.utls.formatString("{0}/?module={1}&inquiryType={2}&target={3}&value={4}&title={5}",
-            inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value, inquiryParameter.title);
+        return sg.utls.formatString("{0}/?module={1}&inquiryType={2}&target={3}&value={4}&title={5}&name={6}",
+            inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value, encodeURIComponent(inquiryParameter.title), encodeURIComponent(inquiryParameter.name));
     }
 
     // Function to handle opening of Reports and Screen as a New Task Window.
@@ -969,12 +1094,7 @@ $(document).ready(function () {
             $('#screenLayout').show();
             $('#widgetLayout').hide();
 
-            //Check if maximum number of screens reached
-            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-                $('#dvWindowsExceedLimitErrorMessage').show();
-                return;
-            }
+            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -998,15 +1118,10 @@ $(document).ready(function () {
             var screenName, parentId, menuid;
 
             var urlParser = $('<a>', { href: postMessageData[postMessageData.length - 1] })[0];
-            var a = $("#xmlMenuDiv li > a[data-url='" + urlParser.pathname + "']");
+            var a = $("#listPrimary li > a[data-url='" + urlParser.pathname + "']");
             var isReport = a.data("isreport");
 
-            //Check if maximum number of screens reached
-            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-                $('#dvWindowsExceedLimitErrorMessage').show();
-                return;
-            }
+            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -1044,12 +1159,7 @@ $(document).ready(function () {
             var postMessageData = evtData.split(" ");
             targetUrl = postMessageData[1];
 
-            //Check if maximum number of screens reached
-            var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-            if (!isScreenOpen && $('#dvWindows').children().length >= numberOfActiveWindows) {
-                $('#dvWindowsExceedLimitErrorMessage').show();
-                return;
-            }
+            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
             if ($('#dvWindows').children().length <= numberOfActiveWindows) {
                 clearIframes();
@@ -1156,16 +1266,19 @@ $(document).ready(function () {
             cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
         }
 
-        // call WebApiProxy to get temp token
-        sg.utls.ajaxGet(sg.utls.url.buildUrl("WebApiProxy?generateSession=true" + cb, "", ""), {}, function (result) {
-            if (result) {
-                if (!sIRCLocation) {
-                    // if no SIRC location is defined, assume it would be on the same location with https (ie https://<current server>/)
-                    sIRCLocation = "https://" + location.hostname + ":" + SIRCPort + "/";
-                }
-
-                var win = window.open(sIRCLocation + '?tempCode=' + result.TempSessionId + '&locale=' + result.UserLanguage, '_blank');
-            }
-        });
+        // attemp to signout and start SIRC afterward
+        OAuthWindow = window.open(oAuthLocation + "/connect/endsession");
     });
 });
+
+window.addEventListener("message", function (e) {
+    if (e.data === "SignedOut" && OAuthWindow) {
+        OAuthWindow.close();
+        var cb = ""; //cachebuster
+        if (sg.utls.isInternetExplorer()) {
+            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000)); // generate date + random number to make the URL unique
+        }
+        window.open(sg.utls.url.buildUrl("WebApiProxy?" + cb, "", ""));
+    }
+}, false);
+

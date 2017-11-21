@@ -71,6 +71,40 @@
   }
 }
 
+.status-msg-content {
+  padding: 8px 8px 8px 50px;
+  border: 1px solid #ff9900;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.3;
+  min-height: 55px;
+
+  label {
+    font-size: 14px;
+  }
+
+  &.msg.msg-warning {
+    border: 1px solid #ff9900;
+
+    &:before {
+    background-position: -449px 11px;
+    background-color: transparent;
+    }      
+  }
+
+  &.msg.msg-info {
+    border: 1px solid #00a4cf;
+
+    &:before {
+    background-position: -398px 11px;
+    background-color: transparent;
+    }      
+  }
+}
+
 // Alternate styles
 //
 // Generate contextual modifier classes for colorizing the alert.
@@ -96,6 +130,7 @@
 #success { 
     width: 100%;
     position: fixed;
+    margin-top: 110px;
     left: 0;
     z-index: 99999;
     .box-sizing(border-box);
@@ -106,9 +141,9 @@
     background-color: #4d4f53;
     margin: 0 auto;
     min-height: 50px; 
-    box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
 }
 
 #message {
@@ -117,11 +152,11 @@
     left: 50%;
     margin-left: -350px;
     z-index: 999999;
-    margin-top: 50px;
+    margin-top: 160px;
     padding-top: 0 !important;
-    box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.20) 0 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
 
     .modal-msg h3 {
       padding:  17px 0 10px; 
