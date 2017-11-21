@@ -1170,6 +1170,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                                 !repositoryType.Equals(RepositoryType.Inquiry) &&
                                                 !repositoryType.Equals(RepositoryType.HeaderDetail);
 
+                // Finder default for Header-Detail should be checked for header entity only otherwise unchecked
+                if (repositoryType.Equals(RepositoryType.HeaderDetail))
+                {
+                    // Checked if header entity
+                    chkGenerateFinder.Checked = _clickedEntityTreeNode.Name.Equals(ProcessGeneration.ElementEntities) && 
+                        _clickedEntityTreeNode.Nodes.Count.Equals(1);
+                }
+
                 chkGenerateDynamicEnablement.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
                 chkGenerateClientFiles.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
                 chkGenerateIfExist.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
