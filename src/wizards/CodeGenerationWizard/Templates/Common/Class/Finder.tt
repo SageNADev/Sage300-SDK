@@ -99,7 +99,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
         /// <returns>Get first or default <#=modelName#></returns>
         public virtual ModelBase Get(string id)
         {
-            Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == id;
+            Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#>.ToString() == id;
             Service.IsReadOnly = true;
             var model = Service.FirstOrDefault(filter);
             Service.IsReadOnly = false;

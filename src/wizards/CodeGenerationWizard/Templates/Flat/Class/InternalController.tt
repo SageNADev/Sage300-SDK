@@ -152,7 +152,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=entityName#>ViewModel<T> Delete(string id)
         {
-            Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == id;
+            Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#>.ToString() == id;
             var data = Service.Delete(filter);
 
             var userMessage = new UserMessage(data,
