@@ -21,13 +21,13 @@
 #region Namespace
 
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using ValuedParter.TU.Resources;
-using ValuedParter.TU.Models;
+using ValuedPartner.TU.Resources;
+using ValuedPartner.TU.Models;
 using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace ValuedParter.TU.Models
+namespace ValuedPartner.TU.Models
 {
      /// <summary>
      /// Partial class for Receipt Detail OptionalField

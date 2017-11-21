@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ValuedParter.TU.Resources
+namespace ValuedPartner.TU.Resources
 {
     using System;
 
@@ -45,7 +45,7 @@ namespace ValuedParter.TU.Resources
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ValuedParter.TU.Resources.MenuResx", typeof(MenuResx).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ValuedPartner.TU.Resources.MenuResx", typeof(MenuResx).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

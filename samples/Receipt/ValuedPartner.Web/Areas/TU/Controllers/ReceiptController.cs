@@ -26,9 +26,9 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Resources.Forms;
-using ValuedParter.Web.Areas.TU.Models;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Resources.Forms;
+using ValuedPartner.Web.Areas.TU.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -36,7 +36,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Controllers
+namespace ValuedPartner.Web.Areas.TU.Controllers
 {
     /// <summary>
     ///  Controller for Receipt view

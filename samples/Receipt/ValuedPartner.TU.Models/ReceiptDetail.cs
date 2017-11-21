@@ -26,12 +26,12 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 
-using ValuedParter.TU.Models.Enums;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Models.Enums;
+using ValuedPartner.TU.Resources.Forms;
 
 #endregion
 
-namespace ValuedParter.TU.Models
+namespace ValuedPartner.TU.Models
 {
     /// <summary>
     /// Partial class for ReceiptDetail

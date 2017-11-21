@@ -20,7 +20,7 @@
 
 using System.Web.Optimization;
 
-namespace ValuedParter.Web
+namespace ValuedPartner.Web
 {
     /// <summary>
     /// Class for bundle registration
@@ -34,10 +34,10 @@ namespace ValuedParter.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region Receipt
-			bundles.Add(new ScriptBundle("~/bundles/ValuedParterReceipt").Include(
-				"~/Areas/TU/Scripts/Receipt/ValuedParterReceiptBehaviour.js",
-				"~/Areas/TU/Scripts/Receipt/ValuedParterReceiptKoExtn.js",
-				"~/Areas/TU/Scripts/Receipt/ValuedParterReceiptRepository.js",
+			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerReceipt").Include(
+				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptBehaviour.js",
+				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptKoExtn.js",
+				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
         }

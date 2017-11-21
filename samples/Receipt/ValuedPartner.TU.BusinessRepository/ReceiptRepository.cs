@@ -32,10 +32,10 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-using ValuedParter.TU.BusinessRepository.Mappers;
-using ValuedParter.TU.Interfaces.BusinessRepository;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.BusinessRepository.Mappers;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +45,7 @@ using ICModel = Sage.CA.SBS.ERP.Sage300.IC.Models;
 
 #endregion
 
-namespace ValuedParter.TU.BusinessRepository
+namespace ValuedPartner.TU.BusinessRepository
 {
   
     /// <summary>

@@ -23,13 +23,13 @@
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedParter.TU.Models;
+using ValuedPartner.TU.Models;
 using System;
 using System.Linq.Expressions;
 
 #endregion
 
-namespace ValuedParter.TU.Interfaces.Services
+namespace ValuedPartner.TU.Interfaces.Services
 {
     /// <summary>
     /// An Interface for TU Receipt service

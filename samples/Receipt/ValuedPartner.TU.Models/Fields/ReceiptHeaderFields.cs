@@ -24,7 +24,7 @@
 
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using System.Collections.Generic;
-namespace ValuedParter.TU.Models
+namespace ValuedPartner.TU.Models
 {
     /// <summary>
     /// Contains list of ReceiptHeader Constants

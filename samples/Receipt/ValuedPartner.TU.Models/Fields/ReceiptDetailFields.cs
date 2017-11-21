@@ -22,7 +22,7 @@
 
 #endregion
 
-namespace ValuedParter.TU.Models
+namespace ValuedPartner.TU.Models
 {
     /// <summary>
     /// Contains list of ReceiptDetail Constants

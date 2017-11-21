@@ -21,11 +21,11 @@
 #region Namespace
 
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedParter.TU.Resources.Forms;
+using ValuedPartner.TU.Resources.Forms;
 
 #endregion
 
-namespace ValuedParter.TU.Models.Enums
+namespace ValuedPartner.TU.Models.Enums
 {
     /// <summary>
     /// Enum for ReceiptType

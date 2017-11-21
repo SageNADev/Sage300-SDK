@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ValuedParter.TU.Interfaces")]
+[assembly: AssemblyTitle("ValuedPartner.TU.Interfaces")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ValuedParter.TU.Interfaces")]
-[assembly: AssemblyCopyright("Copyright © 2016 ValuedParter")]
+[assembly: AssemblyProduct("ValuedPartner.TU.Interfaces")]
+[assembly: AssemblyCopyright("Copyright © 2016 ValuedPartner")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

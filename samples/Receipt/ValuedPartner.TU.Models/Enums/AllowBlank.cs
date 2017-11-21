@@ -21,7 +21,7 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 
-namespace ValuedParter.TU.Models.Enums
+namespace ValuedPartner.TU.Models.Enums
 {
     /// <summary>
     /// Enum for AllowBlank 

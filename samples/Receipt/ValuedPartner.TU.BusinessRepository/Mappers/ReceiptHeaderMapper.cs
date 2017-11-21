@@ -25,12 +25,12 @@ using System;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 
 #endregion
 
-namespace ValuedParter.TU.BusinessRepository.Mappers
+namespace ValuedPartner.TU.BusinessRepository.Mappers
 {
     /// <summary>
     /// Class for ReceiptHeader mapping

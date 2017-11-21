@@ -32,24 +32,24 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
-using ValuedParter.TU.Interfaces.BusinessRepository;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
-using ValuedParter.TU.Resources.Forms;
-using ValuedParter.Web.Areas.TU.Models;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
+using ValuedPartner.TU.Resources.Forms;
+using ValuedPartner.Web.Areas.TU.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Options = Sage.CA.SBS.ERP.Sage300.IC.Models.Options;
 using PostingDate = Sage.CA.SBS.ERP.Sage300.IC.Models.Enums.DefaultPostingDate;
-using Type = ValuedParter.TU.Models.Enums.Type;
+using Type = ValuedPartner.TU.Models.Enums.Type;
 using ICService = Sage.CA.SBS.ERP.Sage300.IC.Interfaces.Services;
 
 
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Controllers
+namespace ValuedPartner.Web.Areas.TU.Controllers
 {
     /// <summary>
     ///  Controller for Receipt view
@@ -827,7 +827,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         public virtual ReceiptDetail SetDetail(ReceiptDetail currentDetail)
         {
             var model = RepoService.SetDetail(currentDetail);
-            return model?.ReceiptDetail.Items.FirstOrDefault();
+            return model == null ? null : model.ReceiptDetail.Items.FirstOrDefault();
         }
 
         /// <summary>
