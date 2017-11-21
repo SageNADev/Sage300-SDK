@@ -126,7 +126,7 @@ var receiptRepository = {
     },
 
     getVendorDetails: function (id) {
-        var data = { 'vendorNumber': id };
+        var data = { 'id': id };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail"), data, receiptUISuccess.getVendorDetailsSuccess);
     },
 
@@ -198,28 +198,28 @@ var receiptRepository = {
         window.sg.utls.ajaxPost(window.sg.utls.url.buildUrl("TU", "Receipt", "GetDetailOptFieldFinderData"), data, receiptUISuccess.fillOptionalFieldFinderData);
     }, 
 
-    saveOptionalFields: function (model) {
+    saveOptionalFields: function (modelData) {
         var data = {
-            receiptOptionalField: ko.mapping.toJS(model),
+            model: ko.mapping.toJS(modelData),
             receiptNumber: receiptUI.receiptModel.Data.ReceiptNumber(),
             isDetail:receiptUI.isDetailOptionalField
         };
         sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetailOptFields"), data, receiptUISuccess.saveOptionalFields);
     },
 
-    setDetail: function (model) {
-        if (model) {
+    setDetail: function (modelData) {
+        if (modelData) {
             var data = {
-                currentDetail: ko.mapping.toJS(model)
+                model: ko.mapping.toJS(modelData)
             };
             sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SetDetail"), data, receiptUISuccess.setDetail);
         }
 
     },
 
-    refreshDetail: function (model) {
+    refreshDetail: function (modelData) {
         var data = {
-            model: ko.mapping.toJS(model)
+            model: ko.mapping.toJS(modelData)
         };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "RefreshDetail"), data, receiptUISuccess.refreshDetail);
     },
@@ -283,7 +283,7 @@ var receiptRepository = {
     },
 
     saveDetailOnChange: function (detail) {
-        var data = { detail: detail };
+        var data = { model: detail };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetail"), data, receiptUISuccess.refreshReceiptDetail);
     }
 }

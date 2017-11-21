@@ -21,15 +21,30 @@
 #region
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
+<<<<<<< HEAD
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using ValuedPartner.TU.Models;
+using System;
+using System.Linq.Expressions;
+
+#endregion
+
+namespace ValuedPartner.TU.Interfaces.BusinessRepository
+=======
 using ValuedParter.TU.Models;
 
 #endregion
 
 namespace ValuedParter.TU.Interfaces.BusinessRepository
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 {
     /// <summary>
     /// An Interface for TU Receipt Finder
     /// </summary>
+<<<<<<< HEAD
+    /// <typeparam name="T">Model of type Receipt Header</typeparam>
+=======
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
     public interface IReceiptHeaderEntity: IBusinessRepository<ReceiptHeader>, ISecurity  
     {
     }

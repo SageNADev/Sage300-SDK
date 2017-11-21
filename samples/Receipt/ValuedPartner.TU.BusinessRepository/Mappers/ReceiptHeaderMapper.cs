@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,12 +25,12 @@ using System;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 
 #endregion
 
-namespace ValuedParter.TU.BusinessRepository.Mappers
+namespace ValuedPartner.TU.BusinessRepository.Mappers
 {
     /// <summary>
     /// Class for ReceiptHeader mapping

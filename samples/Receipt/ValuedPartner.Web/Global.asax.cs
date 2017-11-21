@@ -38,7 +38,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ValuedParter.Web
+namespace ValuedPartner.Web
 {
     /// <summary>
     /// MVC application class that provides start and end functionality for application and user sessions

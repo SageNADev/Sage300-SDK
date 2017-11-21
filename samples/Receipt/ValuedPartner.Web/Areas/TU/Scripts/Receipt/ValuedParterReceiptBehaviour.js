@@ -2735,7 +2735,7 @@ var receiptGrid = {
         },
 
         //URL to get the data from the server. 
-        pageUrl: sg.utls.url.buildUrl("TU", "Receipt", "GetPagedReceiptDetails"),
+        pageUrl: sg.utls.url.buildUrl("TU", "Receipt", "GetReceiptDetails"),
 
         //Call back function when Get is successful. In this, the data for the grid and the total results count are to be set along with updating knockout
         buildGridData: receiptGridUtility.setGridData,

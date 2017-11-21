@@ -26,9 +26,9 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Resources.Forms;
-using ValuedParter.Web.Areas.TU.Models;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Resources.Forms;
+using ValuedPartner.Web.Areas.TU.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -36,12 +36,16 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Controllers
+namespace ValuedPartner.Web.Areas.TU.Controllers
 {
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+    public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
+=======
         public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
     {
         #region Private Variables
 
@@ -82,17 +86,22 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         #region Actions
 
         /// <summary>
-        ///  Gets default Index Page
+        /// Get default receipt view
         /// </summary>
-        /// <returns>ActionResult.</returns>
+        /// <param name="id">Receipt number Id</param>
+        /// <param name="disableAll">disable screen</param>
+        /// <returns></returns>
         public virtual ActionResult Index(string id = null, bool disableAll = false)
         {
             ReceiptViewModel receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create(); 
             //Added this make the optionalFields uncheck in UI 
             receiptViewModel.Data.OptionalFields = 0;
             receiptViewModel.Attributes = ControllerInternal.GetDynamicAttributesOfHeader();
-            receiptViewModel.UserAccess = ControllerInternal.GetAccessRights();
-            ViewBag.UserAccess = ControllerInternal.GetAccessRights();
+
+            var accessRight = ControllerInternal.GetAccessRights();
+            receiptViewModel.UserAccess = accessRight;
+            ViewBag.UserAccess = accessRight;
+
             receiptViewModel.DisableScreen = disableAll;
             return View(receiptViewModel);
         }
@@ -126,7 +135,11 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="filters">Filters</param>
         /// <returns>Receipt data</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        public virtual JsonNetResult GetReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+=======
         public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -172,7 +185,7 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException,
+                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException,
                         CommonResx.OptionalField));
             }
         }
@@ -180,19 +193,23 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <summary>
         /// Save detail
         /// </summary>
-        /// <param name="detail">The detail model</param>
+        /// <param name="model">The detail model</param>
         /// <returns>returns  Receipt Viewmodel</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        public virtual JsonNetResult SaveDetail(ReceiptDetail model)
+=======
         public virtual JsonNetResult SaveDetail(ReceiptDetail detail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
-                return JsonNet(ControllerInternal.SaveDetail(detail));
+                return JsonNet(ControllerInternal.SaveDetail(model));
             }
             catch (BusinessException businessException)
             {
-                var receiptHeader = new ReceiptHeader { ReceiptDetail = new EnumerableResponse<ReceiptDetail> { Items = new List<ReceiptDetail> { detail } } };
-                return JsonNet(BuildErrorModelBase(receiptHeader, CommonResx.RefreshDetailsFailedMessage, businessException, "ReceiptView"));
+                var receiptHeader = new ReceiptHeader { ReceiptDetail = new EnumerableResponse<ReceiptDetail> { Items = new List<ReceiptDetail> { model } } };
+                return JsonNet(BuildErrorModelBase(receiptHeader, CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -406,11 +423,20 @@ namespace ValuedParter.Web.Areas.TU.Controllers
             } 
         }
 
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        /// <summary>
+        /// Get vendor details by vendor number id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonNetResult GetVendorDetail(string id) 
+=======
         public JsonNetResult GetVendorDetail(string vendorNumber) 
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
-                return JsonNet(ControllerInternal.GetVendorDetail(vendorNumber));
+                return JsonNet(ControllerInternal.GetVendorDetail(id));
             }
             catch (BusinessException businessException)
             {
@@ -470,16 +496,20 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <summary>
         /// Post Receipt
         /// </summary>
-        /// <param name="headerModel">Receipt Header model</param>
+        /// <param name="model">Receipt Header model</param>
         /// <param name="sequenceNumber">Sequence Number</param>
         /// <param name="yesNo">Check Yes No confirmation selection</param>
         /// <returns>Receipt</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        public virtual JsonNetResult Post(ReceiptHeader model, long sequenceNumber, bool yesNo)
+=======
         public virtual JsonNetResult Post(ReceiptHeader headerModel, long sequenceNumber, bool yesNo)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
-                return JsonNet(ControllerInternal.Post(headerModel, sequenceNumber, yesNo));
+                return JsonNet(ControllerInternal.Post(model, sequenceNumber, yesNo));
             }
             catch (BusinessException businessException)
             {
@@ -490,20 +520,24 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <summary>
         /// Save detail optional field.
         /// </summary>
-        /// <param name="receiptOptionalField">Receipt Optional Field</param>
+        /// <param name="model">Receipt Optional Field</param>
         /// <param name="receiptNumber">Receipt Number</param>
         /// <param name="isDetail">True / False</param>
         /// <returns>Receipt Detail Optional Field</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> model, string receiptNumber, bool isDetail)
+=======
         public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> receiptOptionalField, string receiptNumber, bool isDetail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
-                return JsonNet(ControllerInternal.SaveOptionalFields(receiptOptionalField, receiptNumber, isDetail));
+                return JsonNet(ControllerInternal.SaveOptionalFields(model, receiptNumber, isDetail));
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException, CommonResx.OptionalField));
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, CommonResx.OptionalField));
             }
         }
 
@@ -515,8 +549,12 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <param name="pageSize">Page Size</param>
         /// <returns>Enumerable Response of Receipts Optional Field</returns>
         [HttpPost]
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber, int pageSize)
+=======
         public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
             int pageSize)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
@@ -595,14 +633,21 @@ namespace ValuedParter.Web.Areas.TU.Controllers
         /// <summary>
         /// Set detail to current row
         /// </summary>
+<<<<<<< HEAD:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
+        /// <param name="model">Current ReceiptDetail model</param>
+        /// <returns>returns ReceiptDetail model</returns>
+        [HttpPost]
+        public virtual JsonNetResult SetDetail(ReceiptDetail model)
+=======
         /// <param name="currentDetail">Current ReceiptDetail model</param>
         /// <returns>returns ReceiptDetail model</returns>
         [HttpPost]
         public virtual JsonNetResult SetDetail(ReceiptDetail currentDetail)
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2:samples/Receipt/ValuedPartner.Web/Areas/TU/Controllers/ReceiptController.cs
         {
             try
             {
-                return JsonNet(ControllerInternal.SetDetail(currentDetail));
+                return JsonNet(ControllerInternal.SetDetail(model));
             }
             catch (BusinessException businessException)
             {

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,14 +24,14 @@ using System.Linq;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedParter.TU.Models;
-using ValuedParter.TU.Models.Enums;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System;
 #endregion
 
-namespace ValuedParter.Web.Areas.TU.Models
+namespace ValuedPartner.Web.Areas.TU.Models
 {
     public class ReceiptViewModel : ViewModelBase<ReceiptHeader>  
     {

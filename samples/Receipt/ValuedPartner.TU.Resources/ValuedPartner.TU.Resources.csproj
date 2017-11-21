@@ -7,8 +7,8 @@
     <ProjectGuid>{CDB16FD3-C8B1-4520-A9F3-0AD2B6328B0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ValuedParter.TU.Resources</RootNamespace>
-    <AssemblyName>ValuedParter.TU.Resources</AssemblyName>
+    <RootNamespace>ValuedPartner.TU.Resources</RootNamespace>
+    <AssemblyName>ValuedPartner.TU.Resources</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

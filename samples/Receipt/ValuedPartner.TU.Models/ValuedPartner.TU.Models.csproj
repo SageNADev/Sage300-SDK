@@ -7,8 +7,8 @@
     <ProjectGuid>{1B84FCAE-7113-41AE-8746-9F8B5B635FB9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ValuedParter.TU.Models</RootNamespace>
-    <AssemblyName>ValuedParter.TU.Models</AssemblyName>
+    <RootNamespace>ValuedPartner.TU.Models</RootNamespace>
+    <AssemblyName>ValuedPartner.TU.Models</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -89,7 +89,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj">
       <Project>{cdb16fd3-c8b1-4520-a9f3-0ad2b6328b0e}</Project>
-      <Name>ValuedParter.TU.Resources</Name>
+      <Name>ValuedPartner.TU.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

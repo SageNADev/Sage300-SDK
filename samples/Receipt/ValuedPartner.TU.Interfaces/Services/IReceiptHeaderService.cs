@@ -23,17 +23,29 @@
 
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+<<<<<<< HEAD
+using ValuedPartner.TU.Models;
+=======
 using ValuedParter.TU.Models;
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 using System;
 using System.Linq.Expressions;
 
 #endregion
 
+<<<<<<< HEAD
+namespace ValuedPartner.TU.Interfaces.Services
+=======
 namespace ValuedParter.TU.Interfaces.Services
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
 {
     /// <summary>
     /// An Interface for TU Receipt service
     /// </summary>
+<<<<<<< HEAD
+    /// <typeparam name="T">Model of type ReceiptHeader</typeparam>
+=======
+>>>>>>> ff0042d533a7308467f0048872236ad8afb584d2
     public interface IReceiptHeaderService : IEntityService<ReceiptHeader>, ISecurityService 
     {
        
