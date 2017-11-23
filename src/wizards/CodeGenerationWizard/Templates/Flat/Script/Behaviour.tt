@@ -62,7 +62,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
     // Save
     save<#=entityName#>: function () {
-        if ($("#frm<#=entityName#>").valid()) {
+        if ($("#frm<#=containerName#>").valid()) {
             var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
             if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
                 <#=localEntityName#>Repository.update(data, <#=localEntityName#>UISuccess.update);
@@ -102,10 +102,10 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
         // Delete Button
         $("#btnDelete").bind('click', function () {
-            if ($("#frm<#=entityName#>").valid()) {
+            if ($("#frm<#=containerName#>").valid()) {
                 var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
                 sg.utls.showKendoConfirmationDialog(function () {
-                    sg.utls.clearValidations("frm<#=entityName#>");
+                    sg.utls.clearValidations("frm<#=containerName#>");
                     <#=localEntityName#>Repository.delete(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.delete);
                 }, null, message, <#=localEntityName#>Resources.DeleteTitle);
             }
@@ -128,7 +128,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
     // Create
     create: function () {
-        sg.utls.clearValidations("frm<#=entityName#>");
+        sg.utls.clearValidations("frm<#=containerName#>");
         <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
     },
 
@@ -137,7 +137,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
-                    sg.utls.clearValidations("frm<#=entityName#>");
+                    sg.utls.clearValidations("frm<#=containerName#>");
                     functionToCall.call();
                 },
                 function () { // No
@@ -248,7 +248,7 @@ var <#=localEntityName#>UISuccess = {
     // Set Finder
     setFinderData: function () {
         var data = <#=localEntityName#>UI.finderData;
-        sg.utls.clearValidations("frm<#=entityName#>");
+        sg.utls.clearValidations("frm<#=containerName#>");
         ko.mapping.fromJS(data, {}, modelData);
         <#=localEntityName#>UI.finderData = null;
         modelData.UIMode(sg.utls.OperationMode.SAVE);

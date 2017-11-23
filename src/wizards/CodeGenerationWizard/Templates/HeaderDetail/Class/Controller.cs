@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+    #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class Controller : ControllerBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 2 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 3 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 4 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 5 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 6 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 7 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 8 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 9 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 10 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 11 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 12 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 13 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 14 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 15 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 16 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 17 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 18 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 19 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 24 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -154,14 +154,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var containerName = settings.EntitiesContainerName;
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
-
+	var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 38 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 38 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -179,77 +179,77 @@ using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ");
             
-            #line 49 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 49 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 49 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 49 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\nusing ");
             
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 50 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 50 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 51 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 51 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 51 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 55 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 55 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 55 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 55 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 58 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 58 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Public Controller\r\n    /// </summary>\r\n    public class ");
             
-            #line 60 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 60 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller : MultitenantControllerBase<");
             
-            #line 60 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 60 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -258,7 +258,7 @@ using ");
                     "     /// Gets or sets the internal controller\r\n        /// </summary>\r\n        p" +
                     "ublic ");
             
-            #line 67 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 67 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -266,7 +266,7 @@ using ");
             this.Write("ControllerInternal ControllerInternal { get; set; }\r\n\r\n        #endregion\r\n\r\n    " +
                     "    #region Constructor\r\n\r\n        /// <summary>\r\n        /// Constructor for ");
             
-            #line 74 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 74 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -274,20 +274,20 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"container\">Unity Container</pa" +
                     "ram>\r\n        public ");
             
-            #line 77 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 77 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller(IUnityContainer container)\r\n            : base(container,\"");
             
-            #line 78 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 78 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             
-            #line 78 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 78 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -309,7 +309,7 @@ using ");
             base.Initialize(requestContext);
             ControllerInternal = new ");
             
-            #line 93 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 93 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -318,14 +318,14 @@ using ");
                     "Public methods\r\n\r\n        /// <summary>\r\n        /// Load screen\r\n        /// </" +
                     "summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 103 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 103 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 104 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 104 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -333,7 +333,7 @@ using ");
             this.Write("</returns>\r\n        public virtual ActionResult Index(string id)\r\n        {\r\n    " +
                     "        ");
             
-            #line 107 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 107 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -350,14 +350,14 @@ using ");
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
                         ");
             
-            #line 117 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 117 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 117 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 117 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -365,21 +365,21 @@ using ");
             this.Write("));\r\n            }\r\n\r\n            return View(viewModel);\r\n        }\r\n\r\n        /" +
                     "// <summary>\r\n        /// Get ");
             
-            #line 124 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 124 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 126 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 126 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 127 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 127 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -401,30 +401,194 @@ using ");
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
                         ");
             
-            #line 142 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 142 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 142 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 142 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("));\r\n            }\r\n\r\n            return JsonNet(new ");
             
-            #line 145 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 145 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
-            this.Write("ViewModel());\r\n        }\r\n\r\n\r\n        #endregion\r\n    }\r\n}");
+            this.Write("ViewModel());\r\n        }\r\n\r\n\t\t/// <summary>\r\n        /// Add ");
+            
+            #line 149 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
+            
+            #line 151 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</param>\r\n        /// <returns>JSON object for ");
+            
+            #line 152 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</returns>\r\n        [HttpPost]\r\n        public virtual JsonNetResult Add(");
+            
+            #line 154 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(@" model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                   ? JsonNet(ControllerInternal.Add(model))
+                   : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
+                        ");
+            
+            #line 168 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 168 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
+            
+            #line default
+            #line hidden
+            this.Write("));\r\n            }\r\n        }\r\n\r\n        /// <summary>\r\n        /// Create ");
+            
+            #line 173 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <returns>JSON object for ");
+            
+            #line 175 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</returns>\r\n        [HttpPost]\r\n        public virtual JsonNetResult Create()\r\n  " +
+                    "      {\r\n            return JsonNet(ControllerInternal.Create());\r\n        }\r\n\r\n" +
+                    "        /// <summary>\r\n        /// Update ");
+            
+            #line 183 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
+            
+            #line 185 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</param>\r\n        /// <returns>JSON object for ");
+            
+            #line 186 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</returns>\r\n        [HttpPost]\r\n        public virtual JsonNetResult Save(");
+            
+            #line 188 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(@" model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                    ? JsonNet(ControllerInternal.Save(model))
+                    : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        /// <summary>
+        /// Delete ");
+            
+            #line 205 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
+            
+            #line 207 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write("</param>\r\n        /// <returns>JSON object for ");
+            
+            #line 208 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            
+            #line default
+            #line hidden
+            this.Write(@"</returns>
+        [HttpPost]
+        public virtual JsonNetResult Delete(string id)
+        {
+            try
+            {
+                return JsonNet(ControllerInternal.Delete(id));
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
+                        ");
+            
+            #line 220 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 220 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
+            
+            #line default
+            #line hidden
+            this.Write("));\r\n            }\r\n        }\r\n\r\n        #endregion\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+        #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
