@@ -33,7 +33,7 @@
     var containerName = settings.EntitiesContainerName;
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
-
+	var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 #>
 // <#=copyright#>
 
@@ -145,6 +145,81 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
             return JsonNet(new <#=containerName#>ViewModel());
         }
 
+		/// <summary>
+        /// Add <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Add(<#=headerModelName#> model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                   ? JsonNet(ControllerInternal.Add(model))
+                   : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+        }
+
+        /// <summary>
+        /// Create <#=modelName#>
+        /// </summary>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Create()
+        {
+            return JsonNet(ControllerInternal.Create());
+        }
+
+        /// <summary>
+        /// Update <#=modelName#>
+        /// </summary>
+        /// <param name="model">Model for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Save(<#=headerModelName#> model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+
+                return ValidateModelState(ModelState, out viewModel)
+                    ? JsonNet(ControllerInternal.Save(model))
+                    : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        /// <summary>
+        /// Delete <#=modelName#>
+        /// </summary>
+        /// <param name="id">Id for <#=modelName#></param>
+        /// <returns>JSON object for <#=modelName#></returns>
+        [HttpPost]
+        public virtual JsonNetResult Delete(string id)
+        {
+            try
+            {
+                return JsonNet(ControllerInternal.Delete(id));
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
+                        <#=resxName#>.<#=keyFieldName#>));
+            }
+        }
 
         #endregion
     }

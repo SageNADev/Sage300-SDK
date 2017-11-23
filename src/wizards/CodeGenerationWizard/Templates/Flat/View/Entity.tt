@@ -33,7 +33,6 @@
     }
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
-    var resxName = view.Properties[BusinessView.ResxName];
     var companyNamespace = settings.CompanyNamespace;
     var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.ModelName];
@@ -100,7 +99,7 @@ else
     <div class="form-group">
         <div class="search-group">
             @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
-            @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default txt-upper", @formatTextbox = "alphaNumeric" })
+            @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
             @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
             @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
             @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
