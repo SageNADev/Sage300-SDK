@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\ReceiptDetailResx.es.resx" />
-    <EmbeddedResource Include="Forms\ReceiptDetailResx.fr-CA.resx" />
+    <EmbeddedResource Include="Forms\ReceiptDetailResx.fr.resx" />
     <EmbeddedResource Include="Forms\ReceiptDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReceiptDetailResx.Designer.cs</LastGenOutput>
@@ -66,7 +66,7 @@
     <EmbeddedResource Include="Forms\ReceiptDetailResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ReceiptDetailResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ReceiptHeaderResx.es.resx" />
-    <EmbeddedResource Include="Forms\ReceiptHeaderResx.fr-CA.resx" />
+    <EmbeddedResource Include="Forms\ReceiptHeaderResx.fr.resx" />
     <EmbeddedResource Include="Forms\ReceiptHeaderResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReceiptHeaderResx.Designer.cs</LastGenOutput>
@@ -74,7 +74,7 @@
     <EmbeddedResource Include="Forms\ReceiptHeaderResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ReceiptHeaderResx.zh-Hant.resx" />
     <EmbeddedResource Include="MenuResx.es.resx" />
-    <EmbeddedResource Include="MenuResx.fr-CA.resx" />
+    <EmbeddedResource Include="MenuResx.fr.resx" />
     <EmbeddedResource Include="MenuResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>
