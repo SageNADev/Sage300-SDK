@@ -150,12 +150,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\ReleaseSpecificImportExport.txt" />
     <Content Include="content\ReleaseAllUpgrade.txt" />
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
-    <Content Include="content\ReleaseSpecificEnableXmlProperty.txt" />
+    <Content Include="content\ReleaseSpecificModifyLogin.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
