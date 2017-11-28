@@ -1119,6 +1119,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             txtViewID.Enabled = _modeType.Equals(ModeType.Add) && enable;
 
+            // If enabled AND Report or Dynamic Query then disable
+            if (txtViewID.Enabled)
+            {
+                if (repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report))
+                {
+                    txtViewID.Enabled = false;
+                }
+            }
+
             chkGenerateFinder.Enabled = (!repositoryType.Equals(RepositoryType.Report) &&
                                 !repositoryType.Equals(RepositoryType.Process) &&
                                 !repositoryType.Equals(RepositoryType.DynamicQuery) &&
