@@ -23,6 +23,7 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace MergeISVProject
 {
@@ -57,7 +58,6 @@ namespace MergeISVProject
             var moduleId = menuFileName.Substring(0, 2);
             var pathSage300 = GetSage300Path();
 
-
             var nodeploy = false;  // flag indicating if the files should be deployed [copied] to the Sage 300 online folder
             if (args.Length == 6)
             {
@@ -80,15 +80,22 @@ namespace MergeISVProject
                Directory.Delete(pathDeploy, true);
             }
             Directory.CreateDirectory(pathDeploy);
-
-            // compile and copy files to web project deploy folder
-            if (StageFiles(pathWebProj, menuFileName, pathFramework))
+            try
             {
-               if (!nodeploy)
-               { 
-                  DeployFiles(pathWebProj, pathSage300, menuFileName);
-               }
+                // compile and copy files to web project deploy folder
+                if (StageFiles(pathWebProj, menuFileName, pathFramework))
+                {
+                    if (!nodeploy)
+                    {
+                        DeployFiles(pathWebProj, pathSage300, menuFileName);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                 WriteErrorFile(pathWebProj, ex.Message);
+            }
+
         }
 
         /// <summary>
@@ -252,6 +259,31 @@ namespace MergeISVProject
                     File.Copy(pathMenuFrom, pathMenuSubTo, true);
                 }
             }
+            
+            //Get company name, icon file name, backgroud image file name and copy image files
+            var menuFilePath = Path.Combine(pathWebProj, menuFileName);
+            var menuFileContent = File.ReadAllText(menuFilePath);
+            var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
+            var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
+            var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
+
+            var pathImageFrom = Path.Combine(pathWebProj, @"Content\Images\nav");
+            var pathImageTo = Path.Combine(pathOnlineWeb, @"External\Content\Images\nav", companyName);
+
+            if (!Directory.Exists(pathImageTo))
+	        {
+		        Directory.CreateDirectory(pathImageTo);
+	        }
+            string[] imageNames = {menuIconName, menuBackGroundImage};
+            foreach (var image in imageNames)
+	        {
+		        var pathImageFileFrom = Path.Combine(pathImageFrom, image);
+                if (File.Exists(pathImageFileFrom))
+	            {
+                    var pathImageFileTo = Path.Combine(pathImageTo, image);
+		            File.Copy(pathImageFileFrom, pathImageFileTo);
+	            }
+	        }
 
             // Copy areas scripts files
             var pathAreaDir = Path.Combine(pathWebProj, "Areas");
