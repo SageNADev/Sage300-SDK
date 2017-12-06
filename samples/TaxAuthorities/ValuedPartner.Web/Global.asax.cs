@@ -67,9 +67,12 @@ namespace ValuedPartner.Web
                     TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
+                    ScreenContext = new ScreenContext(),
                     ScreenName = "None",
                     Container = BootstrapTaskManager.Container
                 };
+
+                context.ScreenContext.ScreenName = "None";
 
 				//Set default company information
                 var companies =  new List<Organization>

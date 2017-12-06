@@ -394,10 +394,12 @@ input[class*="btn-"]:hover,
   text-indent: -9999px;
 }
 
-.pencil-edit-disabled {
+.pencil-edit-disabled,
+input.pencil-edit-disabled {
   background-position: -607px -72px;
   cursor: default;
   text-indent: -9999px;
+  border: none;
 }
 
 // Filter buttons 
@@ -494,3 +496,64 @@ input.btn-filter-delete:hover {
 }
 
 
+.inquiry-panel-body {
+
+  button {
+
+    &:focus {
+       outline: none; 
+    }
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .btn-label {
+      color: #3c424f;
+      display: inline-block;
+      padding: 0 14px;
+      line-height: 1;
+      cursor: pointer;
+    }
+  }
+
+  .glyphicon {
+    color: #565658;
+    font-size: 16px;
+    line-height: 1;
+    padding-right: 10px;
+
+    &.glyphicon-quick-add {
+      color: #38c72a;
+    }
+  }
+
+  input.btn {
+    font-weight: normal;
+  }
+
+  .buttons-group {
+    border-top: 1px solid #fff;
+    padding-top: 16px;
+    height: 46px;
+
+    .btn:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    .btn-inquiry-save {
+      color: #fff;
+      background-color: #ed1c5f;
+      border: 1px solid #ed1c5f;
+
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: #cc1851;
+        border: 1px solid #cc1851;
+        cursor: pointer;
+      }
+    }
+  }
+}

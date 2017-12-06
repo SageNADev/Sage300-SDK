@@ -71,6 +71,34 @@
             }
         },
         /**
+         * Uncheck all radio buttons and check the current selected one
+         * 
+         * @param {string}  currentButtonId Id of the selected radio button element
+         * @param {string[]} radioIdList List of Ids of selectable radio buttons
+         */
+        SelectRadioButton: function (currentButtonId, radioIdList) {
+            $.each(radioIdList, function(key, val) {
+                if (val !== currentButtonId) {
+                    $('#' + val).parent().removeClass('focus selected');
+                    $('#' + val).prop('checked', false);
+                }
+            });
+            $('#' + currentButtonId).prop('checked', true);
+            $('#' + currentButtonId).parent().addClass('focus selected');
+        },
+        /**
+         * Initial the select behaviour of radio buttons
+         * 
+         * @param {string[]} radioIdList List of Ids of selectable radio buttons
+         */
+        InitSelectRadioButtonBehaviour: function (radioIdList) {
+            $.each(radioIdList, function(key, val) {
+                $('#' + val).click(function() {
+                    return sg.controls.SelectRadioButton(val, radioIdList);
+                });
+            });
+        },
+        /**
          * Applies the input focus to a specified element.
          * 
          * @param {object} element The element to set the focus to.

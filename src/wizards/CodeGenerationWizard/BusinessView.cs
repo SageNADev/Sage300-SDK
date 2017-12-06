@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Namespaces
+using System;
 using System.Collections.Generic;
 
 #endregion
@@ -34,8 +35,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public const string ModelName = "ModelName";
         public const string ModuleId = "ModuleId";
         public const string EntityName = "EntityName";
+        public const string ReportIni = "ReportIni";
         public const string ReportKey = "ReportKey";
         public const string ProgramId = "ProgramId";
+        public const string ResxName = "ResxName";
+        public const string GenerateFinder = "GenerateFinder";
+        public const string GenerateDynamicEnablement = "GenerateDynamicEnablement";
+        public const string GenerateClientFiles = "GenerateClientFiles";
+        public const string GenerateIfAlreadyExists = "GenerateIfAlreadyExists";
+        public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
+        public const string WorkflowKindId = "WorkflowKindId";
         #endregion
 
         #region Constructor
@@ -46,6 +55,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Fields = new List<BusinessField>();            
             Enums = new Dictionary<string, EnumHelper>();
             Keys = new List<string>();
+            Options = new Dictionary<string, bool>();
+            Compositions = new List<Composition>();
         }
         #endregion
 
@@ -58,6 +69,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public Dictionary<string, EnumHelper> Enums { get; set; }
         /// <summary> Keys is the collection of keys </summary>
         public List<string> Keys { get; set; }
+        /// <summary> Text for tree display </summary>
+        public string Text { get; set; }
+        /// <summary> Options is the collection of business view options </summary>
+        public Dictionary<string, bool> Options { get; set; }
+        /// <summary> Compositions is the collection of entity compositions </summary>
+        public List<Composition> Compositions { get; set; }
+
+        public bool IsPartofHeaderDetailComposition { get; set; }
+        
         #endregion
 
     }

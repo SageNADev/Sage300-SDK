@@ -20,6 +20,15 @@
       <Folder Name="Areas" TargetFolderName="Areas">
         <Folder Name="Core" TargetFolderName="Core">
           <Folder Name="Scripts" TargetFolderName="Scripts">
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js</ProjectItem>
+            </Folder>
             <Folder Name="Authentication" TargetFolderName="Authentication">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
@@ -59,6 +68,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js">Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js</ProjectItem>
@@ -66,6 +76,16 @@
           </Folder>
           <Folder Name="Views" TargetFolderName="Views">
             <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiry.cshtml">_AdhocInquiry.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiryFilterControl.cshtml">_AdhocInquiryFilterControl.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SavedTab.cshtml">_SavedTab.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SaveQueryPanel.cshtml">_SaveQueryPanel.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
             <Folder Name="Authentication" TargetFolderName="Authentication">
               <ProjectItem ReplaceParameters="true" TargetFileName="OnPremiseLogin.cshtml">OnPremiseLogin.cshtml</ProjectItem>
               <Folder Name="Partials" TargetFolderName="Partials">
@@ -136,8 +156,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
@@ -145,9 +163,6 @@
             </Folder>
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
-            </Folder>
-            <Folder Name="Wizard" TargetFolderName="Wizard">
-              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
           </Folder>
@@ -187,9 +202,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
             </Folder>
-            <Folder Name="IC" TargetFolderName="IC">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.IC.Common.js">Sage.CA.SBS.ERP.Sage300.IC.Common.js</ProjectItem>
-            </Folder>
             <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
             </Folder>
@@ -199,11 +211,6 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
               </Folder>
-            </Folder>
-            <Folder Name="Revaluation" TargetFolderName="Revaluation">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js">Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js</ProjectItem>
             </Folder>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
@@ -232,10 +239,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="DocumentHistory.cshtml">DocumentHistory.cshtml</ProjectItem>
-            </Folder>
-            <Folder Name="ExportImport" TargetFolderName="ExportImport">
-              <ProjectItem ReplaceParameters="true" TargetFileName="AddCriteria.cshtml">AddCriteria.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Filter.cshtml">Filter.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Partials" TargetFolderName="Partials">
               <ProjectItem ReplaceParameters="true" TargetFileName="_AddLineButton.cshtml">_AddLineButton.cshtml</ProjectItem>
@@ -355,6 +358,7 @@
         <Folder Name="Kendo" TargetFolderName="Kendo">
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-CA.min.js">kendo.culture.en-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.min.js">kendo.culture.en-ZA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es.min.js">kendo.culture.es.min.js</ProjectItem>
@@ -368,6 +372,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-SG.min.js">kendo.culture.zh-SG.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-TW.min.js">kendo.culture.zh-TW.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-CA.min.js">kendo.messages.en-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.min.js">kendo.messages.es-ES.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.min.js">kendo.messages.fr-CA.min.js</ProjectItem>

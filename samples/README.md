@@ -67,3 +67,19 @@ and potential future enhancement.
 Sample source files are provided as examples of a Resource Information Text File and Settings Text
 File, which can be supplied to the Resx Generation Utility. Refer to the Resx Generation Utility document
 located in the **docs\utilities** folder for details.
+
+## Web API Samples
+
+The Admin user does not have Sage 300 Web API privileges. In order to make various Sage 300 Web API 
+requests, you will need to configure a new user and give it the proper user authorizations. Documentation
+for the samples will assume you use **SAMLTD** as the database and **WEBAPI/WEBAPI** as the credentials.
+
+Configuring a new user can be accomplished as follows:
+
+* In Sage 300, navigate to Administrative Services -> Users
+* Enter **WEBAPI** as the User ID, **WEBAPI** as the User Name, **WEBAPI** as the Password and **WEBAPI** in Verify
+* Click Save when finished
+* Go to Administrative Services -> Security Groups
+* Ensure that for each application that has Sage 300 Web API rights that there is a group ID associated with it
+* Go to Administrative Services -> User Authorizations
+* For the WEBAPI user, assign the group ID that has Sage 300 Web API rights to each corresponding application

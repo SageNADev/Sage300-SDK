@@ -153,18 +153,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 
             // Specific to release steps go here
-            // 2018.0 Release: Manual step to modify LoginResult function
-            AddStep(Resources.ReleaseSpecificTitleModifyLoginResultFn, Resources.ReleaseSpecificDescModifyLoginResultFn,
-                Resources.ReleaseSpecificModifyLoginResultFn);
-
-            // 2018.0 Release: Explain how to use import/export functionality
-            AddStep(Resources.ReleaseSpecificTitleImportExport, Resources.ReleaseSpecificDescImportExport,
-                Resources.ReleaseSpecificImportExport);
-
-            // 2018.0 Release: Optionally enable XML comments check box
-            AddStep(Resources.ReleaseSpecificTitleEnableXmlProperty, Resources.ReleaseSpecificDescEnableXmlProperty,
-                Resources.ReleaseSpecificEnableXmlProperty, true, Resources.GenerateXMLDocFile);
-
+            // 2018.1 Release: Manual step to modify Login function
+            AddStep(Resources.ReleaseSpecificTitleModifyLogin, Resources.ReleaseSpecificDescModifyLogin,
+                Resources.ReleaseSpecificModifyLogin);
 
             // Same for all upgrades, but the content will be specific to the release
             AddStep(Resources.ReleaseAllTitleConfirmation, Resources.ReleaseAllDescConfirmation,
@@ -174,7 +165,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Display first step
             NextStep();
-
         }
 
         /// <summary> Build Main Content Step </summary>
@@ -191,9 +181,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncAccpacLibs));
 
             // Specific to release
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleModifyLoginResultFn));
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleImportExport));
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleEnableXmlProperty));
+            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleModifyLogin));
 
             // Same for all upgrades
             content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleConfirmation));
