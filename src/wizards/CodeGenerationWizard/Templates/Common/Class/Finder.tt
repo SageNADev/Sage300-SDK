@@ -35,7 +35,8 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
-	var keyFieldTypeName = view.Properties["KeyFieldTypeName"];
+
+	var keyFieldTypeName = view.Fields.Where(f => f.IsKey).FirstOrDefault().Type.ToString();
 
 #>
 // <#=copyright#>

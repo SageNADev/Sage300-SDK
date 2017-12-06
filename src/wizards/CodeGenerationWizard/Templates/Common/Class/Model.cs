@@ -356,10 +356,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
                 {
                     // Check for Key annotation
                     var annotation = field.IsKey ? "[Key]" : string.Empty;
-					if (field.IsKey) 
-					{
-						view.Properties.Add("KeyFieldTypeName", field.Type.ToString());
-					}		
                     if (!annotation.Equals(string.Empty))
                     {
 
@@ -368,14 +364,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 110 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 106 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 111 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 107 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -389,14 +385,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 119 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 115 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 120 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 116 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -410,14 +406,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 128 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 124 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 129 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 125 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -431,14 +427,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 137 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 133 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 138 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 134 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
                 }
@@ -452,21 +448,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        [Display(Name = \"");
             
-            #line 146 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 142 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\", ResourceType = typeof (");
             
-            #line 146 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 142 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write("))]\r\n");
             
-            #line 147 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 143 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
 
@@ -477,21 +473,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        public ");
             
-            #line 152 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 148 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? field.Name : EnumValue.GetValue(field.Type))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 152 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 148 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 154 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 150 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
             }
 
@@ -503,7 +499,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        #region UI Strings\r\n\r\n");
             
-            #line 162 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 158 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 // UI access methods
                 foreach (var value in view.Enums.Values)
@@ -514,28 +510,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets ");
             
-            #line 168 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 164 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Name));
             
             #line default
             #line hidden
             this.Write(" string value\r\n        /// </summary>\r\n        public string ");
             
-            #line 170 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 166 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Name));
             
             #line default
             #line hidden
             this.Write("String\r\n        {\r\n         get { return EnumUtility.GetStringValue(");
             
-            #line 172 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 168 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Name));
             
             #line default
             #line hidden
             this.Write("); }\r\n        }\r\n\r\n");
             
-            #line 175 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 171 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
 
@@ -544,7 +540,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        #endregion\r\n");
             
-            #line 179 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 175 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
             }
 

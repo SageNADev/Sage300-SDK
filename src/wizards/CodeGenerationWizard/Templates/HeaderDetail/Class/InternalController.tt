@@ -37,7 +37,8 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
-	var keyFieldTypeName = view.Properties["KeyFieldTypeName"] ?? "String";
+
+	var keyFieldTypeName = view.Fields.Where(f => f.IsKey).FirstOrDefault().Type.ToString();
 #>
 // <#=copyright#>
 
@@ -184,7 +185,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 	<#  
 		}
 	#>
-            var data = _repository.Delete(filter);
+			var data = _repository.Delete(filter);
 
             var userMessage = new UserMessage(data,
                 string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));

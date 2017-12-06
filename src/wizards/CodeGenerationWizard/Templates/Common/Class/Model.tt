@@ -100,10 +100,6 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 {
                     // Check for Key annotation
                     var annotation = field.IsKey ? "[Key]" : string.Empty;
-					if (field.IsKey) 
-					{
-						view.Properties.Add("KeyFieldTypeName", field.Type.ToString());
-					}		
                     if (!annotation.Equals(string.Empty))
                     {
 #>
