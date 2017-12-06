@@ -31,8 +31,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -57,8 +57,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"time": 1479085904439,
@@ -77,8 +77,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -99,8 +99,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -125,8 +125,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"time": 1479082379902,
@@ -148,8 +148,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"time": 1479086333573,
@@ -172,8 +172,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"time": 1484942559794,
@@ -192,8 +192,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -225,8 +225,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			}
 		},
@@ -243,8 +243,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"time": 1479082450088,
@@ -262,8 +262,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -284,8 +284,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",
@@ -306,8 +306,8 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "WEBAPI",
-				"password": "WEBAPI",
+				"username": "ADMIN",
+				"password": "ADMIN",
 				"saveToRequest": true
 			},
 			"headers": "Content-Type: application/json\nAuthorization: Basic QURNSU46QURNSU4=",

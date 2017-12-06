@@ -24,12 +24,6 @@
 <#
     // Locals
     var entityName = view.Properties[BusinessView.EntityName];
-    
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        entityName = settings.EntitiesContainerName;
-    }
-
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;

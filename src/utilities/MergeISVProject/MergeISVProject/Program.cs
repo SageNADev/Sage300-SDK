@@ -317,7 +317,7 @@ namespace MergeISVProject
         /// <param name="moduleId">module id</param>
         private static void CopyResourceSatelliteFiles(string pathFrom, string pathSage300, string moduleId)
         {
-            string[] languages = { "es", "fr", "zh-Hans", "zh-Hant"};
+            string[] languages = { "es", "fr-CA", "zh-Hans", "zh-Hant"};
             var pathBinFrom = Path.Combine(pathFrom, "Bin");
             var pathWebBinTo = Path.Combine(pathSage300, @"Online\Web\Bin");
             var pathWorkerTo = Path.Combine(pathSage300, @"Online\Worker");

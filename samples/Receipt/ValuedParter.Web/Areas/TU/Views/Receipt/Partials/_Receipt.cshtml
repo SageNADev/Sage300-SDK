@@ -1,0 +1,247 @@
+@* The MIT License (MIT) *@
+@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+@* *@
+@* Permission is hereby granted, free of charge, to any person obtaining a copy of *@
+@* this software and associated documentation files (the "Software"), to deal in *@
+@* the Software without restriction, including without limitation the rights to use, *@
+@* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the *@
+@* Software, and to permit persons to whom the Software is furnished to do so, *@
+@* subject to the following conditions: *@
+@* *@
+@* The above copyright notice and this permission notice shall be included in all *@
+@* copies or substantial portions of the Software. *@
+@* *@
+@* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, *@
+@* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A *@
+@* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT *@
+@* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF *@
+@* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE *@
+@* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. *@
+
+@model ValuedParter.Web.Areas.TU.Models.ReceiptViewModel<ValuedParter.TU.Models.ReceiptHeader>
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using ReceiptResx = ValuedParter.TU.Resources.Forms.ReceiptDetailResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using ValuedParter.Web.Areas.TU.Constants
+
+    <script type="text/javascript">
+        var receiptUserPreferences = {
+            receiptDetailGrid: '@Html.GridPreference("53538E45-3265-4BA3-B5B2-CD0582ADEF99")',
+        }
+        @Html.ConvertToJsVariableUsingNewtonSoft("receiptViewModel", Model)
+    </script>
+
+    <div>
+        @Html.ValidationSummary(true)
+    </div>
+    <div id="success" class="message"></div>
+
+    <div class="form-screen">
+        <div id="message"></div> 
+        
+        <script type="text/javascript">
+        @{
+                bool poUpdateRights = false;
+                poUpdateRights = Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify);
+                @Html.ConvertToJsVariableUsingNewtonSoft("poUpdateRights", poUpdateRights);
+            }
+        </script> 
+
+        <header>
+            <section class="header-group-1">
+                <div class="header-wrapper">
+                    <div class="header-headline">
+                        @Html.SageHeader1Label("receiptHeader", ReceiptResx.Entity)
+                    </div>
+                    <div class="header-options">
+                        @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
+                        {
+                            @Html.KoSageButton("btnNewReceipt", new { @sagedisable = "DisableScreen" }, new { @value = CommonResx.CreateNew, @id = "btnNewReceipt", @class = "btn btn-primary" })
+                        }
+                    </div>
+                </div>
+            </section>
+        </header>
+        <div class="form-group">
+            <div class="search-group">
+                @Html.SageLabel("lblReceiptNumber", "Receipt Number")
+                @Html.KoSageTextBoxFor(model => model.Data.ReceiptNumber, new { @sagevalue = "Data.ReceiptNumber", @valueUpdate = "'input'" }, new { @maxlength = "22", @class = "txt-upper default", @id = "txtReceiptNumber" })
+                @Html.KoSageButton("btnReceiptNumber", new { @value = "Data.ReceiptNumber", @disable = "false" }, new
+                {
+                    @id = "btnReceiptNumber",
+                    @tabindex = -1,
+                    @class = "icon btn-go"
+                })
+                @Html.KoSageButton("btnReceiptNumberFinder", new { }, new { @class = "icon btn-search", @id = "btnReceiptNumberFinder", @tabindex = -1 })
+                @Html.ValidationMessageFor(m => m.Data.ReceiptNumber)
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblDescription", "Receipt Description")
+                @Html.KoSageTextBox("txtDescription", new { @value = "Data.Description", @sagedisable = "IsDisableOnlyComplete" }, new { @id = "txtDescription", @class = "medium-large", @maxlength = "60" })
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblEnteredBy", "Entered By")
+                @Html.KoSageTextBoxFor(model => model.Data.EnteredBy, new { @value = "Data.EnteredBy" }, new { @disabled = "true", @class = "small" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dropdown-group" data-bind="visible:IsVisibleOnMode">
+                @Html.KoSageLabelFor(model => model.Data.ReceiptType, "Type", new { @visible = "IsVisibleOnMode" })
+                @Html.KoSageDropDownListFor(model => model.Data.ReceiptType, Model.ReceiptType, null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "default" })
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblPONumber", "PO Number")
+                @Html.KoSageTextBox("txtPONumber", new { @value = "Data.PurchaseOrderNumber", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @class = "txt-upper default", @maxlength = "22" })
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblReference", "Reference")
+                @Html.KoSageTextBox("txtReference", new { @value = "Data.Reference", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @class = "large", @maxlength = "60" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="datepicker-group">
+                @Html.SageLabel("lblReceiptDate", "Receipt Date")
+                @Html.KoSageTextBoxFor(model => model.Data.ReceiptDate, new { @sageDatePicker = "Data.ReceiptDate", @sagedisable = "IsDisableOnlyComplete" }, new { @id = "txtReceiptDate", @class = "datepicker small" })
+            </div>
+            <div class="datepicker-group">
+                @Html.SageLabel("lblPostingDate", "Posting Date")
+                @Html.KoSageTextBoxFor(model => model.Data.PostingDate, new { @sageDatePicker = "Data.PostingDate", @sagedisable = "IsDisableOnlyComplete" }, new { @id = "txtPostingDate", @class = "datepicker small" })
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblYearPeriod", "Year/Period")
+                @Html.KoSageTextBox("txtYearPeriod", new { @value = "Data.ComputedYearPeriod" }, new { @disabled = "true", @tabindex = -1, @class = "small" })
+            </div>
+            <div class="ctrl-group">
+                <div>
+                    @Html.KoSageCheckBoxFor(model => model.Data.IsRequireLabel, new { @sagechecked = "IsRequireChecked", @valueUpdate = "'input'", @sagedisable = "IsPosted" })
+                    @Html.KoSageLabelFor(model => model.Data.IsRequireLabel, "Require Labels", new { @sagedisable = "IsPosted" })
+                </div>
+                <div>
+                    @Html.KoSageCheckBoxFor(model => model.Data.IsOptionalFields, new { @sagechecked = "IsOptionalFields", @valueUpdate = "'input'" }, new { @id = "chkIsOptionalFields", @class = "", @disabled = "true" })
+                    @Html.KoSageLabelFor(model => model.Data.IsOptionalFields, "Optional Fields", new { @sagedisable = "true" }, new { @disabled = "true" })
+                    @Html.SageHamburger("#", null, null, new { @id = "lnkOptionalField" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="search-group">
+                @Html.SageLabel("lblVendorNumber", "Vendor Number")
+                @Html.KoSageTextBoxFor(model => model.Data.VendorNumber, new { @sagevalue = "Data.VendorNumber", @valueUpdate = "'input'", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @maxlength = "12", @class = "txt-upper small" })
+                @Html.KoSageButton("btnVendorNumber", new { @value = "Data.VendorNumber", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new
+                {
+                    @id = "btnVendorNumber",
+                    @tabindex = -1,
+                    @class = "icon btn-go"
+                })
+                @Html.KoSageButton("btnVendorNumberFinder", new { @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @class = "icon btn-search", @id = "btnVendorNumberFinder", @tabindex = -1 })
+            </div>
+            <div class="input-group">
+                @Html.SageLabel("lblVendorName", "Vendor Description")
+                @Html.KoSageTextBox("txtVendorName", new { @value = "Data.VendorShortName" }, new { @disabled = "true", @tabindex = -1, @class = "large" })
+            </div>
+        </div>
+
+        <div class="form-group" data-bind="visible:IsMulticurrency">
+            <div class="search-group">
+                @Html.KoSageLabelFor(model => model.Data.ReceiptCurrency, "Receipt Currency", new { @visible = "IsMulticurrency" })
+                @Html.KoSageTextBoxFor(model => model.Data.ReceiptCurrency, new { @sagevalue = "Data.ReceiptCurrency", @valueUpdate = "'input'", @sagedisable = "IsDisableRecCurr", @visible = "IsMulticurrency" }, new { @maxlength = "3", @class = "txt-upper smaller", @formatTextbox = "alphaNumeric" })
+                @Html.KoSageButton("btnReceiptCurrency", new { @value = "Data.ReceiptCurrency", @disable = "false", @visible = "IsMulticurrency", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new
+                {
+                    @id = "btnReceiptCurrency",
+                    @tabindex = -1,
+                    @class = "icon btn-go"
+                })
+                @Html.KoSageButton("btnReceiptCurrencyFinder", new { @sagedisable = "IsDisableRecCurr", @visible = "IsMulticurrency" }, new { @class = "icon btn-search", @id = "btnReceiptCurrencyFinder", @tabindex = -1 })
+            </div>
+            <div class="input-group">
+                @Html.KoSageLabelFor(model => model.Data.ReceiptCurrency, "Receipt Currency Description", new { @visible = "IsMulticurrency" })
+                @Html.KoSageTextBox("txtReceiptCurrencyDescription", new { @value = "ReceiptCurrencyDescription", @visible = "IsMulticurrency" }, new { @maxlength = "60", @disabled = "true", @tabindex = -1, @class = "large" })
+            </div>
+        </div>
+        <div class="form-group" data-bind="visible:IsMulticurrency">
+            <div class="input-group">
+                @Html.SageLabelForWithHamburger(model => model.Data.ExchangeRate, new { @class = "" }, "#", null, null, new { @id = "lnkExchangeRateThree" })
+                @Html.KoSageNumericBoxFor(model => model.Data.ExchangeRate, new { @sagevalue = "Data.ExchangeRate", @valueUpdate = "'input'", @sagedisable = "IsFuncCurrency" }, new { @maxlength = "16", @class = "default align-right" })
+            </div>
+            <div class="search-group">
+                @Html.KoSageLabelFor(model => model.Data.AdditionalCostCurrency, "Additional Cost Currency", new { @visible = "IsMulticurrency" })
+                @Html.KoSageTextBoxFor(model => model.Data.AdditionalCostCurrency, new { @sagevalue = "Data.AdditionalCostCurrency", @valueUpdate = "'input'", @sagedisable = "Data.isControlsDisabledOnReadMode", @visible = "IsMulticurrency" }, new { @maxlength = "3", @class = "txt-upper smaller", @formatTextbox = "alphaNumeric" })
+                @Html.KoSageButton("btnAddlCostCurrency", new { @value = "Data.AdditionalCostCurrency", @disabled = "true", @visible = "IsMulticurrency", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new
+                {
+                    @id = "btnAddlCostCurrency",
+                    @tabindex = -1,
+                    @class = "icon btn-go"
+                })
+                @Html.KoSageButton("btnAddlCostCurrencyFinder", new { @sagedisable = "Data.isControlsDisabledOnReadMode", @visible = "IsMulticurrency" }, new { @class = "icon btn-search", @id = "btnAddlCostCurrencyFinder", @tabindex = -1 })
+            </div>
+            <div class="input-group">
+                @Html.KoSageLabelFor(model => model.Data.AdditionalCostCurrency, "Additional Cost Currency Description", new { @visible = "IsMulticurrency" })
+                @Html.KoSageTextBox("txtAddlCostCurrencyDescription", new { @value = "AddlCostCurrencyDescription", @visible = "IsMulticurrency", }, new { @disabled = "true", @tabindex = -1, @class = "default" })
+            </div>
+            <div class="dropdown-group" data-bind="visible:IsVisibleAllocType">
+                @Html.KoSageLabelFor(model => model.Data.AdditionalCostAllocationType, "Additional Cost", new { @visible = "IsVisibleAllocType" })
+                @Html.KoSageDropDownListFor(model => model.Data.AdditionalCostAllocationType, Model.AdditionalCostAllocationType, null, new { @optionsText = "'Text'", @optionsValue = "'Value'", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @class = "default" })
+            </div>
+            <div class="input-group">
+                @Html.KoSageLabelFor(model => model.Data.AdditionalCost, "Additional Cost", new { @sagedisable = "disableAdditionalCost" })
+                @Html.KoSageNumericBox("txtAddlCost", new { @value = "Data.AdditionalCost", @sagedisable = "disableAdditionalCost" }, new { @class = "default align-right kendonumeric" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group" data-bind="visible: Data.IsTotalCostReceiptAdditional">
+                @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, "Total Cost", new { @text = "lblTotalCost" })
+                @Html.KoSageNumericBox("txtTotalCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalCostReceiptAdditional" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            </div>
+            <div class="input-group" data-bind="visible: Data.IsTotalReturnCost">
+                @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, "Total Cost", new { @text = "lblTotalCost" })
+                @Html.KoSageNumericBox("txtTotalReturnCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalReturnCost" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            </div>
+            <div class="input-group" data-bind="visible: Data.IsTotalAdjustmentCost">
+                @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, "Total Cost", new { @text = "lblTotalCost" })
+                @Html.KoSageNumericBox("txtTotalAdjustmentCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalAdjCostReceiptAddl" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            </div>
+            <div class="input-group">
+                @Html.KoSageLabelFor(model => model.TotalCostCurrency, "Currency", new { @visible = "IsMulticurrency" })
+                @Html.KoSageTextBox("txtTotalCostCurrency", new { @sagevalue = "TotalExtendedCostCurrency", @valueUpdate = "'input'", @visible = "IsMulticurrency" }, new { @disabled = "true", @tabindex = -1, @class = "smaller" })
+            </div>
+            <div class="input-group" data-bind="visible:IsMultiCurrAndReturn">
+                @Html.KoSageLabelFor(model => model.Data.TotalExtendedCostSource, "Total Extended Cost", new { })
+                @Html.KoSageNumericBox("txtTotalExtendedCost", new { @value = "Data.TotalExtendedCostSource", @sagevalue = "TotalExtendedCost", @valueUpdate = "'input'" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right" })
+            </div>
+            <div class="input-group" data-bind="visible:IsMultiCurrAndReturn">
+                @Html.KoSageLabelFor(model => model.ExtendedCostCurrency, "Currency", new { })
+                @Html.KoSageTextBox("txtExtendedCostCurrency", new { @sagevalue = "Data.ReceiptCurrency", @valueUpdate = "'input'" }, new { @disabled = "true", @tabindex = -1, @class = "smaller" })
+            </div>
+            <div class="buttons-group no-label">
+                @Html.KoSageButton("btnRefresh", new { @sagedisable = "IsDisableOnlyComplete" }, new { @class = "btn btn-secondary", @id = "btnRefresh", @value = CommonResx.Refresh })
+            </div>
+        </div>
+        @Html.Partial(Constants.ReceiptGridViewPath, new ValuedParter.TU.Models.ReceiptDetail())
+        <div id="optionalField" style="display: none;">
+            @Html.Partial(Constants.ReceiptOptionalFieldsViewPath, new ValuedParter.TU.Models.ReceiptOptionalField())
+        </div>
+        <div id="detailOptionalField" style="display: none;">
+            @Html.Partial(Constants.ReceiptDetailOptionalFieldsViewPath, new ValuedParter.TU.Models.ReceiptDetailOptionalField())
+        </div>
+        <div id="" style="display: none;">
+            @Html.Partial(Constants.ReceiptExchangeRateViewPath)
+        </div>
+        <section class="footer-group-1">
+            @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
+            {
+                @Html.KoSageButton("Delete", new { @sagedisable = "IsDisableDelBtn" }, new { @class = "btn btn-primary", @value = CommonResx.Delete, @id = "btnDelete" })
+                @Html.KoSageButton("Save", new { @sagedisable = "IsDisableSaveBtn" }, new { @class = "btn btn-primary", @id = "btnSave", @value = CommonResx.Save })
+                @Html.KoSageButton("Post", new { @sagedisable = "IsDisablePostBtn" }, new { @class = "btn btn-primary", @value = CommonResx.Post, @id = "btnPost" })
+            }
+        </section>
+    </div>
+     @Html.Partial(Core.GridPreferences)
+     @Html.Partial(Core.HamburgerMenu)
+    

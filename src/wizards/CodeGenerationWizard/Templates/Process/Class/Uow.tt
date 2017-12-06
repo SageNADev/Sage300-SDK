@@ -28,7 +28,7 @@
     var companyNamespace = settings.CompanyNamespace;
     var modelName = view.Properties[BusinessView.ModelName];
     var entityName = view.Properties[BusinessView.EntityName];
-    var workflowKindId = view.Properties[BusinessView.WorkflowKindId];
+    var workflowKindId = settings.WorkflowKindId;
 #>
 // <#=copyright#>
 

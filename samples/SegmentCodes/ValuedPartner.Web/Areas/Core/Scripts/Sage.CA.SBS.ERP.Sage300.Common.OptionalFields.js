@@ -41,14 +41,12 @@ var optionalFieldColumnName = {
 var optFldGridUtils = {
     getParamPaging: function (data, pageNumber, pageSize, newinsertIndex) {
         var model = ko.mapping.toJS(optionalFieldUIGrid.modelData);
-        if (model && model.hasOwnProperty(optionalFieldUIGrid.modelName)) {
-            var currentPageNumber = $('#' + optionalFieldUIGrid.gridId).data("kendoGrid").dataSource.page();
-            var optionalFieldData = model[optionalFieldUIGrid.modelName].Items;
+        var currentPageNumber = $('#' + optionalFieldUIGrid.gridId).data("kendoGrid").dataSource.page();
+        var optionalFieldData = model[optionalFieldUIGrid.modelName].Items;
 
-            optionalFieldData = sg.utls.kndoUI.assignDisplayIndex(optionalFieldData, currentPageNumber, pageSize);
-            model[optionalFieldUIGrid.modelName].Items = optionalFieldData;
-            optionalFieldUIGrid.paramIndex = newinsertIndex;
-        }
+        optionalFieldData = sg.utls.kndoUI.assignDisplayIndex(optionalFieldData, currentPageNumber, pageSize);
+        model[optionalFieldUIGrid.modelName].Items = optionalFieldData;
+        optionalFieldUIGrid.paramIndex = newinsertIndex;
     },
 
     checkDuplicateRecord: function (dataSource, field, checkItem, row) {
@@ -280,9 +278,6 @@ var gridColConfig = {
         var html = ((options.field == "DefaultValue") ? optionalFieldFields.txtDefaultValue : optionalFieldFields.txtValue) + optionalFieldFields.finderValue;
 
         if (options.model.OptionalField !== null && options.model.OptionalField !== "") {
-            //Tmp fixed 
-            optionalFieldUIGrid.pristineData.val = currentRowGrid.Value;
-            optionalFieldUIGrid.pristineData.description = currentRowGrid.ValueDescription;
             if (options.model.Type == optionalFieldEnum.Type.Date) {
                 $(html).appendTo(container).addClass("dp-and-finder");
                 sg.utls.kndoUI.datePicker("txtOptFieldValue");
@@ -580,7 +575,6 @@ var optionalFieldUIGrid =
     //temporary added, because of there are several place to using location as a http request parameter. Remove it once confirm
     optFldSrcName: null,
     retrivableCellOldVal: null,
-    pristineData: {val:null, description:null},
 
     baselineItem: {
         "OptionalField": null,

@@ -32,10 +32,8 @@
             }
         }
         var cultureArray = [
-            kendo.cultures["en-AU"], kendo.cultures["en-CA"], kendo.cultures["en-US"], kendo.cultures["en-ZA"],
-            kendo.cultures["es"], kendo.cultures["es-ES"], kendo.cultures["fr"], kendo.cultures["fr-CA"],
-            kendo.cultures["zh-Hans"], kendo.cultures["zh-CN"], kendo.cultures["zh-SG"], kendo.cultures["zh-Hant"],
-            kendo.cultures["zh-HK"], kendo.cultures["zh-TW"]
+            kendo.cultures["en-AU"], kendo.cultures["en-US"], kendo.cultures["en-ZA"],
+            kendo.cultures["es-ES"], kendo.cultures["fr-CA"], kendo.cultures["zh-Hans"], kendo.cultures["zh-Hant"]
         ];
         $.each(cultureArray, function(key, value) {
             if (value) {

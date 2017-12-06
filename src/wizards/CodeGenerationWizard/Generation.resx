@@ -123,32 +123,10 @@
   <data name="lblCodeTypeFilesHelp.Text" xml:space="preserve">
     <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnIniDialog.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk02BAAAAAAAADYAAAAoAAAAEAAAABAAAAABACAAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AnJSRkMjEwlD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8Avbi2YE9CPP9PQjz/////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AGRZVOBPQjz/nJSRkP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AKegnYBPQjz/WU1H8PTz
-        8xD///8A////AP///wD///8A////AP///wD///8A7uzrMNHLyoDAuLawxb68oNDLyXleUkzxT0I8/7Ks
-        qXD///8A////AP///wD///8A////AP///wD5+fgQwLi2sKOYlf+0q6n/urKw/7qysP+pnpz/o5iV+Hxw
-        bOz///8A////AP///wD///8A////AP///wD///8AtKup0K+lov/o5uX/////////////////+vn5/9HM
-        yv+jmJX/3NjXYP///wD///8A////AP///wD///8A19LQcKmenP/08vL/////////////////////////
-        ////////0czK/6iem/Dz8vIg////AP///wD///8A////AK6louDLxcT/////////////////////////
-        //////////////r5+f+pnpz/19LQcP///wD///8A////AP///wCjmJX/6Obl////////////////////
-        ////////////////////////urKw/8C4trD///8A////AP///wD///8Ao5iV/+jm5f//////////////
-        /////////////////////////////7qysP+6sa/A////AP///wD///8A////AKiem/Dd2dj/////////
-        //////////////////////////////////+0q6n/y8XDkP///wD///8A////AP///wDFvrygurKw////
-        ///////////////////////////////////o5uX/o5iV/+Lf3lD///8A////AP///wD///8A8/LyIKOY
-        lf/Gv73////////////////////////////08vL/r6Wi/7qxr8D///8A////AP///wD///8A////AP//
-        /wDc2Ndgo5iV/7qysP/d2dj/6Obl/+jm5f/LxcT/qZ6c/7SrqdD5+fgQ////AP///wD///8A////AP//
-        /wD///8A////AO7s6zDAuLawo5iV/6OYlf+jmJX/qJ6b8NHLyoD5+fgQ////AP///wD///8A////AA==
-</value>
-  </data>
-  <metadata name="tbrEntity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tbrDynamicQuery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>553, 5</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRowAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -177,6 +155,43 @@
         0yTfAGaRox7nikfkoXFUJlK3NtSJu6oKBiWgySbryiymR87iXyEmy6JYiUuvp2CTYfBunplPL2MoHikH
         r/3qvaP/3bsuMOWoH/JgkB9RDgYRrQzmTZJcTNJ1I1hMJo5WBse12SSpq03SQMP1vRLHEBPq5z0VaF4N
         fHvGfABkh94pEIb8VQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="tbrReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>658, 17</value>
+  </metadata>
+  <data name="btnLoadIniFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVEhLpZTLjcQgEETJiZxIwddJg9scVhvMiEisPawj
+        8HZB97iNGwyzJZVkPl2Pn+xCTPuUAxx3NyoUzSgqGEf0NQPYto2CYwFQ2RBkBrCu6wngI0Hog6NszQNw
+        B+WIPLsLGQHgaOD0w3dAl1yb4666A+jwk1Pan8+v7GVZPgM0w8nfr99s2RHHXdUCSLgL7p82AHrldtGM
+        8d6UdLgGzEoB6DGz6nAL4LkdYuAeW00A3noPALkH9cFVv9YJYK28B4COAJcXVesYJwAmWAA8Q5lYy0f/
+        3gm+Ua91AdThd4DcD0As4/UupC4DWuEW4Cgk59WrNll09FUACe4C+Fh8YhNEQCKpmwZAaAMQKBzO92HM
+        KVaAOrwFgNAnkNZ4sQHA30MsEy2NjGVAz72Qnt6AW8nET30rq2jYbv8DjjjEfeKONSUAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="btnIniDialog.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk02BAAAAAAAADYAAAAoAAAAEAAAABAAAAABACAAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AnJSRkMjEwlD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8Avbi2YE9CPP9PQjz/////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AGRZVOBPQjz/nJSRkP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AKegnYBPQjz/WU1H8PTz
+        8xD///8A////AP///wD///8A////AP///wD///8A7uzrMNHLyoDAuLawxb68oNDLyXleUkzxT0I8/7Ks
+        qXD///8A////AP///wD///8A////AP///wD5+fgQwLi2sKOYlf+0q6n/urKw/7qysP+pnpz/o5iV+Hxw
+        bOz///8A////AP///wD///8A////AP///wD///8AtKup0K+lov/o5uX/////////////////+vn5/9HM
+        yv+jmJX/3NjXYP///wD///8A////AP///wD///8A19LQcKmenP/08vL/////////////////////////
+        ////////0czK/6iem/Dz8vIg////AP///wD///8A////AK6louDLxcT/////////////////////////
+        //////////////r5+f+pnpz/19LQcP///wD///8A////AP///wCjmJX/6Obl////////////////////
+        ////////////////////////urKw/8C4trD///8A////AP///wD///8Ao5iV/+jm5f//////////////
+        /////////////////////////////7qysP+6sa/A////AP///wD///8A////AKiem/Dd2dj/////////
+        //////////////////////////////////+0q6n/y8XDkP///wD///8A////AP///wDFvrygurKw////
+        ///////////////////////////////////o5uX/o5iV/+Lf3lD///8A////AP///wD///8A8/LyIKOY
+        lf/Gv73////////////////////////////08vL/r6Wi/7qxr8D///8A////AP///wD///8A////AP//
+        /wDc2Ndgo5iV/7qysP/d2dj/6Obl/+jm5f/LxcT/qZ6c/7SrqdD5+fgQ////AP///wD///8A////AP//
+        /wD///8A////AO7s6zDAuLawo5iV/6OYlf+jmJX/qJ6b8NHLyoD5+fgQ////AP///wD///8A////AA==
 </value>
   </data>
   <metadata name="tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

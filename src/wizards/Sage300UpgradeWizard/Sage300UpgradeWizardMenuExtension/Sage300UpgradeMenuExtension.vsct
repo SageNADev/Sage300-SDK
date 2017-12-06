@@ -86,7 +86,7 @@
         <Parent guid="guidSage300UpgradeMenuExtensionCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Sage 300 2018.1 Upgrade Wizard</ButtonText>
+          <ButtonText>Sage 300 2018 Upgrade Wizard</ButtonText>
         </Strings>
       </Button>
 

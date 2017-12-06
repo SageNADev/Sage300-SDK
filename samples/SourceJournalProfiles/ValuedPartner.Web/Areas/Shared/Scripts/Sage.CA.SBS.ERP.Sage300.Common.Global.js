@@ -102,44 +102,20 @@ $.extend(sg.utls, {
         }
     },
     progressBarControl: function (id, percentageComplete) {
-        var $id = $(id);
         if (percentageComplete == 0) {
-            $id.hide();
+            $(id).hide();
         } else {
-            $id.show();
+            $(id).show();
         }
-        var $progressBar = $id.find(".progress-bar");
+        var $progressBar = $(id + " > .progress-bar");
         if (percentageComplete > 80) {
             $progressBar.addClass('over-80');
         } else {
             $progressBar.removeClass('over-80');
         }
         $progressBar[0].style.width = percentageComplete + '%';
-        $progressBar.find(".percentage")[0].innerHTML = percentageComplete + '% ' + globalResource.Complete;
+        $(id + " > .progress-bar  .percentage")[0].innerHTML = percentageComplete + '% ' + globalResource.Complete;
     },
-
-    showProgressBar: function(progressBar) {
-        var processCount = 0;
-        var increment = 2;
-        var processTimer = setInterval(function () {
-            if (processCount > 50 && processCount < 80) {
-                increment = 1;
-            } else if (processCount >= 80 && processCount < 90) {
-                increment = 0.1;
-            } else if (processCount >= 90 && processCount < 95) {
-                increment = 0.01;
-            } else if (processCount >= 95) {
-                increment = 0.001;
-            }
-            processCount += increment;
-            if (processCount > 100) {
-                processCount = 100; 
-            }
-            sg.utls.progressBarControl(progressBar, processCount.toFixed(2));
-        }, 1000);
-        return processTimer;
-    },
-
     convertEntityErrorsToUserMessage: function (errors) {
         if (errors.length > 0) {
             var isError = false;
@@ -1171,12 +1147,11 @@ $.extend(sg.utls, {
             /// Setting message position to viewport top.
             sg.utls.showMessagesInViewPort();
 
-            var showTime = (globalResource.ShowMessageTime) ? globalResource.ShowMessageTime : 5000;
             if (isSuccessMessage) {
                 fnTimeout = setTimeout(function () {
                     messageDiv.fadeOut(1000);
                     messageDiv.empty();
-                }, showTime);
+                }, 5000);
             }
 
             if (isModal === true) {
@@ -1294,12 +1269,11 @@ $.extend(sg.utls, {
             /// Setting message position to viewport top.
             sg.utls.showMessagesInViewPort();
 
-            var showTime = (globalResource.ShowMessageTime) ? globalResource.ShowMessageTime : 5000;
             if (isSuccessMessage) {
                 fnTimeout = setTimeout(function () {
                     messageDiv.fadeOut(1000);
                     messageDiv.empty();
-                }, showTime);
+                }, 5000);
 
             }
         }
@@ -1388,12 +1362,11 @@ $.extend(sg.utls, {
             }
 
             messageDiv.html(messageHTML);
-            var showTime = (globalResource.ShowMessageTime) ? globalResource.ShowMessageTime : 5000;
             if (isSuccessMessage) {
                 fnTimeout = setTimeout(function () {
                     messageDiv.fadeOut(1000);
                     messageDiv.empty();
-                }, showTime);
+                }, 5000);
 
             }
         }
@@ -1480,12 +1453,11 @@ $.extend(sg.utls, {
             }
 
             messageDiv.html(messageHTML);
-            var showTime = (globalResource.ShowMessageTime) ? globalResource.ShowMessageTime : 5000;
             if (isSuccessMessage) {
                 fnTimeout = setTimeout(function () {
                     messageDiv.fadeOut(1000);
                     messageDiv.empty();
-                }, showTime);
+                }, 5000);
 
             }
         }

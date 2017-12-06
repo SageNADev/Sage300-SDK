@@ -18,7 +18,7 @@
     <Project TargetFileName="TPA.TU.Resources.csproj" File="TPA.TU.Resources.csproj" ReplaceParameters="true">
       <Folder Name="Forms" TargetFolderName="Forms" />
       <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.es.resx">MenuResx.es.resx</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.fr.resx">MenuResx.fr.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.fr-CA.resx">MenuResx.fr-CA.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.resx">MenuResx.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.Designer.cs">MenuResx.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MenuResx.zh-Hans.resx">MenuResx.zh-Hans.resx</ProjectItem>

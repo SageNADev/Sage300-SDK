@@ -51,7 +51,7 @@
     <Folder Include="Process\" />
     <Folder Include="Reports\" />
     <EmbeddedResource Include="MenuResx.es.resx" />
-    <EmbeddedResource Include="MenuResx.fr.resx" />
+    <EmbeddedResource Include="MenuResx.fr-CA.resx" />
     <EmbeddedResource Include="MenuResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>

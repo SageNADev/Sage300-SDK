@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.Web", "ValuedPartner.Web\ValuedPartner.Web.csproj", "{F6B5EC3C-B9C9-47F1-A85E-3170AB2C5092}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.Web", "ValuedParter.Web\ValuedParter.Web.csproj", "{F6B5EC3C-B9C9-47F1-A85E-3170AB2C5092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.TU.BusinessRepository", "ValuedPartner.TU.BusinessRepository\ValuedPartner.TU.BusinessRepository.csproj", "{63BD6794-9F07-4A15-9A25-0EA210569830}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.TU.BusinessRepository", "ValuedParter.TU.BusinessRepository\ValuedParter.TU.BusinessRepository.csproj", "{63BD6794-9F07-4A15-9A25-0EA210569830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.TU.Interfaces", "ValuedPartner.TU.Interfaces\ValuedPartner.TU.Interfaces.csproj", "{7FFA0BDC-C3C9-405A-8D01-A169396EE59F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.TU.Interfaces", "ValuedParter.TU.Interfaces\ValuedParter.TU.Interfaces.csproj", "{7FFA0BDC-C3C9-405A-8D01-A169396EE59F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.TU.Models", "ValuedPartner.TU.Models\ValuedPartner.TU.Models.csproj", "{1B84FCAE-7113-41AE-8746-9F8B5B635FB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.TU.Models", "ValuedParter.TU.Models\ValuedParter.TU.Models.csproj", "{1B84FCAE-7113-41AE-8746-9F8B5B635FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.TU.Resources", "ValuedPartner.TU.Resources\ValuedPartner.TU.Resources.csproj", "{CDB16FD3-C8B1-4520-A9F3-0AD2B6328B0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.TU.Resources", "ValuedParter.TU.Resources\ValuedParter.TU.Resources.csproj", "{CDB16FD3-C8B1-4520-A9F3-0AD2B6328B0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedPartner.TU.Services", "ValuedPartner.TU.Services\ValuedPartner.TU.Services.csproj", "{35EB3451-D6CA-4F8D-A77F-D869F4397E42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuedParter.TU.Services", "ValuedParter.TU.Services\ValuedParter.TU.Services.csproj", "{35EB3451-D6CA-4F8D-A77F-D869F4397E42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F675FE6B-0705-463F-918F-2FFCE8BA8067}"
 	ProjectSection(SolutionItems) = preProject

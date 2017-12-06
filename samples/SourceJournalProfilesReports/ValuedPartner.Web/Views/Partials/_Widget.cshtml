@@ -26,26 +26,26 @@
     
     @for (int i = 1; i <= 6; i++)
     {
-            <div id="widgetSlot@(i)" rank="-1" class="kpi" draggable="true">
-                <div class="btnsettingsPopUp">
-                    <button class="navbarToggle  kpi-menu">
-                        <span class="glyphicon glyphicon-menu"></span>
-                    </button>
-                </div>
-                <div class="container_popUp Widget widgetList widgetSettings">
-                    <h3 class="widget-setting-headline">@EnumerationsResx.KPISetting</h3>
-                    <i class="portalIcon closeIcon"></i>
-                    <ul>
-                        <li class="btnEditSettings">@EnumerationsResx.Configure</li>
-                        <li class="btnEditTitle">@EnumerationsResx.EditTitle</li>
-                        <li class="btnRefresh">@EnumerationsResx.Refresh</li>
-                        <li class="btnOpenReport">@EnumerationsResx.OpenReport</li>
-                        <li class="btnClose">@EnumerationsResx.Hide</li>
-                    </ul>
-                </div>
-                <iframe id="iframeWidget@(i)" class="iframeContainer" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+        <div id="widgetSlot@(i)" rank="-1" class="kpi" draggable="true">
+            <div class="btnsettingsPopUp">
+                <button class="navbarToggle  kpi-menu">
+                    <span class="glyphicon glyphicon-menu"></span>
+                </button>
             </div>
-        }
+            <div class="container_popUp Widget widgetList widgetSettings">
+                <h3 class="widget-setting-headline">@EnumerationsResx.KPISetting</h3>
+                <i class="portalIcon closeIcon"></i>
+                <ul>
+                    <li class="btnEditSettings">@EnumerationsResx.Configure</li>
+                    <li class="btnEditTitle">@EnumerationsResx.EditTitle</li>
+                    <li class="btnRefresh">@EnumerationsResx.Refresh</li>
+                    <li class="btnOpenReport">@EnumerationsResx.OpenReport</li>
+                    <li class="btnClose">@EnumerationsResx.Hide</li>
+                </ul>
+            </div>
+            <iframe id="iframeWidget@(i)" class="iframeContainer" sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts" scrolling="no" src=""></iframe>
+        </div>
+    }
 
     <input type="hidden" id="hdnScreenDomain" value="@ViewBag.ScreenDomain" />
 </div>

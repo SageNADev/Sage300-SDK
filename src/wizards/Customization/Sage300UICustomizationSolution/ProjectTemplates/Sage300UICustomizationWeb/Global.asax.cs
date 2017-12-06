@@ -48,11 +48,9 @@ namespace $safeprojectname$
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
                     ScreenName = "None",
-                    Container = BootstrapTaskManager.Container,
-					ScreenContext = new ScreenContext(),
+                    Container = BootstrapTaskManager.Container
                 };
-				context.ScreenContext.ScreenName = "None";
-				
+
                 //Set default company information
                 var companies = new List<Organization>
                 {
@@ -94,7 +92,7 @@ namespace $safeprojectname$
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // Register unity configuration
-            BootstrapConfig.Register();
+            //BootstrapConfig.Register();
 
             //Register providers
             ProvidersConfig.Register();

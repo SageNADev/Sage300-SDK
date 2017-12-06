@@ -28,7 +28,6 @@
     var companyNamespace = settings.CompanyNamespace;
     var extension = settings.Extension;
     var repositoryType = settings.RepositoryType;
-    var entityName = view.Properties[BusinessView.EntityName];
     var modelName = view.Properties[BusinessView.ModelName];
     var reportName = (view.Properties.ContainsKey(BusinessView.ReportKey))
                 ? view.Properties[BusinessView.ReportKey]
@@ -86,10 +85,10 @@ using <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>;
 namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=extension#>
 {
     /// <summary>
-    /// Class for <#=entityName#> mapping
+    /// Class for <#=modelName#> mapping
     /// </summary>
     /// <typeparam name="T"><#=modelName#></typeparam>
-    public class <#=entityName#>Mapper<T> : <#=(repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")#>Mapper<T> where T : <#=modelName#>, new ()
+    public class <#=modelName#>Mapper<T> : <#=(repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")#>Mapper<T> where T : <#=modelName#>, new ()
     {
 <#
     if (repositoryType.Equals(RepositoryType.Report))
@@ -130,7 +129,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
         /// Constructor to set the Context
         /// </summary>
         /// <param name="context">Context</param>
-        public <#=entityName#>Mapper(Context context)
+        public <#=modelName#>Mapper(Context context)
 <#
     if (!repositoryType.Equals(RepositoryType.Report))
     {

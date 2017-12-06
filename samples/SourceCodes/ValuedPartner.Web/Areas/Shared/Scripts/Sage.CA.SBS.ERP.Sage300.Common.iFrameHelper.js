@@ -179,15 +179,11 @@ $.extend(sg.utls.iFrameHelper = {
             iframe: true,
             content: sg.utls.urlEncode(url),
             minWidth: 1020,
-            minHeight: 550,
+            minHeight: 300,
             maxHeight: maxHeight,
             height: height,
             width: width,
             activate: sg.utls.kndoUI.onActivate,
-            actions: [
-                "Maximize",
-                "Close"
-            ],
             close: function (e) {
 
                 var frameWindow;

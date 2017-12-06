@@ -306,40 +306,113 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will require manual modifications..
+        ///   Looks up a localized string similar to This step will optionally enable the XML documentation file property..
         /// </summary>
-        internal static string ReleaseSpecificDescModifyLogin {
+        internal static string ReleaseSpecificDescEnableXmlProperty {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescEnableXmlProperty", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Context object that is passed into the Authentication Manager needs an
-        ///extra parameter in Sage 300 2018.1.
+        ///   Looks up a localized string similar to This step will require manual modifications..
+        /// </summary>
+        internal static string ReleaseSpecificDescImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will require manual modifications..
+        /// </summary>
+        internal static string ReleaseSpecificDescModifyLoginResultFn {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescModifyLoginResultFn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;XML documentation file&apos; property determines whether an XML
+        ///file will be generated during compilation. When this option is enabled,
+        ///XML documentation is automatically emitted into an XML file, which will 
+        ///have the same name as the project, but with an .xml extension.
+        ///
+        ///When enabling this property, all public classes, methods, 
+        ///properties, constants, and enums must have proper XML documentation 
+        ///comments, otherwise there will be warnings and/or errors when 
+        ///compiling the projects and solution.
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificEnableXmlProperty {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificEnableXmlProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Framework was enhanced to contain a common component for 
+        ///Import/Export functionality in the web screens.
+        ///
+        ///To implement the import/export functionality, the Business Repository class
+        ///will require modifications to the import/export base class along with 
+        ///supplying a Business Entity Property or a hierarchy of Business
+        ///Entity Properties (for header/detail screens) based upon the composition
+        ///of the business views.
+        ///
+        ///The upgrade wizard is unable to automatically perform these
+        ///modifications and there [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Authentication Manager&apos;s LoginResult function has been updated in 
+        ///Sage 300 2018 with an additional parameter. 
         ///
         ///A small modification will need to be made to the ASP.NET application file 
-        ///Global.asax.cs (found within the Namespace.Web project) for the project to
-        ///run after the upgrade process.
+        ///global.asax.cs (found within the Namespace.Web project) for the project to
+        ///compile after the upgrade process.
         ///
         ///The upgrade wizard is unable to automatically perform this
         ///modification and therefore this step will require manual modifications.
         ///
-        ///Please refer to the &apos;Modify Login&apos; subsection in the Sage 300 
-        ///Upgrade Guid [rest of string was truncated]&quot;;.
+        ///Please refer to the &apos;Modify LoginResult Function&apos; subsection in the [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ReleaseSpecificModifyLogin {
+        internal static string ReleaseSpecificModifyLoginResultFn {
             get {
-                return ResourceManager.GetString("ReleaseSpecificModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificModifyLoginResultFn", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify Context object parameter.
+        ///   Looks up a localized string similar to Enable XML Documentation Property.
         /// </summary>
-        internal static string ReleaseSpecificTitleModifyLogin {
+        internal static string ReleaseSpecificTitleEnableXmlProperty {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleEnableXmlProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import/Export Common Component.
+        /// </summary>
+        internal static string ReleaseSpecificTitleImportExport {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleImportExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modify LoginResult Function.
+        /// </summary>
+        internal static string ReleaseSpecificTitleModifyLoginResultFn {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleModifyLoginResultFn", resourceCulture);
             }
         }
         

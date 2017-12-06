@@ -212,16 +212,34 @@
   <data name="UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
-  <data name="ReleaseSpecificDescModifyLogin" xml:space="preserve">
+  <data name="ReleaseSpecificDescModifyLoginResultFn" xml:space="preserve">
     <value>This step will require manual modifications.</value>
   </data>
-  <data name="ReleaseSpecificTitleModifyLogin" xml:space="preserve">
-    <value>Modify Context object parameter</value>
+  <data name="ReleaseSpecificDescImportExport" xml:space="preserve">
+    <value>This step will require manual modifications.</value>
+  </data>
+  <data name="ReleaseSpecificDescEnableXmlProperty" xml:space="preserve">
+    <value>This step will optionally enable the XML documentation file property.</value>
+  </data>
+  <data name="ReleaseSpecificTitleModifyLoginResultFn" xml:space="preserve">
+    <value>Modify LoginResult Function</value>
+  </data>
+  <data name="ReleaseSpecificTitleImportExport" xml:space="preserve">
+    <value>Import/Export Common Component</value>
+  </data>
+  <data name="ReleaseSpecificTitleEnableXmlProperty" xml:space="preserve">
+    <value>Enable XML Documentation Property</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
   </data>
-  <data name="ReleaseSpecificModifyLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificModifyLogin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ReleaseSpecificModifyLoginResultFn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificModifyLoginResultFn.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificEnableXmlProperty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificEnableXmlProperty.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificImportExport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificImportExport.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -29,7 +29,7 @@
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;
     var enumHelper = settings.EnumHelper;
-    var resxName = view.Properties[BusinessView.ResxName];
+    var resxName = settings.ResxName;
 #>
 // <#=copyright#>
 

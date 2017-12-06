@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MenuResx.es.resx" />
-    <EmbeddedResource Include="MenuResx.fr.resx" />
+    <EmbeddedResource Include="MenuResx.fr-CA.resx" />
     <EmbeddedResource Include="MenuResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>
@@ -61,7 +61,7 @@
     <EmbeddedResource Include="MenuResx.zh-Hans.resx" />
     <EmbeddedResource Include="MenuResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.es.resx" />
-    <EmbeddedResource Include="Process\ClearStatisticsResx.fr.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticsResx.fr-CA.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClearStatisticsResx.Designer.cs</LastGenOutput>

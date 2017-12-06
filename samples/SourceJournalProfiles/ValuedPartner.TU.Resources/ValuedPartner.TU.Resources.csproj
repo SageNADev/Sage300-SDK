@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\SourceCodeResx.es.resx" />
-    <EmbeddedResource Include="Forms\SourceCodeResx.fr.resx" />
+    <EmbeddedResource Include="Forms\SourceCodeResx.fr-CA.resx" />
     <EmbeddedResource Include="Forms\SourceCodeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SourceCodeResx.Designer.cs</LastGenOutput>
@@ -66,7 +66,7 @@
     <EmbeddedResource Include="Forms\SourceCodeResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\SourceCodeResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\SourceJournalProfileResx.es.resx" />
-    <EmbeddedResource Include="Forms\SourceJournalProfileResx.fr.resx" />
+    <EmbeddedResource Include="Forms\SourceJournalProfileResx.fr-CA.resx" />
     <EmbeddedResource Include="Forms\SourceJournalProfileResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SourceJournalProfileResx.Designer.cs</LastGenOutput>
@@ -74,7 +74,7 @@
     <EmbeddedResource Include="Forms\SourceJournalProfileResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\SourceJournalProfileResx.zh-Hant.resx" />
     <EmbeddedResource Include="MenuResx.es.resx" />
-    <EmbeddedResource Include="MenuResx.fr.resx" />
+    <EmbeddedResource Include="MenuResx.fr-CA.resx" />
     <EmbeddedResource Include="MenuResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>

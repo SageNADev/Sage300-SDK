@@ -75,14 +75,11 @@
 
     <div id="importResult" style="display:none">
         <div>@Html.KoSpan(new { text = "ImportResponse.StatusString" })</div>
+
+        <div id="importMessageDiv">@CommonResx.Processing</div>
         <div id="resultgrid" style="display:none" class="result-grid-wrapper">
             @Html.KoKendoGrid("importResultGrid", "sg.importHelper.importModel.ImportResponse.Results", "ProcessResult", "sg.importHelper.gridOption")
             <div id="fileNameDiv" style="display:none">@Html.KoSpan(new { text = "ImportResponse.FileName" })</div>
-        </div>
-        <div class="progress" id="progressBarForImport">
-            <div class="progress-bar progress-bar-1 active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                <span class="percentage">0% Complete</span>
-            </div>
         </div>
         <div id="btnClose" style="margin-top:20px !important;">
             @Html.KoSageButton("Ok", null, new { @class = "btn btn-primary right", @value = CommonResx.Close, @id = "btnImportOk" })

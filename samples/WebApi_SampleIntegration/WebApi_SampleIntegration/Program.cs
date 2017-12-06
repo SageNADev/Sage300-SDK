@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2016 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -123,7 +123,7 @@ namespace WebApi_SampleIntegration
             {
                 Item = ItemNumber,
                 QuantityOrdered = QuantityToOrder,
-                QuantityShipped = QuantityToOrder
+                QuantityShipped = QuantityToOrder,
             };
             var order = new
             {
@@ -196,7 +196,7 @@ namespace WebApi_SampleIntegration
             }
 
             // Create the Web API client with the appropriate authentication
-            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("WEBAPI", "WEBAPI") })
+            using (var httpClientHandler = new HttpClientHandler { Credentials = new NetworkCredential("ADMIN", "ADMIN") })
             using (var httpClient = new HttpClient(httpClientHandler))
             {
                 Console.WriteLine("\n{0} {1}", method.Method, requestUri);

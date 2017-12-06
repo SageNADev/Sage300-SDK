@@ -166,7 +166,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                             if ((projectItem.Name.Equals("MenuResx.zh-Hans.resx") && !_includeChineseSimplified) ||
                                (projectItem.Name.Equals("MenuResx.zh-Hant.resx") && !_includeChineseTraditional) ||
                                 (projectItem.Name.Equals("MenuResx.es.resx") && !_includeSpanish) ||
-                                (projectItem.Name.Equals("MenuResx.fr.resx") && !_includeFrench))
+                                (projectItem.Name.Equals("MenuResx.fr-CA.resx") && !_includeFrench))
                             {
                                 // remove from project
                                 projectItem.Delete();

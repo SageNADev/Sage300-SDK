@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
 
 #region
 
@@ -48,12 +48,9 @@ namespace $safeprojectname$
                     TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,
                     ApplicationType = ApplicationType.WebApplication,
                     Language = "en",
-                    ScreenContext = new ScreenContext(),
                     ScreenName = "None",
                     Container = BootstrapTaskManager.Container
                 };
-
-                context.ScreenContext.ScreenName = "None";
 
 				//Set default company information
                 var companies =  new List<Organization>

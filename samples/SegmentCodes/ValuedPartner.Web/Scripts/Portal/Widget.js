@@ -1,6 +1,6 @@
 ﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
-//"use strict"
+"use strict"
 var homeUI = homeUI || {}; 
 var widgetUI = widgetUI || {};
 var widgetConstants = widgetConstants || {};
@@ -41,12 +41,12 @@ homeUI = {
 };
 
 widgetConstants = {
-    WidgetHeight: 334,
+    WidgetHeight: 315,
     WidgetWidth: 460,
-    WidgetMarginRight: 24,
-    WidgetMarginBottom: 24,
+    WidgetMarginRight: 20,
+    WidgetMarginBottom: 20,
     NumOfWidgetsMax: 6,
-    NumOfWidgetsPerRow: 3,
+    NumOfWidgetsPerRow: 2,
 }
 
 var slotManager = new function () {
@@ -136,7 +136,7 @@ var slotManager = new function () {
     }
 }
 
-function updateLayout(isWidgetActive) {
+function updateLayout() {
 
     //update slot positions
     $('.bodyWidgetContainer .kpi').each(function () {
@@ -150,47 +150,27 @@ function updateLayout(isWidgetActive) {
         }
         else {
             $(this).attr('rank', slot.rank);
-            var widgetContainerWidth = $('.bodyWidgetContainer').width();
-            var windowWidth = window.innerWidth;
-            var width = 0;
-            var top = 0;
-            var left = 0;
 
-            if (windowWidth >= 1440) {
-                widgetConstants.NumOfWidgetsPerRow = 3;
-                width = (widgetContainerWidth - (widgetConstants.WidgetMarginRight * (widgetConstants.NumOfWidgetsPerRow - 1))) / widgetConstants.NumOfWidgetsPerRow;
-                top = Math.floor((slot.rank - 1) / widgetConstants.NumOfWidgetsPerRow) * (widgetConstants.WidgetHeight + widgetConstants.WidgetMarginBottom);
-                left = ((slot.rank - 1) % widgetConstants.NumOfWidgetsPerRow) * (width + widgetConstants.WidgetMarginRight);
-                
-            }
-            else {
-                widgetConstants.NumOfWidgetsPerRow = 2;
-                width = (widgetContainerWidth - (widgetConstants.WidgetMarginRight * (widgetConstants.NumOfWidgetsPerRow - 1))) / widgetConstants.NumOfWidgetsPerRow;
-                top = Math.floor((slot.rank - 1) / widgetConstants.NumOfWidgetsPerRow) * (widgetConstants.WidgetHeight + widgetConstants.WidgetMarginBottom);
-                left = ((slot.rank - 1) % widgetConstants.NumOfWidgetsPerRow) * (width + widgetConstants.WidgetMarginRight);
-               
-            }
-
-            $(this).removeClass('hide').css('top', top).css('left', left).css('width', width);
-
+            var top = Math.floor((slot.rank - 1) / widgetConstants.NumOfWidgetsPerRow) * (widgetConstants.WidgetHeight + widgetConstants.WidgetMarginBottom);
+            var left = ((slot.rank - 1) % widgetConstants.NumOfWidgetsPerRow) * (widgetConstants.WidgetWidth + widgetConstants.WidgetMarginRight)
+            
+            $(this).removeClass('hide').css('top', top).css('left', left);
         }
     });
 
     //set container height
     var numberOfActiveWidgets = slotManager.getActiveSlotsCount();
-    $('.bodyWidgetContainer').height((widgetConstants.WidgetHeight + widgetConstants.WidgetMarginBottom) * Math.ceil(numberOfActiveWidgets / widgetConstants.NumOfWidgetsPerRow));
+    $('.bodyWidgetContainer').height((widgetConstants.WidgetHeight + widgetConstants.WidgetMarginBottom) * Math.ceil(numberOfActiveWidgets / 2));
 
-    if (isWidgetActive) {
-        //bodyWidgetContainer
-        if (numberOfActiveWidgets > 0) {
-            $('#widgetLayout').show();
-            $('#widgetHplayout').hide();
-            $('#dvAddWidget').show();
-        } else {
-            $('#widgetHplayout').show();
-            $('#widgetLayout').hide();
-            $('#dvAddWidget').hide();
-        }
+    //bodyWidgetContainer
+    if (numberOfActiveWidgets > 0) {
+        $('#widgetLayout').show();
+        $('#widgetHplayout').hide();
+        $('#dvAddWidget').show();
+    } else {
+        $('#widgetHplayout').show();
+        $('#widgetLayout').hide();
+        $('#dvAddWidget').hide();
     }
 }
 
@@ -207,7 +187,7 @@ function loadWidgets(widgetInfos)
         }
     });
     slotManager.recalculateRanks();
-    updateLayout(true);
+    updateLayout();
 }
 
 function displayWidget(widgetId) {
@@ -242,7 +222,7 @@ function hideSlot(slotId) {
         $iframe.attr("IsReport", "");
         $iframe.attr("widgetid", "");
     }
-    updateLayout(true);
+    updateLayout();
     return true;
 }
 
@@ -250,7 +230,7 @@ function addWidgetToSlot(widgetId, slotId, rank)
 {
     var slot = slotManager.registerSlot(slotId, widgetId, rank);
     if (slot != null) {
-        updateLayout(true);
+        updateLayout();
 
         var widgetInfo = getWidgetInfoById(widgetId);
         if (widgetInfo != null)
@@ -338,9 +318,9 @@ function cleanFrameContent($iframe)
 }
 
 $(document).ready(function () {
-    $("#homeNav, .logo-product, .footer_container").click(function () {
+    $(".home_nav, .footer_container").click(function () {
         if (!$('#screenLayout').is(":visible")) {
-            updateLayout(true);
+            updateLayout();
         }
         $("#breadcrumb").hide();
         //When Home Menu is clicked
@@ -535,7 +515,7 @@ function myDrop(e) {
         sourceSlot.rank = destSlot.rank;
         destSlot.rank = rank;
 
-        updateLayout(true);
+        updateLayout();
 
         saveWidgetOrder();        
     }
@@ -561,8 +541,6 @@ function saveWidgetOrder() {
 
 function myDrag(e) {
     // do things here if you need to while dragging
-    this.style.opacity = '0.4';
-    this.classList.add('moving');
 }
 
 function myDragEnd(e) {
@@ -570,7 +548,6 @@ function myDragEnd(e) {
     this.style.opacity = '1.0';
     $(".kpi").each(function () {
         this.classList.remove('over');
-        this.classList.remove('moving');
     });
 }
 
@@ -583,12 +560,6 @@ function myDragStart(ev) {
 }
 
 $(document).ready(function () {
-
-    // updating KPI layout on windows resize event
-    window.onresize = function (event) {
-        updateLayout(false);
-        kendo.resize($("div.k-chart[data-role='chart']"));
-    };
 
     // Setting popup
     $(document).on('click', '.btnsettingsPopUp', function (e) {

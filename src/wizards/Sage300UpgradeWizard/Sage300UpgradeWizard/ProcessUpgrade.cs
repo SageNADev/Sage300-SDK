@@ -36,16 +36,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         #region Public constants
         /// <summary> From Release Number </summary>
-        public const string FromReleaseNumber = "2018.0";
+        public const string FromReleaseNumber = "2017.2";
 
         /// <summary> To Release Number </summary>
-        public const string ToReleaseNumber = "2018.1";
+        public const string ToReleaseNumber = "2018.0";
 
         /// <summary> From Accpac Number </summary>
-        public const string FromAccpacNumber = "6.5.0.0";
+        public const string FromAccpacNumber = "6.4.0.20";
 
         /// <summary> To Accpac Number </summary>
-        public const string ToAccpacNumber = "6.5.0.10";
+        public const string ToAccpacNumber = "6.5.0.0";
 
         /// <summary> Web Suffix </summary>
         public const string WebSuffix = ".web";
@@ -104,6 +104,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         LaunchProcessingEvent(_settings.WizardSteps[index].Title);
                         SyncAccpacLibraries(_settings.WizardSteps[index].Title);
                         break;
+                    case 5: //Enable XML property step - if step number changes, this case must change too
+                        if (_settings.WizardSteps[index].CheckboxValue)
+                        {
+                            LaunchProcessingEvent(_settings.WizardSteps[index].Title);
+                            EnableXmlProperty(_settings.WizardSteps[index].Title);
+                        }
+                        break;
                         // Case n for release specific steps here
                 }
             }
@@ -157,6 +164,68 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent(string.Format("{0} {1}", DateTime.Now, 
                 string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber)));
 
+            // Log end of step
+            LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.End, title));
+            LaunchLogEvent("");
+        }
+
+        /// <summary> Enable XML Documentation file property of projects </summary>
+        /// <param name="title">Title of step being processed</param>
+        private void EnableXmlProperty(string title)
+        {
+            // Log start of step
+            LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.Start, title));
+
+            // turn on project generate XML documentation file
+            var slnDir = Directory.GetParent(_settings.DestinationWebFolder);
+            var csprojFiles = slnDir.EnumerateFiles("*.csproj", SearchOption.AllDirectories);
+            foreach (var projFile in csprojFiles)
+            {
+                var xmlDoc = new XmlDocument();
+                xmlDoc.Load(projFile.FullName);
+                var projName = Path.GetFileNameWithoutExtension(projFile.FullName) + ".XML";
+                var nodes = xmlDoc.ChildNodes[1].ChildNodes;
+                var xmlDocFileName = "";
+                var hasChanges = false;
+
+                foreach (XmlNode node in nodes)
+                {
+                    if (node.NodeType == XmlNodeType.Element)
+                    {
+                        var e = (XmlElement)node;
+                        if (e.Name == "PropertyGroup" && e.HasAttributes && e.Attributes[0].Name == "Condition")
+                        {
+                            var hasXmlDocFileName = false;
+                            foreach (XmlElement n in e.ChildNodes)
+                            {
+                                if (n.Name == "OutputPath" && !string.IsNullOrEmpty(n.InnerText))
+                                {
+                                    if (n.InnerText.StartsWith("$"))
+                                    {
+                                        n.InnerText = @"bin\";
+                                    }
+                                    xmlDocFileName = Path.Combine(n.InnerText, projName);
+                                }
+                                if (n.Name == "DocumentationFile" && n.InnerText != "")
+                                {
+                                    hasXmlDocFileName = true;
+                                }
+                            }
+                            if (!hasXmlDocFileName && !string.IsNullOrEmpty(xmlDocFileName))
+                            {
+                                e.InnerXml += string.Format("<DocumentationFile>{0}</DocumentationFile>", xmlDocFileName);
+                                hasChanges = true;
+                            }
+                        }
+                    }
+                }
+
+                if (hasChanges)
+                {
+                    xmlDoc.Save(projFile.FullName);
+                    LaunchLogEvent(string.Format("{0} {1} : {2}", DateTime.Now, Resources.ReleaseSpecificTitleEnableXmlProperty, projFile.FullName));
+                }
+            }
             // Log end of step
             LaunchLogEvent(string.Format("{0} -- {1} {2} --", DateTime.Now, Resources.End, title));
             LaunchLogEvent("");

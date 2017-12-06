@@ -87,7 +87,7 @@ inquiryUI = {
                 var renderedObj = control.renderedObjList[j];
                 switch(renderedObj.objectType) {
                     case "dropdown":
-                        inquiryUI.initDropDownList(renderedObj.Id, control);
+                        inquiryUI.initDropDownList(renderedObj.Id, renderedObj.Event);
                         break;
 
                     case "fromtextbox":
@@ -126,35 +126,14 @@ inquiryUI = {
         }
     },
 
-    initDropDownList: function (id, control) {
+    initDropDownList: function (id, onChange) {
         sg.utls.kndoUI.dropDownList(id);
         var dropdown = $("#" + id).data("kendoDropDownList");
         //dropdown.select(1);
-        var isFinderType = control.inquiryFilterControl.FilterType === inquiryUI.filterType.Finder;
-        if (isFinderType) {
+        if (onChange != null) {
             dropdown.bind("change", function (e) {
-                var controlRenderedObjList = control.renderedObjList;
-                var toGroupId = $.grep(controlRenderedObjList, function (renderedObj) {
-                    return renderedObj.objectType === "finderGroup";
-                })[0].Id;
-
-                var fromBoxId = $.grep(controlRenderedObjList, function (renderedObj) {
-                    return renderedObj.objectType === "fromtextbox";
-                })[0].Id;
-
-                var toBoxId = $.grep(controlRenderedObjList, function (renderedObj) {
-                    return renderedObj.objectType === "totextbox";
-                })[0].Id;
-
-                if (this.value() == inquiryUI.filterOperator.Between) {
-                    $("#" + toGroupId).show();
-                    $("#" + fromBoxId).attr('placeholder', 'First');
-                    $("#" + toBoxId).attr('placeholder', 'Last');
-                } else {
-                    $("#" + toGroupId).hide();
-                    $("#" + fromBoxId).removeAttr('placeholder');
-                     $("#" + toBoxId).removeAttr('placeholder');
-                }
+                var condition = this.value() == inquiryUI.filterOperator.Between;
+                eval(onChange);
             });
         }
     },
@@ -163,7 +142,7 @@ inquiryUI = {
         var title = $.validator.format(InquiryResources.FinderTitle, finderTitle);
         var onSuccess = function(result) {
             if (result != null) {
-                $("#" + textBoxId).val(result[fieldName]);
+                $("#" + textBoxId).val(eval("result." + fieldName));
             }
         };
         var finderFilter = function() {
@@ -175,7 +154,7 @@ inquiryUI = {
             return filters;
         };
 
-        sg.finderHelper.setFinder(id, sg.finder[finderName], onSuccess, $.noop, title, finderFilter);
+        sg.finderHelper.setFinder(id, eval("sg.finder." + finderName), onSuccess, $.noop, title, finderFilter);
     },
 
     initMultiSelect: function (id) {
@@ -624,13 +603,15 @@ inquiryUI = {
                     var valueMultiSelect = $('#' + multiSelectObj.Id).data("kendoMultiSelect").value();
                     if (valueMultiSelect[0] === "-1") {
                         var allValues = $('#' + multiSelectObj.Id).data("kendoMultiSelect").dataSource.data();
-                        selection = allValues.filter(function (elem) {
-                                        return elem.value !== "-1";
-                                    }).map(function (elem) {
-                                        return elem.value;
-                                    }).join();
+                        selection = "(" +
+                            allValues.filter(function(elem) {
+                                return elem.value !== "-1";
+                            }).map(function(elem) {
+                                return elem.value;
+                            }).join() +
+                            ")";
                     } else {
-                        selection = valueMultiSelect.join();
+                        selection = "(" + valueMultiSelect.join() + ")";
                     }
                     filters[count] = sg.finderHelper.createInquiryFilter(control.inquiryFilterControl.Field, inquiryUI.filterOperator.Include, selection, false);
                     ++count;
