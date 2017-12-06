@@ -506,6 +506,8 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="menu3dLevel.png">menu3dLevel.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Msg_icons.png">Msg_icons.png</ProjectItem>
           <Folder Name="nav" TargetFolderName="nav">
+		    <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-1.jpg">bg-menu-1.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-10.jpg">bg-menu-10.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-11.jpg">bg-menu-11.jpg</ProjectItem>
