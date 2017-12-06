@@ -37,6 +37,8 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
+
+	var keyFieldTypeName = view.Fields.Where(f => f.IsKey).FirstOrDefault().Type.ToString();
 #>
 // <#=copyright#>
 
@@ -157,8 +159,33 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=containerName#>ViewModel Delete(string id)
         {
-            Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#>.ToString() == id;
-            var data = _repository.Delete(filter);
+	<#
+		if (keyFieldTypeName == "String")
+		{
+	#>
+		Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == id;
+	<#
+		}
+		else if (keyFieldTypeName == "Decimal")
+		{
+	#>
+		Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDecimal(id);
+	<#
+		}
+		else if (keyFieldTypeName == "Double")
+		{
+	#>
+		Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDouble(id);
+	<#
+		} 
+		else 
+		{
+	#>
+		Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToInt64(id);
+	<#  
+		}
+	#>
+			var data = _repository.Delete(filter);
 
             var userMessage = new UserMessage(data,
                 string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
