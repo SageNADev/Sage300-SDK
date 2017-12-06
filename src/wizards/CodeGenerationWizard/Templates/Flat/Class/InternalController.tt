@@ -37,6 +37,26 @@
     var enumsCount = view.Enums.Count;
 	
 	var keyFieldTypeName = view.Fields.Where(f => f.IsKey).FirstOrDefault().Type.ToString();
+	var convertId = "id";
+
+	switch (keyFieldTypeName)
+    {
+        case "Double":
+            convertId = "Convert.ToDouble(id)";
+            break;
+        case "Long":
+            convertId = "Convert.ToInt64(id)";
+            break;
+        case "Integer":
+            convertId = "Convert.ToInt32(id)";
+            break;
+        case "Decimal":
+            convertId = "Convert.ToDecimal(id)";
+            break;
+        case "Byte":
+            convertId = "Convert.ToByte(id)";
+            break;
+    }
 #>
 
 // <#=copyright#>
@@ -155,35 +175,9 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=entityName#>ViewModel<T> Delete(string id)
         {
-	<#
-		if (keyFieldTypeName == "String")
-		{
-	#>
-		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == id;
-	<#
-		}
-		else if (keyFieldTypeName == "Decimal")
-		{
-	#>
-		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDecimal(id);
-	<#
-		}
-		else if (keyFieldTypeName == "Double")
-		{
-	#>
-		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDouble(id);
-	<#
-		} 
-		else 
-		{
-	#>
-		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToInt64(id);
-	<#  
-		}
-	#>
 
+			Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == <#=convertId#>;
 			var data = Service.Delete(filter);
-
             var userMessage = new UserMessage(data,
                 string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
 
