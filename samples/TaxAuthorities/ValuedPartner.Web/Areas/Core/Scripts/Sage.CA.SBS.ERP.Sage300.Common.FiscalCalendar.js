@@ -52,6 +52,7 @@ fiscalCalendarHelper = {
             // if the target of the click isn't the container... nor a descendant of the container
             if (!container.is(e.target) && !button.is(e.target) && container.has(e.target).length === 0 && !ddlFiscalCal.is(e.target) && e.target.parentNode.id !== "ddlFiscalYear_listbox") {
                 container.hide();
+                $(document).off('click.fiscalCalCtrl')
             }
         });
 
@@ -215,7 +216,7 @@ fiscalCalendarGrid = {
             title: fiscalCalendarHeader.StatusTitle,
             attributes: " class = w110",
             headerAttributes: "class = w110",
-            hidden: false
+            hidden: true
         }
     ],
     init: function (result) {
@@ -233,10 +234,6 @@ fiscalCalendarGrid = {
             }
         });
 
-        if (!result.ShowStatusColumn) {
-            fiscalCalendarUtils.hideColumns = ["Status"];
-        }
-
         var columns = fiscalCalendarGrid.getColumns(fiscalCalendarUtils.hideColumns, result.ShowStatusColumn);
 
         $('#divFiscalCalGrid').kendoGrid({
@@ -249,8 +246,16 @@ fiscalCalendarGrid = {
             columns: columns,
             change: fiscalCalendarGrid.onChange
         });
+
+        //It is not necessary, just keep this line for unit test
         if (!result.ShowStatusColumn) {
-            sg.utls.kndoUI.hideGridColumns($("#divFiscalCalGrid").data("kendoGrid"), fiscalCalendarUtils.hideColumns);
+            fiscalCalendarUtils.hideColumns = ["Status"];
+        }
+
+        if (result.ShowStatusColumn) {
+            $("#divFiscalCalGrid").data("kendoGrid").showColumn("Status");
+            //I am not see any benift below, if any side effect, free to get it back
+            //sg.utls.kndoUI.hideGridColumns($("#divFiscalCalGrid").data("kendoGrid"), fiscalCalendarUtils.hideColumns);
         }
     },
     onChange: function (arg) {

@@ -28,7 +28,7 @@
     var companyNamespace = settings.CompanyNamespace;
     var extension = settings.Extension;
     var repositoryType = settings.RepositoryType;
-    var generateDynamicEnablement = settings.GenerateDynamicEnablement;
+    var generateDynamicEnablement = view.Options[BusinessView.GenerateDynamicEnablement];
     var viewId = view.Properties[BusinessView.ViewId];
     var modelName = view.Properties[BusinessView.ModelName];
 #>

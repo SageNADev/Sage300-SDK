@@ -65,6 +65,20 @@ namespace ValuedPartner.TU.Services.Process
             }
         }
 
+        /// <summary>
+        /// Get session date period info 
+        /// </summary>
+        /// <param name="date">Date</param>
+        /// <param name="app">Application ID</param>
+        /// <returns>Period info</returns>
+        public override FiscalYearSet GetFiscalYearPeriodInfoSet(DateTime date, string app)
+        {
+            using (var repository = Resolve<IClearStatisticsEntity<T>>())
+            {
+                return repository.GetFiscalYearPeriodInfoSet(date, app);
+            }
+        }
+
         #endregion
 
     }

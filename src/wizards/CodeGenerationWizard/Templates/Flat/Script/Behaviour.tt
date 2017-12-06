@@ -25,10 +25,17 @@
     // Locals
     var entityName = view.Properties[BusinessView.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = entityName;
+    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+    {
+        containerName = settings.EntitiesContainerName;
+    }
+
     var moduleId = view.Properties[BusinessView.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
+
 #>
 /* <#=copyright#> */
 
@@ -49,13 +56,13 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     init: function () {
     <#=localEntityName#>UI.initButtons();
     <#=localEntityName#>UI.initFinders();
-    <#=localEntityName#>UISuccess.initialLoad(<#=entityName#>ViewModel);
+    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
     <#=localEntityName#>UISuccess.setkey();
     },
 
     // Save
     save<#=entityName#>: function () {
-        if ($("#frm<#=entityName#>").valid()) {
+        if ($("#frm<#=containerName#>").valid()) {
             var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
             if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
                 <#=localEntityName#>Repository.update(data, <#=localEntityName#>UISuccess.update);
@@ -68,8 +75,8 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     // Init Buttons
     initButtons: function () {
         // Import/Export Buttons
-        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", false, $.noop);
-        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", false, $.noop);
+        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
         // Key field with Finder
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
@@ -95,10 +102,10 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
         // Delete Button
         $("#btnDelete").bind('click', function () {
-            if ($("#frm<#=entityName#>").valid()) {
+            if ($("#frm<#=containerName#>").valid()) {
                 var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
                 sg.utls.showKendoConfirmationDialog(function () {
-                    sg.utls.clearValidations("frm<#=entityName#>");
+                    sg.utls.clearValidations("frm<#=containerName#>");
                     <#=localEntityName#>Repository.delete(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.delete);
                 }, null, message, <#=localEntityName#>Resources.DeleteTitle);
             }
@@ -111,7 +118,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     // Init Finders, if any
     initFinders: function () {
         var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=entityName.ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
+        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
     },
 
     // Get
@@ -121,7 +128,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
     // Create
     create: function () {
-        sg.utls.clearValidations("frm<#=entityName#>");
+        sg.utls.clearValidations("frm<#=containerName#>");
         <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
     },
 
@@ -130,7 +137,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
-                    sg.utls.clearValidations("frm<#=entityName#>");
+                    sg.utls.clearValidations("frm<#=containerName#>");
                     functionToCall.call();
                 },
                 function () { // No
@@ -241,7 +248,7 @@ var <#=localEntityName#>UISuccess = {
     // Set Finder
     setFinderData: function () {
         var data = <#=localEntityName#>UI.finderData;
-        sg.utls.clearValidations("frm<#=entityName#>");
+        sg.utls.clearValidations("frm<#=containerName#>");
         ko.mapping.fromJS(data, {}, modelData);
         <#=localEntityName#>UI.finderData = null;
         modelData.UIMode(sg.utls.OperationMode.SAVE);
@@ -264,7 +271,8 @@ var <#=localEntityName#>Filter = {
     getFilter: function () {
         var filters = [[]];
         var <#=localEntityName#>Name = $("#txt<#=keyFieldName#>").val();
-        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", sg.finderOperator.StartsWith, <#=localEntityName#>Name);
+		var operator = (isNaN(<#=localEntityName#>Name)) ? sg.finderOperator.StartsWith : sg.finderOperator.Equal;
+        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", operator, <#=localEntityName#>Name);
         return filters;
     }
 };

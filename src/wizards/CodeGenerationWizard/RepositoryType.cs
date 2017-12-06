@@ -44,6 +44,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary>
         /// Inquiry Repository
         /// </summary>
-        Inquiry = 4
+        Inquiry = 4,
+        /// <summary>
+        /// Header-Detail Repository
+        /// </summary>
+        HeaderDetail = 5
     }
 }

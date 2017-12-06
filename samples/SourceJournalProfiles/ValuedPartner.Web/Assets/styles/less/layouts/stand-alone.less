@@ -1,0 +1,362 @@
+//
+// Stand-alone master layout
+// --------------------------------------------------
+
+/* master-stand-alone styles */
+/* login screen */
+
+.master-stand-alone {
+
+    font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+    background-color: #ebedef;
+
+    .header-global {
+        background:#3c424f;
+        height: 47px;
+        position: relative;
+
+        .wrapper {
+            margin: 0 30px 0 30px;
+
+            .Sage_logo {
+                top: 11px;
+                position: relative;
+            }
+
+            .top-nav {
+                position: absolute;
+                right: 30px;
+                top: 0;
+                height: 47px;
+
+                li {
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 14px;
+                    height: 47px;
+                    text-align: right;
+                    vertical-align: middle;
+                    min-width: 50px;
+
+                    > span {
+                        top: 14px;
+                        position: relative;
+                    }
+
+                    &:hover {
+                        opacity: 0.75;
+                        cursor: pointer;
+                    }
+
+                    .help {
+                        height: 47px;
+                        text-align: center;
+                        min-width: 50px;
+                        background: transparent url(../../images/nav/sprite_global_menu_rev@2x.png) no-repeat center -52px;
+                        background-size: 40px 400px;
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+
+                        > span {
+                            font: normal 10px/1 Arial;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            padding: 34px 10px 0;
+                            position: relative;
+                            color: #fff;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
+    .main-body .wrapper {
+        margin: 0 30px 40px 30px;
+    }
+
+    .h1, h1, .h2, h2, .h3, h3 {
+        label {
+            font-size: inherit;
+        }
+    }
+
+    .quick-links .wrapper {
+        margin: 20px 30px 20px -10px;
+
+        li {
+            display: inline-block;
+
+            .navigation-pipe {
+                color: #ccc;
+                padding: 0 10px;
+            }
+
+            a.active {
+                text-decoration:none;
+                color: #3c424f !important;
+                cursor: default;
+            }
+        }
+    }
+
+    section.footer {
+        background-color: #4d4f53;
+        height: 40px;
+        color: #cfcfcf;
+        font-size: 11px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 13px 0 0;
+
+        .wrapper {
+            margin: 0;
+            min-width: 900px;
+            padding: 0 30px;
+            position: relative;
+
+            .logo-sage {
+                position: absolute;
+                top: -4px;
+                left: 30px;
+            }
+        }
+    }
+}
+
+/* Sage 300 Online -SEOS Chiclets page styles */
+
+.chiclet {
+    height: 100vh;
+    background-color: #ebedef;
+
+    .header-global {
+        -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.24);
+        box-shadow: 0 2px 4px rgba(0,0,0,.24);
+
+        .wrapper .top-nav li {
+            width: initial;
+            text-align: center;
+            padding: 0 10px;
+            min-width: 70px;
+
+            &:hover {
+                opacity: 1;
+                background: rgba(0,0,0,.21);
+            }
+
+            .help,
+            .sign-out,
+            .sign-in {
+                height: 47px;
+                text-align: center;
+                min-width: 70px;
+                background: transparent url(../../images/nav/sprite_global_menu_rev@2x.png) no-repeat center -52px;
+                background-size: 40px 400px;
+                top: 0;
+                right: 74px;
+                position: absolute;
+
+                > span {
+                    font: normal 10px/1 Arial;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 34px 10px 0;
+                    position: relative;
+                    color: #fff;
+                }
+            }
+
+            .sign-out {
+                background-position: center -307px;
+                right: 0;
+                background-size: 40px 400px;
+            }
+
+            .sign-in {
+                background-position: center -357px;
+                right: 0;
+                background-size: 40px 400px;
+            }
+        }
+    }
+
+    // Headline stypes
+
+    .h1, h1, .h2, h2, .h3, h3 {
+        label {
+            font-size: inherit;
+        }
+    }
+
+    .page-header {
+        margin-top: 20px;
+        padding-bottom: 0;
+        border-bottom: none;
+        color: #3c424f;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+        label {
+            font-size: inherit;
+        }
+    }
+
+    .page-header2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #3c424f;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+        label {
+            font-size: inherit;
+        }
+    }
+
+    // Content Styles
+
+    .main-body {
+        padding-bottom: 100px;
+    }
+
+    .browsers, 
+    .applications {
+        margin-left: -40px;
+        margin-bottom: 0;
+    }
+
+    .container-box {
+        border-radius: .5rem;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        position: relative;
+        vertical-align: top;
+        padding: 15px 15px 0;
+        width: 100%;
+        min-height: 135px;
+        background-color: #fff;
+
+        p, 
+        .browser-supported {
+            margin-left: 28px;
+
+            li {
+                display: inline-block;
+                width: 35px;
+                height: 36px;
+                margin-right: 10px;
+
+                &.browser-chrome {
+                    background-image: url("../../images/login/browser_chrome.png");
+                }
+                &.browser-firefox {
+                    background-image: url("../../images/login/browser_ff.png");
+                }
+                &.browser-opera {
+                    background-image: url("../../images/login/browser_opera.png");
+                }
+                &.browser-safari {
+                    background-image: url("../../images/login/browser_safari.png");
+                }
+                &.browser-ie {
+                    background-image: url("../../images/login/browser_ie.png");
+                }
+            }
+        }
+
+        label.bold {
+            font-weight: bold;
+        }
+    }
+
+    .selection-application .applications li {
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 1rem;
+        position: relative;
+        vertical-align: middle;
+        width: 120px;
+        height: 120px;
+        margin-right: 65px ;
+        margin-bottom: 50px;
+        -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.15);
+        box-shadow: 0 4px 4px rgba(0,0,0,.15);
+
+        &:hover {
+            cursor: pointer;
+
+            &:before {
+                content: attr(data-line);
+                width: 120px;
+                height: 120px;
+                display: block;
+                background: #255bc7;
+                position: absolute;
+                top: 0;
+                text-align: center;
+                color: #fff;
+                font-size: 14px;
+                border-radius: 10px;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                -webkit-box-shadow: 0 8px 8px rgba(0,0,0,.15);
+                box-shadow: 0 8px 8px rgba(0,0,0,.15);
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                right: -4px;
+                bottom: -4px;
+                border: 2px dotted #255bc7;
+                border-radius: 12px;
+            }
+        }
+
+        &.database-backup {
+            background-color: #45a942;
+        }
+
+        &.ms-excel {
+            background-color: #1d7044;
+        }
+
+        &.ms-word {
+            background-color: #2b5796;
+        }
+
+        &.printboss {
+            background-color: #00a4cf;
+        }
+
+        .app-icon {
+            height: 120px;
+
+            .glyphicon {
+                color: #fff;
+                font-size: 58px;
+                margin-bottom: -24px;
+            }
+        }
+
+        .app-caption {
+            position: absolute;
+            top: 135px;
+            text-align: center;
+            width: 120px;
+        }
+    }
+
+    // Footer stypes
+    section.footer {
+        background-color: #ebedef;
+        color: rgba(0,0,0,.54);
+    }
+}

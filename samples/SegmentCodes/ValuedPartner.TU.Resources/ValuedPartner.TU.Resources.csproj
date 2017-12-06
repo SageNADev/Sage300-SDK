@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\SegmentCodesResx.es.resx" />
-    <EmbeddedResource Include="Forms\SegmentCodesResx.fr-CA.resx" />
+    <EmbeddedResource Include="Forms\SegmentCodesResx.fr.resx" />
     <EmbeddedResource Include="Forms\SegmentCodesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SegmentCodesResx.Designer.cs</LastGenOutput>
@@ -61,7 +61,7 @@
     <EmbeddedResource Include="Forms\SegmentCodesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\SegmentCodesResx.zh-Hant.resx" />
     <EmbeddedResource Include="MenuResx.es.resx" />
-    <EmbeddedResource Include="MenuResx.fr-CA.resx" />
+    <EmbeddedResource Include="MenuResx.fr.resx" />
     <EmbeddedResource Include="MenuResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>

@@ -98,6 +98,13 @@
     <Compile Include="BusinessField.cs" />
     <Compile Include="BusinessView.cs" />
     <Compile Include="BusinessViewHelper.cs" />
+    <Compile Include="Composition.cs" />
+    <Compile Include="ContainerName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContainerName.Designer.cs">
+      <DependentUpon>ContainerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnumHelper.cs" />
     <Compile Include="EnumValue.cs" />
     <Compile Include="Generation.cs">
@@ -218,11 +225,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KoExtn.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Flat\View\Entity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Entity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Templates\Flat\Script\Repository.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -237,6 +239,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\View\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\Class\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\Class\InternalController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalController.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\Class\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\Class\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\Class\ViewModel.cs">
+      <DependentUpon>ViewModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Templates\Inquiry\Class\Controller.cs">
       <AutoGen>True</AutoGen>
@@ -384,6 +416,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="WizardStep.cs" />
+    <EmbeddedResource Include="ContainerName.resx">
+      <DependentUpon>ContainerName.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Generation.resx">
       <DependentUpon>Generation.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,6 +686,26 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Templates\HeaderDetail\Class\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HeaderDetail\Class\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HeaderDetail\Class\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HeaderDetail\Class\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HeaderDetail\Class\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -659,6 +714,7 @@
     <Folder Include="Templates\Common\Script\" />
     <Folder Include="Templates\DynamicQuery\Script\" />
     <Folder Include="Templates\DynamicQuery\View\" />
+    <Folder Include="Templates\HeaderDetail\Script\" />
     <Folder Include="Templates\Inquiry\Script\" />
     <Folder Include="Templates\Inquiry\View\" />
     <Folder Include="Templates\Reports\Script\" />

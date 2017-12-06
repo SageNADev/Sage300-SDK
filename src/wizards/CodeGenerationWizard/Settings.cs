@@ -20,6 +20,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -31,16 +33,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Constructor setting defaults </summary>
         public Settings()
         {
-            ViewId = string.Empty;
-            BusinessView = new BusinessView();
+            Entities = new List<BusinessView>();
             RepositoryType = RepositoryType.Flat;
-            ResxName = string.Empty;
+            XmlEntities = new XDocument();
         }
         #endregion
 
         #region Public Properties
-        /// <summary> View Id to process for class generation </summary>
-        public string ViewId { get; set; }
         /// <summary> User for Business View </summary>
         public string User { get; set; }
         /// <summary> Password for Business View </summary>
@@ -51,14 +50,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string Company { get; set; }
         /// <summary> RepositoryType for Business View </summary>
         public RepositoryType RepositoryType { get; set; }
-        /// <summary> Business View </summary>
-        public BusinessView BusinessView { get; set; }
-        /// <summary> Generate Finder </summary>
-        public bool GenerateFinder { get; set; }
-        /// <summary> Generate Dynamic Enablement </summary>
-        public bool GenerateDynamicEnablement { get; set; }
-        /// <summary> Resx Name for Display Attributes </summary>
-        public string ResxName { get; set; }
+        /// <summary> Business Views (Entities) </summary>
+        public List<BusinessView> Entities { get; set; }
+        /// <summary> XDocument of Business Views (Entities) </summary>
+        public XDocument XmlEntities { get; set; }
         /// <summary> Prompt if Exists </summary>
         public bool PromptIfExists { get; set; }
         /// <summary> Module ID </summary>
@@ -79,8 +74,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public EnumHelper EnumHelper { get; set; }
         /// <summary> Resource keys </summary>
         public List<string> ResourceKeys { get; set; }
-        /// <summary> WorkflowKindId </summary>
-        public Guid WorkflowKindId { get; set; }
         /// <summary> Web Project Includes Module </summary>
         public bool WebProjectIncludesModule { get; set; }
         /// <summary> Include English </summary>
@@ -93,6 +86,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool includeSpanish { get; set; }
         /// <summary> Include French </summary>
         public bool includeFrench { get; set; }
+        /// <summary> Entities Container Name </summary>
+        public string EntitiesContainerName { get; set; }
+        /// <summary> Root node in the header-detail tree </summary>
+        public XElement HeaderNode { get; set; }
         #endregion
     }
 
