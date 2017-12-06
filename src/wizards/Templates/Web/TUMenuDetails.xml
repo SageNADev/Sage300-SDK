@@ -20,8 +20,6 @@
     <IsGroupEnd>false</IsGroupEnd>
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
-    <IconName>$companynamespace$/menuIcon.png</IconName>
-    <MenuBackGoundImage>$companynamespace$/menuBackGroundImage.jpg</MenuBackGoundImage>
   </item>
 
   <!--Third Level Menu Items Section Starts-->
