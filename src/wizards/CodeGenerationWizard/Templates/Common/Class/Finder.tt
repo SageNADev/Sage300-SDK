@@ -35,6 +35,7 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
+	var keyFieldTypeName = view.Properties["KeyFieldTypeName"];
 
 #>
 // <#=copyright#>
@@ -99,8 +100,33 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
         /// <returns>Get first or default <#=modelName#></returns>
         public virtual ModelBase Get(string id)
         {
-            Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#>.ToString() == id;
-            Service.IsReadOnly = true;
+	<#
+		if (keyFieldTypeName == "String")
+		{
+	#>
+		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == id;
+	<#
+		}
+		else if (keyFieldTypeName == "Decimal")
+		{
+	#>
+		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDecimal(id);
+	<#
+		}
+		else if (keyFieldTypeName == "Double")
+		{
+	#>
+		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToDouble(id);
+	<#
+		} 
+		else 
+		{
+	#>
+		Expression<Func<T, bool>> filter = param => param.<#=keyFieldName#> == Convert.ToInt64(id);
+	<#  
+		}
+	#>
+			Service.IsReadOnly = true;
             var model = Service.FirstOrDefault(filter);
             Service.IsReadOnly = false;
 			return model;
