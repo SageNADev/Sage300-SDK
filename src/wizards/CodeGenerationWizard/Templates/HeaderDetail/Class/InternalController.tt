@@ -31,7 +31,7 @@
     var entityName = view.Properties[BusinessView.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
     var containerName = settings.EntitiesContainerName;
-    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");

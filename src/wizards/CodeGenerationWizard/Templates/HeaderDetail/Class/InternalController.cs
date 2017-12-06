@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class InternalController : InternalControllerBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -152,7 +152,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var entityName = view.Properties[BusinessView.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
     var containerName = settings.EntitiesContainerName;
-    var headerModelName = settings.Entities.Where(e => e.Properties["ViewId"] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
@@ -166,7 +166,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("// ");
             
-            #line 43 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 43 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -186,91 +186,91 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using ");
             
-            #line 56 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 56 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.BusinessRepository;\r\nusing ");
             
-            #line 57 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 57 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\nusing ");
             
-            #line 58 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 58 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 59 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 59 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 63 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 63 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 66 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Internal Controller\r\n    /// </summary>\r\n    public class ");
             
-            #line 68 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal : ImportExportControllerInternal<I");
             
-            #line 68 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -279,7 +279,7 @@ using ");
                     "mmary>\r\n        /// Variable for storing context.\r\n        /// </summary>\r\n     " +
                     "   private readonly Context _context;\r\n\r\n        private I");
             
-            #line 77 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -287,7 +287,7 @@ using ");
             this.Write("Repository _repository\r\n        {\r\n            get {\r\n                return _con" +
                     "text.Container.Resolve<I");
             
-            #line 80 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -296,7 +296,7 @@ using ");
                     "}\r\n\r\n        #endregion\r\n\r\n        #region Constructor\r\n\r\n        /// <summary>\r" +
                     "\n        /// New instance of <see cref=\"");
             
-            #line 89 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 89 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -304,7 +304,7 @@ using ");
             this.Write("ControllerInternal\"/>\r\n        /// </summary>\r\n        /// <param name=\"context\">" +
                     "Context</param>\r\n        public ");
             
-            #line 92 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -313,28 +313,28 @@ using ");
                     "        _context = context;\r\n        }\r\n\r\n        #endregion\r\n\r\n        #region " +
                     "Internal methods\r\n\r\n        /// <summary>\r\n        /// Create a ");
             
-            #line 103 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 103 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <returns>JSON object for ");
             
-            #line 105 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 105 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 106 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 106 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Create()\r\n        {\r\n            var viewModel = GetViewModel(new ");
             
-            #line 108 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 108 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -342,28 +342,28 @@ using ");
             this.Write("(), null);\r\n\r\n            viewModel.UserAccess = GetAccessRights();\r\n\r\n          " +
                     "  return viewModel;\r\n        }\r\n\r\n        /// <summary>\r\n        /// Get a ");
             
-            #line 116 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 116 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 118 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 118 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 119 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 119 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 120 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 120 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -373,35 +373,35 @@ using ");
                     "urn GetViewModel(data, userMessage);\r\n        }\r\n        /// <summary>\r\n        " +
                     "/// Add a ");
             
-            #line 128 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 130 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 130 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 131 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 132 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 132 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Add(");
             
-            #line 132 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 132 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -410,21 +410,21 @@ using ");
                     " var userMessage = new UserMessage(data,\r\n                string.Format(CommonRe" +
                     "sx.AddSuccessMessage, ");
             
-            #line 137 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 137 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", data.");
             
-            #line 137 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -432,35 +432,35 @@ using ");
             this.Write("));\r\n\r\n            return GetViewModel(data, userMessage);\r\n       }\r\n\r\n        /" +
                     "// <summary>\r\n        /// Update a ");
             
-            #line 143 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 143 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 145 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 146 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 146 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 147 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 147 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Save(");
             
-            #line 147 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 147 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -476,35 +476,35 @@ using ");
         /// <summary>
         /// Delete a ");
             
-            #line 156 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 158 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 158 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 159 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 159 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 160 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 160 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Delete(string id)\r\n        {\r\n\t");
             
-            #line 162 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 162 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
 		if (keyFieldTypeName == "String")
 		{
@@ -514,21 +514,21 @@ using ");
             #line hidden
             this.Write("\t\tExpression<Func<");
             
-            #line 166 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", bool>> filter = param => param.");
             
-            #line 166 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(" == id;\r\n\t");
             
-            #line 167 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
 		}
 		else if (keyFieldTypeName == "Decimal")
@@ -539,21 +539,21 @@ using ");
             #line hidden
             this.Write("\t\tExpression<Func<");
             
-            #line 172 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", bool>> filter = param => param.");
             
-            #line 172 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(" == Convert.ToDecimal(id);\r\n\t");
             
-            #line 173 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
 		}
 		else if (keyFieldTypeName == "Double")
@@ -564,21 +564,21 @@ using ");
             #line hidden
             this.Write("\t\tExpression<Func<");
             
-            #line 178 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 178 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", bool>> filter = param => param.");
             
-            #line 178 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 178 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(" == Convert.ToDouble(id);\r\n\t");
             
-            #line 179 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 179 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
 		} 
 		else 
@@ -589,21 +589,21 @@ using ");
             #line hidden
             this.Write("\t\tExpression<Func<");
             
-            #line 184 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 184 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", bool>> filter = param => param.");
             
-            #line 184 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 184 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(" == Convert.ToInt64(id);\r\n\t");
             
-            #line 185 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 185 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
   
 		}
 	
@@ -614,21 +614,21 @@ using ");
                     "erMessage(data,\r\n                string.Format(CommonResx.DeleteSuccessMessage, " +
                     "");
             
-            #line 191 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 191 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", data.");
             
-            #line 191 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -637,49 +637,49 @@ using ");
                     "#endregion\r\n\r\n        #region Private methods\r\n\r\n        /// <summary>\r\n        " +
                     "/// Generic routine to return a view model for ");
             
-            #line 201 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 201 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 203 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 203 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <param name=\"userMessage\">User Message for ");
             
-            #line 204 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 204 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>View Model for ");
             
-            #line 205 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 205 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        private ");
             
-            #line 206 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel GetViewModel(");
             
-            #line 206 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model, UserMessage userMessage)\r\n        {\r\n            return new ");
             
-            #line 208 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 208 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -689,7 +689,7 @@ using ");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
