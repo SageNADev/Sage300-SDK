@@ -147,7 +147,7 @@ namespace MergeISVProject
             Directory.CreateDirectory(pathAreas);
             Directory.CreateDirectory(pathAreaViewsTo);
 
-            File.Copy(Path.Combine(pathWebProj, "Web.config"), Path.Combine(pathSource, "Web.config"));
+            File.Copy(Path.Combine(pathWebProj, "Web.config"), Path.Combine(pathSource, "Web.config"), true);
             FileSystem.CopyDirectory(pathAreaViewsFrom, pathAreaViewsTo);
 
             string[] patterns = { "System.*.dll", "Sage.CA.SBS.ERP.*.dll", "*.Web.Infrastructure.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
@@ -281,7 +281,7 @@ namespace MergeISVProject
                 if (File.Exists(pathImageFileFrom))
 	            {
                     var pathImageFileTo = Path.Combine(pathImageTo, image);
-		            File.Copy(pathImageFileFrom, pathImageFileTo);
+		            File.Copy(pathImageFileFrom, pathImageFileTo, true);
 	            }
 	        }
 
