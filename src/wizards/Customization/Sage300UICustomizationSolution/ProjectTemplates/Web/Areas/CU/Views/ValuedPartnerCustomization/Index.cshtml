@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sage 300c Customization</title>
+    <link href="~/Areas/$module$/Assets/Styles/css/default.min.css" rel="stylesheet" />
+</head>
+
+<body class="master-stand-alone">
+
+<header>
+    <div class="header-global">
+        <div class="wrapper">
+            <div class="Sage_logo"><img src="~/Areas/$module$/Assets/Images/sage_300_logo_white.png" height="25" alt="Sage 300"></div>
+            <div class="top-nav">
+                <ul>
+                    <li id="liAdminHelp">
+                        <i class="help"><span>Help</span></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="main-body">
+    <div class="wrapper">
+        <h1 class="page-header">Sage 300 UI Customization</h1>
+        <ul>
+            <li>Sign in to Sage 300c, <a href= @ViewBag.Sage300Url>Sage 300c</a>, and open the screen you want to customize.</li>
+            <ul>
+                <li>Sage 300c parses the settings files to add controls to the screen and view, </li>
+                <li>and to include the JavaScript file in the view.</li>
+            </ul>
+            <li>Use this MVC project to add controllers, action methods, and logic in areas\$module$\Controllers (called by client side).</li>
+            <li>Rebuild the project in Release Mode.</li>
+            <ul>
+                <li> The bootstrapper configuration file and project assembly are deployed to the Sage300c web directory.</li>
+            </ul>
+        </ul>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="wrapper">
+        <a class="logo-sage" href="http://na.sage.com"><img src="~/Areas/$module$/Assets/Images/footer_logo.png" width="60" height="25" alt="Sage"></a>
+        © 2017, Sage Software Inc., and its affiliated entities.
+    </div>
+</section>
+
+</body>
+</html>
