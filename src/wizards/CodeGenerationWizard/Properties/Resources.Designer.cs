@@ -685,7 +685,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Fields contain one field with the same name as the Model. Please change the Model Name..
+        ///   Looks up a localized string similar to The Properties contain a field with the name of &apos;EntityName&apos;. Please rename the field as &apos;EntityName&apos; is reserved for a public constant in the model..
+        /// </summary>
+        internal static string InvalidSettingEntityName {
+            get {
+                return ResourceManager.GetString("InvalidSettingEntityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Properties contain one field with the same name as the Model. Please change the Model Name..
         /// </summary>
         internal static string InvalidSettingModel {
             get {

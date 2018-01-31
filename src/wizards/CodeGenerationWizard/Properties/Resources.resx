@@ -269,7 +269,7 @@
     <value>Generating File {0}...</value>
   </data>
   <data name="InvalidSettingModel" xml:space="preserve">
-    <value>The Fields contain one field with the same name as the Model. Please change the Model Name.</value>
+    <value>The Properties contain one field with the same name as the Model. Please change the Model Name.</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -504,5 +504,8 @@
   </data>
   <data name="HeaderNodeDefinition" xml:space="preserve">
     <value>Either the header does not have a child view or there is more than one header defined.</value>
+  </data>
+  <data name="InvalidSettingEntityName" xml:space="preserve">
+    <value>The Properties contain a field with the name of 'EntityName'. Please rename the field as 'EntityName' is reserved for a public constant in the model.</value>
   </data>
 </root>
