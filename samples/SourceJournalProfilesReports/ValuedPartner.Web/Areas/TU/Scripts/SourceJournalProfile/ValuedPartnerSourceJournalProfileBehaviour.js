@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -228,11 +228,8 @@ var sourceJournalProfileUISuccess = {
     setFinderData: function () {
         var data = sourceJournalProfileUI.finderData;
         sg.utls.clearValidations("frmSourceJournalProfile");
-        ko.mapping.fromJS(data, {}, modelData);
         sourceJournalProfileUI.finderData = null;
-        modelData.UIMode(sg.utls.OperationMode.SAVE);
-        sourceJournalProfileUI.sourceJournalProfileModel.isModelDirty.reset();
-        sourceJournalProfileUISuccess.setkey();
+        sourceJournalProfileRepository.get(data.SourceJournalName, sourceJournalProfileUISuccess.get);
     },
 
     // Is New
