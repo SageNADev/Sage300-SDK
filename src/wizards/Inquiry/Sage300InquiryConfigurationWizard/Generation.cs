@@ -456,11 +456,14 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                         continue;
                     }
 
+                    // Get underlying type for nullable type
+                    var underlyingType = Nullable.GetUnderlyingType(declaredProperty.PropertyType) ?? declaredProperty.PropertyType;
+
                     // Gather the properties for the property
                     var property = new Property()
                     {
                         Name = declaredProperty.Name,
-                        PropertyTypeName = declaredProperty.PropertyType.Name,
+                        PropertyTypeName = underlyingType.Name,
                         PropertyTypeFullName = declaredProperty.PropertyType.FullName,
                         Index = (int) indexNestedType.GetField(declaredProperty.Name).GetRawConstantValue(),
                         FieldName = (string) fieldsNestedType.GetField(declaredProperty.Name).GetRawConstantValue()
@@ -941,7 +944,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 {
                     continue;
                 }
-
+   
                 var fields = new JObject
                 {
                     new JProperty(ProcessGeneration.PropertyName, property.Name),
