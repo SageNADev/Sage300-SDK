@@ -38,7 +38,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         #region Public constants
 
         /// <summary> Property for Enums </summary>
-        public const string PropertyEnums = "Enums";
+        public const string PropertyEnums = "List";
         /// <summary> Property for Selected </summary>
         public const string PropertySelected = "Selected";
         /// <summary> Property for Text </summary>
