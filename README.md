@@ -240,9 +240,8 @@ Application is released.
 
 ## Wizards
 
-The following sections will cover topics such as building, installing, uninstalling 
-and the debugging of the SDK. Please refer to the **README** file in the **bin\wizards**
-folder for details.
+Please refer to the **README** files in the **bin\wizards** and **src\wizards** folders for details
+on topics such as building, installing, uninstalling, and debugging of the wizards.
 
 ## License
 
