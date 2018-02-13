@@ -341,7 +341,6 @@
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
-    <Content Include="AccpacDotNetVersion.props" />
     <Content Include="Customization\ScreenDefinitions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

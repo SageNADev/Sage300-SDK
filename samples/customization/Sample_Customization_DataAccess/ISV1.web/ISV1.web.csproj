@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(SolutionDir)\ISV1.Web\AccpacDotNetVersion.props" />
+  <Import Project="$(SolutionDir)\..\..\..\settings\settings\AccpacDotNetVersion.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -294,9 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ISV1CUBootstrapper.xml" />
-    <Content Include="AccpacDotNetVersion.props">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
     <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Wizard.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />

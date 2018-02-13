@@ -329,9 +329,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="MergeISVProject.exe" />
-    <Content Include="AccpacDotNetVersion.props">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Customization\ScreenDefinitions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

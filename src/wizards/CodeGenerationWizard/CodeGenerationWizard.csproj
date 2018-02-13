@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props" Condition="Exists('..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(SolutionDir)\..\ProjectSettings\AccpacDotNetVersion.props" />
+  <Import Project="$(SolutionDir)\..\..\..\settings\AccpacDotNetVersion.props" />
   <PropertyGroup>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
       None
