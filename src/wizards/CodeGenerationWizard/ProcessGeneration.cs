@@ -664,7 +664,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return field.Name;
             }
 
-            return BusinessViewHelper.Replace(field.Description, prefix);
+            return BusinessViewHelper.Replace(field.Description);
         }
 
 

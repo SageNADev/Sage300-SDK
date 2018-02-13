@@ -145,7 +145,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 
                 // Property
 #>
-        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? field.Name : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
+        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + field.Name : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
 <#
             }

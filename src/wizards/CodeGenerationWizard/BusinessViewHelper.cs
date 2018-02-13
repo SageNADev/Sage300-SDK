@@ -201,17 +201,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>Replaced string</returns>
         public static string Replace(string value)
         {
-            return Replace(value, string.Empty);
-        }
-
-        /// <summary>
-        /// Helper method that removes and replaces unwanted characters
-        /// </summary>
-        /// <param name="value">Input string</param>
-        /// <param name="prefix">Prefix string</param>
-        /// <returns>Replaced string</returns>
-        public static string Replace(string value, string prefix)
-        {
             if (value == string.Empty)
             {
                 return string.Empty;
@@ -327,11 +316,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     newString = "Num" + newString;
                 }
 
-                // Special prefix check
-                if (newString.Equals("Type"))
-                {
-                    newString = prefix + newString;
-                }
             }
 
             if (string.CompareOrdinal(newString, "OptionalFields") == 0)

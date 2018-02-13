@@ -207,7 +207,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                         if (view.Enums.ContainsKey(fieldName))
                         {
 #>
-                    PresentationList = EnumUtility.GetItemsList<<#=fieldName#>>()<#=!view.Enums.ContainsKey(fieldName) ? "," : string.Empty#>
+                    PresentationList = EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=fieldName#>>()<#=!view.Enums.ContainsKey(fieldName) ? "," : string.Empty#>
 <#
                         }
                         else
@@ -236,7 +236,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                         break;
                     default:
 #>
-                    PresentationList = EnumUtility.GetItemsList<<#=fieldName#>>()
+                    PresentationList = EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=fieldName#>>()
 <#
                         break;
                 }
