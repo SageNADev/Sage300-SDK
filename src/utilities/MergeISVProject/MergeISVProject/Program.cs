@@ -63,7 +63,9 @@ namespace MergeISVProject
 		/// </summary>
 		private static void DisplayUsageMessageToConsole() 
         {
+			Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(_Options.UsageMessage);
+			Console.ResetColor();
         }
 
         /// <summary>
@@ -74,11 +76,13 @@ namespace MergeISVProject
         {
             if (_Options.LoadErrors.Count > 0)
             {
+				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("");
                 Console.WriteLine($"Errors were encountered attempting to parse command-line arguments:");
 				Console.WriteLine("");
 				var errorMsg = _Options.GetLoadErrorsAsText();
                 Console.WriteLine(errorMsg);
+				Console.ResetColor();
             }
         }
 

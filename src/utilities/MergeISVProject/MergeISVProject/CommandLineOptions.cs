@@ -44,20 +44,20 @@ namespace MergeISVProject
 		#region Private Variables
 		private string divider = new String('-', 105);
         private string UsageInstructionsTemplate =
-                @"Program Name:          {0}" + Environment.NewLine +
-                 "Version:               {1}" + Environment.NewLine +
+                @" Program Name:          {0}" + Environment.NewLine +
+                 " Version:               {1}" + Environment.NewLine +
 				 " " + Environment.NewLine +
-				 "Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  " + Environment.NewLine +
-				 "                       All rights reserved." + Environment.NewLine +
-				 "License:               The MIT Licence (MIT)" + Environment.NewLine +
+				 " Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  " + Environment.NewLine +
+				 "                        All rights reserved." + Environment.NewLine +
+				 " License:               The MIT Licence (MIT)" + Environment.NewLine +
 				 " " + Environment.NewLine +
-                 "Required Parameters:" + Environment.NewLine +
+                 " Required Parameters:" + Environment.NewLine +
                  " " + Environment.NewLine +
-                 "{2}" + Environment.NewLine +
+                 " {2}" + Environment.NewLine +
                  "" + Environment.NewLine +
-                 "Optional Parameter(s):" + Environment.NewLine +
+                 " Optional Parameter(s):" + Environment.NewLine +
                  " " + Environment.NewLine +
-                 "{3}" + Environment.NewLine;
+                 " {3}" + Environment.NewLine;
 
 
         private string[] rawArgList { get; set; }
