@@ -1,32 +1,44 @@
 @echo off
+SET PROGRAMNAME=MergeISVProject.exe
+
+REM *********************************************************************
+REM *                                                                   *
+REM *   This program is used to copy MergeISVProject.exe and it's       *
+REM *   dependencies into the Sage300SDK\Bin\Utilities\ directory       *
+REM *                                                                   *
+REM *********************************************************************
+
 setlocal
-set myDir=%~dp0
-set artifactToPub=%myDir%bin\release\MergeISVProject.exe
+SET myDir=%~dp0
+SET PROGRAMNAME=MergeISVProject.exe
+SET SOURCEFOLDER=%myDir%bin\release
+SET SDKROOT=..\..\..\..\..\..\
+SET BIN_UTILITIES=%SDKROOT%Bin\Utilities\
 
-REM if not [%1]==[] (
-REM   set artifactToPub=%1
-REM )
-echo artifactToPub=%artifactToPub%
+REM Initialize the source paths
+set MERGEISVPROJECTEXE=%SOURCEFOLDER%\%PROGRAMNAME%
+set ANTLR3DLL=%SOURCEFOLDER%\Antlr3.Runtime.dll
+set NEWTONSOFTJSONDLL=%SOURCEFOLDER%\Newtonsoft.Json.dll
+set WEBGREASEDLL=%SOURCEFOLDER%\WebGrease.dll
+set WEBGREASEEXE=%SOURCEFOLDER%\WG.EXE
+REM dir %SDKROOT%bin\utilities
 
-if not exist %artifactToPub% (
-  @echo %artifactToPub% does not exist.
-  @echo Build the RELEASE version to copy MergeISVProject.exe to SDK.
-  exit 0
-)
-call :CopyToPublishLocations %artifactToPub%
+REM Copy the files to the destination
+copy %MERGEISVPROJECTEXE% %BIN_UTILITIES%
+copy %ANTLR3DLL% %BIN_UTILITIES%
+copy %NEWTONSOFTJSONDLL% %BIN_UTILITIES%
+copy %WEBGREASEDLL% %BIN_UTILITIES%
+copy %WEBGREASEEXE% %BIN_UTILITIES%
 
-goto :EOF
+REM Let's just see what was copied :)
+echo %PROGRAMNAME% and dependencies copied to %BIN_UTILITIES%
+dir %BIN_UTILITIES%
+GOTO END
+:END
+@echo.
+@echo.
+@echo.
 
-:CopyToPublishLocations
-  setlocal
-  @echo Delete destination files.
-  call :RunPS "%myDir%\psCopyArtifactToPublish.ps1 -target %1"
-  goto :EOF
 
-  
-:RunPS
-  setlocal
-  @echo on
-  %WINDIR%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command "%1"
-  @echo off
-  goto :EOF
+
+
