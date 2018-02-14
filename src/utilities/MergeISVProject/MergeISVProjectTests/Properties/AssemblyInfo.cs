@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MergeISVProject")]
-[assembly: AssemblyDescription("Utility to process and move ISV project assets to Sage 300 installation directory")]
+[assembly: AssemblyTitle("MergeISVProjectTests")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sage Software, Inc.")]
-[assembly: AssemblyProduct("MergeISVProject")]
-[assembly: AssemblyCopyright("Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("MergeISVProjectTests")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9704a266-8d91-4e63-a6ca-8b60960f896c")]
+[assembly: Guid("6fbb4e72-b28d-4651-a3a2-7806a926a286")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +31,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("2.0.*")]
-//[assembly: AssemblyFileVersion("1.0.0.0")]
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
