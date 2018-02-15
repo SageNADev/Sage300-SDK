@@ -19,18 +19,19 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
 using System;
 using System.IO;
 using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
 using MergeISVProject.Logging;
-
 #endregion
 
 namespace MergeISVProject
 {
-	class Program
+	/// <summary>
+	/// Main program class
+	/// </summary>
+	public class Program
     {
 		#region Constants
 		const string LOGFILENAME = @"MergeISVProject.log";
@@ -49,7 +50,7 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments list</param>
 		private static void InitializeComponents(string[] args)
 		{
-			GetAppNameAndVersion(out string appName, out string appVersion);
+			Utilities.GetAppNameAndVersion(out string appName, out string appVersion);
 			_Options = new CommandLineOptions(appName, appVersion, args);
 			_Logger = new Logger(logfilename: LOGFILENAME,
 									logfolder: Directory.GetCurrentDirectory(),
@@ -78,7 +79,7 @@ namespace MergeISVProject
             {
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("");
-                Console.WriteLine($"Errors were encountered attempting to parse command-line arguments:");
+                Console.WriteLine(Messages.Error_InvalidCommandLineParameters);
 				Console.WriteLine("");
 				var errorMsg = _Options.GetLoadErrorsAsText();
                 Console.WriteLine(errorMsg);
@@ -86,17 +87,17 @@ namespace MergeISVProject
             }
         }
 
-        /// <summary>
-        /// Get the name of this application and it's version number
-        /// </summary>
-        /// <param name="name">Application Name</param>
-        /// <param name="ver">Application Version</param>
-        private static void GetAppNameAndVersion(out string name, out string ver)
-        {
-            name = typeof(Program).Assembly.GetName().Name + ".exe";
-            ver = typeof(Program).Assembly.GetName().Version.ToString();
-        }
-
+		/// <summary>
+		/// Write out some startup information to the log file and console
+		/// </summary>
+		private static void LogStartupInformation()
+		{
+			_Logger.Log(string.Format(Messages.Msg_LogFileLocation, _Logger.LogFile));
+			_Logger.Log(Messages.Msg_LoggingStarted);
+			_Logger.Log(Messages.Msg_PrerequisitesAreValid);
+			_Logger.Log(Messages.Msg_ArgumentList);
+			foreach (var s in _Options.Arguments) { _Logger.Log($"{new String(' ', 5)}{s}"); }
+		}
 		#endregion
 
 		#region Public Method (Main)
@@ -127,14 +128,7 @@ namespace MergeISVProject
 				else
 				{
 					_Driver = new MergeISVProjectDriver(_Options, _Logger);
-
-					_Logger.Log($"Log File Location = {_Logger.LogFile}");
-					_Logger.Log("Logging started...");
-					_Logger.Log("Prerequisites are valid.");
-					_Logger.Log("Argument List: ");
-					foreach (var s in _Options.Arguments) { _Logger.Log($"    {s}"); }
-
-					// Start Processing...
+					LogStartupInformation();
 					_Driver.Run();
 				}
 			}

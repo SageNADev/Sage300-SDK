@@ -24,14 +24,64 @@ using System.Collections.Generic;
 
 namespace MergeISVProject
 {
+	/// <summary>
+	/// Generic class used to hold a command-line option
+	/// Supported types are:
+	///		String
+	///		Bool
+	/// </summary>
+	/// <typeparam name="T">The type of option (String | Bool)</typeparam>
 	public class CommandLineOption<T>
     {
-        public string Name { get; set; }
-        public List<string> AliasList { get; set; }
-        public T OptionValue { get; set; }
-        public bool Required { get; set; }
-        public string Description { get; set; }
-        public string ExampleValue { get; set; }
-        public bool LoadError { get; set; }
+		/// <summary>
+		/// This the name of the command-line option
+		/// and is what would be specified on the command-line
+		/// Example command-line argument: 
+		///		--solutiondir="C:\MyProjects\MySolution\"
+		///	Name:
+		///		solutiondir
+		/// </summary>
+		public string Name { get; set; }
+
+		/// <summary>
+		/// This the list of valid alternate names that
+		/// can be used instead of the Name property
+		/// These are defined when creating an object
+		/// of this class.
+		/// Example: 
+		///		Name = "solutiondir"
+		///		AliasList = "s", "sol", "sp", "solution"
+		/// </summary>
+		public List<string> AliasList { get; set; }
+
+		/// <summary>
+		/// This will hold the value of the command-line option
+		/// Example command-line argument: 
+		///		--solutiondir="C:\MyProjects\MySolution\"
+		///	OptionValue
+		///		"C:\MyProjects\MySolution\"
+		/// </summary>
+		public T OptionValue { get; set; }
+
+		/// <summary>
+		/// This will be the description of the command-line option
+		/// and is used when the help is displayed
+		/// </summary>
+		public string Description { get; set; }
+
+		/// <summary>
+		/// This will be used to hold a valid example of what
+		/// this option will contain. This is used when the
+		/// help is displayed.
+		/// </summary>
+		public string ExampleValue { get; set; }
+
+		/// <summary>
+		/// This will contain the error flag if there was a problem
+		/// loading this option from the command-line.
+		/// true  : An error occurred 
+		/// false : No errors
+		/// </summary>
+		public bool LoadError { get; set; }
     }
 }

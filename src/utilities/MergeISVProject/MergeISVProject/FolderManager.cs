@@ -21,23 +21,63 @@
 #region Imports
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
-using MergeISVProject.Errors;
 using MergeISVProject.Interfaces;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 #endregion
 
 namespace MergeISVProject
 {
+	/// <summary>
+	/// A class to manage the various folders
+	/// (Deployment/Working area and Sage 300 Live Installation)
+	/// </summary>
 	public class FolderManager
 	{
-		#region Internal Classes
+		#region Private Constants
+		private const string LogOutputTemplate = "{0:15}: {1}";
+		#endregion
+
+		#region Classes meant to be used internally 
+		/// <summary>
+		/// Class to encapsulate all folders related to the 
+		/// Live Sage 300 installation
+		/// </summary>
 		public class LiveOnlineFolderBlock
 		{
+			/// <summary>
+			/// Represents the root Sage300 installation folder
+			/// </summary>
 			public string Root { get; set; }
+			/// <summary>
+			/// Represents the Sage300 Online Web folder
+			/// </summary>
 			public string Web { get; set; }
+			/// <summary>
+			/// Represents the Sage300 Online Worker folder
+			/// </summary>
 			public string Worker { get; set; }
+
+			/// <summary>
+			/// Generate a formatted string of the contents
+			/// of this object.
+			/// </summary>
+			public IEnumerable<string> GenerateLogOutput()
+			{
+				var lines = new List<string>();
+				lines.Add(typeof(LiveOnlineFolderBlock).ToString());
+				lines.Add(string.Format(LogOutputTemplate, "Root", Root));
+				lines.Add(string.Format(LogOutputTemplate, "Web", Web));
+				lines.Add(string.Format(LogOutputTemplate, "Worker", Worker));
+				return lines;
+			}
 		}
 
+		/// <summary>
+		/// Class to encapsulate all folders related to
+		/// the Staging/Compiled/Final process
+		/// </summary>
 		public class StagingFolderBlock
 		{
 			public string Root { get; set; }
@@ -46,11 +86,17 @@ namespace MergeISVProject
 			public string AreasViews { get; set; }
 			public string AreasScripts { get; set; }
 
+			/// <summary>
+			/// Create the Root folder only
+			/// </summary>
 			public void CreateRootOnly()
 			{
 				Directory.CreateDirectory(Root);
 			}
 
+			/// <summary>
+			/// Create the necessary folders
+			/// </summary>
 			public void CreateFolders()
 			{
 				Directory.CreateDirectory(Bin);
@@ -58,6 +104,23 @@ namespace MergeISVProject
 				Directory.CreateDirectory(AreasViews);
 				Directory.CreateDirectory(AreasScripts);
 			}
+
+			/// <summary>
+			/// Generate a formatted string of the contents
+			/// of this object.
+			/// </summary>
+			public IEnumerable<string> GenerateLogOutput()
+			{
+				var lines = new List<string>();
+				lines.Add(typeof(StagingFolderBlock).ToString());
+				lines.Add(string.Format(LogOutputTemplate, "Root", Root));
+				lines.Add(string.Format(LogOutputTemplate, "Bin", Bin));
+				lines.Add(string.Format(LogOutputTemplate, "Areas", Areas));
+				lines.Add(string.Format(LogOutputTemplate, "AreasViews", AreasViews));
+				lines.Add(string.Format(LogOutputTemplate, "AreasScripts", AreasScripts));
+				return lines;
+			}
+
 		}
 
 		#endregion
@@ -67,18 +130,46 @@ namespace MergeISVProject
 		#endregion
 
 		#region Public Properties
+		/// <summary>
+		/// This represents the original location of the
+		/// source code
+		/// </summary>
 		public string RootSource { get; set; }
-
+		/// <summary>
+		/// This represents the Deployment folder
+		/// </summary>
 		public string Deploy { get; set; }
-
+		/// <summary>
+		/// Represents the Original file locations
+		/// </summary>
 		public StagingFolderBlock Originals { get; set; }
+		/// <summary>
+		/// Represents the Staging folder file locations
+		/// </summary>
 		public StagingFolderBlock Staging { get; set; }
+		/// <summary>
+		/// Represents the Compiled assets folder file locations
+		/// </summary>
 		public StagingFolderBlock Compiled { get; set; }
+		/// <summary>
+		/// Represents the Final folder file locations
+		/// </summary>
 		public StagingFolderBlock Final { get; set; }
+		/// <summary>
+		/// Represents the Sage 300 installation folder file locations
+		/// </summary>
 		public LiveOnlineFolderBlock Live { get; set; }
 		#endregion
 
 		#region Constructor
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="logger">The Logger object</param>
+		/// <param name="rootPathIn">the root path</param>
+		/// <param name="sage300Installation">The Sage 300 installation folder</param>
+		/// <param name="moduleId">The Module ID</param>
 		public FolderManager(ILogger logger, string rootPathIn, string sage300Installation, string moduleId)
 		{
 			_Logger = logger;
@@ -138,10 +229,38 @@ namespace MergeISVProject
 		}
 		#endregion
 
+		#region Public Methods
+		/// <summary>
+		/// Generate a formatted string of the contents
+		/// of this object.
+		/// </summary>
+		public IEnumerable<string> GenerateLogOutput()
+		{
+			var lines = new List<string>();
+			lines.Add(typeof(FolderManager).ToString());
+			lines.Add(string.Format(LogOutputTemplate, "RootSource", RootSource));
+			lines.Add(string.Format(LogOutputTemplate, "Deploy", Deploy));
+			lines.Add("Originals");
+			lines.AddRange(Originals.GenerateLogOutput());
+			lines.Add("Compiled");
+			lines.AddRange(Compiled.GenerateLogOutput());
+			lines.Add("Staging");
+			lines.AddRange(Staging.GenerateLogOutput());
+			lines.Add("Final");
+			lines.AddRange(Final.GenerateLogOutput());
+			lines.Add("Live");
+			lines.AddRange(Live.GenerateLogOutput());
+			return lines;
+		}
+		#endregion
+
 		#region Private Methods
+		/// <summary>
+		/// Create the necessary output folders
+		/// </summary>
 		private void Create()
 		{
-			_Logger.Log("Preparing __DEPLOY__ folders and files for Staging");
+			_Logger.Log(string.Format(Messages.Msg_PreparingDeployFoldersAndFilesForStaging, FolderNameConstants.DEPLOY));
 
 			// __DEPLOY__ should already exist by this point
 			Compiled.CreateRootOnly();
@@ -158,19 +277,19 @@ namespace MergeISVProject
 			var path = Deploy;
 			if (Directory.Exists(Deploy))
 			{
-				_Logger.Log($"{path} exists.");
+				_Logger.Log(string.Format(Messages.Msg_PathExists, path));
 				try
 				{
 					Directory.Delete(path, true);
-					_Logger.Log($"{path} deleted.");
+					_Logger.Log(string.Format(Messages.Msg_PathDeleted, path));
 				}
 				catch (IOException)
 				{
-					throw new MergeISVProjectException(_Logger, ErrorMessages.DeploymentFolderLockedOrInUse);
+					throw new MergeISVProjectException(_Logger, Messages.Error_DeploymentFolderLockedOrInUse);
 				}
 			}
 			Directory.CreateDirectory(path);
-			_Logger.Log($"{path} created.");
+			_Logger.Log(string.Format(Messages.Msg_PathCreated, path));
 		}
 
 		#endregion

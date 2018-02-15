@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_CouldNotCompileRazorViews" xml:space="preserve">
+    <value>The post-build utility MergeISVProject could not compile the razor view(s). While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).</value>
+  </data>
+  <data name="Error_DeploymentFolderLockedOrInUse" xml:space="preserve">
+    <value>Sorry, the folder '{0}' could not be deleted. It appears as though the '{0}' folder is locked or in use. Please ensure that there are no command prompts or File Explorer instances referring to the '{0}' folder (or any of it's sub-folders).</value>
+  </data>
+  <data name="Error_ErrorParsingOptionNoValueWasSet" xml:space="preserve">
+    <value>{0}Error parsing '{1}'. No value was set.</value>
+  </data>
+  <data name="Error_ErrorParsingOptionTheFolderDoesNotExist" xml:space="preserve">
+    <value>{0}Error parsing '{1}'. The folder '{2}' does not exist.</value>
+  </data>
+  <data name="Error_InvalidBuildProfile" xml:space="preserve">
+    <value>Invalid build profile specified. 'Release' mode must be used.</value>
+  </data>
+  <data name="Error_InvalidCommandLineParameters" xml:space="preserve">
+    <value>Invalid or missing command-line parameters</value>
+  </data>
+  <data name="Error_MinificationFailed" xml:space="preserve">
+    <value>Sorry, the minification process appears to have failed.</value>
+  </data>
+  <data name="Error_Sage300Missing" xml:space="preserve">
+    <value>Sage 300 does not appear to be installed. This is a required application.</value>
+  </data>
+  <data name="Error_Sage300WebFolderMissing" xml:space="preserve">
+    <value>The post-build utility MergeISVProject could not find the Online Web folder for the Web UIs. While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).</value>
+  </data>
+  <data name="Error_UnableToFindTheProgram" xml:space="preserve">
+    <value>Unable to find the program '{0}'. Path='[1]'</value>
+  </data>
+  <data name="Msg_ArgumentList" xml:space="preserve">
+    <value>Argument List:</value>
+  </data>
+  <data name="Msg_Begin" xml:space="preserve">
+    <value>Begin</value>
+  </data>
+  <data name="Msg_BeginningMinificationProcessOnDirectory" xml:space="preserve">
+    <value>Beginning minification process on directory '{0}'</value>
+  </data>
+  <data name="Msg_DeleteFile" xml:space="preserve">
+    <value>Delete File '{0}'</value>
+  </data>
+  <data name="Msg_End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="Msg_FilesDotCount" xml:space="preserve">
+    <value>files.Count() = {0}</value>
+  </data>
+  <data name="Msg_FolderEquals" xml:space="preserve">
+    <value>folder = '{0}'</value>
+  </data>
+  <data name="Msg_LogFileLocation" xml:space="preserve">
+    <value>Log File Location : {0}</value>
+  </data>
+  <data name="Msg_LoggingStarted" xml:space="preserve">
+    <value>Logging Started...</value>
+  </data>
+  <data name="Msg_MinificationComplete" xml:space="preserve">
+    <value>Minification complete.</value>
+  </data>
+  <data name="Msg_MinificationSuccessful" xml:space="preserve">
+    <value>Minification Successful!</value>
+  </data>
+  <data name="Msg_PathCreated" xml:space="preserve">
+    <value>'{0}' created.</value>
+  </data>
+  <data name="Msg_PathDeleted" xml:space="preserve">
+    <value>'{0}' deleted.</value>
+  </data>
+  <data name="Msg_PathExists" xml:space="preserve">
+    <value>'{0}' exists.</value>
+  </data>
+  <data name="Msg_PreparingDeployFoldersAndFilesForStaging" xml:space="preserve">
+    <value>Preparing {0} folders and files for Staging...</value>
+  </data>
+  <data name="Msg_PrerequisitesAreValid" xml:space="preserve">
+    <value>Prerequisites are valid.</value>
+  </data>
+  <data name="Msg_ProgramUsageMessage" xml:space="preserve">
+    <value> Program Name:          {0}
+ Version:               {1}
+ 
+ Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+                        All rights reserved.
+ License:               The MIT Licence (MIT)
+ 
+ Required Parameters:
+ 
+ {2}
+
+ Optional Parameter(s):
+ 
+ {3}</value>
+  </data>
+  <data name="Msg_Rename1To2" xml:space="preserve">
+    <value>Rename '{0}' to '{1}'</value>
+  </data>
+  <data name="Msg_RenamingComplete" xml:space="preserve">
+    <value>Renaming complete!</value>
+  </data>
+  <data name="Msg_RenamingJavascriptFilesBackToUsableState" xml:space="preserve">
+    <value>Renaming javascript files back to usable state.</value>
+  </data>
+  <data name="Msg_RunningCommand" xml:space="preserve">
+    <value>   Running command : {0}</value>
+  </data>
+</root>

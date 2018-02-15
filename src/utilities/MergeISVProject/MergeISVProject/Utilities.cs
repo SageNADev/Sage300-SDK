@@ -22,6 +22,7 @@
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 #endregion
 
@@ -29,6 +30,9 @@ namespace MergeISVProject
 {
 	#region Public Methods
 
+	/// <summary>
+	/// These are general utility methods
+	/// </summary>
 	public static class Utilities
 	{
 		/// <summary>
@@ -43,6 +47,40 @@ namespace MergeISVProject
 			StackTrace st = new StackTrace();
 			StackFrame sf = st.GetFrame(1);
 			return sf.GetMethod().Name;
+		}
+
+		/// <summary>
+		/// Get the string equivalant of an ascii character
+		/// </summary>
+		/// <param name="ASCIIData">byte array containing the character code</param>
+		/// <returns>the string representation of the ascii character</returns>
+		public static string ASCII8ToString(byte[] ASCIIData)
+		{
+			var e = Encoding.GetEncoding("437");
+			return e.GetString(ASCIIData);
+		}
+
+		/// <summary>
+		/// Get the string equivalent of an ascii character
+		/// </summary>
+		/// <param name="asciiCode">byte containing the character code</param>
+		/// <returns>the string representation of the ascii character</returns>
+		public static string ASCII8ToString(byte asciiCode)
+		{
+			var byteArray = new byte[] { asciiCode };
+			var e = Encoding.GetEncoding("437");
+			return e.GetString(byteArray);
+		}
+
+		/// <summary>
+		/// Get the name of this application and it's version number
+		/// </summary>
+		/// <param name="name">Application Name</param>
+		/// <param name="ver">Application Version</param>
+		public static void GetAppNameAndVersion(out string name, out string ver)
+		{
+			name = typeof(Program).Assembly.GetName().Name + ".exe";
+			ver = typeof(Program).Assembly.GetName().Version.ToString();
 		}
 	}
 

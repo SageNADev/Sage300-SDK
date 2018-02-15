@@ -21,7 +21,6 @@
 #region Imports
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
-using MergeISVProject.Errors;
 using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
@@ -68,7 +67,7 @@ namespace MergeISVProject
 										 _Options.WebProjectPath.OptionValue, 
 										 _Sage300Path, 
 										 _Options.ModuleId);
-
+			_Logger.Log(_Folders.GenerateLogOutput());
 			VerifyCorrectBuildProfileSpecified();
 		}
 
@@ -88,7 +87,7 @@ namespace MergeISVProject
 			{
 				if (_Options.BuildProfile.OptionValue.ToLower() != BUILD_PROFILE_RELEASE.ToLower())
 				{
-					throw new MergeISVProjectException(_Logger, ErrorMessages.InvalidBuildProfile);
+					throw new MergeISVProjectException(_Logger, Messages.Error_InvalidBuildProfile);
 				}
 				else
 				{
@@ -342,7 +341,7 @@ namespace MergeISVProject
 
 			if (!Directory.Exists(pathOnlineWeb))
 			{
-				throw new MergeISVProjectException(_Logger, ErrorMessages.Sage300WebFolderMissing);
+				throw new MergeISVProjectException(_Logger, Messages.Error_Sage300WebFolderMissing);
 			}
 
 			DeployBootstrapper(sourceRootFolder, pathOnlineWeb, pathOnlineWorker);
@@ -475,7 +474,7 @@ namespace MergeISVProject
 			// Do not copy IF compile was not successful (determined by existence of folder)
 			if (!Directory.Exists(pathBuildView))
 			{
-				throw new MergeISVProjectException(_Logger, ErrorMessages.CouldNotCompileRazorViews);
+				throw new MergeISVProjectException(_Logger, Messages.Error_CouldNotCompileRazorViews);
 			}
 
 			CopyDirectory(_Options.TestDeploy.OptionValue, pathBuildView, pathSageView, OVERWRITE);

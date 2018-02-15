@@ -50,12 +50,12 @@ namespace MergeISVProject.Interfaces
 		/// The list of all errors encountered while loading
 		/// the command-line arguments
 		/// </summary>
-		List<string> LoadErrors { get; set; }
+		List<string> LoadErrors { get; }
 
 		/// <summary>
 		/// How to call this application
 		/// </summary>
-		string UsageMessage { get; set; }
+		string UsageMessage { get; }
 
 		/// <summary>
 		/// The module Id

@@ -19,13 +19,15 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
 
 namespace MergeISVProject.Interfaces
 {
 	public interface ILogger
 	{
 		string LogFile { get; set; }
-		void Log(string message);
+		void Log(string message, bool timestamp=true);
+		void Log(IEnumerable<string> messages, bool timestamp = true);
 		void LogMethodHeader(string methodName);
 		void LogMethodFooter(string methodName);
 		string DeleteLog();

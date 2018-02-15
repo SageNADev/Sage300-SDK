@@ -30,6 +30,9 @@ using MergeISVProject.Interfaces;
 
 namespace MergeISVProject
 {
+	/// <summary>
+	/// This class will handle the loading and parsing of command-line arguments
+	/// </summary>
 	public class CommandLineOptions : ICommandLineOptions
     {
 		#region Constants
@@ -43,78 +46,142 @@ namespace MergeISVProject
 
 		#region Private Variables
 		private string divider = new String('-', 105);
-        private string UsageInstructionsTemplate =
-                @" Program Name:          {0}" + Environment.NewLine +
-                 " Version:               {1}" + Environment.NewLine +
-				 " " + Environment.NewLine +
-				 " Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  " + Environment.NewLine +
-				 "                        All rights reserved." + Environment.NewLine +
-				 " License:               The MIT Licence (MIT)" + Environment.NewLine +
-				 " " + Environment.NewLine +
-                 " Required Parameters:" + Environment.NewLine +
-                 " " + Environment.NewLine +
-                 " {2}" + Environment.NewLine +
-                 "" + Environment.NewLine +
-                 " Optional Parameter(s):" + Environment.NewLine +
-                 " " + Environment.NewLine +
-                 " {3}" + Environment.NewLine;
 
-
+		/// <summary>
+		/// This will contain the originally passed in argument list
+		/// </summary>
         private string[] rawArgList { get; set; }
+
+		/// <summary>
+		/// This will contain a cleaned up argument list
+		/// </summary>
 		private string[] cleanArgList { get; set; }
         #endregion
 
         #region Public Properties
 
+		/// <summary>
+		/// This will contain the cleaned-up argument list
+		/// </summary>
 		public string[] Arguments { get { return cleanArgList; } }
+
+		/// <summary>
+		/// This will contain the prefix being used when specifying
+		/// command-line arguments.
+		/// </summary>
         public string OptionPrefix { get; set; }
-        public string ApplicationName { get; set; }
-        public string ApplicationVersion { get; set; }
-        public List<string> LoadErrors { get; set; }
-        public string UsageMessage { get; set; }
-        public string ModuleId
+
+		/// <summary>
+		/// This will contain the name of the application
+		/// </summary>
+		public string ApplicationName { get; set; }
+
+		/// <summary>
+		/// This will contain the version of the application
+		/// </summary>
+		public string ApplicationVersion { get; set; }
+
+		/// <summary>
+		/// This will contain the list of all errors that
+		/// occurred when attempting to load and parse the
+		/// command-line options.
+		/// </summary>
+		public List<string> LoadErrors { get; private set; }
+
+		/// <summary>
+		/// This will contain the formatted message 
+		/// used when running the application without any parameters.
+		/// </summary>
+		public string UsageMessage { get; private set; }
+
+		/// <summary>
+		/// This will contain the Vendor's unique module id
+		/// It is based on the first two characters of the 
+		/// MenuFilename specified on the command-line.
+		/// </summary>
+		public string ModuleId
         {
             get { return MenuFilename.OptionValue.Substring(0, 2); }
         }
-        #endregion
+		#endregion
 
-        #region Public Properties that map to valid command-line options
+		#region Public Properties that map to valid command-line options
 
-        // Note to developers: 
-        //
-        // If you wish to add new command-line options,
-        // please add them to this section
+		// Note to developers: 
+		//
+		// If you wish to add new command-line options,
+		// please add them to this section
 		// Presently the code can only deal with strings and booleans
 
-        // Required Command-Line Arguments
-        [RequiredArgument]
-        [IsExistingFolder]
-        public CommandLineOption<string> SolutionPath { get; set; }
+		// Required Command-Line Arguments
 
-        [RequiredArgument]
+		/// <summary>
+		/// This will contain the fully-qualified path to the
+		/// Visual Studio solution.
+		/// </summary>
+		[RequiredArgument]
+        [IsExistingFolder]
+		public CommandLineOption<string> SolutionPath { get; set; }
+
+		/// <summary>
+		/// This will contain the fully-qualified path to the
+		/// Visual Studio solution web project
+		/// </summary>
+		[RequiredArgument]
         [IsExistingFolder]
         public CommandLineOption<string> WebProjectPath { get; set; }
 
+		/// <summary>
+		/// This will contain the name of the menu file
+		/// Example: "PMMenuDetails.xml"
+		/// </summary>
         [RequiredArgument]
         public CommandLineOption<string> MenuFilename { get; set; }
 
+		/// <summary>
+		/// This will contain the name of the Visual Studio solution
+		/// build profile.
+		/// </summary>
         [RequiredArgument]
         public CommandLineOption<string> BuildProfile { get; set; }
 
+		/// <summary>
+		/// This will contain the fully-qualified path to the 
+		/// Microsoft .NET Framework
+		/// </summary>
         [RequiredArgument]
         [IsExistingFolder]
         public CommandLineOption<string> DotNetFrameworkPath { get; set; }
 
         // Optional Command-Line Arguments
+
+		/// <summary>
+		/// This will determine whether or not the minification process
+		/// will run.
+		/// </summary>
         [OptionalArgument]
         public CommandLineOption<bool> Minify { get; set; }
 
+		/// <summary>
+		/// This will determine whether or not the actual deployment
+		/// to the live Sage 300 installation will occur.
+		/// </summary>
         [OptionalArgument]
         public CommandLineOption<bool> NoDeploy { get; set; }
 
+		/// <summary>
+		/// This will determine whether or not files are actually
+		/// copied during the deployment phase. If enabled,
+		/// no actual files or folders will be copied. This is
+		/// for testing purposes only.
+		/// </summary>
         [OptionalArgument]
         public CommandLineOption<bool> TestDeploy { get; set; }
 
+		/// <summary>
+		/// This will determine whether or not the application
+		/// will log messages and errors to a log file
+		/// </summary>
         [OptionalArgument]
         public CommandLineOption<bool> Log { get; set; }
 
@@ -154,12 +221,14 @@ namespace MergeISVProject
             // Initialize the CommandLineOptions
             #region Create CommandLineOptions
 
+
+			// TODO - Add strings to localization file
+
             SolutionPath = new CommandLineOption<string>() 
             { 
                 Name = "solutionpath",
                 AliasList = new List<string>() { "s", "sol", "sp", "solution" },
-                Description = "MS Visual Studio Solution path", 
-                Required = true, 
+                Description = "Microsoft Visual Studio Solution path", 
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
@@ -170,7 +239,6 @@ namespace MergeISVProject
                 Name = "webprojectpath", 
                 AliasList = new List<string>() {"p", "wpp", "projectpath"},
                 Description = "MS Visual Studio Web Project path", 
-                Required = true, 
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
@@ -181,7 +249,6 @@ namespace MergeISVProject
                 Name = "menufilename",
                 AliasList = new List<string>() { "m", "menu", "menufile" },
                 Description = "Sage 300 Menu definition file name (i.e. XXMenuDetails.xml)", 
-                Required = true, 
                 OptionValue = "",
                 ExampleValue = @"<name>"
             };
@@ -192,7 +259,6 @@ namespace MergeISVProject
                 Name = "buildprofile",
                 AliasList = new List<string>() { "b", "bp" },
                 Description = "Visual Studio project build configuration (only release supported)", 
-                Required = true, 
                 OptionValue = "Release",
                 ExampleValue = @"<name>"
             };
@@ -203,7 +269,6 @@ namespace MergeISVProject
                 Name = "dotnetframeworkpath",
                 AliasList = new List<string>() { "f", "dotnet", "dotnetframework", "netframework", "framework" },
                 Description = ".NET Framework path containing aspnet_compile.exe", 
-                Required = true, 
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
@@ -214,7 +279,6 @@ namespace MergeISVProject
                 Name = "minify",
                 AliasList = new List<string>() { "min" },
                 Description = "Minify javascript files", 
-                Required = false, 
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -225,7 +289,6 @@ namespace MergeISVProject
                 Name = "nodeploy",
                 AliasList = new List<string>() { "nd" },
                 Description = "Do NOT copy assets to Sage 300 installation directory", 
-                Required = false, 
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -236,7 +299,6 @@ namespace MergeISVProject
                 Name = "testdeploy",
                 AliasList = new List<string>() { "nd" },
                 Description = "Simulate copying of assets to the Sage 300 installation directory",
-                Required = false,
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -247,7 +309,6 @@ namespace MergeISVProject
                 Name = "log",
                 AliasList = new List<string>() { "logging" },
                 Description = "Generate a log file in the current working folder",
-                Required = false,
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -310,8 +371,8 @@ namespace MergeISVProject
 		/// There is a corresponding method called LoadBoolean to handle 
 		/// boolean flag type arguments.
 		/// </summary>
-		/// <param name="option"></param>
-		/// <param name="args"></param>
+		/// <param name="option">The CommandLineOption object</param>
+		/// <param name="args">The cleaned-up command-line options</param>
 		private void LoadString(CommandLineOption<string> option, string[] args)
 		{
 			var theArg = string.Empty;
@@ -335,7 +396,9 @@ namespace MergeISVProject
 			}))
 			{
 				var valueFromArg = theArg.Split('=')[1];
-				if (option.Required)
+
+				var isRequired = IsPropertyMarkedAsRequired(option);
+				if (isRequired)
 				{
 					option.LoadError = valueFromArg.Length == 0 ? true : false;
 				}
@@ -346,7 +409,10 @@ namespace MergeISVProject
 
 				if (option.LoadError)
 				{
-					LoadErrors.Add($"{new String(' ', 10)}Error parsing '{OptionPrefix + option.Name}'. No value was set.");
+					var msg = string.Format(Messages.Error_ErrorParsingOptionNoValueWasSet, 
+										    new String(' ', 10), 
+											OptionPrefix + option.Name);
+					LoadErrors.Add(msg);
 				}
 
 
@@ -366,7 +432,11 @@ namespace MergeISVProject
 						{
 							// Error: folder doesn't exist
 							option.LoadError = true;
-							LoadErrors.Add($"{new String(' ', 10)}Error parsing '{OptionPrefix + option.Name}'. The folder '{folder}' does not exist.");
+							var msg = string.Format(Messages.Error_ErrorParsingOptionTheFolderDoesNotExist, 
+												    new String(' ', 10), 
+													OptionPrefix + option.Name, 
+													folder);
+							LoadErrors.Add(msg);
 						}
 					}
 				}
@@ -383,8 +453,8 @@ namespace MergeISVProject
 		/// There is a corresponding method called LoadString to handle 
 		/// string type arguments.
 		/// </summary>
-		/// <param name="option"></param>
-		/// <param name="args"></param>
+		/// <param name="option">The CommandLineOption object</param>
+		/// <param name="args">The cleaned-up command-line options</param>
 		private void LoadBoolean(CommandLineOption<bool> option, string[] args)
 		{
 			var theArg = string.Empty;
@@ -413,7 +483,8 @@ namespace MergeISVProject
 			}
 			else
 			{
-				option.LoadError = option.Required;
+				//option.LoadError = option.Required;
+				option.LoadError = IsPropertyMarkedAsRequired(option);
 			}
 		}
 
@@ -445,10 +516,10 @@ namespace MergeISVProject
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
 			var msg = divider + Environment.NewLine;
-			msg += string.Format(UsageInstructionsTemplate, ApplicationName,
-															   ApplicationVersion,
-															   requiredParams,
-															   optionalParams);
+			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
+															       ApplicationVersion,
+															       requiredParams,
+															       optionalParams);
 			msg += divider;
 			return msg;
 		}
@@ -520,7 +591,7 @@ namespace MergeISVProject
 		/// [IsExistingFolder] attribute
 		/// </summary>
 		/// <returns>true : Property is marked with attribute, false : not marked with attribute</returns>
-		private bool IsPropertyMarkedAsExistingFolder(CommandLineOption<string> option)
+		private bool IsPropertyMarkedAsExistingFolder(dynamic option)
 		{
 			Attribute att = new IsExistingFolderAttribute();
 			var propertiesMarkedAsFolders = this.
@@ -529,6 +600,35 @@ namespace MergeISVProject
 											Where(x => x.GetCustomAttributes(att.GetType(), true).Any());
 
 			foreach (var propertyInfo in propertiesMarkedAsFolders)
+			{
+				dynamic valueSet = propertyInfo.GetValue(this, null);
+				if (valueSet != null)
+				{
+					if (option.Name == valueSet.Name)
+					{
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// Check to see if a property has been tagged with the 
+		/// [RequiredArgument] attribute
+		/// </summary>
+		/// <returns>true : Property is marked with attribute, false : not marked with attribute</returns>
+		//private bool IsPropertyMarkedAsRequired(CommandLineOption<bool> option)
+		private bool IsPropertyMarkedAsRequired(dynamic option)
+		{
+			var att = new RequiredArgumentAttribute();
+			var propertiesMarkedAsRequired = this.
+											 GetType().
+											 GetProperties().
+											 Where(x => x.GetCustomAttributes(att.GetType(), true).Any());
+
+			foreach (var propertyInfo in propertiesMarkedAsRequired)
 			{
 				dynamic valueSet = propertyInfo.GetValue(this, null);
 				if (valueSet != null)
