@@ -105,7 +105,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// It all starts here folks!
 		/// </summary>
-		/// <param name="args">The command-line arguments</param>
+		/// <param name="args">The command-line arguments passed in</param>
 		public static void Main(string[] args)
 		{
 			var bypassLogfileDisplay = false;

@@ -34,7 +34,7 @@ namespace MergeISVProject.Logging
 	public class Logger : ILogger
 	{
 		#region Constants and Readonly 
-		// Double line characters
+		// Double width line characters
 		//private const byte METHODBLOCK_START_ASCIICODE = 201;
 		//private const byte METHODBLOCK_END_ASCIICODE = 200;
 		//private const byte METHODBLOCK_VERTICAL_ASCIICODE = 186;
@@ -82,8 +82,8 @@ namespace MergeISVProject.Logging
 		/// Increase or decrease the indentation level by a fixed amount
 		/// </summary>
 		/// <param name="increase">
-		/// Flag indicating whether to increase (true) 
-		/// or decrease (false) the indentation level
+		/// true = increase indentation level
+		/// false = decrease indentation level
 		/// </param>
 		private void IncreaseOrDecreaseIndentationLevel(bool increase)
 		{
@@ -115,7 +115,7 @@ namespace MergeISVProject.Logging
 		/// </summary>
 		/// <param name="logfilename">The name of the log file</param>
 		/// <param name="logfolder">The location to store the log file</param>
-		/// <param name="enabled">Enable|Disable logging</param>
+		/// <param name="enabled">true = enable logging | false = disable logging</param>
 		public Logger(string logfilename, string logfolder, bool enabled)
 		{
 			this.Enabled = enabled;
@@ -128,10 +128,10 @@ namespace MergeISVProject.Logging
 		#region Public Methods
 
 		/// <summary>
-		/// Delete Log
+		/// Delete the log file
 		/// </summary>
-		/// <param name="path">Path to file</param>
-		/// <returns>Fully qualified file name</returns>
+		/// <param name="path">The fully qualified path to the log file directory</param>
+		/// <returns>Fully qualified path to the log file</returns>
 		public string DeleteLog(string path)
 		{
 			if (Enabled)
@@ -152,20 +152,21 @@ namespace MergeISVProject.Logging
 		}
 
 		/// <summary>
-		/// Delete Log
+		/// Delete the log file
 		/// </summary>
-		/// <param name="path">Path to file</param>
-		/// <returns>Fully qualified file name</returns>
 		public string DeleteLog()
 		{
 			return DeleteLog(Directory.GetCurrentDirectory());
 		}
 
 		/// <summary>
-		/// Write to Log
+		/// Write to log file
 		/// </summary>
-		/// <param name="path">Path to file</param>
-		/// <param name="messageIn">Error message</param>
+		/// <param name="path">The fully qualified path to the log file directory</param>
+		/// <param name="messageIn">The error message to add to the log</param>
+		/// <param name="applyTimeStamp">
+		/// Optional Parameter : true = add timestamp | false = do not add timestamp
+		/// </param>
 		public void LogError(string path, string messageIn, bool applyTimeStamp = true)
 		{
 			if (!Enabled) return;
@@ -204,15 +205,17 @@ namespace MergeISVProject.Logging
 		}
 
 		/// <summary>
-		/// Write to Log
+		/// Write to log file
 		/// </summary>
-		/// <param name="path">Path to file</param>
-		/// <param name="message">Error message</param>
-		public void LogError(string message, bool applyTimeStamp = true)
+		/// <param name="messageIn">The error message to add to the log</param>
+		/// <param name="applyTimeStamp">
+		/// Optional Parameter : true = add timestamp | false = do not add timestamp
+		/// </param>
+		public void LogError(string messageIn, bool applyTimeStamp = true)
 		{
 			try
 			{
-				LogError(Directory.GetCurrentDirectory(), message, applyTimeStamp);
+				LogError(Directory.GetCurrentDirectory(), messageIn, applyTimeStamp);
 			}
 			catch
 			{
@@ -221,23 +224,27 @@ namespace MergeISVProject.Logging
 		}
 
 		/// <summary>
-		/// Write to Log (Simple logging)
+		/// Write to the log file
 		/// </summary>
-		/// <param name="message">The Message to log</param>
-		/// <param name="applyTimeStamp">Flag to enable/disable the timestamp</param>
-		public void Log(string message, bool applyTimeStamp = true)
+		/// <param name="messageIn">The error message to add to the log</param>
+		/// <param name="applyTimeStamp">
+		/// Optional Parameter : true = add timestamp | false = do not add timestamp
+		/// </param>
+		public void Log(string messageIn, bool applyTimeStamp = true)
 		{
-			LogError(message: message);
+			LogError(messageIn: messageIn);
 		}
 
 		/// <summary>
-		/// Write a list of strings to the log
+		/// Write a list of strings to the log file
 		/// </summary>
-		/// <param name="messages">A list of strings</param>
-		/// <param name="applyTimeStamp">Flag to enable/disable the timestamp</param>
-		public void Log(IEnumerable<string> messages, bool applyTimeStamp = true)
+		/// <param name="messagesIn">A list of strings</param>
+		/// <param name="applyTimeStamp">
+		/// Optional Parameter : true = add timestamp | false = do not add timestamp
+		/// </param>
+		public void Log(IEnumerable<string> messagesIn, bool applyTimeStamp = true)
 		{
-			foreach (var m in messages)
+			foreach (var m in messagesIn)
 			{
 				Log(m, applyTimeStamp);
 			}

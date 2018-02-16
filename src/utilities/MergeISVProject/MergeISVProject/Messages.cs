@@ -21,7 +21,7 @@
 namespace MergeISVProject
 {
 	/// <summary>
-	/// Container to hold error messages
+	/// Container class for holding error and informational messages
 	/// </summary>
 	public static class Messages
 	{
@@ -39,6 +39,7 @@ namespace MergeISVProject
 			Error_UnableToFindTheProgram,
 			Error_ErrorParsingOptionNoValueWasSet,
 			Error_ErrorParsingOptionTheFolderDoesNotExist,
+			Error_MethodCalledWithInvalidParameter,
 
 			// Messages
 			Msg_LogFileLocation,
@@ -78,6 +79,7 @@ namespace MergeISVProject
 		public static string Error_UnableToFindTheProgram { get { return RM.GetString(IndexEnum.Error_UnableToFindTheProgram.ToString()); } }
 		public static string Error_ErrorParsingOptionNoValueWasSet { get { return RM.GetString(IndexEnum.Error_ErrorParsingOptionNoValueWasSet.ToString()); } }
 		public static string Error_ErrorParsingOptionTheFolderDoesNotExist { get { return RM.GetString(IndexEnum.Error_ErrorParsingOptionTheFolderDoesNotExist.ToString()); } }
+		public static string Error_MethodCalledWithInvalidParameter { get { return RM.GetString(IndexEnum.Error_MethodCalledWithInvalidParameter.ToString()); } }
 		#endregion
 
 		#region Public Properties (Messages)

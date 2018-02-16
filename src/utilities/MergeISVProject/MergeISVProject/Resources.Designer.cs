@@ -115,6 +115,15 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Method &apos;{0}&apos; was called with one or more invalid parameters..
+        /// </summary>
+        internal static string Error_MethodCalledWithInvalidParameter {
+            get {
+                return ResourceManager.GetString("Error_MethodCalledWithInvalidParameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, the minification process appears to have failed..
         /// </summary>
         internal static string Error_MinificationFailed {

@@ -44,6 +44,8 @@ namespace MergeISVProject.CustomExceptions
 		public MergeISVProjectException(ILogger logger, string message, Exception inner)
             : base(message, inner)
         {
+			var innerExceptionMessage = inner.Message;
+			logger.LogError(innerExceptionMessage);
 			logger.LogError(message);
 		}
 

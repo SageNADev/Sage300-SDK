@@ -26,6 +26,7 @@ using System.Linq;
 using System.Text;
 using MergeISVProject.CustomAttributes;
 using MergeISVProject.Interfaces;
+using MergeISVProject.CustomExceptions;
 #endregion
 
 namespace MergeISVProject
@@ -36,15 +37,17 @@ namespace MergeISVProject
 	public class CommandLineOptions : ICommandLineOptions
     {
 		#region Constants
-		// This is the default prefix character block when specifying
-		// command-line arguments to this program.
-        private const string DEFAULT_PREFIX = "--";
+		/// <summary>
+		/// This is the default prefix character block when specifying
+		/// command-line arguments to this program
+		/// </summary>
+		private const string DEFAULT_PREFIX = "--";
 
 		private const string SINGLE_SPACE = @" ";
 		private const char SINGLE_SPACE_CHAR = ' ';
 		#endregion
 
-		#region Private Variables
+		#region Private Variables and Properties
 		private string divider = new String('-', 105);
 
 		/// <summary>
@@ -199,10 +202,10 @@ namespace MergeISVProject
 		/// <summary>
 		/// The primary constructor
 		/// </summary>
-		/// <param name="appName"></param>
-		/// <param name="appVersion"></param>
-		/// <param name="prefix"></param>
-		/// <param name="args"></param>
+		/// <param name="appName">The name of the application</param>
+		/// <param name="appVersion">The version number of the application</param>
+		/// <param name="args">The argument list passed in via the command-line</param>
+		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
 		public CommandLineOptions(string appName, string appVersion, string[] args, string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
@@ -550,7 +553,7 @@ namespace MergeISVProject
 		/// Generic method to build a string of properties marked
 		/// with a particular attribute.
 		/// </summary>
-		/// <param name="att"></param>
+		/// <param name="att">The attribute type to look for</param>
 		/// <returns>A formatted string of text</returns>
 		private string GetPropertiesByAttributeAsString(Attribute att)
 		{
@@ -590,6 +593,7 @@ namespace MergeISVProject
 		/// Check to see if a property has been tagged with the 
 		/// [IsExistingFolder] attribute
 		/// </summary>
+		/// <param name="option">The CommandLineOption to inspect</param>
 		/// <returns>true : Property is marked with attribute, false : not marked with attribute</returns>
 		private bool IsPropertyMarkedAsExistingFolder(dynamic option)
 		{
@@ -618,8 +622,8 @@ namespace MergeISVProject
 		/// Check to see if a property has been tagged with the 
 		/// [RequiredArgument] attribute
 		/// </summary>
+		/// <param name="option">The CommandLineOption to inspect</param>
 		/// <returns>true : Property is marked with attribute, false : not marked with attribute</returns>
-		//private bool IsPropertyMarkedAsRequired(CommandLineOption<bool> option)
 		private bool IsPropertyMarkedAsRequired(dynamic option)
 		{
 			var att = new RequiredArgumentAttribute();
@@ -647,10 +651,10 @@ namespace MergeISVProject
 		/// Build a string containing the command-line argument name, an example value and description.
 		/// This method is used with displaying the help text block.
 		/// </summary>
-		/// <param name="prefix"></param>
-		/// <param name="name"></param>
-		/// <param name="exampleValue"></param>
-		/// <param name="description"></param>
+		/// <param name="prefix">The prefix string used when passing in command-line arguments</param>
+		/// <param name="name">The name of the command-line argument</param>
+		/// <param name="exampleValue">The example value for this type of command-line argument</param>
+		/// <param name="description">The description of the command-line argument</param>
 		/// <returns>A formatted string</returns>
 		private string MakeFormattedLine(string prefix, string name, string exampleValue, string description)
 		{
@@ -666,7 +670,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// Were there any errors during startup (Loading of arguments)
 		/// </summary>
-		/// <returns>true : Errors occurred | False : No errors</returns>
+		/// <returns>true = Errors occurred | False = No errors</returns>
 		public bool AnyErrors()
         {
 			// How many defined required properties are there?

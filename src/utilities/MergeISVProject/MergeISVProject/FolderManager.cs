@@ -166,10 +166,10 @@ namespace MergeISVProject
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="logger">The Logger object</param>
-		/// <param name="rootPathIn">the root path</param>
-		/// <param name="sage300Installation">The Sage 300 installation folder</param>
-		/// <param name="moduleId">The Module ID</param>
+		/// <param name="logger">The instance of the Logger object</param>
+		/// <param name="rootPathIn">the fully-qualified path to the root of the Web project</param>
+		/// <param name="sage300Installation">The fully qualified path to the Sage 300 installation</param>
+		/// <param name="moduleId">The Vendor specific module id</param>
 		public FolderManager(ILogger logger, string rootPathIn, string sage300Installation, string moduleId)
 		{
 			_Logger = logger;
@@ -252,6 +252,7 @@ namespace MergeISVProject
 			lines.AddRange(Live.GenerateLogOutput());
 			return lines;
 		}
+
 		#endregion
 
 		#region Private Methods

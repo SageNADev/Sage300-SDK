@@ -20,9 +20,13 @@
 
 namespace MergeISVProject.Constants
 {
+	/// <summary>
+	/// These are the constant definitions of the 
+	/// various folders that will be used by this application
+	/// </summary>
 	public static class FolderNameConstants
 	{
-		// Source
+		// Source Related Folders
 		public const string DEPLOY		= "__DEPLOY__";
 		public const string STAGING			= "Staging";
 		public const string COMPILED  	    = "Compiled";
@@ -36,7 +40,7 @@ namespace MergeISVProject.Constants
 		public const string MENUDETAIL	= "MenuDetail";
 		public const string BIN			= "bin";
 
-		// Destination
+		// Source Related Folders
 		public const string ONLINE		= "Online";
 		public const string WEB				= "Web";
 		public const string WORKER			= "Worker";

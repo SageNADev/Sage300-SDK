@@ -20,6 +20,7 @@
 
 #region Imports
 
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -56,7 +57,8 @@ namespace MergeISVProject
 		/// <returns>the string representation of the ascii character</returns>
 		public static string ASCII8ToString(byte[] ASCIIData)
 		{
-			var e = Encoding.GetEncoding("437");
+			var codePage = 437; // IBM437 (OEM United States)
+			var e = Encoding.GetEncoding(codePage);
 			return e.GetString(ASCIIData);
 		}
 
@@ -67,13 +69,15 @@ namespace MergeISVProject
 		/// <returns>the string representation of the ascii character</returns>
 		public static string ASCII8ToString(byte asciiCode)
 		{
+			var codePage = 437; // IBM437 (OEM United States)
+			var e = Encoding.GetEncoding(codePage);
 			var byteArray = new byte[] { asciiCode };
-			var e = Encoding.GetEncoding("437");
 			return e.GetString(byteArray);
 		}
 
 		/// <summary>
 		/// Get the name of this application and it's version number
+		/// Values are returned via output string parameters
 		/// </summary>
 		/// <param name="name">Application Name</param>
 		/// <param name="ver">Application Version</param>

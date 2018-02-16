@@ -135,6 +135,9 @@
   <data name="Error_InvalidCommandLineParameters" xml:space="preserve">
     <value>Invalid or missing command-line parameters</value>
   </data>
+  <data name="Error_MethodCalledWithInvalidParameter" xml:space="preserve">
+    <value>Method '{0}' was called with one or more invalid parameters.</value>
+  </data>
   <data name="Error_MinificationFailed" xml:space="preserve">
     <value>Sorry, the minification process appears to have failed.</value>
   </data>
