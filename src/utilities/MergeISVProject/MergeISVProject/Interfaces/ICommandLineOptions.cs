@@ -24,12 +24,16 @@ using System.Collections.Generic;
 
 namespace MergeISVProject.Interfaces
 {
+	/// <summary>
+	/// The ICommandLineOptions interface definition
+	/// </summary>
 	public interface ICommandLineOptions
 	{
 		/// <summary>
 		/// Returns the argument list
 		/// </summary>
 		string[] Arguments { get; }
+
 		/// <summary>
 		/// Character or characters that will prefix all incoming 
 		/// command-line arguments

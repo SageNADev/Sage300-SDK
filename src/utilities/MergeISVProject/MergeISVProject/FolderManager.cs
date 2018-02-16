@@ -22,6 +22,7 @@
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -36,7 +37,9 @@ namespace MergeISVProject
 	public class FolderManager
 	{
 		#region Private Constants
-		private const string LogOutputTemplate = "{0:15}: {1}";
+		private const int PADDING = 3;
+		private const string LogOutputTemplate = @"   {0:-12} = {1,-100}";
+		private const string secondaryLogOutputTemplate = @"{0}{1:-12} = {2,-100}";
 		#endregion
 
 		#region Classes meant to be used internally 
@@ -63,13 +66,16 @@ namespace MergeISVProject
 			/// Generate a formatted string of the contents
 			/// of this object.
 			/// </summary>
-			public IEnumerable<string> GenerateLogOutput()
+			public IEnumerable<string> GenerateLogOutput(int leftPadding)
 			{
-				var lines = new List<string>();
-				lines.Add(typeof(LiveOnlineFolderBlock).ToString());
-				lines.Add(string.Format(LogOutputTemplate, "Root", Root));
-				lines.Add(string.Format(LogOutputTemplate, "Web", Web));
-				lines.Add(string.Format(LogOutputTemplate, "Worker", Worker));
+				var paddingString = new String(' ', leftPadding);
+				var lines = new List<string>
+				{
+					//typeof(LiveOnlineFolderBlock).ToString(),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Root), Root),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Web), Web),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Worker), Worker)
+				};
 				return lines;
 			}
 		}
@@ -109,15 +115,19 @@ namespace MergeISVProject
 			/// Generate a formatted string of the contents
 			/// of this object.
 			/// </summary>
-			public IEnumerable<string> GenerateLogOutput()
+			public IEnumerable<string> GenerateLogOutput(int leftPadding)
 			{
-				var lines = new List<string>();
-				lines.Add(typeof(StagingFolderBlock).ToString());
-				lines.Add(string.Format(LogOutputTemplate, "Root", Root));
-				lines.Add(string.Format(LogOutputTemplate, "Bin", Bin));
-				lines.Add(string.Format(LogOutputTemplate, "Areas", Areas));
-				lines.Add(string.Format(LogOutputTemplate, "AreasViews", AreasViews));
-				lines.Add(string.Format(LogOutputTemplate, "AreasScripts", AreasScripts));
+				var paddingString = new String(' ', leftPadding);
+
+				var lines = new List<string>
+				{
+					//typeof(StagingFolderBlock).ToString(),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Root), Root),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Bin), Bin),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Areas), Areas),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasViews), AreasViews),
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasScripts), AreasScripts)
+				};
 				return lines;
 			}
 
@@ -174,6 +184,8 @@ namespace MergeISVProject
 		{
 			_Logger = logger;
 
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
 			// Original Source Folders
 			RootSource = rootPathIn;
 
@@ -226,6 +238,8 @@ namespace MergeISVProject
 
 			// Create the folders
 			Create();
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 		#endregion
 
@@ -236,26 +250,32 @@ namespace MergeISVProject
 		/// </summary>
 		public IEnumerable<string> GenerateLogOutput()
 		{
-			var lines = new List<string>();
-			lines.Add(typeof(FolderManager).ToString());
-			lines.Add(string.Format(LogOutputTemplate, "RootSource", RootSource));
-			lines.Add(string.Format(LogOutputTemplate, "Deploy", Deploy));
-			lines.Add("Originals");
-			lines.AddRange(Originals.GenerateLogOutput());
-			lines.Add("Compiled");
-			lines.AddRange(Compiled.GenerateLogOutput());
-			lines.Add("Staging");
-			lines.AddRange(Staging.GenerateLogOutput());
-			lines.Add("Final");
-			lines.AddRange(Final.GenerateLogOutput());
-			lines.Add("Live");
-			lines.AddRange(Live.GenerateLogOutput());
+			var lines = new List<string>
+			{
+				typeof(FolderManager).ToString(),
+				string.Format(LogOutputTemplate, nameof(RootSource), RootSource),
+				string.Format(LogOutputTemplate, nameof(Deploy), Deploy),
+			};
+			AddGroupToLogOutput(Originals, nameof(Originals), lines);
+			AddGroupToLogOutput(Compiled, nameof(Compiled), lines);
+			AddGroupToLogOutput(Staging, nameof(Staging), lines);
+			AddGroupToLogOutput(Final, nameof(Final), lines);
+			AddGroupToLogOutput(Live, nameof(Live), lines);
 			return lines;
 		}
 
 		#endregion
 
 		#region Private Methods
+
+		private void AddGroupToLogOutput(dynamic blockObject, string name, List<string> lines)
+		{
+			lines.Add(string.Empty);
+			lines.Add($"{new string(' ', PADDING)}{name}");
+			lines.AddRange(blockObject.GenerateLogOutput(leftPadding: 2 * PADDING));
+		}
+
+
 		/// <summary>
 		/// Create the necessary output folders
 		/// </summary>
@@ -275,22 +295,36 @@ namespace MergeISVProject
 		/// </summary>
 		private void RecreateDeploymentPath()
 		{
-			var path = Deploy;
-			if (Directory.Exists(Deploy))
+			try
 			{
-				_Logger.Log(string.Format(Messages.Msg_PathExists, path));
-				try
+				_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+				var path = Deploy;
+				if (Directory.Exists(Deploy))
 				{
-					Directory.Delete(path, true);
-					_Logger.Log(string.Format(Messages.Msg_PathDeleted, path));
+					_Logger.Log(string.Format(Messages.Msg_PathExists, path));
+					try
+					{
+						Directory.Delete(path, true);
+						_Logger.Log(string.Format(Messages.Msg_PathDeleted, path));
+					}
+					catch (IOException e1)
+					{
+						var msg = string.Format(Messages.Error_DeploymentFolderLockedOrInUse, path);
+						throw new MergeISVProjectException(_Logger, msg, e1);
+					}
+					catch (UnauthorizedAccessException e2)
+					{
+						var msg = string.Format(Messages.Error_DeploymentFolderLockedOrInUse, path);
+						throw new MergeISVProjectException(_Logger, msg, e2);
+					}
 				}
-				catch (IOException)
-				{
-					throw new MergeISVProjectException(_Logger, Messages.Error_DeploymentFolderLockedOrInUse);
-				}
+				Directory.CreateDirectory(path);
+				_Logger.Log(string.Format(Messages.Msg_PathCreated, path));
 			}
-			Directory.CreateDirectory(path);
-			_Logger.Log(string.Format(Messages.Msg_PathCreated, path));
+			finally
+			{
+				_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+			}
 		}
 
 		#endregion

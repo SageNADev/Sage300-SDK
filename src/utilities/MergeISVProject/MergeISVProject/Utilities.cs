@@ -19,23 +19,25 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
-
 #endregion
 
 namespace MergeISVProject
 {
-	#region Public Methods
-
 	/// <summary>
 	/// These are general utility methods
 	/// </summary>
 	public static class Utilities
 	{
+		#region Constants
+		// IBM437 (OEM United States)
+		private const int DefaultCodePage = 437;
+		#endregion
+
+		#region Public Methods
 		/// <summary>
 		/// When this method is called from another class' method,
 		/// this method will return the name of the calling
@@ -45,34 +47,30 @@ namespace MergeISVProject
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public static string GetCurrentMethod()
 		{
-			StackTrace st = new StackTrace();
-			StackFrame sf = st.GetFrame(1);
+			var st = new StackTrace();
+			var sf = st.GetFrame(1);
 			return sf.GetMethod().Name;
 		}
 
 		/// <summary>
 		/// Get the string equivalant of an ascii character
 		/// </summary>
-		/// <param name="ASCIIData">byte array containing the character code</param>
+		/// <param name="data">byte array containing the character code</param>
 		/// <returns>the string representation of the ascii character</returns>
-		public static string ASCII8ToString(byte[] ASCIIData)
+		public static string ASCII8ToString(byte[] data)
 		{
-			var codePage = 437; // IBM437 (OEM United States)
-			var e = Encoding.GetEncoding(codePage);
-			return e.GetString(ASCIIData);
+			return Encoding.GetEncoding(DefaultCodePage).GetString(data);
 		}
 
 		/// <summary>
 		/// Get the string equivalent of an ascii character
 		/// </summary>
-		/// <param name="asciiCode">byte containing the character code</param>
+		/// <param name="data">byte containing the character code</param>
 		/// <returns>the string representation of the ascii character</returns>
-		public static string ASCII8ToString(byte asciiCode)
+		public static string ASCII8ToString(byte data)
 		{
-			var codePage = 437; // IBM437 (OEM United States)
-			var e = Encoding.GetEncoding(codePage);
-			var byteArray = new byte[] { asciiCode };
-			return e.GetString(byteArray);
+			var byteArray = new byte[] { data };
+			return Encoding.GetEncoding(DefaultCodePage).GetString(byteArray);
 		}
 
 		/// <summary>
@@ -86,7 +84,6 @@ namespace MergeISVProject
 			name = typeof(Program).Assembly.GetName().Name + ".exe";
 			ver = typeof(Program).Assembly.GetName().Version.ToString();
 		}
+		#endregion
 	}
-
-	#endregion
 }

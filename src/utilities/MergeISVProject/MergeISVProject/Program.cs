@@ -55,7 +55,7 @@ namespace MergeISVProject
 			_Logger = new Logger(logfilename: LOGFILENAME,
 									logfolder: Directory.GetCurrentDirectory(),
 									enabled: _Options.Log.OptionValue);
-			_Logger.Log($"Application: {_Options.ApplicationName} V{_Options.ApplicationVersion}");
+			_Logger.Log($"{Messages.Msg_Application}: {_Options.ApplicationName} V{_Options.ApplicationVersion}");
 			_Logger.Log(" ");
 		}
 
@@ -109,6 +109,7 @@ namespace MergeISVProject
 		public static void Main(string[] args)
 		{
 			var bypassLogfileDisplay = false;
+			var applicationError = false;
 			try
 			{
 				InitializeComponents(args);
@@ -130,16 +131,20 @@ namespace MergeISVProject
 					_Driver = new MergeISVProjectDriver(_Options, _Logger);
 					LogStartupInformation();
 					_Driver.Run();
+					_Logger.Log(Messages.Msg_ApplicationRunComplete);
 				}
 			}
 			catch (MergeISVProjectException)
 			{
 				// Errors have already been logged to log file.
+				applicationError = true;
+				_Logger.Log(Messages.Msg_ApplicationRunComplete);
 			}
 			finally
 			{
-				if (!bypassLogfileDisplay)
+				if (!bypassLogfileDisplay && !applicationError)
 				{
+					// We only wish to show this if no errors occurred.
 					_Logger.ShowLog();
 				}
 			}

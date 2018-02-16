@@ -160,6 +160,24 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        internal static string Msg_Application {
+            get {
+                return ResourceManager.GetString("Msg_Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application has completed..
+        /// </summary>
+        internal static string Msg_ApplicationRunComplete {
+            get {
+                return ResourceManager.GetString("Msg_ApplicationRunComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Argument List:.
         /// </summary>
         internal static string Msg_ArgumentList {
@@ -187,11 +205,56 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checking for registry keys.
+        /// </summary>
+        internal static string Msg_CheckingForRegistryKeys {
+            get {
+                return ResourceManager.GetString("Msg_CheckingForRegistryKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copying file.
+        /// </summary>
+        internal static string Msg_CopyingFile {
+            get {
+                return ResourceManager.GetString("Msg_CopyingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete File &apos;{0}&apos;.
         /// </summary>
         internal static string Msg_DeleteFile {
             get {
                 return ResourceManager.GetString("Msg_DeleteFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deployment to Sage 300 installation disabled..
+        /// </summary>
+        internal static string Msg_DeploymentToSage300InstallationDisabled {
+            get {
+                return ResourceManager.GetString("Msg_DeploymentToSage300InstallationDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination folder.
+        /// </summary>
+        internal static string Msg_DestinationFolder {
+            get {
+                return ResourceManager.GetString("Msg_DestinationFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do NOT copy assets to the local Sage 300 installation directory.
+        /// </summary>
+        internal static string Msg_DoNotCopyAssetsToSage300installationDirectory {
+            get {
+                return ResourceManager.GetString("Msg_DoNotCopyAssetsToSage300installationDirectory", resourceCulture);
             }
         }
         
@@ -214,11 +277,56 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to files found.
+        /// </summary>
+        internal static string Msg_FilesFound {
+            get {
+                return ResourceManager.GetString("Msg_FilesFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files have been deployed to local Sage 300 installation..
+        /// </summary>
+        internal static string Msg_FilesHaveBeenDeployedToLocalSage300Directory {
+            get {
+                return ResourceManager.GetString("Msg_FilesHaveBeenDeployedToLocalSage300Directory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to folder = &apos;{0}&apos;.
         /// </summary>
         internal static string Msg_FolderEquals {
             get {
                 return ResourceManager.GetString("Msg_FolderEquals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate a log file in the current working folder.
+        /// </summary>
+        internal static string Msg_GenerateALogFileInTheCurrentWorkingFolder {
+            get {
+                return ResourceManager.GetString("Msg_GenerateALogFileInTheCurrentWorkingFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inner Exception.
+        /// </summary>
+        internal static string Msg_InnerException {
+            get {
+                return ResourceManager.GetString("Msg_InnerException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live Deployment. Files will actually be copied to live Sage 300 installion directory..
+        /// </summary>
+        internal static string Msg_LiveDeployment {
+            get {
+                return ResourceManager.GetString("Msg_LiveDeployment", resourceCulture);
             }
         }
         
@@ -241,6 +349,24 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Microsoft Visual Studio Solution path.
+        /// </summary>
+        internal static string Msg_MicrosoftVisualStudioSolutionPath {
+            get {
+                return ResourceManager.GetString("Msg_MicrosoftVisualStudioSolutionPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Microsoft Visual Studio Solution Web project path.
+        /// </summary>
+        internal static string Msg_MicrosoftVisualStudioSolutionWebProjectPath {
+            get {
+                return ResourceManager.GetString("Msg_MicrosoftVisualStudioSolutionWebProjectPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minification complete..
         /// </summary>
         internal static string Msg_MinificationComplete {
@@ -255,6 +381,33 @@ namespace MergeISVProject {
         internal static string Msg_MinificationSuccessful {
             get {
                 return ResourceManager.GetString("Msg_MinificationSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minify javascript files.
+        /// </summary>
+        internal static string Msg_MinifyJavascriptFiles {
+            get {
+                return ResourceManager.GetString("Msg_MinifyJavascriptFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET Framework path containing aspnet_compile.exe.
+        /// </summary>
+        internal static string Msg_NetFrameworkPathContainingAspnetCompileDotExe {
+            get {
+                return ResourceManager.GetString("Msg_NetFrameworkPathContainingAspnetCompileDotExe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only.
+        /// </summary>
+        internal static string Msg_Only {
+            get {
+                return ResourceManager.GetString("Msg_Only", resourceCulture);
             }
         }
         
@@ -358,6 +511,60 @@ namespace MergeISVProject {
         internal static string Msg_RunningCommand {
             get {
                 return ResourceManager.GetString("Msg_RunningCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage 300 Menu definition file name (i.e. XXMenuDetails.xml).
+        /// </summary>
+        internal static string Msg_Sage300MenuDefinitionFileName {
+            get {
+                return ResourceManager.GetString("Msg_Sage300MenuDefinitionFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulate copying of assets to the local Sage 300 installation directory.
+        /// </summary>
+        internal static string Msg_SimulateCopyingOfAssetsTo {
+            get {
+                return ResourceManager.GetString("Msg_SimulateCopyingOfAssetsTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulated Deployment Only. No files will actually be copied to live Sage 300 installion directory..
+        /// </summary>
+        internal static string Msg_SimulatedDeploymentOnly {
+            get {
+                return ResourceManager.GetString("Msg_SimulatedDeploymentOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulation.
+        /// </summary>
+        internal static string Msg_Simulation {
+            get {
+                return ResourceManager.GetString("Msg_Simulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source folder.
+        /// </summary>
+        internal static string Msg_SourceFolder {
+            get {
+                return ResourceManager.GetString("Msg_SourceFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visual Studio project build configuration (only release supported).
+        /// </summary>
+        internal static string Msg_VisualStudioProjectBuildConfiguration {
+            get {
+                return ResourceManager.GetString("Msg_VisualStudioProjectBuildConfiguration", resourceCulture);
             }
         }
     }

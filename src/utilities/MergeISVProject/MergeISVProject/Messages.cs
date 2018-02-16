@@ -63,10 +63,34 @@ namespace MergeISVProject
 			Msg_PathExists,
 			Msg_PathDeleted,
 			Msg_PathCreated,
-		}
-		#endregion
+			Msg_Simulation,
+			Msg_CopyingFile,
+			Msg_SourceFolder,
+			Msg_DestinationFolder,
+			Msg_Only,
+			Msg_FilesHaveBeenDeployedToLocalSage300Directory,
+			Msg_DeploymentToSage300InstallationDisabled,
 
-		private static System.Resources.ResourceManager RM { get { return Resources.ResourceManager; }}
+			Msg_DoNotCopyAssetsToSage300installationDirectory,
+			Msg_GenerateALogFileInTheCurrentWorkingFolder,
+			Msg_MicrosoftVisualStudioSolutionPath,
+			Msg_MicrosoftVisualStudioSolutionWebProjectPath,
+			Msg_MinifyJavascriptFiles,
+			Msg_NetFrameworkPathContainingAspnetCompileDotExe,
+			Msg_Sage300MenuDefinitionFileName,
+			Msg_SimulateCopyingOfAssetsTo,
+			Msg_VisualStudioProjectBuildConfiguration,
+			Msg_Application,
+			Msg_InnerException,
+			Msg_ApplicationRunComplete,
+			Msg_SimulatedDeploymentOnly,
+			Msg_LiveDeployment,
+			Msg_CheckingForRegistryKeys,
+			Msg_FilesFound,
+		}
+	#endregion
+
+	private static System.Resources.ResourceManager RM { get { return Resources.ResourceManager; }}
 
 		#region Public Properties (Errors)
 		public static string Error_InvalidCommandLineParameters { get { return RM.GetString(IndexEnum.Error_InvalidCommandLineParameters.ToString()); } }
@@ -104,6 +128,29 @@ namespace MergeISVProject
 		public static string Msg_PathExists { get { return RM.GetString(IndexEnum.Msg_PathExists.ToString()); } }
 		public static string Msg_PathDeleted { get { return RM.GetString(IndexEnum.Msg_PathDeleted.ToString()); } }
 		public static string Msg_PathCreated { get { return RM.GetString(IndexEnum.Msg_PathCreated.ToString()); } }
+		public static string Msg_Simulation { get { return RM.GetString(IndexEnum.Msg_Simulation.ToString()); } }
+		public static string Msg_CopyingFile { get { return RM.GetString(IndexEnum.Msg_CopyingFile.ToString()); } }
+		public static string Msg_SourceFolder { get { return RM.GetString(IndexEnum.Msg_SourceFolder.ToString()); } }
+		public static string Msg_DestinationFolder { get { return RM.GetString(IndexEnum.Msg_DestinationFolder.ToString()); } }
+		public static string Msg_Only { get { return RM.GetString(IndexEnum.Msg_Only.ToString()); } }
+		public static string Msg_FilesHaveBeenDeployedToLocalSage300Directory { get { return RM.GetString(IndexEnum.Msg_FilesHaveBeenDeployedToLocalSage300Directory.ToString()); } }
+		public static string Msg_DeploymentToSage300InstallationDisabled { get { return RM.GetString(IndexEnum.Msg_DeploymentToSage300InstallationDisabled.ToString()); } }
+		public static string Msg_DoNotCopyAssetsToSage300installationDirectory { get { return RM.GetString(IndexEnum.Msg_DoNotCopyAssetsToSage300installationDirectory.ToString()); } }
+		public static string Msg_GenerateALogFileInTheCurrentWorkingFolder { get { return RM.GetString(IndexEnum.Msg_GenerateALogFileInTheCurrentWorkingFolder.ToString()); } }
+		public static string Msg_MicrosoftVisualStudioSolutionPath { get { return RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionPath.ToString()); } }
+		public static string Msg_MicrosoftVisualStudioSolutionWebProjectPath { get { return RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionWebProjectPath.ToString()); } }
+		public static string Msg_MinifyJavascriptFiles { get { return RM.GetString(IndexEnum.Msg_MinifyJavascriptFiles.ToString()); } }
+		public static string Msg_NetFrameworkPathContainingAspnetCompileDotExe { get { return RM.GetString(IndexEnum.Msg_NetFrameworkPathContainingAspnetCompileDotExe.ToString()); } }
+		public static string Msg_Sage300MenuDefinitionFileName { get { return RM.GetString(IndexEnum.Msg_Sage300MenuDefinitionFileName.ToString()); } }
+		public static string Msg_SimulateCopyingOfAssetsTo { get { return RM.GetString(IndexEnum.Msg_SimulateCopyingOfAssetsTo.ToString()); } }
+		public static string Msg_VisualStudioProjectBuildConfiguration { get { return RM.GetString(IndexEnum.Msg_VisualStudioProjectBuildConfiguration.ToString()); } }
+		public static string Msg_Application { get { return RM.GetString(IndexEnum.Msg_Application.ToString()); } }
+		public static string Msg_InnerException { get { return RM.GetString(IndexEnum.Msg_InnerException.ToString()); } }
+		public static string Msg_ApplicationRunComplete { get { return RM.GetString(IndexEnum.Msg_ApplicationRunComplete.ToString()); } }
+		public static string Msg_SimulatedDeploymentOnly { get { return RM.GetString(IndexEnum.Msg_SimulatedDeploymentOnly.ToString()); } }
+		public static string Msg_LiveDeployment { get { return RM.GetString(IndexEnum.Msg_LiveDeployment.ToString()); } }
+		public static string Msg_CheckingForRegistryKeys { get { return RM.GetString(IndexEnum.Msg_CheckingForRegistryKeys.ToString()); } }
+		public static string Msg_FilesFound { get { return RM.GetString(IndexEnum.Msg_FilesFound.ToString()); } }
 		#endregion
 	}
 }

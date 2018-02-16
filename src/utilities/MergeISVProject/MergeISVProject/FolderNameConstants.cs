@@ -27,7 +27,7 @@ namespace MergeISVProject.Constants
 	public static class FolderNameConstants
 	{
 		// Source Related Folders
-		public const string DEPLOY		= "__DEPLOY__";
+		public const string DEPLOY		= "___DEPLOY___";
 		public const string STAGING			= "Staging";
 		public const string COMPILED  	    = "Compiled";
 		public const string FINAL			= "__READYTODEPLOY__";

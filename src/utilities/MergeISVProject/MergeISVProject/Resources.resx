@@ -150,6 +150,12 @@
   <data name="Error_UnableToFindTheProgram" xml:space="preserve">
     <value>Unable to find the program '{0}'. Path='[1]'</value>
   </data>
+  <data name="Msg_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="Msg_ApplicationRunComplete" xml:space="preserve">
+    <value>The application has completed.</value>
+  </data>
   <data name="Msg_ArgumentList" xml:space="preserve">
     <value>Argument List:</value>
   </data>
@@ -159,8 +165,23 @@
   <data name="Msg_BeginningMinificationProcessOnDirectory" xml:space="preserve">
     <value>Beginning minification process on directory '{0}'</value>
   </data>
+  <data name="Msg_CheckingForRegistryKeys" xml:space="preserve">
+    <value>Checking for registry keys</value>
+  </data>
+  <data name="Msg_CopyingFile" xml:space="preserve">
+    <value>Copying file</value>
+  </data>
   <data name="Msg_DeleteFile" xml:space="preserve">
     <value>Delete File '{0}'</value>
+  </data>
+  <data name="Msg_DeploymentToSage300InstallationDisabled" xml:space="preserve">
+    <value>Deployment to Sage 300 installation disabled.</value>
+  </data>
+  <data name="Msg_DestinationFolder" xml:space="preserve">
+    <value>Destination folder</value>
+  </data>
+  <data name="Msg_DoNotCopyAssetsToSage300installationDirectory" xml:space="preserve">
+    <value>Do NOT copy assets to the local Sage 300 installation directory</value>
   </data>
   <data name="Msg_End" xml:space="preserve">
     <value>End</value>
@@ -168,8 +189,23 @@
   <data name="Msg_FilesDotCount" xml:space="preserve">
     <value>files.Count() = {0}</value>
   </data>
+  <data name="Msg_FilesFound" xml:space="preserve">
+    <value>files found</value>
+  </data>
+  <data name="Msg_FilesHaveBeenDeployedToLocalSage300Directory" xml:space="preserve">
+    <value>Files have been deployed to local Sage 300 installation.</value>
+  </data>
   <data name="Msg_FolderEquals" xml:space="preserve">
     <value>folder = '{0}'</value>
+  </data>
+  <data name="Msg_GenerateALogFileInTheCurrentWorkingFolder" xml:space="preserve">
+    <value>Generate a log file in the current working folder</value>
+  </data>
+  <data name="Msg_InnerException" xml:space="preserve">
+    <value>Inner Exception</value>
+  </data>
+  <data name="Msg_LiveDeployment" xml:space="preserve">
+    <value>Live Deployment. Files will actually be copied to live Sage 300 installion directory.</value>
   </data>
   <data name="Msg_LogFileLocation" xml:space="preserve">
     <value>Log File Location : {0}</value>
@@ -177,11 +213,26 @@
   <data name="Msg_LoggingStarted" xml:space="preserve">
     <value>Logging Started...</value>
   </data>
+  <data name="Msg_MicrosoftVisualStudioSolutionPath" xml:space="preserve">
+    <value>Microsoft Visual Studio Solution path</value>
+  </data>
+  <data name="Msg_MicrosoftVisualStudioSolutionWebProjectPath" xml:space="preserve">
+    <value>Microsoft Visual Studio Solution Web project path</value>
+  </data>
   <data name="Msg_MinificationComplete" xml:space="preserve">
     <value>Minification complete.</value>
   </data>
   <data name="Msg_MinificationSuccessful" xml:space="preserve">
     <value>Minification Successful!</value>
+  </data>
+  <data name="Msg_MinifyJavascriptFiles" xml:space="preserve">
+    <value>Minify javascript files</value>
+  </data>
+  <data name="Msg_NetFrameworkPathContainingAspnetCompileDotExe" xml:space="preserve">
+    <value>.NET Framework path containing aspnet_compile.exe</value>
+  </data>
+  <data name="Msg_Only" xml:space="preserve">
+    <value>Only</value>
   </data>
   <data name="Msg_PathCreated" xml:space="preserve">
     <value>'{0}' created.</value>
@@ -225,5 +276,23 @@
   </data>
   <data name="Msg_RunningCommand" xml:space="preserve">
     <value>   Running command : {0}</value>
+  </data>
+  <data name="Msg_Sage300MenuDefinitionFileName" xml:space="preserve">
+    <value>Sage 300 Menu definition file name (i.e. XXMenuDetails.xml)</value>
+  </data>
+  <data name="Msg_SimulateCopyingOfAssetsTo" xml:space="preserve">
+    <value>Simulate copying of assets to the local Sage 300 installation directory</value>
+  </data>
+  <data name="Msg_SimulatedDeploymentOnly" xml:space="preserve">
+    <value>Simulated Deployment Only. No files will actually be copied to live Sage 300 installion directory.</value>
+  </data>
+  <data name="Msg_Simulation" xml:space="preserve">
+    <value>Simulation</value>
+  </data>
+  <data name="Msg_SourceFolder" xml:space="preserve">
+    <value>Source folder</value>
+  </data>
+  <data name="Msg_VisualStudioProjectBuildConfiguration" xml:space="preserve">
+    <value>Visual Studio project build configuration (only release supported)</value>
   </data>
 </root>

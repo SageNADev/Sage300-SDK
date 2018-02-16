@@ -45,12 +45,14 @@ namespace MergeISVProject.Logging
 		private const byte METHODBLOCK_END_ASCIICODE = 192;
 		private const byte METHODBLOCK_VERTICAL_ASCIICODE = 179;
 		private const byte METHODBLOCK_HORIZONTALLINE_ASCIICODE = 196;
+		private const byte METHODBLOCK_SIDEWAYST_ASCIICODE = 195;
 
-		private static readonly string METHODBLOCK_HORIZONTAL = Utilities.ASCII8ToString(asciiCode: METHODBLOCK_HORIZONTALLINE_ASCIICODE);
-		private readonly string METHODBLOCK_START = Utilities.ASCII8ToString(asciiCode: METHODBLOCK_START_ASCIICODE) + METHODBLOCK_HORIZONTAL;
-		private readonly string METHODBLOCK_END = Utilities.ASCII8ToString(asciiCode: METHODBLOCK_END_ASCIICODE) + METHODBLOCK_HORIZONTAL;
-		private readonly string METHODBLOCK_VERTICAL = Utilities.ASCII8ToString(asciiCode: METHODBLOCK_VERTICAL_ASCIICODE);
-		private const int DEFAULT_INDENT_SPACES = 3;
+		private static readonly string METHODBLOCK_HORIZONTAL = Utilities.ASCII8ToString(data: METHODBLOCK_HORIZONTALLINE_ASCIICODE);
+		private readonly string METHODBLOCK_START = Utilities.ASCII8ToString(data: METHODBLOCK_START_ASCIICODE) + METHODBLOCK_HORIZONTAL + METHODBLOCK_HORIZONTAL;
+		private readonly string METHODBLOCK_END = Utilities.ASCII8ToString(data: METHODBLOCK_END_ASCIICODE) + METHODBLOCK_HORIZONTAL + METHODBLOCK_HORIZONTAL;
+		private readonly string METHODBLOCK_VERTICAL = Utilities.ASCII8ToString(data: METHODBLOCK_VERTICAL_ASCIICODE);
+		private readonly string METHODBLOCK_HORIZONTAL_NONHEADER = Utilities.ASCII8ToString(data: METHODBLOCK_SIDEWAYST_ASCIICODE);
+		private const int DEFAULT_INDENT_SPACES = 5;
 		private const string DATETIME_FORMAT = "yyyyMMddHHmmss";
 		private static readonly string divider = new string('-', 80);
 		#endregion
@@ -281,10 +283,16 @@ namespace MergeISVProject.Logging
 		{
 			if (!Enabled) return;
 			Log("");
-			Log($"{METHODBLOCK_START} {Messages.Msg_Begin}: {methodName}");
+			//Log($"{METHODBLOCK_START} {Messages.Msg_Begin}: {methodName}");
+			Log($"{METHODBLOCK_START} {methodName}");
 
 			// This will increase the indentation level by one unit
 			EnableIndentation = true;
+		}
+
+		public void LogMethodHeader(string methodName, string fileName)
+		{
+			LogMethodHeader($"{fileName} : {methodName}");
 		}
 
 		/// <summary>
@@ -297,7 +305,9 @@ namespace MergeISVProject.Logging
 
 			// This will reduce the indentation level by one unit
 			EnableIndentation = false;
-			Log($"{METHODBLOCK_END} {Messages.Msg_End}: {methodName}");
+//			Log($"{METHODBLOCK_END} {Messages.Msg_End}: {methodName}");
+			Log($"{METHODBLOCK_END} {methodName}");
+
 			Log("");
 		}
 		#endregion

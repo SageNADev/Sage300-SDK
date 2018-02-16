@@ -45,7 +45,8 @@ namespace MergeISVProject
 		private const bool MINIFIED = true;
 		private const bool UNMINIFIED = false;
 		private const string MINIFIED_SOURCE_PATTERN = @".min.js";
-		private const string JAVASCRIPT_FILE_FILTER = @".js";
+		private const string JAVASCRIPT_FILE_FILTER = @"*.js";
+		private const string JAVASCRIPT_FILE_EXTENSION = @".js";
 		#endregion
 
 		#region Private Variables
@@ -81,7 +82,8 @@ namespace MergeISVProject
 			string methodName = string.Empty;
 			try
 			{
-				methodName = Utilities.GetCurrentMethod();
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+				//methodName = Utilities.GetCurrentMethod();
 				_Logger.LogMethodHeader(methodName);
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
@@ -95,7 +97,7 @@ namespace MergeISVProject
 					foreach (var file in files)
 					{
 						File.Delete(file);
-						_Logger.Log(string.Format(Messages.Msg_DeleteFile, file));
+						_Logger.Log(string.Format(Messages.Msg_DeleteFile, new FileInfo(file).Name));
 					}
 				}
 			}
@@ -141,7 +143,7 @@ namespace MergeISVProject
 			string methodName = string.Empty;
 			try
 			{
-				methodName = Utilities.GetCurrentMethod();
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
 				_Logger.LogMethodHeader(methodName);
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
@@ -149,9 +151,13 @@ namespace MergeISVProject
 				// Get list of all files in directory
 				var allFiles = Directory.GetFiles(folder, JAVASCRIPT_FILE_FILTER, System.IO.SearchOption.AllDirectories);
 
-				// Build list of minified (or unminified) files and then return
-				return (minified) ? allFiles.Where(f => f.EndsWith(MINIFIED_SOURCE_PATTERN))
-								  : allFiles.Where(f => !f.EndsWith(MINIFIED_SOURCE_PATTERN));
+				// Now filter based on whether were looking for minified or unminified javascript files
+				var results = (minified) ? allFiles.Where(f => f.EndsWith(MINIFIED_SOURCE_PATTERN))
+									     : allFiles.Where(f => !f.EndsWith(MINIFIED_SOURCE_PATTERN));
+				
+				_Logger.Log($"{results.Count()} {Messages.Msg_FilesFound}." );
+
+				return results;
 			}
 			catch (ArgumentNullException ex)
 			{
@@ -173,26 +179,28 @@ namespace MergeISVProject
 			string methodName = string.Empty;
 			try
 			{
-				methodName = Utilities.GetCurrentMethod();
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+				//methodName = Utilities.GetCurrentMethod();
 				_Logger.LogMethodHeader(methodName);
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
 
-				var files = GetListOfMinifiedJavascriptFiles(folder);
+				var minifiedJavascriptFiles = GetListOfMinifiedJavascriptFiles(folder);
+				int fileCount = minifiedJavascriptFiles.Count();
 
 				_Logger.Log(string.Format(Messages.Msg_FolderEquals, folder));
-				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, files.Count()));
+				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, fileCount));
 
-				if (files.Count() > 0)
+				if (fileCount == 0)
+					return;
+
+				foreach (var file in minifiedJavascriptFiles)
 				{
-					foreach (var file in files)
-					{
-						var newName = file.Replace(MINIFIED_SOURCE_PATTERN, JAVASCRIPT_FILE_FILTER);
-						File.Move(file, newName);
-						var f1 = GetFilenameFromPath(file);
-						var f2 = GetFilenameFromPath(newName);
-						_Logger.Log(string.Format(Messages.Msg_Rename1To2, f1, f2));
-					}
+					var newName = file.Replace(MINIFIED_SOURCE_PATTERN, JAVASCRIPT_FILE_EXTENSION);
+					File.Move(file, newName);
+					var f1 = new FileInfo(file).Name;
+					var f2 = new FileInfo(newName).Name;
+					_Logger.Log(string.Format(Messages.Msg_Rename1To2, f1, f2));
 				}
 			}
 			catch (ArgumentNullException ex)
@@ -204,36 +212,6 @@ namespace MergeISVProject
 			{
 				_Logger.LogMethodFooter(methodName);
 			}
-		}
-
-		/// <summary>
-		/// Given a path, return the filename only
-		/// </summary>
-		/// <param name="dir">The file path from which to extract the file name</param>
-		/// <returns>The filename only</returns>
-		private string GetFilenameFromPath(string dir)
-		{
-			var result = string.Empty;
-			string methodName = string.Empty;
-			try
-			{
-				methodName = Utilities.GetCurrentMethod();
-				_Logger.LogMethodHeader(methodName);
-
-				if (string.IsNullOrEmpty(dir)) throw new ArgumentNullException();
-
-				result = new FileInfo(dir).Name;
-			}
-			catch (ArgumentNullException ex)
-			{
-				var msg = string.Format(Messages.Error_MethodCalledWithInvalidParameter, methodName);
-				throw new MergeISVProjectException(_Logger, msg, ex);
-			}
-			finally
-			{
-				_Logger.LogMethodFooter(methodName);
-			}
-			return result;
 		}
 
 		/// <summary>
@@ -269,7 +247,7 @@ namespace MergeISVProject
 		/// </summary>
 		public void MinifyJavascriptFilesAndCleanup()
 		{
-			_Logger.LogMethodHeader(Utilities.GetCurrentMethod());
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var error = false;
 

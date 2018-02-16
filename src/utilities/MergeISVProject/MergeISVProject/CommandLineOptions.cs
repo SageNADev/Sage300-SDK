@@ -221,18 +221,18 @@ namespace MergeISVProject
 
             LoadErrors = new List<string>();
 
-            // Initialize the CommandLineOptions
-            #region Create CommandLineOptions
+			// Initialize the CommandLineOptions
+			#region Create CommandLineOptions
 
 
 			// TODO - Add strings to localization file
 
-            SolutionPath = new CommandLineOption<string>() 
-            { 
-                Name = "solutionpath",
-                AliasList = new List<string>() { "s", "sol", "sp", "solution" },
-                Description = "Microsoft Visual Studio Solution path", 
-                OptionValue = "",
+			SolutionPath = new CommandLineOption<string>()
+			{
+				Name = "solutionpath",
+				AliasList = new List<string>() { "s", "sol", "sp", "solution" },
+				Description = Messages.Msg_MicrosoftVisualStudioSolutionPath,
+				OptionValue = "",
                 ExampleValue = @"<path>"
             };
             LoadString(SolutionPath, cleanArgList);
@@ -241,7 +241,7 @@ namespace MergeISVProject
             { 
                 Name = "webprojectpath", 
                 AliasList = new List<string>() {"p", "wpp", "projectpath"},
-                Description = "MS Visual Studio Web Project path", 
+				Description = Messages.Msg_MicrosoftVisualStudioSolutionWebProjectPath,
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
@@ -251,7 +251,7 @@ namespace MergeISVProject
             { 
                 Name = "menufilename",
                 AliasList = new List<string>() { "m", "menu", "menufile" },
-                Description = "Sage 300 Menu definition file name (i.e. XXMenuDetails.xml)", 
+                Description = Messages.Msg_Sage300MenuDefinitionFileName, 
                 OptionValue = "",
                 ExampleValue = @"<name>"
             };
@@ -261,7 +261,7 @@ namespace MergeISVProject
             { 
                 Name = "buildprofile",
                 AliasList = new List<string>() { "b", "bp" },
-                Description = "Visual Studio project build configuration (only release supported)", 
+				Description =  Messages.Msg_VisualStudioProjectBuildConfiguration,
                 OptionValue = "Release",
                 ExampleValue = @"<name>"
             };
@@ -271,7 +271,7 @@ namespace MergeISVProject
             { 
                 Name = "dotnetframeworkpath",
                 AliasList = new List<string>() { "f", "dotnet", "dotnetframework", "netframework", "framework" },
-                Description = ".NET Framework path containing aspnet_compile.exe", 
+				Description = Messages.Msg_NetFrameworkPathContainingAspnetCompileDotExe,
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
@@ -281,7 +281,7 @@ namespace MergeISVProject
             { 
                 Name = "minify",
                 AliasList = new List<string>() { "min" },
-                Description = "Minify javascript files", 
+                Description = Messages.Msg_MinifyJavascriptFiles,
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -291,7 +291,7 @@ namespace MergeISVProject
             { 
                 Name = "nodeploy",
                 AliasList = new List<string>() { "nd" },
-                Description = "Do NOT copy assets to Sage 300 installation directory", 
+                Description = Messages.Msg_DoNotCopyAssetsToSage300installationDirectory,
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -301,7 +301,7 @@ namespace MergeISVProject
             {
                 Name = "testdeploy",
                 AliasList = new List<string>() { "nd" },
-                Description = "Simulate copying of assets to the Sage 300 installation directory",
+                Description = Messages.Msg_SimulateCopyingOfAssetsTo,
                 OptionValue = false,
                 ExampleValue = @""
             };
@@ -311,7 +311,7 @@ namespace MergeISVProject
             {
                 Name = "log",
                 AliasList = new List<string>() { "logging" },
-                Description = "Generate a log file in the current working folder",
+				Description = Messages.Msg_GenerateALogFileInTheCurrentWorkingFolder,
                 OptionValue = false,
                 ExampleValue = @""
             };
