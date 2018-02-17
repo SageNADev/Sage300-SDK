@@ -343,7 +343,6 @@
     <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb_DPPMenu.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
-    <Content Include="MergeISVProject.exe" />
     <Content Include="Customization\ScreenDefinitions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -494,7 +493,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" "$(SolutionPath)"  "$(ProjectDir)\"  TUMenuDetails.xml $(ConfigurationName) $(FrameworkDir)</PostBuildEvent>
+    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --solutionpath="$(SolutionDir)" --webprojectpath="$(ProjectDir)" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
