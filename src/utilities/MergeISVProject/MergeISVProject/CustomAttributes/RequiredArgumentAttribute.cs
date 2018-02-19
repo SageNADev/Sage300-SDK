@@ -24,7 +24,12 @@ using System;
 
 namespace MergeISVProject.CustomAttributes
 {
-    public class RequiredArgumentAttribute : Attribute
+	/// <summary>
+	/// This attribute is used in the CommandLineOptions class
+	/// when defining public properties that map to command-line
+	/// options that are required.
+	/// </summary>
+	public class RequiredArgumentAttribute : Attribute
     {
     }
 }

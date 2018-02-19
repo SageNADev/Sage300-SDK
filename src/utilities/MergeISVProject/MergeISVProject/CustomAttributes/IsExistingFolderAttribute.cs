@@ -24,6 +24,11 @@ using System;
 
 namespace MergeISVProject.CustomAttributes
 {
+	/// <summary>
+	/// This attribute is used in the CommandLineOptions class
+	/// when defining public properties that map to command-line
+	/// options that represent an already existing folder.
+	/// </summary>
     public class IsExistingFolderAttribute : Attribute
     {
     }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MergeISVProject</RootNamespace>
     <AssemblyName>MergeISVProject</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -64,7 +64,12 @@
     <Compile Include="CustomAttributes\IsExistingFolderAttribute.cs" />
     <Compile Include="CustomExceptions\MergeISVProjectException.cs" />
     <Compile Include="CustomAttributes\OptionalArgumentAttribute.cs" />
-    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="FolderNameConstants.cs" />
     <Compile Include="Interfaces\ICommandLineOptions.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
@@ -83,7 +88,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)PostBuild.bat $(TargetPath)

@@ -21,7 +21,6 @@
 #region Imports
 
 using MergeISVProject.CustomExceptions;
-using MergeISVProject.Errors;
 using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using System;
@@ -35,11 +34,19 @@ using System.Reflection;
 
 namespace MergeISVProject
 {
+	/// <summary>
+	/// Minification handler class
+	/// </summary>
 	public class SageISVMinifier
 	{
 		#region Constants
 		private const string WG_EXE = @"WG.EXE";
 		private const string WG_COMMAND_TEMPLATE = @"{0}\{1} -m -in:{2} -out:{3}";
+		private const bool MINIFIED = true;
+		private const bool UNMINIFIED = false;
+		private const string MINIFIED_SOURCE_PATTERN = @".min.js";
+		private const string JAVASCRIPT_FILE_FILTER = @"*.js";
+		private const string JAVASCRIPT_FILE_EXTENSION = @".js";
 		#endregion
 
 		#region Private Variables
@@ -49,6 +56,13 @@ namespace MergeISVProject
 		#endregion
 
 		#region Constructor(s)
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="logger">The instance of the logger object</param>
+		/// <param name="folders">The instance FolderManager object</param>
+		/// <param name="moduleId">The string representation of the Module ID</param>
 		public SageISVMinifier(ILogger logger, FolderManager folders, string moduleId)
 		{
 			_Logger = logger;
@@ -62,96 +76,142 @@ namespace MergeISVProject
 		/// <summary>
 		/// Delete the unminified javascript files in a folder
 		/// </summary>
-		/// <param name="folder"></param>
+		/// <param name="folder">The folder from which unminified files will be deleted</param>
 		private void RemoveUnminifiedJavascriptFiles(string folder)
 		{
-			_Logger.LogMethodHeader(Utilities.GetCurrentMethod());
-
-			var files = GetListOfUnminifiedJavascriptFiles(folder);
-			_Logger.Log("folder = " + folder);
-			_Logger.Log($"files.Count() = {files.Count()}");
-
-			if (files.Count() > 0)
+			string methodName = string.Empty;
+			try
 			{
-				foreach (var file in files)
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+				//methodName = Utilities.GetCurrentMethod();
+				_Logger.LogMethodHeader(methodName);
+
+				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
+
+				var files = GetListOfUnminifiedJavascriptFiles(folder);
+				_Logger.Log(string.Format(Messages.Msg_FolderEquals, folder));
+				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, files.Count()));
+
+				if (files.Count() > 0)
 				{
-					File.Delete(file);
-					_Logger.Log("Delete file " + file);
+					foreach (var file in files)
+					{
+						File.Delete(file);
+						_Logger.Log(string.Format(Messages.Msg_DeleteFile, new FileInfo(file).Name));
+					}
 				}
 			}
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+			catch (ArgumentNullException ex)
+			{
+				var msg = string.Format(Messages.Error_MethodCalledWithInvalidParameter, methodName);
+				throw new MergeISVProjectException(_Logger, msg, ex);
+			}
+			finally
+			{
+				_Logger.LogMethodFooter(methodName);
+			}
 		}
 
 		/// <summary>
-		/// TODO - Add Summary
+		/// Get a list of all unminified javascript files in a folder
 		/// </summary>
-		/// <param name="folder"></param>
-		/// <returns></returns>
+		/// <param name="folder">The folder from which to look for unminified javascript files</param>
+		/// <returns>The list of minified file names</returns>
 		private IEnumerable<string> GetListOfUnminifiedJavascriptFiles(string folder)
 		{
-			const string SourcePattern = ".min.js";
-			var filesToSearchFilter = @"*.js";
-			return Directory.GetFiles(folder,
-									  filesToSearchFilter,
-									  System.IO.SearchOption.AllDirectories).Where(f => !f.EndsWith(SourcePattern));
+			return GetListOfJavascriptFiles(folder, UNMINIFIED);
 		}
 
 		/// <summary>
-		/// TODO - Add Summary
+		/// Get a list of all minified javascript files in a folder
 		/// </summary>
-		/// <param name="folder"></param>
-		/// <returns></returns>
+		/// <param name="folder">The folder from which to search for files</param>
+		/// <returns>The list of minified file names</returns>
 		private IEnumerable<string> GetListOfMinifiedJavascriptFiles(string folder)
 		{
-			const string SourcePattern = ".min.js";
-			var filesToSearchFilter = @"*.js";
-			return Directory.GetFiles(folder,
-									  filesToSearchFilter,
-									  System.IO.SearchOption.AllDirectories).Where(f => f.EndsWith(SourcePattern));
+			return GetListOfJavascriptFiles(folder, MINIFIED);
+		}
+
+		/// <summary>
+		/// Get a list of all minified or unminified javascript files from a folder
+		/// </summary>
+		/// <param name="folder">The folder from which to search for files</param>
+		/// <param name="minified">true = minified | false = unminified</param>
+		/// <returns>A list of file names</returns>
+		private IEnumerable<string> GetListOfJavascriptFiles(string folder, bool minified)
+		{
+			string methodName = string.Empty;
+			try
+			{
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+				_Logger.LogMethodHeader(methodName);
+
+				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
+
+				// Get list of all files in directory
+				var allFiles = Directory.GetFiles(folder, JAVASCRIPT_FILE_FILTER, System.IO.SearchOption.AllDirectories);
+
+				// Now filter based on whether were looking for minified or unminified javascript files
+				var results = (minified) ? allFiles.Where(f => f.EndsWith(MINIFIED_SOURCE_PATTERN))
+									     : allFiles.Where(f => !f.EndsWith(MINIFIED_SOURCE_PATTERN));
+				
+				_Logger.Log($"{results.Count()} {Messages.Msg_FilesFound}." );
+
+				return results;
+			}
+			catch (ArgumentNullException ex)
+			{
+				var msg = string.Format(Messages.Error_MethodCalledWithInvalidParameter, methodName);
+				throw new MergeISVProjectException(_Logger, msg, ex);
+			}
+			finally
+			{
+				_Logger.LogMethodFooter(methodName);
+			}
 		}
 
 		/// <summary>
 		/// Rename javascript files of the format *.min.js to *.js
 		/// </summary>
-		/// <param name="folder"></param>
+		/// <param name="folder">The folder from which to rename minified javascript files</param>
 		private void RenameMinifiedJavascriptFiles(string folder)
 		{
-			_Logger.LogMethodHeader(Utilities.GetCurrentMethod());
-
-			const string SourcePattern = ".min.js";
-			const string TargetPattern = ".js";
-			var files = GetListOfMinifiedJavascriptFiles(folder);
-
-			_Logger.Log($"folder = {folder}");
-			_Logger.Log($"files.Count() = {files.Count()}");
-
-			if (files.Count() > 0)
+			string methodName = string.Empty;
+			try
 			{
-				foreach (var file in files)
+				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+				//methodName = Utilities.GetCurrentMethod();
+				_Logger.LogMethodHeader(methodName);
+
+				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
+
+				var minifiedJavascriptFiles = GetListOfMinifiedJavascriptFiles(folder);
+				int fileCount = minifiedJavascriptFiles.Count();
+
+				_Logger.Log(string.Format(Messages.Msg_FolderEquals, folder));
+				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, fileCount));
+
+				if (fileCount == 0)
+					return;
+
+				foreach (var file in minifiedJavascriptFiles)
 				{
-					var newName = file.Replace(SourcePattern, TargetPattern);
+					var newName = file.Replace(MINIFIED_SOURCE_PATTERN, JAVASCRIPT_FILE_EXTENSION);
 					File.Move(file, newName);
-					var f1 = GetFilenameFromPath(file);
-					var f2 = GetFilenameFromPath(newName);
-					_Logger.Log($"Rename {f1} to {f2}");
+					var f1 = new FileInfo(file).Name;
+					var f2 = new FileInfo(newName).Name;
+					_Logger.Log(string.Format(Messages.Msg_Rename1To2, f1, f2));
 				}
 			}
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-		/// <summary>
-		/// Given a path, return the filename only
-		/// </summary>
-		/// <param name="dir">A file path</param>
-		/// <returns>The filename only</returns>
-		private string GetFilenameFromPath(string dir)
-		{
-			var result = string.Empty;
-			if (dir.Length > 0)
+			catch (ArgumentNullException ex)
 			{
-				result = new FileInfo(dir).Name;
+				var msg = string.Format(Messages.Error_MethodCalledWithInvalidParameter, methodName);
+				throw new MergeISVProjectException(_Logger, msg, ex);
 			}
-			return result;
+			finally
+			{
+				_Logger.LogMethodFooter(methodName);
+			}
 		}
 
 		/// <summary>
@@ -185,11 +245,9 @@ namespace MergeISVProject
 		/// Minify the javascript files and rename back to usable names
 		/// Example: TrustedVendor.PM.PaymentCodesBehaviour.min.js --> TrustedVendor.PM.PaymentCodesBehaviour.js
 		/// </summary>
-		/// <param name="pathWebProj">Web project path</param>
-		/// <param name="moduleId">The module id</param>
 		public void MinifyJavascriptFilesAndCleanup()
 		{
-			_Logger.LogMethodHeader(Utilities.GetCurrentMethod());
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var error = false;
 
@@ -199,7 +257,8 @@ namespace MergeISVProject
 				var tempPathToWG = Path.Combine(currentExePath, WG_EXE);
 				if (!File.Exists(tempPathToWG))
 				{
-					throw new Exception($"Unable to find {WG_EXE}. Path={tempPathToWG}");
+					var msg = string.Format(Messages.Error_UnableToFindTheProgram, WG_EXE, tempPathToWG);
+					throw new Exception(msg);
 				}
 
 				var pathToWG = currentExePath;
@@ -212,37 +271,35 @@ namespace MergeISVProject
 				foreach (var dir in Directory.GetDirectories(jsFolder))
 				{
 					var command = string.Format(WG_COMMAND_TEMPLATE, pathToWG, WG_EXE, dir, dir);
-					_Logger.Log($"Beginning minification process on directory {dir}");
-					_Logger.Log("  Running command : " + command);
+					_Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
+					_Logger.Log(string.Format(Messages.Msg_RunningCommand, command));
 					ExecuteCommand(workingFolder, command);
-					_Logger.Log("Minification complete.");
+					_Logger.Log(Messages.Msg_MinificationComplete);
 
-					_Logger.Log("Renaming javascipt files back to usable state");
+					_Logger.Log(Messages.Msg_RenamingJavascriptFilesBackToUsableState);
 					RemoveUnminifiedJavascriptFiles(dir);
 					RenameMinifiedJavascriptFiles(dir);
-					_Logger.Log("Renaming complete!");
+					_Logger.Log(Messages.Msg_RenamingComplete);
 				}
 			}
 			catch (Exception ex)
 			{
 				error = true;
-				var msg = $"{ErrorMessages.MinificationFailed}{Environment.NewLine}{ex.Message}";
+				var msg = $"{Messages.Error_MinificationFailed}{Environment.NewLine}{ex.Message}";
 				throw new MergeISVProjectException(_Logger, msg);
 			}
 			finally
 			{
 				if (!error)
 				{
-					_Logger.Log("Minification successful!");
+					_Logger.Log(Messages.Msg_MinificationSuccessful);
 				}
 				_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 			}
-
 		}
 
 		/// <summary>
-		/// Copy minified javascript files to the Final 
-		/// Staging folder
+		/// Copy minified javascript files to the Final Staging folder
 		/// </summary>
 		public void CopyToFinalStagingLocation()
 		{

@@ -19,18 +19,25 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
+using System.Text;
 #endregion
 
 namespace MergeISVProject
 {
-	#region Public Methods
-
+	/// <summary>
+	/// These are general utility methods
+	/// </summary>
 	public static class Utilities
 	{
+		#region Constants
+		// IBM437 (OEM United States)
+		private const int DefaultCodePage = 437;
+		#endregion
+
+		#region Public Methods
 		/// <summary>
 		/// When this method is called from another class' method,
 		/// this method will return the name of the calling
@@ -40,11 +47,43 @@ namespace MergeISVProject
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public static string GetCurrentMethod()
 		{
-			StackTrace st = new StackTrace();
-			StackFrame sf = st.GetFrame(1);
+			var st = new StackTrace();
+			var sf = st.GetFrame(1);
 			return sf.GetMethod().Name;
 		}
-	}
 
-	#endregion
+		/// <summary>
+		/// Get the string equivalant of an ascii character
+		/// </summary>
+		/// <param name="data">byte array containing the character code</param>
+		/// <returns>the string representation of the ascii character</returns>
+		public static string ASCII8ToString(byte[] data)
+		{
+			return Encoding.GetEncoding(DefaultCodePage).GetString(data);
+		}
+
+		/// <summary>
+		/// Get the string equivalent of an ascii character
+		/// </summary>
+		/// <param name="data">byte containing the character code</param>
+		/// <returns>the string representation of the ascii character</returns>
+		public static string ASCII8ToString(byte data)
+		{
+			var byteArray = new byte[] { data };
+			return Encoding.GetEncoding(DefaultCodePage).GetString(byteArray);
+		}
+
+		/// <summary>
+		/// Get the name of this application and it's version number
+		/// Values are returned via output string parameters
+		/// </summary>
+		/// <param name="name">Application Name</param>
+		/// <param name="ver">Application Version</param>
+		public static void GetAppNameAndVersion(out string name, out string ver)
+		{
+			name = typeof(Program).Assembly.GetName().Name + ".exe";
+			ver = typeof(Program).Assembly.GetName().Version.ToString();
+		}
+		#endregion
+	}
 }

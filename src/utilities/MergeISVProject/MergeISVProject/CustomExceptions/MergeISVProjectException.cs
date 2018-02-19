@@ -27,23 +27,41 @@ using MergeISVProject.Interfaces;
 
 namespace MergeISVProject.CustomExceptions
 {
-    class MergeISVProjectException : Exception
+	/// <summary>
+	/// General Application Exception Class
+	/// </summary>
+	class MergeISVProjectException : Exception
     {
 		#region Constructors
 
+		/// <summary>
+		/// Default constructor
+		/// </summary>
 		public MergeISVProjectException()
         {
         }
 
-        public MergeISVProjectException(ILogger logger, string message)
+		/// <summary>
+		/// Constructor accepting multiple arguments
+		/// </summary>
+		/// <param name="logger">An instance of the Logger object</param>
+		/// <param name="message">The exception message to log</param>
+		public MergeISVProjectException(ILogger logger, string message)
             : base(message)
         {
 			logger.LogError(message);
         }
 
+		/// <summary>
+		/// Constructor accepting multiple arguments including an inner exception
+		/// </summary>
+		/// <param name="logger">An instance of the Logger object</param>
+		/// <param name="message">The exception message to log</param>
+		/// <param name="inner">The inner exeption object</param>
 		public MergeISVProjectException(ILogger logger, string message, Exception inner)
             : base(message, inner)
         {
+			logger.LogError($"[{Messages.Msg_InnerException}] : {inner.Message}");
 			logger.LogError(message);
 		}
 
