@@ -83,22 +83,21 @@ namespace MergeISVProject
 			try
 			{
 				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
-				//methodName = Utilities.GetCurrentMethod();
 				_Logger.LogMethodHeader(methodName);
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
 
 				var files = GetListOfUnminifiedJavascriptFiles(folder);
+				var count = files.Count();
 				_Logger.Log(string.Format(Messages.Msg_FolderEquals, folder));
-				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, files.Count()));
+				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, count));
 
-				if (files.Count() > 0)
+				if (count == 0) return;
+
+				foreach (var file in files)
 				{
-					foreach (var file in files)
-					{
-						File.Delete(file);
-						_Logger.Log(string.Format(Messages.Msg_DeleteFile, new FileInfo(file).Name));
-					}
+					File.Delete(file);
+					_Logger.Log(string.Format(Messages.Msg_DeleteFile, new FileInfo(file).Name));
 				}
 			}
 			catch (ArgumentNullException ex)
@@ -180,19 +179,17 @@ namespace MergeISVProject
 			try
 			{
 				methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
-				//methodName = Utilities.GetCurrentMethod();
 				_Logger.LogMethodHeader(methodName);
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
 
 				var minifiedJavascriptFiles = GetListOfMinifiedJavascriptFiles(folder);
-				int fileCount = minifiedJavascriptFiles.Count();
+				var count = minifiedJavascriptFiles.Count();
 
 				_Logger.Log(string.Format(Messages.Msg_FolderEquals, folder));
-				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, fileCount));
+				_Logger.Log(string.Format(Messages.Msg_FilesDotCount, count));
 
-				if (fileCount == 0)
-					return;
+				if (count == 0) return;
 
 				foreach (var file in minifiedJavascriptFiles)
 				{
