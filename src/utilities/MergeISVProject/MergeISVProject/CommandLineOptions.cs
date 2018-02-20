@@ -45,7 +45,7 @@ namespace MergeISVProject
 
 		private const string SINGLE_SPACE = @" ";
 		private const char SINGLE_SPACE_CHAR = ' ';
-	    private const int EXPECTED_VENDORID_LENGTH = 2;
+	    private const int EXPECTED_MODULEID_LENGTH = 2;
 		#endregion
 
 		#region Private Variables and Properties
@@ -60,20 +60,20 @@ namespace MergeISVProject
 		/// This will contain a cleaned up argument list
 		/// </summary>
 		private string[] cleanArgList { get; set; }
-        #endregion
+		#endregion
 
-        #region Public Properties
+		#region Public Properties
 
 		/// <summary>
 		/// This will contain the cleaned-up argument list
 		/// </summary>
-		public string[] Arguments { get { return cleanArgList; } }
+		public string[] Arguments => cleanArgList;
 
 		/// <summary>
 		/// This will contain the prefix being used when specifying
 		/// command-line arguments.
 		/// </summary>
-        public string OptionPrefix { get; set; }
+		public string OptionPrefix { get; set; }
 
 		/// <summary>
 		/// This will contain the name of the application
@@ -103,7 +103,7 @@ namespace MergeISVProject
 		/// It is based on the first two characters of the 
 		/// MenuFilename specified on the command-line.
 		/// </summary>
-		public string ModuleId => MenuFilename.OptionValue.Substring(0, EXPECTED_VENDORID_LENGTH);
+		public string ModuleId => MenuFilename.OptionValue.Substring(0, EXPECTED_MODULEID_LENGTH);
 
 	    #endregion
 
