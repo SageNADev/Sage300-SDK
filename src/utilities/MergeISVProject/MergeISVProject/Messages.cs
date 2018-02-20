@@ -90,67 +90,69 @@ namespace MergeISVProject
 		}
 	#endregion
 
-	private static System.Resources.ResourceManager RM { get { return Resources.ResourceManager; }}
+	private static System.Resources.ResourceManager RM => Resources.ResourceManager;
 
 		#region Public Properties (Errors)
-		public static string Error_InvalidCommandLineParameters { get { return RM.GetString(IndexEnum.Error_InvalidCommandLineParameters.ToString()); } }
-		public static string Error_Sage300WebFolderMissing { get { return RM.GetString(IndexEnum.Error_Sage300WebFolderMissing.ToString()); } }
-		public static string Error_CouldNotCompileRazorViews { get { return RM.GetString(IndexEnum.Error_CouldNotCompileRazorViews.ToString()); } }
-		public static string Error_InvalidBuildProfile { get { return RM.GetString(IndexEnum.Error_InvalidBuildProfile.ToString()); } }
-		public static string Error_Sage300Missing { get { return RM.GetString(IndexEnum.Error_Sage300Missing.ToString()); } }
-		public static string Error_DeploymentFolderLockedOrInUse { get { return RM.GetString(IndexEnum.Error_DeploymentFolderLockedOrInUse.ToString()); } }
-		public static string Error_MinificationFailed { get { return RM.GetString(IndexEnum.Error_MinificationFailed.ToString()); } }
-		public static string Error_UnableToFindTheProgram { get { return RM.GetString(IndexEnum.Error_UnableToFindTheProgram.ToString()); } }
-		public static string Error_ErrorParsingOptionNoValueWasSet { get { return RM.GetString(IndexEnum.Error_ErrorParsingOptionNoValueWasSet.ToString()); } }
-		public static string Error_ErrorParsingOptionTheFolderDoesNotExist { get { return RM.GetString(IndexEnum.Error_ErrorParsingOptionTheFolderDoesNotExist.ToString()); } }
-		public static string Error_MethodCalledWithInvalidParameter { get { return RM.GetString(IndexEnum.Error_MethodCalledWithInvalidParameter.ToString()); } }
+		public static string Error_InvalidCommandLineParameters => RM.GetString(IndexEnum.Error_InvalidCommandLineParameters.ToString());
+		public static string Error_Sage300WebFolderMissing => RM.GetString(IndexEnum.Error_Sage300WebFolderMissing.ToString());
+		public static string Error_CouldNotCompileRazorViews => RM.GetString(IndexEnum.Error_CouldNotCompileRazorViews.ToString());
+		public static string Error_InvalidBuildProfile => RM.GetString(IndexEnum.Error_InvalidBuildProfile.ToString());
+		public static string Error_Sage300Missing => RM.GetString(IndexEnum.Error_Sage300Missing.ToString());
+		public static string Error_DeploymentFolderLockedOrInUse => RM.GetString(IndexEnum.Error_DeploymentFolderLockedOrInUse.ToString());
+		public static string Error_MinificationFailed => RM.GetString(IndexEnum.Error_MinificationFailed.ToString());
+		public static string Error_UnableToFindTheProgram => RM.GetString(IndexEnum.Error_UnableToFindTheProgram.ToString());
+		public static string Error_ErrorParsingOptionNoValueWasSet => RM.GetString(IndexEnum.Error_ErrorParsingOptionNoValueWasSet.ToString());
+		public static string Error_ErrorParsingOptionTheFolderDoesNotExist => RM.GetString(IndexEnum.Error_ErrorParsingOptionTheFolderDoesNotExist.ToString());
+		public static string Error_MethodCalledWithInvalidParameter => RM.GetString(IndexEnum.Error_MethodCalledWithInvalidParameter.ToString());
+
 		#endregion
 
 		#region Public Properties (Messages)
-		public static string Msg_LogFileLocation { get { return RM.GetString(IndexEnum.Msg_LogFileLocation.ToString()); } }
-		public static string Msg_LoggingStarted { get { return RM.GetString(IndexEnum.Msg_LoggingStarted.ToString()); } }
-		public static string Msg_PrerequisitesAreValid { get { return RM.GetString(IndexEnum.Msg_PrerequisitesAreValid.ToString()); } }
-		public static string Msg_ArgumentList { get { return RM.GetString(IndexEnum.Msg_ArgumentList.ToString()); } }
-		public static string Msg_ProgramUsageMessage { get { return RM.GetString(IndexEnum.Msg_ProgramUsageMessage.ToString()); } }
-		public static string Msg_FolderEquals { get { return RM.GetString(IndexEnum.Msg_FolderEquals.ToString()); } }
-		public static string Msg_FilesDotCount { get { return RM.GetString(IndexEnum.Msg_FilesDotCount.ToString()); } }
-		public static string Msg_DeleteFile { get { return RM.GetString(IndexEnum.Msg_DeleteFile.ToString()); } }
-		public static string Msg_Rename1To2 { get { return RM.GetString(IndexEnum.Msg_Rename1To2.ToString()); } }
-		public static string Msg_BeginningMinificationProcessOnDirectory { get { return RM.GetString(IndexEnum.Msg_BeginningMinificationProcessOnDirectory.ToString()); } }
-		public static string Msg_RunningCommand { get { return RM.GetString(IndexEnum.Msg_RunningCommand.ToString()); } }
-		public static string Msg_MinificationComplete { get { return RM.GetString(IndexEnum.Msg_MinificationComplete.ToString()); } }
-		public static string Msg_RenamingJavascriptFilesBackToUsableState { get { return RM.GetString(IndexEnum.Msg_RenamingJavascriptFilesBackToUsableState.ToString()); } }
-		public static string Msg_RenamingComplete { get { return RM.GetString(IndexEnum.Msg_RenamingComplete.ToString()); } }
-		public static string Msg_MinificationSuccessful { get { return RM.GetString(IndexEnum.Msg_MinificationSuccessful.ToString()); } }
-		public static string Msg_Begin { get { return RM.GetString(IndexEnum.Msg_Begin.ToString()); } }
-		public static string Msg_End { get { return RM.GetString(IndexEnum.Msg_End.ToString()); } }
-		public static string Msg_PreparingDeployFoldersAndFilesForStaging { get { return RM.GetString(IndexEnum.Msg_PreparingDeployFoldersAndFilesForStaging.ToString()); } }
-		public static string Msg_PathExists { get { return RM.GetString(IndexEnum.Msg_PathExists.ToString()); } }
-		public static string Msg_PathDeleted { get { return RM.GetString(IndexEnum.Msg_PathDeleted.ToString()); } }
-		public static string Msg_PathCreated { get { return RM.GetString(IndexEnum.Msg_PathCreated.ToString()); } }
-		public static string Msg_Simulation { get { return RM.GetString(IndexEnum.Msg_Simulation.ToString()); } }
-		public static string Msg_CopyingFile { get { return RM.GetString(IndexEnum.Msg_CopyingFile.ToString()); } }
-		public static string Msg_SourceFolder { get { return RM.GetString(IndexEnum.Msg_SourceFolder.ToString()); } }
-		public static string Msg_DestinationFolder { get { return RM.GetString(IndexEnum.Msg_DestinationFolder.ToString()); } }
-		public static string Msg_Only { get { return RM.GetString(IndexEnum.Msg_Only.ToString()); } }
-		public static string Msg_FilesHaveBeenDeployedToLocalSage300Directory { get { return RM.GetString(IndexEnum.Msg_FilesHaveBeenDeployedToLocalSage300Directory.ToString()); } }
-		public static string Msg_DeploymentToSage300InstallationDisabled { get { return RM.GetString(IndexEnum.Msg_DeploymentToSage300InstallationDisabled.ToString()); } }
-		public static string Msg_DoNotCopyAssetsToSage300installationDirectory { get { return RM.GetString(IndexEnum.Msg_DoNotCopyAssetsToSage300installationDirectory.ToString()); } }
-		public static string Msg_GenerateALogFileInTheCurrentWorkingFolder { get { return RM.GetString(IndexEnum.Msg_GenerateALogFileInTheCurrentWorkingFolder.ToString()); } }
-		public static string Msg_MicrosoftVisualStudioSolutionPath { get { return RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionPath.ToString()); } }
-		public static string Msg_MicrosoftVisualStudioSolutionWebProjectPath { get { return RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionWebProjectPath.ToString()); } }
-		public static string Msg_MinifyJavascriptFiles { get { return RM.GetString(IndexEnum.Msg_MinifyJavascriptFiles.ToString()); } }
-		public static string Msg_NetFrameworkPathContainingAspnetCompileDotExe { get { return RM.GetString(IndexEnum.Msg_NetFrameworkPathContainingAspnetCompileDotExe.ToString()); } }
-		public static string Msg_Sage300MenuDefinitionFileName { get { return RM.GetString(IndexEnum.Msg_Sage300MenuDefinitionFileName.ToString()); } }
-		public static string Msg_SimulateCopyingOfAssetsTo { get { return RM.GetString(IndexEnum.Msg_SimulateCopyingOfAssetsTo.ToString()); } }
-		public static string Msg_VisualStudioProjectBuildConfiguration { get { return RM.GetString(IndexEnum.Msg_VisualStudioProjectBuildConfiguration.ToString()); } }
-		public static string Msg_Application { get { return RM.GetString(IndexEnum.Msg_Application.ToString()); } }
-		public static string Msg_InnerException { get { return RM.GetString(IndexEnum.Msg_InnerException.ToString()); } }
-		public static string Msg_ApplicationRunComplete { get { return RM.GetString(IndexEnum.Msg_ApplicationRunComplete.ToString()); } }
-		public static string Msg_SimulatedDeploymentOnly { get { return RM.GetString(IndexEnum.Msg_SimulatedDeploymentOnly.ToString()); } }
-		public static string Msg_LiveDeployment { get { return RM.GetString(IndexEnum.Msg_LiveDeployment.ToString()); } }
-		public static string Msg_CheckingForRegistryKeys { get { return RM.GetString(IndexEnum.Msg_CheckingForRegistryKeys.ToString()); } }
-		public static string Msg_FilesFound { get { return RM.GetString(IndexEnum.Msg_FilesFound.ToString()); } }
+		public static string Msg_LogFileLocation => RM.GetString(IndexEnum.Msg_LogFileLocation.ToString());
+		public static string Msg_LoggingStarted => RM.GetString(IndexEnum.Msg_LoggingStarted.ToString());
+		public static string Msg_PrerequisitesAreValid => RM.GetString(IndexEnum.Msg_PrerequisitesAreValid.ToString());
+		public static string Msg_ArgumentList => RM.GetString(IndexEnum.Msg_ArgumentList.ToString());
+		public static string Msg_ProgramUsageMessage => RM.GetString(IndexEnum.Msg_ProgramUsageMessage.ToString());
+		public static string Msg_FolderEquals => RM.GetString(IndexEnum.Msg_FolderEquals.ToString());
+		public static string Msg_FilesDotCount => RM.GetString(IndexEnum.Msg_FilesDotCount.ToString());
+		public static string Msg_DeleteFile => RM.GetString(IndexEnum.Msg_DeleteFile.ToString());
+		public static string Msg_Rename1To2 => RM.GetString(IndexEnum.Msg_Rename1To2.ToString());
+		public static string Msg_BeginningMinificationProcessOnDirectory => RM.GetString(IndexEnum.Msg_BeginningMinificationProcessOnDirectory.ToString());
+		public static string Msg_RunningCommand => RM.GetString(IndexEnum.Msg_RunningCommand.ToString());
+		public static string Msg_MinificationComplete => RM.GetString(IndexEnum.Msg_MinificationComplete.ToString());
+		public static string Msg_RenamingJavascriptFilesBackToUsableState => RM.GetString(IndexEnum.Msg_RenamingJavascriptFilesBackToUsableState.ToString());
+		public static string Msg_RenamingComplete => RM.GetString(IndexEnum.Msg_RenamingComplete.ToString());
+		public static string Msg_MinificationSuccessful => RM.GetString(IndexEnum.Msg_MinificationSuccessful.ToString());
+		public static string Msg_Begin => RM.GetString(IndexEnum.Msg_Begin.ToString());
+		public static string Msg_End => RM.GetString(IndexEnum.Msg_End.ToString());
+		public static string Msg_PreparingDeployFoldersAndFilesForStaging => RM.GetString(IndexEnum.Msg_PreparingDeployFoldersAndFilesForStaging.ToString());
+		public static string Msg_PathExists => RM.GetString(IndexEnum.Msg_PathExists.ToString());
+		public static string Msg_PathDeleted => RM.GetString(IndexEnum.Msg_PathDeleted.ToString());
+		public static string Msg_PathCreated => RM.GetString(IndexEnum.Msg_PathCreated.ToString());
+		public static string Msg_Simulation => RM.GetString(IndexEnum.Msg_Simulation.ToString());
+		public static string Msg_CopyingFile => RM.GetString(IndexEnum.Msg_CopyingFile.ToString());
+		public static string Msg_SourceFolder => RM.GetString(IndexEnum.Msg_SourceFolder.ToString());
+		public static string Msg_DestinationFolder => RM.GetString(IndexEnum.Msg_DestinationFolder.ToString());
+		public static string Msg_Only => RM.GetString(IndexEnum.Msg_Only.ToString());
+		public static string Msg_FilesHaveBeenDeployedToLocalSage300Directory => RM.GetString(IndexEnum.Msg_FilesHaveBeenDeployedToLocalSage300Directory.ToString());
+		public static string Msg_DeploymentToSage300InstallationDisabled => RM.GetString(IndexEnum.Msg_DeploymentToSage300InstallationDisabled.ToString());
+		public static string Msg_DoNotCopyAssetsToSage300installationDirectory => RM.GetString(IndexEnum.Msg_DoNotCopyAssetsToSage300installationDirectory.ToString());
+		public static string Msg_GenerateALogFileInTheCurrentWorkingFolder => RM.GetString(IndexEnum.Msg_GenerateALogFileInTheCurrentWorkingFolder.ToString());
+		public static string Msg_MicrosoftVisualStudioSolutionPath => RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionPath.ToString());
+		public static string Msg_MicrosoftVisualStudioSolutionWebProjectPath => RM.GetString(IndexEnum.Msg_MicrosoftVisualStudioSolutionWebProjectPath.ToString());
+		public static string Msg_MinifyJavascriptFiles => RM.GetString(IndexEnum.Msg_MinifyJavascriptFiles.ToString());
+		public static string Msg_NetFrameworkPathContainingAspnetCompileDotExe => RM.GetString(IndexEnum.Msg_NetFrameworkPathContainingAspnetCompileDotExe.ToString());
+		public static string Msg_Sage300MenuDefinitionFileName => RM.GetString(IndexEnum.Msg_Sage300MenuDefinitionFileName.ToString());
+		public static string Msg_SimulateCopyingOfAssetsTo => RM.GetString(IndexEnum.Msg_SimulateCopyingOfAssetsTo.ToString());
+		public static string Msg_VisualStudioProjectBuildConfiguration => RM.GetString(IndexEnum.Msg_VisualStudioProjectBuildConfiguration.ToString());
+		public static string Msg_Application => RM.GetString(IndexEnum.Msg_Application.ToString());
+		public static string Msg_InnerException => RM.GetString(IndexEnum.Msg_InnerException.ToString());
+		public static string Msg_ApplicationRunComplete => RM.GetString(IndexEnum.Msg_ApplicationRunComplete.ToString());
+		public static string Msg_SimulatedDeploymentOnly => RM.GetString(IndexEnum.Msg_SimulatedDeploymentOnly.ToString());
+		public static string Msg_LiveDeployment => RM.GetString(IndexEnum.Msg_LiveDeployment.ToString());
+		public static string Msg_CheckingForRegistryKeys => RM.GetString(IndexEnum.Msg_CheckingForRegistryKeys.ToString());
+		public static string Msg_FilesFound => RM.GetString(IndexEnum.Msg_FilesFound.ToString());
+
 		#endregion
 	}
 }

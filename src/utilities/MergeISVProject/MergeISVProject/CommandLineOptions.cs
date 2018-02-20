@@ -45,6 +45,7 @@ namespace MergeISVProject
 
 		private const string SINGLE_SPACE = @" ";
 		private const char SINGLE_SPACE_CHAR = ' ';
+	    private const int EXPECTED_VENDORID_LENGTH = 2;
 		#endregion
 
 		#region Private Variables and Properties
@@ -102,11 +103,9 @@ namespace MergeISVProject
 		/// It is based on the first two characters of the 
 		/// MenuFilename specified on the command-line.
 		/// </summary>
-		public string ModuleId
-        {
-            get { return MenuFilename.OptionValue.Substring(0, 2); }
-        }
-		#endregion
+		public string ModuleId => MenuFilename.OptionValue.Substring(0, EXPECTED_VENDORID_LENGTH);
+
+	    #endregion
 
 		#region Public Properties that map to valid command-line options
 
@@ -224,9 +223,6 @@ namespace MergeISVProject
 			// Initialize the CommandLineOptions
 			#region Create CommandLineOptions
 
-
-			// TODO - Add strings to localization file
-
 			SolutionPath = new CommandLineOption<string>()
 			{
 				Name = "solutionpath",
@@ -235,9 +231,9 @@ namespace MergeISVProject
 				OptionValue = "",
                 ExampleValue = @"<path>"
             };
-            LoadString(SolutionPath, cleanArgList);
+			LoadOption(SolutionPath, cleanArgList);
 
-            WebProjectPath = new CommandLineOption<string>() 
+			WebProjectPath = new CommandLineOption<string>() 
             { 
                 Name = "webprojectpath", 
                 AliasList = new List<string>() {"p", "wpp", "projectpath"},
@@ -245,9 +241,9 @@ namespace MergeISVProject
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
-            LoadString(WebProjectPath, cleanArgList);
+	        LoadOption(WebProjectPath, cleanArgList);
 
-            MenuFilename = new CommandLineOption<string>() 
+			MenuFilename = new CommandLineOption<string>() 
             { 
                 Name = "menufilename",
                 AliasList = new List<string>() { "m", "menu", "menufile" },
@@ -255,9 +251,9 @@ namespace MergeISVProject
                 OptionValue = "",
                 ExampleValue = @"<name>"
             };
-            LoadString(MenuFilename, cleanArgList);
+			LoadOption(MenuFilename, cleanArgList);
 
-            BuildProfile = new CommandLineOption<string>() 
+			BuildProfile = new CommandLineOption<string>() 
             { 
                 Name = "buildprofile",
                 AliasList = new List<string>() { "b", "bp" },
@@ -265,9 +261,9 @@ namespace MergeISVProject
                 OptionValue = "Release",
                 ExampleValue = @"<name>"
             };
-            LoadString(BuildProfile, cleanArgList);
+	        LoadOption(BuildProfile, cleanArgList);
 
-            DotNetFrameworkPath = new CommandLineOption<string>() 
+			DotNetFrameworkPath = new CommandLineOption<string>() 
             { 
                 Name = "dotnetframeworkpath",
                 AliasList = new List<string>() { "f", "dotnet", "dotnetframework", "netframework", "framework" },
@@ -275,9 +271,9 @@ namespace MergeISVProject
                 OptionValue = "",
                 ExampleValue = @"<path>"
             };
-            LoadString(DotNetFrameworkPath, cleanArgList);
+	        LoadOption(DotNetFrameworkPath, cleanArgList);
 
-            Minify = new CommandLineOption<bool>() 
+			Minify = new CommandLineOption<bool>() 
             { 
                 Name = "minify",
                 AliasList = new List<string>() { "min" },
@@ -285,9 +281,9 @@ namespace MergeISVProject
                 OptionValue = false,
                 ExampleValue = @""
             };
-            LoadBoolean(Minify, cleanArgList);
+	        LoadOption(Minify, cleanArgList);
 
-            NoDeploy = new CommandLineOption<bool>() 
+			NoDeploy = new CommandLineOption<bool>() 
             { 
                 Name = "nodeploy",
                 AliasList = new List<string>() { "nd" },
@@ -295,9 +291,9 @@ namespace MergeISVProject
                 OptionValue = false,
                 ExampleValue = @""
             };
-            LoadBoolean(NoDeploy, cleanArgList);
+	        LoadOption(NoDeploy, cleanArgList);
 
-            TestDeploy = new CommandLineOption<bool>()
+			TestDeploy = new CommandLineOption<bool>()
             {
                 Name = "testdeploy",
                 AliasList = new List<string>() { "nd" },
@@ -305,9 +301,9 @@ namespace MergeISVProject
                 OptionValue = false,
                 ExampleValue = @""
             };
-            LoadBoolean(TestDeploy, cleanArgList);
+	        LoadOption(TestDeploy, cleanArgList);
 
-            Log = new CommandLineOption<bool>()
+			Log = new CommandLineOption<bool>()
             {
                 Name = "log",
                 AliasList = new List<string>() { "logging" },
@@ -315,11 +311,11 @@ namespace MergeISVProject
                 OptionValue = false,
                 ExampleValue = @""
             };
-            LoadBoolean(Log, cleanArgList);
+	        LoadOption(Log, cleanArgList);
 
-            #endregion
+			#endregion
 
-            this.UsageMessage = BuildUsageMessage();
+			this.UsageMessage = BuildUsageMessage();
         }
 		#endregion
 
@@ -366,129 +362,118 @@ namespace MergeISVProject
 			return argList.ToArray();
 		}
 
-		/// <summary>
-		/// Look through all of the command-line arguments to
-		/// determine if there is an entry applicable to
-		/// assignment to the option variable passed into the function.
-		/// This method handles string based command-line arguments
-		/// There is a corresponding method called LoadBoolean to handle 
-		/// boolean flag type arguments.
-		/// </summary>
-		/// <param name="option">The CommandLineOption object</param>
-		/// <param name="args">The cleaned-up command-line options</param>
-		private void LoadString(CommandLineOption<string> option, string[] args)
-		{
-			var theArg = string.Empty;
+	    /// <summary>
+	    /// Look through all of the command-line arguments to
+	    /// determine if there is an entry applicable to
+	    /// assignment to the option variable passed into the function.
+	    /// This method handles both string and boolean based 
+	    /// command-line arguments. 
+	    /// </summary>
+	    /// <param name="option">A dynamic type based on CommandLineOption object</param>
+	    /// <param name="args">The cleaned-up command-line options</param>
+		private void LoadOption(dynamic option, string[] args)
+	    {
+		    var theArg = string.Empty;
 
-			if (Array.Exists(args, s =>
-			{
-				theArg = s;
+		    if (Array.Exists(args, s =>
+		    {
+			    theArg = s;
 
-				// Split the prefix+flag and the actual value
-				var optionName = GetArgumentNameOnly(theArg.Replace(Environment.NewLine, String.Empty));
+			    // Split the prefix+flag and the actual value
+			    var optionName = GetArgumentNameOnly(theArg.Replace(Environment.NewLine, String.Empty));
 
-				// Check the regular name
-				if (optionName == option.Name)
-					return true;
+			    // Check the regular name
+			    if (optionName == option.Name)
+				    return true;
 
-				// Check any Alias'
-				if (option.AliasList.Contains(optionName))
-					return true;
+			    // Check any Alias'
+			    if (option.AliasList.Contains(optionName))
+				    return true;
 
-				return false;
-			}))
-			{
-				var valueFromArg = theArg.Split('=')[1];
-
-				var isRequired = IsPropertyMarkedAsRequired(option);
-				if (isRequired)
-				{
-					option.LoadError = valueFromArg.Length == 0 ? true : false;
-				}
-				else
-				{
-					option.LoadError = false;
-				}
-
-				if (option.LoadError)
-				{
-					var msg = string.Format(Messages.Error_ErrorParsingOptionNoValueWasSet, 
-										    new String(' ', 10), 
-											OptionPrefix + option.Name);
-					LoadErrors.Add(msg);
-				}
-
-
-				// Now, if this property is marked with the [IsExistingFolder] attribute,
-				// ensure that the value is an actual existing folder.
-				if (IsPropertyMarkedAsExistingFolder(option))
-				{
-					// Only do this if the value of the argument 
-					// has a length > 0. 
-					// No sense in checking for a directory of zero length.
-					// Zero length arguments were handled in the previous
-					// code block :)
-					if (valueFromArg.Length > 0)
-					{
-						var folder = valueFromArg.Trim();
-						if (!Directory.Exists(folder))
-						{
-							// Error: folder doesn't exist
-							option.LoadError = true;
-							var msg = string.Format(Messages.Error_ErrorParsingOptionTheFolderDoesNotExist, 
-												    new String(' ', 10), 
-													OptionPrefix + option.Name, 
-													folder);
-							LoadErrors.Add(msg);
-						}
-					}
-				}
-
-				option.OptionValue = valueFromArg;
+			    return false;
+		    }))
+		    {
+				// Process based on type
+			    if (option.GetType() == typeof(CommandLineOption<string>))
+			    {
+				    _ProcessString(option, theArg);
+			    }
+			    else if (option.GetType() == typeof(CommandLineOption<bool>))
+			    {
+					_ProcessBoolean(option, theArg);
+			    }
 			}
 		}
 
 		/// <summary>
-		/// Look through all of the command-line arguments to
-		/// determine if there is an entry applicable to
-		/// assignment to the option variable passed into the function.
-		/// This method handles boolean based command-line arguments
-		/// There is a corresponding method called LoadString to handle 
-		/// string type arguments.
+		/// This method will process a single string 
+		/// command-line argument.
 		/// </summary>
-		/// <param name="option">The CommandLineOption object</param>
-		/// <param name="args">The cleaned-up command-line options</param>
-		private void LoadBoolean(CommandLineOption<bool> option, string[] args)
+		/// <param name="option">The CommandLineOption object (string)</param>
+		/// <param name="theArg">The single command-line argument</param>
+		private void _ProcessString(CommandLineOption<string> option, string theArg)
 		{
-			var theArg = string.Empty;
-			if (Array.Exists(args, s =>
+			var valueFromArg = theArg.Split('=')[1];
+
+			var isRequired = IsPropertyMarkedAsRequired(option);
+			if (isRequired)
 			{
-				theArg = s;
-
-				// Split the prefix+flag and the actual value
-				var optionName = GetArgumentNameOnly(theArg.Replace(Environment.NewLine, String.Empty));
-
-				// Check the regular name
-				if (optionName == option.Name)
-					return true;
-
-				// Check any Alias'
-				if (option.AliasList.Contains(optionName))
-					return true;
-
-				return false;
-			}))
-			{
-				// Since this is a boolean flag we only care that it's defined
-				// It doesn't need to have any kind of value
-				option.OptionValue = true;
-				option.LoadError = false;
+				option.LoadError = valueFromArg.Length == 0 ? true : false;
 			}
 			else
 			{
-				//option.LoadError = option.Required;
-				option.LoadError = IsPropertyMarkedAsRequired(option);
+				option.LoadError = false;
 			}
+
+			if (option.LoadError)
+			{
+				var msg = string.Format(Messages.Error_ErrorParsingOptionNoValueWasSet, 
+										new String(' ', 10), 
+										OptionPrefix + option.Name);
+				LoadErrors.Add(msg);
+			}
+
+
+			// Now, if this property is marked with the [IsExistingFolder] attribute,
+			// ensure that the value is an actual existing folder.
+			if (IsPropertyMarkedAsExistingFolder(option))
+			{
+				// Only do this if the value of the argument 
+				// has a length > 0. 
+				// No sense in checking for a directory of zero length.
+				// Zero length arguments were handled in the previous
+				// code block :)
+				if (valueFromArg.Length > 0)
+				{
+					var folder = valueFromArg.Trim();
+					if (!Directory.Exists(folder))
+					{
+						// Error: folder doesn't exist
+						option.LoadError = true;
+						var msg = string.Format(Messages.Error_ErrorParsingOptionTheFolderDoesNotExist, 
+												new String(' ', 10), 
+												OptionPrefix + option.Name, 
+												folder);
+						LoadErrors.Add(msg);
+					}
+				}
+			}
+
+			option.OptionValue = valueFromArg;
+		}
+
+	    /// <summary>
+	    /// This method will process a single boolean
+	    /// command-line argument.
+	    /// </summary>
+	    /// <param name="option">The CommandLineOption object (boolean)</param>
+	    /// <param name="theArg">The single command-line argument</param>
+		private void _ProcessBoolean(CommandLineOption<bool> option, string theArg)
+		{
+			// Since this is a boolean flag we only care that it's defined
+			// It doesn't need to have any kind of value
+			option.OptionValue = true;
+			option.LoadError = false;
 		}
 
 		/// <summary>

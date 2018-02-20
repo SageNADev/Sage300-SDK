@@ -53,10 +53,12 @@ namespace MergeISVProject
 			/// Represents the root Sage300 installation folder
 			/// </summary>
 			public string Root { get; set; }
+			
 			/// <summary>
 			/// Represents the Sage300 Online Web folder
 			/// </summary>
 			public string Web { get; set; }
+			
 			/// <summary>
 			/// Represents the Sage300 Online Worker folder
 			/// </summary>
@@ -145,26 +147,32 @@ namespace MergeISVProject
 		/// source code
 		/// </summary>
 		public string RootSource { get; set; }
+		
 		/// <summary>
 		/// This represents the Deployment folder
 		/// </summary>
 		public string Deploy { get; set; }
+		
 		/// <summary>
 		/// Represents the Original file locations
 		/// </summary>
 		public StagingFolderBlock Originals { get; set; }
+		
 		/// <summary>
 		/// Represents the Staging folder file locations
 		/// </summary>
 		public StagingFolderBlock Staging { get; set; }
+		
 		/// <summary>
 		/// Represents the Compiled assets folder file locations
 		/// </summary>
 		public StagingFolderBlock Compiled { get; set; }
+		
 		/// <summary>
 		/// Represents the Final folder file locations
 		/// </summary>
 		public StagingFolderBlock Final { get; set; }
+		
 		/// <summary>
 		/// Represents the Sage 300 installation folder file locations
 		/// </summary>
@@ -174,7 +182,7 @@ namespace MergeISVProject
 		#region Constructor
 
 		/// <summary>
-		/// Constructor
+		/// The primary Constructor
 		/// </summary>
 		/// <param name="logger">The instance of the Logger object</param>
 		/// <param name="rootPathIn">the fully-qualified path to the root of the Web project</param>
@@ -268,13 +276,18 @@ namespace MergeISVProject
 
 		#region Private Methods
 
+		/// <summary>
+		/// Add a group of lines to the logging output
+		/// </summary>
+		/// <param name="blockObject">A dynamic type referring to a particular section</param>
+		/// <param name="name">The name of the section</param>
+		/// <param name="lines">The lines to add to the logging output</param>
 		private void AddGroupToLogOutput(dynamic blockObject, string name, List<string> lines)
 		{
 			lines.Add(string.Empty);
 			lines.Add($"{new string(' ', PADDING)}{name}");
 			lines.AddRange(blockObject.GenerateLogOutput(leftPadding: 2 * PADDING));
 		}
-
 
 		/// <summary>
 		/// Create the necessary output folders
