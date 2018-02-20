@@ -263,6 +263,10 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$Bootstrapper.xml">TUBootstrapper.xml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$MenuDetails.xml">TUMenuDetails.xml</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Antlr3.Runtime.dll">Antlr3.Runtime.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Newtonsoft.Json.dll">Newtonsoft.Json.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="WG.exe">WG.exe</ProjectItem>
       <Folder Name="Assets" TargetFolderName="Assets">
         <Folder Name="fonts" TargetFolderName="fonts">
 		  <ProjectItem ReplaceParameters="false" TargetFileName="FontAwesome.otf">FontAwesome.otf</ProjectItem>
