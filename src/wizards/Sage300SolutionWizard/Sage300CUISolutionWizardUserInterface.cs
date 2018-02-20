@@ -113,17 +113,20 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                                 "|$companynamespace$=" + _namespace +
                                 "|$sage300webfolder$=" + _sage300Webfolder;
 
-            foreach (var proj in projects)
-            {
-                var templateFilename = proj + ".vstemplate";
-                var sourceFilenameAndParameters = csTemplatePath + proj + @".zip\" + templateFilename + "|" + parameters;
-                if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
-                {
-                    var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
+	        //var parameters2 = $"$companyname$={_companyName}|$applicationid$={_applicationId}|$companynamespace$={_namespace}|$sage300webfolder$={_sage300Webfolder}";
 
-                    // Before the web project is created, the props file must be manually copied first since the web csproj file attempts
-                    // to import it to resolve ACCPAC references
-                    File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
+			foreach (var proj in projects)
+            {
+				var templateFilename = $"{proj}.vstemplate";
+	            var sourceFilenameAndParameters = $"{csTemplatePath}{proj}.zip\\{templateFilename}|{parameters}";
+				if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    //var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
+	                var destFolder = Path.Combine(_destinationFolder, $"{_namespace}.{_applicationId}.{proj}");
+
+					// Before the web project is created, the props file must be manually copied first since the web csproj file attempts
+					// to import it to resolve ACCPAC references
+					File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
                                             Properties.Resources.AccpacDotNetVersion);
 
                     sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + _applicationId + "." + proj, false);
@@ -229,7 +232,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 replacementsDictionary.Add("$applicationid$", _applicationId);
                 replacementsDictionary.Add("$companynamespace$", _namespace);
                 replacementsDictionary.Add("$sage300webfolder$", _sage300Webfolder);
-
             }
             catch
             {

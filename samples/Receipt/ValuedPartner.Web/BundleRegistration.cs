@@ -34,7 +34,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region Receipt
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerReceipt").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerReceipt").Include(
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptBehaviour.js",
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptKoExtn.js",
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptRepository.js",
