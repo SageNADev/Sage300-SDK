@@ -169,7 +169,7 @@ namespace MergeISVProject {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set the mode that the application will run in. (1 = Full Solution | 2 = Single Project).
+        ///   Looks up a localized string similar to Set the target application type. (0 = Full Solution | 1 = Single Project).
         /// </summary>
         internal static string Msg_ApplicationModeOption {
             get {

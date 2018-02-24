@@ -154,7 +154,7 @@
     <value>Application</value>
   </data>
   <data name="Msg_ApplicationModeOption" xml:space="preserve">
-    <value>Set the mode that the application will run in. (1 = Full Solution | 2 = Single Project)</value>
+    <value>Set the target application type. (0 = Full Solution | 1 = Single Project)</value>
   </data>
   <data name="Msg_ApplicationRunComplete" xml:space="preserve">
     <value>The application has completed.</value>
