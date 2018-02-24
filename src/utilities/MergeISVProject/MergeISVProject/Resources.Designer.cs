@@ -169,6 +169,15 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set the mode that the application will run in. (1 = Full Solution | 2 = Single Project).
+        /// </summary>
+        internal static string Msg_ApplicationModeOption {
+            get {
+                return ResourceManager.GetString("Msg_ApplicationModeOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The application has completed..
         /// </summary>
         internal static string Msg_ApplicationRunComplete {

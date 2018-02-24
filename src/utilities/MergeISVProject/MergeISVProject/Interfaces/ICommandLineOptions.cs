@@ -95,6 +95,12 @@ namespace MergeISVProject.Interfaces
 		/// </summary>
 		CommandLineOption<string> DotNetFrameworkPath { get; set; }
 
+		/// <summary>
+		/// This represents the mode that the application will
+		/// be run in.
+		/// </summary>
+		CommandLineOption<int> Mode { get; set; }
+
 		// Optional Command-Line Arguments
 
 		/// <summary>

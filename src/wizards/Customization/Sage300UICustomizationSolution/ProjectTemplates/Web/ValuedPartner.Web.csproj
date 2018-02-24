@@ -258,7 +258,6 @@
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
     <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js" />
-    <Content Include="MergeISVCustomProject.exe" />
     <Content Include="MergeISVProject.exe" />
     <!-- 20180220 - gvg - These four files need to be included as resources -->
     <Resource Include="Antlr3.Runtime.dll" />
@@ -562,8 +561,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <!--<PostBuildEvent>call "$(ProjectDir)MergeISVCustomProject.exe"  $(ProjectDir)  $(ProjectName)  $(ConfigurationName)</PostBuildEvent>-->
-    <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" --solutionpath="$(SolutionDir)"  --webprojectpath="$(ProjectDir)"  --menufilename="$applicationid$MenuDetails.xml" --buildprofile="$(ConfigurationName)" --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
+    <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" --mode=1 --solutionpath="$(SolutionDir)"  --webprojectpath="$(ProjectDir)"  --buildprofile="$(ConfigurationName)" --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --log</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
