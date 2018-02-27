@@ -103,7 +103,7 @@ namespace MergeISVProject
 		/// It is based on the first two characters of the 
 		/// MenuFilename specified on the command-line.
 		/// </summary>
-		public string ModuleId => MenuFilename.OptionValue.Substring(0, EXPECTED_MODULEID_LENGTH);
+	    public string ModuleId => !string.IsNullOrEmpty(MenuFilename.OptionValue) ? MenuFilename?.OptionValue.Substring(0, EXPECTED_MODULEID_LENGTH) : string.Empty;
 
 	    #endregion
 
@@ -154,6 +154,13 @@ namespace MergeISVProject
         [RequiredArgument]
         [IsExistingFolder]
         public CommandLineOption<string> DotNetFrameworkPath { get; set; }
+
+		/// <summary>
+		/// This represents the mode that the application will
+		/// be run in.
+		/// </summary>
+		[RequiredArgument]
+		public CommandLineOption<int> Mode { get; set; }
 
         // Optional Command-Line Arguments
 
@@ -272,6 +279,16 @@ namespace MergeISVProject
                 ExampleValue = @"<path>"
             };
 	        LoadOption(DotNetFrameworkPath, cleanArgList);
+
+	        Mode = new CommandLineOption<int>()
+	        {
+		        Name = "mode",
+		        AliasList = new List<string>() { "md" },
+		        Description = Messages.Msg_ApplicationModeOption,
+		        OptionValue = 0,
+		        ExampleValue = @"0"
+	        };
+	        LoadOption(Mode, cleanArgList);
 
 			Minify = new CommandLineOption<bool>() 
             { 
@@ -398,6 +415,10 @@ namespace MergeISVProject
 			    {
 				    _ProcessString(option, theArg);
 			    }
+			    else if (option.GetType() == typeof(CommandLineOption<int>))
+			    {
+				    _ProcessNumber(option, theArg);
+			    }
 			    else if (option.GetType() == typeof(CommandLineOption<bool>))
 			    {
 					_ProcessBoolean(option, theArg);
@@ -433,7 +454,6 @@ namespace MergeISVProject
 				LoadErrors.Add(msg);
 			}
 
-
 			// Now, if this property is marked with the [IsExistingFolder] attribute,
 			// ensure that the value is an actual existing folder.
 			if (IsPropertyMarkedAsExistingFolder(option))
@@ -463,11 +483,42 @@ namespace MergeISVProject
 		}
 
 	    /// <summary>
-	    /// This method will process a single boolean
+	    /// This method will process a single number (integer) 
 	    /// command-line argument.
 	    /// </summary>
-	    /// <param name="option">The CommandLineOption object (boolean)</param>
+	    /// <param name="option">The CommandLineOption object (int)</param>
 	    /// <param name="theArg">The single command-line argument</param>
+	    private void _ProcessNumber(CommandLineOption<int> option, string theArg)
+	    {
+		    var valueFromArg = theArg.Split('=')[1];
+
+		    var isRequired = IsPropertyMarkedAsRequired(option);
+		    if (isRequired)
+		    {
+			    option.LoadError = valueFromArg.Length == 0 ? true : false;
+		    }
+		    else
+		    {
+			    option.LoadError = false;
+		    }
+
+		    if (option.LoadError)
+		    {
+			    var msg = string.Format(Messages.Error_ErrorParsingOptionNoValueWasSet,
+				    new String(' ', 10),
+				    OptionPrefix + option.Name);
+			    LoadErrors.Add(msg);
+		    }
+
+		    option.OptionValue = Convert.ToInt32(valueFromArg);
+	    }
+
+		/// <summary>
+		/// This method will process a single boolean
+		/// command-line argument.
+		/// </summary>
+		/// <param name="option">The CommandLineOption object (boolean)</param>
+		/// <param name="theArg">The single command-line argument</param>
 		private void _ProcessBoolean(CommandLineOption<bool> option, string theArg)
 		{
 			// Since this is a boolean flag we only care that it's defined

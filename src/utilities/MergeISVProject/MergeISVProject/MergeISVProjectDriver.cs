@@ -42,6 +42,14 @@ namespace MergeISVProject
 		const bool OVERWRITE = true;
 		#endregion
 
+		#region Enumerations
+		private enum AppMode
+		{
+			FullSolution = 0,
+			SingleProject,
+		}
+		#endregion
+
 		#region Private Variables
 		private readonly string[] Languages = { "es", "fr", "zh-Hans", "zh-Hant" };
 		private readonly ICommandLineOptions _Options = null;
@@ -108,25 +116,33 @@ namespace MergeISVProject
 		/// Some assets are copied to the Final deployment folder instead, as noted
 		/// in their method name.
 		/// </summary>
-		private void StageFiles()
+		private void  StageFiles()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			var moduleId = _Options.ModuleId;
+			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
+			{
+				// Steps that involve just file copying
+				Stage_Bin();
+				Stage_BootstrapperToFinal();
+				Stage_MenuDetailsToFinal();
+				Stage_Areas();
 
-			// Steps that involve just file copying
-			Stage_Bin();
-			Stage_BootstrapperToFinal();	
-			Stage_MenuDetailsToFinal(); 
-			Stage_Areas();
+				// Steps that involve compilation and minification
+				CompileStagedViews();
+				MinifyScripts();
+				CopyCompiledAssetsToFinal();
+				RemoveNonVendorRelatedFilesFromFinalBin();
 
-			// Steps that involve compilation and minification
-			CompileStagedViews();
-			MinifyScripts();
-			CopyCompiledAssetsToFinal();
-			RemoveNonVendorRelatedFilesFromFinalBin();
-
-			Stage_ResourceSatelliteFilesToFinal();
+				Stage_ResourceSatelliteFilesToFinal();
+			}
+			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			{
+				Stage_Bin();
+				Stage_BootstrapperToFinal();
+				CopyStagedBinToFinalBin();
+				RemoveNonVendorRelatedFilesFromFinalBin();
+			}
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
@@ -170,6 +186,18 @@ namespace MergeISVProject
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
+
+		private void CopyStagedBinToFinalBin()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			var source = _FolderManager.Staging.Bin;
+			var dest = _FolderManager.Final.Bin;
+			FileSystem.CopyDirectory(source, dest);
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
 
 		/// <summary>
 		/// Remove non-essential files from the Final bin folder
@@ -257,13 +285,24 @@ namespace MergeISVProject
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			string[] inclusionPatterns = {
-				"System.*.dll",
-				"Sage.CA.SBS.ERP.*.dll",
-				"*.Web.Infrastructure.dll",
-				"*.Web.dll",
-				$"*.{_Options.ModuleId}.*.dll"
-			};
+			string[] inclusionPatterns = null;
+
+			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+			{
+				inclusionPatterns = new []{
+					"System.*.dll",
+					"Sage.CA.SBS.ERP.*.dll",
+					"*.Web.Infrastructure.dll",
+					"*.Web.dll",
+					$"*.{_Options.ModuleId}.*.dll"
+				};
+			}
+			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			{
+				inclusionPatterns = new[]{
+					"*.*.Web.dll",
+				};
+			}
 
 			CopyFilesBasedOnPatternList(_FolderManager.Originals.Bin, _FolderManager.Staging.Bin, inclusionPatterns);
 
@@ -314,11 +353,23 @@ namespace MergeISVProject
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			var bootstrapFileName = $"{_Options.ModuleId}bootstrapper.xml";
-			var sourceFile = Path.Combine(_FolderManager.RootSource, bootstrapFileName);
-			var destFile = Path.Combine(_FolderManager.Final.Root, bootstrapFileName);
-			File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
-
+			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+			{
+				var bootstrapFileName = $"{_Options.ModuleId}bootstrapper.xml";
+				var sourceFile = Path.Combine(_FolderManager.RootSource, bootstrapFileName);
+				var destFile = Path.Combine(_FolderManager.Final.Root, bootstrapFileName);
+				File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+			} 
+			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			{
+				var filePattern = $"*bootstrapper.xml";
+				var files = Directory.GetFiles(_FolderManager.RootSource, filePattern);
+				foreach (var sourceFile in files)
+				{
+					var destFile = Path.Combine(_FolderManager.Final.Root, new FileInfo(sourceFile).Name);
+					File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+				}
+			}
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
@@ -379,12 +430,20 @@ namespace MergeISVProject
 				throw new MergeISVProjectException(_Logger, Messages.Error_Sage300WebFolderMissing);
 			}
 
-			Deploy_Bootstrapper();
-			Deploy_MenuDetails();
-			Deploy_AreaScripts();
-			Deploy_CompiledViews();
-			Deploy_BinFolders();
-			Deploy_ResourceSatelliteFiles();
+			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+			{
+				Deploy_Bootstrapper();
+				Deploy_MenuDetails();
+				Deploy_AreaScripts();
+				Deploy_CompiledViews();
+				Deploy_BinFolders();
+				Deploy_ResourceSatelliteFiles();
+			}
+			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			{
+				Deploy_Bootstrapper();
+				Deploy_BinFolders();
+			}
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
@@ -421,8 +480,11 @@ namespace MergeISVProject
 				var dest = Path.Combine(_FolderManager.Live.Web, filename);
 				CopyFile(_Options.TestDeploy.OptionValue, src, dest, OVERWRITE);
 
-				dest = Path.Combine(_FolderManager.Live.Worker, filename);
-				CopyFile(_Options.TestDeploy.OptionValue, src, dest, OVERWRITE);
+				if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+				{
+					dest = Path.Combine(_FolderManager.Live.Worker, filename);
+					CopyFile(_Options.TestDeploy.OptionValue, src, dest, OVERWRITE);
+				}
 			}
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
@@ -524,23 +586,38 @@ namespace MergeISVProject
 			var pathLiveWebBin = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.BIN);
 			var pathLiveWorker = _FolderManager.Live.Worker;
 
-			string[] validWebFiles =
+			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
 			{
-				"*.compiled",
-				"App_Web_*.dll",
-				"*.Web.dll",
-				$"*.{_Options.ModuleId}.*.dll"
-			};
+				string[] validWebFiles =
+				{
+					"*.compiled",
+					"App_Web_*.dll",
+					"*.Web.dll",
+					$"*.{_Options.ModuleId}.*.dll"
+				};
 
-			foreach (var pattern in validWebFiles)
-			{
-				CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWebBin, OVERWRITE);
+				foreach (var pattern in validWebFiles)
+				{
+					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWebBin, OVERWRITE);
+				}
+
+				string[] validWorkerFiles = { $"*.{_Options.ModuleId}.*.dll" };
+				foreach (var pattern in validWorkerFiles)
+				{
+					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWorker, OVERWRITE, copyWebFile: false);
+				}
 			}
-
-			string[] validWorkerFiles = { $"*.{_Options.ModuleId}.*.dll" };
-			foreach (var pattern in validWorkerFiles)
+			else if (_Options.Mode.OptionValue == (int)AppMode.SingleProject)
 			{
-				CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWorker, OVERWRITE, copyWebFile: false);
+				string[] validWebFiles =
+				{
+					"*.*.Web.dll",
+				};
+
+				foreach (var pattern in validWebFiles)
+				{
+					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWebBin, OVERWRITE);
+				}
 			}
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());

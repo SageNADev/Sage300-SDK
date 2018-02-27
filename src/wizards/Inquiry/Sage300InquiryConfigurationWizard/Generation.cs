@@ -417,8 +417,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 // Get the EntityName constant's value
                 foreach (var field in type.GetFields())
                 {
-                    if (!field.Name.Equals(ProcessGeneration.PropertyEntityName) &&
-                        !field.Name.Equals(ProcessGeneration.PropertyViewName))
+                    if (!field.Name.Equals(ProcessGeneration.PropertyEntityName))
                     {
                         continue;
                     }
