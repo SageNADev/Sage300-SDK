@@ -260,7 +260,7 @@ namespace MergeISVProject
 
 				var pathToWG = currentExePath;
 
-				var workingFolder = _Folders.Compiled.AreasScripts;
+				var workingFolder = _Folders.Staging.AreasScripts;
 				var jsFolder = workingFolder;
 
 				_Logger.Log($"jsFolder = {jsFolder}");

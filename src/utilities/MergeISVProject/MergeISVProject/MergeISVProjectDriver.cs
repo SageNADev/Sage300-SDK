@@ -28,6 +28,7 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 #endregion
 
 namespace MergeISVProject
@@ -116,133 +117,40 @@ namespace MergeISVProject
 		/// Some assets are copied to the Final deployment folder instead, as noted
 		/// in their method name.
 		/// </summary>
-		private void  StageFiles()
+		private void StageFiles()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
+			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
 			{
-				// Steps that involve just file copying
-				Stage_Bin();
-				Stage_BootstrapperToFinal();
-				Stage_MenuDetailsToFinal();
-				Stage_Areas();
-
-				// Steps that involve compilation and minification
-				CompileStagedViews();
-				MinifyScripts();
-				CopyCompiledAssetsToFinal();
-				RemoveNonVendorRelatedFilesFromFinalBin();
-
-				Stage_ResourceSatelliteFilesToFinal();
+				_Stage_WebConfig();
+				_Stage_Areas();
+				_Stage_Bin();
+				_Stage_CompileViewsAndMoveResultsToStagingFolder();
+				_Stage_Bootstrapper();
+				_Stage_Menus();
+				_Stage_MinifyJavascripts();
+				_Stage_Images();
+				_Stage_ResourceSatelliteFiles();
+				_Stage_CopyAllToFinal();
 			}
 			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
 			{
-				Stage_Bin();
-				Stage_BootstrapperToFinal();
-				CopyStagedBinToFinalBin();
-				RemoveNonVendorRelatedFilesFromFinalBin();
+				_Stage_Bin();
+				_Stage_Bootstrapper();
+				//CopyStagedBinToFinalBin();
+				//RemoveNonVendorRelatedFilesFromFinalBin();
+				_Stage_CopyAllToFinal();
 			}
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
-
+		
 		/// <summary>
-		/// Minify the javascript files
+		/// Copy the Web.Config from the original Web folder
+		/// to the staging folder
 		/// </summary>
-		private void MinifyScripts()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			try
-			{
-				if (_Options.Minify.OptionValue)
-				{
-					var minifier = new SageISVMinifier(_Logger, _FolderManager, _Options.ModuleId);
-					minifier.MinifyJavascriptFilesAndCleanup();
-				}
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-			finally
-			{
-				_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-			}
-		}
-
-		/// <summary>
-		/// Copy compiled assets (Views and Minified scripts)
-		/// to the Final deployment folder
-		/// </summary>
-		private void CopyCompiledAssetsToFinal()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			var source = _FolderManager.Compiled.Root;
-			var dest = _FolderManager.Final.Root;
-			FileSystem.CopyDirectory(source, dest);
-
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-		private void CopyStagedBinToFinalBin()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			var source = _FolderManager.Staging.Bin;
-			var dest = _FolderManager.Final.Bin;
-			FileSystem.CopyDirectory(source, dest);
-
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-
-		/// <summary>
-		/// Remove non-essential files from the Final bin folder
-		/// These are Microsoft and Sage files that were only necessary
-		/// for the compilation step and are no longer necessary
-		/// They are already installed in the live Sage 300 installation.
-		/// </summary>
-		private void RemoveNonVendorRelatedFilesFromFinalBin()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			string[] patternFilesToRemove = {
-				"System.*.dll",
-				"Sage.CA.SBS.ERP.*.dll",
-				"*.Web.Infrastructure.dll"
-			};
-			DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Final.Bin, patternFilesToRemove);
-
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-		/// <summary>
-		/// Delete files from a particular folder based on 
-		/// a pattern list
-		/// </summary>
-		/// <param name="workingFolder">This the fully-qualified directory to delete the files from</param>
-		/// <param name="patterns">This is the list of file types to look for</param>
-		private void DeleteFilesFromFolderBasedOnPatternList(string workingFolder, string[] patterns)
-		{
-			foreach (var pattern in patterns)
-			{
-				var fileList = Directory.GetFiles(workingFolder, pattern);
-				foreach (var file in fileList)
-				{
-					FileSystem.DeleteFile(file);
-				}
-			}
-		}
-
-		/// <summary>
-		/// Copy the Areas folder (and all subfolders)
-		/// Source:      ...XX.Web/Areas/* 
-		/// Destination: ...XX.Web/__Deploy/Areas/
-		/// </summary>
-		private void Stage_Areas()
+		private void _Stage_WebConfig()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -254,6 +162,18 @@ namespace MergeISVProject
 			var sourceWebConfig = Path.Combine(source, webConfigName);
 			var destWebConfig = Path.Combine(destination, webConfigName);
 			File.Copy(sourceWebConfig, destWebConfig);
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Copy the Areas folder (and all subfolders)
+		/// Source:      ...XX.Web/Areas/* 
+		/// Destination: ...XX.Web/[DEPLOYMENT]/Areas/*
+		/// </summary>
+		private void _Stage_Areas()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			// Areas/XX/Views
 			var d1 = _FolderManager.Originals.AreasViews;
@@ -281,15 +201,15 @@ namespace MergeISVProject
 		/// and will end up being removed from the final bin folder prior
 		/// to live deployment (if enabled)
 		/// </summary>
-		private void Stage_Bin()
+		private void _Stage_Bin()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			string[] inclusionPatterns = null;
 
-			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
 			{
-				inclusionPatterns = new []{
+				inclusionPatterns = new[]{
 					"System.*.dll",
 					"Sage.CA.SBS.ERP.*.dll",
 					"*.Web.Infrastructure.dll",
@@ -297,7 +217,7 @@ namespace MergeISVProject
 					$"*.{_Options.ModuleId}.*.dll"
 				};
 			}
-			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			else if (_Options.Mode.OptionValue == (int)AppMode.SingleProject)
 			{
 				inclusionPatterns = new[]{
 					"*.*.Web.dll",
@@ -310,9 +230,10 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
-		/// Compile the Razor views
+		/// Compile the Razor views and put into the 'Compiled' folder.
+		/// Move the compiled files back to the 'Staging' folder
 		/// </summary>
-		private void CompileStagedViews()
+		private void _Stage_CompileViewsAndMoveResultsToStagingFolder()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -328,7 +249,208 @@ namespace MergeISVProject
 			p.Start();
 			p.WaitForExit();
 
+			// Now, move the results of the compilation back to the Staging folder
+
+			// Clear out the Staging/Bin folder
+			var fileList = Directory.GetFiles(_FolderManager.Staging.Bin, "*.*");
+			foreach (var file in fileList)
+			{
+				FileSystem.DeleteFile(file);
+			}
+
+			// Copy compile/bin back to staging/bin
+			FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
+
+			// Delete non-vendor related files from staging/bin folder
+			string[] patternFilesToRemove = {
+				"System.*.dll",
+				"Sage.CA.SBS.ERP.*.dll",
+				"*.Web.Infrastructure.dll"
+			};
+			DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
+
+
+			// Areas folder
+			// Clear out the Staging/Areas folder
+			Directory.Delete(_FolderManager.Staging.Areas, recursive: true);
+			Directory.CreateDirectory(_FolderManager.Staging.Areas);
+
+			// Copy compile/areas back to staging/areas
+			FileSystem.CopyDirectory(_FolderManager.Compiled.Areas, _FolderManager.Staging.Areas);
+
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Copy Module bootstrapper file from original folder to staging folder
+		/// </summary>
+		private void _Stage_Bootstrapper()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
+			{
+				var bootstrapFileName = $"{_Options.ModuleId}bootstrapper.xml";
+				var sourceFile = Path.Combine(_FolderManager.RootSource, bootstrapFileName);
+				var destFile = Path.Combine(_FolderManager.Staging.Root, bootstrapFileName);
+				File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+			}
+			else if (_Options.Mode.OptionValue == (int)AppMode.SingleProject)
+			{
+				var filePattern = $"*bootstrapper.xml";
+				var files = Directory.GetFiles(_FolderManager.RootSource, filePattern);
+				foreach (var sourceFile in files)
+				{
+					var destFile = Path.Combine(_FolderManager.Staging.Root, new FileInfo(sourceFile).Name);
+					File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+				}
+			}
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Copy XXMenuDetails.xml to staging folder
+		/// </summary>
+		private void _Stage_Menus()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			Directory.CreateDirectory(Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA));
+			Directory.CreateDirectory(Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL));
+
+			var sourceFile = Path.Combine(_FolderManager.RootSource, _Options.MenuFilename.OptionValue);
+			var destFile = Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL, _Options.MenuFilename.OptionValue);
+			File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Minify the javascript files
+		/// </summary>
+		private void _Stage_MinifyJavascripts()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			try
+			{
+				if (_Options.Minify.OptionValue)
+				{
+					var minifier = new SageISVMinifier(_Logger, _FolderManager, _Options.ModuleId);
+					minifier.MinifyJavascriptFilesAndCleanup();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new MergeISVProjectException(_Logger, e.Message);
+			}
+			finally
+			{
+				_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+			}
+		}
+
+		/// <summary>
+		/// Copy the menu background image and icon from the original source
+		/// to the Staging folder
+		/// </summary>
+		private void _Stage_Images()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			const string defaultIconFilename = @"menuIcon.png";
+
+			var menuName = _Options.MenuFilename.OptionValue;
+
+			// Get the company name, icon file name, and background image file name 
+			var pathMenuDir = Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
+			var menuFilePath = Path.Combine(pathMenuDir, menuName);
+			var menuFileContent = File.ReadAllText(menuFilePath);
+			var companyName = Regex.Match(menuFileContent, $"<IconName>(.*?)/{defaultIconFilename}</IconName>").Groups[1].Value;
+			var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
+			var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
+
+			var pathImageFrom = Path.Combine(_FolderManager.RootSource, @"Content\Images\nav");
+			var pathImageTo = Path.Combine(_FolderManager.Staging.Root, @"External\Content\Images\nav", companyName);
+
+			if (!Directory.Exists(pathImageTo))
+			{
+				Directory.CreateDirectory(pathImageTo);
+			}
+			string[] imageNames = { menuIconName, menuBackGroundImage };
+			foreach (var image in imageNames)
+			{
+				var pathImageFileFrom = Path.Combine(pathImageFrom, image);
+				if (File.Exists(pathImageFileFrom))
+				{
+					var pathImageFileTo = Path.Combine(pathImageTo, image);
+					File.Copy(pathImageFileFrom, pathImageFileTo, true);
+				}
+			}
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Staging - Copy resource satellite dlls to Staging/bin folder
+		/// </summary>
+		private void _Stage_ResourceSatelliteFiles()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			var pathBinFrom = _FolderManager.Originals.Bin;
+			var pathWebBinTo = _FolderManager.Staging.Bin;
+			var pattern = $"*.{_Options.ModuleId}.*.dll";
+
+			foreach (var language in Languages)
+			{
+				var fromFolder = Path.Combine(pathBinFrom, language);
+				var toWebFolder = Path.Combine(pathWebBinTo, language);
+
+				foreach (var file in Directory.GetFiles(fromFolder, pattern))
+				{
+					var fileName = Path.GetFileName(file);
+					if (!string.IsNullOrEmpty(fileName))
+					{
+						// Ensure that the destination directory exists
+						Directory.CreateDirectory(toWebFolder);
+						var destinationFile = Path.Combine(toWebFolder, fileName);
+						CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true);
+					}
+				}
+			}
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Copy all staging files to the final staging folder
+		/// </summary>
+		private void _Stage_CopyAllToFinal()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			FileSystem.CopyDirectory(_FolderManager.Staging.Root, _FolderManager.Final.Root);
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
+		/// Delete files from a particular folder based on 
+		/// a pattern list
+		/// </summary>
+		/// <param name="workingFolder">This the fully-qualified directory to delete the files from</param>
+		/// <param name="patterns">This is the list of file types to look for</param>
+		private void DeleteFilesFromFolderBasedOnPatternList(string workingFolder, string[] patterns)
+		{
+			foreach (var pattern in patterns)
+			{
+				var fileList = Directory.GetFiles(workingFolder, pattern);
+				foreach (var file in fileList)
+				{
+					FileSystem.DeleteFile(file);
+				}
+			}
 		}
 
 		/// <summary>
@@ -344,56 +466,6 @@ namespace MergeISVProject
 			{
 				CopyFiles(false, sourceDir, pattern, destDir, true);
 			}
-		}
-
-		/// <summary>
-		/// Copy Module bootstrapper file from original folder to final deployment folder
-		/// </summary>
-		private void Stage_BootstrapperToFinal()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
-			{
-				var bootstrapFileName = $"{_Options.ModuleId}bootstrapper.xml";
-				var sourceFile = Path.Combine(_FolderManager.RootSource, bootstrapFileName);
-				var destFile = Path.Combine(_FolderManager.Final.Root, bootstrapFileName);
-				File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
-			} 
-			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
-			{
-				var filePattern = $"*bootstrapper.xml";
-				var files = Directory.GetFiles(_FolderManager.RootSource, filePattern);
-				foreach (var sourceFile in files)
-				{
-					var destFile = Path.Combine(_FolderManager.Final.Root, new FileInfo(sourceFile).Name);
-					File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
-				}
-			}
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-		/// <summary>
-		/// Copy XXMenuDetails.xml to Final staging folder
-		/// </summary>
-		private void Stage_MenuDetailsToFinal()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			Directory.CreateDirectory(Path.Combine(_FolderManager.Final.Root, 
-												   FolderNameConstants.APPDATA));
-			Directory.CreateDirectory(Path.Combine(_FolderManager.Final.Root, 
-												   FolderNameConstants.APPDATA, 
-												   FolderNameConstants.MENUDETAIL));
-
-			var sourceFile = Path.Combine(_FolderManager.RootSource, _Options.MenuFilename.OptionValue);
-			var destFile = Path.Combine(_FolderManager.Final.Root, 
-										FolderNameConstants.APPDATA, 
-										FolderNameConstants.MENUDETAIL,
-										_Options.MenuFilename.OptionValue);
-			File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
-
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
 		/// <summary>
@@ -419,7 +491,6 @@ namespace MergeISVProject
 		/// <summary>
 		/// Copy bootStrapper, menuDetails, scripts, views and resource files to the Sage Online folder
 		/// </summary>
-		/// <returns>True if successful otherwise false</returns>
 		private void DeployFiles()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
@@ -430,19 +501,20 @@ namespace MergeISVProject
 				throw new MergeISVProjectException(_Logger, Messages.Error_Sage300WebFolderMissing);
 			}
 
-			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+			if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
 			{
-				Deploy_Bootstrapper();
-				Deploy_MenuDetails();
-				Deploy_AreaScripts();
-				Deploy_CompiledViews();
-				Deploy_BinFolders();
-				Deploy_ResourceSatelliteFiles();
+				_Deploy_Bootstrapper();
+				_Deploy_MenuDetails();
+				_Deploy_Images();
+				_Deploy_AreaScripts();
+				_Deploy_CompiledViews();
+				_Deploy_BinFolders();
+				_Deploy_ResourceSatelliteFiles();
 			}
-			else if (_Options.Mode.OptionValue == (int) AppMode.SingleProject)
+			else if (_Options.Mode.OptionValue == (int)AppMode.SingleProject)
 			{
-				Deploy_Bootstrapper();
-				Deploy_BinFolders();
+				_Deploy_Bootstrapper();
+				_Deploy_BinFolders();
 			}
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
@@ -464,7 +536,7 @@ namespace MergeISVProject
 		/// Deploy the Bootstrapper.xml files to the Sage 300 installation (Web and Worker)
 		/// (Only if TestDeploy is not enabled)
 		/// </summary>
-		private void Deploy_Bootstrapper()
+		private void _Deploy_Bootstrapper()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -473,14 +545,14 @@ namespace MergeISVProject
 			foreach (var src in bootFiles)
 			{
 				var filename = Path.GetFileName(src);
-				if (filename.IsNullOrWhiteSpace())
+				if (string.IsNullOrWhiteSpace(filename))
 				{
 					continue;
 				}
 				var dest = Path.Combine(_FolderManager.Live.Web, filename);
 				CopyFile(_Options.TestDeploy.OptionValue, src, dest, OVERWRITE);
 
-				if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
+				if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
 				{
 					dest = Path.Combine(_FolderManager.Live.Worker, filename);
 					CopyFile(_Options.TestDeploy.OptionValue, src, dest, OVERWRITE);
@@ -492,7 +564,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// Deploy the XXMenuDetails.xml files to the Sage 300 installation
 		/// </summary>
-		private void Deploy_MenuDetails()
+		private void _Deploy_MenuDetails()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -517,9 +589,59 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
+		/// Copy the menu background image and icon from 
+		/// to the Staging folder
+		/// </summary>
+		private void _Deploy_Images()
+		{
+			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+			var menuName = _Options.MenuFilename.OptionValue;
+
+			// Get the company name, icon file name, and background image file name 
+			//var menuFilePath = Path.Combine(pathWebProj, menuFileName);
+			var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
+			var menuFilePath = Path.Combine(pathMenuDir, menuName);
+			var menuFileContent = File.ReadAllText(menuFilePath);
+			var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
+			var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
+			var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
+
+			var pathImageFrom = Path.Combine(_FolderManager.Final.Root, @"External\Content\Images\nav", companyName);
+			var pathImageTo = Path.Combine(_FolderManager.Live.Web, @"External\Content\Images\nav", companyName);
+			_Logger.Log($"pathImageFrom = '{pathImageFrom}'");
+			_Logger.Log($"pathImageTo = '{pathImageTo}'");
+
+
+			if (!Directory.Exists(pathImageTo))
+			{
+				Directory.CreateDirectory(pathImageTo);
+				_Logger.Log($"Created directory '{pathImageTo}'");
+			}
+			string[] imageNames = { menuIconName, menuBackGroundImage };
+			foreach (var image in imageNames)
+			{
+				var pathImageFileFrom = Path.Combine(pathImageFrom, image);
+				if (File.Exists(pathImageFileFrom))
+				{
+					_Logger.Log($"File '{pathImageFileFrom}' exists.");
+
+					var pathImageFileTo = Path.Combine(pathImageTo, image);
+					File.Copy(pathImageFileFrom, pathImageFileTo, true);
+				}
+				else
+				{
+					_Logger.Log($"File '{pathImageFileFrom}' does not exist.");
+				}
+			}
+
+			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		}
+
+		/// <summary>
 		/// Deploy the Area scripts to the Sage 300 installation
 		/// </summary>
-		private void Deploy_AreaScripts()
+		private void _Deploy_AreaScripts()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -544,7 +666,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// Deploy the compiled view files to the Sage 300 installation
 		/// </summary>
-		private void Deploy_CompiledViews()
+		private void _Deploy_CompiledViews()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -573,7 +695,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// Deploy the Vendor's binary assets to the Sage 300 installtion (Web and Worker)
 		/// </summary>
-		private void Deploy_BinFolders()
+		private void _Deploy_BinFolders()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -626,7 +748,7 @@ namespace MergeISVProject
 		/// <summary>
 		/// Copy resource satellite dlls to web bin and worker folder
 		/// </summary>
-		private void Deploy_ResourceSatelliteFiles()
+		private void _Deploy_ResourceSatelliteFiles()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -661,37 +783,6 @@ namespace MergeISVProject
 				}
 			}
 
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
-
-		/// <summary>
-		/// Staging - Copy resource satellite dlls to /Deploy/Final/bin/[LANGUAGE] folders
-		/// </summary>
-		private void Stage_ResourceSatelliteFilesToFinal()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-			var pathBinFrom = _FolderManager.Originals.Bin;
-			var pathWebBinTo = _FolderManager.Final.Bin;
-			var pattern = $"*.{_Options.ModuleId}.*.dll";
-
-			foreach (var language in Languages)
-			{
-				var fromFolder = Path.Combine(pathBinFrom, language);
-				var toWebFolder = Path.Combine(pathWebBinTo, language);
-
-				foreach (var file in Directory.GetFiles(fromFolder, pattern))
-				{
-					var fileName = Path.GetFileName(file);
-					if (!string.IsNullOrEmpty(fileName))
-					{
-						// Ensure that the destination directory exists
-						Directory.CreateDirectory(toWebFolder);
-						var destinationFile = Path.Combine(toWebFolder, fileName);
-						CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: OVERWRITE);
-					}
-				}
-			}
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
@@ -788,15 +879,24 @@ namespace MergeISVProject
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			var runLiveDeployment = !_Options.NoDeploy.OptionValue;
+			var deployToLocalSage300Installation = !_Options.NoDeploy.OptionValue;
 
 			try
 			{
+				// Copy all necessary files from the project to the Staging folder
+				// Do any necessary aspnet compilation
+				// Do any necessary javascript minification (if enabled)
+				// Once the above has completed, copy all files to the final staging folder
 				StageFiles();
 
-				if (runLiveDeployment)
+				if (deployToLocalSage300Installation)
 				{
+					// This step simply copies the assets out of the 
+					// __READYTODEPLOY__ folder (whatever it's called)
+					// to the live Sage 300 installation. No other 
+					// processing occurs.
 					DeployFiles();
+
 					_Logger.Log(Messages.Msg_FilesHaveBeenDeployedToLocalSage300Directory);
 				}
 				else

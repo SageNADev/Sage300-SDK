@@ -103,7 +103,7 @@ namespace MergeISVProject
 		/// It is based on the first two characters of the 
 		/// MenuFilename specified on the command-line.
 		/// </summary>
-	    public string ModuleId => !string.IsNullOrEmpty(MenuFilename.OptionValue) ? MenuFilename?.OptionValue.Substring(0, EXPECTED_MODULEID_LENGTH) : string.Empty;
+		public string ModuleId => !string.IsNullOrEmpty(MenuFilename.OptionValue) ? MenuFilename?.OptionValue.Substring(0, EXPECTED_MODULEID_LENGTH) : string.Empty;
 
 	    #endregion
 
@@ -155,20 +155,20 @@ namespace MergeISVProject
         [IsExistingFolder]
         public CommandLineOption<string> DotNetFrameworkPath { get; set; }
 
-		/// <summary>
-		/// This represents the mode that the application will
-		/// be run in.
-		/// </summary>
-		[RequiredArgument]
-		public CommandLineOption<int> Mode { get; set; }
+	    /// <summary>
+	    /// This represents the mode that the application will
+	    /// be run in.
+	    /// </summary>
+	    [RequiredArgument]
+	    public CommandLineOption<int> Mode { get; set; }
 
-        // Optional Command-Line Arguments
+		// Optional Command-Line Arguments
 
 		/// <summary>
 		/// This will determine whether or not the minification process
 		/// will run.
 		/// </summary>
-        [OptionalArgument]
+		[OptionalArgument]
         public CommandLineOption<bool> Minify { get; set; }
 
 		/// <summary>
@@ -383,7 +383,7 @@ namespace MergeISVProject
 	    /// Look through all of the command-line arguments to
 	    /// determine if there is an entry applicable to
 	    /// assignment to the option variable passed into the function.
-	    /// This method handles both string and boolean based 
+	    /// This method handles string, integer and boolean based 
 	    /// command-line arguments. 
 	    /// </summary>
 	    /// <param name="option">A dynamic type based on CommandLineOption object</param>
@@ -410,7 +410,7 @@ namespace MergeISVProject
 			    return false;
 		    }))
 		    {
-				// Process based on type
+			    // Process based on type
 			    if (option.GetType() == typeof(CommandLineOption<string>))
 			    {
 				    _ProcessString(option, theArg);
@@ -421,9 +421,9 @@ namespace MergeISVProject
 			    }
 			    else if (option.GetType() == typeof(CommandLineOption<bool>))
 			    {
-					_ProcessBoolean(option, theArg);
+				    _ProcessBoolean(option, theArg);
 			    }
-			}
+		    }
 		}
 
 		/// <summary>
@@ -453,6 +453,7 @@ namespace MergeISVProject
 										OptionPrefix + option.Name);
 				LoadErrors.Add(msg);
 			}
+
 
 			// Now, if this property is marked with the [IsExistingFolder] attribute,
 			// ensure that the value is an actual existing folder.
