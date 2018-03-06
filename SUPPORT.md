@@ -15,9 +15,7 @@ Technical support on the Desktop SDK, Web SDK, or Web API requires a subscriptio
 to the Development Partner Program (DPP). 
 
 If you are not a member of the DPP, please submit an application 
-at http://partners.na.sage.com/devpartnerapplication. Questions on the application 
-process can be sent to **ISVNetwork@sage.com** or Sheri Thompson (**sheri.thompson@sage.com**), 
-the Partner Program Manager. 
+at http://partners.na.sage.com/devpartnerapplication. Questions on the application process can be sent to **ISVNetwork@sage.com**. 
 
 If you would like to renew your subscription, please contact 
 our Partner Service Representatives at **PSRNA@sage.com** and be sure to include 
