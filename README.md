@@ -33,7 +33,6 @@ contribute as well
   *	Everyone benefits (Sage too!)
   *	The SDK potentially gets uncompleted sections and areas to be completed
 
-
 ## Folders and Contents
 
 ### bin
