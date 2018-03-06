@@ -33,6 +33,7 @@ contribute as well
   *	Everyone benefits (Sage too!)
   *	The SDK potentially gets uncompleted sections and areas to be completed
 
+
 ## Folders and Contents
 
 ### bin
@@ -113,6 +114,10 @@ A read-only file for displaying the MIT Copyright notice
 ### README.md
 
 A read-only version for displaying SDK information (this page!)
+
+### SUPPORT.md
+
+A read-only file for displaying Development Partner Program Support information
 
 ### VERSION.md
 
