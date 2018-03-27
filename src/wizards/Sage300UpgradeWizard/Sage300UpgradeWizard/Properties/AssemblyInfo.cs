@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software, Inc.")]
 [assembly: AssemblyProduct("Sage300Upgrade")]
-[assembly: AssemblyCopyright("Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2018.2.*")]
+//[assembly: AssemblyFileVersion("1.0.0.0")]

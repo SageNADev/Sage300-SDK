@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /* Grid Columns Customization */
@@ -20,7 +20,7 @@ GridPreferences = {
     },
 
     //Should not call this method directly. This is for only for internal use
-    initializeInternal: function (gridName, userPreferenceKey, btnEdit, gridColumns) {
+    initializeInternal: function (gridName, userPreferenceKey, btnEdit, gridColumns, postApplyCallback) {
 
         var grid = $(gridName).data('kendoGrid');
 
@@ -55,6 +55,10 @@ GridPreferences = {
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"), data);
             GridPreferencesHelper.loadGridPreferences(grid, data.value);
             GridPreferences.hide();
+            // Invoke postApplyCallback if supplied
+            if (postApplyCallback !== undefined) {
+                postApplyCallback.call();
+            }
         });
 
         $(document).off('click.gridPref', "#btnGridPrefRestore");
@@ -268,8 +272,9 @@ GridPreferencesHelper = {
      * @param {} btnEdit - "Edit Columns" button
      * @param {} gridColumns - default columns of the grid
      * @param {} columnsToHold - number of columns to visible and not customizable for user preference
+     * @param {} postApplyCallback - callback event, if supplied, for post apply button click
      */
-    initialize: function (gridName, userPreferenceKey, btnEdit, gridConfigColumns, columnsToHold) {
+    initialize: function (gridName, userPreferenceKey, btnEdit, gridConfigColumns, columnsToHold, postApplyCallback) {
         var grid = $(gridName).data('kendoGrid');
         if (columnsToHold > 0) {
             for (var i = 0; i < gridConfigColumns.length; i++) {
@@ -281,7 +286,7 @@ GridPreferencesHelper = {
                 }
             }
         }
-        GridPreferences.initializeInternal(gridName, userPreferenceKey, btnEdit, gridConfigColumns);
+        GridPreferences.initializeInternal(gridName, userPreferenceKey, btnEdit, gridConfigColumns, postApplyCallback);
     },
     /**
      * Returns the GridColum object

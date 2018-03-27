@@ -1,7 +1,12 @@
-<#
-DESCRIPTION
-  Simple zip script.  Will overwrite destination zip files.
-#>
+# ---------------------------------------------------------------------------------------
+# File: pszip.ps1
+#
+# Purpose: Simple zip script.  Will overwrite destination zip files.
+#
+# Note:    This file is meant to be called from CreateTemplateZipFiles.bat
+#
+# ---------------------------------------------------------------------------------------
+
 Param 
 (
   [Parameter(Mandatory=$True,Position=0)]

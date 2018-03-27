@@ -1,0 +1,5 @@
+﻿The post build command has changed slightly from release 
+{0} to {1}.
+
+This step will update the post build command.
+

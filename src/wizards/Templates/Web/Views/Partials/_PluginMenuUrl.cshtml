@@ -41,7 +41,7 @@
 }
 
 @*Rendering Menu*@
-<li class="divider"></li>
+
 @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
 {
     if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
@@ -54,7 +54,7 @@
                 NavigationResx.SIR_Msg1,
                 NavigationResx.SIR_Msg2,
                 NavigationResx.SIR_Btn)))
-            <li class="divider"></li>
+                <li class="divider"></li>
         }
     }
     else
@@ -63,11 +63,29 @@
         firstItem = 0;
         @*2nd Level Menu: Start*@
         var level2ItemId = level2Item.Data.MenuId;
-        <li class="menu-item top-tier menu-sdk-@itemIndex @GetMenuClassName(level2ItemId)">
-            <div class="nav-icon"></div>
+        var iconName = level2Item.Data.IconName;
+        var bgImageName = level2Item.Data.MenuBackGoundImage;
+        var iconPath = Path.Combine("../../External/Content/Images/nav/", iconName);
+        var bgImagePath = Path.Combine("../../External/Content/Images/nav/", bgImageName);
+        var physicalIconPath = Server.MapPath(iconPath);
+        var physicalBgImagePath = Server.MapPath(bgImagePath);
+        if (!File.Exists(physicalIconPath))
+        {
+            iconPath = "../../External/Content/Images/nav/default_icon.png";
+        }
+        if (!File.Exists(physicalBgImagePath))
+        {
+            bgImagePath = "../../External/Content/Images/nav/default_bg_image.jpg";
+        }
+
+        <li class="menu-item top-tier menu-sdk">
+            <div class="nav-icon">
+                <img src=@iconPath width="16" height="16">
+            </div>
             <a>@level2Item.Data.MenuName</a>
             <ul class="std-menu">
-                    <li class="sub-heading">@level2Item.Data.MenuName</li>
+                <img src=@bgImagePath>
+                <li class="sub-heading">@level2Item.Data.MenuName</li>
                 @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
                 {
                     @*3rd Level Menu Items: Start*@
@@ -92,7 +110,6 @@
                         {
                             var colGroupingList = level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
                             @:<div class="sub-menu-wrap" style="background-image: none">
-
                             foreach (var currentColGrouping in colGroupingList)
                             {
                                 <div class="menu-section">

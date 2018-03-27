@@ -306,40 +306,66 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will require manual modifications..
+        ///   Looks up a localized string similar to This step will be done automatically..
         /// </summary>
-        internal static string ReleaseSpecificDescModifyLogin {
+        internal static string ReleaseSpecificDescUpdatePostBuildEvent {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdatePostBuildEvent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Context object that is passed into the Authentication Manager needs an
-        ///extra parameter in Sage 300 2018.1.
-        ///
-        ///A small modification will need to be made to the ASP.NET application file 
-        ///Global.asax.cs (found within the Namespace.Web project) for the project to
-        ///run after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this
-        ///modification and therefore this step will require manual modifications.
-        ///
-        ///Please refer to the &apos;Modify Login&apos; subsection in the Sage 300 
-        ///Upgrade Guid [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to This step will upgrade your source code files..
         /// </summary>
-        internal static string ReleaseSpecificModifyLogin {
+        internal static string ReleaseSpecificDescUpdateSourceCode {
             get {
-                return ResourceManager.GetString("ReleaseSpecificModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify Context object parameter.
+        ///   Looks up a localized string similar to Update the Web project Post Build Event.
         /// </summary>
-        internal static string ReleaseSpecificTitleModifyLogin {
+        internal static string ReleaseSpecificTitleUpdatePostBuildEvent {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdatePostBuildEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the source code files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateSourceCode {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The post build command has changed slightly from release 
+        ///{0} to {1}.
+        ///
+        ///This step will update the post build command.
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdatePostBuildEvent {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdatePostBuildEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Javascript bundling has changed slightly in this release.
+        ///
+        ///This step will update the following file:
+        ///
+        ///* Web\BundleRegistration.cs
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateSourceCode {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
             }
         }
         

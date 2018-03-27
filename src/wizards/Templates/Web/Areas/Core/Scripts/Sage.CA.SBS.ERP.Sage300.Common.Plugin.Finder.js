@@ -546,7 +546,8 @@
                 activate: sg.utls.kndoUI.onActivate,
                 //Open Kendo Window in center of the Viewport
                 open: function () {
-                    var windowHeight = $(window.top).scrollTop() - window.top.sg.utls.portalHeight;
+                    var portalHeight = (window.top.sg) ? window.top.sg.utls.portalHeight : 20;
+                    var windowHeight = $(window.top).scrollTop() - portalHeight;
                     var finderTopPos = (($(window.top).height() - kendoWindow.options.height) / 2) + windowHeight;
                     if (finderTopPos < 0) {
                         finderTopPos = 0;

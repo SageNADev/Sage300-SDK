@@ -196,6 +196,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // 
             // btnNext
             // 
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Location = new System.Drawing.Point(394, 10);
             this.btnNext.Name = "btnNext";
@@ -207,6 +208,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // 
             // btnBack
             // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(320, 10);
             this.btnBack.Name = "btnBack";
