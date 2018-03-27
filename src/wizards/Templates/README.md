@@ -1,25 +1,34 @@
 # Templates
 
 
-TODO: How to rebuild these folders from latest sources
+## How to rebuild these templates from the latest source code
+
+>Note: This step is only available for internal Sage colleagues. 3rd parties do not have access to the requisite source code.
+
+To rebuild these folders, do the following
+1. Get the most current source code from the GitHub repository **CNA2\Columbus-Web**.
+2. Ensure that you have an environment variable defined called **CNA2_SOURCE_ROOT**. Set this environment variable to the root location of the updated source code from step #1.  For example, if your source code is located in the following folder:
+
+    * C:\Projects\CNA2\Columbus-Web\
+
+    Set CNA2_SOURCE_ROOT=C:\Projects\CNA2
 
 
-> CopyWebRepoFiles.bat
+3. Once the above steps have been done, run the batch file **CopyWebRepoFiles.bat** to copy the necessary files and folders to this folder.
 
-* This is the file description
- 
->CreateTemplateZipFiles.bat
+To create the various Zip archives in this folder, open a command prompt, navigate to this folder and run the batch file **CreateTemplateZipFiles.bat**.
 
-* This is the file description
+The end result will be a list of Zip archives as follows:
 
+* BusinessRepository.zip
+* Interfaces.zip
+* Models.zip
+* Resources.zip
+* Sage300SolutionTemplate.zip
+* Services.zip
+* Web.zip
 
-
-
-
-
-
-
-
+---
 
 ## Powershell Version 4.0
 
@@ -34,7 +43,9 @@ Windows Powershell 4.0 can be installed by downloading Windows Management Framew
 > Windows Powershell 4.0 is only required by the Wizards for compiling the solution. This is not
 a requirement if the Wizard Package is only installed via the VSIX file.
 
-### How to Build the Sage 300 UI Wizard Package
+---
+
+## How to Build the Sage 300 UI Wizard Package
 
 The following steps illustrate how to build the package:
 
@@ -46,7 +57,9 @@ the artifact that will be used to the install the package.
 
 > **Building the package does not install the package**
 
-### How to Run the Sage 300 UI Wizard Package in Debug Mode
+---
+
+## How to Run the Sage 300 UI Wizard Package in Debug Mode
 
 The following steps illustrate how to run the package in debug mode from within Visual Studio:
 
@@ -67,7 +80,9 @@ based upon Version of Visual Studio and installation location
   *	/rootsuffix Exp
 * Run the solution to start debugging!
 
-### How to Build the Sage 300 UI Customization Wizard Executable (Standalone)
+---
+
+## How to Build the Sage 300 UI Customization Wizard Executable (Standalone)
 
 The following steps illustrate how to build the executable:
 
@@ -79,7 +94,9 @@ the artifact produced.
 
 > **The Newtonsoft.Json.dll must accompany the executable if it is copied elsewhere**
 
-### How to Run the Sage 300 UI Customization Wizard Executable in Debug Mode (Standalone)
+---
+
+## How to Run the Sage 300 UI Customization Wizard Executable in Debug Mode (Standalone)
 
 The following steps illustrate how to run the executable in debug mode from within Visual Studio:
 
@@ -98,7 +115,9 @@ the artifact that will be used to the install the package.
 
 > **Building the package does not install the package**
 
-### How to Build the Sage 300 Upgrade Wizard Package
+---
+
+## How to Build the Sage 300 Upgrade Wizard Package
 
 The following steps illustrate how to build the package:
 
@@ -109,3 +128,5 @@ solution configuration (Debug or Release). The **Sage300UpgradeWizardPackage.vsi
 the artifact that will be used to the install the package.
 
 > **Building the package does not install the package**
+
+---
