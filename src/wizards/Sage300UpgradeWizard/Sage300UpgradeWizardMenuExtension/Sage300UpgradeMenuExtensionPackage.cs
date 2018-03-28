@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -27,6 +28,7 @@ using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
+#endregion
 
 namespace Sage300UpgradeWizardMenuExtension
 {
@@ -62,8 +64,6 @@ namespace Sage300UpgradeWizardMenuExtension
         {
             Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
         }
-
-
 
         /////////////////////////////////////////////////////////////////////////////
         // Overridden Package Implementation
@@ -102,6 +102,5 @@ namespace Sage300UpgradeWizardMenuExtension
             var wizard = new Sage300Upgrade();
             wizard.Execute(dte.Solution);
         }
-
     }
 }

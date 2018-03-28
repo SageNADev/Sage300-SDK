@@ -17,6 +17,7 @@
 
         .wrapper {
             margin: 0 30px 0 30px;
+            clear: both;
 
             .Sage_logo {
                 top: 11px;
@@ -75,6 +76,13 @@
 
     .main-body .wrapper {
         margin: 0 30px 40px 30px;
+
+        &.site {
+            float: left;
+            margin-bottom: 0;
+            clear: both;
+            width: 100%;
+        }
     }
 
     .h1, h1, .h2, h2, .h3, h3 {
@@ -131,12 +139,26 @@
 /* Sage 300 Online -SEOS Chiclets page styles */
 
 .chiclet {
-    height: 100vh;
+    height: 100%;
     background-color: #ebedef;
+    position: relative;
 
     .header-global {
         -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.24);
         box-shadow: 0 2px 4px rgba(0,0,0,.24);
+
+        .wrapper .Sage_logo {
+            top: 7px;
+
+            .logo-text {
+                color: #fff;
+                margin-left: 8px;
+                font-size: 26px;
+                font-weight: 100;
+                line-height: 1.2;
+                vertical-align: bottom;
+            }
+        }
 
         .wrapper .top-nav li {
             width: initial;
@@ -144,11 +166,19 @@
             padding: 0 10px;
             min-width: 70px;
 
-            &:hover {
+            &:not(:first-child):hover,
+            &.active {
                 opacity: 1;
                 background: rgba(0,0,0,.21);
             }
 
+            &:first-child {
+                padding-right: 30px;
+                opacity: 1;
+                cursor: default;
+            }
+
+            .notification,
             .help,
             .sign-out,
             .sign-in {
@@ -175,13 +205,50 @@
             .sign-out {
                 background-position: center -307px;
                 right: 0;
-                background-size: 40px 400px;
             }
 
             .sign-in {
                 background-position: center -357px;
                 right: 0;
-                background-size: 40px 400px;
+            }
+
+            .notification{
+                background: none;
+                right: 148px;
+                top: 6px;
+                font-family: "Sage Armonye Icons";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                font-size: 2.4rem;
+                line-height: 1;
+                letter-spacing: 0;
+                -webkit-font-feature-settings: "liga";
+                -moz-font-feature-settings: "liga=1";
+                -moz-font-feature-settings: "liga";
+                -ms-font-feature-settings: "liga" 1;
+                font-feature-settings: "liga";
+                -webkit-font-variant-ligatures: discretionary-ligatures;
+                font-variant-ligatures: discretionary-ligatures;
+                -webkit-font-smoothing: antialiased;
+
+                &:before {
+                    content: "\22";
+                }
+
+                > span {
+                    padding: 4px 10px 0;
+                }
+            }
+
+            &.active {
+                display: inline-block;
+            }
+
+            &.inactive {
+                display: none;
             }
         }
     }
@@ -195,11 +262,12 @@
     }
 
     .page-header {
-        margin-top: 20px;
+        margin: 20px 0;
         padding-bottom: 0;
         border-bottom: none;
         color: #3c424f;
         font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        font-size: 20px;
 
         label {
             font-size: inherit;
@@ -219,10 +287,6 @@
 
     // Content Styles
 
-    .main-body {
-        padding-bottom: 100px;
-    }
-
     .browsers, 
     .applications {
         margin-left: -40px;
@@ -236,7 +300,7 @@
         vertical-align: top;
         padding: 15px 15px 0;
         width: 100%;
-        min-height: 135px;
+        min-height: 104px;
         background-color: #fff;
 
         p, 
@@ -245,9 +309,9 @@
 
             li {
                 display: inline-block;
-                width: 35px;
+                width: 34px;
                 height: 36px;
-                margin-right: 10px;
+                margin-bottom: -13px;
 
                 &.browser-chrome {
                     background-image: url("../../images/login/browser_chrome.png");
@@ -278,20 +342,24 @@
         border-radius: 1rem;
         position: relative;
         vertical-align: middle;
-        width: 120px;
-        height: 120px;
-        margin-right: 65px ;
-        margin-bottom: 50px;
+        width: 110px;
+        height: 110px;
+        margin-right: 27px;
+        margin-bottom: 40px;
         -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.15);
         box-shadow: 0 4px 4px rgba(0,0,0,.15);
+
+        &:last-child {
+            margin-right: 0;
+        }
 
         &:hover {
             cursor: pointer;
 
             &:before {
                 content: attr(data-line);
-                width: 120px;
-                height: 120px;
+                width: 110px;
+                height: 110px;
                 display: block;
                 background: #255bc7;
                 position: absolute;
@@ -337,7 +405,7 @@
         }
 
         .app-icon {
-            height: 120px;
+            height: 110px;
 
             .glyphicon {
                 color: #fff;
@@ -348,15 +416,102 @@
 
         .app-caption {
             position: absolute;
-            top: 135px;
+            top: 120px;
             text-align: center;
-            width: 120px;
+            width: 110px;
         }
+    }
+
+    #site {
+        width: 38%;
     }
 
     // Footer stypes
     section.footer {
         background-color: #ebedef;
         color: rgba(0,0,0,.54);
+        position: initial;
+        border-top: 1px solid @sage-gray;
+
+        &.affix-bottom {
+            position: fixed;
+        }
+    }
+
+    // Notification 
+
+    .notification-box {
+        display: none;
+        float: right;
+        width: 60%;
+        position: relative;
+        top: 13px;
+
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border: solid;
+            border-width: 0 13px 16px;
+            border-color: transparent transparent #fff;
+            position: absolute;
+            right: 170px;
+            top: -13px;
+            z-index: 1;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .alert {
+        background-color: #ffffff;
+        padding: 1.375rem 2.5rem 1.3125rem 5rem;
+        position: relative;
+        color: inherit;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: .5rem;
+        box-shadow: 0 4px 4px rgba(0,0,0,.05);
+
+        &:before {
+            content: "\61";
+            font-family: "Sage Armonye Icons";
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            font-size: 2rem;
+            text-transform: none;
+            color: #ffffff;
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            vertical-align: top;
+            background: #38c72a;
+            border-radius: .5rem 0 0 .5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4rem;
+            text-align: center;
+            line-height: 64px;
+        }
+
+        &.alert-info::before {
+            content: "\a1";
+            background: #00a4cf;
+        }
+
+        .icon.msgCtrl-close {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            background-position: -200px 0px;
+            top: 6px;
+        }
     }
 }

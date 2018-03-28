@@ -22,7 +22,8 @@
         txtThroughDate: '@Html.SageTextBoxFor(model => model.ThroughDate, new { @id = "txtThroughDate" })',
         txtRateType: '@Html.SageTextBoxFor(model => model.RateType, new { @id = "txtRateType", @class = "txt-upper", @maxlength = "2" })' + '@Html.SageButton("btnRateType", new { @id = "btnRateType", @class = "icon btn-search", @tabindex = "-1" })',
         txtRateDate: '@Html.SageTextBoxFor(model => model.RateDate, new { @id = "txtRateDate" })',
-        txtExchangeRate: '@Html.SageTextBoxFor(model => model.ExchangeRate, new { @id = "txtExchangeRate" })' + '@Html.SageButton("btnExchangeRate", new { @id = "btnExchangeRate", @class = "icon btn-search", @tabindex = "-1" })',
+        txtExchangeRate: '@Html.SageTextBoxFor(model => model.ExchangeRate, new { @id = "txtExchangeRate" })',
+        btnExchangeRate: '@Html.SageButton("btnExchangeRate", new { @id = "btnExchangeRate", @class = "icon btn-search", @tabindex = "-1" })',
         txtOptionalFieldsString: '@Html.SageTextBoxFor(model => model.OptionalFieldsString, new { @id = "txtOptionalFieldsString", @disabled = "disabled" })' + '@Html.SageButton("btnOptionalFieldsString", new { @id = "btnOptionalFieldsString", @class = "icon btn-search", @tabindex = "-1" })'
     }
 

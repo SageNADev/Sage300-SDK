@@ -1,43 +1,74 @@
 @echo off
-REM Sage300UIWizardPackage prebuild
-REM - get columbus-web artifacts if env variable EXTRACT_FROM_REPO set to 1
-REM - compress to zip the wizard package
 
-REM Usage example:
-REM  Prebuild.bat <ProjectTemplates path base directory>
+:: ---------------------------------------------------------------------------------------
+:: File: prebuild.bat (Part of Sage300UIWizardPackage)
+::
+:: Purpose: This batch file will do the following:
+::
+::          * Get Columbus-Web artifacts if the environment 
+::            variable EXTRAC_FROM_REPO is set to 1
+::          * Create all the various zip files based
+::            on the above artifacts.
+::
+:: Usage Example:
+::          Prebuild.bat <ProjectTemplates path base directory>
+::
+::          Step 1: Do setup tasks
+::                  * Setup constants and variables
+::                  * Create a temporary folder
+::
+::          Step 2: Copy assets to temporary folder
+::                  * \SDK\Settings\AccpacDotNetVersion.props
+::                  * \assets\__TemplateIcon.ico
+::                  * \assets\MyTemplate.vstemplate
+::                  * Web.zip
+::
+::          Step 3: Clear out the final destination folder
+::
+::          Step 4: Zip everything up into a file called UpgradeWebItems.zip
+::
+::          Step 5: Remove the temporary working folder
+::
+::          Step 6: Done!
+:: ---------------------------------------------------------------------------------------
 
 setlocal
+
+::
+:: Initialize some variables
+::
+set EXTRACT_FROM_REPO=1
+
 set projectTemplatesBaseDir=%~dp0
+
+:: If a command-line parameter passed in...
 if not [%1]==[] (
   set projectTemplatesBaseDir=%1
 )
-echo projectTemplatesBaseDir=%projectTemplatesBaseDir%
-
 set myDir=%~dp0
-
-set projectTemplatesPath=%projectTemplatesBaseDir%\ProjectTemplates
+set projectTemplatesPath=%projectTemplatesBaseDir%ProjectTemplates
 set srcProjectTemplatesDir=%myDir%\..\Templates
 set compressProjectTemplatesCmd=%srcProjectTemplatesDir%\CreateTemplateZipFiles.bat
 set getArtifactsCmd=%srcProjectTemplatesDir%\CopyWebRepoFiles.bat
 
+:: 
+:: Do the work!
+::
 call :GetArtifacts
 call :CompressProjectTemplates
 
-goto :EOF
+GOTO :EOF
 
-:CompressProjectTemplates
-  if not exist %projectTemplatesPath% (
-    mkdir %projectTemplatesPath%
-  )
-  pushd %projectTemplatesPath%
-  call %compressProjectTemplatesCmd% %projectTemplatesPath%
-  popd
-  goto :EOF
-  
+
+:: ---------------------------------------------------------------------------------------
+:: Function Definitions
+:: ---------------------------------------------------------------------------------------
+
 :GetArtifacts
   if [%EXTRACT_FROM_REPO%]==[1] (
     set repoDirName=Columbus-Web
     set repoDirRelPath=..\..\..\..
+    echo FOLDER=%myDir%%repoDirRelPath%\%repoDirName%
     if exist %myDir%%repoDirRelPath%\%repoDirName% (
       call %getArtifactsCmd%
     ) 
@@ -46,4 +77,13 @@ goto :EOF
     echo Set Env Variable [EXTRACT_FROM_REPO] to get artifacts. Requires source code access.
     echo ==================================================================================
   )
+  goto :EOF
+
+:CompressProjectTemplates
+  if not exist %projectTemplatesPath% (
+    mkdir %projectTemplatesPath%
+  )
+  pushd %projectTemplatesPath%
+  call %compressProjectTemplatesCmd% %projectTemplatesPath%
+  popd
   goto :EOF

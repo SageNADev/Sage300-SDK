@@ -26,6 +26,7 @@ $(document).ready(function () {
         $("#firstTimeLogin").show();
         $('#screenLayout').hide();
         $('#breadcrumb').hide();
+        $('#widgetLayout').show();
         $('html').addClass('home-page');
         $('#draggable').animate({
             top: 58

@@ -60,6 +60,7 @@
         var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
         var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
         var oAuthLocation = '@oAuthServer';
+        var menuUserPreferenceKey = '@ViewBag.menuUserPreferenceKey';
 
         @functions {
             public String GetSIRCPort(string path)
@@ -161,6 +162,7 @@
                         </li>
                         <li class="divider"></li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
+                        <li class="divider"></li>
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
                     <div id="menuPrefTogglerAlt" >

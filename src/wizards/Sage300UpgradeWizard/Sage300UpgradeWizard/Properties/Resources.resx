@@ -212,16 +212,25 @@
   <data name="UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
-  <data name="ReleaseSpecificDescModifyLogin" xml:space="preserve">
-    <value>This step will require manual modifications.</value>
+  <data name="ReleaseSpecificDescUpdatePostBuildEvent" xml:space="preserve">
+    <value>This step will be done automatically.</value>
   </data>
-  <data name="ReleaseSpecificTitleModifyLogin" xml:space="preserve">
-    <value>Modify Context object parameter</value>
+  <data name="ReleaseSpecificTitleUpdatePostBuildEvent" xml:space="preserve">
+    <value>Update the Web project Post Build Event</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateSourceCode" xml:space="preserve">
+    <value>Update the source code files</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
   </data>
-  <data name="ReleaseSpecificModifyLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificModifyLogin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ReleaseSpecificDescUpdateSourceCode" xml:space="preserve">
+    <value>This step will upgrade your source code files.</value>
+  </data>
+  <data name="ReleaseSpecificUpdatePostBuildEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdatePostBuildEvent.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificUpdateSourceCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateSourceCode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

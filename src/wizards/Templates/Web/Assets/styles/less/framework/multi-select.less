@@ -70,7 +70,6 @@
 
 .multiselect-group .k-multiselect{ 
   clear: left; 
-  float: left;
   border-color: #9a9b9c;
   border-radius: 0;
 
@@ -143,6 +142,10 @@
   }
 }
 
+.multiselect-group {
+  top: 9px;
+}
+
 .k-multiselect-wrap>ul>.k-button,
 .k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
 .k-state-focused,
@@ -188,4 +191,12 @@
   position: relative;
   top: 27px;
   margin-top: -27px;
+}
+
+//
+// Multi-select box alignment for Customize dialog box
+// --------------------------------------------------
+
+#dlgCustomize .multiselect-group .k-multiselect {
+  float: left;
 }
