@@ -1176,14 +1176,14 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             tabIncludedColumn.Visible = enable;
 
             var useBusinessView = _source.Options[Source.IsBusinessView];
+            var dataType = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
+
 
             // Do not enable column in view controls in certain scenarios
-            chkColumnInView.Enabled = enable && !useBusinessView;
+            chkColumnInView.Enabled = enable && !useBusinessView && (dataType.Equals(SourceDataType.Enumeration));
             EnableColumnInView(chkColumnInView.Checked && enable && !useBusinessView);
 
             // Do not enable filters grid in certain scenarios
-            var dataType = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
-
             EnableFilters(!chkColumnInView.Checked && enable && 
                 !useBusinessView && (dataType.Equals(SourceDataType.Enumeration)));
 
