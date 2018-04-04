@@ -52,11 +52,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Log file </summary>
         private readonly StringBuilder _log = new StringBuilder();
 
-        /// <summary> Source Folder </summary>
-        private readonly string _sourceFolder;
+		/// <summary> Source Folder </summary>
+		private readonly string _sourceFolder;
 
-        /// <summary> Destination Folder </summary>
-        private readonly string _destinationFolder;
+		/// <summary> Destination Folder </summary>
+		private readonly string _destinationFolder;
 
         /// <summary> Destination Web Folder </summary>
         private readonly string _destinationWebFolder;
@@ -82,39 +82,40 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private delegate void LogCallback(string text);
 
 
-        #endregion
+		#endregion
 
-        #region Constructor
+		#region Constructor
 
-        /// <summary> Upgrade Class </summary>
-        /// <param name="destination">Destination Default</param>
-        /// <param name="destinationWeb">Destination Web Default</param>
-        /// <param name="templatePath">Upgrade Web Items template Path </param>
-        public Upgrade(string destination, string destinationWeb, string templatePath)
-        {
-            InitializeComponent();
-            Localize();
-            InitWizardSteps();
-            InitEvents();
-            ProcessingSetup(true);
-            Processing("");
+		/// <summary> Upgrade Class </summary>
+		/// <param name="destination">Destination Default</param>
+		/// <param name="destinationWeb">Destination Web Default</param>
+		/// <param name="templatePath">Upgrade Web Items template Path </param>
+		public Upgrade(string destination, string destinationWeb, string templatePath)
+		{
+			InitializeComponent();
+			Localize();
+			InitWizardSteps();
+			InitEvents();
+			ProcessingSetup(true);
+			Processing("");
 
-            // Setup local vars
-            _destinationFolder = destination;
-            _destinationWeb = destinationWeb;
-            _sourceFolder = Path.GetDirectoryName(templatePath);
-            _destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
-        }
+			// Setup local vars
+			_destinationFolder = destination;
+			_destinationWeb = destinationWeb;
+			_sourceFolder = Path.GetDirectoryName(templatePath);
+			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
+		}
 
-        #endregion
 
-        #region Button Events
+		#endregion
 
-        /// <summary> Next/Upgrade toolbar button </summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Next wizard step or Upgrade if last step</remarks>
-        private void btnNext_Click(object sender, EventArgs e)
+		#region Button Events
+
+		/// <summary> Next/Upgrade toolbar button </summary>
+		/// <param name="sender">Sender object </param>
+		/// <param name="e">Event Args </param>
+		/// <remarks>Next wizard step or Upgrade if last step</remarks>
+		private void btnNext_Click(object sender, EventArgs e)
         {
             NextStep();
         }
@@ -378,7 +379,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             File.WriteAllText(logFilePath, _log.ToString());
         }
 
-
         /// <summary> Setup processing display </summary>
         /// <param name="enableToolbar">True to enable otherwise false</param>
         private void ProcessingSetup(bool enableToolbar)
@@ -494,6 +494,5 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         #endregion
-
     }
 }

@@ -32,19 +32,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
+			var payloadFileName = @"Items.zip";
 			var sln = (Solution2)solution;
-			var templatePath = sln.GetProjectItemTemplate("UpgradeWebItems.zip", "CSharp");
+			var templatePath = sln.GetProjectItemTemplate(payloadFileName, "CSharp");
 
 			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath))
-            {
-                form.ShowDialog();
-            }
-        }
+			{
+				form.ShowDialog();
+			}
+		}
 
-        /// <summary> Get Destination default </summary>
-        /// <param name="solution">Solution</param>
-        /// <returns>Destination or Empty String</returns>
-        public string DestinationDefault(Solution solution)
+		/// <summary> Get Destination default </summary>
+		/// <param name="solution">Solution</param>
+		/// <returns>Destination or Empty String</returns>
+		public string DestinationDefault(Solution solution)
         {
             var retVal = string.Empty;
 
