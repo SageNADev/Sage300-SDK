@@ -35,7 +35,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region TaxAuthorities
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerTaxAuthorities").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerTaxAuthorities").Include(
 				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesBehaviour.js",
 				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesKoExtn.js",
 				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesRepository.js",

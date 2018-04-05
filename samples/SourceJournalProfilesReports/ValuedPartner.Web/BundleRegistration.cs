@@ -34,7 +34,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region SourceJournalProfile
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerSourceJournalProfile").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfile").Include(
 				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileBehaviour.js",
 				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileKoExtn.js",
 				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileRepository.js",
@@ -42,7 +42,7 @@ namespace ValuedPartner.Web
 			#endregion
 
             #region SourceJournalProfileReport
-            bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerSourceJournalProfileReport").Include(
+            bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfileReport").Include(
                 "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportBehaviour.js",
                 "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportKoExtn.js",
                 "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportRepository.js",

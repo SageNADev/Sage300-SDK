@@ -34,7 +34,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region SegmentCodes
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerSegmentCodes").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerSegmentCodes").Include(
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesBehaviour.js",
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesKoExtn.js",
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesRepository.js",
