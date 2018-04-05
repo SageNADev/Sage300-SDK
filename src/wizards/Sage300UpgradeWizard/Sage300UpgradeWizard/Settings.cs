@@ -33,8 +33,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public List<WizardStep> WizardSteps { get; set; }
         /// <summary> Source Folder </summary>
         public string SourceFolder { get; set; }
-        /// <summary> Destination Web Folder </summary>
-        public string DestinationWebFolder { get; set; }
+		/// <summary> Destination Web Folder </summary>
+		public string DestinationWebFolder { get; set; }
         /// <summary> Destination Solution Folder </summary>
         public string DestinationSolutionFolder { get; set; }
         #endregion

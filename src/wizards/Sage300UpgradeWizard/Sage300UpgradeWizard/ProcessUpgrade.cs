@@ -123,34 +123,37 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
         }
 
-        #endregion
+		#endregion
 
-        #region Private methods
+		#region Private methods
 
-        /// <summary> Synchronization of web project files </summary>
-        /// <param name="title">Title of step being processed </param>
-        private void SyncWebFiles(string title)
-        {
-            // Log start of step
-            LaunchLogEventStart(title);
+		/// <summary> Synchronization of web project files </summary>
+		/// <param name="title">Title of step being processed </param>
+		private void SyncWebFiles(string title)
+		{
+			// Log start of step
+			LaunchLogEventStart(title);
 
-            // Setup the names and paths
-            var zipFile = Path.Combine(_settings.SourceFolder, WebZipSuffix);
-            var sourceWebFolder = Path.Combine(_settings.SourceFolder, WebFolderSuffix);
+			// Do the work :)
+			//DeleteFolder(sourceWebFolder);
+			//ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
+			DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder);
 
-            // Do the work :)
-            DeleteFolder(sourceWebFolder);
-            ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
-            DirectoryCopy(sourceWebFolder, _settings.DestinationWebFolder);
+			// Remove the files that are not actually part of the 'Web' bundle.
+			// This is done because of the way VS2017 doesn't seem to allow embedding of zip
+			// files within another zip file.
+			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"__TemplateIcon.ico"));
+			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"Items.vstemplate"));
 
-            // Log end of step
-            LaunchLogEventEnd(title);
-            LaunchLogEvent("");
-        }
+			// Log end of step
+			LaunchLogEventEnd(title);
+			LaunchLogEvent("");
+		}
 
-        /// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
-        /// <param name="title">Title of step being processed </param>
-        private void SyncAccpacLibraries(string title)
+		/// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
+		/// <param name="title">Title of step being processed </param>
+		private void SyncAccpacLibraries(string title)
         {
             // Log start of step
             LaunchLogEventStart(title);
@@ -342,7 +345,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>
         /// Inspect an XmlElement node to determine if it's
-        /// a PropertGroup without any attributes
+        /// a PropertyGroup without any attributes
         /// </summary>
         /// <param name="e">The XmlElement item to inspect</param>
         /// <returns>
@@ -428,9 +431,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 var filePath = Path.Combine(destinationDirectoryName, file.Name);
                 file.CopyTo(filePath, true);
 
-                // Log detail
-                LaunchLogEvent(string.Format("{0} {1} {2}", DateTime.Now, Resources.AddReplaceFile, filePath));
-            }
+				// Log detail
+				LaunchLogEvent($"{DateTime.Now} {Resources.AddReplaceFile} {filePath}");
+			}
 
             // For recursion
             foreach (var subdir in dirs)
