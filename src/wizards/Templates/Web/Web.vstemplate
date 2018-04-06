@@ -444,12 +444,6 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="arrow-right.png">arrow-right.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Ast_Arrows.png">Ast_Arrows.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bar_left.png">bar_left.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bar_middle.png">bar_middle.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bar_right.png">bar_right.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bg_cna.jpg">bg_cna.jpg</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bg_mega_menu.png">bg_mega_menu.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu.png">bg_menu.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="button-down-arrow-disabled.png">button-down-arrow-disabled.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="button-down-arrow.png">button-down-arrow.png</ProjectItem>
@@ -510,31 +504,52 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="menu3dLevel.png">menu3dLevel.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Msg_icons.png">Msg_icons.png</ProjectItem>
           <Folder Name="nav" TargetFolderName="nav">
-		    <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-1.jpg">bg-menu-1.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-10.jpg">bg-menu-10.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-11.jpg">bg-menu-11.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-12.jpg">bg-menu-12.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-13.jpg">bg-menu-12.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-2.jpg">bg-menu-2.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-3.jpg">bg-menu-3.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-4.jpg">bg-menu-4.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-5.jpg">bg-menu-5.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-6.jpg">bg-menu-6.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-7.jpg">bg-menu-7.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-8.jpg">bg-menu-8.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="bg-menu-9.jpg">bg-menu-9.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_1.png">icon_sdk_1.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_10.png">icon_sdk_10.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_2.png">icon_sdk_2.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_3.png">icon_sdk_3.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_4.png">icon_sdk_4.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_5.png">icon_sdk_5.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_6.png">icon_sdk_6.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_7.png">icon_sdk_7.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_8.png">icon_sdk_8.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sdk_9.png">icon_sdk_9.png</ProjectItem>
+            <Folder Name="AP" TargetFolderName="AP">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ap.jpg">bg_menu_ap.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ap.png">icon_ap.png</ProjectItem>
+            </Folder>
+            <Folder Name="AR" TargetFolderName="AR">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ar.jpg">bg_menu_ar.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ar.png">icon_ar.png</ProjectItem>
+            </Folder>
+            <Folder Name="AS" TargetFolderName="AS">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_as.jpg">bg_menu_as.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_as.png">icon_as.png</ProjectItem>
+            </Folder>
+            <Folder Name="BK" TargetFolderName="BK">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_bk.jpg">bg_menu_bk.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk.png">icon_bk.png</ProjectItem>
+            </Folder>
+            <Folder Name="CS" TargetFolderName="CS">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cs.jpg">bg_menu_cs.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs.png">icon_cs.png</ProjectItem>
+            </Folder>
+            <Folder Name="GL" TargetFolderName="GL">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_gl.jpg">bg_menu_gl.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_gl.png">icon_gl.png</ProjectItem>
+            </Folder>
+            <Folder Name="IC" TargetFolderName="IC">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ic.jpg">bg_menu_ic.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ic.png">icon_ic.png</ProjectItem>
+            </Folder>
+            <Folder Name="OE" TargetFolderName="OE">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_oe.jpg">bg_menu_oe.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe.png">icon_oe.png</ProjectItem>
+            </Folder>
+            <Folder Name="PO" TargetFolderName="PO">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_po.jpg">bg_menu_po.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_po.png">icon_po.png</ProjectItem>
+            </Folder>
+            <Folder Name="SIRC" TargetFolderName="SIRC">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_sirc.jpg">bg_menu_sirc.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc.png">icon_sirc.png</ProjectItem>
+            </Folder>
+            <Folder Name="TX" TargetFolderName="TX">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tx.jpg">bg_menu_tx.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx.png">icon_tx.png</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>       
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -550,28 +565,18 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="Req-Field.png">Req-Field.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="required.png">required.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="rq-field.png">rq-field.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.gif">sage_300_logo.gif</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo.png">sage_logo.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sage_One.png">sage_One.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search.png">search.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="search_icon.png">search_icon.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="searchsmall.png">searchsmall.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="spinner_bg.png">spinner_bg.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sprite_mega_menu.png">sprite_mega_menu.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sprite_menu.png">sprite_menu.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sprite1.png">sprite1.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="success.png">success.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="tab_bg_transparent.png">tab_bg_transparent.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="tick.png">tick.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="Time_icon.png">Time_icon.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_iconso.png">toolBar_iconso.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="tooltip.png">tooltip.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="top-bg.png">top-bg.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="top_nav_bg.png">top_nav_bg.png</ProjectItem>
@@ -899,7 +904,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb_DPPMenu.js">TaskDock-Menu-BreadCrumb_DPPMenu.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
         </Folder>
         <Folder Name="Report" TargetFolderName="Report">

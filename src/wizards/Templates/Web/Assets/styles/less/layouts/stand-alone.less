@@ -30,6 +30,20 @@
                 top: 0;
                 height: 47px;
 
+                .options-menu:hover .sub-menu {
+                    display: block;
+                    top: 47px;
+                    left: 0;
+
+                    li {
+                        display: block;
+                        color: #3c424f;
+                        height: auto;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+
                 li {
                     display: inline-block;
                     color: #fff;
@@ -165,6 +179,7 @@
             text-align: center;
             padding: 0 10px;
             min-width: 70px;
+            position: relative;
 
             &:not(:first-child):hover,
             &.active {
@@ -188,7 +203,7 @@
                 background: transparent url(../../images/nav/sprite_global_menu_rev@2x.png) no-repeat center -52px;
                 background-size: 40px 400px;
                 top: 0;
-                right: 74px;
+                right: 0;
                 position: absolute;
 
                 > span {
@@ -204,17 +219,14 @@
 
             .sign-out {
                 background-position: center -307px;
-                right: 0;
             }
 
             .sign-in {
                 background-position: center -357px;
-                right: 0;
             }
 
             .notification{
                 background: none;
-                right: 148px;
                 top: 6px;
                 font-family: "Sage Armonye Icons";
                 speak: none;
@@ -239,7 +251,44 @@
                 }
 
                 > span {
-                    padding: 4px 10px 0;
+                    padding: 4px 10px;
+                }
+            }
+
+            .tools{
+                background: none;
+                position: relative;
+                top: 7px;
+                font-family: "Sage Armonye Icons";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                font-size: 2.4rem;
+                line-height: 1;
+                letter-spacing: 0;
+                -webkit-font-feature-settings: "liga";
+                -moz-font-feature-settings: "liga=1";
+                -moz-font-feature-settings: "liga";
+                -ms-font-feature-settings: "liga" 1;
+                font-feature-settings: "liga";
+                -webkit-font-variant-ligatures: discretionary-ligatures;
+                font-variant-ligatures: discretionary-ligatures;
+                -webkit-font-smoothing: antialiased;
+
+                &:before {
+                    content: "\ea69";
+                }
+
+                > span {
+                    font: 400 10px/1 Arial;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    color: #fff;
+                    padding: 1px 10px;
                 }
             }
 
