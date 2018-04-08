@@ -28,7 +28,7 @@ td.grid_Cell_Number_Right_Align {
     > tr {
       > th,
       > td {
-        padding: @table-condensed-cell-padding @margin-base;
+        padding: @table-condensed-cell-padding @padding-small-horizontal;
         line-height: @line-height-base;
         vertical-align: top;
         min-height: 36px;
@@ -266,6 +266,10 @@ table {
 
     .k-numeric-wrap {
       height: 24px;
+
+      &.k-expand-padding {
+        padding-right: 10px;
+      }
     }
   }
 
@@ -292,7 +296,7 @@ table {
 
       &.with-finder.align-right,
       &.with-finder.numeric {
-        padding-right: 30px;
+        padding-right: 20px;
       }
     }
   }
@@ -385,7 +389,7 @@ table {
     }
 
     .rightbox {
-      width: 140px;
+      width: 160px;
     }
 
     .btn-fiscal-picker {
@@ -568,6 +572,15 @@ table {
           input[type=checkbox] {
             margin-bottom: -6px;
           }
+        }
+      }
+
+      &.k-header span.checkBox {
+        top: 3px;
+        margin-top: -5px;
+
+        input[type=checkbox] {
+          margin-bottom: -6px;
         }
       }
     }
@@ -834,7 +847,7 @@ table {
 
       .pencil-icon {
         position: absolute;
-        right: -15px;
+        right: -10px;
         display: inline-block;
         width: 35px;
         height: 24px;
@@ -888,9 +901,10 @@ table {
       background-color: transparent;
       background-position: 0 0;
       position: absolute;
-      right: 20px;
+      right: 10px;
       top: 5px;
       border: none;
+      padding-right: 0 !important;
 
       &:focus { 
         outline: none;  
@@ -906,7 +920,7 @@ table {
 
     .k-dropdown {  
       margin-top: -1px;
-      width: 100%;
+      width: calc(100% - 20px);
 
       .k-dropdown-wrap {
         height: 24px;  
@@ -928,6 +942,10 @@ table {
           font-size: 12px;
           background-color: @white;
         }
+      }
+
+      + .icon.edit-field {
+        margin-left: -2px;
       }
     }
 
@@ -1599,6 +1617,5 @@ div.spreadsheet {
    table tr td {
     white-space: pre-wrap;
     line-height: 1.5;
-    padding: 5px 20px;
    } 
 }
