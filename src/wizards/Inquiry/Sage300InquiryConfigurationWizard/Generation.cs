@@ -191,7 +191,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 
         /// <summary> Add Captions</summary>
         /// <param name="sourceColumn">Source Column</param>
-        private void AddCaptions(SourceColumn sourceColumn)
+        /// <param name="language">Language</param>
+        private void AddCaptions(SourceColumn sourceColumn, string language)
         {
             // Do not add if already present (SQl column name change scenario)
             if (sourceColumn.Captions.Count > 0)
@@ -199,11 +200,27 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 return;
             }
 
-            AddCaption(sourceColumn, ProcessGeneration.PropertyEnglish, sourceColumn.Description);
-            AddCaption(sourceColumn, ProcessGeneration.PropertyFrench);
-            AddCaption(sourceColumn, ProcessGeneration.PropertySpanish);
-            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseSimplified);
-            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseTraditional);
+            string[] accpacLanguages = new string[5]
+            {
+                ProcessGeneration.PropertyEnglish,
+                ProcessGeneration.PropertyFrench,
+                ProcessGeneration.PropertySpanish,
+                ProcessGeneration.PropertyChineseSimplified,
+                ProcessGeneration.PropertyChineseTraditional
+            };
+
+            foreach (var lang in accpacLanguages)
+            {
+                if (lang == language)
+                {
+                    AddCaption(sourceColumn, lang, sourceColumn.Description);
+                }
+
+                else
+                {
+                    AddCaption(sourceColumn, lang);
+                }
+            }      
         }
 
         /// <summary> Add Caption</summary>
@@ -212,7 +229,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <param name="text">Text if any</param>
         private void AddCaption(SourceColumn sourceColumn, string language, string text = "")
         {
-            sourceColumn.Captions.Add(language, new Caption()
+            sourceColumn.Captions.Add(language, new Caption
             {
                 Language = language,
                 Text = text
@@ -1601,7 +1618,6 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Session
-            var sessionValid = string.Empty;
             try
             {
                 // Init session to see if credentials are valid
@@ -1789,7 +1805,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 else
                 {
                     // Add it since it does not exist
-                    AddCaptions(sourceColumn);
+                    AddCaptions(sourceColumn, _source.Language);
                     _source.SourceColumns.Add(sourceColumn.Name, sourceColumn);
                     _sourceColumns.Add(sourceColumn);
                 }
@@ -1875,12 +1891,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.DataType.Replace(":", ""));
             }
 
-            // Ensure that at least ENG is not null in captions
-            if (captions.Any(x => x.Language.Equals(ProcessGeneration.PropertyEnglish) && string.IsNullOrEmpty(x.Text)))
+            // Ensure that at least the source language is not null in captions
+            if (captions.Any(x => x.Language.Equals(_source.Language) && string.IsNullOrEmpty(x.Text)))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.Caption);
             }
-
 
             // If drilldown...
             if (isDrilldown)
@@ -2100,7 +2115,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 _sourceColumns.Add(sourceColumn);
 
                 // Assign captions
-                AddCaptions(sourceColumn);
+                AddCaptions(sourceColumn, _source.Language);
             }
         }
 
