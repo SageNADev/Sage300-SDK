@@ -188,6 +188,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             session.CreateSession(null, PropertyAppId, PropertyProgramName, source.Properties[Source.Version],
                 source.Properties[Source.User], source.Properties[Source.Password], 
                 source.Properties[Source.Company], DateTime.UtcNow);
+            source.Language = session.UserLanguage;
 
             // Attempt to open a view
             var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);

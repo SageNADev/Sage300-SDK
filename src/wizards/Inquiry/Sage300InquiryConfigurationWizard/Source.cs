@@ -57,6 +57,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         #endregion
 
         #region Public Properties
+        /// <summary> Language is the language of the user tenant associated with the opened session</summary>
+        public string Language { get; set; }
         /// <summary> Properties is the collection of business view or SQL properties </summary>
         public Dictionary<string, string> Properties { get; set; }
         /// <summary> SourceColumns is the collection of source columns </summary>
