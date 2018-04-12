@@ -27,7 +27,7 @@ using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties;
 using System.IO;
 using Newtonsoft.Json.Linq;
-using System.Reflection;
+using ACCPAC.Advantage;
 
 namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 {
@@ -42,8 +42,29 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Information processed </summary>
         private readonly BindingList<Info> _gridInfo = new BindingList<Info>();
 
-        /// <summary> Properties in grid </summary>
-        private readonly BindingList<Property> _properties = new BindingList<Property>();
+        /// <summary> Source for config</summary>
+        private Source _source = new Source();
+
+        /// <summary> Source for viwe column</summary>
+        private Source _viewSource = new Source();
+
+        /// <summary> All Columns in grid for inclusion</summary>
+        private readonly BindingList<SourceColumn> _sourceColumns = new BindingList<SourceColumn>();
+
+        /// <summary> All SQL Columns in grid for inclusion</summary>
+        private readonly BindingList<SourceColumn> _sourceSqlColumns = new BindingList<SourceColumn>();
+
+        /// <summary> Captions in grid </summary>
+        private readonly BindingList<Caption> _captions = new BindingList<Caption>();
+
+        /// <summary> Parameters in grid </summary>
+        private readonly BindingList<Parameter> _parameters = new BindingList<Parameter>();
+
+        /// <summary> Filters in grid </summary>
+        private readonly BindingList<Filter> _filters = new BindingList<Filter>();
+
+        /// <summary> Included columns in grid </summary>
+        private readonly BindingList<SourceColumn> _includedColumns = new BindingList<SourceColumn>();
 
         /// <summary> Row index for grid </summary>
         private int _rowIndex = -1;
@@ -57,8 +78,23 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Settings for Processing </summary>
         private Settings _settings;
 
-        /// <summary> Models in Assembly </summary>
-        private readonly SortedDictionary<string, Model> _models = new SortedDictionary<string, Model>();
+        /// <summary> Mode Type for Edit or None </summary>
+        private ModeType _modeType = ModeType.None;
+
+        /// <summary> Clicked Column </summary>
+        private SourceColumn _clickedColumn;
+
+        /// <summary> Existing JSON </summary>
+        private JObject _json;
+
+        /// <summary> Drag and Drop - for Mouse Down </summary>
+        private Rectangle _dragBoxFromMouseDown;
+
+        /// <summary> Drag and Drop - selected row </summary>
+        private int _rowIndexFromMouseDown;
+
+        /// <summary> Drag and Drop - dropped row </summary>
+        private int _rowIndexOfItemUnderMouseToDrop;
 
         #endregion
 
@@ -67,11 +103,20 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Panel Name for pnlCreateEdit </summary>
         private const string PanelCreateEdit = "pnlCreateEdit";
 
-        /// <summary> Panel Name for pnlGenerated </summary>
-        private const string PanelGenerated = "pnlGenerated";
+        /// <summary> Panel Name for pnlSourceView </summary>
+        private const string PanelSourceView = "pnlSourceView";
+
+        /// <summary> Panel Name for pnlSourceSql </summary>
+        private const string PanelSourceSql = "pnlSourceSql";
+
+        /// <summary> Panel Name for pnlColumns </summary>
+        private const string PanelColumns = "pnlColumns";
 
         /// <summary> Panel Name for pnlGenerate </summary>
         private const string PanelGenerate = "pnlGenerate";
+
+        /// <summary> Panel Name for pnlGenerated </summary>
+        private const string PanelGenerated = "pnlGenerated";
 
         /// <summary> Splitter Distance </summary>
         private const int SplitterDistance = 415;
@@ -79,7 +124,17 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         #endregion
 
         #region Private Enums
+        /// <summary>
+        /// Enum for Mode Types
+        /// </summary>
+        private enum ModeType
+        {
+            /// <summary> No Mode </summary>
+            None = 0,
 
+            /// <summary> Edit Mode</summary>
+            Edit = 1
+        }
         #endregion
 
         #region Delegates
@@ -105,8 +160,12 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             Localize();
             InitWizardSteps();
             InitInfo();
-            InitAssemblySource();
-            InitGridProperties();
+            InitColumnGrid(grdSourceColumns, _sourceColumns);
+            InitSqlColumnGrid(grdSqlColumns, _sourceSqlColumns);
+            InitIncludedColumnsGrid(grdIncludedColumns, _includedColumns);
+            InitCaptionGrid(grdCaptions, _captions);
+            InitParameterGrid(grdParameters, _parameters);
+            InitFilterGrid(grdFilters, _filters);
             InitEvents();
             ProcessingSetup(true);
             Processing("");
@@ -116,70 +175,238 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 
         #region Private Routines
 
-        /// <summary> Assign grid </summary>
-        /// <param name="model">Model selected</param>
-        private void AssignGrid(Model model)
-        {
-            // Assign to the properties grid
-            foreach (var property in model.Properties.Values)
-            {
-                // Add to collection for data binding to grid
-                _properties.Add(property);
-            }
-
-        }
-
         /// <summary> Delete all rows</summary>
-        private void DeleteRows()
+        /// <param name="grid">Grid to delete from</param>
+        private void DeleteRows(DataGridView grid)
         {
             // Iterate grid
-            for (var i = grdProperties.Rows.Count - 1; i >= 0; i--)
+            for (var i = grid.Rows.Count - 1; i >= 0; i--)
             {
-                grdProperties.Rows.Remove(grdProperties.Rows[i]);
+                if (!grid.Rows[i].IsNewRow)
+                {
+                    grid.Rows.Remove(grid.Rows[i]);
+                }
             }
         }
 
-        /// <summary> Initialize property info and grid display </summary>
-        private void InitGridProperties()
+        /// <summary> Add Captions</summary>
+        /// <param name="sourceColumn">Source Column</param>
+        private void AddCaptions(SourceColumn sourceColumn)
         {
-            // Clear data
-            DeleteRows();
-
-            if (grdProperties.DataSource != null)
+            // Do not add if already present (SQl column name change scenario)
+            if (sourceColumn.Captions.Count > 0)
             {
                 return;
             }
 
-            // Assign binding to datasource (two binding)
-            grdProperties.DataSource = _properties;
-            grdProperties.ScrollBars = ScrollBars.Both;
-
-            // Assign widths and localized text
-            GenericInit(grdProperties, 0, 50, Resources.Index, true, true);
-            GenericInit(grdProperties, 1, 125, Resources.Property, true, true);
-            GenericInit(grdProperties, 2, 100, Resources.Field, true, true);
-            GenericInit(grdProperties, 3, 75, Resources.Type, true, true);
-            GenericInit(grdProperties, 4, 100, Resources.FullTypeName, false, true);
-            GenericInit(grdProperties, 5, 75, Resources.Include, true, false);
-            GenericInit(grdProperties, 6, 75, Resources.Filterable, true, false);
-            GenericInit(grdProperties, 7, 75, Resources.Drilldown, true, false);
-            GenericInit(grdProperties, 8, 50, Resources.Area, true, false);
-            GenericInit(grdProperties, 9, 125, Resources.Controller, true, false);
-            GenericInit(grdProperties, 10, 125, Resources.Action, true, false);
-            GenericInit(grdProperties, 11, 100, Resources.Enums, false, true);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyEnglish, sourceColumn.Description);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyFrench);
+            AddCaption(sourceColumn, ProcessGeneration.PropertySpanish);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseSimplified);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseTraditional);
         }
 
-        /// <summary> Add wizard steps </summary>
+        /// <summary> Add Caption</summary>
+        /// <param name="sourceColumn">Source Column</param>
+        /// <param name="language">Language for caption</param>
+        /// <param name="text">Text if any</param>
+        private void AddCaption(SourceColumn sourceColumn, string language, string text = "")
+        {
+            sourceColumn.Captions.Add(language, new Caption()
+            {
+                Language = language,
+                Text = text
+            });
+        }
+
+        /// <summary> Clear and Set Datasource </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void ClearAndSetDatasource<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data
+            DeleteRows(grid);
+
+            // Assign binding to datasource (two binding)
+            grid.DataSource = datasource;
+            grid.ScrollBars = ScrollBars.Vertical;
+        }
+
+        /// <summary> Initialize Columns grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitColumnGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 50, Resources.Index.Replace(":", ""), true, true);
+            GenericInit(grid, 1, 125, Resources.Column.Replace(":", ""), true, true);
+            GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, true);
+            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, true);
+            GenericInit(grid, 4, 75, Resources.Include, true, false);
+            GenericInit(grid, 5, 50, "", false, true);
+            GenericInit(grid, 6, 50, "", false, true);
+            GenericInit(grid, 7, 50, "", false, true);
+            GenericInit(grid, 8, 50, "", false, true);
+            GenericInit(grid, 9, 50, "", false, true);
+            GenericInit(grid, 10, 50, "", false, true);
+            GenericInit(grid, 11, 50, "", false, true);
+            GenericInit(grid, 12, 50, "", false, true);
+            GenericInit(grid, 13, 50, "", false, true);
+            GenericInit(grid, 14, 50, "", false, true);
+            GenericInit(grid, 15, 50, "", false, true);
+            GenericInit(grid, 16, 50, "", false, true);
+            GenericInit(grid, 17, 50, "", false, true);
+        }
+
+        /// <summary> Initialize SQL Columns grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitSqlColumnGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 50, "", false, true);
+            GenericInit(grid, 1, 200, Resources.Column.Replace(":", ""), true, false);
+            GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, false);
+
+            // Remove and re-add as combobox
+            grid.Columns.Remove("Type");
+            var column = new DataGridViewComboBoxColumn
+            {
+                DataPropertyName = "Type",
+                HeaderText = Resources.DataType.Replace(":", ""),
+                DropDownWidth = 100,
+                Width = 75,
+                FlatStyle = FlatStyle.Flat
+            };
+            // Add enums to drop down list
+            foreach (var sourceDataType in Enum.GetValues(typeof(SourceDataType)).Cast<SourceDataType>())
+            {
+                column.Items.Add(sourceDataType);
+            }
+
+            // Re-add column
+            grid.Columns.Insert(3, column);
+            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, false);
+
+            GenericInit(grid, 4, 75, "", false, true);
+            GenericInit(grid, 5, 50, "", false, true);
+            GenericInit(grid, 6, 50, "", false, true);
+            GenericInit(grid, 7, 50, "", false, true);
+            GenericInit(grid, 8, 50, "", false, true);
+            GenericInit(grid, 9, 50, "", false, true);
+            GenericInit(grid, 10, 50, "", false, true);
+            GenericInit(grid, 11, 50, "", false, true);
+            GenericInit(grid, 12, 50, "", false, true);
+            GenericInit(grid, 13, 50, "", false, true);
+            GenericInit(grid, 14, 50, "", false, true);
+            GenericInit(grid, 15, 50, "", false, true);
+            GenericInit(grid, 16, 50, "", false, true);
+            GenericInit(grid, 17, 50, "", false, true);
+        }
+
+        /// <summary> Initialize Included Columns grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitIncludedColumnsGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 50, Resources.Index.Replace(":", ""), true, true);
+            GenericInit(grid, 1, 125, Resources.Column.Replace(":", ""), true, true);
+            GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, true);
+            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, true);
+            GenericInit(grid, 4, 50, "", false, true);
+            GenericInit(grid, 5, 75, Resources.Display, true, true);
+            GenericInit(grid, 6, 50, "", false, true);
+            GenericInit(grid, 7, 50, "", false, true);
+            GenericInit(grid, 8, 75, Resources.DrilldownTab, true, true);
+            GenericInit(grid, 9, 50, "", false, true);
+            GenericInit(grid, 10, 50, "", false, true);
+            GenericInit(grid, 11, 50, "", false, true);
+            GenericInit(grid, 12, 50, "", false, true);
+            GenericInit(grid, 13, 75, Resources.FilterableColumn, true, true);
+            GenericInit(grid, 14, 50, "", false, true);
+            GenericInit(grid, 15, 50, "", false, true);
+            GenericInit(grid, 16, 50, "", false, true);
+            GenericInit(grid, 17, 50, "", false, true);
+        }
+
+        /// <summary> Initialize grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitCaptionGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 100, Resources.Language, true, true);
+            GenericInit(grid, 1, 200, Resources.Caption, true, false);
+        }
+
+        /// <summary> Initialize grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitParameterGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 100, Resources.Parameter, true, false);
+        }
+
+        /// <summary> Initialize grid and display </summary>
+        /// <param name="grid">Grid requiring initialization</param>
+        /// <param name="datasource">Datasource for grid</param>
+        private void InitFilterGrid<T>(DataGridView grid, BindingList<T> datasource)
+        {
+            // Clear data and set datasource
+            ClearAndSetDatasource(grid, datasource);
+
+            // Config and localize
+            GenericInit(grid, 0, 100, Resources.Text, true, false);
+            GenericInit(grid, 1, 100, Resources.Value, true, false);
+        }
+
+        /// <summary> Add wizard step </summary>
         /// <param name="title">Title for wizard step</param>
         /// <param name="description">Description for wizard step</param>
         /// <param name="panel">Panel for wizard step</param>
-        private void AddStep(string title, string description, Panel panel)
+        /// <param name="focusControl">Control to receive focus when step is displayed</param>
+        private void AddStep(string title, string description, Panel panel, Control focusControl)
         {
             _wizardSteps.Add(new WizardStep
             {
                 Title = title,
                 Description = description,
-                Panel = panel
+                Panel = panel,
+                FocusControl = focusControl
+            });
+        }
+
+        /// <summary> Add wizard step at index specified </summary>
+        /// <param name="title">Title for wizard step</param>
+        /// <param name="description">Description for wizard step</param>
+        /// <param name="panel">Panel for wizard step</param>
+        /// <param name="focusControl">Control to receive focus when step is displayed</param>
+        /// <param name="index">Add at index specified</param>
+        private void AddStep(string title, string description, Panel panel, Control focusControl, int index)
+        {
+            _wizardSteps.Insert(index, new WizardStep
+            {
+                Title = title,
+                Description = description,
+                Panel = panel,
+                FocusControl = focusControl
             });
         }
 
@@ -272,6 +499,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         {
             Text = Resources.InquiryConfiguration;
 
+            btnSave.Text = Resources.Save;
+            btnCancel.Text = Resources.Cancel;
             btnBack.Text = Resources.Back;
             btnNext.Text = Resources.Next;
 
@@ -282,18 +511,114 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             lblFolder.Text = Resources.Folder;
             tooltip.SetToolTip(lblFolder, Resources.FolderNameTip);
 
+            lblInquiryName.Text = Resources.InquiryName;
+            tooltip.SetToolTip(lblInquiryName, Resources.InquiryNameTip);
+
             lblInquiryDescription.Text = Resources.InquiryDescription;
             tooltip.SetToolTip(lblInquiryDescription, Resources.InquiryDescriptionTip);
-
-            lblAssembly.Text = Resources.Assembly;
-            tooltip.SetToolTip(lblAssembly, Resources.AssemblyTip);
-
-            lblModel.Text = Resources.Model;
-            tooltip.SetToolTip(lblModel, Resources.ModelTip);
 
             tooltip.SetToolTip(btnInquiryFinder, Resources.InquiryFinderTip);
             tooltip.SetToolTip(btnNew, Resources.InquiryNewTip);
             tooltip.SetToolTip(btnFolder, Resources.FolderFinderTip);
+
+            grpCredentials.Text = Resources.Credentials;
+
+            lblUser.Text = Resources.User;
+            tooltip.SetToolTip(lblUser, Resources.UserTip);
+
+            lblPassword.Text = Resources.Password;
+            tooltip.SetToolTip(lblPassword, Resources.PasswordTip);
+
+            lblVersion.Text = Resources.Version;
+            tooltip.SetToolTip(lblVersion, Resources.VersionTip);
+
+            lblCompany.Text = Resources.Company;
+            tooltip.SetToolTip(lblCompany, Resources.CompanyTip);
+
+            chkUseBusinessView.Text = Resources.UseBusinessView;
+            tooltip.SetToolTip(chkUseBusinessView, Resources.UserTip);
+
+            // Step Source - View
+            lblViewID.Text = Resources.ViewId;
+            tooltip.SetToolTip(lblViewID, Resources.ViewIdTip);
+
+            tooltip.SetToolTip(grdSourceColumns, Resources.ViewColumnsTip);
+
+            // Step Source - SQL
+            lblSqlSource.Text = Resources.SqlSource;
+            lblWrapperInstructions.Text = Resources.WrapperInstructions;
+            tabSqlStatement.Text = Resources.SqlStatement;
+            tabSqlStatement.ToolTipText = Resources.SqlStatementTabTip;
+
+            tabWrapper.Text = Resources.WrapperColsClauses;
+            tabWrapper.ToolTipText = Resources.WrapperTabTip;
+
+            tooltip.SetToolTip(txtSQL, Resources.SqlTip);
+
+            tooltip.SetToolTip(btnSqlHelp, Resources.SqlHelpTip);
+
+            lblWhereClause.Text = Resources.WhereClause;
+            tooltip.SetToolTip(lblWhereClause, Resources.WhereClauseTip);
+
+            lblOrderByClause.Text = Resources.OrderByClause;
+            tooltip.SetToolTip(lblOrderByClause, Resources.OrderByClauseTip);
+
+            // Step Columns
+            lblColumns.Text = Resources.ColumnInstructions;
+
+            // Step Columns - Column
+            tabColumn.Text = Resources.ColumnTab;
+            tabColumn.ToolTipText = Resources.ColumnTabTip;
+
+            lblColumn.Text = Resources.Column;
+            tooltip.SetToolTip(lblColumn, Resources.ColumnTip);
+
+            chkDisplayColumn.Text = Resources.DisplayColumn;
+            tooltip.SetToolTip(chkDisplayColumn, Resources.DisplayColumnTip);
+
+            lblDataType.Text = Resources.DataType;
+            tooltip.SetToolTip(lblDataType, Resources.DataTypeTip);
+
+            lblCaptions.Text = Resources.Captions;
+            tooltip.SetToolTip(grdCaptions, Resources.LanguagesTip);
+
+            // Step Columns - Drilldown
+            tabDrilldown.Text = Resources.DrilldownTab;
+            tabDrilldown.ToolTipText = Resources.DrilldownTabTip;
+
+            chkDrilldown.Text = Resources.DrilldownFromColumn;
+            tooltip.SetToolTip(chkDrilldown, Resources.DrilldownFromColumnTip);
+
+            lblArea.Text = Resources.Area;
+            tooltip.SetToolTip(lblArea, Resources.AreaTip);
+
+            lblController.Text = Resources.Controller;
+            tooltip.SetToolTip(lblController, Resources.ControllerTip);
+
+            splitSqlColumns.Text = Resources.Action;
+            tooltip.SetToolTip(splitSqlColumns, Resources.ActionTip);
+
+            lblParameters.Text = Resources.Parameters;
+            tooltip.SetToolTip(lblParameters, Resources.ParametersTip);
+
+            // Step Columns - Filtering
+            tabFiltering.Text = Resources.FilteringTab;
+            tabFiltering.ToolTipText = Resources.FilteringTabTip;
+
+            chkFilterable.Text = Resources.Filterable;
+            tooltip.SetToolTip(chkFilterable, Resources.FilterableTip);
+
+            chkColumnInView.Text = Resources.ColumnView;
+            tooltip.SetToolTip(chkColumnInView, Resources.ColumnViewTip);
+
+            lblFilterViewId.Text = Resources.ViewId;
+            tooltip.SetToolTip(lblFilterViewId, Resources.ViewIdTip);
+
+            lblFilterColumn.Text = Resources.Column;
+            tooltip.SetToolTip(lblFilterColumn, Resources.ColumnNameTip);
+
+            lblFilters.Text = Resources.Filters;
+            tooltip.SetToolTip(lblFilters, Resources.FiltersTip);
 
         }
 
@@ -306,249 +631,6 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             // Assign widths and localized text
             GenericInit(grdInfo, Info.FileNameColumnNo, 700, Resources.FileName, true, true);
             GenericInit(grdInfo, Info.StatusColumnNo, 50, Resources.Status, true, true);
-        }
-
-        /// <summary> Initialize assembly source </summary>
-        private void InitAssemblySource()
-        {
-            // Get *.models.dll assemblies from ...\web\bin folder
-            var files = Directory.GetFiles(RegistryHelper.Sage300CWebFolder,
-                ProcessGeneration.PropertyModelsSearchPattern);
-
-            // Add a blank row to start with
-            cboAssembly.Items.Add(string.Empty);
-            cboModel.Items.Add(string.Empty);
-
-            // Add files to dropdown list
-            foreach (var file in files)
-            {
-                // Only add if the assembly is not one of these
-                if (!file.EndsWith(ProcessGeneration.PropertyExcludeCommon) &&
-                    !file.EndsWith(ProcessGeneration.PropertyExcludeKpi) &&
-                    !file.EndsWith(ProcessGeneration.PropertyExcludeWorkflow) &&
-                    !file.EndsWith(ProcessGeneration.PropertyExcludeVpf))
-                {
-                    cboAssembly.Items.Add(Path.GetFileNameWithoutExtension(file));
-                }
-            }
-
-            cboAssembly.SelectedIndex = 0;
-            cboModel.SelectedIndex = 0;
-        }
-
-        /// <summary> Build display name from components </summary>
-        /// <param name="modelName">Model Name</param>
-        /// <param name="entityName">Entity or View Name</param>
-        /// <returns>Display Name</returns>
-        private static string BuildDisplayName(string modelName, string entityName)
-        {
-            return modelName + "  (" + entityName + ")";
-        }
-
-        /// <summary> Initialize model source </summary>
-        /// <param name="assemblyName">Assembly Name from dropdown</param>
-        private void InitModelSource(string assemblyName)
-        {
-            // Add a blank row to start with
-            cboModel.Items.Clear();
-            cboModel.Items.Add(string.Empty);
-
-            // Init
-            _models.Clear();
-
-            // Load assembly 
-            var assembly = Assembly.LoadFile(Path.Combine(RegistryHelper.Sage300CWebFolder,
-                string.Concat(assemblyName, ProcessGeneration.PropertyAssemblyExtension)));
-
-            // Gather types from assembly
-            Type[] types;
-
-            try
-            {
-                // No external references
-                types = assembly.GetTypes();
-            }
-            catch (ReflectionTypeLoadException ex)
-            {
-                // Some external references so gather here
-                types = (Type[]) ex.Types.Where(t => t != null);
-            }
-
-            // Iterate types to gather and build structure needed for grid
-            foreach (var type in types)
-            {
-                // If Interface then skip (someone created an interface in Models library!)
-                if (type.IsInterface)
-                {
-                    continue;
-                }
-
-                // If no type or model does not inherit from ModelBase (Reports, Enums), do not add to dropdown
-                if (type.BaseType != null && !type.BaseType.Name.Equals(ProcessGeneration.PropertyModelBase))
-                {
-                    continue;
-                }
-
-                // While Process models inherit from ModelBase, do not add to dropdown
-                if (type.FullName != null && type.FullName.Contains(ProcessGeneration.PropertyModelsProcess))
-                {
-                    continue;
-                }
-
-                // Locals
-                var declaredProperties = type.GetProperties();
-                var indexNestedType = type.GetNestedType(ProcessGeneration.PropertyIndex);
-                var fieldsNestedType = type.GetNestedType(ProcessGeneration.PropertyFields);
-
-                // If it is base upon ModelBase, but no Index class, it is a nested class and is skipped
-                if (indexNestedType == null)
-                {
-                    continue;
-                }
-
-                // Start building the model
-                var model = new Model()
-                {
-                    Name = type.Name,
-                    FullName = type.FullName,
-                    ManifestModuleName = type.Assembly.ManifestModule.Name
-                };
-
-                // Get the EntityName constant's value
-                foreach (var field in type.GetFields())
-                {
-                    if (!field.Name.Equals(ProcessGeneration.PropertyEntityName))
-                    {
-                        continue;
-                    }
-
-                    model.EntityName = (string) field.GetRawConstantValue();
-
-                    // Build a display name. This will be used for the key to the sorted list
-                    model.DisplayName = BuildDisplayName(model.Name, model.EntityName);
-                }
-
-                // If there is no EntityName at this point, it is likely because a process
-                // model is defined in the root folder!
-                if (string.IsNullOrEmpty(model.EntityName))
-                {
-                    continue;
-                }
-
-                // Iterate properties of model and get only the properties that have an Index reference
-                foreach (var declaredProperty in declaredProperties)
-                {
-                    // Skip if a property is in the base class
-                    if (declaredProperty.DeclaringType != null && !declaredProperty.DeclaringType.Name.Equals(type.Name))
-                    {
-                        continue;
-                    }
-
-                    // Skip if property does not have an Index reference
-                    if (indexNestedType.GetField(declaredProperty.Name) == null)
-                    {
-                        continue;
-                    }
-
-                    // Skip if property does not have an fields reference
-                    if (fieldsNestedType.GetField(declaredProperty.Name) == null)
-                    {
-                        continue;
-                    }
-
-                    // Get underlying type for nullable type
-                    var underlyingType = Nullable.GetUnderlyingType(declaredProperty.PropertyType) ?? declaredProperty.PropertyType;
-
-                    // Gather the properties for the property
-                    var property = new Property()
-                    {
-                        Name = declaredProperty.Name,
-                        PropertyTypeName = underlyingType.Name,
-                        PropertyTypeFullName = declaredProperty.PropertyType.FullName,
-                        Index = (int) indexNestedType.GetField(declaredProperty.Name).GetRawConstantValue(),
-                        FieldName = (string) fieldsNestedType.GetField(declaredProperty.Name).GetRawConstantValue()
-                    };
-
-                    // If an enum then gather enums and store
-                    if (declaredProperty.PropertyType.IsEnum)
-                    {
-                        // Get type from assembly and the fields of the enum
-                        UpdateEnumsFromAssembly(assembly, declaredProperty, property);
-                    }
-
-                    // Add the properties to the model
-                    model.Properties.Add(property.Name, property);
-                }
-
-                // Add the model to the list of models
-                _models.Add(model.DisplayName, model);
-            }
-
-            // Iterate the sorted list and ad to the dropdown 
-            foreach (var model in _models.Values)
-            {
-                cboModel.Items.Add(model.DisplayName);
-            }
-
-            cboModel.SelectedIndex = 0;
-        }
-
-        /// <summary> Get Enum Type from assembly </summary>
-        /// <param name="assembly">Currently opened assembly</param>
-        /// <param name="propertyInfo">Property Info of type to get</param>
-        /// <param name="property">Property to update</param>
-        /// <remarks>If not in current assembly, then attempt to get from source assembly</remarks>
-        private static void UpdateEnumsFromAssembly(Assembly assembly, PropertyInfo propertyInfo, Property property)
-        {
-            // Local
-
-            try
-            {
-                // Null check
-                if (propertyInfo == null || propertyInfo.PropertyType.FullName == null)
-                {
-                    return;
-                }
-
-                // Get type from current assembly first
-                var type = assembly.GetType(propertyInfo.PropertyType.FullName);
-
-                // If null then attempt getting from different assembly
-                if (type == null)
-                {
-                    var diffAssembly = Assembly.LoadFile(Path.Combine(RegistryHelper.Sage300CWebFolder,
-                        string.Concat(propertyInfo.PropertyType.Assembly.GetName().Name,
-                            ProcessGeneration.PropertyAssemblyExtension)));
-                    type = diffAssembly.GetType(propertyInfo.PropertyType.FullName);
-                }
-
-                // If null then enum has not been located
-                if (type == null)
-                {
-                    return;
-                }
-
-                // Get fields of enum
-                var typeFields = type.GetFields();
-
-                // Iterate enum
-                foreach (var typeField in typeFields)
-                {
-                    // Skip known index
-                    if (typeField.Name.Equals("value__"))
-                    {
-                        continue;
-                    }
-
-                    // Add to property
-                    property.Enums.Add(typeField.Name, typeField.GetRawConstantValue().ToString());
-                }
-            }
-            catch
-            {
-                // ignored
-            }
-
         }
 
         /// <summary> Initialize wizard steps </summary>
@@ -566,13 +648,28 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 
             // Init Panels
             InitPanel(pnlCreateEdit);
+            InitPanel(pnlSourceView);
+            InitPanel(pnlSourceSql);
+            InitPanel(pnlColumns);
             InitPanel(pnlGenerate);
             InitPanel(pnlGenerated);
 
             // Assign steps for wizard
-            AddStep(Resources.StepTitleCreateEdit, Resources.StepDescriptionCreateEdit, pnlCreateEdit);
-            AddStep(Resources.StepTitleGenerate, Resources.StepDescriptionGenerate, pnlGenerate);
-            AddStep(Resources.StepTitleGenerated, Resources.StepDescriptionGenerated, pnlGenerated);
+            AddStep(Resources.StepTitleCreateEdit, Resources.StepDescriptionCreateEdit, pnlCreateEdit, txtInquiryId);
+
+            // Step specific to View or Sql
+            if (chkUseBusinessView.Checked)
+            {
+                AddStep(Resources.StepTitleSource, Resources.StepDescriptionSourceView, pnlSourceView, txtViewID);
+            }
+            else
+            {
+                AddStep(Resources.StepTitleSource, Resources.StepDescriptionSourceSql, pnlSourceSql, txtSQL);
+            }
+
+            AddStep(Resources.StepTitleColumns, Resources.StepDescriptionColumns, pnlColumns, grdIncludedColumns);
+            AddStep(Resources.StepTitleGenerate, Resources.StepDescriptionGenerate, pnlGenerate, btnNext);
+            AddStep(Resources.StepTitleGenerated, Resources.StepDescriptionGenerated, pnlGenerated, btnNext);
 
             // Display first step
             NextStep();
@@ -626,22 +723,26 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                     if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerate))
                     {
                         // Load controls based upon the previous steps
-                        var model = _models[cboModel.SelectedItem.ToString()];
-                        ClearGenerateControls(model.Name);
+                        var name = _source.Properties[Source.Name];
+                        var configurationFileName = BuildConfigurationFileName(name);
+                        var templateFileName = BuildTemplateFileName(name);
+                        ClearGenerateControls(configurationFileName, templateFileName);
 
-                        // Generate JSON
-                        model.Id = txtInquiryId.Text;
-                        model.Description = txtInquiryDescription.Text;
+                        // Generate JSONs
+                        var configurationJson = GenerateConfigurationJson(configurationFileName);
+                        txtConfigurationToGenerate.Text = configurationJson.ToString();
 
-                        var json = GenerateJson(model);
-                        txtJsonToGenerate.Text = json.ToString();
+                        var templateJson = GenerateTemplateJson(templateFileName);
+                        txtTemplateToGenerate.Text = templateJson.ToString();
 
                         // Establish settings for processing (Validation already ocurred in each step)
                         _settings = new Settings
                         {
                             FolderName = txtFolderName.Text.Trim(),
-                            Json = json,
-                            FileName = BuildFileName(model.Name)
+                            ConfigurationJson = configurationJson,
+                            ConfigurationFileName = configurationFileName,
+                            TemplateJson = templateJson,
+                            TemplateFileName = templateFileName
                         };
                     }
 
@@ -706,6 +807,24 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCreateEdit))
             {
                 valid = ValidCreateEditStep();
+            }
+
+            // Source Step - View
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelSourceView))
+            {
+                valid = ValidSourceStepView();
+            }
+
+            // Source Step - Sql
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelSourceSql))
+            {
+                valid = ValidSourceStepSql();
+            }
+
+            // Columns Step
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelColumns))
+            {
+                valid = ValidColumnsStep();
             }
 
             if (!string.IsNullOrEmpty(valid))
@@ -783,6 +902,18 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
             splitSteps.SplitterDistance = SplitterDistance;
+
+            // Set focus?
+            if (visible && _wizardSteps[_currentWizardStep].FocusControl != null)
+            {
+                try
+                {
+                    _wizardSteps[_currentWizardStep].FocusControl.Focus();
+                }
+                catch
+                {
+                }
+            }
         }
 
         /// <summary> Show Step Title</summary>
@@ -815,7 +946,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Display inquiry selected
-            ExistingJson(dialog.FileName.Trim());
+            ExistingConfiguration(dialog.FileName.Trim());
         }
 
         /// <summary> New customization</summary>
@@ -823,7 +954,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <param name="e">Event Args </param>
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewJson();
+            NewConfiguration();
         }
 
         /// <summary> Folder search dialog</summary>
@@ -847,121 +978,421 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             txtFolderName.Text = dialog.SelectedPath;
         }
 
-        /// <summary> Existing JSON </summary>
+        /// <summary> Existing Configuration </summary>
         /// <param name="fileName">File name </param>
-        private void ExistingJson(string fileName)
+        private void ExistingConfiguration(string fileName)
         {
-            // Get the Json 
-            var json = JObject.Parse(File.ReadAllText(fileName));
-
-            // Properties
-            txtInquiryId.Text = (string)json.SelectToken(ProcessGeneration.PropertyInquiryId);
-            txtInquiryDescription.Text = (string)json.SelectToken(ProcessGeneration.PropertyDescription);
-            var viewName = (string)json.SelectToken(ProcessGeneration.PropertyViewName);
-            var modelName = (string)json.SelectToken(ProcessGeneration.PropertyModelName);
-            var assembly = (string)json.SelectToken(ProcessGeneration.PropertyAssembly);
-
-            // Get location from folder where found
-            var path = Path.GetDirectoryName(fileName);
-            txtFolderName.Text = path;
-
-            // Read JSON to get the Fields
-            var fields =
-                from field in json[ProcessGeneration.PropertyFields]
-                select new
-                {
-                    FieldName = (string)field[ProcessGeneration.PropertyField],
-                    FieldIndex = (string)field[ProcessGeneration.PropertyFieldIndex],
-                    DataType = (string)field[ProcessGeneration.PropertyDataType],
-                    Name = (string)field[ProcessGeneration.PropertyName],
-                    IsFilterable = (bool)field[ProcessGeneration.PropertyIsFilterable],
-                    IsDrilldown = (bool)field[ProcessGeneration.PropertyIsDrilldown],
-                    DrillDownUrl = (JObject)field[ProcessGeneration.PropertyDrilldownUrl]
-                };
-
-            InitModelSource(assembly);
-
-            // Assign to assembly dropdown
-            cboAssembly.SelectedItem= assembly;
-
-            var displayName = BuildDisplayName(modelName, viewName);
-            var model = _models[displayName];
-
-            // Iterate and add to binding
-            foreach (var field in fields)
+            try
             {
-                var property = model.Properties[field.Name];
-                property.IsFilterable = field.IsFilterable;
-                property.IsDrilldown = field.IsDrilldown;
-                property.IsIncluded = true;
+                // Get the configuration 
+                _json = JObject.Parse(File.ReadAllText(fileName));
 
-                if (field.DrillDownUrl != null)
+                // Clear all controls
+                ClearCreateEditControls();
+                ClearSourceViewControls();
+                ClearSourceSqlControls();
+                ClearColumnsControls();
+                ClearColumnControls();
+
+                // Init Source
+                _source.Properties.Clear();
+                _source.Options.Clear();
+                _source.SourceColumns.Clear();
+
+                // Step - Create/Edit
+                _source.Properties[Source.InquiryId] = (string)_json.SelectToken(ProcessGeneration.PropertyInquiryId);
+                _source.Properties[Source.FolderName] = Path.GetDirectoryName(fileName);
+                _source.Properties[Source.Name] = (string)_json.SelectToken(ProcessGeneration.PropertyName);
+                _source.Properties[Source.Description] = (string)_json.SelectToken(ProcessGeneration.PropertyDescription);
+                _source.Options[Source.IsBusinessView] = (string.IsNullOrEmpty((string)_json.SelectToken(ProcessGeneration.PropertySql)));
+
+                txtInquiryId.Text = _source.Properties[Source.InquiryId];
+                txtFolderName.Text = _source.Properties[Source.FolderName];
+                txtInquiryName.Text = _source.Properties[Source.Name];
+                txtInquiryDescription.Text = _source.Properties[Source.Description];
+                chkUseBusinessView.Checked = _source.Options[Source.IsBusinessView];
+
+                // Step - Source View
+                _source.Properties[Source.ViewId] = (string)_json.SelectToken(ProcessGeneration.PropertyViewName);
+                txtViewID.Text = _source.Properties[Source.ViewId];
+
+                // Step - Source SQL
+                _source.Properties[Source.SqlStatement] = (string)_json.SelectToken(ProcessGeneration.PropertySql);
+                _source.Properties[Source.WhereClause] = (string)_json.SelectToken(ProcessGeneration.PropertyWhereClause);
+                _source.Properties[Source.OrderByClause] = (string)_json.SelectToken(ProcessGeneration.PropertyOrderByClause);
+
+                txtSQL.Text = _source.Properties[Source.SqlStatement];
+                txtWhereClause.Text = _source.Properties[Source.WhereClause];
+                txtOrderByClause.Text = _source.Properties[Source.OrderByClause];
+
+                // Step - Columns
+                // If using a business view, this is delayed until the ValidCreateEdit Step where valid 
+                // business view credentials have been entered else load fields here since there is not a
+                // business view that needs to be accessed to get the full columns
+                if (!_source.Options[Source.IsBusinessView])
                 {
-                    var tokenPath = field.DrillDownUrl.Path;
-                    property.Area = (string)json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyArea);
-                    property.ControllerName = (string)json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyController);
-                    property.ActionName = (string)json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyAction);
+                    // Load the configuration now
+                    LoadConfiguration();
                 }
-            }
 
-            // Load property grid
-            cboModel.SelectedItem = model.DisplayName;
+                // Load the template json file just to be sure it is there and loads. But, no need at this point
+                var templateFilename = fileName.Replace(ProcessGeneration.PropertyConfiguration, ProcessGeneration.PropertyTemplate);
+                var templateJson = JObject.Parse(File.ReadAllText(templateFilename));
+
+                // Parse and store template file here if needed
+
+            }
+            catch (Exception ex)
+            {
+                // Error received attempting to load JSON
+                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
+            }
 
         }
 
-        /// <summary> New JSON</summary>
-        private void NewJson()
+        /// <summary> New Configuration</summary>
+        private void NewConfiguration()
         {
+            // Clear source container which holds all data for JSON creation
+            ClearSource(_source);
+
+            // Clear all controls
+            ClearCreateEditControls();
+            ClearSourceViewControls();
+            ClearSourceSqlControls();
+            ClearColumnsControls();
+            ClearColumnControls();
+
+            // Generate GUID for configuration and store in source
             txtInquiryId.Text = Guid.NewGuid().ToString();
+            _source.Properties[Source.InquiryId] = txtInquiryId.Text;
+
+            // Set focus to folder field
+            txtFolderName.Focus();
+        }
+
+        /// <summary> Clear Source</summary>
+        /// <param name="source">Source object </param>
+        private void ClearSource(Source source)
+        {
+            source.Properties.Clear();
+            source.Options.Clear();
+            source.SourceColumns.Clear();
+        }
+
+
+        /// <summary> Clear Create Edit Controls</summary>
+        private void ClearCreateEditControls()
+        {
             txtFolderName.Text = string.Empty;
+            txtInquiryName.Text = string.Empty;
             txtInquiryDescription.Text = string.Empty;
-            cboAssembly.SelectedIndex = 0;
+            chkUseBusinessView.Checked = true;
+        }
+
+        /// <summary> Clear Source View Controls</summary>
+        private void ClearSourceViewControls()
+        {
+            txtViewID.Text = string.Empty;
+            DeleteRows(grdSourceColumns);
+        }
+
+        /// <summary> Clear Source SQL Controls</summary>
+        private void ClearSourceSqlControls()
+        {
+            txtSQL.Text = string.Empty;
+            DeleteRows(grdSqlColumns);
+            txtWhereClause.Text = string.Empty;
+            txtOrderByClause.Text = string.Empty;
+        }
+
+        /// <summary> Clear Columns Congtrols</summary>
+        private void ClearColumnsControls()
+        {
+            DeleteRows(grdIncludedColumns);
+        }
+
+        /// <summary> Clear Column Congtrols</summary>
+        private void ClearColumnControls()
+        {
+            // Column
+            txtColumn.Text = string.Empty;
+            chkDisplayColumn.Checked = false;
+            txtDataType.Text = SourceDataType.None.ToString();
+            DeleteRows(grdCaptions);
+
+            // Drilldown
+            chkDrilldown.Checked = false;
+            txtArea.Text = string.Empty;
+            txtController.Text = string.Empty;
+            txtAction.Text = string.Empty;
+            DeleteRows(grdParameters);
+            EnableDrilldown(chkDrilldown.Checked);
+
+            // Filtering
+            chkFilterable.Checked = true;
+            chkColumnInView.Checked = false;
+            txtFilterViewId.Text = string.Empty;
+            cboFilterColumn.Items.Clear();
+            DeleteRows(grdFilters);
+            EnableColumnInView(chkColumnInView.Checked);
+            EnableFilters(false);
+        }
+
+        /// <summary> Column Setup</summary>
+        /// <param name="modeType">Mode Type (Add)</param>
+        private void ColumnSetup(ModeType modeType)
+        {
+            // Disable buttons
+            EnableNavigationButtons(false);
+
+            // Set mode type and clear controls
+            _modeType = modeType;
+            ClearColumnControls();
+
+            // Load controls from column or set defaults
+            LoadColumnControls();
+
+            // Enable column controls
+            EnableColumnControls(true);
+        }
+
+        /// <summary> Enable or disable navigation buttons</summary>
+        /// <param name="enable">true to enable otherwise false </param>
+        private void EnableNavigationButtons(bool enable)
+        {
+            btnNext.Enabled = enable;
+            btnBack.Enabled = enable;
+        }
+
+        /// <summary> Enable or disable column controls</summary>
+        /// <param name="enable">true to enable otherwise false </param>
+        private void EnableColumnControls(bool enable)
+        {
+            btnSave.Visible = enable;
+            btnCancel.Visible = enable;
+            grdIncludedColumns.Enabled = !enable;
+            tabIncludedColumn.Enabled = enable;
+            tabIncludedColumn.Visible = enable;
+
+            var useBusinessView = _source.Options[Source.IsBusinessView];
+            var dataType = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
+
+
+            // Do not enable column in view controls in certain scenarios
+            chkColumnInView.Enabled = enable && !useBusinessView && (dataType.Equals(SourceDataType.Enumeration));
+            EnableColumnInView(chkColumnInView.Checked && enable && !useBusinessView);
+
+            // Do not enable filters grid in certain scenarios
+            EnableFilters(!chkColumnInView.Checked && enable && 
+                !useBusinessView && (dataType.Equals(SourceDataType.Enumeration)));
+
+            // Drilldown is based upon drilldown checkbox
+            EnableDrilldown(chkDrilldown.Checked);
+
+            // Select the first tab
+            tabIncludedColumn.SelectTab(0);
+        }
+
+        /// <summary> Load Column Controls from included column</summary>
+        private void LoadColumnControls()
+        {
+            // Column
+            txtColumn.Text = _clickedColumn.Name;
+            chkDisplayColumn.Checked = _clickedColumn.IsDisplayable;
+            txtDataType.Text = _clickedColumn.Type.ToString();
+
+            foreach (var caption in _clickedColumn.Captions.Values)
+            {
+                _captions.Add(caption);
+            }
+
+            // Drilldown
+            chkDrilldown.Checked = _clickedColumn.IsDrilldown;
+            txtArea.Text = _clickedColumn.AreaName;
+            txtController.Text = _clickedColumn.ControllerName;
+            txtAction.Text = _clickedColumn.ActionName;
+
+            foreach (var param in _clickedColumn.Params.Values)
+            {
+                _parameters.Add(param);
+            }
+
+            // Filtering
+            chkFilterable.Checked = _clickedColumn.IsFilterable;
+            chkColumnInView.Checked = _clickedColumn.IsColumnInView;
+            txtFilterViewId.Text = _clickedColumn.ViewId;
+            txtFilterViewId.Tag = txtFilterViewId.Text;
+            cboFilterColumn.SelectedText = _clickedColumn.ViewColumnName;
+
+            foreach (var filter in _clickedColumn.Filters.Values)
+            {
+                _filters.Add(filter);
+            }
+
+            return;
+        }
+
+        /// <summary> Cancel any column changes</summary>
+        private void CancelColumn()
+        {
+            // Reset mode
+            _modeType = ModeType.None;
+
+            // Disable buttons
+            EnableNavigationButtons(true);
+
+            // Clear inidividual column controls
+            ClearColumnControls();
+
+            // Disable column controls
+            EnableColumnControls(false);
+
+            // Set focus back to grid
+            grdIncludedColumns.Focus();
+        }
+
+        /// <summary> Column has changed, so update</summary>
+        private void SaveColumn()
+        {
+            // Validation first
+            var dataType = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
+            var success = ValidColumn(dataType, _captions.ToList(), chkDrilldown.Checked,
+                txtArea.Text.Trim(), txtController.Text.Trim(), txtAction.Text.Trim(),
+                chkColumnInView.Checked, txtFilterViewId.Text.Trim(), cboFilterColumn.Text,
+                _filters.ToList());
+            if (!string.IsNullOrEmpty(success))
+            {
+                DisplayMessage(success, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Column
+            _clickedColumn.IsDisplayable = chkDisplayColumn.Checked;
+            _clickedColumn.Type = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
+            _clickedColumn.Captions.Clear();
+
+            foreach (var caption in _captions)
+            {
+                _clickedColumn.Captions.Add(caption.Language, caption);
+            }
+
+            // Drilldown
+            _clickedColumn.IsDrilldown = chkDrilldown.Checked;
+            _clickedColumn.AreaName = txtArea.Text.Trim();
+            _clickedColumn.ControllerName = txtController.Text.Trim();
+            _clickedColumn.ActionName = txtAction.Text.Trim();
+            _clickedColumn.Params.Clear();
+
+            foreach (var param in _parameters)
+            {
+                _clickedColumn.Params.Add(param.Name, param);
+            }
+
+            // Filtering
+            _clickedColumn.IsFilterable = chkFilterable.Checked;
+            _clickedColumn.IsColumnInView = chkColumnInView.Checked;
+            _clickedColumn.ViewId = txtFilterViewId.Text.Trim();
+            _clickedColumn.ViewColumnName = cboFilterColumn.Text.Trim();
+            _clickedColumn.Filters.Clear();
+
+            foreach (var filter in _filters)
+            {
+                _clickedColumn.Filters.Add(filter.Value, filter);
+            }
+
+            // Reset mode
+            _modeType = ModeType.None;
+
+            // Enable buttons
+            EnableNavigationButtons(true);
+
+            // Clear individual column controls
+            ClearColumnControls();
+
+            // Disable column controls
+            EnableColumnControls(false);
+
+            // Set focus back to grid
+            grdIncludedColumns.Focus();
         }
 
         /// <summary> Generate JSON</summary>
-        /// <param name="model">Model used to generate the json file</param>
-        private static JObject GenerateJson(Model model)
+        /// <param name="key">Key to properties dictionary </param>
+        /// <returns>Content otherwise string.empty</returns>
+        private object GetContent(string key)
+        {
+            return _source.Properties.ContainsKey(key) ? _source.Properties[key] : string.Empty;
+        }
+
+        /// <summary> Generate Configuration JSON</summary>
+        /// <param name="fileName">File name</param>
+        private JObject GenerateConfigurationJson(string fileName)
         {
             // Add properties
             var json = new JObject
             {
                 new JProperty(ProcessGeneration.PropertyGeneratedMessage, Resources.GeneratedMessage),
                 new JProperty(ProcessGeneration.PropertyGeneratedWarning, Resources.GeneratedWarning),
-                new JProperty(ProcessGeneration.PropertyInquiryId, model.Id),
-                new JProperty(ProcessGeneration.PropertyDescription, model.Description),
-                new JProperty(ProcessGeneration.PropertyViewName, model.EntityName),
-                new JProperty(ProcessGeneration.PropertyModelName, model.Name),
-                new JProperty(ProcessGeneration.PropertyAssembly, model.ManifestModuleName.Replace(ProcessGeneration.PropertyAssemblyExtension, string.Empty))
+                new JProperty(ProcessGeneration.PropertyInquiryId, GetContent(Source.InquiryId)),
+                new JProperty(ProcessGeneration.PropertyFileName, fileName),
+                new JProperty(ProcessGeneration.PropertyName, GetContent(Source.Name)),
+                new JProperty(ProcessGeneration.PropertyDescription, GetContent(Source.Description)),
+                new JProperty(ProcessGeneration.PropertyViewName, GetContent(Source.ViewId)),
+                new JProperty(ProcessGeneration.PropertySql, GetContent(Source.SqlStatement)),
+                new JProperty(ProcessGeneration.PropertyWhereClause, GetContent(Source.WhereClause)),
+                new JProperty(ProcessGeneration.PropertyOrderByClause, GetContent(Source.OrderByClause))
             };
 
             // Create array of fields
             var fieldsArray = new JArray();
             
-            foreach (var property in model.Properties.Values)
+            foreach (var sourceColumn in _source.SourceColumns.Values.OrderBy(column => column.DisplayOrder))
             {
-                // Skip property if not included
-                if (!property.IsIncluded)
+                // Skip column if not included
+                if (!sourceColumn.IsIncluded)
                 {
                     continue;
                 }
-   
-                var fields = new JObject
-                {
-                    new JProperty(ProcessGeneration.PropertyName, property.Name),
-                    new JProperty(ProcessGeneration.PropertyField, property.FieldName),
-                    new JProperty(ProcessGeneration.PropertyFieldIndex, property.Index),
-                    new JProperty(ProcessGeneration.PropertyDataType, property.PropertyTypeName)
-                };
 
-                // If data type is an enum, then add enum values
-                if (property.Enums.Count > 0)
+                var fields = new JObject();
+
+                fields.Add(new JProperty(ProcessGeneration.PropertyField, sourceColumn.Name));
+                fields.Add(new JProperty(ProcessGeneration.PropertyFieldIndex, sourceColumn.Id));
+
+                // Add captions
+                var captionsArray = new JArray();
+
+                // Iternate captions
+                foreach (var caption in sourceColumn.Captions)
                 {
-                    // Create array of enums
-                    var enumsArray = new JArray();
+                    var captionObj = new JObject
+                        {
+                            new JProperty(ProcessGeneration.PropertyLanguage, caption.Value.Language),
+                            new JProperty(ProcessGeneration.PropertyValue, caption.Value.Text)
+                        };
+
+                    captionsArray.Add(captionObj);
+                }
+                fields.Add(new JProperty(ProcessGeneration.PropertyCaptions, captionsArray));
+
+                // Is column in a view (for SQL columns)
+                fields.Add(new JProperty(ProcessGeneration.PropertyIsColumnInView, sourceColumn.IsColumnInView));
+                fields.Add(new JProperty(ProcessGeneration.PropertyViewName, sourceColumn.ViewId));
+                fields.Add(new JProperty(ProcessGeneration.PropertyColumnNameInView, sourceColumn.ViewColumnName));
+
+                fields.Add(new JProperty(ProcessGeneration.PropertyDataTypeEnumeration, sourceColumn.Type));
+                fields.Add(new JProperty(ProcessGeneration.PropertyDataType, EnumValue.GetValue(sourceColumn.Type)));
+
+                // If there are filters, then add filter values
+                if (sourceColumn.Filters.Count > 0)
+                {
+                    // Create array of filters
+                    var filtersArray = new JArray();
                     var count = 0;
 
                     // Iternate enums
-                    foreach (var propertyEnum in property.Enums)
+                    foreach (var filter in sourceColumn.Filters)
                     {
                         // Increment count for selected check
                         count++;
@@ -969,29 +1400,50 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                         var enumObj = new JObject
                         {
                             new JProperty(ProcessGeneration.PropertySelected, count == 1),
-                            new JProperty(ProcessGeneration.PropertyText, propertyEnum.Key),
-                            new JProperty(ProcessGeneration.PropertyValue, propertyEnum.Value)
+                            new JProperty(ProcessGeneration.PropertyText, filter.Value.Text),
+                            new JProperty(ProcessGeneration.PropertyValue, filter.Value.Value)
                         };
 
-                        enumsArray.Add(enumObj);
+                        filtersArray.Add(enumObj);
                     }
 
-                    fields.Add(new JProperty(ProcessGeneration.PropertyEnums, enumsArray));
+                    fields.Add(new JProperty(ProcessGeneration.PropertyFilters, filtersArray));
                 }
 
-                fields.Add(new JProperty(ProcessGeneration.PropertyIsFilterable, property.IsFilterable));
-                fields.Add(new JProperty(ProcessGeneration.PropertyIsDrilldown, property.IsDrilldown));
-
+                fields.Add(new JProperty(ProcessGeneration.PropertyIsDisplayable, sourceColumn.IsDisplayable));
+                fields.Add(new JProperty(ProcessGeneration.PropertyIsFilterable, sourceColumn.IsFilterable));
+                fields.Add(new JProperty(ProcessGeneration.PropertyIsDrilldown, sourceColumn.IsDrilldown));
 
                 // If drilldown, then add drill down url
-                if (property.IsDrilldown)
+                if (sourceColumn.IsDrilldown)
                 {
                     var drilldownProperties = new JObject
                     {
-                        new JProperty(ProcessGeneration.PropertyArea, property.Area),
-                        new JProperty(ProcessGeneration.PropertyController, property.ControllerName),
-                        new JProperty(ProcessGeneration.PropertyAction, property.ActionName)
+                        new JProperty(ProcessGeneration.PropertyArea, sourceColumn.AreaName),
+                        new JProperty(ProcessGeneration.PropertyController, sourceColumn.ControllerName),
+                        new JProperty(ProcessGeneration.PropertyAction, sourceColumn.ActionName)
                     };
+
+                    // If parameters for drill down
+                    if (sourceColumn.Params.Count > 0)
+                    {
+                        // Create array of parameters
+                        var paramArray = new JArray();
+
+                        // Iternate parameters
+                        foreach (var param in sourceColumn.Params)
+                        {
+                            var paramObj = new JObject
+                            {
+                                new JProperty(ProcessGeneration.PropertyName, param.Value.Name)
+                            };
+
+                            paramArray.Add(paramObj);
+                        }
+
+                        drilldownProperties.Add(new JProperty(ProcessGeneration.PropertyParameters, paramArray));
+                    }
+
                     fields.Add(new JProperty(ProcessGeneration.PropertyDrilldownUrl, drilldownProperties));
                 }
 
@@ -999,6 +1451,40 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             json.Add(new JProperty(ProcessGeneration.PropertyFields, fieldsArray));
+
+            return json;
+        }
+
+        /// <summary> Generate Template JSON</summary>
+        /// <param name="fileName">File name</param>
+        private JObject GenerateTemplateJson(string fileName)
+        {
+            // Add properties
+            var json = new JObject
+            {
+                new JProperty(ProcessGeneration.PropertyGeneratedMessage, Resources.GeneratedMessage),
+                new JProperty(ProcessGeneration.PropertyGeneratedWarning, Resources.GeneratedWarning),
+                new JProperty(ProcessGeneration.PropertyInquiryId, GetContent(Source.InquiryId)),
+                new JProperty(ProcessGeneration.PropertyFileName, fileName),
+                new JProperty(ProcessGeneration.PropertyName, GetContent(Source.Name)),
+                new JProperty(ProcessGeneration.PropertyDescription, GetContent(Source.Description)),
+            };
+
+            // Create array of display fields
+            var displayFieldsArray = new JArray();
+
+            foreach (var sourceColumn in _source.SourceColumns.Values.OrderBy(column => column.DisplayOrder))
+            {
+                // Only add if it is included and is displayable
+                if (sourceColumn.IsIncluded && sourceColumn.IsDisplayable)
+                {
+                    var displayField = new JObject();
+                    displayField.Add(new JProperty(ProcessGeneration.PropertyDisplayField, sourceColumn.Name));
+                    displayFieldsArray.Add(displayField);
+                }
+            }
+
+            json.Add(new JProperty(ProcessGeneration.PropertyDisplayFields, displayFieldsArray));
 
             return json;
         }
@@ -1028,56 +1514,32 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 
 
         /// <summary> Clear Generate Controls </summary>
-        /// <param name="name">model name</param>
-        private void ClearGenerateControls(string name)
+        /// <param name="configurationFileName">Configuration file name</param>
+        /// <param name="templateFileName">Template file name</param>
+        private void ClearGenerateControls(string configurationFileName, string templateFileName)
         {
-            lblGenerateJson.Text = string.Format(Resources.JsonToGenerateTip, BuildFileName(name));
-            txtJsonToGenerate.Clear();
+            lblGenerateJson.Text = string.Format(Resources.JsonToGenerateTip, configurationFileName, templateFileName);
+
+            txtConfigurationToGenerate.Clear();
+            txtTemplateToGenerate.Clear();
         }
 
-        /// <summary> BuildFileName </summary>
-        /// <param name="name">model name</param>
-        /// <returns>File name {model}InquiryConfiguration.json</returns>
-        private static string BuildFileName(string name)
+        /// <summary> Build Configuration File Name </summary>
+        /// <param name="name">Configuration name</param>
+        /// <returns>File name {name}InquiryConfiguration.json</returns>
+        private static string BuildConfigurationFileName(string name)
         {
-            return name + ProcessGeneration.PropertyFileNameSuffix;
+            return name + ProcessGeneration.PropertyConfigurationFileNameSuffix;
         }
 
-        /// <summary> Assembly has changed, so update model dropdown</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void cboAssembly_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary> Build Template File Name </summary>
+        /// <param name="name">Template name</param>
+        /// <returns>File name {name}InquiryTemplate.json</returns>
+        private static string BuildTemplateFileName(string name)
         {
-            // If selecting blank, then clear model and grid
-            if (((ComboBox) sender).SelectedIndex == 0)
-            {
-                cboModel.SelectedIndex = 0;
-                DeleteRows();
-            }
-            else
-            {
-                // Get assembly selected and populate the model list
-                InitModelSource(((ComboBox) sender).SelectedItem.ToString());
-            }
+            return name + ProcessGeneration.PropertyTemplateFileNameSuffix;
         }
 
-        /// <summary> Model has changed, so update grid</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void cboModel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // If selecting blank, then clear other controls downstream
-            if (((ComboBox) sender).SelectedIndex == 0)
-            {
-                DeleteRows();
-            }
-            else
-            {
-                // Load the grid
-                DeleteRows();
-                AssignGrid(_models[((ComboBox)sender).SelectedItem.ToString()]);
-            }
-        }
 
         /// <summary> Valid Create/Edit Step</summary>
         /// <returns>string.Empty if valid otherwise message to display</returns>
@@ -1089,11 +1551,24 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.Inquiry.Replace(":", ""));
             }
 
-            // Folder
+            // Folder not specified
             if (string.IsNullOrEmpty(txtFolderName.Text.Trim()))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.Folder.Replace(":", ""));
             }
+
+            // Folder not exists
+            if (!Directory.Exists(txtFolderName.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingDoesNotExist, Resources.Folder.Replace(":", ""));
+            }
+
+            // Name
+            if (string.IsNullOrEmpty(txtInquiryName.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.InquiryName.Replace(":", ""));
+            }
+
 
             // Description
             if (string.IsNullOrEmpty(txtInquiryDescription.Text.Trim()))
@@ -1101,80 +1576,882 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.InquiryDescription.Replace(":", ""));
             }
 
-            // Assembly
-            if (cboAssembly.SelectedIndex == 0)
+            // User ID
+            if (string.IsNullOrEmpty(txtUser.Text.Trim()))
             {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.Assembly.Replace(":", ""));
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.User.Replace(":", ""));
             }
 
-            // Model
-            if (cboModel.SelectedIndex == 0)
+            // Password
+            //if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            //{
+            //    return string.Format(Resources.InvalidSettingRequiredField, Resources.Password.Replace(":", ""));
+            //}
+
+            // Version
+            if (string.IsNullOrEmpty(txtVersion.Text.Trim()))
             {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.Model.Replace(":", ""));
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Version.Replace(":", ""));
             }
 
-            // Validate grid
-
-            // At least 1 row must be included and if drilldown is selected, the area, controller and action must be specified
-            var included = false;
-            var message = string.Empty;
-
-            // Iterate grid
-            foreach (var property in _properties)
+            // Company
+            if (string.IsNullOrEmpty(txtCompany.Text.Trim()))
             {
-                // Only consider included properties
-                if (!property.IsIncluded)
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Company.Replace(":", ""));
+            }
+
+            // Session
+            var sessionValid = string.Empty;
+            try
+            {
+                // Init session to see if credentials are valid
+                var session = new Session();
+                session.CreateSession(null, ProcessGeneration.PropertyAppId, ProcessGeneration.PropertyProgramName, 
+                    txtVersion.Text.Trim(), txtUser.Text.Trim(), 
+                    txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow);
+                session.Dispose();
+            }
+            catch
+            {
+                return Resources.InvalidSettingCredentials;
+            }
+
+            // The step is valid, so store information from this step into the source
+            _source.Properties[Source.InquiryId] = txtInquiryId.Text.Trim();
+            _source.Properties[Source.FolderName] = txtFolderName.Text.Trim();
+            _source.Properties[Source.Name] = txtInquiryName.Text.Trim();
+            _source.Properties[Source.Description] = txtInquiryDescription.Text.Trim();
+            _source.Properties[Source.User] = txtUser.Text.Trim();
+            _source.Properties[Source.Password] = txtPassword.Text.Trim();
+            _source.Properties[Source.Version] = txtVersion.Text.Trim();
+            _source.Properties[Source.Company] = txtCompany.Text.Trim();
+            _source.Options[Source.IsBusinessView] = chkUseBusinessView.Checked;
+
+            // Before proceeding to the next step, if an existing configuration is loaded
+            // AND the configuration is using a business view, the loading of the remainder 
+            // of the JSON has been delayed until this step is valid (credentials). Thus, 
+            // finish loading the JSON
+            LoadConfiguration();
+
+            return string.Empty;
+        }
+
+        /// <summary> Valid Source Step - View</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidSourceStepView()
+        {
+            // Was a view specified?
+            if (string.IsNullOrEmpty(txtViewID.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.ViewId.Replace(":", ""));
+            }
+
+            // At least 1 row must be included 
+            if (!_sourceColumns.Any(i => i.IsIncluded))
+            {
+                return Resources.InvalidSettingRequiredColumn;
+            }
+
+            // Delete rows first
+            DeleteRows(grdIncludedColumns);
+
+            // Need to add included rows for display order grid
+
+            // Get Max display order in case adding newly unincluded rows
+            var max = _sourceColumns.Max(i => i.DisplayOrder);
+            var temp = new SortedList<int, SourceColumn>();
+
+            // Iterate each column and assign based upon not included or included (and if already have a value)
+            foreach (var sourceColumn in _sourceColumns)
+            {
+                // If not included, ensure display order is 0
+                if (!sourceColumn.IsIncluded)
                 {
+                    sourceColumn.DisplayOrder = 0;
                     continue;
                 }
 
-                // At least one row is included
-                included = true;
-
-                // Check drilldown
-                if (property.IsDrilldown)
+                // It is included, assign display order UNLESS it is already assigned
+                if (sourceColumn.DisplayOrder.Equals(0))
                 {
-                    // Drilldown area must be specified
-                    if (string.IsNullOrEmpty(property.Area))
-                    {
-                        message = Resources.Area;
-                        break;
-                    }
+                    sourceColumn.DisplayOrder = ++max;
+                }
 
-                    // Drilldown area must be specified
-                    if (string.IsNullOrEmpty(property.ControllerName))
-                    {
-                        message = Resources.Controller;
-                        break;
-                    }
+                // Add to temp sorted list
+                temp.Add(sourceColumn.DisplayOrder, sourceColumn);
+            }
 
-                    // Drilldown area must be specified
-                    if (string.IsNullOrEmpty(property.ActionName))
-                    {
-                        message = Resources.Action;
-                        break;
-                    }
+            // All included columns are in the temp sort, but there may be gaps
+            var displayOrder = 0;
+            foreach (var sourceColumn in temp.Values)
+            {
+                // Increment for re-assignment if needed
+                if (!sourceColumn.DisplayOrder.Equals(++displayOrder))
+                {
+                    // Assign proper number without gaps
+                    sourceColumn.DisplayOrder = displayOrder;
 
-                    // Next validation here, if any
+                    // Update back to source list of all columns
+                    _sourceColumns[_sourceColumns.IndexOf(sourceColumn)] = sourceColumn;
+                }
+
+                // Update source for included grid
+                _includedColumns.Add(sourceColumn);
+            }
+            grdIncludedColumns.Refresh();
+
+            // The step is valid, so store information from this step into the source
+            // View and columns are already in the source! No action needed.
+
+            return string.Empty;
+        }
+
+        /// <summary> Valid Source Step SQL</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidSourceStepSql()
+        {
+            // Was SQL specified?
+            if (string.IsNullOrEmpty(txtSQL.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Sql.Replace(":", ""));
+            }
+
+            // SQL Columns
+            if (_sourceSqlColumns.Count == 0)
+            {
+                return Resources.InvalidSettingRequiredColumns;
+            }
+
+            // SQL Columns have duplicate names
+            var duplicates = _sourceSqlColumns.GroupBy(x => x.Name)
+              .Where(g => g.Count() > 1)
+              .Select(y => y.Key)
+              .ToList();
+            if (duplicates.Count > 0)
+            {
+                return Resources.InvalidSettingDuplicateCols;
+            }
+
+            // SQL Columns have invalid names
+            var spaces = _sourceSqlColumns.Any(x => x.Name.Contains(" "));
+            if (spaces)
+            {
+                return Resources.InvalidSettingColumnSpaces;
+            }
+
+            // Where clause
+            if (txtWhereClause.Text.Trim().ToUpper().Contains(ProcessGeneration.PropertyWhere))
+            {
+                return Resources.InvalidSettingWhereClause;
+            }
+
+            // Order by clause
+            if (string.IsNullOrEmpty(txtOrderByClause.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.OrderByClause.Replace(":", ""));
+            }
+
+            if (txtOrderByClause.Text.Trim().ToUpper().Contains(ProcessGeneration.PropertyOrderBy))
+            {
+                return Resources.InvalidSettingOrderByClause;
+            }
+
+            // Order by clause has to have valid columns found in sql columns
+            var orderbyCols = txtOrderByClause.Text.Trim().Split(',');
+            foreach (var colName in orderbyCols)
+            {
+                // Look up column in sql columns
+                var found = _sourceSqlColumns.Any(x => x.Name.Equals(colName));
+                if (!found)
+                {
+                    return string.Format(Resources.InvalidSettingOrderByCol, colName, Resources.OrderByClause.Replace(":", ""));
                 }
             }
 
-            // Were any rows included?
-            if (!included)
+            // Delete included rows first
+            DeleteRows(grdIncludedColumns);
+
+            // Add/Delete/Update all columns based upon columns in sql columns grid
+            var displayOrder = 0;
+            foreach (var sourceColumn in _sourceSqlColumns)
             {
-                return Resources.InvalidSettingRequiredProperty;
+                // Assign proper display order
+                sourceColumn.DisplayOrder = ++displayOrder;
+                sourceColumn.Id = displayOrder;
+                sourceColumn.IsIncluded = true;
+
+                // If already in all columns, update it
+                if (_source.SourceColumns.ContainsKey(sourceColumn.Name))
+                {
+                    _source.SourceColumns[sourceColumn.Name] = sourceColumn;
+                    _sourceColumns[_sourceColumns.IndexOf(sourceColumn)] = sourceColumn;
+                }
+                else
+                {
+                    // Add it since it does not exist
+                    AddCaptions(sourceColumn);
+                    _source.SourceColumns.Add(sourceColumn.Name, sourceColumn);
+                    _sourceColumns.Add(sourceColumn);
+                }
+
+                // Add to included columns
+                _includedColumns.Add(sourceColumn);
             }
 
-            // Any validation message?
-            if (!string.IsNullOrEmpty(message))
+            // Need to determine if any previously added all columns are not in the SQL columns
+            var toBeRemoved = new List<SourceColumn>();
+            foreach (var sourceColumn in _sourceColumns)
             {
-                return string.Format(Resources.InvalidSettingRequiredField, message.Replace(":", ""));
+                // Remove a column if it does not exist in the source SQL columns
+                var exists = _sourceSqlColumns.ToList().Any(t => t.Name.Equals(sourceColumn.Name));
+                if (!exists)
+                {
+                    // To be removed outside of iteration
+                    toBeRemoved.Add(sourceColumn);
+                }
+            }
+            // Anything to be removed?
+            if (toBeRemoved.Count > 0)
+            {
+                foreach (var sourceColumn in toBeRemoved)
+                {
+                    _sourceColumns.Remove(sourceColumn);
+                }
+            }
+
+            grdIncludedColumns.Refresh();
+
+            // The step is valid, so store information from this step into the source
+            _source.Properties[Source.SqlStatement] = txtSQL.Text.Trim();
+            _source.Properties[Source.WhereClause] = txtWhereClause.Text.Trim();
+            _source.Properties[Source.OrderByClause] = txtOrderByClause.Text.Trim();
+
+            return string.Empty;
+        }
+
+        /// <summary> Valid Columns Step</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidColumnsStep()
+        {
+            // Iterate the included columns
+            foreach (var includedColumn in _includedColumns)
+            {
+                var success = ValidColumn(includedColumn.Type, includedColumn.Captions.Values.ToList(), includedColumn.IsDrilldown,
+                    includedColumn.AreaName, includedColumn.ControllerName, includedColumn.ActionName,
+                    includedColumn.IsColumnInView, includedColumn.ViewId, includedColumn.ViewColumnName,
+                    includedColumn.Filters.Values.ToList());
+                if (!string.IsNullOrEmpty(success))
+                {
+                    return success;
+                }
+            }
+
+            // The step is valid, so store information from this step into the source
+            // View and columns are already in the source! No action needed.
+
+            return string.Empty;
+
+        }
+
+        /// <summary> Valid Column </summary>
+        /// <param name="dataType">Data Type of column </param>
+        /// <param name="captions">Captions of column </param>
+        /// <param name="isDrilldown">True if drilldonw otherwise false </param>
+        /// <param name="areaName">Area name for drilldown </param>
+        /// <param name="controllerName">Controller name for drilldown </param>
+        /// <param name="actionName">Action name for drilldown </param>
+        /// <param name="isColumnInView">True if column is in view otherwise false </param>
+        /// <param name="viewId">View Id for column in view </param>
+        /// <param name="columnInView">Column in view </param>
+        /// <param name="filters">Filters of column </param>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidColumn(SourceDataType dataType, List<Caption> captions, bool isDrilldown,
+            string areaName, string controllerName, string actionName, bool isColumnInView,
+            string viewId, string columnInView, List<Filter> filters)
+        {
+            // Data Type
+            if (dataType.Equals(SourceDataType.None))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.DataType.Replace(":", ""));
+            }
+
+            // Ensure that at least ENG is not null in captions
+            if (captions.Any(x => x.Language.Equals(ProcessGeneration.PropertyEnglish) && string.IsNullOrEmpty(x.Text)))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Caption);
+            }
+
+
+            // If drilldown...
+            if (isDrilldown)
+            {
+                // Area
+                if (string.IsNullOrEmpty(areaName))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Area.Replace(":", ""));
+                }
+
+                // Controller
+                if (string.IsNullOrEmpty(controllerName))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Controller.Replace(":", ""));
+                }
+
+                // Action
+                if (string.IsNullOrEmpty(actionName))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Action.Replace(":", ""));
+                }
+
+                // No validation on parameters needed
+
+            }
+
+            // Columnin View?
+            if (isColumnInView)
+            {
+                // View Id
+                if (string.IsNullOrEmpty(viewId))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.ViewId.Replace(":", ""));
+                }
+
+                // Column Name
+                if (string.IsNullOrEmpty(columnInView))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Column.Replace(":", ""));
+                }
+
+            }
+
+            // Filters if specified, must have text and value filled out
+            foreach (var filter in filters)
+            {
+                if (string.IsNullOrEmpty(filter.Text) || string.IsNullOrEmpty(filter.Value))
+                {
+                    return Resources.InvalidSettingFilter;
+                }
             }
 
             return string.Empty;
         }
 
-        #endregion
+        /// <summary> Load configuration</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string LoadConfiguration()
+        {
+            // Exit if no JSON to load
+            if (_json == null)
+            {
+                return string.Empty;
+            }
 
+            // Flag for if a business view or not
+            var isBusinessView = _source.Options[Source.IsBusinessView];
+
+            try
+            {
+                // Get the view and then update the columns with information from JSON else
+                // if SQL then the data will be loaded from the JSON
+                if (isBusinessView)
+                {
+                    GetSource();
+                }
+
+                // Read JSON to get the Fields
+                var fields =
+                    from field in _json[ProcessGeneration.PropertyFields]
+                    select new
+                    {
+                        FieldName = (string)field[ProcessGeneration.PropertyField],
+                        FieldIndex = (string)field[ProcessGeneration.PropertyFieldIndex],
+                        Captions = (JArray)field[ProcessGeneration.PropertyCaptions],
+                        IsSQLColumnInView = (bool)field[ProcessGeneration.PropertyIsColumnInView],
+                        ViewName = (string)field[ProcessGeneration.PropertyViewName],
+                        ColumnNameInView = (string)field[ProcessGeneration.PropertyColumnNameInView],
+                        DataTypeEnumeration = (string)field[ProcessGeneration.PropertyDataTypeEnumeration],
+                        // DataType = (string)field[ProcessGeneration.PropertyDataType],
+                        Filters = (JArray)field[ProcessGeneration.PropertyFilters],
+                        IsDisplayable = (bool)field[ProcessGeneration.PropertyIsDisplayable],
+                        IsFilterable = (bool)field[ProcessGeneration.PropertyIsFilterable],
+                        IsDrilldown = (bool)field[ProcessGeneration.PropertyIsDrilldown],
+                        DrillDownUrl = (JObject)field[ProcessGeneration.PropertyDrilldownUrl]
+                    };
+
+                // Iterate fields in JSON and update columns in source
+                var displayOrder = 0;
+
+                foreach (var field in fields)
+                {
+                    SourceColumn sourceColumn;
+
+                    // If a business view, get column from business view first
+                    if (isBusinessView)
+                    {
+                        sourceColumn = _source.SourceColumns[field.FieldName];
+                    }
+                    else
+                    {
+                        // If not a business view, need to new one first
+                        sourceColumn = new SourceColumn
+                        {
+                            Id = Convert.ToInt32(field.FieldIndex),
+                            Name = field.FieldName
+                        };
+                        _source.SourceColumns.Add(sourceColumn.Name, sourceColumn);
+                    }
+
+                    // Update display order (order in JSON) and included (if in JSON it is included)
+                    sourceColumn.DisplayOrder = ++displayOrder;
+                    sourceColumn.IsIncluded = true;
+
+                    // Update based upon JSON content
+                    sourceColumn.Type = (SourceDataType)Enum.Parse(typeof(SourceDataType), field.DataTypeEnumeration);
+                    sourceColumn.IsDisplayable = field.IsDisplayable;
+                    sourceColumn.IsFilterable = field.IsFilterable;
+                    sourceColumn.IsColumnInView = field.IsSQLColumnInView;
+                    sourceColumn.ViewId = field.ViewName;
+                    sourceColumn.ViewColumnName = field.ColumnNameInView;
+
+                    // Captions
+                    sourceColumn.Captions.Clear();
+                    var captions =
+                        from caption in field.Captions
+                        select new
+                        {
+                            Language = (string)caption[ProcessGeneration.PropertyLanguage],
+                            Value = (string)caption[ProcessGeneration.PropertyValue]
+                        };
+                    foreach (var caption in captions)
+                    {
+                        sourceColumn.Captions.Add(caption.Language, new Caption() { Language = caption.Language, Text = caption.Value });
+                    }
+
+                    // Drilldown
+                    sourceColumn.IsDrilldown = field.IsDrilldown;
+                    if (field.DrillDownUrl != null)
+                    {
+                        var tokenPath = field.DrillDownUrl.Path;
+                        sourceColumn.AreaName = (string)_json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyArea);
+                        sourceColumn.ControllerName = (string)_json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyController);
+                        sourceColumn.ActionName = (string)_json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyAction);
+
+                        // Parameters
+                        var parameters = (JArray)_json.SelectToken(tokenPath + "." + ProcessGeneration.PropertyParameters);
+                        if (parameters != null)
+                        {
+                            sourceColumn.Params.Clear();
+                            var parms =
+                                from param in parameters
+                                select new
+                                {
+                                    Name = Text = (string)param[ProcessGeneration.PropertyName]
+                                };
+                            foreach (var param in parms)
+                            {
+                                sourceColumn.Params.Add(param.Name, new Parameter() { Name = param.Name });
+                            }
+                        }
+                    }
+
+                    // Filters
+                    sourceColumn.Filters.Clear();
+                    if (field.Filters != null)
+                    {
+                        var filters =
+                            from filter in field.Filters
+                            select new
+                            {
+                                Text = (string)filter[ProcessGeneration.PropertyText],
+                                Value = (string)filter[ProcessGeneration.PropertyValue]
+                            };
+                        foreach (var filter in filters)
+                        {
+                            sourceColumn.Filters.Add(filter.Value, new Filter() { Value = filter.Value, Text = filter.Text });
+                        }
+                    }
+
+                }
+
+                // Clear _json
+                _json = null;
+
+            }
+            catch
+            {
+                return Resources.InvalidSettingJsonFile;
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary> Get Source Business View </summary>
+        private void GetSource()
+        {
+            // Init properties
+            _source.Properties[Source.ViewId] = txtViewID.Text.Trim();
+
+            ProcessGeneration.GetSource(_source);
+
+            // Clear and assign
+            DeleteRows(grdSourceColumns);
+            foreach (var sourceColumn in _source.SourceColumns.Values)
+            {
+                _sourceColumns.Add(sourceColumn);
+
+                // Assign captions
+                AddCaptions(sourceColumn);
+            }
+        }
+
+        /// <summary> Validate the view id and convert it to a source </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        /// <remarks>Disable next button</remarks>
+        private void txtViewID_Leave(object sender, EventArgs e)
+        {
+            var errorCondition = false;
+
+            try
+            {
+                // Someting to validate
+                if (!string.IsNullOrEmpty(txtViewID.Text))
+                {
+                    // Do not validate if already the same view 
+                    if (_source.Properties.ContainsValue(txtViewID.Text.Trim()))
+                    {
+                        return;
+                    }
+
+                    GetSource();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                // Error received attempting to get view
+                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
+                errorCondition = true;
+            }
+
+            // Send back to control?
+            if (!errorCondition)
+            {
+                return;
+            }
+
+            // Clear field and send back to control
+            txtViewID.Text = string.Empty;
+            _source.Properties[Source.ViewId] = string.Empty;
+            txtViewID.Focus();
+        }
+
+        /// <summary> Enable and disable based upon selection</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void chkUseBusinessView_CheckedChanged(object sender, EventArgs e)
+        {
+            var selected = chkUseBusinessView.Checked;
+
+            // remove step first
+            _wizardSteps.RemoveAt(1);
+
+            // Step specific to View or Sql
+            if (chkUseBusinessView.Checked)
+            {
+                AddStep(Resources.StepTitleSource, Resources.StepDescriptionSourceView, pnlSourceView, txtViewID, 1);
+            }
+            else
+            {
+                AddStep(Resources.StepTitleSource, Resources.StepDescriptionSourceSql, pnlSourceSql, txtSQL, 1);
+            }
+
+        }
+
+        /// <summary> Enable/Disable Drilldown</summary>
+        /// <param name="selected">True if selected othwise false </param>
+        private void EnableDrilldown(bool selected)
+        {
+            txtArea.Enabled = selected;
+            txtController.Enabled = selected;
+            txtAction.Enabled = selected;
+            grdParameters.Enabled = selected;
+        }
+
+        /// <summary> Enable and disable based upon selection</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void chkDrilldown_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableDrilldown(chkDrilldown.Checked);
+        }
+
+        /// <summary> Enable/Disable ColumnInView</summary>
+        /// <param name="selected">True if selected othwise false </param>
+        private void EnableColumnInView(bool selected)
+        {
+            txtFilterViewId.Enabled = selected;
+            cboFilterColumn.Enabled = selected;
+        }
+
+        /// <summary> Enable/Disable Filters</summary>
+        /// <param name="selected">True if selected othwise false </param>
+        private void EnableFilters(bool selected)
+        {
+            grdFilters.Enabled = selected;
+
+            // If enabled, set the grid to allow add and edit else set to not allow these
+            grdFilters.AllowUserToAddRows = selected;
+            grdFilters.AllowUserToDeleteRows = selected;
+        }
+
+        /// <summary> Enable and disable based upon selection</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void chkColumnInView_CheckedChanged(object sender, EventArgs e)
+        {
+            var dataType = (SourceDataType)Enum.Parse(typeof(SourceDataType), txtDataType.Text.Trim());
+
+            EnableColumnInView(chkColumnInView.Checked);
+            EnableFilters(!chkColumnInView.Checked && dataType.Equals(SourceDataType.Enumeration));
+
+            // If selected AND is not business view, then clear rows
+            if (chkColumnInView.Checked && chkUseBusinessView.Checked)
+            {
+                DeleteRows(grdFilters);
+            }
+            else if (!chkColumnInView.Checked)
+            {
+                // In case it was already specified, need to clear
+                txtFilterViewId.Text = string.Empty;
+                cboFilterColumn.Items.Clear();
+            }
+        }
+
+        /// <summary> Drag/Drop for included columns</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            // Get the index of the item below the mouse
+            _rowIndexFromMouseDown = grdIncludedColumns.HitTest(e.X, e.Y).RowIndex;
+
+            if (_rowIndexFromMouseDown != -1)
+            {
+                // Remember the point where the mouse down occurred 
+                // The DragSize indicates the size that the mouse can move 
+                // before a drag event should be started.                
+                var dragSize = SystemInformation.DragSize;
+
+                // Create a rectangle using the DragSize, with the mouse position being
+                // at the center of the rectangle.
+                _dragBoxFromMouseDown = new Rectangle(
+                          new Point(
+                            e.X - (dragSize.Width / 2),
+                            e.Y - (dragSize.Height / 2)),
+                      dragSize);
+            }
+            else
+            {
+                // Reset the rectangle if the mouse is not over an item in the ListBox.
+                _dragBoxFromMouseDown = Rectangle.Empty;
+            }
+        }
+
+        /// <summary> Drag/Drop for included columns</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Only on left mouse 
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                // If the mouse moves outside the rectangle, start the drag
+                if (_dragBoxFromMouseDown != Rectangle.Empty && !_dragBoxFromMouseDown.Contains(e.X, e.Y))
+                {
+                    // Proceed with the drag and drop, passing in the item                    
+                    var dropEffect = grdIncludedColumns.DoDragDrop(grdIncludedColumns.Rows[_rowIndexFromMouseDown], 
+                        DragDropEffects.Move);
+                }
+            }
+        }
+
+        /// <summary> Drag/Drop for included columns</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        /// <summary> Drag/Drop for included columns</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_DragDrop(object sender, DragEventArgs e)
+        {
+
+            // The mouse locations are relative to the screen, so they must be 
+            // converted to client coordinates.
+            var clientPoint = grdIncludedColumns.PointToClient(new Point(e.X, e.Y));
+
+            // Get the row index of the item below the mouse
+            _rowIndexOfItemUnderMouseToDrop = grdIncludedColumns.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
+
+            // If the drag operation was a move then remove and insert the row.
+            if (e.Effect == DragDropEffects.Move)
+            {
+                var removeAtIndex = ((DataGridViewRow)e.Data.GetData(typeof(DataGridViewRow))).Index;
+                var columnToMove = _includedColumns[removeAtIndex];
+
+                _includedColumns.RemoveAt(removeAtIndex);
+                _includedColumns.Insert(_rowIndexOfItemUnderMouseToDrop, columnToMove);
+
+                // Reset Display Order 
+                var displayOrder = 0;
+                foreach (var includedColumn in _includedColumns)
+                {
+                    includedColumn.DisplayOrder = ++displayOrder;
+                }
+            }
+        }
+
+        /// <summary> Edit an included column</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Get selected row
+            var includedColumn = (SourceColumn)((DataGridView)sender).CurrentRow.DataBoundItem;
+
+            if (includedColumn != null)
+            {
+                // Setup column for editing
+                _clickedColumn = includedColumn;
+                ColumnSetup(ModeType.Edit);
+            }
+
+        }
+
+        /// <summary> No whitespaces allows</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void txtInquiryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary> Edit a column</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void grdIncludedColumns_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        /// <summary> Cancel a column edit</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CancelColumn();
+        }
+
+        /// <summary> Save a column edit</summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveColumn();
+        }
+
+        /// <summary> Validate the view id and convert it to a source </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void txtFilterViewId_Leave(object sender, EventArgs e)
+        {
+            var errorCondition = false;
+
+            try
+            {
+                // Something to validate
+                if (!string.IsNullOrEmpty(txtFilterViewId.Text))
+                {
+                    // Do not validate if already the same view 
+                    if (txtFilterViewId.Tag != null && txtFilterViewId.Tag.ToString().Equals(txtFilterViewId.Text.Trim()))
+                    {
+                        return;
+                    }
+
+                    // Init properties
+                    _viewSource.Properties.Clear();
+                    _viewSource.Properties[Source.ViewId] = txtFilterViewId.Text.Trim();
+                    _viewSource.Properties[Source.User] = txtUser.Text.Trim();
+                    _viewSource.Properties[Source.Password] = txtPassword.Text.Trim();
+                    _viewSource.Properties[Source.Version] = txtVersion.Text.Trim();
+                    _viewSource.Properties[Source.Company] = txtCompany.Text.Trim();
+
+                    ProcessGeneration.GetSource(_viewSource);
+
+                    // Clear and assign
+                    cboFilterColumn.Items.Clear();
+                    foreach (var filterColumn in _viewSource.SourceColumns.Values)
+                    {
+                        cboFilterColumn.Items.Add(filterColumn.Name);
+                    }
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                // Error received attempting to get view
+                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
+                errorCondition = true;
+            }
+
+            // Send back to control?
+            if (!errorCondition)
+            {
+                return;
+            }
+
+            // Clear field and send back to control
+            txtFilterViewId.Text = string.Empty;
+            cboFilterColumn.Items.Clear();
+            txtFilterViewId.Focus();
+        }
+
+        /// <summary> Add filters if any </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void cboFilterColumn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Does the column have a list?
+            // Clear and assign
+            _filters.Clear();
+
+            var column = (SourceColumn)_viewSource.SourceColumns[cboFilterColumn.Text];
+            if (column != null && column.Filters.Values.Count > 0)
+            {
+                foreach (var filter in column.Filters.Values)
+                {
+                    _filters.Add(filter);
+                }
+            }
+
+        }
+
+        /// <summary> Show SQL Help modally </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnSqlHelp_Click(object sender, EventArgs e)
+        {
+            var help = new SqlHelp().ShowDialog();
+        }
+
+        #endregion
     }
 }

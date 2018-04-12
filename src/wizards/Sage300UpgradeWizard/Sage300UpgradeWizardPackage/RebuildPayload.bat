@@ -11,15 +11,15 @@
 ::                  * Create a temporary folder
 ::
 ::          Step 2: Copy assets to temporary folder and build 
-::                  new Web.zip from CNA2\Columbus-Web sources
-::                  * \SDK\Settings\AccpacDotNetVersion.props
-::                  * \assets\__TemplateIcon.ico
-::                  * \assets\MyTemplate.vstemplate
-::                  * Web.zip
+::                  new Items.zip from CNA2\Columbus-Web sources
+::                  and other files as listed below:
+::                     * \SDK\Settings\AccpacDotNetVersion.props
+::                     * \assets\__TemplateIcon.ico
+::                     * \assets\Items.vstemplate
 ::
 ::          Step 3: Clear out the final destination folder
 ::
-::          Step 4: Zip everything up into a file called UpgradeWebItems.zip
+::          Step 4: Zip everything up into a file called Items.zip
 ::
 ::          Step 5: Remove the temporary working folder
 ::
@@ -31,8 +31,8 @@ setlocal
 :: ---------------------------------------------------------------------------------------
 :: Set the final zip filename(s)
 :: ---------------------------------------------------------------------------------------
-set ContainerZipFileName=UpgradeWebItems
-set WebZipFileName=Web
+::set ContainerZipFileName=Items
+set ItemsZipFileName=Items
 
 :: ---------------------------------------------------------------------------------------
 :: Set the destination folder for the zip file
@@ -45,9 +45,13 @@ if not [%1]==[] (
 echo zipDestinationPath=%zipDestinationPath%
 
 :: ---------------------------------------------------------------------------------------
+::
 :: Create a datetimestamped temporary folder to serve
 :: as our working folder
-:: Also, within this folder, create a folder called 'Web'
+:: Also, within this folder, create two folders as follows:
+::   \Web
+::   \Web-All
+::
 :: ---------------------------------------------------------------------------------------
 for /f "delims=" %%a in ('wmic OS get localdatetime  ^| find "."') do set datetime=%%a
 :: Example timestamp = 20180321104611.887000-420
@@ -81,16 +85,23 @@ robocopy /E ..\..\Templates\Web %workingFolderWebAll%
 call :CleanWebFolderBasedOnManifestFile %workingFolderWebAll% %workingFolderWeb%
 rd /S /Q %workingFolderWebAll%
 
-:: ---------------------------------------------------------------------------------------
-:: Create the Web.zip file
-:: ---------------------------------------------------------------------------------------
-call :Zip2 %workingFolderWeb% %workingFolder%\%WebZipFileName%.zip
 
 :: ---------------------------------------------------------------------------------------
-:: Remove the 'Web' folder once a Web.zip file has been created
+:: Move whatever files are in the root of the temporary date/timestamped folder
+:: into the 'Web' folder
 :: ---------------------------------------------------------------------------------------
-if exist %workingFolder%\%WebZipFileName%.zip (
-  echo The web.zip has been created successfully!
+move /Y %workingFolder%\*.* %workingFolderWeb%
+
+:: ---------------------------------------------------------------------------------------
+:: Create the Items.zip file
+:: ---------------------------------------------------------------------------------------
+call :Zip2 %workingFolderWeb% %workingFolder%\%ItemsZipFileName%.zip
+
+:: ---------------------------------------------------------------------------------------
+:: Remove the 'Web' folder once a Items.zip file has been created
+:: ---------------------------------------------------------------------------------------
+if exist %workingFolder%\%ItemsZipFileName%.zip (
+  echo The 'Items.zip' file has been created successfully!
   rd /S /Q %workingFolderWeb%
 )
 
@@ -98,22 +109,34 @@ if exist %workingFolder%\%WebZipFileName%.zip (
 :: Clear out the final destination folder
 :: ---------------------------------------------------------------------------------------
 del %zipDestinationPath%\*.zip
+echo '%zipDestinationPath%' folder has been cleared.
 
 :: ---------------------------------------------------------------------------------------
-:: Create the final zip file
+:: Copy the final Items.zip to the final destination
 :: This file contains all of the components outlined in step 2
 :: ---------------------------------------------------------------------------------------
-call :Zip %workingFolder%
+copy %workingFolder%\%ItemsZipFileName%.zip %zipDestinationPath%
+echo %ItemsZipFileName%.zip copied to '%zipDestinationPath%' 
 
 :: ---------------------------------------------------------------------------------------
 :: Remove the working folder
 :: ---------------------------------------------------------------------------------------
 rd /S /Q %workingFolder%
+echo Temporary folder '%workingFolder%' has been removed.
 
 :: ---------------------------------------------------------------------------------------
 :: That's it :)
 :: ---------------------------------------------------------------------------------------
 goto :EOF
+
+
+
+
+
+
+
+
+
 
 
 

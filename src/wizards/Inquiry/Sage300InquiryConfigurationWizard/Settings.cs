@@ -30,9 +30,13 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Location of inquiry configuration file </summary>
         public string FolderName { get; set; }
         /// <summary> Inquiry configuration file name </summary>
-        public string FileName { get; set; }
-        /// <summary> JSON</summary>
-        public JObject Json { get; set; }
+        public string ConfigurationFileName { get; set; }
+        /// <summary> Inquiry template file name </summary>
+        public string TemplateFileName { get; set; }
+        /// <summary> Configuration JSON</summary>
+        public JObject ConfigurationJson { get; set; }
+        /// <summary> Template JSON</summary>
+        public JObject TemplateJson { get; set; }
         #endregion
     }
 

@@ -32,6 +32,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public string Description { get; set; }
         /// <summary> Wizard Step Panel </summary>
         public Panel Panel { get; set; }
+        /// <summary> Wizard Step Focus Control </summary>
+        public Control FocusControl { get; set; }
         #endregion
 
         #region Public Methods

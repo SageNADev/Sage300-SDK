@@ -61,7 +61,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action.
+        ///   Looks up a localized string similar to Action:.
         /// </summary>
         internal static string Action {
             get {
@@ -70,7 +70,16 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Area.
+        ///   Looks up a localized string similar to Specify the action (method) for the drilldown.
+        /// </summary>
+        internal static string ActionTip {
+            get {
+                return ResourceManager.GetString("ActionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Area:.
         /// </summary>
         internal static string Area {
             get {
@@ -79,20 +88,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Assembly:.
+        ///   Looks up a localized string similar to Specify the area (module) for the drilldown.
         /// </summary>
-        internal static string Assembly {
+        internal static string AreaTip {
             get {
-                return ResourceManager.GetString("Assembly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select an Assembly containing the model to be used for the inquiry configuration.
-        /// </summary>
-        internal static string AssemblyTip {
-            get {
-                return ResourceManager.GetString("AssemblyTip", resourceCulture);
+                return ResourceManager.GetString("AreaTip", resourceCulture);
             }
         }
         
@@ -116,11 +116,164 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Controller.
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caption.
+        /// </summary>
+        internal static string Caption {
+            get {
+                return ResourceManager.GetString("Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Captions:.
+        /// </summary>
+        internal static string Captions {
+            get {
+                return ResourceManager.GetString("Captions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column:.
+        /// </summary>
+        internal static string Column {
+            get {
+                return ResourceManager.GetString("Column", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click a column to Drag and Drop for display order or Double-Click on a column to edit the properties..
+        /// </summary>
+        internal static string ColumnInstructions {
+            get {
+                return ResourceManager.GetString("ColumnInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A column in the Sage 300 business view to be used for filters.
+        /// </summary>
+        internal static string ColumnNameTip {
+            get {
+                return ResourceManager.GetString("ColumnNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Columns:.
+        /// </summary>
+        internal static string Columns {
+            get {
+                return ResourceManager.GetString("Columns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column.
+        /// </summary>
+        internal static string ColumnTab {
+            get {
+                return ResourceManager.GetString("ColumnTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The order of the column, whether or not it is displayed and the localized captions can be modified.
+        /// </summary>
+        internal static string ColumnTabTip {
+            get {
+                return ResourceManager.GetString("ColumnTabTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The included column being modified.
+        /// </summary>
+        internal static string ColumnTip {
+            get {
+                return ResourceManager.GetString("ColumnTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies if this SQLcolumn can be found in a business view for the filtered list.
+        /// </summary>
+        internal static string ColumnView {
+            get {
+                return ResourceManager.GetString("ColumnView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 business view to be used for filters.
+        /// </summary>
+        internal static string ColumnViewIdTip {
+            get {
+                return ResourceManager.GetString("ColumnViewIdTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked to specify column is in a view.
+        /// </summary>
+        internal static string ColumnViewTip {
+            get {
+                return ResourceManager.GetString("ColumnViewTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company:.
+        /// </summary>
+        internal static string Company {
+            get {
+                return ResourceManager.GetString("Company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 company.
+        /// </summary>
+        internal static string CompanyTip {
+            get {
+                return ResourceManager.GetString("CompanyTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Controller:.
         /// </summary>
         internal static string Controller {
             get {
                 return ResourceManager.GetString("Controller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the controller for the drilldown.
+        /// </summary>
+        internal static string ControllerTip {
+            get {
+                return ResourceManager.GetString("ControllerTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application Credentials.
+        /// </summary>
+        internal static string Credentials {
+            get {
+                return ResourceManager.GetString("Credentials", resourceCulture);
             }
         }
         
@@ -134,11 +287,110 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Type:.
+        /// </summary>
+        internal static string DataType {
+            get {
+                return ResourceManager.GetString("DataType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the data type for the column.
+        /// </summary>
+        internal static string DataTypeTip {
+            get {
+                return ResourceManager.GetString("DataTypeTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display.
+        /// </summary>
+        internal static string Display {
+            get {
+                return ResourceManager.GetString("Display", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies if this column will be displayed in the Inquiry Grid else it will be hidden.
+        /// </summary>
+        internal static string DisplayColumn {
+            get {
+                return ResourceManager.GetString("DisplayColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked to display the column in the grid.
+        /// </summary>
+        internal static string DisplayColumnTip {
+            get {
+                return ResourceManager.GetString("DisplayColumnTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order:.
+        /// </summary>
+        internal static string DisplayOrder {
+            get {
+                return ResourceManager.GetString("DisplayOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The display order of the colun in the grid.
+        /// </summary>
+        internal static string DisplayOrderTip {
+            get {
+                return ResourceManager.GetString("DisplayOrderTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies the drilldown criteria for this column.
+        /// </summary>
+        internal static string DrilldownFromColumn {
+            get {
+                return ResourceManager.GetString("DrilldownFromColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked to drilldown from column.
+        /// </summary>
+        internal static string DrilldownFromColumnTip {
+            get {
+                return ResourceManager.GetString("DrilldownFromColumnTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drilldown.
         /// </summary>
-        internal static string Drilldown {
+        internal static string DrilldownTab {
             get {
-                return ResourceManager.GetString("Drilldown", resourceCulture);
+                return ResourceManager.GetString("DrilldownTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The properties for drilling down from the column can be specified or modified.
+        /// </summary>
+        internal static string DrilldownTabTip {
+            get {
+                return ResourceManager.GetString("DrilldownTabTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Column.
+        /// </summary>
+        internal static string EditColumn {
+            get {
+                return ResourceManager.GetString("EditColumn", resourceCulture);
             }
         }
         
@@ -171,6 +423,33 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Example 1.
+        /// </summary>
+        internal static string Example1 {
+            get {
+                return ResourceManager.GetString("Example1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example 2.
+        /// </summary>
+        internal static string Example2 {
+            get {
+                return ResourceManager.GetString("Example2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example 3.
+        /// </summary>
+        internal static string Example3 {
+            get {
+                return ResourceManager.GetString("Example3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field.
         /// </summary>
         internal static string Field {
@@ -198,11 +477,29 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filterable.
+        ///   Looks up a localized string similar to Specifies if the Inquiry Grid for this column will allow filtering.
         /// </summary>
         internal static string Filterable {
             get {
                 return ResourceManager.GetString("Filterable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filterable.
+        /// </summary>
+        internal static string FilterableColumn {
+            get {
+                return ResourceManager.GetString("FilterableColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked to allow column to be filtered.
+        /// </summary>
+        internal static string FilterableTip {
+            get {
+                return ResourceManager.GetString("FilterableTip", resourceCulture);
             }
         }
         
@@ -212,6 +509,42 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         internal static string FilterAll {
             get {
                 return ResourceManager.GetString("FilterAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtering.
+        /// </summary>
+        internal static string FilteringTab {
+            get {
+                return ResourceManager.GetString("FilteringTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The properties for filtering on the column can be specified or modified.
+        /// </summary>
+        internal static string FilteringTabTip {
+            get {
+                return ResourceManager.GetString("FilteringTabTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filters:.
+        /// </summary>
+        internal static string Filters {
+            get {
+                return ResourceManager.GetString("Filters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filters to be used for the column.
+        /// </summary>
+        internal static string FiltersTip {
+            get {
+                return ResourceManager.GetString("FiltersTip", resourceCulture);
             }
         }
         
@@ -387,6 +720,24 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        internal static string InquiryName {
+            get {
+                return ResourceManager.GetString("InquiryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name of the inquiry configuration.
+        /// </summary>
+        internal static string InquiryNameTip {
+            get {
+                return ResourceManager.GetString("InquiryNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select to create a new inquiry configuration.
         /// </summary>
         internal static string InquiryNewTip {
@@ -396,7 +747,106 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} has not been specified..
+        ///   Looks up a localized string similar to Instructions.
+        /// </summary>
+        internal static string Instructions {
+            get {
+                return ResourceManager.GetString("Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is at least one column name that a space in the name..
+        /// </summary>
+        internal static string InvalidSettingColumnSpaces {
+            get {
+                return ResourceManager.GetString("InvalidSettingColumnSpaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to establish connection with entered credentials..
+        /// </summary>
+        internal static string InvalidSettingCredentials {
+            get {
+                return ResourceManager.GetString("InvalidSettingCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} specified does not exist..
+        /// </summary>
+        internal static string InvalidSettingDoesNotExist {
+            get {
+                return ResourceManager.GetString("InvalidSettingDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is at least one column name specified more than once..
+        /// </summary>
+        internal static string InvalidSettingDuplicateCols {
+            get {
+                return ResourceManager.GetString("InvalidSettingDuplicateCols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A filter is not properly spcified..
+        /// </summary>
+        internal static string InvalidSettingFilter {
+            get {
+                return ResourceManager.GetString("InvalidSettingFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The contents of the JSON file caused an error while parsing..
+        /// </summary>
+        internal static string InvalidSettingJsonFile {
+            get {
+                return ResourceManager.GetString("InvalidSettingJsonFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The inquiry engine will supply the &apos;ORDER BY&apos; syntax..
+        /// </summary>
+        internal static string InvalidSettingOrderByClause {
+            get {
+                return ResourceManager.GetString("InvalidSettingOrderByClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} column for the {1} was not found in the list of SQL columns..
+        /// </summary>
+        internal static string InvalidSettingOrderByCol {
+            get {
+                return ResourceManager.GetString("InvalidSettingOrderByCol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At least one column must be included..
+        /// </summary>
+        internal static string InvalidSettingRequiredColumn {
+            get {
+                return ResourceManager.GetString("InvalidSettingRequiredColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no Wrapper columns specified..
+        /// </summary>
+        internal static string InvalidSettingRequiredColumns {
+            get {
+                return ResourceManager.GetString("InvalidSettingRequiredColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} has not been specified or is invalid..
         /// </summary>
         internal static string InvalidSettingRequiredField {
             get {
@@ -405,16 +855,16 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to At least one property must be included..
+        ///   Looks up a localized string similar to The inquiry engine will supply the &apos;WHERE&apos; syntax..
         /// </summary>
-        internal static string InvalidSettingRequiredProperty {
+        internal static string InvalidSettingWhereClause {
             get {
-                return ResourceManager.GetString("InvalidSettingRequiredProperty", resourceCulture);
+                return ResourceManager.GetString("InvalidSettingWhereClause", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} file will be generated with the following content:.
+        ///   Looks up a localized string similar to The {0} and {1} files will be generated:.
         /// </summary>
         internal static string JsonToGenerateTip {
             get {
@@ -423,20 +873,29 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Model:.
+        ///   Looks up a localized string similar to Language.
         /// </summary>
-        internal static string Model {
+        internal static string Language {
             get {
-                return ResourceManager.GetString("Model", resourceCulture);
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select a model for the inquiry configuration.
+        ///   Looks up a localized string similar to Captions for column in grid.
         /// </summary>
-        internal static string ModelTip {
+        internal static string Languages {
             get {
-                return ResourceManager.GetString("ModelTip", resourceCulture);
+                return ResourceManager.GetString("Languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the captions for the required languages.
+        /// </summary>
+        internal static string LanguagesTip {
+            get {
+                return ResourceManager.GetString("LanguagesTip", resourceCulture);
             }
         }
         
@@ -459,11 +918,200 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order By Clause:.
+        /// </summary>
+        internal static string OrderByClause {
+            get {
+                return ResourceManager.GetString("OrderByClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the order by clause, if any, without the ORDER BY verb.
+        /// </summary>
+        internal static string OrderByClauseTip {
+            get {
+                return ResourceManager.GetString("OrderByClauseTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter.
+        /// </summary>
+        internal static string Parameter {
+            get {
+                return ResourceManager.GetString("Parameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameters:.
+        /// </summary>
+        internal static string Parameters {
+            get {
+                return ResourceManager.GetString("Parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify parameter name(s) of the action (method).
+        /// </summary>
+        internal static string ParametersTip {
+            get {
+                return ResourceManager.GetString("ParametersTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 password.
+        /// </summary>
+        internal static string PasswordTip {
+            get {
+                return ResourceManager.GetString("PasswordTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Property.
         /// </summary>
         internal static string Property {
             get {
                 return ResourceManager.GetString("Property", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL.
+        /// </summary>
+        internal static string Sql {
+            get {
+                return ResourceManager.GetString("Sql", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Help.
+        /// </summary>
+        internal static string SqlHelp {
+            get {
+                return ResourceManager.GetString("SqlHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Describes the required structure of the SQL statement and provides a couple of examples.
+        /// </summary>
+        internal static string SqlHelpTip {
+            get {
+                return ResourceManager.GetString("SqlHelpTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In the textbox provided, create or copy &amp; paste a SQL statement that will be used to display data in an inquiry grid..
+        /// </summary>
+        internal static string SqlInstructions1 {
+            get {
+                return ResourceManager.GetString("SqlInstructions1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It is recommended that the SQL statement be developed in a tool such as SQL Server Management Studio or similar to provide a well-formatted, proper and working SQL statement..
+        /// </summary>
+        internal static string SqlInstructions2 {
+            get {
+                return ResourceManager.GetString("SqlInstructions2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Inquiry Engine will create a wrapper for the SQL statement based upon the columns returned by the SQL statement. Note: These columns are manually specified in the exact order of the return columns of the SQL statement in the wizard as the wizard does not parse or validate the format or content of the SQL statement..
+        /// </summary>
+        internal static string SqlInstructions3 {
+            get {
+                return ResourceManager.GetString("SqlInstructions3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Inquiry Engine will apply the supplied &apos;where clause&apos; to the generated wrapper if a &apos;where clause&apos; is supplied. This &apos;where clause&apos; is applied to the wrapper and is considered the &apos;first-level&apos; sort or filter. It is separate from any &apos;where clauses&apos; used in the SQL statement itself. The &apos;WHERE&apos; key word will not be specified in the wizard field (i.e. IDCUST = {0} not WHERE IDCUST = {0})..
+        /// </summary>
+        internal static string SqlInstructions4 {
+            get {
+                return ResourceManager.GetString("SqlInstructions4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Inquiry Engine will apply the required &apos;order by clause&apos; to the generated wrapper. This &apos;order by clause&apos; is applied to the wrapper. It is separate from any &apos;order by clauses&apos; used in the SQL statement itself. The &apos;ORDER BY&apos; key word will not be specified in the wizard field (i.e. IDCUST not ORDER BY IDCUST)..
+        /// </summary>
+        internal static string SqlInstructions5 {
+            get {
+                return ResourceManager.GetString("SqlInstructions5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The examples on the following tabs show various SQL statements (with their wrappers, where and order by clauses already applied). But, remember that the SQL statement provided will NOT include the wrapper, the &apos;where clause&apos; or the &apos;order by clause&apos;. The SQL statement examples provide the ability to understand the proper format required by the wizard..
+        /// </summary>
+        internal static string SqlInstructions6 {
+            get {
+                return ResourceManager.GetString("SqlInstructions6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the SQL Statement in the space below. Select the Help icon for information on SQL format and requirements..
+        /// </summary>
+        internal static string SqlSource {
+            get {
+                return ResourceManager.GetString("SqlSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Statement.
+        /// </summary>
+        internal static string SqlStatement {
+            get {
+                return ResourceManager.GetString("SqlStatement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The SQL statement can be specified or modified.
+        /// </summary>
+        internal static string SqlStatementTabTip {
+            get {
+                return ResourceManager.GetString("SqlStatementTabTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a well-formatted SQL statement whose columns will be defined in the next step.
+        /// </summary>
+        internal static string SqlTip {
+            get {
+                return ResourceManager.GetString("SqlTip", resourceCulture);
             }
         }
         
@@ -486,7 +1134,16 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This will generate a configuration file for an Inquiry..
+        ///   Looks up a localized string similar to Provides the ability to modify existing properties, add captions, drill down targets, and more..
+        /// </summary>
+        internal static string StepDescriptionColumns {
+            get {
+                return ResourceManager.GetString("StepDescriptionColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will generate configuration files..
         /// </summary>
         internal static string StepDescriptionCreateEdit {
             get {
@@ -495,7 +1152,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select &apos;Generate&apos; to generate the configuration file for this inquiry based upon the content from the previous steps..
+        ///   Looks up a localized string similar to Select &apos;Generate&apos; to generate configuration files based upon the content from the previous steps..
         /// </summary>
         internal static string StepDescriptionGenerate {
             get {
@@ -504,7 +1161,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The file noted below has been generated for this inquiry configuration..
+        ///   Looks up a localized string similar to The configuration files noted below have been generated..
         /// </summary>
         internal static string StepDescriptionGenerated {
             get {
@@ -513,7 +1170,34 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add/Edit an Inquiry Configuration.
+        ///   Looks up a localized string similar to Specify a SQL statement for the data source..
+        /// </summary>
+        internal static string StepDescriptionSourceSql {
+            get {
+                return ResourceManager.GetString("StepDescriptionSourceSql", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify a Business View for the data source..
+        /// </summary>
+        internal static string StepDescriptionSourceView {
+            get {
+                return ResourceManager.GetString("StepDescriptionSourceView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Columns.
+        /// </summary>
+        internal static string StepTitleColumns {
+            get {
+                return ResourceManager.GetString("StepTitleColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add/Edit.
         /// </summary>
         internal static string StepTitleCreateEdit {
             get {
@@ -522,7 +1206,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate an Inquiry Configuration.
+        ///   Looks up a localized string similar to Generate.
         /// </summary>
         internal static string StepTitleGenerate {
             get {
@@ -531,11 +1215,20 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generated an Inquiry Configuration.
+        ///   Looks up a localized string similar to Generated.
         /// </summary>
         internal static string StepTitleGenerated {
             get {
                 return ResourceManager.GetString("StepTitleGenerated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source.
+        /// </summary>
+        internal static string StepTitleSource {
+            get {
+                return ResourceManager.GetString("StepTitleSource", resourceCulture);
             }
         }
         
@@ -550,11 +1243,155 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        internal static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         internal static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies if a Business View will be used for the datasource else a SQL Statement will be used.
+        /// </summary>
+        internal static string UseBusinessView {
+            get {
+                return ResourceManager.GetString("UseBusinessView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User:.
+        /// </summary>
+        internal static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 user.
+        /// </summary>
+        internal static string UserTip {
+            get {
+                return ResourceManager.GetString("UserTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A Business View or a SQL statement may be used for this inquiry configuration.
+        /// </summary>
+        internal static string UseViewTip {
+            get {
+                return ResourceManager.GetString("UseViewTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 version.
+        /// </summary>
+        internal static string VersionTip {
+            get {
+                return ResourceManager.GetString("VersionTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select columns from the business view to be included in the configuration.
+        /// </summary>
+        internal static string ViewColumnsTip {
+            get {
+                return ResourceManager.GetString("ViewColumnsTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View ID:.
+        /// </summary>
+        internal static string ViewId {
+            get {
+                return ResourceManager.GetString("ViewId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A valid Sage 300 business view.
+        /// </summary>
+        internal static string ViewIdTip {
+            get {
+                return ResourceManager.GetString("ViewIdTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where Clause:.
+        /// </summary>
+        internal static string WhereClause {
+            get {
+                return ResourceManager.GetString("WhereClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the where clause, if any, without the WHERE verb.
+        /// </summary>
+        internal static string WhereClauseTip {
+            get {
+                return ResourceManager.GetString("WhereClauseTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrapper Columns and Clauses.
+        /// </summary>
+        internal static string WrapperColsClauses {
+            get {
+                return ResourceManager.GetString("WrapperColsClauses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the columns for the Inquiry Engine&apos;s Wrapper that will align with the columns in the SQL Statement. Note: The column names can be named differently than the SQL Statement columns. The Where Clause, if specified, and the Order By Clause must use column names from the columns list and not the SQL Statement..
+        /// </summary>
+        internal static string WrapperInstructions {
+            get {
+                return ResourceManager.GetString("WrapperInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Columns, Where clause and Order By clause can be specified or modified.
+        /// </summary>
+        internal static string WrapperTabTip {
+            get {
+                return ResourceManager.GetString("WrapperTabTip", resourceCulture);
             }
         }
     }
