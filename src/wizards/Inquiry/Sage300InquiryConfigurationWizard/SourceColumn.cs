@@ -88,8 +88,6 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public bool IsGroupBy { get; set; }
         /// <summary> Is column aggregatable </summary>
         public Dictionary<string, string> AggregatedBy { get; set; }
-        /// <summary> List of security rights </summary>
-        public Dictionary<string, string> SecurityRight { get; set; }
         #endregion
     }
 }

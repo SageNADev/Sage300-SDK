@@ -73,6 +73,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public const string PropertyFileName = "FileName";
         /// <summary> Property for Description </summary>
         public const string PropertyDescription = "Description";
+        /// <summary> Property for Security Rights </summary>
+        public const string PropertySecurityRights = "SecurityResourceID";
         /// <summary> Property for GeneratedMessage </summary>
         public const string PropertyGeneratedMessage = "GeneratedMessage";
         /// <summary> Property for GeneratedWarning </summary>

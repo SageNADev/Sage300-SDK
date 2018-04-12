@@ -276,9 +276,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
-            //GenericInit(grid, 18, 50, "", false, true);
-            //GenericInit(grid, 19, 50, "", false, true);
-            //GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 18, 50, "", false, true);
+            GenericInit(grid, 19, 50, "", false, true);
         }
 
         /// <summary> Initialize SQL Columns grid and display </summary>
@@ -328,9 +327,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
-            //GenericInit(grid, 18, 50, "", false, true);
-            //GenericInit(grid, 19, 50, "", false, true);
-            //GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 18, 50, "", false, true);
+            GenericInit(grid, 19, 50, "", false, true);
         }
 
         /// <summary> Initialize Included Columns grid and display </summary>
@@ -361,8 +359,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
             GenericInit(grid, 18, 75, Resources.GroupByColumn, true, true);
-            GenericInit(grid, 19, 50, "AggregatedBy", true, true);
-            GenericInit(grid, 20, 50, "SecurityRight", true, true);
+            GenericInit(grid, 19, 75, "AggregatedBy", true, true);
         }
 
         /// <summary> Initialize grid and display </summary>
@@ -1369,6 +1366,16 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 new JProperty(ProcessGeneration.PropertyWhereClause, GetContent(Source.WhereClause)),
                 new JProperty(ProcessGeneration.PropertyOrderByClause, GetContent(Source.OrderByClause))
             };
+
+            // Create array of security rights - HARDCODED FOR NOW
+            var securityRightsArray = new JArray();
+
+            var securityRights = new JObject();
+            securityRights.Add(new JProperty("Name", "AP1"));
+            securityRights.Add(new JProperty("Code", "AP1"));
+            securityRightsArray.Add(securityRights);
+
+            json.Add(new JProperty(ProcessGeneration.PropertySecurityRights, securityRightsArray));
 
             // Create array of fields
             var fieldsArray = new JArray();
