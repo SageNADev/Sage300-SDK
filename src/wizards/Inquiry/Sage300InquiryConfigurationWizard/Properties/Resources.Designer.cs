@@ -639,6 +639,15 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IsGroupBy.
+        /// </summary>
+        internal static string GroupByColumn {
+            get {
+                return ResourceManager.GetString("GroupByColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string Home {

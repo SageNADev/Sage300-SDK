@@ -276,6 +276,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
+            //GenericInit(grid, 18, 50, "", false, true);
+            //GenericInit(grid, 19, 50, "", false, true);
+            //GenericInit(grid, 20, 50, "", false, true);
         }
 
         /// <summary> Initialize SQL Columns grid and display </summary>
@@ -325,6 +328,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
+            //GenericInit(grid, 18, 50, "", false, true);
+            //GenericInit(grid, 19, 50, "", false, true);
+            //GenericInit(grid, 20, 50, "", false, true);
         }
 
         /// <summary> Initialize Included Columns grid and display </summary>
@@ -354,6 +360,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
+            GenericInit(grid, 18, 75, Resources.GroupByColumn, true, true);
+            GenericInit(grid, 19, 50, "AggregatedBy", true, true);
+            GenericInit(grid, 20, 50, "SecurityRight", true, true);
         }
 
         /// <summary> Initialize grid and display </summary>
@@ -1464,6 +1473,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                     fields.Add(new JProperty(ProcessGeneration.PropertyDrilldownUrl, drilldownProperties));
                 }
 
+                fields.Add(new JProperty(ProcessGeneration.PropertyIsGroupBy, sourceColumn.IsGroupBy));
+
                 fieldsArray.Add(fields);
             }
 
@@ -1990,6 +2001,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                         IsDisplayable = (bool)field[ProcessGeneration.PropertyIsDisplayable],
                         IsFilterable = (bool)field[ProcessGeneration.PropertyIsFilterable],
                         IsDrilldown = (bool)field[ProcessGeneration.PropertyIsDrilldown],
+                        IsGroupBy = (bool)field[ProcessGeneration.PropertyIsGroupBy],
                         DrillDownUrl = (JObject)field[ProcessGeneration.PropertyDrilldownUrl]
                     };
 
@@ -2068,6 +2080,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                             }
                         }
                     }
+
+                    // GroupBy
+                    sourceColumn.IsGroupBy = field.IsGroupBy;
 
                     // Filters
                     sourceColumn.Filters.Clear();

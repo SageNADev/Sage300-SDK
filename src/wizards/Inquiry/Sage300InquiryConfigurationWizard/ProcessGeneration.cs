@@ -85,6 +85,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public const string PropertyIsFilterable = "IsFilterable";
         /// <summary> Property for IsDrilldown </summary>
         public const string PropertyIsDrilldown = "IsDrilldown";
+        /// <summary> Property for IsGroupBy </summary>
+        public const string PropertyIsGroupBy = "IsGroupBy";
         /// <summary> Property for IsDisplayable </summary>
         public const string PropertyIsDisplayable = "IsDisplayable";
         /// <summary> Property for Field </summary>
