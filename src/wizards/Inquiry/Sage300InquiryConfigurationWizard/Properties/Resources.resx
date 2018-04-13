@@ -565,4 +565,7 @@
   <data name="GroupByColumn" xml:space="preserve">
     <value>IsGroupBy</value>
   </data>
+  <data name="AggregationColumn" xml:space="preserve">
+    <value>Aggregation</value>
+  </data>
 </root>

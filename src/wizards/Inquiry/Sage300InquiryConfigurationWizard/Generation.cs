@@ -63,6 +63,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Filters in grid </summary>
         private readonly BindingList<Filter> _filters = new BindingList<Filter>();
 
+        /// <summary> Aggregation types check box group </summary>
+        private readonly BindingList<string> _aggregationTypes = new BindingList<string>();
+
         /// <summary> Included columns in grid </summary>
         private readonly BindingList<SourceColumn> _includedColumns = new BindingList<SourceColumn>();
 
@@ -192,7 +195,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Add Captions</summary>
         /// <param name="sourceColumn">Source Column</param>
         /// <param name="language">Language</param>
-        private void AddCaptions(SourceColumn sourceColumn, string language)
+        private void AddCaptions(SourceColumn sourceColumn)
         {
             // Do not add if already present (SQl column name change scenario)
             if (sourceColumn.Captions.Count > 0)
@@ -200,27 +203,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 return;
             }
 
-            string[] accpacLanguages = new string[5]
-            {
-                ProcessGeneration.PropertyEnglish,
-                ProcessGeneration.PropertyFrench,
-                ProcessGeneration.PropertySpanish,
-                ProcessGeneration.PropertyChineseSimplified,
-                ProcessGeneration.PropertyChineseTraditional
-            };
-
-            foreach (var lang in accpacLanguages)
-            {
-                if (lang == language)
-                {
-                    AddCaption(sourceColumn, lang, sourceColumn.Description);
-                }
-
-                else
-                {
-                    AddCaption(sourceColumn, lang);
-                }
-            }      
+            AddCaption(sourceColumn, ProcessGeneration.PropertyEnglish, sourceColumn.DescriptionENG);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyFrench, sourceColumn.DescriptionFRA);
+            AddCaption(sourceColumn, ProcessGeneration.PropertySpanish, sourceColumn.DescriptionESN);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseSimplified, sourceColumn.DescriptionCHN);
+            AddCaption(sourceColumn, ProcessGeneration.PropertyChineseTraditional, sourceColumn.DescriptionCHT);
         }
 
         /// <summary> Add Caption</summary>
@@ -358,8 +345,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
             GenericInit(grid, 17, 50, "", false, true);
-            GenericInit(grid, 18, 75, Resources.GroupByColumn, true, true);
-            GenericInit(grid, 19, 75, "AggregatedBy", true, true);
+            GenericInit(grid, 18, 75, Resources.GroupByColumn, true, false);
+            GenericInit(grid, 19, 75, Resources.AggregationColumn, true, true);
         }
 
         /// <summary> Initialize grid and display </summary>
@@ -1253,6 +1240,23 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 _filters.Add(filter);
             }
 
+            // Aggregation
+            //foreach (var aggregationType in _clickedColumn.Aggregation.Keys)
+            //{
+            //    _aggregationTypes.Add(aggregationType);
+
+            //}
+
+            for (int i = 0; i < _clickedColumn.Aggregation.Keys.Count; i++)
+            {
+                //if (_clickedColumn.Aggregation.)
+                //{
+
+                //}
+
+                chkAggregation.SetItemChecked(i, true);
+            }
+
             return;
         }
 
@@ -1310,6 +1314,17 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             foreach (var param in _parameters)
             {
                 _clickedColumn.Params.Add(param.Name, param);
+            }
+
+            // Aggregation
+            foreach (var checkedItem in chkAggregation.CheckedItems)
+            {
+                _clickedColumn.Aggregation.Add(checkedItem.ToString(), true);
+            }
+
+            for (int i = 0; i < chkAggregation.Items.Count; i++)
+            {
+                chkAggregation.SetItemChecked(i, false);
             }
 
             // Filtering
@@ -1396,7 +1411,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 // Add captions
                 var captionsArray = new JArray();
 
-                // Iternate captions
+                // Iterate captions
                 foreach (var caption in sourceColumn.Captions)
                 {
                     var captionObj = new JObject
@@ -1424,7 +1439,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                     var filtersArray = new JArray();
                     var count = 0;
 
-                    // Iternate enums
+                    // Iterate enums
                     foreach (var filter in sourceColumn.Filters)
                     {
                         // Increment count for selected check
@@ -1481,6 +1496,24 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 }
 
                 fields.Add(new JProperty(ProcessGeneration.PropertyIsGroupBy, sourceColumn.IsGroupBy));
+
+                // Aggregation
+                if (sourceColumn.Aggregation.Count > 0)
+                {
+                    var aggregateArray = new JArray();
+
+                    foreach (var aggregationType in sourceColumn.Aggregation)
+                    {
+                        var aggregateObj = new JObject
+                        {
+                            new JProperty(aggregationType.Key, aggregationType.Value)
+                        };
+
+                        aggregateArray.Add(aggregateObj);
+                    }
+
+                    fields.Add(ProcessGeneration.PropertyAggregation, aggregateArray);
+                }
 
                 fieldsArray.Add(fields);
             }
@@ -1823,7 +1856,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 else
                 {
                     // Add it since it does not exist
-                    AddCaptions(sourceColumn, _source.Language);
+                    AddCaptions(sourceColumn);
                     _source.SourceColumns.Add(sourceColumn.Name, sourceColumn);
                     _sourceColumns.Add(sourceColumn);
                 }
@@ -2137,7 +2170,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 _sourceColumns.Add(sourceColumn);
 
                 // Assign captions
-                AddCaptions(sourceColumn, _source.Language);
+                AddCaptions(sourceColumn);
             }
         }
 

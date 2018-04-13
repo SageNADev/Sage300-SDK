@@ -79,6 +79,15 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aggregation.
+        /// </summary>
+        internal static string AggregationColumn {
+            get {
+                return ResourceManager.GetString("AggregationColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Area:.
         /// </summary>
         internal static string Area {
