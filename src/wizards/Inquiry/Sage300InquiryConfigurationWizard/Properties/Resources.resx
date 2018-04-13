@@ -562,4 +562,10 @@
   <data name="WrapperTabTip" xml:space="preserve">
     <value>The Columns, Where clause and Order By clause can be specified or modified</value>
   </data>
+  <data name="GroupByColumn" xml:space="preserve">
+    <value>IsGroupBy</value>
+  </data>
+  <data name="AggregationColumn" xml:space="preserve">
+    <value>Aggregation</value>
+  </data>
 </root>

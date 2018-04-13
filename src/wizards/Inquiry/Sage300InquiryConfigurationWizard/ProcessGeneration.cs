@@ -73,6 +73,8 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public const string PropertyFileName = "FileName";
         /// <summary> Property for Description </summary>
         public const string PropertyDescription = "Description";
+        /// <summary> Property for Security Rights </summary>
+        public const string PropertySecurityRights = "SecurityResourceID";
         /// <summary> Property for GeneratedMessage </summary>
         public const string PropertyGeneratedMessage = "GeneratedMessage";
         /// <summary> Property for GeneratedWarning </summary>
@@ -85,6 +87,10 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public const string PropertyIsFilterable = "IsFilterable";
         /// <summary> Property for IsDrilldown </summary>
         public const string PropertyIsDrilldown = "IsDrilldown";
+        /// <summary> Property for IsGroupBy </summary>
+        public const string PropertyIsGroupBy = "IsGroupBy";
+        /// <summary> Property for Aggregation </summary>
+        public const string PropertyAggregation = "Aggregation";
         /// <summary> Property for IsDisplayable </summary>
         public const string PropertyIsDisplayable = "IsDisplayable";
         /// <summary> Property for Field </summary>
@@ -194,12 +200,44 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
             var view = dbLink.OpenView(source.Properties[Source.ViewId]);
 
+            // French
+            var sessionFRA = new Session();
+            sessionFRA.CreateSession(null, PropertyAppId, PropertyProgramName, source.Properties[Source.Version],
+                "FRA", "FRA",
+                source.Properties[Source.Company], DateTime.UtcNow);
+            var dbLinkFRA = sessionFRA.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
+            var viewFRA = dbLinkFRA.OpenView(source.Properties[Source.ViewId]);
+
+            // Spanish
+            var sessionESN = new Session();
+            sessionESN.CreateSession(null, PropertyAppId, PropertyProgramName, source.Properties[Source.Version],
+                "ESN", "ESN",
+                source.Properties[Source.Company], DateTime.UtcNow);
+            var dbLinkESN = sessionESN.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
+            var viewESN = dbLinkESN.OpenView(source.Properties[Source.ViewId]);
+
+            // Chinese Simplified
+            var sessionCHN = new Session();
+            sessionCHN.CreateSession(null, PropertyAppId, PropertyProgramName, source.Properties[Source.Version],
+                "CHN", "CHN",
+                source.Properties[Source.Company], DateTime.UtcNow);
+            var dbLinkCHN = sessionCHN.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
+            var viewChn = dbLinkCHN.OpenView(source.Properties[Source.ViewId]);
+
+            // Chinese Traditional
+            var sessionCHT = new Session();
+            sessionCHT.CreateSession(null, PropertyAppId, PropertyProgramName, source.Properties[Source.Version],
+                "CHT", "CHT",
+                source.Properties[Source.Company], DateTime.UtcNow);
+            var dbLinkCHT = sessionCHT.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
+            var viewCHT = dbLinkCHT.OpenView(source.Properties[Source.ViewId]);
+
             // Clear out source columns
             source.SourceColumns.Clear();
 
             source.Properties[Source.ViewDescription] = view.Description;
 
-            GenerateFieldsAndEnums(source, view);
+            GenerateFieldsAndEnums(source, view, viewFRA, viewESN, viewChn, viewCHT);
 
             // Clean up
             try
@@ -212,13 +250,16 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             {
                 // Swallow error, if any        
             }
-
         }
 
         /// <summary> Generate enums </summary>
         /// <param name="source">Source for Business View</param>
-        /// <param name="view">Accpadc Business View</param>
-        private static void GenerateFieldsAndEnums(Source source, View view)
+        /// <param name="view">Accpac Business View - English</param>
+        /// <param name="viewFRA">Accpac Business View - French</param>
+        /// <param name="viewESN">Accpac Business View - Spanish</param>
+        /// <param name="viewCHN">Accpac Business View - Chinese Simplified</param>
+        /// <param name="viewCHT">Accpac Business View - Chinese Traditional</param>
+        private static void GenerateFieldsAndEnums(Source source, View view, View viewFRA, View viewESN, View viewCHN, View viewCHT)
         {
             // Iterate Accpac View
             for (var i = 0; i < view.Fields.Count; i++)
@@ -230,11 +271,20 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 }
 
                 var field = view.Fields[i];
+                var fieldFRA = viewFRA.Fields[i];
+                var fieldESN = viewESN.Fields[i];
+                var fieldCHN = viewCHN.Fields[i];
+                var fieldCHT = viewCHT.Fields[i];
+
                 var sourceColumn = new SourceColumn
                 {
                     Id = field.ID,
                     Name = field.Name,
-                    Description = field.Description,
+                    DescriptionENG = field.Description,
+                    DescriptionFRA = fieldFRA.Description,
+                    DescriptionESN = fieldESN.Description,
+                    DescriptionCHN = fieldCHN.Description,
+                    DescriptionCHT = fieldCHT.Description,
                     Type = FieldType(field),
                     ViewId = source.Properties[Source.ViewId]
                 };

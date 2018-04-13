@@ -79,6 +79,15 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aggregation.
+        /// </summary>
+        internal static string AggregationColumn {
+            get {
+                return ResourceManager.GetString("AggregationColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Area:.
         /// </summary>
         internal static string Area {
@@ -635,6 +644,15 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard.Properties {
         internal static string GeneratingFile {
             get {
                 return ResourceManager.GetString("GeneratingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IsGroupBy.
+        /// </summary>
+        internal static string GroupByColumn {
+            get {
+                return ResourceManager.GetString("GroupByColumn", resourceCulture);
             }
         }
         
