@@ -1,5 +1,13 @@
 # Utilities
 
+## MergeISVProject.exe
+
+This program is used by various wizards within the Sage 300 Web SDK as well as by Sage partner projects. It is used to take the compiled assets from an external Sage Partner project and bundle them up for deployment. It also provides javascript minification functionality and can optionally deploy the custom solution into a local Sage 300 installation for testing purposes.
+
+## Sage300Utilties.exe
+
+As of the 2018.2 release of the Sage 300 Web SDK, this program is used by the Sage300UIWizardPackage. It's purpose is to facilitate the rebuilding of all of the templates that exist in the \src\Templates\ folder of the SDK. In the future, this application will be enhanced to provide additional functionality to other wizards.
+
 ## Generating JavaScript for Grids
 
 The Grid Enhancement logic that has been included in the samples projects has dramatically changed
