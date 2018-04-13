@@ -76,9 +76,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ACCPAC.Advantage.Types\v4.0_6.5.0.20__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
     </Reference>
-    <Reference Include="$(RefAccpacAdvantage)">
-      <SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>
-    </Reference>
     <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
