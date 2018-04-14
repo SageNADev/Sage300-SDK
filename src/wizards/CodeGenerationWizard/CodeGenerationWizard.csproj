@@ -68,13 +68,11 @@
     <AssemblyOriginatorKeyFile>ai.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACCPAC.Advantage, Version=6.5.0.10, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_32\ACCPAC.Advantage\v4.0_6.5.0.10__4d7048ecf2312a7c\ACCPAC.Advantage.dll</HintPath>
+    <Reference Include="$(RefAccpacAdvantageTypes)">
+      <SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>
     </Reference>
-    <Reference Include="ACCPAC.Advantage.Types, Version=6.5.0.20, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ACCPAC.Advantage.Types\v4.0_6.5.0.20__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
+    <Reference Include="$(RefAccpacAdvantage)">
+      <SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>
     </Reference>
     <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
