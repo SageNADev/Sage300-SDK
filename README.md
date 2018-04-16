@@ -65,7 +65,7 @@ folders in order to segregate the documentation:
 
 The **help** folder contains the CHM files for the documented assemblies
 
-> **Only the Common and Core assmblies are documented at this time**
+> **Only the Common and Core assemblies are documented at this time**
 
 ### maps
 
@@ -200,11 +200,11 @@ are also made in the develop branch**
 
 ### Release Branches
 
-The release branches (i.e. **release-2017**, **release-2017.1**, etc.) contains 
+The release branches (i.e. **release-2018**, **release-2018.1**, etc.) contains 
 the contents for that particular release/version of the SDK.
  
 When the next version of the SDK is released, the **master** branch is copied into, 
-for example, the **release-2017** branch, the **develop** branch is copied to 
+for example, the **release-2018** branch, the **develop** branch is copied to 
 **master** and the **develop** branch then becomes the basis for the next release.
 
 develop --> master --> release-…
@@ -213,8 +213,8 @@ There is only one in-progress version branch: **develop**
 
 There is only one current version branch: **master**
 
-There are to be numerous version branches: **release-2017**, **release-2017.1**, 
-**release-2017.2**, etc.
+There are to be numerous version branches: **release-2018**, **release-2018.1**, 
+**release-2018.2**, etc.
 
 > **Only Sage collaborators can make changes to these branches**
 

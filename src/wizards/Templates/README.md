@@ -1,9 +1,11 @@
 # Templates
 
+>Note: As of release Sage 300 2018.2, the Sage300UIWizardPackage utilizes the new Sage300Utilities application that is located in the \bin\utilities\ folder. It no longer utilizes any of the batch files and PowerShell scripts located in this folder.
+
 
 ## How to rebuild these templates from the latest source code
 
->Note: This step is only available for internal Sage colleagues. 3rd parties do not have access to the requisite source code.
+>Note: This step is only applicable to internal Sage colleagues. 3rd parties do not have access to the requisite source code.
 
 To rebuild these folders, do the following
 1. Get the most current source code from the GitHub repository **CNA2\Columbus-Web**.
@@ -18,7 +20,7 @@ To rebuild these folders, do the following
 
 To create the various Zip archives in this folder, open a command prompt, navigate to this folder and run the batch file **CreateTemplateZipFiles.bat**.
 
-The end result will be a list of Zip archives as follows:
+The end result will be a list of zip archives as follows:
 
 * BusinessRepository.zip
 * Interfaces.zip
