@@ -508,8 +508,8 @@
             // 
             // pnlColumnsGrid
             // 
-            this.pnlColumnsGrid.Controls.Add(this.pnlColumnsLabel);
             this.pnlColumnsGrid.Controls.Add(this.pnlColumnGrid);
+            this.pnlColumnsGrid.Controls.Add(this.pnlColumnsLabel);
             this.pnlColumnsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumnsGrid.Location = new System.Drawing.Point(0, 0);
             this.pnlColumnsGrid.Name = "pnlColumnsGrid";
