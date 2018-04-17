@@ -63,9 +63,6 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Filters in grid </summary>
         private readonly BindingList<Filter> _filters = new BindingList<Filter>();
 
-        /// <summary> Aggregation types check box group </summary>
-        private readonly BindingList<string> _aggregationTypes = new BindingList<string>();
-
         /// <summary> Included columns in grid </summary>
         private readonly BindingList<SourceColumn> _includedColumns = new BindingList<SourceColumn>();
 
@@ -265,6 +262,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 17, 50, "", false, true);
             GenericInit(grid, 18, 50, "", false, true);
             GenericInit(grid, 19, 50, "", false, true);
+
+            GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 21, 50, "", false, true);
+            GenericInit(grid, 22, 50, "", false, true);
+            GenericInit(grid, 23, 50, "", false, true);
         }
 
         /// <summary> Initialize SQL Columns grid and display </summary>
@@ -1241,23 +1243,28 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Aggregation
-            //foreach (var aggregationType in _clickedColumn.Aggregation.Keys)
-            //{
-            //    _aggregationTypes.Add(aggregationType);
 
-            //}
+            // Populate the checked list box depending on the data type
+            //_clickedColumn
+            chkAggregation.Items.Clear();
+            var aggregationItems = _clickedColumn.Type == SourceDataType.Decimal ? 
+                new object[] { "Average", "Count", "Maximum", "Minimum", "Subtotal" } : 
+                new object[] { "Count" };
+            chkAggregation.Items.AddRange(aggregationItems);
 
-            for (int i = 0; i < _clickedColumn.Aggregation.Keys.Count; i++)
+            // Loop through check boxes to see which ones need to be ticked on load
+            // This loop probably isn't optimized
+            for (int i = 0; i < chkAggregation.Items.Count; i++)
             {
-                //if (_clickedColumn.Aggregation.)
-                //{
-
-                //}
-
-                chkAggregation.SetItemChecked(i, true);
+                foreach(var aggregationType in _clickedColumn.Aggregation)
+                {
+                    if (aggregationType == chkAggregation.Items[i].ToString())
+                    {
+                        chkAggregation.SetItemChecked(i, true);
+                        break;
+                    }
+                }
             }
-
-            return;
         }
 
         /// <summary> Cancel any column changes</summary>
@@ -1317,9 +1324,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Aggregation
+            _clickedColumn.Aggregation.Clear();
+
             foreach (var checkedItem in chkAggregation.CheckedItems)
             {
-                _clickedColumn.Aggregation.Add(checkedItem.ToString(), true);
+                _clickedColumn.Aggregation.Add(checkedItem.ToString());
             }
 
             for (int i = 0; i < chkAggregation.Items.Count; i++)
@@ -1500,19 +1509,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 // Aggregation
                 if (sourceColumn.Aggregation.Count > 0)
                 {
-                    var aggregateArray = new JArray();
-
-                    foreach (var aggregationType in sourceColumn.Aggregation)
-                    {
-                        var aggregateObj = new JObject
-                        {
-                            new JProperty(aggregationType.Key, aggregationType.Value)
-                        };
-
-                        aggregateArray.Add(aggregateObj);
-                    }
-
-                    fields.Add(ProcessGeneration.PropertyAggregation, aggregateArray);
+                    fields.Add(new JProperty(ProcessGeneration.PropertyAggregation, sourceColumn.Aggregation));
                 }
 
                 fieldsArray.Add(fields);

@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             Captions = new Dictionary<string, Caption>();
             Params = new Dictionary<string, Parameter>();
             Filters = new Dictionary<string, Filter>();
-            Aggregation = new Dictionary<string, bool>();
+            Aggregation = new List<string>();
 
             IsDisplayable = true;
             IsFilterable = true;
@@ -88,7 +88,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Is column groupable </summary>
         public bool IsGroupBy { get; set; }
         /// <summary> List of column aggregation types </summary>
-        public Dictionary<string, bool> Aggregation { get; set; }
+        public IList<string> Aggregation { get; set; } // not entirely sure why List doesn't work here
         #endregion
 
         /// <summary> Description of the field - French </summary>
