@@ -459,7 +459,7 @@ namespace Sage300Utilities
 		{
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
-			var required3rdPartyComponents = "None Specified";
+			var required3rdPartyComponents = "Log4Net";
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 															       ApplicationVersion,
@@ -515,11 +515,18 @@ namespace Sage300Utilities
 				var name = valueSet.Name;
 				var exampleValue = valueSet.ExampleValue;
 				var description = valueSet.Description;
+				List<String> aliasList = valueSet.AliasList;
 
 				// Now build up the lines of text
 
 				// Parameter Name
-				sb.AppendLine($"{spacer2}{OptionPrefix}{name}");
+				sb.AppendLine($"{spacer2}{name}");
+
+				// Blank line
+				sb.AppendLine();
+
+				// Alias'
+				sb.AppendLine($"{spacer5}Alternate Names: {string.Join(", ", aliasList.ToArray())}");
 
 				// Blank line
 				sb.AppendLine();
