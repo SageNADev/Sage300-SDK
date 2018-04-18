@@ -253,20 +253,24 @@
     <value>Prerequisites are valid.</value>
   </data>
   <data name="Msg_ProgramUsageMessage" xml:space="preserve">
-    <value> Program Name:          {0}
- Version:               {1}
- 
- Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
-                        All rights reserved.
- License:               The MIT Licence (MIT)
- 
- Required Parameters:
- 
- {2}
+    <value>Program Name:          {0}
+Version:               {1}
 
- Optional Parameter(s):
- 
- {3}</value>
+Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+                       All rights reserved.
+License:               The MIT Licence (MIT)
+
+Required 3rd party
+programs/components:   {2}
+
+
+Required Parameter(s):
+
+{3}
+
+Optional Parameter(s):
+
+{4}</value>
   </data>
   <data name="Msg_Rename1To2" xml:space="preserve">
     <value>Rename '{0}' to '{1}'</value>

@@ -313,7 +313,7 @@ namespace MergeISVProject
 			TestDeploy = new CommandLineOption<bool>()
             {
                 Name = "testdeploy",
-                AliasList = new List<string>() { "nd" },
+                AliasList = new List<string>() { "td" },
                 Description = Messages.Msg_SimulateCopyingOfAssetsTo,
                 OptionValue = false,
                 ExampleValue = @""
@@ -555,11 +555,13 @@ namespace MergeISVProject
 		{
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
+			var required3rdPartyComponents = "WebGrease.dll, WG.exe, Newtonsoft.Json.dll, Antlr3.Runtime.dll";
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
-															       ApplicationVersion,
-															       requiredParams,
-															       optionalParams);
+																   ApplicationVersion,
+																   required3rdPartyComponents,
+																   requiredParams,
+																   optionalParams);
 			msg += divider;
 			return msg;
 		}
@@ -594,6 +596,9 @@ namespace MergeISVProject
 		/// <returns>A formatted string of text</returns>
 		private string GetPropertiesByAttributeAsString(Attribute att)
 		{
+			var spacer5 = new string(' ', 5);
+			var spacer2 = new string(' ', 2);
+
 			var sb = new StringBuilder();
 			var requiredProperties = this.
 									 GetType().
@@ -606,9 +611,66 @@ namespace MergeISVProject
 				var name = valueSet.Name;
 				var exampleValue = valueSet.ExampleValue;
 				var description = valueSet.Description;
-				sb.AppendLine(MakeFormattedLine(OptionPrefix, name, exampleValue, description));
+				List<String> aliasList = valueSet.AliasList;
+
+				// Now build up the lines of text
+
+				// Parameter Name
+				sb.AppendLine($"{spacer2}{name}");
+
+				// Blank line
+				sb.AppendLine();
+
+				// Alias'
+				sb.AppendLine($"{spacer5}Alternate Names: {string.Join(", ", aliasList.ToArray())}");
+
+				// Blank line
+				sb.AppendLine();
+
+				// Description - Need to ensure that long lines are broken
+				// up into smaller ones.
+				FormatDescriptionText(ref sb, description);
+
+				// Blank line
+				sb.AppendLine();
+
+				// Example Usage
+				if (exampleValue.Length > 0)
+				{
+					sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}=\"{exampleValue}\"");
+				}
+				else
+				{
+					sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}");
+				}
+				// Blank line
+				sb.AppendLine();
 			}
 			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Process long description strings into smaller chunks on individual lines
+		/// </summary>
+		/// <param name="sb">The destination StringBuilder object</param>
+		/// <param name="description">The description text</param>
+		/// <param name="leftPadding">The number of spaces used for left padding on each line. Default value is 5</param>
+		private void FormatDescriptionText(ref StringBuilder sb, string description, int leftPadding = 5)
+		{
+			const int MaxLineWidth = 60;
+			var leftSpacer = new string(' ', leftPadding);
+			string singleLine = string.Empty;
+			var parts = description.Split(' ');
+			foreach (var part in parts)
+			{
+				singleLine += $"{part} ";
+				if (singleLine.Length >= MaxLineWidth)
+				{
+					sb.AppendLine($"{leftSpacer}{singleLine}");
+					singleLine = string.Empty;
+				}
+			}
+			sb.AppendLine($"{leftSpacer}{singleLine}");
 		}
 
 		/// <summary>

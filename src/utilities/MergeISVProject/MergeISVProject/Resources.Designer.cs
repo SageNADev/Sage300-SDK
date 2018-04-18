@@ -466,20 +466,24 @@ namespace MergeISVProject {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Program Name:          {0}
-        /// Version:               {1}
-        /// 
-        /// Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
-        ///                        All rights reserved.
-        /// License:               The MIT Licence (MIT)
-        /// 
-        /// Required Parameters:
-        /// 
-        /// {2}
+        ///   Looks up a localized string similar to Program Name:          {0}
+        ///Version:               {1}
         ///
-        /// Optional Parameter(s):
-        /// 
-        /// {3}.
+        ///Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+        ///                       All rights reserved.
+        ///License:               The MIT Licence (MIT)
+        ///
+        ///Required 3rd party
+        ///programs/components:   {2}
+        ///
+        ///
+        ///Required Parameter(s):
+        ///
+        ///{3}
+        ///
+        ///Optional Parameter(s):
+        ///
+        ///{4}.
         /// </summary>
         internal static string Msg_ProgramUsageMessage {
             get {
