@@ -222,7 +222,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 "CHN", "CHN",
                 source.Properties[Source.Company], DateTime.UtcNow);
             var dbLinkCHN = sessionCHN.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
-            var viewChn = dbLinkCHN.OpenView(source.Properties[Source.ViewId]);
+            var viewCHN = dbLinkCHN.OpenView(source.Properties[Source.ViewId]);
 
             // Chinese Traditional
             var sessionCHT = new Session();
@@ -237,14 +237,28 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
 
             source.Properties[Source.ViewDescription] = view.Description;
 
-            GenerateFieldsAndEnums(source, view, viewFRA, viewESN, viewChn, viewCHT);
+            GenerateFieldsAndEnums(source, view, viewFRA, viewESN, viewCHN, viewCHT);
 
             // Clean up
             try
             {
                 view.Dispose();
+                viewFRA.Dispose();
+                viewESN.Dispose();
+                viewCHN.Dispose();
+                viewCHT.Dispose();
+
                 dbLink.Dispose();
+                dbLinkFRA.Dispose();
+                dbLinkESN.Dispose();
+                dbLinkCHN.Dispose();
+                dbLinkCHT.Dispose();
+
                 session.Dispose();
+                sessionFRA.Dispose();
+                sessionESN.Dispose();
+                sessionCHN.Dispose();
+                sessionCHT.Dispose();
             }
             catch
             {
