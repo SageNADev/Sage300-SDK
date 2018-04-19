@@ -52,6 +52,14 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         public string Name { get; set; }
         /// <summary> Description of the field - English </summary>
         public string DescriptionENG { get; set; }
+        /// <summary> Description of the field - French </summary>
+        public string DescriptionFRA { get; set; }
+        /// <summary> Description of the field - Spanish </summary>
+        public string DescriptionESN { get; set; }
+        /// <summary> Description of the field - Chinese (simplified) </summary>
+        public string DescriptionCHN { get; set; }
+        /// <summary> Description of the field - Chinese (traditional) </summary>
+        public string DescriptionCHT { get; set; }
         /// <summary> Type is the field type </summary>
         public SourceDataType Type { get; set; }
         #endregion
@@ -90,14 +98,5 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> List of column aggregation types </summary>
         public IList<string> Aggregation { get; set; } // not entirely sure why List doesn't work here
         #endregion
-
-        /// <summary> Description of the field - French </summary>
-        public string DescriptionFRA { get; set; }
-        /// <summary> Description of the field - Spanish </summary>
-        public string DescriptionESN { get; set; }
-        /// <summary> Description of the field - Chinese (simplified) </summary>
-        public string DescriptionCHN { get; set; }
-        /// <summary> Description of the field - Chinese (traditional) </summary>
-        public string DescriptionCHT { get; set; }
     }
 }
