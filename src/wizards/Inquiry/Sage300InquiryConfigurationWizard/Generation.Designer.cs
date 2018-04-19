@@ -59,10 +59,10 @@
             this.pnlColumns = new System.Windows.Forms.Panel();
             this.splitEntities = new System.Windows.Forms.SplitContainer();
             this.pnlColumnsGrid = new System.Windows.Forms.Panel();
-            this.pnlColumnsLabel = new System.Windows.Forms.Panel();
-            this.lblColumns = new System.Windows.Forms.Label();
             this.pnlColumnGrid = new System.Windows.Forms.Panel();
             this.grdIncludedColumns = new System.Windows.Forms.DataGridView();
+            this.pnlColumnsLabel = new System.Windows.Forms.Panel();
+            this.lblColumns = new System.Windows.Forms.Label();
             this.tabIncludedColumn = new System.Windows.Forms.TabControl();
             this.tabColumn = new System.Windows.Forms.TabPage();
             this.txtDataType = new System.Windows.Forms.TextBox();
@@ -92,6 +92,7 @@
             this.chkColumnInView = new System.Windows.Forms.CheckBox();
             this.chkFilterable = new System.Windows.Forms.CheckBox();
             this.tabAggregation = new System.Windows.Forms.TabPage();
+            this.lblAggregateBy = new System.Windows.Forms.Label();
             this.chkAggregation = new System.Windows.Forms.CheckedListBox();
             this.pnlCreateEdit = new System.Windows.Forms.Panel();
             this.chkUseBusinessView = new System.Windows.Forms.CheckBox();
@@ -132,7 +133,6 @@
             this.tbrControls = new System.Windows.Forms.ToolStrip();
             this.wrkBackground = new System.ComponentModel.BackgroundWorker();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblAggregateBy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
@@ -158,9 +158,9 @@
             this.splitEntities.Panel2.SuspendLayout();
             this.splitEntities.SuspendLayout();
             this.pnlColumnsGrid.SuspendLayout();
-            this.pnlColumnsLabel.SuspendLayout();
             this.pnlColumnGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdIncludedColumns)).BeginInit();
+            this.pnlColumnsLabel.SuspendLayout();
             this.tabIncludedColumn.SuspendLayout();
             this.tabColumn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCaptions)).BeginInit();
@@ -202,7 +202,7 @@
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
-            this.splitBase.Size = new System.Drawing.Size(1784, 554);
+            this.splitBase.Size = new System.Drawing.Size(959, 554);
             this.splitBase.SplitterDistance = 90;
             this.splitBase.TabIndex = 1;
             this.splitBase.TabStop = false;
@@ -251,7 +251,7 @@
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(1784, 460);
+            this.splitSteps.Size = new System.Drawing.Size(959, 460);
             this.splitSteps.SplitterDistance = 415;
             this.splitSteps.TabIndex = 5;
             // 
@@ -516,6 +516,34 @@
             this.pnlColumnsGrid.Size = new System.Drawing.Size(659, 25);
             this.pnlColumnsGrid.TabIndex = 0;
             // 
+            // pnlColumnGrid
+            // 
+            this.pnlColumnGrid.Controls.Add(this.grdIncludedColumns);
+            this.pnlColumnGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlColumnGrid.Location = new System.Drawing.Point(0, 26);
+            this.pnlColumnGrid.Name = "pnlColumnGrid";
+            this.pnlColumnGrid.Size = new System.Drawing.Size(659, 0);
+            this.pnlColumnGrid.TabIndex = 3;
+            // 
+            // grdIncludedColumns
+            // 
+            this.grdIncludedColumns.AllowDrop = true;
+            this.grdIncludedColumns.AllowUserToAddRows = false;
+            this.grdIncludedColumns.AllowUserToDeleteRows = false;
+            this.grdIncludedColumns.BackgroundColor = System.Drawing.Color.White;
+            this.grdIncludedColumns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdIncludedColumns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdIncludedColumns.Location = new System.Drawing.Point(0, 0);
+            this.grdIncludedColumns.Name = "grdIncludedColumns";
+            this.grdIncludedColumns.Size = new System.Drawing.Size(659, 0);
+            this.grdIncludedColumns.TabIndex = 0;
+            this.grdIncludedColumns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdIncludedColumns_CellContentClick);
+            this.grdIncludedColumns.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdIncludedColumns_CellMouseDoubleClick);
+            this.grdIncludedColumns.DragDrop += new System.Windows.Forms.DragEventHandler(this.grdIncludedColumns_DragDrop);
+            this.grdIncludedColumns.DragOver += new System.Windows.Forms.DragEventHandler(this.grdIncludedColumns_DragOver);
+            this.grdIncludedColumns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grdIncludedColumns_MouseDown);
+            this.grdIncludedColumns.MouseMove += new System.Windows.Forms.MouseEventHandler(this.grdIncludedColumns_MouseMove);
+            // 
             // pnlColumnsLabel
             // 
             this.pnlColumnsLabel.Controls.Add(this.lblColumns);
@@ -536,34 +564,6 @@
             this.lblColumns.TabIndex = 1;
             this.lblColumns.Text = "Click a column to Drag and Drop for display order or Double-Click on a column to " +
     "edit the properties.";
-            // 
-            // pnlColumnGrid
-            // 
-            this.pnlColumnGrid.Controls.Add(this.grdIncludedColumns);
-            this.pnlColumnGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlColumnGrid.Location = new System.Drawing.Point(0, 0);
-            this.pnlColumnGrid.Name = "pnlColumnGrid";
-            this.pnlColumnGrid.Size = new System.Drawing.Size(659, 25);
-            this.pnlColumnGrid.TabIndex = 3;
-            // 
-            // grdIncludedColumns
-            // 
-            this.grdIncludedColumns.AllowDrop = true;
-            this.grdIncludedColumns.AllowUserToAddRows = false;
-            this.grdIncludedColumns.AllowUserToDeleteRows = false;
-            this.grdIncludedColumns.BackgroundColor = System.Drawing.Color.White;
-            this.grdIncludedColumns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdIncludedColumns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdIncludedColumns.Location = new System.Drawing.Point(0, 0);
-            this.grdIncludedColumns.Name = "grdIncludedColumns";
-            this.grdIncludedColumns.Size = new System.Drawing.Size(659, 25);
-            this.grdIncludedColumns.TabIndex = 0;
-            this.grdIncludedColumns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdIncludedColumns_CellContentClick);
-            this.grdIncludedColumns.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdIncludedColumns_CellMouseDoubleClick);
-            this.grdIncludedColumns.DragDrop += new System.Windows.Forms.DragEventHandler(this.grdIncludedColumns_DragDrop);
-            this.grdIncludedColumns.DragOver += new System.Windows.Forms.DragEventHandler(this.grdIncludedColumns_DragOver);
-            this.grdIncludedColumns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grdIncludedColumns_MouseDown);
-            this.grdIncludedColumns.MouseMove += new System.Windows.Forms.MouseEventHandler(this.grdIncludedColumns_MouseMove);
             // 
             // tabIncludedColumn
             // 
@@ -859,6 +859,15 @@
             this.tabAggregation.TabIndex = 3;
             this.tabAggregation.Text = "Aggregation";
             this.tabAggregation.UseVisualStyleBackColor = true;
+            // 
+            // lblAggregateBy
+            // 
+            this.lblAggregateBy.AutoSize = true;
+            this.lblAggregateBy.Location = new System.Drawing.Point(15, 21);
+            this.lblAggregateBy.Name = "lblAggregateBy";
+            this.lblAggregateBy.Size = new System.Drawing.Size(79, 13);
+            this.lblAggregateBy.TabIndex = 8;
+            this.lblAggregateBy.Text = "Aggregate by:";
             // 
             // chkAggregation
             // 
@@ -1230,7 +1239,7 @@
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(1784, 41);
+            this.pnlButtons.Size = new System.Drawing.Size(959, 41);
             this.pnlButtons.TabIndex = 2;
             // 
             // btnCancel
@@ -1297,21 +1306,12 @@
             this.wrkBackground.DoWork += new System.ComponentModel.DoWorkEventHandler(this.wrkBackground_DoWork);
             this.wrkBackground.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.wrkBackground_RunWorkerCompleted);
             // 
-            // lblAggregateBy
-            // 
-            this.lblAggregateBy.AutoSize = true;
-            this.lblAggregateBy.Location = new System.Drawing.Point(15, 21);
-            this.lblAggregateBy.Name = "lblAggregateBy";
-            this.lblAggregateBy.Size = new System.Drawing.Size(79, 13);
-            this.lblAggregateBy.TabIndex = 8;
-            this.lblAggregateBy.Text = "Aggregate by:";
-            // 
             // Generation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1784, 554);
+            this.ClientSize = new System.Drawing.Size(959, 554);
             this.Controls.Add(this.splitBase);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1350,9 +1350,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitEntities)).EndInit();
             this.splitEntities.ResumeLayout(false);
             this.pnlColumnsGrid.ResumeLayout(false);
-            this.pnlColumnsLabel.ResumeLayout(false);
             this.pnlColumnGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdIncludedColumns)).EndInit();
+            this.pnlColumnsLabel.ResumeLayout(false);
             this.tabIncludedColumn.ResumeLayout(false);
             this.tabColumn.ResumeLayout(false);
             this.tabColumn.PerformLayout();
