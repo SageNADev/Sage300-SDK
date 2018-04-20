@@ -176,8 +176,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 Resources.ReleaseSpecificDescUpdateSourceCode,
                 Resources.ReleaseSpecificUpdateSourceCode);
 
-            // 2018.2 : Post Build Event command
-            AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
+			// 2018.2 : Update the XXMenuDetails.xml file
+			AddStep(Resources.ReleaseSpecificTitleUpdateMenuDetails,
+				Resources.ReleaseSpecificDescUpdateMenuDetails,
+				Resources.ReleaseSpecificUpdateMenuDetails);
+
+			// 2018.2 : Post Build Event command
+			AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
                     Resources.ReleaseSpecificDescUpdatePostBuildEvent,
                     string.Format(Resources.ReleaseSpecificUpdatePostBuildEvent,
                                   ProcessUpgrade.FromReleaseNumber,
@@ -217,7 +222,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Specific to release
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCode}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMenuDetails}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");

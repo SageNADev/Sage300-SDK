@@ -233,4 +233,13 @@
   <data name="ReleaseSpecificUpdateSourceCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateSourceCode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ReleaseSpecificTitleUpdateMenuDetails" xml:space="preserve">
+    <value>Update the Menu Details</value>
+  </data>
+  <data name="ReleaseSpecificUpdateMenuDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateMenuDetails.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificDescUpdateMenuDetails" xml:space="preserve">
+    <value>This step will upgrade the [ModuleID]MenuDetails.xml file.</value>
+  </data>
 </root>

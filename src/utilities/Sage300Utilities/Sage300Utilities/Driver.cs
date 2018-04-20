@@ -46,8 +46,8 @@ namespace Sage300Utilities
 		/// <param name="args">This is the string[] of command-line parameters</param>
 		public Driver(string[] args)
 		{
-			Utilities.GetAppNameAndVersion(out string appName, out string appVersion);
-			_Options = new CommandLineOptions(appName, appVersion, args);
+			Utilities.GetAppInfo(out string appName, out string appVersion, out string buildDate);
+			_Options = new CommandLineOptions(appName, appVersion, buildDate, args);
 
 			// Display the usage text if no command-line parameters specified
 			// or the special help parameter was specified
@@ -162,6 +162,13 @@ namespace Sage300Utilities
 
 				// Create the template zip files
 				CreateTemplateZipFiles();
+
+				// Note: Applies to the Sage300UIWizardPackage Project Only
+				// Copy newly created template Zip archives to the 'Project Templates' folder 
+				CopyTemplateZipFiles();
+
+				// Now, remove the Zip archives from the \src\Wizards\Templates\ folder.
+				RemoveTemplateZipFiles();
 			}
 
 			// Get the elapsed run time
@@ -196,44 +203,54 @@ namespace Sage300Utilities
 
 			foreach (var subPath in webSubPaths)
 			{
-				var targetFolder = Path.Combine(webFolder, subPath);
-				Logger.LogInfo($"Processing '{targetFolder}' folder.");
+				try
+				{
+					var targetFolder = Path.Combine(webFolder, subPath);
+					Logger.LogInfo($"Processing '{targetFolder}' folder.");
 
-				if (!Directory.Exists(targetFolder))
-				{
-					Logger.LogInfo($"'{targetFolder}' does not exist.");
-				}
-				else
-				{
-					var folder = string.Empty;
-					try
+					if (!Directory.Exists(targetFolder))
 					{
-						// Remove all the files in this folder
-						var files = Directory.GetFiles(targetFolder);
-						foreach (var file in files)
+						Logger.LogInfo($"'{targetFolder}' does not exist.");
+					}
+					else
+					{
+						var folder = string.Empty;
+						try
 						{
-							File.Delete(file);
-							Logger.LogInfo($"File '{file}' deleted.");
-						}
+							// Remove all the files in this folder
+							var files = Directory.GetFiles(targetFolder);
+							foreach (var file in files)
+							{
+								File.Delete(file);
+								Logger.LogInfo($"File '{file}' deleted.");
+							}
 
-						// Remove all sub-folders of this folder
-						var folders = Directory.GetDirectories(targetFolder);
-						foreach (string f in folders)
+							// Remove all sub-folders of this folder
+							var folders = Directory.GetDirectories(targetFolder);
+							foreach (string f in folders)
+							{
+								// Save folder name just in case an exception is thrown.
+								folder = f;
+								Directory.Delete(f, recursive: true);
+								Logger.LogInfo($"Folder '{f}' deleted.");
+							}
+						}
+						catch (IOException e)
 						{
-							// Save folder name just in case an exception is thrown.
-							folder = f; 
-							Directory.Delete(f, recursive: true);
-							Logger.LogInfo($"Folder '{f}' deleted.");
+							// Get the filename from the exception message.
+							var filename = e.Message.Replace("The process cannot access the file '", "")
+													.Replace("' because it is being used by another process.", "");
+							lockedItems.Add(Path.Combine(folder, filename));
 						}
 					}
-					catch (IOException e)
-					{
-						// Get the filename from the exception message.
-						var filename = e.Message.Replace("The process cannot access the file '", "")
-												.Replace("' because it is being used by another process.", "");
-						lockedItems.Add(Path.Combine(folder, filename));
-					}
 				}
+				catch (ArgumentException e)
+				{
+					// Possible issue with formatting of folder
+					var message = e.Message;
+					lockedItems.Add(message);
+				}
+
 			}
 
 			// Were there any locked items?  They may have already been deleted.
@@ -370,6 +387,7 @@ namespace Sage300Utilities
 
 			// Ensure that paths are specified and correct.
 			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+			Logger.LogInfo($"templatesFolder = {templatesFolder}");
 
 			// The list of folders to compress into 
 			// individual zip archives
@@ -404,6 +422,88 @@ namespace Sage300Utilities
 			}
 
 			Logger.LogInfo($"End - CreateTemplateZipFiles");
+		}
+
+		/// <summary>
+		/// Copy the Zip archives from the \src\Wizards\Templates\ folder
+		/// to \src\Wizards\Sage300UIWizardPackage\ProjectTemplates\ folder
+		/// </summary>
+		private void CopyTemplateZipFiles()
+		{
+			Logger.LogInfo($"Start - CopyTemplateZipFiles()");
+
+			// Ensure that paths are specified and correct.
+			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+			var targetFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Sage300UIWizardPackage\ProjectTemplates");
+
+			// The list of template files
+			var templateNames = new[] {
+					@"BusinessRepository.zip",
+					@"Interfaces.zip",
+					@"Models.zip",
+					@"Resources.zip",
+					@"Sage300SolutionTemplate.zip",
+					@"Services.zip",
+					@"Web.zip"
+			};
+
+			var fullSourcePath = string.Empty;
+			foreach (var filename in templateNames)
+			{
+				// Build the destination zip archive name
+				var targetFile = Path.Combine(targetFolder, filename);
+
+				// Delete the existing archive if it exists
+				if (File.Exists(targetFile))
+				{
+					Logger.LogInfo($"Existing Zip archive '{targetFile}' deleted.");
+					File.Delete(targetFile);
+				}
+
+				var arguments = $"/S \"{templatesFolder}\" \"{targetFolder}\" {filename} ";
+				Robocopy(arguments);
+				Logger.LogInfo($"Zip archive '{filename}' copied from {templatesFolder} to {targetFolder}.");
+			}
+
+			Logger.LogInfo($"End - CopyTemplateZipFiles");
+		}
+
+		/// <summary>
+		/// Remove the Zip archives from the \src\Wizards\Templates\ folder
+		/// </summary>
+		private void RemoveTemplateZipFiles()
+		{
+			Logger.LogInfo($"Start - RemoveTemplateZipFiles()");
+
+			// Ensure that paths are specified and correct.
+			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+
+			// The list of template files
+			var templateNames = new[] {
+					@"BusinessRepository.zip",
+					@"Interfaces.zip",
+					@"Models.zip",
+					@"Resources.zip",
+					@"Sage300SolutionTemplate.zip",
+					@"Services.zip",
+					@"Web.zip"
+			};
+
+			var fullSourcePath = string.Empty;
+			foreach (var filename in templateNames)
+			{
+				// Build the full path to the Zip archive file
+				var targetFile = Path.Combine(templatesFolder, filename);
+
+				// Delete the existing archive if it exists
+				if (File.Exists(targetFile))
+				{
+					Logger.LogInfo($"Existing Zip archive '{targetFile}' deleted.");
+					File.Delete(targetFile);
+				}
+			}
+
+			Logger.LogInfo($"End - RemoveTemplateZipFiles");
 		}
 
 		/// <summary>

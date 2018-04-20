@@ -485,6 +485,8 @@
 \Content\Images\nav\OE
 \Content\Images\nav\PO
 \Content\Images\nav\SIRC
+\Content\Images\nav\menuBackGroundImage.jpg
+\Content\Images\nav\menuIcon.png
 \Content\Images\nav\sprite_global_menu@2x.png
 \Content\Images\nav\sprite_global_menu_rev@2x.png
 \Content\Images\nav\sprite_navigation.png

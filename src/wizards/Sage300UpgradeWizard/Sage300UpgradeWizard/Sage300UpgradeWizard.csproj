@@ -158,6 +158,7 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
+    <Content Include="content\ReleaseSpecificUpdateMenuDetails.txt" />
     <Content Include="content\ReleaseSpecificUpdatePostBuildEvent.txt" />
     <Content Include="content\ReleaseSpecificUpdateSourceCode.txt" />
     <Content Include="Images\Caaccpac.ico" />

@@ -126,22 +126,23 @@ namespace Sage300Utilities {
         /// <summary>
         ///   Looks up a localized string similar to Program Name:          {0}
         ///Version:               {1}
+        ///Build Date:            {2}
         ///
         ///Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
         ///                       All rights reserved.
         ///License:               The MIT Licence (MIT)
         ///
         ///Required 3rd party
-        ///programs/components:   {2}
+        ///programs/components:   {3}
         ///
         ///
         ///Required Parameter(s):
         ///
-        ///{3}
+        ///{4}
         ///
         ///Optional Parameter(s):
         ///
-        ///{4}.
+        ///{5}.
         /// </summary>
         internal static string Msg_ProgramUsageMessage {
             get {
