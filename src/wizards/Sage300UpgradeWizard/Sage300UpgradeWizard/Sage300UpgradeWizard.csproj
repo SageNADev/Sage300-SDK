@@ -161,6 +161,7 @@
     <Content Include="content\ReleaseSpecificUpdateMenuDetails.txt" />
     <Content Include="content\ReleaseSpecificUpdatePostBuildEvent.txt" />
     <Content Include="content\ReleaseSpecificUpdateSourceCode.txt" />
+    <None Include="content\ReleaseSpecificUpdateSourceCodeManually.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />

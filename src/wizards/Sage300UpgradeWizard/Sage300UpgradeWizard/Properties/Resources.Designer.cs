@@ -324,11 +324,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade your source code files..
+        ///   Looks up a localized string similar to This step will automatically upgrade some of your source code files..
         /// </summary>
         internal static string ReleaseSpecificDescUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCodeManually", resourceCulture);
             }
         }
         
@@ -351,11 +360,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update the source code files.
+        ///   Looks up a localized string similar to Automatic update of source code files.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual update of source code files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCodeManually", resourceCulture);
             }
         }
         
@@ -398,6 +416,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ...Behaviour.js file, on successful return from a finder selection,
+        ///was not performing a Get to get the record from the repository and
+        ///instead used the object returned from the finder. The record returned
+        ///from the finder is out-of-process and needs to be fetched by the screen.
+        ///Changes to partner code are only required if a partner&apos;s business view
+        ///has logic regarding a new record which was incorrectly being invoked by 
+        ///an existing record that &quot;looked like&quot; a new record. This has been 
+        ///corrected. O [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCodeManually", resourceCulture);
             }
         }
         

@@ -112,7 +112,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                     #region Release Specific Steps
                     case 3:
-                        UpdateVendorSourceCode(title);
+                        UpdateVendorSourceCodeAutomatically(title);
                         break;
 
 					case 4:
@@ -122,9 +122,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 					case 5:
                         UpdateProjectPostBuildEvent(title);
                         break;
-                    #endregion
-                }
-            }
+
+					case 6:
+						UpdateVendorSourceCodeManually(title);
+						break;
+						#endregion
+				}
+			}
         }
 
 		#endregion
@@ -472,7 +476,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// 
 		/// </summary>
 		/// <param name="title">Title of step being processed</param>
-		private void UpdateVendorSourceCode(string title)
+		private void UpdateVendorSourceCodeAutomatically(string title)
         {
             // Log start of step
             LaunchLogEventStart(title);
@@ -494,6 +498,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			LaunchLogEventEnd(title);
             LaunchLogEvent("");
         }
+
+		/// <summary>
+		/// Display some text informing the user that they will need to manually update
+		/// some of their source code.
+		/// </summary>
+		/// <param name="title">Title of step being processed</param>
+		private void UpdateVendorSourceCodeManually(string title)
+		{
+			// Log start of step
+			LaunchLogEventStart(title);
+
+			// Just display a message
+			LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCodeManually}");
+
+			// Log end of step
+			LaunchLogEventEnd(title);
+			LaunchLogEvent("");
+		}
 
 		/// <summary>
 		/// Update the XXMenuDetails.xml icon and background images
@@ -567,17 +589,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		private string GetCompanyName(DirectoryInfo solution, string moduleId)
 		{
 			string name = string.Empty;
-			var projectList = solution .EnumerateFiles($"*.{moduleId}.Web.csproj", SearchOption.AllDirectories);
+			var projectList = solution.EnumerateFiles($"*.Web.csproj", SearchOption.AllDirectories);
 			foreach (var projFile in projectList)
 			{
-				name = projFile.ToString();
-
-				// Get the the index of the first period in the filename.
-				// Example: TrustedVendor.PM.Web.csproj
-				//                       ^
-				//
-				var index = name.IndexOf('.');
-				name = projFile.ToString().Substring(0, index);
+				// The company name is the first part of the string (if split on each '.')
+				name = projFile.ToString().Split(new char[] { '.' })[0];
 				break;
 			}
 
