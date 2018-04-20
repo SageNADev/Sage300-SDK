@@ -63,9 +63,6 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
         /// <summary> Filters in grid </summary>
         private readonly BindingList<Filter> _filters = new BindingList<Filter>();
 
-        /// <summary> Aggregation types check box group </summary>
-        private readonly BindingList<string> _aggregationTypes = new BindingList<string>();
-
         /// <summary> Included columns in grid </summary>
         private readonly BindingList<SourceColumn> _includedColumns = new BindingList<SourceColumn>();
 
@@ -248,12 +245,12 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 0, 50, Resources.Index.Replace(":", ""), true, true);
             GenericInit(grid, 1, 125, Resources.Column.Replace(":", ""), true, true);
             GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, true);
-            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, true);
-            GenericInit(grid, 4, 75, Resources.Include, true, false);
+            GenericInit(grid, 3, 50, "", false, true); // TODO: depending on the current language, should set ONE of the inquiry description language columns and not necesssarily English
+            GenericInit(grid, 4, 50, "", false, true);
             GenericInit(grid, 5, 50, "", false, true);
             GenericInit(grid, 6, 50, "", false, true);
-            GenericInit(grid, 7, 50, "", false, true);
-            GenericInit(grid, 8, 50, "", false, true);
+            GenericInit(grid, 7, 100, Resources.DataType.Replace(":", ""), true, true);
+            GenericInit(grid, 8, 75, Resources.Include, true, false);
             GenericInit(grid, 9, 50, "", false, true);
             GenericInit(grid, 10, 50, "", false, true);
             GenericInit(grid, 11, 50, "", false, true);
@@ -265,6 +262,10 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 17, 50, "", false, true);
             GenericInit(grid, 18, 50, "", false, true);
             GenericInit(grid, 19, 50, "", false, true);
+            GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 21, 50, "", false, true);
+            GenericInit(grid, 22, 50, "", false, true);
+            GenericInit(grid, 23, 50, "", false, true);
         }
 
         /// <summary> Initialize SQL Columns grid and display </summary>
@@ -279,6 +280,10 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 0, 50, "", false, true);
             GenericInit(grid, 1, 200, Resources.Column.Replace(":", ""), true, false);
             GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, false);
+            GenericInit(grid, 3, 50, "", false, true);
+            GenericInit(grid, 4, 50, "", false, true);
+            GenericInit(grid, 5, 50, "", false, true);
+            GenericInit(grid, 6, 50, "", false, true);
 
             // Remove and re-add as combobox
             grid.Columns.Remove("Type");
@@ -297,13 +302,9 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Re-add column
-            grid.Columns.Insert(3, column);
-            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, false);
-
-            GenericInit(grid, 4, 75, "", false, true);
-            GenericInit(grid, 5, 50, "", false, true);
-            GenericInit(grid, 6, 50, "", false, true);
-            GenericInit(grid, 7, 50, "", false, true);
+            grid.Columns.Insert(7, column);
+            GenericInit(grid, 7, 100, Resources.DataType.Replace(":", ""), true, false);
+  
             GenericInit(grid, 8, 50, "", false, true);
             GenericInit(grid, 9, 50, "", false, true);
             GenericInit(grid, 10, 50, "", false, true);
@@ -316,6 +317,10 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 17, 50, "", false, true);
             GenericInit(grid, 18, 50, "", false, true);
             GenericInit(grid, 19, 50, "", false, true);
+            GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 21, 50, "", false, true);
+            GenericInit(grid, 22, 50, "", false, true);
+            GenericInit(grid, 23, 50, "", false, true);
         }
 
         /// <summary> Initialize Included Columns grid and display </summary>
@@ -330,23 +335,27 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             GenericInit(grid, 0, 50, Resources.Index.Replace(":", ""), true, true);
             GenericInit(grid, 1, 125, Resources.Column.Replace(":", ""), true, true);
             GenericInit(grid, 2, 200, Resources.InquiryDescription.Replace(":", ""), true, true);
-            GenericInit(grid, 3, 100, Resources.DataType.Replace(":", ""), true, true);
+            GenericInit(grid, 3, 50, "", false, true);
             GenericInit(grid, 4, 50, "", false, true);
-            GenericInit(grid, 5, 75, Resources.Display, true, true);
+            GenericInit(grid, 5, 50, "", false, true);
             GenericInit(grid, 6, 50, "", false, true);
-            GenericInit(grid, 7, 50, "", false, true);
-            GenericInit(grid, 8, 75, Resources.DrilldownTab, true, true);
-            GenericInit(grid, 9, 50, "", false, true);
+            GenericInit(grid, 7, 100, Resources.DataType.Replace(":", ""), true, true);
+            GenericInit(grid, 8, 50, "", false, true);
+            GenericInit(grid, 9, 75, Resources.Display, true, true);
             GenericInit(grid, 10, 50, "", false, true);
             GenericInit(grid, 11, 50, "", false, true);
-            GenericInit(grid, 12, 50, "", false, true);
-            GenericInit(grid, 13, 75, Resources.FilterableColumn, true, true);
+            GenericInit(grid, 12, 75, Resources.DrilldownTab, true, true);
+            GenericInit(grid, 13, 50, "", false, true);
             GenericInit(grid, 14, 50, "", false, true);
             GenericInit(grid, 15, 50, "", false, true);
             GenericInit(grid, 16, 50, "", false, true);
-            GenericInit(grid, 17, 50, "", false, true);
-            GenericInit(grid, 18, 75, Resources.GroupByColumn, true, false);
-            GenericInit(grid, 19, 75, Resources.AggregationColumn, true, true);
+            GenericInit(grid, 17, 75, Resources.FilterableColumn, true, true);
+            GenericInit(grid, 18, 50, "", false, true);
+            GenericInit(grid, 19, 50, "", false, true);
+            GenericInit(grid, 20, 50, "", false, true);
+            GenericInit(grid, 21, 50, "", false, true);
+            GenericInit(grid, 22, 75, Resources.GroupByColumn, true, false);
+            GenericInit(grid, 23, 75, Resources.AggregationColumn, true, true); // TODO:this should be either be removed or changed to a dropdown column later
         }
 
         /// <summary> Initialize grid and display </summary>
@@ -1241,23 +1250,28 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Aggregation
-            //foreach (var aggregationType in _clickedColumn.Aggregation.Keys)
-            //{
-            //    _aggregationTypes.Add(aggregationType);
 
-            //}
+            // Populate the checked list box depending on the data type
+            //_clickedColumn
+            chkAggregation.Items.Clear();
+            var aggregationItems = _clickedColumn.Type == SourceDataType.Decimal ? 
+                new object[] { "Average", "Count", "Maximum", "Minimum", "Subtotal" } : 
+                new object[] { "Count" };
+            chkAggregation.Items.AddRange(aggregationItems);
 
-            for (int i = 0; i < _clickedColumn.Aggregation.Keys.Count; i++)
+            // Loop through check boxes to see which ones need to be ticked on load
+            // This loop probably isn't optimized
+            for (int i = 0; i < chkAggregation.Items.Count; i++)
             {
-                //if (_clickedColumn.Aggregation.)
-                //{
-
-                //}
-
-                chkAggregation.SetItemChecked(i, true);
+                foreach(var aggregationType in _clickedColumn.Aggregation)
+                {
+                    if (aggregationType == chkAggregation.Items[i].ToString())
+                    {
+                        chkAggregation.SetItemChecked(i, true);
+                        break;
+                    }
+                }
             }
-
-            return;
         }
 
         /// <summary> Cancel any column changes</summary>
@@ -1317,9 +1331,11 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
             }
 
             // Aggregation
+            _clickedColumn.Aggregation.Clear();
+
             foreach (var checkedItem in chkAggregation.CheckedItems)
             {
-                _clickedColumn.Aggregation.Add(checkedItem.ToString(), true);
+                _clickedColumn.Aggregation.Add(checkedItem.ToString());
             }
 
             for (int i = 0; i < chkAggregation.Items.Count; i++)
@@ -1500,19 +1516,7 @@ namespace Sage.CA.SBS.ERP.Sage300.InquiryConfigurationWizard
                 // Aggregation
                 if (sourceColumn.Aggregation.Count > 0)
                 {
-                    var aggregateArray = new JArray();
-
-                    foreach (var aggregationType in sourceColumn.Aggregation)
-                    {
-                        var aggregateObj = new JObject
-                        {
-                            new JProperty(aggregationType.Key, aggregationType.Value)
-                        };
-
-                        aggregateArray.Add(aggregateObj);
-                    }
-
-                    fields.Add(ProcessGeneration.PropertyAggregation, aggregateArray);
+                    fields.Add(new JProperty(ProcessGeneration.PropertyAggregation, sourceColumn.Aggregation));
                 }
 
                 fieldsArray.Add(fields);
