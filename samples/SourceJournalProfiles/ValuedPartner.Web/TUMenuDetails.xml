@@ -41,6 +41,8 @@
     <IsGroupEnd>false</IsGroupEnd>
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
+    <IconName>ValuedPartner/menuIcon.png</IconName>
+    <MenuBackGoundImage>ValuedPartner/menuBackGroundImage.jpg</MenuBackGoundImage>
   </item>
   <!--Third Level Menu Items Section Starts-->
   <item>
