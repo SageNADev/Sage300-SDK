@@ -93,8 +93,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Save settings for local usage
             _settings = settings;
 
-            // Start at step 1 and ignore last two steps
-            for (var index = 0; index < _settings.WizardSteps.Count; index++)
+			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Web folder.
+			// If it does/did, then we will just update it in place instead of relocating it to the Solution folder.
+			bool AccpacPropsFileOriginallyInWebFolder = false;
+
+			// Start at step 1 and ignore last two steps
+			for (var index = 0; index < _settings.WizardSteps.Count; index++)
             {
                 var title = _settings.WizardSteps[index].Title;
                 LaunchProcessingEvent(title);
@@ -103,11 +107,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 switch (index)
                 {
                     case 1:
-                        SyncWebFiles(title);
+                        SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
                         break;
 
                     case 2:
-                        SyncAccpacLibraries(title);
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
                         break;
 
                     #region Release Specific Steps
@@ -137,22 +141,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		/// <summary> Synchronization of web project files </summary>
 		/// <param name="title">Title of step being processed </param>
-		private void SyncWebFiles(string title)
+		private void SyncWebFiles(string title, out bool accpacPropsInWebFolder)
 		{
 			// Log start of step
 			LaunchLogEventStart(title);
 
+			// Check to see if the AccpacDotNetVersion.props file
+			// already exists in the Web folder.
+			// If it does, then just update it and do not relocate it to the Project folder
+			accpacPropsInWebFolder = IsAccpacDotNetVersionPropsLocatedInWebFolder();
+
 			// Do the work :)
-			//DeleteFolder(sourceWebFolder);
-			//ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
 			DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder);
 
 			// Remove the files that are not actually part of the 'Web' bundle.
 			// This is done because of the way VS2017 doesn't seem to allow embedding of zip
 			// files within another zip file.
 			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"__TemplateIcon.ico"));
-			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
 			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"Items.vstemplate"));
+
+			if (!accpacPropsInWebFolder)
+			{
+				File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+			}
 
 			// Log end of step
 			LaunchLogEventEnd(title);
@@ -161,17 +172,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		/// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
 		/// <param name="title">Title of step being processed </param>
-		private void SyncAccpacLibraries(string title)
+		private void SyncAccpacLibraries(string title, bool accpacPropsInWebFolder)
         {
             // Log start of step
             LaunchLogEventStart(title);
 
-            // Do the actual work :)
-            RemoveExistingPropsFileFromSolutionFolder();
-            CopyNewPropsFileToSolutionFolder();
+			// Only do this if the AccpacDotNetVersion.props file was not originally in the Web folder.
+			if (!accpacPropsInWebFolder)
+			{
+				// Do the actual work :)
+				RemoveExistingPropsFileFromSolutionFolder();
+				CopyNewPropsFileToSolutionFolder();
+			}
 
-            // Log detail
-            var txt = string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber);
+			// Log detail
+			var txt = string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber);
             LaunchLogEvent($"{DateTime.Now} {txt}");
 
             // Log end of step
@@ -179,11 +194,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
-        /// <summary>
-        /// Remove an existing AccpacDotNetVersion.props file from the
-        /// solution folder if it exists.
-        /// </summary>
-        private void RemoveExistingPropsFileFromSolutionFolder()
+		private bool IsAccpacDotNetVersionPropsLocatedInWebFolder()
+		{
+			return File.Exists(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+		}
+
+		/// <summary>
+		/// Remove an existing AccpacDotNetVersion.props file from the
+		/// solution folder if it exists.
+		/// </summary>
+		private void RemoveExistingPropsFileFromSolutionFolder()
         {
             var oldPropsFile = Path.Combine(_settings.DestinationSolutionFolder, AccpacPropsFile);
             if (File.Exists(oldPropsFile)) { File.Delete(oldPropsFile); }
@@ -540,10 +560,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 				var xmlDoc = new XmlDocument();
 				xmlDoc.Load(menuFile.FullName);
-				var nodes = xmlDoc.ChildNodes[1].ChildNodes;
+
+				// Now find the <Navigation> node.
+				var navigationNode = FindNavigationNode(xmlDoc);
 				var hasChanges = false;
 
-				foreach (XmlNode node in nodes)
+				foreach (XmlNode node in navigationNode)
 				{
 					if (node.NodeType != XmlNodeType.Element) continue;
 					var e = (XmlElement)node;
@@ -578,6 +600,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// Log end of step
 			LaunchLogEventEnd(title);
 			LaunchLogEvent("");
+		}
+
+
+		/// <summary>
+		/// Get a reference to the <Navigation> node in the XXMenuDetail.xml file
+		/// </summary>
+		/// <param name="doc">A reference to the XmlDocument</param>
+		/// <returns>A reference to the Navigation node</returns>
+		private XmlNode FindNavigationNode(XmlDocument doc)
+		{
+			XmlNode returnNode = null;
+			foreach (XmlNode node in doc.ChildNodes)
+			{
+				if (node.Name.ToLowerInvariant() == "navigation" && node.Attributes.Count == 0)
+				{
+					returnNode = node;
+					break;
+				}
+			}
+			return returnNode;
 		}
 
 		/// <summary>
