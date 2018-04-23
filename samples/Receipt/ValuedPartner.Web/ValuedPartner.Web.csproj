@@ -522,7 +522,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)" --webprojectpath="$(ProjectDir)" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log
+    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

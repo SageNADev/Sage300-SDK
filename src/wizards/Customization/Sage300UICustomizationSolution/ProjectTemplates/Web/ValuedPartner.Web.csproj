@@ -561,7 +561,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" --mode=1 --solutionpath="$(SolutionDir)"  --webprojectpath="$(ProjectDir)"  --buildprofile="$(ConfigurationName)" --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --log</PostBuildEvent>
+    <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" --mode=1 --solutionpath="$(SolutionDir)\"  --webprojectpath="$(ProjectDir)\"  --buildprofile="$(ConfigurationName)" --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --log</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
