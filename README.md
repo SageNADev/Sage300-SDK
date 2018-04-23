@@ -99,6 +99,15 @@ These samples are to provide implementation knowledge.
 
 > **The README file in the samples folder is important and contains prerequisites for running samples.**
 
+### settings
+
+The **settings** folder contains an **AccpacDotNetVersion.props** file, which is used by the samples to  
+reference the correct version of the Accpac libraries. Prior to 2018.2, every sample had this file local
+to the sample. This single version of the files will allow for an easier upgrade between releases as only
+the single file will need to be modified for correct references.
+
+> **A generated solution by the Solution Wizard will still contain a local AccpacDotNetVersion.props file .**
+
 ### src
 
 The **src** folder contains the source files which comprise the SDK and contains the following 
