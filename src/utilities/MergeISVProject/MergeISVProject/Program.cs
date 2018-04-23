@@ -112,6 +112,11 @@ namespace MergeISVProject
 			var applicationError = false;
 			try
 			{
+				// Enable for debugging purposes
+				//Console.WriteLine("Main...");
+				//Console.WriteLine($"args.Length = {args.Length}");
+				//foreach (var t in args) Console.WriteLine($"{t}");
+
 				InitializeComponents(args);
 
 				if (_Options.AnyErrors())
