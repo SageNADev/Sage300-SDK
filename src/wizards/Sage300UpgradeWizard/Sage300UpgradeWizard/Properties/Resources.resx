@@ -219,18 +219,36 @@
     <value>Update the Web project Post Build Event</value>
   </data>
   <data name="ReleaseSpecificTitleUpdateSourceCode" xml:space="preserve">
-    <value>Update the source code files</value>
+    <value>Automatic update of source code files</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
   </data>
   <data name="ReleaseSpecificDescUpdateSourceCode" xml:space="preserve">
-    <value>This step will upgrade your source code files.</value>
+    <value>This step will automatically upgrade some of your source code files.</value>
   </data>
   <data name="ReleaseSpecificUpdatePostBuildEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdatePostBuildEvent.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ReleaseSpecificUpdateSourceCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateSourceCode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateMenuDetails" xml:space="preserve">
+    <value>Update the Menu Details</value>
+  </data>
+  <data name="ReleaseSpecificUpdateMenuDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateMenuDetails.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificDescUpdateMenuDetails" xml:space="preserve">
+    <value>This step will upgrade the [ModuleID]MenuDetails.xml file.</value>
+  </data>
+  <data name="ReleaseSpecificDescUpdateSourceCodeManually" xml:space="preserve">
+    <value>This step will need to be done manually.</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateSourceCodeManually" xml:space="preserve">
+    <value>Manual update of source code files</value>
+  </data>
+  <data name="ReleaseSpecificUpdateSourceCodeManually" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateSourceCodeManually.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

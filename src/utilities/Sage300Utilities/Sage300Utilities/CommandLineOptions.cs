@@ -85,6 +85,11 @@ namespace Sage300Utilities
 		public string ApplicationVersion { get; set; }
 
 		/// <summary>
+		/// This will contain the build date of the application
+		/// </summary>
+		public string ApplicationBuildDate { get; set; }
+
+		/// <summary>
 		/// This will contain the list of all errors that
 		/// occurred when attempting to load and parse the
 		/// command-line options.
@@ -161,11 +166,12 @@ namespace Sage300Utilities
 		/// <param name="appVersion">The version number of the application</param>
 		/// <param name="args">The argument list passed in via the command-line</param>
 		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
-		public CommandLineOptions(string appName, string appVersion, string[] args, string prefix=DEFAULT_PREFIX)
+		public CommandLineOptions(string appName, string appVersion, string buildDate, string[] args, string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
             ApplicationName = appName;
             ApplicationVersion = appVersion;
+			ApplicationBuildDate = buildDate;
 
 			// If the argument array has only a single entry, then the
 			// arguments list will likely have /r/n characters in it
@@ -460,9 +466,11 @@ namespace Sage300Utilities
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
 			var required3rdPartyComponents = "Log4Net";
+			var BuildDate = ApplicationBuildDate;
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 															       ApplicationVersion,
+																   BuildDate,
 																   required3rdPartyComponents,
 															       requiredParams,
 															       optionalParams);

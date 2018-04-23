@@ -93,8 +93,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Save settings for local usage
             _settings = settings;
 
-            // Start at step 1 and ignore last two steps
-            for (var index = 0; index < _settings.WizardSteps.Count; index++)
+			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Web folder.
+			// If it does/did, then we will just update it in place instead of relocating it to the Solution folder.
+			bool AccpacPropsFileOriginallyInWebFolder = false;
+
+			// Start at step 1 and ignore last two steps
+			for (var index = 0; index < _settings.WizardSteps.Count; index++)
             {
                 var title = _settings.WizardSteps[index].Title;
                 LaunchProcessingEvent(title);
@@ -103,24 +107,32 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 switch (index)
                 {
                     case 1:
-                        SyncWebFiles(title);
+                        SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
                         break;
 
                     case 2:
-                        SyncAccpacLibraries(title);
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
                         break;
 
                     #region Release Specific Steps
                     case 3:
-                        UpdateVendorSourceCode(title);
+                        UpdateVendorSourceCodeAutomatically(title);
                         break;
 
-                    case 4:
+					case 4:
+						UpdateVendorMenuDetails(title);
+						break;
+
+					case 5:
                         UpdateProjectPostBuildEvent(title);
                         break;
-                        #endregion
-                }
-            }
+
+					case 6:
+						UpdateVendorSourceCodeManually(title);
+						break;
+						#endregion
+				}
+			}
         }
 
 		#endregion
@@ -129,22 +141,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		/// <summary> Synchronization of web project files </summary>
 		/// <param name="title">Title of step being processed </param>
-		private void SyncWebFiles(string title)
+		private void SyncWebFiles(string title, out bool accpacPropsInWebFolder)
 		{
 			// Log start of step
 			LaunchLogEventStart(title);
 
+			// Check to see if the AccpacDotNetVersion.props file
+			// already exists in the Web folder.
+			// If it does, then just update it and do not relocate it to the Project folder
+			accpacPropsInWebFolder = IsAccpacDotNetVersionPropsLocatedInWebFolder();
+
 			// Do the work :)
-			//DeleteFolder(sourceWebFolder);
-			//ZipFile.ExtractToDirectory(zipFile, sourceWebFolder);
 			DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder);
 
 			// Remove the files that are not actually part of the 'Web' bundle.
 			// This is done because of the way VS2017 doesn't seem to allow embedding of zip
 			// files within another zip file.
 			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"__TemplateIcon.ico"));
-			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
 			File.Delete(Path.Combine(_settings.DestinationWebFolder, @"Items.vstemplate"));
+
+			if (!accpacPropsInWebFolder)
+			{
+				File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+			}
 
 			// Log end of step
 			LaunchLogEventEnd(title);
@@ -153,17 +172,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		/// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
 		/// <param name="title">Title of step being processed </param>
-		private void SyncAccpacLibraries(string title)
+		private void SyncAccpacLibraries(string title, bool accpacPropsInWebFolder)
         {
             // Log start of step
             LaunchLogEventStart(title);
 
-            // Do the actual work :)
-            RemoveExistingPropsFileFromSolutionFolder();
-            CopyNewPropsFileToSolutionFolder();
+			// Only do this if the AccpacDotNetVersion.props file was not originally in the Web folder.
+			if (!accpacPropsInWebFolder)
+			{
+				// Do the actual work :)
+				RemoveExistingPropsFileFromSolutionFolder();
+				CopyNewPropsFileToSolutionFolder();
+			}
 
-            // Log detail
-            var txt = string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber);
+			// Log detail
+			var txt = string.Format(Resources.UpgradeLibrary, FromAccpacNumber, ToAccpacNumber);
             LaunchLogEvent($"{DateTime.Now} {txt}");
 
             // Log end of step
@@ -171,11 +194,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
-        /// <summary>
-        /// Remove an existing AccpacDotNetVersion.props file from the
-        /// solution folder if it exists.
-        /// </summary>
-        private void RemoveExistingPropsFileFromSolutionFolder()
+		private bool IsAccpacDotNetVersionPropsLocatedInWebFolder()
+		{
+			return File.Exists(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+		}
+
+		/// <summary>
+		/// Remove an existing AccpacDotNetVersion.props file from the
+		/// solution folder if it exists.
+		/// </summary>
+		private void RemoveExistingPropsFileFromSolutionFolder()
         {
             var oldPropsFile = Path.Combine(_settings.DestinationSolutionFolder, AccpacPropsFile);
             if (File.Exists(oldPropsFile)) { File.Delete(oldPropsFile); }
@@ -357,53 +385,268 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             return e.Name == "PropertyGroup" && e.HasAttributes == false;
         }
 
-        /// <summary>
-        /// Determine whether or not an XmlElement is a PostBuildEvent
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns>
-        /// true = XmlElement is a PostBuildEvent
-        /// false = XmlElement is not a PostBuildEvent
-        /// </returns>
-        private static bool IsPostBuildEventElement(XmlElement e) => e.Name.ToUpperInvariant() == "POSTBUILDEVENT";
+		/// <summary>
+		/// Inspect an XmlElement node to determine if it's
+		/// a second level menu <item> element
+		/// </summary>
+		/// <param name="e">The XmlElement item to inspect</param>
+		/// <returns>
+		/// true = second level menu item node
+		/// false = not a second level menu item node
+		/// </returns>
+		private bool IsSecondLevelMenuItem(XmlElement e)
+		{
+			if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
+			{
+				foreach (XmlElement n in e.ChildNodes)
+				{
+					if (n.Name.ToUpperInvariant() == "MENUITEMLEVEL")
+					{
+						var menuItemLevel = n.InnerText;
+						if (!string.IsNullOrEmpty(menuItemLevel))
+						{
+							return Convert.ToInt32(menuItemLevel) == 2;
+						}
+					}
+				}
+			}
 
-        /// <summary>
-        /// Update any source code:
-        /// 
-        /// ...Web\BundleRegistration.cs
-        ///     Rename instances of 'new ScriptBundle(' with 'new Bundle('
-        /// 
-        /// </summary>
-        /// <param name="title">Title of step being processed</param>
-        private void UpdateVendorSourceCode(string title)
+			return false;
+		}
+
+		/// <summary>
+		/// Does this node contain an element called <IconName></IconName>
+		/// </summary>
+		/// <param name="e">The XML Element in question</param>
+		/// <returns>true = IconName element found </returns>
+		private bool HasIconNameElement(XmlElement e)
+		{
+			// This as already been done but better to be safe than sorry!
+			if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
+			{
+				foreach (XmlElement n in e.ChildNodes)
+				{
+					if (n.Name.ToLowerInvariant() == "iconname")
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// Does this node contain an element called <MenuBackGoundImage></MenuBackGoundImage>
+		/// </summary>
+		/// <param name="e">The XML Element in question</param>
+		/// <returns>true = MenuBackGoundImage element found </returns>
+		private bool HasMenuBackGroundImageElement(XmlElement e)
+		{
+			// This as already been done but better to be safe than sorry!
+			if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
+			{
+				foreach (XmlElement n in e.ChildNodes)
+				{
+					if (n.Name.ToLowerInvariant() == "menubackgoundimage")
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// Determine whether or not an XmlElement is a PostBuildEvent
+		/// </summary>
+		/// <param name="e"></param>
+		/// <returns>
+		/// true = XmlElement is a PostBuildEvent
+		/// false = XmlElement is not a PostBuildEvent
+		/// </returns>
+		private static bool IsPostBuildEventElement(XmlElement e) => e.Name.ToUpperInvariant() == "POSTBUILDEVENT";
+
+		/// <summary>
+		/// Determine whether or not an XmlElement is an <IconName> element
+		/// </summary>
+		/// <param name="e">The XmlElement in question</param>
+		/// <returns>
+		/// true = XmlElement is an IconName
+		/// false = XmlElement is not an IconName
+		/// </returns>
+		private static bool IsIconNameElement(XmlElement e) => e.Name.ToUpperInvariant() == "ICONNAME";
+
+		/// <summary>
+		/// Determine whether or not an XmlElement is an <MenuBackGoundImage> element
+		/// Note: The element name is currently misspelled as 'MenuBackGoundImage' instead of 'MenuBackGroundImage'
+		/// This is a known issue.
+		/// </summary>
+		/// <param name="e">The XmlElement in question</param>
+		/// <returns>
+		/// true = XmlElement is a MenuBackGoundImage
+		/// false = XmlElement is not an MenuBackGoundImage
+		/// </returns>
+		private static bool IsMenuBackGroundImageElement(XmlElement e) => e.Name.ToUpperInvariant() == "MENUBACKGOUNDIMAGE";
+
+		/// <summary>
+		/// Update any source code:
+		/// 
+		/// ...Web\BundleRegistration.cs
+		///     Rename instances of 'new ScriptBundle(' with 'new Bundle('
+		/// 
+		/// </summary>
+		/// <param name="title">Title of step being processed</param>
+		private void UpdateVendorSourceCodeAutomatically(string title)
         {
             // Log start of step
             LaunchLogEventStart(title);
 
-            // Update the file(s)
-            var fileToUpdate = @"BundleRegistration.cs";
-            var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
-            var sourceCodeFiles = slnDir.EnumerateFiles(fileToUpdate, SearchOption.AllDirectories);
-            foreach (var file in sourceCodeFiles)
-            {
-                // For now, only one file needs to be updated.
-                var sourceCode = File.ReadAllText(file.FullName);
-                sourceCode = sourceCode.Replace(@"new ScriptBundle(", "new Bundle(");
-                File.WriteAllText(file.FullName, sourceCode);
+			// Update the file(s)
+			var fileToUpdate = @"BundleRegistration.cs";
+			var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
+			var sourceCodeFiles = slnDir.EnumerateFiles(fileToUpdate, SearchOption.AllDirectories);
+			foreach (var file in sourceCodeFiles)
+			{
+				// For now, only one file needs to be updated.
+				var sourceCode = File.ReadAllText(file.FullName);
+				sourceCode = sourceCode.Replace(@"new ScriptBundle(", "new Bundle(");
+				File.WriteAllText(file.FullName, sourceCode);
+				LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCode} : {file.FullName}");
+			}
 
-                LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCode} : {file.FullName}");
-            }
-
-            // Log end of step
-            LaunchLogEventEnd(title);
+			// Log end of step
+			LaunchLogEventEnd(title);
             LaunchLogEvent("");
         }
 
-        /// <summary>
-        /// Delete a folder, if it exists
-        /// </summary>
-        /// <param name="folder">The fully-qualified path to the folder</param>
-        private void DeleteFolder(string folder)
+		/// <summary>
+		/// Display some text informing the user that they will need to manually update
+		/// some of their source code.
+		/// </summary>
+		/// <param name="title">Title of step being processed</param>
+		private void UpdateVendorSourceCodeManually(string title)
+		{
+			// Log start of step
+			LaunchLogEventStart(title);
+
+			// Just display a message
+			LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCodeManually}");
+
+			// Log end of step
+			LaunchLogEventEnd(title);
+			LaunchLogEvent("");
+		}
+
+		/// <summary>
+		/// Update the XXMenuDetails.xml icon and background images
+		/// </summary>
+		/// <param name="title">Title of step being processed</param>
+		private void UpdateVendorMenuDetails(string title)
+		{
+			const string menuDetailsFilePattern = @"*MenuDetails.xml";
+
+			// Log start of step
+			LaunchLogEventStart(title);
+
+			var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
+			var fileList = slnDir.EnumerateFiles(menuDetailsFilePattern, SearchOption.AllDirectories);
+			foreach (var menuFile in fileList)
+			{
+				// Get the ModuleID from the filename
+				var moduleId = menuFile.ToString().Substring(0, 2);
+
+				// Get the Company Name
+				var companyName = GetCompanyName(slnDir, moduleId);
+
+				var xmlDoc = new XmlDocument();
+				xmlDoc.Load(menuFile.FullName);
+
+				// Now find the <Navigation> node.
+				var navigationNode = FindNavigationNode(xmlDoc);
+				var hasChanges = false;
+
+				foreach (XmlNode node in navigationNode)
+				{
+					if (node.NodeType != XmlNodeType.Element) continue;
+					var e = (XmlElement)node;
+					if (!IsSecondLevelMenuItem(e)) continue;
+
+					if (!HasIconNameElement(e))
+					{
+						// Couldn't find <IconName></IconName> so let's add it.
+						var newNode = xmlDoc.CreateNode(XmlNodeType.Element, "IconName", null);
+						newNode.InnerText = $"{companyName}/menuIcon.png";
+						e.AppendChild(newNode);
+						hasChanges = true;
+					}
+
+					if (!HasMenuBackGroundImageElement(e))
+					{
+						// Couldn't find <MenuBackGoundImage></MenuBackGoundImage> so let's add it.
+						var newNode = xmlDoc.CreateNode(XmlNodeType.Element, "MenuBackGoundImage", null);
+						newNode.InnerText = $"{companyName}/menuBackGroundImage.jpg";
+						e.AppendChild(newNode);
+						hasChanges = true;
+					}
+				}
+
+				// Save the file if anything changed
+				if (hasChanges)
+				{
+					xmlDoc.Save(menuFile.FullName);
+					LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateMenuDetails} : {menuFile.FullName}");
+				}
+			}
+			// Log end of step
+			LaunchLogEventEnd(title);
+			LaunchLogEvent("");
+		}
+
+
+		/// <summary>
+		/// Get a reference to the <Navigation> node in the XXMenuDetail.xml file
+		/// </summary>
+		/// <param name="doc">A reference to the XmlDocument</param>
+		/// <returns>A reference to the Navigation node</returns>
+		private XmlNode FindNavigationNode(XmlDocument doc)
+		{
+			XmlNode returnNode = null;
+			foreach (XmlNode node in doc.ChildNodes)
+			{
+				if (node.Name.ToLowerInvariant() == "navigation" && node.Attributes.Count == 0)
+				{
+					returnNode = node;
+					break;
+				}
+			}
+			return returnNode;
+		}
+
+		/// <summary>
+		/// Extract the company name from the name of the Web project (csproj)
+		/// </summary>
+		/// <param name="solution">A DirectoryInfo object holding the visual studio solution information</param>
+		/// <param name="moduleId">The two letter module designation</param>
+		/// <returns>The extracted company name </returns>
+		private string GetCompanyName(DirectoryInfo solution, string moduleId)
+		{
+			string name = string.Empty;
+			var projectList = solution.EnumerateFiles($"*.Web.csproj", SearchOption.AllDirectories);
+			foreach (var projFile in projectList)
+			{
+				// The company name is the first part of the string (if split on each '.')
+				name = projFile.ToString().Split(new char[] { '.' })[0];
+				break;
+			}
+
+			return name;
+		}
+
+		/// <summary>
+		/// Delete a folder, if it exists
+		/// </summary>
+		/// <param name="folder">The fully-qualified path to the folder</param>
+		private void DeleteFolder(string folder)
         {
             if (Directory.Exists(folder))
             {

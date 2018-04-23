@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -306,6 +306,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will upgrade the [ModuleID]MenuDetails.xml file..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateMenuDetails {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateMenuDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This step will be done automatically..
         /// </summary>
         internal static string ReleaseSpecificDescUpdatePostBuildEvent {
@@ -315,11 +324,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade your source code files..
+        ///   Looks up a localized string similar to This step will automatically upgrade some of your source code files..
         /// </summary>
         internal static string ReleaseSpecificDescUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCodeManually", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the Menu Details.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateMenuDetails {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMenuDetails", resourceCulture);
             }
         }
         
@@ -333,11 +360,34 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update the source code files.
+        ///   Looks up a localized string similar to Automatic update of source code files.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual update of source code files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCodeManually", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the menu icon and background images
+        ///
+        ///This step will update the following file:
+        ///
+        ///* Web\[ModuleID]MenuDetails.xml
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateMenuDetails {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateMenuDetails", resourceCulture);
             }
         }
         
@@ -366,6 +416,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateSourceCode {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ...Behaviour.js file, on successful return from a finder selection,
+        ///was not performing a Get to get the record from the repository and
+        ///instead used the object returned from the finder. The record returned
+        ///from the finder is out-of-process and needs to be fetched by the screen.
+        ///Changes to partner code are only required if a partner&apos;s business view
+        ///has logic regarding a new record which was incorrectly being invoked by 
+        ///an existing record that &quot;looked like&quot; a new record. This has been 
+        ///corrected. O [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCodeManually", resourceCulture);
             }
         }
         

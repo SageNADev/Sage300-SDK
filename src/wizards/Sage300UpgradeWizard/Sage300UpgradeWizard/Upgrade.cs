@@ -170,24 +170,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Release Specific Steps...
 
-
-            // 2018.2 : Source Code changes
+            // 2018.2 : Automatic Source Code changes 
             AddStep(Resources.ReleaseSpecificTitleUpdateSourceCode,
                 Resources.ReleaseSpecificDescUpdateSourceCode,
                 Resources.ReleaseSpecificUpdateSourceCode);
 
-            // 2018.2 : Post Build Event command
-            AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
+			// 2018.2 : Update the XXMenuDetails.xml file
+			AddStep(Resources.ReleaseSpecificTitleUpdateMenuDetails,
+				Resources.ReleaseSpecificDescUpdateMenuDetails,
+				Resources.ReleaseSpecificUpdateMenuDetails);
+
+			// 2018.2 : Post Build Event command
+			AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
                     Resources.ReleaseSpecificDescUpdatePostBuildEvent,
                     string.Format(Resources.ReleaseSpecificUpdatePostBuildEvent,
                                   ProcessUpgrade.FromReleaseNumber,
                                   ProcessUpgrade.ToReleaseNumber));
 
-            #endregion
+			// 2018.2 : Manual Source Code changes 
+			AddStep(Resources.ReleaseSpecificTitleUpdateSourceCodeManually,
+				Resources.ReleaseSpecificDescUpdateSourceCodeManually,
+				Resources.ReleaseSpecificUpdateSourceCodeManually);
 
-            #region Common for all upgrades - content specific to release
+			#endregion
 
-            AddStep(Resources.ReleaseAllTitleConfirmation,
+			#region Common for all upgrades - content specific to release
+
+			AddStep(Resources.ReleaseAllTitleConfirmation,
                     Resources.ReleaseAllDescConfirmation,
                     Resources.ReleaseAllUpgrade);
 
@@ -217,10 +226,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Specific to release
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCode}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMenuDetails}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCodeManually}");
 
-            // Same for all upgrades
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
+			// Same for all upgrades
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleRecompile}");
             content.AppendLine("");
             content.AppendLine(Resources.EnsureBackup);

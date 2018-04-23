@@ -23,6 +23,7 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 #endregion
@@ -85,8 +86,48 @@ namespace Sage300Utilities
 		/// <param name="ver">Application Version</param>
 		public static void GetAppNameAndVersion(out string name, out string ver)
 		{
-			name = typeof(Program).Assembly.GetName().Name + ".exe";
-			ver = typeof(Program).Assembly.GetName().Version.ToString();
+			var assemblyName = typeof(Program).Assembly.GetName();
+			name = assemblyName.Name + ".exe";
+			ver = assemblyName.Version.ToString();
+		}
+
+		/// <summary>
+		/// Get the name of this application, it's version number
+		/// and build date
+		/// Values are returned via output string parameters
+		/// </summary>
+		/// <param name="name">Application Name</param>
+		/// <param name="ver">Application Version</param>
+		/// <param name="buildDate">Application Build Date</param>
+		public static void GetAppInfo(out string name, out string ver, out string buildDate)
+		{
+			var assemblyName = typeof(Program).Assembly.GetName();
+			name = assemblyName.Name + ".exe";
+			ver = assemblyName.Version.ToString();
+			buildDate = Assembly.GetExecutingAssembly().GetLinkerTime().ToString(@"dddd, MMMM dd,yyyy @ HH:mm:ss");
+		}
+
+		public static DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
+		{
+			var filePath = assembly.Location;
+			const int c_PeHeaderOffset = 60;
+			const int c_LinkerTimestampOffset = 8;
+
+			var buffer = new byte[2048];
+
+			using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+				stream.Read(buffer, 0, 2048);
+
+			var offset = BitConverter.ToInt32(buffer, c_PeHeaderOffset);
+			var secondsSince1970 = BitConverter.ToInt32(buffer, offset + c_LinkerTimestampOffset);
+			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+			var linkTimeUtc = epoch.AddSeconds(secondsSince1970);
+
+			var tz = target ?? TimeZoneInfo.Local;
+			var localTime = TimeZoneInfo.ConvertTimeFromUtc(linkTimeUtc, tz);
+
+			return localTime;
 		}
 
 		/// <summary>

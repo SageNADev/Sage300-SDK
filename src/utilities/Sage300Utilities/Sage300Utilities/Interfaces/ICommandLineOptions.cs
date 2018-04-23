@@ -51,6 +51,11 @@ namespace Sage300Utilities.Interfaces
 		string ApplicationVersion { get; set; }
 
 		/// <summary>
+		/// The application build date 
+		/// </summary>
+		string ApplicationBuildDate { get; set; }
+
+		/// <summary>
 		/// The list of all errors encountered while loading
 		/// the command-line arguments
 		/// </summary>

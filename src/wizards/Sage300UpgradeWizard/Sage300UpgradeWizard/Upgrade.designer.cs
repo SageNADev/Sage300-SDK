@@ -68,7 +68,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.splitBase.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splitBase.IsSplitterFixed = true;
 			this.splitBase.Location = new System.Drawing.Point(0, 0);
-			this.splitBase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.splitBase.Name = "splitBase";
 			this.splitBase.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
@@ -82,9 +81,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// 
 			this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
 			this.splitBase.Panel2.Controls.Add(this.splitSteps);
-			this.splitBase.Size = new System.Drawing.Size(448, 547);
-			this.splitBase.SplitterDistance = 94;
-			this.splitBase.SplitterWidth = 6;
+			this.splitBase.Size = new System.Drawing.Size(459, 517);
+			this.splitBase.SplitterDistance = 88;
 			this.splitBase.TabIndex = 9;
 			// 
 			// lblStepDescription
@@ -92,10 +90,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.lblStepDescription.BackColor = System.Drawing.Color.Transparent;
 			this.lblStepDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblStepDescription.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.lblStepDescription.Location = new System.Drawing.Point(18, 41);
-			this.lblStepDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblStepDescription.Location = new System.Drawing.Point(12, 31);
 			this.lblStepDescription.Name = "lblStepDescription";
-			this.lblStepDescription.Size = new System.Drawing.Size(419, 27);
+			this.lblStepDescription.Size = new System.Drawing.Size(346, 38);
 			this.lblStepDescription.TabIndex = 7;
 			this.lblStepDescription.Text = "This is the detailed description";
 			// 
@@ -105,8 +102,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.lblStepTitle.BackColor = System.Drawing.Color.Transparent;
 			this.lblStepTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblStepTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.lblStepTitle.Location = new System.Drawing.Point(18, 14);
-			this.lblStepTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblStepTitle.Location = new System.Drawing.Point(12, 9);
 			this.lblStepTitle.Name = "lblStepTitle";
 			this.lblStepTitle.Size = new System.Drawing.Size(206, 21);
 			this.lblStepTitle.TabIndex = 6;
@@ -118,7 +114,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.splitSteps.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
 			this.splitSteps.IsSplitterFixed = true;
 			this.splitSteps.Location = new System.Drawing.Point(0, 0);
-			this.splitSteps.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.splitSteps.Name = "splitSteps";
 			this.splitSteps.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
@@ -129,9 +124,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// splitSteps.Panel2
 			// 
 			this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-			this.splitSteps.Size = new System.Drawing.Size(448, 447);
+			this.splitSteps.Size = new System.Drawing.Size(459, 425);
 			this.splitSteps.SplitterDistance = 375;
-			this.splitSteps.SplitterWidth = 6;
 			this.splitSteps.TabIndex = 0;
 			// 
 			// splitStep
@@ -140,7 +134,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.splitStep.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
 			this.splitStep.IsSplitterFixed = true;
 			this.splitStep.Location = new System.Drawing.Point(0, 0);
-			this.splitStep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.splitStep.Name = "splitStep";
 			this.splitStep.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
@@ -151,9 +144,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// splitStep.Panel2
 			// 
 			this.splitStep.Panel2.Controls.Add(this.checkBox);
-			this.splitStep.Size = new System.Drawing.Size(448, 375);
+			this.splitStep.Size = new System.Drawing.Size(459, 375);
 			this.splitStep.SplitterDistance = 320;
-			this.splitStep.SplitterWidth = 6;
 			this.splitStep.TabIndex = 0;
 			// 
 			// lblContent
@@ -163,20 +155,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.lblContent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblContent.ForeColor = System.Drawing.SystemColors.HotTrack;
 			this.lblContent.Location = new System.Drawing.Point(0, 0);
-			this.lblContent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblContent.Name = "lblContent";
-			this.lblContent.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.lblContent.Size = new System.Drawing.Size(191, 17);
+			this.lblContent.Padding = new System.Windows.Forms.Padding(1);
+			this.lblContent.Size = new System.Drawing.Size(189, 15);
 			this.lblContent.TabIndex = 0;
 			this.lblContent.Text = "Content to be supplied by the step";
 			// 
 			// checkBox
 			// 
 			this.checkBox.AutoSize = true;
-			this.checkBox.Location = new System.Drawing.Point(15, 13);
-			this.checkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.checkBox.Location = new System.Drawing.Point(10, 8);
 			this.checkBox.Name = "checkBox";
-			this.checkBox.Size = new System.Drawing.Size(243, 24);
+			this.checkBox.Size = new System.Drawing.Size(171, 17);
 			this.checkBox.TabIndex = 0;
 			this.checkBox.Text = "Text to be supplied by the step";
 			this.checkBox.UseVisualStyleBackColor = true;
@@ -189,9 +179,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.pnlButtons.Controls.Add(this.btnBack);
 			this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlButtons.Location = new System.Drawing.Point(0, 0);
-			this.pnlButtons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pnlButtons.Name = "pnlButtons";
-			this.pnlButtons.Size = new System.Drawing.Size(448, 66);
+			this.pnlButtons.Size = new System.Drawing.Size(459, 46);
 			this.pnlButtons.TabIndex = 0;
 			// 
 			// lblProcessing
@@ -199,8 +188,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			this.lblProcessing.AutoSize = true;
 			this.lblProcessing.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblProcessing.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.lblProcessing.Location = new System.Drawing.Point(14, 25);
-			this.lblProcessing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblProcessing.Location = new System.Drawing.Point(9, 16);
 			this.lblProcessing.Name = "lblProcessing";
 			this.lblProcessing.Size = new System.Drawing.Size(62, 13);
 			this.lblProcessing.TabIndex = 2;
@@ -210,10 +198,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// 
 			this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnNext.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnNext.Location = new System.Drawing.Point(335, 12);
-			this.btnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnNext.Location = new System.Drawing.Point(379, 10);
 			this.btnNext.Name = "btnNext";
-			this.btnNext.Size = new System.Drawing.Size(102, 38);
+			this.btnNext.Size = new System.Drawing.Size(68, 25);
 			this.btnNext.TabIndex = 1;
 			this.btnNext.Text = "Next";
 			this.btnNext.UseVisualStyleBackColor = true;
@@ -223,10 +210,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// 
 			this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBack.Location = new System.Drawing.Point(224, 12);
-			this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnBack.Location = new System.Drawing.Point(305, 10);
 			this.btnBack.Name = "btnBack";
-			this.btnBack.Size = new System.Drawing.Size(102, 38);
+			this.btnBack.Size = new System.Drawing.Size(68, 25);
 			this.btnBack.TabIndex = 0;
 			this.btnBack.Text = "Back";
 			this.btnBack.UseVisualStyleBackColor = true;
@@ -234,14 +220,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// 
 			// Upgrade
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(448, 547);
+			this.ClientSize = new System.Drawing.Size(459, 517);
 			this.Controls.Add(this.splitBase);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.HelpButton = true;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Upgrade";
