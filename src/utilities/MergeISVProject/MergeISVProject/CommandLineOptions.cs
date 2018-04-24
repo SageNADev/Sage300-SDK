@@ -364,13 +364,31 @@ namespace MergeISVProject
 			// and add each piece to the final argument list
 			foreach (var s in tempArgList)
 			{
-				foreach (var a in s.Split(SINGLE_SPACE_CHAR).ToList<string>())
+				if (s.Trim().Length > 0)
 				{
-					var temp = a;
-					if (temp.Length > 0)
+					var itemSeparator = new String[] { $" {DEFAULT_PREFIX}" };
+					var tempList = s.Split(itemSeparator, StringSplitOptions.RemoveEmptyEntries).ToList<string>();
+					if (tempList.Count > 1)
 					{
-						temp = temp.Replace("\"", "");
-						argList.Add(temp);
+						// Likely the command-line options were separated by new line characters so 
+						// they showed up as a single command-line entry.
+						foreach (string entry in tempList)
+						{
+							var trimmed = entry.Trim();
+							if (trimmed.Substring(0, 2).ToLowerInvariant() != DEFAULT_PREFIX)
+							{
+								argList.Add($"{DEFAULT_PREFIX}{trimmed}");
+							}
+							else
+							{
+								argList.Add($"{trimmed}");
+							}
+						}
+					}
+					else
+					{
+						// Just add the entry and move on to the next one.
+						argList.Add(tempList[0]);
 					}
 				}
 			}
@@ -392,38 +410,46 @@ namespace MergeISVProject
 	    {
 		    var theArg = string.Empty;
 
-		    if (Array.Exists(args, s =>
-		    {
-			    theArg = s;
+			try
+			{
+				if (Array.Exists(args, s =>
+				{
+					theArg = s;
 
-			    // Split the prefix+flag and the actual value
-			    var optionName = GetArgumentNameOnly(theArg.Replace(Environment.NewLine, String.Empty));
+					// Split the prefix+flag and the actual value
+					var optionName = GetArgumentNameOnly(theArg.Replace(Environment.NewLine, String.Empty));
 
-			    // Check the regular name
-			    if (optionName == option.Name)
-				    return true;
+					// Check the regular name
+					if (optionName == option.Name)
+						return true;
 
-			    // Check any Alias'
-			    if (option.AliasList.Contains(optionName))
-				    return true;
+					// Check any Alias'
+					if (option.AliasList.Contains(optionName))
+						return true;
 
-			    return false;
-		    }))
-		    {
-			    // Process based on type
-			    if (option.GetType() == typeof(CommandLineOption<string>))
-			    {
-				    _ProcessString(option, theArg);
-			    }
-			    else if (option.GetType() == typeof(CommandLineOption<int>))
-			    {
-				    _ProcessNumber(option, theArg);
-			    }
-			    else if (option.GetType() == typeof(CommandLineOption<bool>))
-			    {
-				    _ProcessBoolean(option, theArg);
-			    }
-		    }
+					return false;
+				}))
+				{
+					// Process based on type
+					if (option.GetType() == typeof(CommandLineOption<string>))
+					{
+						_ProcessString(option, theArg);
+					}
+					else if (option.GetType() == typeof(CommandLineOption<int>))
+					{
+						_ProcessNumber(option, theArg);
+					}
+					else if (option.GetType() == typeof(CommandLineOption<bool>))
+					{
+						_ProcessBoolean(option, theArg);
+					}
+				}
+			}
+			catch (ArgumentOutOfRangeException e)
+			{
+				Console.WriteLine(args.Length.ToString());
+				Console.WriteLine($"{option.Name}={option.OptionValue}");
+			}
 		}
 
 		/// <summary>

@@ -321,8 +321,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                 // 2018.2 command format
                 // Call "$(ProjectDir)MergeISVProject.exe" --mode=0 
-                //                                         --solutionpath="$(SolutionDir)" 
-                //                                         --webprojectpath="$(ProjectDir)" 
+                //                                         --solutionpath="$(SolutionDir)\" 
+                //                                         --webprojectpath="$(ProjectDir)\" 
                 //                                         --menufilename="[ModuleName]MenuDetails.xml" 
                 //                                         --buildprofile="$(ConfigurationName)" 
                 //                                         --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" 
@@ -342,12 +342,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <returns>The PostBuildEvent command-line string</returns>
         private string BuildCommandLine(string menuName)
         {
+			// Note: The SolutionDir and ProjectDir below
+			// require the extra \ at the end.
             var sb = new StringBuilder();
             sb.Append($"Call ");
             sb.Append($"\"$(ProjectDir)MergeISVProject.exe\" ");
             sb.Append($"--mode=0 ");
-            sb.Append($"--solutionpath=\"$(SolutionDir)\" ");
-            sb.Append($"--webprojectpath=\"$(ProjectDir)\" ");
+			sb.Append($"--solutionpath=\"$(SolutionDir)\\\" ");
+            sb.Append($"--webprojectpath=\"$(ProjectDir)\\\" ");
             sb.Append($"--menufilename=\"{menuName}\" ");
             sb.Append($"--buildprofile=\"$(ConfigurationName)\" ");
             sb.Append($"--dotnetframeworkpath=\"$(FrameworkDir)$(FrameworkVersion)\" ");
