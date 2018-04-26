@@ -626,6 +626,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write(" = (");
             
             #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(".Models.Enums");
+            
+            #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(extension));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 250 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelMapper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,9 +18,11 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
@@ -30,19 +32,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
+			var payloadFileName = @"Items.zip";
 			var sln = (Solution2)solution;
-			var templatePath = sln.GetProjectItemTemplate("UpgradeWebItems.zip", "CSharp");
+			var templatePath = sln.GetProjectItemTemplate(payloadFileName, "CSharp");
 
 			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath))
-            {
-                form.ShowDialog();
-            }
-        }
+			{
+				form.ShowDialog();
+			}
+		}
 
-        /// <summary> Get Destination default </summary>
-        /// <param name="solution">Solution</param>
-        /// <returns>Destination or Empty String</returns>
-        public string DestinationDefault(Solution solution)
+		/// <summary> Get Destination default </summary>
+		/// <param name="solution">Solution</param>
+		/// <returns>Destination or Empty String</returns>
+		public string DestinationDefault(Solution solution)
         {
             var retVal = string.Empty;
 

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -34,7 +34,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region SegmentCodes
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerSegmentCodes").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerSegmentCodes").Include(
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesBehaviour.js",
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesKoExtn.js",
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesRepository.js",

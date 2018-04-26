@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,365 +18,142 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using Microsoft.VisualBasic.FileIO;
-using Microsoft.Win32;
+#region Imports
 using System;
-using System.Diagnostics;
 using System.IO;
+using MergeISVProject.CustomExceptions;
+using MergeISVProject.Interfaces;
+using MergeISVProject.Logging;
+#endregion
 
 namespace MergeISVProject
 {
-    class Program
+	/// <summary>
+	/// Main program class
+	/// </summary>
+	public class Program
     {
-        /// <summary>
-        /// Main Entry Point
-        /// </summary>
-        /// <remarks>args[0] is the solution file name</remarks>
-        /// <remarks>args[1] is the Web project path</remarks>
-        /// <remarks>args[2] is the menu file name (i.e. XXMenuDetails.xml) </remarks>
-        /// <remarks>args[3] is the configuration name (i.e. debug or release)</remarks>
-        /// <remarks>args[4] is the framework directory containing the aspnet_compile.exe</remarks>
-        /// <remarks>args[5] is the optional parameter /nodeploy</remarks>
-        static void Main(string[] args)
+		#region Constants
+		const string LOGFILENAME = @"MergeISVProject.log";
+		#endregion
+
+		#region Class Variables
+		private static ILogger _Logger;
+		private static ICommandLineOptions _Options;
+		private static MergeISVProjectDriver _Driver;
+        #endregion
+
+		#region Private Methods
+		/// <summary>
+		/// Create all the necessary components
+		/// </summary>
+		/// <param name="args">The command-line arguments list</param>
+		private static void InitializeComponents(string[] args)
+		{
+			Utilities.GetAppNameAndVersion(out string appName, out string appVersion);
+			_Options = new CommandLineOptions(appName, appVersion, args);
+			_Logger = new Logger(logfilename: LOGFILENAME,
+									logfolder: Directory.GetCurrentDirectory(),
+									enabled: _Options.Log.OptionValue);
+			_Logger.Log($"{Messages.Msg_Application}: {_Options.ApplicationName} V{_Options.ApplicationVersion}");
+			_Logger.Log(" ");
+		}
+
+		/// <summary>
+		/// Display the program usage information to the console
+		/// </summary>
+		private static void DisplayUsageMessageToConsole() 
         {
-            // Check for arguments
-            if (args.Length < 5)
-            {
-                if (args.Length >= 2)
-                {
-                    WriteErrorFile(args[1], "The post-build utility MergeISVProject must be invoked with these parameters: {solutionFileName} {WebProjectPath} {MenuFileName} {ConfigurationName} {FrameworkDir} [/nodeploy]");
-                }
-                // Unsuccessful
-                return;
-            }
-
-            var pathWebProj = args[1];
-            var menuFileName = args[2];
-            var configName = args[3];
-            var pathFramework = args[4];
-            var moduleId = menuFileName.Substring(0, 2);
-            var pathSage300 = GetSage300Path();
-
-
-            var nodeploy = false;  // flag indicating if the files should be deployed [copied] to the Sage 300 online folder
-            if (args.Length == 6)
-            {
-               nodeploy = (args[5].ToLower() == "/nodeploy");
-            }
-
-            // Delete Error file, if exists
-            DeleteErrorFile(pathWebProj);
-
-            // Exit without error IF configuration is not Release OR Sage 300 folder does not exist (Sage 300 not installed).
-            if (configName.ToLower() != "release" || string.IsNullOrEmpty(pathSage300))
-            {
-                return;
-            }
-
-            // Create [or empty if already present] the Web\Deploy folder
-            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
-            if (Directory.Exists(pathDeploy))
-            {
-               Directory.Delete(pathDeploy, true);
-            }
-            Directory.CreateDirectory(pathDeploy);
-
-            // compile and copy files to web project deploy folder
-            if (StageFiles(pathWebProj, menuFileName, pathFramework))
-            {
-               if (!nodeploy)
-               { 
-                  DeployFiles(pathWebProj, pathSage300, menuFileName);
-               }
-            }
+			Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(_Options.UsageMessage);
+			Console.ResetColor();
         }
 
         /// <summary>
-        /// Copy files from one folder to another.
+        /// Display any errors encountered parsing command-line arguments
+        /// passed into the program.
         /// </summary>
-        /// <param name="pathFrom">Source path</param>
-        /// <param name="pattern">Copy pattern</param>
-        /// <param name="pathTo">Destination path</param>
-        /// <param name="overwrite">True to overwrite otherwise false</param>
-        /// <param name="copyWebFile">True to copy *.web.dll otherwise false</param>
-        private static void CopyFiles(string pathFrom, string pattern, string pathTo, bool overwrite, bool copyWebFile = true)
+        private static void DisplayErrorsToConsole()
         {
-            foreach (var file in Directory.GetFiles(pathFrom, pattern))
+            if (_Options.LoadErrors.Count > 0)
             {
-                var fileName = Path.GetFileName(file);
-                if (fileName == null || 
-                    fileName.Equals("CrystalDecisions.Web.dll") ||
-                    (fileName.EndsWith("Web.dll") && !copyWebFile))
-                {
-                    continue;
-                }
-                var pathFile = Path.Combine(pathTo, fileName);
-                File.Copy(file, pathFile, overwrite);
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("");
+                Console.WriteLine(Messages.Error_InvalidCommandLineParameters);
+				Console.WriteLine("");
+				var errorMsg = _Options.GetLoadErrorsAsText();
+                Console.WriteLine(errorMsg);
+				Console.ResetColor();
             }
         }
 
-        /// <summary>
-        /// Compile the views and copy compiled files to web project deploy (staging) folder.
-        /// </summary>
-        /// <param name="pathWebProj">Web Project path</param>
-        /// <param name="menuFileName">Menu file name</param>
-        /// <param name="pathFramework">Framework path</param>
-        private static bool StageFiles(string pathWebProj, string menuFileName, string pathFramework)
-        {
-            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
-            var pathSource = Path.Combine(pathDeploy, "Source");
-            var pathBuild = Path.Combine(pathDeploy, "Build");
-            var pathBinFrom = Path.Combine(pathWebProj, "Bin");
-            var pathBinTo = Path.Combine(pathSource, "Bin");
-            var pathAreas = Path.Combine(pathSource, "Areas");
-            var moduleId = menuFileName.Substring(0, 2);
-            var pathAreaViewsFrom = Path.Combine(pathWebProj, @"Areas\" + moduleId + @"\Views");
-            var pathAreaViewsTo = Path.Combine(pathSource, @"Areas\" + moduleId + @"\Views");
+		/// <summary>
+		/// Write out some startup information to the log file and console
+		/// </summary>
+		private static void LogStartupInformation()
+		{
+			_Logger.Log(string.Format(Messages.Msg_LogFileLocation, _Logger.LogFile));
+			_Logger.Log(Messages.Msg_LoggingStarted);
+			_Logger.Log(Messages.Msg_PrerequisitesAreValid);
+			_Logger.Log(Messages.Msg_ArgumentList);
+			foreach (var s in _Options.Arguments) { _Logger.Log($"{new String(' ', 5)}{s}"); }
+		}
+		#endregion
 
-            // prepare compiled directories and files
-            Directory.CreateDirectory(pathBuild);
-            Directory.CreateDirectory(pathSource);
-            Directory.CreateDirectory(pathBinTo);
-            Directory.CreateDirectory(pathAreas);
-            Directory.CreateDirectory(pathAreaViewsTo);
+		#region Public Method (Main)
 
-            File.Copy(Path.Combine(pathWebProj, "Web.config"), Path.Combine(pathSource, "Web.config"));
-            FileSystem.CopyDirectory(pathAreaViewsFrom, pathAreaViewsTo);
+		/// <summary>
+		/// It all starts here folks!
+		/// </summary>
+		/// <param name="args">The command-line arguments passed in</param>
+		public static void Main(string[] args)
+		{
+			var bypassLogfileDisplay = false;
+			var applicationError = false;
+			try
+			{
+				// Enable for debugging purposes
+				//Console.WriteLine("Main...");
+				//Console.WriteLine($"args.Length = {args.Length}");
+				//foreach (var t in args) Console.WriteLine($"{t}");
 
-            string[] patterns = { "System.*.dll", "Sage.CA.SBS.ERP.*.dll", "*.Web.Infrastructure.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
-            foreach (var pattern in patterns)
-            {
-                CopyFiles(pathBinFrom, pattern, pathBinTo, true);
-            }
+				InitializeComponents(args);
 
-            // compile the razors views 
-            var p = new Process
-            {
-                StartInfo =
-                {
-                    FileName = Path.Combine(pathFramework, "aspnet_compiler.exe"),
-                    Arguments = string.Format(" -v / -p \"{0}\" -fixednames \"{1}\"", pathSource, pathBuild)
-                }
-            };
-            p.Start();
-            p.WaitForExit();
-            
-#if _maybe_later
+				if (_Options.AnyErrors())
+				{
+					DisplayUsageMessageToConsole();
+					DisplayErrorsToConsole();
 
-            // CONSIDER FOR A FUTURE UPDATE.  
-            // THE IDEA IS TO RETASK THE DEPLOY FOLDER AS A STAGING FOLDER THAT CONTAINS ALL FILES NEEDED 
-            // IN ORDER TO DEPLOY A PROJECT (VIA COPY).
-            // AT PRESENT THE WEB PROJECT DEPLOY FOLDER DOES NOT CONTAIN ALL REQUIRED FILES. 
-            // IT ALSO CONTAINS EXTRA FILES THAT SHOULD NOT BE DEPLOYED WITH AN ISV PROJECT.
-            
-            // Copy bootstrapper file
-            var bootstrapFileName = moduleId + "bootstrapper.xml";
-            File.Copy(Path.Combine(pathWebProj, bootstrapFileName), Path.Combine(pathBuild, bootstrapFileName), true);
+					// We don't want the log file to be displayed
+					// so we'll prevent that from happening
+					bypassLogfileDisplay = true;
 
-            // Copy menu file to App_Data\MenuDetail
-            Directory.CreateDirectory(Path.Combine(pathBuild, "App_Data"));
-            Directory.CreateDirectory(Path.Combine(pathBuild, @"App_Data\MenuDetail"));
-            File.Copy(Path.Combine(pathWebProj, menuFileName), Path.Combine(pathBuild, @"App_Data\MenuDetail", menuFileName), true);
-
-            // Copy the scripts folder
-            var pathAreaScriptsFrom = Path.Combine(pathWebProj, @"Areas\" + moduleId + @"\Scripts");
-            var pathAreaScriptsTo = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Scripts");
-            Directory.CreateDirectory(pathAreaScriptsTo);
-            FileSystem.CopyDirectory(pathAreaScriptsFrom, pathAreaScriptsTo);
-#endif
-
-            return true;
-        }
-
-        /// <summary>
-        /// Get Sage 300 install path
-        /// </summary>
-        /// <returns>Sage 300 install path</returns>
-        private static string GetSage300Path()
-        {
-            const string sageRegKey = "SOFTWARE\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
-            const string sage64RegKey = "SOFTWARE\\WOW6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
-
-            var key = Registry.LocalMachine.OpenSubKey(sageRegKey) ?? Registry.LocalMachine.OpenSubKey(sage64RegKey);
-
-            return (key == null) ? string.Empty : key.GetValue("Programs").ToString();
-        }
-
-        /// <summary>
-        /// Copy bootStrapper, menuDetails and scripts files to the Sage Online folder
-        /// </summary>
-        /// <param name="pathWebProj">Web Project path</param>
-        /// <param name="pathSage300">Sage 300 folder</param>
-        /// <param name="menuFileName">Menu file name</param>
-        /// <returns>True if successful otherwise false</returns>
-        private static bool DeployFiles(string pathWebProj, string pathSage300, string menuFileName)
-        {
-            const string searchPattern = "*bootstrapper.xml";
-            var pathSageOnline = Path.Combine(pathSage300, @"Online");
-            var pathOnlineWeb = Path.Combine(pathSageOnline, "Web");
-            var pathOnlineWorker = Path.Combine(pathSageOnline, "Worker");
-            if (!Directory.Exists(pathOnlineWeb))
-            {
-                WriteErrorFile(pathWebProj, "The post-build utility MergeISVProject could not find the Online Web folder for the Web UIs. While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
-                // Unsuccessful
-                return false;
-            }
-
-            // Copy bootstrapper.xml file
-            var bootFiles = Directory.GetFiles(pathWebProj, searchPattern);
-            foreach (var srcfile in bootFiles)
-            {
-                var fileName = Path.GetFileName(srcfile);
-                if (fileName == null)
-                {
-                    continue;
-                }
-                var desFile = Path.Combine(pathOnlineWeb, fileName);
-                File.Copy(srcfile, desFile, true);
-
-                desFile = Path.Combine(pathOnlineWorker, fileName);
-                File.Copy(srcfile, desFile, true);
-            }
-
-            // Copy menu file to App_Data menuDetails and all sub directory
-            var pathMenuFrom = Path.Combine(pathWebProj, menuFileName);
-            var pathMenuDir = Path.Combine(pathOnlineWeb, "App_Data", "MenuDetail");
-            var pathMenuTo = Path.Combine(pathMenuDir, menuFileName);
-
-            if (Directory.Exists(pathMenuDir))
-            {
-                File.Copy(pathMenuFrom, pathMenuTo, true);
-                foreach (var dir in Directory.GetDirectories(pathMenuDir))
-                {
-                    var pathMenuSubTo = Path.Combine(dir, menuFileName);
-                    File.Copy(pathMenuFrom, pathMenuSubTo, true);
-                }
-            }
-
-            // Copy areas scripts files
-            var pathAreaDir = Path.Combine(pathWebProj, "Areas");
-            if (Directory.Exists(pathAreaDir))
-            {
-                foreach (var dir in Directory.GetDirectories(pathAreaDir))
-                {
-                    if (!dir.EndsWith("Core") && !dir.EndsWith("Shared"))
-                    {
-                        var paths = dir.Split('\\');
-                        var pathSubArea = Path.Combine(pathOnlineWeb, "Areas", paths[paths.Length - 1]);
-                        var pathFromScripts = Path.Combine(dir, "Scripts");
-                        var pathToScripts = Path.Combine(pathSubArea, "Scripts");
-                        FileSystem.CopyDirectory(pathFromScripts, pathToScripts, true);
-                    }
-                }
-            }
-
-            //copy compiled files from deploy folder to sage online web area and bin directory
-            var pathDeploy = Path.Combine(pathWebProj, "Deploy");
-            var pathSource = Path.Combine(pathDeploy, "Source");
-            var pathBuild = Path.Combine(pathDeploy, "Build");
-            var moduleId = menuFileName.Substring(0, 2);
-            var pathBuildView = Path.Combine(pathBuild, @"Areas\" + moduleId + @"\Views");
-            var pathSageView = Path.Combine(pathSageOnline, @"Web\Areas\" + moduleId + @"\Views");
-
-            // Do not copy IF compile was not successful (determined by existance of folder)
-            if (!Directory.Exists(pathBuildView))
-            {
-               WriteErrorFile(pathWebProj, "The post-build utility MergeISVProject could not compile the razor view(s). While the build was successful, the deployment was unsuccessful. Therefore, check view(s) for issue(s) (i.e. localization syntax).");
-               // Unsuccessful
-               return false;
-            }
-
-            FileSystem.CopyDirectory(pathBuildView, pathSageView, true);
-
-            var pathBuildBin = Path.Combine(pathBuild, "bin");
-            var pathSageBin = Path.Combine(pathOnlineWeb, "bin");
-
-            string[] ps = { "*.compiled", "App_Web_*.dll", "*.Web.dll", "*." + moduleId + ".*.dll" };
-            foreach (var pattern in ps)
-            {
-               CopyFiles(pathBuildBin, pattern, pathSageBin, true);
-            }
-
-            string[] psWorker = { "*." + moduleId + ".*.dll" };
-            foreach (var pattern in psWorker)
-            {
-               CopyFiles(pathBuildBin, pattern, pathOnlineWorker, true, false);
-            }
-
-            // copy resource satellite dlls for localization
-            CopyResourceSatelliteFiles(pathWebProj, pathSage300, moduleId);
-
-            return true;
-        }
-
-        /// <summary>
-        /// Copy resource satellite dlls to web bin and worker folder
-        /// </summary>
-        /// <param name="pathWebProj">source file path</param>
-        /// <param name="pathSage300">Sage 300 folder</param>
-        /// <param name="moduleId">module id</param>
-        private static void CopyResourceSatelliteFiles(string pathFrom, string pathSage300, string moduleId)
-        {
-            string[] languages = { "es", "fr", "zh-Hans", "zh-Hant"};
-            var pathBinFrom = Path.Combine(pathFrom, "Bin");
-            var pathWebBinTo = Path.Combine(pathSage300, @"Online\Web\Bin");
-            var pathWorkerTo = Path.Combine(pathSage300, @"Online\Worker");
-            var pattern = "*." + moduleId + ".*.dll";
-
-            foreach (var language in languages)
-            {
-                var fromFolder = Path.Combine(pathBinFrom, language);
-                var toWebFolder = Path.Combine(pathWebBinTo, language);
-                var toWorkerFolder = Path.Combine(pathWorkerTo, language);
-
-                foreach (var file in Directory.GetFiles(fromFolder, pattern))
-                {
-                    var fileName = Path.GetFileName(file);
-                    if (!string.IsNullOrEmpty(fileName))
-                    {
-                        var pathFile = Path.Combine(toWebFolder, fileName);
-                        File.Copy(file, pathFile, true);
-                        pathFile = Path.Combine(toWorkerFolder, fileName);
-                        File.Copy(file, pathFile, true);
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Delete Compile Error Log
-        /// </summary>
-        /// <param name="path">Path to file</param>
-        /// <returns>Fully qualified file name</returns>
-        private static string DeleteErrorFile(string path)
-        {
-            var fileName = Path.Combine(path, "MVCBuildViewsError.txt");
-
-            if (File.Exists(fileName))
-            {
-                File.Delete(fileName);
-            }
-
-            return fileName;
-        }
-
-        /// <summary>
-        /// Write Compile Error Log
-        /// </summary>
-        /// <param name="path">Path to file</param>
-        /// <param name="message">Error message</param>
-        private static void WriteErrorFile(string path, string message)
-        {
-            try
-            {
-                var fileName = DeleteErrorFile(path);
-
-                File.AppendAllLines(fileName, new[] { DateTime.Now + ": " + message });
-            }
-            catch
-            {
-                // Ignore error
-            }
-        }
-    }
+					// Wait...
+					Console.ReadLine();
+				}
+				else
+				{
+					_Driver = new MergeISVProjectDriver(_Options, _Logger);
+					LogStartupInformation();
+					_Driver.Run();
+					_Logger.Log(Messages.Msg_ApplicationRunComplete);
+				}
+			}
+			catch (MergeISVProjectException)
+			{
+				// Errors have already been logged to log file.
+				applicationError = true;
+				_Logger.Log(Messages.Msg_ApplicationRunComplete);
+			}
+			finally
+			{
+				if (!bypassLogfileDisplay && !applicationError)
+				{
+					// We only wish to show this if no errors occurred.
+					_Logger.ShowLog();
+				}
+			}
+		}
+		#endregion
+	}
 }

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,13 +27,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
+using System.Diagnostics;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> UI for Sage 300 Upgrade Wizard </summary>
     public partial class Upgrade : Form
     {
-        #region Private Vars
+        #region Private Variables
 
         /// <summary> Process Upgrade logic </summary>
         private ProcessUpgrade _upgrade;
@@ -49,11 +52,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Log file </summary>
         private readonly StringBuilder _log = new StringBuilder();
 
-        /// <summary> Source Folder </summary>
-        private readonly string _sourceFolder;
+		/// <summary> Source Folder </summary>
+		private readonly string _sourceFolder;
 
-        /// <summary> Destination Folder </summary>
-        private readonly string _destinationFolder;
+		/// <summary> Destination Folder </summary>
+		private readonly string _destinationFolder;
 
         /// <summary> Destination Web Folder </summary>
         private readonly string _destinationWebFolder;
@@ -79,40 +82,40 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private delegate void LogCallback(string text);
 
 
-        #endregion
+		#endregion
 
-        #region Constructor
+		#region Constructor
 
-        /// <summary> Upgrade Class </summary>
-        /// <param name="destination">Destination Default</param>
-        /// <param name="destinationWeb">Destination Web Default</param>
-        /// <param name="templatePath">Upgrade Web Items template Path </param>
-        public Upgrade(string destination, string destinationWeb, string templatePath)
-        {
-            InitializeComponent();
-            Localize();
-            InitWizardSteps();
-            InitEvents();
-            ProcessingSetup(true);
-            Processing("");
+		/// <summary> Upgrade Class </summary>
+		/// <param name="destination">Destination Default</param>
+		/// <param name="destinationWeb">Destination Web Default</param>
+		/// <param name="templatePath">Upgrade Web Items template Path </param>
+		public Upgrade(string destination, string destinationWeb, string templatePath)
+		{
+			InitializeComponent();
+			Localize();
+			InitWizardSteps();
+			InitEvents();
+			ProcessingSetup(true);
+			Processing("");
 
-            // Setup local vars
-            _destinationFolder = destination;
-            _destinationWeb = destinationWeb;
-            _sourceFolder = Path.GetDirectoryName(templatePath);
-            _destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
+			// Setup local vars
+			_destinationFolder = destination;
+			_destinationWeb = destinationWeb;
+			_sourceFolder = Path.GetDirectoryName(templatePath);
+			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
+		}
 
-        }
 
-        #endregion
+		#endregion
 
-        #region Button Events
+		#region Button Events
 
-        /// <summary> Next/Upgrade toolbar button </summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Next wizard step or Upgrade if last step</remarks>
-        private void btnNext_Click(object sender, EventArgs e)
+		/// <summary> Next/Upgrade toolbar button </summary>
+		/// <param name="sender">Sender object </param>
+		/// <param name="e">Event Args </param>
+		/// <remarks>Next wizard step or Upgrade if last step</remarks>
+		private void btnNext_Click(object sender, EventArgs e)
         {
             NextStep();
         }
@@ -142,26 +145,67 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Init wizard steps
             _wizardSteps.Clear();
 
-            // Same for all upgrades, but the content will be specific to the release
-            AddStep(Resources.StepTitleMain, string.Format(Resources.StepDescriptionMain, ProcessUpgrade.FromReleaseNumber, ProcessUpgrade.ToReleaseNumber), 
-                BuildMainContentStep());
-            AddStep(Resources.ReleaseAllTitleSyncWebFiles, Resources.ReleaseAllDescSyncWebFiles, 
-                Resources.ReleaseAllSyncWebFiles);
+            #region Common for all upgrades - content specific to release
+
+            AddStep(Resources.StepTitleMain,
+                    string.Format(Resources.StepDescriptionMain,
+                                  ProcessUpgrade.FromReleaseNumber,
+                                  ProcessUpgrade.ToReleaseNumber),
+                    BuildMainContentStep());
+
+            AddStep(Resources.ReleaseAllTitleSyncWebFiles,
+                    Resources.ReleaseAllDescSyncWebFiles,
+                    Resources.ReleaseAllSyncWebFiles);
+
+            #endregion
+
+            #region Accpac update - Comment out if no update required
             // This step can be commented if no accpac update this release
-            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs, Resources.ReleaseAllDescSyncAccpacLibs, 
-                string.Format(Resources.ReleaseAllSyncAccpacLibs, ProcessUpgrade.FromAccpacNumber, ProcessUpgrade.ToAccpacNumber));
+            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+                    Resources.ReleaseAllDescSyncAccpacLibs,
+                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
+                                  ProcessUpgrade.FromAccpacNumber,
+                                  ProcessUpgrade.ToAccpacNumber));
+            #endregion
 
+            #region Release Specific Steps...
 
-            // Specific to release steps go here
-            // 2018.1 Release: Manual step to modify Login function
-            AddStep(Resources.ReleaseSpecificTitleModifyLogin, Resources.ReleaseSpecificDescModifyLogin,
-                Resources.ReleaseSpecificModifyLogin);
+            // 2018.2 : Automatic Source Code changes 
+            AddStep(Resources.ReleaseSpecificTitleUpdateSourceCode,
+                Resources.ReleaseSpecificDescUpdateSourceCode,
+                Resources.ReleaseSpecificUpdateSourceCode);
 
-            // Same for all upgrades, but the content will be specific to the release
-            AddStep(Resources.ReleaseAllTitleConfirmation, Resources.ReleaseAllDescConfirmation,
-                Resources.ReleaseAllUpgrade);
-            AddStep(Resources.ReleaseAllTitleRecompile, Resources.ReleaseAllDescRecompile,
-                string.Format(Resources.ReleaseAllUpgraded, Resources.ShowLog, ProcessUpgrade.ToReleaseNumber));
+			// 2018.2 : Update the XXMenuDetails.xml file
+			AddStep(Resources.ReleaseSpecificTitleUpdateMenuDetails,
+				Resources.ReleaseSpecificDescUpdateMenuDetails,
+				Resources.ReleaseSpecificUpdateMenuDetails);
+
+			// 2018.2 : Post Build Event command
+			AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
+                    Resources.ReleaseSpecificDescUpdatePostBuildEvent,
+                    string.Format(Resources.ReleaseSpecificUpdatePostBuildEvent,
+                                  ProcessUpgrade.FromReleaseNumber,
+                                  ProcessUpgrade.ToReleaseNumber));
+
+			// 2018.2 : Manual Source Code changes 
+			AddStep(Resources.ReleaseSpecificTitleUpdateSourceCodeManually,
+				Resources.ReleaseSpecificDescUpdateSourceCodeManually,
+				Resources.ReleaseSpecificUpdateSourceCodeManually);
+
+			#endregion
+
+			#region Common for all upgrades - content specific to release
+
+			AddStep(Resources.ReleaseAllTitleConfirmation,
+                    Resources.ReleaseAllDescConfirmation,
+                    Resources.ReleaseAllUpgrade);
+
+            AddStep(Resources.ReleaseAllTitleRecompile,
+                    Resources.ReleaseAllDescRecompile,
+                    string.Format(Resources.ReleaseAllUpgraded,
+                                  Resources.ShowLog,
+                                  ProcessUpgrade.ToReleaseNumber));
+            #endregion
 
             // Display first step
             NextStep();
@@ -177,15 +221,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Same for all upgrades
             content.AppendLine(Resources.FollowingSteps);
             content.AppendLine("");
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncWebFiles));
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleSyncAccpacLibs));
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
             // Specific to release
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseSpecificTitleModifyLogin));
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCode}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMenuDetails}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCodeManually}");
 
-            // Same for all upgrades
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleConfirmation));
-            content.AppendLine(string.Format("{0} {1}. {2}", Resources.Step, ++step, Resources.ReleaseAllTitleRecompile));
+			// Same for all upgrades
+			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleRecompile}");
             content.AppendLine("");
             content.AppendLine(Resources.EnsureBackup);
 
@@ -231,11 +278,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     // Setup display before processing
                     ProcessingSetup(false);
 
+                    //_settings = new Settings
+                    //{
+                    //    WizardSteps = _wizardSteps,
+                    //    SourceFolder = _sourceFolder,
+                    //    DestinationWebFolder = _destinationWebFolder
+                    //};
+
                     _settings = new Settings
                     {
                         WizardSteps = _wizardSteps,
                         SourceFolder = _sourceFolder,
-                        DestinationWebFolder = _destinationWebFolder
+                        DestinationWebFolder = _destinationWebFolder,
+                        DestinationSolutionFolder = Directory.GetParent(_destinationWebFolder).ToString()
                     };
 
                     // Start background worker for processing (async)
@@ -307,7 +362,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private void ShowStep()
         {
             // Update title and text for step
-            var step = _currentWizardStep.Equals(0) ? "" : Resources.Step + _currentWizardStep.ToString("#0") + Resources.Dash;
+            var currentStep = _currentWizardStep.ToString("#0");
+            var step = _currentWizardStep.Equals(0)
+                            ? string.Empty
+                            : $"{Resources.Step} {currentStep}{Resources.Dash}";
 
             lblStepTitle.Text = step + _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
@@ -331,7 +389,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var logFilePath = Path.Combine(_destinationFolder, ProcessUpgrade.LogFileName);
             File.WriteAllText(logFilePath, _log.ToString());
         }
-
 
         /// <summary> Setup processing display </summary>
         /// <param name="enableToolbar">True to enable otherwise false</param>
@@ -448,6 +505,5 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         #endregion
-
     }
 }

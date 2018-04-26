@@ -4,6 +4,7 @@
 
 var widgetUI = widgetUI || {};
 
+var pluginMenuMerged = false;
 //screen Id hold value for each menu screen menu Id
 var screenId = 0;
 
@@ -108,9 +109,7 @@ $(document).ready(function () {
         $('html').removeClass('page-collapsed').addClass('page-expanded');
         $('#navbarSide').removeClass('side-nav-collapsed').addClass('active');
 
-        var modifiedCookie = "expanded";
-        var cookieExpiresdate = new Date(9999, 12, 31);
-        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+        sg.utls.saveUserPreferences(menuUserPreferenceKey, "expanded");
 
         // Reload/refresh widget layout 
         updateLayout(false);
@@ -126,9 +125,7 @@ $(document).ready(function () {
         $('html').removeClass('page-expanded').addClass('page-collapsed');
         $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.std-menu.active').removeClass('active');
 
-        var modifiedCookie = "collapsed";
-        var cookieExpiresdate = new Date(9999, 12, 31);
-        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+        sg.utls.saveUserPreferences(menuUserPreferenceKey, "collapsed");
 
         // Reload/refresh widget layout 
         updateLayout(false);
@@ -136,23 +133,22 @@ $(document).ready(function () {
 
     $('#btnCollapseMenu, #btnCollapseMenuAlt').click(menuLayoutCollapsed);
 
-    /* Initialize Cookie for Side Menu Setting (Collapsed/Expanded) */
+    /* Initialize for Side Menu Setting (Collapsed/Expanded) */
     /* ---------------------------------------------------------- */
 
     initSideMenu();
 
     function initSideMenu() {
-        var menuCookie = $.cookie(MenuLayoutCookieName);
-        if(menuCookie)
-        {
-            if (menuCookie === "expanded")
-            {
-                menuLayoutExpanded();
+        sg.utls.getUserPreferences(menuUserPreferenceKey, function (result) {
+            if (result) {
+                if (result === "expanded") {
+                    menuLayoutExpanded();
+                }
+                else if (result === "collapsed") {
+                    menuLayoutCollapsed();
+                }
             }
-            else if (menuCookie === "collapsed"){
-                menuLayoutCollapsed();
-            }
-        }
+        });
     };
    
     /* open menu */
@@ -913,9 +909,12 @@ $(document).ready(function () {
 
     function loadBreadCrumb(parentidVal) {
         if (!$('#widgetLayout').is(":visible")) {
-
-            //Variables
             var html = [];
+            //Merge plugin menus to the MenuList            
+            if (PluginMenuList && PluginMenuList.length > 0 && (!pluginMenuMerged)) {
+                Array.prototype.push.apply(MenuList, PluginMenuList)
+                pluginMenuMerged = true;
+            }
             //Add Parent to array
             jQuery.each(MenuList, function (i, val) {
                 if (val.Data.MenuId == parentidVal) {

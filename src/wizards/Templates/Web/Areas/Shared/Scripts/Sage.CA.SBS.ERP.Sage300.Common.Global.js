@@ -518,8 +518,19 @@ $.extend(sg.utls, {
             });
         })();
     },
+
+    getCookie: function(name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
+    },
+
     ajaxInternal: function (ajaxUrl, ajaxData, successHandler, dataType, type, isAsync, errorHandler) {
         sg.utls.ajaxRunning = true;
+        var baseUrl = sg.utls.getCookie("baseUrl");
+        if (baseUrl) {
+            ajaxUrl = baseUrl + ajaxUrl;
+        }
         var data = ajaxData;
         data = JSON.stringify(data);
         $.ajaxq("SageQueue", {
@@ -534,7 +545,10 @@ $.extend(sg.utls, {
             error: errorHandler,
             beforeSend: function () {
                 $('#ajaxSpinner').fadeIn(1);
-                sg.utls.showMessagesInViewPort();
+                var iFrame = window.top.$('iframe.screenIframe:visible');
+                if (iFrame && iFrame.length > 0) {
+                    sg.utls.showMessagesInViewPort();
+                }
             },
             complete: function () {
                 $('#ajaxSpinner').fadeOut(1);
@@ -2241,6 +2255,17 @@ $.extend(sg.utls, {
 
         return parser.pathname;
     },
+
+    saveUserPreferences: function (key, value) {
+        var data = { key: key, value: value }
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveUserPreference"), data, function(result) {
+            console.log("SaveUserPreferences: " + result); //result is either true or false
+        });
+    },
+    getUserPreferences: function (key, successHandler) {
+        var data = { key: key }
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetUserPreference"), data, successHandler);
+    },
 });
 
 $.extend(sg.utls.ko, {
@@ -2639,7 +2664,7 @@ $(function () {
             sg.utls.screenUnloadHandler();
             sg.utls.screenUnloadHandler = null;
         }
-        else if (parent.sg.utls.screenUnloadHandler !== null) {
+        else if (parent.sg && parent.sg.utls.screenUnloadHandler !== null) {
             parent.sg.utls.screenUnloadHandler();
             parent.sg.utls.screenUnloadHandler = null;
         }

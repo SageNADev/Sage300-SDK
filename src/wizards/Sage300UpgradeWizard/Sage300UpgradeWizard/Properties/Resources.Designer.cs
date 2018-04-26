@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -306,40 +306,132 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will require manual modifications..
+        ///   Looks up a localized string similar to This step will upgrade the [ModuleID]MenuDetails.xml file..
         /// </summary>
-        internal static string ReleaseSpecificDescModifyLogin {
+        internal static string ReleaseSpecificDescUpdateMenuDetails {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateMenuDetails", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Context object that is passed into the Authentication Manager needs an
-        ///extra parameter in Sage 300 2018.1.
-        ///
-        ///A small modification will need to be made to the ASP.NET application file 
-        ///Global.asax.cs (found within the Namespace.Web project) for the project to
-        ///run after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this
-        ///modification and therefore this step will require manual modifications.
-        ///
-        ///Please refer to the &apos;Modify Login&apos; subsection in the Sage 300 
-        ///Upgrade Guid [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to This step will be done automatically..
         /// </summary>
-        internal static string ReleaseSpecificModifyLogin {
+        internal static string ReleaseSpecificDescUpdatePostBuildEvent {
             get {
-                return ResourceManager.GetString("ReleaseSpecificModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdatePostBuildEvent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify Context object parameter.
+        ///   Looks up a localized string similar to This step will automatically upgrade some of your source code files..
         /// </summary>
-        internal static string ReleaseSpecificTitleModifyLogin {
+        internal static string ReleaseSpecificDescUpdateSourceCode {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleModifyLogin", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCodeManually", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the Menu Details.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateMenuDetails {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMenuDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the Web project Post Build Event.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdatePostBuildEvent {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdatePostBuildEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic update of source code files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateSourceCode {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual update of source code files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCodeManually", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update the menu icon and background images
+        ///
+        ///This step will update the following file:
+        ///
+        ///* Web\[ModuleID]MenuDetails.xml
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateMenuDetails {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateMenuDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The post build command has changed slightly from release 
+        ///{0} to {1}.
+        ///
+        ///This step will update the post build command.
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdatePostBuildEvent {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdatePostBuildEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Javascript bundling has changed slightly in this release.
+        ///
+        ///This step will update the following file:
+        ///
+        ///* Web\BundleRegistration.cs
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateSourceCode {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ...Behaviour.js file, on successful return from a finder selection,
+        ///was not performing a Get to get the record from the repository and
+        ///instead used the object returned from the finder. The record returned
+        ///from the finder is out-of-process and needs to be fetched by the screen.
+        ///Changes to partner code are only required if a partner&apos;s business view
+        ///has logic regarding a new record which was incorrectly being invoked by 
+        ///an existing record that &quot;looked like&quot; a new record. This has been 
+        ///corrected. O [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateSourceCodeManually {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCodeManually", resourceCulture);
             }
         }
         

@@ -247,7 +247,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
                     {
 						
 #>
-			model.<#=fieldName#> = (<#=fieldName#>)(entity.GetValue<int>(<#=modelName#>.Index.<#=fieldName#>));
+			model.<#=fieldName#> = (<#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>.<#=fieldName#>)(entity.GetValue<int>(<#=modelName#>.Index.<#=fieldName#>));
 <#
                     }
                     else

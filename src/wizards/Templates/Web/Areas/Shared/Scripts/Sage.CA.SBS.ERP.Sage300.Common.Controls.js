@@ -204,12 +204,14 @@
          */
         applyAmountFormat: function(element, value) {
             var value = ko.utils.unwrapObservable(value());
-            if (sg.utls.homeCurrency != null)
+            if (sg.utls.homeCurrency != null) {
                 value = parseFloat(value).toFixed(sg.utls.homeCurrency.Decimals);
-            if ($(element)[0].nodeName == "LABEL")
-                $(element).text(value);
+            }
+            var text = kendo.toString(parseFloat(value), "n");
+            if ($(element)[0].nodeName == "LABEL") 
+                $(element).text(text);
             else
-                $(element).val(value);
+                $(element).val(text);
         }
     };
 }(this.sg = this.sg || {}, jQuery));

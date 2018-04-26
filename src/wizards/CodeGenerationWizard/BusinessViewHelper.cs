@@ -98,7 +98,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             const string tag = "internal static void RegisterBundles(BundleCollection bundles)";
             var textlineToAdded = string.Format(TabThree + @"#region {0}" + "\r\n" +
-                                                TabThree + @"bundles.Add(new ScriptBundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
+                                                TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
                                                 TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
                                                 TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
                                                 TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
@@ -200,17 +200,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="value">Input string</param>
         /// <returns>Replaced string</returns>
         public static string Replace(string value)
-        {
-            return Replace(value, string.Empty);
-        }
-
-        /// <summary>
-        /// Helper method that removes and replaces unwanted characters
-        /// </summary>
-        /// <param name="value">Input string</param>
-        /// <param name="prefix">Prefix string</param>
-        /// <returns>Replaced string</returns>
-        public static string Replace(string value, string prefix)
         {
             if (value == string.Empty)
             {
@@ -327,11 +316,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     newString = "Num" + newString;
                 }
 
-                // Special prefix check
-                if (newString.Equals("Type"))
-                {
-                    newString = prefix + newString;
-                }
             }
 
             if (string.CompareOrdinal(newString, "OptionalFields") == 0)

@@ -54,9 +54,12 @@ $.extend(sg.utls.iFrameHelper = {
     },
 
     isWindowiFramePopup: function () {
-        var id = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window').find('iframe').attr('data-parentiframeid');
-        if (id) {
-            return true;
+        var isPortal = window.top.$('iframe.screenIframe:visible').length > 0;
+        if (isPortal) {
+            var id = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window').find('iframe').attr('data-parentiframeid');
+            if (id) {
+                return true;
+            }
         }
         return false;
     },
@@ -110,14 +113,30 @@ $.extend(sg.utls.iFrameHelper = {
         var form;
         var visbleFrameContent;
         var divCtrl;
+
+        //Handle proxy call (call from outside, not in sage300 portal)
+        var href = decodeURIComponent(window.location.href);
+        var idx1 = href.lastIndexOf('?url=');
+        if (idx1 > -1) {
+            var idx2 = href.indexOf('/', idx1 + 14);
+            if (idx2  > idx1 ) {
+                var hostName = href.substring(idx1 + 5, idx2);
+            }
+            if (hostName) {
+                url = hostName + url;
+            }
+        }
+
         if (source == null) {
-            contentFrame = sg.utls.iFrameHelper.getContentFrame();
+            var isPortal = (idx1 == -1);
+
+            contentFrame = (isPortal) ? sg.utls.iFrameHelper.getContentFrame() : window;
             form = contentFrame.$('form');
-
             // remove the existing div.
-            visbleFrameContent = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window');
-            visbleFrameContent.contents().remove("#div" + id);
-
+            if (isPortal) {
+                visbleFrameContent = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window');
+                visbleFrameContent.contents().remove("#div" + id);
+            }
             // append the div
             form.append(htmlDiv);
 
@@ -242,6 +261,12 @@ $.extend(sg.utls.iFrameHelper = {
             refresh: function () {
                 // refresh function will get called after the page load is complete, we get height after the page is loaded.
                 //var contentFrame = sg.utls.iFrameHelper.getContentFrame();
+
+                //For call outside from Sage 300c portal
+                if (window.top.$('iframe.screenIframe:visible').length == 0) {
+                    contentHeight = 780;
+                    return;
+                }
 
                 var iframeContent = window.top.$('iframe.screenIframe:visible').contents().find('#' + id);
                 var contentHeight = iframeContent.contents().find('body').height();

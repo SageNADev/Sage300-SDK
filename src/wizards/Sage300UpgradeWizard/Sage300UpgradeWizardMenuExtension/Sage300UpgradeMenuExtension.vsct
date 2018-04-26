@@ -2,7 +2,7 @@
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!-- The MIT License (MIT) -->
-  <!-- Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. -->
+  <!-- Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. -->
   <!-- -->
   <!-- Permission is hereby granted, free of charge, to any person obtaining a copy of -->
   <!-- this software and associated documentation files (the "Software"), to deal in -->
@@ -61,13 +61,9 @@
          group as the part of a menu contained between two lines. The parent of a group 
          must be a menu. -->
     <Groups>
-
       <Group guid="guidSage300UpgradeMenuExtensionCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_SOLUTION_CONTEXT_MENU_UNDOCUMENTED"/>
       </Group>
-      
-
-
     </Groups>
     
     <!--Buttons section. -->
@@ -86,10 +82,9 @@
         <Parent guid="guidSage300UpgradeMenuExtensionCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Sage 300 2018.1 Upgrade Wizard</ButtonText>
+          <ButtonText>Sage 300 2018.2 Upgrade Wizard</ButtonText>
         </Strings>
       </Button>
-
     </Buttons>
    
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -100,14 +95,8 @@
             inside a button definition. An important aspect of this declaration is that the element id 
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
-      
     </Bitmaps>
- 
   </Commands>
-
-
-
-
 
   <Symbols>
     <!-- This is the package guid. -->
@@ -119,8 +108,6 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidSage300UpgradeWizard" value="0x0100" />
     </GuidSymbol>
-    
-    
     
     <GuidSymbol name="guidImages" value="{d228e5e7-9569-405e-9f50-fa51a80f16fc}" >
       <IDSymbol name="bmpPic1" value="1" />

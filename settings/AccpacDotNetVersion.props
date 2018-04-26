@@ -1,0 +1,50 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Release Version settings -->
+  <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageVersion)' == '' ">
+    <RefBuildAccpacAdvantageVersion>6.5.0.10</RefBuildAccpacAdvantageVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageTypesVersion)' == '' ">
+    <RefBuildAccpacAdvantageTypesVersion>6.5.0.20</RefBuildAccpacAdvantageTypesVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RefBuildCOMSVRInteropVersion)' == '' ">
+    <RefBuildCOMSVRInteropVersion>6.5.0.20</RefBuildCOMSVRInteropVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageServerVersion)' == '' ">
+    <RefBuildAccpacAdvantageServerVersion>6.5.0.10</RefBuildAccpacAdvantageServerVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RefInternalVersion)' == '' ">
+    <RefInternalVersion>65A</RefInternalVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <RefVersionSage300AccpacAdvantage>$(RefBuildAccpacAdvantageVersion)</RefVersionSage300AccpacAdvantage>
+    <RefVersionSage300AccpacAdvantageTypes>$(RefBuildAccpacAdvantageTypesVersion)</RefVersionSage300AccpacAdvantageTypes>
+    <RefVersionSage300COMSVRInterop>$(RefBuildCOMSVRInteropVersion)</RefVersionSage300COMSVRInterop>
+    <RefVersionSage300AccpacAdvantageServer>$(RefBuildAccpacAdvantageServerVersion)</RefVersionSage300AccpacAdvantageServer>
+    <RefInternalVersionSage300>$(RefInternalVersion)</RefInternalVersionSage300>
+    <IsSage300AllSpecificVersion>True</IsSage300AllSpecificVersion>
+  </PropertyGroup> 
+
+  <!-- Reference Variables -->
+  <PropertyGroup>
+    <!-- ACCPAC.Advantage -->
+    <RefVersionAccpacAdvantage>$(RefVersionSage300AccpacAdvantage)</RefVersionAccpacAdvantage>
+    <IsAccpacAdvantageSpecificVersion>$(IsSage300AllSpecificVersion)</IsAccpacAdvantageSpecificVersion>
+    <RefAccpacAdvantage>ACCPAC.Advantage, Version='$(RefVersionAccpacAdvantage)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86</RefAccpacAdvantage>
+    
+    <!-- ACCPAC.Advantage.Types -->
+    <RefVersionAccpacAdvantageTypes>$(RefVersionSage300AccpacAdvantageTypes)</RefVersionAccpacAdvantageTypes>
+    <IsAccpacAdvantageTypesSpecificVersion>$(IsSage300AllSpecificVersion)</IsAccpacAdvantageTypesSpecificVersion>
+    <RefAccpacAdvantageTypes>ACCPAC.Advantage.Types, Version='$(RefVersionAccpacAdvantageTypes)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL</RefAccpacAdvantageTypes>
+    
+    <!-- ACCPAC.Advantage.COMSVR.Interop -->
+    <RefVersionAccpacAdvantageCOMSVRInterop>$(RefVersionSage300COMSVRInterop)</RefVersionAccpacAdvantageCOMSVRInterop>     
+    <IsAccpacAdvantageCOMSVRInteropSpecificVersion>$(IsSage300AllSpecificVersion)</IsAccpacAdvantageCOMSVRInteropSpecificVersion>
+    <RefAccpacAdvantageCOMSVRInterop>ACCPAC.Advantage.COMSVR.Interop, Version='$(RefVersionAccpacAdvantageCOMSVRInterop)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL</RefAccpacAdvantageCOMSVRInterop>
+    
+    <!-- ACCPAC.Advantage.Server -->
+    <RefVersionAccpacAdvantageServer>$(RefVersionSage300AccpacAdvantageServer)</RefVersionAccpacAdvantageServer>
+    <IsAccpacAdvantageServerSpecificVersion>$(IsSage300AllSpecificVersion)</IsAccpacAdvantageServerSpecificVersion>
+    <RefAccpacAdvantageServer>ACCPAC.Advantage.Server, Version='$(RefVersionAccpacAdvantageServer)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL</RefAccpacAdvantageServer>    
+  </PropertyGroup>  
+</Project>

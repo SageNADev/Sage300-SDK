@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -34,7 +34,7 @@ namespace ValuedPartner.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region Receipt
-			bundles.Add(new ScriptBundle("~/bundles/ValuedPartnerReceipt").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerReceipt").Include(
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptBehaviour.js",
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptKoExtn.js",
 				"~/Areas/TU/Scripts/Receipt/ValuedPartnerReceiptRepository.js",

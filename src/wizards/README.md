@@ -29,18 +29,21 @@ the artifact that will be used to the install the package.
 
 The following steps illustrate how to run the package in debug mode from within Visual Studio:
 
-* Load the **Sage300MenuExtension** solution
+* Load the **Sage300WizardUIPackage** solution
   *	This a solution which contains both wizard projects and other information to allow 
 the Visual Studio plug-in to be debugged
 * Right-Click on the **Sage300MenuExtension** project in order to display the 
-properties page for this project
+properties page for this project and select **Set as StartUp Project**
+* Right-Click on the **Sage300MenuExtension** project in order to display the 
+properties page for this project and select **Properties**
 * Select the **Debug** Tab to display the properties for debugging
 * In the **Start Action** section, select the **Start external program** option and enter 
-the following information into the textbox: 
-  *	C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
+the location of **devenv.exe** cooresponding to the version of Visual Studio into the textbox: 
+  *	i.e. C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
+  *	i.e. C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe
+  *	i.e. C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe
 
-> Location and version of **devenv.exe** may be different than what is specified above 
-based upon Version of Visual Studio and installation location
+> Location and version of **devenv.exe** may be different than what is specified above based upon Version of Visual Studio and installation location
 
 * In the **Start Options** section, enter the following information into the **Command line arguments** textbox:
   *	/rootsuffix Exp

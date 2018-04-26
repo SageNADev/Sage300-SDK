@@ -65,7 +65,7 @@ folders in order to segregate the documentation:
 
 The **help** folder contains the CHM files for the documented assemblies
 
-> **Only the Common and Core assmblies are documented at this time**
+> **Only the Common and Core assemblies are documented at this time**
 
 ### maps
 
@@ -99,6 +99,15 @@ These samples are to provide implementation knowledge.
 
 > **The README file in the samples folder is important and contains prerequisites for running samples.**
 
+### settings
+
+The **settings** folder contains an **AccpacDotNetVersion.props** file, which is used by the samples to  
+reference the correct version of the Accpac libraries. Prior to 2018.2, every sample had this file local
+to the sample. This single version of the files will allow for an easier upgrade between releases as only
+the single file will need to be modified for correct references.
+
+> **A generated solution by the Solution Wizard will still contain a local AccpacDotNetVersion.props file .**
+
 ### src
 
 The **src** folder contains the source files which comprise the SDK and contains the following 
@@ -114,6 +123,10 @@ A read-only file for displaying the MIT Copyright notice
 ### README.md
 
 A read-only version for displaying SDK information (this page!)
+
+### SUPPORT.md
+
+A read-only file for displaying Development Partner Program Support information
 
 ### VERSION.md
 
@@ -196,11 +209,11 @@ are also made in the develop branch**
 
 ### Release Branches
 
-The release branches (i.e. **release-2017**, **release-2017.1**, etc.) contains 
+The release branches (i.e. **release-2018**, **release-2018.1**, etc.) contains 
 the contents for that particular release/version of the SDK.
  
 When the next version of the SDK is released, the **master** branch is copied into, 
-for example, the **release-2017** branch, the **develop** branch is copied to 
+for example, the **release-2018** branch, the **develop** branch is copied to 
 **master** and the **develop** branch then becomes the basis for the next release.
 
 develop --> master --> release-…
@@ -209,8 +222,8 @@ There is only one in-progress version branch: **develop**
 
 There is only one current version branch: **master**
 
-There are to be numerous version branches: **release-2017**, **release-2017.1**, 
-**release-2017.2**, etc.
+There are to be numerous version branches: **release-2018**, **release-2018.1**, 
+**release-2018.2**, etc.
 
 > **Only Sage collaborators can make changes to these branches**
 
@@ -240,9 +253,8 @@ Application is released.
 
 ## Wizards
 
-The following sections will cover topics such as building, installing, uninstalling 
-and the debugging of the SDK. Please refer to the **README** file in the **bin\wizards**
-folder for details.
+Please refer to the **README** files in the **bin\wizards** and **src\wizards** folders for details
+on topics such as building, installing, uninstalling, and debugging of the wizards.
 
 ## License
 

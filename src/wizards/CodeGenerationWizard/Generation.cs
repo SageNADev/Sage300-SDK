@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -288,48 +288,49 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>string.Empty if valid otherwise message to display</returns>
         private string ValidCodeTypeStep()
         {
-            // User ID
-            if (string.IsNullOrEmpty(txtUser.Text.Trim()))
-            {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.User.Replace(":", ""));
-            }
+            // Session - for code types that need to open a session to authenticate credentials
+            // If code type doesn't need to authenticate, this is automatically OK
+            var sessionValid = string.Empty;
 
-            // Password
-            //if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
-            //{
-            //    return string.Format(Resources.InvalidSettingRequiredField, Resources.Password.Replace(":", ""));
-            //}
-
-            // Version
-            if (string.IsNullOrEmpty(txtVersion.Text.Trim()))
-            {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.Version.Replace(":", ""));
-            }
-
-            // Company
-            if (string.IsNullOrEmpty(txtCompany.Text.Trim()))
-            {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.Company.Replace(":", ""));
-            }
-
-            // Module
+            // Module - check for all code types
             if (string.IsNullOrEmpty(cboModule.Text.Trim()))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.Module.Replace(":", ""));
             }
 
-            // Session
-            var sessionValid = string.Empty;
-            try
+            // Only perform additional validation on code types that require credentials
+            // Currently, this excludes Dynamic Query and Report types
+            if (grpCredentials.Enabled)
             {
-                // Init session to see if credentials are valid
-                var session = new Session();
-                session.InitEx2(null, string.Empty, "WX", "WX1000", txtVersion.Text.Trim(), 1);
-                session.Open(txtUser.Text.Trim(), txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow, 0);
-            }
-            catch
-            {
-                sessionValid = Resources.InvalidSettingCredentials;
+                // User ID
+                if (string.IsNullOrEmpty(txtUser.Text.Trim()))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.User.Replace(":", ""));
+                }
+
+                // Version
+                if (string.IsNullOrEmpty(txtVersion.Text.Trim()))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Version.Replace(":", ""));
+                }
+
+                // Company
+                if (string.IsNullOrEmpty(txtCompany.Text.Trim()))
+                {
+                    return string.Format(Resources.InvalidSettingRequiredField, Resources.Company.Replace(":", ""));
+                }
+
+                try
+                {
+                    // Init session to see if credentials are valid
+                    var session = new Session();
+                    session.InitEx2(null, string.Empty, "WX", "WX1000", txtVersion.Text.Trim(), 1);
+                    session.Open(txtUser.Text.Trim(), txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow, 0);
+                }
+                catch
+                {
+                    sessionValid = Resources.InvalidSettingCredentials;
+                }
             }
 
             return sessionValid;
@@ -537,6 +538,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!validFields)
             {
                 return Resources.InvalidSettingModel;
+            }
+
+            // Ensure 'EntityName' is not used in any fields
+            validFields = !entityFields.ToList().Any(t => t.Name.Equals(ProcessGeneration.ConstantEntityName));
+            if (!validFields)
+            {
+                return Resources.InvalidSettingEntityName;
             }
 
             // Entity Compositions

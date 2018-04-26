@@ -153,10 +153,15 @@
 // --------------------------------------------------
 
 .k-widget.k-window {
-  margin-top: 16px;
+  margin-top: 150px;
   max-height: 720px !important;
   left: 50% !important;
   transform: translate(-50%) !important;
+
+  &.k-window-maximized {
+    max-height: 870px !important;
+    margin-top: 0;
+  }
 }
 
 @media only screen    
@@ -211,6 +216,7 @@ and (max-device-width : 1024px) {
   height: 30px;
 }
 .k-window-titlebar .k-window-actions .k-i-close{
+    height: 30px;
     background-position: -210px -31px;
     opacity: 1;
 
@@ -256,7 +262,7 @@ and (max-device-width : 1024px) {
 /*Finder misc*/
 
 .finder_popUp #NumericTextBoxDiv .k-widget.k-numerictextbox{ 
-  width: 100%; padding:0;
+  padding:0;
 }
 #NumericTextBoxDiv .k-numeric-wrap input[type=text]{
     margin: 0;
@@ -285,10 +291,7 @@ and (max-device-width : 1024px) {
     height: 100%;
 }
 .finder_popUp #ValueDropDownDiv .k-datepicker{
-    width: 220px;
-}
-.finder_popUp #ValueDropDownDiv .k-datepicker .k-picker-wrap .k-select{
-    padding-left: 1px;
+    width: 210px;
 }
 
 .k-window .seperator {
@@ -956,10 +959,6 @@ and (max-device-width : 1024px) {
       margin-right: 0;
     }
   }
-}
-
-#deleteConfirmationParent {
-  margin-top: 200px;
 }
 
 // Session Expiary Popup 

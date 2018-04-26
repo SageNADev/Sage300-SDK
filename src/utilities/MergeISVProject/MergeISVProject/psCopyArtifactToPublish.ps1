@@ -1,6 +1,19 @@
 <#
 .DESCRIPTION
-Copy the binary artifact .exe file to all required locations in the SDK
+Copy the following binary artifacts to all required locations in the SDK
+
+Primary Application
+-------------------
+	
+	MergeISVProject.exe
+
+Required 3rd Party Components
+-----------------------------
+
+	WG.EXE
+	WebGrease.dll
+	Newtonsoft.Json.dll
+	Antlr3.Runtime.dll
 
 .PARAMETER $target
 The full path to the target artifact file.
@@ -33,5 +46,4 @@ gci $sdkDir -filter $artifactFile.Name -recurse |  Foreach-Object {
   {
     write-verbose "Don't copy from source project to itself."
   } 
-   
 }
