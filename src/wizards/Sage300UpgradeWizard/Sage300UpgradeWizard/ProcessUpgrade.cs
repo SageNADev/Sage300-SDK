@@ -23,109 +23,116 @@ using System;
 using System.IO;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System.IO.Compression;
+using System.Linq;
 using System.Xml;
 using System.Text;
+using System.Collections.Generic;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
-    /// <summary> Process Upgrade Class (worker) </summary>
-    internal class ProcessUpgrade
-    {
-        #region Private Vars
-        /// <summary> Settings from UI </summary>
-        private Settings _settings;
-        #endregion
+	/// <summary> Process Upgrade Class (worker) </summary>
+	internal class ProcessUpgrade
+	{
+		#region Private Vars
+		/// <summary> Settings from UI </summary>
+		private Settings _settings;
+		private string _backupFolder = String.Empty;
+		#endregion
 
-        #region Public constants
-        /// <summary> From Release Number </summary>
-        public const string FromReleaseNumber = "2018.1";
+		#region Public constants
+		/// <summary> From Release Number </summary>
+		public const string FromReleaseNumber = "2018.1";
 
-        /// <summary> To Release Number </summary>
-        public const string ToReleaseNumber = "2018.2";
+		/// <summary> To Release Number </summary>
+		public const string ToReleaseNumber = "2018.2";
 
-        /// <summary> From Accpac Number </summary>
-        public const string FromAccpacNumber = "6.5.0.10";
+		/// <summary> From Accpac Number </summary>
+		public const string FromAccpacNumber = "6.5.0.10";
 
-        /// <summary> To Accpac Number </summary>
-        public const string ToAccpacNumber = "6.5.0.20";
+		/// <summary> To Accpac Number </summary>
+		public const string ToAccpacNumber = "6.5.0.20";
 
-        /// <summary> Web Suffix </summary>
-        public const string WebSuffix = ".web";
+		/// <summary> Web Suffix </summary>
+		public const string WebSuffix = ".web";
 
-        /// <summary> Web Folder Suffix </summary>
-        public const string WebFolderSuffix = "Web";
+		/// <summary> Web Folder Suffix </summary>
+		public const string WebFolderSuffix = "Web";
 
-        /// <summary> Web Zip Suffix </summary>
-        public const string WebZipSuffix = "Web.zip";
+		/// <summary> Web Zip Suffix </summary>
+		public const string WebZipSuffix = "Web.zip";
 
-        /// <summary> Upgrade Log Name </summary>
-        public const string LogFileName = "UpgradeLog.txt";
+		/// <summary> Upgrade Log Name </summary>
+		public const string LogFileName = "UpgradeLog.txt";
 
-        /// <summary> Accpac Property File </summary>
-        public const string AccpacPropsFile = "AccpacDotNetVersion.props";
+		/// <summary> Accpac Property File </summary>
+		public const string AccpacPropsFile = "AccpacDotNetVersion.props";
 
-        #endregion
+		#endregion
 
-        #region Public Delegates
-        /// <summary> Delegate to update UI with name of the step being processed </summary>
-        /// <param name="text">Text for UI</param>
-        public delegate void ProcessingEventHandler(string text);
+		#region Public Delegates
+		/// <summary> Delegate to update UI with name of the step being processed </summary>
+		/// <param name="text">Text for UI</param>
+		public delegate void ProcessingEventHandler(string text);
 
-        /// <summary> Delegate to update log with status of the step being processed </summary>
-        /// <param name="text">Text for UI</param>
-        public delegate void LogEventHandler(string text);
-        #endregion
+		/// <summary> Delegate to update log with status of the step being processed </summary>
+		/// <param name="text">Text for UI</param>
+		public delegate void LogEventHandler(string text);
+		#endregion
 
-        #region Public Events
-        /// <summary> Event to update UI with name of the step being processed </summary>
-        public event ProcessingEventHandler ProcessingEvent;
+		#region Public Events
+		/// <summary> Event to update UI with name of the step being processed </summary>
+		public event ProcessingEventHandler ProcessingEvent;
 
-        /// <summary> Event to update log with status of the step being processed </summary>
-        public event LogEventHandler LogEvent;
-        #endregion
+		/// <summary> Event to update log with status of the step being processed </summary>
+		public event LogEventHandler LogEvent;
+		#endregion
 
-        #region Public Methods
-        /// <summary> Start the generation process </summary>
-        /// <param name="settings">Settings for processing</param>
-        public void Process(Settings settings)
-        {
-            // Save settings for local usage
-            _settings = settings;
+		#region Public Methods
+		/// <summary> Start the generation process </summary>
+		/// <param name="settings">Settings for processing</param>
+		public void Process(Settings settings)
+		{
+			// Save settings for local usage
+			_settings = settings;
 
 			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Web folder.
 			// If it does/did, then we will just update it in place instead of relocating it to the Solution folder.
 			bool AccpacPropsFileOriginallyInWebFolder = false;
 
+			#region Backup Solution - Currently Disabled
+			//_backupFolder = BackupSolution();
+			#endregion
+
 			// Start at step 1 and ignore last two steps
 			for (var index = 0; index < _settings.WizardSteps.Count; index++)
-            {
-                var title = _settings.WizardSteps[index].Title;
-                LaunchProcessingEvent(title);
+			{
+				var title = _settings.WizardSteps[index].Title;
+				LaunchProcessingEvent(title);
 
-                // Step 0 is Main and Last two steps are Upgrade and Upgraded
-                switch (index)
-                {
-                    case 1:
-                        SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
-                        break;
+				// Step 0 is Main and Last two steps are Upgrade and Upgraded
+				switch (index)
+				{
+					case 1:
+						SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
+						break;
 
-                    case 2:
-                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
-                        break;
+					case 2:
+						SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
+						break;
 
-                    #region Release Specific Steps
-                    case 3:
-                        UpdateVendorSourceCodeAutomatically(title);
-                        break;
+					#region Release Specific Steps
+					case 3:
+						UpdateVendorSourceCodeAutomatically(title, _backupFolder);
+						break;
 
 					case 4:
-						UpdateVendorMenuDetails(title);
+						UpdateVendorMenuDetails(title, _backupFolder);
 						break;
 
 					case 5:
-                        UpdateProjectPostBuildEvent(title);
-                        break;
+						 UpdateProjectPostBuildEvent(title, _backupFolder);
+						break;
 
 					case 6:
 						UpdateVendorSourceCodeManually(title);
@@ -133,7 +140,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 						#endregion
 				}
 			}
-        }
+		}
 
 		#endregion
 
@@ -152,7 +159,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			accpacPropsInWebFolder = IsAccpacDotNetVersionPropsLocatedInWebFolder();
 
 			// Do the work :)
-			DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder);
+			DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder, ignoreDestinationFolder: false);
 
 			// Remove the files that are not actually part of the 'Web' bundle.
 			// This is done because of the way VS2017 doesn't seem to allow embedding of zip
@@ -168,6 +175,54 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// Log end of step
 			LaunchLogEventEnd(title);
 			LaunchLogEvent("");
+		}
+
+		/// <summary>
+		/// Backup the solution
+		/// </summary>
+		private string BackupSolution()
+		{
+			LaunchLogEventStart($"Backing up solution...");
+			LaunchProcessingEvent($"Backing up solution...");
+
+			// Create a backup folder if it doesn't already exist.
+			var solutionFolder = _settings.DestinationSolutionFolder;
+			var backupFolder = CreateBackupFolder(solutionFolder);
+
+			// Do the backup (ensuring that we don't backup the backup folder 
+			// because it lives within the solution folder itself.
+			DirectoryCopy(solutionFolder, backupFolder, ignoreDestinationFolder: true);
+
+			LaunchLogEventEnd($"Backup complete.");
+			LaunchLogEvent("");
+
+			return backupFolder;
+		}
+
+		/// <summary>
+		/// Create a new folder for the backup
+		/// </summary>
+		/// <param name="currentFolder">This is the folder in which we wish to create the backup folder</param>
+		/// <returns>The string representing the fully-qualified path to the backup folder</returns>
+		private string CreateBackupFolder(string currentFolder)
+		{
+			string BackupFolderName = CreateBackupFolderName();
+			var backupFolder = Path.Combine(currentFolder, BackupFolderName);
+			if (!Directory.Exists(backupFolder))
+			{
+				new DirectoryInfo(backupFolder).Create();
+			}
+			return backupFolder;
+		}
+
+		/// <summary>
+		/// Create a name for the backup folder based on the current date and time
+		/// </summary>
+		/// <returns>A string representing the name of the backup folder</returns>
+		private string CreateBackupFolderName()
+		{
+			var dateStamp = DateTime.Now.ToString("yyyyMMdd-HHmmss");
+			return $"Backup-{dateStamp}";
 		}
 
 		/// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
@@ -194,6 +249,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
+		/// <summary>
+		/// Is there a copy of the AccpacDotNetversion.props file in the Web project folder?
+		/// </summary>
+		/// <returns>
+		/// true : AccpacDotNetVersion.props is in Web project folder 
+		/// false: AccpacDotNetVersion.props is in not in the Web project folder 
+		/// </returns>
 		private bool IsAccpacDotNetVersionPropsLocatedInWebFolder()
 		{
 			return File.Exists(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
@@ -222,20 +284,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>Update the command to be run in the Web project PostBuildEvent</summary>
         /// <param name="title">Title of step being processed</param>
-        private void UpdateProjectPostBuildEvent(string title)
+        private void UpdateProjectPostBuildEvent(string title, string backupFolder = @"")
         {
-            const string webProjectsOnly = @"*.Web.csproj";
+            const string fileTypeFilter = @"*.Web.csproj";
 
             // Log start of step
             LaunchLogEventStart(title);
 
             // Update the PostBuildEvent entry in the Web project file
             var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
-            var csprojFiles = slnDir.EnumerateFiles(webProjectsOnly, SearchOption.AllDirectories);
-            foreach (var projFile in csprojFiles)
+
+			// Get the list of files to process, based on the fileTypeFilter
+			// and optional list of folders to ignore, if found
+			var listToProcess = EnumerateFiles(slnDir, fileTypeFilter, ignoreDirectories: new List<string> { backupFolder });
+
+			// Extra Logging
+			LaunchLogEvent($"{Resources.SolutionDirectory} : {slnDir.FullName.ToString()}");
+			LaunchLogEvent($"{Resources.SolutionProjects}:");
+			foreach (var filename in listToProcess)
+			{
+				LaunchLogEvent($"Project: {filename}");
+			}
+
+			foreach (var projFile in listToProcess)
             {
+				LaunchLogEvent($"{Resources.Processing} {projFile}");
                 var projectXmlDoc = new XmlDocument();
-                projectXmlDoc.Load(projFile.FullName);
+                projectXmlDoc.Load(projFile);
                 var nodes = projectXmlDoc.ChildNodes[1].ChildNodes;
                 var hasChanges = false;
 
@@ -251,29 +326,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     {
                         if (!IsPostBuildEventElement(n)) continue;
 
-                        if (!string.IsNullOrEmpty(n.InnerText))
-                        {
-                            // Found an existing PostBuildEvent command, 
-                            // so let's convert it to the new format
-                            n.InnerText = ConvertPostBuildEventCommand(FromReleaseNumber,
-                                ToReleaseNumber,
-                                n.InnerText);
-                            hasChanges = true;
-                        }
-                        else
-                        {
-                            // No command found so let's add it.
-                            n.InnerText = BuildCommandLine(GetMenuFileNameFromProjectName(projFile));
-                            hasChanges = true;
-                        }
-                    }
-                }
+						// Let's just rebuild the whole PostBuildEvent entry from scratch
+						var menuFileName = GetMenuFileName();
+						LaunchLogEvent($"{Resources.FoundPostBuildEventEntry}.");
+						n.InnerText = BuildCommandLine(menuFileName);
+						LaunchLogEvent($"{Resources.InsertedCommand}: {n.InnerText}");
+						hasChanges = true;
+					}
+				}
 
                 // Save the file if anything changed
                 if (hasChanges)
                 {
-                    projectXmlDoc.Save(projFile.FullName);
-                    LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdatePostBuildEvent} : {projFile.FullName}");
+                    projectXmlDoc.Save(projFile);
+                    LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdatePostBuildEvent} : {projFile}");
                 }
             }
             // Log end of step
@@ -281,30 +347,88 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
-        /// <summary>
-        /// Craft up a menu filename based on the project name.
-        /// </summary>
-        /// <param name="f">A FileInfo object</param>
-        /// <returns>
-        /// Return the name of a menufile in the following format [XX]MenuFile.xml
-        /// where [XX] is the ModuleId
-        /// </returns>
-        private string GetMenuFileNameFromProjectName(FileInfo f)
+		/// <summary>
+		/// Build a list of filepaths based on a fileTypeFilter and an optional list of directories to ignore.
+		/// This method is a wrapper for DirectoryInfo.EnumerateFiles()
+		/// </summary>
+		/// <param name="startingDirectory">Where shall this file search start?</param>
+		/// <param name="fileTypeFilter">What types of files shall we look for?</param>
+		/// <param name="ignoreDirectories">This is a list directories that we wish to ignore.</param>
+		/// <returns>A list of files matching the fileTypeFilter with optionally removed directories</returns>
+		private IEnumerable<string> EnumerateFiles(DirectoryInfo startingDirectory, 
+												   string fileTypeFilter, 
+												   List<string> ignoreDirectories)
+		{
+			var results = startingDirectory.EnumerateFiles(fileTypeFilter, SearchOption.AllDirectories)
+												   .ToList<FileInfo>()
+												   .ConvertAll(x => (string)x.FullName);
+			results.RemoveAll(f => ignoreDirectories.Exists(i => !String.IsNullOrWhiteSpace(i) && f.Contains(i)));
+			return results;
+		}
+		/// <summary>
+		/// Get the name of the menu file located in the Web project folder
+		/// It is of the format XXMenuDetails.xml where XX is a two character module id
+		/// </summary>
+		/// <returns>A string representing the name of the menu file</returns>
+		private string GetMenuFileName(string backupFolder = @"")
+		{
+			string fileTypeFilter = @"*MenuDetails.xml";
+			var filename = EnumerateFiles(new DirectoryInfo(_settings.DestinationSolutionFolder), 
+                                          fileTypeFilter, 
+                                          ignoreDirectories: new List<string> { backupFolder }).SingleOrDefault();
+			return new FileInfo(filename).Name;
+		}
+
+		/// <summary>
+		/// Craft up a menu filename based on the project name.
+		/// </summary>
+		/// <param name="fileInfo">A FileInfo object with information on the file.</param>
+		/// <returns>
+		/// Return the name of a menufile in the following format [XX]MenuFile.xml
+		/// where [XX] is the ModuleId
+		/// </returns>
+		private string GetMenuFileNameFromProjectName(FileInfo fileInfo)
         {
-            var parts = f.Name.Split(new string[] { "." }, StringSplitOptions.None);
+            var parts = fileInfo.Name.Split(new string[] { "." }, StringSplitOptions.None);
             var moduleId = parts[1];
-            return $"{moduleId}MenuDetails.xml";
+			return GetMenuFileNameFromModuleId(moduleId);
         }
 
-        /// <summary>
-        /// Convert the Web project PostBuildEvent command string
-        /// from one version to a new version
-        /// </summary>
-        /// <param name="fromVersion">The product version we're converting from</param>
-        /// <param name="toVersion">The product version we're converting to</param>
-        /// <param name="existingCommand"></param>
-        /// <returns>The updated PostBuildEvent command string</returns>
-        private string ConvertPostBuildEventCommand(string fromVersion,
+		/// <summary>
+		/// Craft up a menu filename based on the project name.
+		/// </summary>
+		/// <param name="filePath">A string with the filename and path</param>
+		/// <returns>
+		/// Return the name of a menufile in the following format [XX]MenuFile.xml
+		/// where [XX] is the ModuleId
+		/// </returns>
+		private string GetMenuFileNameFromProjectName(string filePath)
+		{
+			var parts = filePath.Split(new string[] { "." }, StringSplitOptions.None);
+			var moduleId = parts[1];
+			return GetMenuFileNameFromModuleId(moduleId);
+		}
+
+		/// <summary>
+		/// Craft up a menu filename based on the project name.
+		/// </summary>
+		/// <param name="moduleId">This is the two letter module id</param>
+		/// <returns></returns>
+		private string GetMenuFileNameFromModuleId(string moduleId)
+		{
+			string menuFileTemplate = "{0}MenuDetails.xml";
+			return String.Format(menuFileTemplate, moduleId);
+		}
+
+		/// <summary>
+		/// Convert the Web project PostBuildEvent command string
+		/// from one version to a new version
+		/// </summary>
+		/// <param name="fromVersion">The product version we're converting from</param>
+		/// <param name="toVersion">The product version we're converting to</param>
+		/// <param name="existingCommand"></param>
+		/// <returns>The updated PostBuildEvent command string</returns>
+		private string ConvertPostBuildEventCommand(string fromVersion,
                                                     string toVersion,
                                                     string existingCommand)
         {
@@ -365,12 +489,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <returns>The menu file name [XXMenuDetails.xml] where XX == Module Id</returns>
         private string ExtractMenuFileName(string command)
         {
+			string result = string.Empty;
             const int commandStringMenuItemIndex = 4;
             if (command.Length == 0) return string.Empty;
             var parts = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-            // Grab the menu filename. That's all we need.
-            return parts[commandStringMenuItemIndex];
+			// Remove any extra quotes
+			result = parts[commandStringMenuItemIndex].Replace("\"", "");
+
+			// Grab the menu filename. That's all we need.
+			return result;
         }
 
         /// <summary>
@@ -398,16 +526,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// </returns>
 		private bool IsSecondLevelMenuItem(XmlElement e)
 		{
+			int MenuLevelToLookFor = 2;
 			if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
 			{
-				foreach (XmlElement n in e.ChildNodes)
+				foreach (XmlNode node in e.ChildNodes)
 				{
-					if (n.Name.ToUpperInvariant() == "MENUITEMLEVEL")
+					if (node.NodeType != XmlNodeType.Element) continue;
+
+					var element = (XmlElement)node;
+					if (element.Name.ToLowerInvariant() == "menuitemlevel")
 					{
-						var menuItemLevel = n.InnerText;
+						var menuItemLevel = element.InnerText;
 						if (!string.IsNullOrEmpty(menuItemLevel))
 						{
-							return Convert.ToInt32(menuItemLevel) == 2;
+							return Convert.ToInt32(menuItemLevel) == MenuLevelToLookFor;
 						}
 					}
 				}
@@ -498,22 +630,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// 
 		/// </summary>
 		/// <param name="title">Title of step being processed</param>
-		private void UpdateVendorSourceCodeAutomatically(string title)
+		private void UpdateVendorSourceCodeAutomatically(string title, string backupFolder = @"")
         {
             // Log start of step
             LaunchLogEventStart(title);
 
 			// Update the file(s)
-			var fileToUpdate = @"BundleRegistration.cs";
+			var fileTypeFilter = @"BundleRegistration.cs";
 			var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
-			var sourceCodeFiles = slnDir.EnumerateFiles(fileToUpdate, SearchOption.AllDirectories);
-			foreach (var file in sourceCodeFiles)
+
+			// Get the list of files to process, based on the fileTypeFilter
+			// and optional list of folders to ignore, if found
+			var listToProcess = EnumerateFiles(slnDir, fileTypeFilter, ignoreDirectories: new List<string> { backupFolder });
+
+			foreach (var filepath in listToProcess)
 			{
 				// For now, only one file needs to be updated.
-				var sourceCode = File.ReadAllText(file.FullName);
+				var sourceCode = File.ReadAllText(filepath);
 				sourceCode = sourceCode.Replace(@"new ScriptBundle(", "new Bundle(");
-				File.WriteAllText(file.FullName, sourceCode);
-				LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCode} : {file.FullName}");
+				File.WriteAllText(filepath, sourceCode);
+				LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateSourceCode} : {filepath}");
 			}
 
 			// Log end of step
@@ -543,25 +679,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// Update the XXMenuDetails.xml icon and background images
 		/// </summary>
 		/// <param name="title">Title of step being processed</param>
-		private void UpdateVendorMenuDetails(string title)
+		private void UpdateVendorMenuDetails(string title, string backupFolder = @"")
 		{
-			const string menuDetailsFilePattern = @"*MenuDetails.xml";
+			const string fileTypeFilter = @"*MenuDetails.xml";
 
 			// Log start of step
 			LaunchLogEventStart(title);
 
 			var slnDir = new DirectoryInfo(_settings.DestinationSolutionFolder);
-			var fileList = slnDir.EnumerateFiles(menuDetailsFilePattern, SearchOption.AllDirectories);
-			foreach (var menuFile in fileList)
+
+			// Get the list of files to process, based on the fileTypeFilter
+			// and optional list of folders to ignore, if found
+			var listToProcess = EnumerateFiles(slnDir, fileTypeFilter, ignoreDirectories: new List<string> { backupFolder });
+
+			// Extra Logging
+			LaunchLogEvent($"{Resources.SolutionDirectory}: {slnDir.FullName.ToString()}");
+			LaunchLogEvent($"{Resources.SolutionProjectsToBeProcessed}:");
+			foreach (var filepath in listToProcess) { LaunchLogEvent($"{Resources.Project}: {filepath}"); }
+
+			foreach (var filepath in listToProcess)
 			{
+				LaunchLogEvent($"{Resources.Processing} {filepath}");
+
 				// Get the ModuleID from the filename
-				var moduleId = menuFile.ToString().Substring(0, 2);
+				var moduleId = filepath.Substring(0, 2);
+				LaunchLogEvent($"{Resources.ExtractedModuleId} = {moduleId}");
 
 				// Get the Company Name
 				var companyName = GetCompanyName(slnDir, moduleId);
+				LaunchLogEvent($"{Resources.CompanyName} = {companyName}");
 
 				var xmlDoc = new XmlDocument();
-				xmlDoc.Load(menuFile.FullName);
+				xmlDoc.Load(filepath);
 
 				// Now find the <Navigation> node.
 				var navigationNode = FindNavigationNode(xmlDoc);
@@ -575,15 +724,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 					if (!HasIconNameElement(e))
 					{
+						LaunchLogEvent($"{Resources.MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry}.");
+
 						// Couldn't find <IconName></IconName> so let's add it.
 						var newNode = xmlDoc.CreateNode(XmlNodeType.Element, "IconName", null);
 						newNode.InnerText = $"{companyName}/menuIcon.png";
 						e.AppendChild(newNode);
-						hasChanges = true;
+ 						hasChanges = true;
 					}
 
 					if (!HasMenuBackGroundImageElement(e))
 					{
+						LaunchLogEvent($"{Resources.MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry}.");
+
 						// Couldn't find <MenuBackGoundImage></MenuBackGoundImage> so let's add it.
 						var newNode = xmlDoc.CreateNode(XmlNodeType.Element, "MenuBackGoundImage", null);
 						newNode.InnerText = $"{companyName}/menuBackGroundImage.jpg";
@@ -595,8 +748,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				// Save the file if anything changed
 				if (hasChanges)
 				{
-					xmlDoc.Save(menuFile.FullName);
-					LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateMenuDetails} : {menuFile.FullName}");
+					xmlDoc.Save(filepath);
+					LaunchLogEvent($"{DateTime.Now} {Resources.ReleaseSpecificTitleUpdateMenuDetails} : {filepath}");
 				}
 			}
 			// Log end of step
@@ -656,10 +809,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
         }
 
-        /// <summary> Copy folder and files </summary>
-        /// <param name="sourceDirectoryName">Source directory name</param>
-        /// <param name="destinationDirectoryName">Destination directory name</param>
-        private void DirectoryCopy(string sourceDirectoryName, string destinationDirectoryName)
+		/// <summary> Copy folder and files </summary>
+		/// <param name="sourceDirectoryName">Source directory name</param>
+		/// <param name="destinationDirectoryName">Destination directory name</param>
+		private void DirectoryCopy(string sourceDirectoryName, string destinationDirectoryName, bool ignoreDestinationFolder = true)
         {
             var dir = new DirectoryInfo(sourceDirectoryName);
             var dirs = dir.GetDirectories();
@@ -673,18 +826,39 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Iterate files
             foreach (var file in dir.GetFiles())
             {
-                var filePath = Path.Combine(destinationDirectoryName, file.Name);
-                file.CopyTo(filePath, true);
+				try
+				{
+					var filePath = Path.Combine(destinationDirectoryName, file.Name);
+					file.CopyTo(filePath, true);
 
-				// Log detail
-				LaunchLogEvent($"{DateTime.Now} {Resources.AddReplaceFile} {filePath}");
+					// Log detail
+					LaunchLogEvent($"{DateTime.Now} {Resources.AddReplaceFile} {filePath}");
+				}
+				catch (IOException e)
+				{
+					// Likely just a locked file.
+					// Just log it and move on.
+					LaunchLogEvent($"{Resources.ExceptionThrownPossibleLockedFile} : {file.FullName.ToString()}");
+					LaunchLogEvent($"{e.Message}");
+				}
 			}
 
             // For recursion
-            foreach (var subdir in dirs)
+            foreach (DirectoryInfo subdir in dirs)
             {
-                DirectoryCopy(subdir.FullName, Path.Combine(destinationDirectoryName, subdir.Name));
-            }
+				var subdirectoryName = subdir.FullName;
+				if (ignoreDestinationFolder)
+				{
+					if (subdirectoryName != destinationDirectoryName)
+					{
+						DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
+					}
+				}
+				else
+				{
+					DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
+				}
+			}
         }
 
         /// <summary> Update UI </summary>
