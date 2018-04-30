@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AfterUpdate.
+        /// </summary>
+        internal static string AfterUpdate {
+            get {
+                return ResourceManager.GetString("AfterUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string Back {
@@ -79,11 +88,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Before update.
+        /// </summary>
+        internal static string BeforeUpdate {
+            get {
+                return ResourceManager.GetString("BeforeUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IEXPLORE.EXE.
         /// </summary>
         internal static string Browser {
             get {
                 return ResourceManager.GetString("Browser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        internal static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
             }
         }
         
@@ -115,6 +142,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exception thrown. Possible locked file.
+        /// </summary>
+        internal static string ExceptionThrownPossibleLockedFile {
+            get {
+                return ResourceManager.GetString("ExceptionThrownPossibleLockedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extracted moduleid.
+        /// </summary>
+        internal static string ExtractedModuleId {
+            get {
+                return ResourceManager.GetString("ExtractedModuleId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -133,11 +178,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Found PostBuildEvent Entry.
+        /// </summary>
+        internal static string FoundPostBuildEventEntry {
+            get {
+                return ResourceManager.GetString("FoundPostBuildEventEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate XML documentation file.
         /// </summary>
         internal static string GenerateXMLDocFile {
             get {
                 return ResourceManager.GetString("GenerateXMLDocFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserted command.
+        /// </summary>
+        internal static string InsertedCommand {
+            get {
+                return ResourceManager.GetString("InsertedCommand", resourceCulture);
             }
         }
         
@@ -152,6 +215,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Main menu node found but does not have existing IconName entry..
+        /// </summary>
+        internal static string MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry {
+            get {
+                return ResourceManager.GetString("MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main menu node found but does not have existing MEnuBackGoundImage entry..
+        /// </summary>
+        internal static string MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry {
+            get {
+                return ResourceManager.GetString("MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         internal static string Next {
@@ -161,11 +242,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PostBuildEvent text exists but is empty.
+        /// </summary>
+        internal static string PostBuildEventTextExistsButIsEmpty {
+            get {
+                return ResourceManager.GetString("PostBuildEventTextExistsButIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing.
+        /// </summary>
+        internal static string Processing {
+            get {
+                return ResourceManager.GetString("Processing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Processing {0}....
         /// </summary>
         internal static string ProcessingStep {
             get {
                 return ResourceManager.GetString("ProcessingStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project.
+        /// </summary>
+        internal static string Project {
+            get {
+                return ResourceManager.GetString("Project", resourceCulture);
             }
         }
         
@@ -441,6 +549,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ShowLog {
             get {
                 return ResourceManager.GetString("ShowLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution Directory.
+        /// </summary>
+        internal static string SolutionDirectory {
+            get {
+                return ResourceManager.GetString("SolutionDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution Projects.
+        /// </summary>
+        internal static string SolutionProjects {
+            get {
+                return ResourceManager.GetString("SolutionProjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution projects to be processed.
+        /// </summary>
+        internal static string SolutionProjectsToBeProcessed {
+            get {
+                return ResourceManager.GetString("SolutionProjectsToBeProcessed", resourceCulture);
             }
         }
         

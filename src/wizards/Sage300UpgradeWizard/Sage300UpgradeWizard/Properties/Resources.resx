@@ -251,4 +251,49 @@
   <data name="ReleaseSpecificUpdateSourceCodeManually" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateSourceCodeManually.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AfterUpdate" xml:space="preserve">
+    <value>AfterUpdate</value>
+  </data>
+  <data name="BeforeUpdate" xml:space="preserve">
+    <value>Before update</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
+    <value>Exception thrown. Possible locked file</value>
+  </data>
+  <data name="ExtractedModuleId" xml:space="preserve">
+    <value>Extracted moduleid</value>
+  </data>
+  <data name="FoundPostBuildEventEntry" xml:space="preserve">
+    <value>Found PostBuildEvent Entry</value>
+  </data>
+  <data name="InsertedCommand" xml:space="preserve">
+    <value>Inserted command</value>
+  </data>
+  <data name="MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry" xml:space="preserve">
+    <value>Main menu node found but does not have existing IconName entry.</value>
+  </data>
+  <data name="MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry" xml:space="preserve">
+    <value>Main menu node found but does not have existing MEnuBackGoundImage entry.</value>
+  </data>
+  <data name="PostBuildEventTextExistsButIsEmpty" xml:space="preserve">
+    <value>PostBuildEvent text exists but is empty</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="SolutionDirectory" xml:space="preserve">
+    <value>Solution Directory</value>
+  </data>
+  <data name="SolutionProjects" xml:space="preserve">
+    <value>Solution Projects</value>
+  </data>
+  <data name="SolutionProjectsToBeProcessed" xml:space="preserve">
+    <value>Solution projects to be processed</value>
+  </data>
 </root>
