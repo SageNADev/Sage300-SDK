@@ -50,7 +50,11 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments list</param>
 		private static void InitializeComponents(string[] args)
 		{
-			Utilities.GetAppNameAndVersion(out string appName, out string appVersion);
+			//Utilities.GetAppNameAndVersion(out string appName, out string appVersion); // C# V7+ 
+			string appName = string.Empty;
+			string appVersion = string.Empty;
+			Utilities.GetAppNameAndVersion(out appName, out appVersion); // C# V6+ 
+
 			_Options = new CommandLineOptions(appName, appVersion, args);
 			_Logger = new Logger(logfilename: LOGFILENAME,
 									logfolder: Directory.GetCurrentDirectory(),
@@ -62,18 +66,18 @@ namespace MergeISVProject
 		/// <summary>
 		/// Display the program usage information to the console
 		/// </summary>
-		private static void DisplayUsageMessageToConsole() 
-        {
+		private static void DisplayUsageMessageToConsole()
+		{
 			Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(_Options.UsageMessage);
+			Console.WriteLine(_Options.UsageMessage);
 			Console.ResetColor();
-        }
+		}
 
-        /// <summary>
-        /// Display any errors encountered parsing command-line arguments
-        /// passed into the program.
-        /// </summary>
-        private static void DisplayErrorsToConsole()
+		/// <summary>
+		/// Display any errors encountered parsing command-line arguments
+		/// passed into the program.
+		/// </summary>
+		private static void DisplayErrorsToConsole()
         {
             if (_Options.LoadErrors.Count > 0)
             {
@@ -108,25 +112,10 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments passed in</param>
 		public static void Main(string[] args)
 		{
-			args = new string[8];
-			args[0] = "--mode=0";
-			args[1] = @"--solutionpath=G:\FromDaniel\VM\";
-			args[2] = @"--webprojectpath=G:\FromDaniel\VM\Technisoft.VM.Web\";
-			args[3] = @"--menufilename=VMMenuDetails.xml";
-			args[4] = @"--buildprofile=Release";
-			args[5] = @"--dotnetframeworkpath=C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319";
-			args[6] = @"--minify";
-			args[7] = @"--log";
-
 			var bypassLogfileDisplay = false;
 			var applicationError = false;
 			try
 			{
-				// Enable for debugging purposes
-				//Console.WriteLine("Main...");
-				//Console.WriteLine($"args.Length = {args.Length}");
-				//foreach (var t in args) Console.WriteLine($"{t}");
-
 				InitializeComponents(args);
 
 				if (_Options.AnyErrors())
