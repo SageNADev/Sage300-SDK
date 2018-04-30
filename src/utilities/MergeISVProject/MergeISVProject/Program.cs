@@ -108,6 +108,16 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments passed in</param>
 		public static void Main(string[] args)
 		{
+			args = new string[8];
+			args[0] = "--mode=0";
+			args[1] = @"--solutionpath=G:\FromDaniel\VM\";
+			args[2] = @"--webprojectpath=G:\FromDaniel\VM\Technisoft.VM.Web\";
+			args[3] = @"--menufilename=VMMenuDetails.xml";
+			args[4] = @"--buildprofile=Release";
+			args[5] = @"--dotnetframeworkpath=C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319";
+			args[6] = @"--minify";
+			args[7] = @"--log";
+
 			var bypassLogfileDisplay = false;
 			var applicationError = false;
 			try
