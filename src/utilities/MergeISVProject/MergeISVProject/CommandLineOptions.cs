@@ -447,6 +447,7 @@ namespace MergeISVProject
 			}
 			catch (ArgumentOutOfRangeException e)
 			{
+				Console.WriteLine(e.Message);
 				Console.WriteLine(args.Length.ToString());
 				Console.WriteLine($"{option.Name}={option.OptionValue}");
 			}
