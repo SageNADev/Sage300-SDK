@@ -156,7 +156,8 @@ namespace MergeISVProject
 
 			const string webConfigName = @"Web.config";
 			var source = _FolderManager.RootSource;
-			var destination = _FolderManager.Staging.Areas;
+			//var destination = _FolderManager.Staging.Areas;
+			var destination = _FolderManager.Staging.Root;
 
 			// Copy original Web.config to it's staging location
 			var sourceWebConfig = Path.Combine(source, webConfigName);
