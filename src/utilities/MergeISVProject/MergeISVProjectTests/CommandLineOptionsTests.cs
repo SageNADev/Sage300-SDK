@@ -98,6 +98,7 @@ namespace MergeISVProjectTests
 		{
 			string[] args =
 			{
+				"--mode=0",
 				"--solutionpath=\"E:\\Sage300CMvcApplication1\\Sage300CMvcApplication1\"",
 				"--webprojectpath=\"E:\\Sage300CMvcApplication1\\Sage300CMvcApplication1\\TrustedVendor.PM.Web\"",
 				"--menufilename=\"PMMenuDetails.xml\"",

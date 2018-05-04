@@ -251,32 +251,51 @@ namespace MergeISVProject
 			try
 			{
 				var currentExePath = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
+
+				// Ensure that the WG.exe file is available
 				var tempPathToWG = Path.Combine(currentExePath, WG_EXE);
 				if (!File.Exists(tempPathToWG))
 				{
+					_Logger.Log($"If looks like WG cannot be found.");
+
 					var msg = string.Format(Messages.Error_UnableToFindTheProgram, WG_EXE, tempPathToWG);
 					throw new Exception(msg);
 				}
 
 				var pathToWG = currentExePath;
-
 				var workingFolder = _Folders.Staging.AreasScripts;
 				var jsFolder = workingFolder;
 
 				_Logger.Log($"jsFolder = {jsFolder}");
-
-				foreach (var dir in Directory.GetDirectories(jsFolder))
+				if (Directory.Exists(jsFolder))
 				{
-					var command = string.Format(WG_COMMAND_TEMPLATE, pathToWG, WG_EXE, dir, dir);
-					_Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
-					_Logger.Log(string.Format(Messages.Msg_RunningCommand, command));
-					ExecuteCommand(workingFolder, command);
-					_Logger.Log(Messages.Msg_MinificationComplete);
+					foreach (var dir in Directory.GetDirectories(jsFolder))
+					{
+						_Logger.Log($"Processing directory '{dir}'");
 
-					_Logger.Log(Messages.Msg_RenamingJavascriptFilesBackToUsableState);
-					RemoveUnminifiedJavascriptFiles(dir);
-					RenameMinifiedJavascriptFiles(dir);
-					_Logger.Log(Messages.Msg_RenamingComplete);
+						var files = Directory.GetFiles(dir);
+						if (files.Count() == 0)
+						{
+							_Logger.Log($"No files found in folder '{dir}'. Skipping to next directory in list.");
+							continue;
+						}
+
+						var command = string.Format(WG_COMMAND_TEMPLATE, pathToWG, WG_EXE, dir, dir);
+						_Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
+						_Logger.Log(string.Format(Messages.Msg_RunningCommand, command));
+						ExecuteCommand(workingFolder, command);
+						_Logger.Log(Messages.Msg_MinificationComplete);
+
+						_Logger.Log(Messages.Msg_RenamingJavascriptFilesBackToUsableState);
+						RemoveUnminifiedJavascriptFiles(dir);
+						RenameMinifiedJavascriptFiles(dir);
+						_Logger.Log(Messages.Msg_RenamingComplete);
+					}
+				}
+				else
+				{
+					error = true;
+					_Logger.Log($"The directory '{jsFolder}' does not exist. There are no files to minify.");
 				}
 			}
 			catch (Exception ex)

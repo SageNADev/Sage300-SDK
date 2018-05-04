@@ -36,6 +36,7 @@ namespace Sage300Utilities
 			Msg_Application,
 			Msg_InnerException,
 			Msg_CommandLineParameter_PreBuild,
+			Msg_CommandLineParameter_DisableTemplateUpdates,
 			Msg_CommandLineParameter_Help,
 			Msg_CommandLineParameter_SDKRoot,
 			Msg_CommandLineParameter_UseLocalSage300Installation,
@@ -55,6 +56,7 @@ namespace Sage300Utilities
 		public static string Msg_Application => RM.GetString(IndexEnum.Msg_Application.ToString());
 		public static string Msg_InnerException => RM.GetString(IndexEnum.Msg_InnerException.ToString());
 		public static string Msg_CommandLineParameter_PreBuild => RM.GetString(IndexEnum.Msg_CommandLineParameter_PreBuild.ToString());
+		public static string Msg_CommandLineParameter_DisableTemplateUpdates => RM.GetString(IndexEnum.Msg_CommandLineParameter_DisableTemplateUpdates.ToString());
 		public static string Msg_CommandLineParameter_Help => RM.GetString(IndexEnum.Msg_CommandLineParameter_Help.ToString());
 		public static string Msg_CommandLineParameter_SDKRoot => RM.GetString(IndexEnum.Msg_CommandLineParameter_SDKRoot.ToString());
 		public static string Msg_CommandLineParameter_UseLocalSage300Installation => RM.GetString(IndexEnum.Msg_CommandLineParameter_UseLocalSage300Installation.ToString());

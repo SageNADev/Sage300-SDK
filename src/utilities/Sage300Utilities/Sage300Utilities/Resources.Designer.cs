@@ -70,6 +70,15 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to prevent any files in the \src\wizards\templates\Web\ folder from being updated at all. This flag takes precedence over UseLocalSage300Installation AND WebSource..
+        /// </summary>
+        internal static string Msg_CommandLineParameter_DisableTemplateUpdates {
+            get {
+                return ResourceManager.GetString("Msg_CommandLineParameter_DisableTemplateUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specifying this flag indicates that you wish to view the help for this application..
         /// </summary>
         internal static string Msg_CommandLineParameter_Help {
@@ -79,7 +88,7 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you with to run the PreBuild process during the Visual Studio Pre-Build event..
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to run the PreBuild process during the Visual Studio Pre-Build event..
         /// </summary>
         internal static string Msg_CommandLineParameter_PreBuild {
             get {
