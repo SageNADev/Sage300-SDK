@@ -130,6 +130,14 @@ namespace Sage300Utilities
 		public CommandLineOption<bool> PreBuild { get; set; }
 
 		/// <summary>
+		/// Flag parameter used to tell the application
+		/// to avoid any updates to the \src\wizards\templates\ folder contentsg
+		/// Just leave the template directory as is.
+		/// </summary>
+		[OptionalArgument]
+		public CommandLineOption<bool> DisableTemplateUpdates { get; set; }
+
+		/// <summary>
 		/// String parameter set to the location of the Web SDK
 		/// </summary>
 		[OptionalArgument]
@@ -212,6 +220,16 @@ namespace Sage300Utilities
 				AliasList = new List<string>() { "pb" },
 				Description = Messages.Msg_CommandLineParameter_PreBuild,
 				OptionValue = false,
+				ExampleValue = @""
+			};
+			LoadOption(PreBuild, arguments);
+
+			DisableTemplateUpdates = new CommandLineOption<bool>()
+			{
+				Name = "disabletemplateupdates",
+				AliasList = new List<string>() { "dtu" },
+				Description = Messages.Msg_CommandLineParameter_DisableTemplateUpdates,
+				OptionValue = true,
 				ExampleValue = @""
 			};
 			LoadOption(PreBuild, arguments);
