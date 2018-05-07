@@ -117,48 +117,59 @@ namespace Sage300Utilities
 			var webTargetFolder = Path.Combine(templatesFolder, @"Web");
 			var webSourceFolder = (_Options.WebSource.OptionValue.Length > 0) ? _Options.WebSource.OptionValue : string.Empty;
 
-			// If WebSource was defined on the command-line, it takes precedence
-			// over the UseLocalSage300Installtion flag.
-
-			// If WebSource was not specified on the command-line 
-			// AND
-			// UseLocalSage300Installation is true
-			if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == true)
+			if (_Options.DisableTemplateUpdates.OptionValue == false)
 			{
-				webSourceFolder = Utilities.Sage300CWebFolder;
+				// If WebSource was defined on the command-line, it takes precedence
+				// over the UseLocalSage300Installtion flag.
 
-				Logger.LogInfo("Attempting to use the local Sage 300 installation for sources.");
-
-				// Determine if Sage 300 is installed locally
-				if (webSourceFolder.Length > 0)
+				// If WebSource was not specified on the command-line 
+				// AND
+				// UseLocalSage300Installation is true
+				if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == true)
 				{
-					Logger.LogInfo($"Sage 300 web screen installation found in registry: '{webSourceFolder}'");
+					webSourceFolder = Utilities.Sage300CWebFolder;
+
+					Logger.LogInfo("Attempting to use the local Sage 300 installation for sources.");
+
+					// Determine if Sage 300 is installed locally
+					if (webSourceFolder.Length > 0)
+					{
+						Logger.LogInfo($"Sage 300 web screen installation found in registry: '{webSourceFolder}'");
+					}
+					else
+					{
+						Logger.LogError($"Sage 300 web screen installation not found in registry.");
+						proceed = false;
+					}
 				}
 				else
 				{
-					Logger.LogError($"Sage 300 web screen installation not found in registry.");
+					Logger.LogInfo($"Using local CNA2\\Columbus-Web\\Sage.CA.SBS.ERP.Sage300.Web\\ for sources : '{webSourceFolder}'");
+				}
+
+				if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == false)
+				{
+					Logger.LogError($"Unable to determine where web source files should come from.");
+					Logger.LogError($"Did you specify the correct command-line parameters?");
 					proceed = false;
 				}
 			}
 			else
 			{
-				Logger.LogInfo($"Using local CNA2\\Columbus-Web\\Sage.CA.SBS.ERP.Sage300.Web\\ for sources : '{webSourceFolder}'");
-			}
-
-			if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == false)
-			{
-				Logger.LogError($"Unable to determine where web source files should come from.");
-				Logger.LogError($"Did you specify the correct command-line parameters?");
-				proceed = false;
+				Logger.LogInfo($"DisableTemplateUpdates was set on the command-line. The Web templates folder will not be updated.");
 			}
 
 			if (proceed)
 			{
-				// Remove specific files and folders from the 'Web' directory
-				DeleteWebFiles(webTargetFolder);
+				// Only allow Web template folder updates when this flag is false
+				if (_Options.DisableTemplateUpdates.OptionValue == false)
+				{
+					// Remove specific files and folders from the 'Web' directory
+					DeleteWebFiles(webTargetFolder);
 
-				// Copy over the 'Web' files
-				CopyWebSources(webSourceFolder, webTargetFolder);
+					// Copy over the 'Web' files
+					CopyWebSources(webSourceFolder, webTargetFolder);
+				}
 
 				// Create the template zip files
 				CreateTemplateZipFiles();
@@ -181,7 +192,7 @@ namespace Sage300Utilities
 		}
 
 		/// <summary>
-		/// Remove specific items from the 'Web' folder
+		/// Remove specific items from the '\src\Wizards\Templates\Web\' folder
 		/// </summary>
 		/// <param name="folder">The folder to remove files and sub-folders from</param>
 		private void DeleteWebFiles(string webFolder)

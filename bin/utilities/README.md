@@ -2,9 +2,14 @@
 
 ## MergeISVProject.exe
 
-This program is used by various wizards within the Sage 300 Web SDK as well as by Sage partner projects. It is used to take the compiled assets from an external Sage Partner project and bundle them up for deployment. It also provides javascript minification functionality and can optionally deploy the custom solution into a local Sage 300 installation for testing purposes.
+This program is used by various wizards within the Sage 300 Web SDK as well as by Sage partner
+projects. It is used to take the compiled assets from an external Sage Partner project and bundle
+them up for deployment. It also provides JavaScript minification functionality and can optionally 
+deploy the solution into a local Sage 300 installation for testing purposes when the solution is 
+in **Release** mode.
 
-When updating the MergeISVProject.exe application, ensure that you copy the application to the following folders and zip archives:
+When updating the MergeISVProject.exe application, ensure that you copy the application to the 
+following folders and zip archives:
 
 - \bin\utilities\MergeISVProject.exe [This folder]
 - \src\wizards\Templates\Web\MergeISVProject.exe
@@ -12,9 +17,18 @@ When updating the MergeISVProject.exe application, ensure that you copy the appl
 - \src\wizards\Sage300UpgradeWizard\Sage300UpgradeWizardPackage\ItemTemplates\Items.zip
 - \src\wizards\Sage300UIWizardPackage\ProjectTemplates\Web.zip
 
+> As a reminder, when building a solution in **Release** mode be sure to either re-start IIS or stop IIS
+prior to building the solution. This is important if you have previously built in **Release** mode and 
+have accessed the Sage 300 web screens as the worker role will be holding onto some assemblies and
+the deployment of these files to your local Sage 300's **Worker** folder may not be successful. Be 
+sure to re-start IIS after the deployment if you have stopped it prior to the build.
+
 ## Sage300Utilties.exe
 
-As of the 2018.2 release of the Sage 300 Web SDK, this program is used by the Sage300UIWizardPackage. It's purpose is to facilitate the rebuilding of all of the templates that exist in the \src\Templates\ folder of the SDK. In the future, this application will be enhanced to provide additional functionality to other wizards.
+As of the 2018.2 release of the Sage 300 Web SDK, this program is used by the Sage300UIWizardPackage. 
+It's purpose is to facilitate the rebuilding of all of the templates that exist in the \src\Templates\ 
+folder of the SDK. In the future, this application will be enhanced to provide additional functionality 
+to other wizards.
 
 ## Generating JavaScript for Grids
 
