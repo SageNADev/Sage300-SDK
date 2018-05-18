@@ -527,14 +527,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Validate content of fields
-            var validFields = ProcessGeneration.ValidateFields(entityFields, uniqueDescriptions, repositoryType);
-            if (!validFields)
+            var validFieldsMessage = ProcessGeneration.ValidateFields(entityFields, uniqueDescriptions, repositoryType);
+            if (!string.IsNullOrEmpty(validFieldsMessage))
             {
-                return Resources.InvalidFields;
+                return validFieldsMessage;
             }
 
             // Ensure model is not named the same as any fields
-            validFields = !entityFields.ToList().Any(t => t.Name.Equals(modelName));
+            var validFields = !entityFields.ToList().Any(t => t.Name.Equals(modelName));
             if (!validFields)
             {
                 return Resources.InvalidSettingModel;

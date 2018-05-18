@@ -772,10 +772,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="entityFields">the list of BusinessFields to iterate</param>
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
         /// <param name="repositoryType">The repository type</param>
-        /// <returns> True if valid otherwise false</returns>
-        public static bool ValidateFields(List<BusinessField> entityFields, Dictionary<string, bool> uniqueDescriptions, RepositoryType repositoryType)
+        /// <returns> String.Empty if valid otherwise message</returns>
+        public static string ValidateFields(List<BusinessField> entityFields, Dictionary<string, bool> uniqueDescriptions, RepositoryType repositoryType)
         {
-            var validFields = true;
+            var validFields = string.Empty;
             uniqueDescriptions.Clear();
 
             // Iterate fields
@@ -791,9 +791,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Check Name
-                if (field.Name.Trim().Equals(string.Empty))
+                if (string.IsNullOrEmpty(field.Name))
                 {
-                    validFields = false;
+                    validFields = Resources.InvalidFieldBlank;
                     break;
                 }
 
@@ -808,7 +808,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (uniqueDescriptions.ContainsKey(field.Name))
                 {
                     // Duplicate name entered
-                    validFields = false;
+                    validFields = string.Format(Resources.InvalidFieldDuplicate, field.Name);
                     break;
                 }
 

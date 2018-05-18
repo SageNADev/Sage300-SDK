@@ -259,8 +259,8 @@
   <data name="InvalidCount" xml:space="preserve">
     <value>At least one field is required.</value>
   </data>
-  <data name="InvalidFields" xml:space="preserve">
-    <value>The fields have invalid settings.</value>
+  <data name="InvalidFieldBlank" xml:space="preserve">
+    <value>There is a field that does not contain a value.</value>
   </data>
   <data name="Finish" xml:space="preserve">
     <value>Finish</value>
@@ -507,5 +507,8 @@
   </data>
   <data name="InvalidSettingEntityName" xml:space="preserve">
     <value>The Properties contain a field with the name of 'EntityName'. Please rename the field as 'EntityName' is reserved for a public constant in the model.</value>
+  </data>
+  <data name="InvalidFieldDuplicate" xml:space="preserve">
+    <value>The field '{0}' is duplicated and fields must be unique.</value>
   </data>
 </root>

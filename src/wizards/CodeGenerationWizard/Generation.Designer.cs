@@ -156,7 +156,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(83, 22);
             this.txtVersion.TabIndex = 8;
-            this.txtVersion.Text = "65A";
+            this.txtVersion.Text = "66A";
             // 
             // lblPassword
             // 

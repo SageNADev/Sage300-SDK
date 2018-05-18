@@ -622,11 +622,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The fields have invalid settings..
+        ///   Looks up a localized string similar to There is a field that does not contain a value..
         /// </summary>
-        internal static string InvalidFields {
+        internal static string InvalidFieldBlank {
             get {
-                return ResourceManager.GetString("InvalidFields", resourceCulture);
+                return ResourceManager.GetString("InvalidFieldBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field &apos;{0}&apos; is duplicated and fields must be unique..
+        /// </summary>
+        internal static string InvalidFieldDuplicate {
+            get {
+                return ResourceManager.GetString("InvalidFieldDuplicate", resourceCulture);
             }
         }
         
