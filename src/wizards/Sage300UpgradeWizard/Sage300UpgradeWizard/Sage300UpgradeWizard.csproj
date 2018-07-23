@@ -42,7 +42,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>true</RegisterForComInterop>
@@ -186,4 +186,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!-- The following commented-out line can be used to load common settings into the project --> 
+  <!--<Import Project="$(SolutionDir)CommonSettings.targets" />-->
 </Project>

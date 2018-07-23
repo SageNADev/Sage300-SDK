@@ -18,15 +18,15 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 #region Imports
-using System;
-using System.IO;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
-using System.IO.Compression;
-using System.Linq;
-using System.Xml;
-using System.Text;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -34,24 +34,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 	/// <summary> Process Upgrade Class (worker) </summary>
 	internal class ProcessUpgrade
 	{
-		#region Private Vars
+	#region Private Vars
 		/// <summary> Settings from UI </summary>
 		private Settings _settings;
 		private string _backupFolder = String.Empty;
-		#endregion
+	#endregion
 
-		#region Public constants
+	#region Public constants
 		/// <summary> From Release Number </summary>
-		public const string FromReleaseNumber = "2018.1";
+		public const string FromReleaseNumber = "2018.2";
 
 		/// <summary> To Release Number </summary>
-		public const string ToReleaseNumber = "2018.2";
+		public const string ToReleaseNumber = "2019.0";
 
 		/// <summary> From Accpac Number </summary>
-		public const string FromAccpacNumber = "6.5.0.10";
+		public const string FromAccpacNumber = "6.5.0.20";
 
 		/// <summary> To Accpac Number </summary>
-		public const string ToAccpacNumber = "6.5.0.20";
+		public const string ToAccpacNumber = "6.6.0.0";
 
 		/// <summary> Web Suffix </summary>
 		public const string WebSuffix = ".web";
@@ -68,9 +68,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Accpac Property File </summary>
 		public const string AccpacPropsFile = "AccpacDotNetVersion.props";
 
-		#endregion
+	#endregion
 
-		#region Public Delegates
+	#region Public Delegates
 		/// <summary> Delegate to update UI with name of the step being processed </summary>
 		/// <param name="text">Text for UI</param>
 		public delegate void ProcessingEventHandler(string text);
@@ -78,17 +78,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Delegate to update log with status of the step being processed </summary>
 		/// <param name="text">Text for UI</param>
 		public delegate void LogEventHandler(string text);
-		#endregion
+	#endregion
 
-		#region Public Events
+	#region Public Events
 		/// <summary> Event to update UI with name of the step being processed </summary>
 		public event ProcessingEventHandler ProcessingEvent;
 
 		/// <summary> Event to update log with status of the step being processed </summary>
 		public event LogEventHandler LogEvent;
-		#endregion
+	#endregion
 
-		#region Public Methods
+	#region Public Methods
 		/// <summary> Start the generation process </summary>
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
@@ -100,9 +100,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			// If it does/did, then we will just update it in place instead of relocating it to the Solution folder.
 			bool AccpacPropsFileOriginallyInWebFolder = false;
 
-			#region Backup Solution - Currently Disabled
+	#region Backup Solution - Currently Disabled
 			//_backupFolder = BackupSolution();
-			#endregion
+	#endregion
 
 			// Start at step 1 and ignore last two steps
 			for (var index = 0; index < _settings.WizardSteps.Count; index++)
@@ -121,7 +121,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 						SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
 						break;
 
-					#region Release Specific Steps
+	#region Release Specific Steps
+	/*
 					case 3:
 						UpdateVendorSourceCodeAutomatically(title, _backupFolder);
 						break;
@@ -131,20 +132,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 						break;
 
 					case 5:
-						 UpdateProjectPostBuildEvent(title, _backupFolder);
+						UpdateProjectPostBuildEvent(title, _backupFolder);
 						break;
 
 					case 6:
 						UpdateVendorSourceCodeManually(title);
 						break;
-						#endregion
+	*/
+	#endregion
 				}
 			}
 		}
 
-		#endregion
+	#endregion
 
-		#region Private methods
+	#region Private methods
 
 		/// <summary> Synchronization of web project files </summary>
 		/// <param name="title">Title of step being processed </param>
@@ -179,6 +181,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
 		/// <summary>
 		/// Backup the solution
+		/// Note: Not currently used.
 		/// </summary>
 		private string BackupSolution()
 		{
@@ -884,6 +887,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var s = $"{DateTime.Now} -- {Resources.End} {text} --";
             LogEvent?.Invoke(s);
         }
-        #endregion
+	#endregion
     }
 }
