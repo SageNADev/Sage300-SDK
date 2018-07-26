@@ -356,6 +356,7 @@
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptRepository.js" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
     <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
@@ -523,7 +524,6 @@
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
     <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
-</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
