@@ -54,11 +54,13 @@ $.extend(sg.utls.iFrameHelper = {
     },
 
     isWindowiFramePopup: function () {
-        var isPortal = window.top.$('iframe.screenIframe:visible').length > 0;
-        if (isPortal) {
-            var id = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window').find('iframe').attr('data-parentiframeid');
-            if (id) {
-                return true;
+        if (sg.utls.isSameOrigin()) {
+            var isPortal = window.top.$('iframe.screenIframe:visible').length > 0;
+            if (isPortal) {
+                var id = window.top.$('iframe.screenIframe:visible').contents().find('.k-widget.k-window').find('iframe').attr('data-parentiframeid');
+                if (id) {
+                    return true;
+                }
             }
         }
         return false;
@@ -67,6 +69,11 @@ $.extend(sg.utls.iFrameHelper = {
 
     getContentFrame: function () {
         var contentFrame;
+        var sameOrigin = sg.utls.isSameOrigin();
+        if (!sameOrigin) {
+            return window.top;
+        }
+
         var screeniFrame = window.top.$('iframe.screenIframe:visible');
         if (screeniFrame.length > 0) {
             contentFrame = screeniFrame[0].contentWindow;
@@ -91,6 +98,7 @@ $.extend(sg.utls.iFrameHelper = {
     //Below methods are called from parent
 
     getBeforeUnloadEvent: function (frameWindow) {
+        if (!frameWindow.$) return null;
         //return frameWindow.beforeClose_iFramePopup;
         if (frameWindow.$._data(frameWindow, 'events') != null && frameWindow.$._data(frameWindow, 'events')["beforeunload"] != null) {
             return frameWindow.$._data(frameWindow, 'events')["beforeunload"].map(function (elem) { return elem.handler; })[0];
@@ -99,6 +107,7 @@ $.extend(sg.utls.iFrameHelper = {
     },
 
     getUnloadEvents: function (frameWindow) {
+        if (!frameWindow.$) return null;
         if (frameWindow.$._data(frameWindow, 'events') != null && frameWindow.$._data(frameWindow, 'events')["unload"] != null) {
             return frameWindow.$._data(frameWindow, 'events')["unload"].map(function (elem) { return elem.handler; });
         }
@@ -114,22 +123,8 @@ $.extend(sg.utls.iFrameHelper = {
         var visbleFrameContent;
         var divCtrl;
 
-        //Handle proxy call (call from outside, not in sage300 portal)
-        var href = decodeURIComponent(window.location.href);
-        var idx1 = href.lastIndexOf('?url=');
-        if (idx1 > -1) {
-            var idx2 = href.indexOf('/', idx1 + 14);
-            if (idx2  > idx1 ) {
-                var hostName = href.substring(idx1 + 5, idx2);
-            }
-            if (hostName) {
-                url = hostName + url;
-            }
-        }
-
         if (source == null) {
-            var isPortal = (idx1 == -1);
-
+            var isPortal = sg.utls.isSameOrigin();
             contentFrame = (isPortal) ? sg.utls.iFrameHelper.getContentFrame() : window;
             form = contentFrame.$('form');
             // remove the existing div.
@@ -209,10 +204,21 @@ $.extend(sg.utls.iFrameHelper = {
             ],
             close: function (e) {
 
-                var frameWindow;
+                if (!sg.utls.isSameOrigin()) {
+					//Call parent callback function
+					if (parentMsgCallBackFunc != null && typeof parentMsgCallBackFunc !== 'undefined' && $.isFunction(parentMsgCallBackFunc)) {
+						parentMsgCallBackFunc();
+					}
+                    divCtrl.data("kendoWindow").destroy();
+                    return;
+                }
 
+                var frameWindow;
                 if (sg.utls.isChrome() || sg.utls.isSafari()) {
-                    frameWindow = sg.utls.iFrameHelper.getContentFrame().frames[id].contentWindow;
+                    frameWindow = sg.utls.iFrameHelper.getContentFrame().frames[id];
+                    if (frameWindow) {
+                        frameWindow = sg.utls.iFrameHelper.getContentFrame().frames[id].contentWindow;
+                    }
                 } else {
                     frameWindow = sg.utls.iFrameHelper.getContentFrame().frames[id];
                 }
@@ -261,7 +267,17 @@ $.extend(sg.utls.iFrameHelper = {
             refresh: function () {
                 // refresh function will get called after the page load is complete, we get height after the page is loaded.
                 //var contentFrame = sg.utls.iFrameHelper.getContentFrame();
-
+                var contentHeight;
+                //For call outside from Sage 300c portal
+                var sameOrigin = sg.utls.isSameOrigin();
+                if (!sameOrigin) {
+                    contentHeight = 780;
+                    return;
+                }
+                if (window.top.$('iframe.screenIframe:visible').length == 0) {
+                    contentHeight = 780;
+                    return;
+                }
                 //For call outside from Sage 300c portal
                 if (window.top.$('iframe.screenIframe:visible').length == 0) {
                     contentHeight = 780;
@@ -269,7 +285,7 @@ $.extend(sg.utls.iFrameHelper = {
                 }
 
                 var iframeContent = window.top.$('iframe.screenIframe:visible').contents().find('#' + id);
-                var contentHeight = iframeContent.contents().find('body').height();
+                contentHeight = iframeContent.contents().find('body').height();
 
                 if (contentHeight == null) {
                     iframeContent = $('#' + id);
@@ -289,16 +305,21 @@ $.extend(sg.utls.iFrameHelper = {
                 this.element.closest(".popup-iframe").css({
                     height: height - 50, // to adjust the height
                 });
-
-                var leftPos = ($(window.top).innerWidth() - this.wrapper.width()) / 2;
-                if (leftPos < 0) {
+                var sameOrigin = sg.utls.isSameOrigin();
+                if (sameOrigin) {
+                    var leftPos = ($(window.top).innerWidth() - this.wrapper.width()) / 2;
+                    if (leftPos < 0) {
+                        leftPos = 25;
+                    }
+                    var scrollPos = $(window.top).scrollTop();
+                    if (scrollPos > 150) {
+                        scrollPos = scrollPos - 100;
+                    }
+                } else {
+                    scrollPos = 50;
                     leftPos = 25;
                 }
-
-                var scrollPos = $(window.top).scrollTop();
-                if (scrollPos > 150) {
-                    scrollPos = scrollPos - 100;
-                }
+                
                 this.wrapper.css({
                     top: scrollPos,
                     left: leftPos

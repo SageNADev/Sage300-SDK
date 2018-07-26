@@ -90,6 +90,12 @@ namespace Sage300Utilities
 		public string ApplicationBuildDate { get; set; }
 
 		/// <summary>
+		/// This will contain the build year of the application
+		/// Used for the copyright range 
+		/// </summary>
+		public string ApplicationBuildYear { get; set; }
+
+		/// <summary>
 		/// This will contain the list of all errors that
 		/// occurred when attempting to load and parse the
 		/// command-line options.
@@ -131,11 +137,10 @@ namespace Sage300Utilities
 
 		/// <summary>
 		/// Flag parameter used to tell the application
-		/// to avoid any updates to the \src\wizards\templates\ folder contentsg
-		/// Just leave the template directory as is.
+		/// to update to the \src\wizards\templates\ folder contents
 		/// </summary>
 		[OptionalArgument]
-		public CommandLineOption<bool> DisableTemplateUpdates { get; set; }
+		public CommandLineOption<bool> EnableTemplateUpdates { get; set; }
 
 		/// <summary>
 		/// String parameter set to the location of the Web SDK
@@ -159,6 +164,15 @@ namespace Sage300Utilities
 		[IsExistingFolder]
 		public CommandLineOption<string> WebSource { get; set; }
 
+		/// <summary>
+		/// Flag parameter used to tell the application
+		/// to rebuild the Web.vstemplate file located in the root of the 
+		/// \src\Wizards\Templates\Web\ folder
+		/// </summary>
+		[OptionalArgument]
+		public CommandLineOption<bool> RebuildWebDotVstemplateFile { get; set; }
+
+
 		#endregion
 
 		#region Constructor(s)
@@ -172,14 +186,22 @@ namespace Sage300Utilities
 		/// </summary>
 		/// <param name="appName">The name of the application</param>
 		/// <param name="appVersion">The version number of the application</param>
+		/// <param name="buildDate">The string representation of the build date and time</param>
+		/// <param name="buildYear">The string representation of the build year</param>
 		/// <param name="args">The argument list passed in via the command-line</param>
 		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
-		public CommandLineOptions(string appName, string appVersion, string buildDate, string[] args, string prefix=DEFAULT_PREFIX)
+		public CommandLineOptions(string appName, 
+								  string appVersion, 
+								  string buildDate, 
+								  string buildYear,
+								  string[] args, 
+								  string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
             ApplicationName = appName;
             ApplicationVersion = appVersion;
 			ApplicationBuildDate = buildDate;
+			ApplicationBuildYear = buildYear;
 
 			// If the argument array has only a single entry, then the
 			// arguments list will likely have /r/n characters in it
@@ -224,15 +246,15 @@ namespace Sage300Utilities
 			};
 			LoadOption(PreBuild, arguments);
 
-			DisableTemplateUpdates = new CommandLineOption<bool>()
+			EnableTemplateUpdates = new CommandLineOption<bool>()
 			{
-				Name = "disabletemplateupdates",
-				AliasList = new List<string>() { "dtu" },
-				Description = Messages.Msg_CommandLineParameter_DisableTemplateUpdates,
-				OptionValue = true,
+				Name = "enabletemplateupdates",
+				AliasList = new List<string>() { "etu" },
+				Description = Messages.Msg_CommandLineParameter_EnableTemplateUpdates,
+				OptionValue = false, // Defaults to false (off or disabled)
 				ExampleValue = @""
 			};
-			LoadOption(PreBuild, arguments);
+			LoadOption(EnableTemplateUpdates, arguments);
 
 			SDKRoot = new CommandLineOption<string>()
 			{
@@ -249,7 +271,7 @@ namespace Sage300Utilities
 				Name = "uselocalsage300installation",
 				AliasList = new List<string>() { "localsage300" },
 				Description = Messages.Msg_CommandLineParameter_UseLocalSage300Installation,
-				OptionValue = true,
+				OptionValue = false,
 				ExampleValue = @""
 			};
 			LoadOption(UseLocalSage300Installation, cleanArgList);
@@ -263,6 +285,17 @@ namespace Sage300Utilities
 				ExampleValue = @"C:\projects\Web\Sage.CA.SBS.ERP.Sage300.Web"
 			};
 			LoadOption(WebSource, arguments);
+
+			RebuildWebDotVstemplateFile = new CommandLineOption<bool>()
+			{
+				Name = "rebuildwebvstemplate",
+				AliasList = new List<string>() { "rwvst" },
+				Description = Messages.Msg_CommandLineParameter_RebuildWebDotVstemplateFile,
+				OptionValue = false, // Defaults to false (off or disabled)
+				ExampleValue = @""
+			};
+			LoadOption(RebuildWebDotVstemplateFile, arguments);
+
 		}
 
 		/// <summary>
@@ -484,14 +517,16 @@ namespace Sage300Utilities
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
 			var required3rdPartyComponents = "Log4Net";
-			var BuildDate = ApplicationBuildDate;
+			var buildDate = ApplicationBuildDate;
+			var buildYear = ApplicationBuildYear;
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 															       ApplicationVersion,
-																   BuildDate,
+																   buildDate,
 																   required3rdPartyComponents,
 															       requiredParams,
-															       optionalParams);
+															       optionalParams,
+																   buildYear);
 			msg += divider;
 			return msg;
 		}

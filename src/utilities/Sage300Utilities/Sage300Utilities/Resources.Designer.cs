@@ -70,11 +70,11 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to prevent any files in the \src\wizards\templates\Web\ folder from being updated at all. This flag takes precedence over UseLocalSage300Installation AND WebSource..
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is false, it will override both UseLocalSage300Installation AND WebSource..
         /// </summary>
-        internal static string Msg_CommandLineParameter_DisableTemplateUpdates {
+        internal static string Msg_CommandLineParameter_EnableTemplateUpdates {
             get {
-                return ResourceManager.GetString("Msg_CommandLineParameter_DisableTemplateUpdates", resourceCulture);
+                return ResourceManager.GetString("Msg_CommandLineParameter_EnableTemplateUpdates", resourceCulture);
             }
         }
         
@@ -93,6 +93,15 @@ namespace Sage300Utilities {
         internal static string Msg_CommandLineParameter_PreBuild {
             get {
                 return ResourceManager.GetString("Msg_CommandLineParameter_PreBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to rebuild the Web.vstemplate file that lives in the \src\Wizards\Templates\Web\ folder based on the contents of this and it&apos;s sub-folders..
+        /// </summary>
+        internal static string Msg_CommandLineParameter_RebuildWebDotVstemplateFile {
+            get {
+                return ResourceManager.GetString("Msg_CommandLineParameter_RebuildWebDotVstemplateFile", resourceCulture);
             }
         }
         
@@ -137,7 +146,7 @@ namespace Sage300Utilities {
         ///Version:               {1}
         ///Build Date:            {2}
         ///
-        ///Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+        ///Copyright:             (c) 1994-{6} The Sage Group plc or its licensors.  
         ///                       All rights reserved.
         ///License:               The MIT Licence (MIT)
         ///

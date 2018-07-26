@@ -426,7 +426,7 @@ table {
    }
 
   .ctrl-group {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -499,7 +499,7 @@ table {
 
   .k-grid-header {
     background-image: none;
-    padding-right: 0 !important; // To override kendo inserting inline padding styles
+    background-color: #686c76;
 
     > .k-grid-header-wrap {
       border-right: 0;
@@ -622,7 +622,7 @@ table {
         &.icon:disabled {
           border: 1px solid transparent;
         }
-      }      
+      }     
     }
 
     &.k-alt {
@@ -859,6 +859,18 @@ table {
           position: relative;
           top: 5px;
         }
+      }
+    }
+
+    button.glyphicon {
+      width: 40px;
+      height: 20px;
+      line-height: 1.2;
+      color: #474e5d;
+      font-size: 16px;
+
+      &:hover {
+        outline: none;
       }
     }
   }
@@ -1230,6 +1242,28 @@ table {
       line-height: 20px;
     }
   }
+}
+
+// AUS GST grid styles 
+
+.grid-group.grid-small .k-grid .k-grid-content {
+  min-height: unset;
+}
+
+label > span.highlighted,
+span.highlighted {
+  background-color: #ff9900;
+  padding:  0 6px;
+  border-radius: 4px;
+  color: #fff;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+}
+
+span.highlighted.gray {
+  background-color: #a7a9aa;
 }
 
 

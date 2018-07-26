@@ -6,6 +6,7 @@
 
 <script type="text/javascript">
     var menuUrlList = @Html.Raw(Json.Encode(ViewBag.MenuUrlList));
+    var otherUrlList = @Html.Raw(Json.Encode(ViewBag.OthersUrlList));
 </script>
 
 
@@ -45,7 +46,7 @@
     </div>
     <!--Inquiries -->
     <div class="quick-menu-item quick-menu-inquiry" id="btnViewInquiries">
-        <i class="glyphicon glyphicon-magnifying-glass" title="@HomePageResx.QuickMenu_Inquiries"></i>
+        <i class="glyphicon glyphicon-doc-search" title="@HomePageResx.QuickMenu_Inquiries"></i>
     </div>
     <!--Notes Center -->
     @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))

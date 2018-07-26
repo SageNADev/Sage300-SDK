@@ -37,16 +37,21 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
         /// <summary> Generate </summary>
         private bool _generate = false;
-        #endregion
+		#endregion
 
-        #region Private Consts
-        /// <summary> Splitter Distance </summary>
-        private const int SplitterDistance = 237;
+		#region Private Constants
+		private class Constants
+		{
+			/// <summary> Splitter Distance </summary>
+			public const int SplitterDistance = 237;
 
-        #endregion
+			/// <summary> Single space </summary>
+			public const string SingleSpace = " ";
+		}
+		#endregion
 
-        #region Public vars
-        public string ThirdPartyCompanyName { get; set; }
+		#region Public vars
+		public string ThirdPartyCompanyName { get; set; }
         public string ThirdPartyApplicationId { get; set; }
         public string CompanyNamespace { get; set; }
         public string KendoFolder { get; set; }
@@ -176,11 +181,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 DialogResult = DialogResult.OK;
                 Close();
             }
-
-            // Proceed to next wizard step
             else
             {
-                if (!_currentWizardStep.Equals(-1))
+				// Proceed to next wizard step
+
+				if (!_currentWizardStep.Equals(-1))
                 {
                     // Before proceeding to next step, ensure current step is valid
                     if (!ValidSettings())
@@ -244,14 +249,20 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         {
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
-            splitSteps.SplitterDistance = SplitterDistance;
+            splitSteps.SplitterDistance = UserInputForm.Constants.SplitterDistance;
         }
 
         /// <summary> Show Step Title</summary>
         private void ShowStepTitle()
         {
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                _wizardSteps[_currentWizardStep].Title;
+			// Build up the dialog box step title and description
+			var label = Resources.Step + 
+						UserInputForm.Constants.SingleSpace + 
+						(_currentWizardStep + 1).ToString("#0") + 
+						Resources.Dash +
+						_wizardSteps[_currentWizardStep].Title;
+
+			lblStepTitle.Text = label;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
 
@@ -281,9 +292,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 IncludeFrench = chkFrench.Checked;
             }
 
-            if (!string.IsNullOrEmpty(valid))
+			// Were there any validation errors? 
+			if (!string.IsNullOrEmpty(valid))
             {
-                // Something is invalid
                 DisplayMessage(valid, MessageBoxIcon.Error);
             }
 
@@ -435,7 +446,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             lblKendoFolder.Enabled = chkKendoLicense.Checked;
             txtKendoFolder.Enabled = chkKendoLicense.Checked;
             btnKendoDialog.Enabled = chkKendoLicense.Checked;
-        }
+		}
 
         /// <summary> Kendo License Link</summary>
         /// <param name="sender">Sender object </param>
