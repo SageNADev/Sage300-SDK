@@ -25,6 +25,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
+using System.Xml.Linq;
 #endregion
 
 namespace Sage300Utilities
@@ -46,8 +48,8 @@ namespace Sage300Utilities
 		/// <param name="args">This is the string[] of command-line parameters</param>
 		public Driver(string[] args)
 		{
-			Utilities.GetAppInfo(out string appName, out string appVersion, out string buildDate);
-			_Options = new CommandLineOptions(appName, appVersion, buildDate, args);
+			Utilities.GetAppInfo(out string appName, out string appVersion, out string buildDate, out string buildYear);
+			_Options = new CommandLineOptions(appName, appVersion, buildDate, buildYear, args);
 
 			// Display the usage text if no command-line parameters specified
 			// or the special help parameter was specified
@@ -117,7 +119,7 @@ namespace Sage300Utilities
 			var webTargetFolder = Path.Combine(templatesFolder, @"Web");
 			var webSourceFolder = (_Options.WebSource.OptionValue.Length > 0) ? _Options.WebSource.OptionValue : string.Empty;
 
-			if (_Options.DisableTemplateUpdates.OptionValue == false)
+			if (_Options.EnableTemplateUpdates.OptionValue == true)
 			{
 				// If WebSource was defined on the command-line, it takes precedence
 				// over the UseLocalSage300Installtion flag.
@@ -156,19 +158,26 @@ namespace Sage300Utilities
 			}
 			else
 			{
-				Logger.LogInfo($"DisableTemplateUpdates was set on the command-line. The Web templates folder will not be updated.");
+				Logger.LogInfo($"EnableTemplateUpdates was turned off on the command-line. The Web templates folder will not be updated.");
 			}
 
 			if (proceed)
 			{
 				// Only allow Web template folder updates when this flag is false
-				if (_Options.DisableTemplateUpdates.OptionValue == false)
+				if (_Options.EnableTemplateUpdates.OptionValue == true)
 				{
 					// Remove specific files and folders from the 'Web' directory
 					DeleteWebFiles(webTargetFolder);
 
 					// Copy over the 'Web' files
 					CopyWebSources(webSourceFolder, webTargetFolder);
+				}
+
+				// Optionally rebuild the Web.vstemplate file BEFORE
+				// we create the Web.zip (and other zip archives)
+				if (_Options.RebuildWebDotVstemplateFile.OptionValue == true)
+				{
+					RebuildWebDotVstemplate();
 				}
 
 				// Create the template zip files
@@ -279,6 +288,7 @@ namespace Sage300Utilities
 
 		/// <summary>
 		/// Copy specific files from the source folder to destination folder.
+		/// Also includes a step that alters some files.
 		/// </summary>
 		/// <param name="source">The web source directory</param>
 		/// <param name="target">The web destination directory</param>
@@ -386,6 +396,43 @@ namespace Sage300Utilities
 			#endregion
 
 			Logger.LogInfo($"End - CopyWebSources");
+		}
+
+		/// <summary>
+		/// Rebuild the Web.vstemplate file based on the current contents of the 
+		/// \src\Wizards\templates\Web\ folder.
+		/// </summary>
+		private void RebuildWebDotVstemplate()
+		{
+			Logger.LogInfo($"Start - RebuildWebDotVstemplate()");
+
+			const string TemplateFileName = "Web.vstemplate";
+
+			// Ensure that paths are specified and correct.
+			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+			Logger.LogInfo($"templatesFolder = {templatesFolder}");
+			var webFolder = Path.Combine(templatesFolder, "Web");
+			Logger.LogInfo($"webFolder = {webFolder}");
+
+			// Step 1 - Remove the existing Web.vstemplate file
+			// Or perhaps back it up instead?
+			var templateFilePath = Path.Combine(webFolder, TemplateFileName);
+			if (File.Exists(templateFilePath))
+			{
+				Logger.LogInfo($"Existing template file '{templateFilePath}' deleted.");
+				File.Delete(templateFilePath);
+			}
+
+			// Step 2 - Enumerate the source folder
+			// and generate the XML file
+			new WebTemplateGenerator(Logger)
+			{
+				WebTemplateFileName = "Web.vstemplate",
+				RootFolder = webFolder,
+				TargetFolder = webFolder
+			}.SaveXml();
+
+			Logger.LogInfo($"End - RebuildWebDotVstemplate");
 		}
 
 		/// <summary>

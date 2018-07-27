@@ -21,6 +21,7 @@
 #region Imports
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -99,27 +100,46 @@ namespace Sage300Utilities
 		/// <param name="name">Application Name</param>
 		/// <param name="ver">Application Version</param>
 		/// <param name="buildDate">Application Build Date</param>
-		public static void GetAppInfo(out string name, out string ver, out string buildDate)
+		public static void GetAppInfo(out string name, out string ver, out string buildDate, out string buildYear)
 		{
 			var assemblyName = typeof(Program).Assembly.GetName();
 			name = assemblyName.Name + ".exe";
 			ver = assemblyName.Version.ToString();
-			buildDate = Assembly.GetExecutingAssembly().GetLinkerTime().ToString(@"dddd, MMMM dd,yyyy @ HH:mm:ss");
+			var linkerTime = Assembly.GetExecutingAssembly().GetLinkerTime();
+			buildDate = linkerTime.ToString(@"dddd, MMMM dd,yyyy @ HH:mm:ss");
+			buildYear = linkerTime.Year.ToString();
 		}
 
+		/// <summary>
+		/// Remove the first character in a string
+		/// </summary>
+		/// <param name="s">The string to inspect</param>
+		/// <returns>The altered string</returns>
+		public static string RemoveFirstCharacter(this string s)
+		{
+			return s.Substring(1, s.Length - 1);
+		}
+
+		/// <summary>
+		/// Get the application timestamp value
+		/// This is an extension method for the dotnet 'Assembly' class
+		/// </summary>
+		/// <param name="assembly">The assembly</param>
+		/// <param name="target">The target timezone. Defaults to null</param>
+		/// <returns></returns>
 		public static DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
 		{
 			var filePath = assembly.Location;
-			const int c_PeHeaderOffset = 60;
-			const int c_LinkerTimestampOffset = 8;
+			const int PeHeaderOffset = 60;
+			const int LinkerTimestampOffset = 8;
 
 			var buffer = new byte[2048];
 
 			using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
 				stream.Read(buffer, 0, 2048);
 
-			var offset = BitConverter.ToInt32(buffer, c_PeHeaderOffset);
-			var secondsSince1970 = BitConverter.ToInt32(buffer, offset + c_LinkerTimestampOffset);
+			var offset = BitConverter.ToInt32(buffer, PeHeaderOffset);
+			var secondsSince1970 = BitConverter.ToInt32(buffer, offset + LinkerTimestampOffset);
 			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
 			var linkTimeUtc = epoch.AddSeconds(secondsSince1970);
@@ -147,7 +167,47 @@ namespace Sage300Utilities
 				return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web");
 			}
 		}
+
+		/// <summary>
+		/// Method to build a list of files in a directory and all subdirectories
+		/// Notes: Currently not used anywhere
+		/// </summary>
+		/// <param name="dir">The directory to start processing in</param>
+		/// <param name="files">The output file list called by ref</param>
+		public static void GetFiles(DirectoryInfo dir, ref List<FileInfo> files)
+		{
+			try
+			{
+				files.AddRange(dir.GetFiles());
+				DirectoryInfo[] dirs = dir.GetDirectories();
+				foreach (var d in dirs)
+				{
+					GetFiles(d, ref files);
+				}
+			}
+			catch (Exception)
+			{
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="e"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public static IEnumerable<T> Add<T>(this IEnumerable<T> e, T value)
+		{
+			foreach (var cur in e)
+			{
+				yield return cur;
+			}
+			yield return value;
+		}
+
 		#endregion
 	}
 }
 
+// EOF

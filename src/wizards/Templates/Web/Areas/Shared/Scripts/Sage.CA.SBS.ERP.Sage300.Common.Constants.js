@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 
@@ -14,3 +14,8 @@ sg.fiscalCal = {
 	PurchaseOrder: "PO"
 };
 
+sg.constants = sg.constants || {};
+sg.constants.KeyCodeEnum = sg.constants.KeyCodeEnum || {};
+sg.constants.KeyCodeEnum = {
+	Tab: 9,
+};

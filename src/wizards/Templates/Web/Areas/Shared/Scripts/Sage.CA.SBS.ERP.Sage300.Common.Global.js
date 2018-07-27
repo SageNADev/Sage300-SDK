@@ -169,14 +169,34 @@ $.extend(sg.utls, {
         return self.location === top.location;
     },
 
+    getCookie: function (name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
+    },
+
+    isSameOrigin: function () {
+        var requestBaseUrl = sg.utls.getCookie("baseUrl");
+        if (requestBaseUrl) {
+            return requestBaseUrl === window.location.protocol + window.location.host;
+        }
+        return true;
+    },
+
     isPortalIntegrated: function () {
         var screenHome = "999999";
-        return window.top.$("#ScreenName").val() === screenHome;
+        if (sg.utls.isSameOrigin()) {
+            return window.top.$("#ScreenName").val() === screenHome;
+        }
+        return false;
     },
 
     isKendoIframe: function () {
-        var kendoIframe = window.top.$('iframe.screenIframe:visible').contents().find('.k-content-frame:visible');
-        return kendoIframe.length > 0;
+        if (sg.utls.isSameOrigin()) {
+            var kendoIframe = window.top.$('iframe.screenIframe:visible').contents().find('.k-content-frame:visible');
+            return kendoIframe.length > 0;
+        }
+        return false;
     },
 
     openExternalLink: function (URL, name) {
@@ -545,9 +565,11 @@ $.extend(sg.utls, {
             error: errorHandler,
             beforeSend: function () {
                 $('#ajaxSpinner').fadeIn(1);
-                var iFrame = window.top.$('iframe.screenIframe:visible');
-                if (iFrame && iFrame.length > 0) {
-                    sg.utls.showMessagesInViewPort();
+                if (sg.utls.isSameOrigin()) {
+                    var iFrame = window.top.$('iframe.screenIframe:visible');
+                    if (iFrame && iFrame.length > 0) {
+                        sg.utls.showMessagesInViewPort();
+                    }
                 }
             },
             complete: function () {
@@ -1139,8 +1161,28 @@ $.extend(sg.utls, {
                 if (!result.UserMessage.IsSuccess) {
                     defaultErrorMsg = result.UserMessage.Message;
                 }
+                var errors = result.UserMessage.Errors;
                 var errorHTML = sg.utls.generateList(result.UserMessage.Errors, defaultErrorMsg);
-                messageHTML = "<div class='" + errorCSS + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + errorHTML + " </div></div>";
+                if (errors.length > 5) {
+                    var tmp = '<div class="datagrid-group"><div class="k-grid-content"><div class="k-virtual-scrollable-wrap"><table class="k-grid gh320 k-widget">';
+                    errorHTML = "";
+                    for (i = 0; i < errors.length; i++) {
+                        var msg = errors[i].Message;
+                        if (i % 2 === 0) {
+                            errorHTML = errorHTML + "<tr class='k-alt'><td>" + (i + 1) + "</td><td style='width:100%'>" + sg.utls.htmlEncode(msg) + "</td></tr>";
+                        }
+                        else {
+                            errorHTML = errorHTML + "<tr><td>" + (i + 1) + "</td><td style='white-space: normal'>" + sg.utls.htmlEncode(msg) + "</td></tr>";
+                        }
+                    }
+                    var end = '</table></div><div></div>';
+                    errorHTML = tmp + errorHTML + end;
+
+                    messageHTML = "<div class='" + errorCSS + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content with-grid'> " + errorHTML + " </div></div>";
+                }
+                else {
+                    messageHTML = "<div class='" + errorCSS + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + errorHTML + " </div></div>";
+                }
                 messageDiv.html(messageHTML);
             }
 
@@ -2045,6 +2087,9 @@ $.extend(sg.utls, {
 
     /// Show all messages in viewport area
     showMessagesInViewPort: function () {
+        if (!sg.utls.isSameOrigin()) {
+            return;
+        }
         try {
             var activeScreenIframeId = window.top.$('iframe.screenIframe:visible').attr('id');
             var activeScreenIframeContents = window.top.$('#' + activeScreenIframeId).contents();
@@ -2103,6 +2148,9 @@ $.extend(sg.utls, {
     setKendoWindowPosition: function (kendoWindow) {
         kendoWindow.element.closest(".k-window").css({
             top: function () {
+                if (!sg.utls.isSameOrigin()) {
+                    return 20;
+                }
                 // Calculating top position to viewport center and reducing portal height based on scrolled position.
                 var offsetPixels = sg.utls.portalHeight - 45;
                 var topPos = $(window.top).scrollTop() - offsetPixels;
@@ -2660,6 +2708,10 @@ $(function () {
     });
 
     function PageUnloadHandler() {
+        if (!sg.utls.isSameOrigin()) {
+            return;
+        }
+
         if (sg.utls.screenUnloadHandler !== null) {
             sg.utls.screenUnloadHandler();
             sg.utls.screenUnloadHandler = null;

@@ -28,6 +28,10 @@
 #>
 /* <#=copyright#> */
 
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
+
 "use strict";
 
 function <#=localEntityName#>ObservableExtension(viewModel, uiMode) {

@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using ACCPAC.Advantage;
 using System.Xml.Linq;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -113,7 +115,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private readonly MenuItem _editContainerName = new MenuItem(Resources.EditContainerName);
 
         /// <summary> Mode Type for Add, Add Above, Add Below, Edit or None </summary>
-        private ModeType _modeType = ModeType.None;
+        private ModeTypeEnum _modeType = ModeTypeEnum.None;
 
         /// <summary> Clicked Entity Node </summary>
         private TreeNode _clickedEntityTreeNode;
@@ -138,30 +140,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Processing in progress </summary>
         private bool _processingInProgress = false;
-        #endregion
+		#endregion
 
-        #region Private Constants
-        /// <summary> Splitter Distance </summary>
-        private const int SplitterDistance = 415;
+		#region Private Constants
+		private class Constants
+		{
+			/// <summary> Splitter Distance </summary>
+			public const int SplitterDistance = 415;
 
-        /// <summary> Panel Name for pnlCodeType </summary>
-        private const string PanelCodeType = "pnlCodeType";
+			/// <summary> Panel Name for pnlCodeType </summary>
+			public const string PanelCodeType = "pnlCodeType";
 
-        /// <summary> Panel Name for pnlEntities </summary>
-        private const string PanelEntities = "pnlEntities";
+			/// <summary> Panel Name for pnlEntities </summary>
+			public const string PanelEntities = "pnlEntities";
 
-        /// <summary> Panel Name for pnlGenerated </summary>
-        private const string PanelGenerated = "pnlGeneratedCode";
+			/// <summary> Panel Name for pnlGenerated </summary>
+			public const string PanelGenerated = "pnlGeneratedCode";
 
-        /// <summary> Panel Name for pnlGenerate </summary>
-        private const string PanelGenerateCode = "pnlGenerateCode";
-        #endregion
+			/// <summary> Panel Name for pnlGenerate </summary>
+			public const string PanelGenerateCode = "pnlGenerateCode";
 
-        #region Private Enums
-        /// <summary>
-        /// Enum for Mode Types
-        /// </summary>
-        private enum ModeType
+			/// <summary> Single space string </summary>
+			public const string SingleSpace = " ";
+		}
+		#endregion
+
+		#region Private Enums
+		/// <summary>
+		/// Enum for Mode Types
+		/// </summary>
+		private enum ModeTypeEnum
         {
             /// <summary> No Mode </summary>
             None = 0,
@@ -256,6 +264,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             EnableEntityControls(false);
         }
 
+		/// <summary>
+		/// Wrapper method to check the current panel
+		/// </summary>
+		/// <param name="panelName">The panel name</param>
+		/// <returns>true : current panel | false : not current panel</returns>
+		private bool IsCurrentPanel(string panelName)
+		{
+			return _wizardSteps[_currentWizardStep].Panel.Name.Equals(panelName);
+		}
+
         /// <summary> Validate Step before proceeding to next step </summary>
         /// <returns>True for valid step other wise false</returns>
         private bool ValidateStep()
@@ -264,15 +282,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var valid = string.Empty;
 
             // Code Type Step
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCodeType))
-            {
+			if (IsCurrentPanel(Generation.Constants.PanelCodeType))
+			{
                 valid = ValidCodeTypeStep();
             }
 
             // Entities Step
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelEntities))
-            {
-                valid = ValidEntitiesStep();
+			if (IsCurrentPanel(Generation.Constants.PanelEntities))
+			{
+					valid = ValidEntitiesStep();
             }
 
             if (!string.IsNullOrEmpty(valid))
@@ -507,7 +525,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Check for dupes only in add mode since in edit mode the view id cannot be changed
             var dupeFound = false;
-            if (_modeType.Equals(ModeType.Add))
+            if (_modeType.Equals(ModeTypeEnum.Add))
             {
                 // Iterate existing entities specified thus far
                 foreach (var businessView in _entities)
@@ -1025,10 +1043,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Entity Setup</summary>
         /// <param name="treeNode">Tree node</param>
         /// <param name="modeType">Mode Type (Add)</param>
-        private void EntitySetup(TreeNode treeNode, ModeType modeType)
+        private void EntitySetup(TreeNode treeNode, ModeTypeEnum modeType)
         {
             // If not edit mode
-            if (!modeType.Equals(ModeType.Edit))
+            if (!modeType.Equals(ModeTypeEnum.Edit))
             {
                 // Expand clicked node
                 _clickedEntityTreeNode.ExpandAll();
@@ -1125,7 +1143,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var enableCompositionControls = (repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             grdEntityCompositions.Enabled = enableCompositionControls;
 
-            txtViewID.Enabled = _modeType.Equals(ModeType.Add) && enable;
+            txtViewID.Enabled = _modeType.Equals(ModeTypeEnum.Add) && enable;
 
             // If enabled AND Report or Dynamic Query then disable
             if (txtViewID.Enabled)
@@ -1166,7 +1184,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var repositoryType = GetRepositoryType();
 
-            if (_modeType.Equals(ModeType.Add))
+            if (_modeType.Equals(ModeTypeEnum.Add))
             {
                 // Set CS0120 for Dynamic Query Repository
                 if (repositoryType.Equals(RepositoryType.DynamicQuery))
@@ -1348,7 +1366,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void CancelEntity()
         {
             // For added entity, remove last node as this is where the next node was placed
-            if (_modeType == ModeType.Add)
+            if (_modeType == ModeTypeEnum.Add)
             {
                 // Remove from entities list first
                 var businessView = (BusinessView)_clickedEntityTreeNode.LastNode.Tag;
@@ -1359,13 +1377,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // For edit, reset color
-            if (_modeType == ModeType.Edit)
+            if (_modeType == ModeTypeEnum.Edit)
             {
                 SetNodeColor(_clickedEntityTreeNode, false);
             }
 
             // Reset mode
-            _modeType = ModeType.None;
+            _modeType = ModeTypeEnum.None;
 
             // Enable entities controls
             EnableEntitiesControls(true);
@@ -1403,7 +1421,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Get business view from clicked node
-            var node = _modeType == ModeType.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
+            var node = _modeType == ModeTypeEnum.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
             var businessView = (BusinessView)node.Tag;
 
             // Get valued from controls and add to object
@@ -1438,7 +1456,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             node.Tag = businessView;
 
             // Reset mode
-            _modeType = ModeType.None;
+            _modeType = ModeTypeEnum.None;
 
             // Reset selected color
             SetNodeColor(node, false);
@@ -1538,7 +1556,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _entities.Add(businessView);
             _clickedEntityTreeNode.Nodes.Add(treeNode);
 
-            EntitySetup(treeNode, ModeType.Add);
+            EntitySetup(treeNode, ModeTypeEnum.Add);
         }
 
         /// <summary> Edit Container Name</summary>
@@ -1556,7 +1574,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void EditEntityMenuItemOnClick(object sender, EventArgs eventArgs)
         {
             // Setup items for edit of entity
-            EntitySetup(_clickedEntityTreeNode, ModeType.Edit);
+            EntitySetup(_clickedEntityTreeNode, ModeTypeEnum.Edit);
         }
 
         /// <summary> Delete Entity</summary>
@@ -1661,7 +1679,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var repositoryType = GetRepositoryType();
 
             // Finished?
-            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
+            if (!_currentWizardStep.Equals(-1) && 
+				IsCurrentPanel(Generation.Constants.PanelGenerated))
             {
                 _generation.Dispose();
                 Close();
@@ -1670,7 +1689,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Proceed to next wizard step or start generation if last step
                 if (!_currentWizardStep.Equals(-1) &&
-                    _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
+					IsCurrentPanel(Generation.Constants.PanelGenerateCode))
                 {
                     // Build settings
                     var settings = BuildSettings();
@@ -1706,13 +1725,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     _currentWizardStep++;
 
                     // if Step is Screens, expand tree control
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelEntities))
+					if (IsCurrentPanel(Generation.Constants.PanelEntities))
                     {
                         treeEntities.ExpandAll();
                     }
 
                     // Create XML if Step is Generate
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
+                    if (IsCurrentPanel(Generation.Constants.PanelGenerateCode))
                     {
                         _xmlEntities = BuildXDocument();
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
@@ -1738,7 +1757,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     ShowStep(true);
 
                     // Update text of Next button?
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerateCode))
+                    if (IsCurrentPanel(Generation.Constants.PanelGenerateCode))
                     {
                         btnNext.Text = Resources.Generate;
                     }
@@ -1882,7 +1901,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_currentWizardStep.Equals(0))
             {
                 // Proceed back a step
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
+                if (IsCurrentPanel(Generation.Constants.PanelGenerated))
                 {
                     btnNext.Text = Resources.Generate;
                 }
@@ -1916,7 +1935,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Adjust size
             if (visible)
             {
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCodeType))
+                if (IsCurrentPanel(Generation.Constants.PanelCodeType))
                 {
                     // Adjust to smaller size
                     var location = btnBack.Location;
@@ -1952,8 +1971,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
-            splitSteps.SplitterDistance = SplitterDistance;
-
+            splitSteps.SplitterDistance = Generation.Constants.SplitterDistance;
         }
 
         /// <summary> Show Step Title</summary>
@@ -1961,8 +1979,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var repositoryType = GetRepositoryType().ToString();
 
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                string.Format(_wizardSteps[_currentWizardStep].Title, repositoryType);
+			var label = Resources.Step + 
+						Generation.Constants.SingleSpace +
+						(_currentWizardStep + 1).ToString("#0") + 
+						Resources.Dash +
+						string.Format(_wizardSteps[_currentWizardStep].Title, repositoryType);
+
+			lblStepTitle.Text = label;
             lblStepDescription.Text = string.Format(_wizardSteps[_currentWizardStep].Description, repositoryType);
         }
         /// <summary> Initialize wizard steps </summary>
@@ -2020,7 +2043,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Current Step
             _currentWizardStep = -1;
 
-            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report));
+            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || 
+				                       repositoryType.Equals(RepositoryType.Report));
 
             SetupEntitiesTree();
 
@@ -2683,7 +2707,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (!string.IsNullOrEmpty(txtViewID.Text))
                 {
                     // Get business view from clicked node
-                    var node = _modeType == ModeType.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
+                    var node = _modeType == ModeTypeEnum.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
                     var businessView = (BusinessView)node.Tag;
 
                     ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
@@ -2746,7 +2770,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Do nothing (no context menus) if mode is not none (i.e. it is in an edit or add state)
-            if (!_modeType.Equals(ModeType.None))
+            if (!_modeType.Equals(ModeTypeEnum.None))
             {
                 return;
             }
@@ -2776,7 +2800,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 _clickedEntityTreeNode = e.Node;
 
                 // Setup items for edit of entity
-                EntitySetup(_clickedEntityTreeNode, ModeType.Edit);
+                EntitySetup(_clickedEntityTreeNode, ModeTypeEnum.Edit);
             }
 
         }
@@ -2793,7 +2817,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Do nothing (no context menus) if mode is not none (i.e. it is in an edit or add state)
-            if (!_modeType.Equals(ModeType.None))
+            if (!_modeType.Equals(ModeTypeEnum.None))
             {
                 return;
             }

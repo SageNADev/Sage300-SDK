@@ -309,10 +309,11 @@ ko.bindingHandlers.sagevalue = {
                     else if (attr === 'numeric') {
                         invalidChars = /[^0-9]/gi;
                     }
-                    var value = $element.val();
+
+                    value = $element.val();
                     if (invalidChars.test(value)) {
                         var newValue = value.replace(invalidChars, "");
-                        $element.val(newValue)
+                        $element.val(newValue);
                         valueAccessor()(newValue);
                     }
                 }
@@ -346,6 +347,7 @@ ko.bindingHandlers.sagevalue = {
         if (element.type === "radio") {
             sg.controls.ApplyCheckboxRadioButtonStyle(element);
         }
+
         return result;
     }
 };

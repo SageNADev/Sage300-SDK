@@ -67,6 +67,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <Compile Include="WebTemplateGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

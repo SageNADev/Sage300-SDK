@@ -420,121 +420,125 @@ and (max-device-width : 1024px) {
 
   /*Finder Grid*/
 
-  .k-grid .k-grid-header .k-header {
+  .k-grid .k-grid-header {
     background-color: #ebedef;
-    height: 40px;
-    padding: 10px 8px;
-    color: #2e2e2e;
-    line-height: 1.9rem;
-    position: relative;
 
-    >.k-link {
-      text-decoration: none;
-      color: #2e2e2e;
-      margin: 0;
-
-      &:active {
-        text-decoration: none;
-      }
-    }
-
-    >.k-grid-filter {
-      width: 24px;
-      height: 24px;
-      padding: 4px 3px;
-      top: -3px;
-
-      &.k-state-border-down {
-        background-color: #ced0d1;
-
-        .k-i-filter:before {
-          color: #255bc7;
-        }
-      }
-
-      .k-i-filter:hover:before {
-        color: #255bc7;
-      }
-    }
-
-    .k-filter-row {
+    .k-header {
       background-color: #ebedef;
+      height: 40px;
+      padding: 10px 8px;
+      color: #2e2e2e;
+      line-height: 1.9rem;
+      position: relative;
 
-      .k-filtercell {
-      
-        .k-i-filter:hover:before,
-        .k-i-filter:before {
-          color: #255bc7;
-        }
+      >.k-link {
+        text-decoration: none;
+        color: #2e2e2e;
+        margin: 0;
 
-        .k-header {
-          padding: 0;
-          height: 24px;
-          border-radius: 0;
-          background-color: none;
-          margin-right: 20px;
-
-          &.k-autocomplete .k-input {
-            border-radius: 0;
-            height: 22px;
-          }
-        }
-
-        .k-button,
-        .k-dropdown-wrap.k-state-default {
-          border: 0;
-          background: none;
-          padding: 0;
-          margin: 0;
-          height: 24px;
-        }
-
-        .k-button:before {
-          background: none;
-        }
-
-        .k-button .k-i-close {
-          background-position: -207px 1px;
-        }
-
-        .k-dropdown-wrap.k-state-default .k-select {
-          background: none;
-          border-left: 0;
-          border-radius: 0;
-        }
-
-        .k-dropdown-wrap.k-state-default > .k-input {
-          display: none;
-        }
-
-        .k-autocomplete.k-state-focused span.k-icon,
-        .k-autocomplete.k-state-hover>span.k-icon {
-          background-position: -200px 3px;
-        }
-
-        .k-i-loading {
-          background-image: url('@{image-path}/default/loading.gif');
-          background-size: 16px 16px;
-          top: -3px;
-          right: -2px;
-        }
-
-        > span {
-          padding-right: 0px;
-          padding-left: 20px;
-
-          > .k-button {
-            right: -3px;
-          }
-        }
-
-        .k-autocomplete > span.k-icon {
-          display: none;
+        &:active {
+          text-decoration: none;
         }
       }
 
-      .k-dropdown-operator {
-        left: -5px;
+      >.k-grid-filter {
+        width: 24px;
+        height: 24px;
+        padding: 4px 3px;
+        top: -3px;
+
+        &.k-state-border-down {
+          background-color: #ced0d1;
+
+          .k-i-filter:before {
+            color: #255bc7;
+          }
+        }
+
+        .k-i-filter:hover:before {
+          color: #255bc7;
+        }
+      }
+
+      .k-filter-row {
+        background-color: #ebedef;
+
+        .k-filtercell {
+        
+          .k-i-filter:hover:before,
+          .k-i-filter:before {
+            color: #255bc7;
+          }
+
+          .k-header {
+            padding: 0;
+            height: 24px;
+            border-radius: 0;
+            background-color: none;
+            margin-right: 20px;
+
+            &.k-autocomplete .k-input {
+              border-radius: 0;
+              height: 22px;
+            }
+          }
+
+          .k-button,
+          .k-dropdown-wrap.k-state-default {
+            border: 0;
+            background: none;
+            padding: 0;
+            margin: 0;
+            height: 24px;
+          }
+
+          .k-button:before {
+            background: none;
+          }
+
+          .k-button .k-i-close {
+            background-position: -207px 1px;
+          }
+
+          .k-dropdown-wrap.k-state-default .k-select {
+            background: none;
+            border-left: 0;
+            border-radius: 0;
+          }
+
+          .k-dropdown-wrap.k-state-default > .k-input {
+            display: none;
+          }
+
+          .k-autocomplete.k-state-focused span.k-icon,
+          .k-autocomplete.k-state-hover>span.k-icon {
+            background-position: -200px 3px;
+          }
+
+          .k-i-loading {
+            background-image: url('@{image-path}/default/loading.gif');
+            background-size: 16px 16px;
+            top: -3px;
+            right: -2px;
+          }
+
+          > span {
+            padding-right: 0px;
+            padding-left: 20px;
+
+            > .k-button {
+              right: -3px;
+            }
+          }
+
+          .k-autocomplete > span.k-icon {
+            display: none;
+          }
+        }
+
+        .k-dropdown-operator {
+          left: -5px;
+        }
       }
     }
   }

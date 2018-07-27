@@ -120,14 +120,17 @@
   <data name="Msg_Application" xml:space="preserve">
     <value>Application</value>
   </data>
-  <data name="Msg_CommandLineParameter_DisableTemplateUpdates" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish to prevent any files in the \src\wizards\templates\Web\ folder from being updated at all. This flag takes precedence over UseLocalSage300Installation AND WebSource.</value>
+  <data name="Msg_CommandLineParameter_EnableTemplateUpdates" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is false, it will override both UseLocalSage300Installation AND WebSource.</value>
   </data>
   <data name="Msg_CommandLineParameter_Help" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to view the help for this application.</value>
   </data>
   <data name="Msg_CommandLineParameter_PreBuild" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to run the PreBuild process during the Visual Studio Pre-Build event.</value>
+  </data>
+  <data name="Msg_CommandLineParameter_RebuildWebDotVstemplateFile" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to rebuild the Web.vstemplate file that lives in the \src\Wizards\Templates\Web\ folder based on the contents of this and it's sub-folders.</value>
   </data>
   <data name="Msg_CommandLineParameter_SDKRoot" xml:space="preserve">
     <value>This is the path to the root Web SDK folder.</value>
@@ -146,7 +149,7 @@
 Version:               {1}
 Build Date:            {2}
 
-Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+Copyright:             (c) 1994-{6} The Sage Group plc or its licensors.  
                        All rights reserved.
 License:               The MIT Licence (MIT)
 

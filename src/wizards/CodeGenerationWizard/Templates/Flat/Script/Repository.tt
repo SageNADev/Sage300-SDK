@@ -33,6 +33,10 @@
 #>
 /* <#=copyright#> */
 
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
+
 "use strict";
 
 // Ajax call to controller
@@ -46,34 +50,62 @@ var <#=localEntityName#>Ajax = {
 
 var <#=localEntityName#>Repository = {
 
-    // Get
+	/**
+     * Get
+	 *
+	 * @method get
+	 * @param id
+	 * @param callbackMethod
+	 */
     get: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Get", data, callbackMethod);
     },
 
-    // Create
+	/**
+     * Create
+	 *
+	 * @method create
+	 * @param callbackMethod
+	 */
     create: function(callbackMethod) {
         var data = {};
         <#=localEntityName#>Ajax.call("Create", data, callbackMethod);
     },
 
-    // Delete
+	/**
+     * Delete
+	 *
+	 * @method delete
+	 * @param id
+	 * @param callbackMethod
+	 */
     delete: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Delete", data, callbackMethod);
     },
 
-    // Add
+	/**
+     * Add
+	 *
+	 * @method add
+	 * @param data
+	 * @param callbackMethod
+	 */
     add: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Add", data, callbackMethod);
     },
 
-    // Update
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
+	 */
     update: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Save", data, callbackMethod);
     }
 
     // Additional methods go here
-
 };

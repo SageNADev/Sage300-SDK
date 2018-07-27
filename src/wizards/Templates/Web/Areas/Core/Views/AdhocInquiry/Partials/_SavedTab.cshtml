@@ -70,7 +70,7 @@
 <ul>
 @foreach (var module in groupedModule)
 {
-    <li class="item-list inquiry-category collapsed" onclick="itemListOnClick(this)">
+    <li class="item-list" onclick="itemListOnClick(this)">
         <label>@LocalizedModuleName(module)</label>
         @foreach (var query in module)
         {

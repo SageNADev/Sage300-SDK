@@ -43,10 +43,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 // Get the registry key
                 var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
                 var configurationKey = baseKey.OpenSubKey(ConfigurationKey);
-
-                return configurationKey == null ? string.Empty
-                                                : Path.Combine(configurationKey.GetValue("Programs").ToString(),
-                                                               @"Online\Web");
+				var programsPath = configurationKey.GetValue("Programs").ToString();
+                return configurationKey == null ? string.Empty 
+												: Path.Combine(programsPath, @"Online\Web");
             }
         }
     }
