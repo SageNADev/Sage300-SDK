@@ -75,7 +75,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
                model.AmountValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.AmountValue);
                model.NumberValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.NumberValue);
                model.IntegerValue = entity.GetValue<long>(ReceiptDetailOptionalField.Index.IntegerValue);
-               model.YesNoValue = (TypeEnum.YesNoValue)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.YesNoValue));
+               model.YesOrNoValue = (TypeEnum.YesNoValue)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.YesNoValue));
                model.DateValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.DateValue);
                model.TimeValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.TimeValue);
                model.OptionalFieldDescription = entity.GetValue<string>(ReceiptDetailOptionalField.Index.OptionalFieldDescription);

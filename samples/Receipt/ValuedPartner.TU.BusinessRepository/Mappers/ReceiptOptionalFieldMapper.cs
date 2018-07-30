@@ -74,7 +74,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
                model.AmountValue = entity.GetValue<decimal>(ReceiptOptionalField.Index.AmountValue);
                model.NumberValue = entity.GetValue<decimal>(ReceiptOptionalField.Index.NumberValue);
                model.IntegerValue = entity.GetValue<long>(ReceiptOptionalField.Index.IntegerValue);
-               model.YesNoValue = (entity.GetValue<string>(ReceiptOptionalField.Index.YesNoValue) == "False") ? Enums.YesNoValue.No : Enums.YesNoValue.Yes;
+               model.YesOrNoValue = (entity.GetValue<string>(ReceiptOptionalField.Index.YesNoValue) == "False") ? Enums.YesNoValue.No : Enums.YesNoValue.Yes;
                model.DateValue = entity.GetValue<DateTime>(ReceiptOptionalField.Index.DateValue);
                model.TimeValue = entity.GetValue<DateTime>(ReceiptOptionalField.Index.TimeValue);
                model.OptionalFieldDescription = entity.GetValue<string>(ReceiptOptionalField.Index.OptionalFieldDescription);
