@@ -18,15 +18,18 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using EnvDTE;
+using System.Reflection;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
-    /// <summary> Entry Point for Code Generation Wizard </summary>
-    public class CodeGenerationWizard
+	/// <summary> Entry Point for Code Generation Wizard </summary>
+	public class CodeGenerationWizard
     {
-        /// <summary> Execute the Code Generation Wizard </summary>
-        public void Execute(Solution solution)
+		/// <summary> Execute the Code Generation Wizard </summary>
+		public void Execute(Solution solution)
         {
             using (var form = new Generation())
             {
