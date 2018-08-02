@@ -414,132 +414,35 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the [ModuleID]MenuDetails.xml file..
+        ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
         /// </summary>
-        internal static string ReleaseSpecificDescUpdateMenuDetails {
+        internal static string ReleaseSpecificDescConsolidateEnumerations {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateMenuDetails", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescConsolidateEnumerations", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will be done automatically..
+        ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
-        internal static string ReleaseSpecificDescUpdatePostBuildEvent {
+        internal static string ReleaseSpecificTitleConsolidateEnumerations {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdatePostBuildEvent", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically upgrade some of your source code files..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateSourceCode {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateSourceCodeManually {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCodeManually", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the Menu Details.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateMenuDetails {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMenuDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the Web project Post Build Event.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdatePostBuildEvent {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdatePostBuildEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic update of source code files.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateSourceCode {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manual update of source code files.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateSourceCodeManually {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCodeManually", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the menu icon and background images
+        ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
+        ///from release {0} to {1}.
         ///
-        ///This step will update the following file:
-        ///
-        ///* Web\[ModuleID]MenuDetails.xml
+        ///Instead of creating a different, unique enumeration file for each unique enumeration,
+        ///the code generation wizard will now consolidate enumerations into a single file on
+        ///a per-directory basis in the Models project. This file is called &apos;Enumerations.cs&apos;
         ///.
         /// </summary>
-        internal static string ReleaseSpecificUpdateMenuDetails {
+        internal static string ReleaseSpecificUpdateConsolidateEnumerations {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateMenuDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The post build command has changed slightly from release 
-        ///{0} to {1}.
-        ///
-        ///This step will update the post build command.
-        ///
-        ///.
-        /// </summary>
-        internal static string ReleaseSpecificUpdatePostBuildEvent {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdatePostBuildEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Javascript bundling has changed slightly in this release.
-        ///
-        ///This step will update the following file:
-        ///
-        ///* Web\BundleRegistration.cs
-        ///.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateSourceCode {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The ...Behaviour.js file, on successful return from a finder selection,
-        ///was not performing a Get to get the record from the repository and
-        ///instead used the object returned from the finder. The record returned
-        ///from the finder is out-of-process and needs to be fetched by the screen.
-        ///Changes to partner code are only required if a partner&apos;s business view
-        ///has logic regarding a new record which was incorrectly being invoked by 
-        ///an existing record that &quot;looked like&quot; a new record. This has been 
-        ///corrected. O [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateSourceCodeManually {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCodeManually", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
             }
         }
         

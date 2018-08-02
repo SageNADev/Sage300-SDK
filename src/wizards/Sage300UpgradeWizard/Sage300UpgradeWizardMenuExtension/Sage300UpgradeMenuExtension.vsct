@@ -107,7 +107,6 @@
     
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidSage300UpgradeMenuExtensionCmdSet" value="{efcb2057-f513-4b39-ae85-cccc9b644877}">
-
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidSage300UpgradeWizard" value="0x0100" />
     </GuidSymbol>
