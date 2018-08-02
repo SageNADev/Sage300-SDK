@@ -25,6 +25,10 @@ using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft.Win32;
+using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard;
 

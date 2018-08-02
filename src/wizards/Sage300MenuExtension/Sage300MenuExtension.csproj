@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props" Condition="Exists('..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
@@ -60,6 +61,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CreateVsixContainer>True</CreateVsixContainer>
+    <DeployExtension>False</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
