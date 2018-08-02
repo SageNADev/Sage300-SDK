@@ -19,15 +19,14 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
-using System.Diagnostics;
+using System.Windows.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -103,7 +102,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			_destinationFolder = destination;
 			_destinationWeb = destinationWeb;
 			_sourceFolder = Path.GetDirectoryName(templatePath);
-			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(ProcessUpgrade.WebSuffix));
+			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(Constants.Common.WebSuffix));
 		}
 
 
@@ -149,8 +148,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             AddStep(Resources.StepTitleMain,
                     string.Format(Resources.StepDescriptionMain,
-                                  ProcessUpgrade.FromReleaseNumber,
-                                  ProcessUpgrade.ToReleaseNumber),
+                                  Constants.PerRelease.FromReleaseNumber,
+                                  Constants.PerRelease.ToReleaseNumber),
                     BuildMainContentStep());
 
             AddStep(Resources.ReleaseAllTitleSyncWebFiles,
@@ -164,39 +163,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
                     Resources.ReleaseAllDescSyncAccpacLibs,
                     string.Format(Resources.ReleaseAllSyncAccpacLibs,
-                                  ProcessUpgrade.FromAccpacNumber,
-                                  ProcessUpgrade.ToAccpacNumber));
+                                  Constants.PerRelease.FromAccpacNumber,
+                                  Constants.PerRelease.ToAccpacNumber));
             #endregion
 
             #region Release Specific Steps...
 
-            // 2018.2 : Automatic Source Code changes 
-            AddStep(Resources.ReleaseSpecificTitleUpdateSourceCode,
-                Resources.ReleaseSpecificDescUpdateSourceCode,
-                Resources.ReleaseSpecificUpdateSourceCode);
+            // 2019.0 : Consolidate Enumerations
+            AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
+                    Resources.ReleaseSpecificDescConsolidateEnumerations,
+                    string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
+                                  Constants.PerRelease.FromReleaseNumber,
+                                  Constants.PerRelease.ToReleaseNumber));
 
-			// 2018.2 : Update the XXMenuDetails.xml file
-			AddStep(Resources.ReleaseSpecificTitleUpdateMenuDetails,
-				Resources.ReleaseSpecificDescUpdateMenuDetails,
-				Resources.ReleaseSpecificUpdateMenuDetails);
+            #endregion
 
-			// 2018.2 : Post Build Event command
-			AddStep(Resources.ReleaseSpecificTitleUpdatePostBuildEvent,
-                    Resources.ReleaseSpecificDescUpdatePostBuildEvent,
-                    string.Format(Resources.ReleaseSpecificUpdatePostBuildEvent,
-                                  ProcessUpgrade.FromReleaseNumber,
-                                  ProcessUpgrade.ToReleaseNumber));
+            #region Common for all upgrades - content specific to release
 
-			// 2018.2 : Manual Source Code changes 
-			AddStep(Resources.ReleaseSpecificTitleUpdateSourceCodeManually,
-				Resources.ReleaseSpecificDescUpdateSourceCodeManually,
-				Resources.ReleaseSpecificUpdateSourceCodeManually);
-
-			#endregion
-
-			#region Common for all upgrades - content specific to release
-
-			AddStep(Resources.ReleaseAllTitleConfirmation,
+            AddStep(Resources.ReleaseAllTitleConfirmation,
                     Resources.ReleaseAllDescConfirmation,
                     Resources.ReleaseAllUpgrade);
 
@@ -204,7 +188,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     Resources.ReleaseAllDescRecompile,
                     string.Format(Resources.ReleaseAllUpgraded,
                                   Resources.ShowLog,
-                                  ProcessUpgrade.ToReleaseNumber));
+                                  Constants.PerRelease.ToReleaseNumber));
             #endregion
 
             // Display first step
@@ -225,13 +209,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
             // Specific to release
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCode}");
-			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMenuDetails}");
-			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdatePostBuildEvent}");
-			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateSourceCodeManually}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 
-			// Same for all upgrades
-			content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
+            // Same for all upgrades
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleRecompile}");
             content.AppendLine("");
             content.AppendLine(Resources.EnsureBackup);
@@ -337,7 +318,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 // Show the log
                 if (_currentWizardStep.Equals(_wizardSteps.Count - 1))
                 {
-                    var logPath = Path.Combine(_destinationFolder, ProcessUpgrade.LogFileName);
+                    var logPath = Path.Combine(_destinationFolder, Constants.Common.LogFileName);
                     System.Diagnostics.Process.Start(logPath);
                     return;
                 }
@@ -386,7 +367,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </summary>
         private void WriteLogFile()
         {
-            var logFilePath = Path.Combine(_destinationFolder, ProcessUpgrade.LogFileName);
+            var logFilePath = Path.Combine(_destinationFolder, Constants.Common.LogFileName);
             File.WriteAllText(logFilePath, _log.ToString());
         }
 

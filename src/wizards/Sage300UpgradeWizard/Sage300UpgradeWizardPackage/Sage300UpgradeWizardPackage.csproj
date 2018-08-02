@@ -97,9 +97,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sage300MenuExt\Sage300MenuExt.csproj">
+    <ProjectReference Include="..\Sage300UpgradeWizardMenuExtension\Sage300UpgradeWizardMenuExtension.csproj">
       <Project>{0b06ed0e-c402-48a1-8d09-2a30ab8ed25e}</Project>
-      <Name>Sage300MenuExt</Name>
+      <Name>Sage300UpgradeWizardMenuExtension</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>VSIXContainerProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,0 @@
-﻿Update the menu icon and background images
-
-This step will update the following file:
-
-* Web\[ModuleID]MenuDetails.xml

@@ -1,5 +1,0 @@
-﻿Javascript bundling has changed slightly in this release.
-
-This step will update the following file:
-
-* Web\BundleRegistration.cs
