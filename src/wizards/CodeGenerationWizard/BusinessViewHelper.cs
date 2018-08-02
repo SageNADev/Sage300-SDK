@@ -18,12 +18,14 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -32,12 +34,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// </summary>
     public static class BusinessViewHelper
     {
+        #region Private Enummeration(s)
+        private enum MethodSignatureEnum
+        {
+            RegisterController = 0,
+            RegisterFinder = 1,
+            RegisterExportImportController = 2
+        }
+        #endregion
+
         #region Private Constants
-
-        private const string TabTwo = "\t\t";
-        private const string TabThree = "\t\t\t";
-        private const string TabFour = "\t\t\t\t";
-
+        private struct Constants
+        {
+            public const string TabTwo = "\t\t";
+            public const string TabThree = "\t\t\t";
+            public const string TabFour = "\t\t\t\t";
+            public const string WebBootstrapperFilenameBase = "WebBootstrapper.cs";
+            public const int NotFoundInList = -1;
+        }
         #endregion
 
         #region Public Methods
@@ -49,14 +63,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void UpdateFlatBootStrappers(BusinessView view, Settings settings)
         {
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
-                UpdateWebBootStrapper(view, settings);
-            }
-            if (view.Options[BusinessView.GenerateFinder])
-            {
-                UpdateWebBootStrapperForFinder(view, settings);
-            }
+            // Get the flags
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var generateFinder = view.Options[BusinessView.GenerateFinder];
+
+            if (generateClientFiles || generateFinder) { UpdateWebBootStrapperNamespaces(view, settings); }
+            if (generateClientFiles) { UpdateWebBootStrapper(view, settings); }
+            if (generateFinder) { UpdateWebBootStrapperForFinder(view, settings); }
 
             UpdateBootStrapper(view, settings);
         }
@@ -97,13 +110,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var scriptBase = settings.CompanyNamespace;
 
             const string tag = "internal static void RegisterBundles(BundleCollection bundles)";
-            var textlineToAdded = string.Format(TabThree + @"#region {0}" + "\r\n" +
-                                                TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
-                                                TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
-                                                TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
-                                                TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
-                                                TabFour + @"""~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js""));" + "\r\n" +
-                                                TabThree + @"#endregion" + "\r\n", entityName, moduleId, scriptBase);
+            var textlineToAdded = string.Format(BusinessViewHelper.Constants.TabThree + @"#region {0}" + "\r\n" +
+                                                BusinessViewHelper.Constants.TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
+                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
+                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
+                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
+                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js""));" + "\r\n" +
+                                                BusinessViewHelper.Constants.TabThree + @"#endregion" + "\r\n", entityName, moduleId, scriptBase);
 
             if (File.Exists(bundleFile))
             {
@@ -177,7 +190,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.EntityName];
             var pathBusinessRepository = settings.Projects[ProcessGeneration.BusinessRepositoryKey][moduleId].ProjectFolder;
             var filePath = Path.Combine(pathBusinessRepository, @"Security\Security.cs");
-            var f = Environment.NewLine + TabTwo;
+            var f = Environment.NewLine + BusinessViewHelper.Constants.TabTwo;
             var commentLine = f + "/// <summary>" + f + "/// Security resourceID for " + moduleId + " " + entityName + f + "/// </summary>" + Environment.NewLine;
             var constName = moduleId + entityName;
             var constLine = f + "public const string " + constName + " = \"" + constName.ToUpper() + "\";" + Environment.NewLine;
@@ -316,7 +329,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     newString = "Num" + newString;
                 }
-
             }
 
             if (string.CompareOrdinal(newString, "OptionalFields") == 0)
@@ -420,7 +432,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #region Private Methods
         /// <summary>
-        /// Register types for controller/Finder/ImportExport
+        /// Register types for controller/ImportExport
         /// </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">Settings</param>
@@ -431,59 +443,150 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
 
+            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filePath = Path.Combine(pathProj, filename);
+            if (File.Exists(filePath))
+            {
+                var pos = 1;
+
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
+
+                // Insert the Method signatures and bodies
+                InsertMethods(entityName, moduleId, modelName, trimLines, ref txtLines, pos);
+
+                // Write out the file changes
+                File.WriteAllLines(filePath, txtLines);
+            }
+        }
+
+        /// <summary>
+        /// Update the namespaces
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="settings">Settings</param>
+        private static void UpdateWebBootStrapperNamespaces(BusinessView view, Settings settings)
+        {
+            var moduleId = view.Properties[BusinessView.ModuleId];
+            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
             var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName;
 
-            var bsName = moduleId + "WebBootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
-            if (File.Exists(bsFile))
+            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filePath = Path.Combine(pathProj, filename);
+            if (File.Exists(filePath))
             {
-                const string register = "\t\t\tUnityUtil.RegisterType";
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
-                var txtLines = File.ReadAllLines(bsFile).ToList();
                 var pos = 1;
 
-                string[] nameSpace =
-                {
-                    "using " + modelProjNs + ";" ,
-                    "using " + webProjNs + ".Areas." + moduleId + ".Controllers;",
-                    "using " + webProjNs + ".Areas." + moduleId + ".Controllers.Finder;"
-                };
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
 
-                for (var i = 0; i <= 2; i++)
-                {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
-                    {
-                        txtLines.Insert(++pos, nameSpace[i]);
-                    }
-                }
+                // Insert the 'using namespace...' lines
+                InsertNamespaces(modelProjNs, webProjNs, moduleId, trimLines, ref txtLines, ref pos);
 
-                string[] tags =
-                {
-                    @"private void RegisterController(IUnityContainer container)",
-                    @"private void RegisterFinder(IUnityContainer container)",
-                    @"private void RegisterExportImportController(IUnityContainer container)"
-                };
-                string[] linesToAdded =
-                {
-                    string.Format(register + "<IController, {0}Controller<{2}>>(container, \"{1}{0}\");", entityName, moduleId, modelName),
-                    string.Format(register + "<IFinder, Find{0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", entityName, moduleId.ToLower(), entityName.ToLower(), modelName),
-                    string.Format(register + "<IExportImportController, {0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));",entityName, moduleId.ToLower(), entityName.ToLower(), modelName)
-                };
-
-                for (var i = 0; i <= 2; i++)
-                {
-                    if (!view.Options[BusinessView.GenerateFinder] && i == 1)
-                    {
-                        pos--;
-                        continue;
-                    }
-                    var index = trimLines.IndexOf(tags[i]) + 1 + i + pos;
-                    txtLines.Insert(index, linesToAdded[i]);
-                }
-                File.WriteAllLines(bsFile, txtLines);
+                // Write out the file changes
+                File.WriteAllLines(filePath, txtLines);
             }
         }
+
+        /// <summary>
+        /// Create the two working List of strings</string>
+        /// </summary>
+        /// <param name="allLines">The array of strings</param>
+        /// <param name="trimLines">The output List of strings (beginning and end whitespace removed from each line)</param>
+        /// <param name="txtLines">The output List of strings</param>
+        private static void MakeLists(string filepath, out List<string> trimLines, out List<string> txtLines)
+        {
+            var allLines = File.ReadAllLines(filepath);
+            trimLines = allLines.Select(l => l.Trim()).ToList();
+            txtLines = allLines.ToList();
+        }
+
+        /// <summary>
+        /// Insert the namespace lines
+        /// </summary>
+        /// <param name="modelProjectNS">The model project namespace</param>
+        /// <param name="webProjectNS">The web project namespace</param>
+        /// <param name="moduleId">The module ID</param>
+        /// <param name="trimLines">The List<String> of lines</param>
+        /// <param name="txtLines">The working mutating buffer of text lines</param>
+        /// <param name="currentPosition">The current index within the working mutating buffer</param>
+        private static void InsertNamespaces(string modelProjectNS, 
+                                             string webProjectNS, 
+                                             string moduleId, 
+                                             List<string> trimLines, 
+                                             ref List<string> txtLines,
+                                             ref int currentPosition)
+        {
+            string[] namespaces =
+            {
+                    "using " + modelProjectNS + ";" ,
+                    "using " + webProjectNS + ".Areas." + moduleId + ".Controllers;",
+                    "using " + webProjectNS + ".Areas." + moduleId + ".Controllers.Finder;"
+                };
+
+            for (var i = 0; i < namespaces.Length; i++)
+            {
+                if (trimLines.IndexOf(namespaces[i]) < 0)
+                {
+                    // Insert the namespace line only if it doesn't yet exist
+                    txtLines.Insert(++currentPosition, namespaces[i]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Insert the necessary methods
+        /// </summary>
+        /// <param name="entityName">The Entity name as a string</param>
+        /// <param name="moduleId">The module ID as a string</param>
+        /// <param name="modelName">The model name as a string</param>
+        /// <param name="trimLines">The List of strings representing the lines in the file</param>
+        /// <param name="txtLines">The mutable list of strings representing the lines in the file (start and end whitespace removed)</param>
+        /// <param name="currentPosition">The current position in the list of strings as an integer</param>
+        private static void InsertMethods(string entityName, 
+                                          string moduleId, 
+                                          string modelName, 
+                                          List<string> trimLines, 
+                                          ref List<string>txtLines, 
+                                          int currentPosition)
+        {
+            const string register = "\t\t\tUnityUtil.RegisterType";
+
+            string[] methodSignatures =
+            {
+                @"private void RegisterController(IUnityContainer container)",
+                @"private void RegisterExportImportController(IUnityContainer container)"
+            };
+
+            string[] linesToAdd =
+            {
+                string.Format(register + "<IController, {0}Controller<{2}>>(container, \"{1}{0}\");", 
+                              entityName, moduleId, modelName),
+                string.Format(register + "<IExportImportController, {0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));",
+                              entityName, moduleId.ToLower(), entityName.ToLower(), modelName)
+            };
+
+            for (var i = 0; i < methodSignatures.Length; i++)
+            {
+                var lineToAdd = linesToAdd[i];
+                var methodSignature = methodSignatures[i];
+                var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                var insertionIndex = methodSignatureIndex + 1 + i + currentPosition;
+
+                // Need to remove the tabs '\t' before doing the lookup.
+                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                {
+                    // Line was not found so we will now insert it.
+                    txtLines.Insert(insertionIndex, linesToAdd[i]);
+                }
+            }
+        }
+
         /// <summary>
         /// Register types for Finder
         /// </summary>
@@ -496,41 +599,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
 
-            var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
-            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName;
-
-            var bsName = moduleId + "WebBootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
-            if (File.Exists(bsFile))
+            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filePath = Path.Combine(pathProj, filename);
+            if (File.Exists(filePath))
             {
-                const string register = "\t\t\tUnityUtil.RegisterType";
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
-                var txtLines = File.ReadAllLines(bsFile).ToList();
                 var pos = 1;
 
-                string[] nameSpace =
-                {
-                    "using " + modelProjNs + ";" ,
-                    "using " + webProjNs + ".Areas." + moduleId + ".Controllers;",
-                    "using " + webProjNs + ".Areas." + moduleId + ".Controllers.Finder;"
-                };
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
 
-                for (var i = 0; i <= 2; i++)
+                string methodSignature = @"private void RegisterFinder(IUnityContainer container)";
+                const string register = "\t\t\tUnityUtil.RegisterType";
+                var lineToAdd = string.Format(register + "<IFinder, Find{0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", 
+                                               entityName, moduleId.ToLower(), entityName.ToLower(), modelName);
+
+                var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                var insertionIndex = methodSignatureIndex + 1 + pos;
+
+                // Need to remove the tabs '\t' before doing the lookup.
+                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
                 {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
-                    {
-                        txtLines.Insert(++pos, nameSpace[i]);
-                    }
+                    // Line was not found so we will now insert it.
+                    txtLines.Insert(insertionIndex, lineToAdd);
                 }
 
-                string tags = @"private void RegisterFinder(IUnityContainer container)";
-                
-                var linesToAdded = string.Format(register + "<IFinder, Find{0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", entityName, moduleId.ToLower(), entityName.ToLower(), modelName);
-
-                var index = trimLines.IndexOf(tags) + 1 + pos;
-                txtLines.Insert(index, linesToAdded);
-
-                File.WriteAllLines(bsFile, txtLines);
+                File.WriteAllLines(filePath, txtLines);
             }
         }
 
@@ -549,16 +644,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName;
 
-            var bsName = moduleId + "WebBootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
-            if (File.Exists(bsFile))
+            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filePath = Path.Combine(pathProj, filename);
+            if (File.Exists(filePath))
             {
-                const string register = "\t\t\tUnityUtil.RegisterType";
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
-                var txtLines = File.ReadAllLines(bsFile).ToList();
                 var pos = 1;
 
-                string[] nameSpace =
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
+
+                string[] namespaces =
                 {
                     "using " + modelProjNs + ";" ,
                     "using " + webProjNs + ".Areas." + moduleId + ".Controllers;",
@@ -566,33 +663,45 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     "using " + settings.Projects[ProcessGeneration.InterfacesKey][moduleId].ProjectName + ".BusinessRepository;"
                 };
 
-                for (var i = 0; i < nameSpace.Count(); i++)
+                for (var i = 0; i < namespaces.Length; i++)
                 {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    if (trimLines.IndexOf(namespaces[i]) < 0)
                     {
-                        txtLines.Insert(++pos, nameSpace[i]);
+                        txtLines.Insert(++pos, namespaces[i]);
                     }
                 }
 
-                string[] tags =
+                string[] methodSignatures =
                 {
                     @"private void RegisterController(IUnityContainer container)",
                     @"private void RegisterExportImportController(IUnityContainer container)"
                 };
-                string[] linesToAdded =
+
+                const string register = "\t\t\tUnityUtil.RegisterType";
+                string[] linesToAdd =
                 {
                     string.Format(register + "<IController, {0}Controller>(container, \"{1}{0}\");", settings.EntitiesContainerName, moduleId),
                     string.Format(register + "<IExportImportController, ImportExportControllerInternal<I{0}Repository>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", settings.EntitiesContainerName, moduleId.ToLower(), settings.EntitiesContainerName.ToLower())
                 };
 
-                for (var i = 0; i < tags.Count(); i++)
+                for (var i = 0; i < methodSignatures.Length; i++)
                 {
-                    var index = trimLines.IndexOf(tags[i]) +  i + pos + 1;
-                    txtLines.Insert(index, linesToAdded[i]);
+                    var lineToAdd = linesToAdd[i];
+                    var methodSignature = methodSignatures[i];
+                    var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                    var insertionIndex = methodSignatureIndex + i + pos + 1;
+
+                    // Need to remove the tabs '\t' before doing the lookup.
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                    {
+                        // Line was not found so we will now insert it.
+                        txtLines.Insert(insertionIndex, lineToAdd);
+                    }
                 }
-                File.WriteAllLines(bsFile, txtLines);
+                File.WriteAllLines(filePath, txtLines);
             }
         }
+
         /// <summary>
         /// Register types for service/repository
         /// </summary>
@@ -604,37 +713,45 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.EntityName];
             var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
-            var bsName = moduleId + "Bootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
+            var filename = moduleId + "Bootstrapper.cs";
+            var filePath = Path.Combine(pathProj, filename);
 
-            if (File.Exists(bsFile))
+            if (File.Exists(filePath))
             {
                 var register = "\t\t\tUnityUtil.RegisterType";
-                string tags = @"private void RegisterService(IUnityContainer container)";
-                string linesToAdded = string.Format(register + "<I{0}Repository, {0}Repository>(container);", settings.EntitiesContainerName, settings.EntitiesContainerName);
+                string methodSignature = @"private void RegisterService(IUnityContainer container)";
+                string lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", settings.EntitiesContainerName, settings.EntitiesContainerName);
 
-                string[] nameSpace =
+                string[] namespaces =
                 {
                     "using " + settings.CompanyNamespace + "." + moduleId + ".BusinessRepository;",
                     "using " +  settings.CompanyNamespace + "." + moduleId + ".Interfaces.BusinessRepository;"
                 };
 
-                var txtLines = File.ReadAllLines(bsFile).ToList();
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
 
-                for (var i = 0; i < nameSpace.Count(); i++)
+                for (var i = 0; i < namespaces.Length; i++)
                 {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    if (trimLines.IndexOf(namespaces[i]) < 0)
                     {
-                        txtLines.Insert(2, nameSpace[i]);
+                        txtLines.Insert(2, namespaces[i]);
                     }
                 }
 
+                var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                var insertionIndex = methodSignatureIndex + 2;
 
-                var index = trimLines.IndexOf(tags) + 2;
-                txtLines.Insert(index + 2, linesToAdded);
+                // Need to remove the tabs '\t' before doing the lookup.
+                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                {
+                    // Line was not found so we will now insert it.
+                    txtLines.Insert(insertionIndex + 2, lineToAdd);
+                }
 
-                File.WriteAllLines(bsFile, txtLines);
+                File.WriteAllLines(filePath, txtLines);
             }
         }
 
@@ -649,19 +766,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.EntityName];
             var modelName = view.Properties[BusinessView.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
-            var bsName = moduleId + "Bootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
+            var filename = moduleId + "Bootstrapper.cs";
+            var filePath = Path.Combine(pathProj, filename);
 
-            if (File.Exists(bsFile))
+            //const int RegisterServiceMethodIndex = 0;
+            const int RegisterRepositoriesMethodIndex = 1;
+
+            if (File.Exists(filePath))
             {
-                var register = "\t\t\tUnityUtil.RegisterType";
-                string[] tags =
+                string[] methodSignatures =
                 {
                     @"private void RegisterService(IUnityContainer container)",
                     @"private void RegisterRepositories(IUnityContainer container)",
                 };
 
-                string[] linesToAdded =
+                var register = "\t\t\tUnityUtil.RegisterType";
+                string[] linesToAdd =
                 {
                     string.Format(register + "<Interfaces.Services.I{0}Service<Models.{1}>, {0}EntityService<Models.{1}>>(container);",entityName, modelName),
                     string.Format(register + "<IExportImportRepository, BusinessRepository.{2}Repository<Models.{3}>>(container, \"{1}{0}\", new InjectionConstructor(typeof(Context)));", entityName.ToLower(), moduleId.ToLower(), entityName, modelName),
@@ -669,19 +789,47 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     string.Format(register + "(container, typeof(Interfaces.BusinessRepository.I{0}Entity<Models.{1}>), typeof(BusinessRepository.{0}Repository<Models.{1}>), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
                 };
 
-                var txtLines = File.ReadAllLines(bsFile).ToList();
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
-                for (var i = 0; i < 2; i++)
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
+
+                for (var i = 0; i < methodSignatures.Length; i++)
                 {
-                    var index = trimLines.IndexOf(tags[i]) + 2 + i;
-                    txtLines.Insert(index, linesToAdded[i]);
-                    if (i == 1)
+                    var methodSignature = methodSignatures[i];
+                    var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                    var insertionIndex = methodSignatureIndex + 2 + i;
+                    var lineToAdd = linesToAdd[i];
+
+                    // Need to remove the tabs '\t' before doing the lookup.
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
                     {
-                        txtLines.Insert(++index, linesToAdded[2]);
-                        txtLines.Insert(++index, linesToAdded[3]);
+                        // Line was not found so we will now insert it.
+                        txtLines.Insert(insertionIndex, lineToAdd);
+                    }
+
+                    if (i == RegisterRepositoriesMethodIndex)
+                    {
+                        lineToAdd = linesToAdd[2];
+
+                        // Need to remove the tabs '\t' before doing the lookup.
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        {
+                            // Line was not found so we will now insert it.
+                            txtLines.Insert(++insertionIndex, lineToAdd);
+                        }
+
+                        lineToAdd = linesToAdd[3];
+
+                        // Need to remove the tabs '\t' before doing the lookup.
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        {
+                            // Line was not found so we will now insert it.
+                            txtLines.Insert(++insertionIndex, lineToAdd);
+                        }
                     }
                 }
-                File.WriteAllLines(bsFile, txtLines);
+                File.WriteAllLines(filePath, txtLines);
             }
         }
 
@@ -700,16 +848,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
 
-            var bsName = moduleId + "WebBootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
-            if (File.Exists(bsFile))
+            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filePath = Path.Combine(pathProj, filename);
+            if (File.Exists(filePath))
             {
-                const string register = "\t\t\tUnityUtil.RegisterType";
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
-                var txtLines = File.ReadAllLines(bsFile).ToList();
                 var pos = 1;
 
-                string[] nameSpace =
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
+
+                string[] namespaces =
                 {
                     "using " + modelProjNs + ";" ,
                     "using " + webProjNs + ".Areas." + moduleId + ".Controllers.Process;",
@@ -717,27 +867,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 for (var i = 0; i <= 1; i++)
                 {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    if (trimLines.IndexOf(namespaces[i]) < 0)
                     {
-                        txtLines.Insert(++pos, nameSpace[i]);
+                        txtLines.Insert(++pos, namespaces[i]);
                     }
                 }
 
-                string[] tags =
+                string[] methodSignatures =
                 {
                     @"private void RegisterController(IUnityContainer container)",
                 };
-                string[] linesToAdded =
+
+                const string register = "\t\t\tUnityUtil.RegisterType";
+                string[] linesToAdd =
                 {
                     string.Format(register + "<IController, {0}Controller<{2}>>(container, \"{1}{0}\");", entityName, moduleId, modelName)
                 };
 
                 for (var i = 0; i <= 0; i++)
                 {
-                    var index = trimLines.IndexOf(tags[i]) + 1 + i + pos;
-                    txtLines.Insert(index, linesToAdded[i]);
+                    var lineToAdd = linesToAdd[i];
+                    var methodSignature = methodSignatures[i];
+                    var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                    var insertionIndex = methodSignatureIndex + 1 + i + pos;
+
+                    // Need to remove the tabs '\t' before doing the lookup.
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                    {
+                        // Line was not found so we will now insert it.
+                        txtLines.Insert(insertionIndex, lineToAdd);
+                    }
                 }
-                File.WriteAllLines(bsFile, txtLines);
+
+                File.WriteAllLines(filePath, txtLines);
             }
         }
 
@@ -758,17 +920,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
             var servicesProjNs = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectName + ".Process";
 
-            var bsName = moduleId + "Bootstrapper.cs";
-            var bsFile = Path.Combine(pathProj, bsName);
+            var filename = moduleId + "Bootstrapper.cs";
+            var filePath = Path.Combine(pathProj, filename);
 
-            if (File.Exists(bsFile))
+            const int RegisterServiceMethodIndex = 0;
+            const int RegisterRepositoriesMethodIndex = 1;
+
+            if (File.Exists(filePath))
             {
-                var register = "\t\t\tUnityUtil.RegisterType";
-                var txtLines = File.ReadAllLines(bsFile).ToList();
-                var trimLines = (File.ReadAllLines(bsFile)).Select(l => l.Trim()).ToList();
                 var pos = 1;
 
-                string[] nameSpace =
+                // Load the file and make the working lists
+                MakeLists(filePath,
+                          out List<string> trimLines,
+                          out List<string> txtLines);
+
+                string[] namespaces =
                 {
                     "using " + businessProjNs + ";",
                     "using " + interfacesProjNs + ".BusinessRepository.Process;",
@@ -777,47 +944,70 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     "using " + servicesProjNs + ";"
                 };
 
-                for (var i = 0; i <= 4; i++)
+                for (var i = 0; i < namespaces.Length; i++)
                 {
-                    if (trimLines.IndexOf(nameSpace[i]) < 0)
+                    if (trimLines.IndexOf(namespaces[i]) < 0)
                     {
-                        txtLines.Insert(++pos, nameSpace[i]);
+                        txtLines.Insert(++pos, namespaces[i]);
                     }
                 }
 
-                string[] tags =
+                string[] methodSignatures =
                 {
                     @"private void RegisterService(IUnityContainer container)",
                     @"private void RegisterRepositories(IUnityContainer container)"
                 };
 
-                string[] linesToAdded =
+                var register = "\t\t\tUnityUtil.RegisterType";
+                string[] linesToAdd =
                 {
                     string.Format(register + "<I{0}Service<{1}>, {0}Service<{1}>>(container);", entityName, modelName),
                     string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));", entityName, modelName),
                     string.Format(register + "<I{0}Entity<{1}>, {0}Repository<{1}>>(container, UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));", entityName, modelName)
                 };
 
-
-
-                for (var i = 0; i < 2; i++)
+                for (var i = 0; i < methodSignatures.Length; i++)
                 {
-                    var index = trimLines.IndexOf(tags[i]) + pos + i;
-                    if (i == 0)
+                    var methodSignature = methodSignatures[i];
+                    var methodSignatureIndex = trimLines.IndexOf(methodSignature);
+                    var insertionIndex = methodSignatureIndex + pos + i;
+
+                    if (i == RegisterServiceMethodIndex)
                     {
-                        index = index + 2;
-                        txtLines.Insert(index, linesToAdded[i]);
+                        insertionIndex += 2;
+                        var lineToAdd = linesToAdd[i];
+
+                        // Need to remove the tabs '\t' before doing the lookup.
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        {
+                            // Line was not found so we will now insert it.
+                            txtLines.Insert(insertionIndex, lineToAdd);
+                        }
                     }
-                    else
+                    else if (i == RegisterRepositoriesMethodIndex)
                     {
-                        txtLines.Insert(++index, linesToAdded[1]);
-                        txtLines.Insert(++index, linesToAdded[2]);
+                        var lineToAdd = linesToAdd[1];
+
+                        // Need to remove the tabs '\t' before doing the lookup.
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        {
+                            // Line was not found so we will now insert it.
+                            txtLines.Insert(++insertionIndex, lineToAdd);
+                        }
+
+                        lineToAdd = linesToAdd[2];
+
+                        // Need to remove the tabs '\t' before doing the lookup.
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        {
+                            // Line was not found so we will now insert it.
+                            txtLines.Insert(++insertionIndex, lineToAdd);
+                        }
                     }
                 }
-                File.WriteAllLines(bsFile, txtLines);
+                File.WriteAllLines(filePath, txtLines);
             }
         }
-
         #endregion
     }
 }

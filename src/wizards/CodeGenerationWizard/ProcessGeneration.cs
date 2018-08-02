@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using ACCPAC.Advantage;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using System;
@@ -28,6 +29,7 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using View = ACCPAC.Advantage.View;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -966,9 +968,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Create the Model class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + ".cs",
-                TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
-                ModelsKey, SubFolderModelKey);
+                            view.Properties[BusinessView.EntityName] + ".cs",
+                            TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
+                            ModelsKey, SubFolderModelKey);
             }
 
             // Create the Model Mapper class. 
@@ -978,45 +980,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
                 {
                     CreateClass(view,
-                        view.Properties[BusinessView.EntityName] + "Mapper.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
+                                view.Properties[BusinessView.EntityName] + "Mapper.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
+                                BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
                 }
             }
 
             // Create the Model Fields class
             {
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Fields.cs",
-                TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
-                ModelsKey, SubFolderModelFieldsKey);
+                            view.Properties[BusinessView.EntityName] + "Fields.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
+                            ModelsKey, SubFolderModelFieldsKey);
             }
 
             if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                // Create _Index.cshtml
                 if (view.Options[BusinessView.GenerateClientFiles])
                 {
                     if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
                     {
+                        // Create _Index.cshtml
                         var indexTemplate = "Templates.Common.View.Index";
                         if (_settings.RepositoryType.Equals(RepositoryType.Process))
                         {
                             indexTemplate = "Templates.Process.View.Index";
                         }
-
                         CreateClass(view,
-                            "Index.cshtml",
-                            TransformTemplateToText(view, _settings, indexTemplate),
-                            WebKey, SubFolderWebIndexKey);
-                    }
-                }
+                                    "Index.cshtml",
+                                    TransformTemplateToText(view, _settings, indexTemplate),
+                                    WebKey, SubFolderWebIndexKey);
 
-                // Create _Localization.cshtml
-                if (view.Options[BusinessView.GenerateClientFiles])
-                {
-                    if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
-                    {
+
+                        // Create _Localization.cshtml
                         var localizationTemplate = "Templates.Common.View.Localization";
                         if (_settings.RepositoryType.Equals(RepositoryType.Process))
                         {
@@ -1024,12 +1020,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         }
 
                         CreateClass(view,
-                            "_Localization.cshtml",
-                            TransformTemplateToText(view, _settings, localizationTemplate),
-                            WebKey, SubFolderWebLocalizationKey);
+                                    "_Localization.cshtml",
+                                    TransformTemplateToText(view, _settings, localizationTemplate),
+                                    WebKey, SubFolderWebLocalizationKey);
                     }
                 }
             }
+
             // TODO Single Enum file check and logic here
 
             if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
@@ -1041,9 +1038,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     _settings.EnumHelper = value;
 
                     CreateClass(view,
-                        value.Name + ".cs",
-                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
-                        ModelsKey, SubFolderModelEnumsKey);
+                                value.Name + ".cs",
+                                TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
+                                ModelsKey, SubFolderModelEnumsKey);
                 }
             }
 
@@ -1083,9 +1080,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (view.Options[BusinessView.GenerateFinder])
             {
                 CreateClass(view,
-                    "Find" + view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
-                    TransformTemplateToText(view, _settings, "Templates.Common.Class.Finder"),
-                    WebKey, SubFolderWebFinderKey);
+                            "Find" + view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Common.Class.Finder"),
+                            WebKey, SubFolderWebFinderKey);
             }
 
             if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
@@ -1140,77 +1137,74 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private void CreateFlatRepositoryClasses(BusinessView view)
         {
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.EntityName];
+
             // Create the Business Repository Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Entity.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        "I" + entityName + "Entity.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
 
             // Create the Service Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.ServiceInterface"),
-                InterfacesKey, SubFolderInterfacesServicesKey);
+                        "I" + entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.ServiceInterface"),
+                        InterfacesKey, SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "EntityService.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Service"),
-                ServicesKey, SubFolderServicesKey);
+                        entityName + "EntityService.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.Service"),
+                        ServicesKey, SubFolderServicesKey);
 
-            // Create the ViewModel class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the ViewModel class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ViewModel.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
-            }
+                            entityName + "ViewModel.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
+                            WebKey, SubFolderWebViewModelKey);
 
-            // Create the Internal Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the Internal Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.InternalController"),
-                WebKey, SubFolderWebControllersKey);
-            }
+                            entityName + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.InternalController"),
+                            WebKey, SubFolderWebControllersKey);
 
-            // Create the public Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the public Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Controller.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
-                WebKey, SubFolderWebControllersKey);
+                            entityName + "Controller.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
+                            WebKey, SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Repository.cs",
-                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Repository"),
-                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        entityName + "Repository.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
-                var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
+                var fileName = "_" + entityName + ".cshtml";
                 CreateClass(view,
-                    fileName,
-                    TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
-                    WebKey, SubFolderWebLocalizationKey);
+                            fileName,
+                            TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
+                            WebKey, SubFolderWebLocalizationKey);
             }
 
             // Register types
             BusinessViewHelper.UpdateFlatBootStrappers(view, _settings);
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
             }
 
             // set the start page
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 BusinessViewHelper.CreateViewPageUrl(view, _settings);
             }
@@ -1219,29 +1213,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             BusinessViewHelper.UpdateMenuDetails(view, _settings);
 
             // For javascript files, the project name does not include the .Web segment
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 var projectName =
                 _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
                 // Create the Behavior JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
-                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
-                    WebKey, SubFolderWebScriptsKey);
+                            projectName + "." + entityName + "Behaviour.js",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
+                            WebKey, SubFolderWebScriptsKey);
 
                 // Create the Knockout Extension JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
-                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
-                    WebKey, SubFolderWebScriptsKey);
+                            projectName + "." + entityName + "KoExtn.js",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
+                            WebKey, SubFolderWebScriptsKey);
 
                 // Create the Repository JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
-                    TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
-                    WebKey, SubFolderWebScriptsKey);
-
+                            projectName + "." + entityName + "Repository.js",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
+                            WebKey, SubFolderWebScriptsKey);
             }
         }
 
@@ -1252,42 +1245,45 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">settings</param>
         private void CreateHeaderDetailRepositoryClasses(BusinessView headerView, Settings settings)
         {
+            var containerName = settings.EntitiesContainerName;
+
             // Create the Business Repository Interface class
-            CreateClass(headerView, "I" + settings.EntitiesContainerName + "Repository.cs",
-                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+            CreateClass(headerView, 
+                        "I" + containerName + "Repository.cs",
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Repository class
             CreateClass(headerView,
-                settings.EntitiesContainerName + "Repository.cs",
-                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Repository"),
-                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        containerName + "Repository.cs",
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create the ViewModel class
             CreateClass(headerView,
-                settings.EntitiesContainerName + "ViewModel.cs",
-                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
+                        containerName + "ViewModel.cs",
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.ViewModel"),
+                        WebKey, SubFolderWebViewModelKey);
 
             // Create the public Controller class
             CreateClass(headerView,
-            settings.EntitiesContainerName + "Controller.cs",
-            TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Controller"),
-            WebKey, SubFolderWebControllersKey);
+                        containerName + "Controller.cs",
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Controller"),
+                        WebKey, SubFolderWebControllersKey);
 
 
             // Create the Internal Controller class
             CreateClass(headerView,
-                settings.EntitiesContainerName + "ControllerInternal.cs",
-                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.InternalController"),
-                WebKey, SubFolderWebControllersKey);
+                        containerName + "ControllerInternal.cs",
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.InternalController"),
+                        WebKey, SubFolderWebControllersKey);
 
             // Create partial view.cshtml
-            var fileName = "_" + settings.EntitiesContainerName + ".cshtml";
+            var fileName = "_" + containerName + ".cshtml";
             CreateClass(headerView,
-                fileName,
-                TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
-                WebKey, SubFolderWebLocalizationKey);
+                        fileName,
+                        TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
+                        WebKey, SubFolderWebLocalizationKey);
 
             // Register types
             BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
@@ -1309,54 +1305,54 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Behavior JavaScript file
             CreateClass(headerView,
-                projectName + "." + settings.EntitiesContainerName + "Behaviour.js",
-                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
-                WebKey, SubFolderWebScriptsKey);
+                        projectName + "." + containerName + "Behaviour.js",
+                        TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
+                        WebKey, SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(headerView,
-                projectName + "." + settings.EntitiesContainerName + "KoExtn.js",
-                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.KoExtn"),
-                WebKey, SubFolderWebScriptsKey);
+                        projectName + "." + containerName + "KoExtn.js",
+                        TransformTemplateToText(headerView, settings, "Templates.Flat.Script.KoExtn"),
+                        WebKey, SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(headerView,
-                projectName + "." + settings.EntitiesContainerName + "Repository.js",
-                TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Repository"),
-                WebKey, SubFolderWebScriptsKey);
+                        projectName + "." + containerName + "Repository.js",
+                        TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Repository"),
+                        WebKey, SubFolderWebScriptsKey);
 
             // Create _Index.cshtml
             CreateClass(headerView,
-                "Index.cshtml",
-                TransformTemplateToText(headerView, settings, "Templates.Common.View.Index"),
-                WebKey, SubFolderWebIndexKey);
+                        "Index.cshtml",
+                        TransformTemplateToText(headerView, settings, "Templates.Common.View.Index"),
+                        WebKey, SubFolderWebIndexKey);
 
             // Create _Localization.cshtml
             var localizationTemplate = "Templates.Common.View.Localization";
             CreateClass(headerView,
-                "_Localization.cshtml",
-                TransformTemplateToText(headerView, settings, localizationTemplate),
-                WebKey, SubFolderWebLocalizationKey);
+                        "_Localization.cshtml",
+                        TransformTemplateToText(headerView, settings, localizationTemplate),
+                        WebKey, SubFolderWebLocalizationKey);
 
             if (settings.includeEnglish)
             {
-                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.resx", true);
+                CreateHeaderDetailResx(headerView, containerName + "Resx.resx", true);
             }
             if (settings.includeSpanish)
             {
-                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.es.resx", false);
+                CreateHeaderDetailResx(headerView, containerName + "Resx.es.resx", false);
             }
             if (settings.includeFrench)
             {
-                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.fr.resx", false);
+                CreateHeaderDetailResx(headerView, containerName + "Resx.fr.resx", false);
             }
             if (settings.includeChineseSimplified)
             {
-                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hans.resx", false);
+                CreateHeaderDetailResx(headerView, containerName + "Resx.zh-Hans.resx", false);
             }
             if (settings.includeChineseTraditional)
             {
-                CreateHeaderDetailResx(headerView, settings.EntitiesContainerName + "Resx.zh-Hant.resx", false);
+                CreateHeaderDetailResx(headerView, containerName + "Resx.zh-Hant.resx", false);
             }
         }
 
@@ -1364,82 +1360,79 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private void CreateProcessRepositoryClasses(BusinessView view)
         {
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.EntityName];
+
             // Create the Business Repository Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Entity.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        "I" + entityName + "Entity.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.ServiceInterface"),
-                InterfacesKey, SubFolderInterfacesServicesKey);
+                        "I" + entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Class.ServiceInterface"),
+                        InterfacesKey, SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.Service"),
-                ServicesKey, SubFolderServicesKey);
+                        entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Class.Service"),
+                        ServicesKey, SubFolderServicesKey);
 
             // Create the Unit of Work Service Class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Uow.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.Uow"),
-                ServicesKey, SubFolderUnitOfWorkKey);
+                        entityName + "Uow.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Class.Uow"),
+                        ServicesKey, SubFolderUnitOfWorkKey);
 
-            // Create the ViewModel class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the ViewModel class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ViewModel.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
-            }
+                            entityName + "ViewModel.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Class.ViewModel"),
+                            WebKey, SubFolderWebViewModelKey);
 
-            // Create the Internal Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the Internal Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.InternalController"),
-                WebKey, SubFolderWebControllersKey);
-            }
+                            entityName + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Class.InternalController"),
+                            WebKey, SubFolderWebControllersKey);
 
-            // Create the public Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the public Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Controller.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.Controller"),
-                WebKey, SubFolderWebControllersKey);
+                            entityName + "Controller.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Class.Controller"),
+                            WebKey, SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Repository.cs",
-                TransformTemplateToText(view, _settings, "Templates.Process.Class.Repository"),
-                 BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        entityName + "Repository.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
-                var fileName = "_" + view.Properties[BusinessView.EntityName] + ".cshtml";
+                var fileName = "_" + entityName + ".cshtml";
                 CreateClass(view,
-                    fileName,
-                    TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
-                    WebKey, SubFolderWebLocalizationKey);
+                            fileName,
+                            TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
+                            WebKey, SubFolderWebLocalizationKey);
             }
 
             // Register types
             BusinessViewHelper.UpdateProcessBootStrappers(view, _settings);
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
             }
 
             // set the start page
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 BusinessViewHelper.CreateViewPageUrl(view, _settings);
             }
@@ -1448,196 +1441,193 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             BusinessViewHelper.UpdateMenuDetails(view, _settings);
 
             // For javascript files, the project name does not include the .Web segment
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
                 var projectName =
                 _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
                 // Create the Behavior JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "Behaviour.js",
-                    TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
-                    WebKey, SubFolderWebScriptsKey);
+                            projectName + "." + entityName + "Behaviour.js",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
+                            WebKey, SubFolderWebScriptsKey);
 
                 // Create the Knockout Extension JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "KoExtn.js",
-                    TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
-                    WebKey, SubFolderWebScriptsKey);
+                            projectName + "." + entityName + "KoExtn.js",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
+                            WebKey, SubFolderWebScriptsKey);
 
                 // Create the Repository JavaScript file
                 CreateClass(view,
-                    projectName + "." + view.Properties[BusinessView.EntityName] + "Repository.js",
-                    TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
-                    WebKey, SubFolderWebScriptsKey);
+                            projectName + "." + entityName + "Repository.js",
+                            TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
+                            WebKey, SubFolderWebScriptsKey);
             }
 
             // Create the SQL script
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "_WorkerRole_Data.sql",
-                TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
-                 WebKey, SubFolderWebSqlKey,
-                 false);
-
+                        entityName + "_WorkerRole_Data.sql",
+                        TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
+                        WebKey, SubFolderWebSqlKey,
+                        false);
         }
 
         /// <summary> Create Dynamic Query Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateDynamicQueryRepositoryClasses(BusinessView view)
         {
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.EntityName];
+
             // Create the Business Repository Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Entity.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        "I" + entityName + "Entity.cs",
+                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ServiceInterface"),
-                InterfacesKey, SubFolderInterfacesServicesKey);
+                        "I" + entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ServiceInterface"),
+                        InterfacesKey, SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "EntityService.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Service"),
-                ServicesKey, SubFolderServicesKey);
+                        entityName + "EntityService.cs",
+                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Service"),
+                        ServicesKey, SubFolderServicesKey);
 
-            // Create the ViewModel class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the ViewModel class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ViewModel.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
-            }
+                            entityName + "ViewModel.cs",
+                            TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ViewModel"),
+                            WebKey, SubFolderWebViewModelKey);
 
-            // Create the public Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the public Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Controller.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Controller"),
-                WebKey, SubFolderWebControllersKey);
+                            entityName + "Controller.cs",
+                            TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Controller"),
+                            WebKey, SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Repository.cs",
-                TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Repository"),
-                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        entityName + "Repository.cs",
+                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
         }
 
         /// <summary> Create Report Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateReportRepositoryClasses(BusinessView view)
         {
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.EntityName];
+
             // Create the Business Repository Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Entity.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        "I" + entityName + "Entity.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Reports.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.ServiceInterface"),
-                InterfacesKey, SubFolderInterfacesServicesKey);
+                        "I" + entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Reports.Class.ServiceInterface"),
+                        InterfacesKey, SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "EntityService.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.Service"),
-                ServicesKey, SubFolderServicesKey);
+                        entityName + "EntityService.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Reports.Class.Service"),
+                        ServicesKey, SubFolderServicesKey);
 
             // Create the ViewModel class
             if (view.Options[BusinessView.GenerateClientFiles])
             {
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ViewModel.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
+                            entityName + "ViewModel.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Class.ViewModel"),
+                            WebKey, SubFolderWebViewModelKey);
             }
 
             // Create the public Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the public Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Controller.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.Controller"),
-                WebKey, SubFolderWebControllersKey);
+                            entityName + "Controller.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Class.Controller"),
+                            WebKey, SubFolderWebControllersKey);
+
+                // Create the internal Controller class
+                CreateClass(view,
+                            entityName + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Class.InternalController"),
+                            WebKey, SubFolderWebControllersKey);
             }
 
-            // Create the internal Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
-                CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.InternalController"),
-                WebKey, SubFolderWebControllersKey);
-            }
-
-            //Create the Repository class
+            // Create the Repository class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Repository.cs",
-                TransformTemplateToText(view, _settings, "Templates.Reports.Class.Repository"),
-                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        entityName + "Repository.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Reports.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
         }
 
         /// <summary> Create Inquiry Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateInquiryRepositoryClasses(BusinessView view)
         {
+            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.EntityName];
+
             // Create the Business Repository Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Entity.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.RepositoryInterface"),
-                InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        "I" + entityName + "Entity.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.RepositoryInterface"),
+                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
-                "I" + view.Properties[BusinessView.EntityName] + "Service.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ServiceInterface"),
-                InterfacesKey, SubFolderInterfacesServicesKey);
+                        "I" + entityName + "Service.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ServiceInterface"),
+                        InterfacesKey, SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "EntityService.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Service"),
-                ServicesKey, SubFolderServicesKey);
+                        entityName + "EntityService.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Service"),
+                        ServicesKey, SubFolderServicesKey);
 
-            // Create the ViewModel class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the ViewModel class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ViewModel.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ViewModel"),
-                WebKey, SubFolderWebViewModelKey);
-            }
+                            entityName + "ViewModel.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ViewModel"),
+                            WebKey, SubFolderWebViewModelKey);
 
-            // Create the Internal Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the Internal Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.InternalController"),
-                WebKey, SubFolderWebControllersKey);
-            }
+                            entityName + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.InternalController"),
+                            WebKey, SubFolderWebControllersKey);
 
-            // Create the public Controller class
-            if (view.Options[BusinessView.GenerateClientFiles])
-            {
+                // Create the public Controller class
                 CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Controller.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Controller"),
-                WebKey, SubFolderWebControllersKey);
+                            entityName + "Controller.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Controller"),
+                            WebKey, SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
-                view.Properties[BusinessView.EntityName] + "Repository.cs",
-                TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
-                BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        entityName + "Repository.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
+                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
         }
 
         /// <summary>
@@ -1888,7 +1878,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         retVal = false;
                     }
                 }
-
             }
             else
             {
