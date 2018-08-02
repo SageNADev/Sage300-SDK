@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Sage300UIWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35b" Version="6.5.0.21" Language="en-US" Publisher="Sage" />
+        <Identity Id="Sage300UIWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35b" Version="6.6.0.1" Language="en-US" Publisher="Sage" />
         <DisplayName>Sage 300 UI Wizard Package</DisplayName>
         <Description xml:space="preserve">This package contains two wizards: Sage 300 Solution Wizard and Sage 300 Code Generation Wizard.
 </Description>
