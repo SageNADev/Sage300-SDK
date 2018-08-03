@@ -78,8 +78,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 // Ignore
             }
             return retVal;
-
         }
-
     }
 }

@@ -121,6 +121,6 @@ REM Call RebuildPayload.bat</PreBuildEvent>
   <Target Name="AfterBuild">
   </Target>
   -->
-  <!-- The following commented-out line can be used to load common settings into the project --> 
+  <!-- The following commented-out line can be used to load common settings into the project -->
   <!--<Import Project="$(SolutionDir)CommonSettings.targets" />-->
 </Project>
