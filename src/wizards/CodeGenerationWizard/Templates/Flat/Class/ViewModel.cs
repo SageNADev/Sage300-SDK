@@ -260,9 +260,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             
             #line 65 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
 
-            foreach (var value in view.Enums.Values)
-            {
-                var enumName = value.Name;
+        foreach (var value in view.Enums.Values)
+        {
+            var enumName = value.Name;
 
             
             #line default
@@ -278,7 +278,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             
             #line 73 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
 
-                var plural = BusinessViewHelper.PluralName(enumName);
+            var plural = BusinessViewHelper.PluralName(enumName);
 
             
             #line default
@@ -290,7 +290,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             
             #line default
             #line hidden
-            this.Write("\r\n        {\r\n            //get { return EnumUtility.GetItems<");
+            this.Write("\r\n        {\r\n            get { return EnumUtility.GetItemsList<");
             
             #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
@@ -307,36 +307,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             this.Write(".Models.Enums.");
             
             #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
-            
-            #line default
-            #line hidden
-            this.Write(">(); }\r\n\t\t\tget { return EnumUtility.GetItemsList<");
-            
-            #line 79 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 79 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.Enums.");
-            
-            #line 79 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(">(); }\r\n        }\r\n\r\n");
             
-            #line 82 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 81 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
 
-            }
+        }
 
             
             #line default

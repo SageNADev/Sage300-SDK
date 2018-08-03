@@ -63,15 +63,15 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
         where T : <#=modelName#>, new()
     {
 <#
-            foreach (var value in view.Enums.Values)
-            {
-                var enumName = value.Name;
+        foreach (var value in view.Enums.Values)
+        {
+            var enumName = value.Name;
 #>
         /// <summary>
         /// <#=enumName#> list
         /// </summary>
 <#
-                var plural = BusinessViewHelper.PluralName(enumName);
+            var plural = BusinessViewHelper.PluralName(enumName);
 #>
         public IEnumerable<CustomSelectList> <#=plural#>
         {
@@ -79,7 +79,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
         }
 
 <#
-            }
+        }
 #>
     }
 }

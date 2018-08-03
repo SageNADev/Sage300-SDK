@@ -39,6 +39,7 @@
 #region Namespace
 
 using System.Collections;
+using System.Collections.Generic;
 using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
 <#
 	if (enumsCount > 0)
@@ -65,13 +66,14 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process
 <#
         foreach (var value in view.Enums.Values) 
         {
+			var enumName = value.Name;
 #>
         /// <summary>
-        /// <#=value.Name#> list
+        /// <#=enumName#> list
         /// </summary>
-        public IEnumerable <#=value.Name#>
+        public IEnumerable<CustomSelectList> <#=enumName#>
         {
-            get { return EnumUtility.GetItems<<#=value.Name#>>(); }
+            get { return EnumUtility.GetItemsList<<#=enumName#>>(); }
         }
 <#
         }
