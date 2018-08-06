@@ -121,7 +121,7 @@
     <value>Application</value>
   </data>
   <data name="Msg_CommandLineParameter_EnableTemplateUpdates" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is false, it will override both UseLocalSage300Installation AND WebSource.</value>
+    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is specified, it will override both UseLocalSage300Installation AND WebSource. This flag is turned off (disabled) if it is not specified at all on the command-line.</value>
   </data>
   <data name="Msg_CommandLineParameter_Help" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to view the help for this application.</value>

@@ -32,9 +32,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="WebBACKUP.vstemplate">WebBACKUP.vstemplate</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="WebNEW.vstemplate">WebNEW.vstemplate</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WG.EXE">WG.EXE</ProjectItem>
       <Folder Name="WebForms" TargetFolderName="WebForms">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseWebPage.cs">BaseWebPage.cs</ProjectItem>

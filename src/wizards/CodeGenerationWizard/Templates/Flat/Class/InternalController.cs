@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             #line hidden
             
             #line 2 "C:\CNA2Dev\Sage300SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\InternalController.tt"
- /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden

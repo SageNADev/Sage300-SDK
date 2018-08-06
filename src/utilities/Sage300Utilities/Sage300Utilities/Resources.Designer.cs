@@ -70,7 +70,7 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is false, it will override both UseLocalSage300Installation AND WebSource..
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is specified, it will override both UseLocalSage300Installation AND WebSource. This flag is turned off (disabled) if it is not specified at all on the command-line..
         /// </summary>
         internal static string Msg_CommandLineParameter_EnableTemplateUpdates {
             get {
