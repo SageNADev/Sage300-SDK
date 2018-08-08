@@ -302,8 +302,6 @@
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="drilldown.png">drilldown.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -703,11 +701,9 @@
             </Folder>
             <Folder Name="layouts" TargetFolderName="layouts">
               <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             </Folder>
             <Folder Name="libs" TargetFolderName="libs">
               <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>
@@ -1039,6 +1035,10 @@
           <Folder Name="Views" TargetFolderName="Views">
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+          </Folder>
+          <Folder Name="ExternalContent" TargetFolderName="ExternalContent">
+            <ProjectItem ReplaceParameters="true" TargetFileName="bg_menu_$lowercaseapplicationid$.jpg">menuBackGroundImage.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="icon_$lowercaseapplicationid$.png">menuIcon.png</ProjectItem>
           </Folder>
         </Folder>
       </Folder>

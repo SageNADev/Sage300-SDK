@@ -93,11 +93,12 @@ namespace MergeISVProject
 			public string Areas { get; set; }
 			public string AreasViews { get; set; }
 			public string AreasScripts { get; set; }
+            public string AreasExternalContent { get; set; }
 
-			/// <summary>
-			/// Create the Root folder only
-			/// </summary>
-			public void CreateRootOnly()
+            /// <summary>
+            /// Create the Root folder only
+            /// </summary>
+            public void CreateRootOnly()
 			{
 				Directory.CreateDirectory(Root);
 			}
@@ -111,13 +112,14 @@ namespace MergeISVProject
 				Directory.CreateDirectory(Areas);
 				Directory.CreateDirectory(AreasViews);
 				Directory.CreateDirectory(AreasScripts);
-			}
+                Directory.CreateDirectory(AreasExternalContent);
+            }
 
-			/// <summary>
-			/// Generate a formatted string of the contents
-			/// of this object.
-			/// </summary>
-			public IEnumerable<string> GenerateLogOutput(int leftPadding)
+            /// <summary>
+            /// Generate a formatted string of the contents
+            /// of this object.
+            /// </summary>
+            public IEnumerable<string> GenerateLogOutput(int leftPadding)
 			{
 				var paddingString = new String(' ', leftPadding);
 
@@ -128,8 +130,9 @@ namespace MergeISVProject
 					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Bin), Bin),
 					string.Format(secondaryLogOutputTemplate, paddingString, nameof(Areas), Areas),
 					string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasViews), AreasViews),
-					string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasScripts), AreasScripts)
-				};
+					string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasScripts), AreasScripts),
+                    string.Format(secondaryLogOutputTemplate, paddingString, nameof(AreasExternalContent), AreasExternalContent)
+                };
 				return lines;
 			}
 
@@ -211,35 +214,39 @@ namespace MergeISVProject
 			Originals.Areas = Path.Combine(rootPathIn, FolderNameConstants.AREAS);
 			Originals.AreasViews = Path.Combine(rootPathIn, FolderNameConstants.AREAS, moduleId, FolderNameConstants.VIEWS);
 			Originals.AreasScripts = Path.Combine(rootPathIn, FolderNameConstants.AREAS, moduleId, FolderNameConstants.SCRIPTS);
+            Originals.AreasExternalContent = Path.Combine(rootPathIn, FolderNameConstants.AREAS, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
-			// This is where compiled objects will be put (aspnet_compiler)
-			//Compiled = Path.Combine(Deploy, FolderNameConstants.COMPILED);
-			// Deploy/Compiled
-			Compiled = new StagingFolderBlock();
+            // This is where compiled objects will be put (aspnet_compiler)
+            //Compiled = Path.Combine(Deploy, FolderNameConstants.COMPILED);
+            // Deploy/Compiled
+            Compiled = new StagingFolderBlock();
 			Compiled.Root = Path.Combine(Deploy, FolderNameConstants.COMPILED);
 			Compiled.Bin = Path.Combine(Compiled.Root, FolderNameConstants.BIN);
 			Compiled.Areas = Path.Combine(Compiled.Root, FolderNameConstants.AREAS);
 			Compiled.AreasViews = Path.Combine(Compiled.Areas, moduleId, FolderNameConstants.VIEWS);
 			Compiled.AreasScripts = Path.Combine(Compiled.Areas, moduleId, FolderNameConstants.SCRIPTS);
+            Compiled.AreasExternalContent = Path.Combine(Compiled.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
-			// Deploy/Staging
-			Staging = new StagingFolderBlock();
+            // Deploy/Staging
+            Staging = new StagingFolderBlock();
 			Staging.Root = Path.Combine(Deploy, FolderNameConstants.STAGING);
 			Staging.Bin = Path.Combine(Staging.Root, FolderNameConstants.BIN);
 			Staging.Areas = Path.Combine(Staging.Root, FolderNameConstants.AREAS);
 			Staging.AreasViews = Path.Combine(Staging.Areas, moduleId, FolderNameConstants.VIEWS);
 			Staging.AreasScripts = Path.Combine(Staging.Areas, moduleId, FolderNameConstants.SCRIPTS);
+            Staging.AreasExternalContent = Path.Combine(Staging.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
-			// Deploy/Final
-			Final = new StagingFolderBlock();
+            // Deploy/Final
+            Final = new StagingFolderBlock();
 			Final.Root = Path.Combine(Deploy, FolderNameConstants.FINAL);
 			Final.Bin = Path.Combine(Final.Root, FolderNameConstants.BIN);
 			Final.Areas = Path.Combine(Final.Root, FolderNameConstants.AREAS);
 			Final.AreasViews = Path.Combine(Final.Areas, moduleId, FolderNameConstants.VIEWS);
 			Final.AreasScripts = Path.Combine(Final.Areas, moduleId, FolderNameConstants.SCRIPTS);
+            Final.AreasExternalContent = Path.Combine(Final.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
-			// Live
-			Live = new LiveOnlineFolderBlock();
+            // Live
+            Live = new LiveOnlineFolderBlock();
 			Live.Root = Path.Combine(sage300Installation, FolderNameConstants.ONLINE);
 			Live.Web = Path.Combine(Live.Root, FolderNameConstants.WEB);
 			Live.Worker = Path.Combine(Live.Root, FolderNameConstants.WORKER);

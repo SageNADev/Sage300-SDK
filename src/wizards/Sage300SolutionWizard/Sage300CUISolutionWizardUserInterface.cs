@@ -61,6 +61,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
     {
         private string _companyName;
         private string _applicationId;
+        private string _lowercaseapplicationId;
         private string _solutionFolder;
         private string _destinationFolder;
         private DTE	   _dte;
@@ -112,7 +113,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
             var parameters = "$companyname$" + "=" + _companyName + "|$applicationid$=" + _applicationId +
                                 "|$companynamespace$=" + _namespace +
-                                "|$sage300webfolder$=" + _sage300Webfolder;
+                                "|$sage300webfolder$=" + _sage300Webfolder +
+                                "|$lowercaseapplicationid$=" + _lowercaseapplicationId;
 
             foreach (var proj in projects)
             {
@@ -216,6 +218,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 // save parameters
                 _companyName = inputForm.ThirdPartyCompanyName.Trim();
                 _applicationId = inputForm.ThirdPartyApplicationId.Trim();
+                _lowercaseapplicationId = _applicationId.ToLower();
                 _namespace = inputForm.CompanyNamespace.Trim();
                 _sage300Webfolder = webFolder;
                 _kendoFolder = inputForm.KendoFolder.Trim();
@@ -230,6 +233,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 replacementsDictionary.Add("$applicationid$", _applicationId);
                 replacementsDictionary.Add("$companynamespace$", _namespace);
                 replacementsDictionary.Add("$sage300webfolder$", _sage300Webfolder);
+                replacementsDictionary.Add("$lowercaseapplicationid$", _lowercaseapplicationId);
 
             }
             catch

@@ -35,8 +35,9 @@ namespace MergeISVProject.Constants
 		public const string AREAS		= "Areas";
 		public const string SCRIPTS			= "Scripts";
 		public const string VIEWS			= "Views";
+        public const string EXTERNALCONTENT = "ExternalContent";
 
-		public const string APPDATA		= "App_Data";
+        public const string APPDATA		= "App_Data";
 		public const string MENUDETAIL	= "MenuDetail";
 		public const string BIN			= "bin";
 

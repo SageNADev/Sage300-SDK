@@ -20,8 +20,8 @@
     <IsGroupEnd>false</IsGroupEnd>
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
-    <IconName>$companynamespace$/menuIcon.png</IconName>
-    <MenuBackGoundImage>$companynamespace$/menuBackGroundImage.jpg</MenuBackGoundImage>
+    <IconName>../../../../Areas/$applicationid$/ExternalContent/icon_$lowercaseapplicationid$.png</IconName>
+    <MenuBackGoundImage>../../../../Areas/$applicationid$/ExternalContent/bg_menu_$lowercaseapplicationid$.jpg</MenuBackGoundImage>
   </item>
 
   <!--Third Level Menu Items Section Starts-->

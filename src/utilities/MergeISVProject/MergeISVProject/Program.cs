@@ -112,7 +112,7 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments passed in</param>
 		public static void Main(string[] args)
 		{
-			var bypassLogfileDisplay = false;
+            var bypassLogfileDisplay = false;
 			var applicationError = false;
 			try
 			{

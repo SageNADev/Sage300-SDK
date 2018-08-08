@@ -396,6 +396,8 @@
   <ItemGroup>
     <Content Include="Areas\$applicationid$\Views\Web.config" />
     <Content Include="Areas\$applicationid$\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\$applicationid$\ExternalContent\bg_menu_$lowercaseapplicationid$.jpg" />
+    <Content Include="Areas\$applicationid$\ExternalContent\icon_$lowercaseapplicationid$.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\$applicationid$\Controllers\Finder\" />
