@@ -832,6 +832,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             const string LanguageChineseSimplified = "zh-hans";
             const string LanguageChineseTraditional = "zh-hant";
 
+            const int EnglishResourceFileSplitLength = 2;
+            const int NonEnglishResourceFileSplitLength = 3;
+            const int NonEnglishLanguageSpecifierIndex = 1;
+
             var list = new List<string>();
 
             // Build a list of languages found from the ProjectItems collection
@@ -844,7 +848,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var temp = name.Split('.');
                     var length = temp.Length;
 
-                    if (length == 2)
+                    if (length == EnglishResourceFileSplitLength)
                     {
                         // Found an english resx file
 
@@ -854,10 +858,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             list.Add(LanguageEnglish);
                         }
                     }
-                    else if (length == 3)
+                    else if (length == NonEnglishResourceFileSplitLength)
                     {
                         // Found a non-english resx file
-                        var langName = temp[1].ToLowerInvariant();
+                        var langName = temp[NonEnglishLanguageSpecifierIndex].ToLowerInvariant();
 
                         // Add it to the list (if not yet there)
                         if (list.Contains(langName) == false)
