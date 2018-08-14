@@ -28,13 +28,13 @@
     var companyNamespace = settings.CompanyNamespace;
     var extension = settings.Extension;
     var repositoryType = settings.RepositoryType;
-    var entityName = view.Properties[BusinessView.EntityName];
-    var modelName = view.Properties[BusinessView.ModelName];
-    var reportName = (view.Properties.ContainsKey(BusinessView.ReportKey))
-                ? view.Properties[BusinessView.ReportKey]
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var reportName = (view.Properties.ContainsKey(BusinessView.Constants.ReportKey))
+                ? view.Properties[BusinessView.Constants.ReportKey]
                 : string.Empty;
-    var programId = (view.Properties.ContainsKey(BusinessView.ProgramId))
-                ? view.Properties[BusinessView.ProgramId]
+    var programId = (view.Properties.ContainsKey(BusinessView.Constants.ProgramId))
+                ? view.Properties[BusinessView.Constants.ProgramId]
                 : string.Empty;
     var keyFieldName = view.Keys.FirstOrDefault();
     var enumsCount = view.Enums.Count;
@@ -75,9 +75,19 @@ using <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>;
 <#
     if (!repositoryType.Equals(RepositoryType.Report) && enumsCount > 0)
     {
+		if (extension.Length > 0)
+		{
 #>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
 using <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>;
 <#
+		}
+		else
+		{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
+<#
+		}
     }
 #>
 
@@ -245,7 +255,9 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
                     // Check for an enumeration for property
                     if (field.Type.Equals(BusinessDataType.Enumeration))
                     {
-						
+						// Did the user want to override the name?
+						//fieldName = field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+						fieldName = field.Name;
 #>
 			model.<#=fieldName#> = (<#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>.<#=fieldName#>)(entity.GetValue<int>(<#=modelName#>.Index.<#=fieldName#>));
 <#
@@ -281,6 +293,10 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
                     // locals
                     var field = view.Fields[i];
                     var fieldName = field.Name;
+
+					// Did the user want to override the name?
+					//fieldName = field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+					fieldName = field.Name;
 
                     // Locals
                     var commentChars = (field.IsReadOnly || field.IsCalculated) ? @"// " : string.Empty;

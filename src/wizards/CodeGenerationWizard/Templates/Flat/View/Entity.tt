@@ -23,8 +23,8 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
-    var resxName = view.Properties[BusinessView.ResxName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
 
     if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
     {
@@ -35,7 +35,7 @@
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var keyFieldName = view.Keys.FirstOrDefault();
-    var modelName = view.Properties[BusinessView.ModelName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");

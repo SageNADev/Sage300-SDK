@@ -29,7 +29,7 @@
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;
     var enumHelper = settings.EnumHelper;
-    var resxName = view.Properties[BusinessView.ResxName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
 #>
 // <#=copyright#>
 
@@ -37,6 +37,7 @@
 
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>;
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums;
 
 #endregion
 
@@ -80,7 +81,6 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>
 <#
                 }
 #>
-
 <#
             }
 #>

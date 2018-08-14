@@ -25,8 +25,8 @@
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var modelName = view.Properties[BusinessView.ModelName];
-    var entityName = view.Properties[BusinessView.EntityName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
@@ -65,7 +65,9 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
 <#
         foreach (var value in view.Enums.Values)
         {
-            var enumName = value.Name;
+			// Did the user want to override the name?
+			//var enumName = value.AlternateName.Length > 0 ? value.AlternateName : value.Name;
+			var enumName = value.Name;
 #>
         /// <summary>
         /// <#=enumName#> list

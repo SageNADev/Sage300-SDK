@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// <summary> Process Generation Class (worker) </summary>
     class ProcessGeneration
     {
-        #region Private Vars
+        #region Private Variables
 
         /// <summary> Settings from UI </summary>
         private Settings _settings;
@@ -44,217 +44,232 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         #endregion
 
         #region Private Constants
-
+        private static class PrivateConstants
+        {
+            public const string RootEnumerationsFilename = "Enumerations.cs";
+            public const string CommonEnumerationsFilename = "CommonEnumerations.cs";
+            public const string ProcessEnumerationsFilename = "Enumerations.cs";
+            public const string ReportEnumerationsFilename = "Enumerations.cs";
+            public const string CustomCommonResx = "CustomCommonResx";
+        }
         #endregion
 
         #region Public Constants
+        public static class Constants
+        {
+            /// <summary> SettingsKey is used as a dictionary key for settings </summary>
+            public const string SettingsKey = "settings";
 
-        /// <summary> SettingsKey is used as a dictionary key for settings </summary>
-        public const string SettingsKey = "settings";
+            /// <summary> BusinessRepositoryKey is used as a dictionary key for projects </summary>
+            public const string BusinessRepositoryKey = "BusinessRepository";
 
-        /// <summary> BusinessRepositoryKey is used as a dictionary key for projects </summary>
-        public const string BusinessRepositoryKey = "BusinessRepository";
+            /// <summary> InterfacesKey is used as a dictionary key for projects </summary>
+            public const string InterfacesKey = "Interfaces";
 
-        /// <summary> InterfacesKey is used as a dictionary key for projects </summary>
-        public const string InterfacesKey = "Interfaces";
+            /// <summary> ModelsKey is used as a dictionary key for projects </summary>
+            public const string ModelsKey = "Models";
 
-        /// <summary> ModelsKey is used as a dictionary key for projects </summary>
-        public const string ModelsKey = "Models";
+            /// <summary> ResourcesKey is used as a dictionary key for projects </summary>
+            public const string ResourcesKey = "Resources";
 
-        /// <summary> ResourcesKey is used as a dictionary key for projects </summary>
-        public const string ResourcesKey = "Resources";
+            /// <summary> ServicesKey is used as a dictionary key for projects </summary>
+            public const string ServicesKey = "Services";
 
-        /// <summary> ServicesKey is used as a dictionary key for projects </summary>
-        public const string ServicesKey = "Services";
+            /// <summary> WebKey is used as a dictionary key for projects </summary>
+            public const string WebKey = "Web";
 
-        /// <summary> WebKey is used as a dictionary key for projects </summary>
-        public const string WebKey = "Web";
+            /// <summary> SubFolderModelKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderModelKey = "Model";
 
-        /// <summary> SubFolderModelKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderModelKey = "Model";
+            /// <summary> SubFolderModelFieldsKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderModelFieldsKey = "ModelFields";
 
-        /// <summary> SubFolderModelFieldsKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderModelFieldsKey = "ModelFields";
+            /// <summary> SubFolderModelEnumsKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderModelEnumsKey = "ModelEnums";
 
-        /// <summary> SubFolderModelEnumsKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderModelEnumsKey = "ModelEnums";
+            /// <summary> SubFolderBusinessRepositoryKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderBusinessRepositoryKey = "BusinessRepository";
 
-        /// <summary> SubFolderBusinessRepositoryKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderBusinessRepositoryKey = "BusinessRepository";
+            /// <summary> SubFolderBusinessRepositoryMappersKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderBusinessRepositoryMappersKey = "Mappers";
 
-        /// <summary> SubFolderBusinessRepositoryMappersKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderBusinessRepositoryMappersKey = "Mappers";
+            /// <summary> SubFolderBusinessRepositoryMappersKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderInterfacesBusinessRepositoryKey = "BusinessRepository";
 
-        /// <summary> SubFolderBusinessRepositoryMappersKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderInterfacesBusinessRepositoryKey = "BusinessRepository";
+            /// <summary> SubFolderInterfacesServicesKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderInterfacesServicesKey = "Services";
 
-        /// <summary> SubFolderInterfacesServicesKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderInterfacesServicesKey = "Services";
+            /// <summary> SubFolderServicesKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderServicesKey = "Services";
 
-        /// <summary> SubFolderServicesKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderServicesKey = "Services";
+            /// <summary> SubFolderUnitOfWorkKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderUnitOfWorkKey = "UnitOfWork";
 
-        /// <summary> SubFolderUnitOfWorkKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderUnitOfWorkKey = "UnitOfWork";
+            /// <summary> SubFolderResourcesKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderResourcesKey = "Resources";
 
-        /// <summary> SubFolderResourcesKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderResourcesKey = "Resources";
+            /// <summary> SubFolderWebIndexKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebIndexKey = "Index";
 
-        /// <summary> SubFolderWebIndexKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebIndexKey = "Index";
+            /// <summary> SubFolderWebLocalizationKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebLocalizationKey = "Localization";
 
-        /// <summary> SubFolderWebLocalizationKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebLocalizationKey = "Localization";
+            /// <summary> SubFolderWebViewModelKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebViewModelKey = "ViewModel";
 
-        /// <summary> SubFolderWebViewModelKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebViewModelKey = "ViewModel";
+            /// <summary> SubFolderWebControllersKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebControllersKey = "Controllers";
 
-        /// <summary> SubFolderWebControllersKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebControllersKey = "Controllers";
+            /// <summary> SubFolderWebFinderKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebFinderKey = "Finder";
 
-        /// <summary> SubFolderWebFinderKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebFinderKey = "Finder";
+            /// <summary> SubFolderWebScriptsKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebScriptsKey = "Scripts";
 
-        /// <summary> SubFolderWebScriptsKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebScriptsKey = "Scripts";
+            /// <summary> SubFolderWebSqlKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebSqlKey = "Sql";
 
-        /// <summary> SubFolderWebSqlKey is used as a dictionary key for subfolders </summary>
-        public const string SubFolderWebSqlKey = "Sql";
+            /// <summary> SubFolderNameFields is used as a subfolder name </summary>
+            public const string SubFolderNameFields = "Fields";
 
-        /// <summary> SubFolderNameFields is used as a subfolder name </summary>
-        public const string SubFolderNameFields = "Fields";
+            /// <summary> SubFolderNameEnums is used as a subfolder name </summary>
+            public const string SubFolderNameEnums = "Enums";
 
-        /// <summary> SubFolderNameEnums is used as a subfolder name </summary>
-        public const string SubFolderNameEnums = "Enums";
+            /// <summary> SubFolderNameMappers is used as a subfolder name </summary>
+            public const string SubFolderNameMappers = "Mappers";
 
-        /// <summary> SubFolderNameMappers is used as a subfolder name </summary>
-        public const string SubFolderNameMappers = "Mappers";
+            /// <summary> SubFolderNameBusinessRepository is used as a subfolder name </summary>
+            public const string SubFolderNameBusinessRepository = "BusinessRepository";
 
-        /// <summary> SubFolderNameBusinessRepository is used as a subfolder name </summary>
-        public const string SubFolderNameBusinessRepository = "BusinessRepository";
+            /// <summary> SubFolderNameServices is used as a subfolder name </summary>
+            public const string SubFolderNameServices = "Services";
 
-        /// <summary> SubFolderNameServices is used as a subfolder name </summary>
-        public const string SubFolderNameServices = "Services";
+            /// <summary> SubFolderNameForms is used as a subfolder name </summary>
+            public const string SubFolderNameForms = "Forms";
 
-        /// <summary> SubFolderNameForms is used as a subfolder name </summary>
-        public const string SubFolderNameForms = "Forms";
+            /// <summary> SubFolderNameProcess is used as a subfolder name </summary>
+            public const string SubFolderNameProcess = "Process";
 
-        /// <summary> SubFolderNameProcess is used as a subfolder name </summary>
-        public const string SubFolderNameProcess = "Process";
+            /// <summary> SubFolderNameReports is used as a subfolder name </summary>
+            public const string SubFolderNameReports = "Reports";
 
-        /// <summary> SubFolderNameReports is used as a subfolder name </summary>
-        public const string SubFolderNameReports = "Reports";
+            /// <summary> SubFolderNameUnitOfWork is used as a subfolder name </summary>
+            public const string SubFolderNameUnitOfWork = "UnitOfWork";
 
-        /// <summary> SubFolderNameUnitOfWork is used as a subfolder name </summary>
-        public const string SubFolderNameUnitOfWork = "UnitOfWork";
+            /// <summary> SubFolderNameAreas is used as a subfolder name </summary>
+            public const string SubFolderNameAreas = "Areas";
 
-        /// <summary> SubFolderNameAreas is used as a subfolder name </summary>
-        public const string SubFolderNameAreas = "Areas";
+            /// <summary> SubFolderNameViews is used as a subfolder name </summary>
+            public const string SubFolderNameViews = "Views";
 
-        /// <summary> SubFolderNameViews is used as a subfolder name </summary>
-        public const string SubFolderNameViews = "Views";
+            /// <summary> SubFolderNamePartials is used as a subfolder name </summary>
+            public const string SubFolderNamePartials = "Partials";
 
-        /// <summary> SubFolderNamePartials is used as a subfolder name </summary>
-        public const string SubFolderNamePartials = "Partials";
+            /// <summary> SubFolderNameModels is used as a subfolder name </summary>
+            public const string SubFolderNameModels = "Models";
 
-        /// <summary> SubFolderNameModels is used as a subfolder name </summary>
-        public const string SubFolderNameModels = "Models";
+            /// <summary> SubFolderNameControllers is used as a subfolder name </summary>
+            public const string SubFolderNameControllers = "Controllers";
 
-        /// <summary> SubFolderNameControllers is used as a subfolder name </summary>
-        public const string SubFolderNameControllers = "Controllers";
+            /// <summary> SubFolderNameFinder is used as a subfolder name </summary>
+            public const string SubFolderNameFinder = "Finder";
 
-        /// <summary> SubFolderNameFinder is used as a subfolder name </summary>
-        public const string SubFolderNameFinder = "Finder";
+            /// <summary> SubFolderNameScripts is used as a subfolder name </summary>
+            public const string SubFolderNameScripts = "Scripts";
 
-        /// <summary> SubFolderNameScripts is used as a subfolder name </summary>
-        public const string SubFolderNameScripts = "Scripts";
+            /// <summary> Element Name for Entities </summary>
+            public const string ElementEntities = "entities";
 
-        /// <summary> Element Name for Entities </summary>
-        public const string ElementEntities = "entities";
+            /// <summary> New Entity Text </summary>
+            public const string NewEntityText = "new";
 
-        /// <summary> New Entity Text </summary>
-        public const string NewEntityText = "new";
+            /// <summary> Property for Module </summary>
+            public const string PropertyModule = "module";
 
-        /// <summary> Property for Module </summary>
-        public const string PropertyModule = "module";
+            /// <summary> Property for ViewId </summary>
+            public const string PropertyViewId = "view";
 
-        /// <summary> Property for ViewId </summary>
-        public const string PropertyViewId = "view";
+            /// <summary> Property for Entity </summary>
+            public const string PropertyEntity = "entity";
 
-        /// <summary> Property for Entity </summary>
-        public const string PropertyEntity = "entity";
+            /// <summary> Property for Include </summary>
+            public const string PropertyInclude = "include";
 
-        /// <summary> Property for Include </summary>
-        public const string PropertyInclude = "include";
+            /// <summary> Property for Container </summary>
+            public const string PropertyContainer = "container";
 
-        /// <summary> Property for Container </summary>
-        public const string PropertyContainer = "container";
+            /// <summary> Property for Properties </summary>
+            public const string PropertyProperties = "props";
 
-        /// <summary> Property for Properties </summary>
-        public const string PropertyProperties = "props";
+            /// <summary> Property for Compositions </summary>
+            public const string PropertyComps = "comps";
 
-        /// <summary> Property for Compositions </summary>
-        public const string PropertyComps = "comps";
+            /// <summary> Property for Compositions </summary>
+            public const string PropertyCompositions = "compositions";
 
-        /// <summary> Property for Compositions </summary>
-        public const string PropertyCompositions = "compositions";
+            /// <summary> Property for Composition </summary>
+            public const string PropertyComposition = "composition";
 
-        /// <summary> Property for Composition </summary>
-        public const string PropertyComposition = "composition";
+            /// <summary> Property for Type </summary>
+            public const string PropertyType = "type";
 
-        /// <summary> Property for Type </summary>
-        public const string PropertyType = "type";
+            /// <summary> Property for Program </summary>
+            public const string PropertyProgramId = "program";
 
-        /// <summary> Property for Program </summary>
-        public const string PropertyProgramId = "program";
+            /// <summary> Property for WorkflowId </summary>
+            public const string PropertyWorkflowId = "workflow";
 
-        /// <summary> Property for WorkflowId </summary>
-        public const string PropertyWorkflowId = "workflow";
+            /// <summary> Property for Report </summary>
+            public const string PropertyReport = "report";
 
-        /// <summary> Property for Report </summary>
-        public const string PropertyReport = "report";
+            /// <summary> Property for Finder </summary>
+            public const string PropertyFinder = "finder";
 
-        /// <summary> Property for Finder </summary>
-        public const string PropertyFinder = "finder";
+            /// <summary> Property for Enablement </summary>
+            public const string PropertyEnablement = "enablement";
 
-        /// <summary> Property for Enablement </summary>
-        public const string PropertyEnablement = "enablement";
+            /// <summary> Property for ClientFiles </summary>
+            public const string PropertyClientFiles = "clientFiles";
 
-        /// <summary> Property for ClientFiles </summary>
-        public const string PropertyClientFiles = "clientFiles";
+            /// <summary> Property for IfExists </summary>
+            public const string PropertyIfExists = "ifExists";
 
-        /// <summary> Property for IfExists </summary>
-        public const string PropertyIfExists = "ifExists";
+            /// <summary> Property for SingleFile </summary>
+            public const string PropertySingleFile = "singleFile";
 
-        /// <summary> Property for SingleFile </summary>
-        public const string PropertySingleFile = "singleFile";
+            /// <summary> Property for Fields </summary>
+            public const string PropertyFields = "fields";
 
-        /// <summary> Property for Fields </summary>
-        public const string PropertyFields = "fields";
+            /// <summary> Property for Field </summary>
+            public const string PropertyField = "field";
 
-        /// <summary> Property for Field </summary>
-        public const string PropertyField = "field";
+            /// <summary> Property for FieldName </summary>
+            public const string PropertyFieldName = "fieldName";
 
-        /// <summary> Property for FieldName </summary>
-        public const string PropertyFieldName = "fieldName";
+            /// <summary> Property for PropertyName </summary>
+            public const string PropertyPropertyName = "propertyName";
 
-        /// <summary> Property for PropertyName </summary>
-        public const string PropertyPropertyName = "propertyName";
+            /// <summary> Property for Size </summary>
+            public const string PropertySize = "size";
 
-        /// <summary> Property for Size </summary>
-        public const string PropertySize = "size";
+            /// <summary> Property for IsCommon </summary>
+            public const string PropertyIsCommon = "common";
 
-        /// <summary> Property for ResxName </summary>
-        public const string PropertyResxName = "resx";
+            ///// <summary> Property for AlternateName </summary>
+            //public const string PropertyAlternateName = "alternateName";
 
-        /// <summary> Property for Options </summary>
-        public const string PropertyOptions = "options";
+            /// <summary> Property for ResxName </summary>
+            public const string PropertyResxName = "resx";
 
-        /// <summary> Property for Option </summary>
-        public const string PropertyOption = "option";
+            /// <summary> Property for Options </summary>
+            public const string PropertyOptions = "options";
 
-        /// <summary> Constant for EntityName </summary>
-        public const string ConstantEntityName = "EntityName";
+            /// <summary> Property for Option </summary>
+            public const string PropertyOption = "option";
+
+            /// <summary> Constant for EntityName </summary>
+            public const string ConstantEntityName = "EntityName";
+        }
         #endregion
 
         #region Public Delegates
@@ -305,7 +320,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     // Find out the header view and use this view to pass view related information
                     // around to satisfy the parameter requirements for the existing routines.
-                    var headerView = settings.Entities.First(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute(PropertyViewId).Value);
+                    var headerView = settings.Entities.First(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute(Constants.PropertyViewId).Value);
 
                     // Build the subfolders
                     BuildSubfolders(headerView);
@@ -320,8 +335,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     IterateView(businessView);
                 }
             }
-            catch
+            catch (Exception e)
             {
+                var message = e.Message;
+
                 // Catch here does nothing but return to UI
                 // User may have aborted wizard
             }
@@ -357,15 +374,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties.Clear();
             businessView.Compositions.Clear();
 
-            businessView.Properties[BusinessView.ViewId] = view.ViewID;
-            businessView.Properties[BusinessView.ModuleId] = moduleId;
+            businessView.Properties[BusinessView.Constants.ViewId] = view.ViewID;
+            businessView.Properties[BusinessView.Constants.ModuleId] = moduleId;
 
             GenerateUniqueDescriptions(view, uniqueDescriptions);
 
             var description = MakeItSingular(BusinessViewHelper.Replace(view.Description));
 
-            businessView.Properties[BusinessView.ModelName] = description;
-            businessView.Properties[BusinessView.EntityName] = description;
+            businessView.Properties[BusinessView.Constants.ModelName] = description;
+            businessView.Properties[BusinessView.Constants.EntityName] = description;
+
+            businessView.Properties[BusinessView.Constants.CustomCommonResxName] = PrivateConstants.CustomCommonResx;
 
             GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
 
@@ -412,7 +431,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Local
             var retVal = true;
-            var projectInfo = _settings.Projects[projectKey][view.Properties[BusinessView.ModuleId]];
+            var projectInfo = _settings.Projects[projectKey][view.Properties[BusinessView.Constants.ModuleId]];
             var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[subfolderKey] });
             var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
 
@@ -424,7 +443,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (exists && _settings.PromptIfExists)
             {
                 var result = MessageBox.Show(string.Format(Resources.FileExists, fullFileName),
-                    Resources.Confirmation, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                                             Resources.Confirmation, 
+                                             MessageBoxButtons.YesNoCancel, 
+                                             MessageBoxIcon.Question);
 
                 // Evaluate
                 switch (result)
@@ -492,66 +513,66 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void BuildSubfolders(BusinessView view)
         {
             // Iterate Models
-            var projects = _settings.Projects[ModelsKey];
+            var projects = _settings.Projects[Constants.ModelsKey];
             foreach (var project in projects)
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderModelKey, GetSubfolderName(string.Empty)},
-                    {SubFolderModelFieldsKey, GetSubfolderName(SubFolderNameFields)},
-                    {SubFolderModelEnumsKey, GetSubfolderName(SubFolderNameEnums)}
+                    {Constants.SubFolderModelKey, GetSubfolderName(string.Empty)},
+                    {Constants.SubFolderModelFieldsKey, GetSubfolderName(Constants.SubFolderNameFields)},
+                    {Constants.SubFolderModelEnumsKey, GetSubfolderName(Constants.SubFolderNameEnums)}
                 };
                 project.Value.Subfolders = subfolders;
             }
 
             // Iterate BusinessRepository
-            projects = _settings.Projects[BusinessRepositoryKey];
+            projects = _settings.Projects[Constants.BusinessRepositoryKey];
             foreach (var project in projects)
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderBusinessRepositoryKey, GetSubfolderName(string.Empty)},
-                    {SubFolderBusinessRepositoryMappersKey, GetSubfolderName(SubFolderNameMappers)}
+                    {Constants.SubFolderBusinessRepositoryKey, GetSubfolderName(string.Empty)},
+                    {Constants.SubFolderBusinessRepositoryMappersKey, GetSubfolderName(Constants.SubFolderNameMappers)}
                 };
                 project.Value.Subfolders = subfolders;
             }
 
             // Iterate Interfaces
-            projects = _settings.Projects[InterfacesKey];
+            projects = _settings.Projects[Constants.InterfacesKey];
             foreach (var project in projects)
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderInterfacesBusinessRepositoryKey, GetSubfolderName(SubFolderNameBusinessRepository)},
-                    {SubFolderInterfacesServicesKey, GetSubfolderName(SubFolderNameServices)}
+                    {Constants.SubFolderInterfacesBusinessRepositoryKey, GetSubfolderName(Constants.SubFolderNameBusinessRepository)},
+                    {Constants.SubFolderInterfacesServicesKey, GetSubfolderName(Constants.SubFolderNameServices)}
                 };
                 project.Value.Subfolders = subfolders;
             }
 
             // Iterate Services
-            projects = _settings.Projects[ServicesKey];
+            projects = _settings.Projects[Constants.ServicesKey];
             foreach (var project in projects)
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderServicesKey, GetSubfolderName(string.Empty)},
-                    {SubFolderUnitOfWorkKey, SubFolderNameUnitOfWork}
+                    {Constants.SubFolderServicesKey, GetSubfolderName(string.Empty)},
+                    {Constants.SubFolderUnitOfWorkKey, Constants.SubFolderNameUnitOfWork}
                 };
                 project.Value.Subfolders = subfolders;
             }
 
             // Iterate Resources
-            projects = _settings.Projects[ResourcesKey];
+            projects = _settings.Projects[Constants.ResourcesKey];
 
             // Forms, Process and Reports for Resources are at the same level
-            var subfolderName = SubFolderNameForms;
+            var subfolderName = Constants.SubFolderNameForms;
             switch (_settings.RepositoryType)
             {
                 case RepositoryType.Process:
-                    subfolderName = SubFolderNameProcess;
+                    subfolderName = Constants.SubFolderNameProcess;
                     break;
                 case RepositoryType.Report:
-                    subfolderName = SubFolderNameReports;
+                    subfolderName = Constants.SubFolderNameReports;
                     break;
             }
 
@@ -559,41 +580,41 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderResourcesKey, subfolderName}
+                    {Constants.SubFolderResourcesKey, subfolderName}
                 };
                 project.Value.Subfolders = subfolders;
             }
 
             // Iterate Web
-            projects = _settings.Projects[WebKey];
+            projects = _settings.Projects[Constants.WebKey];
             foreach (var project in projects)
             {
                 // Need to determine web path first
                 var moduleId = _settings.ModuleId;
 
                 // Do web folders in "new" layout exist?
-                var path = BusinessViewHelper.ConcatStrings(new[] { project.Value.ProjectFolder, SubFolderNameAreas, moduleId });
+                var path = BusinessViewHelper.ConcatStrings(new[] { project.Value.ProjectFolder, Constants.SubFolderNameAreas, moduleId });
 
                 if (Directory.Exists(path))
                 {
-                    path = BusinessViewHelper.ConcatStrings(new[] { SubFolderNameAreas, moduleId });
+                    path = BusinessViewHelper.ConcatStrings(new[] { Constants.SubFolderNameAreas, moduleId });
                 }
                 else
                 {
                     path = project.Value.ProjectFolder;
                 }
 
-                var entityName = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? _settings.EntitiesContainerName : view.Properties[BusinessView.EntityName];
+                var entityName = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? _settings.EntitiesContainerName : view.Properties[BusinessView.Constants.EntityName];
 
                 var subfolders = new Dictionary<string, string>
                 {
-                    {SubFolderWebIndexKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameViews, entityName})},
-                    {SubFolderWebLocalizationKey, BusinessViewHelper.ConcatStrings(new []{path, BusinessViewHelper.ConcatStrings(new []{SubFolderNameViews, entityName, SubFolderNamePartials})})},
-                    {SubFolderWebViewModelKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameModels}))},
-                    {SubFolderWebControllersKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers}))},
-                    {SubFolderWebFinderKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameControllers, SubFolderNameFinder})},
-                    {SubFolderWebSqlKey, BusinessViewHelper.ConcatStrings(new []{project.Value.ProjectFolder, string.Empty})},
-                    {SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, SubFolderNameScripts, entityName})}
+                    {Constants.SubFolderWebIndexKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameViews, entityName})},
+                    {Constants.SubFolderWebLocalizationKey, BusinessViewHelper.ConcatStrings(new []{path, BusinessViewHelper.ConcatStrings(new []{ Constants.SubFolderNameViews, entityName, Constants.SubFolderNamePartials })})},
+                    {Constants.SubFolderWebViewModelKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameModels }))},
+                    {Constants.SubFolderWebControllersKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameControllers }))},
+                    {Constants.SubFolderWebFinderKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameControllers, Constants.SubFolderNameFinder })},
+                    {Constants.SubFolderWebSqlKey, BusinessViewHelper.ConcatStrings(new []{project.Value.ProjectFolder, string.Empty})},
+                    {Constants.SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameScripts, entityName})}
                 };
                 project.Value.Subfolders = subfolders;
             }
@@ -610,10 +631,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var retVal = fixedName;
 
             // Is this a Process Type?
-            retVal = retVal + ((_settings.RepositoryType.Equals(RepositoryType.Process)) ? @"\" + SubFolderNameProcess : string.Empty);
+            retVal = retVal + ((_settings.RepositoryType.Equals(RepositoryType.Process)) ? @"\" + Constants.SubFolderNameProcess : string.Empty);
 
             // Is this a Report Type?
-            retVal = retVal + ((_settings.RepositoryType.Equals(RepositoryType.Report)) ? @"\" + SubFolderNameReports : string.Empty);
+            retVal = retVal + ((_settings.RepositoryType.Equals(RepositoryType.Report)) ? @"\" + Constants.SubFolderNameReports : string.Empty);
 
             // Trim any begining slash
             if (retVal.StartsWith(@"\"))
@@ -823,7 +844,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Generate enums </summary>
         /// <param name="businessView">Business View</param>
-        /// <param name="view">Accpadc Business View</param>
+        /// <param name="view">Accpac Business View</param>
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
         private static void GenerateFieldsAndEnums(BusinessView businessView, View view, Dictionary<string, bool> uniqueDescriptions)
         {
@@ -840,7 +861,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var businessField = new BusinessField
                 {
                     ServerFieldName = field.Name,
-                    Name = FieldName(field, businessView.Properties[BusinessView.EntityName], uniqueDescriptions),
+                    Name = FieldName(field, businessView.Properties[BusinessView.Constants.EntityName], uniqueDescriptions),
                     Description = field.Description,
                     Type = FieldType(field),
                     Id = field.ID,
@@ -852,7 +873,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     IsUpperCase = field.PresentationMask != null && field.PresentationMask.Contains("C"),
                     IsAlphaNumeric = field.PresentationMask != null && field.PresentationMask.Contains("N"),
                     IsNumeric = field.PresentationMask != null && field.PresentationMask.Contains("D"),
-                    IsDynamicEnablement = field.Attributes.HasFlag(ViewFieldAttributes.CheckEditable)
+                    IsDynamicEnablement = field.Attributes.HasFlag(ViewFieldAttributes.CheckEditable),
+                    IsCommon = false,
+                    //AlternateName = string.Empty,
                 };
 
                 // Add to Keys if it is a key
@@ -863,14 +886,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 if (field.PresentationType == ViewFieldPresentationType.List)
                 {
-                    var enumObject = new EnumHelper { Name = businessField.Name };
+                    var enumObject = new EnumHelper {
+                        Name = businessField.Name,
+                        IsCommon = businessField.IsCommon,
+                        //AlternateName = businessField.AlternateName,
+                    };
 
                     var builder = new StringBuilder();
                     for (var j = 0; j < field.PresentationList.Count; j++)
                     {
-                        if (field.PresentationList.PredefinedString(j) != "N/A" || !string.IsNullOrEmpty(field.PresentationList.PredefinedString(j)))
+                        if (field.PresentationList.PredefinedString(j) != "N/A" || 
+                            !string.IsNullOrEmpty(field.PresentationList.PredefinedString(j)))
                         {
-                            // Will need to prefix key with value in case of dupes (have only seen this with one view (IC0281)) and 
+                            // Will need to prefix key with value in case of dupes 
+                            // (have only seen this with one view (IC0281)) and 
                             // thus will need to resolve in enum class when coding
                             var desc = field.PresentationList.PredefinedString(j);
                             var key = BusinessViewHelper.Replace(desc);
@@ -932,166 +961,531 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private void IterateView(BusinessView view)
         {
+            // Set some flags to reduce code bulk a bit.
+            var repoType = _settings.RepositoryType;
+            var isRepoTypeHeaderDetail = repoType.Equals(RepositoryType.HeaderDetail);
+            var isRepoTypeDynamicQuery = repoType.Equals(RepositoryType.DynamicQuery);
+            var isRepoTypeProcess = repoType.Equals(RepositoryType.Process);
+            var isRepoTypeFlat = repoType.Equals(RepositoryType.Flat);
+            var isRepoTypeReport = repoType.Equals(RepositoryType.Report);
+            var isRepoTypeInquiry = repoType.Equals(RepositoryType.Inquiry);
+            var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+
+            // Reduce code bulk a bit
+            var specialFlag = (isRepoTypeHeaderDetail == false ||
+                               isRepoTypeHeaderDetail == true && view.IsPartofHeaderDetailComposition);
+
             // TODO This needs to be investigated now that we are doing n entities (business views)
 
-            // Build the subfolders
             BuildSubfolders(view);
 
-            // Create the Resx Files if the MenuResx file for that language exists
-            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
-                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
+            if (specialFlag)
             {
-                if (_settings.includeEnglish)
-                {
-                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".resx", true);
-                }
-                if (_settings.includeSpanish)
-                {
-                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".es.resx", false);
-                }
-                if (_settings.includeFrench)
-                {
-                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".fr.resx", false);
-                }
-                if (_settings.includeChineseSimplified)
-                {
-                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hans.resx", false);
-                }
-                if (_settings.includeChineseTraditional)
-                {
-                    CreateResx(view, view.Properties[BusinessView.ResxName] + ".zh-Hant.resx", false);
-                }
-            }
+                // Create the Resx Files if the MenuResx file for that language exists
+                CreateResxFilesByLanguage(_settings, view);
 
-            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
-                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
-            {
                 // Create the Model class
                 CreateClass(view,
-                            view.Properties[BusinessView.EntityName] + ".cs",
+                            entityName + ".cs",
                             TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
-                            ModelsKey, SubFolderModelKey);
-            }
+                            Constants.ModelsKey, Constants.SubFolderModelKey);
 
-            // Create the Model Mapper class. 
-            if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
-                    _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
+                // Create the Model Mapper class. 
+                if (isRepoTypeDynamicQuery == false)
                 {
                     CreateClass(view,
-                                view.Properties[BusinessView.EntityName] + "Mapper.cs",
+                                entityName + "Mapper.cs",
                                 TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
-                                BusinessRepositoryKey, SubFolderBusinessRepositoryMappersKey);
+                                Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryMappersKey);
                 }
             }
 
             // Create the Model Fields class
-            {
-                CreateClass(view,
-                            view.Properties[BusinessView.EntityName] + "Fields.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
-                            ModelsKey, SubFolderModelFieldsKey);
-            }
+            CreateClass(view,
+                        entityName + "Fields.cs",
+                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
+                        Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
 
-            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+            if (isRepoTypeHeaderDetail == false)
             {
-                if (view.Options[BusinessView.GenerateClientFiles])
+                if (generateClientFiles == true)
                 {
-                    if (!_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
+                    if (isRepoTypeDynamicQuery == false)
                     {
                         // Create _Index.cshtml
-                        var indexTemplate = "Templates.Common.View.Index";
-                        if (_settings.RepositoryType.Equals(RepositoryType.Process))
-                        {
-                            indexTemplate = "Templates.Process.View.Index";
-                        }
+                        var indexTemplate = isRepoTypeProcess == false ? "Templates.Common.View.Index"
+                                                                       : "Templates.Process.View.Index";
+
                         CreateClass(view,
                                     "Index.cshtml",
                                     TransformTemplateToText(view, _settings, indexTemplate),
-                                    WebKey, SubFolderWebIndexKey);
-
+                                    Constants.WebKey, Constants.SubFolderWebIndexKey);
 
                         // Create _Localization.cshtml
-                        var localizationTemplate = "Templates.Common.View.Localization";
-                        if (_settings.RepositoryType.Equals(RepositoryType.Process))
-                        {
-                            localizationTemplate = "Templates.Process.View.Localization";
-                        }
+                        var localizationTemplate = isRepoTypeProcess == false ? "Templates.Common.View.Localization"
+                                                                              : "Templates.Process.View.Localization";
 
                         CreateClass(view,
                                     "_Localization.cshtml",
                                     TransformTemplateToText(view, _settings, localizationTemplate),
-                                    WebKey, SubFolderWebLocalizationKey);
+                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
                     }
                 }
             }
 
-            // TODO Single Enum file check and logic here
-
-            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ||
-                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition)
+            if (specialFlag)
             {
-                // Create the Model Enumeration class(es)
+                // A single Enumeration.cs file per directory
+                var projectKey = Constants.ModelsKey;
+                var subfolderKey = Constants.SubFolderModelEnumsKey;
+                var projectInfo = _settings.Projects[projectKey][view.Properties[BusinessView.Constants.ModuleId]];
+                var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[subfolderKey] });
+
                 foreach (var value in view.Enums.Values)
                 {
+                    string content = string.Empty;
+                    var enumName = value.Name;
+
                     _settings.EnumHelper = value;
 
-                    CreateClass(view,
-                                value.Name + ".cs",
-                                TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
-                                ModelsKey, SubFolderModelEnumsKey);
+                    var isCommon = value.IsCommon;
+
+                    HandleEnumeration(isCommon, enumName, filePath, view);
                 }
             }
 
-            // Create classes for Flat Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.Flat) ||
-                _settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && view.IsPartofHeaderDetailComposition &&
-                view.Options[BusinessView.GenerateFinder])
-            {
-                CreateFlatRepositoryClasses(view);
-            }
-
-            // Create classes for Process Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.Process))
-            {
-                CreateProcessRepositoryClasses(view);
-            }
-
-            // Create classes for Dynamic Query Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                CreateDynamicQueryRepositoryClasses(view);
-            }
-
-            // Create classes for Report Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.Report))
-            {
-                CreateReportRepositoryClasses(view);
-            }
-
-            // Create classes for Inquiry Repository Type
-            if (_settings.RepositoryType.Equals(RepositoryType.Inquiry))
-            {
-                CreateInquiryRepositoryClasses(view);
-            }
+            CreateRepositoryClassesByRepositoryType(repoType, view);
 
             // Create class for finder
-            if (view.Options[BusinessView.GenerateFinder])
+            if (generateFinder == true)
             {
                 CreateClass(view,
-                            "Find" + view.Properties[BusinessView.EntityName] + "ControllerInternal.cs",
+                            "Find" + entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Common.Class.Finder"),
-                            WebKey, SubFolderWebFinderKey);
+                            Constants.WebKey, Constants.SubFolderWebFinderKey);
             }
 
-            if (!_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+            if (isRepoTypeHeaderDetail == false)
             {
                 // Update security class
                 BusinessViewHelper.UpdateSecurityClass(view, _settings);
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filePath"></param>
+        private void HandleCommonEnumeration(string enumName, 
+                                             //string alternateName, 
+                                             string filename, 
+                                             string filePath, 
+                                             BusinessView view)
+        {
+            #region Common Enumeration Example
+            /* 
+            /// <summary>
+            /// Enum for Status
+            /// </summary>
+            public enum Status
+            {
+                /// <summary>
+                /// Gets or sets Inactive
+                /// </summary>
+                [EnumValue("Inactive", typeof(CustomCommonResx))]
+                Inactive = 0,
+                /// <summary>
+                /// Gets or sets Active
+                /// </summary>
+                [EnumValue("Active", typeof(CustomCommonResx))]
+                Active = 1
+            }
+            */
+            #endregion
+
+            var content = string.Empty;
+            var rootTemplateName = "Templates.Common.Class";
+            var templateName = rootTemplateName + ".ModelCommonEnums";
+            var templateNamePartial = rootTemplateName + ".ModelCommonEnumsPartial";
+            var fileExists = File.Exists(filePath);
+
+            if (fileExists == false)
+            {
+                // Generate content (complete file)
+                content = TransformTemplateToText(view, _settings, templateName);
+
+                // Create file with the content
+                CreateClass(view, filename, content, Constants.ModelsKey, Constants.SubFolderModelEnumsKey);
+            }
+            else
+            {
+                // The file already exists so let's insert the new enumerations manually
+
+                // Generate content (enum block only)
+                content = TransformTemplateToText(view, _settings, templateNamePartial);
+
+                InsertEnumBlockIfDoesNotExist(filePath, content);
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filePath"></param>
+        private void HandleNormalEnumeration(string enumName, 
+                                             //string alternateName, 
+                                             string filename, 
+                                             string filePath, 
+                                             BusinessView view)
+        {
+            #region Normal Enumeration Example
+            /* 
+            /// <summary>
+            /// Enum for PaymentType
+            /// </summary>
+            public enum PaymentType
+            {
+                /// <summary>
+                /// Gets or sets Cash
+                /// </summary>
+                [EnumValue("Cash", typeof(PaymentCodeResx))]
+                Cash = 1,
+                /// <summary>
+                /// Gets or sets Check
+                /// </summary>
+                [EnumValue("Check", typeof(PaymentCodeResx))]
+                Check = 2,
+                /// <summary>
+                /// Gets or sets CreditCard
+                /// </summary>
+                [EnumValue("CreditCard", typeof(PaymentCodeResx))]
+                CreditCard = 3,
+                /// <summary>
+                /// Gets or sets Other
+                /// </summary>
+                [EnumValue("Other", typeof(PaymentCodeResx))]
+                Other = 4
+            }
+            */
+            #endregion
+
+            var content = string.Empty;
+            var rootTemplateName = "Templates.Common.Class";
+            var templateName = rootTemplateName + ".ModelEnums";
+            var templateNamePartial = rootTemplateName + ".ModelEnumsPartial";
+
+            var fileExists = File.Exists(filePath);
+
+            if (fileExists == false)
+            {
+                // Generate content (complete file)
+                content = TransformTemplateToText(view, _settings, templateName);
+
+                // Create file with the content
+                CreateClass(view, filename, content, Constants.ModelsKey, Constants.SubFolderModelEnumsKey);
+            }
+            else
+            {
+                // The file already exists so let's insert the new enumerations manually
+
+                // Generate content (enum block only)
+                content = TransformTemplateToText(view, _settings, templateNamePartial);
+
+                InsertEnumBlockIfDoesNotExist(filePath, content);
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="enumBlockSignature"></param>
+        /// <param name="filePath"></param>
+        /// <param name="content"></param>
+        private void InsertEnumBlockIfDoesNotExist(string filePath, string content)
+        {
+            if (EnumBlockExistsInFile(filePath, content) == false)
+            {
+                InsertEnumBlock(filePath, content);
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="isCommon"></param>
+        /// <param name="alternateName"></param>
+        /// <param name="enumName"></param>
+        /// <param name="view"></param>
+        private void HandleEnumeration(bool isCommon, 
+                                       //string alternateName, 
+                                       string enumName, 
+                                       string filePath,
+                                       BusinessView view)
+        {
+            var filename = string.Empty;
+
+            if (isCommon)
+            {
+                // Enumeration is marked as 'Common'
+                filename = PrivateConstants.CommonEnumerationsFilename;
+                filePath = BusinessViewHelper.ConcatStrings(new[] { filePath, filename });
+                HandleCommonEnumeration(enumName, filename, filePath, view);
+            }
+            else
+            {
+                // Enumeration is NOT marked as 'Common'
+                filename = PrivateConstants.RootEnumerationsFilename;
+                filePath = BusinessViewHelper.ConcatStrings(new[] { filePath, filename });
+                HandleNormalEnumeration(enumName, filename, filePath, view);
+            }
+        }
+
+        /// <summary>
+        /// This method will determine if an enumeration already exists in a file.
+        /// It will check the name and all of the values.
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <param name="content"></param>
+        /// <returns>true = Enumeration exists (name and values match) | false = Name and/or Value mismatch</returns>
+        private bool EnumBlockExistsInFile(string filepath, string content)
+        {
+            if (File.Exists(filepath) == false) return false;
+
+            // Build up the structure of the enumerations in the file
+            var fileObject = ParseEnumerationsInFile(filepath);
+
+            // Build up the structure of the enumeration in the content block
+            var contentObject = ParseEnumerationsInBlock(content);
+
+            return Utilities.EnumExists(fileObject, contentObject);
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInFile(string filepath)
+        {
+            const string enumSignatureStub = @"public enum ";
+
+            var container = new Dictionary<string, Dictionary<string, object>>();
+
+            // Open the file and parse out the contents
+            var allLines = File.ReadAllLines(filepath);
+            var trimLines = allLines.Select(l => l.Trim()).ToList();
+
+            var enumName = string.Empty;
+            var processingEnum = false;
+
+            var enumValueContainer = new Dictionary<string, object>();
+
+            for (int x = 0; x < trimLines.Count; x++)
+            {
+                var currentLine = trimLines[x];
+                if (currentLine.Contains(enumSignatureStub) && processingEnum == false)
+                {
+                    // Found the beginning of an enumeration
+
+                    var sigArray = currentLine.Split(new string[] { " " }, StringSplitOptions.None);
+                    enumName = sigArray[2];
+                    processingEnum = true;
+                }
+                else if (processingEnum == true)
+                {
+                    // See if this line is actually one of the enumeration values
+                    if (currentLine.Contains("="))
+                    {
+                        var valueLineArr = currentLine.Split('=');
+                        var valueName = valueLineArr[0].Trim();
+                        string value = valueLineArr[1].Trim();
+                        value = value.RemoveLast(",");
+
+                        // Add this value to the container
+                        enumValueContainer.Add(valueName, value);
+                    }
+                    else if (currentLine.Contains("}"))
+                    {
+                        // We've reached the end of this enum block
+                        // Add the enumeration to the container 
+                        // and move on to the next one
+                        container.Add(enumName, enumValueContainer);
+
+                        // Empty the value bucket in preparation 
+                        // for processing the next enumeration.
+                        enumValueContainer.Clear();
+
+                        // No longer processing an enumeration
+                        processingEnum = false;
+                    }
+                }
+            }
+
+            return container;
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInBlock(string content)
+        {
+            const string enumSignatureStub = @"public enum ";
+
+            var container = new Dictionary<string, Dictionary<string, object>>();
+
+            // Open the file and parse out the contents
+            var allLines = content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+            var trimLines = allLines.Select(l => l.Trim()).ToList();
+
+            var enumName = string.Empty;
+            var processingEnum = false;
+
+            var enumValueContainer = new Dictionary<string, object>();
+
+            for (int x = 0; x < trimLines.Count; x++)
+            {
+                var currentLine = trimLines[x];
+                if (currentLine.Contains(enumSignatureStub) && processingEnum == false)
+                {
+                    // Found the beginning of an enumeration
+
+                    var sigArray = currentLine.Split(new string[] { " " }, StringSplitOptions.None);
+                    enumName = sigArray[2];
+                    processingEnum = true;
+                }
+                else if (processingEnum == true)
+                {
+                    // See if this line is actually one of the enumeration values
+                    if (currentLine.Contains("="))
+                    {
+                        var valueLineArr = currentLine.Split('=');
+                        var valueName = valueLineArr[0].Trim();
+                        string value = valueLineArr[1].Trim();
+                        value = value.RemoveLast(",");
+
+                        // Add this value to the container
+                        enumValueContainer.Add(valueName, value);
+                    }
+                    else if (currentLine.Contains("}"))
+                    {
+                        // We've reached the end of this enum block
+                        // Add the enumeration to the container 
+                        // and move on to the next one
+                        container.Add(enumName, enumValueContainer);
+                        processingEnum = false;
+                    }
+                }
+            }
+
+            return container;
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="content"></param>
+        private void InsertEnumBlock(string filepath, string content)
+        {
+            if (File.Exists(filepath) == true)
+            {
+                // Read the file into an array of strings
+                var fileContents = File.ReadAllLines(filepath).ToList();
+
+                // Get the last index in the file and insert the new content
+                var insertionIndex = fileContents.Count - 1;
+                fileContents.Insert(insertionIndex, content);
+
+                // Save the file
+                File.WriteAllLines(filepath, fileContents);
+            }
+        }
+
+        /// <summary>
+        /// Create Resx files based on the languages selected
+        /// </summary>
+        /// <param name="settings">The Settings object (for the language selections)</param>
+        /// <param name="view">The BusinessView object</param>
+        private void CreateResxFilesByLanguage(Settings settings, BusinessView view)
+        {
+            #region Setup filenames
+            var baseFilename = view.Properties[BusinessView.Constants.ResxName];
+
+            // Common resources will live in only one location (Root of Resources project)
+            var commonFilename = PrivateConstants.CustomCommonResx;
+            #endregion
+
+            #region Local Constants
+            const int IndexBaseFile = 0;
+            const int IndexCommonFile = 1;
+
+            const int IndexEnglish = 0;
+            const int IndexSpanish = 1;
+            const int IndexFrench = 2;
+            const int IndexChineseS = 3;
+            const int IndexChineseT = 4;
+
+            const string extension = @".resx";
+            #endregion
+
+            // This is the list of resource files for each supported language 
+            // (Normal resources and Common resources)
+            var resourceFileNames = new string[][]
+            {
+                new string[] { baseFilename + extension,
+                               commonFilename + extension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.Spanish + extension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.Spanish + extension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.French + extension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.French + extension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + extension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + extension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + extension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + extension },
+            };
+
+            // Create the resource files based on whether or not the language has been selected.
+            if (settings.includeEnglish) { CreateResx(view, resourceFileNames[IndexEnglish][IndexBaseFile], 
+                                                            resourceFileNames[IndexEnglish][IndexCommonFile], addDescription: true); }
+            if (settings.includeSpanish) { CreateResx(view, resourceFileNames[IndexSpanish][IndexBaseFile], 
+                                                            resourceFileNames[IndexSpanish][IndexCommonFile], true); }
+            if (settings.includeFrench) { CreateResx(view, resourceFileNames[IndexFrench][IndexBaseFile], 
+                                                           resourceFileNames[IndexFrench][IndexCommonFile], true); }
+            if (settings.includeChineseSimplified) { CreateResx(view, resourceFileNames[IndexChineseS][IndexBaseFile], 
+                                                                      resourceFileNames[IndexChineseS][IndexCommonFile], true); }
+            if (settings.includeChineseTraditional) { CreateResx(view, resourceFileNames[IndexChineseT][IndexBaseFile], 
+                                                                       resourceFileNames[IndexChineseT][IndexCommonFile], true); }
+        }
+
+        /// <summary>
+        /// Create the repository classes by Repository Type
+        /// </summary>
+        /// <param name="type">The selected Repository Type enumeration value</param>
+        /// <param name="view">The BusinessView</param>
+        private void CreateRepositoryClassesByRepositoryType(RepositoryType type, BusinessView view)
+        {
+            var isHeaderDetail = type.Equals(RepositoryType.HeaderDetail);
+            var isDynamicQuery = type.Equals(RepositoryType.DynamicQuery);
+            var isProcess = type.Equals(RepositoryType.Process);
+            var isFlat = type.Equals(RepositoryType.Flat);
+            var isReport = type.Equals(RepositoryType.Report);
+            var isInquiry = type.Equals(RepositoryType.Inquiry);
+            var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
+
+            if (isFlat == true ||
+                (isHeaderDetail == true && view.IsPartofHeaderDetailComposition && generateFinder))
+            {
+                CreateFlatRepositoryClasses(view);
+            }
+            if (isProcess == true) { CreateProcessRepositoryClasses(view); }
+            if (isDynamicQuery == true) { CreateDynamicQueryRepositoryClasses(view); }
+            if (isReport == true) { CreateReportRepositoryClasses(view); }
+            if (isInquiry == true) { CreateInquiryRepositoryClasses(view); }
+        }
         /// <summary> Create the class </summary>
         /// <param name="view">Business View</param>
         /// <param name="fileName"> Name of file to be created</param>
@@ -1103,10 +1497,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             string subfolderKey, bool addToProject = true)
         {
             // Update display of file being processed
-            if (ProcessingEvent != null)
-            {
-                ProcessingEvent(fileName);
-            }
+            ProcessingEvent?.Invoke(fileName);
 
             // Save the file
             var success = SaveFile(view, fileName, content, projectKey, subfolderKey, addToProject);
@@ -1120,44 +1511,37 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="fileName">name of file to be created</param>
         private void LaunchStatusEvent(bool success, string fileName)
         {
-            if (StatusEvent != null)
-            {
-                if (success)
-                {
-                    StatusEvent(fileName, Info.StatusType.Success, string.Empty);
-                }
-                else
-                {
-                    StatusEvent(fileName, Info.StatusType.Error, string.Format(Resources.ErrorCreatingFile, fileName));
-                }
-            }
+            if (StatusEvent == null) { return; }
+            Info.StatusType statusType = success ? Info.StatusType.Success : Info.StatusType.Error;
+            var message = success ? String.Empty : string.Format(Resources.ErrorCreatingFile, fileName);
+            StatusEvent(fileName, statusType, message);
         }
 
         /// <summary> Create Flat Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateFlatRepositoryClasses(BusinessView view)
         {
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.EntityName];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
 
             // Create the Business Repository Interface class
             CreateClass(view,
                         "I" + entityName + "Entity.cs",
                         TransformTemplateToText(view, _settings, "Templates.Flat.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
 
             // Create the Service Interface class
             CreateClass(view,
                         "I" + entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.Flat.Class.ServiceInterface"),
-                        InterfacesKey, SubFolderInterfacesServicesKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
                         entityName + "EntityService.cs",
                         TransformTemplateToText(view, _settings, "Templates.Flat.Class.Service"),
-                        ServicesKey, SubFolderServicesKey);
+                        Constants.ServicesKey, Constants.SubFolderServicesKey);
 
             if (generateClientFiles)
             {
@@ -1165,26 +1549,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             entityName + "ViewModel.cs",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
-                            WebKey, SubFolderWebViewModelKey);
+                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
                 // Create the Internal Controller class
                 CreateClass(view,
                             entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Class.InternalController"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
 
                 // Create the public Controller class
                 CreateClass(view,
                             entityName + "Controller.cs",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.Flat.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
             if (generateClientFiles)
@@ -1193,7 +1577,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             fileName,
                             TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
-                            WebKey, SubFolderWebLocalizationKey);
+                            Constants.WebKey, Constants.SubFolderWebLocalizationKey);
             }
 
             // Register types
@@ -1216,25 +1600,25 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 var projectName =
-                _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+                _settings.Projects[Constants.WebKey][view.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
                 // Create the Behavior JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "Behaviour.js",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
                 // Create the Knockout Extension JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "KoExtn.js",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Script.KoExtn"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
                 // Create the Repository JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "Repository.js",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Script.Repository"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
             }
         }
 
@@ -1251,39 +1635,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             CreateClass(headerView, 
                         "I" + containerName + "Repository.cs",
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Repository class
             CreateClass(headerView,
                         containerName + "Repository.cs",
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
 
             // Create the ViewModel class
             CreateClass(headerView,
                         containerName + "ViewModel.cs",
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.ViewModel"),
-                        WebKey, SubFolderWebViewModelKey);
+                        Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
             // Create the public Controller class
             CreateClass(headerView,
                         containerName + "Controller.cs",
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.Controller"),
-                        WebKey, SubFolderWebControllersKey);
+                        Constants.WebKey, Constants.SubFolderWebControllersKey);
 
 
             // Create the Internal Controller class
             CreateClass(headerView,
                         containerName + "ControllerInternal.cs",
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.InternalController"),
-                        WebKey, SubFolderWebControllersKey);
+                        Constants.WebKey, Constants.SubFolderWebControllersKey);
 
             // Create partial view.cshtml
             var fileName = "_" + containerName + ".cshtml";
             CreateClass(headerView,
                         fileName,
                         TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
-                        WebKey, SubFolderWebLocalizationKey);
+                        Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
             // Register types
             BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
@@ -1301,38 +1685,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // For javascript files, the project name does not include the .Web segment
             var projectName =
-            settings.Projects[WebKey][headerView.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+            settings.Projects[Constants.WebKey][headerView.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
             // Create the Behavior JavaScript file
             CreateClass(headerView,
                         projectName + "." + containerName + "Behaviour.js",
                         TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
-                        WebKey, SubFolderWebScriptsKey);
+                        Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file
             CreateClass(headerView,
                         projectName + "." + containerName + "KoExtn.js",
                         TransformTemplateToText(headerView, settings, "Templates.Flat.Script.KoExtn"),
-                        WebKey, SubFolderWebScriptsKey);
+                        Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
             // Create the Repository JavaScript file
             CreateClass(headerView,
                         projectName + "." + containerName + "Repository.js",
                         TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Repository"),
-                        WebKey, SubFolderWebScriptsKey);
+                        Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
             // Create _Index.cshtml
             CreateClass(headerView,
                         "Index.cshtml",
                         TransformTemplateToText(headerView, settings, "Templates.Common.View.Index"),
-                        WebKey, SubFolderWebIndexKey);
+                        Constants.WebKey, Constants.SubFolderWebIndexKey);
 
             // Create _Localization.cshtml
             var localizationTemplate = "Templates.Common.View.Localization";
             CreateClass(headerView,
                         "_Localization.cshtml",
                         TransformTemplateToText(headerView, settings, localizationTemplate),
-                        WebKey, SubFolderWebLocalizationKey);
+                        Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
             if (settings.includeEnglish)
             {
@@ -1360,32 +1744,32 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private void CreateProcessRepositoryClasses(BusinessView view)
         {
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.EntityName];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
 
             // Create the Business Repository Interface class
             CreateClass(view,
                         "I" + entityName + "Entity.cs",
                         TransformTemplateToText(view, _settings, "Templates.Process.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
                         "I" + entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.Process.Class.ServiceInterface"),
-                        InterfacesKey, SubFolderInterfacesServicesKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
                         entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.Process.Class.Service"),
-                        ServicesKey, SubFolderServicesKey);
+                        Constants.ServicesKey, Constants.SubFolderServicesKey);
 
             // Create the Unit of Work Service Class
             CreateClass(view,
                         entityName + "Uow.cs",
                         TransformTemplateToText(view, _settings, "Templates.Process.Class.Uow"),
-                        ServicesKey, SubFolderUnitOfWorkKey);
+                        Constants.ServicesKey, Constants.SubFolderUnitOfWorkKey);
 
             if (generateClientFiles)
             {
@@ -1393,26 +1777,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             entityName + "ViewModel.cs",
                             TransformTemplateToText(view, _settings, "Templates.Process.Class.ViewModel"),
-                            WebKey, SubFolderWebViewModelKey);
+                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
                 // Create the Internal Controller class
                 CreateClass(view,
                             entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Process.Class.InternalController"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
 
                 // Create the public Controller class
                 CreateClass(view,
                             entityName + "Controller.cs",
                             TransformTemplateToText(view, _settings, "Templates.Process.Class.Controller"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.Process.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
 
             // Create partial view.cshtml
             if (generateClientFiles)
@@ -1421,7 +1805,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             fileName,
                             TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
-                            WebKey, SubFolderWebLocalizationKey);
+                            Constants.WebKey, Constants.SubFolderWebLocalizationKey);
             }
 
             // Register types
@@ -1444,32 +1828,32 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 var projectName =
-                _settings.Projects[WebKey][view.Properties[BusinessView.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+                _settings.Projects[Constants.WebKey][view.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
                 // Create the Behavior JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "Behaviour.js",
                             TransformTemplateToText(view, _settings, "Templates.Process.Script.Behaviour"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
                 // Create the Knockout Extension JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "KoExtn.js",
                             TransformTemplateToText(view, _settings, "Templates.Process.Script.KoExtn"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
                 // Create the Repository JavaScript file
                 CreateClass(view,
                             projectName + "." + entityName + "Repository.js",
                             TransformTemplateToText(view, _settings, "Templates.Process.Script.Repository"),
-                            WebKey, SubFolderWebScriptsKey);
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
             }
 
             // Create the SQL script
             CreateClass(view,
                         entityName + "_WorkerRole_Data.sql",
                         TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
-                        WebKey, SubFolderWebSqlKey,
+                        Constants.WebKey, Constants.SubFolderWebSqlKey,
                         false);
         }
 
@@ -1477,26 +1861,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private void CreateDynamicQueryRepositoryClasses(BusinessView view)
         {
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.EntityName];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
 
             // Create the Business Repository Interface class
             CreateClass(view,
                         "I" + entityName + "Entity.cs",
                         TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
                         "I" + entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ServiceInterface"),
-                        InterfacesKey, SubFolderInterfacesServicesKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
                         entityName + "EntityService.cs",
                         TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Service"),
-                        ServicesKey, SubFolderServicesKey);
+                        Constants.ServicesKey, Constants.SubFolderServicesKey);
 
             if (generateClientFiles)
             {
@@ -1504,103 +1888,99 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             entityName + "ViewModel.cs",
                             TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ViewModel"),
-                            WebKey, SubFolderWebViewModelKey);
+                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
                 // Create the public Controller class
                 CreateClass(view,
                             entityName + "Controller.cs",
                             TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Controller"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
         }
 
         /// <summary> Create Report Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateReportRepositoryClasses(BusinessView view)
         {
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.EntityName];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
 
             // Create the Business Repository Interface class
             CreateClass(view,
                         "I" + entityName + "Entity.cs",
                         TransformTemplateToText(view, _settings, "Templates.Reports.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
                         "I" + entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.Reports.Class.ServiceInterface"),
-                        InterfacesKey, SubFolderInterfacesServicesKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
                         entityName + "EntityService.cs",
                         TransformTemplateToText(view, _settings, "Templates.Reports.Class.Service"),
-                        ServicesKey, SubFolderServicesKey);
+                        Constants.ServicesKey, Constants.SubFolderServicesKey);
 
-            // Create the ViewModel class
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (generateClientFiles)
             {
+                // Create the ViewModel class
                 CreateClass(view,
                             entityName + "ViewModel.cs",
                             TransformTemplateToText(view, _settings, "Templates.Reports.Class.ViewModel"),
-                            WebKey, SubFolderWebViewModelKey);
-            }
+                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
-            // Create the public Controller class
-            if (generateClientFiles)
-            {
                 // Create the public Controller class
                 CreateClass(view,
                             entityName + "Controller.cs",
                             TransformTemplateToText(view, _settings, "Templates.Reports.Class.Controller"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
 
                 // Create the internal Controller class
                 CreateClass(view,
                             entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Reports.Class.InternalController"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.Reports.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
         }
 
         /// <summary> Create Inquiry Repository Classes </summary>
         /// <param name="view">Business View</param>
         private void CreateInquiryRepositoryClasses(BusinessView view)
         {
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.EntityName];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
 
             // Create the Business Repository Interface class
             CreateClass(view,
                         "I" + entityName + "Entity.cs",
                         TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.RepositoryInterface"),
-                        InterfacesKey, SubFolderInterfacesBusinessRepositoryKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Service Interface class
             CreateClass(view,
                         "I" + entityName + "Service.cs",
                         TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ServiceInterface"),
-                        InterfacesKey, SubFolderInterfacesServicesKey);
+                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
 
             // Create the Service class
             CreateClass(view,
                         entityName + "EntityService.cs",
                         TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Service"),
-                        ServicesKey, SubFolderServicesKey);
+                        Constants.ServicesKey, Constants.SubFolderServicesKey);
 
             if (generateClientFiles)
             {
@@ -1608,26 +1988,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 CreateClass(view,
                             entityName + "ViewModel.cs",
                             TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ViewModel"),
-                            WebKey, SubFolderWebViewModelKey);
+                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
                 // Create the Internal Controller class
                 CreateClass(view,
                             entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.InternalController"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
 
                 // Create the public Controller class
                 CreateClass(view,
                             entityName + "Controller.cs",
                             TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Controller"),
-                            WebKey, SubFolderWebControllersKey);
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
             }
 
             // Create the Repository class
             CreateClass(view,
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
-                        BusinessRepositoryKey, SubFolderBusinessRepositoryKey);
+                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
         }
 
         /// <summary>
@@ -1639,15 +2019,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void CreateHeaderDetailResx(BusinessView view, string fileName, bool addDescription)
         {
             // Update display of file being processed
-            if (ProcessingEvent != null)
-            {
-                ProcessingEvent(fileName);
-            }
+            ProcessingEvent?.Invoke(fileName);
 
             // Vars
             var retVal = true;
-            var projectInfo = _settings.Projects[ResourcesKey][view.Properties[BusinessView.ModuleId]];
-            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[SubFolderResourcesKey] });
+            var projectInfo = _settings.Projects[Constants.ResourcesKey][view.Properties[BusinessView.Constants.ModuleId]];
+            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[Constants.SubFolderResourcesKey] });
             var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
 
             // Determine if exists
@@ -1695,7 +2072,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var uniqueList = new List<string>();
 
                     // Add Enity key
-                    resx.AddResource(new ResXDataNode("Entity", addDescription ? view.Properties[BusinessView.ModuleId] +
+                    resx.AddResource(new ResXDataNode("Entity", addDescription ? view.Properties[BusinessView.Constants.ModuleId] +
                         " " + _settings.EntitiesContainerName : string.Empty));
 
                     resx.Close();
@@ -1737,52 +2114,202 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
 
-
         /// <summary>
         /// Create the Resx content
+        /// Both discrete and common
         /// </summary>
         /// <param name="view">Business View</param>
-        /// <param name="fileName">Resx File Name</param>
-        /// <param name="addDescription">True to add descriptions otherwise false</param>
-        private void CreateResx(BusinessView view, string fileName, bool addDescription)
+        /// <param name="filename">The resource file name</param>
+        /// <param name="commonFilename">The common resource file name</param>
+        /// <param name="addDescription">True to add descriptions otherwise false (default is false)</param>
+        private void CreateResx(BusinessView view, string filename, string commonFilename, bool addDescription = false)
         {
-            // Update display of file being processed
-            if (ProcessingEvent != null)
+            // Process the regular Resx file (skip entities not marked as 'IsCommon')
+            var fileToProcess = filename;
+            ProcessingEvent?.Invoke(fileToProcess);
+            var success = SaveResxFile(isStandardResxFile: true, 
+                                       view: view, 
+                                       fileName: fileToProcess, 
+                                       addDescription: addDescription);
+            LaunchStatusEvent(success, fileToProcess);
+
+            if (success)
             {
-                ProcessingEvent(fileName);
+                // Process the Common Resx file (include only entities marked as 'IsCommon')
+                fileToProcess = commonFilename;
+                ProcessingEvent?.Invoke(fileToProcess);
+                success = SaveResxFile(isStandardResxFile: false,
+                                       view: view,
+                                       fileName: fileToProcess,
+                                       addDescription: addDescription);
+                LaunchStatusEvent(success, fileToProcess);
             }
-
-            // Save the file
-            var success = SaveResxFile(view, fileName, addDescription);
-
-            // Update status
-            LaunchStatusEvent(success, fileName);
         }
 
-
         /// <summary>
-        /// Save the Resx content
+        /// 
         /// </summary>
-        /// <param name="view">Business View</param>
-        /// <param name="fileName">Resx File Name</param>
-        /// <param name="addDescription">True to add descriptions otherwise false</param>
-        private bool SaveResxFile(BusinessView view, string fileName, bool addDescription)
+        /// <param name="isStandardResxFile"></param>
+        /// <param name="view"></param>
+        /// <param name="fileName"></param>
+        /// <param name="addDescription"></param>
+        /// <returns></returns>
+        private bool SaveResxFile(bool isStandardResxFile, BusinessView view, string fileName, bool addDescription)
         {
-            // Vars
-            var retVal = true;
-            var projectInfo = _settings.Projects[ResourcesKey][view.Properties[BusinessView.ModuleId]];
-            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[SubFolderResourcesKey] });
-            var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
-
-            // Determine if exists
-            var exists = File.Exists(fullFileName);
+            // Variables
+            var isCommon = !isStandardResxFile;
+            var fileWriteSuccessful = true;
+            var projectInfo = GetProjectInfo(view);
+            var filePath = isCommon ? projectInfo.ProjectFolder
+                                    : BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[Constants.SubFolderResourcesKey] });
+            var resourceFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
             var writeFile = true;
 
+            // Determine if the resource file exists or not
+            var fileExists = File.Exists(resourceFileName);
+
+            var resourceManager = new ResXManager(resourceFileName);
+
             // Prompt if file exists?
-            if (exists && _settings.PromptIfExists)
+            if (writeFile = PromptIfFileExists(fileExists, _settings.PromptIfExists, resourceFileName) == false)
             {
-                var result = MessageBox.Show(string.Format(Resources.FileExists, fullFileName),
-                    Resources.Confirmation, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                return false;
+            }
+
+            try
+            {
+                var uniqueList = new List<string>();
+
+                // If file doesn't exist, 
+                // ensure that the directory exists
+                if (!fileExists)
+                {
+                    CreateDirectoryIfNotYetExists(filePath);
+                }
+
+                // Only necessary if processing a normal resource file
+                if (isCommon == false)
+                {
+                    // Add Entity key
+                    var key = "Entity";
+                    var value = addDescription ? view.Properties[BusinessView.Constants.ModuleId] +
+                                                 " " + view.Properties[BusinessView.Constants.EntityName] : string.Empty;
+                    resourceManager.InsertIfNotExist(key, value);
+                }
+
+                // Iterate fields collection (filter by Enumerations marked as 'IsCommon' (or not))
+                var results = view.Fields.Where(field => field.IsCommon == isCommon);
+                var nodes = from field in results
+                            where !uniqueList.Contains(field.Name, StringComparer.CurrentCultureIgnoreCase)
+                            select new { field.Name, field.Description };
+
+                foreach (var node in nodes)
+                {
+                    var name = node.Name;
+                    var value = addDescription ? node.Description : string.Empty;
+                    resourceManager.InsertIfNotExist(name, value);
+
+                    // Add the enum name to the list of unique strings
+                    uniqueList.Add(name);
+                }
+
+                // Iterate the actual enumeration values
+                // We dealt with the enumeration names in the previous code block.
+                foreach (var enumHelper in view.Enums.Values)
+                {
+                    foreach (var value in enumHelper.Values)
+                    {
+                        // Locals - Used to split out prefix and replace invalid characters
+                        GetEnumKeyAndDescription(value, out string key, out string description);
+
+                        // Add only if not yet present and not blank
+                        if (KeyIsPresentOrBlank(key, uniqueList) == false)
+                        {
+                            if (enumHelper.IsCommon == isCommon)
+                            {
+                                resourceManager.InsertIfNotExist(key, addDescription ? description : string.Empty);
+                            }
+                            uniqueList.Add(key);
+                        }
+                    }
+                }
+
+                _settings.ResourceKeys = uniqueList;
+                resourceManager.Write();
+            }
+            catch
+            {
+                fileWriteSuccessful = false;
+            }
+
+            if (fileWriteSuccessful)
+            {
+                try
+                {
+                    AddResourceFileToProject(projectInfo, resourceFileName, addDescription);
+                }
+                catch
+                {
+                    fileWriteSuccessful = false;
+                }
+            }
+
+            return fileWriteSuccessful;
+        }
+		
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
+        private ProjectInfo GetProjectInfo(BusinessView v) => 
+            _settings.Projects[Constants.ResourcesKey][v.Properties[BusinessView.Constants.ModuleId]];
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="filePath"></param>
+        private void CreateDirectoryIfNotYetExists(string filePath)
+        {
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }
+        }
+		
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="pi"></param>
+        /// <param name="file"></param>
+        /// <param name="addDescription"></param>
+        private void AddResourceFileToProject(ProjectInfo pi, string file, bool addDescription)
+        {
+            var createdItem = pi.Project.ProjectItems.AddFromFile(file);
+
+            // Only add code behind file for english resx file
+            if (addDescription)
+            {
+                createdItem.Properties.Item("CustomTool").Value = "PublicResXFileCodeGenerator";
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="fileExists"></param>
+        /// <param name="promptIfExists"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        private bool PromptIfFileExists(bool fileExists, bool promptIfExists, string filename)
+        {
+            var writeFile = true;
+
+            if (fileExists && promptIfExists)
+            {
+                var result = MessageBox.Show(string.Format(Resources.FileExists, filename),
+                                             Resources.Confirmation,
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
 
                 // Evaluate
                 switch (result)
@@ -1800,92 +2327,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
-            // Write the file?
-            if (writeFile)
-            {
-                try
-                {
-                    // Ensure the filepath exists
-                    if (!exists)
-                    {
-                        if (!Directory.Exists(filePath))
-                        {
-                            Directory.CreateDirectory(filePath);
-                        }
-                    }
-
-                    // Create resx file
-                    var resx = new ResXResourceWriter(fullFileName);
-                    var uniqueList = new List<string>();
-
-                    // Add Enity key
-                    resx.AddResource(new ResXDataNode("Entity", addDescription ? view.Properties[BusinessView.ModuleId] +
-                        " " + view.Properties[BusinessView.EntityName] : string.Empty));
-
-                    // Iterate fields collection
-                    foreach (var node in view.Fields.Select(field => new ResXDataNode(field.Name, addDescription ? field.Description : string.Empty)).Where(node => !uniqueList.Contains(node.Name, StringComparer.CurrentCultureIgnoreCase)))
-                    {
-                        resx.AddResource(node);
-                        uniqueList.Add(node.Name);
-                    }
-
-                    // Iterate enumerations
-                    foreach (var enumHelper in view.Enums.Values)
-                    {
-                        foreach (var value in enumHelper.Values)
-                        {
-                            // Locals - Used to split out prefix and replace invalid characters
-                            var tmp = value.Key.Split(':');
-                            var key = tmp[1]; // Replace function already performed
-                            var description = tmp[2]; // Raw from presentation list
-
-                            // Do not add if already present or key is blank
-                            if (string.IsNullOrEmpty(key) || uniqueList.Contains(key, StringComparer.CurrentCultureIgnoreCase))
-                            {
-                                continue;
-                            }
-
-                            // Add to resource
-                            resx.AddResource(new ResXDataNode(key, addDescription ? description : string.Empty));
-                            uniqueList.Add(key);
-                        }
-                    }
-
-                    _settings.ResourceKeys = uniqueList;
-                    resx.Close();
-                }
-                catch
-                {
-                    retVal = false;
-                }
-
-                // Update project if write was successful
-                if (retVal)
-                {
-                    // Add to project
-                    try
-                    {
-                        var createdItem = projectInfo.Project.ProjectItems.AddFromFile(fullFileName);
-
-                        // Only add code behind file for english resx file
-                        if (addDescription)
-                        {
-                            createdItem.Properties.Item("CustomTool").Value = "PublicResXFileCodeGenerator";
-                        }
-                    }
-                    catch
-                    {
-                        retVal = false;
-                    }
-                }
-            }
-            else
-            {
-                retVal = false;
-            }
-
-            return retVal;
+            return writeFile;
         }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="key"></param>
+        /// <param name="description"></param>
+        private void GetEnumKeyAndDescription(KeyValuePair<string, object> value, out string key, out string description)
+        {
+            var arr = value.Key.Split(':');
+            key = arr[1]; // Replace function already performed
+            description = arr[2]; // Raw from presentation list
+        }
+
+        private bool KeyIsPresentOrBlank(string key, List<string> list) => 
+            string.IsNullOrEmpty(key) || list.Contains(key, StringComparer.CurrentCultureIgnoreCase);
 
         #endregion
     }

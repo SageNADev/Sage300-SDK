@@ -23,7 +23,7 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var containerName = entityName;
     if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
@@ -31,7 +31,7 @@
         containerName = settings.EntitiesContainerName;
     }
 
-    var moduleId = view.Properties[BusinessView.ModuleId];
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
@@ -137,7 +137,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 */
     initFinders: function () {
         var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
+        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.Constants.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
     },
 
 	/**

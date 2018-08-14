@@ -147,9 +147,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var modelName = view.Properties[BusinessView.ModelName];
-    var entityName = view.Properties[BusinessView.EntityName];
-    var workflowKindId = view.Properties[BusinessView.WorkflowKindId];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var workflowKindId = view.Properties[BusinessView.Constants.WorkflowKindId];
 
             
             #line default

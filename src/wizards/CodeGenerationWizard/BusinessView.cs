@@ -31,20 +31,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public class BusinessView
     {
         #region Public Constants
-        public const string ViewId = "ViewId";
-        public const string ModelName = "ModelName";
-        public const string ModuleId = "ModuleId";
-        public const string EntityName = "EntityName";
-        public const string ReportIni = "ReportIni";
-        public const string ReportKey = "ReportKey";
-        public const string ProgramId = "ProgramId";
-        public const string ResxName = "ResxName";
-        public const string GenerateFinder = "GenerateFinder";
-        public const string GenerateDynamicEnablement = "GenerateDynamicEnablement";
-        public const string GenerateClientFiles = "GenerateClientFiles";
-        public const string GenerateIfAlreadyExists = "GenerateIfAlreadyExists";
-        public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
-        public const string WorkflowKindId = "WorkflowKindId";
+        public static class Constants
+        {
+            public const string ViewId = "ViewId";
+            public const string ModelName = "ModelName";
+            public const string ModuleId = "ModuleId";
+            public const string EntityName = "EntityName";
+            public const string ReportIni = "ReportIni";
+            public const string ReportKey = "ReportKey";
+            public const string ProgramId = "ProgramId";
+            public const string ResxName = "ResxName";
+            public const string CustomCommonResxName = "CustomCommonResxName";
+            public const string GenerateFinder = "GenerateFinder";
+            public const string GenerateDynamicEnablement = "GenerateDynamicEnablement";
+            public const string GenerateClientFiles = "GenerateClientFiles";
+            public const string GenerateIfAlreadyExists = "GenerateIfAlreadyExists";
+            public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
+            public const string WorkflowKindId = "WorkflowKindId";
+        }
         #endregion
 
         #region Constructor

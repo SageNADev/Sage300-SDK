@@ -81,7 +81,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 			this.btnIniDialog = new System.Windows.Forms.Button();
 			this.lblEntityName = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.chkGenerateEnumsInSingleFile = new System.Windows.Forms.CheckBox();
 			this.chkGenerateIfExist = new System.Windows.Forms.CheckBox();
 			this.chkGenerateClientFiles = new System.Windows.Forms.CheckBox();
 			this.chkGenerateFinder = new System.Windows.Forms.CheckBox();
@@ -682,7 +681,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.chkGenerateEnumsInSingleFile);
 			this.tabPage2.Controls.Add(this.chkGenerateIfExist);
 			this.tabPage2.Controls.Add(this.chkGenerateClientFiles);
 			this.tabPage2.Controls.Add(this.chkGenerateFinder);
@@ -694,17 +692,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Options";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// chkGenerateEnumsInSingleFile
-			// 
-			this.chkGenerateEnumsInSingleFile.AutoSize = true;
-			this.chkGenerateEnumsInSingleFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkGenerateEnumsInSingleFile.Location = new System.Drawing.Point(15, 111);
-			this.chkGenerateEnumsInSingleFile.Name = "chkGenerateEnumsInSingleFile";
-			this.chkGenerateEnumsInSingleFile.Size = new System.Drawing.Size(216, 17);
-			this.chkGenerateEnumsInSingleFile.TabIndex = 25;
-			this.chkGenerateEnumsInSingleFile.Text = "Generate Enumerations in Single File";
-			this.chkGenerateEnumsInSingleFile.UseVisualStyleBackColor = true;
 			// 
 			// chkGenerateIfExist
 			// 
@@ -1086,7 +1073,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.TabControl tabEntity;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox chkGenerateEnumsInSingleFile;
         private System.Windows.Forms.CheckBox chkGenerateIfExist;
         private System.Windows.Forms.CheckBox chkGenerateClientFiles;
         private System.Windows.Forms.TextBox txtEntitiesToGenerate;

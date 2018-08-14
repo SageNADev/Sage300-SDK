@@ -28,7 +28,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 {
     public partial class UserInputForm : Form
     {
-        #region Private Vars
+        #region Private Variables
         /// <summary> Wizard Steps </summary>
         private readonly List<WizardStep> _wizardSteps = new List<WizardStep>();
 
@@ -40,7 +40,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 		#endregion
 
 		#region Private Constants
-		private class Constants
+		private static class Constants
 		{
 			/// <summary> Splitter Distance </summary>
 			public const int SplitterDistance = 237;
@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 		}
 		#endregion
 
-		#region Public vars
+		#region Public Properties
 		public string ThirdPartyCompanyName { get; set; }
         public string ThirdPartyApplicationId { get; set; }
         public string CompanyNamespace { get; set; }

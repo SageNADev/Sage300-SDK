@@ -45,6 +45,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             IsAlphaNumeric = false;
             IsNumeric = false;
             IsDynamicEnablement = false;
+            IsCommon = false;
+            //AlternateName = string.Empty;
         }
         #endregion
 
@@ -77,6 +79,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool IsNumeric { get; set; }
         /// <summary> IsDynamicEnablement is true if field attribute contains 'X' otherwise false </summary>
         public bool IsDynamicEnablement { get; set; }
+        /// <summary>IsCommon is true if field has been marked as being common (or shared) </summary>
+        public bool IsCommon { get; set; }
+        ///// <summary> AlternateName is used when the user wishes to use a different name than the default.</summary>
+        //public string AlternateName { get; set; }
         #endregion
 
     }

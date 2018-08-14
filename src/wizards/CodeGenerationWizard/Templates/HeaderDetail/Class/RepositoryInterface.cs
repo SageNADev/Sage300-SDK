@@ -151,8 +151,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var containerName = settings.EntitiesContainerName;
-    var entityName = view.Properties[BusinessView.EntityName];
-    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 
             
             #line default

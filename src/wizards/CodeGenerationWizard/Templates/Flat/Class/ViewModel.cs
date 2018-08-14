@@ -146,8 +146,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var modelName = view.Properties[BusinessView.ModelName];
-    var entityName = view.Properties[BusinessView.EntityName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
@@ -262,21 +262,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
 
         foreach (var value in view.Enums.Values)
         {
-            var enumName = value.Name;
+			// Did the user want to override the name?
+			//var enumName = value.AlternateName.Length > 0 ? value.AlternateName : value.Name;
+			var enumName = value.Name;
 
             
             #line default
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 71 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 73 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(" list\r\n        /// </summary>\r\n");
             
-            #line 73 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 75 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
 
             var plural = BusinessViewHelper.PluralName(enumName);
 
@@ -285,35 +287,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             #line hidden
             this.Write("        public IEnumerable<CustomSelectList> ");
             
-            #line 76 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(plural));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n            get { return EnumUtility.GetItemsList<");
             
-            #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 80 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 80 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums.");
             
-            #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 80 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(">(); }\r\n        }\r\n\r\n");
             
-            #line 81 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
+            #line 83 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\ViewModel.tt"
 
         }
 
