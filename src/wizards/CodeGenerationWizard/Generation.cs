@@ -162,6 +162,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
 			/// <summary> Single space string </summary>
 			public const string SingleSpace = " ";
+
+            /// <summary> Resx file extension </summary>
+            public const string ResxExtension = "resx";
 		}
 		#endregion
 
@@ -732,36 +735,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Determine which language resources to include
                     if (key.Equals(ProcessGeneration.ResourcesKey))
                     {
-                        // Iterate files in resources project
-                        foreach (ProjectItem projectItem in project.ProjectItems)
-                        {
-                            // Add which language files based upon solutions menu files
-                            if (projectItem.Name.Equals("MenuResx.resx"))
-                            {
-                                // Add to project
-                                _includeEnglish = true;
-                            }
-                            else if (projectItem.Name.Equals("MenuResx.zh-Hans.resx"))
-                            {
-                                // Add to project
-                                _includeChineseSimplified = true;
-                            }
-                            else if (projectItem.Name.Equals("MenuResx.zh-Hant.resx"))
-                            {
-                                // Add to project
-                                _includeChineseTraditional = true;
-                            }
-                            else if (projectItem.Name.Equals("MenuResx.es.resx"))
-                            {
-                                // Add to project
-                                _includeSpanish = true;
-                            }
-                            else if (projectItem.Name.Equals("MenuResx.fr.resx"))
-                            {
-                                // Add to project
-                                _includeFrench = true;
-                            }
-                        }
+                        SetLanguageFlagsBasedOnExistingProjectResourceFiles(project.ProjectItems);
                     }
 
                     // The Web project name is different from other ones. It should be derived from the folder name
@@ -841,6 +815,71 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     _projects.ContainsKey(ProcessGeneration.ResourcesKey) &&
                     _projects.ContainsKey(ProcessGeneration.ServicesKey) &&
                     _projects.ContainsKey(ProcessGeneration.WebKey));
+        }
+
+        /// <summary>
+        /// Set the language flags based on the existence of resx files
+        /// </summary>
+        /// <param name="items">The ProjectItems list to inspect</param>
+        private void SetLanguageFlagsBasedOnExistingProjectResourceFiles(ProjectItems items)
+        {
+            if (items == null) return;
+
+            // TODO - These will be located elsewhere once refactoring is complete
+            const string LanguageEnglish = "en";
+            const string LanguageSpanish = "es";
+            const string LanguageFrench = "fr";
+            const string LanguageChineseSimplified = "zh-hans";
+            const string LanguageChineseTraditional = "zh-hant";
+
+            const int EnglishResourceFileSplitLength = 2;
+            const int NonEnglishResourceFileSplitLength = 3;
+            const int NonEnglishLanguageSpecifierIndex = 1;
+
+            var list = new List<string>();
+
+            // Build a list of languages found from the ProjectItems collection
+            foreach (ProjectItem item in items)
+            {
+                var name = item.Name.ToLowerInvariant();
+                var lookFor = Constants.ResxExtension.ToLowerInvariant();
+                if (name.EndsWith(lookFor))
+                {
+                    var temp = name.Split('.');
+                    var length = temp.Length;
+
+                    if (length == EnglishResourceFileSplitLength)
+                    {
+                        // Found an english resx file
+
+                        // Add it to the list (if not yet there)
+                        if (list.Contains(LanguageEnglish) == false)
+                        {
+                            list.Add(LanguageEnglish);
+                        }
+                    }
+                    else if (length == NonEnglishResourceFileSplitLength)
+                    {
+                        // Found a non-english resx file
+                        var langName = temp[NonEnglishLanguageSpecifierIndex].ToLowerInvariant();
+
+                        // Add it to the list (if not yet there)
+                        if (list.Contains(langName) == false)
+                        {
+                            list.Add(langName);
+                        }
+                    }
+                }
+            }
+
+            list.ForEach(i =>
+            {
+                if (i == LanguageEnglish) _includeEnglish = true;
+                if (i == LanguageFrench) _includeFrench = true;
+                if (i == LanguageSpanish) _includeSpanish = true;
+                if (i == LanguageChineseSimplified) _includeChineseSimplified = true;
+                if (i == LanguageChineseTraditional) _includeChineseTraditional = true;
+            });
         }
 
         /// <summary> Gets projects </summary>
