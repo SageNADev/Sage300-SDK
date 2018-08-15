@@ -39,7 +39,6 @@ namespace Sage300Utilities
 			Msg_CommandLineParameter_EnableTemplateUpdates,
 			Msg_CommandLineParameter_Help,
 			Msg_CommandLineParameter_SDKRoot,
-			Msg_CommandLineParameter_UseLocalSage300Installation,
 			Msg_CommandLineParameter_WebSource,
 			Msg_CommandLineParameter_RebuildWebDotVstemplateFile,
 		}
@@ -60,7 +59,6 @@ namespace Sage300Utilities
 		public static string Msg_CommandLineParameter_EnableTemplateUpdates => RM.GetString(IndexEnum.Msg_CommandLineParameter_EnableTemplateUpdates.ToString());
 		public static string Msg_CommandLineParameter_Help => RM.GetString(IndexEnum.Msg_CommandLineParameter_Help.ToString());
 		public static string Msg_CommandLineParameter_SDKRoot => RM.GetString(IndexEnum.Msg_CommandLineParameter_SDKRoot.ToString());
-		public static string Msg_CommandLineParameter_UseLocalSage300Installation => RM.GetString(IndexEnum.Msg_CommandLineParameter_UseLocalSage300Installation.ToString());
 		public static string Msg_CommandLineParameter_WebSource => RM.GetString(IndexEnum.Msg_CommandLineParameter_WebSource.ToString());
 		public static string Msg_CommandLineParameter_RebuildWebDotVstemplateFile => RM.GetString(IndexEnum.Msg_CommandLineParameter_RebuildWebDotVstemplateFile.ToString());
 		#endregion
