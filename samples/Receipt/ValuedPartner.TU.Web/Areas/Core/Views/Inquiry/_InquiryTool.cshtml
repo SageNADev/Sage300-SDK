@@ -1,0 +1,275 @@
+@*
+  The MIT License (MIT) 
+  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+ 
+  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+  this software and associated documentation files (the "Software"), to deal in 
+  the Software without restriction, including without limitation the rights to use, 
+  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+  Software, and to permit persons to whom the Software is furnished to do so, 
+  subject to the following conditions:
+ 
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+ 
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*@
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry;
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Inquiry;
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities.Constants;
+@using System.Collections.Generic;
+@using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Base
+@using System.Linq;
+@using Sage.CA.SBS.ERP.Sage300.Core.Logging;
+
+@functions
+{
+    public static string GetResourceString(string resouceFileName, string resourceName)
+    {
+        var resourceType = Type.GetType(resouceFileName);
+        return (string)resourceType.GetProperty(resourceName).GetGetMethod().Invoke(null, null);
+    }
+
+    public static string GetTemplateLocalizedName(string templateName)
+    {
+        string result = null;
+
+        try
+        {
+            var template = InquiryQuery.Load(InquiryQueryType.Template, templateName);
+            if (template != null && !string.IsNullOrEmpty(template.ResourceType) && !string.IsNullOrEmpty(template.ResourceKey))
+            {
+                result = GetResourceString(template.ResourceType, template.ResourceKey);
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.Error(string.Format("Adhoc Inquiry: Problem getting info about template: {0}", templateName), e);
+        }
+
+        return result;
+    }
+}
+
+@{
+    var activeApplications = ((ICommonService) ViewBag.CommonService).GetActiveApplications().Where(a => a.IsInstalled);
+    
+    // get all templates and filter down to only ones that the module is active
+    var allActiveTemplates = new Dictionary<string, List<string>>();
+
+    foreach (var moduleTemplates in InquiryQueryManager.GetTemplates())
+    {
+        if (activeApplications.Select(a => a.AppId).Contains(moduleTemplates.Key))
+        {
+            allActiveTemplates.Add(moduleTemplates.Key, moduleTemplates.Value);
+        }
+    }
+    
+    var stockApplicationIds = new string[]
+    {
+        Constant.GLAppIdentifier,
+        Constant.ARAppIdentifier,
+        Constant.APAppIdentifier,
+        Constant.ICAppIdentifier,
+        Constant.OEAppIdentifier,
+        Constant.POAppIdentifier
+    };
+
+    var thirdPartyTemplates = allActiveTemplates.Where(t => !stockApplicationIds.Contains(t.Key)).OrderBy(t => t.Key);
+}
+
+<div id="viewInquiries" class="side-panel side-panel-shadow view-inquiry" tabindex="-1">
+    <div class="side-panel-wrapper">
+        <div class="header-container">
+            <h1 class="side-panel-header header-inquiry">@HomePageResx.QuickMenu_Inquiries</h1>
+            <div class="glyphicon glyphicon-close dismiss" title="@HomePageResx.QuickMenu_Dismiss" id="btnInquiryClose"></div>
+        </div>
+        <div class="wrapper">
+
+            <!-- Filter Starts  -->
+            <div id="inquiryTabStrip" class="tab-group">
+                <ul>
+                    <li class="k-state-active">@NavigationResx.Templates</li>
+                    @*<li class="">@NavigationResx.Saved_Queries</li>*@ 
+                </ul>
+                <div class="tab-pane" id="templateTab">
+                    <ul>
+                        @*@if (ViewBag.HasAPInquiryRight && allActiveTemplates.ContainsKey(Constant.APAppIdentifier))
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_AccountsPayable</label>
+                                <ul>
+                                    @foreach (var templateName in allActiveTemplates[Constant.APAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="AP" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.AP)">@name</li>
+                                    }
+                                </ul>
+                            </li>
+                        }*@
+                        @if (ViewBag.HasARInquiryRight @*&& allActiveTemplates.ContainsKey(Constant.ARAppIdentifier)*@)
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_AccountsReceivable</label>
+                                <ul>
+                                    @*@foreach (var templateName in allActiveTemplates[Constant.ARAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="AR" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.AR)">@name</li>
+                                    }*@
+                                    <li class="inquiry-item" onclick="launchInquiry(this)" data-module="AR" data-feature="100" data-titletemplate="@Html.SageRaw(@HomePageResx.QuickMenu_ARTemplate)">@InquiryResx.Documents
+                                        @*<span class="info-icon" id="documentInquiryTooltip"></span>*@
+                                    </li>
+                                    <li class="inquiry-item" onclick="launchInquiry(this)" data-module="AR" data-feature="1" data-titletemplate="@Html.SageRaw(@HomePageResx.QuickMenu_ARTemplate)">@HomePageResx.QuickMenu_CustomerDocuments
+                                        @*<span class="info-icon" id="customerDocumentTooltip"></span>*@
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        @*@if (ViewBag.HasGLInquiryRight && allActiveTemplates.ContainsKey(Constant.GLAppIdentifier))
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_GeneralLedger</label>
+                                <ul>
+                                    @foreach (var templateName in allActiveTemplates[Constant.GLAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="GL" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.GL)">@name</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        
+                        @if (ViewBag.HasICInquiryRight && allActiveTemplates.ContainsKey(Constant.ICAppIdentifier))
+                        {
+
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_InventoryControl</label>
+                                <ul>
+                                    @foreach (var templateName in allActiveTemplates[Constant.ICAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="IC" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.IC)">@name</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        
+                        @if (ViewBag.HasOEInquiryRight && allActiveTemplates.ContainsKey(Constant.OEAppIdentifier))
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_OrderEntry</label>
+                                <ul>
+                                    @foreach (var templateName in allActiveTemplates[Constant.OEAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="OE" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.OE)">@name</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        
+                        @if (ViewBag.HasPOInquiryRight && allActiveTemplates.ContainsKey(Constant.POAppIdentifier))
+                        {
+                            <li class="item-list inquiry-category collapsed">
+                                <label>@NavigationResx.Module_PurchaseOrders</label>
+                                <ul>
+                                    @foreach (var templateName in allActiveTemplates[Constant.POAppIdentifier])
+                                    {
+                                        var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                        <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="PO" data-feature="0" data-titletemplate="@Html.SageRaw(@HomePageResx.PO)">@name</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        
+                        @foreach (var templateGroup in thirdPartyTemplates)
+                        {
+                            //Use the first group item to get the name of this group
+                            if (templateGroup.Value.Count > 0)
+                            {
+                                var firstTemplate = InquiryQuery.Load(InquiryQueryType.Template, templateGroup.Value[0]);
+                                if (firstTemplate != null)
+                                {
+                                    var groupName = firstTemplate.InquiryFeatureType.Security;
+                                    if (!string.IsNullOrEmpty(firstTemplate.InquiryFeatureType.ResourceType) &&
+                                        !string.IsNullOrEmpty(firstTemplate.InquiryFeatureType.SecurityResourceKey))
+                                    {
+                                        var resourceType = Type.GetType(firstTemplate.InquiryFeatureType.ResourceType);
+                                        groupName = (string)resourceType.GetProperty(firstTemplate.InquiryFeatureType.SecurityResourceKey).GetGetMethod().Invoke(null, null);
+                                    }
+                                    <li class="item-list inquiry-category collapsed">
+                                        <label>@groupName</label>
+                                        <ul>
+                                            @foreach (var templateName in templateGroup.Value)
+                                            {
+                                                var name = GetTemplateLocalizedName(templateName) ?? templateName;
+                                                <li class="inquiry-item" onclick="launchAdhoc(this)" data-name="@templateName" data-module="@firstTemplate.InquiryFeatureType.Security" data-feature="0" data-titletemplate="@firstTemplate.InquiryFeatureType.Security">@name</li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                            }
+                        }*@
+                    </ul>
+                </div>
+                
+                @*<div class="tab-pane" id="savedTab"> 
+                </div>*@
+            </div>
+            <!-- Filter Ends  -->
+        </div>
+    </div>
+</div>
+
+<script>
+    function launchInquiry(source)
+    {
+        var parameterData = $(source).data();
+        parameterData["title"] = $.validator.format($(source).data("titletemplate"), $(source).text());
+        parameterData["url"] = sg.utls.url.buildUrl("Core", "Inquiry", "Index");
+
+        var parameterDataString = JSON.stringify(parameterData);
+        window.top.postMessage("isInquiry" + " " + encodeURI(parameterDataString), "*");
+
+        // close the side bar
+        $("#btnInquiryClose").trigger("click");
+    }
+
+    $("li.item-list.inquiry-category").click(function () {
+        $(this).children('ul').slideToggle("slow");
+        $(this).toggleClass('collapsed');
+    });
+
+    $("#btnViewInquiries").click(function () {
+        //Generate random url on each request to prevent IE from caching the request result.
+        //var random = "?random=" + sg.utls.guid();
+        //var url = sg.utls.url.buildUrl("Core", "AdhocInquiry", "SavedTab") + random;
+        //$('#inquiryTabStrip-2').load(url);
+        $('#viewInquiries').addClass('slide-in');
+    });
+
+    $('#btnInquiryClose').click(function () {
+        $('#viewInquiries').removeClass("slide-in");
+    });
+
+    $(document).ready(function () {
+        $(".tab-group").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            }
+        });
+        
+        sg.utls.kndoUI.showMouseOverToolTip("documentInquiryTooltip", '@NavigationResx.Inquiry_ToolTip');
+        sg.utls.kndoUI.showMouseOverToolTip("customerDocumentTooltip", '@NavigationResx.Inquiry_ToolTip');
+    });
+</script>

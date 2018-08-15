@@ -1,0 +1,48 @@
+@*
+  The MIT License (MIT) 
+  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+ 
+  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+  this software and associated documentation files (the "Software"), to deal in 
+  the Software without restriction, including without limitation the rights to use, 
+  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+  Software, and to permit persons to whom the Software is furnished to do so, 
+  subject to the following conditions:
+ 
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+ 
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using GLIntegrationResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+<script>
+    var glReferenceIntegrationGridColumns = {
+        headerTransactionType: '@Html.SageRaw(GLIntegrationResx.TransactionType)',
+        headerEntryDescription: '@Html.SageRaw(GLIntegrationResx.GLEntryDescription)',
+        headerDetailReference: '@Html.SageRaw(GLIntegrationResx.GLDetailReference)',
+        headerDetailDescription: '@Html.SageRaw(GLIntegrationResx.GLDetailDescription)',
+        headerDetailComment: '@Html.SageRaw(GLIntegrationResx.GLDetailComment)'
+    };
+
+</script>
+@Html.Partial(Core.GridPreferences)
+<div class="gridcontrols-group clearfix">
+    @Html.KoSageButtonNoName(CommonResx.EditColumns, null, new { @id = "btnEditGLIntegrationColumns", @class = "btn btn-default btn-grid-control btn-edit-column ", })
+</div>
+@Html.KoKendoGrid("gridGLReferenceIntegration", "glIntegrationUI.glIntegrationModel.ReferenceDetails.Items", "SourceTransactionType", "GLReferenceIntegrationUIGrid.GLReferenceIntegrationGridConfig", true, "gh320")
+
+<div id="window">
+    @Html.Partial(Core.GLIntegrationDetail)
+</div>
+@*Kendo work around, fix for Defect D-12563*@
+@Html.KoSageTextBox("txtHiddenKendoTextBox", new { @sagevisible = "false" }, null)

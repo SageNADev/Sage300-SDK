@@ -1,0 +1,84 @@
+@*
+  The MIT License (MIT) 
+  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+ 
+  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+  this software and associated documentation files (the "Software"), to deal in 
+  the Software without restriction, including without limitation the rights to use, 
+  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+  Software, and to permit persons to whom the Software is furnished to do so, 
+  subject to the following conditions:
+ 
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+ 
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using CommonGLIntegrationResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.GLIntegrationResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+
+<script type="text/javascript">
+
+    var glIntegrationDetailResource = {
+        saveConfirm: '@Html.SageRaw(@CommonResx.UnsavedChangesMessage5)',
+        glIntegrationDetailTitle: '@Html.SageRaw(@CommonGLIntegrationResx.GLIntegrationDetail)'
+    };
+
+</script>
+
+<div id="glIntegrationPopupWindow" class="form-screen container_popUp">
+    <div id="windowmessage"></div>
+    <hr/>
+    <div class="form-group">
+        <div class="dropdown-group">
+            <label id="lblSourceTransactionType" for="Data_SourceTransactionType">@CommonGLIntegrationResx.TransactionType</label>
+            @Html.KoSageDropDownList("Data_SourceTransactionType", new { @options = "GetSourceTransactionType", @sagevalue = "Data.koSourceTransactionType", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+        <div class="dropdown-group">
+            <label id="lblGLTransactionField" for="Data_GLTransactionField">@CommonGLIntegrationResx.GLTransactionField</label>
+            @Html.KoSageDropDownList("Data_GLTransactionField", new { @options = "GetGLTransactionField", @sagevalue = "Data.koGLTransactionField", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <label id="lblExample" for="txtExample">@CommonGLIntegrationResx.Example</label>
+            @Html.KoSageTextBox("txtExample", new { @sagevalue = "Data.koExample", @sagedisable = "true" }, new { @class = "large" })
+        </div>
+        <div class="dropdown-group">
+            <label id="lblSeparator" for="Data_Separator">@CommonGLIntegrationResx.SegmentSeparator</label>
+            @Html.KoSageDropDownList("Data_Separator", new { @options = "GetSeparator", @sagevalue = "Data.koSeparator", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "large" })
+        </div>
+    </div>
+
+    <div class="multilist-wrapper clearfix">
+        <div class="multilist-parent multilist left">
+            <label id="lblChooseSegmentFromList" for="">@CommonGLIntegrationResx.ChooseSegmentsFromList</label>
+            @Html.KoSageListView("fromSegmentList", "SegmentName")
+        </div>
+        <div class="multilist-controls left">
+            @Html.KoSageButtonNoName(CommonGLIntegrationResx.BtnInclude, null, new { @id = "btnInclude", @class = "btn btn-default btn-arrow btn-arrow-f" })
+            @Html.KoSageButtonNoName(CommonGLIntegrationResx.BtnExclude, null, new { @id = "btnExclude", @class = "btn btn-default btn-arrow btn-arrow-b" })
+            @*@Html.KoSageButton("btnInclude", null, new { @id = "btnInclude", @class = "icons btn-include", @value = CommonGLIntegrationResx.BtnInclude })
+            @Html.KoSageButton("btnExclude", null, new { @id = "btnExclude", @class = "icons btn-exclude", @value = CommonGLIntegrationResx.BtnExclude })*@
+        </div>
+        <div class="multilist-parent multilist left">
+            <label id="lblSegmentCurrentlyUsed" for="">@CommonGLIntegrationResx.SegmentCurrentlyUsed</label>
+            @Html.KoSageListView("toSegmentList", "SegmentName")
+        </div>
+    </div>
+
+    <section class="footer-group">
+        @Html.KoSageButton("btnDetailSave", new { @visible = "CanModify" }, new { @id = "btnDetailSave", @class = "btn btn-primary", @value = CommonResx.Save })
+        @*@Html.KoSageButton("btnDetailClose", null, new { @id = "btnDetailClose", @class = "btn btn-secondary", @value = CommonResx.Close })*@
+    </section>
+</div>

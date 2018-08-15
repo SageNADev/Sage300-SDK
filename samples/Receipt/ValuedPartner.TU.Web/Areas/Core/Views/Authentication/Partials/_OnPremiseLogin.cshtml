@@ -1,0 +1,99 @@
+@*
+  The MIT License (MIT) 
+  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+ 
+  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+  this software and associated documentation files (the "Software"), to deal in 
+  the Software without restriction, including without limitation the rights to use, 
+  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+  Software, and to permit persons to whom the Software is furnished to do so, 
+  subject to the following conditions:
+ 
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+ 
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*@
+
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.LoginViewModel
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using ASCommonResx = Sage.CA.SBS.ERP.Sage300.AS.Resources.ASCommonResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+
+@Styles.Render("~/Content/Styles/standaloneCss")
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("LoginViewModel", Model)
+</script>
+
+@Html.Partial(Core.OnPremiseLocalization)
+<div id="success"></div>
+<div id="message" class="k-window"></div>
+<div id="changePassword" class="k-window"></div>
+<section class="header login">
+    <div class="wrapper">
+        <div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-sq.png" height="132" width="134" alt="Sage 300"></div>
+        <div class="main-body login">
+            <div>
+                @Html.ValidationSummary(true)
+            </div>
+
+            <h1 class="page-header" id="loginHeader">@ASCommonResx.SignInSage300</h1>
+            @if (Model.ForAdmin)
+            {
+                <h2 class="page-header-2" id="loginHeader2">@ASCommonResx.SignInSage300Admin</h2>
+            }
+            <div class="form-group">
+                <div class="input-group">
+                    @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "txt-upper login", data_val = "true", @maxlength = "8", @placeholder = ASCommonResx.UserID, @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group" id="passwordDiv">
+                <div class="input-group">
+                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @placeholder = ASCommonResx.Password, @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group">
+                @if (Model.ForAdmin)
+                {
+                    <div class="dropdown-group" style="display: none">
+                        @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
+                    </div>
+                    <div class="dropdown-group">
+                        @Html.SageDropDownListFor(model => model.SystemIdDisplayList, Model.SystemIdDisplayList, new { @class = "login", @id = "SystemId" })
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown-group">
+                        @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
+                    </div>
+                }
+            </div>
+            <div class="button-group">
+                @Html.KoSageButton("btnLogin", new { }, new { @value = ASCommonResx.Login, @id = "btnLogin", @class = "btn btn-primary btn-login" })
+                @if (!Model.ForAdmin)
+                {
+                    <div class="left" id="changePasswordDiv">
+                        <a id="lnkChangePassword" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="wrapper">
+        <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
+        <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
+        @string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)
+    </div>
+</section>
