@@ -29,7 +29,10 @@
 
 	var resxName = string.Empty;
     var normalResxName = view.Properties[BusinessView.Constants.ResxName];
+
+#if ENABLE_TK_244885
 	var customCommonResxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#endif
 
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -175,9 +178,13 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                 // locals
                 var field = view.Fields[i];
 
+#if ENABLE_TK_244885
 				// Overrides for Enumeration fields marked as 'Common'
 				resxName = field.IsCommon ? customCommonResxName : normalResxName;
-				//var fieldName = field.IsCommon && field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+#else		
+				resxName = normalResxName;
+#endif
+
 				var fieldName = field.Name;
 #>
                 new GridField

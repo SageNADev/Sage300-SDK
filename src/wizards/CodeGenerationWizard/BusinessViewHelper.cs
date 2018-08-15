@@ -170,7 +170,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 retVal = retVal.Substring(1);
             }
 
-            // Replace seperator with dot?
+            // Replace separator with dot?
             if (changeToDot)
             {
                 retVal = retVal.Replace(@"\", ".");
@@ -181,6 +181,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary>
         /// Modify module level security const string class to add view security resource ID
+        /// Will not insert duplicate entries
         /// </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">Settings</param>
@@ -193,16 +194,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var f = Environment.NewLine + BusinessViewHelper.Constants.TabTwo;
             var commentLine = f + "/// <summary>" + f + "/// Security resourceID for " + moduleId + " " + entityName + f + "/// </summary>" + Environment.NewLine;
             var constName = moduleId + entityName;
-            var constLine = f + "public const string " + constName + " = \"" + constName.ToUpper() + "\";" + Environment.NewLine;
+            var signature = "public const string " + constName + " = \"" + constName.ToUpper() + "\";";
+            var constLine = f + signature + Environment.NewLine;
 
             if (File.Exists(filePath))
             {
-                var text = File.ReadAllText(filePath);
-                var pos = text.IndexOf('}');
-                if (pos > -1)
+                var txtLines = File.ReadAllLines(filePath).ToList();
+                var trimLines = (File.ReadAllLines(filePath)).Select(l => l.Trim()).ToList();
+                var index = trimLines.IndexOf(signature);
+                if (index == -1)
                 {
-                    var updateText = text.Substring(0, pos) + commentLine + constLine + text.Substring(pos - 2);
-                    File.WriteAllText(filePath, updateText);
+                    // Line not found so let's insert it.
+
+                    // Find the line of the first occurance of '}' character
+                    // We want to insert the line just before this line.
+                    index = trimLines.IndexOf("}");
+                    if (index > -1)
+                    {
+                        var pos = index - 3;
+                        var linesToInsert = commentLine + constLine;
+
+                        txtLines.Insert(pos, linesToInsert);
+                        File.WriteAllLines(filePath, txtLines);
+                    }
                 }
             }
         }

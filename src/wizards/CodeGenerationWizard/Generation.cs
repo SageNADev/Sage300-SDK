@@ -837,6 +837,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             const string LanguageChineseSimplified = "zh-hans";
             const string LanguageChineseTraditional = "zh-hant";
 
+            const int EnglishResourceFileSplitLength = 2;
+            const int NonEnglishResourceFileSplitLength = 3;
+            const int NonEnglishLanguageSpecifierIndex = 1;
+
             var list = new List<string>();
 
             // Build a list of languages found from the ProjectItems collection
@@ -849,7 +853,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var temp = name.Split('.');
                     var length = temp.Length;
 
-                    if (length == 2)
+                    if (length == EnglishResourceFileSplitLength)
                     {
                         // Found an english resx file
 
@@ -859,10 +863,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             list.Add(LanguageEnglish);
                         }
                     }
-                    else if (length == 3)
+                    else if (length == NonEnglishResourceFileSplitLength)
                     {
                         // Found a non-english resx file
-                        var langName = temp[1].ToLowerInvariant();
+                        var langName = temp[NonEnglishLanguageSpecifierIndex].ToLowerInvariant();
 
                         // Add it to the list (if not yet there)
                         if (list.Contains(langName) == false)
@@ -1465,10 +1469,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var node = _modeType == ModeTypeEnum.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
             var businessView = (BusinessView)node.Tag;
 
-			// TODO - Comment out for 2019.0 release
+#if ENABLE_TK_244885
             // Now, Fix up the BusinessView.Enums object with values from the Fields object
             // We need to grab the IsCommon (And AlternateName) from the Fields and apply to the Enums dictionary
             ReconcileEnumerationDataBetweenEnumsAndFields(businessView);
+#endif
 
             // Get valued from controls and add to object
             businessView.Properties[BusinessView.Constants.ModuleId] = cboModule.Text;
@@ -1519,6 +1524,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Set focus back to tree
             treeEntities.Focus();
         }
+
+
+#if ENABLE_TK_244885
 
         /// <summary>
         /// This method will copy information about enumerations from the 'Fields' property 
@@ -1603,6 +1611,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
         }
+#endif
 
         /// <summary> Build Entity Text from Entity</summary>
         /// <param name="businessView">Business View to build text from</param>
@@ -1726,7 +1735,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DeleteEntityNodes(treeNodes);
         }
 
-        #region Toolbar Events
+#region Toolbar Events
 
         /// <summary> Next/Generate toolbar button </summary>
         /// <param name="sender">Sender object </param>
@@ -1752,7 +1761,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        #endregion
+#endregion
 
         /// <summary> Edit Container Name</summary>
         private void EditContainerName()
@@ -1962,8 +1971,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName, businessField.Name));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType, businessField.Type.ToString()));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySize, businessField.Size.ToString()));
+
+#if ENABLE_TK_244885
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIsCommon, businessField.IsCommon.ToString()));
                     //fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyAlternateName, businessField.AlternateName.ToString()));
+#endif
 
                     fieldsElement.Add(fieldElement);
                 }
@@ -2273,8 +2285,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsAlphaNumeric,      false, false);
                 GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsNumeric,           false, false);
                 GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsDynamicEnablement, false, false);
+
+#if ENABLE_TK_244885
                 GenericInit(grdEntityFields, columnIndex++, 70, Resources.IsCommon,            true, false);
                 //GenericInit(grdEntityFields, columnIndex++, 100, Resources.AlternateName,      true, false);
+#endif
             }
 
             // Show/Hide Fieldname based upon code type
@@ -3096,7 +3111,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        #endregion
+#endregion
 
     }
 }

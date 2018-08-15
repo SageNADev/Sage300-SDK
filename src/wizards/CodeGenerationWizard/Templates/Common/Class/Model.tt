@@ -27,7 +27,9 @@
     var copyright = settings.Copyright;
 	var resxName = string.Empty;
     var normalResxName = view.Properties[BusinessView.Constants.ResxName];
+#if ENABLE_TK_244885
 	var customCommonResxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#endif
     var companyNamespace = settings.CompanyNamespace;
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;
@@ -97,9 +99,13 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 var field = view.Fields[i];
 				var resXName = normalResxName;
 
+#if ENABLE_TK_244885
 				// Overrides for Enumeration fields marked as 'Common'
 				resxName = field.IsCommon ? customCommonResxName : normalResxName;
-				//fieldName = field.IsCommon && field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+#else
+				resxName = normalResxName;
+#endif
+
 				var fieldName = field.Name;
 
                 // Naming convention is potentially invalid

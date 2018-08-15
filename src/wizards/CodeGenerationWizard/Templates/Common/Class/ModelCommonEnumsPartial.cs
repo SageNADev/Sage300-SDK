@@ -151,12 +151,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
     var extension = settings.Extension;
     var enumHelper = settings.EnumHelper;
 
+#if ENABLE_TK_244885
 	var resxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#else
+	// This file is not currently used so we don't need to have a value here.
+	// This is done so compilation of the wizard will work.
+	var resxName = "";
+#endif
 
+#if ENABLE_TK_244885
 	// Overrides for Enumeration fields marked as 'Common'
 	var isCommon = enumHelper.IsCommon;
 	//var alternateName = enumHelper.AlternateName;
 	//var enumerationName = alternateName.Length > 0 ? alternateName : enumHelper.Name;
+#endif
 	var enumerationName = enumHelper.Name;
 
             
@@ -164,21 +172,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("\r\n    /// <summary>\r\n    /// Enum for ");
             
-            #line 43 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 51 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumerationName));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    public enum ");
             
-            #line 45 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 53 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumerationName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n");
             
-            #line 47 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 55 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
 
             // Iterate values collection
             var count = 0;
@@ -198,28 +206,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets or sets ");
             
-            #line 62 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 70 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        [EnumValue(\"");
             
-            #line 64 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 72 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write("\", typeof(");
             
-            #line 64 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 72 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write("))]\r\n");
             
-            #line 65 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 73 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
 
                 if (value.Value is int)
                 {
@@ -229,27 +237,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 69 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 77 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 69 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 77 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Value));
             
             #line default
             #line hidden
             
-            #line 69 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 77 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((count != enumHelper.Values.Count) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 70 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 78 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
 
                 }
 
@@ -261,28 +269,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 76 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 84 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write(" = \'");
             
-            #line 76 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 84 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Value));
             
             #line default
             #line hidden
             this.Write("\'");
             
-            #line 76 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 84 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((count != enumHelper.Values.Count) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 77 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 85 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
 
                 }
 
@@ -290,7 +298,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line default
             #line hidden
             
-            #line 80 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
+            #line 88 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelCommonEnumsPartial.tt"
 
             }
 

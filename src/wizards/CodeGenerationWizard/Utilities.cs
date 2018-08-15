@@ -35,7 +35,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     {
         /// <summary>
         /// TODO
-        /// Note: Made public so it can be accessed by unit testing framework
         /// </summary>
         /// <param name="searchIn"></param>
         /// <param name="searchFor"></param>

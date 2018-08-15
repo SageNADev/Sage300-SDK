@@ -29,12 +29,18 @@
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;
     var enumHelper = settings.EnumHelper;
+
+#if ENABLE_TK_244885
 	var resxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
 
 	// Overrides for Enumeration fields marked as 'Common'
 	var isCommon = enumHelper.IsCommon;
 	//var alternateName = enumHelper.AlternateName;
 	//var enumerationName = alternateName.Length > 0 ? alternateName : enumHelper.Name;
+#else
+	var resxName = "";
+#endif
+
 	var enumerationName = enumHelper.Name;
 #>
 // <#=copyright#>

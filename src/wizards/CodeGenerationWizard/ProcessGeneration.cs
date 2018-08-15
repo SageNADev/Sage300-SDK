@@ -252,11 +252,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Size </summary>
             public const string PropertySize = "size";
 
+#if ENABLE_TK_244885
             /// <summary> Property for IsCommon </summary>
             public const string PropertyIsCommon = "common";
 
             ///// <summary> Property for AlternateName </summary>
             //public const string PropertyAlternateName = "alternateName";
+#endif
 
             /// <summary> Property for ResxName </summary>
             public const string PropertyResxName = "resx";
@@ -270,9 +272,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Constant for EntityName </summary>
             public const string ConstantEntityName = "EntityName";
         }
-        #endregion
+#endregion
 
-        #region Public Delegates
+#region Public Delegates
 
         /// <summary> Delegate to update UI with name of file being processed </summary>
         /// <param name="text">Text for UI</param>
@@ -284,9 +286,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="text">Text for UI</param>
         public delegate void StatusEventHandler(string fileName, Info.StatusType statusType, string text);
 
-        #endregion
+#endregion
 
-        #region Public Events
+#region Public Events
 
         /// <summary> Event to update UI with name of file being processed </summary>
         public event ProcessingEventHandler ProcessingEvent;
@@ -294,13 +296,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Event to update UI with status of file being processed </summary>
         public event StatusEventHandler StatusEvent;
 
-        #endregion
+#endregion
 
-        #region Constructor
+#region Constructor
 
-        #endregion
+#endregion
 
-        #region Public Methods
+#region Public Methods
 
         /// <summary> Cleanup </summary>
         public void Dispose()
@@ -384,8 +386,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties[BusinessView.Constants.ModelName] = description;
             businessView.Properties[BusinessView.Constants.EntityName] = description;
 
+#if ENABLE_TK_244885
             businessView.Properties[BusinessView.Constants.CustomCommonResxName] = PrivateConstants.CustomCommonResx;
-
+#endif
             GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
 
             // Any compositions
@@ -414,9 +417,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        #endregion
+#endregion
 
-        #region Private Methods
+#region Private Methods
 
         /// <summary> Save a file </summary>
         /// <param name="view">Business View</param>
@@ -874,8 +877,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     IsAlphaNumeric = field.PresentationMask != null && field.PresentationMask.Contains("N"),
                     IsNumeric = field.PresentationMask != null && field.PresentationMask.Contains("D"),
                     IsDynamicEnablement = field.Attributes.HasFlag(ViewFieldAttributes.CheckEditable),
+#if ENABLE_TK_244885
                     IsCommon = false,
                     //AlternateName = string.Empty,
+#endif
                 };
 
                 // Add to Keys if it is a key
@@ -888,8 +893,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     var enumObject = new EnumHelper {
                         Name = businessField.Name,
+#if ENABLE_TK_244885
                         IsCommon = businessField.IsCommon,
                         //AlternateName = businessField.AlternateName,
+#endif                    
                     };
 
                     var builder = new StringBuilder();
@@ -1045,14 +1052,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 foreach (var value in view.Enums.Values)
                 {
+#if ENABLE_TK_244885
                     string content = string.Empty;
                     var enumName = value.Name;
-
+                    _settings.EnumHelper = value;
+                    var isCommon = value.IsCommon;
+                    HandleEnumeration(isCommon, enumName, filePath, view);
+#else
                     _settings.EnumHelper = value;
 
-                    var isCommon = value.IsCommon;
-
-                    HandleEnumeration(isCommon, enumName, filePath, view);
+                    CreateClass(view,
+                        value.Name + ".cs",
+                        TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelEnums"),
+                        Constants.ModelsKey, Constants.SubFolderModelEnumsKey);
+#endif
                 }
             }
 
@@ -1084,7 +1097,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                              string filePath, 
                                              BusinessView view)
         {
-            #region Common Enumeration Example
+#region Common Enumeration Example
             /* 
             /// <summary>
             /// Enum for Status
@@ -1103,7 +1116,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Active = 1
             }
             */
-            #endregion
+#endregion
 
             var content = string.Empty;
             var rootTemplateName = "Templates.Common.Class";
@@ -1140,7 +1153,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                              string filePath, 
                                              BusinessView view)
         {
-            #region Normal Enumeration Example
+#region Normal Enumeration Example
             /* 
             /// <summary>
             /// Enum for PaymentType
@@ -1169,7 +1182,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Other = 4
             }
             */
-            #endregion
+#endregion
 
             var content = string.Empty;
             var rootTemplateName = "Templates.Common.Class";
@@ -1412,14 +1425,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">The BusinessView object</param>
         private void CreateResxFilesByLanguage(Settings settings, BusinessView view)
         {
-            #region Setup filenames
+#region Setup filenames
             var baseFilename = view.Properties[BusinessView.Constants.ResxName];
 
             // Common resources will live in only one location (Root of Resources project)
             var commonFilename = PrivateConstants.CustomCommonResx;
-            #endregion
+#endregion
 
-            #region Local Constants
+#region Local Constants
             const int IndexBaseFile = 0;
             const int IndexCommonFile = 1;
 
@@ -1430,7 +1443,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             const int IndexChineseT = 4;
 
             const string extension = @".resx";
-            #endregion
+#endregion
 
             // This is the list of resource files for each supported language 
             // (Normal resources and Common resources)
@@ -2133,6 +2146,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                        addDescription: addDescription);
             LaunchStatusEvent(success, fileToProcess);
 
+#if ENABLE_TK_244885
             if (success)
             {
                 // Process the Common Resx file (include only entities marked as 'IsCommon')
@@ -2144,6 +2158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                        addDescription: addDescription);
                 LaunchStatusEvent(success, fileToProcess);
             }
+#endif
         }
 
         /// <summary>
@@ -2157,11 +2172,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private bool SaveResxFile(bool isStandardResxFile, BusinessView view, string fileName, bool addDescription)
         {
             // Variables
+#if ENABLE_TK_244885
             var isCommon = !isStandardResxFile;
+#else
+            var isCommon = false;
+#endif
             var fileWriteSuccessful = true;
             var projectInfo = GetProjectInfo(view);
+#if ENABLE_TK_244885
             var filePath = isCommon ? projectInfo.ProjectFolder
                                     : BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[Constants.SubFolderResourcesKey] });
+#else
+            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[Constants.SubFolderResourcesKey] });
+#endif
             var resourceFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
             var writeFile = true;
 
@@ -2197,11 +2220,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     resourceManager.InsertIfNotExist(key, value);
                 }
 
+
+#if ENABLE_TK_244885
                 // Iterate fields collection (filter by Enumerations marked as 'IsCommon' (or not))
                 var results = view.Fields.Where(field => field.IsCommon == isCommon);
                 var nodes = from field in results
                             where !uniqueList.Contains(field.Name, StringComparer.CurrentCultureIgnoreCase)
                             select new { field.Name, field.Description };
+#else
+                var nodes = from field in view.Fields
+                            where !uniqueList.Contains(field.Name, StringComparer.CurrentCultureIgnoreCase)
+                            select new { field.Name, field.Description };
+#endif
 
                 foreach (var node in nodes)
                 {
@@ -2225,10 +2255,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         // Add only if not yet present and not blank
                         if (KeyIsPresentOrBlank(key, uniqueList) == false)
                         {
+#if ENABLE_TK_244885
                             if (enumHelper.IsCommon == isCommon)
                             {
                                 resourceManager.InsertIfNotExist(key, addDescription ? description : string.Empty);
                             }
+#else
+                            resourceManager.InsertIfNotExist(key, addDescription ? description : string.Empty);
+#endif
                             uniqueList.Add(key);
                         }
                     }
@@ -2346,6 +2380,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private bool KeyIsPresentOrBlank(string key, List<string> list) => 
             string.IsNullOrEmpty(key) || list.Contains(key, StringComparer.CurrentCultureIgnoreCase);
 
-        #endregion
+#endregion
     }
 }

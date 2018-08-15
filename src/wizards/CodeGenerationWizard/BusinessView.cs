@@ -41,13 +41,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string ReportKey = "ReportKey";
             public const string ProgramId = "ProgramId";
             public const string ResxName = "ResxName";
-            public const string CustomCommonResxName = "CustomCommonResxName";
             public const string GenerateFinder = "GenerateFinder";
             public const string GenerateDynamicEnablement = "GenerateDynamicEnablement";
             public const string GenerateClientFiles = "GenerateClientFiles";
             public const string GenerateIfAlreadyExists = "GenerateIfAlreadyExists";
             public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
             public const string WorkflowKindId = "WorkflowKindId";
+#if ENABLE_TK_244885
+            public const string CustomCommonResxName = "CustomCommonResxName";
+#endif
         }
         #endregion
 
@@ -62,9 +64,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Options = new Dictionary<string, bool>();
             Compositions = new List<Composition>();
         }
-        #endregion
+#endregion
 
-        #region Public Properties
+#region Public Properties
         /// <summary> Properties is the collection of business view properties </summary>
         public Dictionary<string, string> Properties { get; set; }
         /// <summary> Fields is the collection of business fields </summary>
@@ -82,7 +84,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         public bool IsPartofHeaderDetailComposition { get; set; }
         
-        #endregion
+#endregion
 
     }
 

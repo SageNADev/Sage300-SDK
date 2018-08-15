@@ -30,12 +30,20 @@
     var extension = settings.Extension;
     var enumHelper = settings.EnumHelper;
 
+#if ENABLE_TK_244885
 	var resxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#else
+	// This file is not currently used so we don't need to have a value here.
+	// This is done so compilation of the wizard will work.
+	var resxName = "";
+#endif
 
+#if ENABLE_TK_244885
 	// Overrides for Enumeration fields marked as 'Common'
 	var isCommon = enumHelper.IsCommon;
 	//var alternateName = enumHelper.AlternateName;
 	//var enumerationName = alternateName.Length > 0 ? alternateName : enumHelper.Name;
+#endif
 	var enumerationName = enumHelper.Name;
 #>
 

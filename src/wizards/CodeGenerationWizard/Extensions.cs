@@ -30,6 +30,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
     public static class Extensions
     {
+        /// <summary>
+        /// Remove the last occurance of a character in a given string
+        /// </summary>
+        /// <param name="text">The string to inspect</param>
+        /// <param name="character">The character to look for and remove</param>
+        /// <returns></returns>
         public static string RemoveLast(this string text, string character)
         {
             if (text.Length < 1) return text;
