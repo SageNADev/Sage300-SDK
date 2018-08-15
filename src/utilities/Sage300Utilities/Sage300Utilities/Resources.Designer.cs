@@ -70,7 +70,7 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is specified, it will override both UseLocalSage300Installation AND WebSource. This flag is turned off (disabled) if it is not specified at all on the command-line..
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If set to false or not specified, the templates folders will not be updated at all..
         /// </summary>
         internal static string Msg_CommandLineParameter_EnableTemplateUpdates {
             get {
@@ -115,16 +115,7 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to source the web files from the local Sage 300 installation..
-        /// </summary>
-        internal static string Msg_CommandLineParameter_UseLocalSage300Installation {
-            get {
-                return ResourceManager.GetString("Msg_CommandLineParameter_UseLocalSage300Installation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is the path to the source web files. This setting will take precedence over the UseLocalSage300Installation flag..
+        ///   Looks up a localized string similar to This is the path to the source web files..
         /// </summary>
         internal static string Msg_CommandLineParameter_WebSource {
             get {

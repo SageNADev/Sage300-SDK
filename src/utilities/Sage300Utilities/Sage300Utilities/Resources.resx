@@ -121,7 +121,7 @@
     <value>Application</value>
   </data>
   <data name="Msg_CommandLineParameter_EnableTemplateUpdates" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If this flag is specified, it will override both UseLocalSage300Installation AND WebSource. This flag is turned off (disabled) if it is not specified at all on the command-line.</value>
+    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If set to false or not specified, the templates folders will not be updated at all.</value>
   </data>
   <data name="Msg_CommandLineParameter_Help" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to view the help for this application.</value>
@@ -135,11 +135,8 @@
   <data name="Msg_CommandLineParameter_SDKRoot" xml:space="preserve">
     <value>This is the path to the root Web SDK folder.</value>
   </data>
-  <data name="Msg_CommandLineParameter_UseLocalSage300Installation" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish to source the web files from the local Sage 300 installation.</value>
-  </data>
   <data name="Msg_CommandLineParameter_WebSource" xml:space="preserve">
-    <value>This is the path to the source web files. This setting will take precedence over the UseLocalSage300Installation flag.</value>
+    <value>This is the path to the source web files.</value>
   </data>
   <data name="Msg_InnerException" xml:space="preserve">
     <value>Inner Exception</value>

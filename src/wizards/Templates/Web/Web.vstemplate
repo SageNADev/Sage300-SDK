@@ -1030,15 +1030,15 @@
           <Folder Name="Controllers" TargetFolderName="Controllers">
             <Folder Name="Finder" TargetFolderName="Finder" />
           </Folder>
+          <Folder Name="ExternalContent" TargetFolderName="ExternalContent">
+            <ProjectItem ReplaceParameters="true" TargetFileName="bg_menu_$lowercaseapplicationid$.jpg">menuBackGroundImage.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="icon_$lowercaseapplicationid$.png">menuIcon.png</ProjectItem>
+          </Folder>
           <Folder Name="Models" TargetFolderName="Models" />
           <Folder Name="Scripts" TargetFolderName="Scripts" />
           <Folder Name="Views" TargetFolderName="Views">
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
-          </Folder>
-          <Folder Name="ExternalContent" TargetFolderName="ExternalContent">
-            <ProjectItem ReplaceParameters="true" TargetFileName="bg_menu_$lowercaseapplicationid$.jpg">menuBackGroundImage.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="icon_$lowercaseapplicationid$.png">menuIcon.png</ProjectItem>
           </Folder>
         </Folder>
       </Folder>

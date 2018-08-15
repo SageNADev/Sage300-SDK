@@ -41,6 +41,8 @@ namespace Sage300Utilities
 			public const string ApplicationIdPlaceholder = "$applicationid$";
             public const string LowercaseApplicationIdPlaceholderLowerCase = "$lowercaseapplicationid$";
 			public const string NamespaceString = @"http://schemas.microsoft.com/developer/vstemplate/2005";
+            public const string ExternalContentFolderName = "ExternalContent";
+            public const string ModuleID = "TU";
 		}
 		#endregion
 
@@ -173,7 +175,7 @@ namespace Sage300Utilities
 			// Get all the files in the root of the directory first
 			foreach (var file in dir.GetFiles())
 			{
-				AddProjectItem(xmlInfo, file.Name);
+				AddProjectItem(xmlInfo, dir.Name, file.Name);
 			}
 
 			IEnumerable<DirectoryInfo> subdirectories = from eachDir in dir.GetDirectories()
@@ -201,7 +203,7 @@ namespace Sage300Utilities
 			var fullName = dir.FullName;
 			var targetFolderName = name;
 
-			if (nameUpper == "TU")
+			if (nameUpper == Constants.ModuleID)
 			{
 				// Special processing section
 				this.FullPathToAreasVendorFolder = fullName;
@@ -216,12 +218,12 @@ namespace Sage300Utilities
 			// Process the files in this directory first
 			foreach (var file in dir.GetFiles())
 			{
-				AddProjectItem(xmlInfo, file.Name);
+				AddProjectItem(xmlInfo, dir.Name, file.Name);
 			}
 
 			// Now process the subdirectories in this directory
 			var subdirectories = dir.GetDirectories().ToList();//.OrderBy(d => d.Name);
-			if (nameUpper == "TU")
+			if (nameUpper == Constants.ModuleID)
 			{
 				// Special folder processing
 
@@ -268,16 +270,17 @@ namespace Sage300Utilities
 			return xmlInfo;
 		}
 
-		/// <summary>
-		/// Add a ProjectItem element with special substitution
-		/// for certain files
-		/// Note: There are four filenames, listed in the code below,
-		///       that will have placeholder text inserted into.
-		/// </summary>
-		/// <param name="element">The element to add the new ProjectItem to.</param>
-		/// <param name="currentFilename">The filename to use</param>
-		private void AddProjectItem(XElement element, string currentFilename)
+        /// <summary>
+        /// Add a ProjectItem element with special substitution for certain files
+        /// Note: There are lists of filenames in the code below,
+        ///       that will have placeholder text inserted into.
+        /// </summary>
+        /// <param name="element">The element to add the new ProjectItem to.</param>
+        /// <param name="directory">The directory were currently processing</param>
+        /// <param name="currentFilename">The filename to use</param>
+        private void AddProjectItem(XElement element, string directory, string currentFilename)
 		{
+            var currentDirectory = directory;
 			var targetFileName = currentFilename;
 
 			// List of files that can be ignored. This (or these)
@@ -319,7 +322,9 @@ namespace Sage300Utilities
 			}
 
             // 
-            // Another couple of potential string replacements to deal with
+            // Another couple of potential string replacements to deal with.
+            // Note: This is applicable to the ExternalContent folder only.
+            // If these files are elsewhere, their filename will NOT be altered.
             // Notes: Examples
             //        <ProjectItem ReplaceParameters="true" TargetFileName="bg_menu_$lowercaseapplicationid$.jpg">menuBackGroundImage.jpg</ProjectItem>
             //        <ProjectItem ReplaceParameters="true" TargetFileName="icon_$lowercaseapplicationid$.png">menuIcon.png</ProjectItem>
@@ -329,44 +334,40 @@ namespace Sage300Utilities
                 new[] { @"menuIcon.png",            @"icon_" + ph + ".png" },
             };
 
+            var replaceParametersFlagOverride = false;
             for (int i = 0; i < filters2.Length; i++)
             {
                 var file = filters2[i][0];
 
-                if (currentFilename.Equals(file, System.StringComparison.InvariantCultureIgnoreCase))
+                var fileMatch = currentFilename.Equals(file, System.StringComparison.InvariantCultureIgnoreCase);
+                var directoryMatch = currentDirectory.Equals(Constants.ExternalContentFolderName, System.StringComparison.InvariantCultureIgnoreCase);
+                var match = fileMatch && directoryMatch;
+                if (match)
                 {
                     // Found a match. Assign the replacement filename
                     targetFileName = filters2[i][1];
-                    _Logger.LogInfo($"Substitution Match Found : Target filename will be renamed from '{currentFilename}' to '{targetFileName}'.");
+                    _Logger.LogInfo($"Substitution Match Found : Current Directory = '{currentDirectory}', Target filename will be renamed from '{currentFilename}' to '{targetFileName}'.");
+                    replaceParametersFlagOverride = true;
                     break;
                 }
             }
 
-			// Set the ReplaceParameters attribute based on file extension
-			// Files of these types will be set to ReplaceParameters=false
-			// otherwise they'll be set to ReplaceParameters=true
+            // Set the ReplaceParameters attribute based on file extension
+            // Files of these types will be set to ReplaceParameters=false
+            // otherwise they'll be set to ReplaceParameters=true
 
-			var extensionList = new[] {
+            var extensionList = new[] {
 					// Executable Formats
-					"EXE",
-					"DLL",
+					"EXE", "DLL",
 
 					// Font Types
-					"EOT",
-					"TTF",
-					"WOFF",
-					"WOFF2",
-					"OTF",
+					"EOT", "TTF", "WOFF", "WOFF2", "OTF", 
 
 					// Graphics Formats
-					"SVG",
-					"GIF",
-					"PNG",
-					"JPG",
-					"ICO",
+					"SVG", "GIF", "PNG", "JPG", "ICO",
 
 					// CSS related
-					"LESS",
+					"LESS",  
 
 					// Microsoft Excel format
 					"XLSX"
@@ -374,14 +375,21 @@ namespace Sage300Utilities
 
 			var extension = new FileInfo(currentFilename).Extension.RemoveFirstCharacter().ToUpperInvariant();
 			bool replaceParameters = extensionList.Contains(extension) ? false : true;
-			var replaceParametersString = replaceParameters.ToString().ToLower();
 
-			element.Add(new XElement(this.DocumentNamespace + "ProjectItem", 
-											new XAttribute("ReplaceParameters", replaceParametersString),
-											new XAttribute("TargetFileName", targetFileName),
-											currentFilename));
+            // We need to override the replaceParameters flag when dealing with the two special files in 'ExternalContent' above
+            // menuBackgroundImage.jpg and menuIcon.png
+            if (replaceParametersFlagOverride == true)
+            {
+                replaceParameters = true;
+            }
+
+			var replaceParametersString = replaceParameters.ToString().ToLower();
+            element.Add(new XElement(this.DocumentNamespace + "ProjectItem", 
+									 new XAttribute("ReplaceParameters", replaceParametersString),
+									 new XAttribute("TargetFileName", targetFileName),
+									 currentFilename));
 		}
-		#endregion
+#endregion
 	}
 }
 
