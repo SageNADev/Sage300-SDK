@@ -38,7 +38,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// <summary> UI for Code Generation Wizard </summary>
     public partial class Generation : Form
     {
-        #region Private Vars
+        #region Private Variables
 
         /// <summary> Process Generation logic </summary>
         private ProcessGeneration _generation;
@@ -143,7 +143,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 		#endregion
 
 		#region Private Constants
-		private class Constants
+		private static class Constants
 		{
 			/// <summary> Splitter Distance </summary>
 			public const int SplitterDistance = 415;
@@ -168,7 +168,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 		}
 		#endregion
 
-		#region Private Enums
+		#region Private Enumerations
 		/// <summary>
 		/// Enum for Mode Types
 		/// </summary>
@@ -260,7 +260,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _entitiesContainerName = null;
 
             // Add top level node
-            var entitiesNode = new TreeNode(BuildEntitiesText()) { Name = ProcessGeneration.ElementEntities };
+            var entitiesNode = new TreeNode(BuildEntitiesText()) { Name = ProcessGeneration.Constants.ElementEntities };
             treeEntities.Nodes.Add(entitiesNode);
 
             // Disable entity controls
@@ -379,17 +379,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Iterate existing entities and ensure Entity Name is not the same as Container Name
-                var dupeFound = false;
+                var duplicateFound = false;
                 foreach (var businessView in _entities)
                 {
-                    if (businessView.Properties[BusinessView.EntityName].Equals(_entitiesContainerName))
+                    if (businessView.Properties[BusinessView.Constants.EntityName].Equals(_entitiesContainerName))
                     {
-                        dupeFound = true;
+                        duplicateFound = true;
                         break;
                     }
                 }
 
-                if (dupeFound)
+                if (duplicateFound)
                 {
                     return Resources.InvalidSettingContainerName;
                 }
@@ -448,9 +448,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Iterate entities to see if the entity has been specified for the view
             foreach (var businessView in _entities)
             {
-                if (businessView.Properties[BusinessView.ViewId].Contains(viewId))
+                if (businessView.Properties[BusinessView.Constants.ViewId].Contains(viewId))
                 {
-                    entityName = businessView.Properties[BusinessView.EntityName];
+                    entityName = businessView.Properties[BusinessView.Constants.EntityName];
                     break;
                 }
             }
@@ -470,9 +470,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
         /// <param name="entityCompositions">The compositions list to validate</param>
         /// <returns>string.Empty if valid otherwise message to display</returns>
-        private string ValidEntity(string resxName, string viewId, string entityName, string modelName,
-            RepositoryType repositoryType, string reportKeys, string programId, List<BusinessField> entityFields,
-            Dictionary<string, bool> uniqueDescriptions, List<Composition> entityCompositions)
+        private string ValidEntity(string resxName, 
+                                   string viewId, 
+                                   string entityName, 
+                                   string modelName,
+                                   RepositoryType repositoryType, 
+                                   string reportKeys, 
+                                   string programId, 
+                                   List<BusinessField> entityFields,
+                                   Dictionary<string, bool> uniqueDescriptions, 
+                                   List<Composition> entityCompositions)
         {
             // View ID
             if (string.IsNullOrEmpty(viewId))
@@ -533,7 +540,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate existing entities specified thus far
                 foreach (var businessView in _entities)
                 {
-                    if (!businessView.Text.Equals(ProcessGeneration.NewEntityText) && businessView.Properties[BusinessView.EntityName].Equals(entityName))
+                    if (!businessView.Text.Equals(ProcessGeneration.Constants.NewEntityText) && 
+                         businessView.Properties[BusinessView.Constants.EntityName].Equals(entityName))
                     {
                         dupeFound = true;
                         break;
@@ -562,7 +570,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Ensure 'EntityName' is not used in any fields
-            validFields = !entityFields.ToList().Any(t => t.Name.Equals(ProcessGeneration.ConstantEntityName));
+            validFields = !entityFields.ToList().Any(t => t.Name.Equals(ProcessGeneration.Constants.ConstantEntityName));
             if (!validFields)
             {
                 return Resources.InvalidSettingEntityName;
@@ -629,7 +637,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tooltip.SetToolTip(lblModule, Resources.ModuleTip);
 
             // Entities Step
-            lblEntities.Text = string.Format(Resources.EntitiesInstructions, ProcessGeneration.ElementEntities);
+            lblEntities.Text = string.Format(Resources.EntitiesInstructions, ProcessGeneration.Constants.ElementEntities);
 
             lblViewID.Text = Resources.ViewId;
             tooltip.SetToolTip(lblViewID, Resources.ViewIdTip);
@@ -665,9 +673,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             chkGenerateIfExist.Text = Resources.GenerateIfExist;
             tooltip.SetToolTip(chkGenerateIfExist, Resources.GenerateIfExistTip);
-
-            chkGenerateEnumsInSingleFile.Text = Resources.GenerateEnumsInSingleFile;
-            tooltip.SetToolTip(chkGenerateEnumsInSingleFile, Resources.GenerateEnumsInSingleFileTip);
 
             tooltip.SetToolTip(tbrEntity, Resources.EntityGridTip);
             btnRowAdd.ToolTipText = Resources.AddRow;
@@ -726,20 +731,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var module = segments[segments.Length - 2];
 
                     // Grab the company namespace from the Business Repository project
-                    if (key.Equals(ProcessGeneration.BusinessRepositoryKey))
+                    if (key.Equals(ProcessGeneration.Constants.BusinessRepositoryKey))
                     {
                         _companyNamespace = projectName.Substring(0,
                             projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
                     }
 
                     // Determine which language resources to include
-                    if (key.Equals(ProcessGeneration.ResourcesKey))
+                    if (key.Equals(ProcessGeneration.Constants.ResourcesKey))
                     {
                         SetLanguageFlagsBasedOnExistingProjectResourceFiles(project.ProjectItems);
                     }
 
                     // The Web project name is different from other ones. It should be derived from the folder name
-                    if (key.Equals(ProcessGeneration.WebKey))
+                    if (key.Equals(ProcessGeneration.Constants.WebKey))
                     {
                         var parts = project.FullName.Split('\\');
                         // Last part is web project name
@@ -809,12 +814,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Must have all projects to be valid
-            return (_projects.ContainsKey(ProcessGeneration.BusinessRepositoryKey) &&
-                    _projects.ContainsKey(ProcessGeneration.InterfacesKey) &&
-                    _projects.ContainsKey(ProcessGeneration.ModelsKey) &&
-                    _projects.ContainsKey(ProcessGeneration.ResourcesKey) &&
-                    _projects.ContainsKey(ProcessGeneration.ServicesKey) &&
-                    _projects.ContainsKey(ProcessGeneration.WebKey));
+            return (_projects.ContainsKey(ProcessGeneration.Constants.BusinessRepositoryKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.InterfacesKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.ModelsKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.ResourcesKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.ServicesKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.WebKey));
         }
 
         /// <summary>
@@ -1040,8 +1045,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _editContainerName.Click += EditContainerNameMenuItemOnClick;
 
             // Check box for all compositions
-            _allCompositions = new CheckBox();
-            _allCompositions.Checked = true;
+            _allCompositions = new CheckBox
+            {
+                Checked = true
+            };
             _allCompositions.CheckedChanged += AllCompositionsCheckedChanged;
 
             // Default to Flat Repository
@@ -1052,7 +1059,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static BusinessView NewEntity()
         {
             // Build new entity
-            return new BusinessView { Text = ProcessGeneration.NewEntityText };
+            return new BusinessView { Text = ProcessGeneration.Constants.NewEntityText };
         }
 
         /// <summary> New entity tree node</summary>
@@ -1122,17 +1129,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="setSelected">true for highligh color otherwise standard color </param>
         private static void SetNodeColor(TreeNode treeNode, bool setSelected)
         {
-            if (setSelected)
-            {
-                treeNode.BackColor = Color.FromKnownColor(KnownColor.Highlight);
-                treeNode.ForeColor = Color.FromKnownColor(KnownColor.HighlightText);
+            treeNode.ForeColor = setSelected ? Color.FromKnownColor(KnownColor.HighlightText)
+                                             : Color.FromKnownColor(KnownColor.WindowText);
 
-            }
-            else
-            {
-                treeNode.BackColor = Color.FromKnownColor(KnownColor.Window);
-                treeNode.ForeColor = Color.FromKnownColor(KnownColor.WindowText);
-            }
+            treeNode.BackColor = setSelected ? Color.FromKnownColor(KnownColor.Highlight)
+                                             : Color.FromKnownColor(KnownColor.Window);
         }
 
         /// <summary> Enable or disable entities controls</summary>
@@ -1248,14 +1249,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (repositoryType.Equals(RepositoryType.HeaderDetail))
                 {
                     // Checked if header entity
-                    chkGenerateFinder.Checked = _clickedEntityTreeNode.Name.Equals(ProcessGeneration.ElementEntities) && 
+                    chkGenerateFinder.Checked = _clickedEntityTreeNode.Name.Equals(ProcessGeneration.Constants.ElementEntities) && 
                         _clickedEntityTreeNode.Nodes.Count.Equals(1);
                 }
 
                 chkGenerateDynamicEnablement.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
                 chkGenerateClientFiles.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
                 chkGenerateIfExist.Checked = !repositoryType.Equals(RepositoryType.HeaderDetail);
-                chkGenerateEnumsInSingleFile.Checked = false;
 
                 // If not enabled, then uncheck it
                 if (!chkGenerateFinder.Enabled)
@@ -1279,30 +1279,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var businessView = (BusinessView)treeNode.Tag;
 
             // Assign to controls
-            txtViewID.Text = businessView.Properties[BusinessView.ViewId];
+            txtViewID.Text = businessView.Properties[BusinessView.Constants.ViewId];
 
-            txtReportIniFile.Text = businessView.Properties[BusinessView.ReportIni];
+            txtReportIniFile.Text = businessView.Properties[BusinessView.Constants.ReportIni];
             if (repositoryType.Equals(RepositoryType.Report))
             {
                 AddReports(txtReportIniFile.Text);
-                cboReportKeys.Text = businessView.Properties[BusinessView.ReportKey];
-                txtReportProgramId.Text = businessView.Properties[BusinessView.ProgramId];
+                cboReportKeys.Text = businessView.Properties[BusinessView.Constants.ReportKey];
+                txtReportProgramId.Text = businessView.Properties[BusinessView.Constants.ProgramId];
 
                 // Delete Rows as the selectedIndex Change method caused to add also. They will be added below
                 DeleteRows();
                 DeleteCompositionRows();
             }
 
-            txtEntityName.Text = businessView.Properties[BusinessView.EntityName];
-            txtModelName.Text = businessView.Properties[BusinessView.ModelName];
-            txtResxName.Text = businessView.Properties[BusinessView.ResxName];
+            txtEntityName.Text = businessView.Properties[BusinessView.Constants.EntityName];
+            txtModelName.Text = businessView.Properties[BusinessView.Constants.ModelName];
+            txtResxName.Text = businessView.Properties[BusinessView.Constants.ResxName];
 
             // Options tab
-            chkGenerateFinder.Checked = businessView.Options[BusinessView.GenerateFinder];
-            chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.GenerateDynamicEnablement];
-            chkGenerateClientFiles.Checked = businessView.Options[BusinessView.GenerateClientFiles];
-            chkGenerateIfExist.Checked = businessView.Options[BusinessView.GenerateIfAlreadyExists];
-            chkGenerateEnumsInSingleFile.Checked = businessView.Options[BusinessView.GenerateEnumsInSingleFile];
+            chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
+            chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
+            chkGenerateClientFiles.Checked = businessView.Options[BusinessView.Constants.GenerateClientFiles];
+            chkGenerateIfExist.Checked = businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists];
 
             // Assign to the grids
             AssignGrids(businessView);
@@ -1450,9 +1449,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 composition.ViewId = composition.ViewId.ToUpper();
             }
 
-            var success = ValidEntity(txtResxName.Text, txtViewID.Text, txtEntityName.Text, txtModelName.Text,
-                repositoryType, cboReportKeys.Text, txtReportProgramId.Text, _entityFields.ToList(),
-                uniqueDescriptions, _entityCompositions.ToList());
+            var success = ValidEntity(txtResxName.Text, 
+                                      txtViewID.Text, 
+                                      txtEntityName.Text, 
+                                      txtModelName.Text,
+                                      repositoryType, 
+                                      cboReportKeys.Text, 
+                                      txtReportProgramId.Text, 
+                                      _entityFields.ToList(),
+                                      uniqueDescriptions, 
+                                      _entityCompositions.ToList());
             if (!string.IsNullOrEmpty(success))
             {
                 DisplayMessage(success, MessageBoxIcon.Error);
@@ -1463,23 +1469,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var node = _modeType == ModeTypeEnum.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
             var businessView = (BusinessView)node.Tag;
 
+#if ENABLE_TK_244885
+            // Now, Fix up the BusinessView.Enums object with values from the Fields object
+            // We need to grab the IsCommon (And AlternateName) from the Fields and apply to the Enums dictionary
+            ReconcileEnumerationDataBetweenEnumsAndFields(businessView);
+#endif
+
             // Get valued from controls and add to object
-            businessView.Properties[BusinessView.ModuleId] = cboModule.Text;
-            businessView.Properties[BusinessView.ViewId] = txtViewID.Text;
-            businessView.Properties[BusinessView.ReportIni] = txtReportIniFile.Text;
-            businessView.Properties[BusinessView.ReportKey] = cboReportKeys.Text;
-            businessView.Properties[BusinessView.ProgramId] = txtReportProgramId.Text;
-            businessView.Properties[BusinessView.EntityName] = txtEntityName.Text;
-            businessView.Properties[BusinessView.ModelName] = txtModelName.Text;
-            businessView.Properties[BusinessView.ResxName] = txtResxName.Text;
+            businessView.Properties[BusinessView.Constants.ModuleId] = cboModule.Text;
+            businessView.Properties[BusinessView.Constants.ViewId] = txtViewID.Text;
+            businessView.Properties[BusinessView.Constants.ReportIni] = txtReportIniFile.Text;
+            businessView.Properties[BusinessView.Constants.ReportKey] = cboReportKeys.Text;
+            businessView.Properties[BusinessView.Constants.ProgramId] = txtReportProgramId.Text;
+            businessView.Properties[BusinessView.Constants.EntityName] = txtEntityName.Text;
+            businessView.Properties[BusinessView.Constants.ModelName] = txtModelName.Text;
+            businessView.Properties[BusinessView.Constants.ResxName] = txtResxName.Text;
 
-            businessView.Properties[BusinessView.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
+            businessView.Properties[BusinessView.Constants.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
 
-            businessView.Options[BusinessView.GenerateFinder] = chkGenerateFinder.Checked;
-            businessView.Options[BusinessView.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
-            businessView.Options[BusinessView.GenerateClientFiles] = chkGenerateClientFiles.Checked;
-            businessView.Options[BusinessView.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
-            businessView.Options[BusinessView.GenerateEnumsInSingleFile] = chkGenerateEnumsInSingleFile.Checked;
+            businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
+            businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
+            businessView.Options[BusinessView.Constants.GenerateClientFiles] = chkGenerateClientFiles.Checked;
+            businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
+            businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile] = true; // Checkbox has been removed
 
             businessView.Fields = _entityFields.ToList();
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
@@ -1488,7 +1500,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Add/Update to tree
-            businessView.Text = businessView.Properties[BusinessView.EntityName];
+            businessView.Text = businessView.Properties[BusinessView.Constants.EntityName];
 
             node.Name = BuildEntityNodeName(businessView);
             node.Text = BuildEntityText(businessView);
@@ -1513,6 +1525,94 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             treeEntities.Focus();
         }
 
+
+#if ENABLE_TK_244885
+
+        /// <summary>
+        /// This method will copy information about enumerations from the 'Fields' property 
+        /// to the Enums property so that they're the same.
+        /// This method only needs to be called once.
+        /// </summary>
+        /// <param name="businessView"></param>
+        private void ReconcileEnumerationDataBetweenEnumsAndFields(BusinessView businessView)
+        {
+            var fields = businessView.Fields;
+            foreach (var field in fields)
+            {
+                if (field.Type == BusinessDataType.Enumeration)
+                {
+                    // Get the relevant data about the enumerations 
+                    // from the field (via Fields collection)
+                    var name = field.Name;
+                    var description = field.Description;
+                    var isCommon = field.IsCommon;
+                    if (name.Equals(description) == false && isCommon == true)
+                    {
+                        // Set the description to be the same as the overridden name
+                        field.Description = field.Name;
+                    } 
+                    //var alternateName = field.AlternateName;
+
+                    var rebuildBusinessviewEnums = false;
+                    var indexToFix = 0;
+                    var newEnumName = string.Empty;
+                    for (int index = 0; index < businessView.Enums.Count; index++)
+                    {
+                        var item = businessView.Enums.ElementAt(index);
+                        var enumName = item.Key;
+                        var enumHelper = item.Value;
+
+                        if (enumName.ToUpperInvariant() == description.ToUpperInvariant())
+                        {
+                            // Found the correct enum entry 
+                            // so let's update it and move on
+                            enumHelper.IsCommon = isCommon;
+                            enumHelper.Name = name;
+                            //enumHelper.AlternateName = alternateName;
+
+                            rebuildBusinessviewEnums = true;
+                            indexToFix = index;
+                            newEnumName = name;
+                            break;
+                        }
+                    }
+
+                    if (rebuildBusinessviewEnums)
+                    {
+                        var newEnums = new Dictionary<string, EnumHelper>();
+                        for (int index = 0; index < businessView.Enums.Count; index++)
+                        {
+                            var item = businessView.Enums.ElementAt(index);
+                            var originalEnumName = item.Key; 
+                            var enumHelper = item.Value; // Get the actual enumeration values list
+
+                            // Found the index in the original businessView.Enums list
+                            if (indexToFix == index)
+                            {
+                                var enumObject = new EnumHelper
+                                {
+                                    Name = newEnumName,
+                                    IsCommon = isCommon,
+                                    Values = enumHelper.Values,
+                                };
+
+                                newEnums.Add(enumObject.Name, enumObject);
+                            }
+                            else
+                            {
+                                newEnums.Add(enumHelper.Name, enumHelper);
+                            }
+                        }
+
+                        // Now that we have a newly built Enums Dictionary,
+                        // let's reassign it back to the businessView.
+                        businessView.Enums = newEnums;
+                    }
+                }
+            }
+        }
+#endif
+
         /// <summary> Build Entity Text from Entity</summary>
         /// <param name="businessView">Business View to build text from</param>
         /// <returns>Text</returns>
@@ -1520,45 +1620,45 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var repositoryType = GetRepositoryType();
 
-            var text = ProcessGeneration.PropertyEntity + "=\"" + businessView.Properties[BusinessView.EntityName] + "\" ";
-            text += ProcessGeneration.PropertyModule + "=\"" + businessView.Properties[BusinessView.ModuleId] + "\" ";
+            var text = ProcessGeneration.Constants.PropertyEntity + "=\"" + businessView.Properties[BusinessView.Constants.EntityName] + "\" ";
+            text += ProcessGeneration.Constants.PropertyModule + "=\"" + businessView.Properties[BusinessView.Constants.ModuleId] + "\" ";
 
             // Show view id if not a report
             if (!repositoryType.Equals(RepositoryType.Report))
             {
-                text += ProcessGeneration.PropertyViewId + "=\"" + businessView.Properties[BusinessView.ViewId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyViewId + "=\"" + businessView.Properties[BusinessView.Constants.ViewId] + "\" ";
             }
 
             // Show program id if a report
             if (repositoryType.Equals(RepositoryType.Report))
             {
-                text += ProcessGeneration.PropertyProgramId + "=\"" + businessView.Properties[BusinessView.ProgramId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyProgramId + "=\"" + businessView.Properties[BusinessView.Constants.ProgramId] + "\" ";
             }
 
             // Show workflow id if a process
             if (repositoryType.Equals(RepositoryType.Process))
             {
-                text += ProcessGeneration.PropertyWorkflowId + "=\"" + businessView.Properties[BusinessView.WorkflowKindId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyWorkflowId + "=\"" + businessView.Properties[BusinessView.Constants.WorkflowKindId] + "\" ";
             }
 
-            text += ProcessGeneration.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() + "\" ";
 
             // Show compositions if a header-detail
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                text += ProcessGeneration.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
+                text += ProcessGeneration.Constants.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
             }
 
             // Show Finder and Dynamic Enablement if not a report/dynamic query
             if (!repositoryType.Equals(RepositoryType.Report) && !repositoryType.Equals(RepositoryType.DynamicQuery))
             {
-                text += ProcessGeneration.PropertyFinder + "=\"" + businessView.Options[BusinessView.GenerateFinder].ToString() + "\" ";
-                text += ProcessGeneration.PropertyEnablement + "=\"" + businessView.Options[BusinessView.GenerateDynamicEnablement].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyEnablement + "=\"" + businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
             }
 
-            text += ProcessGeneration.PropertyClientFiles + "=\"" + businessView.Options[BusinessView.GenerateClientFiles].ToString() + "\" ";
-            text += ProcessGeneration.PropertyIfExists + "=\"" + businessView.Options[BusinessView.GenerateIfAlreadyExists].ToString() + "\" ";
-            text += ProcessGeneration.PropertySingleFile + "=\"" + businessView.Options[BusinessView.GenerateEnumsInSingleFile].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyClientFiles + "=\"" + businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyIfExists + "=\"" + businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertySingleFile + "=\"" + businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString() + "\" ";
 
             return text;
         }
@@ -1568,7 +1668,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private string BuildEntitiesText()
         {
             var repositoryType = GetRepositoryType();
-            var text = ProcessGeneration.ElementEntities;
+            var text = ProcessGeneration.Constants.ElementEntities;
 
             // Only for header-detail at this point
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
@@ -1635,7 +1735,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DeleteEntityNodes(treeNodes);
         }
 
-        #region Toolbar Events
+#region Toolbar Events
 
         /// <summary> Next/Generate toolbar button </summary>
         /// <param name="sender">Sender object </param>
@@ -1661,7 +1761,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        #endregion
+#endregion
 
         /// <summary> Edit Container Name</summary>
         private void EditContainerName()
@@ -1698,7 +1798,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             foreach (var x in doc.Root.Elements())
             {
-                if (!x.Descendants().Any(e => e.Name == ProcessGeneration.PropertyEntity))
+                if (!x.Descendants().Any(e => e.Name == ProcessGeneration.Constants.PropertyEntity))
                 {
                     continue;
                 }
@@ -1782,13 +1882,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             _headerNode = FindHeaderNode(_xmlEntities);
 
                             
-                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == ProcessGeneration.PropertyEntity);
+                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == ProcessGeneration.Constants.PropertyEntity);
 
                             // mark entity in _entities 
                             foreach (var entity in _entities)
                             {
                                 // ReSharper disable once PossibleMultipleEnumeration
-                                entity.IsPartofHeaderDetailComposition = headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.PropertyViewId).Value.Equals(entity.Properties[BusinessView.ViewId]));
+                                entity.IsPartofHeaderDetailComposition = headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.Constants.PropertyViewId).Value.Equals(entity.Properties[BusinessView.Constants.ViewId]));
                             }
                         }
                     }
@@ -1817,60 +1917,65 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             foreach (TreeNode entityTreeNode in treeNode.Nodes)
             {
                 // Create element named Entity 
-                var entityElement = new XElement(ProcessGeneration.PropertyEntity);
+                var entityElement = new XElement(ProcessGeneration.Constants.PropertyEntity);
                 // Get business view from tag so can iterate fields and options
                 var businessView = (BusinessView)entityTreeNode.Tag;
 
                 // Make certain properties into attributes
-                entityElement.Add(new XAttribute(ProcessGeneration.PropertyEntity, businessView.Properties[BusinessView.EntityName]));
-                entityElement.Add(new XAttribute(ProcessGeneration.PropertyModule, businessView.Properties[BusinessView.ModuleId]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity, businessView.Properties[BusinessView.Constants.EntityName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModule, businessView.Properties[BusinessView.Constants.ModuleId]));
 
                 // Show view id if not a report
                 if (!repositoryType.Equals(RepositoryType.Report))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyViewId, businessView.Properties[BusinessView.ViewId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId, businessView.Properties[BusinessView.Constants.ViewId]));
                 }
 
                 // Show program id if a report
                 if (repositoryType.Equals(RepositoryType.Report))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyProgramId, businessView.Properties[BusinessView.ProgramId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyProgramId, businessView.Properties[BusinessView.Constants.ProgramId]));
                 }
 
                 // Show workflow id if a process
                 if (repositoryType.Equals(RepositoryType.Process))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.PropertyWorkflowId, businessView.Properties[BusinessView.WorkflowKindId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyWorkflowId, businessView.Properties[BusinessView.Constants.WorkflowKindId]));
                 }
 
-                entityElement.Add(new XAttribute(ProcessGeneration.PropertyResxName, businessView.Properties[BusinessView.ResxName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyResxName, businessView.Properties[BusinessView.Constants.ResxName]));
 
                 // Add Options to this element via the business view's Options
-                var optionsElement = new XElement(ProcessGeneration.PropertyOptions);
-                var optionElement = new XElement(ProcessGeneration.PropertyOption);
+                var optionsElement = new XElement(ProcessGeneration.Constants.PropertyOptions);
+                var optionElement = new XElement(ProcessGeneration.Constants.PropertyOption);
 
-                optionElement.Add(new XAttribute(ProcessGeneration.PropertyFinder, businessView.Options[BusinessView.GenerateFinder].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.PropertyEnablement, businessView.Options[BusinessView.GenerateDynamicEnablement].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.PropertyClientFiles, businessView.Options[BusinessView.GenerateClientFiles].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.PropertyIfExists, businessView.Options[BusinessView.GenerateIfAlreadyExists].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.PropertySingleFile, businessView.Options[BusinessView.GenerateEnumsInSingleFile].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder, businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement, businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyClientFiles, businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIfExists, businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySingleFile, businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString()));
 
                 optionsElement.Add(optionElement);
                 entityElement.Add(optionsElement);
 
 
                 // Add Fields to this element via the business view's Fields
-                var fieldsElement = new XElement(ProcessGeneration.PropertyFields);
+                var fieldsElement = new XElement(ProcessGeneration.Constants.PropertyFields);
 
                 // Iterate fields
                 foreach (var businessField in businessView.Fields)
                 {
-                    var fieldElement = new XElement(ProcessGeneration.PropertyField);
+                    var fieldElement = new XElement(ProcessGeneration.Constants.PropertyField);
 
-                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyFieldName, businessField.ServerFieldName));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyPropertyName, businessField.Name));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertyType, businessField.Type.ToString()));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.PropertySize, businessField.Size.ToString()));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFieldName, businessField.ServerFieldName));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName, businessField.Name));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType, businessField.Type.ToString()));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySize, businessField.Size.ToString()));
+
+#if ENABLE_TK_244885
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIsCommon, businessField.IsCommon.ToString()));
+                    //fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyAlternateName, businessField.AlternateName.ToString()));
+#endif
 
                     fieldsElement.Add(fieldElement);
                 }
@@ -1880,16 +1985,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (repositoryType.Equals(RepositoryType.HeaderDetail))
                 {
                     // Add Compositions to this element via the business view's Compositions
-                    var compositionsElement = new XElement(ProcessGeneration.PropertyCompositions);
+                    var compositionsElement = new XElement(ProcessGeneration.Constants.PropertyCompositions);
 
                     // Iterate compositions
                     foreach (var composition in businessView.Compositions)
                     {
-                        var compositionElement = new XElement(ProcessGeneration.PropertyComposition);
+                        var compositionElement = new XElement(ProcessGeneration.Constants.PropertyComposition);
 
-                        compositionElement.Add(new XAttribute(ProcessGeneration.PropertyViewId, composition.ViewId));
-                        compositionElement.Add(new XAttribute(ProcessGeneration.PropertyEntity, composition.EntityName));
-                        compositionElement.Add(new XAttribute(ProcessGeneration.PropertyInclude, composition.Include.ToString()));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId, composition.ViewId));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity, composition.EntityName));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyInclude, composition.Include.ToString()));
 
                         compositionsElement.Add(compositionElement);
                     }
@@ -1921,7 +2026,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var element = new XElement(treeNode.Name);
                 if (repositoryType.Equals(RepositoryType.HeaderDetail))
                 {
-                    element.Add(new XAttribute(ProcessGeneration.PropertyContainer, _entitiesContainerName));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.PropertyContainer, _entitiesContainerName));
                 }
 
                 // Start recursion
@@ -1940,14 +2045,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_currentWizardStep.Equals(0))
             {
                 // Proceed back a step
-                if (IsCurrentPanel(Generation.Constants.PanelGenerated))
-                {
-                    btnNext.Text = Resources.Generate;
-                }
-                else
-                {
-                    btnNext.Text = Resources.Next;
-                }
+                var label = IsCurrentPanel(Generation.Constants.PanelGenerated) ? Resources.Generate 
+                                                                                : Resources.Next;
+                btnNext.Text = label;
 
                 ShowStep(false);
 
@@ -2137,6 +2237,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DeleteRows();
             _reports.Clear();
 
+            var columnIndex = 0;
             if (grdEntityFields.DataSource == null)
             {
                 // Assign binding to datasource (two binding)
@@ -2144,10 +2245,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 grdEntityFields.ScrollBars = ScrollBars.Both;
 
                 // Assign widths and localized text
-                GenericInit(grdEntityFields, 0, 50, Resources.ID, false, false);
-                GenericInit(grdEntityFields, 1, 125, Resources.ServerField, true, true);
-                GenericInit(grdEntityFields, 2, 150, Resources.Field, true, false);
-                GenericInit(grdEntityFields, 3, 290, Resources.Description, false, false);
+                GenericInit(grid: grdEntityFields, 
+                            column: columnIndex++, 
+                            width: 50, 
+                            text: Resources.ID, 
+                            visible: false, 
+                            readOnly: false);
+                GenericInit(grdEntityFields, columnIndex++, 125, Resources.ServerField, true, true);
+                GenericInit(grdEntityFields, columnIndex++, 150, Resources.Field,       true, false);
+                GenericInit(grdEntityFields, columnIndex++, 290, Resources.Description, false, false);
 
                 // Remove and re-add as combobox column
                 grdEntityFields.Columns.Remove("Type");
@@ -2159,27 +2265,40 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     Width = 100,
                     FlatStyle = FlatStyle.Flat
                 };
-                grdEntityFields.Columns.Insert(4, column);
-                grdEntityFields.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                grdEntityFields.Columns[4].Visible = !repositoryType.Equals(RepositoryType.Report);
+                grdEntityFields.Columns.Insert(columnIndex, column);
+                grdEntityFields.Columns[columnIndex].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grdEntityFields.Columns[columnIndex].Visible = !repositoryType.Equals(RepositoryType.Report);
+                columnIndex++;
 
-                // Continue with assign widths and localized text
-                GenericInit(grdEntityFields, 5, 40, Resources.Size, true, false);
-                GenericInit(grdEntityFields, 6, 75, Resources.IsReadOnly, false, false);
-                GenericInit(grdEntityFields, 7, 75, Resources.IsCalculated, false, false);
-                GenericInit(grdEntityFields, 8, 75, Resources.IsRequired, false, false);
-                GenericInit(grdEntityFields, 9, 75, Resources.IsKey, false, false);
-                GenericInit(grdEntityFields, 10, 75, Resources.IsUpperCase, false, false);
-                GenericInit(grdEntityFields, 11, 75, Resources.IsAlphaNumeric, false, false);
-                GenericInit(grdEntityFields, 12, 75, Resources.IsNumeric, false, false);
-                GenericInit(grdEntityFields, 13, 75, Resources.IsDynamicEnablement, false, false);
+                // Continue with width and localized text assignment
+                GenericInit(grid: grdEntityFields, 
+                            column: columnIndex++, 
+                            width: 40, 
+                            text: Resources.Size, 
+                            visible: true, 
+                            readOnly: false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsReadOnly,          false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsCalculated,        false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsRequired,          false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsKey,               false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsUpperCase,         false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsAlphaNumeric,      false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsNumeric,           false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsDynamicEnablement, false, false);
+
+#if ENABLE_TK_244885
+                GenericInit(grdEntityFields, columnIndex++, 70, Resources.IsCommon,            true, false);
+                //GenericInit(grdEntityFields, columnIndex++, 100, Resources.AlternateName,      true, false);
+#endif
             }
 
             // Show/Hide Fieldname based upon code type
-            GenericInit(grdEntityFields, 1, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
+            columnIndex = 1;
+            GenericInit(grdEntityFields, columnIndex, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
 
             // Droplist items wmay be different based upon repository type
-            var typeColumn = (DataGridViewComboBoxColumn)grdEntityFields.Columns[4];
+            columnIndex = 4;
+            var typeColumn = (DataGridViewComboBoxColumn)grdEntityFields.Columns[columnIndex];
             typeColumn.Items.Clear();
 
             // Add data types
@@ -2223,14 +2342,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (grdEntityCompositions.DataSource == null)
             {
+                var columnIndex = 0;
+
                 // Assign binding to datasource (two binding)
                 grdEntityCompositions.DataSource = _entityCompositions;
                 grdEntityCompositions.ScrollBars = ScrollBars.Both;
 
                 // Assign widths and localized text
-                GenericInit(grdEntityCompositions, 0, 125, Resources.CompositeView, true, true);
-                GenericInit(grdEntityCompositions, 1, 150, Resources.Entity, true, true);
-                GenericInit(grdEntityCompositions, 2, 125, Resources.Include, true, false);
+                GenericInit(grdEntityCompositions, columnIndex++, 125, Resources.CompositeView, true, true);
+                GenericInit(grdEntityCompositions, columnIndex++, 150, Resources.Entity,        true, true);
+                GenericInit(grdEntityCompositions, columnIndex++, 125, Resources.Include,       true, false);
 
                 // Place checkbox into header
                 //var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
@@ -2247,8 +2368,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="text">Header Text</param>
         /// <param name="visible">True for visible otherwise False</param>
         /// <param name="readOnly">True for read only otherwise False</param>
-        private static void GenericInit(DataGridView grid, int column, int width, string text, bool visible,
-            bool readOnly)
+        private static void GenericInit(DataGridView grid, 
+                                        int column, 
+                                        int width, 
+                                        string text, 
+                                        bool visible,
+                                        bool readOnly)
         {
             grid.Columns[column].Width = width;
             grid.Columns[column].HeaderText = text;
@@ -2422,11 +2547,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             cboModule.Items.Add(string.Empty);
 
             // Iterate "Models" project(s) for modules belonging to the solution
-            foreach (var projectInfo in _projects[ProcessGeneration.ModelsKey])
+            foreach (var projectInfo in _projects[ProcessGeneration.Constants.ModelsKey])
             {
                 cboModule.Items.Add(projectInfo.Key);
 
-                if (!_projects[ProcessGeneration.ModelsKey].Count.Equals(1))
+                if (!_projects[ProcessGeneration.Constants.ModelsKey].Count.Equals(1))
                 {
                     continue;
                 }
@@ -2753,8 +2878,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text, cboModule.Text);
 
                     // Assign to entity and model fields
-                    txtEntityName.Text = businessView.Properties[BusinessView.EntityName];
-                    txtModelName.Text = businessView.Properties[BusinessView.ModelName];
+                    txtEntityName.Text = businessView.Properties[BusinessView.Constants.EntityName];
+                    txtModelName.Text = businessView.Properties[BusinessView.Constants.ModelName];
 
                     // Assign to control
                     txtResxName.Text = txtEntityName.Text.Trim() + "Resx";
@@ -2817,7 +2942,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var repositoryType = GetRepositoryType();
 
             // Double click will enter edit mode
-            if (e.Node.Name.Equals(ProcessGeneration.ElementEntities))
+            if (e.Node.Name.Equals(ProcessGeneration.Constants.ElementEntities))
             {
                 if (repositoryType.Equals(RepositoryType.HeaderDetail))
                 {
@@ -2865,7 +2990,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Show Add and Delete All menu if Entities was clicked and if header-detail (for now), 
             // also the Edit Container Name
-            if (e.Node.Name.Equals(ProcessGeneration.ElementEntities))
+            if (e.Node.Name.Equals(ProcessGeneration.Constants.ElementEntities))
             {
                 // Context menu to contain Edit Container Name (if header-detail), Add, Delete All
                 _contextMenu.MenuItems.Clear();
@@ -2986,7 +3111,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        #endregion
+#endregion
 
     }
 }

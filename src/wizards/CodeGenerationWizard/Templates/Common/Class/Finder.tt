@@ -26,9 +26,16 @@
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var resxName = view.Properties[BusinessView.ResxName];
-    var modelName = view.Properties[BusinessView.ModelName];
-    var entityName = view.Properties[BusinessView.EntityName];
+
+	var resxName = string.Empty;
+    var normalResxName = view.Properties[BusinessView.Constants.ResxName];
+
+#if ENABLE_TK_244885
+	var customCommonResxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#endif
+
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
@@ -82,6 +89,7 @@ using <#=companyNamespace#>.<#=moduleId#>.Models.Enums;
 <#
 	}
 #>
+using <#=companyNamespace#>.<#=moduleId#>.Resources; // For common resources
 using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
 
 #endregion
@@ -169,8 +177,15 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
             {
                 // locals
                 var field = view.Fields[i];
-                var fieldName = field.Name;
 
+#if ENABLE_TK_244885
+				// Overrides for Enumeration fields marked as 'Common'
+				resxName = field.IsCommon ? customCommonResxName : normalResxName;
+#else		
+				resxName = normalResxName;
+#endif
+
+				var fieldName = field.Name;
 #>
                 new GridField
                 {
@@ -242,7 +257,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                 }
 
                 // Custom Attributes
-                if (field.Type.Equals(BusinessDataType.Decimal) || field.Type.Equals(BusinessDataType.Double) ||
+                if (field.Type.Equals(BusinessDataType.Decimal) || 
+				    field.Type.Equals(BusinessDataType.Double) ||
                     (field.Type.Equals(BusinessDataType.String) && !view.Enums.ContainsKey(fieldName)))
                 {
 #>

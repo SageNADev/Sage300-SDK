@@ -143,9 +143,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line 23 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-    var moduleId = view.Properties[BusinessView.ModuleId];
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
 	if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
     {

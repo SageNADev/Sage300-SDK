@@ -23,11 +23,11 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
-    var resxName = view.Properties[BusinessView.ResxName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
     var companyNamespace = settings.CompanyNamespace;
     var resourceExtension = settings.ResourceExtension;
     var keyFieldName = view.Keys.FirstOrDefault();

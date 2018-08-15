@@ -43,6 +43,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string Name { get; set; }
         /// <summary> Enumeration values for field </summary>
         public Dictionary<string, Object> Values { get; set; }
+
+#if ENABLE_TK_244885
+        /// <summary> If field is marked as common (or shared) this is set to true, otherwise false </summary>
+        public bool IsCommon { get; set; }
+        ///// <summary> An optional alternate name for the field </summary>
+        //public string AlternateName { get; set; }
+#endif
         #endregion
     }
 }

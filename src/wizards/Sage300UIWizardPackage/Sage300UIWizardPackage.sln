@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGenerationWizard", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.SolutionWizard", "..\Sage300SolutionWizard\Sage.CA.SBS.ERP.Sage300.SolutionWizard.csproj", "{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UIWizardUnitTests", "..\Sage300UIWizardUnitTests\Sage300UIWizardUnitTests.csproj", "{0EB51C22-D1D5-47D7-BE8D-57D4391082C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB51C22-D1D5-47D7-BE8D-57D4391082C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB51C22-D1D5-47D7-BE8D-57D4391082C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB51C22-D1D5-47D7-BE8D-57D4391082C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB51C22-D1D5-47D7-BE8D-57D4391082C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

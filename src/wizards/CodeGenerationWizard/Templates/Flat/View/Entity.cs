@@ -144,8 +144,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             #line 24 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
-    var resxName = view.Properties[BusinessView.ResxName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
 
     if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
     {
@@ -156,7 +156,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var keyFieldName = view.Keys.FirstOrDefault();
-    var modelName = view.Properties[BusinessView.ModelName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");

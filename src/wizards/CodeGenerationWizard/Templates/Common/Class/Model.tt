@@ -25,11 +25,15 @@
     // Locals
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
-    var resxName = view.Properties[BusinessView.ResxName];
+	var resxName = string.Empty;
+    var normalResxName = view.Properties[BusinessView.Constants.ResxName];
+#if ENABLE_TK_244885
+	var customCommonResxName = view.Properties[BusinessView.Constants.CustomCommonResxName];
+#endif
     var companyNamespace = settings.CompanyNamespace;
     var resourceExtension = settings.ResourceExtension;
     var extension = settings.Extension;
-    var modelName = view.Properties[BusinessView.ModelName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
     var repositoryType = settings.RepositoryType;
     var applicationNamespace = (settings.RepositoryType.Equals(RepositoryType.DynamicQuery)) ? "Application" : string.Empty;
 	var enumsCount = view.Enums.Count;
@@ -57,11 +61,22 @@ using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 <#
         if (!repositoryType.Equals(RepositoryType.Report) && enumsCount > 0)
         {
+			if (extension.Length > 0) 
+			{
 #>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
 using <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>;
 <#
+			}
+			else 
+			{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
+<#
+			}
         }
 #>
+using <#=companyNamespace#>.<#=moduleId#>.Resources; // For common resources
 using <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>;
 <#
     }
@@ -82,7 +97,16 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
             {
                 // locals
                 var field = view.Fields[i];
-                var fieldName = field.Name;
+				var resXName = normalResxName;
+
+#if ENABLE_TK_244885
+				// Overrides for Enumeration fields marked as 'Common'
+				resxName = field.IsCommon ? customCommonResxName : normalResxName;
+#else
+				resxName = normalResxName;
+#endif
+
+				var fieldName = field.Name;
 
                 // Naming convention is potentially invalid
                 if (fieldName.All(Char.IsUpper))
@@ -145,12 +169,13 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 
                 // Property
 #>
-        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + field.Name : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
+        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
 <#
             }
 
-            if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
+            if (!repositoryType.Equals(RepositoryType.DynamicQuery) && 
+			    !repositoryType.Equals(RepositoryType.Report))
             {
 #>
         #region UI Strings
@@ -159,13 +184,16 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 // UI access methods
                 foreach (var value in view.Enums.Values)
                 {
+					// Did the user want to override the name?
+					//var name = value.AlternateName.Length > 0 ? value.AlternateName : value.Name;
+					var name = value.Name;
 #>
         /// <summary>
-        /// Gets <#=value.Name#> string value
+        /// Gets <#=name#> string value
         /// </summary>
-        public string <#=value.Name#>String
+        public string <#=name#>String
         {
-         get { return EnumUtility.GetStringValue(<#=value.Name#>); }
+         get { return EnumUtility.GetStringValue(<#=name#>); }
         }
 
 <#

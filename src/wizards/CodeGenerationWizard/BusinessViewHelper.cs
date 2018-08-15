@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// </summary>
     public static class BusinessViewHelper
     {
-        #region Private Enummeration(s)
+        #region Private Enumeration(s)
         private enum MethodSignatureEnum
         {
             RegisterController = 0,
@@ -64,8 +64,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public static void UpdateFlatBootStrappers(BusinessView view, Settings settings)
         {
             // Get the flags
-            var generateClientFiles = view.Options[BusinessView.GenerateClientFiles];
-            var generateFinder = view.Options[BusinessView.GenerateFinder];
+            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
+            var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
 
             if (generateClientFiles || generateFinder) { UpdateWebBootStrapperNamespaces(view, settings); }
             if (generateClientFiles) { UpdateWebBootStrapper(view, settings); }
@@ -87,7 +87,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void UpdateProcessBootStrappers(BusinessView view, Settings settings)
         {
-            if (view.Options[BusinessView.GenerateClientFiles])
+            if (view.Options[BusinessView.Constants.GenerateClientFiles])
             {
                 UpdateProcessWebBootStrapper(view, settings);
             }
@@ -102,9 +102,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void UpdateBundles(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))? settings.EntitiesContainerName : view.Properties[BusinessView.EntityName];
-            var projectInfoWeb = settings.Projects[ProcessGeneration.WebKey][moduleId];
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))? settings.EntitiesContainerName : view.Properties[BusinessView.Constants.EntityName];
+            var projectInfoWeb = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId];
             var pathProj = projectInfoWeb.ProjectFolder;
             var bundleFile = Path.Combine(pathProj, "BundleRegistration.cs");
             var scriptBase = settings.CompanyNamespace;
@@ -139,9 +139,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         public static void CreateViewPageUrl(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
             var pageUrlFile = Path.Combine(pathProj, "pageUrl.txt");
             var pageUrl = "/OnPremise/" + moduleId + "/" + (settings.RepositoryType.Equals(RepositoryType.HeaderDetail)?settings.EntitiesContainerName:entityName);
 
@@ -157,7 +157,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// Concat strings using Path object
         /// </summary>
         /// <param name="values">values to concatenate</param>
-        /// <param name="changeToDot">True to replace separaor with dot (namespaces)</param>
+        /// <param name="changeToDot">True to replace separator with dot (namespaces)</param>
         /// <returns>Concatenated string</returns>
         public static string ConcatStrings(IEnumerable<string> values, bool changeToDot = false)
         {
@@ -170,7 +170,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 retVal = retVal.Substring(1);
             }
 
-            // Replace seperator with dot?
+            // Replace separator with dot?
             if (changeToDot)
             {
                 retVal = retVal.Replace(@"\", ".");
@@ -181,28 +181,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary>
         /// Modify module level security const string class to add view security resource ID
+        /// Will not insert duplicate entries
         /// </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">Settings</param>
         public static void UpdateSecurityClass(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var pathBusinessRepository = settings.Projects[ProcessGeneration.BusinessRepositoryKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var pathBusinessRepository = settings.Projects[ProcessGeneration.Constants.BusinessRepositoryKey][moduleId].ProjectFolder;
             var filePath = Path.Combine(pathBusinessRepository, @"Security\Security.cs");
             var f = Environment.NewLine + BusinessViewHelper.Constants.TabTwo;
             var commentLine = f + "/// <summary>" + f + "/// Security resourceID for " + moduleId + " " + entityName + f + "/// </summary>" + Environment.NewLine;
             var constName = moduleId + entityName;
-            var constLine = f + "public const string " + constName + " = \"" + constName.ToUpper() + "\";" + Environment.NewLine;
+            var signature = "public const string " + constName + " = \"" + constName.ToUpper() + "\";";
+            var constLine = f + signature + Environment.NewLine;
 
             if (File.Exists(filePath))
             {
-                var text = File.ReadAllText(filePath);
-                var pos = text.IndexOf('}');
-                if (pos > -1)
+                var txtLines = File.ReadAllLines(filePath).ToList();
+                var trimLines = (File.ReadAllLines(filePath)).Select(l => l.Trim()).ToList();
+                var index = trimLines.IndexOf(signature);
+                if (index == -1)
                 {
-                    var updateText = text.Substring(0, pos) + commentLine + constLine + text.Substring(pos - 2);
-                    File.WriteAllText(filePath, updateText);
+                    // Line not found so let's insert it.
+
+                    // Find the line of the first occurance of '}' character
+                    // We want to insert the line just before this line.
+                    index = trimLines.IndexOf("}");
+                    if (index > -1)
+                    {
+                        var pos = index - 3;
+                        var linesToInsert = commentLine + constLine;
+
+                        txtLines.Insert(pos, linesToInsert);
+                        File.WriteAllLines(filePath, txtLines);
+                    }
                 }
             }
         }
@@ -380,9 +394,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings"></param>
         public static void UpdateMenuDetails(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
             var menuFile = Path.Combine(pathProj, moduleId + "MenuDetails.xml");
             var xmlDoc = new XmlDocument();
 
@@ -438,10 +452,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateWebBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
             var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
@@ -469,10 +483,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateWebBootStrapperNamespaces(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
-            var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
-            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
+            var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName;
 
             var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
@@ -594,10 +608,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateWebBootStrapperForFinder(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
             var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
@@ -636,13 +650,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateHeaderDetailWebBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
-            var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
-            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName;
+            var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName;
 
             var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
@@ -660,7 +674,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     "using " + modelProjNs + ";" ,
                     "using " + webProjNs + ".Areas." + moduleId + ".Controllers;",
                     "using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;",
-                    "using " + settings.Projects[ProcessGeneration.InterfacesKey][moduleId].ProjectName + ".BusinessRepository;"
+                    "using " + settings.Projects[ProcessGeneration.Constants.InterfacesKey][moduleId].ProjectName + ".BusinessRepository;"
                 };
 
                 for (var i = 0; i < namespaces.Length; i++)
@@ -709,10 +723,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateHeaderDetailModuleBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectFolder;
             var filename = moduleId + "Bootstrapper.cs";
             var filePath = Path.Combine(pathProj, filename);
 
@@ -762,10 +776,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectFolder;
             var filename = moduleId + "Bootstrapper.cs";
             var filePath = Path.Combine(pathProj, filename);
 
@@ -840,13 +854,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateProcessWebBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
-            var webProjNs = settings.Projects[ProcessGeneration.WebKey][moduleId].ProjectName;
-            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
+            var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName + ".Process";
 
             var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
@@ -910,15 +924,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="settings">Settings</param>
         private static void UpdateProcessBootStrapper(BusinessView view, Settings settings)
         {
-            var moduleId = view.Properties[BusinessView.ModuleId];
-            var entityName = view.Properties[BusinessView.EntityName];
-            var modelName = view.Properties[BusinessView.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectFolder;
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var modelName = view.Properties[BusinessView.Constants.ModelName];
+            var pathProj = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectFolder;
 
-            var businessProjNs = settings.Projects[ProcessGeneration.BusinessRepositoryKey][moduleId].ProjectName + ".Process";
-            var interfacesProjNs = settings.Projects[ProcessGeneration.InterfacesKey][moduleId].ProjectName;
-            var modelProjNs = settings.Projects[ProcessGeneration.ModelsKey][moduleId].ProjectName + ".Process";
-            var servicesProjNs = settings.Projects[ProcessGeneration.ServicesKey][moduleId].ProjectName + ".Process";
+            var businessProjNs = settings.Projects[ProcessGeneration.Constants.BusinessRepositoryKey][moduleId].ProjectName + ".Process";
+            var interfacesProjNs = settings.Projects[ProcessGeneration.Constants.InterfacesKey][moduleId].ProjectName;
+            var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName + ".Process";
+            var servicesProjNs = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectName + ".Process";
 
             var filename = moduleId + "Bootstrapper.cs";
             var filePath = Path.Combine(pathProj, filename);

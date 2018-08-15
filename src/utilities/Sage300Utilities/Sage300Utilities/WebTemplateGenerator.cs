@@ -36,9 +36,10 @@ namespace Sage300Utilities
 	public class WebTemplateGenerator
 	{
 		#region Private Constants
-		private struct Constants
+		private static class Constants
 		{
 			public const string ApplicationIdPlaceholder = "$applicationid$";
+            public const string LowercaseApplicationIdPlaceholderLowerCase = "$lowercaseapplicationid$";
 			public const string NamespaceString = @"http://schemas.microsoft.com/developer/vstemplate/2005";
 		}
 		#endregion
@@ -274,10 +275,10 @@ namespace Sage300Utilities
 		///       that will have placeholder text inserted into.
 		/// </summary>
 		/// <param name="element">The element to add the new ProjectItem to.</param>
-		/// <param name="filename">The filename to use</param>
-		private void AddProjectItem(XElement element, string filename)
+		/// <param name="currentFilename">The filename to use</param>
+		private void AddProjectItem(XElement element, string currentFilename)
 		{
-			var targetFileName = filename;
+			var targetFileName = currentFilename;
 
 			// List of files that can be ignored. This (or these)
 			// are not part of the C# project. 
@@ -288,7 +289,7 @@ namespace Sage300Utilities
 			var filesToIgnore = new[] {
 				"__TemplateIcon.ico"
 			};
-			if (filename.ToUpperInvariant().Equals(filesToIgnore[0].ToUpperInvariant())) return;
+			if (currentFilename.ToUpperInvariant().Equals(filesToIgnore[0].ToUpperInvariant())) return;
 
 
 			// Look for the following special files:
@@ -306,16 +307,40 @@ namespace Sage300Utilities
 			// Check for any substitutions
 			foreach (var f in filters)
 			{
-				if (f.ToUpperInvariant() == filename.ToUpperInvariant().Substring(2, filename.Length-2))
+				if (f.ToUpperInvariant() == currentFilename.ToUpperInvariant().Substring(2, currentFilename.Length-2))
 				{
 					// Match found
 					targetFileName = $"{WebTemplateGenerator.Constants.ApplicationIdPlaceholder}{f}";
 
-					_Logger.LogInfo($"Substitution Match Found : Target filename will be renamed from '{filename}' to '{targetFileName}'.");
+					_Logger.LogInfo($"Substitution Match Found : Target filename will be renamed from '{currentFilename}' to '{targetFileName}'.");
 
 					break;
 				}
 			}
+
+            // 
+            // Another couple of potential string replacements to deal with
+            // Notes: Examples
+            //        <ProjectItem ReplaceParameters="true" TargetFileName="bg_menu_$lowercaseapplicationid$.jpg">menuBackGroundImage.jpg</ProjectItem>
+            //        <ProjectItem ReplaceParameters="true" TargetFileName="icon_$lowercaseapplicationid$.png">menuIcon.png</ProjectItem>
+            var ph = WebTemplateGenerator.Constants.LowercaseApplicationIdPlaceholderLowerCase;
+            var filters2 = new[] {
+                new[] { @"menuBackGroundImage.jpg", @"bg_menu_" + ph + ".jpg" },
+                new[] { @"menuIcon.png",            @"icon_" + ph + ".png" },
+            };
+
+            for (int i = 0; i < filters2.Length; i++)
+            {
+                var file = filters2[i][0];
+
+                if (currentFilename.Equals(file, System.StringComparison.InvariantCultureIgnoreCase))
+                {
+                    // Found a match. Assign the replacement filename
+                    targetFileName = filters2[i][1];
+                    _Logger.LogInfo($"Substitution Match Found : Target filename will be renamed from '{currentFilename}' to '{targetFileName}'.");
+                    break;
+                }
+            }
 
 			// Set the ReplaceParameters attribute based on file extension
 			// Files of these types will be set to ReplaceParameters=false
@@ -347,14 +372,14 @@ namespace Sage300Utilities
 					"XLSX"
 			};
 
-			var extension = new FileInfo(filename).Extension.RemoveFirstCharacter().ToUpperInvariant();
+			var extension = new FileInfo(currentFilename).Extension.RemoveFirstCharacter().ToUpperInvariant();
 			bool replaceParameters = extensionList.Contains(extension) ? false : true;
 			var replaceParametersString = replaceParameters.ToString().ToLower();
 
 			element.Add(new XElement(this.DocumentNamespace + "ProjectItem", 
 											new XAttribute("ReplaceParameters", replaceParametersString),
 											new XAttribute("TargetFileName", targetFileName),
-											filename));
+											currentFilename));
 		}
 		#endregion
 	}

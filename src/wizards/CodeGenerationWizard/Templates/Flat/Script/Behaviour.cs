@@ -144,7 +144,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line 24 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var containerName = entityName;
     if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
@@ -152,7 +152,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
         containerName = settings.EntitiesContainerName;
     }
 
-    var moduleId = view.Properties[BusinessView.ModuleId];
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
@@ -576,7 +576,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             
             #line 140 "C:\projects\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(view.Properties[BusinessView.EntityName].ToLower()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(view.Properties[BusinessView.Constants.EntityName].ToLower()));
             
             #line default
             #line hidden

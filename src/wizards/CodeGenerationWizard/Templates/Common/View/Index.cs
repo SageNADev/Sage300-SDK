@@ -144,7 +144,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.View
             #line 24 "C:\CNA2\Sage300-SDK - hacked\src\wizards\CodeGenerationWizard\Templates\Common\View\Index.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     
     if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
     {

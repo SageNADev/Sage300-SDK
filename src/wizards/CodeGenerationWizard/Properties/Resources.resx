@@ -511,4 +511,10 @@
   <data name="InvalidFieldDuplicate" xml:space="preserve">
     <value>The field '{0}' is duplicated and fields must be unique.</value>
   </data>
+  <data name="AlternateName" xml:space="preserve">
+    <value>Alternate Name</value>
+  </data>
+  <data name="IsCommon" xml:space="preserve">
+    <value>Common</value>
+  </data>
 </root>

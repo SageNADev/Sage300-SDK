@@ -45,10 +45,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             IsAlphaNumeric = false;
             IsNumeric = false;
             IsDynamicEnablement = false;
-        }
-        #endregion
 
-        #region Public Properties
+#if ENABLE_TK_244885
+            IsCommon = false;
+            //AlternateName = string.Empty;
+#endif
+        }
+#endregion
+
+#region Public Properties
         /// <summary> Id is the ordinal value for the field </summary>
         public int Id { get; set; }
         /// <summary> ServerFieldName is the field name on the server </summary>
@@ -77,7 +82,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool IsNumeric { get; set; }
         /// <summary> IsDynamicEnablement is true if field attribute contains 'X' otherwise false </summary>
         public bool IsDynamicEnablement { get; set; }
-        #endregion
+
+
+#if ENABLE_TK_244885
+        /// <summary>IsCommon is true if field has been marked as being common (or shared) </summary>
+        public bool IsCommon { get; set; }
+        ///// <summary> AlternateName is used when the user wishes to use a different name than the default.</summary>
+        //public string AlternateName { get; set; }
+#endif
+#endregion
 
     }
 
