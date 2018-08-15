@@ -193,7 +193,15 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         private void SetFilter(Context context)
         {
             ValidRecordFilter = null;
-            ValidRecordFilter = (model => 
+			
+			// TODO: Evaluate the ValidRecordFilter expression and uncomment if desired. This is a validator expression
+			//       used by the framework to prevent 'invalid' records from being returned. However, the
+			//       underlying Business View and database already prevent this type of behavior and 
+			//       will cause 'valid' records to be deemed 'invalid' and will not return them to the View 
+			//       Model (i.e. 0 value keys).
+			// TODO: Delete TODO statements when complete
+
+            // ValidRecordFilter = (model => 
 <#
     for (var i = 0; i <  view.Keys.Count; i++)
     {
@@ -202,7 +210,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         var token = (keyType.Equals(BusinessDataType.String)) ? "!string.IsNullOrEmpty(model." + keyFieldName + ")" : "!model." + keyFieldName + ".Equals(0)";
         var endLine = (i.Equals(view.Keys.Count - 1)) ? ");" : " &&";
 #>
-                <#=token#><#=endLine#>
+            //     <#=token#><#=endLine#>
 <#
     }
 #>
