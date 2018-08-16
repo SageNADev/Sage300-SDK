@@ -19,25 +19,24 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using System;
 using System.Collections.Generic;
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 #endregion
 
-namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
+namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces
 {
-    /// <summary> Settings class to hold info UI Settings </summary>
-    [System.SerializableAttribute]
-    public class Settings : ISettings
+    public interface ISettings
     {
-        #region Public Properties
         /// <summary> Upgrade Steps </summary>
-        public List<WizardStep> WizardSteps { get; set; }
+        List<WizardStep> WizardSteps { get; set; }
         /// <summary> Source Folder </summary>
-        public string SourceFolder { get; set; }
+        string SourceFolder { get; set; }
         /// <summary> Destination Web Folder </summary>
-        public string DestinationWebFolder { get; set; }
+        string DestinationWebFolder { get; set; }
         /// <summary> Destination Solution Folder </summary>
-        public string DestinationSolutionFolder { get; set; }
-        #endregion
+        string DestinationSolutionFolder { get; set; }
     }
 }

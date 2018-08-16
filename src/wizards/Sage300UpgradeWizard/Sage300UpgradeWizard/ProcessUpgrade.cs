@@ -20,6 +20,7 @@
 
 #region Imports
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -102,30 +103,34 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     #region Release Specific Upgrade Steps
 
                     case 3:
-                        //customSteps.ConsolidateEnumerations(title);
-                        ConsolidateEnumerations(title);
+                        ProcessExternalContentUpdates(title);
                         break;
 
-	/*
-					case 3:
-						UpdateVendorSourceCodeAutomatically(title, _backupFolder);
-						break;
+                    //case 4:
+                    //    //customSteps.ConsolidateEnumerations(title);
+                    //    ConsolidateEnumerations(title);
+                    //    break;
 
-					case 4:
-						UpdateVendorMenuDetails(title, _backupFolder);
-						break;
+                        /*
+                                        case 3:
+                                            UpdateVendorSourceCodeAutomatically(title, _backupFolder);
+                                            break;
 
-					case 5:
-						UpdateProjectPostBuildEvent(title, _backupFolder);
-						break;
+                                        case 4:
+                                            UpdateVendorMenuDetails(title, _backupFolder);
+                                            break;
 
-					case 6:
-						UpdateVendorSourceCodeManually(title);
-						break;
-	*/
-	#endregion
-				}
-			}
+                                        case 5:
+                                            UpdateProjectPostBuildEvent(title, _backupFolder);
+                                            break;
+
+                                        case 6:
+                                            UpdateVendorSourceCodeManually(title);
+                                            break;
+                        */
+                        #endregion
+                }
+            }
 		}
 
         #endregion
@@ -272,7 +277,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// 
+        /// TODO 
+        /// </summary>
+        /// <param name="title"></param>
+        public void ProcessExternalContentUpdates(string title)
+        {
+            // Log start of step
+            LaunchLogEventStart(title);
+
+            var processor = new ExternalContentProcessor(_settings);
+            processor.Process();
+
+            // Log end of step
+            LaunchLogEventEnd(title);
+            LaunchLogEvent("");
+        }
+
+        /// <summary>
+        /// TODO - Will implement post 2019.0 release
         /// </summary>
         /// <param name="title"></param>
         public void ConsolidateEnumerations(string title)

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizardMenuExt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizard", "..\Sage300UpgradeWizard\Sage300UpgradeWizard.csproj", "{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage300UpgradeWizardPackageUnitTests", "..\Sage300UpgradeWizardPackageUnitTests\Sage300UpgradeWizardPackageUnitTests.csproj", "{3E65B2FA-3DAE-416C-9A6F-BF94FB2F04A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4930B6F4-B46A-4F02-98AC-72C54BE7AC6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E65B2FA-3DAE-416C-9A6F-BF94FB2F04A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E65B2FA-3DAE-416C-9A6F-BF94FB2F04A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E65B2FA-3DAE-416C-9A6F-BF94FB2F04A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E65B2FA-3DAE-416C-9A6F-BF94FB2F04A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
