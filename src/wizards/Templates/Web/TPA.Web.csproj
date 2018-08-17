@@ -348,6 +348,7 @@
     <Content Include="Scripts\**" />
     <Content Include="Content\**" />
     <Content Include="Assets\**" />
+    <Content Include="aspnet_client\**" />
     <Content Include="WebForms\CustomReportViewer.aspx" />
     <Content Include="WebForms\ReportViewer.aspx" />
     <Content Include="Web.config">
