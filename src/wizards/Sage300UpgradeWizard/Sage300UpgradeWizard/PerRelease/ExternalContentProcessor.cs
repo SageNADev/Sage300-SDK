@@ -26,10 +26,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
+using EnvDTE;
+using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
 {
+    public class CSharpProject
+    {
+        public string ProjectFileName { get; set; }
+        public string ProjectDirectory { get; set; }
+        public string ProjectFilePath { get; set; }
+        public string ModuleId { get; set; }
+    }
+
     public class ExternalContentProcessor
     {
         #region Private Constants
@@ -73,24 +85,105 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
 
             #region Step 1 - Create ExternalContent folder under Areas\{Module} and add to web project
 
-            var webFolder = _settings.DestinationWebFolder;
+            //var webFolder = _settings.DestinationWebFolder;
+            //var solutionFolder = _settings.DestinationSolutionFolder;
 
-            // Get the ModuleID specifier from the webFolder path
-            var moduleId = ExtractModuleIdFromPath(webFolder);
-            // C:\Users\GrGagnaux\source\repos\Test102\SuperConsulting.SC.Web
-            // \Areas\SC
-            var areasFolder = Path.Combine(webFolder, Constants.AreasFolderName);
-            var areasModuleFolder = Path.Combine(areasFolder, moduleId);
-            var externalContentFolder = Path.Combine(areasModuleFolder, Constants.ExternalContentFolderName);
-            if (Directory.Exists(externalContentFolder) == false)
-            {
-                Directory.CreateDirectory(externalContentFolder);
-            }
+            //// Get the ModuleID specifier from the webFolder path
+            //// C:\Users\GrGagnaux\source\repos\Test102\SuperConsulting.SC.Web
+            //// \Areas\SC
+            //var moduleId = ExtractModuleIdFromPath(webFolder);
+            //var areasFolder = Path.Combine(webFolder, Constants.AreasFolderName);
+            //var areasModuleFolder = Path.Combine(areasFolder, moduleId);
+            //var externalContentFolder = Path.Combine(areasModuleFolder, Constants.ExternalContentFolderName);
+            //if (Directory.Exists(externalContentFolder) == false)
+            //{
+            //    //Directory.CreateDirectory(externalContentFolder);
+            //}
 
+            //// Now add the directory to the Web project
+
+            //// PseudoCode
+            //// AddFolderToProject(string projectName, "Areas\SC\ExternalContent");
+            //// AddFileToProject(string fileName, "Areas\SC\ExternalContent\menuBackgroundImage.png");
+
+            ////List<ProjectItemContainer> list = new List<ProjectItemContainer>();
+            //var solutionManager = new SolutionManager(_settings.DestinationSolutionFolder, _settings.Solution);
+            //var allProjectItems = solutionManager.GetAllProjectItemsSimplified("SuperConsulting.SC.Web");
+
+            //var list = new List<string>();
+            //foreach (var item in allProjectItems)
+            //{
+            //    var name = item.Name;
+            //    var type = item.TypeName;
+            //    var parentName = item.ParentItemName;
+            //    var parentType = item.ParentItemTypeName;
+            //    parentName = parentName.Length == 0 ? "N/A" : parentName;
+            //    var line = $"{type} : {name} : {parentName} : {parentType}";
+            //    list.Add(line);
+            //}
+
+            //var count = list.Count();
+
+            ////solutionManager.GetRootProjectFolders("SuperConsulting.SC.Web");
+
+            ////var areaItem = allProjectItems.Select(item => item.Name == "Areas" && item.Type == ProjectItemTypeEnum.Folder).SingleOrDefault();
+            ////var areaItem = allProjectItems.Where(item => item.Name == "Areas" && item.Type == ProjectItemTypeEnum.Folder).SingleOrDefault();
+            ////var childItems = areaItem.ChildItems;
+
+
+            ////var areaModuleItem = allProjectItems
+
+
+            ////solutionManager.AddFolderToProject("SuperConsulting.SC.Web", @"Areas\SC\ExternalContent");
+
+
+
+
+
+
+            ////var list = new List<string>();
+            ////Solution2 solution = _settings.Solution;
+            ////Projects projects = solution.Projects;
+            ////foreach (Project project in projects)
+            ////{
+            ////    if (project.Name.Equals("SuperConsulting.SC.Web"))
+            ////    {
+            ////        ProjectItems items = project.ProjectItems;
+            ////        foreach (ProjectItem item in items)
+            ////        {
+            ////            if (item.Kind == VSConstants.vsProjectItemKindPhysicalFolder)
+
+            ////            var kind = item.Kind;
+            ////            var name = item.Name;
+            ////            var combined = $"{name}:{kind}";
+            ////            list.Add(combined);
+            ////        }
+            ////        //ProjectItem newItem = items.AddFolder(@"Areas\SC\ExternalContent");
+            ////    }
+            ////}
+
+            ////var projectData = new CSharpProject();
+            ////GetProjectInfo(_settings.DestinationWebFolder, ref projectData);
+            ////var projectFilePath = projectData.ProjectFilePath;
+            ////var project = new Project(projectFilePath);
+
+            ////var projectNames = new List<String>();
+
+            ////var projects = SolutionProjects.Projects();
+            ////foreach (var project in projects)
+            ////{
+            ////    var name = project.Name;
+            ////    projectNames.Add(name);
+            ////}
             #endregion
 
-
+            #region Step 2 - Get file names for menuIcon and menuBackGroundImage from {module}MenuDetails.xml
+            var menuManager = new MenuManager(_settings);
+            var menufilename = menuManager.GetMenuFileName();
+            #endregion
         }
+
+
 
         /// <summary>
         /// TODO
@@ -112,6 +205,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
                 }
             }
             return moduleId;
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public string ExtractProjectFileNameFromPath(string path)
+        {
+            const string ExtensionName = @"csproj";
+            var filename = string.Empty;
+
+            if (path.Length > 0)
+            {
+                var parts = path.Split(new[] { '\\' });
+                var lastPart = parts[parts.Length - 1];
+                filename = lastPart + "." + ExtensionName;
+            }
+            return filename;
+        }
+
+        public void GetProjectInfo(string projectFolder, ref CSharpProject project)
+        {
+            project.ProjectDirectory = projectFolder;
+            project.ModuleId = ExtractModuleIdFromPath(projectFolder);
+            project.ProjectFileName = ExtractProjectFileNameFromPath(projectFolder);
+            project.ProjectFilePath = Path.Combine(projectFolder, project.ProjectFileName);
         }
     }
 }

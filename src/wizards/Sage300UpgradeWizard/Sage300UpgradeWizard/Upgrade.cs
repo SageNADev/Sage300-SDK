@@ -27,6 +27,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EnvDTE;
+using EnvDTE80;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -35,6 +37,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
     public partial class Upgrade : Form
     {
         #region Private Variables
+
+        /// <summary> The solution object </summary>
+        private Solution2 _solution;
 
         /// <summary> Process Upgrade logic </summary>
         private ProcessUpgrade _upgrade;
@@ -89,8 +94,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="destination">Destination Default</param>
 		/// <param name="destinationWeb">Destination Web Default</param>
 		/// <param name="templatePath">Upgrade Web Items template Path </param>
-		public Upgrade(string destination, string destinationWeb, string templatePath)
+		public Upgrade(string destination, string destinationWeb, string templatePath, Solution2 solution)
 		{
+            _solution = solution;
+
 			InitializeComponent();
 			Localize();
 			InitWizardSteps();
@@ -271,7 +278,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         WizardSteps = _wizardSteps,
                         SourceFolder = _sourceFolder,
                         DestinationWebFolder = _destinationWebFolder,
-                        DestinationSolutionFolder = Directory.GetParent(_destinationWebFolder).ToString()
+                        DestinationSolutionFolder = Directory.GetParent(_destinationWebFolder).ToString(),
+                        Solution = _solution
                     };
 
                     // Start background worker for processing (async)

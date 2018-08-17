@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnvDTE80;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces
@@ -38,5 +39,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces
         string DestinationWebFolder { get; set; }
         /// <summary> Destination Solution Folder </summary>
         string DestinationSolutionFolder { get; set; }
+
+        /// <summary> The current solution object </summary>
+        Solution2 Solution { get; set; }
     }
 }

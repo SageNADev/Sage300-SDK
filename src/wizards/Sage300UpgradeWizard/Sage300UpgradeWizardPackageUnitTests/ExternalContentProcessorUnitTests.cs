@@ -24,6 +24,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
+using EnvDTE;
+using EnvDTE80;
 #endregion
 
 namespace Sage300UpgradeWizardPackageUnitTests
@@ -40,6 +42,7 @@ namespace Sage300UpgradeWizardPackageUnitTests
             _mockSettings.DestinationWebFolder = @"C:\Users\GrGagnaux\source\repos\Test102\SuperConsulting.SC.Web";
             _mockSettings.SourceFolder = string.Empty;
             _mockSettings.WizardSteps = null;
+            _mockSettings.Solution = null;
         }
 
         /// <summary>
