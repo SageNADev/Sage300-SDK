@@ -45,6 +45,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             /// <summary> Accpac Property File </summary>
             public const string AccpacPropsFile = "AccpacDotNetVersion.props";
+
+            /// <summary> Just a dummy ModuleId </summary>
+            public const string DummyModuleId = "XX";
         }
 
         /// <summary>

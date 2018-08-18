@@ -19,12 +19,8 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EnvDTE80;
+using System.Collections.Generic;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces
@@ -33,10 +29,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces
     {
         /// <summary> Upgrade Steps </summary>
         List<WizardStep> WizardSteps { get; set; }
+
         /// <summary> Source Folder </summary>
         string SourceFolder { get; set; }
+
         /// <summary> Destination Web Folder </summary>
         string DestinationWebFolder { get; set; }
+
         /// <summary> Destination Solution Folder </summary>
         string DestinationSolutionFolder { get; set; }
 

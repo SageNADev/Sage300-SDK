@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.Collections.Generic;
@@ -27,8 +28,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EnvDTE;
-using EnvDTE80;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -165,7 +164,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #endregion
 
-            #region Accpac update - Comment out if no update required
+            #region Accpac .NET library update - Comment out if no update required
             // This step can be commented if no accpac update this release
             AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
                     Resources.ReleaseAllDescSyncAccpacLibs,
@@ -176,12 +175,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Release Specific Steps...
 
+            // 2019.0 : Process new 'ExternalContent' folder
+            AddStep(Resources.ReleaseSpecificTitleExternalContentFolder,
+                    Resources.ReleaseSpecificDescExternalContentFolder,
+                    string.Format(Resources.ReleaseSpecificExternalContentFolder,
+                                  Constants.Common.DummyModuleId));
+
+            // This will be done post 2019.0 release
             // 2019.0 : Consolidate Enumerations
-            AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
-                    Resources.ReleaseSpecificDescConsolidateEnumerations,
-                    string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
-                                  Constants.PerRelease.FromReleaseNumber,
-                                  Constants.PerRelease.ToReleaseNumber));
+            //AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
+            //        Resources.ReleaseSpecificDescConsolidateEnumerations,
+            //        string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
+            //                      Constants.PerRelease.FromReleaseNumber,
+            //                      Constants.PerRelease.ToReleaseNumber));
 
             #endregion
 
@@ -216,7 +222,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
             // Specific to release
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleExternalContentFolder}");
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
@@ -265,13 +271,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 {
                     // Setup display before processing
                     ProcessingSetup(false);
-
-                    //_settings = new Settings
-                    //{
-                    //    WizardSteps = _wizardSteps,
-                    //    SourceFolder = _sourceFolder,
-                    //    DestinationWebFolder = _destinationWebFolder
-                    //};
 
                     _settings = new Settings
                     {

@@ -19,10 +19,9 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using System.Collections.Generic;
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
-using EnvDTE;
 using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
+using System.Collections.Generic;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard

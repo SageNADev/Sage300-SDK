@@ -112,13 +112,13 @@
     <Compile Include="Sage300UpgradeWizard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SolutionManager.cs" />
     <Compile Include="Upgrade.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Upgrade.designer.cs">
       <DependentUpon>Upgrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FileUtilities.cs" />
     <Compile Include="Utilities\MenuManager.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -166,6 +166,7 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
+    <Content Include="content\ReleaseSpecificExternalContentFolder.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
