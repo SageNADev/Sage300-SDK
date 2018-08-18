@@ -160,6 +160,18 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
                     // Add to project
                     webProject.ProjectItems.AddFromFile(allMinFileDest);
+
+                    //// Remove aspnet_client from project (but folder will remain)
+                    //foreach (ProjectItem projectItem in webProject.ProjectItems)
+                    //{
+                    //    // Remove if aspnet_client
+                    //    if (projectItem.Name.Equals("aspnet_client"))
+                    //    {
+                    //        // Remove from project
+                    //        projectItem.Remove();
+                    //    }
+                    //}
+
                 }
                 else
                 {
