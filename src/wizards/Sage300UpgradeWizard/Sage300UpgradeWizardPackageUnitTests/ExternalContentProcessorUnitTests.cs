@@ -37,12 +37,14 @@ namespace Sage300UpgradeWizardPackageUnitTests
 
         private void CreateMockSettings()
         {
-            _mockSettings = new Settings();
-            _mockSettings.DestinationSolutionFolder = @"C:\Users\GrGagnaux\source\repos\Test102";
-            _mockSettings.DestinationWebFolder = @"C:\Users\GrGagnaux\source\repos\Test102\SuperConsulting.SC.Web";
-            _mockSettings.SourceFolder = string.Empty;
-            _mockSettings.WizardSteps = null;
-            _mockSettings.Solution = null;
+            _mockSettings = new Settings
+            {
+                DestinationSolutionFolder = @"C:\Users\GrGagnaux\source\repos\Test102",
+                DestinationWebFolder = @"C:\Users\GrGagnaux\source\repos\Test102\SuperConsulting.SC.Web",
+                SourceFolder = string.Empty,
+                WizardSteps = null,
+                Solution = null
+            };
         }
 
         /// <summary>

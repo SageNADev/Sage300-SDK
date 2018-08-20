@@ -48,7 +48,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
         #endregion
 
         #region Private Variables
-        private string _solutionFolder = string.Empty;
+        private readonly string _solutionFolder = string.Empty;
         #endregion
 
         #region Public Properties
