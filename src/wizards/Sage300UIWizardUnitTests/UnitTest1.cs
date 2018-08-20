@@ -21,6 +21,8 @@
 #region Imports
 using System;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Utilities;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 #endregion
@@ -45,38 +47,48 @@ namespace Sage300UIWizardUnitTests
             enum2 = new Dictionary<string, Dictionary<string, object>>();
 
             // Build the 'SearchIn' list (Two enumerations)
-            var enumValues1 = new Dictionary<string, object>();
-            enumValues1.Add("Inactive", "0");
-            enumValues1.Add("Active", "1");
+            var enumValues1 = new Dictionary<string, object>
+            {
+                { "Inactive", "0" },
+                { "Active", "1" }
+            };
             enum1.Add("Status", enumValues1);
-            var enumValues2 = new Dictionary<string, object>();
-            enumValues2.Add("Cash", "0");
-            enumValues2.Add("Credit", "1");
-            enumValues2.Add("Cheque", "2");
+            var enumValues2 = new Dictionary<string, object>
+            {
+                { "Cash", "0" },
+                { "Credit", "1" },
+                { "Cheque", "2" }
+            };
             enum1.Add("PaymentType", enumValues2);
 
             if (enumExists && valuesMatch)
             {
                 // Build the 'SearchFor' list (One enumeration)
-                var enumValues3 = new Dictionary<string, object>();
-                enumValues3.Add("Inactive", "0");
-                enumValues3.Add("Active", "1");
+                var enumValues3 = new Dictionary<string, object>
+                {
+                    { "Inactive", "0" },
+                    { "Active", "1" }
+                };
                 enum2.Add("Status", enumValues3);
             }
             else if (enumExists == false)
             {
                 // Build the 'SearchFor' list (One enumeration)
-                var enumValues3 = new Dictionary<string, object>();
-                enumValues3.Add("Value1", "0");
-                enumValues3.Add("Value2", "1");
+                var enumValues3 = new Dictionary<string, object>
+                {
+                    { "Value1", "0" },
+                    { "Value2", "1" }
+                };
                 enum2.Add("Test", enumValues3);
             }
             else if (enumExists == true && valuesMatch == false)
             {
                 // Build the 'SearchFor' list (One enumeration)
-                var enumValues3 = new Dictionary<string, object>();
-                enumValues3.Add("Good", "1");
-                enumValues3.Add("Bad", "0");
+                var enumValues3 = new Dictionary<string, object>
+                {
+                    { "Good", "1" },
+                    { "Bad", "0" }
+                };
                 enum2.Add("Status", enumValues3);
             }
             // enumExists == false && valuesMatch == false 
@@ -137,6 +149,7 @@ namespace Sage300UIWizardUnitTests
 
             // Act
             output = Utilities.EnumExists(searchIn, searchFor);
+
 
             // Assert
             Assert.IsTrue(expectedOutput == output);

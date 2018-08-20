@@ -18,7 +18,9 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System.Windows.Forms;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {

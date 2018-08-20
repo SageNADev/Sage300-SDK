@@ -21,6 +21,7 @@
 #region Imports
 using ACCPAC.Advantage;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -36,14 +37,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// <summary> Process Generation Class (worker) </summary>
     class ProcessGeneration
     {
-        #region Private Variables
+#region Private Variables
 
         /// <summary> Settings from UI </summary>
         private Settings _settings;
 
-        #endregion
+#endregion
 
-        #region Private Constants
+#region Private Constants
         private static class PrivateConstants
         {
             public const string RootEnumerationsFilename = "Enumerations.cs";
@@ -52,9 +53,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string ReportEnumerationsFilename = "Enumerations.cs";
             public const string CustomCommonResx = "CustomCommonResx";
         }
-        #endregion
+#endregion
 
-        #region Public Constants
+#region Public Constants
         public static class Constants
         {
             /// <summary> SettingsKey is used as a dictionary key for settings </summary>
@@ -729,13 +730,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Accpac Business View</param>
         private static Object GetValue(int i, int j, View view)
         {
-            int intVal;
-            bool boolVal;
-            if (Int32.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out intVal))
+            if (Int32.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out int intVal))
             {
                 return intVal;
             }
-            if (bool.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out boolVal))
+            if (bool.TryParse(view.Fields[i].PresentationList.PredefinedValue(j).ToString(), out bool boolVal))
             {
                 return boolVal ? 1 : 0;
             }
@@ -1088,9 +1087,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Process Enumerations marked as 'Common'
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="enumName">The name of the enumeration</param>
+        /// <param name="filename">The enumeration filename</param>
+        /// <param name="filePath">The enumeration filepath</param>
+        /// <param name="view">The BusinessView object reference</param>
         private void HandleCommonEnumeration(string enumName, 
                                              //string alternateName, 
                                              string filename, 
@@ -1144,9 +1146,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Process Enumerations not marked as 'Common'
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="enumName">The name of the enumeration</param>
+        /// <param name="filename">The enumeration filename</param>
+        /// <param name="filePath">The enumeration filepath</param>
+        /// <param name="view">The BusinessView object reference</param>
         private void HandleNormalEnumeration(string enumName, 
                                              //string alternateName, 
                                              string filename, 
@@ -1211,11 +1216,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Insert an enumeration block into a file if it
+        /// does not yet exist
         /// </summary>
-        /// <param name="enumBlockSignature"></param>
-        /// <param name="filePath"></param>
-        /// <param name="content"></param>
+        /// <param name="filePath">The file where the enumeration is located</param>
+        /// <param name="content">The enumration block to insert</param>
         private void InsertEnumBlockIfDoesNotExist(string filePath, string content)
         {
             if (EnumBlockExistsInFile(filePath, content) == false)
@@ -1225,12 +1230,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// A routine to handle enumerations
         /// </summary>
-        /// <param name="isCommon"></param>
-        /// <param name="alternateName"></param>
-        /// <param name="enumName"></param>
-        /// <param name="view"></param>
+        /// <param name="isCommon">Is enumeration marked as common?</param>
+        /// <param name="enumName">The name of the enumeration</param>
+        /// <param name="filePath">The enumeration filepath</param>
+        /// <param name="view">The BusinessView object reference</param>
         private void HandleEnumeration(bool isCommon, 
                                        //string alternateName, 
                                        string enumName, 
@@ -1259,8 +1264,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// This method will determine if an enumeration already exists in a file.
         /// It will check the name and all of the values.
         /// </summary>
-        /// <param name="filepath"></param>
-        /// <param name="content"></param>
+        /// <param name="filepath">The file that will be processed</param>
+        /// <param name="content">The content block containing an enumeration</param>
         /// <returns>true = Enumeration exists (name and values match) | false = Name and/or Value mismatch</returns>
         private bool EnumBlockExistsInFile(string filepath, string content)
         {
@@ -1272,14 +1277,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Build up the structure of the enumeration in the content block
             var contentObject = ParseEnumerationsInBlock(content);
 
-            return Utilities.EnumExists(fileObject, contentObject);
+            return Utilities.Utilities.EnumExists(fileObject, contentObject);
         }
 
         /// <summary>
-        /// TODO
+        /// Parse the enumerations located in a file
         /// </summary>
-        /// <param name="filepath"></param>
-        /// <returns></returns>
+        /// <param name="filepath">The file to parse enumerations</param>
+        /// <returns>The object containing a list of enumerations and the values associated with each</returns>
         private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInFile(string filepath)
         {
             const string enumSignatureStub = @"public enum ";
@@ -1340,10 +1345,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Parse the enumerations located in a block of code
         /// </summary>
-        /// <param name="filepath"></param>
-        /// <returns></returns>
+        /// <param name="content">The content block to parse for enumerations</param>
+        /// <returns>The object containing a list of enumerations and the values associated with each</returns>
         private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInBlock(string content)
         {
             const string enumSignatureStub = @"public enum ";
@@ -1398,10 +1403,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Insert an enumeration content block into a file.
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <param name="content"></param>
+        /// <param name="filePath">The file in which the enumeration will be inserted</param>
+        /// <param name="content">The content block with the enumeration</param>
         private void InsertEnumBlock(string filepath, string content)
         {
             if (File.Exists(filepath) == true)
@@ -1499,6 +1504,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (isReport == true) { CreateReportRepositoryClasses(view); }
             if (isInquiry == true) { CreateInquiryRepositoryClasses(view); }
         }
+
         /// <summary> Create the class </summary>
         /// <param name="view">Business View</param>
         /// <param name="fileName"> Name of file to be created</param>
@@ -2191,7 +2197,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Determine if the resource file exists or not
             var fileExists = File.Exists(resourceFileName);
 
-            var resourceManager = new ResXManager(resourceFileName);
+            var resourceManager = new Utilities.ResXManager(resourceFileName);
 
             // Prompt if file exists?
             if (writeFile = PromptIfFileExists(fileExists, _settings.PromptIfExists, resourceFileName) == false)
@@ -2292,16 +2298,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 		
         /// <summary>
-        /// TODO
+        /// Get the ProjectInfo object
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the ProjectInfo object.</returns>
         private ProjectInfo GetProjectInfo(BusinessView v) => 
             _settings.Projects[Constants.ResourcesKey][v.Properties[BusinessView.Constants.ModuleId]];
 
         /// <summary>
-        /// TODO
+        /// Create a directory if it doesn't yet exist
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">The path to the folder to create</param>
         private void CreateDirectoryIfNotYetExists(string filePath)
         {
             if (!Directory.Exists(filePath))
@@ -2311,11 +2317,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 		
         /// <summary>
-        /// TODO
+        /// Add a resource file to a Visual Studio project
         /// </summary>
-        /// <param name="pi"></param>
-        /// <param name="file"></param>
-        /// <param name="addDescription"></param>
+        /// <param name="pi">The ProjectInfo object</param>
+        /// <param name="file">The path to the resource file</param>
+        /// <param name="addDescription">The flag</param>
         private void AddResourceFileToProject(ProjectInfo pi, string file, bool addDescription)
         {
             var createdItem = pi.Project.ProjectItems.AddFromFile(file);
@@ -2328,11 +2334,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// Display a prompt if a file already exists
         /// </summary>
-        /// <param name="fileExists"></param>
-        /// <param name="promptIfExists"></param>
-        /// <param name="filename"></param>
+        /// <param name="fileExists">The flag denoting whether or not a file already exists.</param>
+        /// <param name="promptIfExists">The flag denoting whether or not to display a prompt.</param>
+        /// <param name="filename">The file whose existence is checked</param>
         /// <returns></returns>
         private bool PromptIfFileExists(bool fileExists, bool promptIfExists, string filename)
         {
@@ -2365,11 +2371,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// TODO
+        /// A routine to parse a KeyValuePair
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="key"></param>
-        /// <param name="description"></param>
+        /// <param name="value">The value to parse</param>
+        /// <param name="key">Output parameter key</param>
+        /// <param name="description">Output parameter description</param>
         private void GetEnumKeyAndDescription(KeyValuePair<string, object> value, out string key, out string description)
         {
             var arr = value.Key.Split(':');
@@ -2377,6 +2383,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             description = arr[2]; // Raw from presentation list
         }
 
+        /// <summary>
+        /// A routine to determine if a string key is null (or empty)
+        /// OR if a list contains an entry designated by a key.
+        /// </summary>
+        /// <param name="key">The key to check</param>
+        /// <param name="list">The list to check the key against</param>
+        /// <returns>
+        /// true : key is blank OR list contains an entry for key 
+        /// false : key is not blank OR list does not contain entry for key.
+        /// </returns>
         private bool KeyIsPresentOrBlank(string key, List<string> list) => 
             string.IsNullOrEmpty(key) || list.Contains(key, StringComparer.CurrentCultureIgnoreCase);
 

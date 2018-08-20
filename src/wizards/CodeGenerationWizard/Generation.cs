@@ -830,13 +830,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             if (items == null) return;
 
-            // TODO - These will be located elsewhere once refactoring is complete
-            const string LanguageEnglish = "en";
-            const string LanguageSpanish = "es";
-            const string LanguageFrench = "fr";
-            const string LanguageChineseSimplified = "zh-hans";
-            const string LanguageChineseTraditional = "zh-hant";
-
             const int EnglishResourceFileSplitLength = 2;
             const int NonEnglishResourceFileSplitLength = 3;
             const int NonEnglishLanguageSpecifierIndex = 1;
@@ -858,9 +851,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         // Found an english resx file
 
                         // Add it to the list (if not yet there)
-                        if (list.Contains(LanguageEnglish) == false)
+                        if (list.Contains(GlobalConstants.LanguageExtensions.English) == false)
                         {
-                            list.Add(LanguageEnglish);
+                            list.Add(GlobalConstants.LanguageExtensions.English);
                         }
                     }
                     else if (length == NonEnglishResourceFileSplitLength)
@@ -879,11 +872,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             list.ForEach(i =>
             {
-                if (i == LanguageEnglish) _includeEnglish = true;
-                if (i == LanguageFrench) _includeFrench = true;
-                if (i == LanguageSpanish) _includeSpanish = true;
-                if (i == LanguageChineseSimplified) _includeChineseSimplified = true;
-                if (i == LanguageChineseTraditional) _includeChineseTraditional = true;
+                if (i == GlobalConstants.LanguageExtensions.English) _includeEnglish = true;
+                if (i == GlobalConstants.LanguageExtensions.French) _includeFrench = true;
+                if (i == GlobalConstants.LanguageExtensions.Spanish) _includeSpanish = true;
+                if (i == GlobalConstants.LanguageExtensions.ChineseSimplified) _includeChineseSimplified = true;
+                if (i == GlobalConstants.LanguageExtensions.ChineseTraditional) _includeChineseTraditional = true;
             });
         }
 
