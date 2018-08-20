@@ -181,6 +181,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     string.Format(Resources.ReleaseSpecificExternalContentFolder,
                                   Constants.Common.DummyModuleId));
 
+            // 2019.0 : Process new 'AspNet_Client' folder
+            AddStep(Resources.ReleaseSpecificTitleExternalContentFolder,
+                    Resources.ReleaseSpecificDescExternalContentFolder,
+                    string.Format(Resources.ReleaseSpecificExternalContentFolder,
+                                  Constants.Common.DummyModuleId));
+
             // This will be done post 2019.0 release
             // 2019.0 : Consolidate Enumerations
             //AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
@@ -223,6 +229,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Specific to release
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleExternalContentFolder}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleAspnetClientFolder}");
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");

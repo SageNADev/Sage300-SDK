@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\ISettings.cs" />
+    <Compile Include="PerRelease\AspnetClientProcessor.cs" />
     <Compile Include="PerRelease\ExternalContentProcessor.cs" />
     <Compile Include="ProcessUpgrade.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

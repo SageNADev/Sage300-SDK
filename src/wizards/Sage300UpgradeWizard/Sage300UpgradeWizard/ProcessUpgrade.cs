@@ -107,10 +107,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ProcessExternalContentUpdates(title);
                         break;
 
-                    //case 4:
-                    //    //customSteps.ConsolidateEnumerations(title);
-                    //    ConsolidateEnumerations(title);
-                    //    break;
+                    case 4:
+                        ProcessAspnetClientFolder(title);
+                        break;
+
+                        //case 4:
+                        //    //customSteps.ConsolidateEnumerations(title);
+                        //    ConsolidateEnumerations(title);
+                        //    break;
 
                         /*
                                         case 3:
@@ -287,6 +291,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEventStart(title);
 
             var processor = new ExternalContentProcessor(_settings);
+            processor.Process();
+
+            // Log end of step
+            LaunchLogEventEnd(title);
+            LaunchLogEvent("");
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="title"></param>
+        public void ProcessAspnetClientFolder(string title)
+        {
+            // Log start of step
+            LaunchLogEventStart(title);
+
+            var processor = new AspnetClientProcessor(_settings);
             processor.Process();
 
             // Log end of step
