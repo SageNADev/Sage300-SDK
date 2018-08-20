@@ -147,8 +147,9 @@ namespace MergeISVProject
 
 				if (string.IsNullOrEmpty(folder)) throw new ArgumentNullException();
 
-				// Get list of all files in directory
-				var allFiles = Directory.GetFiles(folder, JAVASCRIPT_FILE_FILTER, System.IO.SearchOption.AllDirectories);
+				// Get all files from a single directory as WebGrease does not do subfolders (iteration of subfolders
+                // is in MinifyJavaScriptFilesAndCleanup
+				var allFiles = Directory.GetFiles(folder, JAVASCRIPT_FILE_FILTER);
 
 				// Now filter based on whether were looking for minified or unminified javascript files
 				var results = (minified) ? allFiles.Where(f => f.EndsWith(MINIFIED_SOURCE_PATTERN))
@@ -269,7 +270,8 @@ namespace MergeISVProject
 				_Logger.Log($"jsFolder = {jsFolder}");
 				if (Directory.Exists(jsFolder))
 				{
-					foreach (var dir in Directory.GetDirectories(jsFolder))
+                    // WebGrease does not do subfolders, so iteration is here (
+					foreach (var dir in Directory.GetDirectories(jsFolder, "*.*", System.IO.SearchOption.AllDirectories))
 					{
 						_Logger.Log($"Processing directory '{dir}'");
 
