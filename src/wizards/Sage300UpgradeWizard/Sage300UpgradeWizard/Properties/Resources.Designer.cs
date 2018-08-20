@@ -423,11 +423,51 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will create and populate the new ExternalContent folder..
+        /// </summary>
+        internal static string ReleaseSpecificDescExternalContentFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescExternalContentFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The way menu images (background and icon) are managed and structured 
+        ///has changed in this release.
+        ///
+        ///A new folder called &apos;ExternalContent&apos; will be added to the 
+        ///&apos;\Areas\{0}\&apos; folder. The menu background and icon images 
+        ///will be moved to this new folder and renamed as follows:
+        ///
+        ///menuBackGroundImage.jpg =&gt; bg_menu_{0}.jpg
+        ///menuIcon.png =&gt; icon_{0}.png
+        ///
+        ///Please Note: XX is just a placeholder for the actual Module Id 
+        ///that will be used.
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificExternalContentFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificExternalContentFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process the new ExternalContent folder.
+        /// </summary>
+        internal static string ReleaseSpecificTitleExternalContentFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleExternalContentFolder", resourceCulture);
             }
         }
         

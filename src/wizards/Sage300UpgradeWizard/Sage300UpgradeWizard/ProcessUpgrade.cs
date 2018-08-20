@@ -20,12 +20,14 @@
 
 #region Imports
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -102,30 +104,34 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     #region Release Specific Upgrade Steps
 
                     case 3:
-                        //customSteps.ConsolidateEnumerations(title);
-                        ConsolidateEnumerations(title);
+                        ProcessExternalContentUpdates(title);
                         break;
 
-	/*
-					case 3:
-						UpdateVendorSourceCodeAutomatically(title, _backupFolder);
-						break;
+                    //case 4:
+                    //    //customSteps.ConsolidateEnumerations(title);
+                    //    ConsolidateEnumerations(title);
+                    //    break;
 
-					case 4:
-						UpdateVendorMenuDetails(title, _backupFolder);
-						break;
+                        /*
+                                        case 3:
+                                            UpdateVendorSourceCodeAutomatically(title, _backupFolder);
+                                            break;
 
-					case 5:
-						UpdateProjectPostBuildEvent(title, _backupFolder);
-						break;
+                                        case 4:
+                                            UpdateVendorMenuDetails(title, _backupFolder);
+                                            break;
 
-					case 6:
-						UpdateVendorSourceCodeManually(title);
-						break;
-	*/
-	#endregion
-				}
-			}
+                                        case 5:
+                                            UpdateProjectPostBuildEvent(title, _backupFolder);
+                                            break;
+
+                                        case 6:
+                                            UpdateVendorSourceCodeManually(title);
+                                            break;
+                        */
+                        #endregion
+                }
+            }
 		}
 
         #endregion
@@ -272,7 +278,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// 
+        /// TODO 
+        /// </summary>
+        /// <param name="title"></param>
+        public void ProcessExternalContentUpdates(string title)
+        {
+            // Log start of step
+            LaunchLogEventStart(title);
+
+            var processor = new ExternalContentProcessor(_settings);
+            processor.Process();
+
+            // Log end of step
+            LaunchLogEventEnd(title);
+            LaunchLogEvent("");
+        }
+
+        /// <summary>
+        /// TODO - Will implement post 2019.0 release
         /// </summary>
         /// <param name="title"></param>
         public void ConsolidateEnumerations(string title)
@@ -300,25 +323,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Build a list of filepaths based on a fileTypeFilter and an optional list of directories to ignore.
-        /// This method is a wrapper for DirectoryInfo.EnumerateFiles()
-        /// </summary>
-        /// <param name="startingDirectory">Where shall this file search start?</param>
-        /// <param name="fileTypeFilter">What types of files shall we look for?</param>
-        /// <param name="ignoreDirectories">This is a list directories that we wish to ignore.</param>
-        /// <returns>A list of files matching the fileTypeFilter with optionally removed directories</returns>
-        private IEnumerable<string> EnumerateFiles(DirectoryInfo startingDirectory,
-                                                   string fileTypeFilter,
-                                                   List<string> ignoreDirectories)
-        {
-            var results = startingDirectory.EnumerateFiles(fileTypeFilter, SearchOption.AllDirectories)
-                                                   .ToList<FileInfo>()
-                                                   .ConvertAll(x => (string)x.FullName);
-            results.RemoveAll(f => ignoreDirectories.Exists(i => !String.IsNullOrWhiteSpace(i) && f.Contains(i)));
-            return results;
-        }
-
-        /// <summary>
         /// Get the name of the menu file located in the Web project folder
         /// It is of the format XXMenuDetails.xml where XX is a two character module id
         /// </summary>
@@ -326,7 +330,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         private string GetMenuFileName(string backupFolder = @"")
         {
             string fileTypeFilter = @"*MenuDetails.xml";
-            var filename = EnumerateFiles(new DirectoryInfo(_settings.DestinationSolutionFolder),
+            var filename = FileUtilities.EnumerateFiles(new DirectoryInfo(_settings.DestinationSolutionFolder),
                                           fileTypeFilter,
                                           ignoreDirectories: new List<string> { backupFolder }).SingleOrDefault();
             return new FileInfo(filename).Name;
