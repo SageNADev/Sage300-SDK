@@ -110,13 +110,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var scriptBase = settings.CompanyNamespace;
 
             const string tag = "internal static void RegisterBundles(BundleCollection bundles)";
-            var textlineToAdded = string.Format(BusinessViewHelper.Constants.TabThree + @"#region {0}" + "\r\n" +
-                                                BusinessViewHelper.Constants.TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
-                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
-                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
-                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
-                                                BusinessViewHelper.Constants.TabFour + @"""~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js""));" + "\r\n" +
-                                                BusinessViewHelper.Constants.TabThree + @"#endregion" + "\r\n", entityName, moduleId, scriptBase);
+            var textlineToAdded = string.Format(Constants.TabThree + @"#region {0}" + "\r\n" +
+                                                Constants.TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
+                                                Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
+                                                Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
+                                                Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
+                                                Constants.TabFour + @"""~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js""));" + "\r\n" +
+                                                Constants.TabThree + @"#endregion" + "\r\n", entityName, moduleId, scriptBase);
 
             if (File.Exists(bundleFile))
             {
@@ -191,7 +191,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.Constants.EntityName];
             var pathBusinessRepository = settings.Projects[ProcessGeneration.Constants.BusinessRepositoryKey][moduleId].ProjectFolder;
             var filePath = Path.Combine(pathBusinessRepository, @"Security\Security.cs");
-            var f = Environment.NewLine + BusinessViewHelper.Constants.TabTwo;
+            var f = Environment.NewLine + Constants.TabTwo;
             var commentLine = f + "/// <summary>" + f + "/// Security resourceID for " + moduleId + " " + entityName + f + "/// </summary>" + Environment.NewLine;
             var constName = moduleId + entityName;
             var signature = "public const string " + constName + " = \"" + constName.ToUpper() + "\";";
@@ -457,7 +457,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelName = view.Properties[BusinessView.Constants.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
-            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
             if (File.Exists(filePath))
             {
@@ -488,7 +488,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName;
 
-            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
             if (File.Exists(filePath))
             {
@@ -593,7 +593,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var insertionIndex = methodSignatureIndex + 1 + i + currentPosition;
 
                 // Need to remove the tabs '\t' before doing the lookup.
-                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                 {
                     // Line was not found so we will now insert it.
                     txtLines.Insert(insertionIndex, linesToAdd[i]);
@@ -613,7 +613,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelName = view.Properties[BusinessView.Constants.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
 
-            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
             if (File.Exists(filePath))
             {
@@ -633,7 +633,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var insertionIndex = methodSignatureIndex + 1 + pos;
 
                 // Need to remove the tabs '\t' before doing the lookup.
-                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                 {
                     // Line was not found so we will now insert it.
                     txtLines.Insert(insertionIndex, lineToAdd);
@@ -658,7 +658,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName;
 
-            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
             if (File.Exists(filePath))
             {
@@ -706,7 +706,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var insertionIndex = methodSignatureIndex + i + pos + 1;
 
                     // Need to remove the tabs '\t' before doing the lookup.
-                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                     {
                         // Line was not found so we will now insert it.
                         txtLines.Insert(insertionIndex, lineToAdd);
@@ -759,7 +759,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var insertionIndex = methodSignatureIndex + 2;
 
                 // Need to remove the tabs '\t' before doing the lookup.
-                if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                 {
                     // Line was not found so we will now insert it.
                     txtLines.Insert(insertionIndex + 2, lineToAdd);
@@ -816,7 +816,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var lineToAdd = linesToAdd[i];
 
                     // Need to remove the tabs '\t' before doing the lookup.
-                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                     {
                         // Line was not found so we will now insert it.
                         txtLines.Insert(insertionIndex, lineToAdd);
@@ -827,7 +827,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         lineToAdd = linesToAdd[2];
 
                         // Need to remove the tabs '\t' before doing the lookup.
-                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                         {
                             // Line was not found so we will now insert it.
                             txtLines.Insert(++insertionIndex, lineToAdd);
@@ -836,7 +836,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         lineToAdd = linesToAdd[3];
 
                         // Need to remove the tabs '\t' before doing the lookup.
-                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                         {
                             // Line was not found so we will now insert it.
                             txtLines.Insert(++insertionIndex, lineToAdd);
@@ -862,7 +862,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var webProjNs = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectName;
             var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName + ".Process";
 
-            var filename = moduleId + BusinessViewHelper.Constants.WebBootstrapperFilenameBase;
+            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
             if (File.Exists(filePath))
             {
@@ -906,7 +906,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var insertionIndex = methodSignatureIndex + 1 + i + pos;
 
                     // Need to remove the tabs '\t' before doing the lookup.
-                    if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                    if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                     {
                         // Line was not found so we will now insert it.
                         txtLines.Insert(insertionIndex, lineToAdd);
@@ -992,7 +992,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         var lineToAdd = linesToAdd[i];
 
                         // Need to remove the tabs '\t' before doing the lookup.
-                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                         {
                             // Line was not found so we will now insert it.
                             txtLines.Insert(insertionIndex, lineToAdd);
@@ -1003,7 +1003,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         var lineToAdd = linesToAdd[1];
 
                         // Need to remove the tabs '\t' before doing the lookup.
-                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                         {
                             // Line was not found so we will now insert it.
                             txtLines.Insert(++insertionIndex, lineToAdd);
@@ -1012,7 +1012,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         lineToAdd = linesToAdd[2];
 
                         // Need to remove the tabs '\t' before doing the lookup.
-                        if (trimLines.IndexOf(lineToAdd.Trim()) == BusinessViewHelper.Constants.NotFoundInList)
+                        if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
                         {
                             // Line was not found so we will now insert it.
                             txtLines.Insert(++insertionIndex, lineToAdd);

@@ -110,7 +110,7 @@
     </Compile>
     <Compile Include="EnumHelper.cs" />
     <Compile Include="EnumValue.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Generation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,7 +128,7 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
-    <Compile Include="ResXManager.cs" />
+    <Compile Include="Utilities\ResXManager.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Templates\Common\Class\Finder.cs">
       <AutoGen>True</AutoGen>
@@ -435,7 +435,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Utilities.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="ContainerName.resx">
       <DependentUpon>ContainerName.cs</DependentUpon>

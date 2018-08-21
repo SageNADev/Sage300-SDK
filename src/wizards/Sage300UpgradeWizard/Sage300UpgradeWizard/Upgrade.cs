@@ -150,7 +150,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Init wizard steps
             _wizardSteps.Clear();
 
-            #region Common for all upgrades - content specific to release
+            #region Common for all upgrades
 
             AddStep(Resources.StepTitleMain,
                     string.Format(Resources.StepDescriptionMain,
@@ -165,7 +165,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #endregion
 
             #region Accpac .NET library update - Comment out if no update required
-            // This step can be commented if no accpac update this release
             AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
                     Resources.ReleaseAllDescSyncAccpacLibs,
                     string.Format(Resources.ReleaseAllSyncAccpacLibs,
@@ -175,20 +174,25 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Release Specific Steps...
 
-            // 2019.0 : Process new 'ExternalContent' folder
+#if ENABLE_TK_244885
+            // This will be done post 2019.0 release
+            // 2019.0 : Consolidate Enumerations
+            AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
+                    Resources.ReleaseSpecificDescConsolidateEnumerations,
+                    string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
+                                  Constants.PerRelease.FromReleaseNumber,
+                                  Constants.PerRelease.ToReleaseNumber));
+#endif
+            // 2019.0 : Process new 'ExternalContent' folder (Automatic step)
             AddStep(Resources.ReleaseSpecificTitleExternalContentFolder,
                     Resources.ReleaseSpecificDescExternalContentFolder,
                     string.Format(Resources.ReleaseSpecificExternalContentFolder,
                                   Constants.Common.DummyModuleId));
 
-            // This will be done post 2019.0 release
-            // 2019.0 : Consolidate Enumerations
-            //AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
-            //        Resources.ReleaseSpecificDescConsolidateEnumerations,
-            //        string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
-            //                      Constants.PerRelease.FromReleaseNumber,
-            //                      Constants.PerRelease.ToReleaseNumber));
-
+            // 2019.0 : Process new 'AspNet_Client' folder (Manual step)
+            AddStep(Resources.ReleaseSpecificTitleAspnetClientFolder,
+                    Resources.ReleaseSpecificDescAspnetClientFolder,
+                    Resources.ReleaseSpecificAspnetClientFolder);
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -222,7 +226,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
             // Specific to release
+#if ENABLE_TK_244885
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
+#endif
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleExternalContentFolder}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleAspnetClientFolder}");
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
@@ -492,6 +500,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             _wizardSteps[_currentWizardStep].CheckboxValue = checkBox.Checked;
         }
 
-        #endregion
+#endregion
     }
 }

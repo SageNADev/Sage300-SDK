@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
     /// * Move the two images from their original location to the new 'ExternalContent' folder
     /// * Add this new folder (and content) to the Web.csproj file
     /// 
-    /// Note: This object is specific to the 2019.0 release
+    /// Note: This class is specific to the 2019.0 release
     /// </summary>
     public class ExternalContentProcessor
     {

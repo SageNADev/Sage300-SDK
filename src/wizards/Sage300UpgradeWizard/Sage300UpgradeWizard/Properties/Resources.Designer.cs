@@ -414,6 +414,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reporting now requires the use of components from the &apos;aspnet_client&apos; folder.
+        ///
+        ///Please locate this folder on your system and copy it, as well as all of it&apos;s 
+        ///content to the root of your custom solutions &apos;Web&apos; project.
+        ///
+        ///A typical location on your system where this folder can be found is as 
+        ///follows:
+        ///
+        ///C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
+        ///
+        ///It&apos;s not necessary to copy the content from all versions of Microsoft.NET
+        ///Only version 4.0.30319 is necessary. 
+        ///
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificAspnetClientFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificAspnetClientFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
+        /// </summary>
+        internal static string ReleaseSpecificDescAspnetClientFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescAspnetClientFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
         /// </summary>
         internal static string ReleaseSpecificDescConsolidateEnumerations {
@@ -450,6 +482,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificExternalContentFolder {
             get {
                 return ResourceManager.GetString("ReleaseSpecificExternalContentFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create and populate &apos;aspnet_client&apos; folder.
+        /// </summary>
+        internal static string ReleaseSpecificTitleAspnetClientFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleAspnetClientFolder", resourceCulture);
             }
         }
         

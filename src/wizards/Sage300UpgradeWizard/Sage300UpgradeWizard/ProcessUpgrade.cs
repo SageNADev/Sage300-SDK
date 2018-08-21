@@ -19,15 +19,10 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -103,40 +98,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                     #region Release Specific Upgrade Steps
 
+#if ENABLE_TK_244885
+                    case 3:
+                        ConsolidateEnumerations(title);
+                        break;
+#endif
                     case 3:
                         ProcessExternalContentUpdates(title);
                         break;
 
-                    //case 4:
-                    //    //customSteps.ConsolidateEnumerations(title);
-                    //    ConsolidateEnumerations(title);
-                    //    break;
+                    case 4:
+                        ProcessAspnetClientFolder(title);
+                        break;
 
-                        /*
-                                        case 3:
-                                            UpdateVendorSourceCodeAutomatically(title, _backupFolder);
-                                            break;
-
-                                        case 4:
-                                            UpdateVendorMenuDetails(title, _backupFolder);
-                                            break;
-
-                                        case 5:
-                                            UpdateProjectPostBuildEvent(title, _backupFolder);
-                                            break;
-
-                                        case 6:
-                                            UpdateVendorSourceCodeManually(title);
-                                            break;
-                        */
-                        #endregion
+                    #endregion
                 }
             }
 		}
 
         #endregion
 
-    #region Private methods
+        #region Private methods
 
         /// <summary> Synchronization of web project files </summary>
         /// <param name="title">Title of step being processed </param>
@@ -278,9 +260,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// TODO 
+        /// Process the 'ExternalContent' changes 
         /// </summary>
-        /// <param name="title"></param>
+        /// <param name="title">The title to display for this step</param>
         public void ProcessExternalContentUpdates(string title)
         {
             // Log start of step
@@ -294,6 +276,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 
+        /// <summary>
+        /// Process the 'aspnet_client' folder changes
+        /// </summary>
+        /// <param name="title">The title to display for this step</param>
+        public void ProcessAspnetClientFolder(string title)
+        {
+            // Log start of step
+            LaunchLogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+
+            // Log end of step
+            LaunchLogEventEnd(title);
+            LaunchLogEvent("");
+        }
+
+#if ENABLE_TK_244885
         /// <summary>
         /// TODO - Will implement post 2019.0 release
         /// </summary>
@@ -321,315 +320,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEventEnd(title);
             LaunchLogEvent("");
         }
-
-        /// <summary>
-        /// Get the name of the menu file located in the Web project folder
-        /// It is of the format XXMenuDetails.xml where XX is a two character module id
-        /// </summary>
-        /// <returns>A string representing the name of the menu file</returns>
-        private string GetMenuFileName(string backupFolder = @"")
-        {
-            string fileTypeFilter = @"*MenuDetails.xml";
-            var filename = FileUtilities.EnumerateFiles(new DirectoryInfo(_settings.DestinationSolutionFolder),
-                                          fileTypeFilter,
-                                          ignoreDirectories: new List<string> { backupFolder }).SingleOrDefault();
-            return new FileInfo(filename).Name;
-        }
-
-        /// <summary>
-        /// Craft up a menu filename based on the project name.
-        /// </summary>
-        /// <param name="fileInfo">A FileInfo object with information on the file.</param>
-        /// <returns>
-        /// Return the name of a menufile in the following format [XX]MenuFile.xml
-        /// where [XX] is the ModuleId
-        /// </returns>
-        private string GetMenuFileNameFromProjectName(FileInfo fileInfo)
-        {
-            var parts = fileInfo.Name.Split(new string[] { "." }, StringSplitOptions.None);
-            var moduleId = parts[1];
-            return GetMenuFileNameFromModuleId(moduleId);
-        }
-
-        /// <summary>
-        /// Craft up a menu filename based on the project name.
-        /// </summary>
-        /// <param name="filePath">A string with the filename and path</param>
-        /// <returns>
-        /// Return the name of a menufile in the following format [XX]MenuFile.xml
-        /// where [XX] is the ModuleId
-        /// </returns>
-        private string GetMenuFileNameFromProjectName(string filePath)
-        {
-            var parts = filePath.Split(new string[] { "." }, StringSplitOptions.None);
-            var moduleId = parts[1];
-            return GetMenuFileNameFromModuleId(moduleId);
-        }
-
-        /// <summary>
-        /// Craft up a menu filename based on the project name.
-        /// </summary>
-        /// <param name="moduleId">This is the two letter module id</param>
-        /// <returns></returns>
-        private string GetMenuFileNameFromModuleId(string moduleId)
-        {
-            string menuFileTemplate = "{0}MenuDetails.xml";
-            return String.Format(menuFileTemplate, moduleId);
-        }
-
-        /// <summary>
-        /// Convert the Web project PostBuildEvent command string
-        /// from one version to a new version
-        /// </summary>
-        /// <param name="fromVersion">The product version we're converting from</param>
-        /// <param name="toVersion">The product version we're converting to</param>
-        /// <param name="existingCommand"></param>
-        /// <returns>The updated PostBuildEvent command string</returns>
-        private string ConvertPostBuildEventCommand(string fromVersion,
-                                                    string toVersion,
-                                                    string existingCommand)
-        {
-            var outputCommand = existingCommand;
-
-            if (fromVersion == Constants.PerRelease.FromReleaseNumber && 
-                toVersion == Constants.PerRelease.ToReleaseNumber)
-            {
-                // 2018.1 command format
-                // Call "$(ProjectDir)MergeISVProject.exe" "$(SolutionPath)"  
-                //                                         "$(ProjectDir)\"  
-                //                                         PMMenuDetails.xml 
-                //                                         $(ConfigurationName) 
-                //                                         $(FrameworkDir)
-
-                // 2018.2 command format
-                // Call "$(ProjectDir)MergeISVProject.exe" --mode=0 
-                //                                         --solutionpath="$(SolutionDir)\" 
-                //                                         --webprojectpath="$(ProjectDir)\" 
-                //                                         --menufilename="[ModuleName]MenuDetails.xml" 
-                //                                         --buildprofile="$(ConfigurationName)" 
-                //                                         --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" 
-                //                                         --minify 
-                //                                         --log
-
-                outputCommand = BuildCommandLine(ExtractMenuFileName(existingCommand));
-            }
-
-            return outputCommand;
-        }
-
-        /// <summary>
-        /// Returns the new PostBuildEvent command-line string
-        /// </summary>
-        /// <param name="menuName">The menu file name [XXMenuDetails.xml] where XX == Module Id</param>
-        /// <returns>The PostBuildEvent command-line string</returns>
-        private string BuildCommandLine(string menuName)
-        {
-            // Note: The SolutionDir and ProjectDir below
-            // require the extra \ at the end.
-            var sb = new StringBuilder();
-            sb.Append($"Call ");
-            sb.Append($"\"$(ProjectDir)MergeISVProject.exe\" ");
-            sb.Append($"--mode=0 ");
-            sb.Append($"--solutionpath=\"$(SolutionDir)\\\" ");
-            sb.Append($"--webprojectpath=\"$(ProjectDir)\\\" ");
-            sb.Append($"--menufilename=\"{menuName}\" ");
-            sb.Append($"--buildprofile=\"$(ConfigurationName)\" ");
-            sb.Append($"--dotnetframeworkpath=\"$(FrameworkDir)$(FrameworkVersion)\" ");
-            sb.Append($"--minify ");
-            sb.Append($"--log ");
-            return sb.ToString();
-        }
-
-        /// <summary>
-        /// Extract the module menu file name from the existing PostBuildEvent command string
-        /// </summary>
-        /// <param name="command">The existing PostBuildEvent command string</param>
-        /// <returns>The menu file name [XXMenuDetails.xml] where XX == Module Id</returns>
-        private string ExtractMenuFileName(string command)
-        {
-            string result = string.Empty;
-            const int commandStringMenuItemIndex = 4;
-            if (command.Length == 0) return string.Empty;
-            var parts = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-
-            // Remove any extra quotes
-            result = parts[commandStringMenuItemIndex].Replace("\"", "");
-
-            // Grab the menu filename. That's all we need.
-            return result;
-        }
-
-        /// <summary>
-        /// Inspect an XmlElement node to determine if it's
-        /// a PropertyGroup without any attributes
-        /// </summary>
-        /// <param name="e">The XmlElement item to inspect</param>
-        /// <returns>
-        /// true = PropertyGroup node without any attributes
-        /// false = PropertyGroup node with attributes
-        /// </returns>
-        private bool IsPropertyGroupWithoutAttributes(XmlElement e)
-        {
-            return e.Name == "PropertyGroup" && e.HasAttributes == false;
-        }
-
-        /// <summary>
-        /// Inspect an XmlElement node to determine if it's
-        /// a second level menu <item> element
-        /// </summary>
-        /// <param name="e">The XmlElement item to inspect</param>
-        /// <returns>
-        /// true = second level menu item node
-        /// false = not a second level menu item node
-        /// </returns>
-        private bool IsSecondLevelMenuItem(XmlElement e)
-        {
-            int MenuLevelToLookFor = 2;
-            if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
-            {
-                foreach (XmlNode node in e.ChildNodes)
-                {
-                    if (node.NodeType != XmlNodeType.Element) continue;
-
-                    var element = (XmlElement)node;
-                    if (element.Name.ToLowerInvariant() == "menuitemlevel")
-                    {
-                        var menuItemLevel = element.InnerText;
-                        if (!string.IsNullOrEmpty(menuItemLevel))
-                        {
-                            return Convert.ToInt32(menuItemLevel) == MenuLevelToLookFor;
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Does this node contain an element called <IconName></IconName>
-        /// </summary>
-        /// <param name="e">The XML Element in question</param>
-        /// <returns>true = IconName element found </returns>
-        private bool HasIconNameElement(XmlElement e)
-        {
-            // This as already been done but better to be safe than sorry!
-            if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
-            {
-                foreach (XmlElement n in e.ChildNodes)
-                {
-                    if (n.Name.ToLowerInvariant() == "iconname")
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Does this node contain an element called <MenuBackGoundImage></MenuBackGoundImage>
-        /// </summary>
-        /// <param name="e">The XML Element in question</param>
-        /// <returns>true = MenuBackGoundImage element found </returns>
-        private bool HasMenuBackGroundImageElement(XmlElement e)
-        {
-            // This as already been done but better to be safe than sorry!
-            if (e.Name.ToLowerInvariant() == "item" && e.HasAttributes == false)
-            {
-                foreach (XmlElement n in e.ChildNodes)
-                {
-                    if (n.Name.ToLowerInvariant() == "menubackgoundimage")
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Determine whether or not an XmlElement is a PostBuildEvent
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns>
-        /// true = XmlElement is a PostBuildEvent
-        /// false = XmlElement is not a PostBuildEvent
-        /// </returns>
-        private static bool IsPostBuildEventElement(XmlElement e) => e.Name.ToUpperInvariant() == "POSTBUILDEVENT";
-
-        /// <summary>
-        /// Determine whether or not an XmlElement is an <IconName> element
-        /// </summary>
-        /// <param name="e">The XmlElement in question</param>
-        /// <returns>
-        /// true = XmlElement is an IconName
-        /// false = XmlElement is not an IconName
-        /// </returns>
-        private static bool IsIconNameElement(XmlElement e) => e.Name.ToUpperInvariant() == "ICONNAME";
-
-        /// <summary>
-        /// Determine whether or not an XmlElement is an <MenuBackGoundImage> element
-        /// Note: The element name is currently misspelled as 'MenuBackGoundImage' instead of 'MenuBackGroundImage'
-        /// This is a known issue.
-        /// </summary>
-        /// <param name="e">The XmlElement in question</param>
-        /// <returns>
-        /// true = XmlElement is a MenuBackGoundImage
-        /// false = XmlElement is not an MenuBackGoundImage
-        /// </returns>
-        private static bool IsMenuBackGroundImageElement(XmlElement e) => e.Name.ToUpperInvariant() == "MENUBACKGOUNDIMAGE";
-
-        /// <summary>
-        /// Get a reference to the <Navigation> node in the XXMenuDetail.xml file
-        /// </summary>
-        /// <param name="doc">A reference to the XmlDocument</param>
-        /// <returns>A reference to the Navigation node</returns>
-        private XmlNode FindNavigationNode(XmlDocument doc)
-        {
-            XmlNode returnNode = null;
-            foreach (XmlNode node in doc.ChildNodes)
-            {
-                if (node.Name.ToLowerInvariant() == "navigation" && node.Attributes.Count == 0)
-                {
-                    returnNode = node;
-                    break;
-                }
-            }
-            return returnNode;
-        }
-
-        /// <summary>
-        /// Extract the company name from the name of the Web project (csproj)
-        /// </summary>
-        /// <param name="solution">A DirectoryInfo object holding the visual studio solution information</param>
-        /// <param name="moduleId">The two letter module designation</param>
-        /// <returns>The extracted company name </returns>
-        private string GetCompanyName(DirectoryInfo solution, string moduleId)
-        {
-            string name = string.Empty;
-            var projectList = solution.EnumerateFiles($"*.Web.csproj", SearchOption.AllDirectories);
-            foreach (var projFile in projectList)
-            {
-                // The company name is the first part of the string (if split on each '.')
-                name = projFile.ToString().Split(new char[] { '.' })[0];
-                break;
-            }
-
-            return name;
-        }
-
-        /// <summary>
-        /// Delete a folder, if it exists
-        /// </summary>
-        /// <param name="folder">The fully-qualified path to the folder</param>
-        private void DeleteFolder(string folder)
-        {
-            if (Directory.Exists(folder))
-            {
-                Directory.Delete(folder, true);
-            }
-        }
+#endif
 
         /// <summary> Copy folder and files </summary>
         /// <param name="sourceDirectoryName">Source directory name</param>
