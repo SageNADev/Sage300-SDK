@@ -45,7 +45,5 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Include in Composition </summary>
         public bool Include { get; set; }
         #endregion
-
     }
-
 }

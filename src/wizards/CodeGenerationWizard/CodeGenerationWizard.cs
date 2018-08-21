@@ -20,13 +20,12 @@
 
 #region Imports
 using EnvDTE;
-using System.Reflection;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
-	/// <summary> Entry Point for Code Generation Wizard </summary>
-	public class CodeGenerationWizard
+    /// <summary> Entry Point for Code Generation Wizard </summary>
+    public class CodeGenerationWizard
     {
 		/// <summary> Execute the Code Generation Wizard </summary>
 		public void Execute(Solution solution)
@@ -41,7 +40,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     form.ShowDialog();
                 }
             }
-
         }
     }
 }

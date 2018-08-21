@@ -389,7 +389,7 @@
     <value>Defaulted from the business view and can be overridden</value>
   </data>
   <data name="CodeGeneration" xml:space="preserve">
-    <value>Code Generation</value>
+    <value>Code Generation Wizard - V{0}</value>
   </data>
   <data name="AddEntity" xml:space="preserve">
     <value>Add Entity</value>

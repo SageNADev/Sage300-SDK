@@ -102,19 +102,19 @@
     <Compile Include="BusinessViewHelper.cs" />
     <Compile Include="Composition.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="ContainerName.cs">
+    <Compile Include="Forms\ContainerName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContainerName.Designer.cs">
+    <Compile Include="Forms\ContainerName.Designer.cs">
       <DependentUpon>ContainerName.cs</DependentUpon>
     </Compile>
     <Compile Include="EnumHelper.cs" />
     <Compile Include="EnumValue.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Generation.cs">
+    <Compile Include="Forms\Generation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generation.Designer.cs">
+    <Compile Include="Forms\Generation.Designer.cs">
       <DependentUpon>Generation.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessGeneration.cs" />
@@ -437,10 +437,10 @@
     </Compile>
     <Compile Include="Utilities\Utilities.cs" />
     <Compile Include="WizardStep.cs" />
-    <EmbeddedResource Include="ContainerName.resx">
+    <EmbeddedResource Include="Forms\ContainerName.resx">
       <DependentUpon>ContainerName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generation.resx">
+    <EmbeddedResource Include="Forms\Generation.resx">
       <DependentUpon>Generation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

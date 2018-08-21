@@ -192,7 +192,7 @@
     <value>Show Log</value>
   </data>
   <data name="SolutionUpgrade" xml:space="preserve">
-    <value>Solution Upgrade</value>
+    <value>Solution Upgrade Wizard - V{0}</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>

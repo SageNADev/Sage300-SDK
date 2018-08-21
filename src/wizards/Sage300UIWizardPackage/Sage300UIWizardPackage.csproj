@@ -151,8 +151,8 @@
   </Target>
   <Import Project="packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets" Condition="Exists('packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).vsix $(ProjectDir)..\..\..\bin\wizards\
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -34,10 +34,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Utilities
     public static class Utilities
     {
         /// <summary>
-        /// TODO
+        /// Compare two dictionaries to determine if they are identical
         /// </summary>
-        /// <param name="searchIn"></param>
-        /// <param name="searchFor"></param>
+        /// <param name="searchIn">The dictionary to search in </param>
+        /// <param name="searchFor">The dictionary entries to look for</param>
         /// <returns></returns>
         public static bool EnumExists(Dictionary<string, Dictionary<string, object>> _searchIn,
                                       Dictionary<string, Dictionary<string, object>> _searchFor)
