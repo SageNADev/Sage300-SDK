@@ -564,7 +564,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Upgrade.
+        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
         /// </summary>
         internal static string SolutionUpgrade {
             get {

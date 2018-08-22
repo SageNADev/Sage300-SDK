@@ -285,7 +285,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="fileName">File Name</param>
         /// <param name="statusType">Status Type</param>
         /// <param name="text">Text for UI</param>
-        public delegate void StatusEventHandler(string fileName, Info.StatusType statusType, string text);
+        public delegate void StatusEventHandler(string fileName, Info.StatusTypeEnum statusType, string text);
 
 #endregion
 
@@ -1531,7 +1531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void LaunchStatusEvent(bool success, string fileName)
         {
             if (StatusEvent == null) { return; }
-            Info.StatusType statusType = success ? Info.StatusType.Success : Info.StatusType.Error;
+            Info.StatusTypeEnum statusType = success ? Info.StatusTypeEnum.Success : Info.StatusTypeEnum.Error;
             var message = success ? String.Empty : string.Format(Resources.ErrorCreatingFile, fileName);
             StatusEvent(fileName, statusType, message);
         }

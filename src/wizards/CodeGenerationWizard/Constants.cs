@@ -19,11 +19,6 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -33,6 +28,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     /// </summary>
     public static class GlobalConstants
     {
+        /// <summary> The version of this wizard </summary>
+        public static string Version = "2019.0";
+
         public static class LanguageExtensions
         {
             public const string English = @"";

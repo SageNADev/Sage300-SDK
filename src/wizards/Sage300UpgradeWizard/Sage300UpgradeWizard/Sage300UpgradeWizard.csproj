@@ -112,10 +112,10 @@
     <Compile Include="Sage300UpgradeWizard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Upgrade.cs">
+    <Compile Include="Forms\Upgrade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Upgrade.designer.cs">
+    <Compile Include="Forms\Upgrade.designer.cs">
       <DependentUpon>Upgrade.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FileUtilities.cs" />
@@ -126,7 +126,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Upgrade.resx">
+    <EmbeddedResource Include="Forms\Upgrade.resx">
       <DependentUpon>Upgrade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ai.snk" />

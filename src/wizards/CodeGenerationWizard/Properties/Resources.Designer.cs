@@ -125,7 +125,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code Generation.
+        ///   Looks up a localized string similar to Code Generation Wizard - V{0}.
         /// </summary>
         internal static string CodeGeneration {
             get {
