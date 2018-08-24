@@ -92,7 +92,12 @@ LabelMenuHelper = {
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 // Detach and Append the container (div) to the current parent, 
                 // because this container not gets scrolled along with the page when loaded inside the popup
-                var parentForm = window.top.$('iframe.screenIframe:visible').contents().find('form:first');
+                if (!sg.utls.isSameOrigin()) {
+                    return;
+                }
+
+                var isPortal = window.top.$('iframe.screenIframe:visible').length > 0;
+                var parentForm = (isPortal) ? window.top.$('iframe.screenIframe:visible').contents().find('form:first') : window.top;
                 var kendoWindowContainer = container.closest('.k-window-content.k-content');
                 if (parentForm !== null && parentForm.length > 0 && kendoWindowContainer !== null && kendoWindowContainer.length > 0) {
                     container.detach();

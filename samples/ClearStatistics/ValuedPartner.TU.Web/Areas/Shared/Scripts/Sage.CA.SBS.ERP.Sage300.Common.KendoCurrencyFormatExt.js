@@ -57,7 +57,7 @@
         ];
         $.each(cultureArray, function(key, value) {
             if (value) {
-                value.numberFormat = stdNumberFormat;
+                //value.numberFormat = stdNumberFormat;
             }
         })
     })(this);

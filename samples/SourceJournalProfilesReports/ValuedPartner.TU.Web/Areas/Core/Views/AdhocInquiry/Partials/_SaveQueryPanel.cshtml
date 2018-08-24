@@ -1,24 +1,4 @@
-@*
-  The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
- 
-  Permission is hereby granted, free of charge, to any person obtaining a copy of 
-  this software and associated documentation files (the "Software"), to deal in 
-  the Software without restriction, including without limitation the rights to use, 
-  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-  Software, and to permit persons to whom the Software is furnished to do so, 
-  subject to the following conditions:
- 
-  The above copyright notice and this permission notice shall be included in all 
-  copies or substantial portions of the Software.
- 
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 
@@ -26,29 +6,35 @@
     <div class="side-panel-wrapper">
         <div class="header-container">  
             <h1 class="side-panel-header header-inquiry" id="hCreateInquiry">@InquiryResx.SaveQuery</h1>
-            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnCreateInquiryClose"></div>
+            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnSaveQueryClose"></div>
         </div>
         <div class="wrapper">
-            <div id="savedQueryGrid" class="datagrid-group"></div>
-            
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.DataSource</label>
+                    <input type="text" id="SaveQueryPanel_DataSource" value="" class="medium" placeholder="" disabled>
+                </div>
+            </div>
+            <div id="saveQueryPanelGrid" class="datagrid-group"></div>
             <div class="form-group">
                 <div class="input-group">
                     <label>@InquiryResx.QueryName</label>
-                    <input type="text" id="SaveQueryPanel_QueryName" value="" class="medium">
+                    <input type="text" id="SaveQueryPanel_QueryName" maxlength="50" value="" class="medium">
                 </div>
                 
             </div>
             <div class="form-group">
-                <div class="ctrl-group">
-                    <div class="radio">
-                        @Html.KoSageRadioButton("queryType_Public", 1, new { }, new { @id = "rdbPublicQueryType" })
-                        @Html.SageLabel("lblPublicQueryType", InquiryResx.PublicTypeDesc, new { @for = "rdbPublicQueryType" })
-                    </div>
-                    <div class="radio">
-                        @Html.KoSageRadioButton("queryType_Private", 1, new { }, new { @id = "rdbPrivateQueryType" })
-                        @Html.SageLabel("lblPrivateQueryType", InquiryResx.PrivateTypeDesc, new { @for = "rdbPublicQueryType" })
-                    </div>
+                <div class="dropdown-group">
+                    <label>@CommonResx.Type</label>
+                    <select class="small single-select" id="SaveQueryPanel_QueryTypeList">
+                        <option>@InquiryResx.Public</option>
+                        <option>@InquiryResx.Private</option>
+                    </select>
                 </div>
+                @*<div class="input-group">
+                    <label>@InquiryResx.DateModified</label>
+                    <input type="text" value="1/12/2017" class="small" id="dateModified" disabled>
+                </div>*@
             </div>
             <div class="form-group">
                 <div class="input-group">
@@ -57,8 +43,8 @@
                 </div>
             </div>
             <div class="footer-group">
-                @Html.KoSageButton("btnCancel", new { }, new { @value = CommonResx.Cancel, @id = "btnCancel", @class = "btn btn-secondary" })
-                @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary btn-inquiry-save" })
+                @Html.KoSageButton("btnSaveQueryCancel", new { }, new { @value = CommonResx.Cancel, @id = "btnSaveQueryCancel", @class = "btn btn-secondary" })
+                @Html.KoSageButton("btnSaveQuerySave", new { }, new { @value = CommonResx.Save, @id = "btnSaveQuerySave", @class = "btn btn-primary btn-inquiry-save" })
             </div>
         </div>
     </div>
@@ -67,16 +53,14 @@
 <script>
     var savedQueryResources = {
         QueryName: '@Html.SageRaw(InquiryResx.QueryName)',
+        Description: '@Html.SageRaw(InquiryResx.Description)',
         DateModified: '@Html.SageRaw(InquiryResx.DateModified)',
         Type: '@Html.SageRaw(CommonResx.Type)',
         Public: '@Html.SageRaw(InquiryResx.Public)',
-        Private: '@Html.SageRaw(InquiryResx.Private)'
+        Private: '@Html.SageRaw(InquiryResx.Private)',
+        Template: '@Html.SageRaw(CommonResx.Template)',
+        Shared: '@Html.SageRaw(InquiryResx.Shared)',
+        Personal: '@Html.SageRaw(InquiryResx.Personal)',
+        DuplicateMessage: '@Html.SageRaw(InquiryGeneralResx.DuplicateMessage)'
     };
-    
-
-    $('#btnCreateInquiryClose').click(function () {
-        $('#saveQueryPanel').removeClass("slide-in").removeClass("slide-in-note-edit");
-    });
-
 </script>
-

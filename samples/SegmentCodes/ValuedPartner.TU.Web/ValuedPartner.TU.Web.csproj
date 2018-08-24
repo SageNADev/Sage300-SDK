@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
@@ -483,6 +483,9 @@
     <Folder Include="Areas\TU\Controllers\Reports\" />
     <Folder Include="Areas\TU\Models\Process\" />
     <Folder Include="Areas\TU\Models\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\TU\ExternalContent\**" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,23 +1,3 @@
-// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy of 
-// this software and associated documentation files (the "Software"), to deal in 
-// the Software without restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-// Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 //
 // Tables
 // ----------------------------------------------------
@@ -48,7 +28,7 @@ td.grid_Cell_Number_Right_Align {
     > tr {
       > th,
       > td {
-        padding: @table-condensed-cell-padding @margin-base;
+        padding: @table-condensed-cell-padding @padding-small-horizontal;
         line-height: @line-height-base;
         vertical-align: top;
         min-height: 36px;
@@ -286,6 +266,10 @@ table {
 
     .k-numeric-wrap {
       height: 24px;
+
+      &.k-expand-padding {
+        padding-right: 10px;
+      }
     }
   }
 
@@ -312,7 +296,7 @@ table {
 
       &.with-finder.align-right,
       &.with-finder.numeric {
-        padding-right: 30px;
+        padding-right: 20px;
       }
     }
   }
@@ -405,7 +389,7 @@ table {
     }
 
     .rightbox {
-      width: 140px;
+      width: 160px;
     }
 
     .btn-fiscal-picker {
@@ -442,7 +426,7 @@ table {
    }
 
   .ctrl-group {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -462,9 +446,44 @@ table {
     padding-bottom: 20px;
     
     .k-grid .k-grid-content {
-    height: 167px !important;
-    min-height: 167px !important;
-    max-height: 167px !important;
+      height: 167px !important;
+      min-height: 167px !important;
+      max-height: 167px !important;
+    }
+  }
+
+  // Added to fix D-36047
+  span.k-widget.k-numerictextbox.pr25 {
+    padding-right: 0 !important; 
+  }
+
+  // Added to fix D-36043
+  .k-widget.k-numerictextbox.icon.btn-search {
+    margin-right: 2px;
+    margin-top: 0;
+    padding: 0;
+
+    span,
+    input {
+      height: 18px !important;
+      background-color: transparent !important;
+      
+        &:focus {
+        text-indent: -9999em;
+      }
+    }
+
+    .icon.btn-search{
+      border: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 2px;
+      height: 18px !important;
+
+      &:focus {
+        text-indent: -9999em;
+      }
     }
   }
 }
@@ -474,16 +493,20 @@ table {
   font-size: 12px;
   border: 1px solid @table-border-color;
 
+  .k-dirty {
+    margin: 0 0 0 -.6rem;
+  }
+
   .k-grid-header {
     background-image: none;
-    padding-right: 0 !important; // To override kendo inserting inline padding styles
+    background-color: #686c76;
 
     > .k-grid-header-wrap {
       border-right: 0;
     }
 
     .k-header {
-      padding: @table-cell-padding 20px;
+      padding: @table-cell-padding;
       color: @white;
       font-weight: 700;
       border-color: @table-border-color;
@@ -537,7 +560,7 @@ table {
       -webkit-transform: translateZ(0);
 
       &.first-cell { 
-        width: 50px;
+        width: 40px;
         max-width: 55px;
         min-width: 20px;
         text-overflow: clip;
@@ -551,11 +574,20 @@ table {
           }
         }
       }
+
+      &.k-header span.checkBox {
+        top: 3px;
+        margin-top: -5px;
+
+        input[type=checkbox] {
+          margin-bottom: -6px;
+        }
+      }
     }
 
     td {
       border: 0;
-      padding: 0 20px; 
+      padding: 0 10px; 
       line-height: 30px;
       height: 30px;
       max-height: 30px;
@@ -576,7 +608,7 @@ table {
       }
 
       &.first-cell { 
-        width: 50px;
+        width: 40px;
         max-width: 55px;
         min-width: 20px;
         text-overflow: clip;
@@ -590,7 +622,7 @@ table {
         &.icon:disabled {
           border: 1px solid transparent;
         }
-      }      
+      }     
     }
 
     &.k-alt {
@@ -612,8 +644,7 @@ table {
 
         &:first-child {
         border-left: 4px solid @sage-link; 
-        padding-left: 16px; 
-        background: transparent;
+        padding-left: 6px;
         }
       }
 
@@ -816,7 +847,7 @@ table {
 
       .pencil-icon {
         position: absolute;
-        right: -15px;
+        right: -10px;
         display: inline-block;
         width: 35px;
         height: 24px;
@@ -830,6 +861,18 @@ table {
         }
       }
     }
+
+    button.glyphicon {
+      width: 40px;
+      height: 20px;
+      line-height: 1.2;
+      color: #474e5d;
+      font-size: 16px;
+
+      &:hover {
+        outline: none;
+      }
+    }
   }
 
   .btn_search {
@@ -838,7 +881,7 @@ table {
 
   // Edit cell styles
   .k-edit-cell {  
-    padding: 0 20px;  
+    padding: 0 10px;  
     position: relative;
 
     .k-numeric-wrap {
@@ -870,9 +913,10 @@ table {
       background-color: transparent;
       background-position: 0 0;
       position: absolute;
-      right: 20px;
+      right: 10px;
       top: 5px;
       border: none;
+      padding-right: 0 !important;
 
       &:focus { 
         outline: none;  
@@ -888,7 +932,7 @@ table {
 
     .k-dropdown {  
       margin-top: -1px;
-      width: 100%;
+      width: calc(100% - 20px);
 
       .k-dropdown-wrap {
         height: 24px;  
@@ -910,6 +954,10 @@ table {
           font-size: 12px;
           background-color: @white;
         }
+      }
+
+      + .icon.edit-field {
+        margin-left: -2px;
       }
     }
 
@@ -982,8 +1030,8 @@ table {
   margin-left: 0;
 
   &#divFinderPrefEditCols {
-    margin-top: 0;
-    margin-left: 1px;
+    margin-top: -12px;
+    margin-left: -10px;
   }
 
   table { 
@@ -1194,6 +1242,28 @@ table {
       line-height: 20px;
     }
   }
+}
+
+// AUS GST grid styles 
+
+.grid-group.grid-small .k-grid .k-grid-content {
+  min-height: unset;
+}
+
+label > span.highlighted,
+span.highlighted {
+  background-color: #ff9900;
+  padding:  0 6px;
+  border-radius: 4px;
+  color: #fff;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+}
+
+span.highlighted.gray {
+  background-color: #a7a9aa;
 }
 
 
@@ -1581,6 +1651,5 @@ div.spreadsheet {
    table tr td {
     white-space: pre-wrap;
     line-height: 1.5;
-    padding: 5px 20px;
    } 
 }

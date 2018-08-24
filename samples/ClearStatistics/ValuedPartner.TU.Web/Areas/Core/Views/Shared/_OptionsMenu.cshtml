@@ -1,4 +1,4 @@
-@*
+﻿@*
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
  
@@ -27,9 +27,15 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
 
 @{
-    var import = ViewData[OptionsMenu.Import] == null ? Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) : Convert.ToBoolean(ViewData[OptionsMenu.Import]);
-    var export = ViewData[OptionsMenu.Export] == null ? Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) : Convert.ToBoolean(ViewData[OptionsMenu.Export]);
-    var customize = ViewData[OptionsMenu.Customize] == null ? Model.SecurityType.HasFlag(SecurityType.Admin) : Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
+    var import = ViewData[OptionsMenu.Import] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Import]);
+    var export = ViewData[OptionsMenu.Export] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Export]);
+    var customize = ViewData[OptionsMenu.Customize] == null ? 
+        Model.SecurityType.HasFlag(SecurityType.Admin) : 
+        Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
 }
 
 @if (export || import || customize)

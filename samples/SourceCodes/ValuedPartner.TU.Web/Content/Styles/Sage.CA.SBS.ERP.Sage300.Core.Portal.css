@@ -1,25 +1,3 @@
-/*
-  The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
- 
-  Permission is hereby granted, free of charge, to any person obtaining a copy of 
-  this software and associated documentation files (the "Software"), to deal in 
-  the Software without restriction, including without limitation the rights to use, 
-  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-  Software, and to permit persons to whom the Software is furnished to do so, 
-  subject to the following conditions:
- 
-  The above copyright notice and this permission notice shall be included in all 
-  copies or substantial portions of the Software.
- 
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-
 /*Portal CSS Starts here*/
 
 ol,li {list-style:none;}
@@ -45,6 +23,39 @@ body{ width: 100%;min-width:1000px;}
 @font-face {
   font-family: 'helveticaneue';
   src: url('../fonts/helveticaneueltstd-roman.ttf') format('truetype'), url('../fonts/helveticaneueltstd-roman.woff') format('woff'), url('../fonts/helveticaneueltstd-roman.eot');}
+
+
+/* Lable tag styles */
+.tag {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 85.71429%;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.tag-pill {
+    padding-right: 0.75em;
+    padding-left: 0.75em;
+    border-radius: 12rem;
+}
+
+.tag-default {
+    background-color: #9e9e9e;
+}
+
+.tag-success {
+    background-color: #41a940;
+}
+
+.tag-info {
+    background-color: #00a4cf;
+}
 
 
 /*Session Date Widget improvement (B-34479)*/
@@ -347,11 +358,12 @@ li.helpSearch .k-link form{ padding: 5px 10px;}
 #topMenu > li.menu-item-with-icon {
     padding: 0;
     text-align: center;
+    margin-left: 10px;
 }
 
-#topMenu > li.k-last {
-    margin-left: 10px;
-    background-color: #ebedef;
+#topMenu > li.menu-item-with-icon .glyphicon-magnifying-glass:before {
+    top: 1px;
+    position: relative;
 }
 
 #topMenu > #topMenuTools.inactive {
@@ -906,7 +918,7 @@ iframe#iframeWidgetConfiguration,iframe#iframeWidgetSettings {
 
 /*firstTenantSetUp*/
 #iFrameNewTenant {width: 100%;height: 100%;border: none;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
-body.tenantForm, .firstTenantSetUp{background:#f5f6f7;}
+body.tenantForm {background:#f5f6f7;}
 .firstTenantSetUp .fTSetUpHedingContainer{box-shadow: 0 2px 4px rgba(0,0,0,0.35);background:#fff;height:150px;}
 .firstTenantSetUp .fTSetUpHeding{margin:48px auto 0px auto;float:left;}
 .firstTenantSetUp .fTSetUpHeding h1{font-size:48px;line-height:1.15em;font-family:foco;font-weight:100;color:#38c72a;}
@@ -965,7 +977,7 @@ body.tenantForm, .firstTenantSetUp{background:#f5f6f7;}
 .message-control .msg-content ul.odtd-bwr-cotainer li.ie{*max-width:108px;}
 .message-control .msg-content ul.odtd-bwr-cotainer li.firefox{*max-width:80px;}
 .message-control .msg-content ul.odtd-bwr-cotainer li.safari{*max-width:125px;}
-body.odtd-bwr {background: #f5f6f7;}
+/*body.odtd-bwr {background: #f5f6f7;}*/
 /*Outdated Browser page CSS*/
 /*Browser specific CSS*/
 @-moz-document url-prefix() {
@@ -1350,9 +1362,9 @@ and (max-device-width : 1024px) {
     -moz-box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
     background: #f4f5fa;
-    background: -moz-linear-gradient(top, #f4f5fa 0%,#f4f5fa 5%, #fff 5%); 
-    background: -webkit-linear-gradient(top, #f4f5fa 0%,#f4f5fa 5%,#fff 5%); 
-    background: linear-gradient(to bottom, #f4f5fa 0%,#f4f5fa 5%,#fff 5%); 
+    background: -moz-linear-gradient(top, #efeefa 0%,#f4f5fa 4%, #fff 4%); 
+    background: -webkit-linear-gradient(top, #efeefa 0%,#f4f5fa 4%,#fff 4%); 
+    background: linear-gradient(to bottom, #efeefa 0%,#f4f5fa 4%,#fff 4%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f4f4f4', endColorstr='#00ffffff',GradientType=0 );
 }
 
@@ -1455,11 +1467,12 @@ and (max-device-width : 1024px) {
     float: left;
 }
 
-/*KPI responsive layout*/
+/*Menu background responsive layout*/
 
 @media screen and (max-height: 700px) {
-    .side-nav .menu-item:not(.menu-ir) .std-menu.active {
-        background-image: linear-gradient(90deg,#ebedef 0,#ebedef 50%,#fff 50%,#fff 100%);
+
+    .side-nav .menu-item:not(.menu-ir) .std-menu.active > img {
+        display: none;
     }
 }
 
@@ -1926,6 +1939,10 @@ and (max-device-width : 1024px) {
   background-color: #ff9900;
 }
 
+.quick-menu-vpf {
+  background-color: #64006e;
+}
+
 .quick-menu-windows > .glyphicon {
     top: 11px;
     left: -2px;
@@ -1936,11 +1953,14 @@ and (max-device-width : 1024px) {
     left: -1px;
 }
 
-.quick-menu-reports > .glyphicon,
-.quick-menu-inquiry > .glyphicon {
-    top: 12px;
+.quick-tools-body .quick-menu-reports > .glyphicon,
+.quick-tools-body .quick-menu-inquiry > .glyphicon,
+.quick-tools-body .quick-menu-vpf > .glyphicon {
+    top: 11px;
     left: -1px;
+    font-size: 1.1rem;
 }
+
 
 
 .item-count{
@@ -2225,6 +2245,24 @@ and (max-device-width : 1024px) {
   position: relative;
 }
 
+.side-panel-header.header-vpf:before {
+  content: "\ea5e";
+  font-family: "Sage Armonye Icons";
+  font-style: normal;
+  font-size: 28px;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  margin-right:8px;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  top: -2px;
+  position: relative;
+}
+
 .header-container .glyphicon-close.dismiss {
   position: absolute;
   top: 24px;
@@ -2428,10 +2466,10 @@ and (max-device-width : 1024px) {
 }
 
 .report-list:before {
-    content: "\57";
+    content: "\6e";
     font-family: "Sage Armonye Icons";
-    color: #255bc7;
-    font-size: 21px;
+    color: #00a4cf;
+    font-size: 14px;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -2919,11 +2957,14 @@ table.k-editor {
 }
 
 .header-global .help,
+.header-global .global-search,
 .header-global .settings {
     height: 3.5rem;
     padding-top: 8px;
     font-size: 1.5rem;
     text-align: center;
+    margin: 0;
+    width: 40px;
 }
 
 #topMenu .menu-item-with-icon.k-state-default .k-i-arrow-s {
@@ -2940,11 +2981,13 @@ table.k-editor {
 }
 
 .header-global .help:hover,
+.header-global .global-search:hover,
 .header-global .settings:hover {
     opacity: 0.80;
 }
 
 .header-global .help > span,
+.header-global .global-search > span,
 .header-global .settings > span {
     font: normal 10px/1 Arial;
     display: block;
@@ -3111,13 +3154,14 @@ table.k-editor {
 
 .item-list {
   position: relative;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  border-bottom: 1px dotted #fff;
 }
 
-.item-list:hover {
+.item-list:hover,
+.item-list label:hover {
     cursor: pointer;
-    background-color: #e8eaec;
+    background-color: #dbdbde;
 }
 
 .item-list.item-list-none:hover {
@@ -3277,10 +3321,6 @@ table.k-editor {
 /*Quick Menu Item - Inquiry Styles - 2018.1 enhancement
 ------------------------------------------------------------------------------*/
 
-.side-panel.create-inquiry .input-group input[type=text].medium {
-    width: 379px;
-}
-
 .create-inquiry .footer-group {
   padding-bottom: 80px;
   text-align: center;
@@ -3352,6 +3392,7 @@ table.k-editor {
 .side-panel.create-inquiry .k-grid {
   margin-top: 0;
   border: 1px solid #ccc;
+  width: 362px;
 }
 
 .create-inquiry .k-grid .k-grid-header {
@@ -3372,6 +3413,34 @@ table.k-editor {
 
 .create-inquiry .k-grid tr.k-state-selected > td:first-child {
   padding-left: 10px;
+}
+
+.create-inquiry .k-grid-header .k-header > .k-link .k-i-arrow-s,
+.create-inquiry .k-grid-header .k-header > .k-link:hover .k-i-arrow-s,
+.create-inquiry .k-grid-header .k-header > .k-link .k-i-arrow-n,
+.create-inquiry .k-grid-header .k-header > .k-link:hover .k-i-arrow-n{
+    font-family: "Sage Armonye Icons";
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 14px;
+    background: none;
+    float: none;
+    margin-left: 2px;
+}
+
+.create-inquiry .k-grid-header .k-header > .k-link .k-i-arrow-s:before {
+    content: "\25b2";
+    top: 8px;
+    position: relative;
+}
+
+.create-inquiry .k-grid-header .k-header > .k-link .k-i-arrow-n:before {
+    content: "\25bc";
+    top: 8px;
+    position: relative;
 }
 
 /* Saved Query - Hierarchy Grid */
@@ -3457,6 +3526,44 @@ table.k-editor {
   min-height: initial;
 }
 
+.side-panel.view-inquiry .tag{
+    margin-left: 10px;
+    position: absolute;
+    right:0;
+    min-width: 66px;
+    font-size: 11px;
+} 
+
+.side-panel.view-inquiry .item-list label {
+    display: block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#inquiryTabStrip-1 .item-list label {
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+.side-panel.view-inquiry .ctrl-group-inline label {
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.side-panel.view-inquiry .ctrl-group-inline > div {
+    min-width: 80px;
+}
+
+.side-panel.view-inquiry .message-control.multiWarn-msg {
+    width: 100%;
+}
+
+.side-panel.view-inquiry .message-control.multiWarn-msg .title .multiWarn-icon {
+    background-color: #00a4cf;
+}
+
 /* Tooltip */
 
 .info-icon {
@@ -3521,23 +3628,25 @@ div#profilesMultiSelect-list+.k-animation-container {
 
 .side-nav .wrapper {
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.side-nav .wrapper::-webkit-scrollbar-track
-{
+.side-nav .wrapper::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 	background-color: #474e5d;
 }
 
-.side-nav .wrapper::-webkit-scrollbar
-{
+.side-nav .wrapper::-webkit-scrollbar {
 	width: 6px;
 	background-color: #474e5d;
 }
 
-.side-nav .wrapper::-webkit-scrollbar-thumb
-{
+.side-nav .wrapper::-webkit-scrollbar-thumb {
 	background-color: #6d717a;
+}
+
+.side-nav .wrapper::-webkit-scrollbar-corner {
+    background-color: #474e5d;
 }
 
 #menuPrefToggler {
@@ -3553,10 +3662,9 @@ div#profilesMultiSelect-list+.k-animation-container {
     display: none;
 }
 
-@media only screen and (max-height: 700px), (max-device-width : 1024px) {
+@media only screen and (max-height: 780px), (max-device-width : 1024px) {
   #menuPrefTogglerAlt {
     display: block;
-    margin-top: 40px;
   }
 
   #menuPrefToggler{
@@ -3564,3 +3672,11 @@ div#profilesMultiSelect-list+.k-animation-container {
   }
 }
 
+/* VPF styles */
+
+.vpf-flash {
+    clear: both;
+    width: 100%;
+    height: 100vh;
+    background: url("../Images/vpf/vpf_background.jpg") no-repeat right bottom;
+}

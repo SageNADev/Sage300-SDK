@@ -1,4 +1,4 @@
-@*
+﻿@*
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
  
@@ -54,7 +54,7 @@
 
 @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_Localization.cshtml")
 
-<div class="form-screen">
+<div class="form-screen crm">
     <div id="message"></div>
     <div id="success"></div>
     <header>
@@ -63,49 +63,29 @@
                 <div class="header-headline">
                     <h1 id="headTitleInquiry" data-bind="text: LocalizedName"></h1>
                 </div>
+                <div class="header-options">
+                  <input class="btn btn-secondary" name="btnOpen" type="button" value="@InquiryResx.OpenQuery" id="btnOpenQuery">
+                  <input class="btn btn-primary" name="btnSave" type="button" value="@InquiryResx.SaveQuery" id="btnSaveQuery"> 
+              </div>
             </div>
         </section>
     </header>
 
-    <div class="inquiry-panel-body">
-        @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_AdhocInquiryFilterControl.cshtml", Model)
-        
-        <div id="filterControl" data-bind="foreach: {data: Data.InquiryFilters, afterRender: refreshFilterControl}">
-            <div class="form-group" id="additionalFiltering_">
-                <button class="glyphicon glyphicon-quick-close" id="btnDeleteFilter_" data-bind="click: $parent.removeFilter"></button>
-                <div class="dropdown-group">
-                    @Html.KoSageDropDownList("FilterList", new { @options = "$parent.FilterListSelection", @optionsText = "'Text'", @optionsValue = "'Value'", @value = "Field.field" }, new { @class = "default single-select", @id = "filterDdl_" })
-                </div>
-                <div class="inline-div"></div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="button-group">
-                <button class="glyphicon glyphicon-quick-add" id="btnAddFilter"><label class="btn-label">@InquiryResx.AddFilter</label></button>
-            </div>
-        </div>
-        <section class="buttons-group">
-            <div class="left">
-                @Html.KoSageButton("btnReset", new {}, new {@value = InquiryResx.ResetFilters, @id = "btnReset", @class = "btn btn-secondary"})
-                @Html.KoSageButton("btnApply", new { }, new { @value = InquiryResx.ApplyFilters, @id = "btnApply", @class = "btn btn-primary" })
-            </div>
-            <div class="right">
-                @Html.KoSageButton("btnDelete", new { @disable = "isDeleteDisable" }, new { @value = InquiryResx.DeleteQuery, @id = "btnDelete", @class = "btn btn-secondary" })
-                @Html.KoSageButton("btnSaveQuery", new {}, new {@value = InquiryResx.SaveQuery, @id = "btnSaveQuery", @class = "btn btn-default btn-inquiry-save"})
-            </div>
-        </section>
-    </div>
-
     <div class="grid-group">
         <div class="gridcontrols-group clearfix">
-            <button class="btn btn-default btn-grid-control btn-edit-column" type="button">Edit Column</button>
+            <div class="right">
+                <lebel class="label-gridcontrl">Per Page :</lebel>
+                <button class="pagesize-10" type="button">10</button>
+                <button class="pagesize-20 active" type="button">20</button>
+                <button class="pagesize-30" type="button">30</button>
+                <button class="btn btn-default btn-grid-control btn-delete" type="button" title="Delete Filter">Delete Filter</button>
+            </div>
         </div>
         <div id="adhocInquiryGrid" class="datagrid-group"></div>
     </div>
     
     <section class="footer-group-1">
-        @Html.KoSageButton("btnPrint", new {}, new {@value = CommonResx.Print, @id = "btnSave", @class = "btn btn-default"})
+        @*@Html.KoSageButton("btnPrint", new {}, new {@value = CommonResx.Print, @id = "btnSave", @class = "btn btn-default"})*@
         @Html.KoSageButton("btnExport", new {}, new {@value = CommonResx.Export, @id = "btnExport", @class = "btn btn-default"})
     </section>
 </div>

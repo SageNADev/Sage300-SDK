@@ -157,10 +157,6 @@
     box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
     -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
-
-    .modal-msg h3 {
-      padding:  17px 0 10px; 
-    }
 }
 
 .message {
@@ -197,6 +193,7 @@
     font-weight: normal;
     margin-left: 70px;
     text-align: left;
+    margin-top: 19px;
 }
 
 .message-control .msg-content { 
@@ -350,3 +347,17 @@
     background-size: 1350px 135px;
 }
 .container_popUp .message-control{width:100%}
+
+.message-control.multiError-msg .msg-content.with-grid {
+  padding-left: 20px;
+
+  .k-grid-content {
+    max-height: 300px;
+
+    td {
+      white-space: normal;
+      line-height: 1.5;
+      padding: 10px;
+    }
+  }
+}

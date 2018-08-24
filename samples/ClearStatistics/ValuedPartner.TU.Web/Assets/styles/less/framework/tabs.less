@@ -425,11 +425,12 @@ header + .nav-tabs {
 // Alternative solution to too many tabs scenario
 
 .tab-1 .tab-header {
-  margin: 0 0 10px 0;
-  font-size: @font-size-large;
+  margin: 16px 0 -1px 0;
+  font-size: @font-size-h3;
 
   .inline-txt {
     margin-right: 4px;
+    margin-left: 0;
   }
 
   .dropdown-group {
@@ -451,6 +452,7 @@ header + .nav-tabs {
 
     .k-input {
       font-size: inherit;
+      line-height: 2.3;
     }
 
     .k-select {
@@ -535,6 +537,10 @@ header + .nav-tabs {
         .k-select {
           background-color: #8d9091;
           cursor: pointer;
+
+          .k-i-arrow-s {
+            cursor: pointer !important;
+          }
         }
       }
 
@@ -564,4 +570,11 @@ header + .nav-tabs {
       }
     }
   }
+}
+
+// Specific to FF/IE
+
+.k-ff #tabInquiry .k-dropdown-wrap.k-state-default,
+.k-ie #tabInquiry .k-dropdown-wrap.k-state-default {
+  height: 41px;
 }

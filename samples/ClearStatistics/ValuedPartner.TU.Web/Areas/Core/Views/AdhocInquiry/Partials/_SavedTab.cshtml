@@ -1,4 +1,4 @@
-@*
+﻿@*
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
  
@@ -91,7 +91,7 @@
 <ul>
 @foreach (var module in groupedModule)
 {
-    <li class="item-list inquiry-category collapsed" onclick="itemListOnClick(this)">
+    <li class="item-list" onclick="itemListOnClick(this)">
         <label>@LocalizedModuleName(module)</label>
         @foreach (var query in module)
         {

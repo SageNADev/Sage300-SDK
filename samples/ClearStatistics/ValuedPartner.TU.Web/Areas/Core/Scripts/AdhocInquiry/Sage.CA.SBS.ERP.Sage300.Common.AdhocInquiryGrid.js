@@ -17,7 +17,6 @@
 // HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 "use strict";
 
 var adhocInquiryGridUI = adhocInquiryGridUI ||
@@ -35,19 +34,35 @@ var adhocInquiryGridUI = adhocInquiryGridUI ||
                     total: 'TotalResultsCount',
                 },
                 serverPaging: true,
-                pageSize: 10
+                pageSize: 20,
+                aggregate: [
+                    { field: "DocTotal", aggregate: "sum" },
+                    { field: "DocTotal", aggregate: "min" },
+                    { field: "DocTotal", aggregate: "max" }
+                ]
             },
             autoBind: false,
-            height: 500,
+            height: 543,
+            columnMenu: true,
+            filterable: true,
+            sortable: {
+                mode: "multiple",
+                allowUnsort: true,
+                showIndexes: true
+            },
             selectable: true,
             scrollable: true,
             resizable: true,
+            reorderable: true,
+            groupable: true,
             pageable: {
                 input: true,
                 numeric: false,
+                refresh: true
             },
             columns: adhocInquiryGridUI.getColumns(ko.mapping.toJS(adhocInquiryUI.inquiryModel.Data.InquiryResultDefinitions())),
             editable: false,
+
         });
     },
 

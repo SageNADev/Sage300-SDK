@@ -1,27 +1,10 @@
-﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy of 
-// this software and associated documentation files (the "Software"), to deal in 
-// the Software without restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-// Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 "use strict"
 
 var widgetUI = widgetUI || {};
 
+var pluginMenuMerged = false;
 //screen Id hold value for each menu screen menu Id
 var screenId = 0;
 
@@ -36,6 +19,12 @@ var reportScreenId = " ";
 
 //Inquiry Screen Id for Help purposes
 var inquiryScreenId = 2;
+
+//Global Search Screen default Id
+//Type is string so that the value can be compared as an attribute in RecentWindow.js
+var globalSearchScreenId = "3";
+//To be used to record extra parameter in order to screen with specific record
+var globalSearchDrillDownParameter = null;
 
 var isWidgetVisible = false;
 
@@ -126,9 +115,7 @@ $(document).ready(function () {
         $('html').removeClass('page-collapsed').addClass('page-expanded');
         $('#navbarSide').removeClass('side-nav-collapsed').addClass('active');
 
-        var modifiedCookie = "expanded";
-        var cookieExpiresdate = new Date(9999, 12, 31);
-        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+        sg.utls.saveUserPreferences(menuUserPreferenceKey, "expanded");
 
         // Reload/refresh widget layout 
         updateLayout(false);
@@ -144,9 +131,7 @@ $(document).ready(function () {
         $('html').removeClass('page-expanded').addClass('page-collapsed');
         $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.std-menu.active').removeClass('active');
 
-        var modifiedCookie = "collapsed";
-        var cookieExpiresdate = new Date(9999, 12, 31);
-        $.cookie(MenuLayoutCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+        sg.utls.saveUserPreferences(menuUserPreferenceKey, "collapsed");
 
         // Reload/refresh widget layout 
         updateLayout(false);
@@ -154,23 +139,22 @@ $(document).ready(function () {
 
     $('#btnCollapseMenu, #btnCollapseMenuAlt').click(menuLayoutCollapsed);
 
-    /* Initialize Cookie for Side Menu Setting (Collapsed/Expanded) */
+    /* Initialize for Side Menu Setting (Collapsed/Expanded) */
     /* ---------------------------------------------------------- */
 
     initSideMenu();
 
     function initSideMenu() {
-        var menuCookie = $.cookie(MenuLayoutCookieName);
-        if(menuCookie)
-        {
-            if (menuCookie === "expanded")
-            {
-                menuLayoutExpanded();
+        sg.utls.getUserPreferences(menuUserPreferenceKey, function (result) {
+            if (result) {
+                if (result === "expanded") {
+                    menuLayoutExpanded();
+                }
+                else if (result === "collapsed") {
+                    menuLayoutCollapsed();
+                }
             }
-            else if (menuCookie === "collapsed"){
-                menuLayoutCollapsed();
-            }
-        }
+        });
     };
    
     /* open menu */
@@ -268,6 +252,20 @@ $(document).ready(function () {
     $('#topMenu').mouseenter(function () {
         if (!$("#helpSearchfl").is(':focus')) {
             helpSearchForMenuItem(screenId);
+        }
+    });
+
+    //Update the current open window title in windows manager
+    window.addEventListener('message', function (event) {
+        var data = event.data;
+        if (data.event_id === 'SaveTemplate' && data.inquiryTitle) {
+            var title = data.inquiryTitle;
+            $("#dvWindows span[rank]").each(function (index, elem) {
+                var $iframe = $('#' + $(elem).attr('frameid'));
+                if ($iframe.is(':visible')) {
+                    $(elem).first().text(title);
+                }
+            })
         }
     });
 
@@ -652,6 +650,12 @@ $(document).ready(function () {
             if (screenId === reportScreenId) {
                 screenId = reportScreenHelp;
             }
+            // notify change inquiry data source 
+            var winUrl = $("#" + currentDiv).attr("src");
+            if (winUrl.indexOf("Core/InquiryGeneral/Index/?templateId") > -1) {
+                var dsId = winUrl.substring(winUrl.indexOf("&dsId") + 6);
+                window.postMessage({ event_id: 'QueryDataSourceChanged', dataSourceId: dsId }, '*');
+            }
         }
     });
 
@@ -749,7 +753,11 @@ $(document).ready(function () {
             if (isExcludingParameters && sg.utls.getUrlPath($iframe.attr("src")) === sg.utls.getUrlPath(targetUrl)) {
                 // Compare the full URL including the query string.
                 // now that we know the path is the same, check for url with parameter, if they are not the same, lets refresh the screen and display that iframe
-                if ($iframe.attr("src") !== targetUrl) {
+
+                if (globalSearchDrillDownParameter !== null) {
+                    $iframe.attr("src", targetUrl + "?" + globalSearchDrillDownParameter);
+                    globalSearchDrillDownParameter = null;
+                } else if ($iframe.attr("src") !== targetUrl) {
                     $iframe.attr("src", targetUrl);
                 }
                 $iframe.show();
@@ -775,7 +783,14 @@ $(document).ready(function () {
                 isIframeClose = false;
                 $iframe.addClass('screenLoading');
                 $iframe.contents().find('body').html('');
-                $iframe.attr("src", targetUrl);
+
+                if (globalSearchDrillDownParameter !== null) {
+                    $iframe.attr("src", targetUrl + "?" + globalSearchDrillDownParameter);
+                    globalSearchDrillDownParameter = null;
+                } else {
+                    $iframe.attr("src", targetUrl);
+                }
+                
                 $iframe.load(function () {
                     // remove the loading/spinner after the page is loaded
                     $(this).removeClass('screenLoading');
@@ -896,8 +911,13 @@ $(document).ready(function () {
                 windowtext = portalBehaviourResources.ReportNameTemplate.format(windowtext, portalBehaviourResources.Report);
             }
 
-            if (targetUrl != "")
-                assignUrl(windowtext, parentidVal, screenId);
+            if (targetUrl != "") {
+                if (globalSearchDrillDownParameter === null) {
+                    assignUrl(windowtext, parentidVal, screenId);
+                } else {
+                    assignUrl(windowtext, parentidVal, screenId, true);
+                }
+            }
         }
 
     });
@@ -930,9 +950,12 @@ $(document).ready(function () {
 
     function loadBreadCrumb(parentidVal) {
         if (!$('#widgetLayout').is(":visible")) {
-
-            //Variables
             var html = [];
+            //Merge plugin menus to the MenuList            
+            if (PluginMenuList && PluginMenuList.length > 0 && (!pluginMenuMerged)) {
+                Array.prototype.push.apply(MenuList, PluginMenuList)
+                pluginMenuMerged = true;
+            }
             //Add Parent to array
             jQuery.each(MenuList, function (i, val) {
                 if (val.Data.MenuId == parentidVal) {
@@ -1042,7 +1065,7 @@ $(document).ready(function () {
             var $iframe = $(this).find("iframe");
             var srcUrl = $iframe.attr("src");
             var originalUrl = $iframe.prop("originalSrc");
-            result = (srcUrl === url) || (originalUrl && originalUrl === url);
+            result = (sg.utls.getUrlPath(srcUrl) === url && globalSearchDrillDownParameter === null) || (originalUrl && originalUrl === url);
             if (result) {
                 $("#dvWindows span[command='Add'][frameid='" + $iframe[0].id + "']").trigger("click");
                 return false;
@@ -1098,15 +1121,18 @@ $(document).ready(function () {
             inquiryParameter.url, inquiryParameter.module, inquiryParameter.feature, inquiryParameter.target, inquiryParameter.value, encodeURIComponent(inquiryParameter.title), encodeURIComponent(inquiryParameter.name));
     }
 
+    function createInquiryURLWithName(inquiryParameter) {
+        return sg.utls.formatString("{0}/?fileName={1}", inquiryParameter.url, inquiryParameter.fileName);
+    }
     // Function to handle opening of Reports and Screen as a New Task Window.
     // NOTE: The caller is responsible for checking that evtData (the data from the window
     //       message presumably received from another IFrame) is a string.
     function openNewTask(evtData) {
         // Display Reports as a New Task Doc Item
-        if (evtData.indexOf("isInquiry") >= 0) {
+        if (evtData.indexOf("isInquiry") >= 0 || evtData.indexOf("isInquiryGeneral") >= 0) {
             var postMessageData = evtData.split(" ");
-            var inquiryParameter = JSON.parse(decodeURI(postMessageData[1]));
-            targetUrl = createInquiryURLWithParameters(inquiryParameter);
+            var parameter = JSON.parse(decodeURI(postMessageData[1]));
+            targetUrl = (evtData.indexOf("isInquiryGeneral") < 0) ? createInquiryURLWithParameters(parameter) : sg.utls.formatString("{0}/?templateId={1}&name={2}&dsId={3}", parameter.url, parameter.templateId, parameter.name, parameter.id);
             var screenName, parentId, menuid;
 
             $('#screenLayout').show();
@@ -1126,7 +1152,7 @@ $(document).ready(function () {
             menuid = inquiryScreenId;
 
             //Method To Load Into Task Doc
-            assignUrl(portalBehaviourResources.Inquiry + " - " + inquiryParameter.title, parentId, menuid);
+            assignUrl(portalBehaviourResources.Inquiry + " - " + parameter.title, parentId, menuid);
 
         } else if (evtData.indexOf("isReport") >= 0) {
 
@@ -1277,6 +1303,32 @@ $(document).ready(function () {
     $("#liManageUsers").bind('click', function () {
         window.open(umURL);
     });
+
+    $("#globalSearch").bind('click', function () {
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "GlobalSearch", "IsServiceRunning"), {}, openGlobalSearch);
+    });
+
+    function openGlobalSearch(result) {
+        if (result && result.UserMessage && result.UserMessage.IsSuccess) {
+            targetUrl = sg.utls.url.buildUrl("Core", "GlobalSearch", "Index");
+            $(this).addClass('active');
+            $('#screenLayout').show();
+            $('#widgetLayout').hide();
+
+            if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
+
+            $('#breadcrumb').hide();
+
+            if ($('#dvWindows').children().length <= numberOfActiveWindows) {
+                clearIframes();
+            }
+
+            //Method To Load Into Task Doc
+            assignUrl(portalBehaviourResources.GlobalSearch, null, globalSearchScreenId);
+        } else {
+            sg.utls.showMessage(result);
+        }
+    }
 
     $("#btnIntelligence").click(function () {
         var cb = ""; //cachebuster
