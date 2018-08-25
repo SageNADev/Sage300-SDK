@@ -1,0 +1,18 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Web.Models;
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
+
+@model  NavigableMenuViewModel<NavigableMenu>
+
+<div id="dvAddWidget" class="top-buttons addWidgets" style="display:none">
+    <div class="top-buttons addWidgets">
+        <span>@HomePageResx.AddWidgets</span>
+    </div>
+</div>
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("NavigableMenuDetail", Model);
+</script>
+

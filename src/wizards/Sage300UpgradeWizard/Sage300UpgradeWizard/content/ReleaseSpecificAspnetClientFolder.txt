@@ -9,6 +9,7 @@ follows:
 C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
 
 It's not necessary to copy the content from all versions of Microsoft.NET
-Only version 4.0.30319 is necessary. 
+Only version 4.0.30319 is necessary. Copy the folder 'aspnet_client' to it's 
+final destination.
 
 

@@ -21,6 +21,7 @@
 #region Imports
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
             public const string AreasFolderName = @"Areas";
             public const string ExternalContentFolderName = @"ExternalContent";
             public const string RelativePathDesignator = @"../../../..";
+            public const string Pre2019Dot0ImageLocation = @"\Content\Images\nav\";
+
+            public const string Pre2019Dot0BackgroundImageName = @"menuBackGroundImage.jpg";
+            public const string Post2019Dot0BackgroundImageNameTemplate = @"bg_menu_{0}.jpg";
+
+            public const string Pre2019Doc0IconImageName = @"menuIcon.png";
+            public const string Post2019Dot0IconImageNameTemplate = @"icon_{0}.png";
         }
         #endregion
 
@@ -81,7 +89,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
             var areasFolder = Path.Combine(webFolder, Constants.AreasFolderName);
             var areasModuleFolder = Path.Combine(areasFolder, moduleId);
             var externalContentFolder = Path.Combine(areasModuleFolder, Constants.ExternalContentFolderName);
-            FileUtilities.CreateFolderIfNotExists(externalContentFolder);
+            var folderAlreadyExisted = FileUtilities.CreateFolderIfNotExists(externalContentFolder);
             #endregion
 
             #region Step 2 - Get file names for menuIcon and menuBackGroundImage from {module}MenuDetails.xml (We will search for these later)
@@ -95,33 +103,79 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
             #endregion
 
             #region Step 3 - Setup the new names for the menu background and icon images
-            string newMenuBackgroundImageFilename = $"bg_menu_{moduleId.ToLower()}.jpg";
-            string newMenuIconImageFilename = $"icon_{moduleId.ToLower()}.png";
+            string newBackgroundImageFilename = string.Format(Constants.Post2019Dot0BackgroundImageNameTemplate, moduleId.ToLower());
+            string newIconImageFilename = string.Format(Constants.Post2019Dot0IconImageNameTemplate, moduleId.ToLower());
+
+            // Determine if the filenames contained in the Menu XML file are the old format 
+            // or the new 2019.0 introduced format
+            var compareType = StringComparison.InvariantCultureIgnoreCase;
+            var sameBackgroundImageFilename = backgroundImageFilenameFromMenu.Equals(newBackgroundImageFilename, compareType);
+            var sameIconImageFilename = iconImageFilenameFromMenu.Equals(newIconImageFilename, compareType);
             #endregion
 
-            #region Step 4 - Update the XXMenuDetails.xml file with the new values
+            #region Step 4 - Update the XXMenuDetails.xml file with the new values, if necessary
             var moduleIdUpper = moduleId.ToUpper();
             var folder = Constants.ExternalContentFolderName;
             var areas = Constants.AreasFolderName;
             var relPath = Constants.RelativePathDesignator;
-            string newMenuBackgroundImageFilePathForMenu = $"{relPath}/{areas}/{moduleIdUpper}/{folder}/{newMenuBackgroundImageFilename}";
-            string newMenuIconImageFilePathForMenu = $"{relPath}/{areas}/{moduleIdUpper}/{folder}/{newMenuIconImageFilename}";
-            menuManager.SetMenuBackgroundImage(newMenuBackgroundImageFilePathForMenu);
-            menuManager.SetMenuIconImage(newMenuIconImageFilePathForMenu);
+
+            if (sameBackgroundImageFilename == false)
+            {
+                // The background image file referenced in the menu is the pre 2019.0 image filename 
+                string newBackgroundImageFilePathForMenu = $"{relPath}/{areas}/{moduleIdUpper}/{folder}/{newBackgroundImageFilename}";
+                menuManager.SetMenuBackgroundImage(newBackgroundImageFilePathForMenu);
+
+                string backgroundImageLocation = FileUtilities.EnumerateFiles(solutionFolder, backgroundImageFilenameFromMenu).ToArray()[0];
+                var targetPath = Path.Combine(externalContentFolder, newBackgroundImageFilename);
+                File.Move(backgroundImageLocation, targetPath);
+            }
+            else
+            {
+                // Menu background image referenced in the menu is the new one
+
+                // Get the full path to the old background image (name and location)
+                var oldImagePath = Path.Combine(webFolder,
+                                        Constants.Pre2019Dot0ImageLocation,
+                                        Constants.Pre2019Dot0BackgroundImageName);
+                if (File.Exists(oldImagePath))
+                {
+                    // The old file exists in the original location. 
+                    // Let's copy it over to the new location with the new name.
+                    var targetPath = Path.Combine(externalContentFolder, newBackgroundImageFilename);
+                    File.Move(oldImagePath, targetPath);
+                }
+            }
+
+            if (sameIconImageFilename == false)
+            {
+                // The icon image file referenced in the menu is the pre 2019.0 icon image filename 
+                string newMenuIconImageFilePathForMenu = $"{relPath}/{areas}/{moduleIdUpper}/{folder}/{newIconImageFilename}";
+                menuManager.SetMenuIconImage(newMenuIconImageFilePathForMenu);
+
+                string iconImageLocation = FileUtilities.EnumerateFiles(solutionFolder, iconImageFilenameFromMenu).ToArray()[0];
+                var targetPath = Path.Combine(externalContentFolder, newIconImageFilename);
+                File.Move(iconImageLocation, targetPath);
+            }
+            else
+            {
+                // Menu background image referenced in the menu is the new one
+
+                // Get the full path to the old background image (name and location)
+                var oldImagePath = Path.Combine(webFolder,
+                                        Constants.Pre2019Dot0ImageLocation,
+                                        Constants.Pre2019Doc0IconImageName);
+                if (File.Exists(oldImagePath))
+                {
+                    // The old file exists in the original location. 
+                    // Let's copy it over to the new location with the new name.
+                    var targetPath = Path.Combine(externalContentFolder, newIconImageFilename);
+                    File.Move(oldImagePath, targetPath);
+                }
+            }
+
             #endregion
 
-            #region Step 5 - Move the files to their new location
-            string backgroundImageLocation = FileUtilities.EnumerateFiles(solutionFolder, backgroundImageFilenameFromMenu).ToArray()[0];
-            string iconImageLocation = FileUtilities.EnumerateFiles(solutionFolder, iconImageFilenameFromMenu).ToArray()[0];
-
-            var targetPath = Path.Combine(externalContentFolder, newMenuBackgroundImageFilename);
-            File.Move(backgroundImageLocation, targetPath);
-
-            targetPath = Path.Combine(externalContentFolder, newMenuIconImageFilename);
-            File.Move(iconImageLocation, targetPath);
-            #endregion
-
-            #region Step 6 - Update the Web project with the new folder and files
+            #region Step 5 - Update the Web project with the new folder and files
             // Now that the new 'ExternalContent' folder has been created and the 
             // two images have been renamed and moved there, let's add all of 
             // these to the Web project.
@@ -143,20 +197,25 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease
             var txtLines = allLines.ToList();
             var trimLines = allLines.Select(l => l.Trim()).ToList();
 
-            // Build the content to insert into the project file
-            var sb = new StringBuilder();
-            sb.AppendLine("  <ItemGroup>");
-            sb.AppendLine($"    <Content Include=\"Areas\\{moduleId.ToUpper()}\\{Constants.ExternalContentFolderName}\\**\" />");
-            sb.Append("  </ItemGroup>");
-
-            // Look for the last </ItemGroup>.
-            // We will insert the block just after this.
-            var lastIndex = trimLines.LastIndexOf(@"</ItemGroup>");
-            if (lastIndex > -1)
+            // Let's see if this line already exists. If it does, then we can skip the rest.
+            var mainContentLine = $"<Content Include=\"Areas\\{moduleId.ToUpper()}\\{Constants.ExternalContentFolderName}\\**\" />";
+            if (trimLines.Contains(mainContentLine) == false)
             {
-                var insertionIndex = lastIndex + 1;
-                txtLines.Insert(insertionIndex, sb.ToString());
-                File.WriteAllLines(webProjectFilePath, txtLines);
+                // Build the content to insert into the project file
+                var sb = new StringBuilder();
+                sb.AppendLine($"  <ItemGroup>");
+                sb.AppendLine($"    {mainContentLine}");
+                sb.Append($"  </ItemGroup>");
+
+                // Look for the last </ItemGroup>.
+                // We will insert the block just after this.
+                var lastIndex = trimLines.LastIndexOf(@"</ItemGroup>");
+                if (lastIndex > -1)
+                {
+                    var insertionIndex = lastIndex + 1;
+                    txtLines.Insert(insertionIndex, sb.ToString());
+                    File.WriteAllLines(webProjectFilePath, txtLines);
+                }
             }
             #endregion
         }

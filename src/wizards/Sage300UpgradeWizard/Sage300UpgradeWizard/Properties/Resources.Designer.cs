@@ -425,10 +425,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
         ///
         ///It&apos;s not necessary to copy the content from all versions of Microsoft.NET
-        ///Only version 4.0.30319 is necessary. 
-        ///
-        ///
-        ///.
+        ///Only version 4.0.30319 is necessary. Copy the folder &apos;aspnet_client&apos; to [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificAspnetClientFolder {
             get {
@@ -486,7 +483,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create and populate &apos;aspnet_client&apos; folder.
+        ///   Looks up a localized string similar to Create &apos;aspnet_client&apos; folder (Manual Step).
         /// </summary>
         internal static string ReleaseSpecificTitleAspnetClientFolder {
             get {

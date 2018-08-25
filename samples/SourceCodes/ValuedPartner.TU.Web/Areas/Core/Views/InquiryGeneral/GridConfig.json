@@ -1,0 +1,106 @@
+{
+	ViewName : "OE0500",
+	ColumnFields :[
+		{
+			Title: "Order ID",
+			Field : "ORDUNIQ",
+			ColumnName : "ORDUNIQ",
+			DataType : "Decimal",
+			Precision: 0,
+			IsDrillDown: false
+		},
+		{
+			Title:"Line Number",
+			Field : "LINENUM",
+			ColumnName : "LINENUM",
+			DataType : "Int32",
+			IsDrillDown: false
+		},
+		{
+			Title: "Item",
+			Field : "ITEM",
+			ColumnName : "ITEM",
+			DataType : "String",
+			IsDrillDown: true,
+			DrillDownUrl:
+			{
+				Area : "IC",
+				ControllerName : "Item",
+				ActionName : "Index"
+			}
+		},
+		{
+			Title: "Description",
+			Field : "DESC",
+			ColumnName : "DESC",
+			DataType : "String",
+			IsDrillDown: false
+		},
+		{
+			Title: "Account Set",
+			Field : "ACCTSET",
+			ColumnName : "ACCTSET",
+			DataType : "String",
+			IsDrillDown: false
+		},
+		{
+			Title: "Category",
+			Field : "CATEGORY",
+			ColumnName : "CATEGORY",
+			DataType : "String",
+			IsDrillDown: false
+		},
+		{
+			Title: "Quantity Ordered",
+			Field : "QTYORDERED",
+			ColumnName : "QTYORDERED",
+			DataType : "Decimal",
+			Precision: 3,
+			IsDrillDown: false
+		},
+		{
+			Title: "Quantity Shipped",
+			Field : "QTYSHIPPED",
+			ColumnName : "QTYSHIPPED",
+			DataType : "Decimal",
+			Precision: 2,
+			IsDrillDown: false
+		},
+		{
+			Title: "Expected Shipment Date",
+			Field : "EXPDATE",
+			ColumnName : "EXPDATE",
+			DataType : "DateTime",
+			IsDrillDown: false
+		},		
+		{
+			Title: "Detail Completed",
+			Field : "COMPLETE",
+			ColumnName : "COMPLETE",
+			DataType : "DetailCompleted",
+			IsDrillDown: "false",
+			PresentationList: [
+				{
+					Selected: true, 
+					Text: "Not Completed",
+					Value: "0"
+				},
+				{
+					Selected: false, 
+					Text: "Completed Not In Database",
+					Value: "1"
+				},
+				{
+					Selected: false, 
+					Text: "Completed",
+					Value: "2"
+				},
+				{
+					Selected: false, 
+					Text: "Processed by Day End",
+					Value: "3"
+				}
+			]
+		}	
+	]
+}

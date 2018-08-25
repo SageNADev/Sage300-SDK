@@ -1,0 +1,118 @@
+{
+	ViewName : "OE0520",
+	ModelName: "Order",
+	Description: "OE All Orders",
+	Fields :[
+		{
+			Field : "ORDNUMBER",
+			FieldIndex: 2,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "OrderEntry",
+				Action : "Index"
+			}			
+		},
+		{
+			Field : "CUSTOMER",
+			FieldIndex: 3,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "AR",
+				Controller : "Customer",
+				Action : "Index"
+			}			
+		},
+		{
+			Field : "REFERENCE",
+			FieldIndex: 38,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "TYPE",
+			DataType : "String",
+			FieldIndex: 39,
+			IsFilterable: true,
+			IsDrilldown: false,
+			List: 
+			[
+				{
+					Text: "Active",
+					Value: "1"
+				},
+				{
+					Text: "Future",
+					Value: "2"
+				},
+				{
+					Text: "Standing",
+					Value: "3"
+				},
+				{
+					Text: "Quote",
+					Value: "4"
+				}
+			]
+		},
+		{
+			Field : "ORDDATE",
+			FieldIndex: 40,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+
+		{
+			Field : "EXPDATE",
+			FieldIndex: 41,
+			DataType : "DateTime",
+			IsFilterable: false,
+			IsDrilldown: false
+		},
+		{
+			Field : "QTEXPDATE",
+			FieldIndex: 42,
+			DataType : "DateTime",
+			IsFilterable: true,
+			Precision: 3,
+			IsDrilldown: false
+		},
+		{
+			Field : "ONHOLD",
+			FieldIndex: 52,
+			DataType : "Bool",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "DESC",
+			FieldIndex: 13,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "INVNETWTX",
+			FieldIndex: 155,
+			DataType : "Decimal",
+			IsFilterable: true,
+			IsDrilldown: false
+		},	
+		
+		{
+			Field : "ORRATEDATE",
+			FieldIndex: 66,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: "false",
+		}	
+	]
+}
