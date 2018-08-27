@@ -75,18 +75,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
                 results.RemoveAll(f => ignoreDirectories.Exists(i => !String.IsNullOrWhiteSpace(i) && f.Contains(i)));
             }
             return results;
+            /// <summary>
+            /// Create a folder if it doesn't yet exist.
+            /// </summary>
+            /// <param name="folderPath">This is the folder path as a string</param>
+            /// 
         }
 
         /// <summary>
         /// Create a folder if it doesn't yet exist.
         /// </summary>
         /// <param name="folderPath">This is the folder path as a string</param>
-        public static void CreateFolderIfNotExists(string folderPath)
+        /// <returns>true = folder already existed | false = folder did not already exist</returns>
+        public static bool CreateFolderIfNotExists(string folderPath)
         {
-            if (Directory.Exists(folderPath) == false)
+            var folderAlreadyExisted = Directory.Exists(folderPath);
+            if (folderAlreadyExisted == false)
             {
                 Directory.CreateDirectory(folderPath);
             }
+
+            return folderAlreadyExisted;
         }
     }
 }

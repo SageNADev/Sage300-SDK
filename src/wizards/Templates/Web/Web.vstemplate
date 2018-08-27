@@ -701,9 +701,11 @@
             </Folder>
             <Folder Name="layouts" TargetFolderName="layouts">
               <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             </Folder>
             <Folder Name="libs" TargetFolderName="libs">
               <ProjectItem ReplaceParameters="false" TargetFileName="common-template.less">common-template.less</ProjectItem>

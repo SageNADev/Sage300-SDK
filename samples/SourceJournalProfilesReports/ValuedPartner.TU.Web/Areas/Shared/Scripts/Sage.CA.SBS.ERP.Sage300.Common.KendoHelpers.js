@@ -1,22 +1,4 @@
-﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy of 
-// this software and associated documentation files (the "Software"), to deal in 
-// the Software without restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-// Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -552,6 +534,9 @@ $.extend(sg.utls.kndoUI, {
     * @return value
     */
     getFormattedNumber: function (val) {
+        if (typeof val === 'string' || val instanceof String) {
+            val = parseFloat(val);
+        }
         return kendo.toString(val, "n0");
     },
 
@@ -832,6 +817,9 @@ $.extend(sg.utls.kndoUI, {
     getFormattedDecimal: function (amount, decimalPlaces) {
         if (amount === "" || amount === null)
             amount = 0;
+        if (typeof amount === 'string' || amount instanceof String) {
+            amount = parseFloat(amount);
+        }
         if (decimalPlaces != null) {
             //Using kendo UI native funciton is better choice, due to it would be easy to handle Culture formating
             return kendo.toString(amount, "n" + decimalPlaces);
@@ -853,8 +841,10 @@ $.extend(sg.utls.kndoUI, {
         $(numericTextBoxDataValue).off("input");
         $(numericTextBoxDataValue).on("input", function (e) {
             var val = numericTextBoxDataValue.val();
-            var parts = val.split(".");
-            if (val.indexOf(".") !== -1) {
+            var decimalSeparator = kendo.culture().numberFormat['.'];
+            var parts = val.split(decimalSeparator);
+
+            if (val.indexOf(decimalSeparator) !== -1) {
                 if (parts[1].length > numberOfDecimals) {
                     numericTextBoxDataValue.val(val.substr(0, val.length - 1));
                 }
@@ -867,11 +857,10 @@ $.extend(sg.utls.kndoUI, {
 
                 if (numeralLength > numberOfNumerals) {
                     if (parts.length > 1) {
-                        numericTextBoxDataValue.val(val.substr(0, numeralLength - 1) + "." + parts[1]);
+                        numericTextBoxDataValue.val(val.substr(0, numeralLength - 1) + decimalSeparator + parts[1]);
                     } else {
                         numericTextBoxDataValue.val(val.substr(0, numeralLength - 1));
                     }
-
                 }
             }
         });

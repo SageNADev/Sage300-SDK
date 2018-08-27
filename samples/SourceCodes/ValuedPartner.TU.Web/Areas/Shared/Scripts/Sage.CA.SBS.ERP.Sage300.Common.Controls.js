@@ -1,22 +1,4 @@
-﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy of 
-// this software and associated documentation files (the "Software"), to deal in 
-// the Software without restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-// Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -35,6 +17,7 @@
         ApplyCheckboxStyle: function (checkboxHtml) {
             return "<span class='icon checkBox'>" + checkboxHtml + "</span>";
         },
+
         /**
          * Spans a copy of an HTML element with the 'radioboxHtml' CSS class.
          * 
@@ -43,6 +26,7 @@
         ApplyRadioboxStyle: function (radioboxHtml) {
             return "<span class='icon radioBox'>" + radioboxHtml + "</span>";
         },
+
         /**
          * Applies CSS styles for disabled or selected radiobutton elements.
          *
@@ -51,6 +35,7 @@
         ApplyCheckboxRadioButtonStyle: function (element) {
             sg.controls.ApplyCheckBoxRadioButtonDisable(element);
         },
+
         /**
          * Applies disablement or selection CSS styles to a specified checkbox or radiobutton element.
          *
@@ -75,6 +60,7 @@
                 }
             }
         },
+
         /**
          * Removes the disabled and selected styles from a specified checkbox or radiobutton element.
          *
@@ -88,6 +74,7 @@
                 $(element).parent().removeClass("rBox-disabled selected checked-disabled");
             }
         },
+
         /**
          * Uncheck all radio buttons and check the current selected one
          * 
@@ -104,6 +91,7 @@
             $('#' + currentButtonId).prop('checked', true);
             $('#' + currentButtonId).parent().addClass('focus selected');
         },
+
         /**
          * Initial the select behaviour of radio buttons
          * 
@@ -116,6 +104,7 @@
                 });
             });
         },
+
         /**
          * Applies the input focus to a specified element.
          * 
@@ -124,25 +113,28 @@
         Focus: function (element) {
             element.focus();
         },
+
         /**
-          * Applies the input focus to the list of a specified Kendo dropdown element.
-          * 
-          * @param {object} element The element to set the focus to.
-          */
+         * Applies the input focus to the list of a specified Kendo dropdown element.
+         * 
+         * @param {object} element The element to set the focus to.
+         */
         KendoDropDownFocus: function (element) {
             var dropdownlist = element.data("kendoDropDownList");
             dropdownlist.focus();
         },
+
         /**
          * Select the element with the focus.
-          * 
-          * @param {object} element The element to select.
+         * 
+         * @param {object} element The element to select.
          */
         Select: function (element) {
             if (element.is(':focus')) {
                 element.select();
             }
         },
+
         /**
          * Coalesce a string. 
          * 
@@ -154,22 +146,61 @@
             }
             return string;
         },
+
         /**
          * Disable a specified element. 
+         * 
+         * Note: the following comments are not currently relevant
+         *       because the specific block of code has been disabled.
+         * 
+         * If incoming element is a string, prefix it with a hashtag if necessary
+         * If incoming element is an object, skip hashtag prefix check/step
          *
          * @param {object} The element to disable.
          */ 
         disable: function (element) {
+            // var tp = $.type(element);
+            // if (tp === "string") {
+            //     element = this.prefixElementWithHashtagIfNecessary(element);
+            // }
             sg.controls.enableDisable(element, true);
         },
+
         /**
          * Enable a specified element. 
+         * 
+         * Note: the following comments are not currently relevant
+         *       because the specific block of code has been disabled.
+         * 
+         * If incoming element is a string, prefix it with a hashtag if necessary
+         * If incoming element is an object, skip hashtag prefix check/step
          *
          * @param {object} The element to enable.
          */
         enable: function (element) {
+            // var tp = $.type(element);
+            // if (tp === "string") {
+            //     element = this.prefixElementWithHashtagIfNecessary(element);
+            // }
             sg.controls.enableDisable(element, false);
         },
+
+        /**
+         * Note: This method is currently disabled
+         * 
+         * Inspect the element name and if it does not start
+         * with a hashtag #, prefix the element name with one
+         * and return
+         *
+         * @param {object} element - The element to inspect.
+         */
+        // prefixElementWithHashtagIfNecessary: function(element) {
+        //     var elm = String(element);
+        //     var hashTag = '#';
+        //     var index = elm.indexOf(hashTag);
+        //     return (index == 0) ? elm : hashTag + elm;
+        // },
+
         /**
          * Adds or removes the 'disabled' attribute from a specified element. 
          *
@@ -184,6 +215,7 @@
                 $(element).removeAttr("disabled");
             }
         },
+
         /**
          * Enables or disables a specified radiobutton, checkbox, or Kendo element. 
          *
@@ -222,12 +254,14 @@
          */
         applyAmountFormat: function(element, value) {
             var value = ko.utils.unwrapObservable(value());
-            if (sg.utls.homeCurrency != null)
+            if (sg.utls.homeCurrency != null) {
                 value = parseFloat(value).toFixed(sg.utls.homeCurrency.Decimals);
-            if ($(element)[0].nodeName == "LABEL")
-                $(element).text(value);
+            }
+            var text = kendo.toString(parseFloat(value), "n");
+            if ($(element)[0].nodeName == "LABEL") 
+                $(element).text(text);
             else
-                $(element).val(value);
+                $(element).val(text);
         }
     };
 }(this.sg = this.sg || {}, jQuery));
@@ -244,24 +278,31 @@ $(function () {
             });
         }
     });
+
     $(document).on('change', 'input[type="checkbox"]', function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
     });
+
     $(document).on('mouseenter', 'input[type="checkbox"]', function () {
         $(this).parent().addClass("cBox-hover");
     });
+
     $(document).on('mouseleave', 'input[type="checkbox"]', function () {
         $(this).parent().removeClass("cBox-hover");
     });
+
     $(document).on('change', 'input[type="radio"]', function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
     });
+
     $(document).on('mouseenter', 'input[type="radio"]', function () {
         $(this).parent().addClass("radioBox-hover");
     });
+
     $(document).on('mouseleave', 'input[type="radio"]', function () {
         $(this).parent().removeClass("radioBox-hover");
     });
+
     $(document).on('focus', 'input', function () {
         var $this = $(this)
             .one('mouseup.mouseupSelect', function () {

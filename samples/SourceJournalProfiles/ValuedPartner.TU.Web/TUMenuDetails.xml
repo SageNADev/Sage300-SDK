@@ -20,8 +20,6 @@
   CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-
-
 <Navigation>
   <!--TODO configure the menus for integrated with sage 300c-->
   <!--Second Level Menu Item, define the menu showed on Sage 300 online portal menu bar-->
@@ -41,8 +39,8 @@
     <IsGroupEnd>false</IsGroupEnd>
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
-    <IconName>ValuedPartner/menuIcon.png</IconName>
-    <MenuBackGoundImage>ValuedPartner/menuBackGroundImage.jpg</MenuBackGoundImage>
+    <IconName>../../../../Areas/TU/ExternalContent/icon_tu.png</IconName>
+    <MenuBackGoundImage>../../../../Areas/TU/ExternalContent/bg_menu_tu.jpg</MenuBackGoundImage>
   </item>
   <!--Third Level Menu Items Section Starts-->
   <item>

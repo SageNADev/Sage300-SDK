@@ -410,6 +410,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
                 if (HasMenuIconNameElement(e))
                 {
                     path = GetMenuIconImagePath(e);
+                    break;
                 }
             }
 
@@ -439,6 +440,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
                 if (HasMenuBackGroundImageElement(e))
                 {
                     path = GetMenuBackgroundImagePath(e);
+                    break;
                 }
             }
 

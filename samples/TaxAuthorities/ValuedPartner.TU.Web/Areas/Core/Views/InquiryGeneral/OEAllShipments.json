@@ -1,0 +1,99 @@
+{
+	ViewName : "OE0692",
+	ModelName: "Shipment",
+	Description: "OE All Shipments",
+	Fields :[
+		{
+			Field : "SHINUMBER",
+			FieldIndex: 2,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "ShipmentEntry",
+				Action : "Index"
+			}
+		},
+		{
+			Field : "ORDNUMBER",
+			FieldIndex: 3,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "OrderEntry",
+				Action : "Index"
+			}			
+		},
+		{
+			Field : "CUSTOMER",
+			DataType : "String",
+			FieldIndex: 5,
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "AR",
+				Controller : "Customer",
+				Action : "Index"
+			}
+		},
+		{
+			Field : "SHIDATE",
+			FieldIndex: 46,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "EXPDATE",
+			FieldIndex: 47,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "SHIPVIA",
+			FieldIndex: 48,
+			DataType : "String",
+			IsFilterable: false,
+			IsDrilldown: false
+		},
+		{
+			Field : "SHIDISCAMT",
+			FieldIndex: 144,
+			DataType : "Decimal",
+			IsFilterable: true,
+			Precision: 3,
+			IsDrilldown: false
+		},
+		{
+			Field : "SHISUBTOT",
+			FieldIndex: 146,
+			DataType : "Decimal",
+			Precision: 3,
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "SHINETWTX",
+			FieldIndex: 149,
+			DataType : "Decimal",
+			Precision: 3,
+			IsFilterable: true,
+			IsDrilldown: false
+		},		
+		{
+			Field : "SHITAXTOT",
+			FieldIndex: 430,
+			DataType : "Decimal",
+			Precision: 3,
+			IsFilterable: true,
+			IsDrilldown: "false",
+		}	
+	]
+}

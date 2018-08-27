@@ -1,0 +1,123 @@
+{
+	ViewName : "OE0500",
+	ModelName: "OrderDetail",
+	Description:"All order details",
+	Sql: "Select oh.CUSTOMER, od.ORDUNIQ, od.LINENUM, od.ITEM, od.[DESC], od.ACCTSET, od.CATEGORY, od.QTYORDERED, od.QTYSHIPPED, od.EXPDATE, od.COMPLETE from  SAMLTD.dbo.OEORDH oh inner join SAMLTD.dbo.OEORDD od on oh.ORDUNIQ = od.ORDUNIQ where oh.CUSTOMER = '1200' Order by oh.ORDUNIQ ",
+	Fields :[
+		{
+			Title: "Customer",
+			Field : "CUSTOMER",
+			FieldIndex: 3,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Order UniqueID",
+			Field : "ORDUNIQ",
+			FieldIndex: 1,
+			DataType : "Decimal",
+			Precision: 0,
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Line Number",
+			Field : "LINENUM",
+			FieldIndex: 2,
+			DataType : "Int32",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Item",
+			Field : "ITEM",
+			DataType : "String",
+			FieldIndex: 4,
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "IC",
+				ControllerName : "Item",
+				ActionName : "Index"
+			}
+		},
+		{
+			Title: "Description",
+			Field : "DESC",
+			FieldIndex: 6,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Account Set",
+			Field : "ACCTSET",
+			FieldIndex: 7,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Category",
+			Field : "CATEGORY",
+			FieldIndex: 10,
+			DataType : "String",
+			IsFilterable: false,
+			IsDrilldown: false
+		},
+		{
+			Title: "Quantity Ordered",
+			Field : "QTYORDERED",
+			FieldIndex: 15,
+			DataType : "Decimal",
+			IsFilterable: true,
+			Precision: 3,
+			IsDrilldown: false
+		},
+		{
+			Title: "Quantity Shipped",
+			Field : "QTYSHIPPED",
+			FieldIndex: 16,
+			DataType : "Decimal",
+			Precision: 2,
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Title: "Expired Date",
+			Field : "EXPDATE",
+			FieldIndex: 13,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},		
+		{
+			Title: "Complete Status",
+			Field : "COMPLETE",
+			FieldIndex: 50,
+			DataType : "DetailCompleted",
+			IsFilterable: true,
+			IsDrilldown: "false",
+			List: [
+				{
+					Text: "Not Completed",
+					Value: "0"
+				},
+				{
+					Text: "Completed Not In Database",
+					Value: "1"
+				},
+				{
+					Text: "Completed",
+					Value: "2"
+				},
+				{
+					Text: "Processed by Day End",
+					Value: "3"
+				}
+			]
+		}	
+	]
+}

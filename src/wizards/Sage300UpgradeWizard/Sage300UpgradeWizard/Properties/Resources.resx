@@ -279,7 +279,7 @@
     <value>Process the new ExternalContent folder</value>
   </data>
   <data name="ReleaseSpecificTitleAspnetClientFolder" xml:space="preserve">
-    <value>Create and populate 'aspnet_client' folder</value>
+    <value>Create 'aspnet_client' folder (Manual Step)</value>
   </data>
   <data name="ReleaseSpecificAspnetClientFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificAspnetClientFolder.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

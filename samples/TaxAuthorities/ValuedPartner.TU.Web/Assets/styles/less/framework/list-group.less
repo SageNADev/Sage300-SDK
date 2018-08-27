@@ -129,3 +129,48 @@ a.list-group-item {
   margin-bottom: 0;
   line-height: 1.3;
 }
+
+
+// Report lists
+//
+
+.report-list {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px dotted #fff;
+  background-image: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before {
+    content: "\6e";
+    font-family: "Sage Armonye Icons";
+    color: #00a4cf;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.k-header.k-filterable>.k-grid-filter {
+    margin-top: -3px;
+}
+
+// Kendo ListView
+//
+
+.k-listview {
+  border: none;
+}

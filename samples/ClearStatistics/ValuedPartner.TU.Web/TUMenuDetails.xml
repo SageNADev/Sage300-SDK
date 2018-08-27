@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
@@ -21,10 +21,8 @@
   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <Navigation>
-
   <!--TODO configure the menus for integrated with sage 300c-->
   <!--Second Level Menu Item, define the menu showed on Sage 300 online portal menu bar-->
-
   <item>
     <MenuID>TU2000</MenuID>
     <MenuName>TU2000</MenuName>
@@ -41,12 +39,10 @@
     <IsGroupEnd>false</IsGroupEnd>
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
-    <IconName>ValuedPartner/menuIcon.png</IconName>
-    <MenuBackGoundImage>ValuedPartner/menuBackGroundImage.jpg</MenuBackGoundImage>
+    <IconName>../../../../Areas/TU/ExternalContent/icon_tu.png</IconName>
+    <MenuBackGoundImage>../../../../Areas/TU/ExternalContent/bg_menu_tu.jpg</MenuBackGoundImage>
   </item>
-
   <!--Third Level Menu Items Section Starts-->
-
   <item>
     <MenuID>TU3000</MenuID>
     <MenuName>TU3000</MenuName>
@@ -64,9 +60,7 @@
     <IsWidget>false</IsWidget>
     <Isintelligence>false</Isintelligence>
   </item>
-
   <!--Fourth Level Menu Items Section Starts-->
-
   <item>
     <MenuID>TU4000</MenuID>
     <MenuName>TU4000</MenuName>
@@ -85,7 +79,5 @@
     <Isintelligence>false</Isintelligence>
     <ModuleName>TU</ModuleName>
   </item>
-
   <!--Fourth Level Menu Items Section End-->
-
 </Navigation>
