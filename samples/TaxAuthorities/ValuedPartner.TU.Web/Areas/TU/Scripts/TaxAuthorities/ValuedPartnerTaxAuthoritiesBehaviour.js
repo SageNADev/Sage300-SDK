@@ -549,9 +549,7 @@ var onFinderSuccess = {
         if (data) {
             if (sg.controls.GetString(taxAuthoritiesUI.taxAuthority) !== data.TaxAuthority) {
                 taxAuthoritiesUI.finderData = data;
-                taxAuthoritiesUISuccess.setFinderData();
-                taxAuthoritiesUI.checkIsDirty(taxAuthoritiesUI.get, taxAuthoritiesUI.taxAuthority);
-                sg.utls.clearValidations("frmtaxAuthorities");
+                taxAuthoritiesUI.checkIsDirty(taxAuthoritiesUISuccess.setFinderData, taxAuthoritiesUI.taxAuthority);
             }
         }
     },
