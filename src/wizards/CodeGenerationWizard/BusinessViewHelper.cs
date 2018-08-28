@@ -49,6 +49,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string TabTwo = "\t\t";
             public const string TabThree = "\t\t\t";
             public const string TabFour = "\t\t\t\t";
+            public const string BootstrapperFilenameBase = "Bootstrapper.cs";
             public const string WebBootstrapperFilenameBase = "WebBootstrapper.cs";
             public const int NotFoundInList = -1;
         }
@@ -727,7 +728,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.Constants.EntityName];
             var modelName = view.Properties[BusinessView.Constants.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectFolder;
-            var filename = moduleId + "Bootstrapper.cs";
+            var filename = moduleId + Constants.BootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
 
             if (File.Exists(filePath))
@@ -780,7 +781,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.Constants.EntityName];
             var modelName = view.Properties[BusinessView.Constants.ModelName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectFolder;
-            var filename = moduleId + "Bootstrapper.cs";
+            var filename = moduleId + Constants.BootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
 
             //const int RegisterServiceMethodIndex = 0;
@@ -934,7 +935,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var modelProjNs = settings.Projects[ProcessGeneration.Constants.ModelsKey][moduleId].ProjectName + ".Process";
             var servicesProjNs = settings.Projects[ProcessGeneration.Constants.ServicesKey][moduleId].ProjectName + ".Process";
 
-            var filename = moduleId + "Bootstrapper.cs";
+            var filename = moduleId + Constants.BootstrapperFilenameBase;
             var filePath = Path.Combine(pathProj, filename);
 
             const int RegisterServiceMethodIndex = 0;
@@ -988,7 +989,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     if (i == RegisterServiceMethodIndex)
                     {
-                        insertionIndex += 2;
+                        insertionIndex++;
                         var lineToAdd = linesToAdd[i];
 
                         // Need to remove the tabs '\t' before doing the lookup.
