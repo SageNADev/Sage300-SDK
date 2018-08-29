@@ -97,6 +97,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Begin Upgrade Process....
+        /// </summary>
+        internal static string BeginUpgradeProcess {
+            get {
+                return ResourceManager.GetString("BeginUpgradeProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IEXPLORE.EXE.
         /// </summary>
         internal static string Browser {
@@ -115,6 +124,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied all files from.
+        /// </summary>
+        internal static string CopiedAllFilesFrom {
+            get {
+                return ResourceManager.GetString("CopiedAllFilesFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         internal static string Dash {
@@ -124,11 +142,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to deleted.
+        /// </summary>
+        internal static string Deleted {
+            get {
+                return ResourceManager.GetString("Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to does not exist.
+        /// </summary>
+        internal static string DoesNotExist {
+            get {
+                return ResourceManager.GetString("DoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End.
         /// </summary>
         internal static string End {
             get {
                 return ResourceManager.GetString("End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End Upgrade Process.
+        /// </summary>
+        internal static string EndUpgradeProcess {
+            get {
+                return ResourceManager.GetString("EndUpgradeProcess", resourceCulture);
             }
         }
         
@@ -151,11 +196,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to exists.
+        /// </summary>
+        internal static string Exists {
+            get {
+                return ResourceManager.GetString("Exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extracted moduleid.
         /// </summary>
         internal static string ExtractedModuleId {
             get {
                 return ResourceManager.GetString("ExtractedModuleId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
             }
         }
         
@@ -602,6 +665,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string StepTitleMain {
             get {
                 return ResourceManager.GetString("StepTitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to.
+        /// </summary>
+        internal static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
         

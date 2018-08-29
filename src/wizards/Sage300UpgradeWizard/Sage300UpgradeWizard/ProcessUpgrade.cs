@@ -59,12 +59,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            Log(Resources.BeginUpgradeProcess);
+
 			// Save settings for local usage
 			_settings = settings;
 
-			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Web folder.
-			// If it does/did, then we will just update it in place instead of relocating it to the Solution folder.
-			bool AccpacPropsFileOriginallyInWebFolder = false;
+			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
+            bool AccpacPropsFileOriginallyInSolutionfolder = false;
 
             //Utilities.InitSettings(_settings);
             //var commonSteps = new CommonReleaseUpgradeSteps(_settings);
@@ -85,13 +86,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				{
                     #region Common Upgrade Steps
                     case 1:
-                        //commonSteps.SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
-                        SyncWebFiles(title, out AccpacPropsFileOriginallyInWebFolder);
+                        // Does the AccpacDotNetVersion.props file exist in the Solution folder?
+                        AccpacPropsFileOriginallyInSolutionfolder = IsAccpacDotNetVersionPropsLocatedInSolutionFolder();
+
+                        SyncWebFiles(title);
+
                         break;
 
 					case 2:
-                        //commonSteps.SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
-                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInWebFolder);
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
                         break;
 
                     #endregion
@@ -114,7 +117,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     #endregion
                 }
             }
-		}
+
+            Log(Resources.EndUpgradeProcess);
+        }
 
         #endregion
 
@@ -122,18 +127,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary> Synchronization of web project files </summary>
         /// <param name="title">Title of step being processed </param>
-        private void SyncWebFiles(string title, out bool accpacPropsInWebFolder)
+        private void SyncWebFiles(string title)
         {
             // Log start of step
-            LaunchLogEventStart(title);
-
-            // Check to see if the AccpacDotNetVersion.props file
-            // already exists in the Web folder.
-            // If it does, then just update it and do not relocate it to the Project folder
-            accpacPropsInWebFolder = IsAccpacDotNetVersionPropsLocatedInWebFolder();
+            LogEventStart(title);
 
             // Do the work :)
             DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder, ignoreDestinationFolder: false);
+            Log($"{Resources.CopiedAllFilesFrom} '{_settings.SourceFolder}' {Resources.To} '{_settings.DestinationWebFolder}'.");
 
             // Remove the files that are not actually part of the 'Web' bundle.
             // This is done because of the way VS2017 doesn't seem to allow embedding of zip
@@ -141,14 +142,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             File.Delete(Path.Combine(_settings.DestinationWebFolder, @"__TemplateIcon.ico"));
             File.Delete(Path.Combine(_settings.DestinationWebFolder, @"Items.vstemplate"));
 
-            if (!accpacPropsInWebFolder)
-            {
-                File.Delete(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
-            }
-
             // Log end of step
-            LaunchLogEventEnd(title);
-            LaunchLogEvent("");
+            LogEventEnd(title);
+            Log("");
         }
 
         /// <summary>
@@ -157,7 +153,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </summary>
         private string BackupSolution()
         {
-            LaunchLogEventStart($"Backing up solution...");
+            LogEventStart($"Backing up solution...");
             LaunchProcessingEvent($"Backing up solution...");
 
             // Create a backup folder if it doesn't already exist.
@@ -168,8 +164,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // because it lives within the solution folder itself.
             DirectoryCopy(solutionFolder, backupFolder, ignoreDestinationFolder: true);
 
-            LaunchLogEventEnd($"Backup complete.");
-            LaunchLogEvent("");
+            LogEventEnd($"Backup complete.");
+            Log("");
 
             return backupFolder;
         }
@@ -202,40 +198,71 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
         /// <param name="title">Title of step being processed </param>
-        private void SyncAccpacLibraries(string title, bool accpacPropsInWebFolder)
+
+        /// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
+        /// <param name="title">The title of this step</param>
+        /// <param name="accpacPropsOriginallyInSolutionFolder">
+        /// Boolean flag denoting if the Accpac props file originally existed
+        /// in the Solution folder.
+        /// If it did, we don't need to do anything because it will have been updated by the previous
+        /// wizard step. 
+        /// If it didn't already exist in the Solution folder, we need to remove it.
+        /// The SDK samples use a common Accpac props file located elsewhere in the
+        /// SDK folder structure ("Settings")
+        /// </param>
+        private void SyncAccpacLibraries(string title, bool accpacPropsOriginallyInSolutionFolder)
         {
             // Log start of step
-            LaunchLogEventStart(title);
+            LogEventStart(title);
 
-            // Only do this if the AccpacDotNetVersion.props file was not originally in the Web folder.
-            if (!accpacPropsInWebFolder)
+            // Remove the newly copied Accpac props file from the Web project folder
+            // It would likely have been copied during the previous SyncWebFiles() call.
+            RemoveExistingPropsFileFromWebProjectFolder();
+
+            // Only do this if the AccpacDotNetVersion.props file was not originally in the Solution folder.
+            // It may have been copied into the Solution folder by the previous step, even if it didn't 
+            // already exist there originally. 
+            if (!accpacPropsOriginallyInSolutionFolder)
             {
-                // Do the actual work :)
                 RemoveExistingPropsFileFromSolutionFolder();
-                CopyNewPropsFileToSolutionFolder();
+            }
+            else
+            {
+                CopyAccpacPropsFileToSolutionFolder();
             }
 
             // Log detail
             var txt = string.Format(Resources.UpgradeLibrary, 
                                     Constants.PerRelease.FromAccpacNumber, 
                                     Constants.PerRelease.ToAccpacNumber);
-            LaunchLogEvent($"{DateTime.Now} {txt}");
+            Log(txt);
 
             // Log end of step
-            LaunchLogEventEnd(title);
-            LaunchLogEvent("");
+            LogEventEnd(title);
+            Log("");
         }
 
         /// <summary>
-        /// Is there a copy of the AccpacDotNetversion.props file in the Web project folder?
+        /// Copy the AccpacDotNetProps file to the Solution folder
+        /// </summary>
+        private void CopyAccpacPropsFileToSolutionFolder()
+        {
+            var sourcePath = Path.Combine(_settings.SourceFolder, Constants.Common.AccpacPropsFile);
+            var destPath = Path.Combine(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
+            File.Copy(sourcePath, destPath, overwrite: true);
+        }
+
+        /// <summary>
+        /// Is there a copy of the AccpacDotNetversion.props file in the Solution folder?
         /// </summary>
         /// <returns>
-        /// true : AccpacDotNetVersion.props is in Web project folder 
-        /// false: AccpacDotNetVersion.props is in not in the Web project folder 
+        /// true : AccpacDotNetVersion.props is in Solution folder 
+        /// false: AccpacDotNetVersion.props is in not in the Solution folder 
         /// </returns>
-        private bool IsAccpacDotNetVersionPropsLocatedInWebFolder()
+        private bool IsAccpacDotNetVersionPropsLocatedInSolutionFolder()
         {
-            return File.Exists(Path.Combine(_settings.DestinationWebFolder, @"AccpacDotNetVersion.props"));
+            return File.Exists(Path.Combine(_settings.DestinationSolutionFolder, 
+                                            Constants.Common.AccpacPropsFile));
         }
 
         /// <summary>
@@ -244,19 +271,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </summary>
         private void RemoveExistingPropsFileFromSolutionFolder()
         {
-            var oldPropsFile = Path.Combine(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
-            if (File.Exists(oldPropsFile)) { File.Delete(oldPropsFile); }
+            var oldPropsFile = Path.Combine(_settings.DestinationSolutionFolder, 
+                                            Constants.Common.AccpacPropsFile);
+            RemoveExistingFile(oldPropsFile);
         }
 
         /// <summary>
-        /// Copy the new AccpacDotNetVersion.props file to the Solution
-        /// folder
+        /// Remove an existing AccpacDotNetVersion.props file from the
+        /// Web project folder if it exists.
         /// </summary>
-        private void CopyNewPropsFileToSolutionFolder()
+        private void RemoveExistingPropsFileFromWebProjectFolder()
         {
-            var file = Path.Combine(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
-            var srcFilePath = Path.Combine(_settings.SourceFolder, Constants.Common.AccpacPropsFile);
-            File.Copy(srcFilePath, file, true);
+            var oldPropsFile = Path.Combine(_settings.DestinationWebFolder,
+                                            Constants.Common.AccpacPropsFile);
+            RemoveExistingFile(oldPropsFile);
+        }
+
+        /// <summary>
+        /// Remove an existing file
+        /// </summary>
+        /// <param name="filePath">The file path specification</param>
+        private void RemoveExistingFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                Log($"{Resources.File} '{filePath}' {Resources.Exists}.");
+                File.Delete(filePath);
+                Log($"{Resources.File} '{filePath}' {Resources.Deleted}.");
+            }
+            else
+            {
+                Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
+            }
         }
 
         /// <summary>
@@ -266,14 +312,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public void ProcessExternalContentUpdates(string title)
         {
             // Log start of step
-            LaunchLogEventStart(title);
+            LogEventStart(title);
 
             var processor = new ExternalContentProcessor(_settings);
             processor.Process();
 
             // Log end of step
-            LaunchLogEventEnd(title);
-            LaunchLogEvent("");
+            LogEventEnd(title);
+            Log("");
         }
 
         /// <summary>
@@ -283,13 +329,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public void ProcessAspnetClientFolder(string title)
         {
             // Log start of step
-            LaunchLogEventStart(title);
+            LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
 
             // Log end of step
-            LaunchLogEventEnd(title);
-            LaunchLogEvent("");
+            LogEventEnd(title);
+            Log("");
         }
 
 #if ENABLE_TK_244885
@@ -345,14 +391,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     file.CopyTo(filePath, true);
 
                     // Log detail
-                    LaunchLogEvent($"{DateTime.Now} {Resources.AddReplaceFile} {filePath}");
+                    Log($"{Resources.AddReplaceFile} {filePath}");
                 }
                 catch (IOException e)
                 {
                     // Likely just a locked file.
                     // Just log it and move on.
-                    LaunchLogEvent($"{Resources.ExceptionThrownPossibleLockedFile} : {file.FullName.ToString()}");
-                    LaunchLogEvent($"{e.Message}");
+                    Log($"{Resources.ExceptionThrownPossibleLockedFile} : {file.FullName.ToString()}");
+                    Log($"{e.Message}");
                 }
             }
 
@@ -378,24 +424,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <param name="text">Step name</param>
         private void LaunchProcessingEvent(string text) => ProcessingEvent?.Invoke(text);
 
-        /// <summary> Update Log </summary>
-        /// <param name="text">Text to log</param>
-        private void LaunchLogEvent(string text) => LogEvent?.Invoke(text);
+        /// <summary>
+        /// Update log
+        /// </summary>
+        /// <param name="text">The message to log</param>
+        /// <param name="withTimeStamp">
+        /// Optional boolean flag denoting whether or not to insert a timestamp
+        /// Default is true
+        /// </param>
+        private void Log(string text, bool withTimestamp = true)
+        {
+            var msg = text;
+            if (withTimestamp)
+            {
+                msg = $"{DateTime.Now} - {text}";
+            }
+            LogEvent?.Invoke(msg);
+        }
 
         /// <summary> Update Log - Event Start</summary>
         /// <param name="text">Text to log</param>
-        private void LaunchLogEventStart(string text)
+        private void LogEventStart(string text)
         {
-            var s = $"{DateTime.Now} -- {Resources.Start} {text} --";
-            LogEvent?.Invoke(s);
+            var s = $"{Resources.Start} {text} --";
+            Log(s);
         }
 
         /// <summary> Update Log - Event End</summary>
         /// <param name="text">Text to log</param>
-        private void LaunchLogEventEnd(string text)
+        private void LogEventEnd(string text)
         {
-            var s = $"{DateTime.Now} -- {Resources.End} {text} --";
-            LogEvent?.Invoke(s);
+            var s = $"{Resources.End} {text} --";
+            Log(s);
         }
         #endregion
     }
