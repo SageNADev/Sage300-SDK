@@ -287,4 +287,28 @@
   <data name="ReleaseSpecificDescAspnetClientFolder" xml:space="preserve">
     <value>This is a manual step that may need to be performed by our development partners.</value>
   </data>
+  <data name="BeginUpgradeProcess" xml:space="preserve">
+    <value>Begin Upgrade Process...</value>
+  </data>
+  <data name="CopiedAllFilesFrom" xml:space="preserve">
+    <value>Copied all files from</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>deleted</value>
+  </data>
+  <data name="DoesNotExist" xml:space="preserve">
+    <value>does not exist</value>
+  </data>
+  <data name="EndUpgradeProcess" xml:space="preserve">
+    <value>End Upgrade Process</value>
+  </data>
+  <data name="Exists" xml:space="preserve">
+    <value>exists</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
 </root>
