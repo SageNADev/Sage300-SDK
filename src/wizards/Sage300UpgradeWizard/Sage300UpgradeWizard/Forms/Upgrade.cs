@@ -58,8 +58,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Source Folder </summary>
 		private readonly string _sourceFolder;
 
-		/// <summary> Destination Folder </summary>
-		private readonly string _destinationFolder;
+        /// <summary> Accpac props file Source Folder </summary>
+        private readonly string _propsSourceFolder;
+
+        /// <summary> Destination Folder </summary>
+        private readonly string _destinationFolder;
 
         /// <summary> Destination Web Folder </summary>
         private readonly string _destinationWebFolder;
@@ -108,10 +111,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			_destinationFolder = destination;
 			_destinationWeb = destinationWeb;
 			_sourceFolder = Path.GetDirectoryName(templatePath);
+            _propsSourceFolder = Utilities.FileUtilities.GetParentPathFromPath(_sourceFolder);
 			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(Constants.Common.WebSuffix));
 		}
-
-
 		#endregion
 
 		#region Button Events
@@ -284,6 +286,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     {
                         WizardSteps = _wizardSteps,
                         SourceFolder = _sourceFolder,
+                        PropsSourceFolder = _propsSourceFolder,
                         DestinationWebFolder = _destinationWebFolder,
                         DestinationSolutionFolder = Directory.GetParent(_destinationWebFolder).ToString(),
                         Solution = _solution

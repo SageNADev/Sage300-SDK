@@ -311,4 +311,7 @@
   <data name="To" xml:space="preserve">
     <value>to</value>
   </data>
+  <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
+    <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
+  </data>
 </root>

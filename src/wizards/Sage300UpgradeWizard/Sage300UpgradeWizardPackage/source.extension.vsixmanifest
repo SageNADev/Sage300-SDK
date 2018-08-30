@@ -25,6 +25,7 @@
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="ItemTemplates\Items.zip" />
+        <Asset d:Source="File" Path="ItemTemplates" Type="Microsoft.VisualStudio.ItemTemplate" d:TargetPath="ItemTemplates\AccpacDotNetVersion.props" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />

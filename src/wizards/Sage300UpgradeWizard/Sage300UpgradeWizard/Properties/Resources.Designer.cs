@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Accpac library was not found in the solution folder. No upgrade was necessary..
+        /// </summary>
+        internal static string AccpacPropsFileDoesNotExistInSolutionFolder {
+            get {
+                return ResourceManager.GetString("AccpacPropsFileDoesNotExistInSolutionFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add/Replace file: .
         /// </summary>
         internal static string AddReplaceFile {
