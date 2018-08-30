@@ -97,5 +97,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
 
             return folderAlreadyExisted;
         }
+
+
+        /// <summary>
+        /// Returns the parent folder of another folder
+        /// Example:
+        ///    Input = C:\path1\path2\path3\
+        ///    Output = C:\path1\path2\
+        /// </summary>
+        /// <param name="path">The string representation of a path to parse for its parent folder</param>
+        /// <returns>The parent path as a string</returns>
+        public static string GetParentPathFromPath(string path)
+        {
+            var parentPath = string.Empty;
+
+            if (path.Length < 1) return path;
+
+            var parts = path.Split(new char[] { Path.DirectorySeparatorChar });
+            for (var index = 0; index < parts.Length - 1; index++)
+            {
+                parentPath += parts[index] + Path.DirectorySeparatorChar.ToString();
+            }
+
+            return parentPath;
+        }
     }
 }

@@ -59,10 +59,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
+            LogSpacerLine();
 
-			// Save settings for local usage
-			_settings = settings;
+            // Save settings for local usage
+            _settings = settings;
 
 			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
             bool AccpacPropsFileOriginallyInSolutionfolder = false;
@@ -71,12 +73,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //var commonSteps = new CommonReleaseUpgradeSteps(_settings);
             //var customSteps = new CustomReleaseUpgradeSteps(_settings);
 
-	#region Backup Solution - Currently Disabled
-			//_backupFolder = BackupSolution();
-	#endregion
+            #region Backup Solution - Currently Disabled
+            //_backupFolder = BackupSolution();
+            #endregion
 
-			// Start at step 1 and ignore last two steps
-			for (var index = 0; index < _settings.WizardSteps.Count; index++)
+            // Does the AccpacDotNetVersion.props file exist in the Solution folder?
+            AccpacPropsFileOriginallyInSolutionfolder = IsAccpacDotNetVersionPropsLocatedInSolutionFolder();
+
+            // Start at step 1 and ignore last two steps
+            for (var index = 0; index < _settings.WizardSteps.Count; index++)
 			{
 				var title = _settings.WizardSteps[index].Title;
 				LaunchProcessingEvent(title);
@@ -86,11 +91,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				{
                     #region Common Upgrade Steps
                     case 1:
-                        // Does the AccpacDotNetVersion.props file exist in the Solution folder?
-                        AccpacPropsFileOriginallyInSolutionfolder = IsAccpacDotNetVersionPropsLocatedInSolutionFolder();
-
                         SyncWebFiles(title);
-
                         break;
 
 					case 2:
@@ -118,7 +119,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 }
             }
 
+            LogSpacerLine();
             Log(Resources.EndUpgradeProcess);
+            LogSpacerLine('-');
         }
 
         #endregion
@@ -212,30 +215,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </param>
         private void SyncAccpacLibraries(string title, bool accpacPropsOriginallyInSolutionFolder)
         {
+            var msg = string.Empty;
+
             // Log start of step
             LogEventStart(title);
 
-            // Remove the newly copied Accpac props file from the Web project folder
-            // It would likely have been copied during the previous SyncWebFiles() call.
-            RemoveExistingPropsFileFromWebProjectFolder();
-
-            // Only do this if the AccpacDotNetVersion.props file was not originally in the Solution folder.
-            // It may have been copied into the Solution folder by the previous step, even if it didn't 
-            // already exist there originally. 
-            if (!accpacPropsOriginallyInSolutionFolder)
+            if (accpacPropsOriginallyInSolutionFolder == true)
             {
-                RemoveExistingPropsFileFromSolutionFolder();
+                CopyAccpacPropsFileToSolutionFolder();
+
+                // Log detail
+                msg = string.Format(Resources.UpgradeLibrary,
+                                        Constants.PerRelease.FromAccpacNumber,
+                                        Constants.PerRelease.ToAccpacNumber);
             }
             else
             {
-                CopyAccpacPropsFileToSolutionFolder();
+                msg = Resources.AccpacPropsFileDoesNotExistInSolutionFolder;
             }
 
-            // Log detail
-            var txt = string.Format(Resources.UpgradeLibrary, 
-                                    Constants.PerRelease.FromAccpacNumber, 
-                                    Constants.PerRelease.ToAccpacNumber);
-            Log(txt);
+            Log(msg);
 
             // Log end of step
             LogEventEnd(title);
@@ -247,7 +246,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// </summary>
         private void CopyAccpacPropsFileToSolutionFolder()
         {
-            var sourcePath = Path.Combine(_settings.SourceFolder, Constants.Common.AccpacPropsFile);
+            var sourcePath = Path.Combine(_settings.PropsSourceFolder, Constants.Common.AccpacPropsFile);
             var destPath = Path.Combine(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
             File.Copy(sourcePath, destPath, overwrite: true);
         }
@@ -440,6 +439,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 msg = $"{DateTime.Now} - {text}";
             }
             LogEvent?.Invoke(msg);
+        }
+
+        /// <summary>
+        /// Log a line with some characters to denote a divider.
+        /// </summary>
+        /// <param name="spacerCharacter">The character to use for the line</param>
+        /// <param name="length">The length of the line</param>
+        private void LogSpacerLine(char spacerCharacter = ' ', int length = 60)
+        {
+            var msg = new String(spacerCharacter, length);
+            Log(msg);
         }
 
         /// <summary> Update Log - Event Start</summary>

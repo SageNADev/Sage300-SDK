@@ -37,6 +37,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Source Folder </summary>
         public string SourceFolder { get; set; }
 
+        /// <summary> Location of Accpac props file </summary>
+        public string PropsSourceFolder { get; set; }
+
         /// <summary> Destination Web Folder </summary>
         public string DestinationWebFolder { get; set; }
 
