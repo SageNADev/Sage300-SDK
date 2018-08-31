@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
 
 @model Sage.CA.SBS.ERP.Sage300.Common.Models.UserAccess
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
@@ -7,9 +7,15 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
 
 @{
-    var import = ViewData[OptionsMenu.Import] == null ? Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) : Convert.ToBoolean(ViewData[OptionsMenu.Import]);
-    var export = ViewData[OptionsMenu.Export] == null ? Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) : Convert.ToBoolean(ViewData[OptionsMenu.Export]);
-    var customize = ViewData[OptionsMenu.Customize] == null ? Model.SecurityType.HasFlag(SecurityType.Admin) : Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
+    var import = ViewData[OptionsMenu.Import] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Import]);
+    var export = ViewData[OptionsMenu.Export] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Export]);
+    var customize = ViewData[OptionsMenu.Customize] == null ? 
+        Model.SecurityType.HasFlag(SecurityType.Admin) : 
+        Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
 }
 
 @if (export || import || customize)

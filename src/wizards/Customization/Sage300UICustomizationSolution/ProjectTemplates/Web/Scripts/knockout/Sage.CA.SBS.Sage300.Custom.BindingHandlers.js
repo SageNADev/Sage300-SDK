@@ -1,4 +1,5 @@
-﻿
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+
 ko.bindingHandlers.SagekendoGrid =
     {
         init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
@@ -244,6 +245,16 @@ ko.bindingHandlers.Amount = {
         sg.controls.applyAmountFormat(element, valueAccessor);
     },
     update: function (element, valueAccessor) {
+        var value = ko.utils.unwrapObservable(valueAccessor());
+        var culture = kendo.culture();
+        var locale = culture.name;
+        var symbol = culture.numberFormat['.'];
+        var strValue = value.toString();
+
+        if (strValue.indexOf(symbol) > 0) {
+            var val = kendo.parseFloat(strValue, locale).toString();
+            valueAccessor()(val);
+        }
         sg.controls.applyAmountFormat(element, valueAccessor);
     }
 };
@@ -276,6 +287,7 @@ ko.bindingHandlers.sagevalue = {
     update: function (element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor());
         var result = ko.bindingHandlers.value.update.apply(this, arguments);
+        var $element = $(element);
 
         if (element.type === "text") {
             if (value) {
@@ -285,7 +297,7 @@ ko.bindingHandlers.sagevalue = {
                 // When disallowed values are copy-pasted, the values are corrected using Javascript, 
                 // and in this scenario, Knockout will not be updated. Instead, the code below will 
                 // truncate the disallowed characters and update Knockout correctly.
-                var attr = $(element).attr('formatTextbox');
+                var attr = $element.attr('formatTextbox');
                 if (attr != undefined) {
                     var invalidChars;
                     if (attr === 'alphaNumeric') {
@@ -297,22 +309,45 @@ ko.bindingHandlers.sagevalue = {
                     else if (attr === 'numeric') {
                         invalidChars = /[^0-9]/gi;
                     }
-                    var value = $(element).val();
+
+                    value = $element.val();
                     if (invalidChars.test(value)) {
                         var newValue = value.replace(invalidChars, "");
-                        $(element).val(newValue)
+                        $element.val(newValue);
                         valueAccessor()(newValue);
                     }
                 }
 
-                if ($(element).hasClass('txt-upper')) {
+                if ($element.hasClass('txt-upper')) {
                     valueAccessor()(valueAccessor()().toUpperCase());
                 }
             }
         }
+        //numeric value to remove culture format 
+        if (value && $element.hasClass('numeric') && !$element.is(':disabled')) {
+            var culture = kendo.culture();
+            var symbol = culture.numberFormat['.'];
+            var strValue = value.toString();
+
+            //For inputs such as ".123", append a 0 in front of it since the value may be needed before Kendo formats the number
+            //For example, AP Payment Entry Bank Exchange Rate needs to make an ajax call to check bank spread before Kendo formats it
+            if (strValue.indexOf(symbol) === 0) {
+                strValue = '0' + strValue;
+            }
+
+            if (symbol !== "." && strValue.indexOf(symbol) > 0) {
+                var writable = (typeof valueAccessor() === 'function') && (valueAccessor().hasWriteFunction === undefined || valueAccessor().hasWriteFunction);
+                if (writable) {
+                    var val = kendo.parseFloat(strValue, culture.name).toString();
+                    valueAccessor()(val);
+                }
+            }
+        }
+
         if (element.type === "radio") {
             sg.controls.ApplyCheckboxRadioButtonStyle(element);
         }
+
         return result;
     }
 };

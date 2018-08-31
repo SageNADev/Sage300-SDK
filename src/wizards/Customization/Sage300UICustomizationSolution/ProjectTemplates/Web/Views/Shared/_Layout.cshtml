@@ -34,6 +34,7 @@
     int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows", false), out numberOfActiveWindows);
     var isOnPremise = ConfigurationHelper.IsOnPremise;
     var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
+    var hasGlobalSearchLicense = ViewBag.HasGlobalSearchLicense;
 }
 <html class="template-side-nav page-collapsed home-page">
 <head>
@@ -60,6 +61,7 @@
         var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
         var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
         var oAuthLocation = '@oAuthServer';
+        var menuUserPreferenceKey = '@ViewBag.menuUserPreferenceKey';
 
         @functions {
             public String GetSIRCPort(string path)
@@ -82,13 +84,13 @@
     {
         @Html.Partial(Constants.FeatureTour)
         @Html.Partial(Constants.CommonPortalLayout)
+        <div id="message"></div>
+        <div id="success"></div>
         <header class="header" id="globalHeader">
             <div class="header-global">
                 <a class="logo-product" id="logoSage300"><img src="~/Content/Images/sage_300_logo_white.png" alt="Sage 300 Logo" width="92" height="26"></a>
                 <div class="globalNavigation">
                     <div class="last_container session-date">
-                        <div id="message"></div>
-                        <div id="success"></div>
                         <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
                         <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
                         <span id="spnSessionDate"></span>
@@ -129,6 +131,12 @@
                             <li id="companyNameMenu">
                                 <span class="txt-top-menu">@RenderSection("companyName", required: false)</span>
                             </li>
+                            @if (hasGlobalSearchLicense)
+                            {
+                                <li class="menu-item-with-icon" id="globalSearch">
+                                    <i class="global-search glyphicon glyphicon-md glyphicon-magnifying-glass" title="@NavigationResx.SearchTitle"><span>@NavigationResx.Search</span></i>
+                                </li>
+                            }
                             <li class="menu-item-with-icon" id="helpMenu">
                                 <i class="help glyphicon glyphicon-md glyphicon-quick-help" title="@NavigationResx.HelpTitle"><span>@NavigationResx.Help</span></i>
                                 <ul>
@@ -161,6 +169,7 @@
                         </li>
                         <li class="divider"></li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
+                        <li class="divider"></li>
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
                     <div id="menuPrefTogglerAlt" >
@@ -314,7 +323,9 @@
 
     <!--Start Inquiries-->
         @Html.Partial("~/Areas/Core/Views/Inquiry/_InquiryTool.cshtml")
+        @Scripts.Render("~/bundles/InquiryPanelUI")
         @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_SaveQueryPanel.cshtml")
+        @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_OpenQueryPanel.cshtml")
         @Scripts.Render("~/bundles/SaveInquiryQuery")
 
     <!--End Inquiries-->
@@ -327,8 +338,8 @@
                 <div class="fild-content">
                     <div id="body-text" />
                     <div class="modelBox_controlls">
-                        <button type="button" class="btn-secondary mar_lef_2 delete-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
-                        <button type="button" class="btn-primary delete-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+                        <input type="button" class="btn btn-secondary delete-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
+                        <input type="button" class="btn btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
                     </div>
                 </div>
             </div>
@@ -341,8 +352,8 @@
                 <div class="fild-content">
                     <div id="body-text" />
                     <div class="modelBox_controlls">
-                        <button type="button" class="btn-secondary mar_lef_2 dialog-cancel" id="kendoConfirmationCancelButton">@CommonResx.No</button>
-                        <button type="button" class="btn-primary dialog-confirm" id="kendoConfirmationAcceptButton">@CommonResx.Yes</button>
+                        <input type="button" class="btn btn-secondary dialog-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
+                        <input type="button" class="btn btn-primary dialog-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
                     </div>
                 </div>
             </div>
