@@ -506,6 +506,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The version information for some Crystal Reports components has changed.
+        ///
+        ///This step will automatically update those component references from
+        ///version {0} to {1}.
+        ///
+        ///This step will be done automatically by the Upgrade Wizard.
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificCrystalReportsVersionNumberUpdate {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificCrystalReportsVersionNumberUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
         /// </summary>
         internal static string ReleaseSpecificDescAspnetClientFolder {
@@ -520,6 +536,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificDescConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will update the version numbers for some Crystal Reports components..
+        /// </summary>
+        internal static string ReleaseSpecificDescCrystalReportsVersionNumberUpdate {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescCrystalReportsVersionNumberUpdate", resourceCulture);
             }
         }
         
@@ -569,6 +594,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crystal Reports version number update.
+        /// </summary>
+        internal static string ReleaseSpecificTitleCrystalReportsVersionNumberUpdate {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleCrystalReportsVersionNumberUpdate", resourceCulture);
             }
         }
         

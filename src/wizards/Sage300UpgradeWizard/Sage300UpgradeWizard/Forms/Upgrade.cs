@@ -20,6 +20,7 @@
 
 #region Imports
 using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.Collections.Generic;
@@ -191,6 +192,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     string.Format(Resources.ReleaseSpecificExternalContentFolder,
                                   Constants.Common.DummyModuleId));
 
+            // 2019.0 : Process Crystal Reports version number update (Automatic step)
+            AddStep(Resources.ReleaseSpecificTitleCrystalReportsVersionNumberUpdate,
+                    Resources.ReleaseSpecificDescCrystalReportsVersionNumberUpdate,
+                    string.Format(Resources.ReleaseSpecificCrystalReportsVersionNumberUpdate,
+                                  CrystalReportsVersionNumberProcessor.Constants.PreviousVersionNumber,
+                                  CrystalReportsVersionNumberProcessor.Constants.NewVersionNumber));
+
             // 2019.0 : Process new 'AspNet_Client' folder (Manual step)
             AddStep(Resources.ReleaseSpecificTitleAspnetClientFolder,
                     Resources.ReleaseSpecificDescAspnetClientFolder,
@@ -232,6 +240,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 #endif
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleExternalContentFolder}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleCrystalReportsVersionNumberUpdate}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleAspnetClientFolder}");
 
             // Same for all upgrades

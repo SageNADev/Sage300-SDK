@@ -100,7 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Interfaces\ISettings.cs" />
+    <Compile Include="PerRelease\CrystalReportsVersionNumberProcessor.cs" />
     <Compile Include="PerRelease\ExternalContentProcessor.cs" />
     <Compile Include="ProcessUpgrade.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -167,6 +169,7 @@
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
     <Content Include="content\ReleaseSpecificAspnetClientFolder.txt" />
+    <Content Include="content\ReleaseSpecificCrystalReportsVersionNumberUpdate.txt" />
     <Content Include="content\ReleaseSpecificExternalContentFolder.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
     <Content Include="Images\Caaccpac.ico" />
