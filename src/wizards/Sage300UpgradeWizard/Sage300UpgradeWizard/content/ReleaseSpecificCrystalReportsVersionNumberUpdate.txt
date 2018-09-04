@@ -1,0 +1,7 @@
+﻿The version information for some Crystal Reports components has changed.
+
+This step will automatically update those component references from
+version {0} to {1}.
+
+This step will be done automatically by the Upgrade Wizard.
+

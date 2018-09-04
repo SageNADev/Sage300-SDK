@@ -314,4 +314,13 @@
   <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
     <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
   </data>
+  <data name="ReleaseSpecificCrystalReportsVersionNumberUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificCrystalReportsVersionNumberUpdate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
+    <value>This step will update the version numbers for some Crystal Reports components.</value>
+  </data>
+  <data name="ReleaseSpecificTitleCrystalReportsVersionNumberUpdate" xml:space="preserve">
+    <value>Crystal Reports version number update</value>
+  </data>
 </root>
