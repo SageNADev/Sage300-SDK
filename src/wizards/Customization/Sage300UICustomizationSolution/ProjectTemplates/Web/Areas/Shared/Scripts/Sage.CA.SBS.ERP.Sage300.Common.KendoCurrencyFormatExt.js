@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. */
 
 (function (f) {
     if (typeof define === 'function' && define.amd) {
@@ -39,7 +39,7 @@
         ];
         $.each(cultureArray, function(key, value) {
             if (value) {
-                value.numberFormat = stdNumberFormat;
+                //value.numberFormat = stdNumberFormat;
             }
         })
     })(this);
