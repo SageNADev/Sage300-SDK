@@ -48,7 +48,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = Resources.CodeGeneration;
+            Text = string.Format(Resources.CodeGeneration, GlobalConstants.Version);
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
@@ -56,7 +56,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Code Type Step
             lblContainerName.Text = Resources.ContainerName;
             tooltip.SetToolTip(lblContainerName, Resources.ContainerNameTip);
-
         }
 
         /// <summary> Save Container Name</summary>
