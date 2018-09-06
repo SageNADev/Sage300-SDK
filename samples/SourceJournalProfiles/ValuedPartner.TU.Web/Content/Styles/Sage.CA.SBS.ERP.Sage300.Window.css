@@ -1,0 +1,90 @@
+.k-overlay {
+                /*background-color: #272f35;*/
+    background-color:#fff;
+    opacity:0 !important;
+    position:fixed;
+    overflow:hidden;
+}
+.k-window {
+	background: #f5f5f4;
+	padding-top: 0 !important;
+    padding-bottom: 20px;  
+	
+}
+
+.k-window-titlebar {
+                margin-top: 0 !important;
+}
+.k-window .k-window-titlebar {
+                position: relative;
+                padding-bottom: 10px;
+                padding-top: 17px;
+                background: none;
+                border-bottom: 0px;
+    text-indent:-1px;
+    height: 30px !important;
+}
+.k-window .k-window-titlebar .k-window-actions {
+                right: 20px !important;
+                top: 5px !important;
+    line-height:15px !important;
+}
+.k-window .k-window-titlebar .k-window-actions .k-i-close {
+                background-position: -66px -66px;
+}
+.k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover{
+                background:none;
+                border: none;
+}
+.k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover .k-i-close {
+                background-position: -95px -65px !important;
+    background-color:none;
+}
+.k-window .k-window-titlebar .k-window-title {
+                left: 20px;
+}
+.k-window .k-window-content {
+	max-height:800px !important;
+	padding: 10px 0px 0px;
+	margin: 20px 20px 0px 20px;
+	background: #f5f5f4;
+	border-radius: 0px;
+    overflow-y:auto !important;
+    border-top: 1px solid #9a9b9c;
+}
+.modelBox .k-window-titlebar .k-window-actions {
+                right: 20px !important;
+                top: 0px !important;
+}
+
+
+/* Finder Window */
+.finder-window,
+.k-window-titlebar{
+    border-radius:0px;
+}
+.finder-window .k-window-titlebar{
+    background-color:#9a9b9c;
+    height:auto;
+    padding:5px 20px;
+}
+.finder-window .k-window-titlebar .k-window-title{
+    color:#fff;
+    font-weight:normal;
+    font-size:14px;
+    line-height:20px;
+}
+.finder-window .k-window-titlebar .k-window-actions{
+    top:0px !important;
+    opacity:1;
+}
+.finder-window .k-window-titlebar .k-window-actions .k-i-close{
+    background-position:-125px -128px;
+    opacity:1;
+}
+
+.finder-window,
+.finder-window .k-window-content{
+    background-color:#fff;
+    margin-top:10px;
+}

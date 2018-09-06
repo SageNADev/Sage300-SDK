@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 @using Sage.CA.SBS.ERP.Sage300.Common.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Inquiry
@@ -70,7 +70,7 @@
 <ul>
 @foreach (var module in groupedModule)
 {
-    <li class="item-list inquiry-category collapsed" onclick="itemListOnClick(this)">
+    <li class="item-list" onclick="itemListOnClick(this)">
         <label>@LocalizedModuleName(module)</label>
         @foreach (var query in module)
         {

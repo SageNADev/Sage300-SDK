@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>$safeprojectname$</RootNamespace>
     <AssemblyName>$safeprojectname$</AssemblyName>
-    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
+    <Sage300WebDir Condition="$(Sage300WebDir) == ''">$sage300webfolder$</Sage300WebDir>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -84,62 +84,49 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Resources">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Services">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Services.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Configuration">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Logging">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Resources">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Services">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Services.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
@@ -214,15 +201,16 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
@@ -255,145 +243,13 @@
   <ItemGroup>
     <Content Include="$project$$module$Bootstrapper.xml" />
     <Content Include="AccpacDotNetVersion.props" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js" />
     <Content Include="pageUrl.txt" />
-    <Content Include="Scripts\AjaxQ\ajaxq.js" />
-    <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
-    <Content Include="Scripts\Help\Help.js" />
-    <Content Include="Scripts\jasmine\boot.js" />
-    <Content Include="Scripts\jasmine\console.js" />
-    <Content Include="Scripts\jasmine\jasmine-html.js" />
-    <Content Include="Scripts\jasmine\jasmine.js" />
-    <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
-    <Content Include="Scripts\jquery-1.11.3.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.js" />
-    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
-    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
-    <Content Include="Scripts\jquery-ui-1.11.4.js" />
-    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
-    <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
-    <Content Include="Scripts\jquery.cookie.js" />
-    <Content Include="Scripts\jquery.form.js" />
-    <Content Include="Scripts\jquery.form.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.map" />
-    <Content Include="Scripts\jquery.form.min.js.map" />
-    <Content Include="Scripts\JQueryUI\_references.js" />
-    <Content Include="Scripts\JQueryUI\iframe-resizer-reports.js" />
-    <Content Include="Scripts\JQueryUI\iframeResizer.js" />
-    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
-    <Content Include="Scripts\JQueryUI\jquery.json.min.js" />
-    <Content Include="Scripts\JQueryUI\jquery.mask.min.js" />
-    <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
-    <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-AU.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-CA.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-US.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.es.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.es-ES.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.fr.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-CN.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-HK.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-SG.min.js" />
-    <Content Include="Scripts\Kendo\kendo.culture.zh-TW.min.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.en-AU.min.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.en-CA.min.js" />
-    <Content Include="Scripts\Kendo\kendo.messages.en-US.min.js" />  
-    <Content Include="Scripts\Kendo\kendo.messages.es-ES.min.js" />  
-    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.min.js" />  
-    <Content Include="Scripts\Kendo\kendo.messages.zh-CN.min.js" />  
-    <Content Include="Scripts\Kendo\kendo.messages.zh-HK.min.js" />  
-    <Content Include="Scripts\Kendo\kendo.messages.zh-TW.min.js" />  
-    <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" /> 
-    <Content Include="Scripts\knockout\knockout.mapping-latest.js" /> 
-    <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" /> 
-    <Content Include="Scripts\knockout\knockout-2.1.0.js" /> 
-    <Content Include="Scripts\knockout\knockout-kendo.min.js" /> 
-    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.BindingHandlers.js" /> 
-    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js" /> 
-    <Content Include="Scripts\Less\less-1.6.1.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\Portal\FeatureTour.js" />
-    <Content Include="Scripts\Portal\RecentWindows.js" />
-    <Content Include="Scripts\Portal\SessionDate.js" />
-    <Content Include="Scripts\Portal\SessionDateCookie.js" />
-    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb.js" />
-    <Content Include="Scripts\Portal\TaskDock-Menu-BreadCrumb_DPPMenu.js" />
-    <Content Include="Scripts\Portal\Widget.js" />
-    <Content Include="Scripts\Report\ReportBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js" />
-    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js" />
-    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Upload.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js" />
-    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js" />
-    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
-    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js" />
-    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js" />
-    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantBehaviour.js" />
-    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantRepository.js" />
-    <Content Include="Areas\Core\Scripts\Process\Sage.CA.SBS.Sage300.Common.Process.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Home.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js" />
-    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Wizard.js" />
-    <Content Include="Areas\Core\Scripts\Tenant\Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js" />
-    <Content Include="Areas\Shared\Scripts\DocumentHistory\Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js" />
-    <Content Include="Areas\Shared\Scripts\ItemQuantity\Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js" />
-    <Content Include="Areas\Shared\Scripts\Report\GLTransaction\Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Cache.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Controls.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Customization.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Global.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Report.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.URL.js" />
-    <Content Include="Areas\Shared\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Validate.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Views\**" />
+    <Content Include="Scripts\**" />
+    <Content Include="Areas\Shared\**" />
+    <Content Include="Areas\Core\**" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -404,126 +260,22 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
     <Content Include="Areas\$module$\Views\Web.config" />
     <Content Include="Areas\$module$\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Index.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_AdhocInquiry.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_AdhocInquiryFilterControl.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_SavedTab.cshtml" />
-    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_SaveQueryPanel.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\OnPremiseLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\Partials\_OnPremiseLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\RedirectToLogin.cshtml" />
-    <Content Include="Areas\Core\Views\Authentication\SessionExpired.cshtml" />
-    <Content Include="Areas\Core\Views\Error\AccountNotAvailable.cshtml" />
-    <Content Include="Areas\Core\Views\Error\AccountNotProvisioned.cshtml" />
-    <Content Include="Areas\Core\Views\Error\Error404.cshtml" />
-    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
-    <Content Include="Areas\Core\Views\Error\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Error\MissingModules.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\Export.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\ExportImportOption.cshtml" />
-    <Content Include="Areas\Core\Views\ExportImport\Import.cshtml" />
-    <Content Include="Areas\Core\Views\Find\Find.cshtml" />
-    <Content Include="Areas\Core\Views\Find\FindPreference.cshtml" />
-    <Content Include="Areas\Core\Views\FiscalYear\FiscalYearSet.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLIntegrationDetail.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLPostingSequence.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLReferenceIntegration.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLSourceCodes.cshtml" />
-    <Content Include="Areas\Core\Views\GLIntegration\Partials\_TransactionsOptions.cshtml" />
-    <Content Include="Areas\Core\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\_InquiryTool.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\Partials\_Inquiry.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\Partials\_InquiryFilter.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\Partials\_InquiryGrid.cshtml" />
-    <Content Include="Areas\Core\Views\Inquiry\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Instrumentation\Index.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Index.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\NewTenant\Partials\_newtenantsetup.cshtml" />
-    <Content Include="Areas\Core\Views\OptionalFields\OptionalFields.cshtml" />
-    <Content Include="Areas\Core\Views\OptionalFields\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\FiscalCalendar.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\GridPage.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\GridPreferences.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\LabelMenuPopup.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_Localization.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_OptionsMenu.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_ProcessingStatus.cshtml" />
-    <Content Include="Areas\Core\Views\Shared\_ReportOptions.cshtml" />
-    <Content Include="Areas\Core\Views\Tenant\Index.cshtml" />
-    <Content Include="Areas\Core\Views\Web.config" />
-    <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Shared\Views\DocumentHistory\DocumentHistory.cshtml" />
-    <Content Include="Areas\Shared\Views\DocumentHistory\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_AddLineButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_ButtonBase.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_DeleteButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_DeleteLineButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_GenericButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_OptionalButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_PrintButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_ProceedButton.cshtml" />
-    <Content Include="Areas\Shared\Views\Partials\_SaveButton.cshtml" />
-    <Content Include="Areas\Shared\Views\QuantityGrid\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\QuantityGrid\_QuantityGrid.cshtml" />
-    <Content Include="Areas\Shared\Views\Report\GLTransaction\_GLSubledgerTransactionReport.cshtml" />
-    <Content Include="Areas\Shared\Views\Report\Index.cshtml" />
-    <Content Include="Areas\Shared\Views\Revaluation\Partials\_Details.cshtml" />
-    <Content Include="Areas\Shared\Views\Revaluation\Partials\_DetailsOptionalFields.cshtml" />
-    <Content Include="Areas\Shared\Views\Revaluation\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Revaluation\_Index.cshtml" />
-    <Content Include="Areas\Shared\Views\RevaluationHistory\Partials\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\RevaluationHistory\_Index.cshtml" />
-    <Content Include="Areas\Shared\Views\SalesSplitGrid\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\SalesSplitGrid\_SalesSplitGrid.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_GridActions.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayout.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_LocalizedLayoutR2.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_ProcessingFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_ReportFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\Shared\_SetupFooter.cshtml" />
-    <Content Include="Areas\Shared\Views\TaxesGrid\TaxesGrid.cshtml" />
-    <Content Include="Areas\Shared\Views\TaxesGrid\_Localization.cshtml" />
-    <Content Include="Areas\Shared\Views\Web.config" />
-    <Content Include="Areas\Shared\Views\_ViewStart.cshtml" />
-    <Content Include="Views\Partials\_CommonLayout.cshtml" />
-    <Content Include="Views\Partials\_ConfigurePopUp.cshtml" />
-    <Content Include="Views\Partials\_FeatureTour.cshtml" />
-    <Content Include="Views\Partials\_Footer.cshtml" />
-    <Content Include="Views\Partials\_HomePageHelp.cshtml" />
-    <Content Include="Views\Partials\_Localization.cshtml" />
-    <Content Include="Views\Partials\_MenuHelp.cshtml" />
-    <Content Include="Views\Partials\_MenuUrl.cshtml" />
-    <Content Include="Views\Partials\_PluginMenuUrl.cshtml" />
-    <Content Include="Views\Partials\_QuickMenu.cshtml" />
-    <Content Include="Views\Partials\_Widget.cshtml" />
-    <Content Include="Views\Partials\_WidgetUrl.cshtml" />
-    <Content Include="Views\Portal.cshtml" />
-    <Content Include="Views\Shared\_GenericLayout.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\UnsupportedBrowser\Error.cshtml" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Areas\$module$\Views\$project$Customization\Index.cshtml" />
 	<Content Include="Areas\$module$\Assets\Images\footer_logo.png" />
 	<Content Include="Areas\$module$\Assets\Images\sage_300_logo_white.png" />
 	<Content Include="Areas\$module$\Assets\Images\nav\sprite_global_menu_rev@2x.png" />
 	<Content Include="Areas\$module$\Assets\styles\css\default.min.css" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

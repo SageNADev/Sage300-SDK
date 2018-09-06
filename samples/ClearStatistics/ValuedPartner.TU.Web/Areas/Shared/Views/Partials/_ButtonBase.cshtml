@@ -1,0 +1,76 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using System.Web.UI.WebControls
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+
+@{
+    IButtonProperties bProperties = ViewBag.bProperties;
+
+    string genericValue = ViewData[ViewItemSemantic.GenericButton] as string ?? string.Empty;
+    bool? isRequired = ViewData[bProperties.IsRequired + genericValue] as bool? ?? bProperties.DefaultIsRequired;
+    SecurityType? securityType = ViewData[bProperties.SecurityLevel + genericValue] as SecurityType? ?? bProperties.DefaultSecurityLevel;
+    string jsName = ViewData[bProperties.JsName + genericValue] as string ?? bProperties.DefaultJsName;
+
+    string buttonId = null;
+    //TODO May want to change to use ?. once Roslyn is ready
+    if (isRequired.Value && Model != null && ((Model.UserAccess != null && Model.UserAccess.SecurityType.HasFlag(securityType.Value)) || (ViewContext.Controller.ViewBag.UserAccess != null && ViewContext.Controller.ViewBag.UserAccess.SecurityType.HasFlag(securityType.Value))))
+    {
+        dynamic parameter = GetParameter(bProperties, ViewData, genericValue);
+        buttonId = parameter.Id;
+        @Html.KoSageButton((string)parameter.Name, (object)parameter.KoParameter, (object)parameter.HtmlParameter)
+    }
+}
+
+@if (!string.IsNullOrEmpty(buttonId))
+{
+    <text>
+        <script type="text/javascript">
+            var btnNames = btnNames || {};
+            btnNames.@jsName = "@buttonId";
+        </script>
+    </text>
+}
+@RenderBody()
+
+@functions
+{
+    /// <summary>
+    /// Return paramter base on type of IButtonProperties and viewData
+    /// </summary>
+    /// <param name="buttonProperties">Type of buttonProperties</param>
+    /// <param name="viewData">The ViewData</param>
+    /// <returns></returns>
+    public static dynamic GetParameter(IButtonProperties buttonProperties, ViewDataDictionary viewData, string genericValue)
+    {
+        dynamic result = new System.Dynamic.ExpandoObject();
+        bool? disabled = viewData[buttonProperties.Disabled + genericValue] as bool?;
+
+        if (disabled.HasValue)
+        {
+            result.HtmlParameter = new
+            {
+                @id = viewData[buttonProperties.Id + genericValue] as string ?? buttonProperties.DefaultId,
+                @class = viewData[buttonProperties.Class + genericValue] as string ?? buttonProperties.DefaultClass,
+                @value = viewData[buttonProperties.Value + genericValue] as string ?? buttonProperties.DefaultValue,
+                @disabled = disabled.Value
+            };
+        }
+        else
+        {
+            result.HtmlParameter = new
+            {
+                @id = viewData[buttonProperties.Id + genericValue] as string ?? buttonProperties.DefaultId,
+                @class = viewData[buttonProperties.Class + genericValue] as string ?? buttonProperties.DefaultClass,
+                @value = viewData[buttonProperties.Value + genericValue] as string ?? buttonProperties.DefaultValue
+            };
+        }
+
+        result.Name = viewData[buttonProperties.Name + genericValue] as string ?? buttonProperties.DefaultName;
+        result.Id = viewData[buttonProperties.Id + genericValue] as string ?? buttonProperties.DefaultId;
+        result.KoParameter = viewData[buttonProperties.KoParameter + genericValue];
+        return result;
+    }
+}

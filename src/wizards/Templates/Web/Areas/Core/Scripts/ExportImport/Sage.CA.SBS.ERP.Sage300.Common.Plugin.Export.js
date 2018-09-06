@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 /* globals globalResource: false */
 /* globals kendo: false */
 /* globals exportModelData: false */
@@ -144,6 +144,8 @@ var exportResultRowNumber = 0;
         TaxClasses: "taxclasses",
         TaxGroup: "taxgroup",
         TaxRates: "taxrates",
+        TsTxMap:"tstxmap",
+        TsRCode:"tsrcode",
         TransactionStatistics: "ictransactionstatistics",
         UnitOfMeasure: "icunitsofmeasure",
         UserAuthorization: "userauthorization",
@@ -339,7 +341,7 @@ var exportResultRowNumber = 0;
         _initCriteriaTab: function () {
             if (sg.exportHelper.initCriteriaTabPage) {
                 var exportDataSource = exportModelData.ExportRequest.DataMigrationList;
-                var columns = exportDataSource[0].Items.filter(function (item) { return !item.IsVirtual });
+                var columns = exportDataSource[0].Items.filter(function (item) { return !item.IsVirtual; });
                 setCriteriaUI.init(columns, "title", "columnName");
                 sg.exportHelper.initCriteriaTabPage = false;
             }
@@ -563,7 +565,7 @@ var exportResultRowNumber = 0;
                         //Set parent node checkbox as indeterminate (tri state)
                         var cbList = $("#exportTreeView").find(":checkbox");
                         if (cbList.length === triStateList.length) {
-                            for (var j = 0, length = triStateList.length ; j < length; j++) {
+                            for (var j = 0, length1 = triStateList.length ; j < length1; j++) {
                                 if (triStateList[j]) {
                                     cbList[j].indeterminate = true;
                                 }

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -79,6 +79,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternate Name.
+        /// </summary>
+        internal static string AlternateName {
+            get {
+                return ResourceManager.GetString("AlternateName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string Back {
@@ -116,7 +125,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code Generation.
+        ///   Looks up a localized string similar to Code Generation Wizard - V{0}.
         /// </summary>
         internal static string CodeGeneration {
             get {
@@ -622,11 +631,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The fields have invalid settings..
+        ///   Looks up a localized string similar to There is a field that does not contain a value..
         /// </summary>
-        internal static string InvalidFields {
+        internal static string InvalidFieldBlank {
             get {
-                return ResourceManager.GetString("InvalidFields", resourceCulture);
+                return ResourceManager.GetString("InvalidFieldBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field &apos;{0}&apos; is duplicated and fields must be unique..
+        /// </summary>
+        internal static string InvalidFieldDuplicate {
+            get {
+                return ResourceManager.GetString("InvalidFieldDuplicate", resourceCulture);
             }
         }
         
@@ -735,6 +753,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string IsCalculated {
             get {
                 return ResourceManager.GetString("IsCalculated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common.
+        /// </summary>
+        internal static string IsCommon {
+            get {
+                return ResourceManager.GetString("IsCommon", resourceCulture);
             }
         }
         

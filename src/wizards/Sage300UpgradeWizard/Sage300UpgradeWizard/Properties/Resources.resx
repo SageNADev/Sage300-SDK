@@ -192,7 +192,7 @@
     <value>Show Log</value>
   </data>
   <data name="SolutionUpgrade" xml:space="preserve">
-    <value>Solution Upgrade</value>
+    <value>Solution Upgrade Wizard - V{0}</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
@@ -212,44 +212,8 @@
   <data name="UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
-  <data name="ReleaseSpecificDescUpdatePostBuildEvent" xml:space="preserve">
-    <value>This step will be done automatically.</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdatePostBuildEvent" xml:space="preserve">
-    <value>Update the Web project Post Build Event</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateSourceCode" xml:space="preserve">
-    <value>Automatic update of source code files</value>
-  </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateSourceCode" xml:space="preserve">
-    <value>This step will automatically upgrade some of your source code files.</value>
-  </data>
-  <data name="ReleaseSpecificUpdatePostBuildEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdatePostBuildEvent.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseSpecificUpdateSourceCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateSourceCode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateMenuDetails" xml:space="preserve">
-    <value>Update the Menu Details</value>
-  </data>
-  <data name="ReleaseSpecificUpdateMenuDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateMenuDetails.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateMenuDetails" xml:space="preserve">
-    <value>This step will upgrade the [ModuleID]MenuDetails.xml file.</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateSourceCodeManually" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateSourceCodeManually" xml:space="preserve">
-    <value>Manual update of source code files</value>
-  </data>
-  <data name="ReleaseSpecificUpdateSourceCodeManually" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateSourceCodeManually.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="AfterUpdate" xml:space="preserve">
     <value>AfterUpdate</value>
@@ -295,5 +259,68 @@
   </data>
   <data name="SolutionProjectsToBeProcessed" xml:space="preserve">
     <value>Solution projects to be processed</value>
+  </data>
+  <data name="ReleaseSpecificDescConsolidateEnumerations" xml:space="preserve">
+    <value>This step will automatically convert all the distinct enumeration files into a single file called 'Enumerations.cs' on a per-folder basis.</value>
+  </data>
+  <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
+    <value>Consolidation of Enumeration Files</value>
+  </data>
+  <data name="ReleaseSpecificUpdateConsolidateEnumerations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateConsolidateEnumerations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificDescExternalContentFolder" xml:space="preserve">
+    <value>This step will create and populate the new ExternalContent folder.</value>
+  </data>
+  <data name="ReleaseSpecificExternalContentFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificExternalContentFolder.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificTitleExternalContentFolder" xml:space="preserve">
+    <value>Process the new ExternalContent folder</value>
+  </data>
+  <data name="ReleaseSpecificTitleAspnetClientFolder" xml:space="preserve">
+    <value>Create 'aspnet_client' folder (Manual Step)</value>
+  </data>
+  <data name="ReleaseSpecificAspnetClientFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificAspnetClientFolder.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReleaseSpecificDescAspnetClientFolder" xml:space="preserve">
+    <value>This is a manual step that may need to be performed by our development partners.</value>
+  </data>
+  <data name="BeginUpgradeProcess" xml:space="preserve">
+    <value>Begin Upgrade Process...</value>
+  </data>
+  <data name="CopiedAllFilesFrom" xml:space="preserve">
+    <value>Copied all files from</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>deleted</value>
+  </data>
+  <data name="DoesNotExist" xml:space="preserve">
+    <value>does not exist</value>
+  </data>
+  <data name="EndUpgradeProcess" xml:space="preserve">
+    <value>End Upgrade Process</value>
+  </data>
+  <data name="Exists" xml:space="preserve">
+    <value>exists</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
+    <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
+  </data>
+  <data name="ReleaseSpecificCrystalReportsVersionNumberUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificCrystalReportsVersionNumberUpdate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
+    <value>This step will update the version numbers for some Crystal Reports components.</value>
+  </data>
+  <data name="ReleaseSpecificTitleCrystalReportsVersionNumberUpdate" xml:space="preserve">
+    <value>Crystal Reports version number update</value>
   </data>
 </root>

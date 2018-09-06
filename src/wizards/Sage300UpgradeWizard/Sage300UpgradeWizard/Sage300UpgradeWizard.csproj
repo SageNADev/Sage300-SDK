@@ -42,7 +42,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>true</RegisterForComInterop>
@@ -83,6 +83,9 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <HintPath>..\..\..\..\..\..\Windows\assembly\GAC\EnvDTE80\8.0.0.0__b03f5f7f11d50a3a\envdte80.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -96,6 +99,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Interfaces\ISettings.cs" />
+    <Compile Include="PerRelease\CrystalReportsVersionNumberProcessor.cs" />
+    <Compile Include="PerRelease\ExternalContentProcessor.cs" />
     <Compile Include="ProcessUpgrade.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -106,19 +114,21 @@
     <Compile Include="Sage300UpgradeWizard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Upgrade.cs">
+    <Compile Include="Forms\Upgrade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Upgrade.designer.cs">
+    <Compile Include="Forms\Upgrade.designer.cs">
       <DependentUpon>Upgrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FileUtilities.cs" />
+    <Compile Include="Utilities\MenuManager.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Upgrade.resx">
+    <EmbeddedResource Include="Forms\Upgrade.resx">
       <DependentUpon>Upgrade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ai.snk" />
@@ -158,10 +168,10 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
-    <Content Include="content\ReleaseSpecificUpdateMenuDetails.txt" />
-    <Content Include="content\ReleaseSpecificUpdatePostBuildEvent.txt" />
-    <Content Include="content\ReleaseSpecificUpdateSourceCode.txt" />
-    <None Include="content\ReleaseSpecificUpdateSourceCodeManually.txt" />
+    <Content Include="content\ReleaseSpecificAspnetClientFolder.txt" />
+    <Content Include="content\ReleaseSpecificCrystalReportsVersionNumberUpdate.txt" />
+    <Content Include="content\ReleaseSpecificExternalContentFolder.txt" />
+    <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
@@ -169,7 +179,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -186,4 +198,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!-- The following commented-out line can be used to load common settings into the project -->
+  <!--<Import Project="$(SolutionDir)CommonSettings.targets" />-->
 </Project>

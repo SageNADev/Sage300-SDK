@@ -1,6 +1,9 @@
-/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 $(window).bind("load", function () {
+    if (typeof sg !== "undefined" && !sg.utls.isSameOrigin()) {
+        return;
+    }
     var iFrameHeight = window.top.$('iframe.screenIframe:visible');
     var th = iFrameHeight.contents().find('body').height();
     if (iFrameHeight.contents().find('#CrystalReportViewerSage300').length) {

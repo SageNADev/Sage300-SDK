@@ -1,0 +1,111 @@
+﻿@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Inquiry
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using Sage.CA.SBS.ERP.Sage300.Core.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities.Constants;
+@using System.Linq;
+
+@model IList<Sage.CA.SBS.ERP.Sage300.Core.Web.Models.AdhocInquiryViewModel>
+
+@{
+    var stockApplicationIds = new string[]
+    {
+        Constant.GLAppIdentifier,
+        Constant.ARAppIdentifier,
+        Constant.APAppIdentifier,
+        Constant.ICAppIdentifier,
+        Constant.OEAppIdentifier,
+        Constant.POAppIdentifier
+    };
+    
+    var stockList = Model.Where(x => stockApplicationIds.Contains(x.Data.InquiryFeatureType.Security)).OrderBy(x => x.Data.InquiryFeatureType.Security).ToList();
+    var nonStockList = Model.Where(x => !stockApplicationIds.Contains(x.Data.InquiryFeatureType.Security)).OrderBy(x => x.Data.InquiryFeatureType.Security).ToList();
+    
+    var groupedModule = stockList.Concat(nonStockList).GroupBy(x => x.Data.InquiryFeatureType.Security);
+}
+
+@functions
+{
+    public static string GetResourceString(string resouceFileName, string resourceName)
+    {
+        var resourceType = Type.GetType(resouceFileName);
+        return (string)resourceType.GetProperty(resourceName).GetGetMethod().Invoke(null, null);
+    }
+
+    public static string LocalizedModuleName(IGrouping<string, AdhocInquiryViewModel>  module)
+    {
+        var moduleName = module.Key;
+        if (moduleName == Constant.GLAppIdentifier)
+            return NavigationResx.Module_GeneralLedger;
+        else if(moduleName == Constant.ARAppIdentifier)
+            return NavigationResx.Module_AccountsReceivable;
+        else if(moduleName == Constant.APAppIdentifier)
+            return NavigationResx.Module_AccountsPayable;
+        else if(moduleName == Constant.ICAppIdentifier)
+            return NavigationResx.Module_InventoryControl;
+        else if(moduleName == Constant.OEAppIdentifier)
+            return NavigationResx.Module_OrderEntry;
+        else if (moduleName == Constant.POAppIdentifier)
+            return NavigationResx.Module_PurchaseOrders;
+        else
+        {
+            var adhocInquiryViewModel = module.FirstOrDefault();
+
+            if (adhocInquiryViewModel != null &&
+                !string.IsNullOrEmpty(adhocInquiryViewModel.Data.InquiryFeatureType.ResourceType) &&
+                !string.IsNullOrEmpty(adhocInquiryViewModel.Data.InquiryFeatureType.SecurityResourceKey))
+            {
+                return GetResourceString(adhocInquiryViewModel.Data.InquiryFeatureType.ResourceType, adhocInquiryViewModel.Data.InquiryFeatureType.SecurityResourceKey);
+            }
+            else
+            { 
+                return moduleName;
+            }
+        }
+    }
+}
+
+<ul>
+@foreach (var module in groupedModule)
+{
+    <li class="item-list" onclick="itemListOnClick(this)">
+        <label>@LocalizedModuleName(module)</label>
+        @foreach (var query in module)
+        {
+            <ul>
+                @if (query.Data.InquiryQueryType == InquiryQueryType.Public)
+                {
+                    <li class="inquiry-item query-public" data-name="@query.Data.Name" data-module="@query.Data.InquiryFeatureType.Security" onclick="launchAdhoc(this)" data-line="@InquiryResx.Public" data-feature="1">@query.Data.Name</li>
+                }
+                else
+                {
+                    <li class="inquiry-item query-private" data-name="@query.Data.Name" data-module="@query.Data.InquiryFeatureType.Security" onclick="launchAdhoc(this)" data-line="@InquiryResx.Private" data-feature="2">@query.Data.Name</li>
+                }
+            </ul>
+        }
+    </li>
+}
+</ul>
+
+<script>
+    function itemListOnClick(e) {
+        $(e).children('ul').slideToggle("slow");
+        $(e).toggleClass('collapsed');
+    };
+
+    function launchAdhoc(source) {
+        var parameterData = $(source).data();
+        //Note: "name" is already coming from data
+        parameterData["title"] = $(source).text();
+        parameterData["url"] = sg.utls.url.buildUrl("Core", "AdhocInquiry", "Index");
+        parameterData["feature"] = $(source).data("feature");
+
+        var parameterDataString = JSON.stringify(parameterData);
+        window.top.postMessage("isInquiry" + " " + encodeURI(parameterDataString), "*");
+
+        // close the side bar
+        $("#btnInquiryClose").trigger("click");
+    }
+</script>

@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>true</RegisterForComInterop>
@@ -101,18 +101,20 @@
     <Compile Include="BusinessView.cs" />
     <Compile Include="BusinessViewHelper.cs" />
     <Compile Include="Composition.cs" />
-    <Compile Include="ContainerName.cs">
+    <Compile Include="Constants.cs" />
+    <Compile Include="Forms\ContainerName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContainerName.Designer.cs">
+    <Compile Include="Forms\ContainerName.Designer.cs">
       <DependentUpon>ContainerName.cs</DependentUpon>
     </Compile>
     <Compile Include="EnumHelper.cs" />
     <Compile Include="EnumValue.cs" />
-    <Compile Include="Generation.cs">
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Forms\Generation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generation.Designer.cs">
+    <Compile Include="Forms\Generation.Designer.cs">
       <DependentUpon>Generation.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessGeneration.cs" />
@@ -126,16 +128,32 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
+    <Compile Include="Utilities\ResXManager.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Templates\Common\Class\Finder.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Finder.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Common\Class\ModelCommonEnums.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCommonEnums.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\ModelCommonEnumsPartial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCommonEnumsPartial.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Common\Class\ModelEnums.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEnums.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Common\Class\ModelEnumsPartial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEnumsPartial.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Common\Class\ModelFields.cs">
       <AutoGen>True</AutoGen>
@@ -417,11 +435,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Utilities\Utilities.cs" />
     <Compile Include="WizardStep.cs" />
-    <EmbeddedResource Include="ContainerName.resx">
+    <EmbeddedResource Include="Forms\ContainerName.resx">
       <DependentUpon>ContainerName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generation.resx">
+    <EmbeddedResource Include="Forms\Generation.resx">
       <DependentUpon>Generation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -689,6 +708,18 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Templates\Common\Class\ModelCommonEnumsPartial.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelCommonEnumsPartial.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\ModelCommonEnums.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelCommonEnums.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Common\Class\ModelEnumsPartial.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelEnumsPartial.cs</LastGenOutput>
+    </None>
     <None Include="Templates\HeaderDetail\Class\InternalController.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>InternalController.cs</LastGenOutput>

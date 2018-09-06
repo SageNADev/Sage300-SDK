@@ -130,7 +130,7 @@ namespace MergeISVProject
 				_Stage_Bootstrapper();
 				_Stage_Menus();
 				_Stage_MinifyJavascripts();
-				_Stage_Images();
+				// _Stage_Images(); // Images have been moved to Areas\appid\ExternalContent
 				_Stage_ResourceSatelliteFiles();
 				_Stage_CopyAllToFinal();
 			}
@@ -192,7 +192,15 @@ namespace MergeISVProject
 			_Logger.Log($"Source: {d1}");
 			_Logger.Log($"Destination: {d2}");
 
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+            // Areas/XX/ExternalContent
+            d1 = _FolderManager.Originals.AreasExternalContent;
+            d2 = _FolderManager.Staging.AreasExternalContent;
+            FileSystem.CopyDirectory(d1, d2);
+            _Logger.Log($"Copying directory...");
+            _Logger.Log($"Source: {d1}");
+            _Logger.Log($"Destination: {d2}");
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
 		/// <summary>
@@ -356,42 +364,42 @@ namespace MergeISVProject
 		/// Copy the menu background image and icon from the original source
 		/// to the Staging folder
 		/// </summary>
-		private void _Stage_Images()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+		//private void _Stage_Images()
+		//{
+		//	_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			const string defaultIconFilename = @"menuIcon.png";
+		//	const string defaultIconFilename = @"menuIcon.png";
 
-			var menuName = _Options.MenuFilename.OptionValue;
+		//	var menuName = _Options.MenuFilename.OptionValue;
 
-			// Get the company name, icon file name, and background image file name 
-			var pathMenuDir = Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
-			var menuFilePath = Path.Combine(pathMenuDir, menuName);
-			var menuFileContent = File.ReadAllText(menuFilePath);
-			var companyName = Regex.Match(menuFileContent, $"<IconName>(.*?)/{defaultIconFilename}</IconName>").Groups[1].Value;
-			var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
-			var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
+		//	// Get the company name, icon file name, and background image file name 
+		//	var pathMenuDir = Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
+		//	var menuFilePath = Path.Combine(pathMenuDir, menuName);
+		//	var menuFileContent = File.ReadAllText(menuFilePath);
+		//	var companyName = Regex.Match(menuFileContent, $"<IconName>(.*?)/{defaultIconFilename}</IconName>").Groups[1].Value;
+		//	var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
+		//	var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
 
-			var pathImageFrom = Path.Combine(_FolderManager.RootSource, @"Content\Images\nav");
-			var pathImageTo = Path.Combine(_FolderManager.Staging.Root, @"External\Content\Images\nav", companyName);
+		//	var pathImageFrom = Path.Combine(_FolderManager.RootSource, @"Content\Images\nav");
+		//	var pathImageTo = Path.Combine(_FolderManager.Staging.Root, @"External\Content\Images\nav", companyName);
 
-			if (!Directory.Exists(pathImageTo))
-			{
-				Directory.CreateDirectory(pathImageTo);
-			}
-			string[] imageNames = { menuIconName, menuBackGroundImage };
-			foreach (var image in imageNames)
-			{
-				var pathImageFileFrom = Path.Combine(pathImageFrom, image);
-				if (File.Exists(pathImageFileFrom))
-				{
-					var pathImageFileTo = Path.Combine(pathImageTo, image);
-					File.Copy(pathImageFileFrom, pathImageFileTo, true);
-				}
-			}
+		//	if (!Directory.Exists(pathImageTo))
+		//	{
+		//		Directory.CreateDirectory(pathImageTo);
+		//	}
+		//	string[] imageNames = { menuIconName, menuBackGroundImage };
+		//	foreach (var image in imageNames)
+		//	{
+		//		var pathImageFileFrom = Path.Combine(pathImageFrom, image);
+		//		if (File.Exists(pathImageFileFrom))
+		//		{
+		//			var pathImageFileTo = Path.Combine(pathImageTo, image);
+		//			File.Copy(pathImageFileFrom, pathImageFileTo, true);
+		//		}
+		//	}
 
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
+		//	_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		//}
 
 		/// <summary>
 		/// Staging - Copy resource satellite dlls to Staging/bin folder
@@ -506,9 +514,10 @@ namespace MergeISVProject
 			{
 				_Deploy_Bootstrapper();
 				_Deploy_MenuDetails();
-				_Deploy_Images();
+				// _Deploy_Images(); // Images are now in the Areas\appid\ExternalContent folder
 				_Deploy_AreaScripts();
-				_Deploy_CompiledViews();
+                _Deploy_AreaExternalContent();
+                _Deploy_CompiledViews();
 				_Deploy_BinFolders();
 				_Deploy_ResourceSatelliteFiles();
 			}
@@ -593,51 +602,51 @@ namespace MergeISVProject
 		/// Copy the menu background image and icon from 
 		/// to the Staging folder
 		/// </summary>
-		private void _Deploy_Images()
-		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+		//private void _Deploy_Images()
+		//{
+		//	_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			var menuName = _Options.MenuFilename.OptionValue;
+		//	var menuName = _Options.MenuFilename.OptionValue;
 
-			// Get the company name, icon file name, and background image file name 
-			//var menuFilePath = Path.Combine(pathWebProj, menuFileName);
-			var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
-			var menuFilePath = Path.Combine(pathMenuDir, menuName);
-			var menuFileContent = File.ReadAllText(menuFilePath);
-			var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
-			var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
-			var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
+		//	// Get the company name, icon file name, and background image file name 
+		//	//var menuFilePath = Path.Combine(pathWebProj, menuFileName);
+		//	var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
+		//	var menuFilePath = Path.Combine(pathMenuDir, menuName);
+		//	var menuFileContent = File.ReadAllText(menuFilePath);
+		//	var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
+		//	var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
+		//	var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
 
-			var pathImageFrom = Path.Combine(_FolderManager.Final.Root, @"External\Content\Images\nav", companyName);
-			var pathImageTo = Path.Combine(_FolderManager.Live.Web, @"External\Content\Images\nav", companyName);
-			_Logger.Log($"pathImageFrom = '{pathImageFrom}'");
-			_Logger.Log($"pathImageTo = '{pathImageTo}'");
+		//	var pathImageFrom = Path.Combine(_FolderManager.Final.Root, @"External\Content\Images\nav", companyName);
+		//	var pathImageTo = Path.Combine(_FolderManager.Live.Web, @"External\Content\Images\nav", companyName);
+		//	_Logger.Log($"pathImageFrom = '{pathImageFrom}'");
+		//	_Logger.Log($"pathImageTo = '{pathImageTo}'");
 
 
-			if (!Directory.Exists(pathImageTo))
-			{
-				Directory.CreateDirectory(pathImageTo);
-				_Logger.Log($"Created directory '{pathImageTo}'");
-			}
-			string[] imageNames = { menuIconName, menuBackGroundImage };
-			foreach (var image in imageNames)
-			{
-				var pathImageFileFrom = Path.Combine(pathImageFrom, image);
-				if (File.Exists(pathImageFileFrom))
-				{
-					_Logger.Log($"File '{pathImageFileFrom}' exists.");
+		//	if (!Directory.Exists(pathImageTo))
+		//	{
+		//		Directory.CreateDirectory(pathImageTo);
+		//		_Logger.Log($"Created directory '{pathImageTo}'");
+		//	}
+		//	string[] imageNames = { menuIconName, menuBackGroundImage };
+		//	foreach (var image in imageNames)
+		//	{
+		//		var pathImageFileFrom = Path.Combine(pathImageFrom, image);
+		//		if (File.Exists(pathImageFileFrom))
+		//		{
+		//			_Logger.Log($"File '{pathImageFileFrom}' exists.");
 
-					var pathImageFileTo = Path.Combine(pathImageTo, image);
-					File.Copy(pathImageFileFrom, pathImageFileTo, true);
-				}
-				else
-				{
-					_Logger.Log($"File '{pathImageFileFrom}' does not exist.");
-				}
-			}
+		//			var pathImageFileTo = Path.Combine(pathImageTo, image);
+		//			File.Copy(pathImageFileFrom, pathImageFileTo, true);
+		//		}
+		//		else
+		//		{
+		//			_Logger.Log($"File '{pathImageFileFrom}' does not exist.");
+		//		}
+		//	}
 
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		}
+		//	_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+		//}
 
 		/// <summary>
 		/// Deploy the Area scripts to the Sage 300 installation
@@ -664,10 +673,33 @@ namespace MergeISVProject
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Deploy the compiled view files to the Sage 300 installation
-		/// </summary>
-		private void _Deploy_CompiledViews()
+        /// <summary>
+        /// Deploy the Area ExternalContent to the Sage 300 installation
+        /// </summary>
+        private void _Deploy_AreaExternalContent()
+        {
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+            // Copy ExternalContent from deploy folder to sage online web area and ExternalContent directory
+            var pathSource = Path.Combine(_FolderManager.Final.Root,
+                                             FolderNameConstants.AREAS,
+                                            _Options.ModuleId,
+                                            FolderNameConstants.EXTERNALCONTENT);
+            var pathTo = Path.Combine(_FolderManager.Live.Root,
+                                            FolderNameConstants.WEB,
+                                            FolderNameConstants.AREAS,
+                                            _Options.ModuleId,
+                                            FolderNameConstants.EXTERNALCONTENT);
+
+            CopyDirectory(_Options.TestDeploy.OptionValue, pathSource, pathTo, OVERWRITE);
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+        }
+
+        /// <summary>
+        /// Deploy the compiled view files to the Sage 300 installation
+        /// </summary>
+        private void _Deploy_CompiledViews()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 

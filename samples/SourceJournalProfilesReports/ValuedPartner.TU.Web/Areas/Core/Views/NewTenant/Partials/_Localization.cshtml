@@ -1,0 +1,16 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
+@using Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms
+@using CurrencyCodesResx = Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms.CurrencyCodesResx
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using CompanyProfileResx = Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms.CompanyProfileResx
+
+<script type="text/javascript">
+    var NewTenantResources = {
+        FinderTitle: '@Html.SageRaw(CompanyProfileResx.FunctionalCurrency)',
+        InvalidYearMsg: '@Html.SageRaw(FiscalCalendarResx.InvalidYearMessage)',
+        FiscalYear: '@Html.SageRaw(FiscalCalendarResx.FiscalYear)',
+        CurrencyCodeTitle: '@Html.SageRaw(CurrencyCodesResx.CurrencyCode)'
+    };
+</script>

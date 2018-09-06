@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
- /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -151,8 +151,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var containerName = settings.EntitiesContainerName;
-    var entityName = view.Properties[BusinessView.EntityName];
-    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 
             
             #line default

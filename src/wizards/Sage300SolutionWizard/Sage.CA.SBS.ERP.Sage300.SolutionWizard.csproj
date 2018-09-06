@@ -75,10 +75,10 @@
     </Compile>
     <Compile Include="Sage300CUISolutionWizardUserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInputForm.cs">
+    <Compile Include="Forms\UserInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserInputForm.Designer.cs">
+    <Compile Include="Forms\UserInputForm.Designer.cs">
       <DependentUpon>UserInputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WizardStep.cs" />
@@ -88,7 +88,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInputForm.resx">
+    <EmbeddedResource Include="Forms\UserInputForm.resx">
       <DependentUpon>UserInputForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

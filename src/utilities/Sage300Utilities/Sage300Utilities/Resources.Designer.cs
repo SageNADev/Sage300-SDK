@@ -70,11 +70,11 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to prevent any files in the \src\wizards\templates\Web\ folder from being updated at all. This flag takes precedence over UseLocalSage300Installation AND WebSource..
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If set to false or not specified, the templates folders will not be updated at all..
         /// </summary>
-        internal static string Msg_CommandLineParameter_DisableTemplateUpdates {
+        internal static string Msg_CommandLineParameter_EnableTemplateUpdates {
             get {
-                return ResourceManager.GetString("Msg_CommandLineParameter_DisableTemplateUpdates", resourceCulture);
+                return ResourceManager.GetString("Msg_CommandLineParameter_EnableTemplateUpdates", resourceCulture);
             }
         }
         
@@ -97,6 +97,15 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to rebuild the Web.vstemplate file that lives in the \src\Wizards\Templates\Web\ folder based on the contents of this and it&apos;s sub-folders..
+        /// </summary>
+        internal static string Msg_CommandLineParameter_RebuildWebDotVstemplateFile {
+            get {
+                return ResourceManager.GetString("Msg_CommandLineParameter_RebuildWebDotVstemplateFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is the path to the root Web SDK folder..
         /// </summary>
         internal static string Msg_CommandLineParameter_SDKRoot {
@@ -106,16 +115,7 @@ namespace Sage300Utilities {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifying this flag indicates that you wish to source the web files from the local Sage 300 installation..
-        /// </summary>
-        internal static string Msg_CommandLineParameter_UseLocalSage300Installation {
-            get {
-                return ResourceManager.GetString("Msg_CommandLineParameter_UseLocalSage300Installation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is the path to the source web files. This setting will take precedence over the UseLocalSage300Installation flag..
+        ///   Looks up a localized string similar to This is the path to the source web files..
         /// </summary>
         internal static string Msg_CommandLineParameter_WebSource {
             get {
@@ -137,7 +137,7 @@ namespace Sage300Utilities {
         ///Version:               {1}
         ///Build Date:            {2}
         ///
-        ///Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+        ///Copyright:             (c) 1994-{6} The Sage Group plc or its licensors.  
         ///                       All rights reserved.
         ///License:               The MIT Licence (MIT)
         ///

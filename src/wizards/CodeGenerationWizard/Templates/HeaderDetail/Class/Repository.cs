@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
- /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -150,7 +150,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var containerName = settings.EntitiesContainerName;
-    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 
             
             #line default
@@ -331,7 +331,7 @@ using ");
         var entityMapperVariableName = "_" + entry.Value + "Mapper";
         var entityMapperVariableType = rotoId2EntityName[entry.Key] + "Mapper";
         var entityName = rotoId2EntityName[entry.Key];
-        var modelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == entry.Key).First().Properties[BusinessView.ModelName];
+        var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Properties[BusinessView.Constants.ModelName];
 
 
             
@@ -395,7 +395,7 @@ using ");
                         continue;
                     }
 
-                    var modelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == entry.Key).First().Properties[BusinessView.ModelName];
+                    var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Properties[BusinessView.Constants.ModelName];
 
                     WriteLine(String.Format("{0}_{1}Mapper = new {2}Mapper<{3}>(context);", new string(' ', 12), entry.Value, rotoId2EntityName[entry.Key], modelName));
             }
@@ -469,7 +469,7 @@ using ");
             foreach (var ent in xmlEntities.Root.Descendants().Where(e => e.Name == "entity"))
             {
                 var viewID = ent.Attribute("view").Value;
-                var modelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == viewID).First().Properties[BusinessView.ModelName];
+                var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == viewID).First().Properties[BusinessView.Constants.ModelName];
 
                 WriteLine(String.Format("{0}_{1}Entity = OpenEntity({2}.EntityName, true);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
             }
@@ -803,7 +803,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             foreach (var node in settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
             {
                 var viewID = node.Attribute("view").Value;
-                var modelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == viewID).First().Properties[BusinessView.ModelName];
+                var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == viewID).First().Properties[BusinessView.Constants.ModelName];
 
                 WriteLine(String.Format("{0}var {1} = new BusinessEntityProperty({2}.EntityName, ViewKeyType.SystemGenerated /* FIXME ViewKeyType.UserSpecified */);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
             }

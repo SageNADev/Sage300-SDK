@@ -1,9 +1,0 @@
-﻿The ...Behaviour.js file, on successful return from a finder selection,
-was not performing a Get to get the record from the repository and
-instead used the object returned from the finder. The record returned
-from the finder is out-of-process and needs to be fetched by the screen.
-Changes to partner code are only required if a partner's business view
-has logic regarding a new record which was incorrectly being invoked by 
-an existing record that "looked like" a new record. This has been 
-corrected. Once this upgrade wizard has completed, please consult
-the Sage 300 2018.2 Web SDK release notes for further instructions.

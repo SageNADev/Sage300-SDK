@@ -59,19 +59,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\web\bin\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\CrystalDecisions.Web.dll</HintPath>
     </Reference>
@@ -348,6 +348,7 @@
     <Content Include="Scripts\**" />
     <Content Include="Content\**" />
     <Content Include="Assets\**" />
+    <Content Include="aspnet_client\**" />
     <Content Include="WebForms\CustomReportViewer.aspx" />
     <Content Include="WebForms\ReportViewer.aspx" />
     <Content Include="Web.config">
@@ -396,6 +397,8 @@
   <ItemGroup>
     <Content Include="Areas\$applicationid$\Views\Web.config" />
     <Content Include="Areas\$applicationid$\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\$applicationid$\ExternalContent\bg_menu_$lowercaseapplicationid$.jpg" />
+    <Content Include="Areas\$applicationid$\ExternalContent\icon_$lowercaseapplicationid$.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\$applicationid$\Controllers\Finder\" />

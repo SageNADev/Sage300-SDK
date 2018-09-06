@@ -51,9 +51,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployExtension>True</DeployExtension>
+    <CreateVsixContainer>True</CreateVsixContainer>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -70,6 +72,10 @@
     <Content Include="Assets\Items.vstemplate" />
     <Content Include="Assets\__TemplateIcon.ico" />
     <Content Include="ItemTemplates\Items.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ItemTemplates\AccpacDotNetVersion.props">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -111,8 +117,7 @@
 REM Call RebuildPayload.bat</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).vsix $(ProjectDir)..\..\..\..\bin\wizards\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -121,4 +126,6 @@ REM Call RebuildPayload.bat</PreBuildEvent>
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!-- The following commented-out line can be used to load common settings into the project -->
+  <!--<Import Project="$(SolutionDir)CommonSettings.targets" />-->
 </Project>

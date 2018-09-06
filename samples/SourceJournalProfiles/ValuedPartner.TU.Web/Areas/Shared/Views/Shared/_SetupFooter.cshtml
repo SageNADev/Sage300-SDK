@@ -1,0 +1,24 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using System.Web.UI.WebControls
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@{
+    FooterType? footerType = ViewData[ViewItemSemantic.FooterType] as FooterType? ?? FooterType.None;
+
+    if (footerType.Value == FooterType.Space)
+    {
+        <text><div class="footer"></div></text>
+    }
+    else if (footerType.Value == FooterType.LineSeparator)
+    {
+        <text><div class="clear-fix"></div><div class="row bor-top mar_top_2"></div></text>
+    }
+
+    @Html.Partial(Shared.SaveButton, (object) Model, (ViewDataDictionary) ViewData)
+    @Html.Partial(Shared.DeleteButton, (object)Model, (ViewDataDictionary)ViewData)
+    @Html.Partial(Shared.OptionalButton, (object)Model, (ViewDataDictionary)ViewData)
+}

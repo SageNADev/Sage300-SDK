@@ -1,0 +1,76 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var resourceExtension = settings.ResourceExtension;
+    var extension = settings.Extension;
+    var enumHelper = settings.EnumHelper;
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
+#>
+
+    /// <summary>
+    /// Enum for <#=enumHelper.Name#>
+    /// </summary>
+    public enum <#=enumHelper.Name#>
+    {
+<#
+            // Iterate values collection
+            var count = 0;
+            foreach (var value in enumHelper.Values)
+            {
+                // Locals - Used to split out prefix and replace invalid characters
+                var tmp = value.Key.Split(':');
+                var valueName = tmp[1];
+                if (!settings.ResourceKeys.Contains(valueName))
+				{
+					valueName = settings.ResourceKeys.FirstOrDefault(e => e.Equals(valueName, StringComparison.CurrentCultureIgnoreCase));
+				}
+                count++;
+#>
+        /// <summary>
+        /// Gets or sets <#=valueName#>
+        /// </summary>
+        [EnumValue("<#=valueName#>", typeof(<#=resxName#>))]
+<#
+                if (value.Value is int)
+                {
+#>
+        <#=valueName#> = <#=value.Value#><#=(count != enumHelper.Values.Count) ? "," : string.Empty#>
+<#
+                }
+
+                if (value.Value is char)
+                {
+#>
+        <#=valueName#> = '<#=value.Value#>'<#=(count != enumHelper.Values.Count) ? "," : string.Empty#>
+<#
+                }
+#>
+<#
+            }
+#>
+    }

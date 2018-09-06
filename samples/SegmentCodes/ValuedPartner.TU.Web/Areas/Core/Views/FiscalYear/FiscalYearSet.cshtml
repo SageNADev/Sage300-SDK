@@ -1,0 +1,24 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.FiscalYearSet
+
+
+<div id="divFiscalCalender" class="fisc-cal">
+    <div class="calendar-heading">
+        <div class="f-cal-left"><input id="btnPreviousFiscal" type="image" src="~/Content/Images/white-left-arrow-t.png" alt="" /></div>
+        <div class="f-cal-title"><label>Fiscal Year</label></div>
+        <div class="f-cal-right"><input id="btnNextFiscal" type="image" src="~/Content/Images/white-right-arrow-t.png" alt="" /></div>
+    </div>
+    <div id="divFiscalGridControl"></div>
+</div>
+
+<script type="text/javascript">
+    var fiscalControlGridColumns = {
+        headerPeriod: '@Html.SageGridHeaderFor(model => model.Period)',
+        headerStartDate: '@Html.SageGridHeaderFor(model => model.StartDate)',
+        headerEndDate: '@Html.SageGridHeaderFor(model => model.EndDate)',
+        headerStatus: '@Html.SageGridHeaderFor(model => model.Status)'
+    };
+</script>

@@ -127,10 +127,10 @@ namespace ValuedPartner.TU.Models
           public long IntegerValue {get; set;}
 
           /// <summary>
-          /// Gets or sets YesNoValue
+          /// Gets or sets YesOrNoValue
           /// </summary>
           [Display(Name = "YesNoValue", ResourceType = typeof(ReceiptDetailResx))]
-          public Enums.YesNoValue YesNoValue { get; set; }
+          public Enums.YesNoValue YesOrNoValue { get; set; }
 
           /// <summary>
           /// Gets or sets DateValue

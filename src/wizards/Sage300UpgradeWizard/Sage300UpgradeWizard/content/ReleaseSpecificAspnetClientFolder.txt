@@ -1,0 +1,15 @@
+Reporting now requires the use of components from the 'aspnet_client' folder.
+
+Please locate this folder on your system and copy it, as well as all of it's 
+content to the root of your custom solutions 'Web' project.
+
+A typical location on your system where this folder can be found is as 
+follows:
+
+C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
+
+It's not necessary to copy the content from all versions of Microsoft.NET
+Only version 4.0.30319 is necessary. Copy the folder 'aspnet_client' to it's 
+final destination.
+
+

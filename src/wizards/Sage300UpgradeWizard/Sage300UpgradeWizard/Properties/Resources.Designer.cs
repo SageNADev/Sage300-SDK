@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Accpac library was not found in the solution folder. No upgrade was necessary..
+        /// </summary>
+        internal static string AccpacPropsFileDoesNotExistInSolutionFolder {
+            get {
+                return ResourceManager.GetString("AccpacPropsFileDoesNotExistInSolutionFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add/Replace file: .
         /// </summary>
         internal static string AddReplaceFile {
@@ -97,6 +106,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Begin Upgrade Process....
+        /// </summary>
+        internal static string BeginUpgradeProcess {
+            get {
+                return ResourceManager.GetString("BeginUpgradeProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IEXPLORE.EXE.
         /// </summary>
         internal static string Browser {
@@ -115,6 +133,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied all files from.
+        /// </summary>
+        internal static string CopiedAllFilesFrom {
+            get {
+                return ResourceManager.GetString("CopiedAllFilesFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         internal static string Dash {
@@ -124,11 +151,38 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to deleted.
+        /// </summary>
+        internal static string Deleted {
+            get {
+                return ResourceManager.GetString("Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to does not exist.
+        /// </summary>
+        internal static string DoesNotExist {
+            get {
+                return ResourceManager.GetString("DoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End.
         /// </summary>
         internal static string End {
             get {
                 return ResourceManager.GetString("End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End Upgrade Process.
+        /// </summary>
+        internal static string EndUpgradeProcess {
+            get {
+                return ResourceManager.GetString("EndUpgradeProcess", resourceCulture);
             }
         }
         
@@ -151,11 +205,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to exists.
+        /// </summary>
+        internal static string Exists {
+            get {
+                return ResourceManager.GetString("Exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extracted moduleid.
         /// </summary>
         internal static string ExtractedModuleId {
             get {
                 return ResourceManager.GetString("ExtractedModuleId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
             }
         }
         
@@ -414,132 +486,147 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the [ModuleID]MenuDetails.xml file..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateMenuDetails {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateMenuDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will be done automatically..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdatePostBuildEvent {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdatePostBuildEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will automatically upgrade some of your source code files..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateSourceCode {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateSourceCodeManually {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateSourceCodeManually", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the Menu Details.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateMenuDetails {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMenuDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the Web project Post Build Event.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdatePostBuildEvent {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdatePostBuildEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic update of source code files.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateSourceCode {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manual update of source code files.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateSourceCodeManually {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateSourceCodeManually", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update the menu icon and background images
+        ///   Looks up a localized string similar to Reporting now requires the use of components from the &apos;aspnet_client&apos; folder.
         ///
-        ///This step will update the following file:
+        ///Please locate this folder on your system and copy it, as well as all of it&apos;s 
+        ///content to the root of your custom solutions &apos;Web&apos; project.
         ///
-        ///* Web\[ModuleID]MenuDetails.xml
-        ///.
+        ///A typical location on your system where this folder can be found is as 
+        ///follows:
+        ///
+        ///C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
+        ///
+        ///It&apos;s not necessary to copy the content from all versions of Microsoft.NET
+        ///Only version 4.0.30319 is necessary. Copy the folder &apos;aspnet_client&apos; to [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ReleaseSpecificUpdateMenuDetails {
+        internal static string ReleaseSpecificAspnetClientFolder {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateMenuDetails", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificAspnetClientFolder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The post build command has changed slightly from release 
-        ///{0} to {1}.
+        ///   Looks up a localized string similar to The version information for some Crystal Reports components has changed.
         ///
-        ///This step will update the post build command.
+        ///This step will automatically update those component references from
+        ///version {0} to {1}.
+        ///
+        ///This step will be done automatically by the Upgrade Wizard.
         ///
         ///.
         /// </summary>
-        internal static string ReleaseSpecificUpdatePostBuildEvent {
+        internal static string ReleaseSpecificCrystalReportsVersionNumberUpdate {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdatePostBuildEvent", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificCrystalReportsVersionNumberUpdate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Javascript bundling has changed slightly in this release.
+        ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
+        /// </summary>
+        internal static string ReleaseSpecificDescAspnetClientFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescAspnetClientFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
+        /// </summary>
+        internal static string ReleaseSpecificDescConsolidateEnumerations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will update the version numbers for some Crystal Reports components..
+        /// </summary>
+        internal static string ReleaseSpecificDescCrystalReportsVersionNumberUpdate {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescCrystalReportsVersionNumberUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will create and populate the new ExternalContent folder..
+        /// </summary>
+        internal static string ReleaseSpecificDescExternalContentFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescExternalContentFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The way menu images (background and icon) are managed and structured 
+        ///has changed in this release.
         ///
-        ///This step will update the following file:
+        ///A new folder called &apos;ExternalContent&apos; will be added to the 
+        ///&apos;\Areas\{0}\&apos; folder. The menu background and icon images 
+        ///will be moved to this new folder and renamed as follows:
         ///
-        ///* Web\BundleRegistration.cs
+        ///menuBackGroundImage.jpg =&gt; bg_menu_{0}.jpg
+        ///menuIcon.png =&gt; icon_{0}.png
+        ///
+        ///Please Note: XX is just a placeholder for the actual Module Id 
+        ///that will be used.
+        ///
         ///.
         /// </summary>
-        internal static string ReleaseSpecificUpdateSourceCode {
+        internal static string ReleaseSpecificExternalContentFolder {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCode", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificExternalContentFolder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The ...Behaviour.js file, on successful return from a finder selection,
-        ///was not performing a Get to get the record from the repository and
-        ///instead used the object returned from the finder. The record returned
-        ///from the finder is out-of-process and needs to be fetched by the screen.
-        ///Changes to partner code are only required if a partner&apos;s business view
-        ///has logic regarding a new record which was incorrectly being invoked by 
-        ///an existing record that &quot;looked like&quot; a new record. This has been 
-        ///corrected. O [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Create &apos;aspnet_client&apos; folder (Manual Step).
         /// </summary>
-        internal static string ReleaseSpecificUpdateSourceCodeManually {
+        internal static string ReleaseSpecificTitleAspnetClientFolder {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateSourceCodeManually", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleAspnetClientFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consolidation of Enumeration Files.
+        /// </summary>
+        internal static string ReleaseSpecificTitleConsolidateEnumerations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crystal Reports version number update.
+        /// </summary>
+        internal static string ReleaseSpecificTitleCrystalReportsVersionNumberUpdate {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleCrystalReportsVersionNumberUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process the new ExternalContent folder.
+        /// </summary>
+        internal static string ReleaseSpecificTitleExternalContentFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleExternalContentFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
+        ///from release {0} to {1}.
+        ///
+        ///Instead of creating a different, unique enumeration file for each unique enumeration,
+        ///the code generation wizard will now consolidate enumerations into a single file on
+        ///a per-directory basis in the Models project. This file is called &apos;Enumerations.cs&apos;
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateConsolidateEnumerations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
             }
         }
         
@@ -580,7 +667,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Upgrade.
+        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
         /// </summary>
         internal static string SolutionUpgrade {
             get {
@@ -621,6 +708,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string StepTitleMain {
             get {
                 return ResourceManager.GetString("StepTitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to.
+        /// </summary>
+        internal static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
         

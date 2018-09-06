@@ -29,10 +29,10 @@ using System.IO.Compression;
 
 namespace Sage300Utilities
 {
-	/// <summary>
-	/// This is the class where the magic happens :)
-	/// </summary>
-	public class Driver
+    /// <summary>
+    /// This is the class where the magic happens :)
+    /// </summary>
+    public class Driver
 	{
 		#region Public Variables
 		public ILogger Logger = Program.Logger;
@@ -46,8 +46,8 @@ namespace Sage300Utilities
 		/// <param name="args">This is the string[] of command-line parameters</param>
 		public Driver(string[] args)
 		{
-			Utilities.GetAppInfo(out string appName, out string appVersion, out string buildDate);
-			_Options = new CommandLineOptions(appName, appVersion, buildDate, args);
+			Utilities.GetAppInfo(out string appName, out string appVersion, out string buildDate, out string buildYear);
+			_Options = new CommandLineOptions(appName, appVersion, buildDate, buildYear, args);
 
 			// Display the usage text if no command-line parameters specified
 			// or the special help parameter was specified
@@ -83,10 +83,11 @@ namespace Sage300Utilities
 		#region Private Methods
 		/// <summary>
 		/// This method will do the following:\
-		/// 1. Clear out the SDK\src\wizards\templates\web\ folder
-		/// 2. Copy assets from either of the following locations:
+		/// 1. Conditionally clear out the SDK\src\wizards\templates\web\ folder
+		/// 2. Conditionally copy assets from either of the following locations:
 		///		a. CNA2\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web\ 
 		///		b. The local Sage 300 online\Web\ 
+        ///		c. Another folder
 		///	   into the following folder
 		///	     SDK\src\wizards\templates\web\
 		///	3. Create zip archives for the following:
@@ -112,24 +113,18 @@ namespace Sage300Utilities
 			sw.Start();
 
 			// Ensure that paths are specified and correct.
-			var sdkRoot = _Options.SDKRoot.OptionValue;
+			var sdkRoot = _Options.SDKRootFolder.OptionValue;
 			var templatesFolder = Path.Combine(sdkRoot, @"src\wizards\Templates");
 			var webTargetFolder = Path.Combine(templatesFolder, @"Web");
-			var webSourceFolder = (_Options.WebSource.OptionValue.Length > 0) ? _Options.WebSource.OptionValue : string.Empty;
+			var webSourceFolder = (_Options.WebSourceFolder.OptionValue.Length > 0) ? _Options.WebSourceFolder.OptionValue : string.Empty;
 
-			if (_Options.DisableTemplateUpdates.OptionValue == false)
+			if (_Options.EnableTemplateUpdates.OptionValue == true)
 			{
-				// If WebSource was defined on the command-line, it takes precedence
-				// over the UseLocalSage300Installtion flag.
-
-				// If WebSource was not specified on the command-line 
-				// AND
-				// UseLocalSage300Installation is true
-				if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == true)
+				// If WebSourceFolder was not specified on the command-line 
+				if (webSourceFolder.Length == 0)
 				{
-					webSourceFolder = Utilities.Sage300CWebFolder;
-
-					Logger.LogInfo("Attempting to use the local Sage 300 installation for sources.");
+                    Logger.LogInfo("Attempting to use the local Sage 300 installation for web source files");
+                    webSourceFolder = Utilities.Sage300CWebFolder;
 
 					// Determine if Sage 300 is installed locally
 					if (webSourceFolder.Length > 0)
@@ -138,16 +133,26 @@ namespace Sage300Utilities
 					}
 					else
 					{
-						Logger.LogError($"Sage 300 web screen installation not found in registry.");
+                        var msg = @"Sage 300 web screen installation not found in registry. You will need to either install Sage 300
+                                    or specify another folder on the command-line.";
+                        Logger.LogError(msg);
 						proceed = false;
 					}
 				}
 				else
 				{
-					Logger.LogInfo($"Using local CNA2\\Columbus-Web\\Sage.CA.SBS.ERP.Sage300.Web\\ for sources : '{webSourceFolder}'");
-				}
+                    // Does the specified folder exist?
+                    if (Directory.Exists(webSourceFolder) == false)
+                    {
+                        Logger.LogInfo($"The specified folder '{webSourceFolder}' does not exist. Please specify a different folder.");
+                    }
+                    else
+                    {
+                        Logger.LogInfo($"Using the following folder for sources : '{webSourceFolder}'.");
+                    }
+                }
 
-				if (webSourceFolder.Length == 0 && _Options.UseLocalSage300Installation.OptionValue == false)
+				if (webSourceFolder.Length == 0)
 				{
 					Logger.LogError($"Unable to determine where web source files should come from.");
 					Logger.LogError($"Did you specify the correct command-line parameters?");
@@ -156,19 +161,22 @@ namespace Sage300Utilities
 			}
 			else
 			{
-				Logger.LogInfo($"DisableTemplateUpdates was set on the command-line. The Web templates folder will not be updated.");
+				Logger.LogInfo($"EnableTemplateUpdates was turned off on the command-line. The Web templates folder will NOT be automatically updated.");
 			}
 
 			if (proceed)
 			{
-				// Only allow Web template folder updates when this flag is false
-				if (_Options.DisableTemplateUpdates.OptionValue == false)
-				{
-					// Remove specific files and folders from the 'Web' directory
-					DeleteWebFiles(webTargetFolder);
+                // Only allow Web template folder updates when this flag is false
+                if (_Options.EnableTemplateUpdates.OptionValue == true)
+                {
+                    UpdateWebFiles(webSourceFolder, webTargetFolder);
+                }
 
-					// Copy over the 'Web' files
-					CopyWebSources(webSourceFolder, webTargetFolder);
+				// Optionally rebuild the Web.vstemplate file BEFORE
+				// we create the Web.zip (and other zip archives)
+				if (_Options.RebuildWebDotVstemplateFile.OptionValue == true)
+				{
+					RebuildWebDotVstemplate();
 				}
 
 				// Create the template zip files
@@ -191,11 +199,25 @@ namespace Sage300Utilities
 			Logger.LogInfo($"RunRebuildProcess() completed - Elapsed Time : {elapsedTime}");
 		}
 
-		/// <summary>
-		/// Remove specific items from the '\src\Wizards\Templates\Web\' folder
-		/// </summary>
-		/// <param name="folder">The folder to remove files and sub-folders from</param>
-		private void DeleteWebFiles(string webFolder)
+        /// <summary>
+        /// A wrapper method for deleting web files and copying over files from a different folder
+        /// </summary>
+        /// <param name="sourceFolder">The source folder for Web files</param>
+        /// <param name="targetFolder">The target folder for the Web files</param>
+        private void UpdateWebFiles(string sourceFolder, string targetFolder)
+        {
+            // Remove specific files and folders from the 'Web' directory
+            DeleteWebFiles(targetFolder);
+
+            // Copy over the 'Web' files
+            CopyWebSources(sourceFolder, targetFolder);
+        }
+
+        /// <summary>
+        /// Remove specific items from the '\src\Wizards\Templates\Web\' folder
+        /// </summary>
+        /// <param name="folder">The folder to remove files and sub-folders from</param>
+        private void DeleteWebFiles(string webFolder)
 		{
 			Logger.LogInfo($"Start - DeleteWebFiles('{webFolder}')");
 
@@ -279,6 +301,7 @@ namespace Sage300Utilities
 
 		/// <summary>
 		/// Copy specific files from the source folder to destination folder.
+		/// Also includes a step that alters some files.
 		/// </summary>
 		/// <param name="source">The web source directory</param>
 		/// <param name="target">The web destination directory</param>
@@ -389,6 +412,43 @@ namespace Sage300Utilities
 		}
 
 		/// <summary>
+		/// Rebuild the Web.vstemplate file based on the current contents of the 
+		/// \src\Wizards\templates\Web\ folder.
+		/// </summary>
+		private void RebuildWebDotVstemplate()
+		{
+			Logger.LogInfo($"Start - RebuildWebDotVstemplate()");
+
+			const string TemplateFileName = "Web.vstemplate";
+
+			// Ensure that paths are specified and correct.
+			var templatesFolder = Path.Combine(_Options.SDKRootFolder.OptionValue, @"src\wizards\Templates");
+			Logger.LogInfo($"templatesFolder = {templatesFolder}");
+			var webFolder = Path.Combine(templatesFolder, "Web");
+			Logger.LogInfo($"webFolder = {webFolder}");
+
+			// Step 1 - Remove the existing Web.vstemplate file
+			// Or perhaps back it up instead?
+			var templateFilePath = Path.Combine(webFolder, TemplateFileName);
+			if (File.Exists(templateFilePath))
+			{
+				Logger.LogInfo($"Existing template file '{templateFilePath}' deleted.");
+				File.Delete(templateFilePath);
+			}
+
+			// Step 2 - Enumerate the source folder
+			// and generate the XML file
+			new WebTemplateGenerator(Logger)
+			{
+				WebTemplateFileName = "Web.vstemplate",
+				RootFolder = webFolder,
+				TargetFolder = webFolder
+			}.SaveXml();
+
+			Logger.LogInfo($"End - RebuildWebDotVstemplate");
+		}
+
+		/// <summary>
 		/// Create the list of Zip archives from the sub-folders
 		/// in the Web SDK src\Wizards\Templates folder
 		/// </summary>
@@ -397,7 +457,7 @@ namespace Sage300Utilities
 			Logger.LogInfo($"Start - CreateTemplateZipFiles()");
 
 			// Ensure that paths are specified and correct.
-			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+			var templatesFolder = Path.Combine(_Options.SDKRootFolder.OptionValue, @"src\wizards\Templates");
 			Logger.LogInfo($"templatesFolder = {templatesFolder}");
 
 			// The list of folders to compress into 
@@ -444,8 +504,8 @@ namespace Sage300Utilities
 			Logger.LogInfo($"Start - CopyTemplateZipFiles()");
 
 			// Ensure that paths are specified and correct.
-			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
-			var targetFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Sage300UIWizardPackage\ProjectTemplates");
+			var templatesFolder = Path.Combine(_Options.SDKRootFolder.OptionValue, @"src\wizards\Templates");
+			var targetFolder = Path.Combine(_Options.SDKRootFolder.OptionValue, @"src\wizards\Sage300UIWizardPackage\ProjectTemplates");
 
 			// The list of template files
 			var templateNames = new[] {
@@ -487,7 +547,7 @@ namespace Sage300Utilities
 			Logger.LogInfo($"Start - RemoveTemplateZipFiles()");
 
 			// Ensure that paths are specified and correct.
-			var templatesFolder = Path.Combine(_Options.SDKRoot.OptionValue, @"src\wizards\Templates");
+			var templatesFolder = Path.Combine(_Options.SDKRootFolder.OptionValue, @"src\wizards\Templates");
 
 			// The list of template files
 			var templateNames = new[] {

@@ -120,8 +120,8 @@
   <data name="Msg_Application" xml:space="preserve">
     <value>Application</value>
   </data>
-  <data name="Msg_CommandLineParameter_DisableTemplateUpdates" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish to prevent any files in the \src\wizards\templates\Web\ folder from being updated at all. This flag takes precedence over UseLocalSage300Installation AND WebSource.</value>
+  <data name="Msg_CommandLineParameter_EnableTemplateUpdates" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If set to false or not specified, the templates folders will not be updated at all.</value>
   </data>
   <data name="Msg_CommandLineParameter_Help" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to view the help for this application.</value>
@@ -129,14 +129,14 @@
   <data name="Msg_CommandLineParameter_PreBuild" xml:space="preserve">
     <value>Specifying this flag indicates that you wish to run the PreBuild process during the Visual Studio Pre-Build event.</value>
   </data>
+  <data name="Msg_CommandLineParameter_RebuildWebDotVstemplateFile" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to rebuild the Web.vstemplate file that lives in the \src\Wizards\Templates\Web\ folder based on the contents of this and it's sub-folders.</value>
+  </data>
   <data name="Msg_CommandLineParameter_SDKRoot" xml:space="preserve">
     <value>This is the path to the root Web SDK folder.</value>
   </data>
-  <data name="Msg_CommandLineParameter_UseLocalSage300Installation" xml:space="preserve">
-    <value>Specifying this flag indicates that you wish to source the web files from the local Sage 300 installation.</value>
-  </data>
   <data name="Msg_CommandLineParameter_WebSource" xml:space="preserve">
-    <value>This is the path to the source web files. This setting will take precedence over the UseLocalSage300Installation flag.</value>
+    <value>This is the path to the source web files.</value>
   </data>
   <data name="Msg_InnerException" xml:space="preserve">
     <value>Inner Exception</value>
@@ -146,7 +146,7 @@
 Version:               {1}
 Build Date:            {2}
 
-Copyright:             (c) 1994-2018 The Sage Group plc or its licensors.  
+Copyright:             (c) 1994-{6} The Sage Group plc or its licensors.  
                        All rights reserved.
 License:               The MIT Licence (MIT)
 

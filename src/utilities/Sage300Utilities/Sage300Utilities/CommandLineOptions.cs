@@ -90,6 +90,12 @@ namespace Sage300Utilities
 		public string ApplicationBuildDate { get; set; }
 
 		/// <summary>
+		/// This will contain the build year of the application
+		/// Used for the copyright range 
+		/// </summary>
+		public string ApplicationBuildYear { get; set; }
+
+		/// <summary>
 		/// This will contain the list of all errors that
 		/// occurred when attempting to load and parse the
 		/// command-line options.
@@ -115,7 +121,7 @@ namespace Sage300Utilities
 		//
 		// If you wish to add new command-line options,
 		// please add them to this section
-		// Presently the code can only deal with strings integers and booleans
+		// Presently the code can only deal with strings, integers and booleans
 
 		/// <summary>
 		/// Flag parameter used to show help information
@@ -131,33 +137,38 @@ namespace Sage300Utilities
 
 		/// <summary>
 		/// Flag parameter used to tell the application
-		/// to avoid any updates to the \src\wizards\templates\ folder contentsg
-		/// Just leave the template directory as is.
+		/// to update to the \src\wizards\templates\ folder contents
 		/// </summary>
 		[OptionalArgument]
-		public CommandLineOption<bool> DisableTemplateUpdates { get; set; }
+		public CommandLineOption<bool> EnableTemplateUpdates { get; set; }
 
 		/// <summary>
 		/// String parameter set to the location of the Web SDK
 		/// </summary>
 		[OptionalArgument]
 		[IsExistingFolder]
-		public CommandLineOption<string> SDKRoot { get; set; }
-
-		/// <summary>
-		/// Flag parameter used to tell application
-		/// to get Web sources from the local Sage 300 installation
-		/// </summary>
-		[OptionalArgument]
-		public CommandLineOption<bool> UseLocalSage300Installation { get; set; }
+		public CommandLineOption<string> SDKRootFolder { get; set; }
 
 		/// <summary>
 		/// String parameter set to the location of the Web sources
-		/// This parameter overrides the UseLocalSage300Installation flag
+        /// Could be any of the following:
+        /// - Local source code folder
+        /// - Local Sage 300 Installation folder
+        /// - Other folder 
+        /// This field is used if the EnableTemplateUpdates flag is set to true
 		/// </summary>
 		[OptionalArgument]
 		[IsExistingFolder]
-		public CommandLineOption<string> WebSource { get; set; }
+		public CommandLineOption<string> WebSourceFolder { get; set; }
+
+		/// <summary>
+		/// Flag parameter used to tell the application
+		/// to rebuild the Web.vstemplate file located in the root of the 
+		/// \src\Wizards\Templates\Web\ folder
+		/// </summary>
+		[OptionalArgument]
+		public CommandLineOption<bool> RebuildWebDotVstemplateFile { get; set; }
+
 
 		#endregion
 
@@ -172,14 +183,22 @@ namespace Sage300Utilities
 		/// </summary>
 		/// <param name="appName">The name of the application</param>
 		/// <param name="appVersion">The version number of the application</param>
+		/// <param name="buildDate">The string representation of the build date and time</param>
+		/// <param name="buildYear">The string representation of the build year</param>
 		/// <param name="args">The argument list passed in via the command-line</param>
 		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
-		public CommandLineOptions(string appName, string appVersion, string buildDate, string[] args, string prefix=DEFAULT_PREFIX)
+		public CommandLineOptions(string appName, 
+								  string appVersion, 
+								  string buildDate, 
+								  string buildYear,
+								  string[] args, 
+								  string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
             ApplicationName = appName;
             ApplicationVersion = appVersion;
 			ApplicationBuildDate = buildDate;
+			ApplicationBuildYear = buildYear;
 
 			// If the argument array has only a single entry, then the
 			// arguments list will likely have /r/n characters in it
@@ -220,49 +239,49 @@ namespace Sage300Utilities
 				AliasList = new List<string>() { "pb" },
 				Description = Messages.Msg_CommandLineParameter_PreBuild,
 				OptionValue = false,
-				ExampleValue = @""
+				ExampleValue = @"true|false"
 			};
 			LoadOption(PreBuild, arguments);
 
-			DisableTemplateUpdates = new CommandLineOption<bool>()
+			EnableTemplateUpdates = new CommandLineOption<bool>()
 			{
-				Name = "disabletemplateupdates",
-				AliasList = new List<string>() { "dtu" },
-				Description = Messages.Msg_CommandLineParameter_DisableTemplateUpdates,
-				OptionValue = true,
-				ExampleValue = @""
-			};
-			LoadOption(PreBuild, arguments);
+				Name = "enabletemplateupdates",
+				AliasList = new List<string>() { "etu" },
+				Description = Messages.Msg_CommandLineParameter_EnableTemplateUpdates,
+				OptionValue = false, // Defaults to false (off or disabled)
+                ExampleValue = @"true|false"
+            };
+			LoadOption(EnableTemplateUpdates, arguments);
 
-			SDKRoot = new CommandLineOption<string>()
+			SDKRootFolder = new CommandLineOption<string>()
 			{
 				Name = "sdkroot",
-				AliasList = new List<string>() { "sdkfolder", "sdkrootfolder" },
+				AliasList = new List<string>() { "sdkfolder", "sdkroot" },
 				Description = Messages.Msg_CommandLineParameter_SDKRoot,
 				OptionValue = @"C:\Projects\Sage300-SDK\",
 				ExampleValue = @"C:\Projects\Sage300-SDK"
 			};
-			LoadOption(SDKRoot, arguments);
+			LoadOption(SDKRootFolder, arguments);
 
-			UseLocalSage300Installation = new CommandLineOption<bool>()
+			WebSourceFolder = new CommandLineOption<string>()
 			{
-				Name = "uselocalsage300installation",
-				AliasList = new List<string>() { "localsage300" },
-				Description = Messages.Msg_CommandLineParameter_UseLocalSage300Installation,
-				OptionValue = true,
-				ExampleValue = @""
-			};
-			LoadOption(UseLocalSage300Installation, cleanArgList);
-
-			WebSource = new CommandLineOption<string>()
-			{
-				Name = "websource",
-				AliasList = new List<string>() { "websourcefolder", "source", "ws" },
+				Name = "websourcefolder",
+				AliasList = new List<string>() { "websource", "source", "ws" },
 				Description = Messages.Msg_CommandLineParameter_WebSource,
 				OptionValue = @"",
 				ExampleValue = @"C:\projects\Web\Sage.CA.SBS.ERP.Sage300.Web"
 			};
-			LoadOption(WebSource, arguments);
+			LoadOption(WebSourceFolder, arguments);
+
+			RebuildWebDotVstemplateFile = new CommandLineOption<bool>()
+			{
+				Name = "rebuildwebvstemplate",
+				AliasList = new List<string>() { "rwvst" },
+				Description = Messages.Msg_CommandLineParameter_RebuildWebDotVstemplateFile,
+				OptionValue = false, // Defaults to false (off or disabled)
+                ExampleValue = @"true|false"
+            };
+			LoadOption(RebuildWebDotVstemplateFile, arguments);
 		}
 
 		/// <summary>
@@ -450,22 +469,38 @@ namespace Sage300Utilities
 		/// <param name="theArg">The single command-line argument</param>
 		private void _ProcessBoolean(CommandLineOption<bool> option, string theArg)
 		{
-			// Since this is a boolean flag we only care that it's defined
-			// It doesn't need to have any kind of value
-			option.OptionValue = true;
-			option.LoadError = false;
-		}
+            // Does the boolean argument follow any of the the following formats?
+            // Any of these are valid:
+            //
+            // --FlagName=true                      : flagname = true
+            // --FlagName=false                     : flagname = false
 
-		/// <summary>
-		/// Gets the name of the command-line argument 
-		/// without any prefix characters or assigned values
-		/// Example: 
-		///     Input:   --argumentname=blahblah
-		///     Output:  argumentname
-		/// </summary>
-		/// <param name="arg">The individual argument</param>
-		/// <returns>The argument name only</returns>
-		private string GetArgumentNameOnly(string arg)
+            var valueFromArg = false;
+            if (theArg.Contains("="))
+            {
+                var temp = theArg.Split('=')[1];
+                Boolean.TryParse(temp, out bool result);
+
+                valueFromArg = result;
+            } 
+            else
+            {
+                valueFromArg = true;
+            }
+
+            option.OptionValue = valueFromArg;
+        }
+
+        /// <summary>
+        /// Gets the name of the command-line argument 
+        /// without any prefix characters or assigned values
+        /// Example: 
+        ///     Input:   --argumentname=blahblah
+        ///     Output:  argumentname
+        /// </summary>
+        /// <param name="arg">The individual argument</param>
+        /// <returns>The argument name only</returns>
+        private string GetArgumentNameOnly(string arg)
 		{
 			var temp = arg.Split('=')[0];
 			if (OptionPrefix.Length > 0)
@@ -484,14 +519,16 @@ namespace Sage300Utilities
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
 			var required3rdPartyComponents = "Log4Net";
-			var BuildDate = ApplicationBuildDate;
+			var buildDate = ApplicationBuildDate;
+			var buildYear = ApplicationBuildYear;
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 															       ApplicationVersion,
-																   BuildDate,
+																   buildDate,
 																   required3rdPartyComponents,
 															       requiredParams,
-															       optionalParams);
+															       optionalParams,
+																   buildYear);
 			msg += divider;
 			return msg;
 		}
@@ -543,6 +580,8 @@ namespace Sage300Utilities
 				var description = valueSet.Description;
 				List<String> aliasList = valueSet.AliasList;
 
+                var isBooleanFlag = IsBooleanFlag(valueSet.OptionValue);
+
 				// Now build up the lines of text
 
 				// Parameter Name
@@ -567,8 +606,15 @@ namespace Sage300Utilities
 				// Example Usage
 				if (exampleValue.Length > 0)
 				{
-					sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}=\"{exampleValue}\"");
-				}
+                    if (isBooleanFlag)
+                    {
+                        sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}={exampleValue}");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}=\"{exampleValue}\"");
+                    }
+                }
 				else
 				{
 					sb.AppendLine($"{spacer5}Example: {OptionPrefix}{name}");
@@ -579,13 +625,33 @@ namespace Sage300Utilities
 			return sb.ToString();
 		}
 
-		/// <summary>
-		/// Process long description strings into smaller chunks on individual lines
-		/// </summary>
-		/// <param name="sb">The destination StringBuilder object</param>
-		/// <param name="description">The description text</param>
-		/// <param name="leftPadding">The number of spaces used for left padding on each line. Default value is 5</param>
-		private void FormatDescriptionText(ref StringBuilder sb, string description, int leftPadding = 5)
+        /// <summary>
+        /// Is the passed in object a boolean?
+        /// </summary>
+        /// <param name="obj">The object to check</param>
+        /// <returns></returns>
+        private bool IsBooleanFlag(object obj)
+        {
+            var isBooleanFlag = false;
+
+            var temp = obj.ToString().ToLower();
+            if (temp.Equals("true", StringComparison.InvariantCultureIgnoreCase) || 
+                temp.Equals("false", StringComparison.InvariantCultureIgnoreCase))
+            {
+                Boolean.TryParse(temp, out bool result);
+                isBooleanFlag = (result == true || result == false) ? true : false;
+            }
+
+            return isBooleanFlag;
+        }
+
+        /// <summary>
+        /// Process long description strings into smaller chunks on individual lines
+        /// </summary>
+        /// <param name="sb">The destination StringBuilder object</param>
+        /// <param name="description">The description text</param>
+        /// <param name="leftPadding">The number of spaces used for left padding on each line. Default value is 5</param>
+        private void FormatDescriptionText(ref StringBuilder sb, string description, int leftPadding = 5)
 		{
 			const int MaxLineWidth = 60;
 			var leftSpacer = new string(' ', leftPadding);

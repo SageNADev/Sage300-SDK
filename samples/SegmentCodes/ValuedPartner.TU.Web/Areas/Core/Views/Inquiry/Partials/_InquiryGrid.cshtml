@@ -1,0 +1,59 @@
+﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Core.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.AR.Models
+
+@{
+    Type[] types = new Type[] { (Type)ViewData["Type"] };
+    Type genericHtmlHelperType = typeof(HtmlHelper<>).MakeGenericType(types);
+    
+    var htmlHelper = Activator.CreateInstance(genericHtmlHelperType, new object[] { Html.ViewContext, Html.ViewDataContainer });
+    var controls = ((Func<object, dynamic>)ViewData["GetControls"]).DynamicInvoke(htmlHelper);
+}
+
+<div>
+    @Html.Partial("~/Areas/Core/Views/Shared/GridPage.cshtml",
+                new GridConfigViewModel((Type)ViewData["Type"], (string)ViewData["DataSource"],
+                Model, (string)ViewData["GridKey"], gridEditableMode: "false")
+        {
+            EditButtonId = (string)ViewData["EditButtonName"],
+            EditButtonVisibility = true,
+            Controls = controls,
+            GridSize = (GridSize)ViewData["GridSize"],
+            TargetIdentity = (int?)ViewData["GridIdentity"],
+            PageUrl = (string[])ViewData["PageUrl"],
+            GridConfigName = (string)ViewData["GridConfigName"],
+            IsSkipGridCreation = (bool)ViewData["IsSkipGridCreation"]
+        })
+</div>
+
+<script>
+    @if (ViewData["FunctionalCurrencyColumns"] != null)
+    {
+        @Html.Raw(string.Format("var {0}FunctionalGridColumns = [{1}];", (string)ViewData["GridConfigName"], "'" + String.Join(",", (string[])ViewData["FunctionalCurrencyColumns"]).Replace(",", "','") + "'"))
+    }
+
+    @if (ViewData["CustomerCurrencyColumns"] != null)
+    {
+        @Html.Raw(string.Format("var {0}CustomerGridColumns = [{1}];", (string)ViewData["GridConfigName"], "'" + String.Join(",", (string[])ViewData["CustomerCurrencyColumns"]).Replace(",", "','") + "'"))
+    }
+
+    @if (ViewData["FunctionalCurrencyPrefKey"] != null)
+    {
+        @Html.Raw(string.Format("var {0}FunctionalCurrencyPrefKey = '{1}';", (string)ViewData["GridConfigName"], (string)ViewData["FunctionalCurrencyPrefKey"]))
+    }
+
+    @if (ViewData["CustomerCurrencyPrefKey"] != null)
+    {
+        @Html.Raw(string.Format("var {0}CustomerCurrencyPrefKey = '{1}';", (string)ViewData["GridConfigName"], (string)ViewData["CustomerCurrencyPrefKey"]))
+    }
+
+    @if (ViewData["ParameterObjectAsString"] != null)
+    {
+        @Html.Raw(string.Format("var {0}GetParameter = function() {{ return {1}}}", (string)ViewData["GridConfigName"], (string)ViewData["ParameterObjectAsString"]));
+    }
+
+    @Html.Raw(string.Format("var {0}DataField = '{1}s'", (string)ViewData["GridConfigName"], ViewData["DataFieldName"] == null? ((Type)ViewData["Type"]).Name : (string)ViewData["DataFieldName"]));
+
+</script>

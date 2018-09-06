@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ValuedPartner.TU.Models")]
-[assembly: AssemblyCopyright("Copyright © 2017 Valued Partner")]
+[assembly: AssemblyCopyright("Copyright © 2018 Valued Partner")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

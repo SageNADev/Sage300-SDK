@@ -193,11 +193,23 @@
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator active"></li>
-                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            @if (ViewBag.HasARInquiryRight || 
+								 ViewBag.HasAPInquiryRight || 
+								 ViewBag.HasGLInquiryRight || 
+								 ViewBag.HasOEInquiryRight || 
+								 ViewBag.HasICInquiryRight || 
+								 ViewBag.HasPOInquiryRight)
                             {
                                 <li class="step-indicator"></li>
                             }
-                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            @if (ViewBag.KNActive != null && 
+								 ViewBag.KNActive && 
+								 (ViewBag.ARActive != null && 
+								  ViewBag.ARActive || 
+								  ViewBag.APActive != null && 
+								  ViewBag.APActive || 
+								  ViewBag.ICActive != null && 
+								  ViewBag.ICActive))
                             {
                                 <li class="step-indicator"></li>
                             }
@@ -210,7 +222,12 @@
                 </div>
             </div>
         </section>
-        @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+        @if (ViewBag.HasARInquiryRight || 
+			 ViewBag.HasAPInquiryRight || 
+			 ViewBag.HasGLInquiryRight || 
+			 ViewBag.HasOEInquiryRight || 
+			 ViewBag.HasICInquiryRight || 
+			 ViewBag.HasPOInquiryRight)
         {
         <section class="ft-inquiries ft-step">
             <!--sixth step: Inquiries -->
@@ -235,7 +252,14 @@
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator active"></li>
-                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            @if (ViewBag.KNActive != null && 
+								 ViewBag.KNActive && 
+								 (ViewBag.ARActive != null && 
+								  ViewBag.ARActive || 
+								  ViewBag.APActive != null && 
+								  ViewBag.APActive || 
+								  ViewBag.ICActive != null && 
+								  ViewBag.ICActive))
                             {
                                 <li class="step-indicator"></li>
                             }
@@ -249,7 +273,14 @@
             </div>
         </section>
         }
-        @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+        @if (ViewBag.KNActive != null && 
+			 ViewBag.KNActive && 
+			 (ViewBag.ARActive != null && 
+			  ViewBag.ARActive || 
+			  ViewBag.APActive != null && 
+			  ViewBag.APActive || 
+			  ViewBag.ICActive != null 
+			  && ViewBag.ICActive))
         {
         <section class="ft-notes ft-step">
             <!--seventh step: Notes -->
@@ -273,7 +304,12 @@
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
                             <li class="step-indicator"></li>
-                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            @if (ViewBag.HasARInquiryRight || 
+								 ViewBag.HasAPInquiryRight || 
+								 ViewBag.HasGLInquiryRight || 
+								 ViewBag.HasOEInquiryRight || 
+								 ViewBag.HasICInquiryRight || 
+								 ViewBag.HasPOInquiryRight)
                             {
                                 <li class="step-indicator"></li>
                             }
@@ -302,10 +338,10 @@
                 <div class="msg-content">
                     <p>@HomePageResx.FeatureTourSlideHelpCenter3</p>
                     <p>
-                        <a href=@Utilities.GetLearnMoreUrl("677001004") target="_blank">@HomePageResx.FeatureTourSlideHelpCenter8 <span class="glyphicon glyphicon-next"></span></a><br>
-                        <a href=@Utilities.GetLearnMoreUrl("677001006") target="_blank">@HomePageResx.FeatureTourSlideHelpCenter6 <span class="glyphicon glyphicon-next"></span></a><br>
-                        <a href=@Utilities.GetLearnMoreUrl("677001007") target="_blank">@HomePageResx.FeatureTourSlideHelpCenter14 <span class="glyphicon glyphicon-next"></span></a><br>
-                        <a href=@Utilities.GetLearnMoreUrl("677001001") target="_blank">@HomePageResx.FeatureTourSlideHelpCenter10 <span class="glyphicon glyphicon-next"></span></a>
+                        <a href="@Utilities.GetLearnMoreUrl("677001004")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter8 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001006")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter6 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001007")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter14 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001001")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter10 <span class="glyphicon glyphicon-next"></span></a>
                     </p>
                 </div>
                 <div class="msg-footer">

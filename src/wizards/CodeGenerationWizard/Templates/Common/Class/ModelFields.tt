@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -28,9 +28,9 @@
     var companyNamespace = settings.CompanyNamespace;
     var extension = settings.Extension;
     var repositoryType = settings.RepositoryType;
-    var generateDynamicEnablement = view.Options[BusinessView.GenerateDynamicEnablement];
-    var viewId = view.Properties[BusinessView.ViewId];
-    var modelName = view.Properties[BusinessView.ModelName];
+    var generateDynamicEnablement = view.Options[BusinessView.Constants.GenerateDynamicEnablement];
+    var viewId = view.Properties[BusinessView.Constants.ViewId];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
 #>
 // <#=copyright#>
 
@@ -121,7 +121,10 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 {
                     // locals
                     var field = view.Fields[i];
-                    var fieldName = field.Name;
+
+					// Is an override of the fieldname being specified?
+					//var fieldName = field.IsCommon && field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+					var fieldName = field.Name;
 
                     // Naming convention is potentially invalid
                     if (fieldName.All(Char.IsUpper))
@@ -158,7 +161,10 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 {
                     // locals
                     var field = view.Fields[i];
-                    var fieldName = field.Name;
+
+					// Is an override of the fieldname being specified?
+					//var fieldName = field.IsCommon && field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+					var fieldName = field.Name;
 
                     // Naming convention is potentially invalid
                     if (fieldName.All(Char.IsUpper))

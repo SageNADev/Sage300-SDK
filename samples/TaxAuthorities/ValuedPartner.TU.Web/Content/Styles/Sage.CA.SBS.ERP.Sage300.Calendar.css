@@ -1,0 +1,173 @@
+.k-calendar-container {
+    padding: 5px !important;
+}
+
+    .k-calendar-container .k-calendar .k-header {
+        background-color: #4d4f53;
+        background-image: none;
+    }
+
+        .k-calendar-container .k-calendar .k-header .k-nav-fast {
+            color: #fff;
+        }
+
+            .k-calendar-container .k-calendar .k-header .k-nav-fast.k-state-hover {
+                background-color: #41a940;
+            }
+        /*
+        .k-calendar-container .k-calendar .k-header .k-nav-next .k-i-arrow-e, .k-calendar-container .k-calendar .k-header .k-nav-prev .k-i-arrow-w {
+            width: 8px;
+            height: 8px;
+        }
+    */
+.k-calendar-container .k-calendar .k-header .k-state-hover {
+    background-color: #41a940;
+}
+.k-state-hover > .k-i-arrow-w{
+     background-color: none;
+     background-position: -188px -67px !important;
+}
+
+.k-calendar-container .k-i-arrow-w {
+    background-position: -188px -67px;
+}
+
+.k-calendar-container .k-i-arrow-e {
+    background-color: none;
+    background-position: -217px -67px !important;
+}
+
+.k-calendar-container .k-calendar td {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.k-calendar .k-content .k-link {
+    text-align: center;
+}
+
+.k-calendar-container .k-calendar td.k-today {
+    background-image: none;
+    border: 1px solid #41a940;
+}
+
+.k-calendar-container .k-calendar td.k-state-selected a,
+.k-calendar-container .k-calendar td.k-state-focused a,
+.k-calendar-container .k-calendar td.k-state-hover a {
+    border: none;
+    border-radius: 0px;
+    background: none;
+    color: #fff;
+}
+
+.k-calendar-container .k-calendar td.k-state-selected,
+.k-calendar-container .k-calendar td.k-state-focused {
+    border: none;
+    border-radius: 0px;
+    background-color: #41a940;
+    background-image: none;
+}
+
+
+.k-calendar-container .k-calendar td.k-state-hover,
+.k-calendar-container .k-calendar .k-other-month.k-state-hover {
+    background-color: #41a940;
+    background-image: none;
+}
+
+    .k-calendar-container .k-calendar td.k-state-hover .k-link {
+        color: #fff;
+    }
+
+.k-calendar-container .k-calendar .k-content thead th {
+    background-color: #4d4f53;
+    background-image: none;
+    color: #fff;
+    padding-left: 5px;
+}
+
+
+/*Fiscal Calender Styles - Start*/
+.fisc-cal {
+    display: none;
+    width: 382px;
+    margin-top: -10px;
+    position: absolute;
+    height: auto;
+}
+
+.calendar-heading {
+    height: 45px;
+    background: #4f4e53;
+    padding: 0 5px 0 5px;
+}
+
+.f-cal-left {
+    float: left;
+    height: 20px;
+    margin-left: 10px;
+    width: 10%;
+}
+
+    .f-cal-left input {
+        margin-top: 10px;
+    }
+
+.f-cal-title {
+    color: #ffffff;
+    float: left;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 74%;
+}
+
+.f-cal-right {
+    float: right;
+    margin-top: 10px;
+    width: 7%;
+}
+
+    .f-cal-right img {
+        margin-top: -10px;
+    }
+
+.f-cal-title label {
+    cursor: pointer;
+    height: 30px;
+    line-height: 27px;
+    margin: 0 auto;
+    position: relative;
+    top: 6px;
+    width: 150px;
+}
+
+    .f-cal-title label:hover {
+        background: none repeat scroll 0 0 #9b9c9d;
+        cursor: pointer;
+        height: 30px;
+        line-height: 27px;
+        margin: 0 auto;
+        position: relative;
+        top: 6px;
+        width: 150px;
+    }
+
+.fisc-cal .k-grid .k-grid-header .k-header {
+    padding: 12px 20px 12px;
+}
+
+.fisc-cal .k-grid tr th
+{
+    border-bottom:none !important;
+}
+
+#divFiscalGridControl .k-grid-content {
+overflow-y: auto;
+height: 210px;
+}
+
+/*Fiscal Calender Styles - End*/

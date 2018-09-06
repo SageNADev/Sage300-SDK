@@ -1,9 +1,7 @@
 # Clear Statistics Sample
 
 The Clear Statistics Sample provides a working solution that illustrates the Process code
-type. Like the other samples, a Kendo file must be added to the project before compiling
-(these instructions are found in the README file in the Samples folder). This sample has additional
-steps that must be performed prior to running the sample.
+type. This sample has additional steps that must be performed prior to running the sample.
 
 ## Clear Statistics Script
 
@@ -32,7 +30,6 @@ service once the binaries are copied.
 ### Build the Clear Statistics sample
 
 * Load the **ClearStatistics.sln**
-* Be sure to follow the instructions for adding the Kendo min file first
 * Build the solution in **Debug** mode first to ensure that all builds successfully
 * Change the solution's mode to **Release**
 * Select **Clean Build** to perform a clean first

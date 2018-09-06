@@ -1,0 +1,96 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Core.Web
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@model List<Sage.CA.SBS.ERP.Sage300.Common.Models.InquiryFilterControl>
+
+@functions{
+    public string GenerateId(string type, int idx, string field, ref List<object> renderedObjects)
+    {
+        string id = string.Format("filter_{0}_{1}{2}", idx, type, field);
+        renderedObjects.Add(new { objectType = type, Id = id});
+        return id;
+    }
+}
+
+@{
+    var inquiryFilterControlList = new List<object>();
+
+    for (int idx = 1; idx < (Model.Count + 1); idx++)
+    {
+        var control = Model[idx - 1];
+        var renderedObjects = new List<object>();
+
+        switch (control.FilterType)
+        {
+            case FilterType.Finder:
+                {
+                    var fromTextBoxId = GenerateId("fromtextbox", idx, control.Field, ref renderedObjects);
+                    var toTextBoxId = GenerateId("totextbox", idx, control.Field, ref renderedObjects);
+                    var toFinderGroup = GenerateId("finderGroup", idx, control.Field, ref renderedObjects);
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id=@GenerateId("dropdown", idx, control.Field, ref renderedObjects)>
+                                <option selected>@control.Title</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("OperatorField", new { @options = "OperatorEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "small single-select", @id = GenerateId("dropdown", idx, "OperatorField", ref renderedObjects) })
+                        </div>
+                        <div class="finder-group">
+                            @Html.KoSageTextBox("frm" + control.Field, new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = fromTextBoxId, @maxlength = control.FieldMaxLength })
+                            @Html.KoSageButton("btnFinderFrom" + control.Field, new { }, new { @class = "icon btn-search", @id = GenerateId("fromfinder", idx, control.Field, ref renderedObjects), @tabindex = -1 })
+                        </div>
+                        <div class="finder-group" id=@toFinderGroup style="display: none;">
+                            @Html.KoSageTextBox("to" + control.Field, new { @valueUpdate = "'input'" }, new { @class = "default txt-upper", @id = toTextBoxId, @maxlength = control.FieldMaxLength })
+                            @Html.KoSageButton("btnFinderTo" + control.Field, new { }, new { @class = "icon btn-search", @id = GenerateId("tofinder", idx, control.Field, ref renderedObjects), @tabindex = -1 })
+                        </div>
+                    </div>
+                }
+                break;
+
+            case FilterType.MultiSelect:
+                {
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id=@GenerateId("dropdown", idx, control.Field, ref renderedObjects)>
+                                <option selected>@control.Title</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            <select class="small single-select" id=@GenerateId("dropdown", idx, "IncludesField", ref renderedObjects)>
+                                <option selected>@InquiryResx.Includes</option>
+                            </select>
+                        </div>
+                        <div class="multiselect-group">
+                            <!-- use existing KoSageDropDownList format for Multi-Select -->
+                            @Html.DropDownListHelper("multiSelect" + control.Field, control.Options, null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = GenerateId("multiselect", idx, control.Field, ref renderedObjects), @class = "medium-large multi-select", multiple = "multiple" })
+                        </div>
+                    </div>
+                }
+                break;
+
+            case FilterType.Enum:
+                {
+                    <div class="form-group">
+                        <div class="dropdown-group">
+                            <select class="default single-select" id=@GenerateId("dropdown", idx, control.Field, ref renderedObjects)>
+                                <option selected>@control.Title</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-group">
+                            @Html.DropDownListHelper("YesNo" + control.Field, control.Options, null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new {@id = @GenerateId("dropdown", idx, "YesNo", ref renderedObjects), @class = "small single-select"})
+                        </div>
+                    </div>
+                }
+                break;
+        }
+
+        inquiryFilterControlList.Add(new { inquiryFilterControl = control, renderedObjList = renderedObjects });
+    }
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("InquiryFilterControlList", inquiryFilterControlList)
+</script>
+

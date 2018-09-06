@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,14 +27,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     {
         #region Private Vars
         /// <summary> Status Type for status </summary>
-        private StatusType _statusType = StatusType.None;
+        private StatusTypeEnum _statusType = StatusTypeEnum.None;
         /// <summary> Icon of the status </summary>
         private Icon _status = Properties.Resources.Blank;
         #endregion
 
         #region Public Enums
         /// <summary> Status type used to identify icon required for UI </summary>
-        public enum StatusType
+        public enum StatusTypeEnum
         {
             None,
             Success,
@@ -68,9 +68,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Sets status to appropriate status column based upon status type </summary>
         /// <param name="statusType">Status Type</param>
         /// <returns>Column index being set</returns>
-        public int SetStatus(StatusType statusType)
+        public int SetStatus(StatusTypeEnum statusType)
         {
-            _status = GetIcon(statusType); ;
+            _status = GetIcon(statusType); 
             _statusType = statusType;
 
             return StatusColumnNo;
@@ -78,7 +78,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Gets status type </summary>
         /// <returns>Status Type</returns>
-        public StatusType GetStatusType()
+        public StatusTypeEnum GetStatusType()
         {
             return _statusType;
         }
@@ -89,19 +89,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Get icon based upon status type </summary>
         /// <param name="statusType">Status Type</param>
         /// <returns>Icon</returns>
-        private Icon GetIcon(StatusType statusType)
+        private Icon GetIcon(StatusTypeEnum statusType)
         {
             var retVal = Properties.Resources.Blank;
 
             switch (statusType)
             {
-                case StatusType.None:
+                case StatusTypeEnum.None:
                     retVal = Properties.Resources.Blank;
                     break;
-                case StatusType.Success:
+                case StatusTypeEnum.Success:
                     retVal = Properties.Resources.Success;
                     break;
-                case StatusType.Error:
+                case StatusTypeEnum.Error:
                     retVal = Properties.Resources.Error;
                     break;
             }

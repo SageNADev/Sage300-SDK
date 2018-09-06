@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var navUrl;
@@ -26,7 +26,6 @@ $(document).ready(function () {
         $("#firstTimeLogin").show();
         $('#screenLayout').hide();
         $('#breadcrumb').hide();
-        $('#widgetLayout').show();
         $('html').addClass('home-page');
         $('#draggable').animate({
             top: 58

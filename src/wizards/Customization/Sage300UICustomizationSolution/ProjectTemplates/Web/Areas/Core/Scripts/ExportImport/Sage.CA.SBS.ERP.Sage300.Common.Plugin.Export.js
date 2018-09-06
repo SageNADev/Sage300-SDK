@@ -1,23 +1,4 @@
-﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy of 
-// this software and associated documentation files (the "Software"), to deal in 
-// the Software without restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-// Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 /* globals globalResource: false */
 /* globals kendo: false */
 /* globals exportModelData: false */
@@ -163,6 +144,8 @@ var exportResultRowNumber = 0;
         TaxClasses: "taxclasses",
         TaxGroup: "taxgroup",
         TaxRates: "taxrates",
+        TsTxMap:"tstxmap",
+        TsRCode:"tsrcode",
         TransactionStatistics: "ictransactionstatistics",
         UnitOfMeasure: "icunitsofmeasure",
         UserAuthorization: "userauthorization",
@@ -358,7 +341,7 @@ var exportResultRowNumber = 0;
         _initCriteriaTab: function () {
             if (sg.exportHelper.initCriteriaTabPage) {
                 var exportDataSource = exportModelData.ExportRequest.DataMigrationList;
-                var columns = exportDataSource[0].Items.filter(function (item) { return !item.IsVirtual });
+                var columns = exportDataSource[0].Items.filter(function (item) { return !item.IsVirtual; });
                 setCriteriaUI.init(columns, "title", "columnName");
                 sg.exportHelper.initCriteriaTabPage = false;
             }
@@ -582,7 +565,7 @@ var exportResultRowNumber = 0;
                         //Set parent node checkbox as indeterminate (tri state)
                         var cbList = $("#exportTreeView").find(":checkbox");
                         if (cbList.length === triStateList.length) {
-                            for (var j = 0, length = triStateList.length ; j < length; j++) {
+                            for (var j = 0, length1 = triStateList.length ; j < length1; j++) {
                                 if (triStateList[j]) {
                                     cbList[j].indeterminate = true;
                                 }

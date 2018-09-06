@@ -29,14 +29,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
     /// <summary> Entry Point for Upgrade Wizard </summary>
     public class Sage300Upgrade
     {
+        private static class Constants
+        {
+            public const string ItemsZipName = @"Items.zip";
+            public const string CSharpName = @"CSharp";
+            public const string GithubRepoName = @"Columbus-Web";
+            public const string GithubRepoWebProjectName = @"Sage.CA.SBS.ERP.Sage300.Web";
+        }
+
 		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
-			var payloadFileName = @"Items.zip";
+			var payloadFileName = Constants.ItemsZipName;
 			var sln = (Solution2)solution;
-			var templatePath = sln.GetProjectItemTemplate(payloadFileName, "CSharp");
+			var templatePath = sln.GetProjectItemTemplate(payloadFileName, Constants.CSharpName);
 
-			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath))
+			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath, sln))
 			{
 				form.ShowDialog();
 			}
@@ -70,16 +78,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             try
             {
+                var solutionPath = Path.GetFullPath(solution.FileName);
+                var repoName = Constants.GithubRepoName;
+                var repoProjectName = Constants.GithubRepoWebProjectName;
+                var solutionParent = Directory.GetParent(solutionPath).FullName;
+
                 // Get destination web default from project
-                retVal = Path.Combine(Directory.GetParent(Directory.GetParent(Path.GetFullPath(solution.FileName)).FullName).FullName, "Columbus-Web", "Sage.CA.SBS.ERP.Sage300.Web");
+                retVal = Path.Combine(Directory.GetParent(solutionParent).FullName, repoName, repoProjectName);
             }
             catch
             {
                 // Ignore
             }
             return retVal;
-
         }
-
     }
 }

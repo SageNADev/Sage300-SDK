@@ -1,0 +1,73 @@
+/* tabs */
+.k-tabstrip {
+	border-width: 0px;
+	background: none;
+}
+.k-tabstrip .k-tabstrip-items {
+	padding: 0px;
+}
+.k-tabstrip .k-tabstrip-items .k-loading {
+	border-top: 0px;
+}
+.k-tabstrip .k-tabstrip-items .k-item {
+    margin-right:0px;
+	background: #bdbebf url(../Images/tab_bg_transparent.png) repeat-x 0 2px;
+	border-radius: 0px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border-color: #9a9b9c;
+	font-weight: bold;
+    border-left:1px solid #c1c2c2;
+    border-right:1px solid #747475;
+    cursor:pointer;
+}
+.k-tabstrip .k-tabstrip-items .k-item .k-link {
+	color: #ffffff;
+	padding:5px 0px;
+	line-height: 18px;
+    font-weight:normal;
+    font-size:12px;
+}
+.k-tabstrip .k-tabstrip-items .k-item:hover {
+	background: -webkit-linear-gradient(#40a73f, #317f30);
+	/* For Safari */
+	background: -o-linear-gradient(#40a73f, #317f30);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#40a73f, #317f30);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(#40a73f, #317f30);/* Standard syntax */
+}
+.k-tabstrip .k-tabstrip-items .k-item:hover .k-link {
+	color: #ffffff;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.k-tabstrip .k-tabstrip-items .k-item.k-state-active {
+	border-color: #9a9b9c;
+	background: #f7f7f7;
+}
+.k-tabstrip .k-tabstrip-items .k-item.k-state-active .k-link {
+	color: #4d4f53;
+}
+.k-tabstrip .k-content.k-state-active {
+	background: #f7f7f7;
+	border: 1px solid #9a9b9c;
+	margin: 0px;
+	padding: 10px 20px;
+}
+
+
+#accountTabstrip.k-tabstrip .k-tabstrip-items .k-item {
+padding-left:25px;
+padding-right:25px;
+}
+
+#Companytabstrip.k-tabstrip .k-tabstrip-items .k-item {
+padding-left:25px;
+padding-right:25px;
+}
+
+.small-tabs ul li {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}

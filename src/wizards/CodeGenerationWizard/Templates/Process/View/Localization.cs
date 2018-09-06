@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Localization.tt"
- /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -144,7 +144,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Localization.tt"
 
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
