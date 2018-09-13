@@ -1,1 +1,363 @@
-"use strict";var inquiryPanelUI=inquiryPanelUI||{};inquiryPanelUI={inquiryKoBindingModel:{},queryTemplate:null,templateId:null,init:function(){function n(){$("#saveQueryPanel").addClass("slide-in")}function t(){$("#openQueryPanel").addClass("slide-in")}$(".tab-group").kendoTabStrip({animation:{open:{effects:"fadeIn"}}});window.addEventListener("message",function(i){var u,r;i.data.event_id==="OpenQuery"?t():i.data.event_id==="SaveQuery"?(inquiryPanelUI.templateId=i.data.templateId,n()):i.data.event_id==="SaveTemplate"||i.data.event_id==="DeleteTemplate"?(r=$("#DataSourceList").data("kendoDropDownList"),r.trigger("change")):i.data.event_id==="QueryDataSourceChanged"&&(u=i.data.dataSourceId,r=$("#DataSourceList").data("kendoDropDownList"),r.value(u),r.trigger("change"))});inquiryPanelUI.initDropDownList();inquiryPanelUI.initButton();inquiryPanelUI.initGrid();inquiryPanelUI.initCheckBox()},initCheckBox:function(){$("#divChkShared > span").addClass("selected");$("#divChkPersonal > span").addClass("selected");$("#chkPublic").prop("checked",!0);$("#chkPrivate").prop("checked",!0)},initDropDownList:function(){sg.utls.kndoUI.dropDownList("SaveQueryPanel_QueryTypeList");$("#SaveQueryPanel_QueryTypeList").kendoDropDownList();sg.utls.kndoUI.dropDownList("DataSourceList");$("#DataSourceList").kendoDropDownList({change:function(n){var t=this.dataItem(n.item).DataSourceId,i=sg.utls.url.buildUrl("Core","InquiryGeneral","GetTemplates");sg.utls.ajaxPost(i,{dataSourceId:t},inquiryPanelUI.populateTemplate)}})},populateDropdownList:function(n){var t=$("#DataSourceList").data("kendoDropDownList");t.setOptions({dataTextField:"DataSourceText",dataValueField:"DataSourceId"});t.setDataSource(n);n.length>0&&(t.select(0),t.trigger("change"))},populateTemplate:function(n){var r,t,s,h,c,i;n&&n.length>0&&(r={},r.DataSourceId=n[0].DataSourceId);var l=$("#commonTemplateList"),a=$("#customizedTemplateList"),u=n.filter(function(n){return n.Type.trim()=="Template"}),f=n.filter(function(n){return n.Type.trim()=="Public"}),e=n.filter(function(n){return n.Type.trim()=="Private"}),o=f.concat(e);inquiryPanelUI.AddlistToTab(l,u,0);inquiryPanelUI.AddlistToTab(a,o,1);t=f.concat(e);t=t.map(function(n){return n.Type.trim()=="Public"?n.Type=savedQueryResources.Public:n.Type.trim()=="Private"&&(n.Type=savedQueryResources.Private),n});var v=u.concat(t),y=new kendo.data.DataSource({data:t}),p=$("#saveQueryPanelGrid").data("kendoGrid");p.setDataSource(y);s=new kendo.data.DataSource({data:v});h=$("#openQueryPanelGrid").data("kendoGrid");h.setDataSource(s);o.length===0?$("#message-info").show():$("#message-info").hide();inquiryPanelUI.initCheckBox();c=$("#DataSourceList").data("kendoDropDownList");i=c.text();$("#SaveQueryPanel_DataSource").val(i);$("#openQueryPanel_DataSource").val(i)},AddlistToTab:function(n,t,i){var f,r,e,u;for(n.empty(),f="<li class='item-list' id='{0}' templateId={1} name='{2}'><label title='{3}'>{3}{span}<\/label><\/li>",r=0,e=t.length;r<e;r++){var o=t[r].Type.trim()=="Public"?"<span class='tag tag-pill tag-default'>Public<\/span>":"<span class='tag tag-pill tag-info'>Private<\/span>",s=f.replace("{span}",i?o:""),h=kendo.format(s,t[r].DataSourceId,t[r].TemplateId,t[r].Name,t[r].Name);n.append(h)}u=$(n.selector+" li");u.off("click");u.click(function(){var n=$(this).data(),u=$(this).attr("name"),i,r,t;n.title=u;n.url=sg.utls.url.buildUrl("Core","InquiryGeneral","Index");n.name=$(this)[0].attributes.name.value;n.id=$(this)[0].attributes.id.value;n.templateId=$(this)[0].attributes.templateId.value;i=JSON.stringify(n);window.top.postMessage("isInquiryGeneral "+encodeURI(i),"*");r=$("#DataSourceList").data("kendoDropDownList");t=r.text();$("#SaveQueryPanel_DataSource").val(t);$("#openQueryPanel_DataSource").val(t);$("#btnInquiryClose").trigger("click")})},initButton:function(){function n(){$("#saveQueryPanel").removeClass("slide-in");$("#SaveQueryPanel_QueryName").val("");$("#SaveQueryPanel_QueryDescription").val("")}function t(){$("#openQueryPanel").removeClass("slide-in");$("#OpenQueryPanel_QueryDescription").val("")}function i(t){var u=$("#saveQueryPanelGrid").data("kendoGrid"),r=sg.utls.kndoUI.getSelectedRowData(u),i={};i.Type=$("#SaveQueryPanel_QueryTypeList").val();i.Name=t;i.Description=$("#SaveQueryPanel_QueryDescription").val();r&&(i.TemplateId=r.TemplateId);i.winTemplateId=inquiryPanelUI.templateId;window.postMessage({event_id:"SaveQueryPanel",template:i},"*");n()}$("#chkPublic").click(function(){$("#customizedTemplateList li").has("span.tag-default").toggle()});$("#chkPrivate").click(function(){$("#customizedTemplateList li").has("span.tag-info").toggle()});$("#btnViewInquiries").click(function(){var n,t,i;$("#viewInquiries").addClass("slide-in");n=$("#DataSourceList").data("kendoDropDownList");t=n.dataSource.data();t.length==0&&(i=sg.utls.url.buildUrl("Core","InquiryGeneral","GetDataSources"),sg.utls.ajaxPost(i,null,inquiryPanelUI.populateDropdownList))});$("#btnInquiryClose").click(function(){$("#viewInquiries").removeClass("slide-in")});$("#btnSaveQueryClose, #btnSaveQueryCancel").click(function(){n()});$("#btnOpenQueryClose, #btnOpenQueryCancel").click(function(){t()});$("#SaveQueryPanel_QueryName").change(function(){$("#btnSaveQuerySave").prop("disabled",$(this).val().length==0)});$("#btnSaveQuerySave").prop("disabled",!0);$("#btnSaveQuerySave").click(function(){var r=$("#saveQueryPanelGrid").data("kendoGrid"),u=r.dataSource.data(),n=$("#SaveQueryPanel_QueryName").val(),f=u.map(function(n){return n.Name.toLowerCase()}),t;n&&(f.indexOf(n.toLowerCase())>-1?(t=savedQueryResources.DuplicateMessage.replace("{0}",n),sg.utls.showKendoConfirmationDialog(function(){i(n)},null,t,"")):i(n))});$("#btnOpenQuery").click(function(){var r=$("#openQueryPanelGrid").data("kendoGrid"),i=sg.utls.kndoUI.getSelectedRowData(r),n,u;i!=null&&(n={},n.title=i.Description,n.url=sg.utls.url.buildUrl("Core","InquiryGeneral","Index"),n.name=i.Name,n.id=i.DataSourceId,n.templateId=i.TemplateId,u=JSON.stringify(n),window.top.postMessage("isInquiryGeneral "+encodeURI(u),"*"),t(),r.clearSelection())});$("#inquiryTool1").click(function(){$("#viewInquiries").removeClass("slide-in");$("#iframeMenu1").show();$("#breadcrumbWrapper").show()})},initGrid:function(){function n(n){$(n).kendoGrid({dataSource:{data:[]},scrollable:!0,sortable:!0,height:300,selectable:!0,resizable:!0,columns:[{field:"Name",title:savedQueryResources.QueryName,width:170},{field:"Description",title:savedQueryResources.Description,hidden:!0},{field:"Type",title:savedQueryResources.Type,width:70},{field:"DateModified",title:savedQueryResources.DateModified,template:"#= sg.utls.kndoUI.getFormattedDate(DateModified) #"}],editable:!1,change:function(){var i=$(n).data("kendoGrid"),t=sg.utls.kndoUI.getSelectedRowData(i);t&&(n=="#saveQueryPanelGrid"&&($("#SaveQueryPanel_QueryName").val(t.Name),$("#SaveQueryPanel_QueryDescription").val(t.Description),$("#btnSaveQuerySave").prop("disabled",!1)),n=="#openQueryPanelGrid"&&$("#OpenQueryPanel_QueryDescription").val(t.Description))}})}n("#saveQueryPanelGrid");n("#openQueryPanelGrid");$("#openQueryPanelGrid").delegate("tbody>tr","dblclick",function(){$("#btnOpenQuery").click()})}};$(function(){inquiryPanelUI.init()});
+﻿/* Copyright (c) 2016-2017 Sage Software, Inc.  All rights reserved. */
+
+/* global kendo */
+/* exported InquiryGeneralUI */
+/* global InquiryGeneralViewModel */
+/* global savedQueryResources*/
+/* gloabl inquiryGeneralResources*/
+
+"use strict";
+var inquiryPanelUI = inquiryPanelUI || {};
+inquiryPanelUI = {
+    inquiryKoBindingModel: {},
+    queryTemplate: null,
+    templateId: null,
+    init: function () {
+        $(".tab-group").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            }
+        });
+
+        window.addEventListener('message', function (event) {
+            if (event.data.event_id === 'OpenQuery') {
+                openQueryClicked();
+            } else if (event.data.event_id === 'SaveQuery') {
+                inquiryPanelUI.templateId = event.data.templateId;
+                saveQueryClicked();
+            } else if (event.data.event_id === 'SaveTemplate' || event.data.event_id === 'DeleteTemplate') {
+                var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+                ddDataSource.trigger("change");
+            } else if (event.data.event_id === 'QueryDataSourceChanged') {
+                var dataSourceId = event.data.dataSourceId;
+                var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+                ddDataSource.value(dataSourceId);
+                ddDataSource.trigger("change");
+            }
+               
+        });
+
+        function receiveMessage(event) {
+            saveQueryClicked();
+        }
+
+        function receiveMessageOpen(event) {
+            openQueryClicked();
+        }
+
+        function saveQueryClicked() {
+            $('#saveQueryPanel').addClass('slide-in');
+        }
+
+        function openQueryClicked() {
+            $('#openQueryPanel').addClass('slide-in');
+        }
+
+        inquiryPanelUI.initDropDownList();
+        inquiryPanelUI.initButton();
+        inquiryPanelUI.initGrid();
+        inquiryPanelUI.initCheckBox();
+        //$("#dateModified").prop("readonly", true);
+        //$("#dateModified").val(Date().toLocaleDateString());
+
+    
+    },
+
+    initCheckBox : function(){
+        $("#divChkShared > span").addClass("selected");
+        $("#divChkPersonal > span").addClass("selected");
+        $("#chkPublic").prop("checked", true);
+        $("#chkPrivate").prop("checked", true);
+    },
+
+    initDropDownList: function () {
+        sg.utls.kndoUI.dropDownList("SaveQueryPanel_QueryTypeList");
+        $("#SaveQueryPanel_QueryTypeList").kendoDropDownList();
+        sg.utls.kndoUI.dropDownList("DataSourceList");
+        $("#DataSourceList").kendoDropDownList({
+            change: function (e) {
+                var id = this.dataItem(e.item).DataSourceId;
+                var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "GetTemplates");
+                sg.utls.ajaxPost(url, { dataSourceId : id }, inquiryPanelUI.populateTemplate);
+            },
+        });
+    },
+
+    populateDropdownList: function (data) {
+        var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+        ddDataSource.setOptions({ dataTextField: "DataSourceText", dataValueField: "DataSourceId" });
+        ddDataSource.setDataSource(data);
+        if (data.length > 0) {
+            ddDataSource.select(0);
+            ddDataSource.trigger("change");
+        }
+    },
+
+    populateTemplate: function (data) {
+        if (data && data.length > 0) {
+            var template = {};
+            template.DataSourceId = data[0].DataSourceId;
+        }
+        var commonTemplate = $("#commonTemplateList");
+        var customizedTemplate = $("#customizedTemplateList");
+
+        var commonList = data.filter(function (item) { return item.Type.trim() == "Template"; } );
+        var publicList = data.filter(function (item) { return item.Type.trim() == "Public"; });
+        var privateList = data.filter(function (item) { return item.Type.trim() == "Private" ;});
+        var customList = publicList.concat(privateList);
+
+        inquiryPanelUI.AddlistToTab(commonTemplate, commonList, 0);
+        inquiryPanelUI.AddlistToTab(customizedTemplate, customList, 1);
+
+        //set save open panel grid data source
+        var dsSaveData = publicList.concat(privateList)
+        dsSaveData = dsSaveData.map(function (i) {
+            if (i.Type.trim() == "Public") {
+                i.Type = savedQueryResources.Public;
+            } else if (i.Type.trim() == "Private") {
+                i.Type = savedQueryResources.Private;
+            }
+            return i;
+        });
+
+        var dsOpenData = commonList.concat(dsSaveData);
+        dsOpenData = dsOpenData.map(function (i) {
+            if (i.Type.trim() == "Template") {
+                i.Type = savedQueryResources.Template;
+            } 
+            return i;
+        });
+
+        var dsSave = new kendo.data.DataSource({ data: dsSaveData });
+        var gridSave = $("#saveQueryPanelGrid").data("kendoGrid");
+        gridSave.setDataSource(dsSave);
+
+        var dsOpen = new kendo.data.DataSource({ data: dsOpenData });
+        var gridOpen = $("#openQueryPanelGrid").data("kendoGrid");
+        gridOpen.setDataSource(dsOpen);
+
+        if (customList.length === 0) {
+            $("#message-info").show();
+        } else {
+            $("#message-info").hide();
+        }
+
+        inquiryPanelUI.initCheckBox();
+
+        var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+        var dataSourceName = ddDataSource.text();
+        $("#SaveQueryPanel_DataSource").val(dataSourceName);
+        $("#openQueryPanel_DataSource").val(dataSourceName);
+    },
+
+    AddlistToTab: function(element, list, showTag)
+    {
+        element.empty();
+        var template = "<li class='item-list' id='{0}' templateId={1} name='{2}'><label title='{3}'>{3}{span}</label></li>";
+        for (var i = 0, length = list.length; i < length; i++) {
+            var span = list[i].Type.trim() == "Public" ? "<span class='tag tag-pill tag-default'>Public</span>" : "<span class='tag tag-pill tag-info'>Private</span>";
+            var tElement = template.replace("{span}", (showTag) ? span : "");
+            var subElement = kendo.format(tElement, list[i].DataSourceId, list[i].TemplateId, list[i].Name, list[i].Name);
+            element.append(subElement);
+        }
+
+        var li = $(element.selector + ' li');
+        li.off('click');
+        li.click(function () {
+            var parameterData = $(this).data();
+            var dsName = $(this).attr("name"); //$(this).text();
+            parameterData["title"] = dsName;
+            parameterData["url"] = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Index");
+            parameterData["name"] = $(this)[0].attributes['name'].value;
+            parameterData["id"] = $(this)[0].attributes['id'].value;
+            parameterData["templateId"] = $(this)[0].attributes['templateId'].value;
+
+            var parameterDataString = JSON.stringify(parameterData);
+            window.top.postMessage("isInquiryGeneral" + " " + encodeURI(parameterDataString), "*");
+
+            var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+            var dataSourceName = ddDataSource.text();
+            $("#SaveQueryPanel_DataSource").val(dataSourceName);
+            $("#openQueryPanel_DataSource").val(dataSourceName);
+            $("#btnInquiryClose").trigger("click");
+        });
+    },
+
+    initButton: function () {
+
+        $("#chkPublic").click(function () {
+            $("#customizedTemplateList li").has("span.tag-default").toggle();
+        });
+
+        $("#chkPrivate").click(function () {
+            $("#customizedTemplateList li").has("span.tag-info").toggle();
+        });
+
+        $("#btnViewInquiries").click(function () {
+            $('#viewInquiries').addClass('slide-in');
+            var ddDataSource = $("#DataSourceList").data("kendoDropDownList");
+            var data = ddDataSource.dataSource.data();
+            if (data.length == 0) {
+                var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "GetDataSources");
+                sg.utls.ajaxPost(url, null, inquiryPanelUI.populateDropdownList);
+            }
+        });
+
+        $('#btnInquiryClose').click(function () {
+            $('#viewInquiries').removeClass("slide-in");
+        });
+
+        $('#btnSaveQueryClose, #btnSaveQueryCancel').click(function () {
+            hideSavePanel();
+        });
+
+        function hideSavePanel() {
+            $('#saveQueryPanel').removeClass("slide-in");
+            $('#SaveQueryPanel_QueryName').val('');
+            $('#SaveQueryPanel_QueryDescription').val('');
+        }
+
+        function hideOpenPanel() {
+            $('#openQueryPanel').removeClass("slide-in");
+            $('#OpenQueryPanel_QueryDescription').val('');
+        }
+
+        $('#btnOpenQueryClose, #btnOpenQueryCancel').click(function () {
+            hideOpenPanel();
+        });
+
+        $("#SaveQueryPanel_QueryName").change(function () {
+            $("#btnSaveQuerySave").prop("disabled", $(this).val().length == 0);
+        });
+
+        $("#btnSaveQuerySave").prop("disabled", true);
+
+        $('#btnSaveQuerySave').click(function () {
+            var grid = $("#saveQueryPanelGrid").data("kendoGrid");
+            var data = grid.dataSource.data();
+           
+            var queryName = $("#SaveQueryPanel_QueryName").val();
+            var queryNameList = data.map(function (item) { return item.Name.toLowerCase(); });
+
+            if (queryName) {
+                if (queryNameList.indexOf(queryName.toLowerCase()) > -1) {
+                    var message = savedQueryResources.DuplicateMessage.replace('{0}', queryName);
+                    sg.utls.showKendoConfirmationDialog(function () {
+                        postSaveMessage(queryName);
+                    },
+                    null, message, "");
+                } else {
+                    postSaveMessage(queryName);
+                }
+            }
+        });
+
+        function postSaveMessage(queryName) {
+            var grid = $("#saveQueryPanelGrid").data("kendoGrid");
+            var selectedRow = sg.utls.kndoUI.getSelectedRowData(grid);
+            var value = {};
+            value.Type = $("#SaveQueryPanel_QueryTypeList").val();
+            value.Name = queryName;
+            value.Description = $("#SaveQueryPanel_QueryDescription").val();
+            if (selectedRow) {
+                value.TemplateId = selectedRow.TemplateId;
+            }
+            value.winTemplateId = inquiryPanelUI.templateId;
+            window.postMessage({ event_id: 'SaveQueryPanel', template: value }, '*');
+            hideSavePanel();
+        };
+
+        $('#btnOpenQuery').click(function () {
+            var grid = $("#openQueryPanelGrid").data("kendoGrid");
+            var selectedRowData = sg.utls.kndoUI.getSelectedRowData(grid);
+            if (selectedRowData == null ) {
+                return;
+            }
+            var parameterData = {};
+            parameterData["title"] = selectedRowData.Description;
+            parameterData["url"] = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Index");
+            parameterData["name"] = selectedRowData.Name;
+            parameterData["id"] = selectedRowData.DataSourceId;
+            parameterData["templateId"] = selectedRowData.TemplateId;
+
+            var parameterDataString = JSON.stringify(parameterData);
+            window.top.postMessage("isInquiryGeneral" + " " + encodeURI(parameterDataString), "*");
+            hideOpenPanel();
+            grid.clearSelection();
+
+        });
+
+        $("#inquiryTool1").click(function () {
+            $('#viewInquiries').removeClass("slide-in");
+            $('#iframeMenu1').show();
+            $('#breadcrumbWrapper').show();
+        });
+    },
+
+    initGrid: function () {
+        function initKendoGrid(id) {
+            $(id).kendoGrid({
+                dataSource: {
+                    data: [],
+                },
+                scrollable: true,
+                sortable: true,
+                height: 300,
+                selectable: true,
+                resizable: true,
+                columns: [
+                    {
+                        field: "Name",
+                        title: savedQueryResources.QueryName,
+                        width: 170
+                    },
+                    {
+                        field: "Description",
+                        title: savedQueryResources.Description,
+                        hidden: true
+                    },
+                    {
+                        field: "Type",
+                        title: savedQueryResources.Type,
+                        width: 70
+                    },
+                    {
+                        field: "DateModified",
+                        title: savedQueryResources.DateModified,
+                        template: '#= sg.utls.kndoUI.getFormattedDate(DateModified) #',
+                    }
+                ],
+                editable: false,
+                change: function () {
+                    var grid = $(id).data("kendoGrid");
+                    var selectedRowData = sg.utls.kndoUI.getSelectedRowData(grid);
+                    if (selectedRowData) {
+                        if (id == "#saveQueryPanelGrid") {
+                            $("#SaveQueryPanel_QueryName").val(selectedRowData.Name);
+                            $("#SaveQueryPanel_QueryDescription").val(selectedRowData.Description);
+                            //$("#SaveQueryPanel_QueryTypeList").val(selectedRowData.Type.trim());
+                            //$("#dateModified").val(sg.utls.kndoUI.getFormattedDate(selectedRowData.DateModified));
+                            $("#btnSaveQuerySave").prop("disabled", false);
+                        }
+                        if (id == "#openQueryPanelGrid") {
+                            $("#OpenQueryPanel_QueryDescription").val(selectedRowData.Description);
+                        }
+                    }
+                }
+            });
+        }
+
+        initKendoGrid("#saveQueryPanelGrid");
+        initKendoGrid("#openQueryPanelGrid");
+        $("#openQueryPanelGrid").delegate("tbody>tr", "dblclick", function () {
+            $('#btnOpenQuery').click();
+        });
+    },
+
+};
+
+$(function () {
+    inquiryPanelUI.init();
+});

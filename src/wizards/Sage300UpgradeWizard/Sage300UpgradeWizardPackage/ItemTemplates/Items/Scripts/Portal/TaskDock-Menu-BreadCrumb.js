@@ -866,7 +866,8 @@ $(document).ready(function () {
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
-
+        $('.feature_nav').removeClass("active");
+		
         //Sage Intelligence
         var intelligence = $(this).attr("data-isIntelligence");
         var fileurl = $(this).attr("data-url");

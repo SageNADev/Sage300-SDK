@@ -3177,6 +3177,7 @@ table.k-editor {
     white-space: nowrap;
     overflow: hidden;
     max-width: 350px;
+    display: inline-block;
     text-overflow: ellipsis;
     color: #2e2e2e;
     margin-left: 10px;
