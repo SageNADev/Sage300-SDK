@@ -1,1 +1,200 @@
-"use strict";var globalSearchUI=globalSearchUI||{};globalSearchUI={globalSearchModel:{data:ko.observableArray()},dataSourceConfig:{transport:{read:function(n){globalSearchUI.search(n)}},pageSize:globalSearchPageSize,serverPaging:!0,schema:{data:function(n){return n.Data},total:function(n){return n.Total}}},init:function(){globalSearchUI.initButton();globalSearchUI.initListView();globalSearchUI.initTreeView()},initTreeView:function(){$("#searchableEntityTreeView").kendoTreeView({checkboxes:{checkChildren:!0},dataSource:entitySchemaList});var t=$("#searchableEntityTreeView").data("kendoTreeView"),n=t.dataItem(".k-item:first");n&&(n.set("checked",!0),n.items&&n.items.length>0&&t.expandTo(n.items[n.items.length-1]))},initListView:function(){var n=new kendo.data.DataSource(globalSearchUI.dataSourceConfig);$("#bodySearchResultListView").kendoListView({dataSource:n,template:kendo.template($("#template").html()),autoBind:!1,dataBound:globalSearchUI.initSearchResult});$("#searchResultPager").kendoPager({dataSource:n,numeric:!0,autoBind:!1})},initSearchResult:function(){$(".item-ID").click(function(){var n=this.dataset.webdetailinfo.split(";"),t;if(window.parent.globalSearchDrillDownParameter="",(n.length-1)%2==0)for(t=1;t<n.length;t++)window.parent.globalSearchDrillDownParameter!==""&&(window.parent.globalSearchDrillDownParameter+="&"),window.parent.globalSearchDrillDownParameter+=n[t]+"="+n[++t];$("a[data-menuid="+n[0]+"]",window.parent.document.body)[0].click()})},initButton:function(){$("#btnSearchFind").click(function(){var n=[];globalSearchUI.getCheckedEntity($("#searchableEntityTreeView").data("kendoTreeView").dataSource.view(),n);n.length==0?sg.utls.showKendoMessageDialog(function(){},globalSearchResource.noSelection):$("#searchResultPager").data().kendoPager.page()===0?$("#bodySearchResultListView").data().kendoListView.dataSource.read():$("#searchResultPager").data().kendoPager.page(1)});$("#globalSearchBox").keyup(function(n){n.keyCode===13&&$("#btnSearchFind").click()});$("#btnResetCompany").click(function(){sg.utls.showKendoConfirmationDialog(function(){globalSearchRepository.ResetCompany({},function(){})},function(){},globalSearchResource.resetConfirm)})},initAutoComplete:function(){var n='# for (var i = 1; i < data.Path.length; i++) { ## if (i > 1) { # - # } ##: data.Path[i] ## } ## for (var j = 0; j < data.Fields.length; j++) { # - #: data["FieldName-" + data.Fields[j]] #: #: data[data.Fields[j]] ## } #',t=$("#globalSearchBox").kendoAutoComplete({minLength:2,template:'<span class="k-state-default" style="background-image: url(\'../../../Assets/images/search/#:data.Type#.png\')"><\/span><span class="k-state-default" title="'+n+'"><h3>#: data["FieldName-"+data.Header] #: #: data[data.Header] #<\/h3><p>'+n+"<\/p><\/span>",dataSource:{serverFiltering:!0,transport:{read:{url:function(){return sg.utls.url.buildUrl("Core","GlobalSearch","Search")},data:function(){return{query:$("#globalSearchBox").val()}}}}},dataTextField:"customer_number",height:408,clearButton:!1}).data("kendoAutoComplete")},search:function(n){var t,i;$(".main-body").hasClass("result-active")||($(".main-body").addClass("result-active"),$(".body-search-result").show());t=[];globalSearchUI.getCheckedEntity($("#searchableEntityTreeView").data("kendoTreeView").dataSource.view(),t);i={query:$("#globalSearchBox").val(),entities:t,pageSize:n.data.pageSize,pageNumber:n.data.page};globalSearchRepository.Search(i,function(t){t&&(t.UserMessage?sg.utls.showMessage(t):n.success(t))})},getCheckedEntity:function(n,t){for(var i=0;i<n.length;i++)n[i].checked&&!n[i].header&&t.push(n[i].id),n[i].hasChildren&&globalSearchUI.getCheckedEntity(n[i].children.view(),t)}};$(document).ready(function(){globalSearchUI.init();$(window).bind("beforeunload",function(){$(parent.document.getElementById("globalSearch")).removeClass("active")})});
+﻿// Copyright (c) 2018 Sage Software, Inc.  All rights reserved.
+"use strict"
+
+var globalSearchUI = globalSearchUI || {};
+globalSearchUI = {
+    globalSearchModel: {
+        data: ko.observableArray(),
+    },
+    dataSourceConfig: {
+        transport: {
+            read: function (options) {
+                globalSearchUI.search(options);
+            }
+        },
+        pageSize: globalSearchPageSize,
+        serverPaging: true,
+        schema: {
+            data: function (response) {
+                return response.Data;
+            },
+            total: function (response) {
+                return response.Total;
+            }
+        }
+    },
+    init: function () {
+        //TODO: Enable autoComplete
+        //globalSearchUI.initAutoComplete();
+        globalSearchUI.initButton();
+        globalSearchUI.initListView();
+        globalSearchUI.initTreeView();
+    },
+
+    initTreeView: function() {
+        $("#searchableEntityTreeView").kendoTreeView({
+            checkboxes: {
+                checkChildren: true
+            },
+            
+            dataSource: entitySchemaList
+        });
+
+        // default all checkboxes are checked and expand the first level
+        var treeview = $("#searchableEntityTreeView").data("kendoTreeView");
+        var firstItem = treeview.dataItem(".k-item:first");
+        if (firstItem) {
+            firstItem.set("checked", true);
+            if (firstItem.items && firstItem.items.length > 0) {
+                treeview.expandTo(firstItem.items[firstItem.items.length - 1]);
+            }
+        }
+    },
+
+    initListView: function () {
+        var ds = new kendo.data.DataSource(globalSearchUI.dataSourceConfig);
+
+        $("#bodySearchResultListView").kendoListView({
+            dataSource: ds,
+            template: kendo.template($("#template").html()),
+            autoBind: false,
+            dataBound: globalSearchUI.initSearchResult
+        });
+
+        $("#searchResultPager").kendoPager({
+            dataSource: ds,
+            numeric: true,
+            autoBind: false
+        });
+    },
+
+    initSearchResult: function () {
+        $(".item-ID").click(function () {
+            var webDetailInfoArray = this.dataset.webdetailinfo.split(";"); // <screenid>;<parameter name>;<parameter value>; ... <parameter name>;<parameter value>;
+            window.parent.globalSearchDrillDownParameter = "";
+            if ((webDetailInfoArray.length - 1) % 2 === 0) { //To make sure the remaining values except the screen id exist in pairs.
+                for (var x = 1; x < webDetailInfoArray.length; x++) {
+                    if (window.parent.globalSearchDrillDownParameter !== "") { window.parent.globalSearchDrillDownParameter += "&" }; //To combine the parameters. 
+                    window.parent.globalSearchDrillDownParameter += webDetailInfoArray[x] + "=" + webDetailInfoArray[++x];
+                }
+            };
+            $("a[data-menuid=" + webDetailInfoArray[0] + "]", window.parent.document.body)[0].click();
+        });
+    },
+
+    initButton: function () {
+        $("#btnSearchFind").click(function () {
+
+            var values = [];
+            globalSearchUI.getCheckedEntity($("#searchableEntityTreeView").data("kendoTreeView").dataSource.view(), values);
+            if (values.length == 0) {
+                sg.utls.showKendoMessageDialog(function () { }, globalSearchResource.noSelection)
+            } else {
+                if ($("#searchResultPager").data().kendoPager.page() === 0) {
+                    $("#bodySearchResultListView").data().kendoListView.dataSource.read();
+                } else {
+                    // set pager to 1 will set the pager back to 1 (as new search is about to happen) and trigger the datasource to read again which as the result, will to search again
+                    $("#searchResultPager").data().kendoPager.page(1);
+                }
+            }
+        });
+
+        $("#globalSearchBox").keyup(function (event) {
+            if (event.keyCode === 13) {
+                $("#btnSearchFind").click();
+            }
+        });
+
+        $("#btnResetCompany").click(function () {
+            sg.utls.showKendoConfirmationDialog(
+                function() { // Yes
+                    globalSearchRepository.ResetCompany({},
+                        function(result) {
+                            // result could be true or false, what to do about it?
+                        }
+                    );
+                },
+                function() { }, // No
+                globalSearchResource.resetConfirm // the message
+            );
+        });
+    },
+
+    initAutoComplete: function () {
+        var content = '# for (var i = 1; i < data.Path.length; i++) { ## if (i > 1) { # - # } ##: data.Path[i] ## } #' +
+            '# for (var j = 0; j < data.Fields.length; j++) { # - #: data["FieldName-" + data.Fields[j]] #: #: data[data.Fields[j]] ## } #';
+        var autocomplete = $("#globalSearchBox").kendoAutoComplete({
+            minLength: 2,
+            template:
+                '<span class="k-state-default" style="background-image: url(\'../../../Assets/images/search/#:data.Type#.png\')"></span>' +
+                '<span class="k-state-default" title="' + content + '">' +
+                '<h3>#: data["FieldName-"+data.Header] #: #: data[data.Header] #</h3>' +
+                '<p>' + content + '</p></span>',
+            dataSource: {
+                serverFiltering: true,
+                transport: {
+                    read: {
+                        url: function() {
+                            return sg.utls.url.buildUrl("Core", "GlobalSearch", "Search");
+                        },
+                        data: function() {
+                            return { query: $("#globalSearchBox").val(), }
+                        },
+                    }
+                }
+            },
+            //TODO: change select item behaviour
+            dataTextField: "customer_number",
+            height: 408,
+            clearButton: false
+        }).data("kendoAutoComplete");
+    },
+
+    search: function (options) {
+        // use .main-body as indicator on the status of the page
+        if (!$('.main-body').hasClass('result-active')) {
+            $('.main-body').addClass('result-active');
+            $(".body-search-result").show();
+        }
+
+        var values = [];
+        globalSearchUI.getCheckedEntity($("#searchableEntityTreeView").data("kendoTreeView").dataSource.view(), values);
+        var data = {
+            "query": $("#globalSearchBox").val(),
+            "entities": values,
+            "pageSize": options.data.pageSize,
+            "pageNumber": options.data.page
+        };
+        
+        globalSearchRepository.Search(data,
+            function (result) {
+                if (result) {
+                    if (result.UserMessage) {
+                        sg.utls.showMessage(result);
+                    } else {
+                        options.success(result);
+                    }
+                }
+            }
+        );
+    },
+    getCheckedEntity: function(nodes, checkedNodes) {
+        for (var i = 0; i < nodes.length; i++) {
+            if (nodes[i].checked && !nodes[i].header) {
+                checkedNodes.push(nodes[i].id);
+            }
+
+            if (nodes[i].hasChildren) {
+                globalSearchUI.getCheckedEntity(nodes[i].children.view(), checkedNodes);
+            }
+        }
+    }
+}
+
+$(document).ready(function () {
+    globalSearchUI.init();
+
+    $(window).bind('beforeunload', function () {
+        $(parent.document.getElementById("globalSearch")).removeClass("active");
+    });
+});

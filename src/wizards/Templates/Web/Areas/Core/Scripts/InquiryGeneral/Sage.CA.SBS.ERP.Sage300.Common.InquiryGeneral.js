@@ -1,1 +1,1133 @@
-(function(){var n=window.kendo,t=n.ui,i=t.Widget,r=i.extend({dataSource:null,options:{name:"GridFilterPanel",template:"<span style='color:blue'>Filter:<\/span> #= filter #",placeholder:"<span style='color:blue'>No Filter<\/span>",columns:[]},init:function(n,t){i.fn.init.call(this,n,t);this.element.attr("class","k-block k-header");this.element.attr("style","min-height:1.5em;");typeof this.options.dataSource!="undefined"&&this.setDataSource(this.options.dataSource);this.element.append("<span class='k-message' style='display:inline-block; margin:0.4em;'><\/span>");this.displayFilter()},operatorText:function(n){var t=n.operator?n.operator:n.Operator;switch(t){case"eq":t="=";break;case"neq":t="!=";break;case"gte":t=">=";break;case"gt":t=">";break;case"lte":t="<=";break;case"lt":t="<"}return t},getDisplayFilter:function(t){var f="",s=t.filters,h,c,e,i,u,o,r,a,v,l;if(s==null)return f;for(h=s.length,c=["int32","int64","int16","long","byte","real","decimal"],e=0;e<h;e++){if(i=s[e],i.filters!=null&&i.filters.length>0)f+=n.format("({0})",this.getDisplayFilter(i));else{if(u=this.options.columns.filter(function(n){return n.columnName===i.field})[0],!u)continue;o=u.dataType.toLowerCase();r=o==="datetime"?n.toString(n.parseDate(i.value),"d"):i.value;r=r.replace(/'/g,"");u.presentation&&(r=u.presentation.filter(function(n){return n.Value==r})[0].Text);a=c.indexOf(o)>-1?"{0} {1} {2}":"{0} {1} '{2}'";c.indexOf(o)>-1&&(r=n.toString(n.parseFloat(r),"n"+u.presion));v=u.title;f+=n.format(a,v,this.operatorText(i),r)}e<h-1&&(l=t.logic.toLowerCase(),f+=n.format(l=="and"||l=="or"?" <span>{0}<\/span> ":" {0} ",t.logic))}return f},displayFilter:function(){var t="",i,r;this.dataSource!==null&&this.dataSource._filter&&(i=this.dataSource._filter,t=this.getDisplayFilter(i));r=t?n.template(this.options.template)({filter:t}):this.options.placeholder;this.element.find(".k-message").html(r)},setDataSource:function(n){var t=this,i=function(n){t.displayFilter.call(t,n)};this.dataSource!==null&&this.dataSource.unbind("change",i);this.dataSource=n;this.dataSource.bind("change",i);this.displayFilter()}});t.plugin(r)})(jQuery);var InquiryGeneralUI=function(){function k(){function t(n){var r,u;if(n.TemplateId=InquiryGeneralViewModel.TemplateId,n.TemplateId===n.winTemplateId){var t=$("#inquiryGrid").data("kendoGrid"),f=t.getOptions().columns,e=f.map(function(n){return n.IsDisplayable=!n.hidden,n}),o=t.getOptions().dataSource.filter,s=t.getOptions().dataSource.group;i=n.Name;n.Type==inquiryGeneralResources.Private?n.Type="Private":n.Type==inquiryGeneralResources.Public&&(n.Type="Public");r={template:n,fields:e,filter:o,group:s};u=sg.utls.url.buildUrl("Core","InquiryGeneral","SaveTemplate");sg.utls.ajaxPost(u,r,nt)}}var n=InquiryGeneralViewModel.UserMessage;if(n&&n.Errors&&n.Errors.length>0){sg.utls.showMessage(InquiryGeneralViewModel);return}d(InquiryGeneralViewModel);g();ot();et(null);window.parent.addEventListener("message",function(n){n.data.event_id==="SaveQueryPanel"&&t(n.data.template)})}function d(n){n.IsAdhocQuery&&($("#divShowGrandTotals").show(),$("#headerButtonsId").show())}function g(){var n=InquiryGeneralViewModel.Title;$("#InquiryGeneralHeader").text(inquiryGeneralResources.Inquiry+" - "+n)}function nt(n){n&&(n.Errors?sg.utls.showMessage(n):(InquiryGeneralViewModel.TemplateId=n.TemplateId,InquiryGeneralViewModel.Title=i,InquiryGeneralViewModel.Name=InquiryGeneralViewModel.Title,$("#InquiryGeneralHeader").text("Inquiry - "+i),$("#btnDeleteQuery").prop("disabled",!1),window.parent.postMessage({event_id:"SaveTemplate",inquiryTitle:"Inquiry - "+i},"*")))}function tt(n){n.Errors?sg.utls.showMessage(n):($("#btnDeleteQuery").prop("disabled",!0),$("#btnSaveQuery").prop("disabled",!0),window.parent.postMessage({event_id:"DeleteTemplate"},"*"))}function v(){for(var n,f,g,o,u,k=InquiryGeneralViewModel.Fields,nt=k.length,d=[],s=["int32","int64","int16","integer","long","byte","real","decimal"],l=InquiryGeneralViewModel.IsAdhocQuery,v=0;v<nt;v++)if(n=k[v],n.Included){var t={},i=n.DataType.toLowerCase(),tt=l&&n.IsGroupable?"groupable":"",p=s.indexOf(i)>-1?"align-right ":"align-left ",w=s.indexOf(i)>-1?"number":i,r=n.PresentationList;if(w=r&&r.length>0?"enum":w,p+=tt,l&&!a&&n.IsDisplayable&&(a=!0,t.locked=!0,y(t,"footer"),y(t,"group")),t.lockable=!1,t.title=n.Title,t.field=n.FieldAlias||n.Field,t.isDummy=n.IsDummy,t.dataType=n.DataType,t.presion=n.Precision,t.isFilterable=n.IsFilterable,t.columnName=n.FieldAlias||n.Field,t.presentation=r&&r.length==0?null:r,t.width=n.IsDummy?100:160,t.headerWidth=n.IsDummy?100:160,t.attributes={"class":p},t.headerAttributes={"class":p,dataType:w},t.template=ft(n),t.isDrillDown=n.IsDrilldown,t.drillDownUrl=n.DrilldownUrl,t.hidden=n.IsDisplayable===undefined?!1:!n.IsDisplayable,t.groupable=n.IsGroupable,t.isAggregate=n.IsAggregate,i==="string"?t.filterable={operators:{string:b}}:i==="datetime"?t.filterable={ui:"datepicker"}:s.indexOf(i)>-1?t.filterable={ui:$.proxy(it,{field:n})}:r&&r.length>0&&(h[n.Field]=r,t.filterable={ui:$.proxy(rt,{field:n.Field}),operators:{string:{eq:"=",neq:"!="}}}),l){if(f=["sum","min","max","avg","count"],i==="decimal"&&n.IsAggregate&&(f.forEach(function(n){c.push({field:t.field,aggregate:n})}),e.indexOf(t.field)<0&&e.push(t.field)),t.aggregates=n.Aggregates,n.IsAggregate&&n.Aggregates&&n.Aggregates.length>0){for(g=n.Aggregates.map(function(n){return n.toLowerCase()}),o="",u=0;u<5;u++)g.indexOf(f[u])>-1&&(o+=kendo.format("<div>#=kendo.toString({0},'n{1}')#<\/div>",f[u],u===4?0:3));t.groupFooterTemplate=o}i==="decimal"&n.IsAggregate&&(t.footerTemplate=o)}d.push(t)}return d}function y(n,t){var i=kendo.format("<span id=footer{0} ><div>{1}:<\/div>",n.field,t=="footer"?inquiryGeneralResources.GrandTotal:inquiryGeneralResources.Total);i+=kendo.format("<div>{0}:<\/div>",inquiryGeneralResources.Minimum);i+=kendo.format("<div>{0}:<\/div>",inquiryGeneralResources.Maximum);i+=kendo.format("<div>{0}:<\/div>",inquiryGeneralResources.Average);i+=kendo.format("<div>{0}:<\/div><\/span>",inquiryGeneralResources.Count);t=="footer"?n.footerTemplate=i:n.groupFooterTemplate=i}function it(n){n.kendoNumericTextBox({format:"n"+this.field.Precision,spinners:!1,decimals:this.field.Precision})}function rt(n){n.kendoDropDownList({dataTextField:"Text",dataValueField:"Value",dataSource:h[this.field]})}function ut(n){var t=n.operator?n.operator:n.Operator;switch(t){case"eq":t="=";break;case"neq":t="!=";break;case"gte":t=">=";break;case"gt":t=">";break;case"lte":t="<=";break;case"lt":t="<";break;case"Like":case"StartsWith":case"Contains":t="LIKE"}return t}function o(t){var f="",y,l,r,d,a,h,g,i,p,u,e,c,s,nt,b,w,tt;if(!t||(y=t.filters,y==null))return f;var k=y.length,it=["Int32","Int64","Int16","Long","Byte","Real","Decimal"],rt=["like","startswith","contains","endwith"];for(l=0;l<k;l++){if(r=y[l],r.filters!=null&&r.filters.length>0)f+=kendo.format("({0})",o(r));else{if(d=n===undefined?v():n.columns,a=d.filter(function(n){return n.columnName==r.field})[0],!a)continue;h=r.field;g=a.dataType.toLowerCase();g==="datetime"?(p=kendo.parseDate(new Date(r.value)),i=kendo.toString(p,"yyyyMMdd"),r.value=kendo.toString(p,"d")):i=r.value;u="";e=(r.operator?r.operator:r.Operator).toLowerCase();rt.indexOf(e)>-1?(c="",s="",u=InquiryGeneralViewModel.Sql,i=u?i.toUpperCase():i,e==="like"&&(s=u?"upper({0}) LIKE '%{1}%'":"{0} LIKE %{1}%",nt=u?"upper({0}) LIKE '{1}'":"{0} LIKE {1}",c=i.indexOf("%")>-1?kendo.format(nt,h,i):kendo.format(s,h,i)),e==="contains"&&(s=u?"upper({0}) LIKE '%{1}%'":"{0} LIKE %{1}%",c=kendo.format(s,h,i)),e==="startswith"&&(s=u?"upper({0}) LIKE '{1}%'":"{0} LIKE {1}%",c=kendo.format(s,h,i)),e==="endwith"&&(s=u?"upper({0}) LIKE '%{1}'":"{0} LIKE %{1}",c=kendo.format(s,h,i)),f+=c):(u=InquiryGeneralViewModel.Sql,w="",b=a.dataType.toLowerCase()=="string"&&e=="eq",i=b&&u?i.toUpperCase():i,w=it.indexOf(a.dataType)>-1?"{0} {1} {2}":u?b?"upper({0}) {1} '{2}'":"{0} {1} '{2}'":'{0} {1} "{2}"',e=ut(r),f+=kendo.format(w,h,e,i))}l<k-1&&(f+=kendo.format(" {0} ",t.logic?t.logic:t.Logic))}return tt=f.split(" or ").length==2&&f.indexOf("(")===-1,tt?"("+f+")":f}function ft(n){var t,i=n.DataType.toLowerCase();return i==="decimal"&&(t="#= kendo.toString("+n.Field+', "n'+n.Precision+'") #'),n.IsDrilldown&&(t=kendo.format("<a href=''>#={0}#<\/a>",n.FieldAlias||n.Field)),i==="datetime"&&(t=kendo.format(w,n.FieldAlias||n.Field)),n.IsDummy&&(t='<img src="../../../../Content/Images/nav/drilldown.png" height="16" width="16"  style="float:middle">'),t}function et(){function w(n){var t,r;if(n==null||n.length==0)return{};var u={},f=InquiryGeneralViewModel.Aggregates,e=f.length;for(i=0;i<e;i++)t={},r=5*i,t.sum=n[r++],t.avg=n[r++],t.max=n[r++],t.min=n[r++],t.count=n[r++],u[f[i]]=t;return u}function b(n){for(var i,e,o=[],l=n.length,u=0;u<l;u++){var s=n[u],a=s.length,h={};for(i=0;i<a;i++){var c=r[i].presentation,v=r[i].field,f=r[i].dataType.toLowerCase(),t=s[i];t&&(f==="datetime"||f==="date"||f==="time")&&(t=t.toString().length===8?kendo.parseDate(t.toString(),"yyyyMMdd"):t);c&&(e=c.filter(function(n){return n.Value==t}),e.length>0&&(t=e[0].Text));h[v]=t}o.push(h)}return o}function k(n){var t,i,f,e,r,s;if(n==null)return{};var o={},u=InquiryGeneralViewModel.Fields,h=1,c=u.length;for(t=0;t<c;t++)if(i=u[t].Aggregates,f=i.length,i!=null&&f>0){for(e={},r=0;r<f;r++)s=i[r],e[s]=n[h++];o[u[t].Field]=e}return o}function d(t,i){var r,s,u,h,e,c;if(t==null||t.length==0||i.length==0)return[];var o=[],f=InquiryGeneralViewModel.Groups[0].field,l=i.map(function(n){return n[f]}),a=l.filter(function(n,t,i){return i.indexOf(n)===t});for(r=0,s=t.length;r<s;r++)u=a[r],h=n.columns.filter(function(n){return n.field==f})[0].dataType,h.toLowerCase()=="datetime"&&(u=kendo.toString(kendo.parseDate(u),"d")),e={hasSubgroups:!1,field:f,value:u},c=k(t[r]),e.aggregates=c,e.items=i.filter(function(n){return n[f]==u}),o.push(e);return o}function a(n){return n&&(n.filters&&n.filters.length>0&&n.filters.forEach(function(n){a(n)}),n.Operator&&(n.operator=n.Operator=="="?"eq":n.Operator,delete n.Operator)),n}var u=new kendo.data.DataSource({serverPaging:!0,serverFiltering:!0,serverSorting:InquiryGeneralViewModel.Sql.length>0,serverAggregates:!0,serverGrouping:!0,aggregate:c,pageSize:t,filter:a(InquiryGeneralViewModel.Filter),transport:{read:function(i){var s=i.data.filter,r=o(s),u,f;InquiryGeneralViewModel.FilterString=r.length>3?r:"";InquiryGeneralViewModel.Sorts=i.data.sort;InquiryGeneralViewModel.Aggregates=e;n&&n.dataSource&&(InquiryGeneralViewModel.Groups=n.dataSource.group());u={currentPageNumber:n?n.dataSource.page()-1:0,pageSize:t,viewModel:InquiryGeneralViewModel};f=sg.utls.url.buildUrl("Core","InquiryGeneral","Get");sg.utls.ajaxPost(f,u,function(n){var t=b(n.Items),u=w(n.Aggregates),f=d(n.Groups,t),r;i.success({data:t,aggregates:u,groups:f,totalRecCount:n.TotalResultsCount});r=$("#chkShowGrandTotals").is(":checked");r?$("#inquiryGrid .k-grid-footer").show():$("#inquiryGrid .k-grid-footer").hide()})}},schema:{aggregates:"aggregates",total:"totalRecCount",data:"data",groups:"groups"}}),r=v(),f=InquiryGeneralViewModel.IsAdhocQuery,i,h,y;for(InquiryGeneralViewModel.Groups&&InquiryGeneralViewModel.Groups.length>0&&u.group(InquiryGeneralViewModel.Groups[0]),n=$("#inquiryGrid").kendoGrid({dataSource:u,columns:r,height:f?590:400,editable:!1,navigatable:!0,selectable:"row",scrollable:!0,resizable:!0,sortable:!0,reorderable:!f,columnMenu:!0,groupable:f,group:function(n){n.groups.length!=0&&(n.groups.length>1&&(n.groups[0].field==l?n.groups.shift():n.groups.pop()),l=n.groups.field||n.groups[0].field)},filterable:{extra:!0,operators:{string:s}},sortable:{allowUnsort:!1},columnShow:function(){},columnHide:function(){},pageable:{input:!0,numeric:!1,refresh:!0,change:function(){}},dataBound:function(n){for(var u,i,f,c,o,v,s,t,l,e,h=n.sender.columns,r=0,a=h.length;r<a;r++)if(u=h[r],u.isDrillDown&&(i=u.drillDownUrl&&u.drillDownUrl.DrilldownCondition,i&&i.Field))for(f=n.sender.dataSource.view(),t=0,c=f.length;t<c;t++)f[t][i.Field]!==i.Value&&(e=n.sender.tbody.find("[data-uid='"+f[t].uid+"']"),o=e.find("td:eq("+r+")"),o&&(o[0].innerHTML=o[0].innerText));for(v=this.wrapper.find(".k-grid-header [data-field=UnitsInStock]").index(),s=n.sender.dataSource.view(),t=0;t<s.length;t++)l=s[t].get("Discontinued"),e=n.sender.tbody.find("[data-uid='"+s[t].uid+"']"),l&&e.addClass("discontinued")}}).data("kendoGrid"),i=0;i<r.length;i++)h=r[i],h.isFilterable||(y=kendo.format("[data-field={0}]>.k-header-column-menu",h.field),n.thead.find(y).remove());$("#inquiryGrid").delegate("tbody > tr > td > a","click",p);$("#inquiryGrid").delegate("tbody > tr > td > img","click",p);$("#filter").kendoGridFilterPanel({dataSource:u,columns:n.options.columns}).data("kendoGridFilterPanel")}function ot(){function i(t){var et=sg.utls.url.buildUrl("Core","InquiryGeneral","Export"),v=InquiryGeneralViewModel.OrderByClause,c=InquiryGeneralViewModel.Sql,ot=n.columns,g=ot.filter(function(n){return!n.hidden}),st=g.map(function(n){return n.title}).join(","),y=g.map(function(n){return n.field}),nt=!1,i=InquiryGeneralViewModel.SelectClause.split(","),s,it,b,r,rt,k,h,l,e,a,d,ut,ft;i&&i.length>0&&(nt=i[0].indexOf(".")>0);var p=nt?i.map(function(n){return(n.indexOf(".")>-1?n.split(".")[1]:n).replace("[","").replace("]","")}):i,w=v?v.split(","):[],tt="",u=0,f="";for(s=0;s<y.length;s++){if(f=y[s],u=p.indexOf(f),u==-1)for(r=0,it=i.length;r<it;r++)if(i[r].indexOf(f)>-1){u=r;break}tt+=s<y.length-1?i[u]+",":i[u]}for(b=v?" order by ":"",r=0;r<w.length;r++)f=w[r].split(" "),u=p.indexOf(f[0]),rt=r===w.length-1?"{0} {1}":"{0} {1},",b+=kendo.format(rt,i[u],f[1]);if(k="",h=n.dataSource?n.dataSource.filter():null,h&&h.filters.length>0){for(l=o(h),e=h.filters.map(function(n){return n.field?n.field:n.filters&&n.filters.length>0?n.filters[0].field:void 0}),e=e.filter(function(n,t){return e.indexOf(n)==t}),a=0;a<e.length;a++)d=e[a],u=p.indexOf(d),ut=new RegExp(d,"g"),ft=i[u],l=l.replace(ut,ft);k=(c.toLowerCase().indexOf(" where ")<0?" where ":" and ")+l}c=c.replace("SELECTSTR",tt)+k+b;t.href=et+"/?sql="+c+"&titleStr="+st+"&name="+InquiryGeneralViewModel.Title}$("#btnPageSize10").click(function(){t=10;r.addClass("active");u.removeClass("active");f.removeClass("active");n.dataSource.pageSize(t)});$("#btnPageSize20").click(function(){t=50;u.addClass("active");r.removeClass("active");f.removeClass("active");n.dataSource.pageSize(t)});$("#btnPageSize30").click(function(){t=100;f.addClass("active");r.removeClass("active");u.removeClass("active");n.dataSource.pageSize(t)});$("#btnClearFilters").click(function(){n.dataSource.filter({})});$("#chkShowGrandTotals").click(function(){$("#inquiryGrid .k-grid-footer").toggle(this.checked)});$("#btnSaveQuery").click(function(){window.parent.postMessage({event_id:"SaveQuery",templateId:InquiryGeneralViewModel.TemplateId},"*")});$("#btnOpenQuery").click(function(){window.parent.postMessage({event_id:"OpenQuery"},"*")});$("#btnExportQuery").click(function(){var n=sg.utls.url.buildUrl("Core","InquiryGeneral","Export");sg.utls.ajaxPost(n,{sql:""},null)});$("#btnDeleteQuery").click(function(){var n=InquiryGeneralViewModel.TemplateId,t=jQuery.validator.format(inquiryGeneralResources.DeleteMessage,InquiryGeneralViewModel.Title);sg.utls.showKendoConfirmationDialog(function(){var t=sg.utls.url.buildUrl("Core","InquiryGeneral","DeleteTemplate");sg.utls.ajaxPost(t,{templateId:n},tt)},null,t,"")});$("#btnDeleteQuery").prop("disabled",!InquiryGeneralViewModel.Deletable);$("#divShowGrandTotals > span").addClass("selected");$("#chkShowGrandTotals").prop("checked",!0);$("a#inquiryExport").click(function(){i(this)});var e=document.getElementById("frmInquiryGeneral");e.onsubmit=function(){return!1}}function p(t){var u,i,f,r;if((t.preventDefault(),n.dataSource.length<=0)||(u=$(this).closest("tr"),i=$(this).closest("td")[0].cellIndex,i<0))return!1;InquiryGeneralViewModel.IsAdhocQuery&&(f=$(this).closest(n.lockedContent).length,i=i>-1&&f?i:i+1);var e=n.dataItem(u),o=n.columns[i],s=o.columnName,h=e[s];h&&(r=st(o,e),r&&sg.utls.iFrameHelper.openWindow("InqueryDetailPopup","",r,null,null,null))}function st(t,i){var o=t.drillDownUrl,tt=i[t.columnName],g="",f,r,c,s,l,y,a,p,b,k,u,e,d,nt;if(t.isDrillDown&&o){f=o.ControllerList;f&&f.length==1?r=f[0].Controller:(c=i[o.TypeField],s=o.SrceApplField?i[o.SrceApplField]:"",r=s?f.filter(function(n){return n.Type==c&&n.SrceAppl==s})[0]:f.filter(function(n){return n.Type==c})[0],r||(l=n.columns.filter(function(n){return n.field==o.TypeField}),l&&l.length>0&&(y=l[0],y.presentation&&(a=y.presentation.filter(function(n){return n.Text==c}),a&&a.length>0&&(p=a[0].Value,r=s?f.filter(function(n){return n.Type==p&&n.SrceAppl==s})[0]:f.filter(function(n){return n.Type==p})[0])))),r||(r=f[0]),r=r.Controller);var h=r.Parameters,w=h.length,v="";if(r.Controller==="InquiryGeneral"){if(v="?templateId="+h[0].Field,w>1){for(b="",u=1;u<w;u++)b+=i[h[u].Field]+",";v+="&id="+b.slice(0,-1)}}else for(k=InquiryGeneralViewModel.Ids,u=0;u<w;u++)e=h[u].Field,e.indexOf("{")==0&&e.indexOf("}")>1?(nt=e.substring(1,2),d=kendo.format(e,k?k[nt]:"")):d=i[e]||e,v+=kendo.format("{0}{1}={2}",u==0?"?":"&",h[u].Name,d);g=sg.utls.url.buildUrl(r.Area,r.Controller,r.Action)+"/"+v}return g}var w='#if({0} === null || {0} == ""){##}else{# #= kendo.toString(kendo.parseDate({0}), "d") #  #}#',s={eq:"=",neq:"!=",gt:">",gte:">=",lt:"<",lte:"<="},b=$.extend({},s,{Like:"Like",StartsWith:"Starts With",Contains:"Contains"}),n,t=10,h={},r=$("#btnPageSize10"),u=$("#btnPageSize20"),f=$("#btnPageSize30"),c=[],e=[],l="",a=!1,i="";return k(),{}}();
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+
+/* global kendo */
+/* exported InquiryGeneralUI */
+/* global InquiryGeneralViewModel */
+/* exported savedQueryResources */
+/* global inquiryGeneralResources */
+
+/// <summary>Kendo UI Web Filter Panel Plugin.</summary>
+/// <description>Display the filter settings applied to a kendo.data.DataSource.</description>
+
+(function ($) {
+    var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget;
+
+    var GridFilterPanel = Widget.extend({
+        dataSource: null,
+
+        options: {
+            name: "GridFilterPanel",
+            template: "<span style='color:blue'>" + inquiryGeneralResources.Filter + "</span> #= filter #",
+            placeholder: "<span style='color:blue'>" + inquiryGeneralResources.NoFilter + "</span>",
+            columns: []
+        },
+
+        init: function (element, options) {
+            Widget.fn.init.call(this, element, options);
+            this.element.attr("class", "k-block k-header");
+            this.element.attr("style", "min-height:1.5em;");
+
+            if (typeof this.options.dataSource !== "undefined") {
+                this.setDataSource(this.options.dataSource);
+            }
+            this.element.append("<span class='k-message' style='display:inline-block; margin:0.4em;'></span>");
+            this.displayFilter();
+        },
+
+        operatorText: function (filter) {
+            var operatorText = (filter.operator ? filter.operator : filter.Operator);
+            switch (operatorText) {
+                case "eq":
+                    operatorText = "=";
+                    break;
+                case "neq":
+                    operatorText = "!="; 
+                    break;
+                case "gte":
+                    operatorText = ">=";
+                    break;
+                case "gt":
+                    operatorText = ">";
+                    break;
+                case "lte":
+                    operatorText = "<=";
+                    break;
+                case "lt":
+                    operatorText = "<";
+                    break;
+            }
+            //return "<span style='color:blue'>" + operatorText + "</span>";
+            return operatorText;
+        },
+
+        getDisplayFilter: function (filter) {
+            var filterText = "";
+            var filters = filter.filters;
+            if (filters == null) return filterText;
+            var length = filters.length;
+            var numberType = ["int32", "int64", "int16", "long", "byte", "real", "decimal"];
+            for (var idx = 0; idx < length; idx++) {
+                var child = filters[idx];
+                if (child.filters != null && child.filters.length > 0) {
+                    filterText += kendo.format("({0})", this.getDisplayFilter(child));
+                } else {
+                    var field = this.options.columns.filter(function (c) { return c.columnName === child.field; })[0];
+                    if (!field) {
+                        continue;
+                    }
+                    var type = field.dataType.toLowerCase();
+                    var value = (type === "datetime") ? kendo.toString(kendo.parseDate(child.value), "d") : child.value; 
+                    value = value.replace(/'/g, '');
+                    if (field.presentation) {
+                        value = field.presentation.filter(function (item) { return item.Value == value; })[0].Text;
+                    }
+                    var format = numberType.indexOf(type) > -1 ? "{0} {1} {2}" : "{0} {1} '{2}'";
+                    if (numberType.indexOf(type) > -1) {
+                        value = kendo.toString(kendo.parseFloat(value, "en-US"), "n" + field.precision);
+                    }
+                    var title = field.title;
+                    filterText += kendo.format(format, title, this.operatorText(child), value);
+                }
+
+                if (idx < (length - 1)) {
+                    var opt = filter.logic.toLowerCase();
+                    filterText += kendo.format((opt == 'and') || (opt == 'or') ? " <span>{0}</span> " : " {0} ", filter.logic);
+                }
+            }
+
+            return filterText;
+        },
+
+        displayFilter: function () {
+            var filterText = "";
+            if (this.dataSource !== null && this.dataSource._filter) {
+                var filter = this.dataSource._filter;
+                filterText = this.getDisplayFilter(filter);
+            }
+            var htmlString = (filterText) ? kendo.template(this.options.template)({ filter: filterText }) : this.options.placeholder;
+            this.element.find(".k-message").html(htmlString);
+        },
+
+        setDataSource: function (ds) {
+            var that = this,
+                change = function (e) {
+                    that.displayFilter.call(that, e);
+                };
+
+            if (this.dataSource !== null) {
+                this.dataSource.unbind("change", change);
+            }
+            this.dataSource = ds;
+            this.dataSource.bind("change", change);
+            this.displayFilter();
+        }
+    });
+
+    ui.plugin(GridFilterPanel);
+
+})(jQuery);
+
+var InquiryGeneralUI = function () {
+    // The culture is usually set in Global.js but there seems to be a timing issue so set it here first
+    kendo.culture(globalResource.Culture);
+    //var drillDowntemplate = '<div class="pencil-wrapper"><span class="pencil-txt">#= {0} #</span><span class="pencil-icon"><input type="button" class="icon edit-field inqueryEditCell"/></span></div>';
+    var datetimeTemplate = '#if({0} === null || {0} == ""){##}else{# #= kendo.toString(kendo.parseDate({0}), "d") #  #}#';
+    var filterOperator = { eq: "=", neq: "!=", gt: ">", gte: ">=", lt: "<", lte: "<=" };
+    var stringFilterOperator = $.extend({}, filterOperator, { Like: "Like", StartsWith: "Starts With", Contains: "Contains" });
+    var grid, pageSize = 10, dropdownDataSource = {};
+    var btnLink1 = $("#btnPageSize10");
+    var btnLink2 = $("#btnPageSize20");
+    var btnLink3 = $("#btnPageSize30");
+    var aggregates = [];
+    var aggregateFields = [];
+    var previousGroupName = "";
+    var aggOptionShow = false;
+    var savedInquiryTitle = "";
+
+    initInquiryGeneralUI();
+
+    //Init Inquiry General UI
+    function initInquiryGeneralUI() {
+        var userMessage = InquiryGeneralViewModel.UserMessage;
+        if (userMessage && userMessage.Errors && userMessage.Errors.length > 0) {
+            sg.utls.showMessage(InquiryGeneralViewModel);
+            return;
+        }
+        //var viewName = InquiryGeneralViewModel.ViewName;
+        showElements(InquiryGeneralViewModel);
+        setHeaderTitle();
+        initButtons();
+        configGrid(null);
+
+        //Fix cross domain issue. For cross domain, we can't access window parent from iframe'
+        if (InquiryGeneralViewModel.IsAdhocQuery) {
+            window.parent.addEventListener('message', function (event) {
+                if (event.data.event_id === 'SaveQueryPanel') {
+                    saveQueryPanel(event.data.template);
+                }
+            });
+        }
+
+        function saveQueryPanel(template)
+        {
+            template.TemplateId = InquiryGeneralViewModel.TemplateId;
+            if (template.TemplateId === template.winTemplateId) {
+                var grid = $("#inquiryGrid").data("kendoGrid");
+                var columns = grid.getOptions().columns;
+                var fields = columns.map(function (f) { f.IsDisplayable = !f.hidden; return f; });
+                var filter = grid.getOptions().dataSource.filter;
+
+                // Convert all dates in filter to a culture invariant format
+                if (filter) {
+                    var datetimefields = fields.filter(function (f) { return f.dataType.toLowerCase() === "datetime"; }); // cache datetime fields for better performance
+                    filter = convertToCultureInvariantDate(filter, datetimefields);
+                }
+
+                var group = grid.getOptions().dataSource.group;
+
+                savedInquiryTitle = template.Name;
+                if (template.Type === inquiryGeneralResources.Private) {
+                    template.Type = "Private";
+                } else if (template.Type === inquiryGeneralResources.Public) {
+                    template.Type = "Public";
+                }
+
+                var value = {
+                    template: template,
+                    fields: fields,
+                    filter: filter,
+                    group: group
+                };
+                var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "SaveTemplate");
+                sg.utls.ajaxPost(url, value, saveTemplate);
+            }
+        }
+    }
+
+    // Recursive helper function to convert dates in a filter to a culture invariant format
+    function convertToCultureInvariantDate(filter, datetimefields) {
+        if (filter.filters && filter.filters.length > 0) {
+            filter.filters.forEach(function(f) {
+                convertToCultureInvariantDate(f, datetimefields); // recursive case
+            });
+        } else {
+            // Check that the column being filtered is of datetime type
+            for (var i = 0; i < datetimefields.length; i++) {
+                if (datetimefields[i].field === filter.field) {
+                    filter.value = kendo.toString(kendo.parseDate(filter.value), "yyyyMMdd"); // base case - do conversion
+                    break;
+                }
+            }
+        }      
+        return filter;
+    }
+
+    //Show elements for adhoc inquiry
+    function showElements(viewModel)
+    {
+        if (viewModel.IsAdhocQuery) {
+            $("#divShowGrandTotals").show();
+            $("#headerButtonsId").show();
+        }
+    }
+
+    //Set header title based on Json file name
+    function setHeaderTitle() {
+        var title = InquiryGeneralViewModel.Title;
+        $("#InquiryGeneralHeader").text(inquiryGeneralResources.Inquiry + " - " + title);
+    }
+    
+    function saveTemplate(jsonResult) {
+        if (jsonResult) {
+            if (jsonResult.Errors) {
+                sg.utls.showMessage(jsonResult);
+            } else {
+                InquiryGeneralViewModel.TemplateId = jsonResult.TemplateId;
+                InquiryGeneralViewModel.Title = savedInquiryTitle;
+                InquiryGeneralViewModel.Name = InquiryGeneralViewModel.Title;
+                $("#InquiryGeneralHeader").text("Inquiry - " + savedInquiryTitle);
+                $("#btnDeleteQuery").prop("disabled", false);
+                window.parent.postMessage({ event_id: 'SaveTemplate', inquiryTitle: "Inquiry - " + savedInquiryTitle }, '*');
+            }
+        }
+
+    }
+
+    function deleteTemplate(jsonResult) {
+        if (jsonResult.Errors) {
+            sg.utls.showMessage(jsonResult);
+        } else {
+            $("#btnDeleteQuery").prop("disabled", true);
+            $("#btnSaveQuery").prop("disabled", true);
+            //$("#btnOpenQuery").prop("disabled", true);
+            //$("#inquiryExport").prop("disabled", true);
+            window.parent.postMessage({ event_id: 'DeleteTemplate' }, '*');
+        }
+    }
+
+    //Config inquiry grid columns
+    function getGridColumns() {
+        var items = InquiryGeneralViewModel.Fields;
+        var length = items.length;
+        var cols = [];
+        var numbers = ["int32", "int64", "int16", "integer", "long", "byte", "real", "decimal"];
+        var groupable = InquiryGeneralViewModel.IsAdhocQuery;
+
+        for (var i = 0; i < length; i++) {
+            var item = items[i];
+            if (!item.Included) {
+                continue;
+            }
+            var col = {},  type = item.DataType.toLowerCase();
+            var classGroupable = (groupable && item.IsGroupable) ? "groupable" : "";
+            var attr = (numbers.indexOf(type) > -1) ? "align-right " : "align-left ";
+            var headerType = (numbers.indexOf(type) > -1) ?  "number" : type;
+            var list = item.PresentationList;
+            headerType = (list && list.length > 0) ? "enum": headerType;
+
+            attr += classGroupable;
+            if (groupable && (!aggOptionShow) && (item.IsDisplayable)) {
+                aggOptionShow = true;
+                col.locked = true;
+                setTemplateCaption(col, "footer");
+                setTemplateCaption(col, "group");
+            }
+            col.lockable = false;
+            col.title = item.Title;
+            col.field = item.FieldAlias || item.Field;
+            col.isDummy = item.IsDummy;
+            col.dataType = item.DataType;
+            col.precision = item.Precision;
+            col.isFilterable = item.IsFilterable;
+            col.columnName = item.FieldAlias || item.Field;
+            col.presentation = (list && list.length == 0) ? null : list;
+            col.width = (item.IsDummy)? 100: 160;
+            col.headerWidth = (item.IsDummy) ? 100 : 160;
+            col.attributes = { "class": attr };
+            col.headerAttributes = { "class": attr, "dataType": headerType };
+            col.template = getTemplate(item);
+            col.isDrillDown = item.IsDrilldown;
+            col.drillDownUrl = item.DrilldownUrl;
+            col.hidden = (item.IsDisplayable === undefined) ? false : !item.IsDisplayable;
+            col.groupable = item.IsGroupable;
+            col.isAggregate = item.IsAggregate;
+
+            if (type === "string") {
+                col.filterable = {
+                    operators: {
+                        string: stringFilterOperator
+                    }
+                };
+            } else if (type === "datetime") {
+                col.filterable = {
+                    ui: "datepicker"
+                };
+            } else if (numbers.indexOf(type) > -1) {
+                col.filterable = {
+                    ui: $.proxy(numberFilter, { field: item })
+                };
+            } else if (list && list.length > 0) {
+                dropdownDataSource[item.Field] = list;
+                col.filterable = {
+                    ui: $.proxy(dropdownFilter, { field: item.Field }),
+                    operators: {
+                        string: {
+                            eq: "=",
+                            neq: "!="
+                        }
+                    }
+                };
+            }
+            //add aggregates for adhoc inquiry
+            if (groupable)
+            {
+                var funcs = ['sum', 'min', 'max', 'avg', 'count'];
+                // for all aggregates
+                if (type === "decimal" && item.IsAggregate) {
+                    funcs.forEach(function (key) {
+                        aggregates.push({ field: col.field, aggregate: key });
+                    });
+                    if (aggregateFields.indexOf(col.field) < 0 ) {
+                        aggregateFields.push(col.field);
+                    }
+                }
+                //for group aggregates
+                col.aggregates = item.Aggregates;
+                if ( item.IsAggregate && item.Aggregates && item.Aggregates.length > 0) {
+                    var aggrs = item.Aggregates.map(function (i) { return i.toLowerCase();});
+                    var template = "";
+                    for (var j = 0; j < 5; j++) {
+                        if (aggrs.indexOf(funcs[j]) > -1) {
+                            template += kendo.format("<div>#=kendo.toString({0},'n{1}')#</div>", funcs[j], (j === 4) ? 0 : 3);
+                        }
+                    }
+                    col.groupFooterTemplate = template;
+                }
+                if (type === "decimal" & item.IsAggregate) {
+                    col.footerTemplate = template;
+                }
+            }
+            cols.push(col);
+        }
+        return cols;
+    }
+
+    function setTemplateCaption(col, mode)
+    {
+        var template = kendo.format("<span id=footer{0} ><div>{1}:</div>", col.field, (mode == "footer") ? inquiryGeneralResources.GrandTotal: inquiryGeneralResources.Total);
+        template += kendo.format("<div>{0}:</div>", inquiryGeneralResources.Minimum);
+        template += kendo.format("<div>{0}:</div>", inquiryGeneralResources.Maximum);
+        template += kendo.format("<div>{0}:</div>", inquiryGeneralResources.Average);
+        template += kendo.format("<div>{0}:</div></span>", inquiryGeneralResources.Count);
+        (mode == "footer") ? col.footerTemplate = template : col.groupFooterTemplate = template;
+    }
+
+    function numberFilter(element) {
+        element.kendoNumericTextBox({
+            format: "n" + this.field.Precision,
+            spinners: false,
+            decimals: this.field.Precision
+        });
+    }
+
+    //DropDown list for column filter
+    function dropdownFilter(element) {
+        element.kendoDropDownList({
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource: dropdownDataSource[this.field]
+        });
+    }
+
+    function getOperator(filter) {
+        var operatorText = (filter.operator ? filter.operator: filter.Operator) ;
+        switch (operatorText) {
+            case "eq":
+                operatorText = "=";
+                break;
+            case "neq":
+                operatorText = "!="; 
+                break;
+            case "gte":
+                operatorText = ">=";
+                break;
+            case "gt":
+                operatorText = ">";
+                break;
+            case "lte":
+                operatorText = "<=";
+                break;
+            case "lt":
+                operatorText = "<";
+                break;
+            case "Like":
+            case "StartsWith":
+            case "Contains":
+                operatorText = "LIKE";
+                break;
+        }
+        return operatorText;
+    }
+
+    //Get filter string
+    function getFilterString(filter) {
+        var filterString = "";
+        if (!filter) return filterString;
+
+        var filters = filter.filters;
+        if (filters == null) return filterString;
+        var length = filters.length;
+        var numberType = ["Int32", "Int64", "Int16", "Long", "Byte", "Real", "Decimal"];
+        var operators = ["like", "startswith", "contains", "endwith"];
+
+        for (var idx = 0; idx < length; idx++) {
+            var child = filters[idx];
+            if (child.filters != null && child.filters.length > 0 ) {
+                filterString += kendo.format("({0})", getFilterString(child));
+            } else {
+                var cols = (grid === undefined) ? getGridColumns() : grid.columns;
+                var field = cols.filter(function (c) { return c.columnName == child.field; })[0];
+                if (!field) {
+                    continue;
+                }
+                var fieldName = child.field;
+                var type = field.dataType.toLowerCase();
+
+                var value;
+                if (type === "datetime") {
+                    var dateObj = kendo.parseDate(new Date(child.value));
+                    value = kendo.toString(dateObj, "yyyyMMdd");
+                    child.value = kendo.toString(dateObj, 'd');
+                } else {
+                    value = child.value;
+                }
+                
+                var isSql = "";
+
+                var operator = (child.operator ? child.operator : child.Operator).toLowerCase();
+
+                if (operators.indexOf(operator) > -1) {
+                    var expression = "", sFormat = "";
+                    isSql = InquiryGeneralViewModel.Sql;
+                    value = (isSql) ? value.toUpperCase() : value;
+                    if (operator === "like") {
+                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}%'" : "{0} LIKE %{1}%";
+                        var sFormat0 = (isSql) ? "upper({0}) LIKE '{1}'" : "{0} LIKE {1}";
+                        expression = (value.indexOf("%") > -1) ? kendo.format(sFormat0, fieldName, value) : kendo.format(sFormat, fieldName, value);
+                    }
+                    if (operator === "contains") {
+                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}%'" : "{0} LIKE %{1}%";
+                        expression = kendo.format(sFormat, fieldName, value);
+                    }
+                    if (operator === "startswith") {
+                        sFormat = (isSql) ? "upper({0}) LIKE '{1}%'" : "{0} LIKE {1}%";
+                        expression = kendo.format(sFormat, fieldName, value);
+                    }
+                    if (operator === "endwith") {
+                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}'" : "{0} LIKE %{1}";
+                        expression = kendo.format(sFormat, fieldName, value);
+                    }
+                    filterString += expression;
+                } else {
+                    isSql = InquiryGeneralViewModel.Sql;
+                    //var format = numberType.indexOf(field.dataType) > -1 ? "{0} {1} {2}" : (isSql) ? "{0} {1} '{2}'" : "{0} {1} \"{2}\"";
+                    var format = "";
+                    var caseInsensitive = (field.dataType.toLowerCase() == 'string' && operator == 'eq');
+                    value = (caseInsensitive && isSql) ? value.toUpperCase() : value;
+
+                    if (numberType.indexOf(field.dataType) > -1) {
+                        var format = "{0} {1} {2}";
+                    } else {
+                        if (isSql) {
+                            if (value.charAt(0) == "'" && value.charAt(value.length - 1) == "'") {
+                                format = "{0} {1} {2}";
+                            } else {
+                                format = (caseInsensitive) ? "upper({0}) {1} '{2}'" : "{0} {1} '{2}'";
+                            }
+                        } else {
+                            format = "{0} {1} \"{2}\"";
+                        }
+                    }
+                    operator = getOperator(child);
+                    filterString += kendo.format(format, fieldName, operator, value);
+                }
+            }
+
+            if (idx < (length - 1)) {
+                filterString += kendo.format(" {0} ", (filter.logic) ? filter.logic : filter.Logic);
+            }
+        }
+        var addBracket = (filterString.split(' or ').length == 2 && (filterString.indexOf("(") === -1));
+        return addBracket ? "("+ filterString + ")" : filterString;
+    }
+
+    //Config column template
+    function getTemplate(item) {
+        var template;
+        var type = item.DataType.toLowerCase();
+        if (type === "decimal") {
+            template = '#= kendo.toString(' + item.Field + ', "n' + item.Precision + '") #';
+        }
+
+        if (item.IsDrilldown) {
+            template = kendo.format("<a href=''>#={0}#</a>", item.FieldAlias || item.Field);
+        }
+
+        if (type === "datetime") {
+            template = kendo.format(datetimeTemplate, item.FieldAlias || item.Field);
+        }
+
+        if (item.IsDummy) {
+            template = '<img src="../../../../Content/Images/nav/drilldown.png" height="16" width="16"  style="float:middle">';
+        }
+
+        return template;
+    }
+
+    //Config inquiry grid
+    function configGrid() {
+        // Map array of primitive data to array of grid column object
+        function getAggregations(items) {
+            if (items == null || items.length == 0) {
+                return {};
+            }
+            var aggreates = {};
+            var fileds = InquiryGeneralViewModel.Aggregates;
+            var fieldLength = fileds.length;
+            for (i = 0; i < fieldLength; i++) {
+                var func = {};
+                var j = 5 * i;
+                func.sum = items[j++];
+                func.avg = items[j++];
+                func.max = items[j++];
+                func.min = items[j++];
+                func.count = items[j++];
+                aggreates[fileds[i]] = func;
+            }
+            return aggreates;
+        }
+
+        function getGridData(items) {
+            var gridData = [], length = items.length;
+            for (var i = 0; i < length; i++) {
+                var row = items[i], len = row.length, r = {};
+                for (var j = 0; j < len; j++) {
+                    var presentation = cols[j].presentation;
+                    var field = cols[j].field;
+                    var type = cols[j].dataType.toLowerCase();
+                    var value = row[j];
+
+                    if (value && (type === "datetime" || type === "date" || type === "time")) {
+                        value = (value.toString().length === 8) ? kendo.parseDate(value.toString(), 'yyyyMMdd') : value;
+                    }
+                    if (presentation) {
+                        var list = presentation.filter(function (i) { return i.Value == value; });
+                        if (list.length > 0) {
+                            value = list[0].Text;
+                        }
+
+                    }
+                    r[field] = value;
+                }
+                gridData.push(r);
+            }
+            return gridData;
+        }
+
+        function getGroupAggregations(items) {
+            if (items == null) {
+                return {};
+            }
+            var grpAggreates = {};
+            var fields = InquiryGeneralViewModel.Fields;
+            var idx = 1;
+            var length = fields.length;
+            for (var i = 0; i < length; i++) {
+                var aggregates = fields[i].Aggregates;
+                var len = aggregates.length;
+                if (aggregates != null && len > 0) {
+                    var func = {};
+                    for (var j = 0; j < len; j++) {
+                        var funcName = aggregates[j];
+                        func[funcName] = items[idx++];
+                    }
+                    grpAggreates[fields[i].Field] = func;
+                }
+            }
+            return grpAggreates;
+        }
+
+        function getGroups(groupItems, dataItems) {
+            if (groupItems == null || groupItems.length == 0 || dataItems.length == 0) {
+                return [];
+            }
+            var groupsData = [];
+            var fieldName = InquiryGeneralViewModel.Groups[0].field;
+            var dataType = grid.columns.filter(function (c) { return c.field == fieldName })[0].dataType;
+            var isDateTime = dataType.toLowerCase() == "datetime";
+            var fieldValues = dataItems.map(function (item) {
+                var value = item[fieldName];
+                return (isDateTime) ? kendo.toString(kendo.parseDate(value), "d") : value;
+            });
+            var groupValues = fieldValues.filter(function (v, i, self) { return self.indexOf(v) === i; });
+
+            for (var i = 0, length = groupItems.length; i < length; i++) {
+                var groupValue = groupValues[i];
+                var groupsObj = { hasSubgroups: false, field: fieldName, value: groupValue };
+                var aggregates = getGroupAggregations(groupItems[i]);
+                groupsObj.aggregates = aggregates;
+                groupsObj.items = dataItems.filter(function (item) {
+                    var itemValue = item[fieldName];
+                    if (isDateTime) {
+                        itemValue = kendo.toString(kendo.parseDate(itemValue), "d");
+                    }
+                    return itemValue === groupValue;
+                });
+                groupsData.push(groupsObj);
+            }
+            return groupsData;
+        }
+        
+        function convertFilterOperator(filter) {
+            if (filter) {
+                if (filter.filters && filter.filters.length > 0) {
+                    filter.filters.forEach(function (f) {
+                        convertFilterOperator(f);
+                    });
+                }
+                if (filter.Operator) {
+                    filter.operator = (filter.Operator == '=') ? 'eq' : filter.Operator ;
+                    delete filter.Operator;
+                }
+            }
+            return filter;
+        }
+
+        var dataSource = new kendo.data.DataSource({
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: (InquiryGeneralViewModel.Sql.length > 0), //true,
+            serverAggregates: true,
+            serverGrouping: true,
+            aggregate: aggregates,
+            pageSize: pageSize,
+            filter: convertFilterOperator(InquiryGeneralViewModel.Filter),
+            transport: {
+                read: function (options) {
+                    var filter = options.data.filter;
+                    var filterString = getFilterString(filter);
+                    var groupField = [];
+                    InquiryGeneralViewModel.FilterString = filterString.length > 3 ? filterString : "";
+                    InquiryGeneralViewModel.Sorts = options.data.sort;
+                    InquiryGeneralViewModel.Aggregates = aggregateFields;
+                    if (grid && grid.dataSource) {
+                        InquiryGeneralViewModel.Groups = grid.dataSource.group();
+                    }
+
+                    var paramters = {
+                        currentPageNumber: (grid) ? grid.dataSource.page() -1 : 0,
+                        pageSize: pageSize,
+                        viewModel: InquiryGeneralViewModel
+                    };
+
+                    var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Get");
+                    sg.utls.ajaxPost(url, paramters, function (successData) {
+                        var gridData =  getGridData(successData.Items);
+                        var aggegateData = getAggregations(successData.Aggregates);
+                        var groupsData = getGroups(successData.Groups, gridData);
+                        options.success({ data: gridData, aggregates: aggegateData, groups: groupsData, totalRecCount: successData.TotalResultsCount });
+                        var checked = $("#chkShowGrandTotals").is(':checked');
+                        checked ? $("#inquiryGrid .k-grid-footer").show() : $("#inquiryGrid .k-grid-footer").hide();
+                    });
+                }
+            },
+            schema: {
+                aggregates: 'aggregates',
+                total: 'totalRecCount',
+                data: 'data',
+                groups: 'groups'
+            }
+        });
+
+        var cols = getGridColumns();
+        var groupable = InquiryGeneralViewModel.IsAdhocQuery;
+        if (InquiryGeneralViewModel.Groups && InquiryGeneralViewModel.Groups.length > 0) {
+            dataSource.group(InquiryGeneralViewModel.Groups[0]);
+        }
+        
+        grid = $("#inquiryGrid").kendoGrid({
+            dataSource: dataSource,
+            columns: cols,
+            height: groupable ? 590 : 400,
+            editable: false,
+            navigatable: true,
+            selectable: "row",
+            scrollable: true,
+            resizable: true,
+            sortable: true,
+            reorderable: !groupable,
+            columnMenu: true,
+            groupable: groupable,
+            group: function(e) {
+                if (e.groups.length == 0) {
+                    return;
+                }
+                if (e.groups.length > 1) {
+                    (e.groups[0].field == previousGroupName) ? e.groups.shift() : e.groups.pop();
+                }
+                previousGroupName = e.groups.field || e.groups[0].field;
+            },
+
+            filterable: {
+                extra: true,
+                operators: {
+                    string: filterOperator
+                }
+            },
+            columnMenuInit: function (e) {
+                //Fix spanish localization issue for kendo grid filter
+                if (kendo.culture().name.indexOf("es") > -1) {
+                    var menu = e.container.find(".k-menu").data("kendoMenu");
+                    var container = e.container;
+                    var field = e.field;
+                    var col = cols.filter(function (i) { return i.field === field });
+                    if (col.length > 0 && col[0].dataType === "Decimal") {
+                        menu.bind("open", function (e) {
+                            var values = [];
+                            UpdateDisplay();
+                            var attrValue = "value: filters[0].operator";
+                            var filterDropdown0 = container.find("[data-role=dropdownlist][data-bind='" + attrValue + "']").data("kendoDropDownList");
+                            if (filterDropdown0) {
+                                filterDropdown0.bind('change', UpdateDisplay);
+                            }
+                            attrValue = "value: filters[1].operator";
+                            var filterDropdown1 = container.find("[data-role=dropdownlist][data-bind='" + attrValue + "']").data("kendoDropDownList");
+                            if (filterDropdown1) {
+                                filterDropdown1.bind('change', UpdateDisplay);
+                            }
+
+                            //Function to get filter values
+                            function getFilterValues(filter, name) {
+                                for (var idx = 0, length = filter.filters.length; idx < length; idx++) {
+                                    var child = filter.filters[idx];
+                                    if (child.filters && child.filters.length > 0) {
+                                        getFilterValues(child, name);
+                                    } else {
+                                        if (child.field === name) {
+                                            values.push(child.value);
+                                        }
+                                    }
+                                }
+                                return values;
+                            }
+
+                            //For spanish locale, update the display value, reset the numeric textbox with locale string
+                            function UpdateDisplay() {
+                                var filter = $("#inquiryGrid").data("kendoGrid").dataSource.filter();
+                                if (filter) {
+                                    values = []
+                                    getFilterValues(filter, field);
+                                    var numeric0 = container.find("[data-role=numerictextbox][data-bind*='0']").data("kendoNumericTextBox");
+                                    var numeric1 = container.find("[data-role=numerictextbox][data-bind*='1']").data("kendoNumericTextBox");
+                                    if (numeric0 && values.length > 0) {
+                                        numeric0.value(values[0].toString().replace('.', ','));
+                                    }
+                                    if (numeric1 && values.length > 1) {
+                                        numeric1.value(values[1].toString().replace('.', ','));
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            },
+
+            sortable: {
+                allowUnsort: false
+            },
+            columnShow: function(e) {
+            },
+            columnHide: function (e) {
+            },
+            pageable: {
+                input: true,
+                numeric: false,
+                refresh: true,
+                change: function (e) {
+                },
+            },
+            dataBound: function (e) {
+                var columns = e.sender.columns;
+                for (var i = 0, length = columns.length; i < length; i++) {
+                    var col = columns[i];
+                    if (col.isDrillDown) {
+                        var condition = col.drillDownUrl && col.drillDownUrl.DrilldownCondition;
+                        if (condition && condition.Field) {
+                            var items = e.sender.dataSource.view();
+                            for (var j = 0, len = items.length; j < len; j++) {
+                                if (items[j][condition.Field] !== condition.Value) {
+                                    //Remove the drill down link
+                                    var row = e.sender.tbody.find("[data-uid='" + items[j].uid + "']");
+                                    var cell = row.find("td:eq(" + i + ")");
+                                    if (cell) {
+                                        cell[0].innerHTML = cell[0].innerText;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                var columnIndex = this.wrapper.find(".k-grid-header [data-field=" + "UnitsInStock" + "]").index();
+
+                // iterate the data items and apply row styles where necessary
+                var dataItems = e.sender.dataSource.view();
+                for (var j = 0; j < dataItems.length; j++) {
+                    var discontinued = dataItems[j].get("Discontinued");
+
+                    var row = e.sender.tbody.find("[data-uid='" + dataItems[j].uid + "']");
+                    if (discontinued) {
+                        row.addClass("discontinued");
+                    }
+                }
+            }
+        }).data("kendoGrid");
+
+        //Remove the column menu based on settings
+        for (var i = 0; i < cols.length; i++) {
+            var c = cols[i];
+            if (!c.isFilterable) {
+                var pattern = kendo.format("[data-field={0}]>.k-header-column-menu", c.field);
+                grid.thead.find(pattern).remove();
+            }
+        }
+        //Open popup window on drill down cell click
+        $("#inquiryGrid").delegate("tbody > tr > td > a", "click", initShowPopup);
+        $("#inquiryGrid").delegate("tbody > tr > td > img", "click", initShowPopup);
+        //Init filter panel
+        $("#filter").kendoGridFilterPanel({
+            dataSource: dataSource,
+            columns: grid.options.columns
+        }).data("kendoGridFilterPanel");
+    }
+
+    //Init buttons
+    function initButtons() {
+        $("#btnPageSize10").click(function () {
+            pageSize = 10;
+            btnLink1.addClass('active');
+            btnLink2.removeClass('active');
+            btnLink3.removeClass('active');
+            grid.dataSource.pageSize(pageSize);
+        });
+
+        $("#btnPageSize20").click(function () {
+            pageSize = 50;
+            btnLink2.addClass('active');
+            btnLink1.removeClass('active');
+            btnLink3.removeClass('active');
+            grid.dataSource.pageSize(pageSize);
+        });
+
+        $("#btnPageSize30").click(function () {
+            pageSize = 100;
+            btnLink3.addClass('active');
+            btnLink1.removeClass('active');
+            btnLink2.removeClass('active');
+            grid.dataSource.pageSize(pageSize);
+        });
+
+        function showHideFooter() {
+            var checked = $("#chkShowGrandTotals").is(':checked');
+            checked ? $("#inquiryGrid .k-grid-footer").show() : $("#inquiryGrid .k-grid-footer").hide();
+        }
+
+        $("#btnClearFilters").click(function () {
+            grid.dataSource.filter({});
+        });
+
+        $("#chkShowGrandTotals").click(function () {
+            $("#inquiryGrid .k-grid-footer").toggle(this.checked);
+        });
+
+        $("#btnSaveQuery").click(function () {
+            window.parent.postMessage({ event_id: 'SaveQuery', templateId: InquiryGeneralViewModel.TemplateId }, '*');
+        });
+
+        $("#btnOpenQuery").click(function () {
+            window.parent.postMessage({ event_id: 'OpenQuery' }, '*');
+        });
+
+        $("#btnExportQuery").click(function () {
+            var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Export");
+            sg.utls.ajaxPost(url, {sql:""}, null);
+        });
+
+        $("#btnDeleteQuery").click(function () {
+            var templateId = InquiryGeneralViewModel.TemplateId;
+            var message = jQuery.validator.format(inquiryGeneralResources.DeleteMessage, InquiryGeneralViewModel.Title);
+            sg.utls.showKendoConfirmationDialog(function () {
+                var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DeleteTemplate");
+                sg.utls.ajaxPost(url, { "templateId": templateId }, deleteTemplate);
+            }, null, message, "");
+        });
+
+        $("#btnDeleteQuery").prop("disabled", !InquiryGeneralViewModel.Deletable);
+        $("#divShowGrandTotals > span").addClass("selected");
+        $("#chkShowGrandTotals").prop("checked", true);
+
+        function exportData(that) {
+            var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Export");
+            var orderClause = InquiryGeneralViewModel.OrderByClause;
+            var sql = InquiryGeneralViewModel.Sql;
+            var cols = grid.columns;
+            var displayFields = cols.filter(function (f) { return !f.hidden; });
+            var titles = displayFields.map(function (f) { return f.title; }).join(',');
+            var fields = displayFields.map(function (f) { return f.field; });
+            var needSanity = false;
+            var selectFields = InquiryGeneralViewModel.SelectClause.split(',');
+            if (selectFields && selectFields.length > 0) {
+                needSanity = selectFields[0].indexOf('.') > 0;
+            }
+            var sanityFields = (needSanity) ? selectFields.map(function (f) {return (f.indexOf('.') > -1 ? f.split('.')[1] : f) .replace('[', '').replace(']', '');}) : selectFields;
+            var orderByFields = orderClause ? orderClause.split(',') : [];
+            var selectFieldsStr = "";
+            var idx = 0, field = "";
+
+            //select fields string, add table prefix for each display field
+            for (var i = 0; i < fields.length; i++) {
+                field = fields[i];
+                idx = sanityFields.indexOf(field);
+                if (idx == -1) {
+                    for (var j = 0, len = selectFields.length; j < len; j++) {
+                        if (selectFields[j].indexOf(field) > -1) {
+                            idx = j;
+                            break;
+                        }
+                    }
+                }
+                selectFieldsStr += (i < fields.length - 1) ? selectFields[idx] + ',' : selectFields[idx];
+            }
+            //order by fields string
+            var orderbyStr = (orderClause) ? " order by " : "";
+            for (var j = 0; j < orderByFields.length; j++) {
+                field = orderByFields[j].split(' ');
+                idx = sanityFields.indexOf(field[0]);
+                var formatter = (j === orderByFields.length - 1) ? "{0} {1}" : "{0} {1},";
+                orderbyStr += kendo.format(formatter, selectFields[idx], field[1]);
+            }
+            // filter string
+            var whereClause = ""; //InquiryGeneralViewModel.WhereClause;
+            var filter = (grid.dataSource) ? grid.dataSource.filter() : null;
+            if (filter && filter.filters.length > 0) {
+                var filterString = getFilterString(filter);
+                var filterFields = filter.filters.map(function (f) {
+                    if (f.field) {
+                        return f.field;
+                    } else if (f.filters && f.filters.length > 0) {
+                        return f.filters[0].field;
+                    }
+                });
+
+                filterFields = filterFields.filter(function (item, pos) {
+                    return filterFields.indexOf(item) == pos;
+                });
+
+                for (var k = 0; k < filterFields.length; k++) {
+                    var item = filterFields[k];
+                    idx = sanityFields.indexOf(item);
+                    var regx = new RegExp(item, 'g');
+                    var newItem = selectFields[idx];
+                    filterString = filterString.replace(regx, newItem);
+                }
+                if (filterString && filterString.indexOf('%') > -1 ) {
+                    filterString = encodeURIComponent(filterString);
+                }
+                whereClause = (sql.toLowerCase().indexOf(" where ") < 0 ? " where " : " and ") + filterString;
+            }
+            sql = sql.replace('SELECTSTR', selectFieldsStr) + whereClause + orderbyStr;
+            that.href = url + "/?sql=" + sql + "&titleStr=" + titles + "&name=" + InquiryGeneralViewModel.Title;
+        };
+
+        $("a#inquiryExport").click(function () {
+            exportData(this);
+        });
+        // prevent page refresh
+        var form = document.getElementById('frmInquiryGeneral');
+        form.onsubmit = function () {
+            return false;
+        }
+    }
+
+    //Init iFrame popup detail window
+    function initShowPopup(e) {
+        e.preventDefault();
+        if (grid.dataSource.length <= 0) {
+            return false;
+        }
+        var row = $(this).closest("tr");
+        var colIndex = $(this).closest("td")[0].cellIndex;
+
+        if (colIndex < 0) {
+            return false;
+        }
+        if (InquiryGeneralViewModel.IsAdhocQuery) {
+            var locked = $(this).closest(grid.lockedContent).length;
+            colIndex = (colIndex > -1 && locked) ? colIndex : colIndex + 1;
+        }
+
+        var rowData = grid.dataItem(row);
+        var col = grid.columns[colIndex];
+        var colName = col.columnName;
+        var param1 = rowData[colName];
+
+        if (param1) {
+            var childUrl = getDrillDownUrl(col, rowData);
+            if (childUrl) {
+                sg.utls.iFrameHelper.openWindow("InqueryDetailPopup", "", childUrl, null, null, null);
+            }
+        }
+    }
+ 
+    //Get drill down query url 
+    function getDrillDownUrl(col, rowData) {
+        var drillDownUrl = col.drillDownUrl;
+        var param1 = rowData[col.columnName];
+        var url = "";
+
+        // Drill down url is in config json
+        if (col.isDrillDown && drillDownUrl) {
+            var controllerList = drillDownUrl.ControllerList;
+            var controller;
+            if (controllerList && controllerList.length == 1 ) {
+                controller = controllerList[0].Controller;
+            } else {
+                var typeName = rowData[drillDownUrl.TypeField];
+                var appName = (drillDownUrl.SrceApplField) ? rowData[drillDownUrl.SrceApplField] : "";
+                if (appName) {
+                    controller = controllerList.filter(function (c) { return c.Type == typeName && c.SrceAppl == appName; })[0];
+                } else {
+                    controller = controllerList.filter(function (c) { return c.Type == typeName; })[0];
+                }
+                // if the controller type is string name, get it's type id
+                if (!controller) {
+                    var typeCols = grid.columns.filter(function (c) { return c.field == drillDownUrl.TypeField; });
+                    if (typeCols && typeCols.length > 0) {
+                        var typeCol = typeCols[0];
+                        if (typeCol.presentation) {
+                            var types = typeCol.presentation.filter(function (p) { return p.Text == typeName; });
+                            if (types && types.length > 0) {
+                                var typeId = types[0].Value;
+                                if (appName) {
+                                    controller = controllerList.filter(function (c) { return c.Type == typeId && c.SrceAppl == appName; })[0];
+                                } else {
+                                    controller = controllerList.filter(function (c) { return c.Type == typeId; })[0];
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (!controller) {
+                    controller = controllerList[0];
+                }
+                controller = controller.Controller;
+            }
+            //var params = drillDownUrl.Params;
+            var params = controller.Parameters;
+            var length = params.length;
+            var paramsStr = "";
+            if (controller.Controller === "InquiryGeneral") {
+                paramsStr = "?templateId=" + params[0].Field;
+                if (length > 1) {
+                    var values = "";
+                    for (var i = 1; i < length; i++) {
+                        values += rowData[params[i].Field] + ",";
+                    }
+                    paramsStr += "&id=" + values.slice(0, -1);
+                }
+            } else {
+                var paramValues = InquiryGeneralViewModel.Ids;
+                for (var i = 0; i < length; i++) {
+                    var fieldName = params[i].Field;
+                    var paramValue;
+                    if (fieldName.indexOf('{') == 0 && fieldName.indexOf('}') > 1) {
+                        var idx = fieldName.substring(1, 2);
+                        paramValue = kendo.format(fieldName, (paramValues) ? paramValues[idx]: "");
+                    } else {
+                        paramValue = rowData[fieldName] || fieldName; 
+                    }
+                    paramsStr += kendo.format("{0}{1}={2}", (i == 0) ? "?" : "&", params[i].Name, paramValue);
+                }
+            }
+            url = sg.utls.url.buildUrl(controller.Area, controller.Controller, controller.Action) +"/" + paramsStr;
+        }
+        return url;
+    }
+
+    return {
+        //init: initInquiryGeneral,
+    };
+
+}();
+
