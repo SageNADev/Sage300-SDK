@@ -97,40 +97,40 @@ clearStatisticsUI = {
         var title = jQuery.validator.format(clearStatisticsResources.FinderTitle, clearStatisticsResources.CustomerNumberTitle);
         //From Customer
         sg.finderHelper.setFinder("btnFromCustomerFinder", sg.finder.ARCustomerFinder, onFinderSuccess.FromCustomerFinder, onFinderCancel.FromCustomerFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_FromCustomerNo", "CustomerNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_FromCustomerNo", "CustomerNumber", sg.finderOperator.StartsWith), null, true);
         //To Customer
         sg.finderHelper.setFinder("btnToCustomerFinder", sg.finder.ARCustomerFinder, onFinderSuccess.ToCustomerFinder, onFinderCancel.ToCustomerFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_ToCustomerNo", "CustomerNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_ToCustomerNo", "CustomerNumber", sg.finderOperator.StartsWith), null, true);
     },
 
     initCustomerGroupFinder: function() {
         var title = jQuery.validator.format(clearStatisticsResources.FinderTitle, clearStatisticsResources.CustomerGroupFinder);
         //From Customer Group
         sg.finderHelper.setFinder("btnFromCustomerGroupFinder", sg.finder.CustomerGroup, onFinderSuccess.FromCustomerGroupFinder, onFinderCancel.FromCustomerGroupFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_FromGroupCode", "GroupCode", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_FromGroupCode", "GroupCode", sg.finderOperator.StartsWith), null, true);
         //To Customer
         sg.finderHelper.setFinder("btnToCustomerGroupFinder", sg.finder.CustomerGroup, onFinderSuccess.ToCustomerGroupFinder, onFinderCancel.ToCustomerGroupFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_ToGroupCode", "GroupCode", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_ToGroupCode", "GroupCode", sg.finderOperator.StartsWith), null, true);
     },
     
     initNationalAcctFinder: function () {
         var title = jQuery.validator.format(clearStatisticsResources.FinderTitle, clearStatisticsResources.NationalAccountNumberTitle);
         //From National Account
         sg.finderHelper.setFinder("btnFromNationalAcctFinder", sg.finder.NationalAccounts, onFinderSuccess.FromNationalAccountFinder,onFinderCancel.FromNationalAccountFinder , title,
-            sg.finderHelper.createDefaultFunction("Data_FromNationalAccount", "NationalAccountNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_FromNationalAccount", "NationalAccountNumber", sg.finderOperator.StartsWith), null, true);
         //To National Account
         sg.finderHelper.setFinder("btnToNationalAcctFinder", sg.finder.NationalAccounts, onFinderSuccess.ToNationalAccountFinder, onFinderCancel.ToNationalAccountFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_ToNationalAccount", "NationalAccountNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_ToNationalAccount", "NationalAccountNumber", sg.finderOperator.StartsWith), null, true);
     },
     
     initSalespersonFinder: function () {
         var title = jQuery.validator.format(clearStatisticsResources.FinderTitle, clearStatisticsResources.SalesPersonFinderTitle);
         //From Salesperson
         sg.finderHelper.setFinder("btnFromSalespersonFinder", sg.finder.SalesPersonFinder, onFinderSuccess.FromSalespersonFinder, onFinderCancel.FromSalespersonFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_FromSalesPerson", "SalesPersonCode", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_FromSalesPerson", "SalesPersonCode", sg.finderOperator.StartsWith), null, true);
         //To Salesperson
         sg.finderHelper.setFinder("btnToSalespersonFinder", sg.finder.SalesPersonFinder, onFinderSuccess.ToSalespersonFinder, onFinderCancel.ToSalespersonFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_ToSalesPerson", "SalesPersonCode", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_ToSalesPerson", "SalesPersonCode", sg.finderOperator.StartsWith), null, true);
     },
 
     initFiscalYearFinder: function () {
@@ -146,10 +146,10 @@ clearStatisticsUI = {
         var title = jQuery.validator.format(clearStatisticsResources.FinderTitle, clearStatisticsResources.ItemFinderTitle);
         //From Item
         sg.finderHelper.setFinder("btnFromItemFinder", sg.finder.ARItemNumberFinder, onFinderSuccess.FromItemFinder, onFinderCancel.FromItemFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_FromItem", "ItemNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_FromItem", "ItemNumber", sg.finderOperator.StartsWith), null, true);
         //To Item
         sg.finderHelper.setFinder("btnToItemFinder", sg.finder.ARItemNumberFinder, onFinderSuccess.ToItemFinder, onFinderCancel.ToItemFinder, title,
-            sg.finderHelper.createDefaultFunction("Data_ToItem", "ItemNumber", sg.finderOperator.StartsWith));
+            sg.finderHelper.createDefaultFunction("Data_ToItem", "ItemNumber", sg.finderOperator.StartsWith), null, true);
     },
 
     initCheckBox: function () {

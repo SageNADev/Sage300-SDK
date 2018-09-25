@@ -257,19 +257,19 @@ taxAuthoritiesUI = {
     // Init Finders, if any
     initFinders: function () {
         var title = jQuery.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.TaxAuthorityTitle);
-        sg.finderHelper.setFinder("btnFinderTaxAuthority", "tutaxauthorities", onFinderSuccess.taxAuthority, onFinderCancel.taxAuthority, title, taxAuthoritiesFilter.getFilter);
+        sg.finderHelper.setFinder("btnFinderTaxAuthority", "tutaxauthorities", onFinderSuccess.taxAuthority, onFinderCancel.taxAuthority, title, taxAuthoritiesFilter.getFilter, null, true);
 
         title = jQuery.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.Reportingcurrency);
         sg.finderHelper.setFinder("btnCurrencyFinder", sg.finder.TaxCurrencyFinder, onFinderSuccess.currencyCode, onFinderCancel.currencyCode, title, sg.finderHelper.createDefaultFunction("txtTaxReportingCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith), null, true);
 
         title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.LiabilityAccount);
-        sg.finderHelper.setFinder("btnLiabilityAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.liabilityAccount, onFinderCancel.liabilityAccount, title, sg.finderHelper.createDefaultFunction("txtTaxLiabilityAccount", "AccountNumber", sg.finderOperator.StartsWith));
+        sg.finderHelper.setFinder("btnLiabilityAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.liabilityAccount, onFinderCancel.liabilityAccount, title, sg.finderHelper.createDefaultFunction("txtTaxLiabilityAccount", "AccountNumber", sg.finderOperator.StartsWith), null, true);
 
         title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.ExpenseAccount);
-        sg.finderHelper.setFinder("btnExpenseAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.expenseAccount, onFinderCancel.expenseAccount, title, sg.finderHelper.createDefaultFunction("txtExpenseAccount", "AccountNumber", sg.finderOperator.StartsWith));
+        sg.finderHelper.setFinder("btnExpenseAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.expenseAccount, onFinderCancel.expenseAccount, title, sg.finderHelper.createDefaultFunction("txtExpenseAccount", "AccountNumber", sg.finderOperator.StartsWith), null, true);
 
         title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.RecoverabletaxAccount);
-        sg.finderHelper.setFinder("btnTaxRecoverableFinder", "tutaxauthoritiesaccount", onFinderSuccess.recoverableAccount, onFinderCancel.recoverableAccount, title, sg.finderHelper.createDefaultFunction("txtTaxRecoverable", "AccountNumber", sg.finderOperator.StartsWith));
+        sg.finderHelper.setFinder("btnTaxRecoverableFinder", "tutaxauthoritiesaccount", onFinderSuccess.recoverableAccount, onFinderCancel.recoverableAccount, title, sg.finderHelper.createDefaultFunction("txtTaxRecoverable", "AccountNumber", sg.finderOperator.StartsWith), null, true);
 
     },
     //Init CheckBoxs
