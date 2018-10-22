@@ -19,9 +19,8 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Namespaces
-using System;
+using System.Linq;
 using System.Collections.Generic;
-
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -60,7 +59,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Properties = new Dictionary<string, string>();
             Fields = new List<BusinessField>();            
             Enums = new Dictionary<string, EnumHelper>();
-            Keys = new List<string>();
             Options = new Dictionary<string, bool>();
             Compositions = new List<Composition>();
         }
@@ -69,19 +67,34 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #region Public Properties
         /// <summary> Properties is the collection of business view properties </summary>
         public Dictionary<string, string> Properties { get; set; }
+
         /// <summary> Fields is the collection of business fields </summary>
         public List<BusinessField> Fields { get; set; }
+
         /// <summary> Enums is the collection of business enumerations </summary>
         public Dictionary<string, EnumHelper> Enums { get; set; }
+
         /// <summary> Keys is the collection of keys </summary>
-        public List<string> Keys { get; set; }
+        public List<string> Keys
+        {
+            get
+            {
+                return (from item in Fields
+                        where item.IsKey == true
+                        select item.Name).ToList();
+            }
+        }
+
         /// <summary> Text for tree display </summary>
         public string Text { get; set; }
+
         /// <summary> Options is the collection of business view options </summary>
         public Dictionary<string, bool> Options { get; set; }
+
         /// <summary> Compositions is the collection of entity compositions </summary>
         public List<Composition> Compositions { get; set; }
 
+        /// <summary> Is this part of a HeaderDetail Composition? </summary>
         public bool IsPartofHeaderDetailComposition { get; set; }
         
 #endregion

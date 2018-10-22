@@ -372,7 +372,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Clear out business view except for text
             businessView.Enums.Clear();
             businessView.Fields.Clear();
-            businessView.Keys.Clear();
+            //businessView.Keys.Clear();
             businessView.Options.Clear();
             businessView.Properties.Clear();
             businessView.Compositions.Clear();
@@ -882,11 +882,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #endif
                 };
 
+                // No longer necessary (TK-253029)
                 // Add to Keys if it is a key
-                if (businessField.IsKey)
-                {
-                    businessView.Keys.Add(businessField.Name);
-                }
+                //if (businessField.IsKey)
+                //{
+                //    businessView.Keys.Add(businessField.Name);
+                //}
 
                 if (field.PresentationType == ViewFieldPresentationType.List)
                 {
