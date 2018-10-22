@@ -2697,7 +2697,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             // Evaluate to determine field, non-field or end of report fields
 
                             // End of report?
-                            if (string.IsNullOrEmpty(line))
+                            if (string.IsNullOrEmpty(line.Trim()))
                             {
                                 // Add to dictionary and reset
                                 _reports.Add(reportName, bindingList);

@@ -97,7 +97,7 @@ sourceCodeUI = {
     // Init Finders, if any
     initFinders: function () {
         var title = jQuery.validator.format(sourceCodeResources.FinderTitle, sourceCodeResources.SourceLedgerTitle);
-        sg.finderHelper.setFinder("btnFinderSourceLedger", "tusourcecode", sourceCodeUISuccess.finderSuccess, $.noop, title, sourceCodeFilter.getFilter);
+        sg.finderHelper.setFinder("btnFinderSourceLedger", "tusourcecode", sourceCodeUISuccess.finderSuccess, $.noop, title, sourceCodeFilter.getFilter, null, true);
     },
 
     // Get

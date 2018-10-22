@@ -182,7 +182,7 @@ var sourceJournalProfileFinderDeclaration = {
     // Initializing the Source Journal Finder Declaration finder properties
     initSourceJournalFinder: function () {
         var title = $.validator.format(sourceJournalProfileResources.FinderTitle, sourceJournalProfileResources.SourceJournalProfile);
-        sg.finderHelper.setFinder("btnSourceJournalCodeFinder", "tusourcejournalprofile", onFinderSuccess.onSourceJournalProfile, $.noop, title, sourceJournalFilter.sourceJournalProfile);
+        sg.finderHelper.setFinder("btnSourceJournalCodeFinder", "tusourcejournalprofile", onFinderSuccess.onSourceJournalProfile, $.noop, title, sourceJournalFilter.sourceJournalProfile, null, true);
     }
 
 };

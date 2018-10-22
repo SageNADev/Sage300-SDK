@@ -36,8 +36,8 @@ sourceJournalProfileReportUI = {
 
     initFinders: function () {
         var SourceJournalTitle = jQuery.validator.format(sourceJournalProfileReportResources.FinderTitle, sourceJournalProfileReportResources.Profile);
-        sg.finderHelper.setFinder("btnFromSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.FromProfile, onFinderCancel.findFromProfile, SourceJournalTitle, finderFilter.getFromProfileFilter);
-        sg.finderHelper.setFinder("btnToSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.ToProfile, onFinderCancel.findToProfile, SourceJournalTitle, finderFilter.getToProfileFilter);
+        sg.finderHelper.setFinder("btnFromSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.FromProfile, onFinderCancel.findFromProfile, SourceJournalTitle, finderFilter.getFromProfileFilter, null, true);
+        sg.finderHelper.setFinder("btnToSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.ToProfile, onFinderCancel.findToProfile, SourceJournalTitle, finderFilter.getToProfileFilter, null, true);
 
     },
 

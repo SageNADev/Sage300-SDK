@@ -97,7 +97,7 @@ sourceJournalProfileUI = {
     // Init Finders, if any
     initFinders: function () {
         var title = jQuery.validator.format(sourceJournalProfileResources.FinderTitle, sourceJournalProfileResources.SourceJournalNameTitle);
-        sg.finderHelper.setFinder("btnFinderSourceJournalName", "tusourcejournalprofile", sourceJournalProfileUISuccess.finderSuccess, $.noop, title, sourceJournalProfileFilter.getFilter);
+        sg.finderHelper.setFinder("btnFinderSourceJournalName", "tusourcejournalprofile", sourceJournalProfileUISuccess.finderSuccess, $.noop, title, sourceJournalProfileFilter.getFilter, null, true);
     },
 
     // Get
