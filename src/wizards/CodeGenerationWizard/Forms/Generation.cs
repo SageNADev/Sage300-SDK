@@ -1466,7 +1466,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // We need to grab the IsCommon (And AlternateName) from the Fields and apply to the Enums dictionary
             ReconcileEnumerationDataBetweenEnumsAndFields(businessView);
 #endif
-
             // Get valued from controls and add to object
             businessView.Properties[BusinessView.Constants.ModuleId] = cboModule.Text;
             businessView.Properties[BusinessView.Constants.ViewId] = txtViewID.Text;
@@ -1517,7 +1516,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             treeEntities.Focus();
         }
 
-
 #if ENABLE_TK_244885
 
         /// <summary>
@@ -1525,7 +1523,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// to the Enums property so that they're the same.
         /// This method only needs to be called once.
         /// </summary>
-        /// <param name="businessView"></param>
+        /// <param name="businessView">The businessView object</param>
         private void ReconcileEnumerationDataBetweenEnumsAndFields(BusinessView businessView)
         {
             var fields = businessView.Fields;

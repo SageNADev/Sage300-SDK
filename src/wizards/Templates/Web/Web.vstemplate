@@ -1523,6 +1523,7 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
             </Folder>
+            <Folder Name="FakeAuthentication" TargetFolderName="FakeAuthentication" />
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
