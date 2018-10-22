@@ -137,7 +137,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 */
     initFinders: function () {
         var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.Constants.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter, null, true);
+        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.Constants.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
     },
 
 	/**
