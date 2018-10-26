@@ -273,6 +273,15 @@ namespace Sage300InquiryConfigurationWizardUI
 
     public class Company
     {
+        public enum LanguageEnum
+        {
+            ENG = 0,
+            FRA,
+            ESN,
+            CHT,
+            CHN
+        }
+
         public string CompanyName { get; set; }
         public string Version { get; set; }
         public string Username { get; set; }

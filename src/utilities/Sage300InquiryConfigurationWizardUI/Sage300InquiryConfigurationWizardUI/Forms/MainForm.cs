@@ -43,11 +43,33 @@ namespace Sage300InquiryConfigurationWizardUI
             CRM,
             Inquiry
         }
+
+        private enum ValidationRuleEnum
+        {
+            RequiredField,
+            ValidFile,
+            ValidPath
+        };
+        #endregion
+
+        #region Private Class(es)
+        private class ValidationRule
+        {
+            public ValidationRule(ValidationRuleEnum rule, string message)
+            {
+                this.Rule = rule;
+                this.Message = message;
+            }
+
+            public ValidationRuleEnum Rule { get; set; }
+            public string Message { get; set; }
+        }
         #endregion
 
         #region Private Variables
         private List<BorderedTextBox> _TextboxControls;
         private Settings _settings;
+        private ValidationErrors _validationErrors;
         #endregion
 
         #region Constructor(s)
@@ -66,6 +88,8 @@ namespace Sage300InquiryConfigurationWizardUI
 
             // Set the values of the controls based on the INI settings
             InitSettingsSection();
+
+            _validationErrors = new ValidationErrors();
         }
         #endregion
 
@@ -148,10 +172,12 @@ namespace Sage300InquiryConfigurationWizardUI
         {
             if (ValidateForm() == false)
             {
+                var validationErrors = _validationErrors.GetAllAsString();
                 var errorLine1 = Resources.ValidationErrors1;
-                var errorLine2 = Resources.ValidationErrors2;
-                var errorText = String.Format("{0}{1}{1}{2}", errorLine1, Environment.NewLine, errorLine2);
+                var errorText = String.Format("{0}{1}{1}{2}", errorLine1, Environment.NewLine, validationErrors);
+                LogLine(errorText);
                 Utilities.DisplayErrorMessage(errorText);
+                _validationErrors.Clear();
                 return;
             }
 
@@ -169,77 +195,33 @@ namespace Sage300InquiryConfigurationWizardUI
             // Build the true output path 
             var outputPath = _settings.TrueOutputPath;
 
-            var companySetting = new Company();
-            companySetting.CompanyName = _settings.Company;
-            companySetting.Version = _settings.Version;
-            companySetting.Username = txtUser.Text;
-            companySetting.Password = txtPassword.Text;
+            var company = new Company();
+            company.CompanyName = _settings.Company;
+            company.Version = _settings.Version;
+            company.Username = txtUser.Text.Trim();
+            company.Password = txtPassword.Text.Trim();
 
-            var usernameEng = txtUser.Text;
-            var passwordEng = txtPassword.Text;
+            company.IncludeFra = _settings.IncludeFra;
+            company.IncludeEsn = _settings.IncludeEsn;
+            company.IncludeCht = _settings.IncludeCht;
+            company.IncludeChn = _settings.IncludeChn;
 
-            companySetting.IncludeFra = _settings.IncludeFra;
-            companySetting.IncludeEsn = _settings.IncludeEsn;
-            companySetting.IncludeCht = _settings.IncludeCht;
-            companySetting.IncludeChn = _settings.IncludeChn;
 
-            if (companySetting.IncludeFra)
-            {
-                if (txtLanguageSupportUserFra.Text.Length == 0)
-                {
-                    companySetting.UsernameFra = usernameEng;
-                    companySetting.PasswordFra = passwordEng;
-                }
-                else
-                {
-                    companySetting.UsernameFra = txtLanguageSupportUserFra.Text;
-                    companySetting.PasswordFra = txtLanguageSupportPasswordFra.Text;
-                }
-            }
+            // Grab the language usernames and passwords from the form
+            // Note: Done to make variable names smaller :)
+            var userFra = txtLanguageSupportUserFra.Text.Trim();
+            var passFra = txtLanguageSupportUserFra.Text.Trim();
+            var userEsn = txtLanguageSupportUserEsn.Text.Trim();
+            var passEsn = txtLanguageSupportUserEsn.Text.Trim();
+            var userCht = txtLanguageSupportUserCht.Text.Trim();
+            var passCht = txtLanguageSupportUserCht.Text.Trim();
+            var userChn = txtLanguageSupportUserChn.Text.Trim();
+            var passChn = txtLanguageSupportUserChn.Text.Trim();
 
-            if (companySetting.IncludeEsn)
-            {
-                companySetting.IncludeFra = true;
-
-                if (txtLanguageSupportUserEsn.Text.Length == 0)
-                {
-                    companySetting.UsernameEsn = usernameEng;
-                    companySetting.PasswordEsn = passwordEng;
-                }
-                else
-                {
-                    companySetting.UsernameEsn = txtLanguageSupportUserEsn.Text;
-                    companySetting.PasswordEsn = txtLanguageSupportPasswordEsn.Text;
-                }
-            }
-
-            if (companySetting.IncludeChn)
-            {
-                if (txtLanguageSupportUserChn.Text.Length == 0)
-                {
-                    companySetting.UsernameChn = usernameEng;
-                    companySetting.PasswordChn = passwordEng;
-                }
-                else
-                {
-                    companySetting.UsernameChn = txtLanguageSupportUserChn.Text;
-                    companySetting.PasswordChn = txtLanguageSupportPasswordChn.Text;
-                }
-            }
-
-            if (companySetting.IncludeCht)
-            {
-                if (txtLanguageSupportUserCht.Text.Length == 0)
-                {
-                    companySetting.UsernameCht = usernameEng;
-                    companySetting.PasswordCht = passwordEng;
-                }
-                else
-                {
-                    companySetting.UsernameCht = txtLanguageSupportUserCht.Text;
-                    companySetting.PasswordCht = txtLanguageSupportPasswordCht.Text;
-                }
-            }
+            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.FRA, userFra, passFra, ref company);
+            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.ESN, userEsn, passEsn, ref company);
+            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHT, userCht, passCht, ref company);
+            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHN, userChn, passChn, ref company);
 
             // Test Run Logs
             var _RunLogs = new List<LogRecord>();
@@ -278,7 +260,7 @@ namespace Sage300InquiryConfigurationWizardUI
 
                     if (ConfigurationColumnList.Count() > 0)
                     {
-                        Generation.ProcessView(this, companySetting, cr, ConfigurationColumnList, OverridePresentationList);
+                        Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
                     }
                     #endregion
                 }
@@ -325,7 +307,7 @@ namespace Sage300InquiryConfigurationWizardUI
 
                     if (DSViewMappingList.Count() > 0)
                     {
-                        Generation.GenerateInquiryConfigurationAndTemplate(this, companySetting, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
+                        Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
                     }
                 }
             }
@@ -333,31 +315,17 @@ namespace Sage300InquiryConfigurationWizardUI
 
             #region GenerateDBScript
 
-            Generation.GenerateDBScript(_settings.Option, 
-                                        _settings.SQLScriptName, 
-                                        _settings.TrueOutputPath, 
-                                        TemplateInquiryConfigurationList, 
-                                        DatasourceList, 
-                                        "Create");
+            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
+                                        TemplateInquiryConfigurationList, DatasourceList, "Create");
 
-            Generation.GenerateDBScript(_settings.Option, 
-                                        _settings.SQLScriptName, 
-                                        _settings.TrueOutputPath, 
-                                        TemplateInquiryConfigurationList, 
-                                        DatasourceList, 
-                                        "Update");
+            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
+                                        TemplateInquiryConfigurationList, DatasourceList, "Update");
 
-            Generation.GenerateDeleteDBScript(_settings.Option, 
-                                              _settings.SQLScriptName, 
-                                              _settings.TrueOutputPath, 
-                                              TemplateInquiryConfigurationList, 
-                                              DatasourceList);
+            Generation.GenerateDeleteDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
+                                              TemplateInquiryConfigurationList, DatasourceList);
 
-            Generation.GenerateSQLScript(_settings.Option, 
-                                         _settings.SQLScriptName, 
-                                         _settings.TrueOutputPath, 
-                                         TemplateInquiryConfigurationList, 
-                                         DatasourceList);
+            Generation.GenerateSQLScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
+                                         TemplateInquiryConfigurationList, DatasourceList);
             #endregion
 
             // export test run log
@@ -368,14 +336,18 @@ namespace Sage300InquiryConfigurationWizardUI
                 file.Write(JsonConvert.SerializeObject(_RunLogs, Formatting.Indented));
             }
 
-            // Display the success message
-            MessageBox.Show(Resources.ConfigurationGenerationSuccessful, Resources.Status, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            // Display the message
+            var finalMessage = string.Format("{0}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
+            MessageBox.Show(finalMessage, Resources.Status, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             // Show the output folder and the log file
+            LogLine(Resources.DisplayingOutputFolder);
             Process.Start(_settings.TrueOutputPath);
+
+            LogLine(Resources.DisplayingOutputLogFile);
             Process.Start("notepad.exe", logFilePath);
 
-            LogLine("Program run completed.");
+            LogLine(finalMessage);
         }
 
         /// <summary>
@@ -415,6 +387,74 @@ namespace Sage300InquiryConfigurationWizardUI
             catch (Exception)
             {
                 Directory.CreateDirectory(Path.Combine(_settings.TrueOutputPath, "View"));
+            }
+        }
+
+        /// <summary>
+        /// Set the specific languages username and/or password only if that
+        /// particular language has been marked for inclusion. 
+        /// </summary>
+        /// <param name="lang">The language to target</param>
+        /// <param name="userLang">The username specified for that particular language</param>
+        /// <param name="passLang">The password specified for that particular language</param>
+        /// <param name="company">A reference to the company object</param>
+        private void SetNonEnglishUsernameAndPassword(Company.LanguageEnum lang, string userLang, string passLang, ref Company company)
+        {
+            // Determine correct language inclusion flag to use
+            var includeLang = false;
+            if (lang == Company.LanguageEnum.FRA) includeLang = company.IncludeFra;
+            if (lang == Company.LanguageEnum.ESN) includeLang = company.IncludeEsn;
+            if (lang == Company.LanguageEnum.CHT) includeLang = company.IncludeCht;
+            if (lang == Company.LanguageEnum.CHN) includeLang = company.IncludeChn;
+
+            // Process
+            if (includeLang == true)
+            {
+                #region Set Username
+                if (userLang.Length == 0)
+                {
+                    switch (lang)
+                    {
+                        case Company.LanguageEnum.FRA: company.UsernameFra = company.Username; break;
+                        case Company.LanguageEnum.ESN: company.UsernameEsn = company.Username; break;
+                        case Company.LanguageEnum.CHT: company.UsernameCht = company.Username; break;
+                        case Company.LanguageEnum.CHN: company.UsernameChn = company.Username; break;
+                    }
+                }
+                else
+                {
+                    switch (lang)
+                    {
+                        case Company.LanguageEnum.FRA: company.UsernameFra = userLang; break;
+                        case Company.LanguageEnum.ESN: company.UsernameEsn = userLang; break;
+                        case Company.LanguageEnum.CHT: company.UsernameCht = userLang; break;
+                        case Company.LanguageEnum.CHN: company.UsernameChn = userLang; break;
+                    }
+                }
+                #endregion
+
+                #region Set Password
+                if (passLang.Length == 0)
+                {
+                    switch (lang)
+                    {
+                        case Company.LanguageEnum.FRA: company.PasswordFra = company.Password; break;
+                        case Company.LanguageEnum.ESN: company.PasswordEsn = company.Password; break;
+                        case Company.LanguageEnum.CHT: company.PasswordCht = company.Password; break;
+                        case Company.LanguageEnum.CHN: company.PasswordChn = company.Password; break;
+                    }
+                }
+                else
+                {
+                    switch (lang)
+                    {
+                        case Company.LanguageEnum.FRA: company.PasswordFra = passLang; break;
+                        case Company.LanguageEnum.ESN: company.PasswordEsn = passLang; break;
+                        case Company.LanguageEnum.CHT: company.PasswordCht = passLang; break;
+                        case Company.LanguageEnum.CHN: company.PasswordChn = passLang; break;
+                    }
+                }
+                #endregion
             }
         }
 
@@ -832,8 +872,8 @@ namespace Sage300InquiryConfigurationWizardUI
         /// </summary>
         private void PopulateSettingsFromForm()
         {
-            _settings.Company = txtCompany.Text;
-            _settings.Version = txtVersion.Text;
+            _settings.Company = txtCompany.Text.Trim();
+            _settings.Version = txtVersion.Text.Trim();
 
             _settings.IncludeFra = chkLanguageFra.Checked;
             _settings.IncludeEsn = chkLanguageEsn.Checked;
@@ -841,11 +881,11 @@ namespace Sage300InquiryConfigurationWizardUI
             _settings.IncludeChn = chkLanguageChn.Checked;
 
             _settings.Option = GetSelectedOption();
-            _settings.RootPath = txtRootPath.Text;
-            _settings.OutputPath = txtOutputPath.Text;
-            _settings.DatasourceConfigurationFile = txtDatasourceConfigurationFile.Text;
-            _settings.TemplateConfigurationFile = txtTemplateConfigurationFile.Text;
-            _settings.SQLScriptName = txtSQLScriptName.Text;
+            _settings.RootPath = txtRootPath.Text.Trim();
+            _settings.OutputPath = txtOutputPath.Text.Trim();
+            _settings.DatasourceConfigurationFile = txtDatasourceConfigurationFile.Text.Trim();
+            _settings.TemplateConfigurationFile = txtTemplateConfigurationFile.Text.Trim();
+            _settings.SQLScriptName = txtSQLScriptName.Text.Trim();
         }
 
         /// <summary>
@@ -951,31 +991,106 @@ namespace Sage300InquiryConfigurationWizardUI
             var status = true;
             var control = sender as BorderedTextBox;
             var errorText = string.Empty;
+            var validationRules = new List<ValidationRule>();
+
+
+            var msg = string.Empty;
             switch (control.Name)
             {
-                case "txtUser": errorText = Resources.UsernameIsRequired; break;
-                case "txtPassword": errorText = Resources.PasswordIsRequired; break;
-                case "txtCompany": errorText = Resources.CompanyIsRequired; break;
-                case "txtVersion": errorText = Resources.VersionIsRequired; break;
-                case "txtRootPath": errorText = Resources.RootPathIsRequired; break;
-                case "txtOutputPath": errorText = Resources.OutputPathIsRequired; break;
-                case "txtSQLScriptName": errorText = Resources.SQLScriptNameIsRequired; break;
-                case "txtDatasourceConfigurationFile": errorText = Resources.DatasourceConfigurationFileIsRequired; break;
-                case "txtTemplateConfigurationFile": errorText = Resources.TemplateConfigurationFileIsRequired; break;
+                case "txtUser":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.User);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    errorText = Resources.UsernameIsRequired;
+                    break;
+
+                case "txtPassword":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.Password);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    errorText = Resources.PasswordIsRequired;
+                    break;
+
+                case "txtCompany":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.Company);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    break;
+
+                case "txtVersion":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.Version);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    break;
+
+                case "txtRootPath":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.RootPath);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    break;
+
+                case "txtOutputPath":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.OutputPath);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    errorText = Resources.OutputPathIsRequired;
+                    break;
+
+                case "txtSQLScriptName":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.SQLScriptName);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    errorText = Resources.SQLScriptNameIsRequired;
+                    break;
+
+                case "txtDatasourceConfigurationFile":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.DatasourceConfigurationFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    msg = String.Format(Resources.IsValidFileTemplate, Resources.DatasourceConfigurationFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidFile, msg));
+                    break;
+
+                case "txtTemplateConfigurationFile":
+                    msg = String.Format(Resources.IsRequiredTemplate, Resources.TemplateConfigurationFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
+                    msg = String.Format(Resources.IsValidFileTemplate, Resources.TemplateConfigurationFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidFile, msg));
+                    break;
             }
 
-            if (control.Text.Length == 0)
+            // Now do the actual checking
+            e.Cancel = false;
+            var controlText = string.Empty;
+            foreach (var rule in validationRules)
             {
-                errorProvider.SetError(control, errorText);
-                control.SetError(true);
-                e.Cancel = true;
-                status = false;
-            }
-            else
-            {
-                errorProvider.SetError(control, string.Empty);
-                control.SetError(false);
-                e.Cancel = false;
+                controlText = control.Text.Trim();
+                if (rule.Rule == ValidationRuleEnum.RequiredField)
+                {
+                    if (controlText.Length == 0)
+                    {
+                        errorProvider.SetError(control, rule.Message);
+                        _validationErrors.Add(rule.Message);
+                        control.SetError(true);
+                        e.Cancel = true;
+                        status = false;
+                    }
+                    else
+                    {
+                        errorProvider.SetError(control, string.Empty);
+                        control.SetError(false);
+                        e.Cancel = false;
+                    }
+                }
+                else if (rule.Rule == ValidationRuleEnum.ValidFile)
+                {
+                    if (File.Exists(controlText) == false)
+                    {
+                        errorProvider.SetError(control, rule.Message);
+                        _validationErrors.Add(rule.Message);
+                        control.SetError(true);
+                        e.Cancel = true;
+                        status = false;
+                    }
+                    else
+                    {
+                        errorProvider.SetError(control, string.Empty);
+                        control.SetError(false);
+                        e.Cancel = false;
+                    }
+                }
             }
             return status;
         }

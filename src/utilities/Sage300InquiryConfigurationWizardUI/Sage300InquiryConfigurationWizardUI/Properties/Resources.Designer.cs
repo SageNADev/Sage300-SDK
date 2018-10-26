@@ -241,6 +241,24 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Displaying output folder....
+        /// </summary>
+        internal static string DisplayingOutputFolder {
+            get {
+                return ResourceManager.GetString("DisplayingOutputFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displaying the output log file....
+        /// </summary>
+        internal static string DisplayingOutputLogFile {
+            get {
+                return ResourceManager.GetString("DisplayingOutputLogFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         internal static string English {
@@ -300,6 +318,24 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         internal static string InvalidCredentials {
             get {
                 return ResourceManager.GetString("InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; is a required field..
+        /// </summary>
+        internal static string IsRequiredTemplate {
+            get {
+                return ResourceManager.GetString("IsRequiredTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; must be a valid, existing file..
+        /// </summary>
+        internal static string IsValidFileTemplate {
+            get {
+                return ResourceManager.GetString("IsValidFileTemplate", resourceCulture);
             }
         }
         
@@ -394,6 +430,15 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please ensure no errors occurred by viewing the output log file..
+        /// </summary>
+        internal static string PleaseEnsureNoErrorsOccurred {
+            get {
+                return ResourceManager.GetString("PleaseEnsureNoErrorsOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press &apos;Cancel&apos; to abort..
         /// </summary>
         internal static string PressCancelToAbort {
@@ -408,6 +453,15 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         internal static string PressOKToProceed {
             get {
                 return ResourceManager.GetString("PressOKToProceed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The program has completed..
+        /// </summary>
+        internal static string ProgramRunCompleted {
+            get {
+                return ResourceManager.GetString("ProgramRunCompleted", resourceCulture);
             }
         }
         

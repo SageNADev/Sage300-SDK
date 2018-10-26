@@ -346,68 +346,44 @@ namespace Sage300InquiryConfigurationWizardUI
                             {
                                 ControllerDef c = new ControllerDef(areaList[cnt], controllerList[cnt], actionList[cnt]);
 
-                                //
-                                // GVG - Original Code
-                                //
-
                                 // find the controller param list from the Controller Param Def file
                                 ControllParamDef cpf = new ControllParamDef();
                                 if (ControllerParamDefList.Exists(cp => (cp.Area == areaList[cnt] && cp.Controller == controllerList[cnt])))
                                 {
                                     cpf = ControllerParamDefList.First(cp => (cp.Area == areaList[cnt] && cp.Controller == controllerList[cnt]));
                                 }
-                                string[] paramNameList = cpf.parameters.Split(',');
-                                foreach (string pn in paramNameList)
+                                
+                                // GVG - 20181026
+                                // If the Controller Param Def file didn't exist,
+                                // we need to do this check.
+                                // This will prevent the previously encountered exceptions from being generated.
+                                if (cpf.parameters != null)
                                 {
-                                    if (parameters.Exists(p => p.Name == pn))
-                                        c.parameters.Add(parameters.First(p => p.Name == pn));
+                                    var paramNameList = cpf.parameters.Split(',');
+                                    foreach (string pn in paramNameList)
+                                    {
+                                        if (parameters.Exists(p => p.Name == pn))
+                                            c.parameters.Add(parameters.First(p => p.Name == pn));
+                                    }
                                 }
 
                                 //c.parameters = parameters;
                                 ControllerTypeMapping ctm = new ControllerTypeMapping(typeList[cnt], c);
                                 if (srceapplList.Count() == typeList.Count())
+                                {
                                     ctm.SrceAppl = srceapplList[cnt];
+                                }
 
                                 ss.DrilldownUrl.ControllerList.Add(ctm);
 
                                 if (ss.DrilldownCondition.Field != "")
+                                {
                                     ss.DrilldownUrl.DrilldownCondition = ss.DrilldownCondition;
+                                }
                                 else
+                                {
                                     ss.DrilldownUrl.DrilldownCondition = null;
-
-                                //
-                                // GVG - Fixed? Code
-                                //
-
-                                //// find the controller param list from the Controller Param Def file
-                                ////ControllParamDef cpf = new ControllParamDef();
-                                //ControllParamDef cpf = null;
-                                //if (ControllerParamDefList.Exists(cp => (cp.Area == areaList[cnt] && cp.Controller == controllerList[cnt])))
-                                //{
-                                //    cpf = ControllerParamDefList.First(cp => (cp.Area == areaList[cnt] && cp.Controller == controllerList[cnt]));
-                                //}
-
-                                //if (cpf != null)
-                                //{
-                                //    string[] paramNameList = cpf?.parameters.Split(',');
-                                //    foreach (string pn in paramNameList)
-                                //    {
-                                //        if (parameters.Exists(p => p.Name == pn))
-                                //            c.parameters.Add(parameters.First(p => p.Name == pn));
-                                //    }
-
-                                //    //c.parameters = parameters;
-                                //    ControllerTypeMapping ctm = new ControllerTypeMapping(typeList[cnt], c);
-                                //    if (srceapplList.Count() == typeList.Count())
-                                //        ctm.SrceAppl = srceapplList[cnt];
-
-                                //    ss.DrilldownUrl.ControllerList.Add(ctm);
-
-                                //    if (ss.DrilldownCondition.Field != "")
-                                //        ss.DrilldownUrl.DrilldownCondition = ss.DrilldownCondition;
-                                //    else
-                                //        ss.DrilldownUrl.DrilldownCondition = null;
-                                //}
+                                }
                             }
                         }
                         else if (controllerList.Count() == 1)

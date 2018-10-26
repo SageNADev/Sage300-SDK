@@ -309,4 +309,22 @@
   <data name="ValidationErrors2" xml:space="preserve">
     <value>Please fix before attempting to generate output files.</value>
   </data>
+  <data name="DisplayingOutputFolder" xml:space="preserve">
+    <value>Displaying output folder...</value>
+  </data>
+  <data name="DisplayingOutputLogFile" xml:space="preserve">
+    <value>Displaying the output log file...</value>
+  </data>
+  <data name="PleaseEnsureNoErrorsOccurred" xml:space="preserve">
+    <value>Please ensure no errors occurred by viewing the output log file.</value>
+  </data>
+  <data name="ProgramRunCompleted" xml:space="preserve">
+    <value>The program has completed.</value>
+  </data>
+  <data name="IsRequiredTemplate" xml:space="preserve">
+    <value>'{0}' is a required field.</value>
+  </data>
+  <data name="IsValidFileTemplate" xml:space="preserve">
+    <value>'{0}' must be a valid, existing file.</value>
+  </data>
 </root>
