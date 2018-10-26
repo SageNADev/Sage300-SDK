@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adhoc" xml:space="preserve">
+    <value>Adhoc</value>
+  </data>
+  <data name="ApplicationCredentials" xml:space="preserve">
+    <value>Application Credentials</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChineseSimplified" xml:space="preserve">
+    <value>Chinese (Simplified)</value>
+  </data>
+  <data name="ChineseTraditional" xml:space="preserve">
+    <value>Chinese (Traditional)</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>Inquiry</value>
+  </data>
+  <data name="InquiryConfiguration" xml:space="preserve">
+    <value>Inquiry Configuration</value>
+  </data>
+  <data name="LanguageSupport" xml:space="preserve">
+    <value>Language Support</value>
+  </data>
+  <data name="RootPath" xml:space="preserve">
+    <value>RootPath</value>
+  </data>
+  <data name="Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="OutputPath" xml:space="preserve">
+    <value>OutputPath</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="DatasourceConfigurationFile" xml:space="preserve">
+    <value>Datasource</value>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="TemplateConfigurationFile" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="AreYouSureYouWishToProceed" xml:space="preserve">
+    <value>Are you sure you wish to proceed?</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CloseTip" xml:space="preserve">
+    <value>Close this application</value>
+  </data>
+  <data name="CompanyIsRequired" xml:space="preserve">
+    <value>A valid Company is required.</value>
+  </data>
+  <data name="CompanyTip" xml:space="preserve">
+    <value>A valid Sage 300 company</value>
+  </data>
+  <data name="ConfigurationFileFilter" xml:space="preserve">
+    <value>XLSX Files (InquiryConfiguration*.xlsx)|InquiryConfiguration*.xlsx</value>
+  </data>
+  <data name="ConfigurationGenerationSuccessful" xml:space="preserve">
+    <value>Generation of the configuration files was successful!</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Datasource</value>
+  </data>
+  <data name="GenerateTip" xml:space="preserve">
+    <value>Proceed with the file generation process</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Please enter a valid username, password, company and version.</value>
+  </data>
+  <data name="OptionTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutputFolderBrowserDescription" xml:space="preserve">
+    <value>Please select the folder location where you wish to save the output of this program. This folder will be relative to (within) the Root folder defined previously.</value>
+  </data>
+  <data name="OutputPathIsRequired" xml:space="preserve">
+    <value>A valid Output directory is required.</value>
+  </data>
+  <data name="OutputPathTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>A valid Sage 300 password is required.</value>
+  </data>
+  <data name="PasswordTip" xml:space="preserve">
+    <value>A valid Sage 300 password</value>
+  </data>
+  <data name="PressCancelToAbort" xml:space="preserve">
+    <value>Press 'Cancel' to abort.</value>
+  </data>
+  <data name="PressOKToProceed" xml:space="preserve">
+    <value>Press 'OK' to proceed.</value>
+  </data>
+  <data name="RootFolderBrowserDescription" xml:space="preserve">
+    <value>Please select the Root folder location where all input and output for this application will be located.</value>
+  </data>
+  <data name="RootPathIsRequired" xml:space="preserve">
+    <value>A valid Root directory is required.</value>
+  </data>
+  <data name="RootPathTip" xml:space="preserve">
+    <value>The root working folder</value>
+  </data>
+  <data name="DatasourceColumnSettingFileFilter" xml:space="preserve">
+    <value>XLSX Files (Sage300ViewColumnSetting*.xlsx)|Sage300ViewColumnSetting*.xlsx</value>
+  </data>
+  <data name="DatasourceConfigurationFileIsRequired" xml:space="preserve">
+    <value>A valid Datasource Configuration File specification is required.</value>
+  </data>
+  <data name="DatasourceConfigurationFileTip" xml:space="preserve">
+    <value>The Datasource Configuration file path</value>
+  </data>
+  <data name="SaveSettingsTip" xml:space="preserve">
+    <value>Save the current settings to the application configuration file</value>
+  </data>
+  <data name="SettingsSavedSuccessfully" xml:space="preserve">
+    <value>The settings were saved successfully.</value>
+  </data>
+  <data name="SQLScriptName" xml:space="preserve">
+    <value>SQL Script Name</value>
+  </data>
+  <data name="SQLScriptNameIsRequired" xml:space="preserve">
+    <value>A SQL Script Name is required.</value>
+  </data>
+  <data name="SQLScriptNameTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="TemplateConfigurationFileIsRequired" xml:space="preserve">
+    <value>A valid Template Configuration File specification is required.</value>
+  </data>
+  <data name="TemplateConfigurationFileTip" xml:space="preserve">
+    <value>The Template Configuration file path</value>
+  </data>
+  <data name="UsernameIsRequired" xml:space="preserve">
+    <value>A valid Sage 300 username is required.</value>
+  </data>
+  <data name="UserTip" xml:space="preserve">
+    <value>A valid Sage 300 user</value>
+  </data>
+  <data name="VersionIsRequired" xml:space="preserve">
+    <value>A valid Version is required.</value>
+  </data>
+  <data name="VersionTip" xml:space="preserve">
+    <value>A valid Sage 300 version</value>
+  </data>
+  <data name="ValidationErrors1" xml:space="preserve">
+    <value>Sorry, there appear to be one (or more) validation errors.</value>
+  </data>
+  <data name="ValidationErrors2" xml:space="preserve">
+    <value>Please fix before attempting to generate output files.</value>
+  </data>
+</root>
