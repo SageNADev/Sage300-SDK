@@ -23,7 +23,7 @@ have accessed the Sage 300 web screens as the worker role will be holding onto s
 the deployment of these files to your local Sage 300's **Worker** folder may not be successful. Be 
 sure to re-start IIS after the deployment if you have stopped it prior to the build.
 
-## Sage300Utilties.exe
+## Sage300Utilities.exe
 
 As of the 2018.2 release of the Sage 300 Web SDK, this program is used by the Sage300UIWizardPackage. 
 It's purpose is to facilitate the rebuilding of all of the templates that exist in the \src\Templates\ 
@@ -36,3 +36,8 @@ The Grid Enhancement logic that has been included in the samples projects has dr
 the JavaScript requirements of a grid implementation. The documentation for the Generating JavaScript 
 for Grids utility does not reflect these changes nor does the Generating JavaScript for Grids utility
 itself. However, it is still valid for generating JavaScript which does not use the enhancemnet logic.
+
+## Sage300InquiryConfigurationGenerator
+
+As of the 2019.1 release of the Sage 300 Web SDK, a new program called Sage300InquiryConfigurationGenerator has been included. 
+The purpose of this program is to aid in the creation of SQL scripts used to configure new Inquiry screens. In the future, this program will be replaced with a more full-featured wizard type application.
