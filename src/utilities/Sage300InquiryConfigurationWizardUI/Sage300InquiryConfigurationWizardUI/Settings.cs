@@ -50,6 +50,9 @@ namespace Sage300InquiryConfigurationWizardUI
             }
         }
 
+        public bool DisplayOutputFolderOnCompletion { get; set; }
+
+        public bool DisplayLogFileOnCompletion { get; set; }
         #endregion
 
         #region Constructor(s)
@@ -68,6 +71,8 @@ namespace Sage300InquiryConfigurationWizardUI
             IncludeEsn = false;
             IncludeCht = false;
             IncludeChn = false;
+            DisplayOutputFolderOnCompletion = true;
+            DisplayLogFileOnCompletion = true;
         }
         #endregion
     }

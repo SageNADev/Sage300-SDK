@@ -259,6 +259,24 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display log file on program completion..
+        /// </summary>
+        internal static string DisplayLogFileOnCompletion {
+            get {
+                return ResourceManager.GetString("DisplayLogFileOnCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display output folder on program completion..
+        /// </summary>
+        internal static string DisplayOutputFolderOnCompletion {
+            get {
+                return ResourceManager.GetString("DisplayOutputFolderOnCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         internal static string English {

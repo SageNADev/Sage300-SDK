@@ -327,4 +327,10 @@
   <data name="IsValidFileTemplate" xml:space="preserve">
     <value>'{0}' must be a valid, existing file.</value>
   </data>
+  <data name="DisplayLogFileOnCompletion" xml:space="preserve">
+    <value>Display log file on program completion.</value>
+  </data>
+  <data name="DisplayOutputFolderOnCompletion" xml:space="preserve">
+    <value>Display output folder on program completion.</value>
+  </data>
 </root>

@@ -114,4 +114,7 @@
     <None Include="Resources\Exclamation.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).exe $(ProjectDir)..\..\..\..\bin\utilities\$(TargetName)\</PostBuildEvent>
+  </PropertyGroup>
 </Project>
