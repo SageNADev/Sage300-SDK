@@ -27,7 +27,7 @@ using System.Text;
 using System.Threading.Tasks;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public static class Constants
     {
@@ -51,7 +51,7 @@ namespace Sage300InquiryConfigurationWizardUI
 
         public const string LabelPostFixCharacter = ":";
 
-        public const string DefaultIniFileName = "Sage300InquiryConfigurationWizardUI.ini";
+        public const string DefaultIniFileName = "Sage300InquiryConfigurationGenerator.ini";
 
         public const string DefaultOutputFolderName = "Output";
         public const string DefaultInquiryFolderName = "InquiryConfiguration";

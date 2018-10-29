@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sage300InquiryConfigurationWizardUI.Properties {
+namespace Sage300InquiryConfigurationGenerator.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sage300InquiryConfigurationWizardUI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sage300InquiryConfigurationGenerator.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -331,6 +331,15 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inquiry Configuration Generator.
+        /// </summary>
+        internal static string InquiryConfigurationGenerator {
+            get {
+                return ResourceManager.GetString("InquiryConfigurationGenerator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter a valid username, password, company and version..
         /// </summary>
         internal static string InvalidCredentials {
@@ -354,6 +363,24 @@ namespace Sage300InquiryConfigurationWizardUI.Properties {
         internal static string IsValidFileTemplate {
             get {
                 return ResourceManager.GetString("IsValidFileTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; must be a valid Sage 300 password..
+        /// </summary>
+        internal static string IsValidPassword {
+            get {
+                return ResourceManager.GetString("IsValidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; must be a valid Sage 300 user..
+        /// </summary>
+        internal static string IsValidUsername {
+            get {
+                return ResourceManager.GetString("IsValidUsername", resourceCulture);
             }
         }
         

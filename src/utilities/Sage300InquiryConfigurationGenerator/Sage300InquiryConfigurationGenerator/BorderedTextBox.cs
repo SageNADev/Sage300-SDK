@@ -24,7 +24,7 @@ using System.Drawing;
 using System.Windows.Forms;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public class BorderedTextBox : UserControl
     {

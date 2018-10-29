@@ -333,4 +333,13 @@
   <data name="DisplayOutputFolderOnCompletion" xml:space="preserve">
     <value>Display output folder on program completion.</value>
   </data>
+  <data name="InquiryConfigurationGenerator" xml:space="preserve">
+    <value>Inquiry Configuration Generator</value>
+  </data>
+  <data name="IsValidPassword" xml:space="preserve">
+    <value>'{0}' must be a valid Sage 300 password.</value>
+  </data>
+  <data name="IsValidUsername" xml:space="preserve">
+    <value>'{0}' must be a valid Sage 300 user.</value>
+  </data>
 </root>

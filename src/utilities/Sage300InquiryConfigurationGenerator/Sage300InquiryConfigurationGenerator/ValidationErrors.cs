@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     /// <summary>
     /// Simple class to manage validation errors

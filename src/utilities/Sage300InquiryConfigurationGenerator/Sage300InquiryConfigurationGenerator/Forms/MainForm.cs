@@ -20,7 +20,7 @@
 
 #region Imports
 using Newtonsoft.Json;
-using Sage300InquiryConfigurationWizardUI.Properties;
+using Sage300InquiryConfigurationGenerator.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +32,7 @@ using System.Reflection;
 using System.Windows.Forms;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public partial class MainForm : Form
     {
@@ -48,7 +48,8 @@ namespace Sage300InquiryConfigurationWizardUI
         {
             RequiredField,
             ValidFile,
-            ValidPath
+            ValidUsername,
+            ValidPassword,
         };
         #endregion
 
@@ -527,7 +528,7 @@ namespace Sage300InquiryConfigurationWizardUI
         private void Localize()
         {
             // Window Title
-            Text = Resources.InquiryConfiguration;
+            SetApplicationTitle();
 
             // Application Credentials
             grpCredentials.Text = Resources.ApplicationCredentials;
@@ -588,6 +589,17 @@ namespace Sage300InquiryConfigurationWizardUI
 
             btnGenerate.Text = Resources.Generate;
             toolTip.SetToolTip(btnGenerate, Resources.GenerateTip);
+        }
+
+        /// <summary>
+        /// Set the title of the application
+        /// </summary>
+        private void SetApplicationTitle()
+        {
+            var appName = Resources.InquiryConfigurationGenerator;
+            Utilities.GetAppInfo(out string name, out string ver, out string buildDate, out string buildYear);
+            var appTitle = String.Format("{0} [V{1}]", appName, ver);
+            Text = appTitle;
         }
 
         /// <summary>
@@ -1034,6 +1046,10 @@ namespace Sage300InquiryConfigurationWizardUI
             var errorText = string.Empty;
             var validationRules = new List<ValidationRule>();
 
+            var username = txtUser.Text.Trim();
+            var password = txtPassword.Text.Trim();
+            var company = txtCompany.Text.Trim();
+            var version = txtVersion.Text.Trim();
 
             var msg = string.Empty;
             switch (control.Name)
@@ -1041,13 +1057,15 @@ namespace Sage300InquiryConfigurationWizardUI
                 case "txtUser":
                     msg = String.Format(Resources.IsRequiredTemplate, Resources.User);
                     validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
-                    errorText = Resources.UsernameIsRequired;
+                    msg = String.Format(Resources.IsValidUsername, Resources.User);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidUsername, msg));
                     break;
 
                 case "txtPassword":
                     msg = String.Format(Resources.IsRequiredTemplate, Resources.Password);
                     validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
-                    errorText = Resources.PasswordIsRequired;
+                    msg = String.Format(Resources.IsValidPassword, Resources.Password);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidPassword, msg));
                     break;
 
                 case "txtCompany":
@@ -1118,6 +1136,40 @@ namespace Sage300InquiryConfigurationWizardUI
                 else if (rule.Rule == ValidationRuleEnum.ValidFile)
                 {
                     if (File.Exists(controlText) == false)
+                    {
+                        errorProvider.SetError(control, rule.Message);
+                        _validationErrors.Add(rule.Message);
+                        control.SetError(true);
+                        e.Cancel = true;
+                        status = false;
+                    }
+                    else
+                    {
+                        errorProvider.SetError(control, string.Empty);
+                        control.SetError(false);
+                        e.Cancel = false;
+                    }
+                }
+                else if (rule.Rule == ValidationRuleEnum.ValidUsername)
+                {
+                    if (Utilities.ValidateCredentials(controlText, password, company, version) == false)
+                    {
+                        errorProvider.SetError(control, rule.Message);
+                        _validationErrors.Add(rule.Message);
+                        control.SetError(true);
+                        e.Cancel = true;
+                        status = false;
+                    }
+                    else
+                    {
+                        errorProvider.SetError(control, string.Empty);
+                        control.SetError(false);
+                        e.Cancel = false;
+                    }
+                }
+                else if (rule.Rule == ValidationRuleEnum.ValidPassword)
+                {
+                    if (Utilities.ValidateCredentials(username, controlText, company, version) == false)
                     {
                         errorProvider.SetError(control, rule.Message);
                         _validationErrors.Add(rule.Message);

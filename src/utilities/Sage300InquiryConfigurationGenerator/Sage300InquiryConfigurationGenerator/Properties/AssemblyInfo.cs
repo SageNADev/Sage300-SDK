@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sage300InquiryConfigurationWizardUI")]
+[assembly: AssemblyTitle("Sage300InquiryConfigurationGenerator")]
 [assembly: AssemblyDescription("Utility application to aid in the generation of Inquiry Configuration files.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software, Inc.")]
-[assembly: AssemblyProduct("Sage300InquiryConfigurationWizardUI")]
+[assembly: AssemblyProduct("Sage300InquiryConfigurationGenerator")]
 [assembly: AssemblyCopyright("Copyright (c) 2018 Sage Software, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

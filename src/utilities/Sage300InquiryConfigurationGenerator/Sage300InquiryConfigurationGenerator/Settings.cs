@@ -23,7 +23,7 @@ using System;
 using System.IO;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public class Settings
     {

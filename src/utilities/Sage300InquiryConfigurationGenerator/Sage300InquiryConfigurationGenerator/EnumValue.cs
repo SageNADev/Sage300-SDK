@@ -26,68 +26,51 @@ using System.Text;
 using System.Threading.Tasks;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
-    public class LogRecord
+    public class EnumValue : Attribute
     {
-        /// <summary>
-        /// Description
-        /// </summary>
-        public string Description { get; set; }
+        #region Public Properties
+        /// <summary> Gets or sets the value </summary>
+        public string Value { get; set; }
+        #endregion
 
+        #region Public Constructor
         /// <summary>
-        /// Transaction Detail
+        /// Initializes a new instance of the <see cref="EnumValue"/> class.
         /// </summary>
-        public string Detail { get; set; }
-
-        /// <summary>
-        /// Error Message
-        /// </summary>
-        public string ErrorMessage { get; set; }
-
-        /// <summary>
-        /// Transaction Start Time
-        /// </summary>
-        public DateTime Start { get; set; }
-
-        /// <summary>
-        /// Transaction End Time
-        /// </summary>
-        public DateTime End { get; set; }
-
-        /// <summary>
-        /// Time span in milliseconds
-        /// </summary>
-        public Double Timespan
+        /// <param name="value">the enum value</param>
+        public EnumValue(string value)
         {
-            get
+            Value = value;
+        }
+        #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// Gets Value for enumeration
+        /// </summary>
+        /// <param name="value">Enum value</param>
+        /// <returns>Value from EnumValue</returns>
+        public static string GetValue(Enum value)
+        {
+            // Locals
+            string output = null;
+            var type = value.GetType();
+            var fieldInfo = type.GetField(value.ToString());
+
+            if (fieldInfo != null)
             {
-                return ((TimeSpan)(End - Start)).TotalMilliseconds;
+                var attrs = fieldInfo.GetCustomAttributes(typeof(EnumValue), false) as EnumValue[];
+
+                if (attrs != null && attrs.Length > 0)
+                {
+                    output = attrs[0].Value;
+                }
+                return output;
             }
+            return string.Empty;
         }
-
-        /// <summary>
-        /// Status of the transaction
-        /// </summary>
-        public string Status { get; set; }
-
-        public LogRecord(DateTime start)
-        {
-            Description = "";
-            Detail = "";
-            ErrorMessage = "";
-            Start = start;
-            End = DateTime.Now;
-            Status = "";
-        }
-        public LogRecord(DateTime start, string status, string description, string detail, string error)
-        {
-            Description = description;
-            Detail = detail;
-            ErrorMessage = error;
-            Start = start;
-            End = DateTime.Now;
-            Status = status;
-        }
+        #endregion
     }
 }

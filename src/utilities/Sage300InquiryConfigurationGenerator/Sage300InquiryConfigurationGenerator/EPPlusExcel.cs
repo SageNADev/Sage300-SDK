@@ -27,7 +27,7 @@ using System.Text;
 using System.Threading.Tasks;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public static class EPPlusExcel
     {
