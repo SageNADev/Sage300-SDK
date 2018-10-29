@@ -81,6 +81,8 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtLogWindow = new System.Windows.Forms.TextBox();
             this.lblConsole = new System.Windows.Forms.Label();
+            this.chkDisplayOutputFolderOnCompletion = new System.Windows.Forms.CheckBox();
+            this.chkDisplayLogFileOnCompletion = new System.Windows.Forms.CheckBox();
             this.grpCredentials.SuspendLayout();
             this.grpLanguageSupport.SuspendLayout();
             this.grpSettings.SuspendLayout();
@@ -124,6 +126,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(151, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // txtUser
@@ -141,6 +144,7 @@
             this.txtUser.PasswordChar = '\0';
             this.txtUser.Size = new System.Drawing.Size(151, 22);
             this.txtUser.TabIndex = 1;
+            this.txtUser.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
             // 
             // txtCompany
@@ -158,6 +162,7 @@
             this.txtCompany.PasswordChar = '\0';
             this.txtCompany.Size = new System.Drawing.Size(151, 22);
             this.txtCompany.TabIndex = 3;
+            this.txtCompany.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtCompany.Validating += new System.ComponentModel.CancelEventHandler(this.txtCompany_Validating);
             // 
             // txtVersion
@@ -175,6 +180,7 @@
             this.txtVersion.PasswordChar = '\0';
             this.txtVersion.Size = new System.Drawing.Size(40, 22);
             this.txtVersion.TabIndex = 4;
+            this.txtVersion.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtVersion.Validating += new System.ComponentModel.CancelEventHandler(this.txtVersion_Validating);
             // 
             // lblVersion
@@ -220,9 +226,9 @@
             // btnGenerate
             // 
             this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerate.Location = new System.Drawing.Point(631, 664);
+            this.btnGenerate.Location = new System.Drawing.Point(631, 544);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(95, 32);
+            this.btnGenerate.Size = new System.Drawing.Size(95, 44);
             this.btnGenerate.TabIndex = 31;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -232,9 +238,9 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(13, 664);
+            this.btnClose.Location = new System.Drawing.Point(13, 544);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(95, 32);
+            this.btnClose.Size = new System.Drawing.Size(95, 44);
             this.btnClose.TabIndex = 29;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -477,7 +483,7 @@
             this.grpSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.grpSettings.Location = new System.Drawing.Point(13, 167);
             this.grpSettings.Name = "grpSettings";
-            this.grpSettings.Size = new System.Drawing.Size(713, 253);
+            this.grpSettings.Size = new System.Drawing.Size(713, 248);
             this.grpSettings.TabIndex = 16;
             this.grpSettings.TabStop = false;
             this.grpSettings.Text = "Settings";
@@ -499,6 +505,7 @@
             this.txtSQLScriptName.PasswordChar = '\0';
             this.txtSQLScriptName.Size = new System.Drawing.Size(155, 20);
             this.txtSQLScriptName.TabIndex = 22;
+            this.txtSQLScriptName.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtSQLScriptName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSQLScriptName_Validating);
             // 
             // lblSQLScriptName
@@ -541,6 +548,7 @@
             this.txtDatasourceConfigurationFile.PasswordChar = '\0';
             this.txtDatasourceConfigurationFile.Size = new System.Drawing.Size(437, 20);
             this.txtDatasourceConfigurationFile.TabIndex = 25;
+            this.txtDatasourceConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtDatasourceConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtDatasourceConfigurationFile_Validating);
             // 
             // lblDatasourceConfigurationFile
@@ -594,6 +602,7 @@
             this.txtTemplateConfigurationFile.PasswordChar = '\0';
             this.txtTemplateConfigurationFile.Size = new System.Drawing.Size(437, 20);
             this.txtTemplateConfigurationFile.TabIndex = 27;
+            this.txtTemplateConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtTemplateConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemplateConfigurationFile_Validating);
             // 
             // btnDatasourceConfigurationFileFinder
@@ -659,6 +668,7 @@
             this.txtOutputPath.PasswordChar = '\0';
             this.txtOutputPath.Size = new System.Drawing.Size(437, 20);
             this.txtOutputPath.TabIndex = 23;
+            this.txtOutputPath.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtOutputPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtOutputPath_Validating);
             // 
             // txtRootPath
@@ -676,6 +686,7 @@
             this.txtRootPath.PasswordChar = '\0';
             this.txtRootPath.Size = new System.Drawing.Size(538, 20);
             this.txtRootPath.TabIndex = 20;
+            this.txtRootPath.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtRootPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtRootPath_Validating);
             // 
             // lblRootPath
@@ -753,9 +764,9 @@
             // btnSaveSettings
             // 
             this.btnSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveSettings.Location = new System.Drawing.Point(114, 664);
+            this.btnSaveSettings.Location = new System.Drawing.Point(114, 544);
             this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(95, 32);
+            this.btnSaveSettings.Size = new System.Drawing.Size(95, 44);
             this.btnSaveSettings.TabIndex = 30;
             this.btnSaveSettings.Text = "Save Settings";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
@@ -777,23 +788,43 @@
             this.txtLogWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLogWindow.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogWindow.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtLogWindow.Location = new System.Drawing.Point(13, 462);
+            this.txtLogWindow.Location = new System.Drawing.Point(13, 437);
             this.txtLogWindow.Multiline = true;
             this.txtLogWindow.Name = "txtLogWindow";
             this.txtLogWindow.ReadOnly = true;
             this.txtLogWindow.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLogWindow.Size = new System.Drawing.Size(713, 187);
+            this.txtLogWindow.Size = new System.Drawing.Size(713, 98);
             this.txtLogWindow.TabIndex = 32;
             // 
             // lblConsole
             // 
             this.lblConsole.AutoSize = true;
             this.lblConsole.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblConsole.Location = new System.Drawing.Point(12, 441);
+            this.lblConsole.Location = new System.Drawing.Point(10, 420);
             this.lblConsole.Name = "lblConsole";
             this.lblConsole.Size = new System.Drawing.Size(45, 13);
             this.lblConsole.TabIndex = 8;
             this.lblConsole.Text = "Console";
+            // 
+            // chkDisplayOutputFolderOnCompletion
+            // 
+            this.chkDisplayOutputFolderOnCompletion.AutoSize = true;
+            this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 548);
+            this.chkDisplayOutputFolderOnCompletion.Name = "chkDisplayOutputFolderOnCompletion";
+            this.chkDisplayOutputFolderOnCompletion.Size = new System.Drawing.Size(191, 17);
+            this.chkDisplayOutputFolderOnCompletion.TabIndex = 33;
+            this.chkDisplayOutputFolderOnCompletion.Text = "Display output folder on completion";
+            this.chkDisplayOutputFolderOnCompletion.UseVisualStyleBackColor = true;
+            // 
+            // chkDisplayLogFileOnCompletion
+            // 
+            this.chkDisplayLogFileOnCompletion.AutoSize = true;
+            this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 567);
+            this.chkDisplayLogFileOnCompletion.Name = "chkDisplayLogFileOnCompletion";
+            this.chkDisplayLogFileOnCompletion.Size = new System.Drawing.Size(162, 17);
+            this.chkDisplayLogFileOnCompletion.TabIndex = 34;
+            this.chkDisplayLogFileOnCompletion.Text = "Display log file on completion";
+            this.chkDisplayLogFileOnCompletion.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -803,7 +834,9 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(735, 708);
+            this.ClientSize = new System.Drawing.Size(735, 603);
+            this.Controls.Add(this.chkDisplayLogFileOnCompletion);
+            this.Controls.Add(this.chkDisplayOutputFolderOnCompletion);
             this.Controls.Add(this.lblConsole);
             this.Controls.Add(this.txtLogWindow);
             this.Controls.Add(this.btnSaveSettings);
@@ -886,6 +919,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.TextBox txtLogWindow;
         private System.Windows.Forms.Label lblConsole;
+        private System.Windows.Forms.CheckBox chkDisplayLogFileOnCompletion;
+        private System.Windows.Forms.CheckBox chkDisplayOutputFolderOnCompletion;
     }
 }
 

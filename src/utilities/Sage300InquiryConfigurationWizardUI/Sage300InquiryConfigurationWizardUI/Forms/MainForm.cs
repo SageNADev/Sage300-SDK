@@ -83,6 +83,7 @@ namespace Sage300InquiryConfigurationWizardUI
             SetTextboxFocusedBorderColor();
             Localize();
             LoadSettings();
+            InitGeneralSettings();
             InitOptionButtons();
             InitLanguageSupport();
 
@@ -340,12 +341,18 @@ namespace Sage300InquiryConfigurationWizardUI
             var finalMessage = string.Format("{0}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
             MessageBox.Show(finalMessage, Resources.Status, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-            // Show the output folder and the log file
-            LogLine(Resources.DisplayingOutputFolder);
-            Process.Start(_settings.TrueOutputPath);
+            if (_settings.DisplayOutputFolderOnCompletion == true)
+            {
+                // Show the output folder and the log file
+                LogLine(Resources.DisplayingOutputFolder);
+                Process.Start(_settings.TrueOutputPath);
+            }
 
-            LogLine(Resources.DisplayingOutputLogFile);
-            Process.Start("notepad.exe", logFilePath);
+            if (_settings.DisplayLogFileOnCompletion == true)
+            {
+                LogLine(Resources.DisplayingOutputLogFile);
+                Process.Start("notepad.exe", logFilePath);
+            }
 
             LogLine(finalMessage);
         }
@@ -569,6 +576,9 @@ namespace Sage300InquiryConfigurationWizardUI
             btnOptionCrm.Text = Resources.CRM;
             btnOptionInquiry.Text = Resources.Inquiry;
 
+            chkDisplayOutputFolderOnCompletion.Text = Resources.DisplayOutputFolderOnCompletion;
+            chkDisplayLogFileOnCompletion.Text = Resources.DisplayLogFileOnCompletion;
+
             // Buttons
             btnClose.Text = Resources.Close;
             toolTip.SetToolTip(btnClose, Resources.CloseTip);
@@ -610,11 +620,23 @@ namespace Sage300InquiryConfigurationWizardUI
                 _settings.IncludeEsn = ini["COMPANY"]["IncludeEsn"].ToBool();
                 _settings.IncludeCht = ini["COMPANY"]["IncludeCht"].ToBool();
                 _settings.IncludeChn = ini["COMPANY"]["IncludeChn"].ToBool();
+
+                _settings.DisplayLogFileOnCompletion = ini["SETTINGS"]["DisplayLogFileOnCompletion"].ToBool();
+                _settings.DisplayOutputFolderOnCompletion = ini["SETTINGS"]["DisplayOutputFolderOnCompletion"].ToBool();
             }
             else
             {
                 // File doesn't exist
             }
+        }
+
+        /// <summary>
+        /// Initialize general-purpose controls 
+        /// </summary>
+        private void InitGeneralSettings()
+        {
+            chkDisplayLogFileOnCompletion.Checked = _settings.DisplayLogFileOnCompletion;
+            chkDisplayOutputFolderOnCompletion.Checked = _settings.DisplayOutputFolderOnCompletion;
         }
 
         /// <summary>
@@ -862,6 +884,9 @@ namespace Sage300InquiryConfigurationWizardUI
             ini["SETTINGS"]["DatasourceConfigurationFile"] = _settings.DatasourceConfigurationFile;
             ini["SETTINGS"]["TemplateConfigurationFile"] = _settings.TemplateConfigurationFile;
 
+            ini["SETTINGS"]["DisplayOutputFolderOnCompletion"] = _settings.DisplayOutputFolderOnCompletion;
+            ini["SETTINGS"]["DisplayLogFileOnCompletion"] = _settings.DisplayLogFileOnCompletion;
+
             ini.Save(iniFilePath);
 
             Utilities.DisplaySuccessMessage(Resources.SettingsSavedSuccessfully);
@@ -886,6 +911,9 @@ namespace Sage300InquiryConfigurationWizardUI
             _settings.DatasourceConfigurationFile = txtDatasourceConfigurationFile.Text.Trim();
             _settings.TemplateConfigurationFile = txtTemplateConfigurationFile.Text.Trim();
             _settings.SQLScriptName = txtSQLScriptName.Text.Trim();
+
+            _settings.DisplayOutputFolderOnCompletion = chkDisplayOutputFolderOnCompletion.Checked;
+            _settings.DisplayLogFileOnCompletion = chkDisplayLogFileOnCompletion.Checked;
         }
 
         /// <summary>
@@ -965,6 +993,19 @@ namespace Sage300InquiryConfigurationWizardUI
             var textBoxPassword = txtLanguageSupportPasswordChn;
             var checkBox = sender as CheckBox;
             ProcessCheckBoxNonEnglish(textBoxUsername, textBoxPassword, checkBox);
+        }
+
+        /// <summary>
+        /// Focus event handler for text boxes
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The Event Arguments</param>
+        private void textBox_Enter(object sender, EventArgs e)
+        {
+            // Clear any error conditions
+            var control = sender as BorderedTextBox;
+            errorProvider.SetError(control, string.Empty);
+            control.SetError(false);
         }
 
         #region 'Validating' Event Handlers
