@@ -25,7 +25,7 @@ using System.Globalization;
 using System.Linq;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     /// <summary>
     /// Enum for Data Types

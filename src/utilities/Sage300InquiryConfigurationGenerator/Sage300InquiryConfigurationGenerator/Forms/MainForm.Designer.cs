@@ -1,4 +1,4 @@
-﻿namespace Sage300InquiryConfigurationWizardUI
+﻿namespace Sage300InquiryConfigurationGenerator
 {
     partial class MainForm
     {
@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.grpCredentials = new System.Windows.Forms.GroupBox();
-            this.txtPassword = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtUser = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtCompany = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtVersion = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtPassword = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtUser = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtCompany = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtVersion = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpLanguageSupport = new System.Windows.Forms.GroupBox();
-            this.txtLanguageSupportPasswordChn = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportPasswordCht = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportPasswordEsn = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportPasswordFra = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportUserChn = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportUserCht = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportUserEsn = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtLanguageSupportUserFra = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtLanguageSupportPasswordChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblLanguageSupportPassword = new System.Windows.Forms.Label();
             this.lblLanguageSupportUser = new System.Windows.Forms.Label();
             this.chkLanguageChn = new System.Windows.Forms.CheckBox();
@@ -57,19 +57,19 @@
             this.chkLanguageEsn = new System.Windows.Forms.CheckBox();
             this.chkLanguageFra = new System.Windows.Forms.CheckBox();
             this.grpSettings = new System.Windows.Forms.GroupBox();
-            this.txtSQLScriptName = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtSQLScriptName = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblSQLScriptName = new System.Windows.Forms.Label();
             this.grpConfigurationFiles = new System.Windows.Forms.GroupBox();
-            this.txtDatasourceConfigurationFile = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtDatasourceConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblDatasourceConfigurationFile = new System.Windows.Forms.Label();
             this.lblTemplateConfigurationFile = new System.Windows.Forms.Label();
             this.btnTemplateConfigurationFileFinder = new System.Windows.Forms.Button();
-            this.txtTemplateConfigurationFile = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtTemplateConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.btnDatasourceConfigurationFileFinder = new System.Windows.Forms.Button();
             this.btnOutputPathFinder = new System.Windows.Forms.Button();
             this.btnRootPathFinder = new System.Windows.Forms.Button();
-            this.txtOutputPath = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
-            this.txtRootPath = new Sage300InquiryConfigurationWizardUI.BorderedTextBox();
+            this.txtOutputPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtRootPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblRootPath = new System.Windows.Forms.Label();
             this.lblOutputPath = new System.Windows.Forms.Label();
             this.btnOptionInquiry = new System.Windows.Forms.Button();
@@ -226,10 +226,10 @@
             // btnGenerate
             // 
             this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerate.Location = new System.Drawing.Point(631, 544);
+            this.btnGenerate.Location = new System.Drawing.Point(631, 543);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(95, 44);
-            this.btnGenerate.TabIndex = 31;
+            this.btnGenerate.TabIndex = 33;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
@@ -238,10 +238,10 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(13, 544);
+            this.btnClose.Location = new System.Drawing.Point(13, 543);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(95, 44);
-            this.btnClose.TabIndex = 29;
+            this.btnClose.TabIndex = 31;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -483,7 +483,7 @@
             this.grpSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.grpSettings.Location = new System.Drawing.Point(13, 167);
             this.grpSettings.Name = "grpSettings";
-            this.grpSettings.Size = new System.Drawing.Size(713, 248);
+            this.grpSettings.Size = new System.Drawing.Size(713, 249);
             this.grpSettings.TabIndex = 16;
             this.grpSettings.TabStop = false;
             this.grpSettings.Text = "Settings";
@@ -499,12 +499,12 @@
             this.txtSQLScriptName.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtSQLScriptName.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtSQLScriptName, 5);
-            this.txtSQLScriptName.Location = new System.Drawing.Point(109, 96);
+            this.txtSQLScriptName.Location = new System.Drawing.Point(109, 121);
             this.txtSQLScriptName.Name = "txtSQLScriptName";
             this.txtSQLScriptName.Padding = new System.Windows.Forms.Padding(1);
             this.txtSQLScriptName.PasswordChar = '\0';
             this.txtSQLScriptName.Size = new System.Drawing.Size(155, 20);
-            this.txtSQLScriptName.TabIndex = 22;
+            this.txtSQLScriptName.TabIndex = 24;
             this.txtSQLScriptName.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtSQLScriptName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSQLScriptName_Validating);
             // 
@@ -512,7 +512,7 @@
             // 
             this.lblSQLScriptName.AutoSize = true;
             this.lblSQLScriptName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSQLScriptName.Location = new System.Drawing.Point(11, 99);
+            this.lblSQLScriptName.Location = new System.Drawing.Point(10, 124);
             this.lblSQLScriptName.Name = "lblSQLScriptName";
             this.lblSQLScriptName.Size = new System.Drawing.Size(92, 13);
             this.lblSQLScriptName.TabIndex = 41;
@@ -526,9 +526,9 @@
             this.grpConfigurationFiles.Controls.Add(this.btnTemplateConfigurationFileFinder);
             this.grpConfigurationFiles.Controls.Add(this.txtTemplateConfigurationFile);
             this.grpConfigurationFiles.Controls.Add(this.btnDatasourceConfigurationFileFinder);
-            this.grpConfigurationFiles.Location = new System.Drawing.Point(111, 150);
+            this.grpConfigurationFiles.Location = new System.Drawing.Point(13, 148);
             this.grpConfigurationFiles.Name = "grpConfigurationFiles";
-            this.grpConfigurationFiles.Size = new System.Drawing.Size(586, 83);
+            this.grpConfigurationFiles.Size = new System.Drawing.Size(682, 83);
             this.grpConfigurationFiles.TabIndex = 40;
             this.grpConfigurationFiles.TabStop = false;
             this.grpConfigurationFiles.Text = "Configuration Files";
@@ -542,11 +542,11 @@
             this.txtDatasourceConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtDatasourceConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtDatasourceConfigurationFile, 19);
-            this.txtDatasourceConfigurationFile.Location = new System.Drawing.Point(100, 19);
+            this.txtDatasourceConfigurationFile.Location = new System.Drawing.Point(96, 19);
             this.txtDatasourceConfigurationFile.Name = "txtDatasourceConfigurationFile";
             this.txtDatasourceConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
             this.txtDatasourceConfigurationFile.PasswordChar = '\0';
-            this.txtDatasourceConfigurationFile.Size = new System.Drawing.Size(437, 20);
+            this.txtDatasourceConfigurationFile.Size = new System.Drawing.Size(538, 20);
             this.txtDatasourceConfigurationFile.TabIndex = 25;
             this.txtDatasourceConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtDatasourceConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtDatasourceConfigurationFile_Validating);
@@ -555,7 +555,7 @@
             // 
             this.lblDatasourceConfigurationFile.AutoSize = true;
             this.lblDatasourceConfigurationFile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDatasourceConfigurationFile.Location = new System.Drawing.Point(33, 21);
+            this.lblDatasourceConfigurationFile.Location = new System.Drawing.Point(22, 21);
             this.lblDatasourceConfigurationFile.Name = "lblDatasourceConfigurationFile";
             this.lblDatasourceConfigurationFile.Size = new System.Drawing.Size(62, 13);
             this.lblDatasourceConfigurationFile.TabIndex = 32;
@@ -565,7 +565,7 @@
             // 
             this.lblTemplateConfigurationFile.AutoSize = true;
             this.lblTemplateConfigurationFile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTemplateConfigurationFile.Location = new System.Drawing.Point(44, 47);
+            this.lblTemplateConfigurationFile.Location = new System.Drawing.Point(33, 47);
             this.lblTemplateConfigurationFile.Name = "lblTemplateConfigurationFile";
             this.lblTemplateConfigurationFile.Size = new System.Drawing.Size(51, 13);
             this.lblTemplateConfigurationFile.TabIndex = 34;
@@ -578,7 +578,7 @@
             this.btnTemplateConfigurationFileFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTemplateConfigurationFileFinder.FlatAppearance.BorderSize = 0;
             this.btnTemplateConfigurationFileFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTemplateConfigurationFileFinder.Location = new System.Drawing.Point(538, 46);
+            this.btnTemplateConfigurationFileFinder.Location = new System.Drawing.Point(635, 45);
             this.btnTemplateConfigurationFileFinder.Name = "btnTemplateConfigurationFileFinder";
             this.btnTemplateConfigurationFileFinder.Size = new System.Drawing.Size(19, 20);
             this.btnTemplateConfigurationFileFinder.TabIndex = 28;
@@ -596,11 +596,11 @@
             this.txtTemplateConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtTemplateConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtTemplateConfigurationFile, 19);
-            this.txtTemplateConfigurationFile.Location = new System.Drawing.Point(100, 45);
+            this.txtTemplateConfigurationFile.Location = new System.Drawing.Point(96, 45);
             this.txtTemplateConfigurationFile.Name = "txtTemplateConfigurationFile";
             this.txtTemplateConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
             this.txtTemplateConfigurationFile.PasswordChar = '\0';
-            this.txtTemplateConfigurationFile.Size = new System.Drawing.Size(437, 20);
+            this.txtTemplateConfigurationFile.Size = new System.Drawing.Size(538, 20);
             this.txtTemplateConfigurationFile.TabIndex = 27;
             this.txtTemplateConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtTemplateConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemplateConfigurationFile_Validating);
@@ -612,7 +612,7 @@
             this.btnDatasourceConfigurationFileFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDatasourceConfigurationFileFinder.FlatAppearance.BorderSize = 0;
             this.btnDatasourceConfigurationFileFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatasourceConfigurationFileFinder.Location = new System.Drawing.Point(538, 20);
+            this.btnDatasourceConfigurationFileFinder.Location = new System.Drawing.Point(635, 19);
             this.btnDatasourceConfigurationFileFinder.Name = "btnDatasourceConfigurationFileFinder";
             this.btnDatasourceConfigurationFileFinder.Size = new System.Drawing.Size(19, 20);
             this.btnDatasourceConfigurationFileFinder.TabIndex = 26;
@@ -628,10 +628,10 @@
             this.btnOutputPathFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOutputPathFinder.FlatAppearance.BorderSize = 0;
             this.btnOutputPathFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOutputPathFinder.Location = new System.Drawing.Point(648, 125);
+            this.btnOutputPathFinder.Location = new System.Drawing.Point(648, 95);
             this.btnOutputPathFinder.Name = "btnOutputPathFinder";
             this.btnOutputPathFinder.Size = new System.Drawing.Size(19, 20);
-            this.btnOutputPathFinder.TabIndex = 24;
+            this.btnOutputPathFinder.TabIndex = 23;
             this.btnOutputPathFinder.TabStop = false;
             this.btnOutputPathFinder.Text = " = String.Empty;";
             this.btnOutputPathFinder.UseVisualStyleBackColor = true;
@@ -644,7 +644,7 @@
             this.btnRootPathFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRootPathFinder.FlatAppearance.BorderSize = 0;
             this.btnRootPathFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRootPathFinder.Location = new System.Drawing.Point(648, 69);
+            this.btnRootPathFinder.Location = new System.Drawing.Point(648, 70);
             this.btnRootPathFinder.Name = "btnRootPathFinder";
             this.btnRootPathFinder.Size = new System.Drawing.Size(19, 20);
             this.btnRootPathFinder.TabIndex = 21;
@@ -662,12 +662,12 @@
             this.txtOutputPath.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtOutputPath.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtOutputPath, 19);
-            this.txtOutputPath.Location = new System.Drawing.Point(210, 124);
+            this.txtOutputPath.Location = new System.Drawing.Point(109, 95);
             this.txtOutputPath.Name = "txtOutputPath";
             this.txtOutputPath.Padding = new System.Windows.Forms.Padding(1);
             this.txtOutputPath.PasswordChar = '\0';
-            this.txtOutputPath.Size = new System.Drawing.Size(437, 20);
-            this.txtOutputPath.TabIndex = 23;
+            this.txtOutputPath.Size = new System.Drawing.Size(538, 20);
+            this.txtOutputPath.TabIndex = 22;
             this.txtOutputPath.Enter += new System.EventHandler(this.textBox_Enter);
             this.txtOutputPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtOutputPath_Validating);
             // 
@@ -703,7 +703,7 @@
             // 
             this.lblOutputPath.AutoSize = true;
             this.lblOutputPath.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblOutputPath.Location = new System.Drawing.Point(139, 127);
+            this.lblOutputPath.Location = new System.Drawing.Point(35, 98);
             this.lblOutputPath.Name = "lblOutputPath";
             this.lblOutputPath.Size = new System.Drawing.Size(67, 13);
             this.lblOutputPath.TabIndex = 26;
@@ -764,10 +764,10 @@
             // btnSaveSettings
             // 
             this.btnSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveSettings.Location = new System.Drawing.Point(114, 544);
+            this.btnSaveSettings.Location = new System.Drawing.Point(114, 543);
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.Size = new System.Drawing.Size(95, 44);
-            this.btnSaveSettings.TabIndex = 30;
+            this.btnSaveSettings.TabIndex = 32;
             this.btnSaveSettings.Text = "Save Settings";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
             this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
@@ -788,19 +788,20 @@
             this.txtLogWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLogWindow.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogWindow.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtLogWindow.Location = new System.Drawing.Point(13, 437);
+            this.txtLogWindow.Location = new System.Drawing.Point(13, 436);
             this.txtLogWindow.Multiline = true;
             this.txtLogWindow.Name = "txtLogWindow";
             this.txtLogWindow.ReadOnly = true;
             this.txtLogWindow.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtLogWindow.Size = new System.Drawing.Size(713, 98);
             this.txtLogWindow.TabIndex = 32;
+            this.txtLogWindow.TabStop = false;
             // 
             // lblConsole
             // 
             this.lblConsole.AutoSize = true;
             this.lblConsole.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblConsole.Location = new System.Drawing.Point(10, 420);
+            this.lblConsole.Location = new System.Drawing.Point(10, 419);
             this.lblConsole.Name = "lblConsole";
             this.lblConsole.Size = new System.Drawing.Size(45, 13);
             this.lblConsole.TabIndex = 8;
@@ -809,20 +810,20 @@
             // chkDisplayOutputFolderOnCompletion
             // 
             this.chkDisplayOutputFolderOnCompletion.AutoSize = true;
-            this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 548);
+            this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 547);
             this.chkDisplayOutputFolderOnCompletion.Name = "chkDisplayOutputFolderOnCompletion";
             this.chkDisplayOutputFolderOnCompletion.Size = new System.Drawing.Size(191, 17);
-            this.chkDisplayOutputFolderOnCompletion.TabIndex = 33;
+            this.chkDisplayOutputFolderOnCompletion.TabIndex = 29;
             this.chkDisplayOutputFolderOnCompletion.Text = "Display output folder on completion";
             this.chkDisplayOutputFolderOnCompletion.UseVisualStyleBackColor = true;
             // 
             // chkDisplayLogFileOnCompletion
             // 
             this.chkDisplayLogFileOnCompletion.AutoSize = true;
-            this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 567);
+            this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 566);
             this.chkDisplayLogFileOnCompletion.Name = "chkDisplayLogFileOnCompletion";
             this.chkDisplayLogFileOnCompletion.Size = new System.Drawing.Size(162, 17);
-            this.chkDisplayLogFileOnCompletion.TabIndex = 34;
+            this.chkDisplayLogFileOnCompletion.TabIndex = 30;
             this.chkDisplayLogFileOnCompletion.Text = "Display log file on completion";
             this.chkDisplayLogFileOnCompletion.UseVisualStyleBackColor = true;
             // 
@@ -834,7 +835,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(735, 603);
+            this.ClientSize = new System.Drawing.Size(735, 601);
             this.Controls.Add(this.chkDisplayLogFileOnCompletion);
             this.Controls.Add(this.chkDisplayOutputFolderOnCompletion);
             this.Controls.Add(this.lblConsole);

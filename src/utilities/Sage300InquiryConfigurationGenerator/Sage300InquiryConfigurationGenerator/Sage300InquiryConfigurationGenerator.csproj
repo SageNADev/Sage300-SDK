@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D22F89FA-8B9A-4C87-BEEE-BCD531627175}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sage300InquiryConfigurationWizardUI</RootNamespace>
-    <AssemblyName>Sage300InquiryConfigurationWizardUI</AssemblyName>
+    <RootNamespace>Sage300InquiryConfigurationGenerator</RootNamespace>
+    <AssemblyName>Sage300InquiryConfigurationGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -26,7 +26,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     static class Program
     {

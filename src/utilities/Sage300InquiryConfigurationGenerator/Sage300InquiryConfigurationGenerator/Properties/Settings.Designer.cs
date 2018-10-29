@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sage300InquiryConfigurationWizardUI.Properties
+namespace Sage300InquiryConfigurationGenerator.Properties
 {
 
 

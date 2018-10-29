@@ -28,7 +28,7 @@ using System.IO;
 using System.Linq;
 #endregion
 
-namespace Sage300InquiryConfigurationWizardUI
+namespace Sage300InquiryConfigurationGenerator
 {
     public static class Generation
     {
