@@ -171,15 +171,25 @@ namespace MergeISVProject
 		/// </summary>
 		public StagingFolderBlock Compiled { get; set; }
 		
-		/// <summary>
-		/// Represents the Final folder file locations
-		/// </summary>
-		public StagingFolderBlock Final { get; set; }
-		
-		/// <summary>
-		/// Represents the Sage 300 installation folder file locations
-		/// </summary>
-		public LiveOnlineFolderBlock Live { get; set; }
+		///// <summary>
+		///// Represents the Final folder file locations
+		///// </summary>
+		//public StagingFolderBlock Final { get; set; }
+
+        /// <summary>
+        /// Represents the Final Web folder file locations
+        /// </summary>
+        public StagingFolderBlock FinalWeb { get; set; }
+
+        /// <summary>
+        /// Represents the Final Worker folder file locations
+        /// </summary>
+        public StagingFolderBlock FinalWorker { get; set; }
+
+        /// <summary>
+        /// Represents the Sage 300 installation folder file locations
+        /// </summary>
+        public LiveOnlineFolderBlock Live { get; set; }
 		#endregion
 
 		#region Constructor
@@ -237,13 +247,30 @@ namespace MergeISVProject
             Staging.AreasExternalContent = Path.Combine(Staging.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
             // Deploy/Final
-            Final = new StagingFolderBlock();
-			Final.Root = Path.Combine(Deploy, FolderNameConstants.FINAL);
-			Final.Bin = Path.Combine(Final.Root, FolderNameConstants.BIN);
-			Final.Areas = Path.Combine(Final.Root, FolderNameConstants.AREAS);
-			Final.AreasViews = Path.Combine(Final.Areas, moduleId, FolderNameConstants.VIEWS);
-			Final.AreasScripts = Path.Combine(Final.Areas, moduleId, FolderNameConstants.SCRIPTS);
-            Final.AreasExternalContent = Path.Combine(Final.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
+   //         Final = new StagingFolderBlock();
+			//Final.Root = Path.Combine(Deploy, FolderNameConstants.FINAL);
+   //         Final.Bin = Path.Combine(Final.Root, FolderNameConstants.BIN);
+			//Final.Areas = Path.Combine(Final.Root, FolderNameConstants.AREAS);
+			//Final.AreasViews = Path.Combine(Final.Areas, moduleId, FolderNameConstants.VIEWS);
+			//Final.AreasScripts = Path.Combine(Final.Areas, moduleId, FolderNameConstants.SCRIPTS);
+   //         Final.AreasExternalContent = Path.Combine(Final.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
+
+            // Deploy/Final (Web)
+            FinalWeb = new StagingFolderBlock();
+            FinalWeb.Root = Path.Combine(Deploy, FolderNameConstants.FINAL, FolderNameConstants.WEB);
+            FinalWeb.Bin = Path.Combine(FinalWeb.Root, FolderNameConstants.BIN);
+            FinalWeb.Areas = Path.Combine(FinalWeb.Root, FolderNameConstants.AREAS);
+            FinalWeb.AreasViews = Path.Combine(FinalWeb.Areas, moduleId, FolderNameConstants.VIEWS);
+            FinalWeb.AreasScripts = Path.Combine(FinalWeb.Areas, moduleId, FolderNameConstants.SCRIPTS);
+            FinalWeb.AreasExternalContent = Path.Combine(FinalWeb.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
+
+            FinalWorker = new StagingFolderBlock();
+            FinalWorker.Root = Path.Combine(Deploy, FolderNameConstants.FINAL, FolderNameConstants.WORKER);
+            //FinalWeb.Bin = Path.Combine(Final.Root, FolderNameConstants.BIN);
+            //FinalWeb.Areas = Path.Combine(Final.Root, FolderNameConstants.AREAS);
+            //FinalWeb.AreasViews = Path.Combine(Final.Areas, moduleId, FolderNameConstants.VIEWS);
+            //FinalWeb.AreasScripts = Path.Combine(Final.Areas, moduleId, FolderNameConstants.SCRIPTS);
+            //FinalWeb.AreasExternalContent = Path.Combine(Final.Areas, moduleId, FolderNameConstants.EXTERNALCONTENT);
 
             // Live
             Live = new LiveOnlineFolderBlock();
@@ -274,8 +301,9 @@ namespace MergeISVProject
 			AddGroupToLogOutput(Originals, nameof(Originals), lines);
 			AddGroupToLogOutput(Compiled, nameof(Compiled), lines);
 			AddGroupToLogOutput(Staging, nameof(Staging), lines);
-			AddGroupToLogOutput(Final, nameof(Final), lines);
-			AddGroupToLogOutput(Live, nameof(Live), lines);
+			AddGroupToLogOutput(FinalWeb, nameof(FinalWeb), lines);
+            AddGroupToLogOutput(FinalWorker, nameof(FinalWorker), lines);
+            AddGroupToLogOutput(Live, nameof(Live), lines);
 			return lines;
 		}
 
@@ -306,14 +334,17 @@ namespace MergeISVProject
 			// __DEPLOY__ should already exist by this point
 			Compiled.CreateRootOnly();
 			Staging.CreateFolders();
-			Final.CreateFolders();
-		}
+			FinalWeb.CreateFolders();
 
-		/// <summary>
-		/// If the Deploy path already exists, delete it and then recreate it
-		/// If the Deploy path doesn't exist, create it.
-		/// </summary>
-		private void RecreateDeploymentPath()
+            // Create the 'Worker' folder 
+            Directory.CreateDirectory(FinalWorker.Root);
+        }
+
+        /// <summary>
+        /// If the Deploy path already exists, delete it and then recreate it
+        /// If the Deploy path doesn't exist, create it.
+        /// </summary>
+        private void RecreateDeploymentPath()
 		{
 			try
 			{
