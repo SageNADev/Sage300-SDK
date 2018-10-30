@@ -322,7 +322,7 @@ namespace MergeISVProject
 		public void CopyToFinalStagingLocation()
 		{
 			var source = _Folders.Staging.Areas;
-			var dest = _Folders.Final.Areas;
+			var dest = _Folders.FinalWeb.Areas;
 			FileSystem.CopyDirectory(source, dest, overwrite: true);
 		}
 
