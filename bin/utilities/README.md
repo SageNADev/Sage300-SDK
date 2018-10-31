@@ -13,7 +13,6 @@ following folders and zip archives:
 
 - \bin\utilities\MergeISVProject.exe [This folder]
 - \src\wizards\Templates\Web\MergeISVProject.exe
-- \src\wizards\Customization\Sage300UICustomizationSolution\ProjectTemplates\Web\MergeISVProject.exe
 - \src\wizards\Sage300UpgradeWizard\Sage300UpgradeWizardPackage\ItemTemplates\Items.zip
 - \src\wizards\Sage300UIWizardPackage\ProjectTemplates\Web.zip
 

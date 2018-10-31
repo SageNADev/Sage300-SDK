@@ -85,6 +85,9 @@ namespace Sage300InquiryConfigurationGenerator
             Localize();
             LoadSettings();
             InitGeneralSettings();
+
+            btnOptionInquiry.Visible = false;
+
             InitOptionButtons();
             InitLanguageSupport();
 
@@ -189,7 +192,7 @@ namespace Sage300InquiryConfigurationGenerator
             }
 
             ClearLog();
-            LogLine("Starting Generation...");
+            LogLine("Starting Generation Process...");
 
             // Get the currently specified settings
             PopulateSettingsFromForm();
@@ -233,6 +236,7 @@ namespace Sage300InquiryConfigurationGenerator
             CreateOutputPaths();
 
             // Read Override presentation list
+            LogLine("Attempting to read the override presentation list...");
             var OverridePresentationList = new List<OverridePresentationList>();
             if (File.Exists(Path.Combine(_settings.RootPath, "OverridePresentationListJSON.JSON")))
             {
@@ -330,9 +334,12 @@ namespace Sage300InquiryConfigurationGenerator
                                          TemplateInquiryConfigurationList, DatasourceList);
             #endregion
 
-            // export test run log
+            // Generate the log file
             var fileFormat = "txt";
-            var logFilePath = Path.Combine(_settings.RootPath, string.Format(@"{0}.{1}", string.Format("{0}-{1}", "RunLog", DateTime.Now.ToString("yyyyMMdd")), fileFormat));
+            var filePrefix = "RunLog";
+            var dateStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            var logFileName = String.Format("{0}-{1}.{2}", filePrefix, dateStamp, fileFormat);
+            var logFilePath = Path.Combine(_settings.RootPath, logFileName);
             using (var file = new StreamWriter(logFilePath, false))
             {
                 file.Write(JsonConvert.SerializeObject(_RunLogs, Formatting.Indented));
@@ -356,6 +363,8 @@ namespace Sage300InquiryConfigurationGenerator
             }
 
             LogLine(finalMessage);
+
+            LogLine(String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath));
         }
 
         /// <summary>
@@ -475,7 +484,7 @@ namespace Sage300InquiryConfigurationGenerator
         {
             SetButtonSelectedColors(btnOptionAdhoc);
             SetButtonUnselectedColors(btnOptionCrm);
-            SetButtonUnselectedColors(btnOptionInquiry);
+            //SetButtonUnselectedColors(btnOptionInquiry);
         }
 
         /// <summary>
@@ -487,7 +496,7 @@ namespace Sage300InquiryConfigurationGenerator
         {
             SetButtonSelectedColors(btnOptionCrm);
             SetButtonUnselectedColors(btnOptionAdhoc);
-            SetButtonUnselectedColors(btnOptionInquiry);
+            //SetButtonUnselectedColors(btnOptionInquiry);
         }
 
         /// <summary>

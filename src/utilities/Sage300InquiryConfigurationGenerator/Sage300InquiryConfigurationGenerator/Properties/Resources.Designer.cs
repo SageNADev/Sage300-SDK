@@ -664,6 +664,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The log file is located here: &apos;{0}&apos;..
+        /// </summary>
+        internal static string TheLogFileIsLocatedHereTemplate {
+            get {
+                return ResourceManager.GetString("TheLogFileIsLocatedHereTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User.
         /// </summary>
         internal static string User {

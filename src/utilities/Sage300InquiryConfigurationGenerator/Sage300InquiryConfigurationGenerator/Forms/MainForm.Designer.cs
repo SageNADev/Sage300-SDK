@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.grpCredentials = new System.Windows.Forms.GroupBox();
-            this.txtPassword = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtUser = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtCompany = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtVersion = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -42,14 +38,6 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpLanguageSupport = new System.Windows.Forms.GroupBox();
-            this.txtLanguageSupportPasswordChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportPasswordCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportPasswordEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportPasswordFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportUserChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportUserCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportUserEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtLanguageSupportUserFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblLanguageSupportPassword = new System.Windows.Forms.Label();
             this.lblLanguageSupportUser = new System.Windows.Forms.Label();
             this.chkLanguageChn = new System.Windows.Forms.CheckBox();
@@ -57,19 +45,14 @@
             this.chkLanguageEsn = new System.Windows.Forms.CheckBox();
             this.chkLanguageFra = new System.Windows.Forms.CheckBox();
             this.grpSettings = new System.Windows.Forms.GroupBox();
-            this.txtSQLScriptName = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblSQLScriptName = new System.Windows.Forms.Label();
             this.grpConfigurationFiles = new System.Windows.Forms.GroupBox();
-            this.txtDatasourceConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblDatasourceConfigurationFile = new System.Windows.Forms.Label();
             this.lblTemplateConfigurationFile = new System.Windows.Forms.Label();
             this.btnTemplateConfigurationFileFinder = new System.Windows.Forms.Button();
-            this.txtTemplateConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.btnDatasourceConfigurationFileFinder = new System.Windows.Forms.Button();
             this.btnOutputPathFinder = new System.Windows.Forms.Button();
             this.btnRootPathFinder = new System.Windows.Forms.Button();
-            this.txtOutputPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
-            this.txtRootPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.lblRootPath = new System.Windows.Forms.Label();
             this.lblOutputPath = new System.Windows.Forms.Label();
             this.btnOptionInquiry = new System.Windows.Forms.Button();
@@ -83,6 +66,23 @@
             this.lblConsole = new System.Windows.Forms.Label();
             this.chkDisplayOutputFolderOnCompletion = new System.Windows.Forms.CheckBox();
             this.chkDisplayLogFileOnCompletion = new System.Windows.Forms.CheckBox();
+            this.txtSQLScriptName = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtDatasourceConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtTemplateConfigurationFile = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtOutputPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtRootPath = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportPasswordFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserChn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserCht = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserEsn = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtLanguageSupportUserFra = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtPassword = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtUser = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtCompany = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
+            this.txtVersion = new Sage300InquiryConfigurationGenerator.BorderedTextBox();
             this.grpCredentials.SuspendLayout();
             this.grpLanguageSupport.SuspendLayout();
             this.grpSettings.SuspendLayout();
@@ -110,78 +110,6 @@
             this.grpCredentials.Text = "Application Credentials";
             this.grpCredentials.Enter += new System.EventHandler(this.group_Enter);
             this.grpCredentials.Leave += new System.EventHandler(this.group_Leave);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPassword.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtPassword.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtPassword.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtPassword, 10);
-            this.txtPassword.Location = new System.Drawing.Point(80, 61);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(1);
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(151, 22);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
-            // 
-            // txtUser
-            // 
-            this.txtUser.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUser.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtUser.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtUser.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtUser, 10);
-            this.txtUser.Location = new System.Drawing.Point(80, 33);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Padding = new System.Windows.Forms.Padding(1);
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.Size = new System.Drawing.Size(151, 22);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCompany.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCompany.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtCompany.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtCompany.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtCompany, 10);
-            this.txtCompany.Location = new System.Drawing.Point(80, 89);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Padding = new System.Windows.Forms.Padding(1);
-            this.txtCompany.PasswordChar = '\0';
-            this.txtCompany.Size = new System.Drawing.Size(151, 22);
-            this.txtCompany.TabIndex = 3;
-            this.txtCompany.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtCompany.Validating += new System.ComponentModel.CancelEventHandler(this.txtCompany_Validating);
-            // 
-            // txtVersion
-            // 
-            this.txtVersion.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVersion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtVersion.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtVersion.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtVersion.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtVersion, 10);
-            this.txtVersion.Location = new System.Drawing.Point(80, 118);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Padding = new System.Windows.Forms.Padding(1);
-            this.txtVersion.PasswordChar = '\0';
-            this.txtVersion.Size = new System.Drawing.Size(40, 22);
-            this.txtVersion.TabIndex = 4;
-            this.txtVersion.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtVersion.Validating += new System.ComponentModel.CancelEventHandler(this.txtVersion_Validating);
             // 
             // lblVersion
             // 
@@ -272,126 +200,6 @@
             this.grpLanguageSupport.Text = "Language Support";
             this.grpLanguageSupport.Enter += new System.EventHandler(this.group_Enter);
             this.grpLanguageSupport.Leave += new System.EventHandler(this.group_Leave);
-            // 
-            // txtLanguageSupportPasswordChn
-            // 
-            this.txtLanguageSupportPasswordChn.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordChn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportPasswordChn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportPasswordChn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordChn.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportPasswordChn.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportPasswordChn.Location = new System.Drawing.Point(275, 108);
-            this.txtLanguageSupportPasswordChn.Name = "txtLanguageSupportPasswordChn";
-            this.txtLanguageSupportPasswordChn.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportPasswordChn.PasswordChar = '*';
-            this.txtLanguageSupportPasswordChn.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportPasswordChn.TabIndex = 16;
-            // 
-            // txtLanguageSupportPasswordCht
-            // 
-            this.txtLanguageSupportPasswordCht.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordCht.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportPasswordCht.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportPasswordCht.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordCht.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportPasswordCht.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportPasswordCht.Location = new System.Drawing.Point(275, 85);
-            this.txtLanguageSupportPasswordCht.Name = "txtLanguageSupportPasswordCht";
-            this.txtLanguageSupportPasswordCht.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportPasswordCht.PasswordChar = '*';
-            this.txtLanguageSupportPasswordCht.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportPasswordCht.TabIndex = 13;
-            // 
-            // txtLanguageSupportPasswordEsn
-            // 
-            this.txtLanguageSupportPasswordEsn.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordEsn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportPasswordEsn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportPasswordEsn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordEsn.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportPasswordEsn.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportPasswordEsn.Location = new System.Drawing.Point(275, 62);
-            this.txtLanguageSupportPasswordEsn.Name = "txtLanguageSupportPasswordEsn";
-            this.txtLanguageSupportPasswordEsn.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportPasswordEsn.PasswordChar = '*';
-            this.txtLanguageSupportPasswordEsn.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportPasswordEsn.TabIndex = 10;
-            // 
-            // txtLanguageSupportPasswordFra
-            // 
-            this.txtLanguageSupportPasswordFra.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordFra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportPasswordFra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportPasswordFra.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportPasswordFra.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportPasswordFra.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportPasswordFra.Location = new System.Drawing.Point(275, 39);
-            this.txtLanguageSupportPasswordFra.Name = "txtLanguageSupportPasswordFra";
-            this.txtLanguageSupportPasswordFra.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportPasswordFra.PasswordChar = '*';
-            this.txtLanguageSupportPasswordFra.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportPasswordFra.TabIndex = 7;
-            // 
-            // txtLanguageSupportUserChn
-            // 
-            this.txtLanguageSupportUserChn.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserChn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportUserChn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportUserChn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserChn.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportUserChn.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportUserChn.Location = new System.Drawing.Point(161, 108);
-            this.txtLanguageSupportUserChn.Name = "txtLanguageSupportUserChn";
-            this.txtLanguageSupportUserChn.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportUserChn.PasswordChar = '\0';
-            this.txtLanguageSupportUserChn.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportUserChn.TabIndex = 15;
-            // 
-            // txtLanguageSupportUserCht
-            // 
-            this.txtLanguageSupportUserCht.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserCht.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportUserCht.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportUserCht.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserCht.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportUserCht.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportUserCht.Location = new System.Drawing.Point(161, 85);
-            this.txtLanguageSupportUserCht.Name = "txtLanguageSupportUserCht";
-            this.txtLanguageSupportUserCht.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportUserCht.PasswordChar = '\0';
-            this.txtLanguageSupportUserCht.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportUserCht.TabIndex = 12;
-            // 
-            // txtLanguageSupportUserEsn
-            // 
-            this.txtLanguageSupportUserEsn.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserEsn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportUserEsn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportUserEsn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserEsn.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportUserEsn.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportUserEsn.Location = new System.Drawing.Point(161, 62);
-            this.txtLanguageSupportUserEsn.Name = "txtLanguageSupportUserEsn";
-            this.txtLanguageSupportUserEsn.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportUserEsn.PasswordChar = '\0';
-            this.txtLanguageSupportUserEsn.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportUserEsn.TabIndex = 9;
-            // 
-            // txtLanguageSupportUserFra
-            // 
-            this.txtLanguageSupportUserFra.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserFra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLanguageSupportUserFra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLanguageSupportUserFra.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtLanguageSupportUserFra.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtLanguageSupportUserFra.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.txtLanguageSupportUserFra.Location = new System.Drawing.Point(161, 39);
-            this.txtLanguageSupportUserFra.Name = "txtLanguageSupportUserFra";
-            this.txtLanguageSupportUserFra.Padding = new System.Windows.Forms.Padding(1);
-            this.txtLanguageSupportUserFra.PasswordChar = '\0';
-            this.txtLanguageSupportUserFra.Size = new System.Drawing.Size(88, 20);
-            this.txtLanguageSupportUserFra.TabIndex = 6;
             // 
             // lblLanguageSupportPassword
             // 
@@ -490,24 +298,6 @@
             this.grpSettings.Enter += new System.EventHandler(this.group_Enter);
             this.grpSettings.Leave += new System.EventHandler(this.group_Leave);
             // 
-            // txtSQLScriptName
-            // 
-            this.txtSQLScriptName.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtSQLScriptName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSQLScriptName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSQLScriptName.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtSQLScriptName.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtSQLScriptName.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtSQLScriptName, 5);
-            this.txtSQLScriptName.Location = new System.Drawing.Point(109, 121);
-            this.txtSQLScriptName.Name = "txtSQLScriptName";
-            this.txtSQLScriptName.Padding = new System.Windows.Forms.Padding(1);
-            this.txtSQLScriptName.PasswordChar = '\0';
-            this.txtSQLScriptName.Size = new System.Drawing.Size(155, 20);
-            this.txtSQLScriptName.TabIndex = 24;
-            this.txtSQLScriptName.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtSQLScriptName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSQLScriptName_Validating);
-            // 
             // lblSQLScriptName
             // 
             this.lblSQLScriptName.AutoSize = true;
@@ -532,24 +322,6 @@
             this.grpConfigurationFiles.TabIndex = 40;
             this.grpConfigurationFiles.TabStop = false;
             this.grpConfigurationFiles.Text = "Configuration Files";
-            // 
-            // txtDatasourceConfigurationFile
-            // 
-            this.txtDatasourceConfigurationFile.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtDatasourceConfigurationFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDatasourceConfigurationFile.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDatasourceConfigurationFile.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtDatasourceConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtDatasourceConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtDatasourceConfigurationFile, 19);
-            this.txtDatasourceConfigurationFile.Location = new System.Drawing.Point(96, 19);
-            this.txtDatasourceConfigurationFile.Name = "txtDatasourceConfigurationFile";
-            this.txtDatasourceConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
-            this.txtDatasourceConfigurationFile.PasswordChar = '\0';
-            this.txtDatasourceConfigurationFile.Size = new System.Drawing.Size(538, 20);
-            this.txtDatasourceConfigurationFile.TabIndex = 25;
-            this.txtDatasourceConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtDatasourceConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtDatasourceConfigurationFile_Validating);
             // 
             // lblDatasourceConfigurationFile
             // 
@@ -586,24 +358,6 @@
             this.btnTemplateConfigurationFileFinder.Text = " = String.Empty;";
             this.btnTemplateConfigurationFileFinder.UseVisualStyleBackColor = true;
             this.btnTemplateConfigurationFileFinder.Click += new System.EventHandler(this.btnTemplateConfigurationFileFinder_Click);
-            // 
-            // txtTemplateConfigurationFile
-            // 
-            this.txtTemplateConfigurationFile.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtTemplateConfigurationFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTemplateConfigurationFile.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTemplateConfigurationFile.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtTemplateConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtTemplateConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtTemplateConfigurationFile, 19);
-            this.txtTemplateConfigurationFile.Location = new System.Drawing.Point(96, 45);
-            this.txtTemplateConfigurationFile.Name = "txtTemplateConfigurationFile";
-            this.txtTemplateConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
-            this.txtTemplateConfigurationFile.PasswordChar = '\0';
-            this.txtTemplateConfigurationFile.Size = new System.Drawing.Size(538, 20);
-            this.txtTemplateConfigurationFile.TabIndex = 27;
-            this.txtTemplateConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtTemplateConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemplateConfigurationFile_Validating);
             // 
             // btnDatasourceConfigurationFileFinder
             // 
@@ -652,42 +406,6 @@
             this.btnRootPathFinder.Text = " = String.Empty;";
             this.btnRootPathFinder.UseVisualStyleBackColor = true;
             this.btnRootPathFinder.Click += new System.EventHandler(this.btnRootPathFinder_Click);
-            // 
-            // txtOutputPath
-            // 
-            this.txtOutputPath.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtOutputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOutputPath.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtOutputPath.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtOutputPath.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtOutputPath.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtOutputPath, 19);
-            this.txtOutputPath.Location = new System.Drawing.Point(109, 95);
-            this.txtOutputPath.Name = "txtOutputPath";
-            this.txtOutputPath.Padding = new System.Windows.Forms.Padding(1);
-            this.txtOutputPath.PasswordChar = '\0';
-            this.txtOutputPath.Size = new System.Drawing.Size(538, 20);
-            this.txtOutputPath.TabIndex = 22;
-            this.txtOutputPath.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtOutputPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtOutputPath_Validating);
-            // 
-            // txtRootPath
-            // 
-            this.txtRootPath.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtRootPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRootPath.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtRootPath.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtRootPath.ErrorBorderColor = System.Drawing.Color.Red;
-            this.txtRootPath.FocusedBorderColor = System.Drawing.Color.Blue;
-            this.errorProvider.SetIconPadding(this.txtRootPath, 19);
-            this.txtRootPath.Location = new System.Drawing.Point(109, 69);
-            this.txtRootPath.Name = "txtRootPath";
-            this.txtRootPath.Padding = new System.Windows.Forms.Padding(1);
-            this.txtRootPath.PasswordChar = '\0';
-            this.txtRootPath.Size = new System.Drawing.Size(538, 20);
-            this.txtRootPath.TabIndex = 20;
-            this.txtRootPath.Enter += new System.EventHandler(this.textBox_Enter);
-            this.txtRootPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtRootPath_Validating);
             // 
             // lblRootPath
             // 
@@ -810,6 +528,7 @@
             // chkDisplayOutputFolderOnCompletion
             // 
             this.chkDisplayOutputFolderOnCompletion.AutoSize = true;
+            this.chkDisplayOutputFolderOnCompletion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 547);
             this.chkDisplayOutputFolderOnCompletion.Name = "chkDisplayOutputFolderOnCompletion";
             this.chkDisplayOutputFolderOnCompletion.Size = new System.Drawing.Size(191, 17);
@@ -820,12 +539,295 @@
             // chkDisplayLogFileOnCompletion
             // 
             this.chkDisplayLogFileOnCompletion.AutoSize = true;
+            this.chkDisplayLogFileOnCompletion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 566);
             this.chkDisplayLogFileOnCompletion.Name = "chkDisplayLogFileOnCompletion";
             this.chkDisplayLogFileOnCompletion.Size = new System.Drawing.Size(162, 17);
             this.chkDisplayLogFileOnCompletion.TabIndex = 30;
             this.chkDisplayLogFileOnCompletion.Text = "Display log file on completion";
             this.chkDisplayLogFileOnCompletion.UseVisualStyleBackColor = true;
+            // 
+            // txtSQLScriptName
+            // 
+            this.txtSQLScriptName.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtSQLScriptName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSQLScriptName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSQLScriptName.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtSQLScriptName.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtSQLScriptName.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtSQLScriptName, 5);
+            this.txtSQLScriptName.Location = new System.Drawing.Point(109, 121);
+            this.txtSQLScriptName.Name = "txtSQLScriptName";
+            this.txtSQLScriptName.Padding = new System.Windows.Forms.Padding(1);
+            this.txtSQLScriptName.PasswordChar = '\0';
+            this.txtSQLScriptName.Size = new System.Drawing.Size(155, 20);
+            this.txtSQLScriptName.TabIndex = 24;
+            this.txtSQLScriptName.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtSQLScriptName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSQLScriptName_Validating);
+            // 
+            // txtDatasourceConfigurationFile
+            // 
+            this.txtDatasourceConfigurationFile.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtDatasourceConfigurationFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDatasourceConfigurationFile.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtDatasourceConfigurationFile.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtDatasourceConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtDatasourceConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtDatasourceConfigurationFile, 19);
+            this.txtDatasourceConfigurationFile.Location = new System.Drawing.Point(96, 19);
+            this.txtDatasourceConfigurationFile.Name = "txtDatasourceConfigurationFile";
+            this.txtDatasourceConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
+            this.txtDatasourceConfigurationFile.PasswordChar = '\0';
+            this.txtDatasourceConfigurationFile.Size = new System.Drawing.Size(538, 20);
+            this.txtDatasourceConfigurationFile.TabIndex = 25;
+            this.txtDatasourceConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtDatasourceConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtDatasourceConfigurationFile_Validating);
+            // 
+            // txtTemplateConfigurationFile
+            // 
+            this.txtTemplateConfigurationFile.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtTemplateConfigurationFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTemplateConfigurationFile.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTemplateConfigurationFile.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtTemplateConfigurationFile.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtTemplateConfigurationFile.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtTemplateConfigurationFile, 19);
+            this.txtTemplateConfigurationFile.Location = new System.Drawing.Point(96, 45);
+            this.txtTemplateConfigurationFile.Name = "txtTemplateConfigurationFile";
+            this.txtTemplateConfigurationFile.Padding = new System.Windows.Forms.Padding(1);
+            this.txtTemplateConfigurationFile.PasswordChar = '\0';
+            this.txtTemplateConfigurationFile.Size = new System.Drawing.Size(538, 20);
+            this.txtTemplateConfigurationFile.TabIndex = 27;
+            this.txtTemplateConfigurationFile.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtTemplateConfigurationFile.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemplateConfigurationFile_Validating);
+            // 
+            // txtOutputPath
+            // 
+            this.txtOutputPath.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtOutputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOutputPath.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtOutputPath.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtOutputPath.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtOutputPath.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtOutputPath, 19);
+            this.txtOutputPath.Location = new System.Drawing.Point(109, 95);
+            this.txtOutputPath.Name = "txtOutputPath";
+            this.txtOutputPath.Padding = new System.Windows.Forms.Padding(1);
+            this.txtOutputPath.PasswordChar = '\0';
+            this.txtOutputPath.Size = new System.Drawing.Size(538, 20);
+            this.txtOutputPath.TabIndex = 22;
+            this.txtOutputPath.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtOutputPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtOutputPath_Validating);
+            // 
+            // txtRootPath
+            // 
+            this.txtRootPath.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtRootPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRootPath.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtRootPath.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtRootPath.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtRootPath.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtRootPath, 19);
+            this.txtRootPath.Location = new System.Drawing.Point(109, 69);
+            this.txtRootPath.Name = "txtRootPath";
+            this.txtRootPath.Padding = new System.Windows.Forms.Padding(1);
+            this.txtRootPath.PasswordChar = '\0';
+            this.txtRootPath.Size = new System.Drawing.Size(538, 20);
+            this.txtRootPath.TabIndex = 20;
+            this.txtRootPath.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtRootPath.Validating += new System.ComponentModel.CancelEventHandler(this.txtRootPath_Validating);
+            // 
+            // txtLanguageSupportPasswordChn
+            // 
+            this.txtLanguageSupportPasswordChn.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordChn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportPasswordChn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportPasswordChn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordChn.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportPasswordChn.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportPasswordChn.Location = new System.Drawing.Point(275, 108);
+            this.txtLanguageSupportPasswordChn.Name = "txtLanguageSupportPasswordChn";
+            this.txtLanguageSupportPasswordChn.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportPasswordChn.PasswordChar = '*';
+            this.txtLanguageSupportPasswordChn.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportPasswordChn.TabIndex = 16;
+            // 
+            // txtLanguageSupportPasswordCht
+            // 
+            this.txtLanguageSupportPasswordCht.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordCht.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportPasswordCht.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportPasswordCht.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordCht.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportPasswordCht.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportPasswordCht.Location = new System.Drawing.Point(275, 85);
+            this.txtLanguageSupportPasswordCht.Name = "txtLanguageSupportPasswordCht";
+            this.txtLanguageSupportPasswordCht.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportPasswordCht.PasswordChar = '*';
+            this.txtLanguageSupportPasswordCht.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportPasswordCht.TabIndex = 13;
+            // 
+            // txtLanguageSupportPasswordEsn
+            // 
+            this.txtLanguageSupportPasswordEsn.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordEsn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportPasswordEsn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportPasswordEsn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordEsn.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportPasswordEsn.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportPasswordEsn.Location = new System.Drawing.Point(275, 62);
+            this.txtLanguageSupportPasswordEsn.Name = "txtLanguageSupportPasswordEsn";
+            this.txtLanguageSupportPasswordEsn.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportPasswordEsn.PasswordChar = '*';
+            this.txtLanguageSupportPasswordEsn.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportPasswordEsn.TabIndex = 10;
+            // 
+            // txtLanguageSupportPasswordFra
+            // 
+            this.txtLanguageSupportPasswordFra.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordFra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportPasswordFra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportPasswordFra.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportPasswordFra.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportPasswordFra.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportPasswordFra.Location = new System.Drawing.Point(275, 39);
+            this.txtLanguageSupportPasswordFra.Name = "txtLanguageSupportPasswordFra";
+            this.txtLanguageSupportPasswordFra.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportPasswordFra.PasswordChar = '*';
+            this.txtLanguageSupportPasswordFra.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportPasswordFra.TabIndex = 7;
+            // 
+            // txtLanguageSupportUserChn
+            // 
+            this.txtLanguageSupportUserChn.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserChn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportUserChn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportUserChn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserChn.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportUserChn.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportUserChn.Location = new System.Drawing.Point(161, 108);
+            this.txtLanguageSupportUserChn.Name = "txtLanguageSupportUserChn";
+            this.txtLanguageSupportUserChn.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportUserChn.PasswordChar = '\0';
+            this.txtLanguageSupportUserChn.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportUserChn.TabIndex = 15;
+            // 
+            // txtLanguageSupportUserCht
+            // 
+            this.txtLanguageSupportUserCht.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserCht.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportUserCht.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportUserCht.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserCht.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportUserCht.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportUserCht.Location = new System.Drawing.Point(161, 85);
+            this.txtLanguageSupportUserCht.Name = "txtLanguageSupportUserCht";
+            this.txtLanguageSupportUserCht.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportUserCht.PasswordChar = '\0';
+            this.txtLanguageSupportUserCht.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportUserCht.TabIndex = 12;
+            // 
+            // txtLanguageSupportUserEsn
+            // 
+            this.txtLanguageSupportUserEsn.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserEsn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportUserEsn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportUserEsn.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserEsn.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportUserEsn.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportUserEsn.Location = new System.Drawing.Point(161, 62);
+            this.txtLanguageSupportUserEsn.Name = "txtLanguageSupportUserEsn";
+            this.txtLanguageSupportUserEsn.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportUserEsn.PasswordChar = '\0';
+            this.txtLanguageSupportUserEsn.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportUserEsn.TabIndex = 9;
+            // 
+            // txtLanguageSupportUserFra
+            // 
+            this.txtLanguageSupportUserFra.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserFra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLanguageSupportUserFra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLanguageSupportUserFra.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLanguageSupportUserFra.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtLanguageSupportUserFra.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.txtLanguageSupportUserFra.Location = new System.Drawing.Point(161, 39);
+            this.txtLanguageSupportUserFra.Name = "txtLanguageSupportUserFra";
+            this.txtLanguageSupportUserFra.Padding = new System.Windows.Forms.Padding(1);
+            this.txtLanguageSupportUserFra.PasswordChar = '\0';
+            this.txtLanguageSupportUserFra.Size = new System.Drawing.Size(88, 20);
+            this.txtLanguageSupportUserFra.TabIndex = 6;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPassword.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPassword.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtPassword.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtPassword, 10);
+            this.txtPassword.Location = new System.Drawing.Point(80, 61);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(1);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(151, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
+            // 
+            // txtUser
+            // 
+            this.txtUser.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUser.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtUser.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtUser.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtUser, 10);
+            this.txtUser.Location = new System.Drawing.Point(80, 33);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Padding = new System.Windows.Forms.Padding(1);
+            this.txtUser.PasswordChar = '\0';
+            this.txtUser.Size = new System.Drawing.Size(151, 22);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.txtUser_Validating);
+            // 
+            // txtCompany
+            // 
+            this.txtCompany.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCompany.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCompany.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtCompany.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtCompany.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtCompany, 10);
+            this.txtCompany.Location = new System.Drawing.Point(80, 89);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Padding = new System.Windows.Forms.Padding(1);
+            this.txtCompany.PasswordChar = '\0';
+            this.txtCompany.Size = new System.Drawing.Size(151, 22);
+            this.txtCompany.TabIndex = 3;
+            this.txtCompany.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtCompany.Validating += new System.ComponentModel.CancelEventHandler(this.txtCompany_Validating);
+            // 
+            // txtVersion
+            // 
+            this.txtVersion.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVersion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtVersion.DefaultBorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtVersion.ErrorBorderColor = System.Drawing.Color.Red;
+            this.txtVersion.FocusedBorderColor = System.Drawing.Color.Blue;
+            this.errorProvider.SetIconPadding(this.txtVersion, 10);
+            this.txtVersion.Location = new System.Drawing.Point(80, 118);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Padding = new System.Windows.Forms.Padding(1);
+            this.txtVersion.PasswordChar = '\0';
+            this.txtVersion.Size = new System.Drawing.Size(40, 22);
+            this.txtVersion.TabIndex = 4;
+            this.txtVersion.Enter += new System.EventHandler(this.textBox_Enter);
+            this.txtVersion.Validating += new System.ComponentModel.CancelEventHandler(this.txtVersion_Validating);
             // 
             // MainForm
             // 
