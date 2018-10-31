@@ -342,4 +342,7 @@
   <data name="IsValidUsername" xml:space="preserve">
     <value>'{0}' must be a valid Sage 300 user.</value>
   </data>
+  <data name="TheLogFileIsLocatedHereTemplate" xml:space="preserve">
+    <value>The log file is located here: '{0}'.</value>
+  </data>
 </root>
