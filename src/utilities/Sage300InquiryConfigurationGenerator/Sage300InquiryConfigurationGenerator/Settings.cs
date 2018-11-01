@@ -29,12 +29,16 @@ namespace Sage300InquiryConfigurationGenerator
     {
         #region Public Properties
         public string IniFilePath { get; set; }
+
         public string Option { get; set; }
         public string RootPath { get; set; }
+        public string OutputPath { get; set; }
+        public string SQLScriptName { get; set; }
         public string DatasourceConfigurationFile { get; set; }
         public string TemplateConfigurationFile { get; set; }
-        public string SQLScriptName { get; set; }
-        public string OutputPath { get; set; }
+        public string ControllerParameterDefinitionFile { get; set; }
+        public string OverridePresentationListFile { get; set; }
+
         public string Company { get; set; }
         public string Version { get; set; }
         public bool IncludeFra { get; set; }
@@ -61,16 +65,20 @@ namespace Sage300InquiryConfigurationGenerator
             IniFilePath = String.Empty;
             Option = "Adhoc";
             RootPath = String.Empty;
+            OutputPath = String.Empty;
+            SQLScriptName = String.Empty;
             DatasourceConfigurationFile = String.Empty;
             TemplateConfigurationFile = String.Empty;
-            SQLScriptName = String.Empty;
-            OutputPath = String.Empty;
+            ControllerParameterDefinitionFile = String.Empty;
+            OverridePresentationListFile = String.Empty;
+
             Company = String.Empty;
             Version = String.Empty;
             IncludeFra = false;
             IncludeEsn = false;
             IncludeCht = false;
             IncludeChn = false;
+
             DisplayOutputFolderOnCompletion = true;
             DisplayLogFileOnCompletion = true;
         }

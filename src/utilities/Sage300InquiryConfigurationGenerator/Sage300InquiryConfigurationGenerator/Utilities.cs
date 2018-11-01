@@ -20,9 +20,12 @@
 
 #region Imports
 using ACCPAC.Advantage;
+using Sage300InquiryConfigurationGenerator.Forms;
 using Sage300InquiryConfigurationGenerator.Properties;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 #endregion
@@ -67,7 +70,13 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="msg">The message text</param>
         public static void DisplaySuccessMessage(string msg)
         {
-            MessageBox.Show(msg, Resources.Status, MessageBoxButtons.OK);
+            var msgBox = new ModalMessageBox();
+            msgBox.Caption = Resources.Status;
+            msgBox.Title = "Success";
+            msgBox.Message = msg;
+            msgBox.Buttons = MessageBoxButtons.OK;
+            DialogResult result = msgBox.ShowDialog();
+            msgBox.Dispose();
         }
 
         /// <summary>
@@ -76,7 +85,35 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="msg">The message text</param>
         public static void DisplayErrorMessage(string msg)
         {
-            MessageBox.Show(msg, Resources.Status, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var msgBox = new ModalMessageBox();
+            msgBox.Caption = Resources.Status;
+            msgBox.Title = "Validation Errors";
+            msgBox.Message = msg;
+            msgBox.Buttons = MessageBoxButtons.OK;
+            DialogResult result = msgBox.ShowDialog();
+            msgBox.Dispose();
+        }
+
+        /// <summary>
+        /// Display a simple confirmation dialog box
+        /// </summary>
+        /// <param name="msgIn">The text message to display </param>
+        /// <returns>true = Proceed | false = Abort</returns>
+        public static bool Confirmation(string caption, string title, string msgIn)
+        {
+            var message = String.Format("{0}{3}{3}{1}{3}{2}",
+                                        msgIn,
+                                        Resources.PressOKToProceed,
+                                        Resources.PressCancelToAbort,
+                                        Environment.NewLine);
+            var msgBox = new ModalMessageBox();
+            msgBox.Caption = caption;
+            msgBox.Title = title;
+            msgBox.Message = message;
+            msgBox.Buttons = MessageBoxButtons.OKCancel;
+            DialogResult result = msgBox.ShowDialog();
+            msgBox.Dispose();
+            return (result != DialogResult.Cancel);
         }
 
         /// <summary>
@@ -126,6 +163,75 @@ namespace Sage300InquiryConfigurationGenerator
             var localTime = TimeZoneInfo.ConvertTimeFromUtc(linkTimeUtc, tz);
 
             return localTime;
+        }
+
+        /// <summary>
+        /// Get a list of all controls in a form by type
+        /// </summary>
+        /// <typeparam name="T">The type of control to find</typeparam>
+        /// <param name="control">The root control to query</param>
+        /// <returns>List of controls of a particular type</returns>
+        public static IEnumerable<T> FindControls<T>(Control control) where T : Control
+        {
+            // we can't cast here because some controls in here will most likely not be <T>
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => FindControls<T>(ctrl))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == typeof(T)).Cast<T>();
+        }
+
+        /// <summary>
+        /// Clear out all form text boxes
+        /// </summary>
+        /// <param name="form">A reference to the form</param>
+        public static void ClearAllTextBoxes(MainForm form)
+        {
+            var controls = FindControls<BorderedTextBox>(form);
+            foreach (var tb in controls)
+            {
+                tb.Text = String.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Display a Browse for file dialog
+        /// </summary>
+        /// <param name="fileTypeFilter">The file type filter setting</param>
+        /// <param name="fileExists">Check for file existence (defaults to true)</param>
+        /// <param name="pathExists">Check for path existence (default to true)</param>
+        /// <param name="multiselect">Allow selection of multiple files (defaults to false)</param>
+        /// <returns></returns>
+        public static string FileBrowser(string fileTypeFilter, 
+                                         string dialogTitle = "",
+                                         string initialDirectory = "",
+                                         bool fileExists = true, 
+                                         bool pathExists = true, 
+                                         bool multiselect = false)
+        {
+            var dialog = new OpenFileDialog
+            {
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Filter = fileTypeFilter,
+                FilterIndex = 1,
+                Multiselect = false,
+                Title = dialogTitle,
+                InitialDirectory = initialDirectory, 
+            };
+
+            // Show the dialog and evaluate action
+            var selectedFile = String.Empty;
+            if (dialog.ShowDialog() != DialogResult.OK)
+            {
+                selectedFile = String.Empty;
+            }
+            else
+            {
+                selectedFile = dialog.FileName.Trim();
+            }
+
+            return selectedFile;
         }
     }
 }

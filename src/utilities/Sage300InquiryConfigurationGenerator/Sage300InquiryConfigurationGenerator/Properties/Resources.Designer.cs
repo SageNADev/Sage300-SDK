@@ -88,6 +88,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse for {0}.
+        /// </summary>
+        internal static string BrowseForTemplate {
+            get {
+                return ResourceManager.GetString("BrowseForTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string Cancel {
@@ -187,6 +196,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Controller Parameter Definition.
+        /// </summary>
+        internal static string ControllerParameterDefinitionFile {
+            get {
+                return ResourceManager.GetString("ControllerParameterDefinitionFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CRM.
         /// </summary>
         internal static string CRM {
@@ -201,15 +219,6 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         internal static string DataSource {
             get {
                 return ResourceManager.GetString("DataSource", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to XLSX Files (Sage300ViewColumnSetting*.xlsx)|Sage300ViewColumnSetting*.xlsx.
-        /// </summary>
-        internal static string DatasourceColumnSettingFileFilter {
-            get {
-                return ResourceManager.GetString("DatasourceColumnSettingFileFilter", resourceCulture);
             }
         }
         
@@ -237,6 +246,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         internal static string DatasourceConfigurationFileTip {
             get {
                 return ResourceManager.GetString("DatasourceConfigurationFileTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XLSX Files (Sage300ViewConfigurationColumnSetting*.xlsx)|Sage300ViewConfigurationColumnSetting*.xlsx.
+        /// </summary>
+        internal static string DatasourceFileFilter {
+            get {
+                return ResourceManager.GetString("DatasourceFileFilter", resourceCulture);
             }
         }
         
@@ -286,6 +304,24 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to XLSX Files (*.xlsx)|*.xlsx.
+        /// </summary>
+        internal static string ExcelFileFilter {
+            get {
+                return ResourceManager.GetString("ExcelFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find a file.
+        /// </summary>
+        internal static string FindAFile {
+            get {
+                return ResourceManager.GetString("FindAFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to French.
         /// </summary>
         internal static string French {
@@ -300,6 +336,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         internal static string Generate {
             get {
                 return ResourceManager.GetString("Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate Configuration.
+        /// </summary>
+        internal static string GenerateConfiguration {
+            get {
+                return ResourceManager.GetString("GenerateConfiguration", resourceCulture);
             }
         }
         
@@ -385,6 +430,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JSON Files (*.json)|*.json.
+        /// </summary>
+        internal static string JSONFileFilter {
+            get {
+                return ResourceManager.GetString("JSONFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language Support.
         /// </summary>
         internal static string LanguageSupport {
@@ -444,6 +498,15 @@ namespace Sage300InquiryConfigurationGenerator.Properties {
         internal static string OutputPathTip {
             get {
                 return ResourceManager.GetString("OutputPathTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Override Presentation List.
+        /// </summary>
+        internal static string OverridePresentationListFile {
+            get {
+                return ResourceManager.GetString("OverridePresentationListFile", resourceCulture);
             }
         }
         

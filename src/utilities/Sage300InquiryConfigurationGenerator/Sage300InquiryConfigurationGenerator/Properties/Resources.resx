@@ -255,8 +255,8 @@
   <data name="RootPathTip" xml:space="preserve">
     <value>The root working folder</value>
   </data>
-  <data name="DatasourceColumnSettingFileFilter" xml:space="preserve">
-    <value>XLSX Files (Sage300ViewColumnSetting*.xlsx)|Sage300ViewColumnSetting*.xlsx</value>
+  <data name="DatasourceFileFilter" xml:space="preserve">
+    <value>XLSX Files (Sage300ViewConfigurationColumnSetting*.xlsx)|Sage300ViewConfigurationColumnSetting*.xlsx</value>
   </data>
   <data name="DatasourceConfigurationFileIsRequired" xml:space="preserve">
     <value>A valid Datasource Configuration File specification is required.</value>
@@ -344,5 +344,26 @@
   </data>
   <data name="TheLogFileIsLocatedHereTemplate" xml:space="preserve">
     <value>The log file is located here: '{0}'.</value>
+  </data>
+  <data name="BrowseForTemplate" xml:space="preserve">
+    <value>Browse for {0}</value>
+  </data>
+  <data name="ControllerParameterDefinitionFile" xml:space="preserve">
+    <value>Controller Parameter Definition</value>
+  </data>
+  <data name="ExcelFileFilter" xml:space="preserve">
+    <value>XLSX Files (*.xlsx)|*.xlsx</value>
+  </data>
+  <data name="FindAFile" xml:space="preserve">
+    <value>Find a file</value>
+  </data>
+  <data name="GenerateConfiguration" xml:space="preserve">
+    <value>Generate Configuration</value>
+  </data>
+  <data name="JSONFileFilter" xml:space="preserve">
+    <value>JSON Files (*.json)|*.json</value>
+  </data>
+  <data name="OverridePresentationListFile" xml:space="preserve">
+    <value>Override Presentation List</value>
   </data>
 </root>
