@@ -86,11 +86,13 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtLogWindow = new System.Windows.Forms.TextBox();
-            this.lblConsole = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.chkDisplayOutputFolderOnCompletion = new System.Windows.Forms.CheckBox();
             this.chkDisplayLogFileOnCompletion = new System.Windows.Forms.CheckBox();
             this.btnDebugEmptyForm = new System.Windows.Forms.Button();
             this.btnDebugTestMessageBox = new System.Windows.Forms.Button();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.grpCredentials.SuspendLayout();
             this.grpLanguageSupport.SuspendLayout();
             this.grpSettings.SuspendLayout();
@@ -234,9 +236,10 @@
             // btnGenerate
             // 
             this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerate.Location = new System.Drawing.Point(720, 603);
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.Location = new System.Drawing.Point(720, 609);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(95, 44);
+            this.btnGenerate.Size = new System.Drawing.Size(95, 42);
             this.btnGenerate.TabIndex = 37;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -246,9 +249,10 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(13, 603);
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(13, 609);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(95, 44);
+            this.btnClose.Size = new System.Drawing.Size(95, 42);
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -425,10 +429,11 @@
             // 
             this.chkLanguageChn.AutoSize = true;
             this.chkLanguageChn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkLanguageChn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkLanguageChn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkLanguageChn.Location = new System.Drawing.Point(22, 110);
             this.chkLanguageChn.Name = "chkLanguageChn";
-            this.chkLanguageChn.Size = new System.Drawing.Size(117, 17);
+            this.chkLanguageChn.Size = new System.Drawing.Size(114, 17);
             this.chkLanguageChn.TabIndex = 14;
             this.chkLanguageChn.Text = "Chinese (Simplified)";
             this.chkLanguageChn.UseVisualStyleBackColor = true;
@@ -438,10 +443,11 @@
             // 
             this.chkLanguageCht.AutoSize = true;
             this.chkLanguageCht.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkLanguageCht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkLanguageCht.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkLanguageCht.Location = new System.Drawing.Point(22, 87);
             this.chkLanguageCht.Name = "chkLanguageCht";
-            this.chkLanguageCht.Size = new System.Drawing.Size(122, 17);
+            this.chkLanguageCht.Size = new System.Drawing.Size(119, 17);
             this.chkLanguageCht.TabIndex = 11;
             this.chkLanguageCht.Text = "Chinese (Traditional)";
             this.chkLanguageCht.UseVisualStyleBackColor = true;
@@ -451,10 +457,11 @@
             // 
             this.chkLanguageEsn.AutoSize = true;
             this.chkLanguageEsn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkLanguageEsn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkLanguageEsn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkLanguageEsn.Location = new System.Drawing.Point(22, 64);
             this.chkLanguageEsn.Name = "chkLanguageEsn";
-            this.chkLanguageEsn.Size = new System.Drawing.Size(64, 17);
+            this.chkLanguageEsn.Size = new System.Drawing.Size(61, 17);
             this.chkLanguageEsn.TabIndex = 8;
             this.chkLanguageEsn.Text = "Spanish";
             this.chkLanguageEsn.UseVisualStyleBackColor = true;
@@ -464,10 +471,11 @@
             // 
             this.chkLanguageFra.AutoSize = true;
             this.chkLanguageFra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkLanguageFra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkLanguageFra.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkLanguageFra.Location = new System.Drawing.Point(22, 41);
             this.chkLanguageFra.Name = "chkLanguageFra";
-            this.chkLanguageFra.Size = new System.Drawing.Size(59, 17);
+            this.chkLanguageFra.Size = new System.Drawing.Size(56, 17);
             this.chkLanguageFra.TabIndex = 5;
             this.chkLanguageFra.Text = "French";
             this.chkLanguageFra.UseVisualStyleBackColor = true;
@@ -491,7 +499,7 @@
             this.grpSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.grpSettings.Location = new System.Drawing.Point(13, 167);
             this.grpSettings.Name = "grpSettings";
-            this.grpSettings.Size = new System.Drawing.Size(802, 300);
+            this.grpSettings.Size = new System.Drawing.Size(802, 279);
             this.grpSettings.TabIndex = 16;
             this.grpSettings.TabStop = false;
             this.grpSettings.Text = "Settings";
@@ -507,7 +515,7 @@
             this.txtSQLScriptName.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtSQLScriptName.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtSQLScriptName, 5);
-            this.txtSQLScriptName.Location = new System.Drawing.Point(202, 122);
+            this.txtSQLScriptName.Location = new System.Drawing.Point(202, 101);
             this.txtSQLScriptName.Name = "txtSQLScriptName";
             this.txtSQLScriptName.Padding = new System.Windows.Forms.Padding(1);
             this.txtSQLScriptName.PasswordChar = '\0';
@@ -520,7 +528,7 @@
             // 
             this.lblSQLScriptName.AutoSize = true;
             this.lblSQLScriptName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSQLScriptName.Location = new System.Drawing.Point(105, 125);
+            this.lblSQLScriptName.Location = new System.Drawing.Point(105, 104);
             this.lblSQLScriptName.Name = "lblSQLScriptName";
             this.lblSQLScriptName.Size = new System.Drawing.Size(92, 13);
             this.lblSQLScriptName.TabIndex = 41;
@@ -540,7 +548,7 @@
             this.grpConfigurationFiles.Controls.Add(this.btnTemplateConfigurationFileFinder);
             this.grpConfigurationFiles.Controls.Add(this.txtTemplateConfigurationFile);
             this.grpConfigurationFiles.Controls.Add(this.btnDatasourceConfigurationFileFinder);
-            this.grpConfigurationFiles.Location = new System.Drawing.Point(13, 148);
+            this.grpConfigurationFiles.Location = new System.Drawing.Point(13, 127);
             this.grpConfigurationFiles.Name = "grpConfigurationFiles";
             this.grpConfigurationFiles.Size = new System.Drawing.Size(778, 138);
             this.grpConfigurationFiles.TabIndex = 40;
@@ -730,7 +738,7 @@
             this.btnOutputPathFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOutputPathFinder.FlatAppearance.BorderSize = 0;
             this.btnOutputPathFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOutputPathFinder.Location = new System.Drawing.Point(744, 95);
+            this.btnOutputPathFinder.Location = new System.Drawing.Point(744, 74);
             this.btnOutputPathFinder.Name = "btnOutputPathFinder";
             this.btnOutputPathFinder.Size = new System.Drawing.Size(19, 20);
             this.btnOutputPathFinder.TabIndex = 23;
@@ -746,7 +754,7 @@
             this.btnRootPathFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRootPathFinder.FlatAppearance.BorderSize = 0;
             this.btnRootPathFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRootPathFinder.Location = new System.Drawing.Point(744, 70);
+            this.btnRootPathFinder.Location = new System.Drawing.Point(744, 49);
             this.btnRootPathFinder.Name = "btnRootPathFinder";
             this.btnRootPathFinder.Size = new System.Drawing.Size(19, 20);
             this.btnRootPathFinder.TabIndex = 21;
@@ -764,7 +772,7 @@
             this.txtOutputPath.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtOutputPath.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtOutputPath, 19);
-            this.txtOutputPath.Location = new System.Drawing.Point(202, 96);
+            this.txtOutputPath.Location = new System.Drawing.Point(202, 75);
             this.txtOutputPath.Name = "txtOutputPath";
             this.txtOutputPath.Padding = new System.Windows.Forms.Padding(1);
             this.txtOutputPath.PasswordChar = '\0';
@@ -782,7 +790,7 @@
             this.txtRootPath.ErrorBorderColor = System.Drawing.Color.Red;
             this.txtRootPath.FocusedBorderColor = System.Drawing.Color.Blue;
             this.errorProvider.SetIconPadding(this.txtRootPath, 19);
-            this.txtRootPath.Location = new System.Drawing.Point(202, 70);
+            this.txtRootPath.Location = new System.Drawing.Point(202, 49);
             this.txtRootPath.Name = "txtRootPath";
             this.txtRootPath.Padding = new System.Windows.Forms.Padding(1);
             this.txtRootPath.PasswordChar = '\0';
@@ -795,7 +803,7 @@
             // 
             this.lblRootPath.AutoSize = true;
             this.lblRootPath.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblRootPath.Location = new System.Drawing.Point(139, 72);
+            this.lblRootPath.Location = new System.Drawing.Point(139, 51);
             this.lblRootPath.Name = "lblRootPath";
             this.lblRootPath.Size = new System.Drawing.Size(58, 13);
             this.lblRootPath.TabIndex = 24;
@@ -805,7 +813,7 @@
             // 
             this.lblOutputPath.AutoSize = true;
             this.lblOutputPath.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblOutputPath.Location = new System.Drawing.Point(130, 99);
+            this.lblOutputPath.Location = new System.Drawing.Point(130, 78);
             this.lblOutputPath.Name = "lblOutputPath";
             this.lblOutputPath.Size = new System.Drawing.Size(67, 13);
             this.lblOutputPath.TabIndex = 26;
@@ -817,9 +825,9 @@
             this.btnOptionInquiry.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOptionInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptionInquiry.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOptionInquiry.Location = new System.Drawing.Point(363, 23);
+            this.btnOptionInquiry.Location = new System.Drawing.Point(363, 18);
             this.btnOptionInquiry.Name = "btnOptionInquiry";
-            this.btnOptionInquiry.Size = new System.Drawing.Size(75, 38);
+            this.btnOptionInquiry.Size = new System.Drawing.Size(75, 25);
             this.btnOptionInquiry.TabIndex = 19;
             this.btnOptionInquiry.Text = "Inquiry";
             this.btnOptionInquiry.UseVisualStyleBackColor = false;
@@ -831,9 +839,9 @@
             this.btnOptionCrm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOptionCrm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptionCrm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOptionCrm.Location = new System.Drawing.Point(281, 23);
+            this.btnOptionCrm.Location = new System.Drawing.Point(281, 18);
             this.btnOptionCrm.Name = "btnOptionCrm";
-            this.btnOptionCrm.Size = new System.Drawing.Size(75, 38);
+            this.btnOptionCrm.Size = new System.Drawing.Size(75, 25);
             this.btnOptionCrm.TabIndex = 18;
             this.btnOptionCrm.Text = "CRM";
             this.btnOptionCrm.UseVisualStyleBackColor = false;
@@ -843,7 +851,7 @@
             // 
             this.lblOption.AutoSize = true;
             this.lblOption.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblOption.Location = new System.Drawing.Point(156, 35);
+            this.lblOption.Location = new System.Drawing.Point(156, 23);
             this.lblOption.Name = "lblOption";
             this.lblOption.Size = new System.Drawing.Size(41, 13);
             this.lblOption.TabIndex = 28;
@@ -855,9 +863,9 @@
             this.btnOptionAdhoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOptionAdhoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptionAdhoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOptionAdhoc.Location = new System.Drawing.Point(200, 23);
+            this.btnOptionAdhoc.Location = new System.Drawing.Point(200, 18);
             this.btnOptionAdhoc.Name = "btnOptionAdhoc";
-            this.btnOptionAdhoc.Size = new System.Drawing.Size(75, 38);
+            this.btnOptionAdhoc.Size = new System.Drawing.Size(75, 25);
             this.btnOptionAdhoc.TabIndex = 17;
             this.btnOptionAdhoc.Text = "Adhoc";
             this.btnOptionAdhoc.UseVisualStyleBackColor = false;
@@ -866,9 +874,10 @@
             // btnSaveSettings
             // 
             this.btnSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveSettings.Location = new System.Drawing.Point(114, 603);
+            this.btnSaveSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveSettings.Location = new System.Drawing.Point(114, 609);
             this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(95, 44);
+            this.btnSaveSettings.Size = new System.Drawing.Size(95, 42);
             this.btnSaveSettings.TabIndex = 36;
             this.btnSaveSettings.Text = "Save Settings";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
@@ -890,32 +899,33 @@
             this.txtLogWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLogWindow.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogWindow.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtLogWindow.Location = new System.Drawing.Point(13, 496);
+            this.txtLogWindow.Location = new System.Drawing.Point(13, 468);
             this.txtLogWindow.Multiline = true;
             this.txtLogWindow.Name = "txtLogWindow";
             this.txtLogWindow.ReadOnly = true;
             this.txtLogWindow.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLogWindow.Size = new System.Drawing.Size(802, 98);
+            this.txtLogWindow.Size = new System.Drawing.Size(802, 131);
             this.txtLogWindow.TabIndex = 32;
             this.txtLogWindow.TabStop = false;
             // 
-            // lblConsole
+            // lblStatus
             // 
-            this.lblConsole.AutoSize = true;
-            this.lblConsole.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblConsole.Location = new System.Drawing.Point(10, 479);
-            this.lblConsole.Name = "lblConsole";
-            this.lblConsole.Size = new System.Drawing.Size(45, 13);
-            this.lblConsole.TabIndex = 8;
-            this.lblConsole.Text = "Console";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblStatus.Location = new System.Drawing.Point(11, 450);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "Status";
             // 
             // chkDisplayOutputFolderOnCompletion
             // 
             this.chkDisplayOutputFolderOnCompletion.AutoSize = true;
             this.chkDisplayOutputFolderOnCompletion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 607);
+            this.chkDisplayOutputFolderOnCompletion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkDisplayOutputFolderOnCompletion.Location = new System.Drawing.Point(215, 609);
             this.chkDisplayOutputFolderOnCompletion.Name = "chkDisplayOutputFolderOnCompletion";
-            this.chkDisplayOutputFolderOnCompletion.Size = new System.Drawing.Size(191, 17);
+            this.chkDisplayOutputFolderOnCompletion.Size = new System.Drawing.Size(188, 17);
             this.chkDisplayOutputFolderOnCompletion.TabIndex = 33;
             this.chkDisplayOutputFolderOnCompletion.Text = "Display output folder on completion";
             this.chkDisplayOutputFolderOnCompletion.UseVisualStyleBackColor = true;
@@ -924,9 +934,10 @@
             // 
             this.chkDisplayLogFileOnCompletion.AutoSize = true;
             this.chkDisplayLogFileOnCompletion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 626);
+            this.chkDisplayLogFileOnCompletion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkDisplayLogFileOnCompletion.Location = new System.Drawing.Point(215, 632);
             this.chkDisplayLogFileOnCompletion.Name = "chkDisplayLogFileOnCompletion";
-            this.chkDisplayLogFileOnCompletion.Size = new System.Drawing.Size(162, 17);
+            this.chkDisplayLogFileOnCompletion.Size = new System.Drawing.Size(159, 17);
             this.chkDisplayLogFileOnCompletion.TabIndex = 34;
             this.chkDisplayLogFileOnCompletion.Text = "Display log file on completion";
             this.chkDisplayLogFileOnCompletion.UseVisualStyleBackColor = true;
@@ -935,10 +946,11 @@
             // 
             this.btnDebugEmptyForm.BackColor = System.Drawing.Color.Red;
             this.btnDebugEmptyForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDebugEmptyForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebugEmptyForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDebugEmptyForm.Location = new System.Drawing.Point(609, 603);
+            this.btnDebugEmptyForm.Location = new System.Drawing.Point(609, 609);
             this.btnDebugEmptyForm.Name = "btnDebugEmptyForm";
-            this.btnDebugEmptyForm.Size = new System.Drawing.Size(105, 43);
+            this.btnDebugEmptyForm.Size = new System.Drawing.Size(105, 41);
             this.btnDebugEmptyForm.TabIndex = 38;
             this.btnDebugEmptyForm.Text = "Empty Form";
             this.btnDebugEmptyForm.UseVisualStyleBackColor = false;
@@ -948,14 +960,32 @@
             // 
             this.btnDebugTestMessageBox.BackColor = System.Drawing.Color.DarkRed;
             this.btnDebugTestMessageBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDebugTestMessageBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebugTestMessageBox.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDebugTestMessageBox.Location = new System.Drawing.Point(498, 603);
+            this.btnDebugTestMessageBox.Location = new System.Drawing.Point(498, 609);
             this.btnDebugTestMessageBox.Name = "btnDebugTestMessageBox";
-            this.btnDebugTestMessageBox.Size = new System.Drawing.Size(105, 43);
+            this.btnDebugTestMessageBox.Size = new System.Drawing.Size(105, 41);
             this.btnDebugTestMessageBox.TabIndex = 39;
             this.btnDebugTestMessageBox.Text = "Test MessageBox";
             this.btnDebugTestMessageBox.UseVisualStyleBackColor = false;
             this.btnDebugTestMessageBox.Click += new System.EventHandler(this.btnDebugTestMessageBox_Click);
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.WorkerSupportsCancellation = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
+            // progressBar
+            // 
+            this.progressBar.ForeColor = System.Drawing.Color.SteelBlue;
+            this.progressBar.Location = new System.Drawing.Point(50, 451);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(765, 12);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 40;
             // 
             // MainForm
             // 
@@ -965,12 +995,13 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(827, 661);
+            this.ClientSize = new System.Drawing.Size(827, 660);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnDebugTestMessageBox);
             this.Controls.Add(this.btnDebugEmptyForm);
             this.Controls.Add(this.chkDisplayLogFileOnCompletion);
             this.Controls.Add(this.chkDisplayOutputFolderOnCompletion);
-            this.Controls.Add(this.lblConsole);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtLogWindow);
             this.Controls.Add(this.btnSaveSettings);
             this.Controls.Add(this.grpSettings);
@@ -1051,7 +1082,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.TextBox txtLogWindow;
-        private System.Windows.Forms.Label lblConsole;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.CheckBox chkDisplayLogFileOnCompletion;
         private System.Windows.Forms.CheckBox chkDisplayOutputFolderOnCompletion;
         private System.Windows.Forms.Label lblControllerParameterDefinitionFile;
@@ -1062,6 +1093,8 @@
         private BorderedTextBox txtOverridePresentationList;
         private System.Windows.Forms.Button btnDebugEmptyForm;
         private System.Windows.Forms.Button btnDebugTestMessageBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 

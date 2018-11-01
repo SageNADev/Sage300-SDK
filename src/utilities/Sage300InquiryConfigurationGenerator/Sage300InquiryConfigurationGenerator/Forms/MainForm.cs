@@ -69,7 +69,6 @@ namespace Sage300InquiryConfigurationGenerator
         #endregion
 
         #region Private Variables
-        //private List<BorderedTextBox> _TextboxControls;
         private Settings _settings;
         private ValidationErrors _validationErrors;
         #endregion
@@ -93,6 +92,7 @@ namespace Sage300InquiryConfigurationGenerator
             InitSettingsSection();
 
             _validationErrors = new ValidationErrors();
+            progressBar.Hide();
         }
         #endregion
 
@@ -168,6 +168,8 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            btnGenerate.Enabled = false;
+
             // Ensure all fields are valid
             if (ValidateForm() == false)
             {
@@ -177,6 +179,7 @@ namespace Sage300InquiryConfigurationGenerator
                 LogLine(errorText);
                 Utilities.DisplayErrorMessage(errorText);
                 _validationErrors.Clear();
+                btnGenerate.Enabled = true;
                 return;
             }
 
@@ -185,166 +188,193 @@ namespace Sage300InquiryConfigurationGenerator
                                        Resources.Confirmation,
                                        Resources.AreYouSureYouWishToProceed) == false)
             {
+                btnGenerate.Enabled = true;
                 return;
             }
 
-            ClearLog();
-            LogLine("Starting Generation Process...");
+            progressBar.Show();
 
-            // Get the currently specified settings
-            PopulateSettingsFromForm();
-
-            // Build the true output path 
-            var outputPath = _settings.TrueOutputPath;
-
-            var company = new Company();
-            company.CompanyName = _settings.Company;
-            company.Version = _settings.Version;
-            company.Username = txtUser.Text.Trim();
-            company.Password = txtPassword.Text.Trim();
-
-            company.IncludeFra = _settings.IncludeFra;
-            company.IncludeEsn = _settings.IncludeEsn;
-            company.IncludeCht = _settings.IncludeCht;
-            company.IncludeChn = _settings.IncludeChn;
-
-
-            // Grab the language usernames and passwords from the form
-            // Note: Done to make variable names smaller :)
-            var userFra = txtLanguageSupportUserFra.Text.Trim();
-            var passFra = txtLanguageSupportUserFra.Text.Trim();
-            var userEsn = txtLanguageSupportUserEsn.Text.Trim();
-            var passEsn = txtLanguageSupportUserEsn.Text.Trim();
-            var userCht = txtLanguageSupportUserCht.Text.Trim();
-            var passCht = txtLanguageSupportUserCht.Text.Trim();
-            var userChn = txtLanguageSupportUserChn.Text.Trim();
-            var passChn = txtLanguageSupportUserChn.Text.Trim();
-
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.FRA, userFra, passFra, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.ESN, userEsn, passEsn, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHT, userCht, passCht, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHN, userChn, passChn, ref company);
-
-            var _RunLogs = new List<LogRecord>();
-
-            LogRecord tranRec = null;
-
-            CreateOutputPaths();
-
-            List<OverridePresentationList> OverridePresentationList = LoadOverridePresentationListIfExists();
-
-            #region ReadSage300ViewConfigurationFile
-
-            var DatasourceConfigurationFile = _settings.DatasourceConfigurationFile;
-            var Sage300ViewInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(DatasourceConfigurationFile, "Sage300View", ref Sage300ViewInquiryConfigurationList);
-            _RunLogs.Add(tranRec);
-            #endregion
-
-            #region ProcessSage300View
-            foreach (var cr in Sage300ViewInquiryConfigurationList)
-            {
-                if (cr.Included == "Y")
-                {
-                    cr.OutputPath = _settings.TrueOutputPath;
-                    #region ProcessSage300View
-                    LogLine(string.Format("Read Configuration Column Setting File: {0}", cr.ConfigSettingFile));
-
-                    var file = _settings.ControllerParameterDefinitionFile;
-                    var ConfigurationColumnList = new List<ConfigurationColumnSettingDefinition>();
-                    tranRec = ReadConfigurationSetting.ReadInquiryConfigurationColumnSetting(cr.ConfigSettingFile, cr.ViewID, ref ConfigurationColumnList, file);
-                    _RunLogs.Add(tranRec);
-
-                    if (ConfigurationColumnList.Count() > 0)
-                    {
-                        Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
-                    }
-                    #endregion
-                }
-            }
-            #endregion
-
-            // Generate Datasource and Template JSON files
-            #region ReadTemplateConfigurationFile
-
-            var TemplateConfigurationFile = _settings.TemplateConfigurationFile;
-            var TemplateInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Template", ref TemplateInquiryConfigurationList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile));
-
-            var DSViewMappingList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "DatasourceSage300ViewMapping", ref DSViewMappingList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile));
-
-            var TemplateTranslationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Translation", ref TemplateTranslationList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Datasource Configuration File: {0}, tab: Datasource", TemplateConfigurationFile));
-
-            var DatasourceList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Datasource", ref DatasourceList);
-            _RunLogs.Add(tranRec);
-
-            #endregion
-
-            #region ProcessDataSourceAndTemplateInquiryConfiguration
-            foreach (var cr in TemplateInquiryConfigurationList)
-            {
-                if (cr.Included == "Y")
-                {
-                    cr.OutputPath = _settings.TrueOutputPath;
-
-                    if (DSViewMappingList.Count() > 0)
-                    {
-                        Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
-                    }
-                }
-            }
-            #endregion
-
-            #region GenerateDBScript
-
-            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
-                                        TemplateInquiryConfigurationList, DatasourceList, "Create");
-
-            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
-                                        TemplateInquiryConfigurationList, DatasourceList, "Update");
-
-            Generation.GenerateDeleteDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
-                                              TemplateInquiryConfigurationList, DatasourceList);
-
-            Generation.GenerateSQLScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
-                                         TemplateInquiryConfigurationList, DatasourceList);
-            #endregion
-
-            string logFilePath = WriteLogFile(_RunLogs);
-
-            // Display the message
-            var finalMessage = string.Format("{0}{1}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
-            Utilities.DisplaySuccessMessage(finalMessage);
-
-            if (_settings.DisplayOutputFolderOnCompletion == true)
-            {
-                // Show the output folder and the log file
-                LogLine(Resources.DisplayingOutputFolder);
-                Process.Start(_settings.TrueOutputPath);
-            }
-
-            if (_settings.DisplayLogFileOnCompletion == true)
-            {
-                LogLine(Resources.DisplayingOutputLogFile);
-                Process.Start("notepad.exe", logFilePath);
-            }
-
-            LogLine(finalMessage);
-
-            LogLine(String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath));
+            backgroundWorker.RunWorkerAsync();
         }
+
+        /// <summary>
+        /// This is the primary processing block
+        /// </summary>
+        private void DoProcessing(BackgroundWorker worker, DoWorkEventArgs e)
+        {
+            var progressPercentage = 0;
+            var message = string.Empty;
+
+            if (worker.CancellationPending)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                message = "Starting Generation Process...";
+                worker.ReportProgress(progressPercentage, new UICommand() { Command = UICommandEnum.ClearLog, Message = message });
+
+                // Get the currently specified settings
+                PopulateSettingsFromForm();
+
+                // Build the true output path 
+                var outputPath = _settings.TrueOutputPath;
+
+                var company = new Company();
+                company.CompanyName = _settings.Company;
+                company.Version = _settings.Version;
+                company.Username = txtUser.Text.Trim();
+                company.Password = txtPassword.Text.Trim();
+
+                company.IncludeFra = _settings.IncludeFra;
+                company.IncludeEsn = _settings.IncludeEsn;
+                company.IncludeCht = _settings.IncludeCht;
+                company.IncludeChn = _settings.IncludeChn;
+
+
+                // Grab the language usernames and passwords from the form
+                // Note: Done to make variable names smaller :)
+                var userFra = txtLanguageSupportUserFra.Text.Trim();
+                var passFra = txtLanguageSupportUserFra.Text.Trim();
+                var userEsn = txtLanguageSupportUserEsn.Text.Trim();
+                var passEsn = txtLanguageSupportUserEsn.Text.Trim();
+                var userCht = txtLanguageSupportUserCht.Text.Trim();
+                var passCht = txtLanguageSupportUserCht.Text.Trim();
+                var userChn = txtLanguageSupportUserChn.Text.Trim();
+                var passChn = txtLanguageSupportUserChn.Text.Trim();
+
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.FRA, userFra, passFra, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.ESN, userEsn, passEsn, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHT, userCht, passCht, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHN, userChn, passChn, ref company);
+
+                var _RunLogs = new List<LogRecord>();
+
+                LogRecord tranRec = null;
+
+                CreateOutputPaths(worker);
+
+                List<OverridePresentationList> OverridePresentationList = LoadOverridePresentationListIfExists(worker);
+
+                var DatasourceConfigurationFile = _settings.DatasourceConfigurationFile;
+                var Sage300ViewInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(DatasourceConfigurationFile, "Sage300View", ref Sage300ViewInquiryConfigurationList);
+                _RunLogs.Add(tranRec);
+
+                
+                foreach (var cr in Sage300ViewInquiryConfigurationList)
+                {
+                    if (cr.Included == "Y")
+                    {
+                        cr.OutputPath = _settings.TrueOutputPath;
+                        #region ProcessSage300View
+                        message = string.Format("Read Configuration Column Setting File: {0}", cr.ConfigSettingFile);
+                        worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                        var file = _settings.ControllerParameterDefinitionFile;
+                        var ConfigurationColumnList = new List<ConfigurationColumnSettingDefinition>();
+                        tranRec = ReadConfigurationSetting.ReadInquiryConfigurationColumnSetting(cr.ConfigSettingFile, cr.ViewID, ref ConfigurationColumnList, file);
+                        _RunLogs.Add(tranRec);
+
+                        if (ConfigurationColumnList.Count() > 0)
+                        {
+                            Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
+                        }
+                        #endregion
+                    }
+                }
+
+                // Generate Datasource and Template JSON files
+                #region ReadTemplateConfigurationFile
+
+                var TemplateConfigurationFile = _settings.TemplateConfigurationFile;
+                var TemplateInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Template", ref TemplateInquiryConfigurationList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var DSViewMappingList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "DatasourceSage300ViewMapping", ref DSViewMappingList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var TemplateTranslationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Translation", ref TemplateTranslationList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Datasource Configuration File: {0}, tab: Datasource", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var DatasourceList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Datasource", ref DatasourceList);
+                _RunLogs.Add(tranRec);
+
+                #endregion
+
+                #region ProcessDataSourceAndTemplateInquiryConfiguration
+                foreach (var cr in TemplateInquiryConfigurationList)
+                {
+                    if (cr.Included == "Y")
+                    {
+                        cr.OutputPath = _settings.TrueOutputPath;
+
+                        if (DSViewMappingList.Count() > 0)
+                        {
+                            Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
+                        }
+                    }
+                }
+                #endregion
+
+                #region GenerateDBScript
+
+                Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                            TemplateInquiryConfigurationList, DatasourceList, "Create");
+
+                Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                            TemplateInquiryConfigurationList, DatasourceList, "Update");
+
+                Generation.GenerateDeleteDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                                  TemplateInquiryConfigurationList, DatasourceList);
+
+                Generation.GenerateSQLScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                             TemplateInquiryConfigurationList, DatasourceList);
+                #endregion
+
+                string logFilePath = WriteLogFile(_RunLogs);
+
+                // Display the message
+                var finalMessage = string.Format("{0}{1}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.DisplaySuccessMessage, Message = finalMessage });
+
+
+                if (_settings.DisplayOutputFolderOnCompletion == true)
+                {
+                    // Show the output folder and the log file
+                    message = Resources.DisplayingOutputFolder;
+                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    Process.Start(_settings.TrueOutputPath);
+                }
+
+                if (_settings.DisplayLogFileOnCompletion == true)
+                {
+                    message = Resources.DisplayingOutputLogFile;
+                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    Process.Start("notepad.exe", logFilePath);
+                }
+
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = finalMessage });
+
+                message = String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath);
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+            }
+            btnGenerate.Enabled = true;
+        }
+
 
         /// <summary>
         /// Write out the log file
@@ -370,15 +400,17 @@ namespace Sage300InquiryConfigurationGenerator
         /// Load the optional Override Presentation list file
         /// </summary>
         /// <returns>The List of Overrides</returns>
-        private List<OverridePresentationList> LoadOverridePresentationListIfExists()
+        private List<OverridePresentationList> LoadOverridePresentationListIfExists(BackgroundWorker worker)
         {
             var file = _settings.OverridePresentationListFile;
             var list = new List<OverridePresentationList>();
 
-            LogLine(String.Format("Attempting to read the override presentation list file '{0}'.", file));
+            var msg = String.Format("Attempting to read the override presentation list file '{0}'.", file);
+            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
             if (File.Exists(file))
             {
-                LogLine("Override presentation list file exists.");
+                msg = "Override presentation list file exists.";
+                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
                 list = JsonConvert.DeserializeObject<List<OverridePresentationList>>(File.ReadAllText(file));
             }
 
@@ -388,12 +420,15 @@ namespace Sage300InquiryConfigurationGenerator
         /// <summary>
         /// Recreate (or create) the output folders
         /// </summary>
-        private void CreateOutputPaths()
+        private void CreateOutputPaths(BackgroundWorker worker)
         {
+            var msg = String.Empty;
+
             // Create Output Path
             if (Directory.Exists(_settings.TrueOutputPath))
             {
-                LogLine(string.Format("Attempting to delete 'Output' folder if it already exists: {0}", _settings.TrueOutputPath));
+                msg = string.Format("Attempting to delete 'Output' folder if it already exists: {0}", _settings.TrueOutputPath);
+                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
                 try
                 {
                     Directory.Delete(_settings.TrueOutputPath, true);
@@ -405,7 +440,8 @@ namespace Sage300InquiryConfigurationGenerator
                 }
             }
 
-            LogLine(string.Format("Create 'Output' folder: {0}", _settings.TrueOutputPath));
+            msg = string.Format("Create 'Output' folder: {0}", _settings.TrueOutputPath);
+            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
             try
             {
                 Directory.CreateDirectory(_settings.TrueOutputPath);
@@ -669,6 +705,8 @@ namespace Sage300InquiryConfigurationGenerator
 
             btnGenerate.Text = Resources.Generate;
             toolTip.SetToolTip(btnGenerate, Resources.GenerateTip);
+
+            lblStatus.Text = Resources.Status;
         }
 
         /// <summary>
@@ -882,8 +920,8 @@ namespace Sage300InquiryConfigurationGenerator
 
             var dialogTitle = String.Format(Resources.BrowseForTemplate, Resources.DatasourceConfigurationFile);
             var filePath = Utilities.FileBrowser(Resources.ExcelFileFilter,
-                                                                        dialogTitle,
-                                                                        initialDirectory);
+                                                 dialogTitle,
+                                                 initialDirectory);
             textBox.Text = filePath.Length > 0 ? filePath : textBox.Text;
             textBox_Enter(textBox, new EventArgs());
         }
@@ -1146,7 +1184,57 @@ namespace Sage300InquiryConfigurationGenerator
             control.SetError(false);
         }
 
-#region 'Validating' Event Handlers
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            DoProcessing(worker, e);
+        }
+
+        /// <summary>
+        /// ProgressChanged handler
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The ProgressChangedEvent Arguments</param>
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage > 100 ? 100 : e.ProgressPercentage;
+
+            var loggerCommand = (UICommand)e.UserState;
+            var command = loggerCommand.Command;
+            var msg = loggerCommand.Message;
+
+            switch (command)
+            {
+                case UICommandEnum.ClearLog:
+                    ClearLog();
+                    break;
+
+                case UICommandEnum.AppendToLog:
+                    LogLine(msg);
+                    break;
+
+                case UICommandEnum.DisplaySuccessMessage:
+                    Utilities.DisplaySuccessMessage(msg);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// RunWorkerCompleted handler
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The RunWorkerCompletedEvent Arguments</param>
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progressBar.Hide();
+        }
+
+        #region 'Validating' Event Handlers
         private void txtUser_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
 
         private void txtPassword_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
