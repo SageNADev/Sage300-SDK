@@ -20,6 +20,7 @@
 
 #region Imports
 using Newtonsoft.Json;
+using Sage300InquiryConfigurationGenerator.Forms;
 using Sage300InquiryConfigurationGenerator.Properties;
 using System;
 using System.Collections.Generic;
@@ -68,7 +69,6 @@ namespace Sage300InquiryConfigurationGenerator
         #endregion
 
         #region Private Variables
-        private List<BorderedTextBox> _TextboxControls;
         private Settings _settings;
         private ValidationErrors _validationErrors;
         #endregion
@@ -80,14 +80,11 @@ namespace Sage300InquiryConfigurationGenerator
         public MainForm()
         {
             InitializeComponent();
-            BuildTextBoxList();
             SetTextboxFocusedBorderColor();
             Localize();
             LoadSettings();
             InitGeneralSettings();
-
-            btnOptionInquiry.Visible = false;
-
+            InitializeDebugSpecificControls();
             InitOptionButtons();
             InitLanguageSupport();
 
@@ -95,50 +92,36 @@ namespace Sage300InquiryConfigurationGenerator
             InitSettingsSection();
 
             _validationErrors = new ValidationErrors();
+            progressBar.Hide();
         }
         #endregion
 
         #region Private Methods
+
         /// <summary>
-        /// Build a list of all TextBox controls
+        /// Depending on the build type, show/hide controls
         /// </summary>
-        private void BuildTextBoxList()
+        private void InitializeDebugSpecificControls()
         {
-            _TextboxControls = new List<BorderedTextBox>
-            {
-                txtUser,
-                txtPassword,
-                txtCompany,
-                txtVersion,
-
-                txtLanguageSupportUserFra,
-                txtLanguageSupportUserEsn,
-                txtLanguageSupportUserCht,
-                txtLanguageSupportUserChn,
-                txtLanguageSupportPasswordFra,
-                txtLanguageSupportPasswordEsn,
-                txtLanguageSupportPasswordCht,
-                txtLanguageSupportPasswordChn,
-
-                txtRootPath,
-                txtOutputPath,
-                txtSQLScriptName,
-                txtTemplateConfigurationFile,
-                txtDatasourceConfigurationFile,
-            };
+#if DEBUG
+            btnDebugEmptyForm.Visible = true;
+            btnDebugTestMessageBox.Visible = true;
+#else
+            btnDebugEmptyForm.Visible = false;
+            btnDebugTestMessageBox.Visible = false;
+#endif
         }
 
         /// <summary>
-        /// Set the border color of all TextBox controls
+        /// Set the border color property of all TextBox controls
         /// for when they have focus
         /// </summary>
         private void SetTextboxFocusedBorderColor()
         {
             var color = Constants.TextBoxBorderColor_Focus;
-            foreach (var tb in _TextboxControls)
-            {
-                tb.FocusedBorderColor = color;
-            }
+            Utilities.FindControls<BorderedTextBox>(this)
+                     .ToList()
+                     .ForEach(tb => tb.FocusedBorderColor = color);
         }
 
         /// <summary>
@@ -152,20 +135,30 @@ namespace Sage300InquiryConfigurationGenerator
         }
 
         /// <summary>
-        /// Display a simple confirmation dialog box
+        /// Click event handler for the 'Empty Form' button
+        /// Note: Debug version only!
         /// </summary>
-        /// <param name="msgIn">The text message to display </param>
-        /// <returns>true = Proceed | false = Abort</returns>
-        private bool Confirmation(string msgIn)
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The Event Arguments</param>
+        private void btnDebugEmptyForm_Click(object sender, EventArgs e)
         {
-            var caption = Resources.Confirmation;
-            var message = String.Format("{0}{3}{3}{1}{3}{2}", 
-                                        msgIn, 
-                                        Resources.PressOKToProceed, 
-                                        Resources.PressCancelToAbort, 
-                                        Environment.NewLine);
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            return (result != DialogResult.Cancel);
+            Utilities.ClearAllTextBoxes(this);
+        }
+
+        /// <summary>
+        /// Click event handler for the 'Message Box' button
+        /// Note: Debug version only!
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The Event Arguments</param>
+        private void btnDebugTestMessageBox_Click(object sender, EventArgs e)
+        {
+            var msgBox = new ModalMessageBox();
+            msgBox.Caption = "Status";
+            msgBox.Title = "Validation Errors";
+            msgBox.Message = "This is the actual error message or messages.";
+            DialogResult result = msgBox.ShowDialog(this);
+            msgBox.Dispose();
         }
 
         /// <summary>
@@ -175,6 +168,9 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            btnGenerate.Enabled = false;
+
+            // Ensure all fields are valid
             if (ValidateForm() == false)
             {
                 var validationErrors = _validationErrors.GetAllAsString();
@@ -183,158 +179,210 @@ namespace Sage300InquiryConfigurationGenerator
                 LogLine(errorText);
                 Utilities.DisplayErrorMessage(errorText);
                 _validationErrors.Clear();
+                btnGenerate.Enabled = true;
                 return;
             }
 
-            if (Confirmation(Resources.AreYouSureYouWishToProceed) == false)
+            // Ask for confirmation before proceeding
+            if (Utilities.Confirmation(Resources.GenerateConfiguration,
+                                       Resources.Confirmation,
+                                       Resources.AreYouSureYouWishToProceed) == false)
             {
+                btnGenerate.Enabled = true;
                 return;
             }
 
-            ClearLog();
-            LogLine("Starting Generation Process...");
+            progressBar.Show();
 
-            // Get the currently specified settings
-            PopulateSettingsFromForm();
+            backgroundWorker.RunWorkerAsync();
+        }
 
-            // Build the true output path 
-            var outputPath = _settings.TrueOutputPath;
+        /// <summary>
+        /// This is the primary processing block
+        /// </summary>
+        private void DoProcessing(BackgroundWorker worker, DoWorkEventArgs e)
+        {
+            var progressPercentage = 0;
+            var message = string.Empty;
 
-            var company = new Company();
-            company.CompanyName = _settings.Company;
-            company.Version = _settings.Version;
-            company.Username = txtUser.Text.Trim();
-            company.Password = txtPassword.Text.Trim();
-
-            company.IncludeFra = _settings.IncludeFra;
-            company.IncludeEsn = _settings.IncludeEsn;
-            company.IncludeCht = _settings.IncludeCht;
-            company.IncludeChn = _settings.IncludeChn;
-
-
-            // Grab the language usernames and passwords from the form
-            // Note: Done to make variable names smaller :)
-            var userFra = txtLanguageSupportUserFra.Text.Trim();
-            var passFra = txtLanguageSupportUserFra.Text.Trim();
-            var userEsn = txtLanguageSupportUserEsn.Text.Trim();
-            var passEsn = txtLanguageSupportUserEsn.Text.Trim();
-            var userCht = txtLanguageSupportUserCht.Text.Trim();
-            var passCht = txtLanguageSupportUserCht.Text.Trim();
-            var userChn = txtLanguageSupportUserChn.Text.Trim();
-            var passChn = txtLanguageSupportUserChn.Text.Trim();
-
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.FRA, userFra, passFra, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.ESN, userEsn, passEsn, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHT, userCht, passCht, ref company);
-            SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHN, userChn, passChn, ref company);
-
-            // Test Run Logs
-            var _RunLogs = new List<LogRecord>();
-
-            LogRecord tranRec = null;
-
-            CreateOutputPaths();
-
-            // Read Override presentation list
-            LogLine("Attempting to read the override presentation list...");
-            var OverridePresentationList = new List<OverridePresentationList>();
-            if (File.Exists(Path.Combine(_settings.RootPath, "OverridePresentationListJSON.JSON")))
+            if (worker.CancellationPending)
             {
-                OverridePresentationList = JsonConvert.DeserializeObject<List<OverridePresentationList>>(File.ReadAllText(Path.Combine(_settings.RootPath, "OverridePresentationListJSON.JSON")));
+                e.Cancel = true;
             }
-
-            #region ReadSage300ViewConfigurationFile
-
-            var DatasourceConfigurationFile = _settings.DatasourceConfigurationFile;
-            var Sage300ViewInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(DatasourceConfigurationFile, "Sage300View", ref Sage300ViewInquiryConfigurationList);
-            _RunLogs.Add(tranRec);
-            #endregion
-
-            #region ProcessSage300View
-            foreach (var cr in Sage300ViewInquiryConfigurationList)
+            else
             {
-                if (cr.Included == "Y")
+                message = "Starting Generation Process...";
+                worker.ReportProgress(progressPercentage, new UICommand() { Command = UICommandEnum.ClearLog, Message = message });
+
+                // Get the currently specified settings
+                PopulateSettingsFromForm();
+
+                // Build the true output path 
+                var outputPath = _settings.TrueOutputPath;
+
+                var company = new Company();
+                company.CompanyName = _settings.Company;
+                company.Version = _settings.Version;
+                company.Username = txtUser.Text.Trim();
+                company.Password = txtPassword.Text.Trim();
+
+                company.IncludeFra = _settings.IncludeFra;
+                company.IncludeEsn = _settings.IncludeEsn;
+                company.IncludeCht = _settings.IncludeCht;
+                company.IncludeChn = _settings.IncludeChn;
+
+
+                // Grab the language usernames and passwords from the form
+                // Note: Done to make variable names smaller :)
+                var userFra = txtLanguageSupportUserFra.Text.Trim();
+                var passFra = txtLanguageSupportUserFra.Text.Trim();
+                var userEsn = txtLanguageSupportUserEsn.Text.Trim();
+                var passEsn = txtLanguageSupportUserEsn.Text.Trim();
+                var userCht = txtLanguageSupportUserCht.Text.Trim();
+                var passCht = txtLanguageSupportUserCht.Text.Trim();
+                var userChn = txtLanguageSupportUserChn.Text.Trim();
+                var passChn = txtLanguageSupportUserChn.Text.Trim();
+
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.FRA, userFra, passFra, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.ESN, userEsn, passEsn, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHT, userCht, passCht, ref company);
+                SetNonEnglishUsernameAndPassword(Company.LanguageEnum.CHN, userChn, passChn, ref company);
+
+                var _RunLogs = new List<LogRecord>();
+
+                LogRecord tranRec = null;
+
+                CreateOutputPaths(worker);
+
+                List<OverridePresentationList> OverridePresentationList = LoadOverridePresentationListIfExists(worker);
+
+                var DatasourceConfigurationFile = _settings.DatasourceConfigurationFile;
+                var Sage300ViewInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(DatasourceConfigurationFile, "Sage300View", ref Sage300ViewInquiryConfigurationList);
+                _RunLogs.Add(tranRec);
+
+                
+                foreach (var cr in Sage300ViewInquiryConfigurationList)
                 {
-                    cr.OutputPath = _settings.TrueOutputPath;
-                    #region ProcessSage300View
-                    LogLine(string.Format("Read Configuration Column Setting File: {0}", cr.ConfigSettingFile));
-
-                    var ConfigurationColumnList = new List<ConfigurationColumnSettingDefinition>();
-                    tranRec = ReadConfigurationSetting.ReadInquiryConfigurationColumnSetting(cr.ConfigSettingFile, cr.ViewID, ref ConfigurationColumnList, Path.Combine(_settings.RootPath, "Controller.JSON"));
-                    _RunLogs.Add(tranRec);
-
-                    if (ConfigurationColumnList.Count() > 0)
+                    if (cr.Included == "Y")
                     {
-                        Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
-                    }
-                    #endregion
-                }
-            }
-            #endregion
+                        cr.OutputPath = _settings.TrueOutputPath;
+                        #region ProcessSage300View
+                        message = string.Format("Read Configuration Column Setting File: {0}", cr.ConfigSettingFile);
+                        worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
 
-            // Generate Datasource and Template JSON files
-            #region ReadTemplateConfigurationFile
+                        var file = _settings.ControllerParameterDefinitionFile;
+                        var ConfigurationColumnList = new List<ConfigurationColumnSettingDefinition>();
+                        tranRec = ReadConfigurationSetting.ReadInquiryConfigurationColumnSetting(cr.ConfigSettingFile, cr.ViewID, ref ConfigurationColumnList, file);
+                        _RunLogs.Add(tranRec);
 
-            //Console.WriteLine(string.Format("Read Inquiry Template Configuration File: {0}, tab: Template", TemplateConfigurationFile));
-
-            //TemplateConfigurationFile = Path.Combine(MasterPath, TemplateConfigurationFile);
-            var TemplateConfigurationFile = _settings.TemplateConfigurationFile;
-            var TemplateInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Template", ref TemplateInquiryConfigurationList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile));
-
-            var DSViewMappingList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "DatasourceSage300ViewMapping", ref DSViewMappingList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile));
-
-            var TemplateTranslationList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Translation", ref TemplateTranslationList);
-            _RunLogs.Add(tranRec);
-
-            LogLine(string.Format("Read Datasource Configuration File: {0}, tab: Datasource", TemplateConfigurationFile));
-
-            var DatasourceList = new List<InquiryConfigurationDefinition>();
-            tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Datasource", ref DatasourceList);
-            _RunLogs.Add(tranRec);
-
-            #endregion
-
-            #region ProcessDataSourceAndTemplateInquiryConfiguration
-            foreach (var cr in TemplateInquiryConfigurationList)
-            {
-                if (cr.Included == "Y")
-                {
-                    cr.OutputPath = _settings.TrueOutputPath;
-
-                    if (DSViewMappingList.Count() > 0)
-                    {
-                        Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
+                        if (ConfigurationColumnList.Count() > 0)
+                        {
+                            Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
+                        }
+                        #endregion
                     }
                 }
+
+                // Generate Datasource and Template JSON files
+                #region ReadTemplateConfigurationFile
+
+                var TemplateConfigurationFile = _settings.TemplateConfigurationFile;
+                var TemplateInquiryConfigurationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Template", ref TemplateInquiryConfigurationList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var DSViewMappingList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "DatasourceSage300ViewMapping", ref DSViewMappingList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var TemplateTranslationList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Translation", ref TemplateTranslationList);
+                _RunLogs.Add(tranRec);
+
+                message = string.Format("Read Datasource Configuration File: {0}, tab: Datasource", TemplateConfigurationFile);
+                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+
+                var DatasourceList = new List<InquiryConfigurationDefinition>();
+                tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Datasource", ref DatasourceList);
+                _RunLogs.Add(tranRec);
+
+                #endregion
+
+                #region ProcessDataSourceAndTemplateInquiryConfiguration
+                foreach (var cr in TemplateInquiryConfigurationList)
+                {
+                    if (cr.Included == "Y")
+                    {
+                        cr.OutputPath = _settings.TrueOutputPath;
+
+                        if (DSViewMappingList.Count() > 0)
+                        {
+                            Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
+                        }
+                    }
+                }
+                #endregion
+
+                #region GenerateDBScript
+
+                Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                            TemplateInquiryConfigurationList, DatasourceList, "Create");
+
+                Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                            TemplateInquiryConfigurationList, DatasourceList, "Update");
+
+                Generation.GenerateDeleteDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                                  TemplateInquiryConfigurationList, DatasourceList);
+
+                Generation.GenerateSQLScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath,
+                                             TemplateInquiryConfigurationList, DatasourceList);
+                #endregion
+
+                string logFilePath = WriteLogFile(_RunLogs);
+
+                // Display the message
+                var finalMessage = string.Format("{0}{1}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.DisplaySuccessMessage, Message = finalMessage });
+
+
+                if (_settings.DisplayOutputFolderOnCompletion == true)
+                {
+                    // Show the output folder and the log file
+                    message = Resources.DisplayingOutputFolder;
+                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    Process.Start(_settings.TrueOutputPath);
+                }
+
+                if (_settings.DisplayLogFileOnCompletion == true)
+                {
+                    message = Resources.DisplayingOutputLogFile;
+                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    Process.Start("notepad.exe", logFilePath);
+                }
+
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = finalMessage });
+
+                message = String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath);
+                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
             }
-            #endregion
+            btnGenerate.Enabled = true;
+        }
 
-            #region GenerateDBScript
 
-            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
-                                        TemplateInquiryConfigurationList, DatasourceList, "Create");
-
-            Generation.GenerateDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
-                                        TemplateInquiryConfigurationList, DatasourceList, "Update");
-
-            Generation.GenerateDeleteDBScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
-                                              TemplateInquiryConfigurationList, DatasourceList);
-
-            Generation.GenerateSQLScript(_settings.Option, _settings.SQLScriptName, _settings.TrueOutputPath, 
-                                         TemplateInquiryConfigurationList, DatasourceList);
-            #endregion
-
-            // Generate the log file
+        /// <summary>
+        /// Write out the log file
+        /// </summary>
+        /// <param name="_RunLogs">The List of LogRecords to write to a file</param>
+        /// <returns>The fully-qualified path to the newly generated log file</returns>
+        private string WriteLogFile(List<LogRecord> _RunLogs)
+        {
             var fileFormat = "txt";
             var filePrefix = "RunLog";
             var dateStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -345,37 +393,42 @@ namespace Sage300InquiryConfigurationGenerator
                 file.Write(JsonConvert.SerializeObject(_RunLogs, Formatting.Indented));
             }
 
-            // Display the message
-            var finalMessage = string.Format("{0}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
-            MessageBox.Show(finalMessage, Resources.Status, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            return logFilePath;
+        }
 
-            if (_settings.DisplayOutputFolderOnCompletion == true)
+        /// <summary>
+        /// Load the optional Override Presentation list file
+        /// </summary>
+        /// <returns>The List of Overrides</returns>
+        private List<OverridePresentationList> LoadOverridePresentationListIfExists(BackgroundWorker worker)
+        {
+            var file = _settings.OverridePresentationListFile;
+            var list = new List<OverridePresentationList>();
+
+            var msg = String.Format("Attempting to read the override presentation list file '{0}'.", file);
+            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+            if (File.Exists(file))
             {
-                // Show the output folder and the log file
-                LogLine(Resources.DisplayingOutputFolder);
-                Process.Start(_settings.TrueOutputPath);
+                msg = "Override presentation list file exists.";
+                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+                list = JsonConvert.DeserializeObject<List<OverridePresentationList>>(File.ReadAllText(file));
             }
 
-            if (_settings.DisplayLogFileOnCompletion == true)
-            {
-                LogLine(Resources.DisplayingOutputLogFile);
-                Process.Start("notepad.exe", logFilePath);
-            }
-
-            LogLine(finalMessage);
-
-            LogLine(String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath));
+            return list;
         }
 
         /// <summary>
         /// Recreate (or create) the output folders
         /// </summary>
-        private void CreateOutputPaths()
+        private void CreateOutputPaths(BackgroundWorker worker)
         {
+            var msg = String.Empty;
+
             // Create Output Path
             if (Directory.Exists(_settings.TrueOutputPath))
             {
-                LogLine(string.Format("Attempting to delete 'Output' folder if it already exists: {0}", _settings.TrueOutputPath));
+                msg = string.Format("Attempting to delete 'Output' folder if it already exists: {0}", _settings.TrueOutputPath);
+                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
                 try
                 {
                     Directory.Delete(_settings.TrueOutputPath, true);
@@ -387,7 +440,8 @@ namespace Sage300InquiryConfigurationGenerator
                 }
             }
 
-            LogLine(string.Format("Create 'Output' folder: {0}", _settings.TrueOutputPath));
+            msg = string.Format("Create 'Output' folder: {0}", _settings.TrueOutputPath);
+            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
             try
             {
                 Directory.CreateDirectory(_settings.TrueOutputPath);
@@ -427,7 +481,7 @@ namespace Sage300InquiryConfigurationGenerator
             // Process
             if (includeLang == true)
             {
-                #region Set Username
+#region Set Username
                 if (userLang.Length == 0)
                 {
                     switch (lang)
@@ -448,9 +502,9 @@ namespace Sage300InquiryConfigurationGenerator
                         case Company.LanguageEnum.CHN: company.UsernameChn = userLang; break;
                     }
                 }
-                #endregion
+#endregion
 
-                #region Set Password
+#region Set Password
                 if (passLang.Length == 0)
                 {
                     switch (lang)
@@ -471,7 +525,7 @@ namespace Sage300InquiryConfigurationGenerator
                         case Company.LanguageEnum.CHN: company.PasswordChn = passLang; break;
                     }
                 }
-                #endregion
+#endregion
             }
         }
 
@@ -482,9 +536,12 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnOptionAdhoc_Click(object sender, EventArgs e)
         {
-            SetButtonSelectedColors(btnOptionAdhoc);
-            SetButtonUnselectedColors(btnOptionCrm);
-            //SetButtonUnselectedColors(btnOptionInquiry);
+            // Selected
+            SetOptionButtonSelectedColors(btnOptionAdhoc, OptionTypeEnum.Adhoc);
+
+            // Unselected
+            SetOptionButtonUnselectedColors(btnOptionCrm, OptionTypeEnum.CRM);
+            SetOptionButtonUnselectedColors(btnOptionInquiry, OptionTypeEnum.Inquiry);
         }
 
         /// <summary>
@@ -494,9 +551,12 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnOptionCrm_Click(object sender, EventArgs e)
         {
-            SetButtonSelectedColors(btnOptionCrm);
-            SetButtonUnselectedColors(btnOptionAdhoc);
-            //SetButtonUnselectedColors(btnOptionInquiry);
+            // Selected 
+            SetOptionButtonSelectedColors(btnOptionCrm, OptionTypeEnum.CRM);
+
+            // Unselected
+            SetOptionButtonUnselectedColors(btnOptionAdhoc, OptionTypeEnum.Adhoc);
+            SetOptionButtonUnselectedColors(btnOptionInquiry, OptionTypeEnum.Inquiry);
         }
 
         /// <summary>
@@ -506,29 +566,76 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnOptionInquiry_Click(object sender, EventArgs e)
         {
-            SetButtonSelectedColors(btnOptionInquiry);
-            SetButtonUnselectedColors(btnOptionAdhoc);
-            SetButtonUnselectedColors(btnOptionCrm);
+            // Select 
+            SetOptionButtonSelectedColors(btnOptionInquiry, OptionTypeEnum.Inquiry);
+
+            // Unselected
+            SetOptionButtonUnselectedColors(btnOptionAdhoc, OptionTypeEnum.Adhoc);
+            SetOptionButtonUnselectedColors(btnOptionCrm, OptionTypeEnum.CRM);
         }
 
         /// <summary>
         /// Set the background and foreground colors for the selected option button
         /// </summary>
         /// <param name="btn">A reference to the button control</param>
-        private void SetButtonSelectedColors(Button btn)
+        /// <param name="option">The option to target</param>
+        private void SetOptionButtonSelectedColors(Button btn, OptionTypeEnum option)
         {
-            btn.ForeColor = Constants.OptionButtonSelected_ForegroundColor;
-            btn.BackColor = Constants.OptionButtonSelected_BackgroundColor;
+            Color foregroundColor = Color.White;
+            Color backgroundColor = Color.Black;
+
+            switch (option)
+            {
+                case OptionTypeEnum.Adhoc:
+                    foregroundColor = Constants.OptionButton_Adhoc_Selected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_Adhoc_Selected_BackgroundColor;
+                    break;
+
+                case OptionTypeEnum.CRM:
+                    foregroundColor = Constants.OptionButton_CRM_Selected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_CRM_Selected_BackgroundColor;
+                    break;
+
+                case OptionTypeEnum.Inquiry:
+                    foregroundColor = Constants.OptionButton_Inquiry_Selected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_Inquiry_Selected_BackgroundColor;
+                    break;
+            }
+
+            btn.ForeColor = foregroundColor;
+            btn.BackColor = backgroundColor;
         }
 
         /// <summary>
         /// Set the background and foreground colors for an 'unselected' option button
         /// </summary>
         /// <param name="btn">A reference to the button control</param>
-        private void SetButtonUnselectedColors(Button btn)
+        /// <param name="option">The option to target</param>
+        private void SetOptionButtonUnselectedColors(Button btn, OptionTypeEnum option)
         {
-            btn.ForeColor = Constants.OptionButtonUnselected_ForegroundColor;
-            btn.BackColor = Constants.OptionButtonUnselected_BackgroundColor;
+            Color foregroundColor = Color.White;
+            Color backgroundColor = Color.Black;
+
+            switch (option)
+            {
+                case OptionTypeEnum.Adhoc:
+                    foregroundColor = Constants.OptionButton_Adhoc_Unselected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_Adhoc_Unselected_BackgroundColor;
+                    break;
+
+                case OptionTypeEnum.CRM:
+                    foregroundColor = Constants.OptionButton_CRM_Unselected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_CRM_Unselected_BackgroundColor;
+                    break;
+
+                case OptionTypeEnum.Inquiry:
+                    foregroundColor = Constants.OptionButton_Inquiry_Unselected_ForegroundColor;
+                    backgroundColor = Constants.OptionButton_Inquiry_Unselected_BackgroundColor;
+                    break;
+            }
+
+            btn.ForeColor = foregroundColor;
+            btn.BackColor = backgroundColor;
         }
 
         /// <summary>
@@ -598,6 +705,8 @@ namespace Sage300InquiryConfigurationGenerator
 
             btnGenerate.Text = Resources.Generate;
             toolTip.SetToolTip(btnGenerate, Resources.GenerateTip);
+
+            lblStatus.Text = Resources.Status;
         }
 
         /// <summary>
@@ -633,6 +742,9 @@ namespace Sage300InquiryConfigurationGenerator
                 _settings.OutputPath = ini["SETTINGS"]["OutputPath"].ToString();
                 _settings.DatasourceConfigurationFile = ini["SETTINGS"]["DatasourceConfigurationFile"].ToString();
                 _settings.TemplateConfigurationFile = ini["SETTINGS"]["TemplateConfigurationFile"].ToString();
+
+                _settings.ControllerParameterDefinitionFile = ini["SETTINGS"]["ControllerParameterDefinitionFile"].ToString();
+                _settings.OverridePresentationListFile = ini["SETTINGS"]["OverridePresentationListFile"].ToString();
 
                 _settings.Company = ini["COMPANY"]["Company"].ToString();
                 _settings.Version = ini["COMPANY"]["Version"].ToString();
@@ -752,6 +864,8 @@ namespace Sage300InquiryConfigurationGenerator
             txtTemplateConfigurationFile.Text = Path.Combine(selectedFolder, Constants.DefaultInquiryFolderName);
 
             ShowOrHideSettingsSectionControls(true);
+
+            textBox_Enter(txtRootPath, new EventArgs());
         }
 
         /// <summary>
@@ -785,6 +899,8 @@ namespace Sage300InquiryConfigurationGenerator
             var selectedFolder = dialog.SelectedPath.Trim();
 
             txtOutputPath.Text = selectedFolder;
+
+            textBox_Enter(txtOutputPath, new EventArgs());
         }
 
         /// <summary>
@@ -794,24 +910,20 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnDatasourceConfigurationFileFinder_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog
+            var textBox = txtDatasourceConfigurationFile;
+            var initialDirectory = string.Empty;
+            var currentPath = textBox.Text.Trim();
+            if (currentPath.Length > 0)
             {
-                CheckFileExists = true,
-                CheckPathExists = true,
-                Filter = Resources.DatasourceColumnSettingFileFilter,
-                FilterIndex = 1,
-                Multiselect = false,
-            };
-
-            // Show the dialog and evaluate action
-            if (dialog.ShowDialog() != DialogResult.OK)
-            {
-                return;
+                initialDirectory = Path.GetDirectoryName(currentPath);
             }
 
-            var selectedFile = dialog.FileName.Trim();
-
-            txtDatasourceConfigurationFile.Text = selectedFile;
+            var dialogTitle = String.Format(Resources.BrowseForTemplate, Resources.DatasourceConfigurationFile);
+            var filePath = Utilities.FileBrowser(Resources.ExcelFileFilter,
+                                                 dialogTitle,
+                                                 initialDirectory);
+            textBox.Text = filePath.Length > 0 ? filePath : textBox.Text;
+            textBox_Enter(textBox, new EventArgs());
         }
 
         /// <summary>
@@ -821,24 +933,66 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="e">The Event Arguments</param>
         private void btnTemplateConfigurationFileFinder_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog
+            var textBox = txtTemplateConfigurationFile;
+            var initialDirectory = string.Empty;
+            var currentPath = textBox.Text.Trim();
+            if (currentPath.Length > 0)
             {
-                CheckFileExists = true,
-                CheckPathExists = true,
-                Filter = Resources.ConfigurationFileFilter,
-                FilterIndex = 1,
-                Multiselect = false,
-            };
-
-            // Show the dialog and evaluate action
-            if (dialog.ShowDialog() != DialogResult.OK)
-            {
-                return;
+                initialDirectory = Path.GetDirectoryName(currentPath);
             }
 
-            var selectedFile = dialog.FileName.Trim();
+            var dialogTitle = String.Format(Resources.BrowseForTemplate, Resources.TemplateConfigurationFile);
+            var filePath = Utilities.FileBrowser(Resources.ExcelFileFilter,
+                                                 dialogTitle,
+                                                 initialDirectory);
+            textBox.Text = filePath.Length > 0 ? filePath : textBox.Text;
+            textBox_Enter(textBox, new EventArgs());
+        }
 
-            txtTemplateConfigurationFile.Text = selectedFile;
+        /// <summary>
+        /// Click event handler for the 'Controller Parameter Definition File Finder' button
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The Event Arguments</param>
+        private void btnControllerParameterDefinitionFileFinder_Click(object sender, EventArgs e)
+        {
+            var textBox = txtControllerParameterDefinitionFile;
+            var initialDirectory = string.Empty;
+            var currentPath = textBox.Text.Trim();
+            if (currentPath.Length > 0)
+            {
+                initialDirectory = Path.GetDirectoryName(currentPath);
+            }
+
+            var dialogTitle = String.Format(Resources.BrowseForTemplate, Resources.ControllerParameterDefinitionFile);
+            var filePath = Utilities.FileBrowser(Resources.JSONFileFilter,
+                                                 dialogTitle,
+                                                 initialDirectory);
+            textBox.Text = filePath.Length > 0 ? filePath : textBox.Text;
+            textBox_Enter(textBox, new EventArgs());
+        }
+
+        /// <summary>
+        /// Click event handler for the 'Override Presentation List File Finder' button
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The Event Arguments</param>
+        private void btnOverridePresentationListFinder_Click(object sender, EventArgs e)
+        {
+            var textBox = txtOverridePresentationList;
+            var initialDirectory = string.Empty;
+            var currentPath = textBox.Text.Trim();
+            if (currentPath.Length > 0)
+            {
+                initialDirectory = Path.GetDirectoryName(currentPath);
+            }
+
+            var dialogTitle = String.Format(Resources.BrowseForTemplate, Resources.OverridePresentationListFile);
+            var filePath = Utilities.FileBrowser(Resources.JSONFileFilter,
+                                                 dialogTitle,
+                                                 initialDirectory);
+            textBox.Text = filePath.Length > 0 ? filePath : textBox.Text;
+            textBox_Enter(textBox, new EventArgs());
         }
 
         /// <summary>
@@ -851,18 +1005,13 @@ namespace Sage300InquiryConfigurationGenerator
 
             txtSQLScriptName.Text = _settings.SQLScriptName;
             txtRootPath.Text = _settings.RootPath;
-            if (txtRootPath.Text.Length > 0)
-            {
-                txtOutputPath.Text = _settings.OutputPath;
-                txtDatasourceConfigurationFile.Text = _settings.DatasourceConfigurationFile;
-                txtTemplateConfigurationFile.Text = _settings.TemplateConfigurationFile;
-                txtCompany.Text = _settings.Company;
-                txtVersion.Text = _settings.Version;
-            } 
-            else
-            {
-                ShowOrHideSettingsSectionControls(false);
-            }
+            txtOutputPath.Text = _settings.OutputPath;
+            txtDatasourceConfigurationFile.Text = _settings.DatasourceConfigurationFile;
+            txtTemplateConfigurationFile.Text = _settings.TemplateConfigurationFile;
+            txtOverridePresentationList.Text = _settings.OverridePresentationListFile;
+            txtControllerParameterDefinitionFile.Text = _settings.ControllerParameterDefinitionFile;
+            txtCompany.Text = _settings.Company;
+            txtVersion.Text = _settings.Version;
         }
 
         /// <summary>
@@ -905,6 +1054,11 @@ namespace Sage300InquiryConfigurationGenerator
             ini["SETTINGS"]["DatasourceConfigurationFile"] = _settings.DatasourceConfigurationFile;
             ini["SETTINGS"]["TemplateConfigurationFile"] = _settings.TemplateConfigurationFile;
 
+            ini["SETTINGS"]["TemplateConfigurationFile"] = _settings.TemplateConfigurationFile;
+            ini["SETTINGS"]["TemplateConfigurationFile"] = _settings.TemplateConfigurationFile;
+            ini["SETTINGS"]["ControllerParameterDefinitionFile"] = _settings.ControllerParameterDefinitionFile;
+            ini["SETTINGS"]["OverridePresentationListFile"] = _settings.OverridePresentationListFile;
+
             ini["SETTINGS"]["DisplayOutputFolderOnCompletion"] = _settings.DisplayOutputFolderOnCompletion;
             ini["SETTINGS"]["DisplayLogFileOnCompletion"] = _settings.DisplayLogFileOnCompletion;
 
@@ -929,9 +1083,11 @@ namespace Sage300InquiryConfigurationGenerator
             _settings.Option = GetSelectedOption();
             _settings.RootPath = txtRootPath.Text.Trim();
             _settings.OutputPath = txtOutputPath.Text.Trim();
+            _settings.SQLScriptName = txtSQLScriptName.Text.Trim();
             _settings.DatasourceConfigurationFile = txtDatasourceConfigurationFile.Text.Trim();
             _settings.TemplateConfigurationFile = txtTemplateConfigurationFile.Text.Trim();
-            _settings.SQLScriptName = txtSQLScriptName.Text.Trim();
+            _settings.ControllerParameterDefinitionFile = txtControllerParameterDefinitionFile.Text.Trim();
+            _settings.OverridePresentationListFile = txtOverridePresentationList.Text.Trim();
 
             _settings.DisplayOutputFolderOnCompletion = chkDisplayOutputFolderOnCompletion.Checked;
             _settings.DisplayLogFileOnCompletion = chkDisplayLogFileOnCompletion.Checked;
@@ -943,10 +1099,9 @@ namespace Sage300InquiryConfigurationGenerator
         /// <returns>The string representation of the currently selected option</returns>
         private string GetSelectedOption()
         {
-            Color selectedColor = Constants.OptionButtonSelected_BackgroundColor;
-            if (btnOptionAdhoc.BackColor == selectedColor) return OptionTypeEnum.Adhoc.ToString();
-            if (btnOptionCrm.BackColor == selectedColor) return OptionTypeEnum.CRM.ToString();
-            if (btnOptionInquiry.BackColor == selectedColor) return OptionTypeEnum.Inquiry.ToString();
+            if (btnOptionAdhoc.BackColor == Constants.OptionButton_Adhoc_Selected_BackgroundColor) return OptionTypeEnum.Adhoc.ToString();
+            if (btnOptionCrm.BackColor == Constants.OptionButton_CRM_Selected_BackgroundColor) return OptionTypeEnum.CRM.ToString();
+            if (btnOptionInquiry.BackColor == Constants.OptionButton_Inquiry_Selected_BackgroundColor) return OptionTypeEnum.Inquiry.ToString();
             return String.Empty;
         }
 
@@ -1029,6 +1184,56 @@ namespace Sage300InquiryConfigurationGenerator
             control.SetError(false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            DoProcessing(worker, e);
+        }
+
+        /// <summary>
+        /// ProgressChanged handler
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The ProgressChangedEvent Arguments</param>
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage > 100 ? 100 : e.ProgressPercentage;
+
+            var loggerCommand = (UICommand)e.UserState;
+            var command = loggerCommand.Command;
+            var msg = loggerCommand.Message;
+
+            switch (command)
+            {
+                case UICommandEnum.ClearLog:
+                    ClearLog();
+                    break;
+
+                case UICommandEnum.AppendToLog:
+                    LogLine(msg);
+                    break;
+
+                case UICommandEnum.DisplaySuccessMessage:
+                    Utilities.DisplaySuccessMessage(msg);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// RunWorkerCompleted handler
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The RunWorkerCompletedEvent Arguments</param>
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progressBar.Hide();
+        }
+
         #region 'Validating' Event Handlers
         private void txtUser_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
 
@@ -1047,6 +1252,10 @@ namespace Sage300InquiryConfigurationGenerator
         private void txtDatasourceConfigurationFile_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
 
         private void txtTemplateConfigurationFile_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
+
+        private void txtControllerParameterDefinitionFile_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
+
+        private void txtOverridePresentationList_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
 
         private bool ValidateControl(object sender, CancelEventArgs e)
         {
@@ -1115,6 +1324,16 @@ namespace Sage300InquiryConfigurationGenerator
                     msg = String.Format(Resources.IsRequiredTemplate, Resources.TemplateConfigurationFile);
                     validationRules.Add(new ValidationRule(ValidationRuleEnum.RequiredField, msg));
                     msg = String.Format(Resources.IsValidFileTemplate, Resources.TemplateConfigurationFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidFile, msg));
+                    break;
+                
+                case "txtControllerParameterDefinitionFile":
+                    msg = String.Format(Resources.IsValidFileTemplate, Resources.ControllerParameterDefinitionFile);
+                    validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidFile, msg));
+                    break;
+
+                case "txtOverridePresentationList":
+                    msg = String.Format(Resources.IsValidFileTemplate, Resources.OverridePresentationListFile);
                     validationRules.Add(new ValidationRule(ValidationRuleEnum.ValidFile, msg));
                     break;
             }
@@ -1196,7 +1415,7 @@ namespace Sage300InquiryConfigurationGenerator
             }
             return status;
         }
-        #endregion
+#endregion
 
         /// <summary>
         /// Validate the entire form
@@ -1206,9 +1425,9 @@ namespace Sage300InquiryConfigurationGenerator
         {
             return this.ValidateChildren(ValidationConstraints.Enabled);
         }
-        #endregion
+#endregion
 
-        #region Public Methods
+#region Public Methods
         /// <summary>
         /// Insert a line of text into the logging console
         /// </summary>

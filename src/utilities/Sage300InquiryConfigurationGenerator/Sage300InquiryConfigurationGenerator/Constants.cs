@@ -32,11 +32,28 @@ namespace Sage300InquiryConfigurationGenerator
     public static class Constants
     {
         #region UI Colors
-        public static readonly Color OptionButtonSelected_ForegroundColor = Color.White;
-        public static readonly Color OptionButtonSelected_BackgroundColor = Color.DarkGreen;
+        // Option = 'Adhoc'
+        public static readonly Color OptionButton_Adhoc_Selected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_Adhoc_Selected_BackgroundColor = Color.DarkGreen;
+        public static readonly Color OptionButton_Adhoc_Unselected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_Adhoc_Unselected_BackgroundColor = Color.LightGray;
 
-        public static readonly Color OptionButtonUnselected_ForegroundColor = Color.White;
-        public static readonly Color OptionButtonUnselected_BackgroundColor = Color.LightGray;
+        // Option = 'CRM'
+        public static readonly Color OptionButton_CRM_Selected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_CRM_Selected_BackgroundColor = Color.Red;
+        public static readonly Color OptionButton_CRM_Unselected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_CRM_Unselected_BackgroundColor = Color.LightGray;
+
+        // Option = 'Inquiry'
+        public static readonly Color OptionButton_Inquiry_Selected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_Inquiry_Selected_BackgroundColor = Color.Blue;
+        public static readonly Color OptionButton_Inquiry_Unselected_ForegroundColor = Color.White;
+        public static readonly Color OptionButton_Inquiry_Unselected_BackgroundColor = Color.LightGray;
+
+        //public static readonly Color OptionButtonSelected_ForegroundColor = Color.White;
+        //public static readonly Color OptionButtonSelected_BackgroundColor = Color.DarkGreen;
+        //public static readonly Color OptionButtonUnselected_ForegroundColor = Color.White;
+        //public static readonly Color OptionButtonUnselected_BackgroundColor = Color.LightGray;
 
         public static readonly Color GroupInactive_BackgroundColor = Color.White;
         public static readonly Color GroupActive_BackgroundColor = Color.FromArgb(252, 252, 252);

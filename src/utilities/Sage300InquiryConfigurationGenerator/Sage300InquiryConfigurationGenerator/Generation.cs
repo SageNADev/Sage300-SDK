@@ -129,7 +129,7 @@ namespace Sage300InquiryConfigurationGenerator
 
             string today = DateTime.Now.ToString("yyyyMMdd");
 
-            parent.LogLine(string.Format("Start Processing {0}: ", cr.ViewID));
+            //parent.LogLine(string.Format("Start Processing {0}: ", cr.ViewID));
 
             DateTime start = DateTime.Now;
 
@@ -138,7 +138,7 @@ namespace Sage300InquiryConfigurationGenerator
             #region Process
             try
             {
-                parent.LogLine("Open Accpac Session");
+                //parent.LogLine("Open Accpac Session");
 
                 start = DateTime.Now;
 
@@ -370,7 +370,7 @@ namespace Sage300InquiryConfigurationGenerator
             }
             catch (Exception evt)
             {
-                parent.LogLine(evt.Message);
+                //parent.LogLine(evt.Message);
                 tranRec = new LogRecord(start, "Fail", string.Format("{0} {1}", TestTitle, today), string.Format("Test Case File: {0} ", cr.ViewName), evt.Message);
                 _ProcessLogs.Add(tranRec);
             }
@@ -505,7 +505,7 @@ namespace Sage300InquiryConfigurationGenerator
         {
             string today = DateTime.Now.ToString("yyyyMMdd");
 
-            parent.LogLine(string.Format("Start Processing {0}: ", cr.Name));
+            //parent.LogLine(string.Format("Start Processing {0}: ", cr.Name));
             
             DateTime start = DateTime.Now;
 
