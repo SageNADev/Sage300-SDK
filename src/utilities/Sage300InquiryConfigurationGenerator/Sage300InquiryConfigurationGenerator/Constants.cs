@@ -50,11 +50,6 @@ namespace Sage300InquiryConfigurationGenerator
         public static readonly Color OptionButton_Inquiry_Unselected_ForegroundColor = Color.White;
         public static readonly Color OptionButton_Inquiry_Unselected_BackgroundColor = Color.LightGray;
 
-        //public static readonly Color OptionButtonSelected_ForegroundColor = Color.White;
-        //public static readonly Color OptionButtonSelected_BackgroundColor = Color.DarkGreen;
-        //public static readonly Color OptionButtonUnselected_ForegroundColor = Color.White;
-        //public static readonly Color OptionButtonUnselected_BackgroundColor = Color.LightGray;
-
         public static readonly Color GroupInactive_BackgroundColor = Color.White;
         public static readonly Color GroupActive_BackgroundColor = Color.FromArgb(252, 252, 252);
 
@@ -72,5 +67,7 @@ namespace Sage300InquiryConfigurationGenerator
 
         public const string DefaultOutputFolderName = "Output";
         public const string DefaultInquiryFolderName = "InquiryConfiguration";
+
+        public const string SQLCommentLineSageCopyright = @"-- Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.";
     }
 }

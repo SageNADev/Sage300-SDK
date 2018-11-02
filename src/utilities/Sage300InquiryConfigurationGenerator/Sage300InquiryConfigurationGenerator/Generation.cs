@@ -21,17 +21,24 @@
 #region Imports
 using ACCPAC.Advantage;
 using Newtonsoft.Json;
+using Sage300InquiryConfigurationGenerator.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using AccpacView = ACCPAC.Advantage.View;
 #endregion
 
 namespace Sage300InquiryConfigurationGenerator
 {
     public static class Generation
     {
+        /// <summary>
+        /// A reference to the parent window/object
+        /// </summary>
+        public static MainForm Parent { get; set; }
+
         public enum LanguageEnum
         {
             ENG = 0,
@@ -98,7 +105,7 @@ namespace Sage300InquiryConfigurationGenerator
         /// <param name="i">Outer Loop</param>
         /// <param name="j">Inner Loop</param>
         /// <param name="view">Accpac Business View</param>
-        private static Object GetValue(int i, int j, View view)
+        private static Object GetValue(int i, int j, AccpacView view)
         {
             int intVal;
             bool boolVal;
@@ -119,17 +126,20 @@ namespace Sage300InquiryConfigurationGenerator
         /// </summary>
         /// <param name="cr">InquiryConfigurationDefinition</param>
         /// <param name="ConfigurationColumnList">List of Sage 300 View Column Settings</param>
-        public static void ProcessView(MainForm parent, Company companySetting, InquiryConfigurationDefinition cr, List<ConfigurationColumnSettingDefinition> ConfigurationColumnList, List<OverridePresentationList> OverridePresentationList)
+        public static void ProcessView(Company companySetting, 
+                                       InquiryConfigurationDefinition cr, 
+                                       List<ConfigurationColumnSettingDefinition> ConfigurationColumnList, 
+                                       List<OverridePresentationList> OverridePresentationList)
         {
-            // Test Title
+            const string methodName = "ProcessView";
+            LogMethodStart(methodName);
+
             string TestTitle = "Process Sage 300 View";
 
             List<LogRecord> _ProcessLogs = new List<LogRecord>();
             LogRecord tranRec = null;
 
             string today = DateTime.Now.ToString("yyyyMMdd");
-
-            //parent.LogLine(string.Format("Start Processing {0}: ", cr.ViewID));
 
             DateTime start = DateTime.Now;
 
@@ -138,14 +148,12 @@ namespace Sage300InquiryConfigurationGenerator
             #region Process
             try
             {
-                //parent.LogLine("Open Accpac Session");
-
                 start = DateTime.Now;
 
                 #region OpenSession
                 Session session, sessionFra, sessionEsn, sessionChn, sessionCht;
                 DBLink dbLink, dbLinkFra, dbLinkEsn, dbLinkChn, dbLinkCht;
-                View view, viewFra, viewEsn, viewChn, viewCht;
+                AccpacView view, viewFra, viewEsn, viewChn, viewCht;
 
                 var viewId = cr.ViewID.Substring(0, 6);
                 OpenAccpacView(companySetting, LanguageEnum.ENG, viewId, out session, out dbLink, out view);
@@ -370,7 +378,7 @@ namespace Sage300InquiryConfigurationGenerator
             }
             catch (Exception evt)
             {
-                //parent.LogLine(evt.Message);
+                LogLine(evt.Message);
                 tranRec = new LogRecord(start, "Fail", string.Format("{0} {1}", TestTitle, today), string.Format("Test Case File: {0} ", cr.ViewName), evt.Message);
                 _ProcessLogs.Add(tranRec);
             }
@@ -438,14 +446,24 @@ namespace Sage300InquiryConfigurationGenerator
                 file.Write(JsonConvert.SerializeObject(_ProcessLogs, Formatting.Indented));
             }
 
+            LogMethodEnd(methodName);
         }
 
+        /// <summary>
+        /// Open an Accpac View
+        /// </summary>
+        /// <param name="company">The company name</param>
+        /// <param name="lang">The language enumeration</param>
+        /// <param name="viewId">The viewId to open</param>
+        /// <param name="session">The Accpac Session (output)</param>
+        /// <param name="dbLink">The DBLink object (output)</param>
+        /// <param name="view">The ACCPAC View (output)</param>
         public static void OpenAccpacView(Company company, 
                                           LanguageEnum lang, 
                                           string viewId,
                                           out Session session, 
                                           out DBLink dbLink, 
-                                          out View view)
+                                          out AccpacView view)
         {
             string version = company.Version;
             string companyName = company.CompanyName;
@@ -501,12 +519,29 @@ namespace Sage300InquiryConfigurationGenerator
         /// </summary>
         /// <param name="cr"></param>
         /// <param name="ConfigurationColumnList"></param>
-        public static void GenerateInquiryConfigurationAndTemplate(MainForm parent, Company companySetting, InquiryConfigurationDefinition cr, List<InquiryConfigurationDefinition> DSViewList, List<InquiryConfigurationDefinition> TemplateTranslationList, List<InquiryConfigurationDefinition> DatasourceList)
+        /// 
+
+
+        /// <summary>
+        /// Generate Sage 300 Inquiry Configuration and Template JSON files
+        /// </summary>
+        /// <param name="companySetting">The company settings object</param>
+        /// <param name="cr">The InquiryConfigurationDefinition object</param>
+        /// <param name="DSViewList"></param>
+        /// <param name="TemplateTranslationList"></param>
+        /// <param name="DatasourceList"></param>
+        public static void GenerateInquiryConfigurationAndTemplate(Company companySetting, 
+                                                                   InquiryConfigurationDefinition cr, 
+                                                                   List<InquiryConfigurationDefinition> DSViewList, 
+                                                                   List<InquiryConfigurationDefinition> TemplateTranslationList, 
+                                                                   List<InquiryConfigurationDefinition> DatasourceList)
         {
+            const string methodName = "GenerateInquiryConfigurationAndTemplate";
+            LogMethodStart(methodName);
+            LogLine(string.Format("Start Processing {0}: ", cr.Name));
+
             string today = DateTime.Now.ToString("yyyyMMdd");
 
-            //parent.LogLine(string.Format("Start Processing {0}: ", cr.Name));
-            
             DateTime start = DateTime.Now;
 
             // Find the template translation record from template translation records TemplateTranslation
@@ -707,52 +742,91 @@ namespace Sage300InquiryConfigurationGenerator
                 file.Write(JsonConvert.SerializeObject(inquiryTemplateRec, Formatting.Indented));
             }
 
-
+            LogMethodEnd(methodName);
         }
 
-        public static void GenerateDBScript(string Option, string SQLScriptName, string OutputPath, List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, List<InquiryConfigurationDefinition> DatasourceList, string Choice)
+        public static void GenerateDBScript(string Option, 
+                                            string SQLScriptName, 
+                                            string OutputPath, 
+                                            List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, 
+                                            List<InquiryConfigurationDefinition> DatasourceList, 
+                                            string actionType)
         {
-            var filename = "";
+            const string methodName = "GenerateDBScript";
+            LogMethodStart(methodName);
 
-            if (Choice == "Delete")
-            {
-                filename = Path.Combine(OutputPath, string.Format("Delete_Inquiry_DataSource-{0}.sql", SQLScriptName));
-            }
-            else if (Choice == "Update")
-            {
-                filename = Path.Combine(OutputPath, string.Format("Update_Inquiry_Data-{0}.sql", SQLScriptName));
-            }
-            else if (Choice == "Create")
-            {
-                filename = Path.Combine(OutputPath, string.Format("Create_Inquiry_Data-{0}.sql", SQLScriptName));
-            }
+            var fileName = string.Empty;
+            var sqlLine = string.Empty;
+            var filePath = string.Empty;
+            var tempFileName = string.Empty;
+            var tempFilePath = string.Empty;
 
-            using (var file = new StreamWriter(Path.Combine(OutputPath, filename), false))
+            //fileName = $"{actionType}_Inquiry_DataSource-{SQLScriptName}.sql";
+            fileName = string.Format("{0}_Inquiry_DataSource-{1}.sql", actionType, SQLScriptName);
+            filePath = Path.Combine(OutputPath, fileName);
+            LogLine(filePath);
+
+            using (var file = new StreamWriter(filePath, false))
             {
-                file.WriteLine(@"-- Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.");
-                file.WriteLine(@"-- Create_Inquiry_Schema.sql");
+                file.WriteLine(Constants.SQLCommentLineSageCopyright);
+                file.WriteLine(string.Format(@"-- {0}", fileName));
                 file.WriteLine("");
 
                 file.WriteLine(@"BEGIN");
                 foreach (InquiryConfigurationDefinition ds in DatasourceList)
                 {
-                    if (Choice == "Create")
-                    {
-                        file.WriteLine(@"INSERT INTO [dbo].[InquiryDataSource] ([DataSourceId], [Name], [DataSource], [Module], [App]) VALUES ('{0}', N'{1}', 0x01, '{2}', '{3}');",
-                            ds.DatasourceId, ds.Name, ds.Module, Option);
-                        file.WriteLine("");
-                    }
-                    if (Choice == "Create" || Choice == "Update")
-                    {
-                        file.WriteLine(@"UPDATE InquiryDataSource SET DataSource = BulkColumn FROM OPENROWSET(BULK '{0}', SINGLE_BLOB) AS DATA WHERE [DataSourceId] = '{1}';", Path.Combine(OutputPath, string.Format(@"{0}-Datasource.json", ds.Name.Replace("/", ""))), ds.DatasourceId);
-                        file.WriteLine("");
-                    }
-                    if (Choice == "Delete")
-                    {
-                        file.WriteLine(@"DELETE FROM InquiryDataSource WHERE [DataSourceId] = '{1}';", Path.Combine(OutputPath, string.Format(@"{0}-Datasource.json", ds.Name.Replace("/", ""))), ds.DatasourceId);
-                        file.WriteLine("");
-                    }
+                    var dsID = ds.DatasourceId;
+                    var dsName = ds.Name;
 
+                    if ((dsName != null && dsName.Length > 0) && 
+                        (dsID != null && dsID.Length > 0))
+                    {
+                        dsName = dsName.Replace("/", "");
+
+                        if (actionType == "Create")
+                        {
+                            var dsModuleID = ds.Module;
+
+                            sqlLine = String.Format(@"INSERT INTO [dbo].[InquiryDataSource] ([DataSourceId], [Name], [DataSource], [Module], [App]) VALUES ('{0}', N'{1}', 0x01, '{2}', '{3}');",
+                                                dsID, dsName, dsModuleID, Option);
+                            file.WriteLine(sqlLine);
+                            LogLine(sqlLine);
+
+                            file.WriteLine("");
+                        }
+
+                        if (actionType == "Create" || actionType == "Update")
+                        {
+                            tempFileName = string.Format(@"{0}-Datasource.json", dsName);
+                            tempFilePath = Path.Combine(OutputPath, tempFileName);
+                            sqlLine = String.Format(@"UPDATE InquiryDataSource SET DataSource = BulkColumn FROM OPENROWSET(BULK '{0}', SINGLE_BLOB) AS DATA WHERE [DataSourceId] = '{1}';",
+                                                    tempFilePath,
+                                                    dsID);
+                            file.WriteLine(sqlLine);
+                            LogLine(sqlLine);
+
+                            file.WriteLine("");
+                        }
+
+                        if (actionType == "Delete")
+                        {
+                            tempFileName = string.Format(@"{0}-Datasource.json", dsName);
+                            tempFilePath = Path.Combine(OutputPath, tempFileName);
+                            sqlLine = String.Format(@"DELETE FROM InquiryDataSource WHERE [DataSourceId] = '{1}';",
+                                                    tempFilePath,
+                                                    dsID);
+                            file.WriteLine(sqlLine);
+                            LogLine(sqlLine);
+
+                            file.WriteLine("");
+                        }
+                    }
+                    else
+                    {
+                        LogLine(string.Format("Error in {0}", methodName));
+                        LogLine("   td.DatasourceName is null and/or empty.");
+                        LogLine("   td.Name is null and/or empty.");
+                    }
                 }
                 file.WriteLine(@"END");
                 file.WriteLine(@"GO");
@@ -763,20 +837,56 @@ namespace Sage300InquiryConfigurationGenerator
 
                 foreach (InquiryConfigurationDefinition td in TemplateInquiryConfigurationList)
                 {
-                    if (Choice == "Create")
+                    var tdTemplateId = td.TemplateId;
+                    var tdDatasourceId = td.DatasourceId;
+                    var tdDatasourceName = td.DatasourceName;
+                    var tdName = td.Name;
+                    var tdModule = td.Module;
+
+                    if (actionType == "Create")
                     {
-                        file.WriteLine(@"INSERT INTO [dbo].[InquiryTemplate] ([TemplateId], [DataSourceId], [Name], [UserId], [Module], [Type], [Template], [DateModified]) VALUES ('{0}', '{1}', N'{2}', null, '{3}', 'Template', 0x01, null);",
-                        td.TemplateId, td.DatasourceId, td.Name, td.Module);
+                        sqlLine = String.Format(@"INSERT INTO [dbo].[InquiryTemplate] ([TemplateId], [DataSourceId], [Name], [UserId], [Module], [Type], [Template], [DateModified]) VALUES ('{0}', '{1}', N'{2}', null, '{3}', 'Template', 0x01, null);",
+                                                tdTemplateId,
+                                                tdDatasourceId,
+                                                tdName,
+                                                tdModule);
+                        file.WriteLine(sqlLine);
+                        LogLine(sqlLine);
+
                         file.WriteLine("");
                     }
-                    if (Choice == "Create" || Choice == "Update")
+                    if (actionType == "Create" || actionType == "Update")
                     {
-                        file.WriteLine(@"UPDATE InquiryTemplate SET Template = BulkColumn FROM OPENROWSET(BULK '{0}', SINGLE_BLOB) AS DATA WHERE [TemplateId] = '{1}';", Path.Combine(OutputPath, string.Format("{0}-Template-{1}.json", td.DatasourceName.Replace("/", ""), td.Name.Replace(" ", string.Empty).Replace("/", ""))), td.TemplateId);
-                        file.WriteLine("");
+                        if ((tdDatasourceName != null && tdDatasourceName.Length > 0) && 
+                            (tdName != null & tdName.Length > 0))
+                        {
+                            tdDatasourceName = tdDatasourceName.Replace("/", "");
+                            tdName = tdName.Replace(" ", string.Empty).Replace("/", "");
+
+                            tempFileName = string.Format("{0}-Template-{1}.json", tdDatasourceName, tdName);
+                            tempFilePath = Path.Combine(OutputPath, tempFileName);
+                            sqlLine = String.Format(@"UPDATE InquiryTemplate SET Template = BulkColumn FROM OPENROWSET(BULK '{0}', SINGLE_BLOB) AS DATA WHERE [TemplateId] = '{1}';",
+                                                    tempFilePath,
+                                                    tdTemplateId);
+                            file.WriteLine(sqlLine);
+                            LogLine(sqlLine);
+
+                            file.WriteLine("");
+                        }
+                        else
+                        {
+                            LogLine(string.Format("Error in {0}", methodName));
+                            LogLine("   td.DatasourceName is null and/or empty.");
+                            LogLine("   td.Name is null and/or empty.");
+                        }
                     }
-                    if (Choice == "Delete")
+                    if (actionType == "Delete")
                     {
-                        file.WriteLine(@"DELETE InquiryTemplate WHERE [TemplateId] = '{1}';", Path.Combine(OutputPath, string.Format("{0}-Template-{1}.json", td.DatasourceName.Replace("/", ""), td.Name.Replace(" ", string.Empty).Replace("/", ""))), td.TemplateId);
+                        sqlLine = String.Format(@"DELETE InquiryTemplate WHERE [TemplateId] = '{0}';", 
+                                                tdTemplateId);
+                        file.WriteLine(sqlLine);
+                        LogLine(sqlLine);
+
                         file.WriteLine("");
                     }
                 }
@@ -784,25 +894,39 @@ namespace Sage300InquiryConfigurationGenerator
                 file.WriteLine(@"END");
                 file.WriteLine(@"GO");
 
-
+                LogMethodEnd(methodName);
             }
         }
-        public static void GenerateDeleteDBScript(string Option, string SQLScriptName, string OutputPath, List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, List<InquiryConfigurationDefinition> DatasourceList)
+
+        public static void GenerateDeleteDBScript(string Option, 
+                                                  string SQLScriptName, 
+                                                  string OutputPath, 
+                                                  List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, 
+                                                  List<InquiryConfigurationDefinition> DatasourceList)
         {
-            var filename = "";
+            const string methodName = "GenerateDeleteDBScript";
+            LogMethodStart(methodName);
 
-            filename = Path.Combine(OutputPath, string.Format("Delete_Inquiry_DataSource-{0}.sql", SQLScriptName));
+            var sqlLine = string.Empty;
+            var fileName = string.Format("Delete_Inquiry_DataSource-{0}.sql", SQLScriptName);
+            var filePath = Path.Combine(OutputPath, fileName);
+            var tempFileName = string.Empty;
+            var tempFilePath = string.Empty;
 
-            using (var file = new StreamWriter(Path.Combine(OutputPath, filename), false))
+            using (var file = new StreamWriter(Path.Combine(OutputPath, filePath), false))
             {
-                file.WriteLine(@"-- Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.");
-                file.WriteLine(@"-- Create_Inquiry_Schema.sql");
+                file.WriteLine(Constants.SQLCommentLineSageCopyright);
+                file.WriteLine(string.Format(@"-- {0}", fileName));
                 file.WriteLine("");
 
                 file.WriteLine(@"BEGIN");
                 foreach (InquiryConfigurationDefinition td in TemplateInquiryConfigurationList)
                 {
-                    file.WriteLine(@"DELETE InquiryTemplate WHERE [TemplateId] = '{1}';", Path.Combine(OutputPath, string.Format("{0}-Template-{1}.json", td.DatasourceName.Replace("/", ""), td.Name.Replace(" ", string.Empty).Replace("/", ""))), td.TemplateId);
+                    sqlLine = String.Format(@"DELETE InquiryTemplate WHERE [TemplateId] = '{0}';", 
+                                            td.TemplateId);
+                    file.WriteLine(sqlLine);
+                    LogLine(sqlLine);
+
                     file.WriteLine("");
                 }
                 file.WriteLine(@"END");
@@ -813,86 +937,165 @@ namespace Sage300InquiryConfigurationGenerator
                 file.WriteLine(@"BEGIN");
                 foreach (InquiryConfigurationDefinition ds in DatasourceList)
                 {
-                    file.WriteLine(@"DELETE FROM InquiryDataSource WHERE [DataSourceId] = '{1}';", Path.Combine(OutputPath, string.Format(@"{0}-Datasource.json", ds.Name.Replace("/", ""))), ds.DatasourceId);
+                    sqlLine = String.Format(@"DELETE FROM InquiryDataSource WHERE [DataSourceId] = '{0}';", ds.DatasourceId);
+
+                    file.WriteLine(sqlLine);
+                    LogLine(sqlLine);
+
                     file.WriteLine("");
 
                 }
                 file.WriteLine(@"END");
                 file.WriteLine(@"GO");
-
-
             }
+
+            LogMethodEnd(methodName);
         }
 
-        public static void GenerateSQLScript(string Option, string SQLScriptName, string OutputPath, List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, List<InquiryConfigurationDefinition> DatasourceList)
+        public static void GenerateSQLScript(string Option, 
+                                             string SQLScriptName, 
+                                             string OutputPath, 
+                                             List<InquiryConfigurationDefinition> TemplateInquiryConfigurationList, 
+                                             List<InquiryConfigurationDefinition> DatasourceList)
         {
+            const string methodName = "GenerateSQLScript";
+            LogMethodStart(methodName);
 
             foreach (InquiryConfigurationDefinition ds in DatasourceList)
             {
-                string fname = string.Format("Sage300-{1}-InsertDataSource-{0}.sql", ds.Name, SQLScriptName);
-                string content = File.ReadAllText(Path.Combine(OutputPath, string.Format(@"{0}-Datasource.json", ds.Name.Replace("/", ""))));
-                content = content.Replace("'", "''");
-                using (var sqlscript = new StreamWriter(Path.Combine(OutputPath, fname.Replace("/", "")), false))
+                var dsName = ds.Name;
+                if (dsName != null && dsName.Length > 0)
                 {
-                    sqlscript.WriteLine(@"-- Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.");
-                    sqlscript.WriteLine(@"-- {0}", fname);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("SET ANSI_NULLS ON");
-                    sqlscript.WriteLine("SET QUOTED_IDENTIFIER ON");
-                    sqlscript.WriteLine("");
+                    dsName = dsName.Replace("/", "");
 
-                    sqlscript.WriteLine("IF NOT EXISTS (SELECT * FROM [dbo].[InquiryDataSource] WHERE [DataSourceId] = '{0}')", ds.DatasourceId);
-                    sqlscript.WriteLine("BEGIN");
-                    sqlscript.WriteLine(@"INSERT INTO [dbo].[InquiryDataSource] ([DataSourceId], [Name], [DataSource], [Module], [App]) VALUES (");
-                    sqlscript.WriteLine(@"'{0}', N'{1}', ", ds.DatasourceId, ds.Name);
-                    sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX)),", content);
-                    sqlscript.WriteLine("'{0}', '{1}')", ds.Module, Option);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("END");
-                    sqlscript.WriteLine("ELSE");
-                    sqlscript.WriteLine("BEGIN");
-                    sqlscript.WriteLine(@"UPDATE [dbo].[InquiryDataSource] set [DataSource] = ");
-                    sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX))", content);
-                    sqlscript.WriteLine("where [DataSourceId] = '{0}'", ds.DatasourceId);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("END");
+                    // Input file and contents
+                    var inputFileName = string.Format(@"{0}-Datasource.json", dsName);
+                    var inputFilePath = Path.Combine(OutputPath, inputFileName);
+                    var content = File.ReadAllText(inputFilePath);
+                    content = content.Replace("'", "''");
 
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine(@"GO");
+                    // Output file
+                    var outputFileName = string.Format("Sage300-{0}-InsertDataSource-{1}.sql", SQLScriptName, dsName);
+                    var outputFilePath = Path.Combine(OutputPath, outputFileName.Replace("/", ""));
+
+                    using (var sqlscript = new StreamWriter(outputFilePath, false))
+                    {
+                        sqlscript.WriteLine(Constants.SQLCommentLineSageCopyright);
+                        sqlscript.WriteLine(@"-- {0}", outputFileName);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("SET ANSI_NULLS ON");
+                        sqlscript.WriteLine("SET QUOTED_IDENTIFIER ON");
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("IF NOT EXISTS (SELECT * FROM [dbo].[InquiryDataSource] WHERE [DataSourceId] = '{0}')", ds.DatasourceId);
+                        sqlscript.WriteLine("BEGIN");
+                        sqlscript.WriteLine(@"INSERT INTO [dbo].[InquiryDataSource] ([DataSourceId], [Name], [DataSource], [Module], [App]) VALUES (");
+                        sqlscript.WriteLine(@"'{0}', N'{1}', ", ds.DatasourceId, ds.Name);
+                        sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX)),", content);
+                        sqlscript.WriteLine("'{0}', '{1}')", ds.Module, Option);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("END");
+                        sqlscript.WriteLine("ELSE");
+                        sqlscript.WriteLine("BEGIN");
+                        sqlscript.WriteLine(@"UPDATE [dbo].[InquiryDataSource] set [DataSource] = ");
+                        sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX))", content);
+                        sqlscript.WriteLine("where [DataSourceId] = '{0}'", ds.DatasourceId);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("END");
+
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine(@"GO");
+                    }
+                }
+                else
+                {
+                    LogLine(string.Format("Error in {0}", methodName));
+                    LogLine("   ds.Name is null and/or empty.");
                 }
             }
 
             foreach (InquiryConfigurationDefinition td in TemplateInquiryConfigurationList)
             {
-                string fname = string.Format("Sage300-{1}-InsertTemplate-{0}.sql", td.Name, SQLScriptName);
-                string content = File.ReadAllText(Path.Combine(OutputPath, string.Format("{0}-Template-{1}.json", td.DatasourceName.Replace("/", ""), td.Name.Replace(" ", string.Empty).Replace("/", ""))));
-                content = content.Replace("'", "''");
-                using (var sqlscript = new StreamWriter(Path.Combine(OutputPath, fname.Replace("/", "")), false))
-                {
-                    sqlscript.WriteLine(@"-- Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.");
-                    sqlscript.WriteLine(@"-- {0}", fname);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("SET ANSI_NULLS ON");
-                    sqlscript.WriteLine("SET QUOTED_IDENTIFIER ON");
-                    sqlscript.WriteLine("");
+                var tdName = td.Name;
+                var tdDatasourceName = td.DatasourceName;
 
-                    sqlscript.WriteLine("IF NOT EXISTS (SELECT * FROM [dbo].[InquiryTemplate] WHERE [TemplateId] = '{0}')", td.TemplateId);
-                    sqlscript.WriteLine("BEGIN");
-                    sqlscript.WriteLine(@"INSERT INTO [dbo].[InquiryTemplate] ([TemplateId], [DataSourceId], [Name], [UserId], [Module], [Type], [Template], [DateModified]) VALUES (");
-                    sqlscript.WriteLine(@"'{0}', '{1}', N'{2}', null, '{3}', 'Template', ", td.TemplateId, td.DatasourceId, td.Name, td.Module);
-                    sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX)),null)", content);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("END");
-                    sqlscript.WriteLine("ELSE");
-                    sqlscript.WriteLine("BEGIN");
-                    sqlscript.WriteLine(@"UPDATE [dbo].[InquiryTemplate] set [Template] = ");
-                    sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX))", content);
-                    sqlscript.WriteLine("where [TemplateId] = '{0}'", td.TemplateId);
-                    sqlscript.WriteLine("");
-                    sqlscript.WriteLine("END");
-                    sqlscript.WriteLine(@"GO");
+                if ((tdName != null && tdName.Length > 0) && 
+                    (tdDatasourceName != null && tdDatasourceName.Length > 0))
+                {
+                    // Input file and contents
+                    tdName = tdName.Replace(" ", string.Empty).Replace("/", "");
+                    tdDatasourceName = tdDatasourceName.Replace("/", "");
+
+                    var inputFileName = string.Format("{0}-Template-{1}.json", tdDatasourceName, tdName);
+                    var inputFilePath = Path.Combine(OutputPath, inputFileName);
+                    var content = File.ReadAllText(inputFilePath);
+                    content = content.Replace("'", "''");
+
+                    // Output file
+                    var outputFileName = string.Format("Sage300-{0}-InsertTemplate-{1}.sql", SQLScriptName, tdName);
+                    var outputFilePath = Path.Combine(OutputPath, outputFileName.Replace("/", ""));
+
+                    using (var sqlscript = new StreamWriter(outputFilePath, false))
+                    {
+                        sqlscript.WriteLine(Constants.SQLCommentLineSageCopyright);
+                        sqlscript.WriteLine(@"-- {0}", outputFileName);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("SET ANSI_NULLS ON");
+                        sqlscript.WriteLine("SET QUOTED_IDENTIFIER ON");
+                        sqlscript.WriteLine("");
+
+                        sqlscript.WriteLine("IF NOT EXISTS (SELECT * FROM [dbo].[InquiryTemplate] WHERE [TemplateId] = '{0}')", td.TemplateId);
+                        sqlscript.WriteLine("BEGIN");
+                        sqlscript.WriteLine(@"INSERT INTO [dbo].[InquiryTemplate] ([TemplateId], [DataSourceId], [Name], [UserId], [Module], [Type], [Template], [DateModified]) VALUES (");
+                        sqlscript.WriteLine(@"'{0}', '{1}', N'{2}', null, '{3}', 'Template', ", td.TemplateId, td.DatasourceId, td.Name, td.Module);
+                        sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX)),null)", content);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("END");
+                        sqlscript.WriteLine("ELSE");
+                        sqlscript.WriteLine("BEGIN");
+                        sqlscript.WriteLine(@"UPDATE [dbo].[InquiryTemplate] set [Template] = ");
+                        sqlscript.WriteLine(@"CAST(CAST (N'{0}' AS nvarchar(MAX)) AS varbinary(MAX))", content);
+                        sqlscript.WriteLine("where [TemplateId] = '{0}'", td.TemplateId);
+                        sqlscript.WriteLine("");
+                        sqlscript.WriteLine("END");
+                        sqlscript.WriteLine(@"GO");
+                    }
+                }
+                else
+                {
+                    LogLine(string.Format("Error in {0}", methodName));
+                    LogLine("   td.Name is null and/or empty.");
+                    LogLine("   td.DatasourceName is null and/or empty.");
                 }
             }
+
+            LogMethodEnd(methodName);
+        }
+
+        /// <summary>
+        /// Wrapper method to call LogLine method in parent
+        /// </summary>
+        /// <param name="msg">The message text to log</param>
+        private static void LogLine(string msg)
+        {
+            Parent?.RunOnUIThread(() => { Parent?.LogLine(msg); });
+        }
+
+        /// <summary>
+        /// Log the start of a method
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        private static void LogMethodStart(string methodName)
+        {
+            LogLine(String.Format("Start - {0}()", methodName));
+        }
+
+        /// <summary>
+        /// Log the end of a method
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        private static void LogMethodEnd(string methodName)
+        {
+            LogLine(String.Format("End - {0}()", methodName));
         }
     }
 }
