@@ -66,6 +66,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="EnumValue.cs" />
     <Compile Include="EPPlusExcel.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

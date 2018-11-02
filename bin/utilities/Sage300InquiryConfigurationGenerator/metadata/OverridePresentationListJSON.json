@@ -1,0 +1,458 @@
+[
+    {
+      "Type": "OESerialLotDrillDown",
+      "PresentationList": [
+        {
+          "Selected": false,
+          "Value": "3",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Shipment",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Expédition",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Envío",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "发货",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "發貨",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "1",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Invoice",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Facture",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Factura",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "发票",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "發票",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "2",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Credit Note",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Note Crédit",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "N. De Crédito",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "贷项通知单",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "貸項通知單",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "4",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Debit Note",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Note Débit",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Nota De Débito",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "借项通知单",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "借項通知單",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+      ]
+    },
+    {
+      "Type": "POSerialLotDrillDown",
+      "PresentationList": [
+        {
+          "Selected": false,
+          "Value": "3",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Receipt",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Réception",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Recibo",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "进货",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "進貨",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "4",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Return",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Retour",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Devolución",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "退回",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "退回",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "5",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Invoice",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Facture",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Factura",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "发票",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "發票",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "6",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Credit Note / Debit Note",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Note Crédit / Note Débit",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "N. De Crédito / Nota De Débito",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "贷项通知单 / 借项通知单",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "貸項通知單 / 借項通知單",
+              "ColumnWidth": "200px"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type": "YesNo",
+      "PresentationList": [
+        {
+          "Selected": true,
+          "Value": "0",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "No",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Non",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "No",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "否",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "否",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "1",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Yes",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Oui",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Sí",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "是",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "是",
+              "ColumnWidth": "200px"
+            }
+          ]
+        }
+      ]
+    },
+	{
+      "Type": "AR0032TransactionType",
+      "PresentationList": [
+        {
+          "Selected": true,
+          "Value": "1",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Invoice",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Facture",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Factura",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "发票",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "發票",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "2",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Debit Note",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Note De Débit",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "N. De Débito",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "借项通知单",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "借項通知單",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "3",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Credit Note",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Note De Crédit",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "N. De Crédito",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "贷项通知单",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "貸項通知單",
+              "ColumnWidth": "200px"
+            }
+          ]
+        },
+        {
+          "Selected": false,
+          "Value": "4",
+          "Captions": [
+            {
+              "Language": "ENG",
+              "Value": "Interest",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "FRA",
+              "Value": "Intérêt",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "ESN",
+              "Value": "Interés",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHN",
+              "Value": "利息",
+              "ColumnWidth": "200px"
+            },
+            {
+              "Language": "CHT",
+              "Value": "利息",
+              "ColumnWidth": "200px"
+            }
+          ]
+        }
+      ]
+	}
+]   
+
+

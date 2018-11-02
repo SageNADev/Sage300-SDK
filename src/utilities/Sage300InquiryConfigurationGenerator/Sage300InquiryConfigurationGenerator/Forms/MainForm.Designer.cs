@@ -895,7 +895,7 @@
             // 
             // txtLogWindow
             // 
-            this.txtLogWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtLogWindow.BackColor = System.Drawing.Color.White;
             this.txtLogWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLogWindow.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogWindow.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -975,7 +975,6 @@
             this.backgroundWorker.WorkerReportsProgress = true;
             this.backgroundWorker.WorkerSupportsCancellation = true;
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
             // progressBar
