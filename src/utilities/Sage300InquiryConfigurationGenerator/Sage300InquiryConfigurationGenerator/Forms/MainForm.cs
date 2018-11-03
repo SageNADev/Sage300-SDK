@@ -20,6 +20,7 @@
 
 #region Imports
 using Newtonsoft.Json;
+using Sage300InquiryConfigurationGenerator.Extensions;
 using Sage300InquiryConfigurationGenerator.Forms;
 using Sage300InquiryConfigurationGenerator.Properties;
 using System;
@@ -199,11 +200,16 @@ namespace Sage300InquiryConfigurationGenerator
 
         /// <summary>
         /// This is the primary processing block
+        /// Note: All work done here is in the BackgroundWorker so any UI updates 
+        /// have to be done via the RunOnUIThread() extension method. 
         /// </summary>
         private void DoProcessing(BackgroundWorker worker, DoWorkEventArgs e)
         {
             var progressPercentage = 0;
             var message = string.Empty;
+
+            // Set this so we can call the logging methods in this class (to update the UI thread)
+            Generation.Parent = this;
 
             if (worker.CancellationPending)
             {
@@ -212,7 +218,7 @@ namespace Sage300InquiryConfigurationGenerator
             else
             {
                 message = "Starting Generation Process...";
-                worker.ReportProgress(progressPercentage, new UICommand() { Command = UICommandEnum.ClearLog, Message = message });
+                this.RunOnUIThread(() => { ClearLog(); LogLine(message); SetProgress(progressPercentage); });
 
                 // Get the currently specified settings
                 PopulateSettingsFromForm();
@@ -269,7 +275,7 @@ namespace Sage300InquiryConfigurationGenerator
                         cr.OutputPath = _settings.TrueOutputPath;
                         #region ProcessSage300View
                         message = string.Format("Read Configuration Column Setting File: {0}", cr.ConfigSettingFile);
-                        worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                        this.RunOnUIThread(() => { LogLine(message); SetProgress(progressPercentage += 5); });
 
                         var file = _settings.ControllerParameterDefinitionFile;
                         var ConfigurationColumnList = new List<ConfigurationColumnSettingDefinition>();
@@ -278,7 +284,7 @@ namespace Sage300InquiryConfigurationGenerator
 
                         if (ConfigurationColumnList.Count() > 0)
                         {
-                            Generation.ProcessView(this, company, cr, ConfigurationColumnList, OverridePresentationList);
+                            Generation.ProcessView(company, cr, ConfigurationColumnList, OverridePresentationList);
                         }
                         #endregion
                     }
@@ -293,21 +299,22 @@ namespace Sage300InquiryConfigurationGenerator
                 _RunLogs.Add(tranRec);
 
                 message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
-                worker.ReportProgress(progressPercentage+=5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                this.RunOnUIThread(() => { LogLine(message); SetProgress(progressPercentage += 5); });
+
 
                 var DSViewMappingList = new List<InquiryConfigurationDefinition>();
                 tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "DatasourceSage300ViewMapping", ref DSViewMappingList);
                 _RunLogs.Add(tranRec);
 
                 message = string.Format("Read Inquiry Datasource Inquiry Configuration File: {0}, tab: DatasourceSage300ViewMapping", TemplateConfigurationFile);
-                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                this.RunOnUIThread(() => { LogLine(message); SetProgress(progressPercentage += 5); });
 
                 var TemplateTranslationList = new List<InquiryConfigurationDefinition>();
                 tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Translation", ref TemplateTranslationList);
                 _RunLogs.Add(tranRec);
 
                 message = string.Format("Read Datasource Configuration File: {0}, tab: Datasource", TemplateConfigurationFile);
-                worker.ReportProgress(progressPercentage += 5, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                this.RunOnUIThread(() => { LogLine(message); SetProgress(progressPercentage += 5); });
 
                 var DatasourceList = new List<InquiryConfigurationDefinition>();
                 tranRec = ReadConfigurationSetting.ReadInquiryConfigurationSetting(TemplateConfigurationFile, "Datasource", ref DatasourceList);
@@ -324,7 +331,7 @@ namespace Sage300InquiryConfigurationGenerator
 
                         if (DSViewMappingList.Count() > 0)
                         {
-                            Generation.GenerateInquiryConfigurationAndTemplate(this, company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
+                            Generation.GenerateInquiryConfigurationAndTemplate(company, cr, DSViewMappingList, TemplateTranslationList, DatasourceList);
                         }
                     }
                 }
@@ -349,32 +356,31 @@ namespace Sage300InquiryConfigurationGenerator
 
                 // Display the message
                 var finalMessage = string.Format("{0}{1}{1}{2}", Resources.ProgramRunCompleted, Environment.NewLine, Resources.PleaseEnsureNoErrorsOccurred);
-                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.DisplaySuccessMessage, Message = finalMessage });
-
+                this.RunOnUIThread(() => { LogLine(finalMessage); Utilities.DisplaySuccessMessage(finalMessage); SetProgress(100); });
 
                 if (_settings.DisplayOutputFolderOnCompletion == true)
                 {
                     // Show the output folder and the log file
                     message = Resources.DisplayingOutputFolder;
-                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    this.RunOnUIThread(() => { LogLine(message); SetProgress(100); });
                     Process.Start(_settings.TrueOutputPath);
                 }
 
                 if (_settings.DisplayLogFileOnCompletion == true)
                 {
                     message = Resources.DisplayingOutputLogFile;
-                    worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                    this.RunOnUIThread(() => { LogLine(message); SetProgress(100); });
                     Process.Start("notepad.exe", logFilePath);
                 }
 
-                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = finalMessage });
+                this.RunOnUIThread(() => { LogLine(finalMessage); SetProgress(100); });
 
                 message = String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath);
-                worker.ReportProgress(100, new UICommand() { Command = UICommandEnum.AppendToLog, Message = message });
+                this.RunOnUIThread(() => { LogLine(message); SetProgress(100); });
             }
-            btnGenerate.Enabled = true;
-        }
 
+            this.RunOnUIThread(() => { btnGenerate.Enabled = true; });
+        }
 
         /// <summary>
         /// Write out the log file
@@ -406,11 +412,12 @@ namespace Sage300InquiryConfigurationGenerator
             var list = new List<OverridePresentationList>();
 
             var msg = String.Format("Attempting to read the override presentation list file '{0}'.", file);
-            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+            this.RunOnUIThread(() => { LogLine(msg); SetProgress(0); });
+
             if (File.Exists(file))
             {
                 msg = "Override presentation list file exists.";
-                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+                this.RunOnUIThread(() => { LogLine(msg); SetProgress(0); });
                 list = JsonConvert.DeserializeObject<List<OverridePresentationList>>(File.ReadAllText(file));
             }
 
@@ -428,7 +435,8 @@ namespace Sage300InquiryConfigurationGenerator
             if (Directory.Exists(_settings.TrueOutputPath))
             {
                 msg = string.Format("Attempting to delete 'Output' folder if it already exists: {0}", _settings.TrueOutputPath);
-                worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+                this.RunOnUIThread(() => { LogLine(msg); SetProgress(0); });
+
                 try
                 {
                     Directory.Delete(_settings.TrueOutputPath, true);
@@ -441,7 +449,7 @@ namespace Sage300InquiryConfigurationGenerator
             }
 
             msg = string.Format("Create 'Output' folder: {0}", _settings.TrueOutputPath);
-            worker.ReportProgress(0, new UICommand() { Command = UICommandEnum.AppendToLog, Message = msg });
+            this.RunOnUIThread(() => { LogLine(msg); SetProgress(0); });
             try
             {
                 Directory.CreateDirectory(_settings.TrueOutputPath);
@@ -847,7 +855,7 @@ namespace Sage300InquiryConfigurationGenerator
             var dialog = new FolderBrowserDialog
             {
                 Description = Resources.RootFolderBrowserDescription,
-                ShowNewFolderButton = true, 
+                ShowNewFolderButton = true,
             };
 
             // Show the dialog and evaluate action
@@ -1185,10 +1193,10 @@ namespace Sage300InquiryConfigurationGenerator
         }
 
         /// <summary>
-        /// 
+        /// DoWork event handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The DoWorkEventArgs object</param>
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -1196,32 +1204,12 @@ namespace Sage300InquiryConfigurationGenerator
         }
 
         /// <summary>
-        /// ProgressChanged handler
+        /// Method to update the progress bar value
         /// </summary>
-        /// <param name="sender">The control that initiated the event</param>
-        /// <param name="e">The ProgressChangedEvent Arguments</param>
-        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        /// <param name="percentage">The percentage to set on the progress bar</param>
+        private void SetProgress(int percentage)
         {
-            progressBar.Value = e.ProgressPercentage > 100 ? 100 : e.ProgressPercentage;
-
-            var loggerCommand = (UICommand)e.UserState;
-            var command = loggerCommand.Command;
-            var msg = loggerCommand.Message;
-
-            switch (command)
-            {
-                case UICommandEnum.ClearLog:
-                    ClearLog();
-                    break;
-
-                case UICommandEnum.AppendToLog:
-                    LogLine(msg);
-                    break;
-
-                case UICommandEnum.DisplaySuccessMessage:
-                    Utilities.DisplaySuccessMessage(msg);
-                    break;
-            }
+            progressBar.Value = percentage > 100 ? 100 : percentage;
         }
 
         /// <summary>
@@ -1257,9 +1245,16 @@ namespace Sage300InquiryConfigurationGenerator
 
         private void txtOverridePresentationList_Validating(object sender, CancelEventArgs e) => ValidateControl(sender, e);
 
+        /// <summary>
+        /// Do the actual field validations
+        /// Note: Currently, all controls checked are text boxes.
+        /// </summary>
+        /// <param name="sender">The control that initiated the event</param>
+        /// <param name="e">The CancelEventArgs object</param>
+        /// <returns>true = field is valid | false = field is NOT valid</returns>
         private bool ValidateControl(object sender, CancelEventArgs e)
         {
-            var status = true;
+            var isValid = true;
             var control = sender as BorderedTextBox;
             var errorText = string.Empty;
             var validationRules = new List<ValidationRule>();
@@ -1270,7 +1265,7 @@ namespace Sage300InquiryConfigurationGenerator
             var version = txtVersion.Text.Trim();
 
             var msg = string.Empty;
-            switch (control.Name)
+            switch (control.Name.Trim())
             {
                 case "txtUser":
                     msg = String.Format(Resources.IsRequiredTemplate, Resources.User);
@@ -1352,7 +1347,10 @@ namespace Sage300InquiryConfigurationGenerator
                         _validationErrors.Add(rule.Message);
                         control.SetError(true);
                         e.Cancel = true;
-                        status = false;
+                        isValid = false;
+
+                        // No point in checking remaining rules
+                        break;
                     }
                     else
                     {
@@ -1363,19 +1361,23 @@ namespace Sage300InquiryConfigurationGenerator
                 }
                 else if (rule.Rule == ValidationRuleEnum.ValidFile)
                 {
-                    if (File.Exists(controlText) == false)
+                    // Only bother with this check if the control has some text in it.
+                    if (controlText.Length > 0)
                     {
-                        errorProvider.SetError(control, rule.Message);
-                        _validationErrors.Add(rule.Message);
-                        control.SetError(true);
-                        e.Cancel = true;
-                        status = false;
-                    }
-                    else
-                    {
-                        errorProvider.SetError(control, string.Empty);
-                        control.SetError(false);
-                        e.Cancel = false;
+                        if (File.Exists(controlText) == false)
+                        {
+                            errorProvider.SetError(control, rule.Message);
+                            _validationErrors.Add(rule.Message);
+                            control.SetError(true);
+                            e.Cancel = true;
+                            isValid = false;
+                        }
+                        else
+                        {
+                            errorProvider.SetError(control, string.Empty);
+                            control.SetError(false);
+                            e.Cancel = false;
+                        }
                     }
                 }
                 else if (rule.Rule == ValidationRuleEnum.ValidUsername)
@@ -1386,7 +1388,7 @@ namespace Sage300InquiryConfigurationGenerator
                         _validationErrors.Add(rule.Message);
                         control.SetError(true);
                         e.Cancel = true;
-                        status = false;
+                        isValid = false;
                     }
                     else
                     {
@@ -1403,7 +1405,7 @@ namespace Sage300InquiryConfigurationGenerator
                         _validationErrors.Add(rule.Message);
                         control.SetError(true);
                         e.Cancel = true;
-                        status = false;
+                        isValid = false;
                     }
                     else
                     {
@@ -1413,9 +1415,20 @@ namespace Sage300InquiryConfigurationGenerator
                     }
                 }
             }
-            return status;
+            return isValid;
         }
-#endregion
+
+        /// <summary>
+        /// Does the defined rule list for a control contain a specific rule?
+        /// </summary>
+        /// <param name="ruleList">The list of rules defined for a control</param>
+        /// <param name="rule">The rule to look for</param>
+        /// <returns>true = rule exists in list | false = rule does not exist in list</returns>
+        private bool IsRuleSpecified(List<ValidationRule> ruleList, ValidationRuleEnum rule)
+        {
+            return ruleList.Where(i => i.Rule == rule).FirstOrDefault() != null;
+        }
+        #endregion
 
         /// <summary>
         /// Validate the entire form
@@ -1427,7 +1440,7 @@ namespace Sage300InquiryConfigurationGenerator
         }
 #endregion
 
-#region Public Methods
+        #region Public Methods
         /// <summary>
         /// Insert a line of text into the logging console
         /// </summary>
