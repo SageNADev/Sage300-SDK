@@ -377,9 +377,7 @@ namespace Sage300InquiryConfigurationGenerator
             this.RunOnUIThread(() => { LogLine(finalMessage); SetProgress(100); });
 
             message = String.Format(Resources.TheLogFileIsLocatedHereTemplate, logFilePath);
-            this.RunOnUIThread(() => { LogLine(message); SetProgress(100); });
-
-            this.RunOnUIThread(() => { btnGenerate.Enabled = true; });
+            this.RunOnUIThread(() => { LogLine(message); SetProgress(100); btnGenerate.Enabled = true; });
         }
 
         /// <summary>
@@ -489,7 +487,7 @@ namespace Sage300InquiryConfigurationGenerator
             // Process
             if (includeLang == true)
             {
-#region Set Username
+				#region Set Username
                 if (userLang.Length == 0)
                 {
                     switch (lang)
@@ -510,9 +508,9 @@ namespace Sage300InquiryConfigurationGenerator
                         case Company.LanguageEnum.CHN: company.UsernameChn = userLang; break;
                     }
                 }
-#endregion
+				#endregion
 
-#region Set Password
+				#region Set Password
                 if (passLang.Length == 0)
                 {
                     switch (lang)
@@ -533,7 +531,7 @@ namespace Sage300InquiryConfigurationGenerator
                         case Company.LanguageEnum.CHN: company.PasswordChn = passLang; break;
                     }
                 }
-#endregion
+				#endregion
             }
         }
 
@@ -1417,7 +1415,7 @@ namespace Sage300InquiryConfigurationGenerator
         {
             return this.ValidateChildren(ValidationConstraints.Enabled);
         }
-#endregion
+		#endregion
 
         #region Public Methods
         /// <summary>
