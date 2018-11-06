@@ -91,7 +91,6 @@
             this.chkDisplayLogFileOnCompletion = new System.Windows.Forms.CheckBox();
             this.btnDebugEmptyForm = new System.Windows.Forms.Button();
             this.btnDebugTestMessageBox = new System.Windows.Forms.Button();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.grpCredentials.SuspendLayout();
             this.grpLanguageSupport.SuspendLayout();
@@ -970,13 +969,6 @@
             this.btnDebugTestMessageBox.UseVisualStyleBackColor = false;
             this.btnDebugTestMessageBox.Click += new System.EventHandler(this.btnDebugTestMessageBox_Click);
             // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.WorkerReportsProgress = true;
-            this.backgroundWorker.WorkerSupportsCancellation = true;
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
-            // 
             // progressBar
             // 
             this.progressBar.ForeColor = System.Drawing.Color.SteelBlue;
@@ -1092,7 +1084,6 @@
         private BorderedTextBox txtOverridePresentationList;
         private System.Windows.Forms.Button btnDebugEmptyForm;
         private System.Windows.Forms.Button btnDebugTestMessageBox;
-        private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ProgressBar progressBar;
     }
 }
