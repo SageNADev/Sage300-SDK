@@ -302,6 +302,8 @@
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="drilldown.png">drilldown.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -386,27 +388,9 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="jasmine_favicon.png">jasmine_favicon.png</ProjectItem>
         </Folder>
         <Folder Name="Styles" TargetFolderName="Styles">
-          <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Buttons.css">Sage.CA.SBS.ERP.Sage300.Buttons.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Calendar.css">Sage.CA.SBS.ERP.Sage300.Calendar.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.css">Sage.CA.SBS.ERP.Sage300.Common.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Portal.css">Sage.CA.SBS.ERP.Sage300.Core.Portal.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.css">Sage.CA.SBS.ERP.Sage300.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.DataGrid.css">Sage.CA.SBS.ERP.Sage300.DataGrid.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.DropDown.css">Sage.CA.SBS.ERP.Sage300.DropDown.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.FormControls.css">Sage.CA.SBS.ERP.Sage300.FormControls.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Grid.css">Sage.CA.SBS.ERP.Sage300.Grid.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Reset.css">Sage.CA.SBS.ERP.Sage300.Reset.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Site.css">Sage.CA.SBS.ERP.Sage300.Site.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.StandAlone.css">Sage.CA.SBS.ERP.Sage300.StandAlone.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Tabs.css">Sage.CA.SBS.ERP.Sage300.Tabs.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Vpf.css">Sage.CA.SBS.ERP.Sage300.Vpf.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Widget.css">Sage.CA.SBS.ERP.Sage300.Widget.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Window.css">Sage.CA.SBS.ERP.Sage300.Window.css</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300datepicker.css">Sage.CA.SBS.ERP.Sage300datepicker.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="base_backup.css">base_backup.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Portal_backup.css">Sage.CA.SBS.ERP.Sage300.Core.Portal_backup.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.StandAlone_backup.css">Sage.CA.SBS.ERP.Sage300.StandAlone_backup.css</ProjectItem>
           <Folder Name="Default" TargetFolderName="Default">
             <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
@@ -583,6 +567,14 @@
       </Folder>
       <Folder Name="Assets" TargetFolderName="Assets">
         <Folder Name="fonts" TargetFolderName="fonts">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Foco-Regular.otf">Foco-Regular.otf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Foco-Regular.ttf">Foco-Regular.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.eot">focobold.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.ttf">focobold.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focobold.woff">focobold.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.eot">focolight.eot</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.ttf">focolight.ttf</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="focolight.woff">focolight.woff</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.eot">fontawesome-webfont.eot</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.ttf">fontawesome-webfont.ttf</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.woff">fontawesome-webfont.woff</ProjectItem>
@@ -601,10 +593,20 @@
         </Folder>
         <Folder Name="images" TargetFolderName="images">
           <Folder Name="default" TargetFolderName="default">
+            <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="DropDownArrow.png">DropDownArrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
           </Folder>
           <Folder Name="home" TargetFolderName="home">
+            <ProjectItem ReplaceParameters="false" TargetFileName="bar_left.png">bar_left.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bar_middle.png">bar_middle.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bar_right.png">bar_right.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="close.png">close.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="quick-menu-icon_rev.png">quick-menu-icon_rev.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
           </Folder>
           <Folder Name="login" TargetFolderName="login">
@@ -623,6 +625,10 @@
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
+            <Folder Name="SIRC" TargetFolderName="SIRC">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_sirc.jpg">bg_menu_sirc.jpg</ProjectItem>
+            </Folder>
           </Folder>
           <Folder Name="search" TargetFolderName="search">
             <ProjectItem ReplaceParameters="false" TargetFileName="account.png">account.png</ProjectItem>
@@ -640,8 +646,16 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="vendor.png">vendor.png</ProjectItem>
           </Folder>
           <Folder Name="ui" TargetFolderName="ui">
+            <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="logo-img-holder.png">logo-img-holder.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_icons.png">sprite_icons.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
           </Folder>
         </Folder>
         <Folder Name="js" TargetFolderName="js">
@@ -651,33 +665,49 @@
         </Folder>
         <Folder Name="styles" TargetFolderName="styles">
           <Folder Name="css" TargetFolderName="css">
+            <ProjectItem ReplaceParameters="true" TargetFileName="base.min.css">base.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="home.min.css">home.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="stand-alone.css">stand-alone.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="widget.min.css">widget.min.css</ProjectItem>
+            <Folder Name="default" TargetFolderName="default">
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
+            </Folder>
           </Folder>
           <Folder Name="less" TargetFolderName="less">
+            <ProjectItem ReplaceParameters="false" TargetFileName="base.less">base.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default-home.less">default-home.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             <Folder Name="framework" TargetFolderName="framework">
               <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="alerts.less">alerts.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="base.less">base.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="boxed-elements.less">boxed-elements.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="breadcrumbs.less">breadcrumbs.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="buttons.less">buttons.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="close.less">close.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="component-animations.less">component-animations.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="cross-fieldset.less">cross-fieldset.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="dashboard.less">dashboard.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="dropdowns.less">dropdowns.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="feature-tour.less">feature-tour.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="file-upload.less">file-upload.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="footer.less">footer.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="form-footer.less">form-footer.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="form-header.less">form-header.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="forms_backup.less">forms_backup.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="global-search.less">global-search.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="header.less">header.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="hr.less">hr.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="kpi.less">kpi.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="list-group.less">list-group.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="login.less">login.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="master-stand-alone.less">master-stand-alone.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="media.less">media.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="mixins.less">mixins.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="modals.less">modals.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="multi-select.less">multi-select.less</ProjectItem>
@@ -685,6 +715,9 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="pagination.less">pagination.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="panels.less">panels.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="popovers.less">popovers.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="portal-feature-tour.less">portal-feature-tour.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="portal-side-panel.less">portal-side-panel.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="portal-stand-alone.less">portal-stand-alone.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="progress-bars.less">progress-bars.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="scaffolding.less">scaffolding.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="setup-wizard.less">setup-wizard.less</ProjectItem>
@@ -698,13 +731,13 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="type.less">type.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="utilities.less">utilities.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="variables.less">variables.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="widget.less">widget.less</ProjectItem>
             </Folder>
             <Folder Name="layouts" TargetFolderName="layouts">
               <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="master-stand-alone.less">master-stand-alone.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             </Folder>
             <Folder Name="libs" TargetFolderName="libs">
@@ -1523,7 +1556,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
             </Folder>
-            <Folder Name="FakeAuthentication" TargetFolderName="FakeAuthentication" />
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
@@ -1544,6 +1576,7 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
               <Folder Name="Partials" TargetFolderName="Partials">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_GlobalSearch.cshtml">_GlobalSearch.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
               </Folder>
             </Folder>
             <Folder Name="Home" TargetFolderName="Home">
@@ -1594,9 +1627,6 @@
             <Folder Name="Tenant" TargetFolderName="Tenant">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
             </Folder>
-            <Folder Name="Wizard" TargetFolderName="Wizard">
-              <ProjectItem ReplaceParameters="true" TargetFileName="_Wizard.cshtml">_Wizard.cshtml</ProjectItem>
-            </Folder>
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
@@ -1625,9 +1655,6 @@
             <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
             </Folder>
-            <Folder Name="IC" TargetFolderName="IC">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.IC.Common.js">Sage.CA.SBS.ERP.Sage300.IC.Common.js</ProjectItem>
-            </Folder>
             <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
             </Folder>
@@ -1637,11 +1664,6 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
               </Folder>
-            </Folder>
-            <Folder Name="Revaluation" TargetFolderName="Revaluation">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js">Sage.CA.SBS.ERP.Sage300.RevaluationHistoryBehavior.js</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js">Sage.CA.SBS.ERP.Sage300.RevaluationKoExtn.js</ProjectItem>
             </Folder>
           </Folder>
           <Folder Name="Views" TargetFolderName="Views">
