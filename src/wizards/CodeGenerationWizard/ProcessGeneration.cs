@@ -744,6 +744,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary>
         /// Get field's data type
+        /// 
+        /// This method will attempt to map Visual Basic data types (ViewFieldType)
+        /// to C# data types (BusinessDataType)
         /// </summary>
         /// <param name="field">The field the data type is to be determined</param>
         /// <returns>Data type of the field</returns>
@@ -754,41 +757,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return BusinessDataType.Enumeration;
             }
 
-            //Need to use enum field.Type.HasFlag
-            var viewfiledType = field.Type;
-
-            if (viewfiledType.GetHashCode() == ViewFieldType.Long.GetHashCode())
-            {
-                return BusinessDataType.Long;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Char.GetHashCode())
-            {
-                return BusinessDataType.String;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Date.GetHashCode())
-            {
-                return BusinessDataType.DateTime;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Int.GetHashCode())
-            {
-                return BusinessDataType.Integer;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Decimal.GetHashCode())
-            {
-                return BusinessDataType.Decimal;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Bool.GetHashCode())
-            {
-                return BusinessDataType.Boolean;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Time.GetHashCode())
-            {
-                return BusinessDataType.TimeSpan;
-            }
-            if (viewfiledType.GetHashCode() == ViewFieldType.Byte.GetHashCode())
-            {
-                return BusinessDataType.Byte;
-            }
+            // Need to use enum field.Type.HasFlag
+            var hc = field.Type.GetHashCode();
+            if (hc == ViewFieldType.Long.GetHashCode())    { return BusinessDataType.Integer; }
+            if (hc == ViewFieldType.Char.GetHashCode())    { return BusinessDataType.String; }
+            if (hc == ViewFieldType.Date.GetHashCode())    { return BusinessDataType.DateTime; }
+            if (hc == ViewFieldType.Int.GetHashCode())     { return BusinessDataType.Short; }
+            if (hc == ViewFieldType.Decimal.GetHashCode()) { return BusinessDataType.Decimal; }
+            if (hc == ViewFieldType.Bool.GetHashCode())    { return BusinessDataType.Boolean; }
+            if (hc == ViewFieldType.Time.GetHashCode())    { return BusinessDataType.TimeSpan; }
+            if (hc == ViewFieldType.Byte.GetHashCode())    { return BusinessDataType.Byte; }
 
             return BusinessDataType.Double;
         }
@@ -1100,7 +1078,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                              string filePath, 
                                              BusinessView view)
         {
-#region Common Enumeration Example
+            #region Common Enumeration Example
             /* 
             /// <summary>
             /// Enum for Status
@@ -1119,7 +1097,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Active = 1
             }
             */
-#endregion
+            #endregion
 
             var content = string.Empty;
             var rootTemplateName = "Templates.Common.Class";
@@ -1159,7 +1137,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                              string filePath, 
                                              BusinessView view)
         {
-#region Normal Enumeration Example
+            #region Normal Enumeration Example
             /* 
             /// <summary>
             /// Enum for PaymentType
@@ -1188,7 +1166,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Other = 4
             }
             */
-#endregion
+            #endregion
 
             var content = string.Empty;
             var rootTemplateName = "Templates.Common.Class";
