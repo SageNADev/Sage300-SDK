@@ -486,42 +486,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reporting now requires the use of components from the &apos;aspnet_client&apos; folder.
-        ///
-        ///Please locate this folder on your system and copy it, as well as all of it&apos;s 
-        ///content to the root of your custom solutions &apos;Web&apos; project.
-        ///
-        ///A typical location on your system where this folder can be found is as 
-        ///follows:
-        ///
-        ///C:\inetpub\wwwroot\aspnet_client\system_web\4.0.30319\
-        ///
-        ///It&apos;s not necessary to copy the content from all versions of Microsoft.NET
-        ///Only version 4.0.30319 is necessary. Copy the folder &apos;aspnet_client&apos; to [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificAspnetClientFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificAspnetClientFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The version information for some Crystal Reports components has changed.
-        ///
-        ///This step will automatically update those component references from
-        ///version {0} to {1}.
-        ///
-        ///This step will be done automatically by the Upgrade Wizard.
-        ///
-        ///.
-        /// </summary>
-        internal static string ReleaseSpecificCrystalReportsVersionNumberUpdate {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificCrystalReportsVersionNumberUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
         /// </summary>
         internal static string ReleaseSpecificDescAspnetClientFolder {
@@ -558,60 +522,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The way menu images (background and icon) are managed and structured 
-        ///has changed in this release.
-        ///
-        ///A new folder called &apos;ExternalContent&apos; will be added to the 
-        ///&apos;\Areas\{0}\&apos; folder. The menu background and icon images 
-        ///will be moved to this new folder and renamed as follows:
-        ///
-        ///menuBackGroundImage.jpg =&gt; bg_menu_{0}.jpg
-        ///menuIcon.png =&gt; icon_{0}.png
-        ///
-        ///Please Note: XX is just a placeholder for the actual Module Id 
-        ///that will be used.
-        ///
-        ///.
-        /// </summary>
-        internal static string ReleaseSpecificExternalContentFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificExternalContentFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Create &apos;aspnet_client&apos; folder (Manual Step).
-        /// </summary>
-        internal static string ReleaseSpecificTitleAspnetClientFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleAspnetClientFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Crystal Reports version number update.
-        /// </summary>
-        internal static string ReleaseSpecificTitleCrystalReportsVersionNumberUpdate {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleCrystalReportsVersionNumberUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Process the new ExternalContent folder.
-        /// </summary>
-        internal static string ReleaseSpecificTitleExternalContentFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleExternalContentFolder", resourceCulture);
             }
         }
         
