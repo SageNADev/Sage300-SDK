@@ -499,7 +499,7 @@ table {
 
   .k-grid-header {
     background-image: none;
-    background-color: #686c76;
+    background-color: @table-header-bg;
 
     > .k-grid-header-wrap {
       border-right: 0;
@@ -764,6 +764,11 @@ table {
     -o-border-radius: 0;
     border-radius: 0; 
   }
+
+  span.checkBox input[type=checkbox] {
+    position: relative;
+    height: 20px;
+  }
 }
 
 
@@ -1013,6 +1018,10 @@ table {
     position: relative; 
     top: 1px;
   }
+
+  .gridcell-exempt {
+    color: @sage-orange;
+  }
 }
 
 .k-grid-delete .k-delete {
@@ -1107,6 +1116,10 @@ table {
       border-top: 1px solid @table-border-color;
     }
   }
+}
+
+.k-window.k-widget div#divGridPrefEditCols {
+    margin-top: -161px;
 }
 
 @-moz-document url-prefix() { 

@@ -456,7 +456,7 @@ $(document).ready(function () {
 
     $('#topMenuTools .k-link').click(function () {
         $('.quick-menu').toggle();
-        $(this).parent('.menu-item-with-icon').toggleClass('active').toggleClass('inactive')
+        $(this).parent('.menu-item-with-icon').toggleClass('inactive');
         return false;
     });
 
@@ -866,8 +866,7 @@ $(document).ready(function () {
 
         // try close the widget add/remove menu no matter what
         $(".container_popUp.Widget.widgetList").hide();
-        $('.feature_nav').removeClass("active");
-		
+
         //Sage Intelligence
         var intelligence = $(this).attr("data-isIntelligence");
         var fileurl = $(this).attr("data-url");

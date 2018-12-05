@@ -440,7 +440,7 @@ $.extend(sg.utls, {
         }
 
     },
-    openReport: function (reportToken, checkTitle) {
+    openReport: function (reportToken, checkTitle, callbackOnClose) {
         var reportUrl = $("#hdnUrl").val() + "../" + globalResource.ReportUrl + "/ReportViewer.aspx?token=" + reportToken;
         if (!sg.utls.isPortalIntegrated()) {
             window.open(reportUrl);
@@ -454,7 +454,61 @@ $.extend(sg.utls, {
                 reportName = checkTitle
             }
             window.top.postMessage("isReport" + " " + reportUrl + " " + reportName + " " + $('form').prop('action'), "*");
+
+            // If provided a callback, bind it to the report (crystal) window
+            if (callbackOnClose !== undefined) {
+                // Need to delay a bit for the window to be established
+                setTimeout(function () {
+                    // Get the iFrame object where the report is loaded
+                    var iFrameObject = sg.utls.getReportIFrame(reportToken);
+                    if (iFrameObject !== undefined) {
+                        // Get the report window
+                        var reportWin = iFrameObject.contentWindow;
+                        // Need to bind to an event   
+                        $(iFrameObject).load(function () {
+                            // Bind to the before unload event
+                            $(reportWin).bind("beforeunload", function () {
+                                // Invoke the callback
+                                callbackOnClose.call();
+                            })
+                        })
+                    }
+                }, 500);
+            }
+
         }
+    },
+
+    // Determines which iFrame the report has been opened in
+    getReportIFrame: function (reportToken) {
+
+        // Locals
+        var i;
+        var id;
+        var iFrameObject;
+
+        // Iterate frames looking for report token in the source
+        for (i = 1; i < 12; i++) {
+            // Set id to interrogate
+            id = "iFrameMenu" + i;
+            // Browser specific checks looking for object
+            var tmp;
+            if (window.top.frames[id].src !== undefined) {
+                // Non IE logic
+                tmp = window.top.frames[id];
+            }
+            else {
+                // IE logic
+                tmp = window.top.document.getElementById(id);
+            }
+            // Is report opened here?
+            if (tmp !== undefined && tmp.src.indexOf(reportToken) !== -1) {
+                // Found it
+                iFrameObject = tmp;
+                break;
+            }
+        }
+        return iFrameObject;
     },
 
     // Common helper function to ask the portal to open Notes Center to display notes (if any)
