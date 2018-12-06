@@ -638,7 +638,13 @@ var optionalFieldUIGrid =
                 }
             };
         }
-        if (initialize) {
+        //temporary fix to address the issue in the screens that removed the optional field UI objects when license is not present. Such screens fail in the init functions
+        var gridObj = $('#' + optionalFieldUIGrid.gridId);
+        var grid;
+        if (gridObj) {
+            grid = gridObj.data("kendoGrid");
+        }
+        if (initialize && grid) {
             optionalFieldUIGrid.initButton();
             optionalFieldUIGrid.initCheckBox();
         } else {

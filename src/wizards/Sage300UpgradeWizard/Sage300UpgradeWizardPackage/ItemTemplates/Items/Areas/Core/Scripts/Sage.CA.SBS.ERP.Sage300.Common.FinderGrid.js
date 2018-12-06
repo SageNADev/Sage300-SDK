@@ -554,8 +554,8 @@ var FinderGridHelper = {
                     }
                 }
                 if (field.dataType === sg.finderDataType.Integer || field.dataType === sg.finderDataType.Amount || field.dataType == sg.finderDataType.Number || field.dataType === sg.finderDataType.SmallInteger) {
-                    var numerictextbox = $("#NumericTextBox").data("kendoNumericTextBox");
-                    value = numerictextbox.value();
+                    var txtValue = $("#NumericTextBox").val();
+                    value = (txtValue) ? kendo.parseFloat(txtValue) : txtValue;
                 }
                 else if (field.dataType === sg.finderDataType.Date) {
                     if (dateInvalid) {
@@ -592,7 +592,8 @@ var FinderGridHelper = {
         $("#ValueTextBox").bind('change', function (e) {
             FinderGridHelper.ExecuteSimpleFilter();
         });
-        $("#NumericTextBox").bind('change', function (e) {
+        //var numeric = $("#NumericTextBox").data('kendoNumericTextBox');
+        $("#NumericTextBox").bind("change", function (e) {
             FinderGridHelper.ExecuteSimpleFilter();
         });
     },
