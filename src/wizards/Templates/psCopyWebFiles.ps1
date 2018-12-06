@@ -63,7 +63,7 @@ push-location -path $absWebFolderPath
 # ---------------------------------------------------------------------------------------
 $webSubPaths.split(',') | Foreach-Object { 
   robocopy /S "$webAssetDirPath\$_" "$_" `
-  /xf *.cs *.csproj *.user *.xml *.Sage300.Revaluation*.js *.IC.Common.js _wizard.cshtml packages.config `
+  /xf *.cs *.csproj *.user *.xml *.Sage300.Revaluation*.js *.IC.Common.js _wizard.cshtml packages.config menuBackGroundImage.jpg menuIcon.png `
   /xd TU obj
 }
 

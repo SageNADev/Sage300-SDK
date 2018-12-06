@@ -302,8 +302,6 @@
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="drilldown.png">drilldown.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="menuBackGroundImage.jpg">menuBackGroundImage.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.png">menuIcon.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -1556,7 +1554,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
             </Folder>
-            <Folder Name="FakeAuthentication" TargetFolderName="FakeAuthentication" />
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
