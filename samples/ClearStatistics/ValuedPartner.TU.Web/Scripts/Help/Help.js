@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var navUrl;
@@ -21,19 +21,41 @@ $(document).ready(function () {
         win.focus();
     };
 
+    function ShowHomePage() {
+        window.scrollTo(0, 0);
+        $('html').addClass('home-page');
+        $('#homeNav > a').addClass('active');
+        $('#screenLayout').hide();
+        $('#widgetlayout').show();
+        $('#widgetHplayout').hide();
+
+        //When footer logo is clicked
+        screenId = defaultScreenId;
+
+        $('#breadcrumb').hide();
+
+        updateLayout(true);
+
+        if (!$('#screenLayout').is(":visible")) {
+
+            if ($('#widgetlayout').is(":visible")) {
+                $('#widgetHplayout').hide();
+            }
+        }
+    }
+
     $("#featureTourLink").click(function () {
         scroll(0, 0);
+        ShowHomePage();
+        updateLayout(false);
         $("#firstTimeLogin").show();
-        $('#screenLayout').hide();
-        $('#breadcrumb').hide();
-        $('html').addClass('home-page');
         $('#draggable').animate({
             top: 58
         }, 'slow', function () { $(this).removeAttr('style'); }); /* reset the position of #draggable-Quick Menu */
+        $('#topMenuTools').removeClass('inactive');
         $('#FeatureTour').show(function () {
             $(this).children().eq(0).addClass('show'); /* add class .show to the first child of #FeatureTour */
         });
-        updateLayout(false);
     });
 
     $('#FeatureTour').find('.btn-tertiary').click(function () {

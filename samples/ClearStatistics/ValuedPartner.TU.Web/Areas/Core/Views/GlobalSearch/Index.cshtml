@@ -5,6 +5,7 @@
 @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "frmGlobalSearch", onSubmit = "return false;" }))
 {
     @Html.Partial("~/Areas/Core/Views/GlobalSearch/Partials/_GlobalSearch.cshtml")
+    @Html.Partial("~/Areas/Core/Views/GlobalSearch/Partials/_Localization.cshtml")
 }
 
 @section scripts{
