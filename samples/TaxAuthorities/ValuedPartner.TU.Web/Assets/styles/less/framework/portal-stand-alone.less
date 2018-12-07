@@ -1,0 +1,154 @@
+//
+// master-stand-alone styles
+// --------------------------------------------------
+
+.master-stand-alone {
+
+  .header-global {
+    position: initial;
+
+    .Sage_logo {
+      top: 17px;
+      position: absolute;
+    }
+
+    .wrapper {
+      height: 47px;
+
+      .top-nav {
+        position: absolute;
+        right: 30px;
+        top: 0;
+        height: 47px;
+
+        li {
+          display: inline-block;
+          color: #fff;
+          font-size: 14px;
+          margin-left: 20px;
+
+          > span {
+            top: -13px;
+            position: relative;
+
+            &:hover  {
+              cursor: pointer;
+              color: #ccc;
+            }
+          }
+
+          .help {
+            margin-top: 0;
+
+            &:hover  {
+              cursor: pointer;
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer .wrapper {
+    margin: 0;
+  }
+
+  .main-body {
+    padding: 0;
+  }
+  
+  .quick-links .wrapper {
+    margin: 20px 30px -20px 30px;
+
+    li {
+      display: inline-block;
+    }
+
+    li .navigation-pipe {
+      color: #ccc;
+      padding: 0 10px;
+    }
+
+    li a.active {
+      text-decoration:none;
+      color: #3c424f !important;
+      cursor: default;
+    }
+  }
+}
+
+/*Outdated Browser page CSS*/
+
+.odtd-bwr {
+
+  &.message-control.multiWarn-msg {
+    width: 960px;
+
+    .msg-content.odtd-bwr {
+      padding: 17px 20px 20px 65px;
+      background: none !important;
+      border: 0px;
+
+      ul.odtd-bwr-cotainer {
+        margin: 0px !important;
+        padding: 0px !important;
+
+        .odtd-bwr {
+          display: inline-block;
+          margin-right: 60px;
+          float: left;
+
+          &:last-child {
+            margin-right: 0px;
+          }
+
+          .odtd-bwr-content {
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            color: @sage-dark-gray;
+          }
+
+          .odtd-bwr-icon {
+            background: url('@{image-path}/default/browser_icons.png');
+            display: block;
+            margin: 26px auto 10px auto;
+
+            &.chromeicon {
+              background-position: 0px -5px;
+              height: 87px;
+              width: 76px;
+            }
+
+            &.ieicon {
+              background-position: -144px -4px;
+              height: 87px;
+              width: 82px;
+            }
+
+            &.firefoxicon {
+              background-position: -296px -3px;
+              height: 87px;
+              width: 80px;
+            }
+
+            &.safariicon{
+              background-position:-451px 1px;
+              height:87px;
+              width:77px;
+            }
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
+
+      .title h3 {
+        padding: 16px 15px;
+      }
+    }
+  }
+}
