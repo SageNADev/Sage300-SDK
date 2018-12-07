@@ -107,10 +107,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    case 3:
-                        ProcessAspnetClientFolder(title);
-                        break;
-
                     #endregion
                 }
             }

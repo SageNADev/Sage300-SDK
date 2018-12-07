@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -30,7 +30,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
     internal class ProcessGeneration
     {
 
-        #region Private Vars
+        #region Private Variables
 
         /// <summary> Settings from UI </summary>
         private Settings _settings;
@@ -38,175 +38,176 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         #endregion
 
         #region Public constants
+        public class Constants
+        {
+            /// <summary> Property for Module ID </summary>
+            public const string PropertyModuleId = "ModuleId";
 
-        /// <summary> Property for Module ID </summary>
-        public const string PropertyModuleId = "ModuleId";
+            /// <summary> Property for Name </summary>
+            public const string PropertyName = "Name";
 
-        /// <summary> Property for Name </summary>
-        public const string PropertyName = "Name";
+            /// <summary> Property for PackageId </summary>
+            public const string PropertyPackageId = "PackageId";
 
-        /// <summary> Property for PackageId </summary>
-        public const string PropertyPackageId = "PackageId";
+            /// <summary> Property for Description </summary>
+            public const string PropertyDescription = "Description";
 
-        /// <summary> Property for Description </summary>
-        public const string PropertyDescription = "Description";
+            /// <summary> Property for GeneratedMessage </summary>
+            public const string PropertyGeneratedMessage = "GeneratedMessage";
 
-        /// <summary> Property for GeneratedMessage </summary>
-        public const string PropertyGeneratedMessage = "GeneratedMessage";
+            /// <summary> Property for GeneratedWarning </summary>
+            public const string PropertyGeneratedWarning = "GeneratedWarning";
 
-        /// <summary> Property for GeneratedWarning </summary>
-        public const string PropertyGeneratedWarning = "GeneratedWarning";
+            /// <summary> Property for BusinessPartnerName </summary>
+            public const string PropertyBusinessPartnerName = "BusinessPartnerName";
 
-        /// <summary> Property for BusinessPartnerName </summary>
-        public const string PropertyBusinessPartnerName = "BusinessPartnerName";
+            /// <summary> Property for SageCompatibility </summary>
+            public const string PropertySageCompatibility = "SageCompatibility";
 
-        /// <summary> Property for SageCompatibility </summary>
-        public const string PropertySageCompatibility = "SageCompatibility";
+            /// <summary> Property for EULA </summary>
+            public const string PropertyEula = "EULA";
 
-        /// <summary> Property for EULA </summary>
-        public const string PropertyEula = "EULA";
+            /// <summary> Property for Bootstrapper </summary>
+            public const string PropertyBootstrapper = "Bootstrapper";
 
-        /// <summary> Property for Bootstrapper </summary>
-        public const string PropertyBootstrapper = "Bootstrapper";
+            /// <summary> Property for Assembly </summary>
+            public const string PropertyAssembly = "Assembly";
 
-        /// <summary> Property for Assembly </summary>
-        public const string PropertyAssembly = "Assembly";
+            /// <summary> Property for Version </summary>
+            public const string PropertyVersion = "Version";
 
-        /// <summary> Property for Version </summary>
-        public const string PropertyVersion = "Version";
+            /// <summary> Property for WebScreens </summary>
+            public const string PropertyWebScreens = "WebScreens";
 
-        /// <summary> Property for WebScreens </summary>
-        public const string PropertyWebScreens = "WebScreens";
+            /// <summary> Property for ScreenName </summary>
+            public const string PropertyScreenName = "ScreenName";
 
-        /// <summary> Property for ScreenName </summary>
-        public const string PropertyScreenName = "ScreenName";
+            /// <summary> Property for ScreenDescription </summary>
+            public const string PropertyScreenDescription = "ScreenDescription";
 
-        /// <summary> Property for ScreenDescription </summary>
-        public const string PropertyScreenDescription = "ScreenDescription";
+            /// <summary> Property for TargetScreen </summary>
+            public const string PropertyTargetScreen = "TargetScreen";
 
-        /// <summary> Property for TargetScreen </summary>
-        public const string PropertyTargetScreen = "TargetScreen";
+            /// <summary> Property for ControlsConfiguration </summary>
+            public const string PropertyControlsConfiguration = "ControlsConfiguration";
 
-        /// <summary> Property for ControlsConfiguration </summary>
-        public const string PropertyControlsConfiguration = "ControlsConfiguration";
+            /// <summary> Property for ControlsBehavior </summary>
+            public const string PropertyControlsBehavior = "ControlsBehavior";
 
-        /// <summary> Property for ControlsBehavior </summary>
-        public const string PropertyControlsBehavior = "ControlsBehavior";
+            /// <summary> Property for Module </summary>
+            public const string PropertyModule = "Module";
 
-        /// <summary> Property for Module </summary>
-        public const string PropertyModule = "Module";
+            /// <summary> Property for Category </summary>
+            public const string PropertyCategory = "Category";
 
-        /// <summary> Property for Category </summary>
-        public const string PropertyCategory = "Category";
+            /// <summary> Property for Screen </summary>
+            public const string PropertyScreen = "Screen";
 
-        /// <summary> Property for Screen </summary>
-        public const string PropertyScreen = "Screen";
+            /// <summary> Property for XML </summary>
+            public const string PropertyXml = "XML";
 
-        /// <summary> Property for XML </summary>
-        public const string PropertyXml = "XML";
+            /// <summary> Property for JS </summary>
+            public const string PropertyJs = "JS";
 
-        /// <summary> Property for JS </summary>
-        public const string PropertyJs = "JS";
+            /// <summary> Prefix for dictionary to provide a reverse lookup of screen name </summary>
+            public const string Manifest = "Manifest";
 
-        /// <summary> Prefix for dictionary to provide a reverse lookup of screen name </summary>
-        public const string Manifest = "Manifest";
+            /// <summary> Suffix for XML file name </summary>
+            public const string XmlFileNameSuffix = "_Settings.xml";
 
-        /// <summary> Suffix for XML file name </summary>
-        public const string XmlFileNameSuffix = "_Settings.xml";
+            /// <summary> Suffix for JavaScript file name </summary>
+            public const string JavaScriptFileNameSuffix = "_Customization.js";
 
-        /// <summary> Suffix for JavaScript file name </summary>
-        public const string JavaScriptFileNameSuffix = "_Customization.js";
+            /// <summary> File name for XSD file </summary>
+            public const string XsdFileName = "screenConfig.xsd";
 
-        /// <summary> File name for XSD file </summary>
-        public const string XsdFileName = "screenConfig.xsd";
+            /// <summary> File name for JSON file </summary>
+            public const string JsonFileName = "Manifest.json";
 
-        /// <summary> File name for JSON file </summary>
-        public const string JsonFileName = "Manifest.json";
+            /// <summary> Suffix for Custom Description </summary>
+            public const string CustomDescriptionSuffix = " Custom Description";
 
-        /// <summary> Suffix for Custom Description </summary>
-        public const string CustomDescriptionSuffix = " Custom Description";
+            /// <summary> Suffix for Custom Screen Name </summary>
+            public const string CustomNameSuffix = " Custom";
 
-        /// <summary> Suffix for Custom Screen Name </summary>
-        public const string CustomNameSuffix = " Custom";
+            /// <summary> Attribute for ID </summary>
+            public const string AttributeId = "ID";
 
-        /// <summary> Attribute for ID </summary>
-        public const string AttributeId = "ID";
+            /// <summary> Attribute for Type </summary>
+            public const string AttributeType = "Type";
 
-        /// <summary> Attribute for Type </summary>
-        public const string AttributeType = "Type";
+            /// <summary> Attribute for Label </summary>
+            public const string AttributeLabel = "Label";
 
-        /// <summary> Attribute for Label </summary>
-        public const string AttributeLabel = "Label";
+            /// <summary> Attribute for Binding </summary>
+            public const string AttributeBinding = "Binding";
 
-        /// <summary> Attribute for Binding </summary>
-        public const string AttributeBinding = "Binding";
+            /// <summary> Attribute for BeforeID </summary>
+            public const string AttributeBeforeId = "BeforeID";
 
-        /// <summary> Attribute for BeforeID </summary>
-        public const string AttributeBeforeId = "BeforeID";
+            /// <summary> Attribute for AfterID </summary>
+            public const string AttributeAfterId = "AfterID";
 
-        /// <summary> Attribute for AfterID </summary>
-        public const string AttributeAfterId = "AfterID";
+            /// <summary> Attribute for HeaderBeforeID </summary>
+            public const string AttributeHeaderBeforeId = "HeaderBeforeID";
 
-        /// <summary> Attribute for HeaderBeforeID </summary>
-        public const string AttributeHeaderBeforeId = "HeaderBeforeID";
+            /// <summary> Attribute for HeaderAfterID </summary>
+            public const string AttributeHeaderAfterId = "HeaderAfterID";
 
-        /// <summary> Attribute for HeaderAfterID </summary>
-        public const string AttributeHeaderAfterId = "HeaderAfterID";
+            /// <summary> Attribute for DetailBeforeID </summary>
+            public const string AttributeDetailBeforeId = "DetailBeforeID";
 
-        /// <summary> Attribute for DetailBeforeID </summary>
-        public const string AttributeDetailBeforeId = "DetailBeforeID";
+            /// <summary> Attribute for DetailAfterID </summary>
+            public const string AttributeDetailAfterId = "DetailAfterID";
 
-        /// <summary> Attribute for DetailAfterID </summary>
-        public const string AttributeDetailAfterId = "DetailAfterID";
+            /// <summary> Attribute for MaxLength </summary>
+            public const string AttributeMaxLength = "MaxLength";
 
-        /// <summary> Attribute for MaxLength </summary>
-        public const string AttributeMaxLength = "MaxLength";
+            /// <summary> Attribute for Cols </summary>
+            public const string AttributeCols = "Cols";
 
-        /// <summary> Attribute for Cols </summary>
-        public const string AttributeCols = "Cols";
+            /// <summary> Attribute for Rows </summary>
+            public const string AttributeRows = "Rows";
 
-        /// <summary> Attribute for Rows </summary>
-        public const string AttributeRows = "Rows";
+            /// <summary> Attribute for Name </summary>
+            public const string AttributeName = "Name";
 
-        /// <summary> Attribute for Name </summary>
-        public const string AttributeName = "Name";
+            /// <summary> Attribute for FinderTextId </summary>
+            public const string AttributeFinderTextId = "FinderTextId";
 
-        /// <summary> Attribute for FinderTextId </summary>
-        public const string AttributeFinderTextId = "FinderTextId";
+            /// <summary> Attribute for xsi </summary>
+            public const string AttributeXsi = "xsi";
 
-        /// <summary> Attribute for xsi </summary>
-        public const string AttributeXsi = "xsi";
+            /// <summary> Attribute for xmlns:xsi </summary>
+            public const string AttributeXmlnsXsi = "xmlns:xsi";
 
-        /// <summary> Attribute for xmlns:xsi </summary>
-        public const string AttributeXmlnsXsi = "xmlns:xsi";
+            /// <summary> Attribute for xmlns:xsi </summary>
+            public const string AttributeNoNamespaceSchemaLocation = "noNamespaceSchemaLocation";
 
-        /// <summary> Attribute for xmlns:xsi </summary>
-        public const string AttributeNoNamespaceSchemaLocation = "noNamespaceSchemaLocation";
+            /// <summary> Attribute for xmlns:xsi </summary>
+            public const string AttributeXsiNoNamespaceSchemaLocation = "xsi:noNamespaceSchemaLocation";
 
-        /// <summary> Attribute for xmlns:xsi </summary>
-        public const string AttributeXsiNoNamespaceSchemaLocation = "xsi:noNamespaceSchemaLocation";
+            /// <summary> Element Name for Screens </summary>
+            public const string ElementScreens = "Screens";
 
-        /// <summary> Element Name for Screens </summary>
-        public const string ElementScreens = "Screens";
+            /// <summary> Element Name for Screen </summary>
+            public const string ElementScreen = "Screen";
 
-        /// <summary> Element Name for Screen </summary>
-        public const string ElementScreen = "Screen";
+            /// <summary> Element Name for Control </summary>
+            public const string ElementControl = "Control";
 
-        /// <summary> Element Name for Control </summary>
-        public const string ElementControl = "Control";
+            /// <summary> Token for Company Name </summary>
+            public const string CompanyNameToken = "$companyname$";
 
-        /// <summary> Token for Company Name </summary>
-        public const string CompanyNameToken = "$companyname$";
+            /// <summary> Token for Screen Name </summary>
+            public const string ScreenNameToken = "$screenName$";
 
-        /// <summary> Token for Screen Name </summary>
-        public const string ScreenNameToken = "$screenName$";
+            /// <summary> Token for Generated Message </summary>
+            public const string GeneratedMessageToken = "$generatedMessage$";
 
-        /// <summary> Token for Generated Message </summary>
-        public const string GeneratedMessageToken = "$generatedMessage$";
-
-        /// <summary> Token for Generated Warning </summary>
-        public const string GeneratedWarningToken = "$generatedWarning$";
-
+            /// <summary> Token for Generated Warning </summary>
+            public const string GeneratedWarningToken = "$generatedWarning$";
+        }
         #endregion
 
         #region Public Delegates
@@ -267,7 +268,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private void CreateManifestFile()
         {
             // Locals
-            var fileName = BuildFileName(JsonFileName);
+            var fileName = BuildFileName(Constants.JsonFileName);
 
             try
             {
@@ -296,11 +297,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         {
             // Read JSON to get the Screen Controls
             var webScreens =
-                from json in _settings.Manifest[PropertyWebScreens]
+                from json in _settings.Manifest[Constants.PropertyWebScreens]
                 select new
                 {
-                    TargetScreen = (string)json[PropertyTargetScreen],
-                    ControlsConfiguration = (string)json[PropertyControlsConfiguration]
+                    TargetScreen = (string)json[Constants.PropertyTargetScreen],
+                    ControlsConfiguration = (string)json[Constants.PropertyControlsConfiguration]
                 };
 
             // Iterate and get screens that will create an XML file
@@ -325,17 +326,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     DeleteFile(fileName);
 
                     // Get Screen Node from XDocument
-                    var elements = _settings.XmlSettings.Descendants(ElementScreen);
+                    var elements = _settings.XmlSettings.Descendants(Constants.ElementScreen);
                     foreach (var element in elements)
                     {
                         // Screen node not located
-                        if (!element.Name.LocalName.Equals(ElementScreen))
+                        if (!element.Name.LocalName.Equals(Constants.ElementScreen))
                         {
                             continue;
                         }
 
                         // Screen node is not for this screen
-                        var nameAttribute = element.Attributes(AttributeName).FirstOrDefault();
+                        var nameAttribute = element.Attributes(Constants.AttributeName).FirstOrDefault();
                         if (nameAttribute != null)
                         {
                             if (!nameAttribute.Value.Equals(targetScreen))
@@ -345,12 +346,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                         }
 
                         // Get template resource file and update name to targetName
-                        var xml = Resources.ScreenSettings.Replace(GeneratedMessageToken, 
-                            Resources.GeneratedMessage).Replace(GeneratedWarningToken, Resources.GeneratedWarning);
+                        var xml = Resources.ScreenSettings.Replace(Constants.GeneratedMessageToken, 
+                            Resources.GeneratedMessage).Replace(Constants.GeneratedWarningToken, Resources.GeneratedWarning);
 
                         var templateSettingsFile = XDocument.Parse(xml);
-                        var screenElement = templateSettingsFile.Descendants(ElementScreen).First();
-                        nameAttribute = screenElement.Attributes(AttributeName).FirstOrDefault();
+                        var screenElement = templateSettingsFile.Descendants(Constants.ElementScreen).First();
+                        nameAttribute = screenElement.Attributes(Constants.AttributeName).FirstOrDefault();
                         if (nameAttribute != null)
                         {
                             nameAttribute.Value = targetScreen;
@@ -384,10 +385,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         {
             // Read JSON to get the Screen Controls
             var webScreens =
-                from json in _settings.Manifest[PropertyWebScreens]
+                from json in _settings.Manifest[Constants.PropertyWebScreens]
                 select new
                 {
-                    ControlsConfiguration = (string)json[PropertyControlsConfiguration]
+                    ControlsConfiguration = (string)json[Constants.PropertyControlsConfiguration]
                 };
 
             // Iterate and get screens that will create an XML file
@@ -400,7 +401,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 }
 
                 // Locals
-                var fileName = BuildFileName(XsdFileName);
+                var fileName = BuildFileName(Constants.XsdFileName);
 
                 try
                 {
@@ -435,16 +436,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <remarks>File(s) are {screen}_Customization.js</remarks>
         private void CreateJavaScriptFiles()
         {
-            var companyName = (string)_settings.Manifest.SelectToken(PropertyBusinessPartnerName);
+            var companyName = (string)_settings.Manifest.SelectToken(Constants.PropertyBusinessPartnerName);
             companyName = companyName.Replace(" ", "");
 
             // Read JSON to get the Screen Controls
             var webScreens =
-                from json in _settings.Manifest[PropertyWebScreens]
+                from json in _settings.Manifest[Constants.PropertyWebScreens]
                 select new
                 {
-                    TargetScreen = (string)json[PropertyTargetScreen],
-                    ControlsBehavior = (string)json[PropertyControlsBehavior]
+                    TargetScreen = (string)json[Constants.PropertyTargetScreen],
+                    ControlsBehavior = (string)json[Constants.PropertyControlsBehavior]
                 };
 
             // Iterate and get screens that will create an XML file
@@ -463,11 +464,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     DeleteFile(fileName);
 
                     // Get template xsd file
-                    var templateJavaScript = Resources.ScreenCustomization.Replace(GeneratedMessageToken,
-                            Resources.GeneratedMessage).Replace(GeneratedWarningToken, Resources.GeneratedWarning);
+                    var templateJavaScript = Resources.ScreenCustomization.Replace(Constants.GeneratedMessageToken,
+                            Resources.GeneratedMessage).Replace(Constants.GeneratedWarningToken, Resources.GeneratedWarning);
 
                     // Replace tokens
-                    templateJavaScript = templateJavaScript.Replace(CompanyNameToken, companyName).Replace(ScreenNameToken, targetScreen);
+                    templateJavaScript = templateJavaScript.Replace(Constants.CompanyNameToken, companyName).Replace(Constants.ScreenNameToken, targetScreen);
 
                     // Save the file
                     File.WriteAllText(fileName, templateJavaScript);
@@ -487,7 +488,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <summary> Copy the EULA file, if specified </summary>
         private void CopyEulaFile()
         {
-            var eulaFile = (string)_settings.Manifest.SelectToken(PropertyEula);
+            var eulaFile = (string)_settings.Manifest.SelectToken(Constants.PropertyEula);
 
             // Return if Eula does not exist
             if (string.IsNullOrEmpty(eulaFile))
