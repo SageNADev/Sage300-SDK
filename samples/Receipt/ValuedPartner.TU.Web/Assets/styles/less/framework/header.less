@@ -33,7 +33,6 @@
 @collapse-distance-simple:  -(@header-global-height);
 @side-nav-width:            14rem;
 @side-nav-width-collapsed:  3.125rem;
-@image-path:                "../Images";
 
 
 body {
@@ -55,7 +54,7 @@ body {
 }
 
 
-/* header */
+/* header / Top Navigation */
 /* ----------------------------------------------------------------------------------- */
 
 .header {
@@ -76,6 +75,10 @@ body {
     backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+
+    &#globalHeader.unpin {
+    position: absolute;
+  }
 }
 
 .navbar-toggler {
@@ -100,15 +103,79 @@ body {
   }
 }
 
-
 .header-global {
   background-color: @darker-bg;
   height: @header-global-height;
   font-weight: 300;
+  position: relative;
 
   .globalNavigation {
     text-align: right;
     height: 3.5rem;
+
+    .last_container {
+      cursor: pointer;
+      color: #ebedef;
+      display: inline-block;
+      top: -23px;
+      position: relative;
+      padding: 0 8px 0 0;
+      height: 2.2rem;
+
+      .glyphicon {
+        margin-right: 6px;
+        color: #ebedef;
+      }
+
+      /* Session Date Widget */
+
+      .session-date-widget-container {
+        display: none;
+
+        .session-date-widget {
+          border: 1px solid @sage-gray;
+          position: relative;
+
+          input::-ms-clear {
+            display: none;
+          }
+
+          .k-state-focused {
+            box-shadow: none !important;
+          }
+
+          span.k-select {
+            display: none;
+          }
+
+          .field-validation-error {
+            z-index: 10003;
+            left: 6px;
+          }
+
+          .k-datepicker { 
+            margin-bottom: 0px;
+            border: 5px solid #ebebeb;
+            height: 36px;
+            background-color: @white;
+            font-size: 14px;
+            width: 247px !important;
+            padding-left: 0;
+            line-height: 0;
+
+            .k-picker-wrap .k-input {
+              text-align: center;
+              height: 24px;
+              background: none;
+              font-size: 14px;
+              width: 247px !important;
+              padding-left: 0;
+              line-height: 0;
+            }
+          }
+        }
+      }
+    }
 
     .top_nav {
       display: inline-block;
@@ -123,34 +190,175 @@ body {
           color: #3c424f; /* hiding menu while javascript loaded*/
           height: 3.5rem;
 
-          &.menu-item-with-icon > .k-i-arrow-s {
+          &.menu-item-with-icon .k-i-arrow-s {
             display: none;
           }
 
           > .k-link {
             padding: 0;
           }
+
+          span.txt-top-menu {
+            line-height: 3.5rem;
+          }
+        }
+      }
+
+      /* Added to fix header expanding issue D-32662*/
+
+      #topMenu > li {
+        position: relative;
+        color: #ebedef; /* hiding menu while javascript loaded*/
+        padding: 0 16px;
+        background: none;
+        min-width: 40px;
+
+        &.k-state-hover .k-i-arrow-s {
+          background-position: -185px -125px !important;
+        }
+        
+        &.k-state-default .k-i-arrow-s {
+          background-position: -185px -125px;
+        }
+
+        &.menu-item-with-icon {
+        padding: 0;
+        text-align: center;
+        margin-left: 10px;
+        width: 40px;
+
+          .glyphicon-magnifying-glass:before {
+            top: 1px;
+            position: relative;
+          }
+        }
+
+        &#topMenuTools.inactive {
+          background-color: #3c424f;
+        }
+
+        .k-animation-container {
+          top: 3.575rem !important;
+
+          .k-link { 
+            font-size:12px;
+            color:#000;
+            text-align: left;
+          }
+        }
+
+        &.active,
+        &.k-state-border-down {
+          background-color: #6d717a;
+
+          > .k-link {
+            background-color: #6d717a;
+          }
+        }
+
+        &.k-item > .k-link { 
+          color: #fff;
+          height: 3.5rem;
+          cursor: default;
+          background: none;
+
+          .help,
+          .global-search,
+          .settings {
+            height: 3.5rem;
+            padding-top: 8px;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 0;
+            width: 40px;
+
+            &:hover {
+              opacity: 0.80;
+            }
+
+            > span {
+              font: normal 10px/1 Arial;
+              display: block;
+              width: 100%;
+              height: auto;
+              padding: 0;
+              position: relative;
+              color: #ebedef;
+              line-height: 1.35rem;
+            }
+          }
+
+          span.txt-top-menu {
+            line-height: 3.5rem;
+          }
+        }
+
+        &:not(#companyNameMenu) > .k-link:hover, 
+        &.k-state-hover:not(#companyNameMenu) > .k-link {
+          cursor: pointer;
+        }
+
+        .k-group.k-popup {
+          display: none;
+          margin-left: 0px !important;
+          background-color:#fff;
+          width:230px;
+          -webkit-box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.21);
+          -moz-box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.21);
+          box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.21);
+
+          .k-state-hover .k-link,
+          .k-state-hover .k-link span,
+          .k-state-hover .k-link span a{
+            background-color:#edf0f7;
+            color:rgba(0, 0, 0, 0.87);
+            background-image:none;
+          }
+          
+          .k-state-hover .k-link span a:hover {
+              text-decoration: none !important;
+          }
+
+          .k-item .k-link {
+            padding:6px 10px;
+            white-space: normal;
+
+            a {
+              color: @black;
+
+              &:link,
+              &:visited {
+                color: @black;
+              }
+            }
+          }
+
+          .top_brd1{
+            margin: 0 !important;
+            border-top:1px solid #e0e1dd !important;
+
+            &.k-state-hover{
+              background:none;
+            }
+
+            .k-link {
+              font-weight:bold;
+              color:@sage-bright-green;
+
+              &:hover {
+                color:@sage-bright-green; 
+                cursor: default;
+              }
+            }
+          }
+
+          > .sub-heading.k-state-focused > .k-link {
+            background:#fff; 
+            color:@sage-bright-green;
+          }
         }
       }
     }
-
-    .session-date-widget-container {
-      display: none;
-    }
   }
 }
 
-/* mobile header for screens <= 1024 */
-/* ----------------------------------------------------------------------------------- */
-
-.header-alt {
-  position: absolute;
-  z-index: 1;
-
-  .logo-product {
-    display: block;
-    position: absolute;
-    left: 4.5rem;
-    top: 1rem;
-  }
-}
