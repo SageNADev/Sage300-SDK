@@ -832,6 +832,9 @@ $.extend(sg.utls.kndoUI, {
     },
 
     restrictDecimals: function (numericTextBoxData, numberOfDecimals, numberOfNumerals) {
+        if (typeof numericTextBoxData === "undefined" ) {
+            return;
+        }
         var numericTextBoxDataValue;
         if (numericTextBoxData.element) {
             numericTextBoxDataValue = numericTextBoxData.element;
