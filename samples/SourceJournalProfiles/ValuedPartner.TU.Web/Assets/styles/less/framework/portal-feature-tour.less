@@ -1,0 +1,369 @@
+//
+// Feature Tour
+// --------------------------------------------------
+
+
+/* First Time Login Experience: New Feature Tour */
+
+#firstTimeLogin { 
+  display: none;
+
+  .k-overlay {
+    opacity: 0;
+    background-color: #000;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.feature-tour {
+  display: none;
+  z-index: 12;
+
+  .ft-step {
+    opacity: 0;
+    position: absolute;
+    z-index: 12;
+
+    .wrapper {
+      position: absolute;
+      display: block;
+      width: 540px;
+      min-height: 220px;
+      z-index: 13;
+      background-color: #fff;
+      box-shadow: rgba(0,0,0,0.45) 0 0 20px;
+      -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 20px;
+      -moz-box-shadow: rgba(0,0,0,0.45) 0 0 20px;
+    }
+
+    &.show {
+      opacity: 1;
+      transition: linear 0.5s;
+      z-index: 13;
+    }
+  }
+
+  .ft-welcome, 
+  .ft-window,
+  .ft-notes,
+  .ft-reports,
+  .ft-help, 
+  .ft-inquiries, 
+  .ft-kpi,
+  .ft-recent-window,
+  .ft-gs {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .connector {
+      position: absolute;
+      top: 18px;
+      right: -50px;
+
+      .right-arrow {
+        position: relative;
+        background: #ed1c5f;
+        width: 60px;
+        height: 8px;
+
+        &:after {
+          content: '';
+          display: block;  
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          margin-top: -11px;
+          border-top: 11px solid transparent;
+          border-right: 11px solid transparent;
+          border-bottom: 11px solid transparent;
+          border-left: 16px solid #ed1c5f;
+        }
+      }
+      
+      .top-arrow {
+        position: relative;
+        background: #ed1c5f;
+        width: 8px;
+        height: 64px;
+
+        &:after {
+          content: '';
+          display: block;  
+          position: absolute;
+          margin-top: -26px;
+          margin-left: -7px;
+          border-top: 11px solid transparent;
+          border-right: 11px solid transparent;
+          border-bottom: 16px solid #ed1c5f;
+          border-left: 11px solid transparent;
+        }
+      }
+    }
+  }
+
+  .ft-welcome .wrapper {
+    top: 235px;
+    left: 50%;
+    margin-left: -270px;
+
+    .connector {
+      top: 248px;
+      left: 50%;
+    }
+  }
+
+  .ft-help .wrapper {
+    top: 120px;
+    right: 44px;
+
+    .connector {
+      top: -40px;
+      right: 25px;
+    }
+  }
+
+  .ft-gs .wrapper {
+    top: 120px;
+    right: 92px;
+
+    .connector {
+      top: -40px;
+      right: 25px;
+    }
+  }
+
+  .ft-kpi .wrapper {
+    top: 175px;
+    right: 55px;
+
+    .connector {
+      top: -40px;
+      right: 45px;
+    }
+  }
+
+  .ft-window .wrapper {
+    top: 83px;
+    right: 110px;
+  }
+
+  .ft-recent-window .wrapper {
+    top: 123px;
+    right: 110px;
+  }
+
+  .ft-reports .wrapper {
+    top: 163px;
+    right: 110px;
+  }
+
+  .ft-inquiries .wrapper {
+    top: 203px;
+    right: 110px;
+  }
+
+  .ft-notes .wrapper {
+    top: 243px;
+    right: 110px;
+  }
+
+  .title {
+    height: 44px;
+    background-color: #ed1c5f;
+    font-family: Arial, San-serif;
+    font-size: 16px;
+    color: #fff;
+
+    h3 {
+      line-height: 2.825rem;
+    }
+
+    .tour-icon {
+      background-image: url('@{image-path}/home/tour_icon_sprite.png');
+      background-repeat: no-repeat;
+      width: 55px;
+      height: 44px;
+      float: left;
+      cursor: default;
+
+      &.welcome-icon {
+        background-position: 0px 0px;
+      }
+
+      &.search-icon {
+        background-position: -55px 0px;
+      }
+
+      &.kpi-widget-icon {
+        background-position: -110px 0px;
+      }
+
+      &.window-icon {
+        background-position: -220px 0px;
+      }
+
+      &.help-icon {
+        background-position: -165px 0px;
+      }
+
+      &.recent-window-icon {
+        background-position: -275px 0px;
+      }
+
+    }
+
+    .tour-font-icon {
+      width: 55px;
+      height: 44px;
+      float: left;
+      cursor: default;
+      left: 16px;
+      top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .msgCtrl-close {
+      position: absolute;
+      margin: 0px;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+      right: 10px;
+      background-position: -120px -120px;
+      top: 6px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .msg-content { 
+    padding: 0 20px;
+    color: #4d4f53;
+    overflow: auto;
+    border-top: 0px;
+    background: #fff;
+    text-align: left;
+    min-height: 120px;
+
+    p {
+      line-height: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: @sage-link;
+        line-height: 24px;
+      }
+    }
+
+    ul {
+      line-height: 24px;
+
+      li {
+        list-style-type: disc;
+        margin-left: 35px;
+      }
+    }
+
+    .glyphicon {
+      font-size: xx-small;
+      top: 6px;
+    }
+  }
+
+  .msg-footer {
+    padding: 0 20px;
+
+    .step-indicator-group {
+      float: left;
+      width: 50%;
+      margin-top: 26px;
+      height: 30px;
+    }
+
+    .step-indicator {
+      width: 16px;
+      height: 16px;
+      background-color: #dbdbde;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-right: 1px;
+      border: 4px solid #fff;
+      cursor: pointer;
+
+      &.active {
+        background-color: #ed1c5f;
+      }
+    }
+
+    .button-group {
+      float: right;
+    }
+  }
+}
+
+/*
+* Bouncing animation
+*/
+
+.animated {
+  -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both; /* Chrome, Safari, Opera */
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+  animation-iteration-count: infinite;
+  -webkit-animation-delay: 3s; /* Chrome, Safari, Opera */
+  animation-delay: 3s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+  40% {-webkit-transform: translateY(-8px);}
+  60% {-webkit-transform: translateY(-2px);}
+} 
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-8px);}
+  60% {transform: translateY(-2px);}
+} 
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateX(0);}
+  40% {-webkit-transform: translateX(-8px);}
+  60% {-webkit-transform: translateX(-2px);}
+} 
+
+@keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+  40% {transform: translateX(-8px);}
+  60% {transform: translateX(-2px);}
+} 
+
+.bounceRight {
+  -webkit-animation-name: bounceRight;
+  animation-name: bounceRight;
+}

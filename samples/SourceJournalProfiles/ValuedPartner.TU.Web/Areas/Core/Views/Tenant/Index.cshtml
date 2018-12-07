@@ -1,4 +1,4 @@
-@* Copyright (c) 2017 Sage Software, Inc.  All rights reserved. *@
+@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
 
 @model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.TenantViewModel
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@CommonResx.Title</title>
-    @Styles.Render("~/Content/Styles/portalcss")
+    @Styles.Render("~/Assets/Styles/css/portalcss")
 </head>
 <body class="tenantForm">
     @using (Html.BeginForm(null, null, FormMethod.Post, new { Id = "frmTenantSelection" }))

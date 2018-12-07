@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 "use strict";
 (function (sg, $) {
     sg.finderHelper = {
@@ -420,8 +420,10 @@
         UICustomizationFinder: "asuicustomization",
 
         //TS
-        TsRCodeFinder: "taxratecodefinder"
+        TsRCodeFinder: "taxratecodefinder",
 
+        //TM
+        TmRCodeFinder: "tmtaxratecodefinder"
     };
 
     /* Add all the finders that doesn't require page navigation ie. First Page, Last Page buttons, shoud have the finder name in the below array 

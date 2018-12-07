@@ -456,7 +456,7 @@ $(document).ready(function () {
 
     $('#topMenuTools .k-link').click(function () {
         $('.quick-menu').toggle();
-        $(this).parent('.menu-item-with-icon').toggleClass('active').toggleClass('inactive')
+        $(this).parent('.menu-item-with-icon').toggleClass('inactive');
         return false;
     });
 

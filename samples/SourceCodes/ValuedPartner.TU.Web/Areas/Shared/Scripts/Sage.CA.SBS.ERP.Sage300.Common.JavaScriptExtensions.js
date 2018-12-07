@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
 
 var _DefaultDateConstructor = Date.prototype.constructor;
 Date = function (a, b, c, d, e, f, g) {

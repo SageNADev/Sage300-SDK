@@ -313,15 +313,31 @@ input[type="button"] {
   &.btn-refresh[disabled]:before {
     background-position: -463px -67px
   }
+
+  &.btn-select-all:before {
+    background-position: -800px 1px;
+  }
+
+  &.btn-select-all[disabled]:before {
+    background-position: -800px -69px
+  }
+
+  &#btnSelectAll,
+  &#btnClearAll {
+    text-indent: -6px;
+
+    &:before {
+      width: 0;
+    }
+  }
 }
 
 // Buttons using anchor tag
 
 a[class*="btn-"] {
-  color: @white;
   cursor: pointer; 
   padding: 6px 20px 5px;
-  margin-left: 6px;
+  margin-left: 14px;
   -webkit-appearance:         none;   /* iPad button defects */
   -moz-appearance:            none;   /* iPad button defects */
   -webkit-border-radius:      0;      /* iPad button defects */
@@ -334,15 +350,12 @@ a[class*="btn-"]:first-child {
   margin-left: 0;
 }
 a[class*="btn-"]:link {
-  color: @white;
   text-decoration: none;
 }
 a[class*="btn-"]:hover {
-  color: @white;
   text-decoration: none;
 }
 a[class*="btn-"]:visited {
-  color: @white;
   text-decoration: none;
 }
 a[class*="btn-"].disabled {

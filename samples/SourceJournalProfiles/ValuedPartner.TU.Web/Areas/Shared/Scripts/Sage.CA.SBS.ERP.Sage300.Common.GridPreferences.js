@@ -198,12 +198,19 @@ GridPreferences = {
 
             if (attributeNotExists || customizable == null || customizable) {
                 tableBody.append(window.gridPreferenceElements.listElement);
+                var text = "";
+                if (grid.columns[i].title) {
+                    text = grid.columns[i].title;
+                }
+                else if (grid.columns[i].headerTemplate) {
+                    text = $(grid.columns[i].headerTemplate).text()
+                }
                 tableBody.find("#chkNewGridPref").attr({
                     "id": "chkGridPref" + grid.columns[i].field,
                     "data-finder-key": grid.columns[i].field,
-                    "value": sg.utls.htmlDecode(grid.columns[i].title)
+                    "value": sg.utls.htmlDecode(text)
                 });
-                tableBody.find("#lblNewGridPref").text(sg.utls.htmlDecode(grid.columns[i].title)).attr({
+                tableBody.find("#lblNewGridPref").text(sg.utls.htmlDecode(text)).attr({
                     "id": "lblGridPref" + grid.columns[i].field,
                     "for": "chkGridPref" + grid.columns[i].field
                 });

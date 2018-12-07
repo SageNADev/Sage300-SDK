@@ -69,17 +69,24 @@ globalSearchUI = {
     },
 
     initSearchResult: function () {
-        $(".item-ID").click(function () {
-            var webDetailInfoArray = this.dataset.webdetailinfo.split(";"); // <screenid>;<parameter name>;<parameter value>; ... <parameter name>;<parameter value>;
-            window.parent.globalSearchDrillDownParameter = "";
-            if ((webDetailInfoArray.length - 1) % 2 === 0) { //To make sure the remaining values except the screen id exist in pairs.
-                for (var x = 1; x < webDetailInfoArray.length; x++) {
-                    if (window.parent.globalSearchDrillDownParameter !== "") { window.parent.globalSearchDrillDownParameter += "&" }; //To combine the parameters. 
-                    window.parent.globalSearchDrillDownParameter += webDetailInfoArray[x] + "=" + webDetailInfoArray[++x];
-                }
-            };
-            $("a[data-menuid=" + webDetailInfoArray[0] + "]", window.parent.document.body)[0].click();
-        });
+        if (this.dataSource.data().length === 0) {
+            $("#resultMessage").html($.validator.format(globalSearchResources.NoResult, $("#globalSearchBox").val()));
+            $("#resultMessage").show();
+        } else {
+            $("#resultMessage").hide();
+        
+            $(".item-ID").click(function () {
+                var webDetailInfoArray = this.dataset.webdetailinfo.split(";"); // <screenid>;<parameter name>;<parameter value>; ... <parameter name>;<parameter value>;
+                window.parent.globalSearchDrillDownParameter = "";
+                if ((webDetailInfoArray.length - 1) % 2 === 0) { //To make sure the remaining values except the screen id exist in pairs.
+                    for (var x = 1; x < webDetailInfoArray.length; x++) {
+                        if (window.parent.globalSearchDrillDownParameter !== "") { window.parent.globalSearchDrillDownParameter += "&" }; //To combine the parameters. 
+                        window.parent.globalSearchDrillDownParameter += webDetailInfoArray[x] + "=" + webDetailInfoArray[++x];
+                    }
+                };
+                $("a[data-menuid=" + webDetailInfoArray[0] + "]", window.parent.document.body)[0].click();
+            });
+        }
     },
 
     initButton: function () {

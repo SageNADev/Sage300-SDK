@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using TaxesResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.TaxesResx;
@@ -14,6 +14,9 @@
         TaxBase: '@Html.SageRaw(TaxesResx.TaxBase)',
         TaxAmount: '@Html.SageRaw(TaxesResx.TaxAmount)',
         TaxReportAmount: '@Html.SageRaw(TaxesResx.TaxReportingAmount)',
+        ReverseChargeBase:'@Html.SageRaw(TaxesResx.ReverseChargeBase)',
+        ReverseCharges:'@Html.SageRaw(TaxesResx.ReverseCharges)',
+        TaxWithheld:'@Html.SageRaw(TaxesResx.TaxWithheld)',
         FinderTitle: '@Html.SageRaw(CommonResx.Select)',
         yes: '@Html.SageRaw(CommonResx.Yes)',
         no: '@Html.SageRaw(CommonResx.No)',

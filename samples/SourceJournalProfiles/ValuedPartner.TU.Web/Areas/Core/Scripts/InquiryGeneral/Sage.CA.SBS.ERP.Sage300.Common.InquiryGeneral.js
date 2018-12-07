@@ -19,7 +19,7 @@
             name: "GridFilterPanel",
             template: "<span style='color:blue'>" + inquiryGeneralResources.Filter + "</span> #= filter #",
             placeholder: "<span style='color:blue'>" + inquiryGeneralResources.NoFilter + "</span>",
-            columns: [],
+            columns: []
         },
 
         init: function (element, options) {
@@ -128,6 +128,8 @@
 })(jQuery);
 
 var InquiryGeneralUI = function () {
+    // The culture is usually set in Global.js but there seems to be a timing issue so set it here first
+    kendo.culture(globalResource.Culture);
     //var drillDowntemplate = '<div class="pencil-wrapper"><span class="pencil-txt">#= {0} #</span><span class="pencil-icon"><input type="button" class="icon edit-field inqueryEditCell"/></span></div>';
     var datetimeTemplate = '#if({0} === null || {0} == ""){##}else{# #= kendo.toString(kendo.parseDate({0}), "d") #  #}#';
     var filterOperator = { eq: "=", neq: "!=", gt: ">", gte: ">=", lt: "<", lte: "<=" };
@@ -174,13 +176,20 @@ var InquiryGeneralUI = function () {
                 var columns = grid.getOptions().columns;
                 var fields = columns.map(function (f) { f.IsDisplayable = !f.hidden; return f; });
                 var filter = grid.getOptions().dataSource.filter;
+
+                // Convert all dates in filter to a culture invariant format
+                if (filter) {
+                    var datetimefields = fields.filter(function (f) { return f.dataType.toLowerCase() === "datetime"; }); // cache datetime fields for better performance
+                    filter = convertToCultureInvariantDate(filter, datetimefields);
+                }
+
                 var group = grid.getOptions().dataSource.group;
 
                 savedInquiryTitle = template.Name;
-                if (template.Type == inquiryGeneralResources.Private) {
-                    template.Type ="Private"
-                } else if (template.Type == inquiryGeneralResources.Public) {
-                    template.Type = "Public"
+                if (template.Type === inquiryGeneralResources.Private) {
+                    template.Type = "Private";
+                } else if (template.Type === inquiryGeneralResources.Public) {
+                    template.Type = "Public";
                 }
 
                 var value = {
@@ -193,6 +202,24 @@ var InquiryGeneralUI = function () {
                 sg.utls.ajaxPost(url, value, saveTemplate);
             }
         }
+    }
+
+    // Recursive helper function to convert dates in a filter to a culture invariant format
+    function convertToCultureInvariantDate(filter, datetimefields) {
+        if (filter.filters && filter.filters.length > 0) {
+            filter.filters.forEach(function(f) {
+                convertToCultureInvariantDate(f, datetimefields); // recursive case
+            });
+        } else {
+            // Check that the column being filtered is of datetime type
+            for (var i = 0; i < datetimefields.length; i++) {
+                if (datetimefields[i].field === filter.field) {
+                    filter.value = kendo.toString(kendo.parseDate(filter.value), "yyyyMMdd"); // base case - do conversion
+                    break;
+                }
+            }
+        }      
+        return filter;
     }
 
     //Show elements for adhoc inquiry
@@ -626,7 +653,7 @@ var InquiryGeneralUI = function () {
                 if (filter.filters && filter.filters.length > 0) {
                     filter.filters.forEach(function (f) {
                         convertFilterOperator(f);
-                    })
+                    });
                 }
                 if (filter.Operator) {
                     filter.operator = (filter.Operator == '=') ? 'eq' : filter.Operator ;
@@ -717,6 +744,64 @@ var InquiryGeneralUI = function () {
                     string: filterOperator
                 }
             },
+            columnMenuInit: function (e) {
+                //Fix spanish localization issue for kendo grid filter
+                if (kendo.culture().name.indexOf("es") > -1) {
+                    var menu = e.container.find(".k-menu").data("kendoMenu");
+                    var container = e.container;
+                    var field = e.field;
+                    var col = cols.filter(function (i) { return i.field === field });
+                    if (col.length > 0 && col[0].dataType === "Decimal") {
+                        menu.bind("open", function (e) {
+                            var values = [];
+                            UpdateDisplay();
+                            var attrValue = "value: filters[0].operator";
+                            var filterDropdown0 = container.find("[data-role=dropdownlist][data-bind='" + attrValue + "']").data("kendoDropDownList");
+                            if (filterDropdown0) {
+                                filterDropdown0.bind('change', UpdateDisplay);
+                            }
+                            attrValue = "value: filters[1].operator";
+                            var filterDropdown1 = container.find("[data-role=dropdownlist][data-bind='" + attrValue + "']").data("kendoDropDownList");
+                            if (filterDropdown1) {
+                                filterDropdown1.bind('change', UpdateDisplay);
+                            }
+
+                            //Function to get filter values
+                            function getFilterValues(filter, name) {
+                                for (var idx = 0, length = filter.filters.length; idx < length; idx++) {
+                                    var child = filter.filters[idx];
+                                    if (child.filters && child.filters.length > 0) {
+                                        getFilterValues(child, name);
+                                    } else {
+                                        if (child.field === name) {
+                                            values.push(child.value);
+                                        }
+                                    }
+                                }
+                                return values;
+                            }
+
+                            //For spanish locale, update the display value, reset the numeric textbox with locale string
+                            function UpdateDisplay() {
+                                var filter = $("#inquiryGrid").data("kendoGrid").dataSource.filter();
+                                if (filter) {
+                                    values = []
+                                    getFilterValues(filter, field);
+                                    var numeric0 = container.find("[data-role=numerictextbox][data-bind*='0']").data("kendoNumericTextBox");
+                                    var numeric1 = container.find("[data-role=numerictextbox][data-bind*='1']").data("kendoNumericTextBox");
+                                    if (numeric0 && values.length > 0) {
+                                        numeric0.value(values[0].toString().replace('.', ','));
+                                    }
+                                    if (numeric1 && values.length > 1) {
+                                        numeric1.value(values[1].toString().replace('.', ','));
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            },
+
             sortable: {
                 allowUnsort: false
             },
