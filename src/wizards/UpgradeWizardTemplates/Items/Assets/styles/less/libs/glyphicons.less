@@ -1,0 +1,601 @@
+//
+// Glyphicons
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
+
+// Import the fonts
+@font-face {
+  font-family: 'Sage Armonye Icons';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}
+
+[data-icon]:before {
+  font-family: "Sage Armonye Icons";
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon {
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+  }
+}
+
+.glyphicon-add:before {
+  content: "\2b";
+}
+.glyphicon-zoom-out:before {
+  content: "\68";
+}
+.glyphicon-zoom-in:before {
+  content: "\67";
+}
+.glyphicon-wizard:before {
+  content: "\e052";
+}
+.glyphicon-window:before {
+  content: "\65";
+}
+.glyphicon-volume-up:before {
+  content: "\e054";
+}
+.glyphicon-volume-muted:before {
+  content: "\e055";
+}
+.glyphicon-volume-down:before {
+  content: "\e056";
+}
+.glyphicon-bell-notification:before {
+  content: "\e057";
+}
+.glyphicon-bidirection:before {
+  content: "\23";
+}
+.glyphicon-calendar:before {
+  content: "\3c8";
+}
+.glyphicon-camera:before {
+  content: "\e059";
+}
+.glyphicon-credit-card-visa:before {
+  content: "\e05a";
+}
+.glyphicon-chat:before {
+  content: "\26";
+}
+.glyphicon-check:before {
+  content: "\3bd";
+}
+.glyphicon-clip:before {
+  content: "\a7";
+}
+.glyphicon-diagram:before {
+  content: "\5a";
+}
+.glyphicon-dir-btm:before {
+  content: "\6a";
+}
+.glyphicon-dir-down:before {
+  content: "\e05e";
+}
+.glyphicon-dir-top:before {
+  content: "\6b";
+}
+.glyphicon-enlarge:before {
+  content: "\e97d";
+}
+.glyphicon-error:before {
+  content: "\f8";
+}
+.glyphicon-euro:before {
+  content: "\20ac";
+}
+.glyphicon-exit:before {
+  content: "\48";
+}
+.glyphicon-export:before {
+  content: "\e061";
+}
+.glyphicon-graph-pie:before {
+  content: "\e062";
+}
+.glyphicon-grid:before {
+  content: "\4d";
+}
+.glyphicon-help:before {
+  content: "\3f";
+}
+.glyphicon-home:before {
+  content: "\4f";
+}
+.glyphicon-list:before {
+  content: "\69";
+}
+.glyphicon-list-2:before {
+  content: "\6f";
+}
+.glyphicon-lock:before {
+  content: "\44";
+}
+.glyphicon-logo-microsoft-excel:before {
+  content: "\e069";
+}
+.glyphicon-logo-microsoft-powerpoint:before {
+  content: "\e06a";
+}
+.glyphicon-logo-sage:before {
+  content: "\e06b";
+}
+.glyphicon-logo-sage-city:before {
+  content: "\e06c";
+}
+.glyphicon-logo-tumblr:before {
+  content: "\e06d";
+}
+.glyphicon-next-all:before {
+  content: "\bb";
+}
+.glyphicon-note:before {
+  content: "\77";
+}
+.glyphicon-server:before {
+  content: "\e06f";
+}
+.glyphicon-os-android:before {
+  content: "\e070";
+}
+.glyphicon-quick-add:before {
+  content: "\2295";
+}
+.glyphicon-quick-alert:before {
+  content: "\e071";
+}
+.glyphicon-quick-close:before {
+  content: "\2297";
+}
+.glyphicon-quick-error:before {
+  content: "\2204";
+}
+.glyphicon-scroll-up:before {
+  content: "\e072";
+}
+.glyphicon-setting:before {
+  content: "\2217";
+}
+.glyphicon-share:before {
+  content: "\e073";
+}
+.glyphicon-smartphone:before {
+  content: "\e074";
+}
+.glyphicon-task:before {
+  content: "\72";
+}
+.glyphicon-thumbs-down:before {
+  content: "\e076";
+}
+.glyphicon-thumbs-up:before {
+  content: "\e077";
+}
+.glyphicon-tick:before {
+  content: "\61";
+}
+.glyphicon-video-play:before {
+  content: "\e079";
+}
+.glyphicon-video-rw:before {
+  content: "\e07a";
+}
+.glyphicon-video-stop:before {
+  content: "\e07b";
+}
+.glyphicon-volume:before {
+  content: "\e07c";
+}
+.glyphicon-alert:before {
+  content: "\21";
+}
+.glyphicon-account-payable:before {
+  content: "\37";
+}
+.glyphicon-account-payable-euro:before {
+  content: "\e07f";
+}
+.glyphicon-account-payable-pound:before {
+  content: "\e080";
+}
+.glyphicon-account-receivable:before {
+  content: "\38";
+}
+.glyphicon-account-receivable-euro:before {
+  content: "\e082";
+}
+.glyphicon-account-receivable-pound:before {
+  content: "\e083";
+}
+.glyphicon-arrow-down:before {
+  content: "\e084";
+}
+.glyphicon-arrow-left:before {
+  content: "\2190";
+}
+.glyphicon-arrow-right:before {
+  content: "\2192";
+}
+.glyphicon-arrow-up:before {
+  content: "\e085";
+}
+.glyphicon-bell:before {
+  content: "\22";
+}
+.glyphicon-caret-btm:before {
+  content: "\e087";
+}
+.glyphicon-caret-first:before {
+  content: "\e088";
+}
+.glyphicon-caret-last:before {
+  content: "\e089";
+}
+.glyphicon-caret-top:before {
+  content: "\e08a";
+}
+.glyphicon-cart:before {
+  content: "\25";
+}
+.glyphicon-credit-card:before {
+  content: "\e08c";
+}
+.glyphicon-credit-card-amex:before {
+  content: "\e08d";
+}
+.glyphicon-credit-card-discover:before {
+  content: "\e08e";
+}
+.glyphicon-credit-card-mc:before {
+  content: "\e08f";
+}
+.glyphicon-clock:before {
+  content: "\34";
+}
+.glyphicon-close:before {
+  content: "\78";
+}
+.glyphicon-collaborate:before {
+  content: "\2234";
+}
+.glyphicon-columns:before {
+  content: "\31";
+}
+.glyphicon-comments:before {
+  content: "\e093";
+}
+.glyphicon-confirm:before {
+  content: "\30";
+}
+.glyphicon-copy:before {
+  content: "\e095";
+}
+.glyphicon-customer-support:before {
+  content: "\e096";
+}
+.glyphicon-devices:before {
+  content: "\e097";
+}
+.glyphicon-dir-up:before {
+  content: "\e098";
+}
+.glyphicon-doc-pdf:before {
+  content: "\59";
+}
+.glyphicon-doc-search:before {
+  content: "\58";
+}
+.glyphicon-document:before {
+  content: "\57";
+}
+.glyphicon-dollar:before {
+  content: "\24";
+}
+.glyphicon-down:before {
+  content: "\25bc";
+}
+.glyphicon-download:before {
+  content: "\62";
+}
+.glyphicon-dragdrop-doc:before {
+  content: "\e09e";
+}
+.glyphicon-email:before {
+  content: "\53";
+}
+.glyphicon-face-average:before {
+  content: "\e001";
+}
+.glyphicon-face-happy:before {
+  content: "\e002";
+}
+.glyphicon-face-sad:before {
+  content: "\e003";
+}
+.glyphicon-fax:before {
+  content: "\6c";
+}
+.glyphicon-filter:before {
+  content: "\46";
+}
+.glyphicon-folder:before {
+  content: "\4a";
+}
+.glyphicon-garbage:before {
+  content: "\4b";
+}
+.glyphicon-graph-bar:before {
+  content: "\4c";
+}
+.glyphicon-graph-line:before {
+  content: "\e009";
+}
+.glyphicon-image:before {
+  content: "\e00a";
+}
+.glyphicon-image-upload:before {
+  content: "\e00b";
+}
+.glyphicon-import:before {
+  content: "\e00c";
+}
+.glyphicon-info:before {
+  content: "\49";
+}
+.glyphicon-inventory:before {
+  content: "\51";
+}
+.glyphicon-laptop:before {
+  content: "\e00f";
+}
+.glyphicon-layout:before {
+  content: "\52";
+}
+.glyphicon-left:before {
+  content: "\e011";
+}
+.glyphicon-leftright:before {
+  content: "\2194";
+}
+.glyphicon-lightning::before {
+    content: "\e9be";
+}
+.glyphicon-logo-facebook:before {
+  content: "\e013";
+}
+.glyphicon-logo-google-plus:before {
+  content: "\e014";
+}
+.glyphicon-logo-instagram:before {
+  content: "\e015";
+}
+.glyphicon-logo-linkedin:before {
+  content: "\e016";
+}
+.glyphicon-logo-microsoft-office:before {
+  content: "\e017";
+}
+.glyphicon-logo-microsoft-onedrive:before {
+  content: "\e018";
+}
+.glyphicon-logo-microsoft-outlook:before {
+  content: "\e019";
+}
+.glyphicon-logo-periscope:before {
+  content: "\e01a";
+}
+.glyphicon-logo-pinterest:before {
+  content: "\e01b";
+}
+.glyphicon-logo-twitter:before {
+  content: "\e01c";
+}
+.glyphicon-logo-microsoft-word:before {
+  content: "\e01d";
+}
+.glyphicon-logo-youtube:before {
+  content: "\e01e";
+}
+.glyphicon-magnifying-glass:before {
+  content: "\43";
+}
+.glyphicon-mail:before {
+  content: "\42";
+}
+.glyphicon-menu:before {
+  content: "\39e";
+}
+.glyphicon-more:before {
+  content: "\2026";
+}
+.glyphicon-move:before {
+  content: "\e023";
+}
+.glyphicon-next:before {
+  content: "\3e";
+}
+.glyphicon-os-apple:before {
+  content: "\e025";
+}
+.glyphicon-os-windows:before {
+  content: "\e026";
+}
+.glyphicon-pc:before {
+  content: "\e027";
+}
+.glyphicon-pencil:before {
+  content: "\76";
+}
+.glyphicon-pin:before {
+  content: "\75";
+}
+.glyphicon-pound:before {
+  content: "\a3";
+}
+.glyphicon-prev:before {
+  content: "\3c";
+}
+.glyphicon-prev-all:before {
+  content: "\ab";
+}
+.glyphicon-print:before {
+  content: "\70";
+}
+.glyphicon-quick-help:before {
+  content: "\66";
+}
+.glyphicon-quick-info:before {
+  content: "\a1";
+}
+.glyphicon-quick-subtract:before {
+  content: "\2205";
+}
+.glyphicon-refresh:before {
+  content: "\6d";
+}
+.glyphicon-report:before {
+  content: "\6e";
+}
+.glyphicon-reset:before {
+  content: "\e033";
+}
+.glyphicon-right:before {
+  content: "\e034";
+}
+.glyphicon-save:before {
+  content: "\e035";
+}
+.glyphicon-scroll-down:before {
+  content: "\e036";
+}
+.glyphicon-sms:before {
+  content: "\e037";
+}
+.glyphicon-star:before {
+  content: "\2666";
+}
+.glyphicon-star-empty:before {
+  content: "\e039";
+}
+.glyphicon-star-half:before {
+  content: "\e03a";
+}
+.glyphicon-start:before {
+  content: "\71";
+}
+.glyphicon-subscribe:before {
+  content: "\e03c";
+}
+.glyphicon-subtract:before {
+  content: "\2d";
+}
+.glyphicon-sync:before {
+  content: "\e03e";
+}
+.glyphicon-tablet:before {
+  content: "\e03f";
+}
+.glyphicon-unlock:before {
+  content: "\e040";
+}
+.glyphicon-up:before {
+  content: "\25b2";
+}
+.glyphicon-updown:before {
+  content: "\63";
+}
+.glyphicon-upload:before {
+  content: "\54";
+}
+.glyphicon-user:before {
+  content: "\64";
+}
+.glyphicon-video-collapse:before {
+  content: "\e045";
+}
+.glyphicon-video-expand:before {
+  content: "\e046";
+}
+.glyphicon-video-ff:before {
+  content: "\e047";
+}
+.glyphicon-video-pause:before {
+  content: "\e048";
+}
+.glyphicon-doc-preview:before {
+  content: "\79";
+}
+.glyphicon-phone-outlined:before {
+  content: "\73";
+}
+.glyphicon-phone:before {
+  content: "\7a";
+}
+.glyphicon-trending-down:before {
+  content: "\41";
+}
+.glyphicon-trending-down-outlined:before {
+  content: "\4e";
+}
+.glyphicon-trending-up-outlined:before {
+  content: "\55";
+}
+.glyphicon-trending-up:before {
+  content: "\56";
+}
+.glyphicon-column-sort:before {
+  content: "\74";
+}
+.glyphicon-calendar-1:before {
+  content: "\e010";
+}
+.glyphicon-hyperlink:before {
+  content: "\27";
+}
+.glyphicon-dragdrop-img:before {
+  content: "\e00b";
+}
+.glyphicon-dragdrop-doc:before {
+  content: "\e09e";
+}
+.glyphicon-data-management::before {
+    content: "\e966";
+}
+.glyphicon-db::before {
+    content: "\e967";
+}
+
+

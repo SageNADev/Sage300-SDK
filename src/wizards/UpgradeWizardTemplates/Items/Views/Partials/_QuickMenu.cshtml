@@ -1,0 +1,63 @@
+﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities.Constants;
+@using System.Linq;
+
+<script type="text/javascript">
+    var menuUrlList = @Html.Raw(Json.Encode(ViewBag.MenuUrlList));
+    var otherUrlList = @Html.Raw(Json.Encode(ViewBag.OthersUrlList));
+</script>
+
+
+<!--Start Quick Menu (draggable sidebar)-->
+<div class="quick-menu ui-draggable ui-draggable-handle" id="draggable">
+    <!--Drag -->
+    <div class="quick-tools-head"><span aria-hidden="true" class="glyphicon glyphicon-lightning"></span></div>
+    <div class="quick-tools-body">
+    <!--Window Manager -->
+    <div class="quick-menu-item quick-menu-windows" id="windowManager" title="@HomePageResx.QuickMenu_WindowManager">
+        <i class="glyphicon glyphicon-window"></i>
+        <span class="item-count" id="spWindowCount"></span>
+        <div class="open-window" id="windowManagerPopup">
+            <div class="open-window-header left">@HomePageResx.OpenWindows</div>
+            @*<div class="open-window-header close right">@HomePageResx.QuickMenu_CloseAll</div>*@<!-- Removed for future. -->
+            <div class="clear-fix"></div>
+            <div id="dvWindows">
+            </div>
+        </div>
+        <span class="task_added" style="display: none;"><span aria-hidden="true" class="glyphicon glyphicon-check"></span>@HomePageResx.CNAPortal_Task<br>@HomePageResx.TaskAdded</span>
+    </div>
+    <!--Recently used windows-->
+    <div class="quick-menu-item quick-menu-window-history" id="recentWindowManager" title="@HomePageResx.QuickMenu_RecentWindows">
+        <i class="window-history"></i>
+        <div class="open-window" id="recentWindowsPopup">
+            <div class="open-window-header left">@HomePageResx.QuickMenu_RecentWindows</div>
+            <div class="clear-fix"></div>
+            <div class="open-recent-window" id="dvRecentWindows">
+            </div>
+        </div>
+    </div>
+
+
+    <!--Reports button -->
+    <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
+        <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
+    </div>
+    <!--Inquiries -->
+    <div class="quick-menu-item quick-menu-inquiry" id="btnViewInquiries">
+        <i class="glyphicon glyphicon-doc-search" title="@HomePageResx.QuickMenu_Inquiries"></i>
+    </div>
+    <!--Notes Center -->
+    @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+    {
+        <div class="quick-menu-item quick-menu-notes" id="btnViewNotes" title="@HomePageResx.QuickMenu_Notes">
+            <i class="glyphicon glyphicon-note"></i>
+        </div>
+        }
+    </div>
+        
+</div>
+
+<!--End Quick Menu (draggable sidebar)-->
+

@@ -1,0 +1,635 @@
+/* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+}
+
+/* basic elements */
+
+body, td, input {
+	font: normal 14px/1.35 'Arial', 'Helvetica Neue', 'MS Sans-Serif';
+	color: #232325;
+}
+
+body {
+    background-color: #ebedef;
+    background-size: cover;
+    background-image: url("../../assets/images/login/login-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+body.admin {
+    background-color: #ebedef;
+    background-size: cover;
+    background-image: url("../../assets/images/login/login-bg_admin.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+body.master-stand-alone {
+    background-color: #fff;
+    background-image: none;
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.15;
+}
+
+.page-header {
+    margin-bottom: 20px;
+    font-family: 'Calibri';
+    font-weight: normal;
+    color: #3c424f;
+}
+
+h1.page-header {
+    font-size: 30px;
+}
+
+h2.page-header {
+    font-size: 22px;
+}
+
+p {
+	margin: 0 0 12px;
+}
+
+a, a:visited {
+	color: #255bc7;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #255bc7;
+	text-decoration: underline;
+}
+
+
+.header {
+	height: 3.5rem;
+    background-color: #3c424f;
+    box-shadow: 0 2px 4px rgba(0,0,0,.24);
+}
+
+.footer {
+	background-color: #4d4f53;
+	height: 40px;
+	color: #cfcfcf;
+	font-size: 11px;
+	position: static;
+	width: 100%;
+	text-align: center;
+	padding: 13px 0 0;
+}
+
+.footer.affix-bottom {
+    bottom: 0;
+    position: fixed;
+}
+
+.header > .wrapper,
+.main-body > .wrapper {
+	width: 940px;
+	padding: 16px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.footer > .wrapper {
+    width: 100%;
+    min-width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.footer .logo-sage {
+	position: absolute;
+	top: -4px;
+	left: 64px;
+}
+
+.version {
+    position: absolute;
+    top: -55px;
+    left: 175px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* inline links */
+.lnk-inline {
+	margin: 0 6px 0 0;
+	padding: 0 10px 0 0;
+	border-right: 1px solid #ccc;
+}
+
+.lnk-inline:last-of-type {
+	border-right: none;
+}
+
+/* message boxes */
+.msg {
+	margin: 0 0 20px;
+}
+
+.msg-heading {
+	background-color: #3c414e;
+	font-weight: normal;
+	height: 50px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #fff;
+	line-height: 50px;
+	position: relative;
+    padding-left: 65px;
+}
+
+.msg-body {
+	padding: 20px 15px 20px 65px;
+    border: 1px solid #9a9b9c;
+    border-top: 0px;
+    background: #fff;
+    text-align: left;
+}
+
+.msg-heading:before {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	top: 0;
+	left: 0;
+	content: "";
+	background: #41a940 url('../Images/sprite_msg.png') no-repeat -47px 9px; /* default is confirmation */
+}
+
+.msg-info .msg-heading:before {
+	background-color: #009fda;
+	background-position: 9px 9px;
+}
+
+.msg-warning .msg-heading:before {
+	background-color: #ff5800;
+	background-position: -103px 9px;
+}
+
+.msg-error .msg-heading:before {
+	background-color: #ff0000;
+	background-position: -159px 9px;
+}
+
+/* buttons ------------------------------------------------------------- */
+
+.button-group input[class*="btn-"]{
+	margin-top: 25px;
+}
+
+.button-group input[class*="btn-"]:first-child{
+	margin-left: 0;
+}
+
+input[class*="btn-"] {
+    cursor: pointer; 
+    height: 30px; 
+    -webkit-appearance:         none;   /* inok: iPad button defects */
+    -moz-appearance:            none;   /* inok: iPad button defects */
+    -webkit-border-radius:      0;      /* inok: iPad button defects */
+    -moz-border-radius:         0;      /* inok: iPad button defects */
+    -o-border-radius:           0;      /* inok: iPad button defects */
+    border-radius:              0;      /* inok: iPad button defects */
+}
+
+.btn-primary, .btn-secondary { 
+	font-weight: 700; 
+	color: #fff; 
+	padding: 1px 40px 0 40px; 
+	font-size: 90%; margin:0; 
+	height: 30px; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	max-width: 300px;
+}
+
+.btn-primary { 
+	background: #255bc7; 
+	border: 1px solid #255bc7;
+}
+
+.btn-primary:hover { 
+	background: #1d479c; 
+	border: 1px solid #255bc7;
+}
+
+.btn-secondary { 
+	background: #fff; 
+    color: #255bc7;
+	border: 1px solid #255bc7;
+}
+
+.btn-secondary:hover { 
+	background: #e8effe; 
+    color: #255bc7;
+	border: 1px solid #255bc7;
+}
+
+.btn-primary:disabled, .btn-secondary:disabled  { 
+	background: #eaeaea; 
+	border: 1px solid #e0e0e0; 
+	color: #c0bebe;
+}
+
+.btn-primary:focus { /*New UI: Focus style added for primary button*/
+    background-color: #1d479c; 
+    border: 1px solid #255bc7;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+
+}
+
+.btn-secondary:focus { /*New UI: Focus style added for secondary button*/
+    color: #255bc7;
+    border:1px solid #255bc7;
+    background-color: #e8effe;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+
+}
+
+/* login page custom css ------------------------------------------------------------- */
+
+#lnkChangePassword:focus { /*New UI: Focus style added for Change Password link*/
+    text-decoration:underline;
+}
+
+.input-group  input[type=text].medium, 
+.input-group  input[type=password].medium, 
+.input-group .k-numerictextbox.medium { 
+	width: 360px;
+}
+
+.dropdown-group .k-dropdown.medium {
+	width: 360px; 
+}
+
+.login .button-group .left {
+	line-height: 68px;
+}
+
+.k-window {
+	padding-bottom: 0;
+}
+
+.button-group input[class*="btn-"] {
+	margin-top: 10px;
+	margin-left: 6px;
+}
+
+.login .button-group input[class*="btn-"] {
+	margin-top: 20px;
+}
+
+.login .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.k-window {
+	box-shadow: 			rgba(0,0,0,0.45) 0 0 30px;
+	-webkit-box-shadow: 	rgba(0,0,0,0.45) 0 0 30px;
+	-moz-box-shadow: 		rgba(0,0,0,0.45) 0 0 30px;
+}
+
+.k-window .modal-msg.k-window-content {
+	margin: 0;
+}
+
+.modal-msg .message-control {
+	margin: 0;
+}
+
+.message-control .msg-content {
+	border: none;
+	padding-bottom: 0;
+}
+
+div.k-window {
+	border: none;
+	background:#fff;
+}
+
+.k-window .k-window-titlebar.k-header {
+    font-size: 14px;
+    background: #3c424f;
+    color: #fff;
+    border-radius: 0;
+    height: 50px;
+}
+
+/*.k-window .k-window-titlebar .k-window-actions .k-i-close {
+	background-position: -71px -15px;
+	background-image: url('../Images/portalSprite.png');
+}*/
+
+.k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover .k-i-close{
+	border: none;
+	background-position:-71px -15px;
+}
+
+.k-window .k-window-titlebar .k-window-actions .k-link.k-state-hover{ 
+	background: none;
+}
+
+#message {
+	top: 70px;
+}
+.modal-wide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  height: 100vh;
+  display: initial;
+} 
+
+.wrapper-change-password {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    background-color: #fff;
+}
+
+.wrapper-change-password .k-window-titlebar {
+    margin-top: -50px !important;
+}
+
+.wrapper-change-password .k-window-titlebar .k-window-actions {
+     top: 3px; 
+}
+
+
+/* end login page custom css ----------------------------------------------------------- */
+
+/* List custom css ----------------------------------------------------------- */
+
+.std-list {
+  padding: 6px 0 0 24px;
+}
+
+.std-list li {
+  margin: 0 0 6px 0;
+}
+
+ul.std-list {
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+ol.std-list {
+  list-style-type: decimal;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+/* New login styles ----------------------------------------------------------- */
+
+.header.login {
+	width: 340px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	padding-top: 57px;
+	position: relative;
+	left: 66px;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	background: none;
+}
+
+.header.login > .wrapper {
+	width: 340px;
+	padding: 0 15px 100px;
+}
+
+.header.login:after {
+	content: "";
+	opacity: 0.85;
+	background-color: #ebedef;
+	position: fixed;
+	width: 340px;
+	top: 0;
+    left: 66px;
+	bottom: 0;
+	z-index: -1;
+}
+
+.header.login .Sage_logo {
+	width: 134px;
+    height: 132px;
+    margin: 0 auto;
+    background-color: #00dc00;
+    border-radius: 3px;
+}
+
+.main-body.login > .wrapper {
+	width: 340px;
+	padding: 0 15px;
+	margin: 0 0 0 66px;
+}
+
+.main-body.login  h1.page-header {
+	font-family: Arial;
+	color: #555;
+	font-size: 20px;
+	font-weight: normal;
+	border: 0;
+    text-align: center;
+    padding: 36px 0 0 0;
+    margin: 0 0 20px;
+}
+
+.main-body.login .page-header-2 {
+    font-family: Arial;
+    color: #555;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: -10px 0 20px;
+}
+
+.main-body.login .input-group {
+	margin-bottom: 10px;
+}
+
+input[type=text].login, 
+input[type=password].login{
+	width: 310px;
+	height: 36px !important;
+	border-color: #ccc;
+}
+
+input[type=text].login:focus, 
+input[type=password].login:focus {
+    border-color: #66afe9;
+}
+
+.main-body.login .dropdown-group {
+    margin-bottom: 15px;
+    width: 310px;
+}
+
+.main-body.login .dropdown-group .k-dropdown {
+    height: 36px !important;
+    width: 310px;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap {
+	height: 36px;
+    border-color: #ccc;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-default:focus,
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-focused,
+.main-body.login .dropdown-group .k-dropdown-wrap.k-state-focused .k-input {
+	border-color: #66afe9;
+    -webkit-box-shadow: none;
+    box-shadow: none);
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-select {
+	border-left: 1px solid #ccc;
+	width: 36px;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-input {
+	padding: 8px 10px;
+	height: 34px;
+    line-height: 1.5;
+}
+
+.main-body.login .dropdown-group .k-dropdown-wrap .k-icon {
+	margin-top: 4px;
+}
+
+.main-body.login .button-group {
+	width: 310px;
+	margin-top: 5px;
+    text-align: right;
+}
+
+.main-body.login .button-group input[class*="btn-login"] {
+	width: 100%;
+	margin: 0;
+	height: 36px;
+    max-width: 310px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+input[type=text]:-webkit-autofill,
+input[type=password]:-webkit-autofill, 
+input[type=text]:-webkit-autofill:focus,
+input[type=password]:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder  { /* WebKit, Blink, Edge */
+    color:    #999;
+}
+input[type=text]:-moz-placeholder,
+input[type=password]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #999;
+   opacity:  1;
+}
+input[type=text]::-moz-placeholder,
+input[type=password]::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #999;
+   opacity:  1;
+}
+input[type=text]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #999;
+}
+
