@@ -1,0 +1,70 @@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.AdhocInquiryViewModel
+@using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+@functions{
+    public static string GetResourceString(string resouceFileName, string resourceName, string defaultName)
+    {
+        if (!string.IsNullOrEmpty(resouceFileName) && !string.IsNullOrEmpty(resourceName))
+        {
+            var resourceType = Type.GetType(resouceFileName);
+            return (string)resourceType.GetProperty(resourceName).GetGetMethod().Invoke(null, null);
+        }
+        return defaultName;
+    }
+}
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("AdhocInquiryViewModel", Model)
+    var localizedName = '@Html.SageRaw(GetResourceString(Model.Data.ResourceType, Model.Data.ResourceKey, Model.Data.Name))';
+    var localizedFeatureName = '@Html.SageRaw(GetResourceString(Model.Data.InquiryFeatureType.ResourceType, Model.Data.InquiryFeatureType.FeatureIdResourceKey, Model.Data.InquiryFeatureType.Id))';
+
+    var nameToDisplayName = {
+        @foreach (var field in Model.Data.InquiryFeatureType.Fields)
+        {
+            @:"@field.Name": "@field.DisplayName",
+        }
+    };
+
+</script>
+
+@Scripts.Render("~/bundles/AdhocInquiry")
+
+@Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_Localization.cshtml")
+
+<div class="form-screen crm">
+    <div id="message"></div>
+    <div id="success"></div>
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    <h1 id="headTitleInquiry" data-bind="text: LocalizedName"></h1>
+                </div>
+                <div class="header-options">
+                  <input class="btn btn-secondary" name="btnOpen" type="button" value="@InquiryResx.OpenQuery" id="btnOpenQuery">
+                  <input class="btn btn-primary" name="btnSave" type="button" value="@InquiryResx.SaveQuery" id="btnSaveQuery"> 
+              </div>
+            </div>
+        </section>
+    </header>
+
+    <div class="grid-group">
+        <div class="gridcontrols-group clearfix">
+            <div class="right">
+                <lebel class="label-gridcontrl">Per Page :</lebel>
+                <button class="pagesize-10" type="button">10</button>
+                <button class="pagesize-20 active" type="button">20</button>
+                <button class="pagesize-30" type="button">30</button>
+                <button class="btn btn-default btn-grid-control btn-delete" type="button" title="Delete Filter">Delete Filter</button>
+            </div>
+        </div>
+        <div id="adhocInquiryGrid" class="datagrid-group"></div>
+    </div>
+    
+    <section class="footer-group-1">
+        @*@Html.KoSageButton("btnPrint", new {}, new {@value = CommonResx.Print, @id = "btnSave", @class = "btn btn-default"})*@
+        @Html.KoSageButton("btnExport", new {}, new {@value = CommonResx.Export, @id = "btnExport", @class = "btn btn-default"})
+    </section>
+</div>

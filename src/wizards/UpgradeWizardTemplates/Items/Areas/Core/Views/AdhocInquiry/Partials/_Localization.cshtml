@@ -1,0 +1,19 @@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
+@using Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms
+
+<script type="text/javascript">
+    var AdhocInquiryResources = {
+        DeleteConfirmMessage: '@Html.SageRaw(CommonResx.DeleteConfirmMessage)',
+        SaveReplaceMessage: '@Html.SageRaw(InquiryResx.SaveReplaceConfirmMessage)',
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        Query: '@Html.SageRaw(InquiryResx.Query)',
+        QueryTypeString: ['@Html.SageRaw(InquiryResx.Template)', '@Html.SageRaw(InquiryResx.Public)', '@Html.SageRaw(InquiryResx.Private)'],
+        Select: '@Html.SageRaw(CommonResx.Select1)',
+        All: '@Html.SageRaw(CommonResx.All)',
+        Required: '@Html.SageRaw(AnnotationsResx.Required)',
+    };
+</script>

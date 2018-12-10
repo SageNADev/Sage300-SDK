@@ -1,0 +1,63 @@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
+
+@model Sage.CA.SBS.ERP.Sage300.Common.Models.UserAccess
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@{
+    var import = ViewData[OptionsMenu.Import] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Import]);
+    var export = ViewData[OptionsMenu.Export] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) && !Model.DisableImportExport :
+        Convert.ToBoolean(ViewData[OptionsMenu.Export]);
+    var customize = ViewData[OptionsMenu.Customize] == null ? 
+        Model.SecurityType.HasFlag(SecurityType.Admin) : 
+        Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
+}
+
+@if (export || import || customize)
+{
+    string sImport = "", sExport = "";
+    bool hasHeadOptions = ViewData.Count == 0 || (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
+    string headOptions = hasHeadOptions ? "<div class='header-options'>" : "";
+    string divEndTag = hasHeadOptions ? "</div>" : "";
+    string importId = (ViewData[OptionsMenu.ImportId] == null) ? "btnOptionImport" : ViewData[OptionsMenu.ImportId].ToString();
+    string exportId = (ViewData[OptionsMenu.ExportId] == null) ? "btnOptionExport" : ViewData[OptionsMenu.ExportId].ToString();
+    
+    if (ViewData[OptionsMenu.EnableBinding] != null)
+    {
+        sImport = "<li><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsEnabled' value='{1}'></li>";
+        sExport = "<li><input type='button' id='{0}' data-bind='enable: Data.ExportOptionsEnabled' value='{1}'></li>";
+    }
+    else
+    {
+        sImport = "<li><a id='{0}'>{1}</a></li>";
+        sExport = "<li><a id='{0}'>{1}</a></li>";
+    }
+
+    @Html.Raw(headOptions)
+    @Html.Raw(string.Format("<ul class='{0}'>", "options-menu"))
+            <li>
+                <a>@CommonResx.Options<span class="arrow-grey"></span></a>
+                <ul class="sub-menu">
+                    @if (import)
+                    {
+                        @Html.Raw(string.Format(sImport, importId, CommonResx.Import))
+                    }
+                    @if (export)
+                    {
+                        @Html.Raw(string.Format(sExport, exportId, CommonResx.Export))
+                    }
+                    @if (customize)
+                    {
+                        <li><a id="btnCustomizeUI">@CommonResx.Customize</a></li>
+                    }
+                </ul>
+            </li>
+        @Html.Raw("</ul>")
+    @Html.Raw(divEndTag)
+}
+

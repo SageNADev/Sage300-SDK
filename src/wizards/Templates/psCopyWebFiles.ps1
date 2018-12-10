@@ -42,8 +42,8 @@ if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Example: $rootCNA2SourceFolder="C:\projects\SageAzureDev\"'
 }
 $verbosepreference = 'continue'
-$webSubPaths = 'Areas\Core,Areas\Shared,Views,Content,Assets'
-$webSubPathsCopyAll = 'Customization'
+$webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
+$webSubPathsCopyAll = 'Customization,WebForms'
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
 $webFolderName = "Web"
@@ -68,7 +68,7 @@ $webSubPaths.split(',') | Foreach-Object {
 }
 
 # ---------------------------------------------------------------------------------------
-# Copy Web\Customization (All files and folders)
+# Copy Web\Customization and Web\WebForms (All files and folders)
 # ---------------------------------------------------------------------------------------
 $webSubPathsCopyAll.split(',') | Foreach-Object { 
   robocopy /S "$webAssetDirPath\$_" "$_" 
@@ -82,11 +82,6 @@ $scriptsWebSubPath.split(',') | Foreach-Object {
   robocopy /S "$webAssetDirPath\$_" "$_" `
   /xf kendo.all*.js Test_*.js *TestUtils.js chutzpah.json 
 }
-
-# ---------------------------------------------------------------------------------------
-# Copy WebForms
-# ---------------------------------------------------------------------------------------
-"WebForms" | Foreach-Object { robocopy /E "$webAssetDirPath\$_" "$_" }
 
 # ---------------------------------------------------------------------------------------
 # Quick Edit Namespaces
@@ -115,7 +110,6 @@ Where-Object {
 # Remove extra files.
 # ---------------------------------------------------------------------------------------
 Remove-Item $absWebFolderPath\Areas\Core\web.config
-Remove-Item $absWebFolderPath\Areas\Shared\Models -force -recurse
 pop-location
 
 

@@ -1,0 +1,74 @@
+﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Core.Web
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms
+@using Sage.CA.SBS.ERP.Sage300.Common.Models
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.InquiryViewModel
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("InquiryViewModel", Model)
+    var inquiryRazorView = {};
+    inquiryRazorView.isOEActive = '@ViewBag.IsOEActive';
+    inquiryRazorView.IsCompanyMultiCurrency = '@ViewBag.IsCompanyMultiCurrency';
+</script>
+
+@Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_Localization.cshtml")
+@Html.Partial(Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.GridPreferences)
+
+<div id="message"></div>
+<div class="form-screen">
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    <h1 id="headlineInquiry">@CommonResx.Inquiry - @Model.Title</h1>
+                </div>
+                @if (ViewBag.IsCompanyMultiCurrency)
+                {
+                    <div class="header-options">
+                        @*@Html.HeaderOptionsListHelper(InquiryResx.currencyListHeader, Model.CurrencyEnum, new { @id = "currencyOptions" })*@
+                        <div class="dropdown-group">
+                            @Html.KoSageDropDownList("currencyOptions", new { @options = "CurrencyEnum", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "default single-select", @id = "currencyOptions" })
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    </header>
+    <div class="panel-group accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="titleFilter">
+                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+                        @InquiryResx.Filter
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquiryFilter.cshtml", (List<InquiryFilterControl>)ViewBag.InquiryFilterList)
+                    <section class="footer-group-1">
+                        <input class="btn btn-primary" name="btnApply" type="button" value="@CommonResx.Apply" id="btnApply">
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquiryGrid.cshtml", (ViewDataDictionary)ViewBag.PrimaryGridViewData)
+
+    @if (ViewBag.DetailGridViewData != null)
+    {
+        foreach (var data in ViewBag.DetailGridViewData)
+        {
+            @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquiryGrid.cshtml", (ViewDataDictionary)data)
+        }
+    }
+
+    @if (ViewBag.SecondaryGridViewData != null)
+    {
+        @Html.Partial("~/Areas/Core/Views/Inquiry/Partials/_InquiryGrid.cshtml", (ViewDataDictionary)ViewBag.SecondaryGridViewData)
+    }
+    
+</div>
