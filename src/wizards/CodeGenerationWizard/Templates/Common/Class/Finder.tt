@@ -195,8 +195,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                 // Assign attributes based upon type
                 var attributes = field.Type.Equals(BusinessDataType.Decimal) ||
                                     field.Type.Equals(BusinessDataType.Double) ||
-                                    field.Type.Equals(BusinessDataType.Integer) ||
-                                    field.Type.Equals(BusinessDataType.Long) ? "FinderConstant.CssClassGridColumn10NumRightAlign" :
+                                    field.Type.Equals(BusinessDataType.Short) ||
+                                    field.Type.Equals(BusinessDataType.Integer) ? "FinderConstant.CssClassGridColumn10NumRightAlign" :
                                     "FinderConstant.CssClassGridColumn10";
 #>
                     attributes = <#=attributes#>,
@@ -211,8 +211,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers.Finder
                     dataType = FinderConstant.DataTypeAmount,
 <#
                         break;
+                    case BusinessDataType.Short:
                     case BusinessDataType.Integer:
-                    case BusinessDataType.Long:
 #>
                     dataType = FinderConstant.DataTypeNumber
 <#

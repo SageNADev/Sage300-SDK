@@ -18,6 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+//#define ENABLE_STAGE_WEBCONFIG
+
 #region Imports
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
@@ -28,15 +30,14 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text.RegularExpressions;
 #endregion
 
 namespace MergeISVProject
 {
-	/// <summary>
-	/// This is the primary driver class for the application
-	/// </summary>
-	public class MergeISVProjectDriver
+    /// <summary>
+    /// This is the primary driver class for the application
+    /// </summary>
+    public class MergeISVProjectDriver
 	{
 		#region Constants
 		const string BUILD_PROFILE_RELEASE = @"release";
@@ -123,8 +124,10 @@ namespace MergeISVProject
 
 			if (_Options.Mode.OptionValue == (int) AppMode.FullSolution)
 			{
-				_Stage_WebConfig();
-				_Stage_Areas();
+#if ENABLE_STAGE_WEBCONFIG
+                _Stage_WebConfig();
+#endif
+                _Stage_Areas();
 				_Stage_Bin();
 				_Stage_CompileViewsAndMoveResultsToStagingFolder();
 				_Stage_Bootstrapper();
@@ -145,12 +148,13 @@ namespace MergeISVProject
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
-		
-		/// <summary>
-		/// Copy the Web.Config from the original Web folder
-		/// to the staging folder
-		/// </summary>
-		private void _Stage_WebConfig()
+
+#if ENABLE_STAGE_WEBCONFIG
+        /// <summary>
+        /// Copy the Web.Config from the original Web folder
+        /// to the staging folder
+        /// </summary>
+        private void _Stage_WebConfig()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -166,6 +170,7 @@ namespace MergeISVProject
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
+#endif
 
 		/// <summary>
 		/// Copy the Areas folder (and all subfolders)
@@ -433,24 +438,69 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
-		/// Copy all staging files to the final staging folder
+		/// Copy all staging files to the final staging folder(s)
 		/// </summary>
 		private void _Stage_CopyAllToFinal()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			FileSystem.CopyDirectory(_FolderManager.Staging.Root, _FolderManager.Final.Root);
+            // Copy everything to the 'Web' deployment folder
+            FileSystem.CopyDirectory(_FolderManager.Staging.Root, _FolderManager.FinalWeb.Root);
 
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+            // Copy a subset to the 'Worker' deployment folder
+            _Stage_CopyToWorkerDeployment(); 
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Delete files from a particular folder based on 
-		/// a pattern list
-		/// </summary>
-		/// <param name="workingFolder">This the fully-qualified directory to delete the files from</param>
-		/// <param name="patterns">This is the list of file types to look for</param>
-		private void DeleteFilesFromFolderBasedOnPatternList(string workingFolder, string[] patterns)
+        /// <summary>
+        /// Copy all necessary staging files to the final worker staging folder
+        /// </summary>
+        private void _Stage_CopyToWorkerDeployment()
+        {
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+            // 1. Copy bootstrapper.xml to Worker folder
+            if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
+            {
+                var bootstrapFileName = $"{_Options.ModuleId}bootstrapper.xml";
+                var sourceFile = Path.Combine(_FolderManager.Staging.Root, bootstrapFileName);
+                var destFile = Path.Combine(_FolderManager.FinalWorker.Root, bootstrapFileName);
+                File.Copy(sourceFile, destFile, overwrite: OVERWRITE);
+            }
+
+            // 2. Copy DLL's to Worker folder
+            //    *.*.BusinessRepository.dll
+            //    *.*.Interfaces.dll
+            //    *.*.Models.dll
+            //    *.*.Resources.dll
+            //    *.*.Services.dll
+
+            string[] inclusionPatterns = null;
+
+            if (_Options.Mode.OptionValue == (int)AppMode.FullSolution)
+            {
+                inclusionPatterns = new[]{
+                    $"*.{_Options.ModuleId}.BusinessRepository.dll",
+                    $"*.{_Options.ModuleId}.Interfaces.dll",
+                    $"*.{_Options.ModuleId}.Models.dll",
+                    $"*.{_Options.ModuleId}.Resources.dll",
+                    $"*.{_Options.ModuleId}.Services.dll",
+                };
+            }
+
+            CopyFilesBasedOnPatternList(_FolderManager.Staging.Bin, _FolderManager.FinalWorker.Root, inclusionPatterns);
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+        }
+
+        /// <summary>
+        /// Delete files from a particular folder based on 
+        /// a pattern list
+        /// </summary>
+        /// <param name="workingFolder">This the fully-qualified directory to delete the files from</param>
+        /// <param name="patterns">This is the list of file types to look for</param>
+        private void DeleteFilesFromFolderBasedOnPatternList(string workingFolder, string[] patterns)
 		{
 			foreach (var pattern in patterns)
 			{
@@ -551,7 +601,7 @@ namespace MergeISVProject
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			const string searchPattern = "*bootstrapper.xml";
-			var bootFiles = Directory.GetFiles(_FolderManager.Final.Root, searchPattern);
+			var bootFiles = Directory.GetFiles(_FolderManager.FinalWeb.Root, searchPattern);
 			foreach (var src in bootFiles)
 			{
 				var filename = Path.GetFileName(src);
@@ -581,7 +631,7 @@ namespace MergeISVProject
 			var menuName = _Options.MenuFilename.OptionValue;
 
 			// Copy menu file to App_Data menuDetails and all sub directories
-			var pathMenuFrom = Path.Combine(_FolderManager.Final.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL, menuName);
+			var pathMenuFrom = Path.Combine(_FolderManager.FinalWeb.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL, menuName);
 			var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
 			var pathMenuTo = Path.Combine(pathMenuDir, menuName);
 
@@ -657,7 +707,7 @@ namespace MergeISVProject
 
 			var moduleId = _Options.ModuleId;
 
-			var pathScripts = Path.Combine(_FolderManager.Final.Root, FolderNameConstants.AREAS, moduleId, FolderNameConstants.SCRIPTS);
+			var pathScripts = Path.Combine(_FolderManager.FinalWeb.Root, FolderNameConstants.AREAS, moduleId, FolderNameConstants.SCRIPTS);
 			if (Directory.Exists(pathScripts))
 			{
 				foreach (var sourceFolder in Directory.GetDirectories(pathScripts))
@@ -681,7 +731,7 @@ namespace MergeISVProject
             _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
             // Copy ExternalContent from deploy folder to sage online web area and ExternalContent directory
-            var pathSource = Path.Combine(_FolderManager.Final.Root,
+            var pathSource = Path.Combine(_FolderManager.FinalWeb.Root,
                                              FolderNameConstants.AREAS,
                                             _Options.ModuleId,
                                             FolderNameConstants.EXTERNALCONTENT);
@@ -704,7 +754,7 @@ namespace MergeISVProject
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			// Copy compiled files from deploy folder to sage online web area and bin directory
-			var pathBuildView = Path.Combine(_FolderManager.Final.Root, 
+			var pathBuildView = Path.Combine(_FolderManager.FinalWeb.Root, 
 											 FolderNameConstants.AREAS, 
 											_Options.ModuleId, 
 											FolderNameConstants.VIEWS);
@@ -735,7 +785,7 @@ namespace MergeISVProject
 			var simulateCopy = _Options.TestDeploy.OptionValue;
 
 			// Source folder
-			var pathBuildBin = _FolderManager.Final.Bin;
+			var pathBuildBin = _FolderManager.FinalWeb.Bin;
 
 			// Desination folders (Web\Bin and Worker)
 			var pathLiveWebBin = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.BIN);
@@ -785,7 +835,7 @@ namespace MergeISVProject
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
-			var pathBinFrom = _FolderManager.Final.Bin;
+			var pathBinFrom = _FolderManager.FinalWeb.Bin;
 			var pathWebBinTo = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.BIN);
 			var pathWorkerTo = _FolderManager.Live.Worker;
 			var pattern = $"*.{_Options.ModuleId}.*.dll";
@@ -901,9 +951,9 @@ namespace MergeISVProject
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		#endregion // Private Methods
+#endregion // Private Methods
 
-		#region Public Methods
+#region Public Methods
 
 		/// <summary>
 		/// The main processor!
@@ -943,6 +993,6 @@ namespace MergeISVProject
 			}
 		}
 
-		#endregion
+#endregion
 	}
 }

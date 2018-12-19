@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,23 +27,44 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
     {
         /// <summary> Accounts Payable </summary>
         AP = 0,
+
         /// <summary> Accounts Receivable </summary>
         AR = 1,
+
         /// <summary> Administrative Services </summary>
         AS = 2,
+
         /// <summary> Bank Services </summary>
         BK = 3,
+
         /// <summary> Tax Services </summary>
         TX = 4,
+
         /// <summary> Common Services </summary>
         CS = 5,
+
         /// <summary> General Ledger </summary>
         GL = 6,
+
         /// <summary> Inventory Control </summary>
         IC = 7,
+
         /// <summary> Order Entry </summary>
         OE = 8,
+
         /// <summary> Purchase Order </summary>
-        PO = 9
+        PO = 9,
+
+        /// <summary> Tax - Australia </summary>
+        TA = 10,
+
+        /// <summary> Tax - Singapore </summary>
+        TS = 11,
+
+        /// <summary> Tax - United Kingdom </summary>
+        //TK = 12,
+
+        /// <summary> PJC - Project and Job Costing </summary>
+        //PM = 13,
     }
 }

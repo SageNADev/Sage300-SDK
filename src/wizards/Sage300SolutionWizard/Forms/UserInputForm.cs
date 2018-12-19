@@ -42,9 +42,6 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 		#region Private Constants
 		private static class Constants
 		{
-            /// <summary> The title of this wizard </summary>
-            public const string Version = "2019.0";
-
 			/// <summary> Splitter Distance </summary>
 			public const int SplitterDistance = 237;
 

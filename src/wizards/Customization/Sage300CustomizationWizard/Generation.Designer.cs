@@ -271,15 +271,16 @@
             this.pnlCreateEdit.Controls.Add(this.btnPackageFinder);
             this.pnlCreateEdit.Controls.Add(this.txtPackageId);
             this.pnlCreateEdit.Controls.Add(this.lblPackageId);
-            this.pnlCreateEdit.Location = new System.Drawing.Point(848, 18);
+            this.pnlCreateEdit.Location = new System.Drawing.Point(849, 31);
             this.pnlCreateEdit.Name = "pnlCreateEdit";
-            this.pnlCreateEdit.Size = new System.Drawing.Size(582, 40);
+            this.pnlCreateEdit.Size = new System.Drawing.Size(613, 46);
             this.pnlCreateEdit.TabIndex = 0;
             // 
             // btnDeleteAssembly
             // 
             this.btnDeleteAssembly.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteAssembly.BackgroundImage")));
             this.btnDeleteAssembly.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDeleteAssembly.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteAssembly.FlatAppearance.BorderSize = 0;
             this.btnDeleteAssembly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAssembly.Location = new System.Drawing.Point(422, 352);
@@ -293,6 +294,7 @@
             // 
             this.btnDeleteBootstrapper.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteBootstrapper.BackgroundImage")));
             this.btnDeleteBootstrapper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDeleteBootstrapper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteBootstrapper.FlatAppearance.BorderSize = 0;
             this.btnDeleteBootstrapper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteBootstrapper.Location = new System.Drawing.Point(422, 324);
@@ -306,6 +308,7 @@
             // 
             this.btnDeleteEula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteEula.BackgroundImage")));
             this.btnDeleteEula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDeleteEula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteEula.FlatAppearance.BorderSize = 0;
             this.btnDeleteEula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteEula.Location = new System.Drawing.Point(624, 271);
@@ -319,6 +322,7 @@
             // 
             this.btnEula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEula.BackgroundImage")));
             this.btnEula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEula.FlatAppearance.BorderSize = 0;
             this.btnEula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEula.Location = new System.Drawing.Point(593, 271);
@@ -471,6 +475,7 @@
             // 
             this.btnFolder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFolder.BackgroundImage")));
             this.btnFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFolder.FlatAppearance.BorderSize = 0;
             this.btnFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFolder.Location = new System.Drawing.Point(593, 45);
@@ -505,6 +510,7 @@
             this.btnNew.BackColor = System.Drawing.SystemColors.Window;
             this.btnNew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNew.BackgroundImage")));
             this.btnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.FlatAppearance.BorderSize = 0;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Location = new System.Drawing.Point(453, 17);
@@ -518,6 +524,7 @@
             // 
             this.btnPackageFinder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPackageFinder.BackgroundImage")));
             this.btnPackageFinder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPackageFinder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPackageFinder.FlatAppearance.BorderSize = 0;
             this.btnPackageFinder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackageFinder.Location = new System.Drawing.Point(422, 17);
@@ -849,7 +856,7 @@
             this.lblGenerateManifest.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateManifest.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateManifest.Name = "lblGenerateManifest";
-            this.lblGenerateManifest.Size = new System.Drawing.Size(618, 35);
+            this.lblGenerateManifest.Size = new System.Drawing.Size(621, 35);
             this.lblGenerateManifest.TabIndex = 2;
             this.lblGenerateManifest.Text = "The Manifest.json file will be generated with the following content";
             // 
@@ -863,7 +870,7 @@
             this.txtManifestToGenerate.Name = "txtManifestToGenerate";
             this.txtManifestToGenerate.ReadOnly = true;
             this.txtManifestToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtManifestToGenerate.Size = new System.Drawing.Size(618, 25);
+            this.txtManifestToGenerate.Size = new System.Drawing.Size(621, 25);
             this.txtManifestToGenerate.TabIndex = 1;
             // 
             // splitGenerateBottom
@@ -895,7 +902,7 @@
             this.lblGenerateSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblGenerateSettings.Location = new System.Drawing.Point(0, 0);
             this.lblGenerateSettings.Name = "lblGenerateSettings";
-            this.lblGenerateSettings.Size = new System.Drawing.Size(618, 33);
+            this.lblGenerateSettings.Size = new System.Drawing.Size(621, 33);
             this.lblGenerateSettings.TabIndex = 0;
             this.lblGenerateSettings.Text = "The {screen}_Settimgs.xml file(s) will be generated with the following content:";
             // 
@@ -908,7 +915,7 @@
             this.txtSettingsToGenerate.Name = "txtSettingsToGenerate";
             this.txtSettingsToGenerate.ReadOnly = true;
             this.txtSettingsToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSettingsToGenerate.Size = new System.Drawing.Size(618, 25);
+            this.txtSettingsToGenerate.Size = new System.Drawing.Size(621, 25);
             this.txtSettingsToGenerate.TabIndex = 0;
             // 
             // pnlControls
@@ -1197,6 +1204,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Location = new System.Drawing.Point(731, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 25);
@@ -1208,6 +1216,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Location = new System.Drawing.Point(657, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 25);
@@ -1219,6 +1228,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Location = new System.Drawing.Point(879, 7);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(68, 25);
@@ -1229,6 +1239,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Location = new System.Drawing.Point(805, 7);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 25);
@@ -1271,6 +1282,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Generation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Web Customization";
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel1.PerformLayout();

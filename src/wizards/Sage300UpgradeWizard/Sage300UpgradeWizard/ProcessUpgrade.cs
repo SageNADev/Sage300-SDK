@@ -19,7 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
+//using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.IO;
@@ -107,18 +107,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    case 3: 
-                        ProcessExternalContentUpdates(title);
-                        break;
-
-                    case 4:
-                        ProcessCrystalReportsVersionNumberUpdate(title);
-                        break;
-
-                    case 5:
-                        ProcessAspnetClientFolder(title);
-                        break;
-
                     #endregion
                 }
             }
@@ -306,40 +294,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             {
                 Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
             }
-        }
-
-        /// <summary>
-        /// Process the 'ExternalContent' changes 
-        /// </summary>
-        /// <param name="title">The title to display for this step</param>
-        public void ProcessExternalContentUpdates(string title)
-        {
-            // Log start of step
-            LogEventStart(title);
-
-            var processor = new ExternalContentProcessor(_settings);
-            processor.Process();
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
-        }
-
-        /// <summary>
-        /// Process the Crystal Reports version number update 
-        /// </summary>
-        /// <param name="title">The title to display for this step</param>
-        public void ProcessCrystalReportsVersionNumberUpdate(string title)
-        {
-            // Log start of step
-            LogEventStart(title);
-
-            var processor = new CrystalReportsVersionNumberProcessor(_settings);
-            processor.Process();
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
         }
 
         /// <summary>

@@ -20,7 +20,7 @@
 
 #region Imports
 using EnvDTE80;
-using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
+//using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.Collections.Generic;
@@ -178,31 +178,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #region Release Specific Steps...
 
 #if ENABLE_TK_244885
-            // This will be done post 2019.0 release
-            // 2019.0 : Consolidate Enumerations
+            // This will be done post 2019.1 release
+            // 2019.1 : Consolidate Enumerations
             AddStep(Resources.ReleaseSpecificTitleConsolidateEnumerations,
                     Resources.ReleaseSpecificDescConsolidateEnumerations,
                     string.Format(Resources.ReleaseSpecificUpdateConsolidateEnumerations,
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-            // 2019.0 : Process new 'ExternalContent' folder (Automatic step)
-            AddStep(Resources.ReleaseSpecificTitleExternalContentFolder,
-                    Resources.ReleaseSpecificDescExternalContentFolder,
-                    string.Format(Resources.ReleaseSpecificExternalContentFolder,
-                                  Constants.Common.DummyModuleId));
-
-            // 2019.0 : Process Crystal Reports version number update (Automatic step)
-            AddStep(Resources.ReleaseSpecificTitleCrystalReportsVersionNumberUpdate,
-                    Resources.ReleaseSpecificDescCrystalReportsVersionNumberUpdate,
-                    string.Format(Resources.ReleaseSpecificCrystalReportsVersionNumberUpdate,
-                                  CrystalReportsVersionNumberProcessor.Constants.PreviousVersionNumber,
-                                  CrystalReportsVersionNumberProcessor.Constants.NewVersionNumber));
-
-            // 2019.0 : Process new 'AspNet_Client' folder (Manual step)
-            AddStep(Resources.ReleaseSpecificTitleAspnetClientFolder,
-                    Resources.ReleaseSpecificDescAspnetClientFolder,
-                    Resources.ReleaseSpecificAspnetClientFolder);
+            // No release specific steps for 2019.1
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -239,9 +223,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 #if ENABLE_TK_244885
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 #endif
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleExternalContentFolder}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleCrystalReportsVersionNumberUpdate}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleAspnetClientFolder}");
+            // No release specific steps for 2019.1
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");

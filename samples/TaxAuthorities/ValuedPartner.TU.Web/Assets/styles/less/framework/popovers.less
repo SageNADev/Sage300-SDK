@@ -778,18 +778,22 @@ and (max-device-width : 1024px) {
     }
   }
 
-  .k-grid .k-grid-header .k-header {
+  .k-grid .k-grid-header {
     background-color: #ebedef;
-    height: 40px;
-    padding: 10px 8px;
-    color: #2e2e2e;
-    line-height: 1.9rem;
-    position: relative;
-  }
 
-  .k-grid .k-grid-header .k-header>.k-link {
-    color: #2e2e2e;
-    margin: 0;
+    .k-header {
+      background-color: #ebedef;
+      height: 40px;
+      padding: 10px 8px;
+      color: #2e2e2e;
+      line-height: 1.9rem;
+      position: relative;
+
+      >.k-link {
+        color: #2e2e2e;
+        margin: 0;
+      }
+    }
   }
 
   .k-grid tr td {

@@ -29,7 +29,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public static class GlobalConstants
     {
         /// <summary> The version of this wizard </summary>
-        public static string Version = "2019.0";
+        public static string Version = "2019.1";
 
         public static class LanguageExtensions
         {

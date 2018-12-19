@@ -30,9 +30,9 @@ namespace MergeISVProject.Constants
 		public const string DEPLOY		= "___DEPLOY___";
 		public const string STAGING			= "Staging";
 		public const string COMPILED  	    = "Compiled";
-		public const string FINAL			= "__READYTODEPLOY__";
+        public const string FINAL           = "__READYTODEPLOY__";  
 
-		public const string AREAS		= "Areas";
+        public const string AREAS		= "Areas";
 		public const string SCRIPTS			= "Scripts";
 		public const string VIEWS			= "Views";
         public const string EXTERNALCONTENT = "ExternalContent";
