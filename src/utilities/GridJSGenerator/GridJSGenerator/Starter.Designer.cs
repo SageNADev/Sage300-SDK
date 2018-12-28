@@ -88,10 +88,10 @@
             // 
             // txtModelPath
             // 
-            this.txtModelPath.Location = new System.Drawing.Point(145, 88);
+            this.txtModelPath.Location = new System.Drawing.Point(145, 55);
             this.txtModelPath.Name = "txtModelPath";
             this.txtModelPath.Size = new System.Drawing.Size(210, 20);
-            this.txtModelPath.TabIndex = 1;
+            this.txtModelPath.TabIndex = 9;
             this.txtModelPath.Text = "F:\\Sage\\Assemblies\\Sage.CA.SBS.ERP.Sage300.GL.Models.dll";
             this.toolTip1.SetToolTip(this.txtModelPath, "Model DLL file path");
             // 
@@ -106,7 +106,7 @@
             this.tabCreate.Location = new System.Drawing.Point(12, 22);
             this.tabCreate.Name = "tabCreate";
             this.tabCreate.SelectedIndex = 0;
-            this.tabCreate.Size = new System.Drawing.Size(509, 235);
+            this.tabCreate.Size = new System.Drawing.Size(522, 439);
             this.tabCreate.TabIndex = 4;
             // 
             // tabPage1
@@ -121,14 +121,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(501, 209);
+            this.tabPage1.Size = new System.Drawing.Size(514, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Select Model";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 91);
+            this.label2.Location = new System.Drawing.Point(33, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 13;
@@ -145,26 +145,19 @@
             // 
             // btnToColumns
             // 
-            this.btnToColumns.Location = new System.Drawing.Point(145, 151);
+            this.btnToColumns.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToColumns.Location = new System.Drawing.Point(433, 384);
             this.btnToColumns.Name = "btnToColumns";
             this.btnToColumns.Size = new System.Drawing.Size(75, 23);
             this.btnToColumns.TabIndex = 3;
-            this.btnToColumns.Text = "Next";
+            this.btnToColumns.Text = "Next >";
             this.btnToColumns.UseVisualStyleBackColor = true;
             this.btnToColumns.Click += new System.EventHandler(this.btnToColumns_Click);
             // 
-            // txtModelPath
-            // 
-            this.txtModelPath.Location = new System.Drawing.Point(145, 88);
-            this.txtModelPath.Name = "txtModelPath";
-            this.txtModelPath.Size = new System.Drawing.Size(210, 20);
-            this.txtModelPath.TabIndex = 9;
-            this.txtModelPath.Text = "F:\\Sage\\Assemblies\\Sage.CA.SBS.ERP.Sage300.GL.Models.dll";
-            this.toolTip1.SetToolTip(this.txtModelPath, "Model DLL file path");
-            // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(361, 88);
+            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBrowse.Location = new System.Drawing.Point(361, 55);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 2;
@@ -180,13 +173,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(501, 209);
+            this.tabPage2.Size = new System.Drawing.Size(514, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Select Columns";
             // 
             // btnToOrder
             // 
-            this.btnToOrder.Location = new System.Drawing.Point(197, 361);
+            this.btnToOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToOrder.Location = new System.Drawing.Point(433, 384);
             this.btnToOrder.Name = "btnToOrder";
             this.btnToOrder.Size = new System.Drawing.Size(75, 23);
             this.btnToOrder.TabIndex = 10;
@@ -215,13 +209,14 @@
             this.tabPage3.Controls.Add(this.dataSelectedProperties);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(501, 209);
+            this.tabPage3.Size = new System.Drawing.Size(514, 413);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Select Order";
             // 
             // btnToVariables
             // 
-            this.btnToVariables.Location = new System.Drawing.Point(197, 361);
+            this.btnToVariables.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToVariables.Location = new System.Drawing.Point(433, 384);
             this.btnToVariables.Name = "btnToVariables";
             this.btnToVariables.Size = new System.Drawing.Size(75, 23);
             this.btnToVariables.TabIndex = 11;
@@ -264,7 +259,7 @@
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(501, 209);
+            this.tabPage4.Size = new System.Drawing.Size(514, 413);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Set Variables";
             // 
@@ -300,7 +295,7 @@
             "PO",
             "Core",
             "Shared"});
-            this.cmbModule.Location = new System.Drawing.Point(135, 91);
+            this.cmbModule.Location = new System.Drawing.Point(150, 91);
             this.cmbModule.Name = "cmbModule";
             this.cmbModule.Size = new System.Drawing.Size(128, 21);
             this.cmbModule.TabIndex = 4;
@@ -308,14 +303,14 @@
             // 
             // txtAction
             // 
-            this.txtAction.Location = new System.Drawing.Point(135, 144);
+            this.txtAction.Location = new System.Drawing.Point(150, 144);
             this.txtAction.Name = "txtAction";
             this.txtAction.Size = new System.Drawing.Size(215, 20);
             this.txtAction.TabIndex = 6;
             // 
             // txtController
             // 
-            this.txtController.Location = new System.Drawing.Point(135, 118);
+            this.txtController.Location = new System.Drawing.Point(150, 118);
             this.txtController.Name = "txtController";
             this.txtController.Size = new System.Drawing.Size(215, 20);
             this.txtController.TabIndex = 5;
@@ -345,7 +340,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 196);
+            this.label4.Location = new System.Drawing.Point(47, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 28;
@@ -353,14 +348,15 @@
             // 
             // txtUserPrefId
             // 
-            this.txtUserPrefId.Location = new System.Drawing.Point(135, 193);
+            this.txtUserPrefId.Location = new System.Drawing.Point(150, 193);
             this.txtUserPrefId.Name = "txtUserPrefId";
             this.txtUserPrefId.Size = new System.Drawing.Size(222, 20);
             this.txtUserPrefId.TabIndex = 8;
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(167, 261);
+            this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerate.Location = new System.Drawing.Point(433, 384);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 10;
@@ -391,14 +387,14 @@
             // 
             // txtJSViewModel
             // 
-            this.txtJSViewModel.Location = new System.Drawing.Point(135, 65);
+            this.txtJSViewModel.Location = new System.Drawing.Point(150, 65);
             this.txtJSViewModel.Name = "txtJSViewModel";
             this.txtJSViewModel.Size = new System.Drawing.Size(222, 20);
             this.txtJSViewModel.TabIndex = 3;
             // 
             // txtGridId
             // 
-            this.txtGridId.Location = new System.Drawing.Point(135, 13);
+            this.txtGridId.Location = new System.Drawing.Point(150, 13);
             this.txtGridId.Name = "txtGridId";
             this.txtGridId.Size = new System.Drawing.Size(222, 20);
             this.txtGridId.TabIndex = 1;
@@ -416,7 +412,7 @@
             // 
             // txtNameSpace
             // 
-            this.txtNameSpace.Location = new System.Drawing.Point(135, 39);
+            this.txtNameSpace.Location = new System.Drawing.Point(150, 39);
             this.txtNameSpace.Name = "txtNameSpace";
             this.txtNameSpace.Size = new System.Drawing.Size(222, 20);
             this.txtNameSpace.TabIndex = 2;
@@ -436,7 +432,7 @@
             this.tabPage5.Controls.Add(this.richTextBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(501, 209);
+            this.tabPage5.Size = new System.Drawing.Size(514, 413);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Javascript";
             // 
@@ -455,13 +451,13 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(501, 209);
+            this.tabPage6.Size = new System.Drawing.Size(514, 413);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "CSHTML";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(21, 15);
+            this.richTextBox2.Location = new System.Drawing.Point(19, 19);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(478, 370);
             this.richTextBox2.TabIndex = 2;
@@ -471,10 +467,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 282);
+            this.ClientSize = new System.Drawing.Size(548, 475);
             this.Controls.Add(this.tabCreate);
             this.Name = "Starter";
-            this.Text = "Generate Grid javascript";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Generate Grid Javascript";
             this.tabCreate.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

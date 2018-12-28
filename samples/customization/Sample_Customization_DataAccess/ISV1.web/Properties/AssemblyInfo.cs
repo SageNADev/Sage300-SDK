@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ISV1.web")]
-[assembly: AssemblyCopyright("Copyright © 2016 ISV1")]
+[assembly: AssemblyCopyright("Copyright © 2018 ISV1")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
