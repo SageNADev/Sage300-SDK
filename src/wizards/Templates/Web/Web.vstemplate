@@ -387,6 +387,7 @@
         </Folder>
         <Folder Name="Styles" TargetFolderName="Styles">
           <ProjectItem ReplaceParameters="true" TargetFileName="base_backup.css">base_backup.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Portal.css">Sage.CA.SBS.ERP.Sage300.Core.Portal.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Portal_backup.css">Sage.CA.SBS.ERP.Sage300.Core.Portal_backup.css</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.StandAlone_backup.css">Sage.CA.SBS.ERP.Sage300.StandAlone_backup.css</ProjectItem>
           <Folder Name="Default" TargetFolderName="Default">
@@ -1554,6 +1555,7 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
             </Folder>
+            <Folder Name="FakeAuthentication" TargetFolderName="FakeAuthentication" />
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
