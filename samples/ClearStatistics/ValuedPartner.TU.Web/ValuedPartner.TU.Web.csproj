@@ -412,6 +412,7 @@
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_ClearStatistics.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
+    <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
