@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,38 +18,45 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-"use strict";
-var clearStatisticsRepository = clearStatisticsRepository || {};
+// @ts-check
 
-clearStatisticsRepository = {
-    getCustomerMaxPeriodForValidYear: function (year) {
-        var data = {
-            'year': year
-        };
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillCustomerFiscalYear);
-    },
-    getGroupMaxPeriodForValidYear: function (year) {
-        var data = {
-            'year': year
-        };
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillGroupFiscalYear);
-    },
-    getNationalAcctMaxPeriodForValidYear: function (year) {
-        var data = {
-            'year': year
-        };
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillNationalAcctFiscalYear);
-    },
-    getSalespersonMaxPeriodForValidYear: function (year) {
-        var data = {
-            'year': year
-        };
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetSalesPersonMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillSalespersonFiscalYear);
-    },
-    getItemMaxPeriodForValidYear: function (year) {
-        var data = {
-            'year': year
-        };
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetItemMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillItemFiscalYear);
+"use strict";
+
+var clearStatisticsRepository = (function (parent) {
+
+    // Private method
+    function _commonHandler(year, method, defaultCallback, overrideCallback = null) {
+        var data = {'year': year };
+
+        var callback = defaultCallback;
+        if (overrideCallback !== null) {
+            callback = overrideCallback;
+        }
+
+        var url = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, method);
+        sg.utls.ajaxPostHtml(url, data, callback);
     }
-};
+
+    // Publicly exposed objects
+    return {
+        getCustomerMaxPeriodForValidYear: function(year, successCallback = null) {
+            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillCustomerFiscalYear, successCallback);
+        },
+
+        getGroupMaxPeriodForValidYear: function(year, successCallback = null) {
+            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillGroupFiscalYear, successCallback);
+        },
+
+        getNationalAcctMaxPeriodForValidYear: function(year, successCallback = null) {
+            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillNationalAcctFiscalYear, successCallback);
+        },
+
+        getSalespersonMaxPeriodForValidYear: function(year, successCallback = null) {
+            _commonHandler(year, "GetSalesPersonMaxPeriodForValidYear", clearStatisticsUISuccess.fillSalespersonFiscalYear, successCallback);
+        },
+
+        getItemMaxPeriodForValidYear: function(year, successCallback = null) {
+            _commonHandler(year, "GetItemMaxPeriodForValidYear", clearStatisticsUISuccess.fillItemFiscalYear, successCallback);
+        }
+    };
+})(clearStatisticsRepository || {});
