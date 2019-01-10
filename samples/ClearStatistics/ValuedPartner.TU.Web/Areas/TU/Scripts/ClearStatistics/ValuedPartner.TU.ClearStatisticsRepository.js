@@ -18,12 +18,13 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
 var clearStatisticsRepository = (function (parent) {
-    const MODULEID = "TU";
-    const ACTION = "ClearStatistics";
 
+    // Private method
     function _commonHandler(year, method, defaultCallback, overrideCallback = null) {
         var data = {'year': year };
 
@@ -32,13 +33,14 @@ var clearStatisticsRepository = (function (parent) {
             callback = overrideCallback;
         }
 
-        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl(MODULEID, ACTION, method), data, callback);
+        var url = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, method);
+        sg.utls.ajaxPostHtml(url, data, callback);
     }
 
-    // Publicly exposed methods
+    // Publicly exposed objects
     return {
         getCustomerMaxPeriodForValidYear: function(year, successCallback = null) {
-        _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillCustomerFiscalYear, successCallback);
+            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillCustomerFiscalYear, successCallback);
         },
 
         getGroupMaxPeriodForValidYear: function(year, successCallback = null) {

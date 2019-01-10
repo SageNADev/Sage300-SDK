@@ -18,558 +18,543 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
-var clearStatisticsUI = clearStatisticsUI || {}
-var minimumFiscalYear = 1900;
+var clearStatisticsConstants = (function (self) {
+    return {
+        MODULEID: 'TU',
+        ACTION: 'ClearStatistics',
+        MINIMUMFISCALYEAR: 1900,
+    };
+})(clearStatisticsConstants || {});
 
-//var Constants = {
+var clearStatisticsUI = (function (self, $) {
 
-//    FromTypeEnum: Object.freeze({
-//        GeneralLedger: 1,
-//        TaxServices: 2,
-//    }),
+    var _initialized = false;
 
-//    ColumnNames: Object.freeze({
-//        From: 'From',
-//        AccountNumber: 'AccountNumber',
-//        TaxAuthority: 'TaxAuthority',
-//        BuyerTaxClass: 'BuyerTaxClass',
-//        ItemTaxClass: 'ItemTaxClass',
-//    }),
+    var _model = {};
+    var computedProperties = ["bClearCustomerStatistics", "bClearGroupStatistics",
+                              "bClearNationalAcctStatistics", "bClearSalespersonStatistics"];
+    var customerFiscalYear = null;
+    var customerGroupFiscalYear = null;
+    var nationalAcctFiscalYear = null;
+    var salespersonFiscalYear = null;
+    var itemFiscalYear = null;
+    var customerFiscalPeriod = null;
+    var customerGroupFiscalPeriod = null;
+    var nationalAcctFiscalPeriod = null;
+    var salespersonFiscalPeriod = null;
+    var itemFiscalPeriod = null;
 
-//    ColumnEnum: Object.freeze({
-//        From: 0,
-//        AccountNumber: 1,
-//        TaxAuthority: 2,
-//        BuyerTaxClass: 3,
-//        ItemTaxClass: 4
-//    }),
+    /**
+     * @name initKendoBindings
+     * @desc Initialize the Kendo bindings
+     * @private
+     */
+    function initKendoBindings() {
+        // Reduce code noise
+        var utils = clearStatisticsUtilities;
 
-//    BoxNumberEnum: Object.freeze({
-//        G1: 1, G2: 2, G3: 3, G4: 4, G7: 5,
-//        G10: 6, G11: 7, G13: 8, G14: 9, G15: 10,
-//        G18: 11, W1: 16, W2: 17, W4: 18, W3: 19,
-//        _5B: 20, _7: 21
-//    }),
-//}
+        _model = ko.mapping.fromJS(ClearStatisticsViewModel);
 
+        customerFiscalYear = _model.Data.ThroughCustomerYear();
+        customerGroupFiscalYear = _model.Data.ThroughGroupYear();
+        nationalAcctFiscalYear = _model.Data.ThroughNationalAcctYear();
+        salespersonFiscalYear = _model.Data.ThroughSalesPersonYear();
+        itemFiscalYear = _model.Data.ThroughItemYear();
 
+        utils.customerYearBackup = _model.Data.ThroughCustomerYear();
+        utils.customerGroupYearBackup = _model.Data.ThroughGroupYear();
+        utils.nationalAcctYearBackup = _model.Data.ThroughNationalAcctYear();
+        utils.salespersonYearBackup = _model.Data.ThroughSalesPersonYear();
+        utils.itemYearBackup = _model.Data.ThroughItemYear();
 
-clearStatisticsUI = {
-    clearStatisticsModel: {},
-    computedProperties: ["bClearCustomerStatistics", "bClearGroupStatistics", "bClearNationalAcctStatistics", "bClearSalespersonStatistics"],
-    customerFiscalYear: null,
-    customerGroupFiscalYear: null,
-    nationalAcctFiscalYear: null,
-    salespersonFiscalYear: null,
-    itemFiscalYear: null,
-    customerFiscalPeriod: null,
-    customerGroupFiscalPeriod: null,
-    nationalAcctFiscalPeriod: null,
-    salespersonFiscalPeriod: null,
-    itemFiscalPeriod: null,
-    init: function () {     
-        // Initialize the controls and apply kendo bindings 
-        clearStatisticsUI.initKendoBindings();          
-        clearStatisticsUI.initFinders();
-        clearStatisticsUI.initButtons();
-        clearStatisticsUI.initTextBox();
-        clearStatisticsUI.initCheckBox();
-        clearStatisticsUI.initBlur();
-        clearStatisticsUI.initProcessUI();
-        ko.applyBindings(clearStatisticsUI.clearStatisticsModel);
-        //if (clearStatisticsUI.clearStatisticsModel.CalendarYear()) {
-        //    $("#btnFindCustomerYear").hide();
-        //} else {
-        //    $("#btnFindCustomerYear").show();
+        customerFiscalPeriod = _model.Data.ThroughCustomerPeriod();
+        customerGroupFiscalPeriod = _model.Data.ThroughGroupPeriod();
+        nationalAcctFiscalPeriod = _model.Data.ThroughNationalAcctPeriod();
+        salespersonFiscalPeriod = _model.Data.ThroughSalesPersonPeriod();
+        itemFiscalPeriod = _model.Data.ThroughItemPeriod();
+
+        utils.customerPeriodBackup = _model.Data.ThroughCustomerPeriod();
+        utils.customerGroupPeriodBackup = _model.Data.ThroughGroupPeriod();
+        utils.nationalAcctPeriodBackup = _model.Data.ThroughNationalAcctPeriod();
+        utils.salespersonPeriodBackup = _model.Data.ThroughSalesPersonPeriod();
+        utils.itemPeriodBackup = _model.Data.ThroughItemPeriod();
+
+        tuClearStatisticsKoExtn.tuClearStatisticsModelExtension(_model);
+    }
+
+    /**
+     * @name initFinders
+     * @desc Initialize all of the finders on the page
+     * @private
+     */
+    function initFinders() {
+        initCustomerNumberFinders();
+        initCustomerGroupFinders();
+        initNationalAcctFinders();
+        initSalespersonFinders();
+        initItemFinders();
+        initFiscalYearFinders();
+    }
+
+    /**
+     * @name initCustomerNumberFinders
+     * @desc Initialize the Customer Number finders
+     * @private
+     */
+    function initCustomerNumberFinders() {
+        var props = sg.viewFinderProperties.ARCustomers;
+        var controls = [
+            { buttonId: "btnFromCustomerFinder", dataControlId: "Data_FromCustomerNo" },
+            { buttonId: "btnToCustomerFinder", dataControlId: "Data_ToCustomerNo" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name initCustomerGroupFinders
+     * @desc Initialize the Customer Group finders
+     * @private
+     */
+    function initCustomerGroupFinders() {
+        var props = sg.viewFinderProperties.ARCustomerGroups;
+        var controls = [
+            { buttonId: "btnFromCustomerGroupFinder", dataControlId: "Data_FromGroupCode" },
+            { buttonId: "btnToCustomerGroupFinder", dataControlId: "Data_ToGroupCode" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name initNationalAcctFinders
+     * @desc Initialize the National Accounts finders
+     * @private
+     */
+    function initNationalAcctFinders() {
+        var props = sg.viewFinderProperties.ARNationalAccounts;
+        var controls = [
+            { buttonId: "btnFromNationalAcctFinder", dataControlId: "Data_FromNationalAccount" },
+            { buttonId: "btnToNationalAcctFinder", dataControlId: "Data_ToNationalAccount" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name initSalespersonFinders
+     * @desc Initialize the National Accounts finder
+     * @private
+     */
+    function initSalespersonFinders() {
+        var props = sg.viewFinderProperties.ARSalespersons;
+        var controls = [
+            { buttonId: "btnFromSalespersonFinder", dataControlId: "Data_FromSalesPerson" },
+            { buttonId: "btnToSalespersonFinder", dataControlId: "Data_ToSalesPerson" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name initItemFinders
+     * @desc Initialize the Item finders
+     * @private
+     */
+    function initItemFinders() {
+        var props = sg.viewFinderProperties.ARItems;
+        var controls = [
+            { buttonId: "btnFromItemFinder", dataControlId: "Data_FromItem" },
+            { buttonId: "btnToItemFinder", dataControlId: "Data_ToItem" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name initFiscalYearFinders
+     * @desc Initialize the Fiscal Year finders
+     * @private
+     */
+    function initFiscalYearFinders() {
+
+        var props = sg.viewFinderProperties.CSFiscalCalendars;
+        var controls = [
+            { buttonId: "btnFindCustomerYear", dataControlId: "Data_ThroughCustomerYear" },
+            { buttonId: "btnFindCustomerGroupYear", dataControlId: "Data_ThroughGroupYear" },
+            { buttonId: "btnFindNationalAcctYear", dataControlId: "Data_ThroughNationalAcctYear" },
+            { buttonId: "btnFindSalespersonYear", dataControlId: "Data_ThroughSalesPersonYear" },
+            { buttonId: "btnFindItemYear", dataControlId: "Data_ThroughItemYear" },
+        ];
+        _initFinderGroup(controls, props);
+    }
+
+    /**
+     * @name _initFinderGroup
+     * @desc Generic routine to initialize a group of finders
+     * @private
+     * @param {array} controls - Array of objects containing button and data control names
+     * @param {object} info - Object containing various settings for the finder
+     * @param {object} filter = "" | The optional filter used to filter the finder results
+     * @param {number} height = null | The optional height of the finder window
+     * @param {number} top = null | The optional top location of the finder window
+     */
+    function _initFinderGroup(controls, info, filter = "", height = null, top = null) {
+        for (var i = 0; i < controls.length; i++) {
+            _initFinder(controls[i].buttonId, controls[i].dataControlId, info, filter, height, top);
+        }
+    }
+
+    /**
+     * @name _initFinder
+     * @desc Generic routine to initialize an individual finder
+     * @private
+     * @param {string} buttonId - The Id of the button used to invoke the finder
+     * @param {string} controlId - The underlying control that will receive the selected item
+     * @param {object} info - Object containing various settings for the finder
+     * @param {object} filter = "" | The optional filter used to filter the finder results
+     * @param {number} height = null | The optional height of the finder window
+     * @param {number} top = null | The optional top location of the finder window
+     */
+    function _initFinder(buttonId, controlId, info, filter = "", height = null, top = null) {
+
+        let initKeyValues = [$("#" + controlId).val()];
+
+        let initFinder = function (viewFinder) {
+            viewFinder.viewID = info.viewID;
+            viewFinder.viewOrder = info.viewOrder;
+            viewFinder.displayFieldNames = info.displayFieldNames;
+            viewFinder.returnFieldName = info.returnFieldName;
+
+            // Optional 
+            //     If omitted, the starting value is blank.
+            viewFinder.initKeyValues = initKeyValues;
+
+            // Optional
+            //     Only useful for UIs such as Invoice Entry finder where you 
+            //     want to restrict the entries to a specific batch
+            viewFinder.filter = filter;
+        };
+
+        // Note:
+        //   There are two different ways to initialize the finder:
+        //   1. Specify a callback method to handle more complicated processing
+        //   OR
+        //   2. Specify a simple control id where the selected finder value will be sent.
+        //
+        // Scenario #1
+        //
+        //let onFinderOK = function (val) {
+        //    if (val != null) {
+        //        dataEntity(val);
+        //        sg.controls.Focus($("#" + nextControlIdForFocus));
+        //    }
         //}
-    },
-    
-    initKendoBindings: function () {
-        clearStatisticsUI.clearStatisticsModel = ko.mapping.fromJS(ClearStatisticsViewModel);       
-        clearStatisticsUI.customerFiscalYear = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear();
-        clearStatisticsUI.customerGroupFiscalYear = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear();
-        clearStatisticsUI.nationalAcctFiscalYear = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear();
-        clearStatisticsUI.salespersonFiscalYear = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear();
-        clearStatisticsUI.itemFiscalYear = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear();
-        clearStatisticsUtilities.customerYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear();
-        clearStatisticsUtilities.customerGroupYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear();
-        clearStatisticsUtilities.nationalAcctYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear();
-        clearStatisticsUtilities.salespersonYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear();
-        clearStatisticsUtilities.itemYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear();
-        clearStatisticsUI.customerFiscalPeriod = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerPeriod();
-        clearStatisticsUI.customerGroupFiscalPeriod = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupPeriod();
-        clearStatisticsUI.nationalAcctFiscalPeriod = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctPeriod();
-        clearStatisticsUI.salespersonFiscalPeriod = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonPeriod();
-        clearStatisticsUI.itemFiscalPeriod = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemPeriod();
-        clearStatisticsUtilities.customerPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerPeriod();
-        clearStatisticsUtilities.customerGroupPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupPeriod();
-        clearStatisticsUtilities.nationalAcctPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctPeriod();
-        clearStatisticsUtilities.salespersonPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonPeriod();
-        clearStatisticsUtilities.itemPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemPeriod();
-        tuClearStatisticsKoExtn.tuClearStatisticsModelExtension(clearStatisticsUI.clearStatisticsModel);
-    },
+        //sg.viewFinderHelper.setViewFinder(buttonId, onFinderOK, initFinder, height, top);
 
-    initFinders: function() {
-        // Initializing Customer Statistics Finders
-        clearStatisticsUI.initCustomerNumberFinders(); 
+        // Scenario #2
+        sg.viewFinderHelper.setViewFinder(buttonId, controlId, initFinder, height, top);
+    }
 
-        // Initializing Customer Group Statistics Finders
-        clearStatisticsUI.initCustomerGroupFinders(); 
-
-        // Initializing National Account Statistics Finders
-        clearStatisticsUI.initNationalAcctFinders(); 
-
-        // Initializing Salesperson Statistics Finders
-        clearStatisticsUI.initSalespersonFinders(); 
-
-        // Initializing Item Statistics Finders
-        clearStatisticsUI.initItemFinders();
-
-        // Initializing Fiscal Year Finders
-        clearStatisticsUI.initFiscalYearFinders();
-    },
-
-    initCustomerNumberFinders: function () {
-        let viewID = "AR0024";
-        let displayFieldNames = ["IDCUST", "NAMECUST", "SWACTV", "SWHOLD", "IDGRP", "IDNATACCT", "SWBALFWD", "CODECURN",
-                                 "TEXTSNAM", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE",
-                                 "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "EMAIL2", "NAMECTAC", "CTACPHONE",
-                                 "CTACFAX", "EMAIL1"];
-        let returnFieldName = "IDCUST";
-        let nextControlIdForFocus = "Data_ToCustomerNo";
-        clearStatisticsUI._initFinder("btnFromCustomerFinder", "Data_FromCustomerNo", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.FromCustomerNo);
-
-        nextControlIdForFocus = "Data_ThroughCustomerYear";
-        clearStatisticsUI._initFinder("btnToCustomerFinder", "Data_ToCustomerNo", nextControlIdForFocus, viewID, displayFieldNames,
-                                      returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.ToCustomerNo);
-    },
-
-    initCustomerGroupFinders: function () {
-        let viewID = "AR0025";
-        let displayFieldNames = ["IDGRP", "TEXTDESC", "SWACTV"];
-        let returnFieldName = "IDGRP";
-        let nextControlIdForFocus = "Data_ToGroupCode";
-        clearStatisticsUI._initFinder("btnFromCustomerGroupFinder", "Data_FromGroupCode", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.FromGroupCode);
-
-        nextControlIdForFocus = "Data_ThroughGroupYear";
-        clearStatisticsUI._initFinder("btnToCustomerGroupFinder", "Data_ToGroupCode", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.ToGroupCode);
-    },
-
-    initNationalAcctFinders: function () {
-        let viewID = "AR0028";
-        let displayFieldNames = ["IDNATACCT", "NAMEACCT", "IDGRP", "SWACTV", "SWHOLD", "CODECURN", "SWBALFWD"];
-        let returnFieldName = "IDNATACCT";
-        let nextControlIdForFocus = "Data_ToNationalAccount";
-        clearStatisticsUI._initFinder("btnFromNationalAcctFinder", "Data_FromNationalAccount", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.FromNationalAccount);
-
-        nextControlIdForFocus = "Data_ThroughNationalAcctYear"
-        clearStatisticsUI._initFinder("btnToNationalAcctFinder", "Data_ToNationalAccount", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.ToNationalAccount);
-    },
-
-    initSalespersonFinders: function () {
-        let viewID = "AR0018"; // ARSAP
-        let displayFieldNames = ["CODESLSP", "NAMEEMPL", "SWACTV"];
-        let returnFieldName = "CODESLSP";
-        let nextControlIdForFocus = "Data_ToSalesPerson";
-
-        clearStatisticsUI._initFinder("btnFromSalespersonFinder", "Data_FromSalesPerson", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.FromSalesPerson);
-
-        nextControlIdForFocus = "Data_ThroughSalesPersonYear";
-        clearStatisticsUI._initFinder("btnToSalespersonFinder", "Data_ToSalesPerson", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.ToSalesPerson);
-    },
-
-    initItemFinders: function () {
-        let viewID = "AR0010";
-        let displayFieldNames = ["IDITEM", "TEXTDESC", "SWACTV"];
-        let returnFieldName = "IDITEM";
-        let nextControlIdForFocus = "Data_ToItem";
-        clearStatisticsUI._initFinder("btnFromItemFinder", "Data_FromItem", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.FromItemNumber);
-
-        nextControlIdForFocus = "Data_ThroughItemYear";
-        clearStatisticsUI._initFinder("btnToItemFinder", "Data_ToItem", nextControlIdForFocus, viewID, displayFieldNames,
-            returnFieldName, clearStatisticsUI.clearStatisticsModel.Data.ToItemNumber);
-    },
-
-    // Generic routine to initialize a finder (Non Date Type Finders Only)
-    _initFinder: function (buttonId, parentControlId, nextControlIdForFocus, viewID, displayFieldNames, returnFieldName, dataEntity, viewOrder=0, filter="") {
-        let initKeyValues = [$("#" + parentControlId).val()];
-
-        let initFinder = function (viewFinder) {
-            viewFinder.viewID = viewID;
-            viewFinder.viewOrder = viewOrder;
-            viewFinder.displayFieldNames = displayFieldNames;
-            viewFinder.returnFieldName = returnFieldName;
-
-            // Optional 
-            //     If omitted, the starting value is blank.
-            viewFinder.initKeyValues = initKeyValues;
-
-            // Optional
-            //     Only useful for UIs such as Invoice Entry finder where you 
-            //     want to restrict the entries to a specific batch
-            viewFinder.filter = filter;
-        };
-
-        let onFinderOK = function (val) {
-            if (val != null) {
-                dataEntity(val);
-                sg.controls.Focus($("#" + nextControlIdForFocus));
-            }
-        }
-
-        sg.viewFinderHelper.setViewFinder(buttonId, onFinderOK, initFinder);
-    },
-
-    initFiscalYearFinders: function () {
-        var UI = clearStatisticsUI;
-
-        let viewID = "CS0002"; // CSFSC
-        let displayFieldNames = ["FSCYEAR", "PERIODS", "QTR4PERD", "ACTIVE",
-            "BGNDATE1", "BGNDATE2", "BGNDATE3", "BGNDATE4", "BGNDATE5", "BGNDATE6",
-            "BGNDATE7", "BGNDATE8", "BGNDATE9", "BGNDATE10", "BGNDATE11", "BGNDATE12", "BGNDATE13",
-            "ENDDATE1", "ENDDATE2", "ENDDATE3", "ENDDATE4", "ENDDATE5", "ENDDATE6",
-            "ENDDATE7", "ENDDATE8", "ENDDATE9", "ENDDATE10", "ENDDATE11", "ENDDATE12", "ENDDATE13"];
-        let returnFieldName = "FSCYEAR";
-
-        let onFinderOk = function (year) {
-            if (year !== null) {
-
-                let modelYear = clearStatisticsUI.clearStatisticsModel.Data.Year();
-                if (modelYear !== year) {
-                    // If the current model year differs from year selected via finder
-
-                    // Update the model values
-                    clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-
-                    // Now Validate the year
-                    clearStatisticsRepository.getCustomerMaxPeriodForValidYear(year);
-                }
-            }
-        }
-        UI._initYearFinder("btnFindCustomerYear", "Data_ThroughCustomerYear", "Data_ThroughCustomerPeriod", viewID, displayFieldNames, returnFieldName, onFinderOk);
-
-        onFinderOk = function (year) {
-            if (year !== null) {
-
-                let modelYear = clearStatisticsUI.clearStatisticsModel.Data.Year();
-                if (modelYear !== year) {
-                    // If the current model year differs from year selected via finder
-
-                    // Update the model values
-                    clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-
-                    // Now Validate the year
-                    clearStatisticsRepository.getCustomerMaxPeriodForValidYear(year);
-                }
-            }
-        }
-        UI._initYearFinder("btnFindCustomerGroupYear", "Data_ThroughGroupYear", "Data_ThroughGroupPeriod", viewID, displayFieldNames, returnFieldName, onFinderOk);
-
-        onFinderOk = function (year) {
-            if (year !== null) {
-
-                let modelYear = clearStatisticsUI.clearStatisticsModel.Data.Year();
-                if (modelYear !== year) {
-                    // If the current model year differs from year selected via finder
-
-                    // Update the model values
-                    clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-
-                    // Now Validate the year
-                    clearStatisticsRepository.getCustomerMaxPeriodForValidYear(year);
-                }
-            }
-        }
-        UI._initYearFinder("btnFindNationalAcctYear", "Data_ThroughNationalAcctYear", "Data_ThroughNationalAcctPeriod", viewID, displayFieldNames, onFinderOk);
-
-        onFinderOk = function (year) {
-            if (year !== null) {
-
-                let modelYear = clearStatisticsUI.clearStatisticsModel.Data.Year();
-                if (modelYear !== year) {
-                    // If the current model year differs from year selected via finder
-
-                    // Update the model values
-                    clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-
-                    // Now Validate the year
-                    clearStatisticsRepository.getCustomerMaxPeriodForValidYear(year);
-                }
-            }
-        }
-        UI._initYearFinder("btnFindSalespersonYear", "Data_ThroughSalesPersonYear", "Data_ThroughSalesPersonYear", viewID, displayFieldNames, returnFieldName, onFinderOk);
-
-        onFinderOk = function (year) {
-            if (year !== null) {
-
-                let modelYear = clearStatisticsUI.clearStatisticsModel.Data.Year();
-                if (modelYear !== year) {
-                    // If the current model year differs from year selected via finder
-
-                    // Update the model values
-                    clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-
-                    // Now Validate the year
-                    clearStatisticsRepository.getCustomerMaxPeriodForValidYear(year);
-                }
-            }
-        }
-        UI._initYearFinder("btnFindItemYear", "Data_ThroughItemYear", "Data_ThroughItemPeriod", viewID, displayFieldNames, returnFieldName, onFinderOk);
-    },
-
-    // Generic routine to initialize a 'year' selector finders 
-    _initYearFinder: function (buttonId,
-        yearControlId,
-        periodControlId,
-        viewID,
-        displayFieldNames,
-        returnFieldName,
-        onFinderOk,
-        viewOrder = 0,
-        filter = "") {
-
-        // Reduce visual bloat
-        let UI = clearStatisticsUI;
-
-        let initKeyValues = [$("#" + yearControlId).val()];
-
-        // Define the initializer callback
-        let initFinder = function (viewFinder) {
-            viewFinder.viewID = viewID;
-            viewFinder.viewOrder = viewOrder;
-            viewFinder.displayFieldNames = displayFieldNames;
-            viewFinder.returnFieldName = returnFieldName;
-
-            // Optional 
-            //     If omitted, the starting value is blank.
-            viewFinder.initKeyValues = initKeyValues;
-
-            // Optional
-            //     Only useful for UIs such as Invoice Entry finder where you 
-            //     want to restrict the entries to a specific batch
-            viewFinder.filter = filter;
-        };
-
-        // Define the success callback
-        let onFinderOK = onFinderOk;
-
-        sg.viewFinderHelper.setViewFinder(buttonId, onFinderOK, initFinder);
-    },
-    
-    initCheckBox: function () {
+    /**
+     * @name initCheckBox
+     * @desc Initialize the click handlers for check boxes
+     * @private
+     */
+    function initCheckBox() {
 
         $("#Data_ClearCustomerStatistics").click(function (e) {
             if ($(this).is(':checked')) {
-                setTimeout(function() {
+                setTimeout(function () {
                     sg.controls.Focus($("#Data_FromCustomerNo"));
                 })
-               
             }
-        });       
+        });
+
         $(document).on("change", "#Data_ClearGroupStatistics", function () {
             if ($("#Data_ClearGroupStatistics").is(":checked")) {
-                setTimeout(function() {
+                setTimeout(function () {
                     sg.controls.Focus($("#Data_FromGroupCode"));
                 })
             }
         });
+
         $(document).on("change", "#Data_ClearNationalAcctStatistics", function () {
             if ($("#Data_ClearNationalAcctStatistics").is(":checked")) {
-                setTimeout(function() {
+                setTimeout(function () {
                     sg.controls.Focus($("#Data_FromNationalAccount"));
                 })
             }
         });
+
         $(document).on("change", "#Data_ClearSalesPersonStatistics", function () {
             if ($("#Data_ClearSalesPersonStatistics").is(":checked")) {
-                setTimeout(function() {
+                setTimeout(function () {
                     sg.controls.Focus($("#Data_FromSalesPerson"));
                 })
             }
         });
+
         $(document).on("change", "#Data_ClearItemStatistics", function () {
             if ($("#Data_ClearItemStatistics").is(":checked")) {
-                setTimeout(function() {
+                setTimeout(function () {
                     sg.controls.Focus($("#Data_FromItem"));
                 })
             }
         });
-    },
-    
-    initBlur:function() {
-        $("#Data_ThroughCustomerYear").bind('change', function(e) {
-            sg.delayOnChange("btnFindCustomerYear", $("Data_ThroughCustomerYear"), function() {
-                var year = $("#Data_ThroughCustomerYear").val();
-                var oldYear = clearStatisticsUI.customerFiscalYear;
-                if (clearStatisticsUI.clearStatisticsModel.CalendarYear()) {
-                    if (year < minimumFiscalYear) {
-                        clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(oldYear);
-                        clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(clearStatisticsUtilities.customerYearBackup);
-                        //clearStatisticsUtilities.revertYearValue();
-                        $('#Data_ThroughCustomerYear').focus();
+    }
+
+    /**
+     * @name initBlur
+     * @desc Initialize the onChange handlers for various controls
+     * @private
+     */
+    function initBlur() {
+        $("#Data_FromCustomerNo").on('change', function (e) { 
+            sg.controls.Focus($("#Data_ToCustomerNo"));
+        });
+
+        $("#Data_ToCustomerNo").on('change', function (e) {
+            sg.controls.Focus($("#Data_ThroughCustomerYear"));
+        });
+
+        $("#Data_ThroughCustomerYear").on('change', function (e) {
+            let $control = $("#Data_ThroughCustomerYear");
+            sg.delayOnChange("btnFindCustomerYear", $control, function () {
+                var validatePeriodForYear = true;
+                var year = $control.val();
+                var oldYear = customerFiscalYear;
+                if (_model.CalendarYear()) {
+                    if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
+                        _model.Data.ThroughCustomerYear(oldYear);
+                        _model.Data.ThroughCustomerYear(clearStatisticsUtilities.customerYearBackup);
+                        $control.focus();
+                        validatePeriodForYear = false;
                     } else {
-                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshCustomerStatistic, clearStatisticsUtility.setFocusToFiscalYear);
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshCustomerStatistic,
+                            clearStatisticsUtility.setFocusToFiscalYear);
                     }
                 } else {
-                    if (!(clearStatisticsUI.fiscalYrExists($("#Data_ThroughCustomerYear").val()))) {
-                        clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(clearStatisticsUtilities.customerYearBackup);
+                    if (!(fiscalYrExists(year))) {
+                        _model.Data.ThroughCustomerYear(clearStatisticsUtilities.customerYearBackup);
+                        validatePeriodForYear = false;
                     } else {
-                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateCustomerYear, clearStatisticsUtility.setFocusToFiscalYear);
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateCustomerYear,
+                            clearStatisticsUtility.setFocusToFiscalYear);
                     }
+                }
+
+                if (validatePeriodForYear) {
+                    clearStatisticsUtilities.validateCustomerYear();
                 }
             });
         });
 
-        $("#Data_ThroughGroupYear").bind('change', function (e) {
-            sg.delayOnChange("btnFindCustomerGroupYear", $("Data_ThroughGroupYear"), function() {
-            var year = $("#Data_ThroughGroupYear").val();
-            var oldYear = clearStatisticsUI.customerGroupFiscalYear;
-            if (clearStatisticsUI.clearStatisticsModel.CalendarYear()) {
-                if (year < minimumFiscalYear) {
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear(oldYear);
-                    //clearStatisticsUtilities.revertYearValue();
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear(clearStatisticsUtilities.customerGroupYearBackup);
-                    $('#Data_ThroughGroupYear').focus();
-                } else {
-                    clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshGroupStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-                }
-            }
-            else {
-                if (!(clearStatisticsUI.fiscalYrExists($("#Data_ThroughGroupYear").val()))) {
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear(clearStatisticsUtilities.customerGroupYearBackup);
-                } else {
-                    clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateGroupYear, clearStatisticsUtility.setFocusToFiscalYear);
-                }
-            }
-            });
+        $("#Data_FromGroupCode").on('change', function (e) {
+            sg.controls.Focus($("#Data_ToGroupCode"));
         });
-        
-            $("#Data_ThroughNationalAcctYear").bind('change', function (e) {
-                sg.delayOnChange("btnFindNationalAcctYear", $("Data_ThroughNationalAcctYear"), function() {
-            var year = $("#Data_ThroughNationalAcctYear").val();
-            var oldYear = clearStatisticsUI.nationalAcctFiscalYear;
-            if (clearStatisticsUI.clearStatisticsModel.CalendarYear()) {
-                if (year < minimumFiscalYear) {
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear(oldYear);
-                    //clearStatisticsUtilities.revertYearValue();
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear(clearStatisticsUtilities.nationalAcctYearBackup);
-                    $('#Data_ThroughNationalAcctYear').focus();
-                } else {
-                    clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshNationalAcctStatistic, clearStatisticsUtility.setFocusToFiscalYear);
+
+        $("#Data_ToGroupCode").on('change', function (e) {
+            sg.controls.Focus($("#Data_ThroughGroupYear"));
+        });
+
+        $("#Data_ThroughGroupYear").on('change', function (e) {
+            let $control = $("#Data_ThroughGroupYear");
+            sg.delayOnChange("btnFindCustomerGroupYear", $control, function () {
+                var validatePeriodForYear = true;
+                var year = $control.val();
+                var oldYear = customerGroupFiscalYear;
+                if (_model.CalendarYear()) {
+                    if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
+                        _model.Data.ThroughGroupYear(oldYear);
+                        _model.Data.ThroughGroupYear(clearStatisticsUtilities.customerGroupYearBackup);
+                        $control.focus();
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshGroupStatistic,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
                 }
-            }
-            else {
-                if (!(clearStatisticsUI.fiscalYrExists($("#Data_ThroughNationalAcctYear").val()))) {
-                    clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear(clearStatisticsUtilities.nationalAcctYearBackup);
-                } else {
-                    clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateNationalAcctYear, clearStatisticsUtility.setFocusToFiscalYear);
+                else {
+                    if (!(fiscalYrExists(year))) {
+                        _model.Data.ThroughGroupYear(clearStatisticsUtilities.customerGroupYearBackup);
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateGroupYear,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
                 }
-              }
+
+                if (validatePeriodForYear) {
+                    clearStatisticsUtilities.validateGroupYear();
+                }
             });
         });
 
-            $("#Data_ThroughSalesPersonYear").bind('change', function (e) {
-                sg.delayOnChange("btnFindSalespersonYear", $("Data_ThroughSalesPersonYear"), function () {
-                    var year = $("#Data_ThroughSalesPersonYear").val();
-                    var oldYear = clearStatisticsUI.salespersonFiscalYear;
-                    if (clearStatisticsUI.clearStatisticsModel.SalesCalendarYear()) {
-                        if (year < minimumFiscalYear) {
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear(oldYear);
-                            //clearStatisticsUtilities.revertYearValue();
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear(clearStatisticsUtilities.salespersonYearBackup);
-                            $('#Data_ThroughSalesPersonYear').focus();
-                        } else {
-                            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshSalespersonStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-                        }
-                    }
-                    else {
-                        if (!(clearStatisticsUI.fiscalYrExists($("#Data_ThroughSalesPersonYear").val()))) {
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear(clearStatisticsUtilities.salespersonYearBackup);
-                        } else {
-                            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateSalespersonYear, clearStatisticsUtility.setFocusToFiscalYear);
-                        }
-                    }
-                });
-            });
+        $("#Data_FromNationalAccount").on('change', function (e) {
+            sg.controls.Focus($("#Data_ToNationalAccount"));
+        });
 
-            $("#Data_ThroughItemYear").bind('change', function (e) {
-                sg.delayOnChange("btnFindItemYear", $("Data_ThroughItemYear"), function () {
-                    var year = $("#Data_ThroughItemYear").val();
-                    var oldYear = clearStatisticsUI.itemFiscalYear;
-                    if (clearStatisticsUI.clearStatisticsModel.ItemCalendarYear()) {
-                        if (year < minimumFiscalYear) {
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear(oldYear);
-                            //clearStatisticsUtilities.revertYearValue();
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear(clearStatisticsUtilities.itemYearBackup);
-                            $('#Data_ThroughItemYear').focus();
-                        } else {
-                            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshItemStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-                        }
-                    }
-                    else {
-                        if (!(clearStatisticsUI.fiscalYrExists($("#Data_ThroughItemYear").val()))) {
-                            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear(clearStatisticsUtilities.itemYearBackup);
-                        } else {
-                            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateItemYear, clearStatisticsUtility.setFocusToFiscalYear);
-                        }
-                    }
-                });
-            });
-        
-            $("#Data_ThroughCustomerPeriod").bind('change', function (e) {
-                $("#message").empty();               
-                clearStatisticsUtilities.validateCustomerPeriod();
-            });
-        
-            $("#Data_ThroughGroupPeriod").bind('change', function (e) {
-                $("#message").empty();
-                clearStatisticsUtilities.validateGroupPeriod();
-            });
-        
-            $("#Data_ThroughNationalAcctPeriod").bind('change', function (e) {
-                $("#message").empty();
-                clearStatisticsUtilities.validateNationalAcctPeriod();
-            });
-        
-            $("#Data_ThroughSalesPersonPeriod").bind('change', function (e) {
-                $("#message").empty();
-               // clearStatisticsUtilities.backupSalespersonPeriodValue();
-                clearStatisticsUtilities.validateSalespersonPeriod();
-            });
-        
-            $("#Data_ThroughItemPeriod").bind('change', function (e) {
-                $("#message").empty();
-                clearStatisticsUtilities.validateItemPeriod();
-            });
-    },    
+        $("#Data_ToNationalAccount").on('change', function (e) {
+            sg.controls.Focus($("#Data_ThroughNationalAcctYear"));
+        });
 
-    initTextBox: function ()
-    {
+        $("#Data_ThroughNationalAcctYear").on('change', function (e) {
+            let $control = $("#Data_ThroughNationalAcctYear");
+            sg.delayOnChange("btnFindNationalAcctYear", $control, function () {
+                var validatePeriodForYear = true;
+                var year = $control.val();
+                var oldYear = nationalAcctFiscalYear;
+                if (_model.CalendarYear()) {
+                    if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
+                        _model.Data.ThroughNationalAcctYear(oldYear);
+                        _model.Data.ThroughNationalAcctYear(clearStatisticsUtilities.nationalAcctYearBackup);
+                        $control.focus();
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshNationalAcctStatistic,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+                else {
+                    if (!(fiscalYrExists(year))) {
+                        _model.Data.ThroughNationalAcctYear(clearStatisticsUtilities.nationalAcctYearBackup);
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateNationalAcctYear,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+
+                if (validatePeriodForYear) {
+                    clearStatisticsUtilities.validateNationalAcctYear();
+                }
+            });
+        });
+
+        $("#Data_FromSalesPerson").on('change', function (e) {
+            sg.controls.Focus($("#Data_ToSalesPerson"));
+        });
+
+        $("#Data_ToSalesPerson").on('change', function (e) {
+            sg.controls.Focus($("#Data_ThroughSalesPersonYear"));
+        });
+
+        $("#Data_ThroughSalesPersonYear").on('change', function (e) {
+            let $control = $("#Data_ThroughSalesPersonYear");
+            sg.delayOnChange("btnFindSalespersonYear", $control, function () {
+                var validatePeriodForYear = true;
+                var year = $control.val();
+                var oldYear = salespersonFiscalYear;
+                if (_model.SalesCalendarYear()) {
+                    if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
+                        _model.Data.ThroughSalesPersonYear(oldYear);
+                        _model.Data.ThroughSalesPersonYear(clearStatisticsUtilities.salespersonYearBackup);
+                        $control.focus();
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshSalespersonStatistic,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+                else {
+                    if (!(fiscalYrExists(year))) {
+                        _model.Data.ThroughSalesPersonYear(clearStatisticsUtilities.salespersonYearBackup);
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateSalespersonYear,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+
+                if (validatePeriodForYear) {
+                    clearStatisticsUtilities.validateSalespersonYear();
+                }
+            });
+        });
+
+        $("#Data_FromItem").on('change', function (e) {
+            sg.controls.Focus($("#Data_ToItem"));
+        });
+
+        $("#Data_ToItem").on('change', function (e) {
+            sg.controls.Focus($("#Data_ThroughItemYear"));
+        });
+
+        $("#Data_ThroughItemYear").on('change', function (e) {
+            let $control = $("#Data_ThroughItemYear");
+            sg.delayOnChange("btnFindItemYear", $control, function () {
+                var validatePeriodForYear = true;
+                var year = $control.val();
+                var oldYear = itemFiscalYear;
+                if (_model.ItemCalendarYear()) {
+                    if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
+                        _model.Data.ThroughItemYear(oldYear);
+                        _model.Data.ThroughItemYear(clearStatisticsUtilities.itemYearBackup);
+                        $control.focus();
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshItemStatistic,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+                else {
+                    if (!(fiscalYrExists(year))) {
+                        _model.Data.ThroughItemYear(clearStatisticsUtilities.itemYearBackup);
+                        validatePeriodForYear = false;
+                    } else {
+                        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.validateItemYear,
+                            clearStatisticsUtility.setFocusToFiscalYear);
+                    }
+                }
+
+                if (validatePeriodForYear) {
+                    clearStatisticsUtilities.validateItemYear();
+                }
+            });
+        });
+
+        $("#Data_ThroughCustomerPeriod").on('change', function (e) {
+            $("#message").empty();
+            clearStatisticsUtilities.validateCustomerPeriod();
+        });
+
+        $("#Data_ThroughGroupPeriod").on('change', function (e) {
+            $("#message").empty();
+            clearStatisticsUtilities.validateGroupPeriod();
+        });
+
+        $("#Data_ThroughNationalAcctPeriod").on('change', function (e) {
+            $("#message").empty();
+            clearStatisticsUtilities.validateNationalAcctPeriod();
+        });
+
+        $("#Data_ThroughSalesPersonPeriod").on('change', function (e) {
+            $("#message").empty();
+            clearStatisticsUtilities.validateSalespersonPeriod();
+        });
+
+        $("#Data_ThroughItemPeriod").on('change', function (e) {
+            $("#message").empty();
+            clearStatisticsUtilities.validateItemPeriod();
+        });
+    }
+
+    /**
+     * @name initTextBox
+     * @desc Initialize the Kendo text boxes
+     * @private
+     */
+    function initTextBox() {
         $("#Data_ThroughCustomerPeriod").kendoNumericTextBox({
             format: "00",
             spinners: true,
-            min: clearStatisticsUI.clearStatisticsModel.MinimumPeriod(),
-            max: clearStatisticsUI.clearStatisticsModel.MaximumPeriod(),
+            min: _model.MinimumPeriod(),
+            max: _model.MaximumPeriod(),
             step: "1",
             type: "number",
             spin: function () {
                 var value = this.value();
-                clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerPeriod(value);                
+                _model.Data.ThroughCustomerPeriod(value);
                 clearStatisticsUtilities.backupCustomerPeriodValue();
             }
         });
@@ -577,13 +562,13 @@ clearStatisticsUI = {
         $("#Data_ThroughGroupPeriod").kendoNumericTextBox({
             format: "00",
             spinners: true,
-            min: clearStatisticsUI.clearStatisticsModel.MinimumPeriod(),
-            max: clearStatisticsUI.clearStatisticsModel.MaximumPeriod(),
+            min: _model.MinimumPeriod(),
+            max: _model.MaximumPeriod(),
             step: "1",
             type: "number",
             spin: function () {
                 var value = this.value();
-                clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupPeriod(value);                
+                _model.Data.ThroughGroupPeriod(value);
                 clearStatisticsUtilities.backupGroupPeriodValue();
             }
         });
@@ -591,608 +576,694 @@ clearStatisticsUI = {
         $("#Data_ThroughNationalAcctPeriod").kendoNumericTextBox({
             format: "00",
             spinners: true,
-            min: clearStatisticsUI.clearStatisticsModel.MinimumPeriod(),
-            max: clearStatisticsUI.clearStatisticsModel.MaximumPeriod(),
+            min: _model.MinimumPeriod(),
+            max: _model.MaximumPeriod(),
             step: "1",
             type: "number",
             spin: function () {
                 var value = this.value();
-                clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctPeriod(value);
+                _model.Data.ThroughNationalAcctPeriod(value);
                 clearStatisticsUtilities.backupNationalAcctPeriodValue();
             }
-            
+
         });
 
         $("#Data_ThroughSalesPersonPeriod").kendoNumericTextBox({
             format: "00",
             spinners: true,
-            min: clearStatisticsUI.clearStatisticsModel.SalesPersonMinimumPeriod(),
-            max: clearStatisticsUI.clearStatisticsModel.SalesPersonMaximumPeriod(),
+            min: _model.SalesPersonMinimumPeriod(),
+            max: _model.SalesPersonMaximumPeriod(),
             step: "1",
             type: "number",
             spin: function () {
                 var value = this.value();
-                clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonPeriod(value);
+                _model.Data.ThroughSalesPersonPeriod(value);
                 clearStatisticsUtilities.backupSalespersonPeriodValue();
             }
         });
-        
+
         $("#Data_ThroughItemPeriod").kendoNumericTextBox({
             format: "00",
             spinners: true,
-            min: clearStatisticsUI.clearStatisticsModel.ItemMinimumPeriod(),
-            max: clearStatisticsUI.clearStatisticsModel.ItemMaximumPeriod(),
+            min: _model.ItemMinimumPeriod(),
+            max: _model.ItemMaximumPeriod(),
             step: "1",
             type: "number",
             spin: function () {
                 var value = this.value();
-                clearStatisticsUI.clearStatisticsModel.Data.ThroughItemPeriod(value);
+                _model.Data.ThroughItemPeriod(value);
                 clearStatisticsUtilities.backupItemPeriodValue();
             }
         });
 
-    },
-    
-    initButtons: function () {
+    }
+
+    /**
+     * @name initButtons
+     * @desc Initialize the button click handlers
+     * @private
+     */
+    function initButtons() {
         $("#btnProcess").click(function (e) {
             debugger;
-            sg.utls.SyncExecute(clearStatisticsUI.process);
+            sg.utls.SyncExecute(process);
         });
-    },
-    
-    process: function () {
+    }
+
+    /**
+     * @name process
+     * @desc Handler for the process button
+     * @private
+     */
+    function process() {
         debugger;
         sg.utls.isProcessRunning = true;
         var processUrl = sg.utls.url.buildUrl("TU", "ClearStatistics", "Process");
-        
-        var isChecked = (clearStatisticsUI.clearStatisticsModel.Data.bClearCustomerStatistics()
-          || clearStatisticsUI.clearStatisticsModel.Data.bClearGroupStatistics()
-          || clearStatisticsUI.clearStatisticsModel.Data.bClearNationalAcctStatistics()
-          || clearStatisticsUI.clearStatisticsModel.Data.bClearSalespersonStatistics()
-          || clearStatisticsUI.clearStatisticsModel.Data.bClearItemStatistics());
+
+        var isChecked = (_model.Data.bClearCustomerStatistics()
+            || _model.Data.bClearGroupStatistics()
+            || _model.Data.bClearNationalAcctStatistics()
+            || _model.Data.bClearSalespersonStatistics()
+            || _model.Data.bClearItemStatistics());
 
         if (!isChecked) {
-            //Do not process
+            // Do not process
             sg.utls.showMessageInfo(sg.utls.msgType.ERROR, clearStatisticsResources.NoProcessingOption);
             sg.utls.isProcessRunning = false;
         }
-        //else {
-        //    if (sg.utls.isProcessRunning) {
-        //        return;
-        //    }
-        //}
+
         // Check if form is valid
         if ($("#frmClearStatistics").valid() && sg.utls.isProcessRunning) {
             // Check Validations
-            if (clearStatisticsUI.Validation()) {
+            if (Validation()) {
                 $("#message").empty();
                 sg.utls.clearValidations("frmClearStatistics");
                 sg.utls.isProcessRunning = true;
-                var data = { model: ko.mapping.toJS(clearStatisticsUI.clearStatisticsModel, clearStatisticsUI.computedProperties) };
+                var data = { model: ko.mapping.toJS(_model, computedProperties) };
                 sg.utls.ajaxPost(processUrl, data, onSuccess.process)
             }
         }
-    },
-    
-    initProcessUI: function() {
-        var progressUrl = sg.utls.url.buildUrl("TU", "ClearStatistics", "Progress");
-        var cancelUrl = sg.utls.url.buildUrl("TU", "ClearStatistics", "Cancel");
-        window.progressUI.init(progressUrl, cancelUrl, clearStatisticsUI.clearStatisticsModel, screenName, onSuccess.onProcessComplete);
-    },
+    }
 
-    Validation: function () {
+    /**
+     * @name initProcessUI
+     * @desc 
+     * @private
+     */
+    function initProcessUI() {
+        var progressUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Progress");
+        var cancelUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Cancel");
+        // @ts-ignore
+        window.progressUI.init(progressUrl, cancelUrl, _model, screenName, onSuccess.onProcessComplete);
+    }
+
+    /**
+     * @name Validation
+     * @desc Page validator
+     * @private
+     */
+    function Validation() {
         var errorRangeMessage = "";
         var inputValid = true;
+        // @ts-ignore
+        var resources = clearStatisticsResources;
 
         // If FromCustomer is greater than ToCustomer, throw an exception
-        if (clearStatisticsUI.clearStatisticsModel.Data.ClearCustomerStatistics() && (clearStatisticsUI.clearStatisticsModel.Data.FromCustomerNo() != null &&
-          clearStatisticsUI.clearStatisticsModel.Data.FromCustomerNo().localeCompare(clearStatisticsUI.clearStatisticsModel.Data.ToCustomerNo())) > 0) {
+        if (_model.Data.ClearCustomerStatistics() && (_model.Data.FromCustomerNo() != null &&
+            _model.Data.FromCustomerNo().localeCompare(_model.Data.ToCustomerNo())) > 0) {
             inputValid = false;
-            errorRangeMessage = clearStatisticsResources.CustomerNumberTitle;
+            errorRangeMessage = resources.CustomerNumberTitle;
             sg.controls.Focus($("#Data_FromCustomerNo"));
         }
 
         // If FromCustomerGroup is greater than ToCustomerGroup, throw an exception
-        else if (clearStatisticsUI.clearStatisticsModel.Data.ClearGroupStatistics() && (clearStatisticsUI.clearStatisticsModel.Data.FromGroupCode() != null &&
-                 clearStatisticsUI.clearStatisticsModel.Data.FromGroupCode().localeCompare(clearStatisticsUI.clearStatisticsModel.Data.ToGroupCode())) > 0) {
+        else if (_model.Data.ClearGroupStatistics() && (_model.Data.FromGroupCode() != null &&
+            _model.Data.FromGroupCode().localeCompare(_model.Data.ToGroupCode())) > 0) {
             inputValid = false;
-            errorRangeMessage = clearStatisticsResources.CustomerGroupFinder;
+            errorRangeMessage = resources.CustomerGroupFinder;
             sg.controls.Focus($("#Data_FromGroupCode"));
         }
 
         // If FromNationalAccnt is greater than ToNationalAccnt, throw an exception
-        else if (clearStatisticsUI.clearStatisticsModel.Data.ClearNationalAcctStatistics() && clearStatisticsUI.clearStatisticsModel.Data.FromNationalAccount() != null &&
-                 clearStatisticsUI.clearStatisticsModel.Data.FromNationalAccount().localeCompare(clearStatisticsUI.clearStatisticsModel.Data.ToNationalAccount()) > 0) {
+        else if (_model.Data.ClearNationalAcctStatistics() && _model.Data.FromNationalAccount() != null &&
+            _model.Data.FromNationalAccount().localeCompare(_model.Data.ToNationalAccount()) > 0) {
             inputValid = false;
-            errorRangeMessage = clearStatisticsResources.NationalAccountNumberTitle;
+            errorRangeMessage = resources.NationalAccountNumberTitle;
             sg.controls.Focus($("#Data_FromNationalAccount"));
         }
 
         // If FromSalesPerson is greater than ToSalesPerson, throw an exception
-        else if (clearStatisticsUI.clearStatisticsModel.Data.ClearSalesPersonStatistics() && clearStatisticsUI.clearStatisticsModel.Data.FromSalesPerson() != null &&
-                 clearStatisticsUI.clearStatisticsModel.Data.FromSalesPerson().localeCompare(clearStatisticsUI.clearStatisticsModel.Data.ToSalesPerson()) > 0) {
+        else if (_model.Data.ClearSalesPersonStatistics() && _model.Data.FromSalesPerson() != null &&
+            _model.Data.FromSalesPerson().localeCompare(_model.Data.ToSalesPerson()) > 0) {
             inputValid = false;
-            errorRangeMessage = clearStatisticsResources.SalesPersonFinderTitle;
+            errorRangeMessage = resources.SalesPersonFinderTitle;
             sg.controls.Focus($("#Data_FromSalesPerson"));
         }
 
         // If FromItem is greater than ToItem, throw an exception
-        else if (clearStatisticsUI.clearStatisticsModel.Data.ClearItemStatistics() && clearStatisticsUI.clearStatisticsModel.Data.FromItemNumber() != null &&
-                 clearStatisticsUI.clearStatisticsModel.Data.FromItemNumber().localeCompare(clearStatisticsUI.clearStatisticsModel.Data.ToItemNumber()) > 0) {
+        else if (_model.Data.ClearItemStatistics() && _model.Data.FromItemNumber() != null &&
+            _model.Data.FromItemNumber().localeCompare(_model.Data.ToItemNumber()) > 0) {
             inputValid = false;
-            errorRangeMessage = clearStatisticsResources.ItemFinderTitle;
+            errorRangeMessage = resources.ItemFinderTitle;
             sg.controls.Focus($("#Data_FromItem"));
         }
 
         if (!inputValid) {
             if (errorRangeMessage != "") {
-                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(clearStatisticsResources.ErrorFromToValueMessage, errorRangeMessage));
+                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(resources.ErrorFromToValueMessage, errorRangeMessage));
             } else if (errorMessage != "") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, errorMessage);
             }
         }
 
         return inputValid;
-    },
+    }
 
-    fiscalYrExists: function (Year) {
-        if (clearStatisticsUI.clearStatisticsModel.FiscalCalendars() !== null) {
-            for (var i = 0; i < clearStatisticsUI.clearStatisticsModel.FiscalCalendars().length; i++) {
-                if (Year === clearStatisticsUI.clearStatisticsModel.FiscalCalendars()[i].Year()) {
-                    return true;
-                }
+    /**
+     * @name fiscalYrExists
+     * @desc Check to see if a year is a FiscalYear
+     * @private
+     * @param Year
+     * @returns {boolean} true | false
+     */
+    function fiscalYrExists(Year) {
+        if (_model.FiscalCalendars() === null) {
+            return false;
+        }
+
+        for (var i = 0; i < _model.FiscalCalendars().length; i++) {
+            if (Year === _model.FiscalCalendars()[i].Year()) {
+                return true;
             }
         }
-        return false;
-    },
-};
-
-var onSuccess = {
-    process: function (jsonResult) {
-        if (jsonResult.UserMessage.IsSuccess) {
-            var model = clearStatisticsUI.clearStatisticsModel;
-            window.ko.mapping.fromJS(jsonResult.WorkflowInstanceId, {}, model.WorkflowInstanceId);
-            window.progressUI.progress();
-        } else {
-            sg.utls.showMessage(jsonResult);
-        }
-    },
-    onProcessComplete: function (result) {
-        if (result.ProcessResult.Results.length <= 0) {
-            $("#processingResultGrid").hide();
-            var errorMessage = clearStatisticsResources.ProcessingComplete;
-            sg.utls.showMessageInfoInCustomDivWithoutClose(sg.utls.msgType.INFO, errorMessage, 'messageDiv');
-        }
-    },
-};
-
-// Finder success method
-var onFinderSuccess = {
-    // variable for From Customer Number finder.
-    //FromCustomerFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.FromCustomerNo(data.CustomerNumber);
-    //        //setTimeout(function () {
-    //        //    ($("#Data_ToCustomerNo")).siblings('input:visible').focus();
-    //        //});
-    //        sg.controls.Focus($("#Data_ToCustomerNo"));
-    //    }
-    //},
-    //// variable for To Customer Number finder.
-    //ToCustomerFinder: function (data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.ToCustomerNo(data.CustomerNumber);
-    //        sg.controls.Focus($("#Data_ThroughCustomerYear"));
-    //    }       
-    //},
-    //// variable for From Customer Group finder.
-    //FromCustomerGroupFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.FromGroupCode(data.GroupCode);
-    //        //setTimeout(function () {
-    //        //    ($("#Data_ToGroupCode")).siblings('input:visible').focus();
-    //        //});
-    //        sg.controls.Focus($("#Data_ToGroupCode"));
-    //    }
-    //},
-    //// variable for To Customer Group finder.
-    //ToCustomerGroupFinder: function (data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.ToGroupCode(data.GroupCode);
-    //        sg.controls.Focus($("#Data_ThroughGroupYear"));
-    //    }   
-    //},
-    //// variable for From National Account finder.
-    //FromNationalAccountFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.FromNationalAccount(data.NationalAccountNumber);
-    //        //setTimeout(function () {
-    //        //    ($("#Data_ToNationalAccount")).siblings('input:visible').focus();
-    //        //});
-    //        sg.controls.Focus($("#Data_ToNationalAccount"));
-    //    }
-    //},
-    //// variable for To National Account finder.
-    //ToNationalAccountFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.ToNationalAccount(data.NationalAccountNumber);
-    //        //setTimeout(function () {
-    //        //    ($("#Data_ToNationalAccount")).siblings('input:visible').focus();
-    //        //});
-    //        sg.controls.Focus($("#Data_ThroughNationalAcctPeriod"));
-    //    }
-    //},
-    //// variable for From Salesperson finder.
-    //FromSalespersonFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.FromSalesPerson(data.SalesPersonCode);
-    //        sg.controls.Focus($("#Data_ToSalesPerson"));
-    //    }
-    //},
-    //// variable for To Salesperson finder.
-    //ToSalespersonFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.ToSalesPerson(data.SalesPersonCode);
-    //        sg.controls.Focus($("#Data_ThroughSalesPersonYear"));
-    //    }
-    //},
-    //// variable for From Item finder.
-    //FromItemFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.FromItemNumber(data.ItemNumber);
-    //        sg.controls.Focus($("#Data_ToItem"));
-    //    }
-    //},
-    //// variable for To Item finder.
-    //ToItemFinder: function(data) {
-    //    if (data != null) {
-    //        clearStatisticsUI.clearStatisticsModel.Data.ToItemNumber(data.ItemNumber);
-    //        sg.controls.Focus($("#Data_ThroughItemYear"));
-    //    }
-    //},
-    //// variable for Customer Year finder.
-    //CustomerYearFinder: function(data) {
-    //    if (data) {
-    //        var year = data.FiscalYear;
-    //        if (sg.controls.GetString(clearStatisticsUI.clearStatisticsModel.Data.Year()) !== sg.controls.GetString(year)) {
-    //            clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-    //            clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(year);
-    //            //Now Validate the method year
-    //            clearStatisticsRepository.getCustomerMaxPeriodForValidYear($("#Data_ThroughCustomerYear").val())               
-    //        }
-    //    }
-    
-    //},
-    //// variable for Customer Group Year finder.
-    //CustomerGroupYearFinder: function (data) {
-    //    if (data) {
-    //        var year = data.FiscalYear;
-    //        if (sg.controls.GetString(clearStatisticsUI.clearStatisticsModel.Data.Year()) !== sg.controls.GetString(year)) {
-    //            clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-    //            clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear(year);
-    //            //Now Validate the method year
-    //            clearStatisticsRepository.getGroupMaxPeriodForValidYear($("#Data_ThroughGroupYear").val())               
-    //        }
-    //    }
-    //},
-    //// variable for National Acct Year finder.
-    //NationalAcctYearFinder: function (data) {
-    //    if (data) {
-    //        var year = data.FiscalYear;
-    //        if (sg.controls.GetString(clearStatisticsUI.clearStatisticsModel.Data.Year()) !== sg.controls.GetString(year)) {
-    //            clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-    //            clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear(year);
-    //            //Now Validate the method year
-    //            clearStatisticsRepository.getNationalAcctMaxPeriodForValidYear($("#Data_ThroughNationalAcctYear").val())               
-    //        }
-    //    }
-    //},
-    //// variable for Salesperson Year finder.
-    //SalespersonYearFinder: function (data) {
-    //    if (data) {
-    //        var year = data.FiscalYear;
-    //        if (sg.controls.GetString(clearStatisticsUI.clearStatisticsModel.Data.Year()) !== sg.controls.GetString(year)) {
-    //            clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-    //            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear(year);               
-    //            //Now Validate the method year
-    //            clearStatisticsRepository.getSalespersonMaxPeriodForValidYear($("#Data_ThroughSalesPersonYear").val())
-    //        }
-    //    }      
-    //},
-    //// variable for Item Year finder.
-    //ItemYearFinder: function (data) {
-    //    if (data) {
-    //        var year = data.FiscalYear;
-    //        if (sg.controls.GetString(clearStatisticsUI.clearStatisticsModel.Data.Year()) !== sg.controls.GetString(year)) {
-    //            clearStatisticsUI.clearStatisticsModel.Data.Year(year);
-    //            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear(year);
-    //            //Now Validate the method year
-    //            clearStatisticsRepository.getItemMaxPeriodForValidYear($("#Data_ThroughItemYear").val())               
-    //        }
-    //    }
-    //},
-};
-
-var clearStatisticsUtility = {   
-    checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
-        if (clearStatisticsUI.clearStatisticsModel.IsKoStatisticsDirty && clearStatisticsUI.clearStatisticsModel.IsKoStatisticsDirty.isDirty()) {
-            sg.utls.showKendoConfirmationDialog(
-                function () { // Yes
-                    yesFunctionToCall.call();
-                },
-                function () { // No
-                    noFunctionToCall.call();
-                },
-                $.validator.format(globalResource.SaveConfirm));
-        } else {
-            yesFunctionToCall.call();
-        }
-    },
-    setFocusToFiscalYear: function () {
-        sg.utls.focus("Data_ThroughCustomerYear");
-    },
-};
-
-var clearStatisticsUtilities = {
-    customerYearBackup: null,
-    customerGroupYearBackup: null,
-    nationalAcctYearBackup: null,
-    salespersonYearBackup: null,
-    itemYearBackup: null,
-    customerPeriodBackup: null,
-    customerGroupPeriodBackup: null,
-    nationalAcctPeriodBackup: null,
-    salespersonPeriodBackup: null,
-    itemPeriodBackup: null,
-    backupCustomerYearValue: function () {
-        clearStatisticsUtilities.customerYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear();
-    },
-    backupGroupYearValue: function() {
-        clearStatisticsUtilities.customerGroupYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear();
-    },
-    backupNationalAcctYearValue: function () {
-        clearStatisticsUtilities.nationalAcctYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear();
-    },
-    backupSalespersonYearValue: function () {
-        clearStatisticsUtilities.salespersonYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear();
-    },
-    backupItemYearValue: function () {
-        clearStatisticsUtilities.itemYearBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear();
-    },
-    backupCustomerPeriodValue: function() {
-        clearStatisticsUtilities.customerPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerPeriod();
-    },
-    backupGroupPeriodValue: function () {
-        clearStatisticsUtilities.customerGroupPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupPeriod();
-    },
-    backupNationalAcctPeriodValue: function () {
-        clearStatisticsUtilities.nationalAcctPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctPeriod();
-    },
-    backupSalespersonPeriodValue: function () {
-        clearStatisticsUtilities.salespersonPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonPeriod();
-    },
-    backupItemPeriodValue: function () {
-        clearStatisticsUtilities.itemPeriodBackup = clearStatisticsUI.clearStatisticsModel.Data.ThroughItemPeriod();
-    },
-    refreshCustomerStatistic: function () {
-        clearStatisticsUtilities.backupCustomerPeriodValue();
-        clearStatisticsUtilities.backupCustomerYearValue();
-    },
-    refreshGroupStatistic: function () {
-        clearStatisticsUtilities.backupGroupPeriodValue();
-        clearStatisticsUtilities.backupGroupYearValue();
-    },
-    refreshNationalAcctStatistic: function () {
-        clearStatisticsUtilities.backupNationalAcctPeriodValue();
-        clearStatisticsUtilities.backupNationalAcctYearValue();
-    },
-    refreshSalespersonStatistic: function () {
-        clearStatisticsUtilities.backupSalespersonPeriodValue();
-        clearStatisticsUtilities.backupSalespersonYearValue();
-    },
-    refreshItemStatistic: function () {
-        clearStatisticsUtilities.backupItemPeriodValue();
-        clearStatisticsUtilities.backupItemYearValue();
-    },  
-    validateCustomerYear: function () {
-        clearStatisticsRepository.getCustomerMaxPeriodForValidYear($("#Data_ThroughCustomerYear").val());
-    },
-    validateGroupYear: function () {
-        clearStatisticsRepository.getGroupMaxPeriodForValidYear($("#Data_ThroughGroupYear").val());
-    },
-    validateNationalAcctYear: function () {
-        clearStatisticsRepository.getNationalAcctMaxPeriodForValidYear($("#Data_ThroughNationalAcctYear").val());
-    },
-    validateSalespersonYear: function () {
-        clearStatisticsRepository.getSalespersonMaxPeriodForValidYear($("#Data_ThroughSalesPersonYear").val());
-    },
-    validateItemYear: function () {
-        clearStatisticsRepository.getItemMaxPeriodForValidYear($("#Data_ThroughItemYear").val());
-    },
-    validateCustomerPeriod: function () {
-        sg.utls.clearValidations("frmClearStatistics");
-        var period = $("#Data_ThroughCustomerPeriod").val();
-        var oldPeriod = clearStatisticsUtilities.customerPeriodBackup;
-        if ((parseInt(clearStatisticsUI.clearStatisticsModel.MaximumPeriod()) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
-            clearStatisticsUI.clearStatisticsModel.CustomerStatisticsCurrentPeriod(clearStatisticsUtilities.customerPeriodBackup);
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerPeriod(clearStatisticsUtilities.customerPeriodBackup);           
-        } else if (oldPeriod != period) {
-            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshCustomerStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-        }
-    },
-    validateGroupPeriod: function () {
-    sg.utls.clearValidations("frmClearStatistics");
-    var period = $("#Data_ThroughGroupPeriod").val();
-    var oldPeriod = clearStatisticsUtilities.customerGroupPeriodBackup;
-    if ((parseInt(clearStatisticsUI.clearStatisticsModel.MaximumPeriod()) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
-        clearStatisticsUI.clearStatisticsModel.CustomerStatisticsCurrentPeriod(clearStatisticsUtilities.customerGroupPeriodBackup);
-        clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupPeriod(clearStatisticsUtilities.customerGroupPeriodBackup);
-    } else if (oldPeriod != period) {
-        clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshGroupStatistic, clearStatisticsUtility.setFocusToFiscalYear);
     }
-    },
-    validateNationalAcctPeriod: function () {
+
+    /**
+     * @name setInitialized
+     * @desc set or unset the _initialized flag
+     * @private
+     * @param {boolean} true | false
+     */
+    function setInitialized(init) {
+        _initialized = init;
+    }
+
+    return {
+
+        /**
+         * @name init
+         * @desc Initialize the controls and apply kendo bindings
+         * @public
+         */
+        init: function () {
+            initKendoBindings();
+            initFinders();
+            initButtons();
+            initTextBox();
+            initCheckBox();
+            initBlur();
+            initProcessUI();
+            ko.applyBindings(_model);
+            setInitialized(true);
+        },
+
+        /**
+         * @name getInitialized
+         * @desc Check to see if page has been initialized
+         * @public
+         * @returns {boolean} _initialized
+         */
+        getInitialized: function () {
+            return _initialized;
+        },
+
+        /**
+         * @name getModel
+         * @desc Get the _model property
+         * @public
+         * @returns {object} _model
+         */
+        getModel: function () {
+            return _model;
+        },
+    };
+
+})(clearStatisticsUI || {}, jQuery);
+
+var onSuccess = (function (self, $) {
+
+    return {
+        /**
+         * @name process
+         * @desc
+         * @public
+         * @param {object} jsonResult - The result of the operation
+         */
+        process: function (jsonResult) {
+            if (jsonResult.UserMessage.IsSuccess) {
+                var model = clearStatisticsUI.getModel();
+                window.ko.mapping.fromJS(jsonResult.WorkflowInstanceId, {}, model.WorkflowInstanceId);
+                window.progressUI.progress();
+            } else {
+                sg.utls.showMessage(jsonResult);
+            }
+        },
+
+        /**
+         * @name onProcessComplete
+         * @desc
+         * @public
+         * @param {object} result - The result of the operation
+         */
+        onProcessComplete: function (result) {
+            if (result.ProcessResult.Results.length <= 0) {
+                $("#processingResultGrid").hide();
+                var errorMessage = clearStatisticsResources.ProcessingComplete;
+                sg.utls.showMessageInfoInCustomDivWithoutClose(sg.utls.msgType.INFO, errorMessage, 'messageDiv');
+            }
+        },
+    };
+})(onSuccess || {}, jQuery);
+
+var clearStatisticsUtility = (function (self, $) {
+    return {
+        /**
+         * @name checkIsDirty
+         * @desc
+         * @public
+         * @param {object} yesFunctionToCall - Callback for Yes
+         * @param {object} noFunctionToCall - Callback for No
+         */
+        checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
+            if (clearStatisticsUI.getModel().IsKoStatisticsDirty && clearStatisticsUI.getModel().IsKoStatisticsDirty.isDirty()) {
+                sg.utls.showKendoConfirmationDialog(
+                    function () { // Yes
+                        yesFunctionToCall.call();
+                    },
+                    function () { // No
+                        noFunctionToCall.call();
+                    },
+                    $.validator.format(globalResource.SaveConfirm));
+            } else {
+                yesFunctionToCall.call();
+            }
+        },
+
+        /**
+         * @name setFocusToFiscalYear
+         * @desc Set the current cursor focus to the 'Through Customer Year' field
+         * @public
+         */
+        setFocusToFiscalYear: function () {
+            sg.utls.focus("Data_ThroughCustomerYear");
+        },
+    };
+})(clearStatisticsUtility || {}, jQuery);
+
+var clearStatisticsUtilities = (function (self, $) {
+
+    var customerYearBackup = null;
+    var customerGroupYearBackup = null;
+    var nationalAcctYearBackup = null;
+    var salespersonYearBackup = null;
+    var itemYearBackup = null;
+    var customerPeriodBackup = null;
+    var customerGroupPeriodBackup = null;
+    var nationalAcctPeriodBackup = null;
+    var salespersonPeriodBackup = null;
+    var itemPeriodBackup = null;
+
+    /**
+     * @name _validationPeriod
+     * @description Method used by other validation methods in this object
+     * @private
+     * @param {string} dataItemId
+     * @param {number} periodBackup
+     * @param {number} maxPeriod
+     * @param {object} modelCurrentPeriodMethod - Method Name
+     * @param {object} throughPeriodMethod - Method Name
+     * @param {object} refreshStatisticMethod - Method Name
+     */
+    function _validatePeriod(dataItemId, periodBackup, maxPeriod, modelCurrentPeriodMethod, throughPeriodMethod, refreshStatisticMethod) {
         sg.utls.clearValidations("frmClearStatistics");
-        var period = $("#Data_ThroughNationalAcctPeriod").val();
-        var oldPeriod = clearStatisticsUtilities.nationalAcctPeriodBackup;
-        if ((parseInt(clearStatisticsUI.clearStatisticsModel.MaximumPeriod()) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
-            clearStatisticsUI.clearStatisticsModel.CustomerStatisticsCurrentPeriod(clearStatisticsUtilities.nationalAcctPeriodBackup);
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctPeriod(clearStatisticsUtilities.nationalAcctPeriodBackup);
+        var period = $("#" + dataItemId).val();
+        var oldPeriod = periodBackup;
+        if ((parseInt(maxPeriod) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
+            modelCurrentPeriodMethod(periodBackup);
+            throughPeriodMethod(periodBackup);
         } else if (oldPeriod != period) {
-            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshNationalAcctStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-        }
-    },
-    validateSalespersonPeriod: function () {
-        sg.utls.clearValidations("frmClearStatistics");
-        var period = $("#Data_ThroughSalesPersonPeriod").val();
-        var oldPeriod = clearStatisticsUtilities.salespersonPeriodBackup;
-        if ((parseInt(clearStatisticsUI.clearStatisticsModel.SalesPersonMaximumPeriod()) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
-            clearStatisticsUI.clearStatisticsModel.SalesPersonStatisticsCurrentPeriod(clearStatisticsUtilities.salespersonPeriodBackup);
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonPeriod(clearStatisticsUtilities.salespersonPeriodBackup);
-        } else if (oldPeriod != period) {
-            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshSalespersonStatistic, clearStatisticsUtility.setFocusToFiscalYear);
-        }
-    },
-    validateItemPeriod: function () {
-        sg.utls.clearValidations("frmClearStatistics");
-        var period = $("#Data_ThroughItemPeriod").val();
-        var oldPeriod = clearStatisticsUtilities.itemPeriodBackup;
-        if ((parseInt(clearStatisticsUI.clearStatisticsModel.ItemMaximumPeriod()) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
-            clearStatisticsUI.clearStatisticsModel.ItemStatisticsCurrentPeriod(clearStatisticsUtilities.itemPeriodBackup);
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemPeriod(clearStatisticsUtilities.itemPeriodBackup);
-        } else if (oldPeriod != period) {
-            clearStatisticsUtility.checkIsDirty(clearStatisticsUtilities.refreshItemStatistic, clearStatisticsUtility.setFocusToFiscalYear);
+            clearStatisticsUtility.checkIsDirty(refreshStatisticMethod, clearStatisticsUtility.setFocusToFiscalYear);
         }
     }
-    
-};
 
-var clearStatisticsUISuccess = {    
-    fillCustomerFiscalYear: function (result) {
-        if (result == 0) {
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughCustomerYear(clearStatisticsUtilities.customerYearBackup);
-        } else {
-            clearStatisticsUI.clearStatisticsModel.MaximumPeriod(result);
+    return {
+
+        customerYearBackup: customerYearBackup,
+        customerGroupYearBackup: customerGroupYearBackup,
+        nationalAcctYearBackup: nationalAcctYearBackup,
+        salespersonYearBackup: salespersonYearBackup,
+        itemYearBackup: itemYearBackup,
+        customerPeriodBackup: customerPeriodBackup,
+        customerGroupPeriodBackup: customerGroupPeriodBackup,
+        nationalAcctPeriodBackup: nationalAcctPeriodBackup,
+        salespersonPeriodBackup: salespersonPeriodBackup,
+        itemPeriodBackup: itemPeriodBackup,
+
+        /**
+         * @name backupCustomerYearValue
+         * @description 
+         * @private
+         */
+        backupCustomerYearValue: function () { 
+            customerYearBackup = clearStatisticsUI.getModel().Data.ThroughCustomerYear();
+        },
+
+        /**
+         * @name backupGroupYearValue
+         * @description 
+         * @private
+         */
+        backupGroupYearValue: function () {
+            customerGroupYearBackup = clearStatisticsUI.getModel().Data.ThroughGroupYear();
+        },
+
+        /**
+         * @name backupNationalAcctYearValue
+         * @description 
+         * @private
+         */
+        backupNationalAcctYearValue: function () {
+            nationalAcctYearBackup = clearStatisticsUI.getModel().Data.ThroughNationalAcctYear();
+        },
+
+        /**
+         * @name backupSalespersonYearValue
+         * @description 
+         * @private
+         */
+        backupSalespersonYearValue: function () {
+            salespersonYearBackup = clearStatisticsUI.getModel().Data.ThroughSalesPersonYear();
+        },
+
+        /**
+         * @name backupItemYearValue
+         * @description 
+         * @private
+         */
+        backupItemYearValue: function () {
+            itemYearBackup = clearStatisticsUI.getModel().Data.ThroughItemYear();
+        },
+
+        /**
+         * @name backupCustomerPeriodValue
+         * @description 
+         * @private
+         */
+        backupCustomerPeriodValue: function () {
+            customerPeriodBackup = clearStatisticsUI.getModel().Data.ThroughCustomerPeriod();
+        },
+
+        /**
+         * @name backupGroupPeriodValue
+         * @description 
+         * @private
+         */
+        backupGroupPeriodValue: function () {
+            customerGroupPeriodBackup = clearStatisticsUI.getModel().Data.ThroughGroupPeriod();
+        },
+
+        /**
+         * @name backupNationalAcctPeriodValue
+         * @description 
+         * @private
+         */
+        backupNationalAcctPeriodValue: function () {
+            nationalAcctPeriodBackup = clearStatisticsUI.getModel().Data.ThroughNationalAcctPeriod();
+        },
+
+        /**
+         * @name backupSalespersonPeriodValue
+         * @description 
+         * @private
+         */
+        backupSalespersonPeriodValue: function () {
+            salespersonPeriodBackup = clearStatisticsUI.getModel().Data.ThroughSalesPersonPeriod();
+        },
+
+        /**
+         * @name backupItemPeriodValue
+         * @description 
+         * @private
+         */
+        backupItemPeriodValue: function () {
+            itemPeriodBackup = clearStatisticsUI.getModel().Data.ThroughItemPeriod();
+        },
+
+        /**
+         * @name refreshCustomerStatistic
+         * @description 
+         * @private
+         */
+        refreshCustomerStatistic: function () {
+            clearStatisticsUtilities.backupCustomerPeriodValue();
             clearStatisticsUtilities.backupCustomerYearValue();
-            setTimeout(function () {
-                ($("#Data_ThroughCustomerPeriod")).siblings('input:visible').focus();
-            });
-        }
-        clearStatisticsUtilities.refreshCustomerStatistic();
-    },
+        },
 
-    fillGroupFiscalYear: function (result) {
-        if (result == 0) {
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughGroupYear(clearStatisticsUtilities.customerGroupYearBackup);
-        } else {
-            clearStatisticsUI.clearStatisticsModel.MaximumPeriod(result);
+        /**
+         * @name refreshGroupStatistic
+         * @description 
+         * @private
+         */
+        refreshGroupStatistic: function () {
+            clearStatisticsUtilities.backupGroupPeriodValue();
             clearStatisticsUtilities.backupGroupYearValue();
-            setTimeout(function () {
-                ($("#Data_ThroughGroupPeriod")).siblings('input:visible').focus();
-            });
-        }
-        clearStatisticsUtilities.refreshGroupStatistic();
-    },
-    fillNationalAcctFiscalYear: function (result) {
-        if (result == 0) {
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughNationalAcctYear(clearStatisticsUtilities.nationalAcctYearBackup);
-        } else {
-            clearStatisticsUI.clearStatisticsModel.MaximumPeriod(result);
+        },
+
+        /**
+         * @name refreshNationalAcctStatistic
+         * @description 
+         * @private
+         */
+        refreshNationalAcctStatistic: function () {
+            clearStatisticsUtilities.backupNationalAcctPeriodValue();
             clearStatisticsUtilities.backupNationalAcctYearValue();
-            setTimeout(function () {
-                ($("#Data_ThroughNationalAcctPeriod")).siblings('input:visible').focus();
-            });
-        }
-        clearStatisticsUtilities.refreshNationalAcctStatistic();
-    },
-    fillSalespersonFiscalYear: function (result) {
-        if (result == 0) {
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughSalesPersonYear(clearStatisticsUtilities.salespersonYearBackup);
-        } else {
-            clearStatisticsUI.clearStatisticsModel.SalesPersonMaximumPeriod(result);
+        },
+
+        /**
+         * @name refreshSalespersonStatistic
+         * @description 
+         * @private
+         */
+        refreshSalespersonStatistic: function () {
+            clearStatisticsUtilities.backupSalespersonPeriodValue();
             clearStatisticsUtilities.backupSalespersonYearValue();
-            setTimeout(function () {
-            ($("#Data_ThroughSalesPersonPeriod")).siblings('input:visible').focus();
-            });
-        }
-        
-        clearStatisticsUtilities.refreshSalespersonStatistic();
-        
-    },
-    fillItemFiscalYear: function (result) {
-        if (result == 0) {
-            clearStatisticsUI.clearStatisticsModel.Data.ThroughItemYear(clearStatisticsUtilities.itemYearBackup);
-        } else {
-            clearStatisticsUI.clearStatisticsModel.ItemMaximumPeriod(result);
+        },
+
+        /**
+         * @name refreshItemStatistic
+         * @description 
+         * @private
+         */
+        refreshItemStatistic: function () {
+            clearStatisticsUtilities.backupItemPeriodValue();
             clearStatisticsUtilities.backupItemYearValue();
+        },
+
+        /**
+         * @name validateCustomerYear
+         * @description 
+         * @private
+         */
+        validateCustomerYear: function () {
+            clearStatisticsRepository.getCustomerMaxPeriodForValidYear($("#Data_ThroughCustomerYear").val());
+        },
+
+        /**
+         * @name validateGroupYear
+         * @description 
+         * @private
+         */
+        validateGroupYear: function () {
+            clearStatisticsRepository.getGroupMaxPeriodForValidYear($("#Data_ThroughGroupYear").val());
+        },
+
+        /**
+         * @name validateNationalAcctYear
+         * @description 
+         * @private
+         */
+        validateNationalAcctYear: function () {
+            clearStatisticsRepository.getNationalAcctMaxPeriodForValidYear($("#Data_ThroughNationalAcctYear").val());
+        },
+
+        /**
+         * @name validateSalespersonYear
+         * @description 
+         * @private
+         */
+        validateSalespersonYear: function () {
+            clearStatisticsRepository.getSalespersonMaxPeriodForValidYear($("#Data_ThroughSalesPersonYear").val());
+        },
+
+        /**
+         * @name validateItemYear
+         * @description 
+         * @private
+         */
+        validateItemYear: function () {
+            clearStatisticsRepository.getItemMaxPeriodForValidYear($("#Data_ThroughItemYear").val());
+        },
+
+        /**
+         * @name validateCustomerPeriod
+         * @description 
+         * @private
+         */
+        validateCustomerPeriod: function () {
+            _validatePeriod("Data_ThroughCustomerPeriod", customerPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
+                clearStatisticsUI.getModel().CustomerStatisticsCurrentPeriod, clearStatisticsUI.getModel().Data.ThroughCustomerPeriod,
+                clearStatisticsUtilities.refreshCustomerStatistic);
+        },
+
+        /**
+         * @name validateGroupPeriod
+         * @description 
+         * @private
+         */
+        validateGroupPeriod: function () {
+            _validatePeriod("Data_ThroughGroupPeriod", customerGroupPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
+                clearStatisticsUI.getModel().CustomerStatisticsCurrentPeriod, clearStatisticsUI.getModel().Data.ThroughGroupPeriod,
+                clearStatisticsUtilities.refreshGroupStatistic);
+        },
+
+        /**
+         * @name validateNationalAcctPeriod
+         * @description 
+         * @private
+         */
+        validateNationalAcctPeriod: function () {
+            _validatePeriod("Data_ThroughNationalAcctPeriod", nationalAcctPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
+                clearStatisticsUI.getModel().CustomerStatisticsCurrentPeriod, clearStatisticsUI.getModel().Data.ThroughNationalAcctPeriod,
+                clearStatisticsUtilities.refreshNationalAcctStatistic);
+        },
+
+        /**
+         * @name validateSalespersonPeriod
+         * @description 
+         * @private
+         */
+        validateSalespersonPeriod: function () {
+            _validatePeriod("Data_ThroughSalesPersonPeriod", salespersonPeriodBackup, clearStatisticsUI.getModel().SalesPersonMaximumPeriod(),
+                clearStatisticsUI.getModel().SalesPersonStatisticsCurrentPeriod, clearStatisticsUI.getModel().Data.ThroughSalesPersonPeriod,
+                clearStatisticsUtilities.refreshSalespersonStatistic);
+        },
+
+        /**
+         * @name validateItemPeriod
+         * @description 
+         * @private
+         */
+        validateItemPeriod: function () {
+            _validatePeriod("Data_ThroughItemPeriod", itemPeriodBackup, clearStatisticsUI.getModel().ItemMaximumPeriod(),
+                clearStatisticsUI.getModel().ItemStatisticsCurrentPeriod, clearStatisticsUI.getModel().Data.ThroughItemPeriod,
+                clearStatisticsUtilities.refreshItemStatistic);
+        },
+    };
+
+})(clearStatisticsUtilities || {}, jQuery);
+
+var clearStatisticsUISuccess = (function (self, $) {
+
+    /**
+     * @name _commonHandler
+     * @description Method used by the public methods in this object
+     * @private
+     * @param {any} result
+     * @param {any} dataItemId
+     * @param {any} throughYearMethod
+     * @param {any} yearBackup
+     * @param {any} maxPeriodMethod
+     * @param {any} backupYearMethod
+     * @param {any} refreshStatisticMethod
+     */
+    function _commonHandler(result, dataItemId, throughYearMethod, yearBackup,
+                            maxPeriodMethod, backupYearMethod, refreshStatisticMethod) {
+        if (result == 0) {
+            throughYearMethod(yearBackup);
+        } else {
+            maxPeriodMethod(result);
+            backupYearMethod();
             setTimeout(function () {
-                ($("#Data_ThroughItemPeriod")).siblings('input:visible').focus();
+                ($("#" + dataItemId)).siblings('input:visible').focus();
             });
         }
-        clearStatisticsUtilities.refreshItemStatistic();
+        refreshStatisticMethod();
     }
-    
-};
 
-// Finder Cancel method
-var onFinderCancel = {
-    FromCustomerFinder: function () {
-        sg.controls.Focus($("#Data_FromCustomerNo"));
-    },
-    ToCustomerFinder: function () {
-        sg.controls.Focus($("#Data_ToCustomerNo"));
-    },
-    FromCustomerGroupFinder: function () {
-        sg.controls.Focus($("#Data_FromGroupCode"));
-    },
-    ToCustomerGroupFinder: function () {
-        sg.controls.Focus($("#Data_ToGroupCode"));
-    },
-    FromNationalAccountFinder: function () {
-        sg.controls.Focus($("#Data_FromNationalAccount"));
-    },
-    ToNationalAccountFinder: function () {
-        sg.controls.Focus($("#Data_ToNationalAccount"));
-    },
-    FromSalespersonFinder: function () {
-        sg.controls.Focus($("#Data_FromSalesPerson"));
-    },
-    ToSalespersonFinder: function () {
-        sg.controls.Focus($("#Data_ToSalesPerson"));
-    },
-    FromItemFinder: function () {
-        sg.controls.Focus($("#Data_FromItem"));
-    },
-    ToItemFinder: function () {
-        sg.controls.Focus($("#Data_ToItem"));
-    },
-    CustomerYearFinder: function () {
-        setTimeout(function() {
-            sg.controls.Focus($("#Data_ThroughCustomerYear"));
-        })
-    },
-    CustomerGroupYearFinder: function () {
-        setTimeout(function() {
-            sg.controls.Focus($("#Data_ThroughGroupYear"));
-        })
-    },
-    NationalAcctYearFinder: function () {
-        setTimeout(function() {
-            sg.controls.Focus($("#Data_ThroughNationalAcctYear"));
-        })
-    },
-    SalespersonYearFinder: function () {
-        
-            sg.controls.Focus($("#Data_ThroughSalesPersonYear"));
-        
-    },
-    ItemYearFinder: function () {
-        setTimeout(function() {
-            sg.controls.Focus($("#Data_ThroughItemYear"));
-        })
-    }    
-};
+    return {
 
+        /**
+         * @name fillCustomerFiscalYear
+         * @description
+         * @private
+         * @param result
+         */
+        fillCustomerFiscalYear: function (result) {
+            _commonHandler(result, "Data_ThroughCustomerPeriod", clearStatisticsUI.getModel().Data.ThroughCustomerYear,
+                clearStatisticsUtilities.customerYearBackup, clearStatisticsUI.getModel().MaximumPeriod,
+                clearStatisticsUtilities.backupCustomerYearValue, clearStatisticsUtilities.refreshCustomerStatistic);
+        },
+
+        /**
+         * @name fillGroupFiscalYear
+         * @description
+         * @private
+         * @param result
+         */
+        fillGroupFiscalYear: function (result) {
+            _commonHandler(result, "Data_ThroughGroupPeriod", clearStatisticsUI.getModel().Data.ThroughGroupYear,
+                clearStatisticsUtilities.customerGroupYearBackup, clearStatisticsUI.getModel().MaximumPeriod,
+                clearStatisticsUtilities.backupGroupYearValue, clearStatisticsUtilities.refreshGroupStatistic);
+        },
+
+        /**
+         * @name fillNationalAcctFiscalYear
+         * @description
+         * @private
+         * @param result
+         */
+        fillNationalAcctFiscalYear: function (result) {
+            _commonHandler(result, "Data_ThroughNationalAcctPeriod", clearStatisticsUI.getModel().Data.ThroughNationalAcctYear,
+                clearStatisticsUtilities.nationalAcctYearBackup, clearStatisticsUI.getModel().MaximumPeriod,
+                clearStatisticsUtilities.backupNationalAcctYearValue, clearStatisticsUtilities.refreshNationalAcctStatistic);
+        },
+
+        /**
+         * @name fillSalespersonFiscalYear
+         * @description
+         * @private
+         * @param result
+         */
+        fillSalespersonFiscalYear: function (result) {
+            _commonHandler(result, "Data_ThroughSalesPersonPeriod", clearStatisticsUI.getModel().Data.ThroughSalesPersonYear,
+                clearStatisticsUtilities.salespersonYearBackup, clearStatisticsUI.getModel().SalesPersonMaximumPeriod,
+                clearStatisticsUtilities.backupSalespersonYearValue, clearStatisticsUtilities.refreshSalespersonStatistic);
+        },
+
+        /**
+         * @name fillItemFiscalYear
+         * @description
+         * @private
+         * @param result
+         */
+        fillItemFiscalYear: function (result) {
+            _commonHandler(result, "Data_ThroughItemPeriod", clearStatisticsUI.getModel().Data.ThroughItemYear,
+                clearStatisticsUtilities.itemYearBackup, clearStatisticsUI.getModel().ItemMaximumPeriod,
+                clearStatisticsUtilities.backupItemYearValue, clearStatisticsUtilities.refreshItemStatistic);
+        }
+    };
+
+})(clearStatisticsUISuccess || {}, jQuery);
 
 $(function () {
     clearStatisticsUI.init();

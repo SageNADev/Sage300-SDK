@@ -151,10 +151,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.dll</HintPath>
-    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository.dll</HintPath>
@@ -359,6 +355,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsBehaviour.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsKoExtn.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsRepository.js" />
@@ -370,7 +367,114 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Shared\**" />
-    <Content Include="Areas\Core\**" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\AdhocInquiry\Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js" />
+    <Content Include="Areas\Core\Scripts\Authentication\Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js" />
+    <Content Include="Areas\Core\Scripts\ExportImport\Sage.CA.SBS.ERP.Sage300.Common.Upload.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js" />
+    <Content Include="Areas\Core\Scripts\GLIntegration\Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js" />
+    <Content Include="Areas\Core\Scripts\GlobalSearch\Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\GlobalSearch\Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchRepository.js" />
+    <Content Include="Areas\Core\Scripts\InquiryGeneral\Sage.CA.SBS.ERP.Sage300.Common.InquiryGeneral.js" />
+    <Content Include="Areas\Core\Scripts\InquiryGeneral\Sage.CA.SBS.ERP.Sage300.Common.InquiryPanel.js" />
+    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js" />
+    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js" />
+    <Content Include="Areas\Core\Scripts\Inquiry\Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js" />
+    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantBehaviour.js" />
+    <Content Include="Areas\Core\Scripts\NewTenantSetup\NewTenantRepository.js" />
+    <Content Include="Areas\Core\Scripts\Process\Sage.CA.SBS.Sage300.Common.Process.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Constants.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Home.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js" />
+    <Content Include="Areas\Core\Scripts\Sage.CA.SBS.ERP.Sage300.Common.Wizard.js" />
+    <Content Include="Areas\Core\Scripts\Tenant\Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Index.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_AdhocInquiry.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_AdhocInquiryFilterControl.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_OpenQueryPanel.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_SavedTab.cshtml" />
+    <Content Include="Areas\Core\Views\AdhocInquiry\Partials\_SaveQueryPanel.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\OnPremiseLogin.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\Partials\_OnPremiseLogin.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\RedirectToLogin.cshtml" />
+    <Content Include="Areas\Core\Views\Authentication\SessionExpired.cshtml" />
+    <Content Include="Areas\Core\Views\Error\AccountNotAvailable.cshtml" />
+    <Content Include="Areas\Core\Views\Error\AccountNotProvisioned.cshtml" />
+    <Content Include="Areas\Core\Views\Error\AuthorizedError.cshtml" />
+    <Content Include="Areas\Core\Views\Error\Error404.cshtml" />
+    <Content Include="Areas\Core\Views\Error\ICTNotAvailable.cshtml" />
+    <Content Include="Areas\Core\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Core\Views\Error\MissingModules.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\Export.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\ExportImportOption.cshtml" />
+    <Content Include="Areas\Core\Views\ExportImport\Import.cshtml" />
+    <Content Include="Areas\Core\Views\Find\Find.cshtml" />
+    <Content Include="Areas\Core\Views\Find\FindPreference.cshtml" />
+    <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
+    <Content Include="Areas\Core\Views\FiscalYear\FiscalYearSet.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLIntegrationDetail.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLPostingSequence.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLReferenceIntegration.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_GLSourceCodes.cshtml" />
+    <Content Include="Areas\Core\Views\GLIntegration\Partials\_TransactionsOptions.cshtml" />
+    <Content Include="Areas\Core\Views\GlobalSearch\Index.cshtml" />
+    <Content Include="Areas\Core\Views\GlobalSearch\Partials\_GlobalSearch.cshtml" />
+    <Content Include="Areas\Core\Views\GlobalSearch\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\GridConfig.json" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\Index.cshtml" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\OEAllOrderDetails.json" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\OEAllOrders.json" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\OEAllShipments.json" />
+    <Content Include="Areas\Core\Views\InquiryGeneral\OECreditDebitNotes.json" />
+    <Content Include="Areas\Core\Views\Inquiry\Index.cshtml" />
+    <Content Include="Areas\Core\Views\Inquiry\Partials\_Inquiry.cshtml" />
+    <Content Include="Areas\Core\Views\Inquiry\Partials\_InquiryFilter.cshtml" />
+    <Content Include="Areas\Core\Views\Inquiry\Partials\_InquiryGrid.cshtml" />
+    <Content Include="Areas\Core\Views\Inquiry\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Inquiry\_InquiryTool.cshtml" />
+    <Content Include="Areas\Core\Views\Instrumentation\Index.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Index.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Partials\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\NewTenant\Partials\_newtenantsetup.cshtml" />
+    <Content Include="Areas\Core\Views\OptionalFields\OptionalFields.cshtml" />
+    <Content Include="Areas\Core\Views\OptionalFields\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\FiscalCalendar.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\GridPage.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\GridPreferences.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\LabelMenuPopup.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_Localization.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_OptionsMenu.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_ProcessingStatus.cshtml" />
+    <Content Include="Areas\Core\Views\Shared\_ReportOptions.cshtml" />
+    <Content Include="Areas\Core\Views\Tenant\Index.cshtml" />
+    <Content Include="Areas\Core\Views\Web.config" />
+    <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
     <Content Include="Views\**" />
     <Content Include="Scripts\**" />
     <Content Include="Content\**" />
