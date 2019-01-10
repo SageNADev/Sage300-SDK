@@ -347,10 +347,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartnerSegmentCodesBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartnerSegmentCodesGrid.js" />
-    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartnerSegmentCodesKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartnerSegmentCodesRepository.js" />
+    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesGrid.js" />
+    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesRepository.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">
@@ -403,6 +403,7 @@
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_SegmentCodes.cshtml" />
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_SegmentCodeGrid.cshtml" />
+    <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
