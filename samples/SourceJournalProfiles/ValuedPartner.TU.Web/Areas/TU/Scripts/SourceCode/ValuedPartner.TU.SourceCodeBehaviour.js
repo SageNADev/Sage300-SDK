@@ -99,7 +99,6 @@ sourceCodeUI = {
     // Init Finders, if any
     initFinders: function () {
         var info = sg.viewFinderProperties.GL.SourceCodes;
-        var info = sg.viewFinderProperties.GL.SourceCodes;
         var buttonId = "btnFinderSourceLedger";
         var dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceCodeFilter.getFilter);
