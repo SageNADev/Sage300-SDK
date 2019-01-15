@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
 var modelData;
@@ -33,10 +35,10 @@ sourceJournalProfileUI = {
 
     // Init
     init: function () {
-    sourceJournalProfileUI.initButtons();
-    sourceJournalProfileUI.initFinders();
-    sourceJournalProfileUISuccess.initialLoad(SourceJournalProfileViewModel);
-    sourceJournalProfileUISuccess.setkey();
+        sourceJournalProfileUI.initButtons();
+        sourceJournalProfileUI.initFinders();
+        sourceJournalProfileUISuccess.initialLoad(SourceJournalProfileViewModel);
+        sourceJournalProfileUISuccess.setkey();
     },
 
     // Save
@@ -94,10 +96,12 @@ sourceJournalProfileUI = {
 
     // Init Dropdowns here
 
-    // Init Finders, if any
+    // Init Finders
     initFinders: function () {
-        var title = jQuery.validator.format(sourceJournalProfileResources.FinderTitle, sourceJournalProfileResources.SourceJournalNameTitle);
-        sg.finderHelper.setFinder("btnFinderSourceJournalName", "tusourcejournalprofile", sourceJournalProfileUISuccess.finderSuccess, $.noop, title, sourceJournalProfileFilter.getFilter, null, true);
+        var info = sg.viewFinderProperties.GL.SourceJournalProfiles;
+        var buttonId = "btnFinderSourceJournalName";
+        var dataControlIdOrSuccessCallback = sourceJournalProfileUISuccess.finderSuccess;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceJournalProfileFilter.getFilter);
     },
 
     // Get

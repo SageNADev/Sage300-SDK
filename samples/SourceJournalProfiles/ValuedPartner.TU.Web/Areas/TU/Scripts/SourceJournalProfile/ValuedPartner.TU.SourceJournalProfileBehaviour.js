@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -17,6 +17,10 @@
 // HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// @ts-check
+
+"use strict";
 
 var sourceJournalProfileUI = {
     ignoreIsDirtyProperties: ["SourceJournalName"],
@@ -50,7 +54,10 @@ var sourceJournalProfileUI = {
     },
     
     initFinders: function () {
-        sourceJournalProfileFinderDeclaration.initSourceJournalFinder();
+        var info = sg.viewFinderHelper.getFinderSettings("GL", "SourceJournalProfiles");
+        var buttonId = "btnSourceJournalCodeFinder";
+        var dataControlIdOrSuccessCallback = onFinderSuccess.onSourceJournalProfile;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceJournalFilter.sourceJournalProfile);
     },
 
     initTextBox: function () {
@@ -178,14 +185,7 @@ var sourceJournalProfileUI = {
     },
 };
 
-var sourceJournalProfileFinderDeclaration = {
-    // Initializing the Source Journal Finder Declaration finder properties
-    initSourceJournalFinder: function () {
-        var title = $.validator.format(sourceJournalProfileResources.FinderTitle, sourceJournalProfileResources.SourceJournalProfile);
-        sg.finderHelper.setFinder("btnSourceJournalCodeFinder", "tusourcejournalprofile", onFinderSuccess.onSourceJournalProfile, $.noop, title, sourceJournalFilter.sourceJournalProfile, null, true);
-    }
-
-};
+ 
 
 var sourceJournalFilter = {
     sourceJournalProfile: function () {
@@ -210,12 +210,14 @@ var onFinderSuccess = {
     onSourceJournalProfile: function (result) {
         $('#message').empty();
         if (result != null) {
-            sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName(result.SourceJournalName);
-            $("#Data_SourceJournalName").val(result.SourceJournalName);
+            var name = result.SRCEJRNL;
+            sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName(name);
+            $("#Data_SourceJournalName").val(name);
             sourceJournalProfileUI.checkIsDirty(sourceJournalProfileUI.sourceJournalChange);
             sg.controls.Focus($("#Data_SourceJournalName"));
         }
     },
+
     onSourceCode: function (data) {
         $('#message').empty();
         var grid = $("#SourceCodeGrid").data("kendoGrid");
@@ -397,7 +399,7 @@ var sourceJournalProfileUtility = {
     getSourceJournalParamPaging: function (data, pageNumber, pageSize, newinsertIndex) {
         var page = sourceJournalProfileUtility.currentPageNumber;
         var model = ko.mapping.toJS(sourceJournalProfileUI.sourceJournalModel.Data);
-        var sourceJournalData = model.SourceCodeList.Items;
+        var sourceJournalData = model.SourceCodeList.Items; 
 
         sourceJournalData = sg.utls.kndoUI.assignDisplayIndex(sourceJournalData, sourceJournalProfileUtility.currentPageNumber, pageSize);
         model.SourceCodeList.Items = sourceJournalData;

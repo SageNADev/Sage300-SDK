@@ -35,22 +35,20 @@ namespace ValuedPartner.TU.Web
         {
 			#region SourceJournalProfile
 			bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfile").Include(
-                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileGrid.js",
-                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileBehaviour.js",
-				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileKoExtn.js",
-				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileRepository.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileGrid.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileBehaviour.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileKoExtn.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
 
 			#region SourceCode
 			bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceCode").Include(
-				"~/Areas/TU/Scripts/SourceCode/ValuedPartnerSourceCodeBehaviour.js",
-				"~/Areas/TU/Scripts/SourceCode/ValuedPartnerSourceCodeKoExtn.js",
-				"~/Areas/TU/Scripts/SourceCode/ValuedPartnerSourceCodeRepository.js",
+                "~/Areas/TU/Scripts/SourceCode/ValuedPartner.TU.SourceCodeBehaviour.js",
+                "~/Areas/TU/Scripts/SourceCode/ValuedPartner.TU.SourceCodeKoExtn.js",
+                "~/Areas/TU/Scripts/SourceCode/ValuedPartner.TU.SourceCodeRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
-
-
         }
     }
 }

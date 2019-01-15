@@ -5,6 +5,63 @@
         pageSize: 5,
         cancelFuncCall: $.noop,
 
+        /**
+         * @name getFinderSettings
+         * @description Get the settings for a finder based on ModuleID and ModuleAction
+         * @public
+         * @param {string} moduleId - The module Id as a string
+         * @param {string} moduleAction - The action name as a string
+         * @returns {object} Object representing the finder settings
+         */
+        getFinderSettings: function(moduleId, moduleAction) {
+			return sg.viewFinderProperties[moduleId][moduleAction];
+        },
+
+        /**
+         * @name initFinder
+         * @desc Generic routine to initialize an individual finder
+         * @private
+         * @param {string} id - The id of the button used to invoke the finder
+         * @param {any} parent - Dual purpose parameter 
+         *                       1. Name of underlying control that will receive the
+         *                          selected item
+         *                       2. Callback when finder item selected                                              
+         * @param {object} properties - Object containing various settings for the finder
+         * @param {object} filter = "" | The optional filter used to filter the finder results
+         * @param {number} height = null | The optional height of the finder window
+         * @param {number} top = null | The optional top location of the finder window
+         */
+        initFinder: function(id, parent, properties, filter = "", height = null, top = null) {
+
+            var isFunction = function (param) {
+                return typeof param === "function";
+            };
+
+            // If parent is NOT a callback, set the initKeyValues
+            var initKeyValues = null;
+            if (isFunction(parent) === false) {
+                initKeyValues = [$("#" + parent).val()];
+            }
+
+            let initFinder = function (viewFinder) {
+                viewFinder.viewID = properties.viewID;
+                viewFinder.viewOrder = properties.viewOrder;
+                viewFinder.displayFieldNames = properties.displayFieldNames;
+                viewFinder.returnFieldNames = properties.returnFieldNames;
+
+                // Optional 
+                //     If omitted, the starting value is blank.
+                viewFinder.initKeyValues = initKeyValues;
+
+                // Optional
+                //     Only useful for UIs such as Invoice Entry finder where you 
+                //     want to restrict the entries to a specific batch
+                viewFinder.filter = filter;
+            };
+
+            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, height, top);
+        },
+
         setViewFinder: function (id, parent, properties, height, top) {
             $("#" + id).ViewFinder({
                 properties: properties,
@@ -27,6 +84,7 @@
             }
             return { Field: { field: field }, Value: value, SqlOperator: operator, ApplyFilterIfNull: applyFilterIfNull };
         },
+
         createDefaultFunction: function (fieldControl, field, operator) {
             var func = function () {
                 if (operator == undefined || operator.length == 0) {
@@ -241,7 +299,7 @@
                 ViewID: that.options.finderProperties.viewID,
                 ViewOrder: that.options.finderProperties.viewOrder,
                 DisplayFieldNames: that.options.finderProperties.displayFieldNames,
-                ReturnFieldName: that.options.finderProperties.returnFieldName,
+                ReturnFieldNames: that.options.finderProperties.returnFieldNames,
                 InitKeyValues: that.options.finderProperties.initKeyValues,
                 Filter: that.options.finderProperties.filter,
                 ColumnFilter: null,  // no column filter initially
@@ -462,41 +520,46 @@
         },
 
         _selectGrid: function (that) {
-            var grid, row, data, val;
+            var grid, row, data, retObject = {};
             if ($('#div_finder_grid')) {
                 grid = $('#div_finder_grid').data("kendoGrid");
                 row = grid.select();
                 data = grid.dataItem(row);
 
-                if (data == null)
-                    return val;
+                if (data === null)
+                    return retObject;
 
-                var cellVal = data[sg.finderOptions.ReturnFieldName];
-                
-                var column = $.grep(grid.columns, function (column) {
-                    return column.field == sg.finderOptions.ReturnFieldName;
-                });
+                for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
+                    var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
 
-                if (column.length == 1) {
-                    // check data type
-                    if (column[0].PresentationList != null) {
-                        var pval = $.grep(column[0].PresentationList, function (p) {
-                            return p.Text == cellVal;
-                        });
+                    var column = $.grep(grid.columns, function (column) {
+                        return column.field === sg.finderOptions.ReturnFieldNames[i];
+                    });
 
-                        if (pval.length == 1) {
-                            val = pval[0].Value;
+                    var val;
+                    if (column.length === 1) {
+                        // check data type
+                        if (column[0].PresentationList !== null) {
+                            var pval = $.grep(column[0].PresentationList, function (p) {
+                                return p.Text === cellVal;
+                            });
+
+                            if (pval.length === 1) {
+                                val = pval[0].Value;
+                            }
                         }
-                    }
-                    else if (column[0].dataType == sg.finderDataType.Date) {
-                        val = sg.utls.kndoUI.getFormattedDate(cellVal);
-                    }
-                    else {
-                        val = cellVal;
+                        else if (column[0].dataType === sg.finderDataType.Date) {
+                            val = sg.utls.kndoUI.getFormattedDate(cellVal);
+                        }
+                        else {
+                            val = cellVal;
+                        }
+
+                        retObject[sg.finderOptions.ReturnFieldNames[i]] = val;
                     }
                 }
             }
-            return val;
+            return retObject;
         },
 
         _isNullOrUndefined: function (variable) {
@@ -521,13 +584,13 @@
                     that.options.parent(dataSelected);
                 }
                 else {
-                    $("#" + that.options.parent).val(dataSelected);
+                    $("#" + that.options.parent).val(dataSelected[Object.keys(dataSelected)[0]]);
                     $("#" + that.options.parent).trigger("change");
                     $("#" + that.options.parent).trigger("blur");
                 }
 
                 var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
-                if (finderWin != undefined) {
+                if (finderWin !== undefined) {
                     finderWin.destroy();
                     sg.utls.isFinderClicked = false;
                     sg.findEvent = null;
@@ -536,7 +599,7 @@
         },
         _resetFocus: function (that) {
             var finderElement = $("#" + that.options.id);
-            if (finderElement.length == 0) {
+            if (finderElement.length === 0) {
                 finderElement.focus();
             } else {
                 finderElement[0].focus();

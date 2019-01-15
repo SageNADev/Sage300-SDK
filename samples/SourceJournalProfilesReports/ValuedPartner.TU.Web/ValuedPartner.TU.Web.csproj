@@ -385,12 +385,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportRepository.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileRepository.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
     <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml">
       <SubType>Designer</SubType>

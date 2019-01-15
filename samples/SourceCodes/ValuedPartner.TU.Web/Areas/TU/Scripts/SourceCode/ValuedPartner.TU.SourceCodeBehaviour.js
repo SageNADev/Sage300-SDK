@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,7 +18,9 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
 "use strict";
+
 var sourceCodeUI = sourceCodeUI || {};
 
 sourceCodeUI = {
@@ -104,24 +106,12 @@ sourceCodeUI = {
 
     // Init Dropdowns here
 
-    // Init Finders, if any
+    // Init Finders
     initFinders: function () {
-        var title = jQuery.validator.format(
-            sourceCodeResources.FinderTitle,
-            sourceCodeResources.SourceCodeTitle
-        );
-        sg.finderHelper.setFinder(
-            "btnFinderSourceCode",
-            "tusourcecode",
-            sourceCodeUISuccess.finderSuccess,
-            function () {
-                sg.controls.Focus($("#sourceCode"));
-            },
-            title,
-            sourceCodeFilter.getFilter,
-            null,
-            false
-        );
+        var info = sg.viewFinderProperties.GL.SourceCodes;
+        var buttonId = "btnFinderSourceCode";
+        var dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceCodeFilter.getFilter);
     },
 
     // Get
@@ -264,9 +254,12 @@ var sourceCodeUISuccess = {
     // Set Finder
     setFinderData: function () {
         var data = sourceCodeUI.finderData;
+        var sourceLedger = data.SRCELEDGER;
+        var sourceType = data.SRCETYPE;
+
         sg.utls.clearValidations("frmSourceCodes");
         sourceCodeUI.finderData = null;
-        sourceCodeRepository.get(data.SourceLedger, data.SourceType);
+        sourceCodeRepository.get(sourceLedger, sourceType);
     },
 
     // Is New
@@ -283,11 +276,8 @@ var sourceCodeUISuccess = {
 var sourceCodeFilter = {
     getFilter: function () {
         var filters = [[]];
-
         filters[0][0] = sg.finderHelper.createFilter("SourceLedger", sg.finderOperator.StartsWith, sourceCodeUI.sourceCodeModel.Data.SourceLedger());
-
         filters[0][1] = sg.finderHelper.createFilter("SourceType", sg.finderOperator.StartsWith, sourceCodeUI.sourceCodeModel.Data.SourceType());
-
         return filters;
     }
 };
@@ -328,5 +318,4 @@ $(function () {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, sourceCodeResources.SourceCodeTitle)).text();
         }
     });
-
 });

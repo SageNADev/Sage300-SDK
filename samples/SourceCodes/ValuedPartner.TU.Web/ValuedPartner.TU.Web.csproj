@@ -332,9 +332,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeRepository.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

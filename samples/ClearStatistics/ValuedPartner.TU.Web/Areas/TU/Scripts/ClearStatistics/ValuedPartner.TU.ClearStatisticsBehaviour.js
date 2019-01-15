@@ -106,7 +106,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initCustomerNumberFinders() {
-        var props = sg.viewFinderProperties.ARCustomers;
+        var props = sg.viewFinderProperties.AR.Customers;
         var controls = [
             { buttonId: "btnFromCustomerFinder", dataControlId: "Data_FromCustomerNo" },
             { buttonId: "btnToCustomerFinder", dataControlId: "Data_ToCustomerNo" },
@@ -120,7 +120,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initCustomerGroupFinders() {
-        var props = sg.viewFinderProperties.ARCustomerGroups;
+        var props = sg.viewFinderProperties.AR.CustomerGroups;
         var controls = [
             { buttonId: "btnFromCustomerGroupFinder", dataControlId: "Data_FromGroupCode" },
             { buttonId: "btnToCustomerGroupFinder", dataControlId: "Data_ToGroupCode" },
@@ -134,7 +134,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initNationalAcctFinders() {
-        var props = sg.viewFinderProperties.ARNationalAccounts;
+        var props = sg.viewFinderProperties.AR.NationalAccounts;
         var controls = [
             { buttonId: "btnFromNationalAcctFinder", dataControlId: "Data_FromNationalAccount" },
             { buttonId: "btnToNationalAcctFinder", dataControlId: "Data_ToNationalAccount" },
@@ -148,7 +148,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initSalespersonFinders() {
-        var props = sg.viewFinderProperties.ARSalespersons;
+        var props = sg.viewFinderProperties.AR.Salespersons;
         var controls = [
             { buttonId: "btnFromSalespersonFinder", dataControlId: "Data_FromSalesPerson" },
             { buttonId: "btnToSalespersonFinder", dataControlId: "Data_ToSalesPerson" },
@@ -162,7 +162,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initItemFinders() {
-        var props = sg.viewFinderProperties.ARItems;
+        var props = sg.viewFinderProperties.AR.Items;
         var controls = [
             { buttonId: "btnFromItemFinder", dataControlId: "Data_FromItem" },
             { buttonId: "btnToItemFinder", dataControlId: "Data_ToItem" },
@@ -177,7 +177,7 @@ var clearStatisticsUI = (function (self, $) {
      */
     function initFiscalYearFinders() {
 
-        var props = sg.viewFinderProperties.CSFiscalCalendars;
+        var props = sg.viewFinderProperties.CS.FiscalCalendars;
         var controls = [
             { buttonId: "btnFindCustomerYear", dataControlId: "Data_ThroughCustomerYear" },
             { buttonId: "btnFindCustomerGroupYear", dataControlId: "Data_ThroughGroupYear" },
@@ -200,59 +200,8 @@ var clearStatisticsUI = (function (self, $) {
      */
     function _initFinderGroup(controls, info, filter = "", height = null, top = null) {
         for (var i = 0; i < controls.length; i++) {
-            _initFinder(controls[i].buttonId, controls[i].dataControlId, info, filter, height, top);
+            sg.viewFinderHelper.initFinder(controls[i].buttonId, controls[i].dataControlId, info, filter, height, top);
         }
-    }
-
-    /**
-     * @name _initFinder
-     * @desc Generic routine to initialize an individual finder
-     * @private
-     * @param {string} buttonId - The Id of the button used to invoke the finder
-     * @param {string} controlId - The underlying control that will receive the selected item
-     * @param {object} info - Object containing various settings for the finder
-     * @param {object} filter = "" | The optional filter used to filter the finder results
-     * @param {number} height = null | The optional height of the finder window
-     * @param {number} top = null | The optional top location of the finder window
-     */
-    function _initFinder(buttonId, controlId, info, filter = "", height = null, top = null) {
-
-        let initKeyValues = [$("#" + controlId).val()];
-
-        let initFinder = function (viewFinder) {
-            viewFinder.viewID = info.viewID;
-            viewFinder.viewOrder = info.viewOrder;
-            viewFinder.displayFieldNames = info.displayFieldNames;
-            viewFinder.returnFieldName = info.returnFieldName;
-
-            // Optional 
-            //     If omitted, the starting value is blank.
-            viewFinder.initKeyValues = initKeyValues;
-
-            // Optional
-            //     Only useful for UIs such as Invoice Entry finder where you 
-            //     want to restrict the entries to a specific batch
-            viewFinder.filter = filter;
-        };
-
-        // Note:
-        //   There are two different ways to initialize the finder:
-        //   1. Specify a callback method to handle more complicated processing
-        //   OR
-        //   2. Specify a simple control id where the selected finder value will be sent.
-        //
-        // Scenario #1
-        //
-        //let onFinderOK = function (val) {
-        //    if (val != null) {
-        //        dataEntity(val);
-        //        sg.controls.Focus($("#" + nextControlIdForFocus));
-        //    }
-        //}
-        //sg.viewFinderHelper.setViewFinder(buttonId, onFinderOK, initFinder, height, top);
-
-        // Scenario #2
-        sg.viewFinderHelper.setViewFinder(buttonId, controlId, initFinder, height, top);
     }
 
     /**

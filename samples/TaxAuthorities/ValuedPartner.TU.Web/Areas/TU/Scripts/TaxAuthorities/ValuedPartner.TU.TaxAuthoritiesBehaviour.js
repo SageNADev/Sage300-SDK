@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,6 +25,8 @@
 /*global taxAuthoritiesResources*/
 /*global globalResource*/
 /*global taxAuthoritiesObservableExtension*/
+
+// @ts-check
 
 "use strict";
 
@@ -111,7 +113,7 @@ taxAuthoritiesUI = {
         });
 
     },
-    // Init TextBoxs
+    // Init TextBoxes
     initTextbox: function(){
         $("#txtRecoRate").val(100);
         $('#txtTaxAuthority').bind("blur", function () {
@@ -230,7 +232,8 @@ taxAuthoritiesUI = {
         sg.utls.kndoUI.restrictDecimals(RecoverRateTxtBox, 5, 3);
 
     },
-    // Init Dropdowns here
+
+    // Init Dropdowns
     initDropDownList: function () {
         sg.utls.kndoUI.dropDownList("ddlreportTaxRetainage");
         sg.utls.kndoUI.dropDownList("ddltaxBase");
@@ -254,25 +257,36 @@ taxAuthoritiesUI = {
         });
 
     },
-    // Init Finders, if any
+
+    // Init Finders
     initFinders: function () {
-        var title = jQuery.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.TaxAuthorityTitle);
-        sg.finderHelper.setFinder("btnFinderTaxAuthority", "tutaxauthorities", onFinderSuccess.taxAuthority, onFinderCancel.taxAuthority, title, taxAuthoritiesFilter.getFilter, null, true);
+        var info = sg.viewFinderProperties.TX.TaxAuthorities;
+        var buttonId = "btnFinderTaxAuthority";
+        var dataControlIdOrSuccessCallback = onFinderSuccess.taxAuthority;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, taxAuthoritiesFilter.getFilter);
 
-        title = jQuery.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.Reportingcurrency);
-        sg.finderHelper.setFinder("btnCurrencyFinder", sg.finder.TaxCurrencyFinder, onFinderSuccess.currencyCode, onFinderCancel.currencyCode, title, sg.finderHelper.createDefaultFunction("txtTaxReportingCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith), null, true);
+        info = sg.viewFinderProperties.CS.CurrencyCodes;
+        buttonId = "btnCurrencyFinder";
+        dataControlIdOrSuccessCallback = onFinderSuccess.currencyCode;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info);
 
-        title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.LiabilityAccount);
-        sg.finderHelper.setFinder("btnLiabilityAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.liabilityAccount, onFinderCancel.liabilityAccount, title, sg.finderHelper.createDefaultFunction("txtTaxLiabilityAccount", "AccountNumber", sg.finderOperator.StartsWith), null, true);
+        info = sg.viewFinderProperties.GL.Accounts;
+        buttonId = "btnLiabilityAccountFinder";
+        dataControlIdOrSuccessCallback = onFinderSuccess.liabilityAccount;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info);
 
-        title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.ExpenseAccount);
-        sg.finderHelper.setFinder("btnExpenseAccountFinder", "tutaxauthoritiesaccount", onFinderSuccess.expenseAccount, onFinderCancel.expenseAccount, title, sg.finderHelper.createDefaultFunction("txtExpenseAccount", "AccountNumber", sg.finderOperator.StartsWith), null, true);
+        info = sg.viewFinderProperties.GL.Accounts;
+        buttonId = "btnExpenseAccountFinder";
+        dataControlIdOrSuccessCallback = onFinderSuccess.expenseAccount;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info);
 
-        title = $.validator.format(taxAuthoritiesResources.FinderTitle, taxAuthoritiesResources.RecoverabletaxAccount);
-        sg.finderHelper.setFinder("btnTaxRecoverableFinder", "tutaxauthoritiesaccount", onFinderSuccess.recoverableAccount, onFinderCancel.recoverableAccount, title, sg.finderHelper.createDefaultFunction("txtTaxRecoverable", "AccountNumber", sg.finderOperator.StartsWith), null, true);
-
+        info = sg.viewFinderProperties.GL.Accounts;
+        buttonId = "btnTaxRecoverableFinder";
+        dataControlIdOrSuccessCallback = onFinderSuccess.recoverableAccount;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info);
     },
-    //Init CheckBoxs
+
+    // Init CheckBoxes
     initCheckBoxes: function () {
         $("#chktaxRecoverable").bind("change", function () {
             if (!this.checked) {
@@ -477,22 +491,12 @@ var taxAuthoritiesUISuccess = {
         sg.controls.Focus($("#txtTaxAuthority"));
     },
 
-    // Finder Success
-    finderSuccess: function (data) {
-        if (data) {
-            if (sg.controls.GetString(taxAuthoritiesUI.taxAuthority) !== data.TaxAuthority) {
-                taxAuthoritiesUI.finderData = data;
-                taxAuthoritiesUI.checkIsDirty(taxAuthoritiesUI.get, taxAuthoritiesUI.taxAuthority);
-            }
-        }
-    },
-
     // Set Finder
     setFinderData: function () {
         var data = taxAuthoritiesUI.finderData;
         sg.utls.clearValidations("frmTaxAuthorities");
         taxAuthoritiesUI.finderData = null;
-        taxAuthoritiesRepository.get(data.TaxAuthority, taxAuthoritiesUISuccess.get);
+        taxAuthoritiesRepository.get(data.AUTHORITY, taxAuthoritiesUISuccess.get);
     },
 
     // Is New
@@ -543,11 +547,12 @@ var taxAuthoritiesFilter = {
         return filters;
     }
 };
+
 var onFinderSuccess = {
 
     taxAuthority: function (data) {
         if (data) {
-            if (sg.controls.GetString(taxAuthoritiesUI.taxAuthority) !== data.TaxAuthority) {
+            if (sg.controls.GetString(taxAuthoritiesUI.taxAuthority) !== data.AUTHORITY) {
                 taxAuthoritiesUI.finderData = data;
                 taxAuthoritiesUI.checkIsDirty(taxAuthoritiesUISuccess.setFinderData, taxAuthoritiesUI.taxAuthority);
             }
@@ -557,18 +562,17 @@ var onFinderSuccess = {
     currencyCode: function (data) {
         var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
-            vm.Data.TaxReportingCurrency(data.CurrencyCodeId);
-            vm.CurrencyDescription(data.Description);
+            vm.Data.TaxReportingCurrency(data.CURID);
+            vm.CurrencyDescription(data.CURNAME);
             sg.controls.Focus($("#txtTaxReportingCurrency"));
-
         }
     },
 
     liabilityAccount: function (data) {
         var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
-            vm.Data.TaxLiabilityAccount(data.AccountNumber);
-            vm.LiabilityAccountDescription(data.Description);
+            vm.Data.TaxLiabilityAccount(data.ACCTFMTTD);
+            vm.LiabilityAccountDescription(data.ACCTDESC);
             taxAuthoritiesUI.type = taxAuthoritiesResources.Liabilityconstant;
         }
     },
@@ -576,8 +580,8 @@ var onFinderSuccess = {
     expenseAccount: function (data) {
         var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
-            vm.Data.ExpenseAccount(data.AccountNumber);
-            vm.ExpenseAccountDescription(data.Description);
+            vm.Data.ExpenseAccount(data.ACCTFMTTD);
+            vm.ExpenseAccountDescription(data.ACCTDESC);
             taxAuthoritiesUI.type = taxAuthoritiesResources.Expconstant;
         }
     },
@@ -585,33 +589,10 @@ var onFinderSuccess = {
     recoverableAccount: function (data) {
         var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
-            vm.Data.RecoverableTaxAccount(data.AccountNumber);
-            vm.RecoverableTaxAccountDescription(data.Description);
+            vm.Data.RecoverableTaxAccount(data.ACCTFMTTD);
+            vm.RecoverableTaxAccountDescription(data.ACCTDESC);
             taxAuthoritiesUI.type = taxAuthoritiesResources.Recoconstant;
         }
-    },
-};
-
-var onFinderCancel = {
-
-    taxAuthority: function () {
-        sg.controls.Focus($("#txtTaxAuthority"));
-    },
-
-    currencyCode: function () {
-        sg.controls.Focus($("#txtTaxReportingCurrency"));
-    },
-
-    liabilityAccount: function () {
-        sg.controls.Focus($("#txtTaxLiabilityAccount"));
-    },
-
-    expenseAccount: function () {
-        sg.controls.Focus($("#txtExpenseAccount"));
-    },
-
-    recoverableAccount: function () {
-        sg.controls.Focus($("#txtTaxRecoverable"));
     },
 };
  
