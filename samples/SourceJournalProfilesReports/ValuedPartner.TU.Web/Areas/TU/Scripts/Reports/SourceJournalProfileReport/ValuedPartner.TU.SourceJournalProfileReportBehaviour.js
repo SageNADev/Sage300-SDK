@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
 var sourceJournalProfileReportUI = sourceJournalProfileReportUI || {};
@@ -32,19 +34,20 @@ sourceJournalProfileReportUI = {
         sg.controls.Focus($("#Data_Frjrnl"));
     },
 
-
-
     initFinders: function () {
-        var SourceJournalTitle = jQuery.validator.format(sourceJournalProfileReportResources.FinderTitle, sourceJournalProfileReportResources.Profile);
-        sg.finderHelper.setFinder("btnFromSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.FromProfile, onFinderCancel.findFromProfile, SourceJournalTitle, finderFilter.getFromProfileFilter, null, true);
-        sg.finderHelper.setFinder("btnToSrcJournalFinder", "tusourcejournalprofile", onFinderSuccess.ToProfile, onFinderCancel.findToProfile, SourceJournalTitle, finderFilter.getToProfileFilter, null, true);
+        var info = sg.viewFinderProperties.GL.SourceJournalProfiles;
+        var buttonId = "btnFromSrcJournalFinder";
+        var dataControlIdOrSuccessCallback = onFinderSuccess.FromProfile;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, finderFilter.getFromProfileFilter);
 
+        var buttonId = "btnToSrcJournalFinder";
+        var dataControlIdOrSuccessCallback = onFinderSuccess.ToProfile;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, finderFilter.getToProfileFilter);
     },
 
     initKendoBindings: function () {
         sourceJournalProfileReportUI.sourceJournalProfileReportModel = ko.mapping.fromJS(sourceJournalProfileReportViewModel);
     },
-
 
     initButton: function () {
         $("#btnPrint").click(function () {
@@ -66,7 +69,6 @@ sourceJournalProfileReportUI = {
                     }
 
                 }, 150);
-
             }
         })
     },
@@ -77,34 +79,22 @@ var onFinderSuccess = {
 
     FromProfile: function (result) {
         if (result != null) {
-            sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Frjrnl(result.SourceJournalName);
-
-            $("#Data_Frjrnl").val(result.SourceJournalName);
+            var sourceJournalName = result.SRCEJRNL;
+            sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Frjrnl(sourceJournalName);
+            $("#Data_Frjrnl").val(sourceJournalName);
             sg.controls.Focus($("#Data_Tojrnl"));
         }
     },
 
     ToProfile: function (result) {
         if (result != null) {
-            sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Tojrnl(result.SourceJournalName);
-
-            $("#Data_Tojrnl").val(result.SourceJournalName);
+            var sourceJournalName = result.SRCEJRNL;
+            sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Tojrnl(sourceJournalName);
+            $("#Data_Tojrnl").val(sourceJournalName);
             sg.controls.Focus($("#btnPrint"));
         }
     }
 };
-
-var onFinderCancel = {
-
-
-    findFromProfile: function () {
-        sg.controls.Focus($("#Data_Frjrnl"));
-    },
-
-    findToProfile: function () {
-        sg.controls.Focus($("#Data_Tojrnl"));
-    }
-}
 
 var finderFilter = {
     getFromProfileFilter: function () {

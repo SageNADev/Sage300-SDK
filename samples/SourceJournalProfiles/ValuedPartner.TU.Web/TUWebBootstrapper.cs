@@ -70,7 +70,7 @@ namespace ValuedPartner.TU.Web
         /// <param name="container">The Unity container</param>
         private void RegisterFinder(IUnityContainer container)
         {
-			UnityUtil.RegisterType<IFinder, FindSourceJournalProfileControllerInternal<SourceJournalProfile>>(container, "tusourcejournalprofile", new InjectionConstructor(typeof(Context)));
+			//UnityUtil.RegisterType<IFinder, FindSourceJournalProfileControllerInternal<SourceJournalProfile>>(container, "tusourcejournalprofile", new InjectionConstructor(typeof(Context)));
 			UnityUtil.RegisterType<IFinder, FindSourceCodeControllerInternal<SourceCode>>(container, "tusourcecode", new InjectionConstructor(typeof(Context)));
         }
 

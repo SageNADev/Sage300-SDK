@@ -312,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\TU\Controllers\Finder\FindSourceCodeControllerInternal.cs" />
-    <Compile Include="Areas\TU\Controllers\Finder\FindSourceJournalProfileControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\SourceCodeController.cs" />
     <Compile Include="Areas\TU\Controllers\SourceCodeControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\SourceJournalProfileController.cs" />
@@ -330,13 +329,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeRepository.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileGrid.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileGrid.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml">
       <SubType>Designer</SubType>

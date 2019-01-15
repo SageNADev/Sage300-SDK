@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
 var modelData;
@@ -33,10 +35,10 @@ sourceCodeUI = {
 
     // Init
     init: function () {
-    sourceCodeUI.initButtons();
-    sourceCodeUI.initFinders();
-    sourceCodeUISuccess.initialLoad(SourceCodeViewModel);
-    sourceCodeUISuccess.setkey();
+        sourceCodeUI.initButtons();
+        sourceCodeUI.initFinders();
+        sourceCodeUISuccess.initialLoad(SourceCodeViewModel);
+        sourceCodeUISuccess.setkey();
     },
 
     // Save
@@ -96,8 +98,11 @@ sourceCodeUI = {
 
     // Init Finders, if any
     initFinders: function () {
-        var title = jQuery.validator.format(sourceCodeResources.FinderTitle, sourceCodeResources.SourceLedgerTitle);
-        sg.finderHelper.setFinder("btnFinderSourceLedger", "tusourcecode", sourceCodeUISuccess.finderSuccess, $.noop, title, sourceCodeFilter.getFilter, null, true);
+        var info = sg.viewFinderProperties.GL.SourceCodes;
+        var info = sg.viewFinderProperties.GL.SourceCodes;
+        var buttonId = "btnFinderSourceLedger";
+        var dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
+        sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceCodeFilter.getFilter);
     },
 
     // Get

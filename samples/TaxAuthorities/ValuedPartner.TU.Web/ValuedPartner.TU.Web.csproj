@@ -351,9 +351,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartnerTaxAuthoritiesBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartnerTaxAuthoritiesKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartnerTaxAuthoritiesRepository.js" />
+    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesRepository.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">
