@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//#define ENABLE_STAGE_WEBCONFIG
+#define ENABLE_STAGE_WEBCONFIG
 
 #region Imports
 using MergeISVProject.Constants;
@@ -42,6 +42,7 @@ namespace MergeISVProject
 		#region Constants
 		const string BUILD_PROFILE_RELEASE = @"release";
 		const bool OVERWRITE = true;
+        const string WEB_CONFIG = @"web.config";
 		#endregion
 
 		#region Enumerations
@@ -366,50 +367,9 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
-		/// Copy the menu background image and icon from the original source
-		/// to the Staging folder
-		/// </summary>
-		//private void _Stage_Images()
-		//{
-		//	_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-		//	const string defaultIconFilename = @"menuIcon.png";
-
-		//	var menuName = _Options.MenuFilename.OptionValue;
-
-		//	// Get the company name, icon file name, and background image file name 
-		//	var pathMenuDir = Path.Combine(_FolderManager.Staging.Root, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
-		//	var menuFilePath = Path.Combine(pathMenuDir, menuName);
-		//	var menuFileContent = File.ReadAllText(menuFilePath);
-		//	var companyName = Regex.Match(menuFileContent, $"<IconName>(.*?)/{defaultIconFilename}</IconName>").Groups[1].Value;
-		//	var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
-		//	var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
-
-		//	var pathImageFrom = Path.Combine(_FolderManager.RootSource, @"Content\Images\nav");
-		//	var pathImageTo = Path.Combine(_FolderManager.Staging.Root, @"External\Content\Images\nav", companyName);
-
-		//	if (!Directory.Exists(pathImageTo))
-		//	{
-		//		Directory.CreateDirectory(pathImageTo);
-		//	}
-		//	string[] imageNames = { menuIconName, menuBackGroundImage };
-		//	foreach (var image in imageNames)
-		//	{
-		//		var pathImageFileFrom = Path.Combine(pathImageFrom, image);
-		//		if (File.Exists(pathImageFileFrom))
-		//		{
-		//			var pathImageFileTo = Path.Combine(pathImageTo, image);
-		//			File.Copy(pathImageFileFrom, pathImageFileTo, true);
-		//		}
-		//	}
-
-		//	_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		//}
-
-		/// <summary>
 		/// Staging - Copy resource satellite dlls to Staging/bin folder
 		/// </summary>
-		private void _Stage_ResourceSatelliteFiles()
+		private void _Stage_ResourceSatelliteFiles() 
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -446,6 +406,17 @@ namespace MergeISVProject
 
             // Copy everything to the 'Web' deployment folder
             FileSystem.CopyDirectory(_FolderManager.Staging.Root, _FolderManager.FinalWeb.Root);
+
+            // D-39067
+            // Because ENABLE_STAGE_WEBCONFIG has been reactivated, we have to ensure that the 
+            // final web root folder does NOT have a copy of the main web.config file.
+            var webConfigFilePath = Path.Combine(_FolderManager.FinalWeb.Root, WEB_CONFIG);
+            if (File.Exists(webConfigFilePath))
+            {
+                _Logger.Log($"{WEB_CONFIG} found in final 'web' deployment folder.");
+                _Logger.Log($"Deleting {webConfigFilePath}");
+                File.Delete(webConfigFilePath);
+            }
 
             // Copy a subset to the 'Worker' deployment folder
             _Stage_CopyToWorkerDeployment(); 
