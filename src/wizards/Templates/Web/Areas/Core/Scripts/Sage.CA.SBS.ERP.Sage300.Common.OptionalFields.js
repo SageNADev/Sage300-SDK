@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var optionalFieldEnum = optionalFieldEnum || {};
@@ -53,7 +53,7 @@ var optFldGridUtils = {
 
     checkDuplicateRecord: function (dataSource, field, checkItem, row) {
         var count = 0;
-        var errorMsg = $.validator.format(optionalFieldsResources.duplicateMessage, optionalFieldsResources.optionalFieldsTitle, checkItem.toUpperCase());
+        var errorMsg = $.validator.format(optionalFieldsResources.duplicateMessage, optionalFieldsResources.optionalFieldTitle, checkItem.toUpperCase());
         $("#message").empty();
         $.each(dataSource.data(), function (key, value) {
             if (dataSource.data()[key][field] == checkItem) {
@@ -971,7 +971,7 @@ var optionalFieldUIGrid =
             return !isDuplicate;
         });
         if (isDuplicate) {
-            var errorMsg = $.validator.format(optionalFieldsResources.duplicateMessage, optionalFieldsResources.optionalFieldsTitle, optValue.toUpperCase());
+            var errorMsg = $.validator.format(optionalFieldsResources.duplicateMessage, optionalFieldsResources.optionalFieldTitle, optValue.toUpperCase());
             if (optionalFieldUIGrid.isPopUp) {
                 optionalFieldUIGrid.showMessage(errorMsg);
             } else {

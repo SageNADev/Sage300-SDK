@@ -369,6 +369,28 @@ table {
 .k-item,
 .k-select {
   border-radius: 0 !important;
+
+  &.k-primary {
+    background-color: #255bc7;
+    border-color: #2151b1;
+    background-image: none;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:focus:active:not(.k-state-disabled):not([disabled]) {
+      background-color: #1d479c;
+      border: 1px solid #2151b1;
+      color: #fff;
+      outline: 0;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+  }
+}
+
+.k-datepicker {
+  padding: 0;
 }
 
 /* `Font Global
@@ -396,6 +418,12 @@ textarea {
     background-size: auto;
 }
 
+.k-tool-icon,
+.k-pager-wrap>.k-link>.k-icon {
+  background: none;
+  color: #5e6063;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
 only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
   .icon, 
@@ -411,6 +439,13 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     background-image: url('@{image-path}/ui/sprite.png');
     background-repeat: no-repeat;
     background-size:auto ;
+  }
+
+  .k-i-arrow-60-down,
+  .k-pager-wrap .k-icon,
+  .k-tool-icon {
+    background: none !important;
+    color: #5e6063;
   }
 }
 
@@ -1393,6 +1428,11 @@ a[class*="btn-"] {
       -kthtml-transition: all .2s linear;
       transition: all .2s linear;
     }
+
+    .k-i-arrow-60-down {
+      background: none;
+      color: #5e6063;
+    }
   }
 
   &.k-state-disabled {
@@ -1501,6 +1541,10 @@ a[class*="btn-"] {
   width: 20px;
   height: 20px;
   background-position: -156px -187px;
+
+  &:before {
+    content: none;
+  }
 }
 
 .k-calendar-container {
@@ -1514,6 +1558,24 @@ a[class*="btn-"] {
 
     .k-nav-fast {
       color: @white;
+  }
+
+    .k-i-arrow-w,
+    .k-i-arrow-60-left {
+      background-position: -188px -67px;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    .k-i-arrow-e,
+    .k-i-arrow-60-right {
+      background-position: -217px -67px;
+
+      &:before {
+        content: none;
+      }
     }
 
     .k-state-hover.k-nav-fast,
@@ -1521,15 +1583,25 @@ a[class*="btn-"] {
       background: @sage-link none;
       border-radius: 4;
       color: @white;
+
+      .k-i-arrow-w,
+      .k-i-arrow-60-left {
+        background-position: -188px -67px;
+
+        &:before {
+          content: none;
+        }
+      }
+
+      .k-i-arrow-e,
+      .k-i-arrow-60-right {
+        background-position: -217px -67px;
+
+        &:before {
+          content: none;
+        }
+      }
     }
-  }
-
-  .k-i-arrow-w {
-    background-position: -188px -67px !important;
-  }
-
-  .k-i-arrow-e {
-    background-position: -217px -67px !important;
   }
 
   .k-calendar .k-content .k-link {
@@ -1703,7 +1775,7 @@ a[class*="btn-"] {
           left: -1px;
           right: -1px;
           border-top: 5px solid @sage-link;
-          top: -5px;
+          top: -2px;
         }
 
         .k-link,
@@ -1802,7 +1874,13 @@ a[class*="btn-"] {
           -webkit-box-shadow: none !important;
           -moz-box-shadow: none !important;
         }
-      }      
+      }
+
+      .k-state-active,
+      .k-state-active .k-i-filter,
+      .k-i-filter {
+        background: none;
+      }     
     }
   }
 
@@ -1897,22 +1975,6 @@ a[class*="btn-"] {
 
       &:not(.k-state-disabled):hover {
         background-color: darken(@btn-default-bg, 5%);
-      }
-
-      .k-i-seek-w {
-        background-position: -97px -8px;
-      }
-
-      .k-i-arrow-w {
-        background-position: -68px -8px;
-      }
-
-      .k-i-arrow-e {
-        background-position: -36px -8px;
-      }
-
-      .k-i-seek-e {
-        background-position: -126px -8px;
       }
     }
 
@@ -4086,11 +4148,15 @@ textarea,
 
     .k-window-actions {
       right: -7px;
-      top: 6px;
+      top: 12px;
       opacity: 1;
 
       .k-i-close {
         background-position: -127px -127px;
+
+        &:before {
+          content: none;
+        }
       }
 
       .k-link.k-state-hover {
@@ -4176,7 +4242,7 @@ textarea,
   }
 
   .popup-iframe {
-    max-height: 720px !important;
+    max-height: ~"calc(100% - 24px)" !important;
     overflow: hidden !important;
     padding: 0;
     margin: 0;
@@ -4219,6 +4285,10 @@ textarea,
       .k-i-close {
         background-position: -125px -128px;
         opacity: 1;
+
+        &:before {
+          content: none;
+        }
       }
     }
   }
@@ -4864,7 +4934,7 @@ ul.list-bullet {
 .multiselect-group .k-multiselect{ 
   clear: left; 
   float: left;
-  border-color: #9a9b9c;
+  border: 1px solid #8e8a86;
 
   &.default {
     width: 220px;
@@ -4882,6 +4952,8 @@ ul.list-bullet {
 .k-multiselect-wrap,
 .k-state-hover .k-multiselect-wrap {
   border-radius: 0;
+  border: 0;
+  min-height: 28px;
 }
 
 .k-multiselect-wrap .k-select {
@@ -4914,6 +4986,10 @@ ul.list-bullet {
   }
 }
 
+.k-multiselect-wrap>ul>.k-button {
+  padding-right: 15px;
+}
+
 .k-multiselect-wrap>ul>.k-button,
 .k-multiselect-wrap.k-state-focused>ul>.k-button:focus,
 .k-state-focused,
@@ -4927,10 +5003,50 @@ ul.list-bullet {
   color: inherit;
   background-color: #fff;
   background: none;
+
+  .k-i-close:before {
+    content: none;
+  }
 }
 
 .k-button:hover {
   background-color: #fff;
+}
+
+.k-filter-menu .k-button {
+  background-color: #fff;
+  border: 1px solid #255bc7;
+  color: #255bc7;
+
+  &:hover {
+    background-color: #e8effe;
+    color: #255bc7;
+    border: 1px solid #255bc7;
+  }
+
+  &:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: 0;
+  }
+
+  &.k-primary {
+    background-color: #255bc7;
+    border-color: #2151b1;
+    background-image: none;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:focus:active:not(.k-state-disabled):not([disabled]) {
+      background-color: #1d479c;
+      border: 1px solid #2151b1;
+      color: #fff;
+      outline: 0;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+  }
 }
 
 .k-multiselect-wrap .k-input {
@@ -4950,6 +5066,7 @@ ul.list-bullet {
   transition: all .2s linear;
 }
 
+.k-multiselect.k-state-hover>.k-multiselect-wrap>.k-i-close,
 .k-multiselect.k-state-focused>.k-multiselect-wrap>.k-i-close {
   display: none;
 }
@@ -4961,4 +5078,8 @@ ul.list-bullet {
 .k-state-focused .k-multiselect .k-input{
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+#gridReportList.k-grid .k-grid-content {
+  height: unset !important;
 }
