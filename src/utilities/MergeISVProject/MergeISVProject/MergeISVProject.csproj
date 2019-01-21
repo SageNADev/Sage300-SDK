@@ -97,8 +97,24 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>set Source=$(TargetDir)$(TargetName).exe
+set SDKRootDir=$(SolutionDir)..\..\..\
+
+REM \bin\utilities\
+set Destination=%25SDKRootDir%25bin\utilities\
+copy %25Source%25 %25Destination%25
+
+REM \src\wizards\Templates\Web\
+set Destination=%25SDKRootDir%25src\wizards\Templates\Web\
+copy %25Source%25 %25Destination%25
+
+REM \src\wizards\UpgradeWizardTemplates\Items\
+set Destination=%25SDKRootDir%25src\wizards\UpgradeWizardTemplates\Items\
+copy %25Source%25 %25Destination%25
+
+
+
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

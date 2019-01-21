@@ -151,7 +151,13 @@
   </Target>
   <Import Project="packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets" Condition="Exists('packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.5.100\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetName).vsix $(ProjectDir)..\..\..\bin\wizards\
+    <PostBuildEvent>REM Set up Environment
+set Source=$(TargetDir)$(TargetName).vsix
+set Destination=$(ProjectDir)..\..\..\bin\wizards\
+
+REM Copy the output
+copy %25Source%25 %25Destination%25
+
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
