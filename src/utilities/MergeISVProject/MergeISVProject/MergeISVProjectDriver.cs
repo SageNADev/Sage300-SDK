@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//#define ENABLE_STAGE_WEBCONFIG
+#define ENABLE_STAGE_WEBCONFIG
 
 #region Imports
 using MergeISVProject.Constants;
@@ -42,10 +42,11 @@ namespace MergeISVProject
 		#region Constants
 		const string BUILD_PROFILE_RELEASE = @"release";
 		const bool OVERWRITE = true;
-		#endregion
+        const string WEB_CONFIG = @"web.config";
+        #endregion
 
-		#region Enumerations
-		private enum AppMode
+        #region Enumerations
+        private enum AppMode
 		{
 			FullSolution = 0,
 			SingleProject,
@@ -446,6 +447,17 @@ namespace MergeISVProject
 
             // Copy everything to the 'Web' deployment folder
             FileSystem.CopyDirectory(_FolderManager.Staging.Root, _FolderManager.FinalWeb.Root);
+
+            // D-39067
+            // Because ENABLE_STAGE_WEBCONFIG has been reactivated, we have to ensure that the 
+            // final web root folder does NOT have a copy of the main web.config file.
+            var webConfigFilePath = Path.Combine(_FolderManager.FinalWeb.Root, WEB_CONFIG);
+            if (File.Exists(webConfigFilePath))
+            {
+                _Logger.Log($"{WEB_CONFIG} found in final 'web' deployment folder.");
+                _Logger.Log($"Deleting {webConfigFilePath}");
+                File.Delete(webConfigFilePath);
+            }
 
             // Copy a subset to the 'Worker' deployment folder
             _Stage_CopyToWorkerDeployment(); 
