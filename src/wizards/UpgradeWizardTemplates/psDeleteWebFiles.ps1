@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # File:     psDeleteWebFiles.ps1
 #
-# Purpose:  Delete various files and folders in the SDK\wizards\UpgradeWizardTemplates\Web\ directory
+# Purpose:  Delete various files and folders in the SDK\wizards\UpgradeWizardTemplates\Items\ directory
 #
 # Note:     This file is meant to be called from CopyWebRepoFiles.bat
 #

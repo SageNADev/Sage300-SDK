@@ -1145,21 +1145,26 @@ var SageNumericTextBoxPlugin = (function (init) {
         init: function (_element, _options) {
             var tagName = "data-sage300uicontrol";
             var style = $(_element).attr("style");
-            init.call(this, _element, _options);
-            var wrapper = $(this.wrapper[0]);
-            var element = wrapper.find('[' + tagName + ']');
-            var sageStyle = wrapper.attr("sage-style");
-            if (!sageStyle) {
-                wrapper.attr("style", style);
-            } else {
-                wrapper.attr("style", sageStyle);
-            }
+            var kendoNumericTextBox = $("#" + _element.id).data("kendoNumericTextBox");
+            if (!kendoNumericTextBox) {
+                init.call(this, _element, _options);
+                var wrapper = $(this.wrapper[0]);
+                var element = wrapper.find('[' + tagName + ']');
+                var sageStyle = wrapper.attr("sage-style");
+                if (!sageStyle) {
+                    wrapper.attr("style", style);
+                } else {
+                    wrapper.attr("style", sageStyle);
+                }
 
-            if (element.length > 0) {
-                var value = element.attr(tagName);
-                element.removeAttr(tagName);
-                wrapper.attr(tagName, value);
-                wrapper.attr("sage-style", (!style) ? "display": style);
+                if (element.length > 0) {
+                    var value = element.attr(tagName);
+                    element.removeAttr(tagName);
+                    wrapper.attr(tagName, value);
+                    wrapper.attr("sage-style", !style ? "display" : style);
+                }
+            } else {
+                kendoNumericTextBox.setOptions(_options);
             }
         }
     });

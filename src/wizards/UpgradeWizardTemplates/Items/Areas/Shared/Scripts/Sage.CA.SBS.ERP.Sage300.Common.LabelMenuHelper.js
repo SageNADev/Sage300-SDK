@@ -9,7 +9,6 @@ LabelMenuHelper = {
     screenModelName: null,
 
     initialize: function (data, btnHamburger, viewModelName) {
-
         $(document).off('.labelMenu');
         ko.cleanNode($("#divLabelMenu")[0]);
         $("#" + btnHamburger).attr('tabindex', '-1');
