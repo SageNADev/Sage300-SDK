@@ -16,6 +16,7 @@
             AccountSet: {
                 viewID: "AP0006",
                 viewOrder: 0,
+				parentValAsInitKey: true, 
                 returnFieldNames: ["ACCTSET"],
                 displayFieldNames: ["ACCTSET", "TEXTDESC", "SWACTV", "DATEINACTV", "DATELASTMN", "CURRCODE"],
             },
@@ -25,6 +26,7 @@
             Customers: {
                 viewID: "AR0024",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["IDCUST"],
                 displayFieldNames: ["IDCUST", "NAMECUST", "SWACTV", "SWHOLD", "IDGRP", "IDNATACCT", "SWBALFWD", "CODECURN",
                     "TEXTSNAM", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE",
@@ -35,6 +37,7 @@
             CustomerGroups: {
                 viewID: "AR0025",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["IDGRP"],
                 displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"],
             },
@@ -42,6 +45,7 @@
             Items: {
                 viewID: "AR0010",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["IDITEM"],
                 displayFieldNames: ["IDITEM", "TEXTDESC", "SWACTV"],
             },
@@ -49,6 +53,7 @@
             Salespersons: {
                 viewID: "AR0018",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["CODESLSP"],
                 displayFieldNames: ["CODESLSP", "NAMEEMPL", "SWACTV"],
             },
@@ -56,8 +61,8 @@
             NationalAccounts: {
                 viewID: "AR0028",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["IDNATACCT"],
-                returnFieldDisplayMask: "{0}",
                 displayFieldNames: ["IDNATACCT", "NAMEACCT", "IDGRP", "SWACTV", "SWHOLD", "CODECURN", "SWBALFWD"],
             },
         }, 
@@ -70,6 +75,7 @@
             CurrencyCodes: {
                 viewID: "CS0003",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["CURID", "CURNAME"],
                 displayFieldNames: ["CURID", "CURNAME", "SYMBOL"],
             },
@@ -77,6 +83,7 @@
             FiscalCalendars: {
                 viewID: "CS0002",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["FSCYEAR"],
                 displayFieldNames: ["FSCYEAR", "PERIODS", "QTR4PERD", "ACTIVE", "BGNDATE1", "BGNDATE2", "BGNDATE3",
                     "BGNDATE4", "BGNDATE5", "BGNDATE6", "BGNDATE7", "BGNDATE8", "BGNDATE9",
@@ -90,6 +97,7 @@
             Accounts: {
                 viewID: "GL0001",
                 viewOrder: 0,
+				parentValAsInitKey: false, // TODO - Need to ensure that this works correctly.
                 returnFieldNames: ["ACCTFMTTD", "ACCTDESC"],
                 displayFieldNames: ["ACCTFMTTD", "ACCTDESC", "ACTIVESW", "ACCTTYPE", "ABRKID",
                                     "ALLOCSW", "MCSW", "QTYSW", "UOM"],
@@ -98,6 +106,7 @@
             SourceCodes: {
                 viewID: "GL0002",
                 viewOrder: 0,
+				parentValAsInitKey: false, // TODO - Need to ensure that this works correctly.
                 returnFieldNames: ["SRCELEDGER", "SRCETYPE"],
                 displayFieldNames: ["SRCELEDGER", "SRCETYPE", "SRCEDESC"],
             },
@@ -122,6 +131,7 @@
             TaxAuthorities: {
                 viewID: "TX0002",
                 viewOrder: 0,
+				parentValAsInitKey: true,
                 returnFieldNames: ["AUTHORITY"],
                 displayFieldNames: ["AUTHORITY", "DESC", "SCURN", "MAXTAX", "MINTAX", "TXBASE",
                     "INCLUDABLE", "LIABILITY", "AUDITLEVEL", "RECOVERABL", "RATERECOV",
