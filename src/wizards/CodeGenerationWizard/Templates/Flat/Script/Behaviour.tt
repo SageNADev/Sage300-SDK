@@ -25,12 +25,7 @@
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-    var containerName = entityName;
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        containerName = settings.EntitiesContainerName;
-    }
-
+    var containerName = entityName; 
     var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
@@ -94,16 +89,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
-        // Key field with Finder
+        // Key field change event
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
-            sg.delayOnBlur("btnFinder<#=keyFieldName#>", function () {
-                if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
-                    if (sg.controls.GetString(<#=localEntityName#>UI.<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
-                        <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
-                    }
-                }
-            });
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
+                <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+            }
         });
 
         // Create New Button
@@ -136,8 +127,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method initFinders
 	 */
     initFinders: function () {
-        var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.Constants.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter, null, true);
+        sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>", /*TODO. SHOWING AP ACCOUNT SET AS EXAMPLE*/ {viewID:"AP0006", viewOrder:0, displayFieldNames:["ACCTSET", "TEXTDESC"], returnFieldNames:["ACCTSET"], filter:null , parentValAsInitKey:true});
     },
 
 	/**
@@ -304,30 +294,6 @@ var <#=localEntityName#>UISuccess = {
         sg.controls.Focus($("#txt<#=keyFieldName#>"));
     },
 
-	/**
-     * Finder Success
-	 *
-	 * @method finderSuccess
-	 * @param data
-	 */
-    finderSuccess: function (data) {
-        if (data != null) {
-            <#=localEntityName#>UI.finderData = data;
-            <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UISuccess.setFinderData, <#=localEntityName#>UI.<#=localKeyFieldName#>);
-        }
-    },
-
-	/**
-     * Set Finder
-	 *
-	 * @method SetFinderData
-	 */
-    setFinderData: function () {
-        var data = <#=localEntityName#>UI.finderData;
-        sg.utls.clearValidations("frm<#=containerName#>");
-        <#=localEntityName#>UI.finderData = null;
-        <#=localEntityName#>Repository.get(data.<#=keyFieldName#>, <#=localEntityName#>UISuccess.get);
-    },
 
 	/**
      * Is New
@@ -340,22 +306,6 @@ var <#=localEntityName#>UISuccess = {
            return true;
         }
         return false;
-    }
-};
-
-// Finder Filter
-var <#=localEntityName#>Filter = {
-	/**
-     * Get Filter
-	 *
-	 * @method getFilter
-	 */
-    getFilter: function () {
-        var filters = [[]];
-        var <#=localEntityName#>Name = $("#txt<#=keyFieldName#>").val();
-		var operator = (isNaN(<#=localEntityName#>Name)) ? sg.finderOperator.StartsWith : sg.finderOperator.Equal;
-        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", operator, <#=localEntityName#>Name);
-        return filters;
     }
 };
 

@@ -119,6 +119,22 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 
         #region Internal methods
 
+		/// <summary>
+        /// Get grid definition for the <#=entityName#> grid
+        /// </summary>
+        /// <returns></returns>
+        internal GridDefinition GetDetailGridDefinition(string jsonFilePath)
+        {
+            var <#=entityName#>Grid = new GridDefinition();
+            
+            <#=entityName#>Grid.AccpacEntityGUID = _repository.Get<#=entityName#>().Id;
+            IEnumerable<BusinessEntityField> fields = _repository.Get<#=entityName#>().Id.FieldDefinitions;
+
+            return GetGridDefinition(<#=entityName#>Grid, jsonFilePath, fields);
+
+        }
+
+
         /// <summary>
         /// Create a <#=modelName#>
         /// </summary>

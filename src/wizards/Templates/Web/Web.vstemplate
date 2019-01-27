@@ -336,10 +336,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_oe.jpg">bg_menu_oe.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe.png">icon_oe.png</ProjectItem>
             </Folder>
-            <Folder Name="PM" TargetFolderName="PM">
-              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_pm.jpg">bg_menu_pm.jpg</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pm.png">icon_pm.png</ProjectItem>
-            </Folder>
             <Folder Name="PO" TargetFolderName="PO">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_po.jpg">bg_menu_po.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_po.png">icon_po.png</ProjectItem>
@@ -477,10 +473,6 @@
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.woff">WebComponentsIcons.woff</ProjectItem>
               </Folder>
             </Folder>
           </Folder>
@@ -620,7 +612,6 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_ie.png">browser_ie.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_o.png">browser_o.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg - Copy.jpg">login-bg - Copy.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
@@ -680,14 +671,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
-            </Folder>
-            <Folder Name="fonts" TargetFolderName="fonts">
-              <Folder Name="glyphs" TargetFolderName="glyphs">
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.woff">WebComponentsIcons.woff</ProjectItem>
-              </Folder>
             </Folder>
           </Folder>
           <Folder Name="less" TargetFolderName="less">
@@ -1470,6 +1453,7 @@
       <Folder Name="Areas" TargetFolderName="Areas">
         <Folder Name="Core" TargetFolderName="Core">
           <Folder Name="Scripts" TargetFolderName="Scripts">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js</ProjectItem>
@@ -1480,7 +1464,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
@@ -1656,7 +1639,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js">Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js">Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js">Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js">Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js</ProjectItem>

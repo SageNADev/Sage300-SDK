@@ -128,13 +128,13 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
-    <Compile Include="Utilities\ResXManager.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Templates\Common\Class\Finder.cs">
+    <Compile Include="Templates\HeaderDetail\Script\Behaviour.cs">
+      <DependentUpon>Behaviour.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Finder.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ResXManager.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Templates\Common\Class\ModelCommonEnums.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -459,10 +459,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Templates\Common\Class\Finder.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Finder.cs</LastGenOutput>
-    </None>
     <None Include="Templates\Common\Class\ModelEnums.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelEnums.cs</LastGenOutput>
@@ -708,6 +704,10 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Templates\HeaderDetail\Script\Behaviour.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Behaviour.cs</LastGenOutput>
+    </None>
     <None Include="Templates\Common\Class\ModelCommonEnumsPartial.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelCommonEnumsPartial.cs</LastGenOutput>
@@ -748,7 +748,6 @@
     <Folder Include="Templates\Common\Script\" />
     <Folder Include="Templates\DynamicQuery\Script\" />
     <Folder Include="Templates\DynamicQuery\View\" />
-    <Folder Include="Templates\HeaderDetail\Script\" />
     <Folder Include="Templates\Inquiry\Script\" />
     <Folder Include="Templates\Inquiry\View\" />
     <Folder Include="Templates\Reports\Script\" />

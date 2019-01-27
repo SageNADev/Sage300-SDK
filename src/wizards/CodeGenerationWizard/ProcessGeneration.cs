@@ -193,6 +193,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Entity </summary>
             public const string PropertyEntity = "entity";
 
+            /// <summary> Property for Entity </summary>
+            public const string PropertyModel = "model";
+
             /// <summary> Property for Include </summary>
             public const string PropertyInclude = "include";
 
@@ -226,6 +229,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Finder </summary>
             public const string PropertyFinder = "finder";
 
+            /// <summary> Property for Grid </summary>
+            public const string PropertyGrid = "grid";
+
             /// <summary> Property for Enablement </summary>
             public const string PropertyEnablement = "enablement";
 
@@ -246,6 +252,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> Property for FieldName </summary>
             public const string PropertyFieldName = "fieldName";
+
+            /// <summary> Property for Key Field </summary>
+            public const string PropertyKeyField = "KeyField";
+
 
             /// <summary> Property for PropertyName </summary>
             public const string PropertyPropertyName = "propertyName";
@@ -1048,15 +1058,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             CreateRepositoryClassesByRepositoryType(repoType, view);
-
-            // Create class for finder
-            if (generateFinder == true)
-            {
-                CreateClass(view,
-                            "Find" + entityName + "ControllerInternal.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Common.Class.Finder"),
-                            Constants.WebKey, Constants.SubFolderWebFinderKey);
-            }
 
             if (isRepoTypeHeaderDetail == false)
             {

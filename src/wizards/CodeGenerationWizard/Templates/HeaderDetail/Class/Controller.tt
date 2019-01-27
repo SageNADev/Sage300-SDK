@@ -117,6 +117,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                         <#=resxName#>.<#=keyFieldName#>));
             }
 
+			viewModel.<#=entityName#>Grid = ControllerInternal.GetDetailGridDefinition(GetGridJsonFilePath("<#=entityName#>Grid"));
             return View(viewModel);
         }
 
