@@ -80,5 +80,11 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository
         /// <param name="filter">filter for deleting a record</param>
         /// <returns></returns>
         <#=headerModelName#> Delete(Expression<Func<<#=headerModelName#>, Boolean>> filter);
+
+		 /// <summary>
+        /// Get Business Entity by rotoid
+        /// </summary>
+        /// <returns>business entity</returns>
+        IBusinessEntity GetBusinessEntity(string rotoId);
     }
 }

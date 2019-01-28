@@ -362,38 +362,39 @@ using ");
             
             #line default
             #line hidden
-            this.Write("));\r\n            }\r\n\r\n\t\t\tviewModel.");
+            this.Write("));\r\n            }\r\n\r\n\t\t\t");
             
             #line 120 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("viewModel.{1}Grid = ControllerInternal.CreateGridDefinition(\"{0}\", GetGridJsonFilePath(\"{1}Grid\"));", view.Properties[BusinessView.Constants.ViewId],  view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+			
             
             #line default
             #line hidden
-            this.Write("Grid = ControllerInternal.GetDetailGridDefinition(GetGridJsonFilePath(\"");
+            this.Write("\r\n            return View(viewModel);\r\n        }\r\n\r\n        /// <summary>\r\n      " +
+                    "  /// Get ");
             
-            #line 120 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("Grid\"));\r\n            return View(viewModel);\r\n        }\r\n\r\n        /// <summary>" +
-                    "\r\n        /// Get ");
-            
-            #line 125 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 134 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 127 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 136 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 128 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 137 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -415,49 +416,49 @@ using ");
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
                         ");
             
-            #line 143 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 152 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 143 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 152 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("));\r\n            }\r\n\r\n            return JsonNet(new ");
             
-            #line 146 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 155 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel());\r\n        }\r\n\r\n\t\t/// <summary>\r\n        /// Add ");
             
-            #line 150 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 159 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 152 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 161 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 153 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 162 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        [HttpPost]\r\n        public virtual JsonNetResult Add(");
             
-            #line 155 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 164 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -478,28 +479,28 @@ using ");
                     JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
                         ");
             
-            #line 169 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 169 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("));\r\n            }\r\n        }\r\n\r\n        /// <summary>\r\n        /// Create ");
             
-            #line 174 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 183 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <returns>JSON object for ");
             
-            #line 176 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 185 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -508,28 +509,28 @@ using ");
                     "      {\r\n            return JsonNet(ControllerInternal.Create());\r\n        }\r\n\r\n" +
                     "        /// <summary>\r\n        /// Update ");
             
-            #line 184 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 193 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 186 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 195 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 187 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 196 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        [HttpPost]\r\n        public virtual JsonNetResult Save(");
             
-            #line 189 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 198 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -553,21 +554,21 @@ using ");
         /// <summary>
         /// Delete ");
             
-            #line 206 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 208 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 217 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 209 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 218 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -586,14 +587,14 @@ using ");
                     JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
                         ");
             
-            #line 221 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 230 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 221 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
+            #line 230 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default

@@ -133,6 +133,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Templates\HeaderDetail\View\GridJson.cs">
+      <DependentUpon>GridJson.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\View\Entity.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Utilities\ResXManager.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Templates\Common\Class\ModelCommonEnums.cs">
@@ -704,6 +714,14 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Templates\HeaderDetail\View\GridJson.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GridJson.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HeaderDetail\View\Entity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
     <None Include="Templates\HeaderDetail\Script\Behaviour.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Behaviour.cs</LastGenOutput>

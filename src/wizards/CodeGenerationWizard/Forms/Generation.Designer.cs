@@ -106,8 +106,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.grdEntityGridDefinitions = new System.Windows.Forms.DataGridView();
+            this.chkSequenceRevisionList = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdResourceInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
@@ -140,8 +139,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             ((System.ComponentModel.ISupportInitialize)(this.grdEntityCompositions)).BeginInit();
             this.pnlGenerateCode.SuspendLayout();
             this.pnlButtons.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdEntityGridDefinitions)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCompany
@@ -149,7 +146,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtCompany.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCompany.Location = new System.Drawing.Point(295, 59);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(83, 26);
+            this.txtCompany.Size = new System.Drawing.Size(83, 22);
             this.txtCompany.TabIndex = 10;
             this.txtCompany.Text = "SAMLTD";
             // 
@@ -158,7 +155,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVersion.Location = new System.Drawing.Point(295, 33);
             this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(83, 26);
+            this.txtVersion.Size = new System.Drawing.Size(83, 22);
             this.txtVersion.TabIndex = 8;
             this.txtVersion.Text = "66A";
             // 
@@ -168,7 +165,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblPassword.Location = new System.Drawing.Point(7, 62);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(70, 19);
+            this.lblPassword.Size = new System.Drawing.Size(59, 13);
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password:";
             // 
@@ -178,7 +175,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblUser.Location = new System.Drawing.Point(31, 36);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(40, 19);
+            this.lblUser.Size = new System.Drawing.Size(33, 13);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "User:";
             // 
@@ -188,7 +185,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblVersion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblVersion.Location = new System.Drawing.Point(241, 36);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(57, 19);
+            this.lblVersion.Size = new System.Drawing.Size(48, 13);
             this.lblVersion.TabIndex = 7;
             this.lblVersion.Text = "Version:";
             // 
@@ -198,7 +195,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtPassword.Location = new System.Drawing.Point(69, 59);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(137, 26);
+            this.txtPassword.Size = new System.Drawing.Size(137, 22);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "ADMIN";
             // 
@@ -208,7 +205,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblCompany.Location = new System.Drawing.Point(233, 62);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(71, 19);
+            this.lblCompany.Size = new System.Drawing.Size(58, 13);
             this.lblCompany.TabIndex = 9;
             this.lblCompany.Text = "Company:";
             // 
@@ -217,7 +214,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUser.Location = new System.Drawing.Point(69, 33);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(137, 26);
+            this.txtUser.Size = new System.Drawing.Size(137, 22);
             this.txtUser.TabIndex = 4;
             this.txtUser.Text = "ADMIN";
             // 
@@ -234,7 +231,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             "HeaderDetail"});
             this.cboRepositoryType.Location = new System.Drawing.Point(83, 27);
             this.cboRepositoryType.Name = "cboRepositoryType";
-            this.cboRepositoryType.Size = new System.Drawing.Size(141, 27);
+            this.cboRepositoryType.Size = new System.Drawing.Size(141, 21);
             this.cboRepositoryType.TabIndex = 1;
             this.cboRepositoryType.SelectedIndexChanged += new System.EventHandler(this.cboRepositoryType_SelectedIndexChanged);
             // 
@@ -244,7 +241,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblRepositoryType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRepositoryType.Location = new System.Drawing.Point(15, 30);
             this.lblRepositoryType.Name = "lblRepositoryType";
-            this.lblRepositoryType.Size = new System.Drawing.Size(76, 19);
+            this.lblRepositoryType.Size = new System.Drawing.Size(62, 13);
             this.lblRepositoryType.TabIndex = 0;
             this.lblRepositoryType.Text = "Code Type:";
             // 
@@ -254,7 +251,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblViewID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewID.Location = new System.Drawing.Point(39, 32);
             this.lblViewID.Name = "lblViewID";
-            this.lblViewID.Size = new System.Drawing.Size(59, 19);
+            this.lblViewID.Size = new System.Drawing.Size(49, 13);
             this.lblViewID.TabIndex = 2;
             this.lblViewID.Text = "View ID:";
             // 
@@ -263,7 +260,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtViewID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtViewID.Location = new System.Drawing.Point(93, 29);
             this.txtViewID.Name = "txtViewID";
-            this.txtViewID.Size = new System.Drawing.Size(209, 26);
+            this.txtViewID.Size = new System.Drawing.Size(209, 22);
             this.txtViewID.TabIndex = 3;
             this.txtViewID.Leave += new System.EventHandler(this.txtViewID_Leave);
             // 
@@ -325,7 +322,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepTitle.Location = new System.Drawing.Point(12, 9);
             this.lblStepTitle.Name = "lblStepTitle";
-            this.lblStepTitle.Size = new System.Drawing.Size(263, 28);
+            this.lblStepTitle.Size = new System.Drawing.Size(206, 21);
             this.lblStepTitle.TabIndex = 2;
             this.lblStepTitle.Text = "This is the title of the step";
             // 
@@ -425,7 +422,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblModule.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModule.Location = new System.Drawing.Point(27, 327);
             this.lblModule.Name = "lblModule";
-            this.lblModule.Size = new System.Drawing.Size(59, 19);
+            this.lblModule.Size = new System.Drawing.Size(50, 13);
             this.lblModule.TabIndex = 11;
             this.lblModule.Text = "Module:";
             // 
@@ -435,7 +432,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.cboModule.FormattingEnabled = true;
             this.cboModule.Location = new System.Drawing.Point(83, 324);
             this.cboModule.Name = "cboModule";
-            this.cboModule.Size = new System.Drawing.Size(56, 27);
+            this.cboModule.Size = new System.Drawing.Size(56, 21);
             this.cboModule.TabIndex = 19;
             // 
             // pnlGeneratedCode
@@ -529,7 +526,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Controls.Add(this.tabPage2);
             this.tabEntity.Controls.Add(this.tabPage3);
             this.tabEntity.Controls.Add(this.tabPage4);
-            this.tabEntity.Controls.Add(this.tabPage5);
             this.tabEntity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
@@ -555,10 +551,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Controls.Add(this.lblModelName);
             this.tabPage1.Controls.Add(this.btnIniDialog);
             this.tabPage1.Controls.Add(this.lblEntityName);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(701, 134);
+            this.tabPage1.Size = new System.Drawing.Size(701, 140);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -567,14 +563,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.txtReportIniFile.Location = new System.Drawing.Point(93, 61);
             this.txtReportIniFile.Name = "txtReportIniFile";
-            this.txtReportIniFile.Size = new System.Drawing.Size(325, 26);
+            this.txtReportIniFile.Size = new System.Drawing.Size(325, 22);
             this.txtReportIniFile.TabIndex = 5;
             // 
             // txtEntityName
             // 
             this.txtEntityName.Location = new System.Drawing.Point(545, 61);
             this.txtEntityName.Name = "txtEntityName";
-            this.txtEntityName.Size = new System.Drawing.Size(209, 26);
+            this.txtEntityName.Size = new System.Drawing.Size(209, 22);
             this.txtEntityName.TabIndex = 12;
             this.txtEntityName.Leave += new System.EventHandler(this.txtEntityName_Leave);
             // 
@@ -584,7 +580,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportKeys.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportKeys.Location = new System.Drawing.Point(37, 89);
             this.lblReportKeys.Name = "lblReportKeys";
-            this.lblReportKeys.Size = new System.Drawing.Size(59, 19);
+            this.lblReportKeys.Size = new System.Drawing.Size(50, 13);
             this.lblReportKeys.TabIndex = 7;
             this.lblReportKeys.Text = "Reports:";
             // 
@@ -594,7 +590,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.cboReportKeys.FormattingEnabled = true;
             this.cboReportKeys.Location = new System.Drawing.Point(93, 86);
             this.cboReportKeys.Name = "cboReportKeys";
-            this.cboReportKeys.Size = new System.Drawing.Size(209, 27);
+            this.cboReportKeys.Size = new System.Drawing.Size(209, 21);
             this.cboReportKeys.TabIndex = 8;
             this.cboReportKeys.SelectedIndexChanged += new System.EventHandler(this.cboReportKeys_SelectedIndexChanged);
             // 
@@ -602,7 +598,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.txtResxName.Location = new System.Drawing.Point(545, 111);
             this.txtResxName.Name = "txtResxName";
-            this.txtResxName.Size = new System.Drawing.Size(209, 26);
+            this.txtResxName.Size = new System.Drawing.Size(209, 22);
             this.txtResxName.TabIndex = 16;
             // 
             // lblReportIniFile
@@ -611,7 +607,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportIniFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportIniFile.Location = new System.Drawing.Point(39, 64);
             this.lblReportIniFile.Name = "lblReportIniFile";
-            this.lblReportIniFile.Size = new System.Drawing.Size(51, 19);
+            this.lblReportIniFile.Size = new System.Drawing.Size(44, 13);
             this.lblReportIniFile.TabIndex = 4;
             this.lblReportIniFile.Text = "Ini File:";
             // 
@@ -620,7 +616,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtReportProgramId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReportProgramId.Location = new System.Drawing.Point(93, 114);
             this.txtReportProgramId.Name = "txtReportProgramId";
-            this.txtReportProgramId.Size = new System.Drawing.Size(209, 26);
+            this.txtReportProgramId.Size = new System.Drawing.Size(209, 22);
             this.txtReportProgramId.TabIndex = 10;
             this.txtReportProgramId.Leave += new System.EventHandler(this.txtReportProgramId_Leave);
             // 
@@ -630,7 +626,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblResxName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResxName.Location = new System.Drawing.Point(474, 114);
             this.lblResxName.Name = "lblResxName";
-            this.lblResxName.Size = new System.Drawing.Size(79, 19);
+            this.lblResxName.Size = new System.Drawing.Size(65, 13);
             this.lblResxName.TabIndex = 15;
             this.lblResxName.Text = "Resx Name:";
             // 
@@ -640,7 +636,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportProgramId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportProgramId.Location = new System.Drawing.Point(21, 117);
             this.lblReportProgramId.Name = "lblReportProgramId";
-            this.lblReportProgramId.Size = new System.Drawing.Size(83, 19);
+            this.lblReportProgramId.Size = new System.Drawing.Size(67, 13);
             this.lblReportProgramId.TabIndex = 9;
             this.lblReportProgramId.Text = "Program ID:";
             // 
@@ -648,7 +644,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.txtModelName.Location = new System.Drawing.Point(545, 87);
             this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(209, 26);
+            this.txtModelName.Size = new System.Drawing.Size(209, 22);
             this.txtModelName.TabIndex = 14;
             this.txtModelName.Leave += new System.EventHandler(this.txtModelName_Leave);
             // 
@@ -658,7 +654,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblModelName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelName.Location = new System.Drawing.Point(464, 90);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(91, 19);
+            this.lblModelName.Size = new System.Drawing.Size(75, 13);
             this.lblModelName.TabIndex = 13;
             this.lblModelName.Text = "Model Name:";
             // 
@@ -681,21 +677,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntityName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntityName.Location = new System.Drawing.Point(469, 64);
             this.lblEntityName.Name = "lblEntityName";
-            this.lblEntityName.Size = new System.Drawing.Size(87, 19);
+            this.lblEntityName.Size = new System.Drawing.Size(71, 13);
             this.lblEntityName.TabIndex = 11;
             this.lblEntityName.Text = "Entity Name:";
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chkSequenceRevisionList);
             this.tabPage2.Controls.Add(this.chkGenerateGrid);
             this.tabPage2.Controls.Add(this.chkGenerateIfExist);
             this.tabPage2.Controls.Add(this.chkGenerateClientFiles);
             this.tabPage2.Controls.Add(this.chkGenerateFinder);
             this.tabPage2.Controls.Add(this.chkGenerateDynamicEnablement);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(701, 134);
+            this.tabPage2.Size = new System.Drawing.Size(701, 140);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -704,9 +701,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.chkGenerateGrid.AutoSize = true;
             this.chkGenerateGrid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGenerateGrid.Location = new System.Drawing.Point(446, 16);
+            this.chkGenerateGrid.Location = new System.Drawing.Point(481, 19);
             this.chkGenerateGrid.Name = "chkGenerateGrid";
-            this.chkGenerateGrid.Size = new System.Drawing.Size(117, 23);
+            this.chkGenerateGrid.Size = new System.Drawing.Size(98, 17);
             this.chkGenerateGrid.TabIndex = 25;
             this.chkGenerateGrid.Text = "Generate Grid";
             this.chkGenerateGrid.UseVisualStyleBackColor = true;
@@ -717,7 +714,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateIfExist.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGenerateIfExist.Location = new System.Drawing.Point(15, 88);
             this.chkGenerateIfExist.Name = "chkGenerateIfExist";
-            this.chkGenerateIfExist.Size = new System.Drawing.Size(209, 23);
+            this.chkGenerateIfExist.Size = new System.Drawing.Size(176, 17);
             this.chkGenerateIfExist.TabIndex = 24;
             this.chkGenerateIfExist.Text = "Generate if Files Already Exist";
             this.chkGenerateIfExist.UseVisualStyleBackColor = true;
@@ -728,7 +725,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateClientFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGenerateClientFiles.Location = new System.Drawing.Point(15, 65);
             this.chkGenerateClientFiles.Name = "chkGenerateClientFiles";
-            this.chkGenerateClientFiles.Size = new System.Drawing.Size(382, 23);
+            this.chkGenerateClientFiles.Size = new System.Drawing.Size(322, 17);
             this.chkGenerateClientFiles.TabIndex = 23;
             this.chkGenerateClientFiles.Text = "Generate Client Files (Controllers, Razor Views, JavaScript)";
             this.chkGenerateClientFiles.UseVisualStyleBackColor = true;
@@ -741,7 +738,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateFinder.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGenerateFinder.Location = new System.Drawing.Point(15, 19);
             this.chkGenerateFinder.Name = "chkGenerateFinder";
-            this.chkGenerateFinder.Size = new System.Drawing.Size(129, 23);
+            this.chkGenerateFinder.Size = new System.Drawing.Size(109, 17);
             this.chkGenerateFinder.TabIndex = 21;
             this.chkGenerateFinder.Text = "Generate Finder";
             this.chkGenerateFinder.UseVisualStyleBackColor = true;
@@ -752,7 +749,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateDynamicEnablement.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGenerateDynamicEnablement.Location = new System.Drawing.Point(15, 42);
             this.chkGenerateDynamicEnablement.Name = "chkGenerateDynamicEnablement";
-            this.chkGenerateDynamicEnablement.Size = new System.Drawing.Size(220, 23);
+            this.chkGenerateDynamicEnablement.Size = new System.Drawing.Size(183, 17);
             this.chkGenerateDynamicEnablement.TabIndex = 22;
             this.chkGenerateDynamicEnablement.Text = "Generate Dynamic Enablement";
             this.chkGenerateDynamicEnablement.UseVisualStyleBackColor = true;
@@ -760,9 +757,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.pnlColumns);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(701, 134);
+            this.tabPage3.Size = new System.Drawing.Size(701, 140);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -774,7 +771,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(701, 134);
+            this.pnlColumns.Size = new System.Drawing.Size(701, 140);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -785,7 +782,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 27);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(701, 107);
+            this.grdEntityFields.Size = new System.Drawing.Size(701, 113);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -834,9 +831,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.pnlComposition);
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(701, 134);
+            this.tabPage4.Size = new System.Drawing.Size(701, 140);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -847,7 +844,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(701, 134);
+            this.pnlComposition.Size = new System.Drawing.Size(701, 140);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -858,7 +855,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 134);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 140);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
             // 
@@ -927,7 +924,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblProcessingFile.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblProcessingFile.Location = new System.Drawing.Point(17, 10);
             this.lblProcessingFile.Name = "lblProcessingFile";
-            this.lblProcessingFile.Size = new System.Drawing.Size(0, 19);
+            this.lblProcessingFile.Size = new System.Drawing.Size(0, 13);
             this.lblProcessingFile.TabIndex = 1;
             // 
             // btnSave
@@ -967,32 +964,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // tabPage5
+            // chkSequenceRevisionList
             // 
-            this.tabPage5.Controls.Add(this.grdEntityGridDefinitions);
-            this.tabPage5.Location = new System.Drawing.Point(4, 28);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(701, 134);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Grid Definition";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // grdEntityGridDefinitions
-            // 
-            this.grdEntityGridDefinitions.AllowUserToAddRows = false;
-            this.grdEntityGridDefinitions.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.grdEntityGridDefinitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEntityGridDefinitions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdEntityGridDefinitions.Location = new System.Drawing.Point(3, 3);
-            this.grdEntityGridDefinitions.Name = "grdEntityGridDefinitions";
-            this.grdEntityGridDefinitions.Size = new System.Drawing.Size(695, 128);
-            this.grdEntityGridDefinitions.TabIndex = 2;
-            this.grdEntityGridDefinitions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.chkSequenceRevisionList.AutoSize = true;
+            this.chkSequenceRevisionList.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSequenceRevisionList.Location = new System.Drawing.Point(481, 42);
+            this.chkSequenceRevisionList.Name = "chkSequenceRevisionList";
+            this.chkSequenceRevisionList.Size = new System.Drawing.Size(142, 17);
+            this.chkSequenceRevisionList.TabIndex = 26;
+            this.chkSequenceRevisionList.Text = "Sequence Revision List";
+            this.chkSequenceRevisionList.UseVisualStyleBackColor = true;
             // 
             // Generation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 554);
             this.Controls.Add(this.splitBase);
@@ -1047,8 +1032,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlGenerateCode.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
             this.pnlButtons.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdEntityGridDefinitions)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1129,8 +1112,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Panel pnlComposition;
         private System.Windows.Forms.DataGridView grdEntityCompositions;
         private System.Windows.Forms.CheckBox chkGenerateGrid;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DataGridView grdEntityGridDefinitions;
+        private System.Windows.Forms.CheckBox chkSequenceRevisionList;
     }
 }
 

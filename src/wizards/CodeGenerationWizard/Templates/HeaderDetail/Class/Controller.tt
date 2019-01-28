@@ -117,7 +117,16 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                         <#=resxName#>.<#=keyFieldName#>));
             }
 
-			viewModel.<#=entityName#>Grid = ControllerInternal.GetDetailGridDefinition(GetGridJsonFilePath("<#=entityName#>Grid"));
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("viewModel.{1}Grid = ControllerInternal.CreateGridDefinition(\"{0}\", GetGridJsonFilePath(\"{1}Grid\"));", view.Properties[BusinessView.Constants.ViewId],  view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+			#>
+
             return View(viewModel);
         }
 

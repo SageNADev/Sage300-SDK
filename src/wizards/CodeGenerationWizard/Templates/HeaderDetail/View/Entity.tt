@@ -23,8 +23,8 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var resxName = view.Properties[BusinessView.Constants.ResxName];
+    var entityName = settings.EntitiesContainerName;
+    var resxName = settings.EntitiesContainerName + "Resx";
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
@@ -37,7 +37,7 @@
 #>
 @* <#=copyright#> *@
 
-@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
+@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -80,6 +80,18 @@
         <div class="search-group">
             @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
             @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
+
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("@Html.AccpacGrid(\"{0}Grid\", Model.{0}Grid)",  view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 
+			 }
+			#>
+
             @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
             @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
             @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)

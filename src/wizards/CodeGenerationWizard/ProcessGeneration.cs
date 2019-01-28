@@ -232,6 +232,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Grid </summary>
             public const string PropertyGrid = "grid";
 
+            /// <summary> Property for Grid </summary>
+            public const string PropertySequenceRevisionList = "sequencerevisionlist";
+
             /// <summary> Property for Enablement </summary>
             public const string PropertyEnablement = "enablement";
 
@@ -1665,8 +1668,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var fileName = "_" + containerName + ".cshtml";
             CreateClass(headerView,
                         fileName,
-                        TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.View.Entity"),
                         Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+            // Create grid json files
+            foreach (var view in settings.Entities)
+            {
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    fileName = view.Properties[BusinessView.Constants.EntityName] + "Grid.json";
+                    CreateClass(view,
+                                fileName,
+                                TransformTemplateToText(view, settings, "Templates.HeaderDetail.View.GridJson"),
+                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                }
+            }
 
             // Register types
             BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
@@ -1689,7 +1705,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Create the Behavior JavaScript file
             CreateClass(headerView,
                         projectName + "." + containerName + "Behaviour.js",
-                        TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Script.Behaviour"),
                         Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file

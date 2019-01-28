@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
+namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.View
 {
     using System.Linq;
     using System;
@@ -16,9 +16,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+    #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class Entity : EntityBase
+    public partial class GridJson : GridJsonBase
     {
 #line hidden
         /// <summary>
@@ -27,369 +27,211 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
         public virtual string TransformText()
         {
             
-            #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 2 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 3 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 4 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 5 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 6 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 7 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 8 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 9 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 10 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 11 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 12 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 13 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 14 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 15 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 16 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 17 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 18 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 19 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 24 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
-    // Locals
+   
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var resxName = view.Properties[BusinessView.Constants.ResxName];
-    var moduleId = settings.ModuleId;
-    var copyright = settings.Copyright;
-    var companyNamespace = settings.CompanyNamespace;
-    var keyFieldName = view.Keys.FirstOrDefault();
-    var modelName = view.Properties[BusinessView.Constants.ModelName];
-
-    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
-	"Web.Areas." + moduleId : moduleId + ".Web");
 
 
             
             #line default
             #line hidden
-            this.Write("@* ");
+            this.Write("\r\n{\r\n   \"IsSequenceRevisionList\": ");
             
-            #line 38 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
-            
-            #line default
-            #line hidden
-            this.Write(" *@\r\n\r\n@model ");
-            
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            #line 31 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(view.Options[BusinessView.Constants.SeqenceRevisionList]));
             
             #line default
             #line hidden
-            this.Write(".");
+            this.Write(",\r\n   \"GridName\": \"");
             
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 32 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("ViewModel<");
+            this.Write("Grid\",\r\n   \"ReadOnly\": false,\r\n   \"PageSize\": 10,\r\n   \"ColumnDefinitions\": [\r\n\t");
             
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write(">\r\n@using ");
-            
-            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
-            
-            #line default
-            #line hidden
-            this.Write(" = ");
-            
-            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Resources.Forms.");
-            
-            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
-            
-            #line default
-            #line hidden
-            this.Write(@"
+            #line 36 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
-@using Sage.CA.SBS.ERP.Sage300.Common.Resources
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
-@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
-@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
+		PushIndent("    ");	
+		foreach(var field in view.Fields)
+		{
+			if (field.IsKey)
+				continue;
 
-<script type=""text/javascript"">
-    @Html.ConvertToJsVariableUsingNewtonSoft(""");
-            
-            #line 50 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel\", Model)\r\n</script>\r\n\r\n@Html.Partial(\"~/Areas/");
-            
-            #line 53 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write("/Views/");
-            
-            #line 53 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+			WriteLine("{");
+			PushIndent("    ");	
+			WriteLine("\"FieldName\": \"{0}\",", field.ServerFieldName);
+	        WriteLine("\"IsEditable\": {0},",  !field.IsReadOnly && !field.IsCalculated);
+	        WriteLine("\"IsLineNumber\": {0},",  false);
+		    WriteLine("\"HasFinder\": {0},",  false);
+	        WriteLine("\"IsCustomData\": {0},",  false);
+	        WriteLine("\"IsHidden\": {0}",  false);
+			PopIndent();	
+			WriteLine("},");
+		}
+		PopIndent();
+	
             
             #line default
             #line hidden
-            this.Write(@"/Partials/_Localization.cshtml"")
+            this.Write(@"	]
+ }
 
-<div id=""success"" class=""message""></div>
+/*** Example of a field with finder ***/   
+	{
+         ""FieldName"": ""ITEMNO"",
+		 ""HasFinder"": true,
+		 ""IsCustomData"": false,
+         ""Finder"": {
+            ""ViewID"": ""IC0310"",
+            ""ViewOrder"": 0,
+            ""DisplayFieldNames"": [
+               ""ITEMNO"",
+               ""DESC"",
+               ""INACTIVE"",
+               ""ITEMBRKID"",
+               ""CATEGORY"",
+               ""CNTLACCT"",
+               ""STOCKUNIT"",
+               ""DEFPRICLST""
+            ],
+            ""ReturnFieldNames"": [
+               ""ITEMNO""
+            ],
+            ""InitKeyFieldNames"": [
+               ""UNFMTITMNO""
+            ]
+         },
+      }
 
-<div class=""form-screen"">
-    <div id=""message""></div>
-    <header>
-        <section class=""header-group-1"">
-            <div class=""header-wrapper"">
-                <div class=""header-headline"">
-                    @Html.SageHeader1Label(""");
-            
-            #line 63 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("Header\", ");
-            
-            #line 63 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
-            
-            #line default
-            #line hidden
-            this.Write(@".Entity)
-                </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
-                <div class=""header-options"">
-                    @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-                    {
-                        @Html.KoSageButton(""btnNew"", null, new { @value = CommonResx.CreateNew, @id = ""btnNew"", @class = ""btn btn-primary"" })
-                    }
-                </div>
-            </div>
-            <div class=""flag-required"">
-                <span class=""req-option"">@CommonResx.RequiredLegend</span>
-            </div>
-        </section>
-    </header>
+/*** Example of a custom field ***/   
 
-    <div class=""form-group"">
-        <div class=""search-group"">
-            @Html.SageLabelFor(model => model.Data.");
-            
-            #line 81 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(", new { @id = \"lbl");
-            
-            #line 81 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
-                    ".");
-            
-            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(", new { @sagevalue = \"Data.");
-            
-            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @valueUpdate = \"\'input\'\" }, new { @id = \"txt");
-            
-            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
-                    "geButton(\"btnLoad");
-            
-            #line 83 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
-                    "        @Html.KoSageButton(\"btnFinder");
-            
-            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
-            
-            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
-                    "a.");
-            
-            #line 85 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(@")
-        </div>
-    </div>
-    <section class=""footer-group-1"">
-        @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-        {
-            @Html.KoSageButton(""btnSave"", new { }, new { @value = CommonResx.Save, @id = ""btnSave"", @class = ""btn btn-primary"" })
-            @Html.KoSageButton(""btnDelete"", new { }, new { @value = CommonResx.Delete, @id = ""btnDelete"", @class = ""btn btn-primary"" })
-        }
-    </section>
-</div>");
+ {
+		 ""IsCustomData"": true,
+		 ""FieldName"": ""CustomData1"",
+		 ""CustomData"": ""receiptUI.callbackRoutine"",
+ }
+");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+        #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
@@ -471,7 +313,7 @@ if ((settingsValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class EntityBase
+    public class GridJsonBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

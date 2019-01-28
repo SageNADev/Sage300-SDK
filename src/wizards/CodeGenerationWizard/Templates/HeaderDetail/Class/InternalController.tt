@@ -120,18 +120,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         #region Internal methods
 
 		/// <summary>
-        /// Get grid definition for the <#=entityName#> grid
+        /// Get grid definition for a view
         /// </summary>
         /// <returns></returns>
-        internal GridDefinition GetDetailGridDefinition(string jsonFilePath)
+        internal GridDefinition CreateGridDefinition(string rotoId, string jsonFilePath)
         {
-            var <#=entityName#>Grid = new GridDefinition();
+            var grid = new GridDefinition();
             
-            <#=entityName#>Grid.AccpacEntityGUID = _repository.Get<#=entityName#>().Id;
-            IEnumerable<BusinessEntityField> fields = _repository.Get<#=entityName#>().Id.FieldDefinitions;
+            grid.AccpacEntityGUID = _repository.GetBusinessEntity(rotoId).Id;
+            IEnumerable<BusinessEntityField> fields = _repository.GetBusinessEntity(rotoId).Id.FieldDefinitions;
 
-            return GetGridDefinition(<#=entityName#>Grid, jsonFilePath, fields);
-
+            return GetGridDefinition(grid, jsonFilePath, fields);
         }
 
 

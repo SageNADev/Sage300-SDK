@@ -22,50 +22,71 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
-    // Locals
-    var moduleId = settings.ModuleId;
-    var copyright = settings.Copyright;
-    var companyNamespace = settings.CompanyNamespace;
-    var modelName = view.Properties[BusinessView.Constants.ModelName];
+   
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var containerName = settings.EntitiesContainerName;
-
-    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
-	"Web.Areas." + moduleId : moduleId + ".Web");
-    
-    var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 
 #>
-// <#=copyright#>
 
-#region Namespace
-
-using System;
-using System.Collections;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using <#=companyNamespace#>.<#=moduleId#>.Models;
-
-#endregion
-
-namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
 {
-    /// <summary>
-    /// Class for <#=containerName#>ViewModel
-    /// </summary>
-    public class <#=containerName#>ViewModel : ViewModelBase<<#=headerModelName#>>
-    {
-<#
-             PushIndent("        ");
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-					WriteLine("public GridDefinition {0}Grid {{ get; set; }}", view.Properties[BusinessView.Constants.EntityName]);
-				}
-			 }
-             PopIndent();
-#>
-    }
-}
-					
+   "IsSequenceRevisionList": <#=view.Options[BusinessView.Constants.SeqenceRevisionList]#>,
+   "GridName": "<#=entityName#>Grid",
+   "ReadOnly": false,
+   "PageSize": 10,
+   "ColumnDefinitions": [
+	<#
+		PushIndent("    ");	
+		foreach(var field in view.Fields)
+		{
+			if (field.IsKey)
+				continue;
+
+			WriteLine("{");
+			PushIndent("    ");	
+			WriteLine("\"FieldName\": \"{0}\",", field.ServerFieldName);
+	        WriteLine("\"IsEditable\": {0},",  !field.IsReadOnly && !field.IsCalculated);
+	        WriteLine("\"IsLineNumber\": {0},",  false);
+		    WriteLine("\"HasFinder\": {0},",  false);
+	        WriteLine("\"IsCustomData\": {0},",  false);
+	        WriteLine("\"IsHidden\": {0}",  false);
+			PopIndent();	
+			WriteLine("},");
+		}
+		PopIndent();
+	#>
+	]
+ }
+
+/*** Example of a field with finder ***/   
+	{
+         "FieldName": "ITEMNO",
+		 "HasFinder": true,
+		 "IsCustomData": false,
+         "Finder": {
+            "ViewID": "IC0310",
+            "ViewOrder": 0,
+            "DisplayFieldNames": [
+               "ITEMNO",
+               "DESC",
+               "INACTIVE",
+               "ITEMBRKID",
+               "CATEGORY",
+               "CNTLACCT",
+               "STOCKUNIT",
+               "DEFPRICLST"
+            ],
+            "ReturnFieldNames": [
+               "ITEMNO"
+            ],
+            "InitKeyFieldNames": [
+               "UNFMTITMNO"
+            ]
+         },
+      }
+
+/*** Example of a custom field ***/   
+
+ {
+		 "IsCustomData": true,
+		 "FieldName": "CustomData1",
+		 "CustomData": "receiptUI.callbackRoutine",
+ }

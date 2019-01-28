@@ -1294,6 +1294,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Options tab
             chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
             chkGenerateGrid.Checked = businessView.Options[BusinessView.Constants.GenerateGrid];
+            chkSequenceRevisionList.Checked = businessView.Options[BusinessView.Constants.SeqenceRevisionList];
             chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
             chkGenerateClientFiles.Checked = businessView.Options[BusinessView.Constants.GenerateClientFiles];
             chkGenerateIfExist.Checked = businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists];
@@ -1483,6 +1484,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
             businessView.Options[BusinessView.Constants.GenerateGrid] = chkGenerateGrid.Checked;
+            businessView.Options[BusinessView.Constants.SeqenceRevisionList] = chkSequenceRevisionList.Checked;
             businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
             businessView.Options[BusinessView.Constants.GenerateClientFiles] = chkGenerateClientFiles.Checked;
             businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
@@ -1844,6 +1846,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
                 businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
+                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList).Value);
                 businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
                 businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
                 businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyIfExists).Value);
@@ -3150,14 +3153,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
                 _allCompositions.Location = new Point(rect.Location.X + 18, rect.Location.Y + 2);
             }
-            else if (((TabControl)sender).SelectedTab.TabIndex.Equals(2))
-            {
-                // hide grid column if not header detail repo, or the entity has no grid
-                GenericInit(grdEntityFields, 5, 40, "Grid Column", !GetRepositoryType().Equals(RepositoryType.HeaderDetail) || !chkGenerateGrid.Checked, true);
-            }
         }
 
 #endregion
 
-        }
+    }
 }

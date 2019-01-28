@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+    #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewModel : ViewModelBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
         public virtual string TransformText()
         {
             
-            #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 2 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 3 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 4 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 5 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 6 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 7 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 8 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 9 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 10 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 11 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 12 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 13 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 14 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 15 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 16 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 17 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 18 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 19 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 24 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -162,7 +162,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("// ");
             
-            #line 39 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 39 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -171,58 +171,75 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
                     "SBS.ERP.Sage300.Common.Web;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models;\r\nusing" +
                     " ");
             
-            #line 47 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 47 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 47 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 47 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 51 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 51 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 51 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models\r\n{\r\n    /// <summary>\r\n    /// Class for ");
             
-            #line 54 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 54 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel\r\n    /// </summary>\r\n    public class ");
             
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 56 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel : ViewModelBase<");
             
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 56 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
-            this.Write(">\r\n    {\r\n    }\r\n}");
+            this.Write(">\r\n    {\r\n");
+            
+            #line 58 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+
+             PushIndent("        ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("public GridDefinition {0}Grid {{ get; set; }}", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+             PopIndent();
+
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n}\r\n\t\t\t\t\t\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+        #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

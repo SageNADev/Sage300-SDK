@@ -168,6 +168,31 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
             return userAccess;
         }
 
+		/// <summary>
+        /// Get business repository by roto id
+        /// </summary>
+        /// <param name="rotoId"></param>
+        /// <returns></returns>
+        public IBusinessEntity  GetBusinessEntity(string rotoId)
+        {
+<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+                    PushIndent("            ");
+                    WriteLine("if (rotoId == {0}.EntityName)", view.Properties[BusinessView.Constants.EntityName]);
+                    PushIndent("  ");
+                    WriteLine("return _{0};", view.Properties[BusinessView.Constants.EntityName]);
+                    PopIndent();
+                    PopIndent();
+                    }
+                 }
+#>
+
+            throw new ArgumentException();
+        }
+
          /// <summary>
         /// Open and compose business entities
         /// </summary>
