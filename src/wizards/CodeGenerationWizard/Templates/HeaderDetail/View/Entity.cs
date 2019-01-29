@@ -323,25 +323,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             
             #line default
             #line hidden
-            this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n\r\n\t\t\t");
+            this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
+                    "geButton(\"btnLoad");
             
-            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
-
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-					WriteLine("@Html.AccpacGrid(\"{0}Grid\", Model.{0}Grid)",  view.Properties[BusinessView.Constants.EntityName]);
-				}
-			 
-			 }
-			
-            
-            #line default
-            #line hidden
-            this.Write("\r\n            @Html.KoSageButton(\"btnLoad");
-            
-            #line 95 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 83 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -349,29 +334,44 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
                     "        @Html.KoSageButton(\"btnFinder");
             
-            #line 96 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
             
-            #line 96 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
-                    "a.");
+            this.Write("\", @tabindex = \"-1\" })\r\n\r\n            @Html.ValidationMessageFor(model => model.D" +
+                    "ata.");
             
-            #line 97 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 86 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
-            this.Write(@")
-        </div>
-    </div>
+            this.Write(")\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n\t\t\t");
+            
+            #line 91 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("@Html.AccpacGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{0}Grid)",  view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 
+			 }
+			
+            
+            #line default
+            #line hidden
+            this.Write(@"    </div>
+
     <section class=""footer-group-1"">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

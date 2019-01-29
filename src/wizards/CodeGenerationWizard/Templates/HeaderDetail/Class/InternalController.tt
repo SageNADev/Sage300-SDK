@@ -73,6 +73,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
 using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
@@ -125,23 +126,18 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns></returns>
         internal GridDefinition CreateGridDefinition(string rotoId, string jsonFilePath)
         {
-            var grid = new GridDefinition();
-            
-            grid.AccpacEntityGUID = _repository.GetBusinessEntity(rotoId).Id;
-            IEnumerable<BusinessEntityField> fields = _repository.GetBusinessEntity(rotoId).Id.FieldDefinitions;
-
-            return GetGridDefinition(grid, jsonFilePath, fields);
+            return ((BaseRepository)_repository).CreateGridDefinition(rotoId, jsonFilePath);
         }
-
 
         /// <summary>
         /// Create a <#=modelName#>
         /// </summary>
-        /// <returns>JSON object for <#=modelName#></returns>
+        /// <returns>view model for  <#=modelName#></returns>
         internal <#=containerName#>ViewModel Create()
         {
-            var viewModel = GetViewModel(new <#=headerModelName#>(), null);
+            var newData = _repository.CreateNewRecord();
 
+            var viewModel = GetViewModel(newData, null);
             viewModel.UserAccess = GetAccessRights();
 
             return viewModel;

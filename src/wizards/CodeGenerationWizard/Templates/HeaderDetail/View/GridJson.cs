@@ -150,23 +150,53 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n   \"IsSequenceRevisionList\": ");
+            this.Write(@"
+{
+""_comment"": [
+        ""***** example of defining a finder for a grid column *****"",
+        {
+            ""FieldName"": ""ITEMNO"",
+            ""HasFinder"": true,
+            ""IsCustomData"": false,
+            ""Finder"": {
+                ""ViewID"": ""IC0310"",
+                ""ViewOrder"": 0,
+                ""DisplayFieldNames"": [
+                    ""ITEMNO"",
+                    ""DESC"",
+                    ""INACTIVE"",
+                    ""ITEMBRKID"",
+                    ""CATEGORY"",
+                    ""CNTLACCT"",
+                    ""STOCKUNIT"",
+                    ""DEFPRICLST""
+                ],
+                ""ReturnFieldNames"": [
+                    ""ITEMNO""
+                ],
+                ""InitKeyFieldNames"": [
+                    ""UNFMTITMNO""
+                ]
+            }
+        },
+        ""***** example of defining a custom grid column *****"",
+        {
+            ""IsCustomData"": true,
+            ""FieldName"": ""CustomData1"",
+            ""CustomData"": ""receiptUI.callbackRoutine""
+        },
+    ],
+    
+   ""IsSequenceRevisionList"": ");
             
-            #line 31 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(view.Options[BusinessView.Constants.SeqenceRevisionList]));
+            #line 66 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()));
             
             #line default
             #line hidden
-            this.Write(",\r\n   \"GridName\": \"");
+            this.Write(",\r\n   \"ReadOnly\": false,\r\n   \"PageSize\": 10,\r\n   \"ColumnDefinitions\": [\r\n\t");
             
-            #line 32 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("Grid\",\r\n   \"ReadOnly\": false,\r\n   \"PageSize\": 10,\r\n   \"ColumnDefinitions\": [\r\n\t");
-            
-            #line 36 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 70 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
 		PushIndent("    ");	
 		foreach(var field in view.Fields)
@@ -177,11 +207,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
 			WriteLine("{");
 			PushIndent("    ");	
 			WriteLine("\"FieldName\": \"{0}\",", field.ServerFieldName);
-	        WriteLine("\"IsEditable\": {0},",  !field.IsReadOnly && !field.IsCalculated);
-	        WriteLine("\"IsLineNumber\": {0},",  false);
-		    WriteLine("\"HasFinder\": {0},",  false);
-	        WriteLine("\"IsCustomData\": {0},",  false);
-	        WriteLine("\"IsHidden\": {0}",  false);
+	        WriteLine("\"IsEditable\": {0},",  (!field.IsReadOnly && !field.IsCalculated).ToString().ToLower());
+	        WriteLine("\"IsLineNumber\": {0},",  "false");
+		    WriteLine("\"HasFinder\": {0},",  "false");
+	        WriteLine("\"IsCustomData\": {0},",  "false");
+	        WriteLine("\"IsHidden\": {0}",  "false");
 			PopIndent();	
 			WriteLine("},");
 		}
@@ -190,44 +220,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             
             #line default
             #line hidden
-            this.Write(@"	]
- }
-
-/*** Example of a field with finder ***/   
-	{
-         ""FieldName"": ""ITEMNO"",
-		 ""HasFinder"": true,
-		 ""IsCustomData"": false,
-         ""Finder"": {
-            ""ViewID"": ""IC0310"",
-            ""ViewOrder"": 0,
-            ""DisplayFieldNames"": [
-               ""ITEMNO"",
-               ""DESC"",
-               ""INACTIVE"",
-               ""ITEMBRKID"",
-               ""CATEGORY"",
-               ""CNTLACCT"",
-               ""STOCKUNIT"",
-               ""DEFPRICLST""
-            ],
-            ""ReturnFieldNames"": [
-               ""ITEMNO""
-            ],
-            ""InitKeyFieldNames"": [
-               ""UNFMTITMNO""
-            ]
-         },
-      }
-
-/*** Example of a custom field ***/   
-
- {
-		 ""IsCustomData"": true,
-		 ""FieldName"": ""CustomData1"",
-		 ""CustomData"": ""receiptUI.callbackRoutine"",
- }
-");
+            this.Write("\t]\r\n }\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

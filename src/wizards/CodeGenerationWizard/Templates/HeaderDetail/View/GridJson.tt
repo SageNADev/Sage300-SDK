@@ -28,8 +28,42 @@
 #>
 
 {
-   "IsSequenceRevisionList": <#=view.Options[BusinessView.Constants.SeqenceRevisionList]#>,
-   "GridName": "<#=entityName#>Grid",
+"_comment": [
+        "***** example of defining a finder for a grid column *****",
+        {
+            "FieldName": "ITEMNO",
+            "HasFinder": true,
+            "IsCustomData": false,
+            "Finder": {
+                "ViewID": "IC0310",
+                "ViewOrder": 0,
+                "DisplayFieldNames": [
+                    "ITEMNO",
+                    "DESC",
+                    "INACTIVE",
+                    "ITEMBRKID",
+                    "CATEGORY",
+                    "CNTLACCT",
+                    "STOCKUNIT",
+                    "DEFPRICLST"
+                ],
+                "ReturnFieldNames": [
+                    "ITEMNO"
+                ],
+                "InitKeyFieldNames": [
+                    "UNFMTITMNO"
+                ]
+            }
+        },
+        "***** example of defining a custom grid column *****",
+        {
+            "IsCustomData": true,
+            "FieldName": "CustomData1",
+            "CustomData": "receiptUI.callbackRoutine"
+        },
+    ],
+    
+   "IsSequenceRevisionList": <#=view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()#>,
    "ReadOnly": false,
    "PageSize": 10,
    "ColumnDefinitions": [
@@ -43,50 +77,15 @@
 			WriteLine("{");
 			PushIndent("    ");	
 			WriteLine("\"FieldName\": \"{0}\",", field.ServerFieldName);
-	        WriteLine("\"IsEditable\": {0},",  !field.IsReadOnly && !field.IsCalculated);
-	        WriteLine("\"IsLineNumber\": {0},",  false);
-		    WriteLine("\"HasFinder\": {0},",  false);
-	        WriteLine("\"IsCustomData\": {0},",  false);
-	        WriteLine("\"IsHidden\": {0}",  false);
+	        WriteLine("\"IsEditable\": {0},",  (!field.IsReadOnly && !field.IsCalculated).ToString().ToLower());
+	        WriteLine("\"IsLineNumber\": {0},",  "false");
+		    WriteLine("\"HasFinder\": {0},",  "false");
+	        WriteLine("\"IsCustomData\": {0},",  "false");
+	        WriteLine("\"IsHidden\": {0}",  "false");
 			PopIndent();	
 			WriteLine("},");
 		}
 		PopIndent();
 	#>
 	]
- }
-
-/*** Example of a field with finder ***/   
-	{
-         "FieldName": "ITEMNO",
-		 "HasFinder": true,
-		 "IsCustomData": false,
-         "Finder": {
-            "ViewID": "IC0310",
-            "ViewOrder": 0,
-            "DisplayFieldNames": [
-               "ITEMNO",
-               "DESC",
-               "INACTIVE",
-               "ITEMBRKID",
-               "CATEGORY",
-               "CNTLACCT",
-               "STOCKUNIT",
-               "DEFPRICLST"
-            ],
-            "ReturnFieldNames": [
-               "ITEMNO"
-            ],
-            "InitKeyFieldNames": [
-               "UNFMTITMNO"
-            ]
-         },
-      }
-
-/*** Example of a custom field ***/   
-
- {
-		 "IsCustomData": true,
-		 "FieldName": "CustomData1",
-		 "CustomData": "receiptUI.callbackRoutine",
  }

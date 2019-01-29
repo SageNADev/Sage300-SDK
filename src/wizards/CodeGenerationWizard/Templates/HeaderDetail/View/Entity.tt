@@ -80,23 +80,26 @@
         <div class="search-group">
             @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
             @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
+            @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
+            @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
 
+            @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
+        </div>
+    </div>
+
+    <div class="form-group">
 			<#
 			 foreach(var view in settings.Entities)
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					WriteLine("@Html.AccpacGrid(\"{0}Grid\", Model.{0}Grid)",  view.Properties[BusinessView.Constants.EntityName]);
+					WriteLine("@Html.AccpacGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{0}Grid)",  view.Properties[BusinessView.Constants.EntityName]);
 				}
 			 
 			 }
 			#>
-
-            @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
-            @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
-        </div>
     </div>
+
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

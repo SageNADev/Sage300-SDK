@@ -358,7 +358,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("()) != \"\") {\r\n                ");
+            this.Write("()) !== \"\") {\r\n                ");
             
             #line 96 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));

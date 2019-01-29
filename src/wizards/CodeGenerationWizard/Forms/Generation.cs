@@ -1917,10 +1917,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Create XML if Step is Generate
                     if (IsCurrentPanel(Constants.PanelGenerateCode))
                     {
-                        //_xmlEntities = BuildXDocument();
+                        _xmlEntities = BuildXDocument();
 
-                        _xmlEntities = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
-                        ParseXml(@"C:\AAA\apdistributionsetschema.xml");
+                        //_xmlEntities = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
+                        //ParseXml(@"C:\AAA\apdistributionsetschema.xml");
 
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
 

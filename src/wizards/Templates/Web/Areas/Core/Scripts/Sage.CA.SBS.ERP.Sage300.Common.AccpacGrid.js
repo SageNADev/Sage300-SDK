@@ -19,9 +19,8 @@ var accpacGrid = function () {
         accpacGridValid = {},
         accpacGridDataChanged = {},
         accpacGridSkipChange = {},
-        accpacGridPageSize = {},
         accpacGridReadOnlyColumns = {},
-        accpacGridUniqueGuidId = {};
+        accpacGridList = [];
 
     function accpacGridToolbarDelete(gridName) {
         var grid = $("#" + gridName).data("kendoGrid");
@@ -158,7 +157,16 @@ var accpacGrid = function () {
     function editColumnSettings(gridName) {
         var grid = $("#" + gridName).data("kendoGrid");
         var btnEditElement = $("#" + gridName + " .k-grid-toolbar .btn-edit-column");
-        GridPreferencesHelper.initialize('#' + gridName, accpacGridUniqueGuidId[gridName], $(btnEditElement), grid.columns);
+        GridPreferencesHelper.initialize('#' + gridName, window[gridName + "Model"].UserPreferencesUniqueId, $(btnEditElement), grid.columns);
+    }
+
+    function setInsertNewLine(gridName) {
+        delete accpacGridLastRowNumber[gridName];
+        accpacGridLastRowStatus[gridName] === accpacGridLastRowStatusEnum.NONE;
+        accpacGridValid[gridName] = true;
+        accpacGridNewLine[gridName] = false;
+        accpacGridDataChanged[gridName] = false;
+        //window.postMessage({ "action": "AddLine", "gridName": gridName }, window.location);
     }
 
     function receiveMessage(event) {
@@ -190,8 +198,35 @@ var accpacGrid = function () {
                 accpacGridLastRowStatus[gridName] === accpacGridLastRowStatusEnum.NONE;
                 accpacGridValid[gridName] = true;
                 accpacGridNewLine[gridName] = false;
+                //window.postMessage({ "action": "AddLine", "gridName": gridName }, window.location);
             }
         });
+    }
+
+    function commitGrid(gridName) {
+        if (!accpacGridNewLine[gridName]) {
+            return true;
+        }
+        var grid = $("#" + gridName).data("kendoGrid");
+        var data = { 'viewID': $("#" + gridName).attr('viewID') };
+        var rowIndex = grid.select().index();
+        if (rowIndex < 0) {
+            return true;
+        }
+        data.Data = grid._data[rowIndex];
+        var url = sg.utls.url.buildUrl("Core", "Grid", "Insert");
+        sg.utls.ajaxPostSync(url, data, function (jsonResult) {
+            // if failure, set the focus to the failed cell
+            if (jsonResult.UserMessage.Errors || jsonResult.UserMessage.Warning) {
+                sg.utls.showMessage(jsonResult);
+                setEditCell(grid, grid.select().index(), accpacGridLastColField[gridName]);
+                accpacGridValid[gridName] = false;
+                accpacGridDataChanged[gridName] = true;
+            } else {
+                setInsertNewLine(gridName);
+            }
+        });
+        return accpacGridValid[gridName];
     }
 
     function init(gridName) {
@@ -204,7 +239,6 @@ var accpacGrid = function () {
         var delTemplate = kendo.format(btnTemplate, 'btn-delete', 'accpacGrid.deleteLine(&quot;' + gridName + '&quot;)', 'Delete Line');
         var editTemplate = kendo.format(btnTemplate, 'btn-edit-column', 'accpacGrid.editColumnSettings(&quot;' + gridName + '&quot;)', 'Column Settings');
 
-        accpacGridUniqueGuidId[gridName] = model.UserPreferencesUniqueId;
         accpacGridSetDefaultRow[gridName] = true;
         accpacGridLastRowNumber[gridName] = -1;
         accpacGridLastColField[gridName] = "";
@@ -214,8 +248,9 @@ var accpacGrid = function () {
         accpacGridValid[gridName] = true;
         accpacGridDataChanged[gridName] = false;
         accpacGridSkipChange[gridName] = false;
-        accpacGridPageSize[gridName] = model.PageSize || 10;
         accpacGridReadOnlyColumns[gridName] = [];
+
+        if (accpacGridList.indexOf(gridName) < 0) { accpacGridList.push(gridName);}
 
         $("#" + gridName).kendoGrid({
             height: model.Height || 450,
@@ -237,7 +272,7 @@ var accpacGrid = function () {
 
             change: function (e) {
                 var grid = $("#" + gridName).data("kendoGrid");
-                var selectedIndex = grid.select().index() % accpacGridPageSize[gridName];
+                var selectedIndex = grid.select().index();
 
                 if (accpacGridSkipChange[gridName]) {
                     accpacGridSkipChange[gridName] = false;
@@ -271,6 +306,7 @@ var accpacGrid = function () {
                             accpacGridLastRowStatus[gridName] === accpacGridLastRowStatusEnum.NONE;
                             accpacGridNewLine[gridName] = false;
                             accpacGridValid[gridName] = true;
+                            //window.postMessage({ "action": "AddLine", "gridName": gridName }, window.location);
                         }
                     });
                 }
@@ -281,7 +317,6 @@ var accpacGrid = function () {
             },
 
             dataBound: function (e) {
-                //select the first row
                 var grid = $("#" + gridName).data("kendoGrid");
                 var pageSize = grid.dataSource.pageSize() -1;
                 if (accpacGridSetDefaultRow[gridName]) {
@@ -301,7 +336,7 @@ var accpacGrid = function () {
             },
 
             pageable: {
-                pageSize: accpacGridPageSize[gridName],
+                pageSize: model.PageSize || 10,
                 numeric: false,
                 buttonCount: 1,
                 input: true
@@ -332,8 +367,12 @@ var accpacGrid = function () {
                         accpacGridDataChanged[gridName] = true;
                     }
                     if (e.action === "itemchange") {
-                        // we need to send the changed column to the server side
+                        // we need to send the changed column to the server side except custom data
                         e.preventDefault();
+                        var col = grid.columns.filter(function (c) { return c.field === e.field; })[0];
+                        if (col.isCustomData) {
+                            return;
+                        }
                         var currentRowGrid = sg.utls.kndoUI.getRowByKey(grid.dataSource.data(), "KendoGridAccpacViewPrimaryKey", e.items[0]["KendoGridAccpacViewPrimaryKey"]);
                         var model = e.items[0];
                         var data = { 'Data': e.items[0], 'viewID': $("#" + gridName).attr('viewID'), 'ChangedField': e.field };
@@ -341,7 +380,6 @@ var accpacGrid = function () {
 
                         sg.utls.ajaxPostSync(url, data, function (jsonResult) {
                             if (jsonResult && jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
-                                // reset the row status
                                 if (accpacGridLastRowStatus[gridName] === accpacGridLastRowStatusEnum.UPDATE) {
                                     accpacGridLastRowStatus[gridName] = accpacGridLastRowStatusEnum.NONE;
                                 }
@@ -360,6 +398,7 @@ var accpacGrid = function () {
                                 var row = sg.utls.kndoUI.getRowForDataItem(currentRowGrid);
                                 grid.select(row);
                                 setNextEditCell(grid, model, row, index + 1);
+                                //window.postMessage({ "action": "UpdateLine", "gridName": gridName }, window.location);
                             }
 
                             if (jsonResult.UserMessage.Errors || jsonResult.UserMessage.Warning) {
@@ -437,17 +476,15 @@ var accpacGrid = function () {
                         page = totalPage;
                     }
                 }
-                
-                window.postMessage({ action: "saveGridActiveRow", gridName: gridName }, window.location);
-                setTimeout(() => {
-                    if (accpacGridValid[gridName]) {
-                        grid.dataSource.page(page);
-                    }
-                }, 100);
-            }
-            if (!accpacGridValid[gridName]) {
-                e.preventDefault();
-                e.stopPropagation();
+
+                commit();
+
+                if (accpacGridValid[gridName]) {
+                    grid.dataSource.page(page);
+                } else {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
             }
         }
 
@@ -558,7 +595,7 @@ var accpacGrid = function () {
                 }
             } else {
                 var paramValues = InquiryGeneralViewModel.Ids;
-                for (var i = 0; i < length; i++) {
+                for (i = 0; i < length; i++) {
                     var fieldName = params[i].Field;
                     var paramValue;
                     if (fieldName.indexOf('{') === 0 && fieldName.indexOf('}') > 1) {
@@ -600,6 +637,13 @@ var accpacGrid = function () {
         if (type === "date" || type === "datetime") {
             template = kendo.format(datetimeTemplate, col.field);
         }
+
+        if (col.isCustomData) {
+            var key = getFuntion(col.CustomData)(true);
+            if (key) {
+                template = kendo.format('#= {0}(false, data.{1}, true) #', getFuntion(col.CustomData), key);
+            }
+        }
         return template;
     }
 
@@ -615,7 +659,7 @@ var accpacGrid = function () {
             var list = column.PresentationList;
             var attr = numbers.indexOf(datType) > -1 && list === null ? "align-right " : "align-left ";
             col.title = column.ColumnName;
-            col.field = column.AccpacFieldName;
+            col.field = column.FieldName;
             col.dataType = datType;
             col.width = column.Width || 180;
             col.headerWidth = col.width;
@@ -628,6 +672,8 @@ var accpacGrid = function () {
             col.finder = column.Finder;
             col.drillDownUrl = column.DrillDownUrl;
             col.isLineNumber = column.IsLineNumber;
+            col.isCustomData = column.IsCustomData;
+            col.CustomData = column.CustomData;
             col.template = column.Template || getColumnTemplate(col, gridName);
             col.editor = function (container, options) {
                 return getColumnEditor(container, options, columns, gridName);
@@ -670,10 +716,10 @@ var accpacGrid = function () {
         var maskProps = getTextBoxProps(mask);
         var className = maskProps.class;
         var maxlength = maskProps.maxLength;
-        var txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" maxlength="{1}" class="{2}"/></div>';
+        var txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="txtGridCol{0}" maxlength="{1}" class="{2}"/></div>';
         var txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>';
         var html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId);
-
+       
         $(html).appendTo(container);
         finder.viewID = finder.ViewID;
         finder.viewOrder = finder.ViewOrder;
@@ -704,9 +750,31 @@ var accpacGrid = function () {
             }
             return filter;
         }
-        function onFinderSelected(options, value) {
-            options.model.set(options.field, value[Object.keys(value)[0]]);
+
+        function setCustomFinderValue(options, col, returnValue) {
+            var callback = getFuntion(col.CustomData);
+            var key = callback(true);
+            var rowId = options.model[key];
+            callback(false, rowId, false, returnValue, field);
+            var grid = $("#" + gridName).data("kendoGrid");
+            if (grid) {
+                var rowIndex = grid.select().index();
+                grid.refresh();
+                setTimeout(function () {
+                    grid.select("tr:eq(" + rowIndex + ")");
+                    setEditCell(grid, rowIndex, options.field);
+                }, 50);
+            }
         }
+
+        function onFinderSelected(options, col, value) {
+            var returnValue = value[Object.keys(value)[0]];
+            options.model.set(options.field, returnValue);
+            if (col.IsCustomData && col.CustomData) {
+                setCustomFinderValue(options, col, returnValue);
+            }
+        }
+
         function onFinderCancel(options) {
             var grid = $("#" + gridName).data("kendoGrid");
             if (grid) {
@@ -714,8 +782,7 @@ var accpacGrid = function () {
                 setEditCell(grid, rowIndex, options.field);
             }
         }
-
-        sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
+        sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
         accpacGridLastColField[gridName] = options.field;
     }
 
@@ -729,30 +796,36 @@ var accpacGrid = function () {
         accpacGridLastColField[gridName] = field;
     }
 
-    function dropdownEditor(container, options, presentationList, gridName) {
+    function dropdownEditor(container, options, presentationList, gridName, isCustom) {
         var field = options.field;
+        var html = '<input name="' + field + '" />';
         if (options.model[field] === true) {
             options.model[field] = "True";
         }
         if (options.model[field] === false) {
             options.model[field] = "False";
         }
-        $('<input name="' + field + '" />')
-            .appendTo(container)
-            .kendoDropDownList({
-                dataTextField: "Text",
-                dataValueField: "Value",
-                dataSource: presentationList
-            });
-
+        if (isCustom) {
+            $(html).appendTo(container)
+                .kendoDropDownList({
+                    dataSource: presentationList
+                });
+        } else {
+            $(html).appendTo(container)
+                .kendoDropDownList({
+                    dataTextField: "Text",
+                    dataValueField: "Value",
+                    dataSource: presentationList
+                });
+        }
         accpacGridLastColField[gridName] = field;
     }
 
     function textEditor(container, options, col, gridName) {
         var mask = col.PresentationMask;
-        var maskProps = getTextBoxProps(mask);
-        var className = maskProps.class;
-        var maxlength = maskProps.maxLength;
+        var maskProps = mask ? getTextBoxProps(mask) : "";
+        var className = maskProps ? maskProps.class : "";
+        var maxlength = maskProps ? maskProps.maxLength : 64;
         var field = options.field;
         var html = kendo.format('<input type="text" name="{0}" class="{1}" maxlength="{2}"/>', field, className, maxlength);
 
@@ -771,9 +844,6 @@ var accpacGrid = function () {
             format: "n" + precision,
             spinners: false,
             decimals: precision
-            //change: function (e) {
-            //    options.model.set(field, e.sender.value() );
-            //}
         });
         sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, 16);
         accpacGridLastColField[gridName] = field;
@@ -783,11 +853,53 @@ var accpacGrid = function () {
         sg.utls.kndoUI.nonEditable($('#' + gridName).data("kendoGrid"), container);
     }
 
+    function customEditor(container, options, col, gridName) {
+        function onChange(rowId, field, e) {
+            e.preventDefault();
+            e.stopPropagation();
+            callback(false, rowId, false, e.target.value, field);
+        }
+        
+        var callback = getFuntion(col.CustomData);
+        var key = callback(true);
+        var rowId = options.model[key];
+        var customCol = callback(false, rowId, false);
+        var value = customCol.Value;
+        var colDef = customCol.ColumnDef || col;
+        var field = options.field;
+
+        if (!colDef.IsEditable) {
+            return;
+        }
+
+        options.model[field] = value;
+        $(this).val(value);
+
+        if (colDef.PresentationList) {
+            dropdownEditor(container, options, colDef.PresentationList, gridName, true);
+        } else if (colDef.Finder) {
+            col.Finder = colDef.Finder;
+            finderEditor(container, options, col, gridName);
+        } else if (colDef.DataType === "Decimal") {
+            numericEditor(container, options, col.Precision || 3, gridName);
+        } else if (colDef.DataType === "DateTime") {
+            dateEditor(container, options, gridName);
+        } else {
+            textEditor(container, options, col, gridName);
+        } 
+        $(kendo.format("input[name='{0}']", field)).on("change", onChange.bind(null, rowId, field));
+        accpacGridLastColField[gridName] = field;
+    }
+
     function getColumnEditor(container, options, columns, gridName) {
         var numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"];
         var field = options.model.fields[options.field];
-        var dataType = field.type.toLowerCase();
-        var col = columns.filter(function (c) { return c.AccpacFieldName === options.field; })[0];
+        var dataType = Array.isArray(columns) ? field.type.toLowerCase(): columns.DataType;
+        var col = Array.isArray(columns) ? columns.filter(function (c) { return c.FieldName === options.field; })[0] : columns;
+
+        if (col.IsCustomData) {
+            return customEditor(container, options, col, gridName);
+        }
 
         if (col.HasFinder) {
             return col.Finder ? finderEditor(container, options, col, gridName) : null;
@@ -818,7 +930,7 @@ var accpacGrid = function () {
         return accpacGridValid[gridName];
     }
 
-    function dataChanged(gridName) {
+    function isDirty(gridName) {
         return accpacGridDataChanged[gridName];
     }
 
@@ -869,7 +981,19 @@ var accpacGrid = function () {
         return grid.dataItem(grid.select());
     }
 
-    function refreshGrid(gridName) {
+    function commit() {
+        var result = true;
+        for (var i = 0, length = accpacGridList.length; i < length; i++) {
+            var gridName = accpacGridList[i];
+            result = commitGrid(gridName);
+            if (!result) {
+                break;
+            }
+        }
+        return result;
+    }
+
+    function refresh(gridName) {
         var grid = $("#" + gridName).data("kendoGrid");
         grid.dataSource.read();
     }
@@ -887,7 +1011,8 @@ var accpacGrid = function () {
         setGridReadOnly: setGridReadOnly,
         setColumnsReadOnly: setColumnsReadOnly, 
         valid: valid,
-        dataChanged: dataChanged,
-        refreshGrid: refreshGrid
+        isDirty: isDirty,
+        commit: commit,
+        refresh: refresh
     };
 }();

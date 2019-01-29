@@ -370,7 +370,7 @@ using ");
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					WriteLine("viewModel.{1}Grid = ControllerInternal.CreateGridDefinition(\"{0}\", GetGridJsonFilePath(\"{1}Grid\"));", view.Properties[BusinessView.Constants.ViewId],  view.Properties[BusinessView.Constants.EntityName]);
+					WriteLine("ViewBag.{1}Grid = ControllerInternal.CreateGridDefinition(\"{0}\", GetGridJsonFilePath(\"{1}Grid\"));", view.Properties[BusinessView.Constants.ViewId],  view.Properties[BusinessView.Constants.EntityName]);
 				}
 			 }
 			

@@ -55,17 +55,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
     /// </summary>
     public class <#=containerName#>ViewModel : ViewModelBase<<#=headerModelName#>>
     {
-<#
-             PushIndent("        ");
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-					WriteLine("public GridDefinition {0}Grid {{ get; set; }}", view.Properties[BusinessView.Constants.EntityName]);
-				}
-			 }
-             PopIndent();
-#>
     }
 }
 					

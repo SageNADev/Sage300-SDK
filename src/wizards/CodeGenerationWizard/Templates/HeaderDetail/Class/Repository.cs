@@ -456,38 +456,14 @@ using ");
             return userAccess;
         }
 
-		/// <summary>
-        /// Get business repository by roto id
+         /// <summary>
+        /// Open and compose business entities
         /// </summary>
-        /// <param name=""rotoId""></param>
-        /// <returns></returns>
-        public IBusinessEntity  GetBusinessEntity(string rotoId)
+        protected override void CreateBusinessEntities()
         {
 ");
             
-            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
-
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-                    PushIndent("            ");
-                    WriteLine("if (rotoId == {0}.EntityName)", view.Properties[BusinessView.Constants.EntityName]);
-                    PushIndent("  ");
-                    WriteLine("return _{0};", view.Properties[BusinessView.Constants.EntityName]);
-                    PopIndent();
-                    PopIndent();
-                    }
-                 }
-
-            
-            #line default
-            #line hidden
-            this.Write("\r\n            throw new ArgumentException();\r\n        }\r\n\r\n         /// <summary>" +
-                    "\r\n        /// Open and compose business entities\r\n        /// </summary>\r\n      " +
-                    "  protected override void CreateBusinessEntities()\r\n        {\r\n");
-            
-            #line 201 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 176 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
            // open all the entities
             foreach (var ent in xmlEntities.Root.Descendants().Where(e => e.Name == "entity"))
@@ -507,7 +483,7 @@ using ");
             #line hidden
             this.Write("        }\r\n");
             
-            #line 216 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 191 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
     var headerEntity = rotoId2EntityName[settings.HeaderNode.Attribute("view").Value];
 
@@ -517,7 +493,7 @@ using ");
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Get ");
             
-            #line 222 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 197 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
@@ -526,21 +502,21 @@ using ");
                     "Key\">data type of the primary key</typeparam>\r\n        /// <param name=\"id\">key " +
                     "value</param>\r\n        /// <returns>");
             
-            #line 226 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 201 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 227 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 202 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" GetById<TKey>(TKey id)\r\n        {\r\n");
             
-            #line 229 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 204 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
 
 var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]);
@@ -551,203 +527,203 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             #line hidden
             this.Write("            CheckRights(");
             
-            #line 234 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 209 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Inquire);\r\n\r\n            var fields = GetKeyField(");
             
-            #line 236 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 211 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n\r\n            ");
             
-            #line 238 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 213 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".SetValue(fields[0].ID, id);\r\n\r\n            return !");
             
-            #line 240 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Read(false) ? null : ");
             
-            #line 240 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 240 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n       /// <summary>\r\n        /// Save ");
             
-            #line 244 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 219 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
             
-            #line 246 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 221 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" model</param>\r\n        /// <returns>");
             
-            #line 247 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 222 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 248 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 223 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Save(");
             
-            #line 248 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 223 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model)\r\n        {\r\n            CheckRights(");
             
-            #line 250 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 225 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Modify);\r\n\r\n            ");
             
-            #line 252 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 227 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(model, ");
             
-            #line 252 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 227 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n            ");
             
-            #line 253 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 228 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Update();\r\n            \r\n            return ");
             
-            #line 255 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 230 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 255 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 230 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Add ");
             
-            #line 259 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 234 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
             
-            #line 261 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 236 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" model</param>\r\n        /// <returns>");
             
-            #line 262 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 237 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 263 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 238 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Add(");
             
-            #line 263 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 238 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model)\r\n        {\r\n            CheckRights(");
             
-            #line 265 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 240 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Add);\r\n\r\n            ");
             
-            #line 267 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 242 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(model, ");
             
-            #line 267 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 242 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n            ");
             
-            #line 268 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 243 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Insert();\r\n            \r\n            return ");
             
-            #line 270 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 245 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 270 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 245 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Delete ");
             
-            #line 274 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 249 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
@@ -755,35 +731,35 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"filter\">filter for dele" +
                     "ting a record</param>\r\n        /// <returns></returns>\r\n        public ");
             
-            #line 278 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 253 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Delete(Expression<Func<");
             
-            #line 278 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 253 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", Boolean>> filter)\r\n        {\r\n            CheckRights(");
             
-            #line 280 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 255 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Delete);\r\n            if (Search(");
             
-            #line 281 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 256 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", filter))\r\n            {\r\n                ");
             
-            #line 283 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 258 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
@@ -792,14 +768,63 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
                     " ExceptionHelper.RowNotFoundException(CommonResx.DeleteFailedNoRecordMessage);\r\n" +
                     "            }\r\n            return ");
             
-            #line 289 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 264 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 289 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 264 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Creates a new ");
+            
+            #line 268 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(" record\r\n        /// </summary>\r\n        /// <returns>");
+            
+            #line 270 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(" viewModel</returns>\r\n        public ");
+            
+            #line 271 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" CreateNewRecord()\r\n        {\r\n            CheckRights(");
+            
+            #line 273 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(", SecurityType.Add);\r\n            ");
+            
+            #line 274 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(".Init();\r\n            return ");
+            
+            #line 275 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
+            
+            #line default
+            #line hidden
+            this.Write(".Map(");
+            
+            #line 275 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
@@ -821,7 +846,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
         {
 ");
             
-            #line 304 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 290 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
             // create all business entity properties
             foreach (var node in settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
@@ -874,7 +899,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 349 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+        #line 335 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
         void ComposeChildren(XElement node, Dictionary<string, string> rotoId2EntityVarName)
         {

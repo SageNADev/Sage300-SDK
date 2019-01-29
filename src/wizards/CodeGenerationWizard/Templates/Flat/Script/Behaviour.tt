@@ -92,7 +92,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         // Key field change event
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
-            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
                 <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
             }
         });

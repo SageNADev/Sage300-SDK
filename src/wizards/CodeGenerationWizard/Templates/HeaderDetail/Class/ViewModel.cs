@@ -218,24 +218,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             
             #line default
             #line hidden
-            this.Write(">\r\n    {\r\n");
-            
-            #line 58 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
-
-             PushIndent("        ");
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-					WriteLine("public GridDefinition {0}Grid {{ get; set; }}", view.Properties[BusinessView.Constants.EntityName]);
-				}
-			 }
-             PopIndent();
-
-            
-            #line default
-            #line hidden
-            this.Write("    }\r\n}\r\n\t\t\t\t\t\r\n");
+            this.Write(">\r\n    {\r\n    }\r\n}\r\n\t\t\t\t\t\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

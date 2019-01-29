@@ -178,9 +178,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             
             #line default
             #line hidden
-            this.Write(".Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;\r\nusing Sage" +
-                    ".CA.SBS.ERP.Sage300.Common.Interfaces.Service;\r\nusing System.Linq.Expressions;\r\n" +
-                    "using System;\r\n\r\n#endregion\r\n\r\nnamespace ");
+            this.Write(@".Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+using System.Linq.Expressions;
+using System;
+#endregion
+
+namespace ");
             
             #line 48 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
@@ -310,9 +316,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             
             #line default
             #line hidden
-            this.Write(", Boolean>> filter);\r\n\r\n\t\t /// <summary>\r\n        /// Get Business Entity by roto" +
-                    "id\r\n        /// </summary>\r\n        /// <returns>business entity</returns>\r\n    " +
-                    "    IBusinessEntity GetBusinessEntity(string rotoId);\r\n    }\r\n}\r\n");
+            this.Write(", Boolean>> filter);\r\n\r\n        /// <summary>\r\n        /// Creates a new ");
+            
+            #line 85 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" record\r\n        /// </summary>\r\n        /// <returns>");
+            
+            #line 87 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" viewModel</returns>\r\n        ");
+            
+            #line 88 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\RepositoryInterface.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
+            
+            #line default
+            #line hidden
+            this.Write(" CreateNewRecord();\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

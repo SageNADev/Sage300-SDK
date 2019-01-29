@@ -57,10 +57,23 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method init
 	 */
     init: function () {
-    <#=localEntityName#>UI.initButtons();
-    <#=localEntityName#>UI.initFinders();
-    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
-    <#=localEntityName#>UISuccess.setkey();
+        // initialize grid(s)
+<#
+             PushIndent("        ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("accpacGrid.init(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 
+			 }
+             PopIndent();
+#>
+        <#=localEntityName#>UI.initButtons();
+        <#=localEntityName#>UI.initFinders();
+        <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
+        <#=localEntityName#>UISuccess.setkey();
     },
 
 	/**
@@ -92,7 +105,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         // Key field change event
         $("#txt<#=keyFieldName#>").bind('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
-            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
                 <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
             }
         });
@@ -202,6 +215,20 @@ var <#=localEntityName#>UISuccess = {
                 modelData.UIMode(sg.utls.OperationMode.NEW);
             }
             <#=localEntityName#>UISuccess.setkey();
+
+<#
+             PushIndent("            ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("accpacGrid.refresh(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 
+			 }
+             PopIndent();
+#>
+
         }
     },
 
@@ -277,6 +304,18 @@ var <#=localEntityName#>UISuccess = {
                 // 
             }
         }
+<#
+        PushIndent("        ");
+		foreach(var view in settings.Entities)
+		{
+		    if (view.Options[BusinessView.Constants.GenerateGrid])
+			{
+				WriteLine("accpacGrid.refresh(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+			}
+			 
+		}
+        PopIndent();
+#>
     },
 
 	/**

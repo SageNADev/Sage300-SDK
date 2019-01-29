@@ -204,93 +204,94 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using ");
             
-            #line 76 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 77 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 76 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 77 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.BusinessRepository;\r\nusing ");
             
-            #line 77 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 78 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 77 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 78 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\nusing ");
             
-            #line 78 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 79 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 78 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 79 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 79 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 80 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 79 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 80 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 83 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 83 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 86 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 87 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Internal Controller\r\n    /// </summary>\r\n    public class ");
             
-            #line 88 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 89 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal : ImportExportControllerInternal<I");
             
-            #line 88 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 89 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -299,7 +300,7 @@ using ");
                     "mmary>\r\n        /// Variable for storing context.\r\n        /// </summary>\r\n     " +
                     "   private readonly Context _context;\r\n\r\n        private I");
             
-            #line 97 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 98 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -307,7 +308,7 @@ using ");
             this.Write("Repository _repository\r\n        {\r\n            get {\r\n                return _con" +
                     "text.Container.Resolve<I");
             
-            #line 100 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 101 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -316,7 +317,7 @@ using ");
                     "}\r\n\r\n        #endregion\r\n\r\n        #region Constructor\r\n\r\n        /// <summary>\r" +
                     "\n        /// New instance of <see cref=\"");
             
-            #line 109 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 110 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -324,7 +325,7 @@ using ");
             this.Write("ControllerInternal\"/>\r\n        /// </summary>\r\n        /// <param name=\"context\">" +
                     "Context</param>\r\n        public ");
             
-            #line 112 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 113 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -345,69 +346,66 @@ using ");
         /// <returns></returns>
         internal GridDefinition CreateGridDefinition(string rotoId, string jsonFilePath)
         {
-            var grid = new GridDefinition();
-            
-            grid.AccpacEntityGUID = _repository.GetBusinessEntity(rotoId).Id;
-            IEnumerable<BusinessEntityField> fields = _repository.GetBusinessEntity(rotoId).Id.FieldDefinitions;
-
-            return GetGridDefinition(grid, jsonFilePath, fields);
+            return ((BaseRepository)_repository).CreateGridDefinition(rotoId, jsonFilePath);
         }
-
 
         /// <summary>
         /// Create a ");
             
-            #line 138 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 133 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("\r\n        /// </summary>\r\n        /// <returns>JSON object for ");
+            this.Write("\r\n        /// </summary>\r\n        /// <returns>view model for  ");
             
-            #line 140 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 135 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 141 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 136 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
-            this.Write("ViewModel Create()\r\n        {\r\n            var viewModel = GetViewModel(new ");
+            this.Write(@"ViewModel Create()
+        {
+            var newData = _repository.CreateNewRecord();
+
+            var viewModel = GetViewModel(newData, null);
+            viewModel.UserAccess = GetAccessRights();
+
+            return viewModel;
+        }
+
+        /// <summary>
+        /// Get a ");
             
-            #line 143 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
-            
-            #line default
-            #line hidden
-            this.Write("(), null);\r\n\r\n            viewModel.UserAccess = GetAccessRights();\r\n\r\n          " +
-                    "  return viewModel;\r\n        }\r\n\r\n        /// <summary>\r\n        /// Get a ");
-            
-            #line 151 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 147 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 153 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 149 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 154 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 150 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 155 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 151 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -417,35 +415,35 @@ using ");
                     "urn GetViewModel(data, userMessage);\r\n        }\r\n        /// <summary>\r\n        " +
                     "/// Add a ");
             
-            #line 163 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 159 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 165 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 161 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 166 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 162 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 167 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 163 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Add(");
             
-            #line 167 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 163 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -454,21 +452,21 @@ using ");
                     " var userMessage = new UserMessage(data,\r\n                string.Format(CommonRe" +
                     "sx.AddSuccessMessage, ");
             
-            #line 172 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 168 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 172 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 168 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", data.");
             
-            #line 172 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 168 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -476,35 +474,35 @@ using ");
             this.Write("));\r\n\r\n            return GetViewModel(data, userMessage);\r\n       }\r\n\r\n        /" +
                     "// <summary>\r\n        /// Update a ");
             
-            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 174 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 180 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 176 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 181 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 177 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 182 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Save(");
             
-            #line 182 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 178 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
@@ -520,49 +518,49 @@ using ");
         /// <summary>
         /// Delete a ");
             
-            #line 191 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 187 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 193 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 189 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 194 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 190 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        internal ");
             
-            #line 195 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 191 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel Delete(string id)\r\n        {\r\n\t\t\tExpression<Func<");
             
-            #line 197 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 193 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", bool>> filter = param => param.");
             
-            #line 197 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 193 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(" == ");
             
-            #line 197 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 193 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(convertId));
             
             #line default
@@ -571,21 +569,21 @@ using ");
                     "serMessage(data,\r\n                string.Format(CommonResx.DeleteSuccessMessage," +
                     " ");
             
-            #line 200 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 196 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 200 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 196 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", data.");
             
-            #line 200 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 196 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -594,49 +592,49 @@ using ");
                     "#endregion\r\n\r\n        #region Private methods\r\n\r\n        /// <summary>\r\n        " +
                     "/// Generic routine to return a view model for ");
             
-            #line 210 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 206 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 212 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 208 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <param name=\"userMessage\">User Message for ");
             
-            #line 213 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 209 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>View Model for ");
             
-            #line 214 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 210 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        private ");
             
-            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 211 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel GetViewModel(");
             
-            #line 215 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 211 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model, UserMessage userMessage)\r\n        {\r\n            return new ");
             
-            #line 217 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
+            #line 213 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
