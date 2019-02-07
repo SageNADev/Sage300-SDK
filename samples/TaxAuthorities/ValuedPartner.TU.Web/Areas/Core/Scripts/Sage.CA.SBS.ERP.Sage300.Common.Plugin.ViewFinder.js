@@ -267,9 +267,12 @@
                 CalculatePageCount: true
             };
 
+<<<<<<< HEAD
             if (that.options.finderProperties.CalculatePageCount)
                 finderOptions.CalculatePageCount = that.options.finderProperties.CalculatePageCount;
 
+=======
+>>>>>>> ac653f9a5d804debd2cb3ac1331e9bf7fc077b80
             // set the initial key values if caller asks so
             if (that.options.finderProperties.parentValAsInitKey !== null &&
                 that.options.finderProperties.parentValAsInitKey &&
