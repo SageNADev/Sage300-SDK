@@ -16,7 +16,7 @@
         getFinderSettings: function(moduleId, moduleAction) {
 			return sg.viewFinderProperties[moduleId][moduleAction];
         },
-
+        
         /**
          * @name initFinder
          * @desc Generic routine to initialize an individual finder
@@ -27,21 +27,11 @@
          *                          selected item
          *                       2. Callback when finder item selected                                              
          * @param {object} properties - Object containing various settings for the finder
-         * @param {object} filter = "" | The optional filter used to filter the finder results
-         * @param {number} height = null | The optional height of the finder window
-         * @param {number} top = null | The optional top location of the finder window
+         * @param {object} filter - The optional filter used to filter the finder results
+         * @param {number} height - The optional height of the finder window
+         * @param {number} top - The optional top location of the finder window
          */
-        initFinder: function(id, parent, properties, filter = "", height = null, top = null) {
-
-            var isFunction = function (param) {
-                return typeof param === "function";
-            };
-
-            // If parent is NOT a callback, set the initKeyValues
-            var initKeyValues = null;
-            if (isFunction(parent) === false) {
-                initKeyValues = [$("#" + parent).val()];
-            }
+        initFinder: function(id, parent, properties, filter, height, top) {
 
             let initFinder = function (viewFinder) {
                 viewFinder.viewID = properties.viewID;
@@ -49,59 +39,33 @@
                 viewFinder.displayFieldNames = properties.displayFieldNames;
                 viewFinder.returnFieldNames = properties.returnFieldNames;
 
-                // Optional 
-                //     If omitted, the starting value is blank.
-                viewFinder.initKeyValues = initKeyValues;
-
                 // Optional
                 //     Only useful for UIs such as Invoice Entry finder where you 
                 //     want to restrict the entries to a specific batch
+                //
+                // Note: 
+                //     The following syntax is a workaround for IE which doesn't 
+                //     support default parameters.
+                //
+                var filter = filter || null;
                 viewFinder.filter = filter;
             };
 
-            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, height, top);
+            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, null, height, top);
         },
 
-        setViewFinder: function (id, parent, properties, height, top) {
+        setViewFinder: function (id, parent, properties, onCancelCallback, height, top) {
             $("#" + id).ViewFinder({
                 properties: properties,
                 parent: parent,
-                height: height,
+                cancel: onCancelCallback,
+                height: height,  
                 top: top
             });
-        },
-
-        createFilter: function (field, operator, value, applyFilterIfNull) {
-            if (applyFilterIfNull == null || applyFilterIfNull == undefined) {
-                applyFilterIfNull = false;
-            }
-            return { Field: { field: field }, Value: value, Operator: operator, ApplyFilterIfNull: applyFilterIfNull };
-        },
-
-        createInquiryFilter: function (field, operator, value, applyFilterIfNull, isAndOperation, logisticGroup) {
-            if (applyFilterIfNull == null || applyFilterIfNull == undefined) {
-                applyFilterIfNull = false;
-            }
-            return { Field: { field: field }, Value: value, SqlOperator: operator, ApplyFilterIfNull: applyFilterIfNull };
-        },
-
-        createDefaultFunction: function (fieldControl, field, operator) {
-            var func = function () {
-                if (operator == undefined || operator.length == 0) {
-                    operator = sg.finderOperator.StartsWith;
-                }
-                var filterData = [[]];
-                var value = $("#" + fieldControl).val();
-                filterData[0][0] = { Field: { field: field }, Operator: operator, Value: value };
-                return filterData;
-            };
-            return func;
         },
     };
 
     sg.findEvent = null;
-    sg.filterData = [];
-    sg.mandatoryFilterData = [];
 
     /* Required for  Preferences */
     sg.isPreferencesPostback = false;
@@ -277,15 +241,9 @@
             }
         },
         _doAjax: function (that) {
-            var filterData = [[]];
-            var mandatoryFilterAndData = [];
-            var mandatoryFilterData = [];
-            var andCounter = 0;
-            var orCounter = 0;
-            var item;
 
             if (typeof that.options.properties === 'function') {
-                if (that.options.finderProperties == null) {
+                if (that.options.finderProperties === null) {
                     that.options.finderProperties = {};
                 }
 
@@ -305,8 +263,27 @@
                 ColumnFilter: null,  // no column filter initially
                 PageNumber: that.options.pageNumber,
                 PageSize: that.options.pageSize,
-                OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings
+                OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings,
+                CalculatePageCount: true
             };
+
+            if (that.options.finderProperties.CalculatePageCount)
+                finderOptions.CalculatePageCount = that.options.finderProperties.CalculatePageCount;
+
+            // set the initial key values if caller asks so
+            if (that.options.finderProperties.parentValAsInitKey !== null &&
+                that.options.finderProperties.parentValAsInitKey &&
+                that.options.parent !== 'function') {
+
+                var ctrl = $("#" + that.options.parent);
+
+                if (ctrl.hasClass("txt-upper")) {
+                    finderOptions.InitKeyValues = [ctrl.val().toUpperCase()];
+                }
+                else {
+                    finderOptions.InitKeyValues = [ctrl.val()];
+                }
+            }
 
             sg.finderOptions = finderOptions;
 
@@ -520,42 +497,41 @@
         },
 
         _selectGrid: function (that) {
-            var grid, row, data, retObject = {};
+            var grid, row, data, retObject;
             if ($('#div_finder_grid')) {
                 grid = $('#div_finder_grid').data("kendoGrid");
                 row = grid.select();
-                data = grid.dataItem(row);
+                if (row.length !== 0) {
+                    data = grid.dataItem(row);
+                    retObject = {};
+                    for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
+                        var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
 
-                if (data === null)
-                    return retObject;
+                        var column = $.grep(grid.columns, function (column) {
+                            return column.field === sg.finderOptions.ReturnFieldNames[i];
+                        });
 
-                for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
-                    var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
+                        var val;
+                        if (column.length === 1) {
+                            // check data type
+                            if (column[0].PresentationList !== null) {
+                                var pval = $.grep(column[0].PresentationList, function (p) {
+                                    return p.Text === cellVal;
+                                });
 
-                    var column = $.grep(grid.columns, function (column) {
-                        return column.field === sg.finderOptions.ReturnFieldNames[i];
-                    });
-
-                    var val;
-                    if (column.length === 1) {
-                        // check data type
-                        if (column[0].PresentationList !== null) {
-                            var pval = $.grep(column[0].PresentationList, function (p) {
-                                return p.Text === cellVal;
-                            });
-
-                            if (pval.length === 1) {
-                                val = pval[0].Value;
+                                if (pval.length === 1) {
+                                    val = pval[0].Value;
+                                }
                             }
-                        }
-                        else if (column[0].dataType === sg.finderDataType.Date) {
-                            val = sg.utls.kndoUI.getFormattedDate(cellVal);
-                        }
-                        else {
-                            val = cellVal;
-                        }
+                            else if (column[0].dataType === sg.finderDataType.Date) {
+                                val = sg.utls.kndoUI.getFormattedDate(cellVal);
+                            }
+                            else {
+                                val = cellVal;
+                            }
 
-                        retObject[sg.finderOptions.ReturnFieldNames[i]] = val;
+                            retObject[sg.finderOptions.ReturnFieldNames[i]] = val;
+                        }
                     }
                 }
             }

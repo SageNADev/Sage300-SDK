@@ -172,33 +172,32 @@ var fiscalyearSetUI = {
                 pageSize: 14,
                 columns:
                     [
-                            {
-                                field: "Period",
-                                title: FiscalControlHeader.PeriodTitle,
-                                attributes: " class = w80",
-                                headerAttributes: "class =  w80",
-                            },
-                            {
-                                field: "StartDate",
-                                title: FiscalControlHeader.StartDateTitle,
-                                template: '#= sg.utls.kndoUI.getFormattedDate(StartDate)#',
-                                attributes: " class = w110",
-                                headerAttributes: "class = w110",
-                            },
-                            {
-                                field: "EndDate",
-                                title: FiscalControlHeader.EndDateTitle,
-                                template: '#= sg.utls.kndoUI.getFormattedDate(EndDate)#',
-                                attributes: " class = w110",
-                                headerAttributes: "class = w110",
-                            },
-                            {
-                                field: "Status",
-                                title: FiscalControlHeader.StatusTitle,
-                                attributes: " class = w110",
-                                headerAttributes: "class = w110",
-                            },
-
+                        {
+                            field: "Period",
+                            title: FiscalControlHeader.PeriodTitle,
+                            attributes: { "class": "w80" },
+                            headerAttributes: { "class": "w80" },
+                        },
+                        {
+                            field: "StartDate",
+                            title: FiscalControlHeader.StartDateTitle,
+                            template: '#= sg.utls.kndoUI.getFormattedDate(StartDate)#',
+                            attributes: { "class": "w110" },
+                            headerAttributes: { "class": "w110" },
+                        },
+                        {
+                            field: "EndDate",
+                            title: FiscalControlHeader.EndDateTitle,
+                            template: '#= sg.utls.kndoUI.getFormattedDate(EndDate)#',
+                            attributes: { "class": "w110" },
+                            headerAttributes: { "class": "w110" },
+                        },
+                        {
+                            field: "Status",
+                            title: FiscalControlHeader.StatusTitle,
+                            attributes: { "class": "w110" },
+                            headerAttributes: { "class": "w110" },
+                        },
                     ]
             });
 

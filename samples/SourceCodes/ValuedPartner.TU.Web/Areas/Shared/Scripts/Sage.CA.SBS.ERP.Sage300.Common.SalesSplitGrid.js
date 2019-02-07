@@ -208,7 +208,7 @@ var saleSplitGridUI = {
         else {
             fieldValue = sg.utls.kndoUI.getFormattedDecimalNumber(0, 5);
         }
-        return '<span style="float:right">' + fieldValue + '</span>';
+        return '<label class="numeric">' + fieldValue + '</label>';
     },
 
     init: function (params) {

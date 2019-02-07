@@ -1,4 +1,14 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+
+// @ts-check
+
+// Note: 
+//       Enabling 'use strict' line below seems to cause unit tests to fail.
+//       Also, using some ECMAScript 6 features will cause unit tests to fail.
+//       For example, declaring a variable using 'let' instead of 'var' will
+//       cause unit tests to fail.
+//
+//"use strict";
 
 var sg = sg || {};
 sg.utls = sg.utls || {};
@@ -893,19 +903,28 @@ $.extend(sg.utls, {
     },
 
     showKendoConfirmationDialog: function (callbackYes, callbackNo, message, typeOfAction, isMessageEncoded, callbackCancel) {
+
+        // true : Confirmation dialog title will be positioned in the header bar of dialog box
+        // false : Confirmation dialog title will be positioned just above the body text instead (original behaviour)
+        var positionDialogTitleInHeader = true;
+
+        var title = globalResource.ConfirmationTitle;
+        var dialogId = 'deleteConfirmation';
+
         // This kendoWindow visiblity check is added for the defect D-07638
-        var wnd = $("#deleteConfirmation").data("kendoWindow");
+        var wnd = $("#" + dialogId).data("kendoWindow");
         if (wnd != null && !wnd.element.is(":hidden")) {
             return;
         }
-        var kendoWindow = $("<div class='modelWindow' id='" + "deleteConfirmation" + "' />").kendoWindow({
+
+        var kendoWindow = $("<div class='modelWindow' id='" + dialogId + "' />").kendoWindow({
             title: '',
             resizable: false,
             modal: true,
             minWidth: 400,
             maxWidth: 760,
             Height: 240,
-            //custom function to suppot focus within kendo window
+            // Custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
 
@@ -920,7 +939,10 @@ $.extend(sg.utls, {
             }
         });
 
-        kendoWindow.find("#title-text").html(globalResource.ConfirmationTitle);
+        if (!positionDialogTitleInHeader) {
+            kendoWindow.find("#title-text").html(title);
+        }
+
         kendoWindow.find("#body-text").html(isMessageEncoded ? message : sg.utls.htmlEncode(message));
         if (typeOfAction == globalResource.DeleteTitle) {
             kendoWindow.find("#kendoConfirmationCancelButton").val(globalResource.CancelTitle);
@@ -958,14 +980,22 @@ $.extend(sg.utls, {
         kendoWindow.parent().addClass('modelBox');
         kendoWindow.parent().attr('id', 'deleteConfirmationParent');
         var divDeleteConfirmParent = $('#deleteConfirmationParent');
-        //Removed the line below because if modal is true, the z-index value increasing automatically. we cannot  guarantee 999999 is the largest value on the screen
+
+        // Removed the line below because if modal is true, the z-index value increasing 
+        // automatically. We cannot guarantee 999999 is the largest value on the screen.
         //divDeleteConfirmParent.css('z-index', '999999');
+
         divDeleteConfirmParent.css('position', 'absolute');
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
 
-        /// Setting message position to viewport top.
+        if (positionDialogTitleInHeader) {
+            divDeleteConfirmParent.find('#' + dialogId + '_wnd_title').text(title);
+        }
+
+        // Setting message position to viewport top.
         sg.utls.showMessagesInViewPort();
     },
+
     showCommonConfirmationDialog: function (id, callbackYes, callbackNo, message) {
         var dialogId = 'div_' + id + 'confirm_dialog';
         $('<div  class="modelWindow" id="' + dialogId + '" />').appendTo('body');
@@ -999,6 +1029,196 @@ $.extend(sg.utls, {
             }).end();
         kendoWindow.parent().addClass('modelBox');
     },
+
+    /**
+     * @name showConfirmationDialogYesNo
+     * @desc Display a confirmation dialog box
+     *       Notes:
+     *         - This method does not rely on an embedded x-kendo-template script element. 
+     *           It will dynamically create one at run-time.
+     *         - It will display the dialog title in the traditional header of the dialog box
+     *           instead of in the message body area.
+     *         
+     * @private
+     * @param {object} callbackYes - Callback when 'Yes' selected
+     * @param {object} callbackNo - Callback when 'No' selected
+     * @param {string} messageIn - The message to display
+     * @param {string} titleIn - Optional - The dialog title to display
+     * @param {string} btnYesLabelIn - Optional - The text for the 'Yes' button
+     * @param {string} btnNoLabelIn - Optional - The text for the 'No' button
+     */
+    showConfirmationDialogYesNo: function (callbackYes, callbackNo, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn) {
+        var DialogID = 'confirmationDialog';
+        var DialogParentID = 'confirmationParent';
+        var InpageTemplateIDRoot = 'generic-confirmation';
+        var randomPostfix = sg.utls.makeRandomString(5);
+        var InpageTemplateID = InpageTemplateIDRoot + randomPostfix;
+
+        var template = "<script id=\"" + InpageTemplateID + "\" type=\"text/x-kendo-template\">" +
+            "<div class=\"fild_set\">" +
+            "<div class=\"fild-title generic-message\" id=\"gen-message" + randomPostfix + "\">" +
+            "<div id=\"title-text" + randomPostfix + "\" />" +
+            "</div>" +
+            "<div class=\"fild-content\">" +
+            "<div id=\"body-text" + randomPostfix + "\" />" +
+            "<div class=\"modelBox_controlls\">" +
+            "<input type=\"button\" class=\"btn btn-secondary generic-cancel\" id=\"kendoConfirmationCancelButton" + randomPostfix + "\" value=\"@CommonResx.No\" />" +
+            "<input type=\"button\" class=\"btn btn-primary generic-confirm\" id=\"kendoConfirmationAcceptButton" + randomPostfix + "\" value=\"@CommonResx.Yes\" />" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</script>";
+        $(template).appendTo('body');
+
+        // This kendoWindow visiblity check is added for the defect D-07638
+        var wnd = $('#' + DialogID).data("kendoWindow");
+        if (wnd != null && !wnd.element.is(":hidden")) {
+            return;
+        }
+
+        var kendoWindow = $("<div class='modelWindow' id='" + DialogID + "' />").kendoWindow({
+            title: '',
+            resizable: false,
+            modal: true,
+            minWidth: 400,
+            maxWidth: 760,
+            Height: 240,
+            // custom function to support focus within kendo window
+            activate: sg.utls.kndoUI.onActivate
+        });
+
+        kendoWindow.data("kendoWindow").content($("#" + InpageTemplateID).html()).center().open();
+
+        kendoWindow.data("kendoWindow").bind("close", function () {
+            kendoWindow.data("kendoWindow").destroy();
+            if (callbackNo != null) {
+                callbackNo();
+            }
+        });
+
+        // Set the message text
+        //kendoWindow.find("#body-text").html(sg.utls.htmlEncode(messageIn));
+        var msg = messageIn.replace(/\n/g, '<br/>');
+        kendoWindow.find("#body-text" + randomPostfix).html(msg);
+
+        _setButtonLabels();
+
+        _setButtonCallbacks();
+
+        kendoWindow.parent().addClass('modelBox');
+        kendoWindow.parent().attr('id', DialogParentID);
+        var $divConfirmParent = $('#' + DialogParentID);
+        $divConfirmParent.css('position', 'absolute');
+        $divConfirmParent.css('left', ($(window).width() - $divConfirmParent.width()) / 2);
+
+        _setDialogTitle();
+
+        /// Setting message position to viewport top.
+        sg.utls.showMessagesInViewPort2(DialogParentID);
+
+        function _setDialogTitle() {
+            var title;
+            if (titleIn && titleIn.length > 0) {
+                title = titleIn;
+            } else {
+                title = globalResource.ConfirmationTitle;
+            }
+
+            // Set the modal dialog caption (title) text
+            $divConfirmParent.find('#' + DialogID + '_wnd_title').text(title);
+        }
+
+        function _setButtonLabels() {
+            var yesLabel;
+            if (btnYesLabelIn && btnYesLabelIn.length > 0) {
+                yesLabel = btnYesLabelIn;
+            } else {
+                yesLabel = globalResource.Yes;
+            }
+
+            var noLabel;
+            if (btnNoLabelIn && btnNoLabelIn.length > 0) {
+                noLabel = btnNoLabelIn;
+            } else {
+                noLabel = globalResource.No;
+            }
+
+            kendoWindow.find("#kendoConfirmationAcceptButton" + randomPostfix).val(yesLabel);
+            kendoWindow.find("#kendoConfirmationCancelButton" + randomPostfix).val(noLabel);
+        }
+
+        function _setButtonCallbacks() {
+            kendoWindow.find(".generic-confirm, .generic-cancel")
+                .click(function () {
+                    if ($(this).hasClass("generic-confirm")) {
+                        if (callbackYes != null) {
+                            callbackYes();
+                        }
+                        try {
+                            kendoWindow.data("kendoWindow").destroy();
+                        } catch (err) {
+                            // Don't do anything. This means the window is already 
+                            // destroyed or does not exist.
+                            // This is required for iframes
+                        }
+                    } else if ($(this).hasClass("generic-cancel")) {
+                        if (callbackNo != null)
+                            callbackNo();
+                        kendoWindow.data("kendoWindow").destroy();
+                    }
+                }).end();
+        }
+    },
+
+    /**
+     * @name showMessagesInViewPort2
+     * @desc Show all messages in viewport area 
+     * @private
+     */
+    showMessagesInViewPort2: function (parentDialogID) {
+        // Call the main global version first
+        sg.utls.showMessagesInViewPort();
+
+        if (!sg.utls.isSameOrigin()) {
+            return;
+        }
+        try {
+            var activeScreenIframeId = window.top.$('iframe.screenIframe:visible').attr('id');
+            var activeScreenIframeContents = window.top.$('#' + activeScreenIframeId).contents();
+
+            var divConfirmation = activeScreenIframeContents.find('#' + parentDialogID);
+
+            _setHorizontalAndVerticalScrollPositions(divConfirmation);
+        }
+        catch (err) {
+            // Don't do anything. This means window is already destroyed or does not exists.
+            // This is required for iframes
+        }
+
+        function _setHorizontalAndVerticalScrollPositions(div) {
+            if ((div !== null && div.length > 0)) {
+                sg.utls.setScrollPosition(div);
+                var horizontalPos = ($(window).width() - div.width()) / 2;
+                div.css('left', horizontalPos);
+            }
+        }
+    },
+
+    /**
+     * @name makeRandomString
+     * @description Returns a random string of alphabetical letters of a designated length
+     * @param len
+     * @returns {string} The random string of designated length
+     */
+    makeRandomString: function (len) {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < len; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    },
+
     showKendoMessageDialog: function (callbackok, message) {
         var kendoWindow = $("<div class='modelWindow' id='" + "messageDialog " + "' />").kendoWindow({
             title: '',
@@ -1060,9 +1280,11 @@ $.extend(sg.utls, {
      * @param {function} onClose Handler for the popup's close event.
      *
      */
-    initializeKendoWindowPopup: function (id, title, onClose) {
+    initializeKendoWindowPopup: function(id, title, onClose, maxConfig) {
         var winH = $(window).height();
         var winW = $(window).width();
+        var actions = maxConfig ? maxConfig.actions : ["Close"];
+        var width = (maxConfig && maxConfig.width)? maxConfig.width: 980;
         var kendoWindow = $(id).kendoWindow({
             modal: true,
             title: title,
@@ -1070,13 +1292,14 @@ $.extend(sg.utls, {
             draggable: false,
             scrollable: true,
             visible: false,
-            maxWidth: 1000,
-            minWidth: 960,
+            //maxWidth: maxWidth,
+            minWidth: 900,
             minHeight: 300,
+            width: width,
             //maxHeight: 600,
             // Custom function to support focus within Kendo Window.
             activate: sg.utls.kndoUI.onActivate,
-            close: function (data) {
+            close: function(data) {
                 // Hide the Grid Preferences columns list for Popups. 
                 // This is needed because the div element (columns list) is not hiding while closing popups with editable grids.
                 if (GridPreferencesHelper) {
@@ -1086,11 +1309,27 @@ $.extend(sg.utls, {
                     onClose(data);
                 }
             },
+            actions: actions,
             // Open the Kendo Window in the center of the Viewport.
             open: function () {
                 sg.utls.setKendoWindowPosition(this);
             },
         }).data("kendoWindow");
+    },
+
+    /**
+     * Initializes a Kendo popup window with minimize/maximize option.
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     */
+    initializeKendoWindowPopupWithMaximize: function(id, title, onClose, width) {
+        var config = {
+            actions: ["Maximize", "Close"],
+            width: width
+        };
+        this.initializeKendoWindowPopup(id, title, onClose, config);
     },
 
     /**
@@ -2083,6 +2322,9 @@ $.extend(sg.utls, {
             return parseInt(value, 10);
     },
     getMaxVale: function (defaultChar, precisionLength, maxDigitAllowed, isDecimal) {
+        return sg.utls.getMaxValue(defaultChar, precisionLength, maxDigitAllowed, isDecimal);
+    },
+    getMaxValue: function (defaultChar, precisionLength, maxDigitAllowed, isDecimal) {
         var intPart = sg.utls.padChar(defaultChar, maxDigitAllowed - precisionLength);
         var decimalPart = sg.utls.padChar(defaultChar, precisionLength);
 

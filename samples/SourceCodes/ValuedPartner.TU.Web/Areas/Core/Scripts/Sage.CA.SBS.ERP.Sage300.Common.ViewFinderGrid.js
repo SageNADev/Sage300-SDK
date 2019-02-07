@@ -36,6 +36,7 @@ var ViewFinderGridHelper = {
         $(".clsValueDropDown").hide();
         $("#OperatorDropdown").attr("disabled", true);
         $('#OperatorDropdown').kendoDropDownList({}).data("kendoDropDownList");
+        $("#ValueTextBox").val("");
         $("#ValueTextBox").attr("disabled", true);
         $("#ValueDropDown").hide();
         $("#btnSearch").attr("disabled", true);

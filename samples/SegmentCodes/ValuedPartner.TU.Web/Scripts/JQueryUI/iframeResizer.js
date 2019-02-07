@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
 $(window).bind("load", function () {
     if (typeof sg !== "undefined" && !sg.utls.isSameOrigin()) {

@@ -372,10 +372,6 @@ setCriteriaUI = {
             n = 0;
         }
 
-        var numberBox = $("#numberValueTextBox").data("kendoNumericTextBox");
-        if (numberBox) {
-            numberBox.destroy();
-        }
 
         $("#numberValueTextBox").kendoNumericTextBox({
             spinners: false,
@@ -553,7 +549,7 @@ setCriteriaUI = {
             }
 
             //Remove the first visible column cell value expressions starts "AND"
-            if (colIndex == i) {
+            if (colIndex === i) {
                 do {
                     i++;
                 } while (grid.columns[i].hidden && i < length);
@@ -596,7 +592,7 @@ setCriteriaUI = {
     showPopupWindow: function (id, title, isExprWin, colIndex, width) {
         $("#ExpColumnDropdown").closest(".k-widget").hide();
         var w = (isExprWin) ? width : 800;
-        var h = (isExprWin) ? 124 : 318;
+        var h = (isExprWin) ? 164 : 358;
         if (isExprWin) {
             setCriteriaUI.initExprWindow(colIndex);
         }

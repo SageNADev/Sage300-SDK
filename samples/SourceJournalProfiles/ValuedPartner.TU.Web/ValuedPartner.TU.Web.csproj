@@ -312,6 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\TU\Controllers\Finder\FindSourceCodeControllerInternal.cs" />
+    <Compile Include="Areas\TU\Controllers\Finder\FindSourceJournalProfileControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\SourceCodeController.cs" />
     <Compile Include="Areas\TU\Controllers\SourceCodeControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\SourceJournalProfileController.cs" />
