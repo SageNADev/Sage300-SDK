@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -416,12 +416,16 @@ $.extend(sg.utls.kndoUI, {
      * @return 
      */
     dropDownList: function (id) {
-        return $("#" + id).kendoDropDownList({
-            //dataBound: function () {
-            //    this.select(this.selectedIndex);
-            //    this.trigger("change");
-            //}
+        var dropDown = $("#" + id).kendoDropDownList();
+
+        // https://www.telerik.com/blogs/kendo-ui-mvvm-and-knockoutjs
+        // This will bind the "change" event of the underlying DOM element (which gets triggered by Knockout) to code that will “force” a Kendo UI widget 
+        // to update and refresh the UI.With this code added, Kendo UI will "listen" for changes Knockout triggers in the HTML and the update the rich Kendo UI widget.
+        $("#" + id).on("change", function () {
+            $(this).data("kendoDropDownList").select(this.selectedIndex);
         });
+
+        return dropDown;
     },
 
     /**
@@ -1145,21 +1149,26 @@ var SageNumericTextBoxPlugin = (function (init) {
         init: function (_element, _options) {
             var tagName = "data-sage300uicontrol";
             var style = $(_element).attr("style");
-            init.call(this, _element, _options);
-            var wrapper = $(this.wrapper[0]);
-            var element = wrapper.find('[' + tagName + ']');
-            var sageStyle = wrapper.attr("sage-style");
-            if (!sageStyle) {
-                wrapper.attr("style", style);
-            } else {
-                wrapper.attr("style", sageStyle);
-            }
+            var kendoNumericTextBox = $("#" + _element.id).data("kendoNumericTextBox");
+            if (!kendoNumericTextBox) {
+                init.call(this, _element, _options);
+                var wrapper = $(this.wrapper[0]);
+                var element = wrapper.find('[' + tagName + ']');
+                var sageStyle = wrapper.attr("sage-style");
+                if (!sageStyle) {
+                    wrapper.attr("style", style);
+                } else {
+                    wrapper.attr("style", sageStyle);
+                }
 
-            if (element.length > 0) {
-                var value = element.attr(tagName);
-                element.removeAttr(tagName);
-                wrapper.attr(tagName, value);
-                wrapper.attr("sage-style", (!style) ? "display": style);
+                if (element.length > 0) {
+                    var value = element.attr(tagName);
+                    element.removeAttr(tagName);
+                    wrapper.attr(tagName, value);
+                    wrapper.attr("sage-style", !style ? "display" : style);
+                }
+            } else {
+                kendoNumericTextBox.setOptions(_options);
             }
         }
     });

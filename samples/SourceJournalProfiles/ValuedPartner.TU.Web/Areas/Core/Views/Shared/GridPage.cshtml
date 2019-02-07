@@ -241,7 +241,7 @@
 }
 
 @functions {
-    public static void AddHtmlString(Sage.CA.SBS.ERP.Sage300.Core.Web.Models.GridConfigViewModel model, GridInfo gridInfo, string propertyName,
+    public static void AddHtmlString(Sage.CA.SBS.ERP.Sage300.Core.Web.Models.GridConfigViewModel model, GridInfo gridInfo, string propertyName, 
         PropertyInfo propertyInfo, StringBuilder colConfigStr)
     {
         var prefix = model.Controls.IsUsingSameModelType ? string.Empty : "Data_";
@@ -249,7 +249,7 @@
             @class = gridInfo.EditorHtmlClass ?? string.Empty,
             formatTextbox = gridInfo.IsAlphaNumericEditor? "alphaNumeric": string.Empty
         };
-
+        
         if (gridInfo.EditorType == GridEditorEnum.Text)
         {
             if (propertyInfo.PropertyType == typeof(string))
@@ -280,9 +280,9 @@
                         model.Controls.TextBox.ForDateTimeProperty(propertyName, editorHtmlProperties).ToHtmlString()
                     )
                 );
-
+                
                 var onChangeEventStr = string.Format("{0}.editorEvents.{1}.OnChangeEvent", model.GridConfigName, propertyName);
-
+                
                 colConfigStr.AppendLine(string.Format("sg.utls.kndoUI.datePicker(\"{0}{1}\");", prefix, propertyName));
                 colConfigStr.AppendLine(string.Format("var datePicker = $(\"#{0}{1}\").data(\"kendoDatePicker\");", prefix, propertyName));
                 colConfigStr.AppendLine("datePicker.bind(\"change\", function (e) {");
@@ -290,7 +290,7 @@
                 colConfigStr.AppendFormat("     {0}(e);\n", onChangeEventStr);
                 colConfigStr.AppendLine("   }");
                 colConfigStr.AppendLine("});");
-
+                
             }
         }
         else if (gridInfo.EditorType == GridEditorEnum.Finder)
@@ -298,27 +298,29 @@
             if (propertyInfo.PropertyType == typeof(string))
             {
                 var btnName = string.Format("btn{0}", propertyName);
-
+                
                 colConfigStr.AppendLine(
                     string.Format(
                         "$('{0}').appendTo(container);\n",
-                        model.Controls.TextBox.ForStringProperty(propertyName, editorHtmlProperties).ToHtmlString() +
+                        model.Controls.TextBox.ForStringProperty(propertyName, editorHtmlProperties).ToHtmlString() + 
                         model.Controls.Button.ForAllProperty(btnName, new { @id = btnName, @class = "icon btn-search", @tabindex = "-1" }).ToHtmlString()
                     )
                 );
 
-                // Old Finder
-                var finderHandlerTemplate = "{0}.editorEvents.{1}.{2}";
-                var finderCallTemplate = "sg.finderHelper.setFinder(\"{0}\", \"{1}\", {2}, {3}, \"{4}\", {5}, null, {6});";
+                var finderHandlerFormat = "{0}.editorEvents.{1}.{2}";
+                
                 colConfigStr.AppendLine(
-                    string.Format(finderCallTemplate,
-                                  btnName,
-                                  gridInfo.FinderName,
-                                  string.Format(finderHandlerTemplate, model.GridConfigName, propertyName, "FinderSelect"),
-                                  string.Format(finderHandlerTemplate, model.GridConfigName, propertyName, "FinderCancel"),
-                                  gridInfo.FinderTitle,
-                                  string.Format(finderHandlerTemplate, model.GridConfigName, propertyName, "FinderFilter"),
-                                  gridInfo.FinderPostbackNotRequired ? "true" : "false"));
+                    string.Format(
+                        "sg.finderHelper.setFinder(\"{0}\", \"{1}\", {2}, {3}, \"{4}\", {5}, null, {6});",
+                            btnName, 
+                            gridInfo.FinderName, 
+                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderSelect"),
+                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderCancel"),
+                            gridInfo.FinderTitle,
+                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderFilter"),
+                            gridInfo.FinderPostbackNotRequired ? "true" : "false"
+                    )
+                );
             }
         }
         else if (gridInfo.EditorType == GridEditorEnum.Dropdown)
@@ -354,7 +356,7 @@
                             "}}).data(\"kendoNumericTextBox\");",
                             "sg.utls.kndoUI.restrictDecimals(numericField, options.model.{1}, {2} - options.model.{1});"
                         );
-
+            
             if (propertyInfo.PropertyType == typeof(decimal))
             {
                 colConfigStr.AppendLine(

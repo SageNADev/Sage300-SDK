@@ -191,31 +191,31 @@ fiscalCalendarGrid = {
         {
             field: "Period",
             title: fiscalCalendarHeader.PeriodTitle,
-            attributes: " class = w80",
-            headerAttributes: "class =  w80",
+            attributes: { "class": "w80" },
+            headerAttributes: { "class": "w80" },
             hidden: false
         },
         {
             field: "StartDate",
             title: fiscalCalendarHeader.StartDateTitle,
             template: '#= sg.utls.kndoUI.getFormattedDate(StartDate)#',
-            attributes: " class = w110",
-            headerAttributes: "class = w110",
+            attributes: { "class": "w110" },
+            headerAttributes: { "class": "w110" },
             hidden: false
         },
         {
             field: "EndDate",
             title: fiscalCalendarHeader.EndDateTitle,
             template: '#= sg.utls.kndoUI.getFormattedDate(EndDate)#',
-            attributes: " class = w110",
-            headerAttributes: "class = w110",
+            attributes: { "class": "w110" },
+            headerAttributes: { "class": "w110" },
             hidden: false
         },
         {
             field: "Status",
             title: fiscalCalendarHeader.StatusTitle,
-            attributes: " class = w110",
-            headerAttributes: "class = w110",
+            attributes: { "class": "w110" },
+            headerAttributes: { "class": "w110" },
             hidden: true
         }
     ],

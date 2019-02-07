@@ -20,6 +20,16 @@
                 returnFieldNames: ["ACCTSET"],
                 displayFieldNames: ["ACCTSET", "TEXTDESC", "SWACTV", "DATEINACTV", "DATELASTMN", "CURRCODE"],
             },
+			
+            Vendor: {
+                viewID: "AP0015",
+                viewOrder: 0,
+                parentValAsInitKey: false, 
+                returnFieldNames: ["VENDORID"],
+                displayFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME", 
+                                    "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", 
+                                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"],
+            },
         },
 
         AR: {
@@ -68,7 +78,7 @@
         }, 
 
         AS: {
-            // Add new IC finders here
+            // Add new AS finders here
         },
 
         CS: {
@@ -114,17 +124,41 @@
             SourceJournalProfiles: {
                 viewID: "GL0019",
                 viewOrder: 0,
+                parentValAsInitKey: true, 
                 returnFieldNames: ["SRCEJRNL"],
                 displayFieldNames: ["SRCEJRNL"],
             },
         },
 
         IC: {
-            // Add new IC finders here
+            PriceListCodes: {
+                viewID: "IC0390",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["PRICELIST"],
+                displayFieldNames: ["PRICELIST", "DESC"],
+            },
+
+            Item: {
+                viewID: "IC0310",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["FMTITEMNO"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT", "PICKINGSEQ",
+                    "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA", "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"],
+                //optionalFieldBindings: "IC0313,IC0377[0]"
+            }
         },
 
         PO: {
-            // Add new PO finders here
+            ItemPOStandalone: {
+                viewID: "PO0124",
+                viewOrder: 3,
+                parentValAsInitKey: false,
+                returnFieldNames: ["FMTITEMNO"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "CNTLACCT", "SELLABLE"],
+                //optionalFieldBindings: "PO0125,PO0119[0]"
+            }
         },
 
         TX: {
@@ -136,6 +170,72 @@
                 displayFieldNames: ["AUTHORITY", "DESC", "SCURN", "MAXTAX", "MINTAX", "TXBASE",
                     "INCLUDABLE", "LIABILITY", "AUDITLEVEL", "RECOVERABL", "RATERECOV",
                     "ACCTRECOV", "EXPSEPARTE", "ACCTEXP", "LASTMAINT"],
+            },
+        },
+
+        PM: { // aka PJC
+            Contract: {
+                viewID: "PM0021",
+                viewOrder: 3,
+                returnFieldNames: ["FMTCONTNO"],
+                displayFieldNames: ["FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"],
+                //optionalFieldBindings: "PM0850,PM0500[1]"
+            },
+            Project: {
+                viewID: "PM0022",
+                viewOrder: 2,
+                displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT", "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE", "CLOSEDDATE", "CODETAXGRP"],
+                returnFieldNames: ["PROJECT"],
+                /*extra*/
+                filterTemplate: "CONTRACT LIKE \"{0}%\" ",
+                //optionalFieldBindings: "PM0851,PM0500[2]"
+            },
+            Category: {
+                viewID: "PM0039",
+                viewOrder: 2,
+                displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "TYPE", "BILLTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
+                /*extra*/
+                filterTemplate: "CONTRACT LIKE \"{0}%\" AND PROJECT LIKE \"{1}%\" ",
+                //optionalFieldBindings: "PM0852,PM0500[3]"
+            },
+            Resource: {
+                viewID: "PM0121",
+                viewOrder: 3,
+                displayFieldNames: ["RESOURCE", "RESDESC"],
+                returnFieldNames: ["RESOURCE"],
+                /*extra*/
+                filterTemplate: "CONTRACT LIKE \"{0}%\" AND PROJECT LIKE \"{1}%\" AND CATEGORY LIKE \"{2}%\" "
+            },
+            Labor: {
+                viewID: "PM0002",
+                viewOrder: 0,
+                displayFieldNames: ["STAFFCODE", "NAME", "INACTIVE", "EARNCODE", "GROUP"],
+                returnFieldNames: ["STAFFCODE"]
+            },
+            Equipment: {
+                viewID: "PM0025",
+                viewOrder: 0,
+                displayFieldNames: ["EQUIPMENT", "DESC", "INACTIVE"],
+                returnFieldNames: ["EQUIPMENT"]
+            },
+            Subcontractor: {
+                viewID: "PM0026",
+                viewOrder: 0,
+                displayFieldNames: ["SUBCONT", "NAME", "DESC", "INACTIVE", "VENDORID"],
+                returnFieldNames: ["SUBCONT"]
+            },
+            Overhead: {
+                viewID: "PM0029",
+                viewOrder: 0,
+                displayFieldNames: ["OHCODE", "DESC", "INACTIVE"],
+                returnFieldNames: ["OHCODE"]
+            },
+            Miscellaneous: {
+                viewID: "PM0028",
+                viewOrder: 0,
+                displayFieldNames: ["MISCCODE", "DESC", "INACTIVE"],
+                returnFieldNames: ["MISCCODE"]
             },
         },
     };

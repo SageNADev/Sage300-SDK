@@ -1,5 +1,6 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 "use strict";
+
 var kendoHelper = {
     CreateSchemaModelFields: function (model) {
         var localItems = {};
@@ -399,7 +400,10 @@ var FinderGridHelper = {
 
         var numericTextbox = $("#NumericTextBox").data("kendoNumericTextBox");
         if (numericTextbox) {
+            var origin = numericTextbox.element.show();
+            origin.insertAfter(numericTextbox.wrapper);
             numericTextbox.destroy();
+            numericTextbox.wrapper.remove();
         }
 
         //If phoneNumber attribute is defined

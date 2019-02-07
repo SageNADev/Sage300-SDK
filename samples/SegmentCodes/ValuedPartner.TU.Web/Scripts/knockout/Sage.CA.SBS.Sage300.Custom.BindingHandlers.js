@@ -360,12 +360,12 @@ ko.bindingHandlers.sagechecked = {
         }
         return result;
     },
-    update: function (element) {
+    update: function (element, valueAccessor) {
         var result = ko.bindingHandlers.checked.update.apply(this, arguments);
         if (element.type === "radio" || element.type === "checkbox") {
             sg.controls.ApplyCheckboxRadioButtonStyle(element);
         }
-        // return result;
+        return result;
     }
 };
 

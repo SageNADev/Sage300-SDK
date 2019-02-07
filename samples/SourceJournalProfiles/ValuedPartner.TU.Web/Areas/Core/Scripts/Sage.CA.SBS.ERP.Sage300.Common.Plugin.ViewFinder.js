@@ -16,7 +16,7 @@
         getFinderSettings: function(moduleId, moduleAction) {
 			return sg.viewFinderProperties[moduleId][moduleAction];
         },
-
+        
         /**
          * @name initFinder
          * @desc Generic routine to initialize an individual finder
@@ -51,13 +51,14 @@
                 viewFinder.filter = filter;
             };
 
-            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, height, top);
+            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, null, height, top);
         },
 
-        setViewFinder: function (id, parent, properties, height, top) {
+        setViewFinder: function (id, parent, properties, onCancelCallback, height, top) {
             $("#" + id).ViewFinder({
                 properties: properties,
                 parent: parent,
+                cancel: onCancelCallback,
                 height: height,  
                 top: top
             });
@@ -262,9 +263,16 @@
                 ColumnFilter: null,  // no column filter initially
                 PageNumber: that.options.pageNumber,
                 PageSize: that.options.pageSize,
-                OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings
+                OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings,
+                CalculatePageCount: true
             };
 
+<<<<<<< HEAD
+            if (that.options.finderProperties.CalculatePageCount)
+                finderOptions.CalculatePageCount = that.options.finderProperties.CalculatePageCount;
+
+=======
+>>>>>>> ac653f9a5d804debd2cb3ac1331e9bf7fc077b80
             // set the initial key values if caller asks so
             if (that.options.finderProperties.parentValAsInitKey !== null &&
                 that.options.finderProperties.parentValAsInitKey &&
@@ -492,42 +500,41 @@
         },
 
         _selectGrid: function (that) {
-            var grid, row, data, retObject = {};
+            var grid, row, data, retObject;
             if ($('#div_finder_grid')) {
                 grid = $('#div_finder_grid').data("kendoGrid");
                 row = grid.select();
-                data = grid.dataItem(row);
+                if (row.length !== 0) {
+                    data = grid.dataItem(row);
+                    retObject = {};
+                    for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
+                        var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
 
-                if (data === null)
-                    return retObject;
+                        var column = $.grep(grid.columns, function (column) {
+                            return column.field === sg.finderOptions.ReturnFieldNames[i];
+                        });
 
-                for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
-                    var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
+                        var val;
+                        if (column.length === 1) {
+                            // check data type
+                            if (column[0].PresentationList !== null) {
+                                var pval = $.grep(column[0].PresentationList, function (p) {
+                                    return p.Text === cellVal;
+                                });
 
-                    var column = $.grep(grid.columns, function (column) {
-                        return column.field === sg.finderOptions.ReturnFieldNames[i];
-                    });
-
-                    var val;
-                    if (column.length === 1) {
-                        // check data type
-                        if (column[0].PresentationList !== null) {
-                            var pval = $.grep(column[0].PresentationList, function (p) {
-                                return p.Text === cellVal;
-                            });
-
-                            if (pval.length === 1) {
-                                val = pval[0].Value;
+                                if (pval.length === 1) {
+                                    val = pval[0].Value;
+                                }
                             }
-                        }
-                        else if (column[0].dataType === sg.finderDataType.Date) {
-                            val = sg.utls.kndoUI.getFormattedDate(cellVal);
-                        }
-                        else {
-                            val = cellVal;
-                        }
+                            else if (column[0].dataType === sg.finderDataType.Date) {
+                                val = sg.utls.kndoUI.getFormattedDate(cellVal);
+                            }
+                            else {
+                                val = cellVal;
+                            }
 
-                        retObject[sg.finderOptions.ReturnFieldNames[i]] = val;
+                            retObject[sg.finderOptions.ReturnFieldNames[i]] = val;
+                        }
                     }
                 }
             }

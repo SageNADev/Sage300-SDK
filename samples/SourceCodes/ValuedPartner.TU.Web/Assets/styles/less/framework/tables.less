@@ -280,6 +280,10 @@ table {
     .k-picker-wrap{
       height: 24px;
     }
+
+    &.w90pc .k-select {
+      margin-right: 20px;
+    }
   }
 
   input[type="text"] {
@@ -301,7 +305,8 @@ table {
     }
   }
 
-  .k-state-default {
+  .k-state-default,
+  .k-state-disabled {
     font-size: 12px;
     height: 24px;
     padding: 0 10px;
@@ -345,6 +350,13 @@ table {
       right: 7px;
       bottom: 2px;
     }
+  }
+
+  .k-state-disabled .k-select {
+    border: none;
+    width: 26px;
+    background-image: none;
+    padding: 0;
   }
 
   .numeric-group {
@@ -406,6 +418,15 @@ table {
     .rightbox:disabled + .btn-fiscal-picker {
       border-color: darken(@input-bg-disabled, 3%);
       background-color: @input-bg-disabled;
+    }
+  }
+
+  .ctrl-group {
+    margin-bottom: 0 !important;
+
+    .checkbox, .radio {
+      line-height: 2.1rem;
+      margin-bottom: 0;
     }
   }
 }
@@ -506,7 +527,8 @@ table {
     }
 
     .k-header {
-      padding: @table-cell-padding;
+      line-height: 2;
+      padding: 6px 10px;
       color: @white;
       font-weight: 700;
       border-color: @table-border-color;
@@ -524,29 +546,21 @@ table {
       >.k-link {
         color: @white;
         padding: 0;
-        line-height: 1.7;
+        line-height: 2;
 
-        > span.k-icon.k-i-arrow-n {
-          height: 15px;
-          background-position: -705px -38px;
-        }
-
-        &:hover span.k-icon.k-i-arrow-n {
-          background-position: -705px -38px;
-          opacity: 0.7;
-        }
-
-        > span.k-icon.k-i-arrow-s {
-          height: 15px;
-          background-position: -80px -38px;
-        }
-
-        &:hover span.k-icon.k-i-arrow-s {
-          background-position: -80px -38px;
-          opacity: 0.7;
+        .k-icon {
+          background-image: none;
+          width: 16px;
+          height: 16px;
+          color: #fff;
+          top: -1px;
         }
       }
     }
+  }
+
+  .k-header.k-grid-toolbar {
+    padding: @table-cell-padding @table-cell-padding 0;
   }
 
   tr {
@@ -566,8 +580,8 @@ table {
         text-overflow: clip;
 
           .checkBox {
-          top: 3px;
-          margin-top: -5px;
+            top: 2px;
+            height: 20px;
 
           input[type=checkbox] {
             margin-bottom: -6px;
@@ -576,8 +590,8 @@ table {
       }
 
       &.k-header span.checkBox {
-        top: 3px;
-        margin-top: -5px;
+        top: 2px;
+        height: 20px;
 
         input[type=checkbox] {
           margin-bottom: -6px;
@@ -656,6 +670,11 @@ table {
 
   .k-grid-edit-row td {
     text-overflow: ellipsis;
+
+    &.k-edit-cell input[type=text].with-finder.align-right,
+    &.k-edit-cell input[type=text].with-finder.numeric {
+      padding-right: 24px;
+    }
   }
 
   .k-grid-pager {
@@ -878,23 +897,23 @@ table {
         outline: none;
       }
     }
+
+    label {
+      font-size: 12px;
+    }
   }
 
   .btn_search {
     position: absolute;
   }
 
+
   // Edit cell styles
   .k-edit-cell {  
     padding: 0 10px;  
-    position: relative;
 
-    .k-numeric-wrap {
-      border: 0;
-      height: 22px;
-    }
-
-    input[type="text"] {
+    input[type="text"],
+    .edit-cell.inpt-text input {
       height: 24px; 
       font-size: 12px;
       border: 1px solid @input-border-focus;
@@ -903,12 +922,66 @@ table {
       border-radius: 0;
       margin-top: -2px;
       .focus-input-box;
+      width: 100%;
 
       &.default {
         width: 100%;
       }
     }
 
+    .k-numeric-wrap {
+      border: 0;
+      height: 22px;
+
+      input.k-state-invalid {
+        
+        input {
+          color: #c7384f;
+          border-color: #c7384f;
+        }
+      }
+
+      .k-i-warning {
+        left: unset;
+        top: -1px;
+        right: 0;
+        background-image: none;
+        color: #c7384f;
+        font-family: "Sage Armonye Icons";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+
+        &:before {
+          content: "\2204";
+        }
+      }
+
+      .pr25+.k-i-warning {
+        left:unset;
+        top: -1px;
+        right: 16px;
+      }
+    }
+
+    &.numeric,
+    &.align-right,
+    .numeric,
+    .align-right {
+
+      .k-numeric-wrap input[type="text"] {
+        text-align: right !important;
+      }
+
+      .k-numeric-wrap .k-i-warning {
+        top: -1px;
+        left: 0;
+        right: unset;
+      }
+    }
+
+    .edit-cell.inpt-text .btn-finder, 
+    .edit-cell.inpt-text .btn-search,
     .btn-finder, 
     .btn-search {  
       height: 22px;
@@ -917,9 +990,9 @@ table {
       -webkit-min-logical-height: 22px;
       background-color: transparent;
       background-position: 0 0;
-      position: absolute;
-      right: 10px;
-      top: 5px;
+      position: relative;
+      right: 24px;
+      top: 0;
       border: none;
       padding-right: 0 !important;
 
@@ -935,8 +1008,18 @@ table {
       }
     }
 
+    .edit-container {
+      position:relative;
+
+      .edit-cell.inpt-finder {
+        position: absolute;
+        top: 0;
+        right: -20px;
+      }
+    }
+    
     .k-dropdown {  
-      margin-top: -1px;
+      margin-top: -3px;
       width: calc(100% - 20px);
 
       .k-dropdown-wrap {
@@ -1003,7 +1086,6 @@ table {
       }
 
       &.dp-and-finder {
-        margin-right: 10px;
         width: 95%;
 
         & + .icon.btn-search {
@@ -1021,6 +1103,21 @@ table {
 
   .gridcell-exempt {
     color: @sage-orange;
+  }
+
+  input.k-checkbox+label.k-checkbox-label {
+    margin: 0;
+  }
+
+  .k-grid-header input.k-checkbox,
+  .k-grid-content input.k-checkbox {
+    z-index: 1;
+    position: absolute;
+    padding-left: 0;
+  }
+
+  .k-grid-content .k-checkbox-label:before {
+    top: 7px;
   }
 }
 
@@ -1119,7 +1216,7 @@ table {
 }
 
 .k-window.k-widget div#divGridPrefEditCols {
-    margin-top: -161px;
+    margin-top: -65px;
 }
 
 @-moz-document url-prefix() { 
@@ -1298,22 +1395,26 @@ span.highlighted.gray {
 // controlling the grid height
 
 .gh150 .k-grid-content {
-  height: 150px !important;
-  min-height: 150px !important;
+  height: 150px;
+  min-height: 150px;
 }
 
 .gh180 .k-grid-content {
-  height: 180px !important;
+  height: 180px;
 }
 
 .gh320 .k-grid-content {
-  min-height:321px !important; 
-  max-height:321px !important; 
+  min-height:321px; 
+  max-height:321px; 
   height:321px;
 }
 
 .gh400 .k-grid-content {
-  height: 400px !important;
+  height: 400px;
+}
+
+.k-widget.k-window.k-window-maximized .gh180 .k-grid-content {
+  height:321px;
 }
 
 // status window - massage to be truncated
@@ -1330,6 +1431,15 @@ span.highlighted.gray {
 
     &.k-state-active {
       background: none;
+    }
+
+    .k-i-filter {
+      background-image: none;
+    }
+
+    &:hover {
+      color: inherit;
+      opacity: 0.7;
     }
 }
 
@@ -1405,6 +1515,12 @@ span.highlighted.gray {
 
   .k-textbox {
     height: 30px;
+    border-color: @sage-mid-gray;
+  }
+
+  .k-action-buttons {
+    margin: 0;
+    padding: 0;
   }
 
   .k-button {
@@ -1415,6 +1531,7 @@ span.highlighted.gray {
     -webkit-appearance: none;
     height: 30px;
     border-radius: 0;
+    margin: 6px 0 0;
 
     &:hover {
         background-color: @btn-link-hover-color;
@@ -1453,6 +1570,8 @@ span.highlighted.gray {
       -webkit-appearance: none;
       height: 30px;
       border-radius: 0;
+      float: right;
+      margin-left: 6px;
 
       &:hover {
         background-color: darken(@btn-primary-bg, 10%);
