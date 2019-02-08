@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 #region
 
@@ -68,7 +68,11 @@ namespace $safeprojectname$
                 var fileUrlPath = Path.Combine(Server.MapPath("~"), "PageUrl.txt");
                 if (File.Exists(fileUrlPath))
                 {
-                    var url = File.ReadAllText(fileUrlPath).Trim();
+                    var url = "";
+                    using (StreamReader reader = new StreamReader(fileUrlPath)){
+                        url = reader.ReadLine();
+                    }
+
                     url = HttpContext.Current.Request.Url.AbsoluteUri + url;
                     Response.Redirect(url);
                 }
