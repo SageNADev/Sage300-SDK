@@ -260,7 +260,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Kendo UI version used in these projects is v2016.2.714.
+        ///   Looks up a localized string similar to The Kendo UI version used in these projects is v2019.1.115.
         /// </summary>
         internal static string KendoVersionTip {
             get {
