@@ -88,6 +88,14 @@
                 displayFieldNames: ["CNTLINE", "CONTRACT", "PROJECT", "CATEGORY", "COSTCLASS", "RESOURCE", "AMTINVCTC", "AMTDUETC"],
                 filterTemplate: "IDCUST = \"{0}\" AND IDINVC = \"{1}\"  AND AMTDUETC != 0",
             },
+
+            OpenDocumentDetailsOriginalDetail: {
+                viewID: "AR0200",
+                viewOrder: 0,
+                returnFieldNames: ["CNTLINE"],
+                displayFieldNames: ["CNTLINE", "CONTRACT", "PROJECT", "CATEGORY", "COSTCLASS", "RESOURCE", "BILLDATE", "IDITEM","UNITMEAS", "QTYINVC", "IDDIST", "IDGLACCT", "AMTINVCTC", "AMTDUETC", "SWDISCABL", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
+                filterTemplate: "IDCUST = \"{0}\" AND IDINVC = \"{1}\""
+            }
         }, 
 
         AS: {
@@ -157,13 +165,33 @@
                 viewOrder: 0,
                 parentValAsInitKey: false,
                 returnFieldNames: ["FMTITEMNO"],
-                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT", "PICKINGSEQ",
-                    "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA", "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
+                                    "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
+                                    "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"],
                 //optionalFieldBindings: "IC0313,IC0377[0]"
             }
         },
 
         PO: {
+
+            CreditDebitNote: {
+                viewID: "PO0311",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["CRNNUMBER"],
+                displayFieldNames: ["CRNNUMBER", "VDCODE", "VDNAME", "TRANSTYPE", "DATE", "DESCRIPTIO", "REFERENCE", "FROMDOC",
+                    "RETNUMBER", "INVNUMBER", "HASJOB"],
+                optionalFieldBindings: "PO0314,PO0580[14]"
+            },
+
+            Invoices: {
+                viewID: "PO0420",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["INVNUMBER"],
+                displayFieldNames: ["INVNUMBER", "VDCODE", "VDNAME", "DATE", "DESCRIPTIO", "REFERENCE", "HASJOB"],
+            },
+
             ItemPOStandalone: {
                 viewID: "PO0124",
                 viewOrder: 3,
@@ -171,7 +199,43 @@
                 returnFieldNames: ["FMTITEMNO"],
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "CNTLACCT", "SELLABLE"],
                 //optionalFieldBindings: "PO0125,PO0119[0]"
-            }
+            },
+
+            PurchaseOrders: {
+                viewID: "PO0620",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["PONUMBER"],
+                displayFieldNames: ["PONUMBER", "PORTYPE", "VDCODE", "VDNAME", "ISPRINTED", "DATE", "DESCRIPTIO", "REFERENCE",
+                    "ISCOMPLETE", "HASJOB"],
+            },
+
+            Receipts: {
+                viewID: "PO0700",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["RCPNUMBER"],
+                displayFieldNames: ["RCPNUMBER", "VDCODE", "VDNAME", "ISPRINTED", "DATE", "DESCRIPTIO", "REFERENCE",
+                                    "PONUMBER", "INVNUMBER", "ISCOMPLETE", "HASJOB"],
+            },
+
+            Requisitions: {
+                viewID: "PO0760",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["RQNNUMBER"],
+                displayFieldNames: ["RQNNUMBER", "VDCODE", "VDNAME", "ISPRINTED", "DATE", "DESCRIPTIO", "REFERENCE",
+                                    "ISCOMPLETE", "REQUESTBY", "HASJOB"],
+            },
+
+            Returns: {
+                viewID: "PO0731",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["RETNUMBER"],
+                displayFieldNames: ["RETNUMBER", "VDCODE", "VDNAME", "ISPRINTED", "DATE", "DESCRIPTIO", "REFERENCE",
+                                    "RCPNUMBER", "PONUMBER", "ISCOMPLETE", "HASJOB"],
+            },
         },
 
         TX: {
@@ -197,7 +261,9 @@
             Project: {
                 viewID: "PM0022",
                 viewOrder: 2,
-                displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT", "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE", "CLOSEDDATE", "CODETAXGRP"],
+                displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT",
+                                    "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE",
+                                    "CLOSEDDATE", "CODETAXGRP"],
                 returnFieldNames: ["PROJECT"],
                 /*extra*/
                 filterTemplate: "CONTRACT = \"{0}\" ",
