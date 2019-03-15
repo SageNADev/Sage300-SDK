@@ -220,6 +220,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="edit-time.png">edit-time.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="edit-up-down.png">edit-up-down.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="floral_2.png">floral_2.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="global_navigation.png">global_navigation.png</ProjectItem>
@@ -335,6 +336,10 @@
             <Folder Name="OE" TargetFolderName="OE">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_oe.jpg">bg_menu_oe.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe.png">icon_oe.png</ProjectItem>
+            </Folder>
+            <Folder Name="PM" TargetFolderName="PM">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_pm.jpg">bg_menu_pm.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pm.png">icon_pm.png</ProjectItem>
             </Folder>
             <Folder Name="PO" TargetFolderName="PO">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_po.jpg">bg_menu_po.jpg</ProjectItem>
@@ -473,6 +478,10 @@
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.woff">WebComponentsIcons.woff</ProjectItem>
               </Folder>
             </Folder>
           </Folder>
@@ -671,6 +680,14 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
+            </Folder>
+            <Folder Name="fonts" TargetFolderName="fonts">
+              <Folder Name="glyphs" TargetFolderName="glyphs">
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.woff">WebComponentsIcons.woff</ProjectItem>
+              </Folder>
             </Folder>
           </Folder>
           <Folder Name="less" TargetFolderName="less">
@@ -1462,9 +1479,12 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js</ProjectItem>
@@ -1556,6 +1576,7 @@
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ViewFinder.cshtml">ViewFinder.cshtml</ProjectItem>
             </Folder>
             <Folder Name="FiscalYear" TargetFolderName="FiscalYear">
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalYearSet.cshtml">FiscalYearSet.cshtml</ProjectItem>
@@ -1635,6 +1656,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js">Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js">Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js">Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js">Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js</ProjectItem>
