@@ -246,7 +246,6 @@ input, textarea {
 input[type=text], 
 input[type=password], 
 textarea {
-    width: 100%;
     font-size: 100%;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -813,6 +812,10 @@ input[type="checkbox"] {
     width: 60px;
     float: left;
     text-transform: uppercase;
+
+    .k-numeric-wrap {
+      border-right: 0;
+    } 
   }
 
   .separator, 
@@ -948,7 +951,9 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
       color: #4e5053;
     }
 
-    .k-pager-wrap .k-icon {
+    .k-pager-wrap .k-icon,
+    .k-header>.k-grid-filter .k-i-filter, 
+    .k-header>.k-header-column-menu .k-i-filter {
       background: none !important;
     }
 }
@@ -1085,7 +1090,6 @@ input.numeric {
   }  
 }
 
-
 /* input field sizes */
 input,
 textarea,
@@ -1094,7 +1098,8 @@ textarea,
 .numeric-search-group .k-numerictextbox,
 .input-group .k-numerictextbox,
 .input-group .k-dropdown,
-.dropdown-group .k-dropdown {
+.dropdown-group .k-dropdown,
+.k-widget.k-numerictextbox .k-input {
   &.xlarge {
     width: 100%;
   }
@@ -1137,6 +1142,13 @@ textarea,
   width: 100%;
 }
 
+span.k-numerictextbox.numeric {
+
+  &.default {
+    width: 210px;
+  }
+}
+
 textarea {
   min-height: 200px; 
   resize: vertical; 
@@ -1154,7 +1166,6 @@ textarea {
   &.default {
     width: 206px;
   }
-  
 }
 
 // Align Total Tax input field
@@ -1229,6 +1240,11 @@ textarea {
 }
 
 // Kendo Customization - dropdown list, numeric text box and datepicker
+
+.k-numeric-wrap {
+  display: inline-block; // AT-48050
+}
+
 .k-dropdown-wrap,
 .k-numeric-wrap,
 .k-picker-wrap {
@@ -1281,7 +1297,7 @@ textarea {
 
     .k-i-warning {
       left: 0;
-      right: unset;
+      right: auto;
       background-image: none;
       color: #C7384F;
       font-family: "Sage Armonye Icons";
@@ -1375,7 +1391,7 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-n,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-up  { 
-  background-position: -708px -3px;
+  background-position: -708px -5px;
   text-indent: -9999px;
 
   &:before {
@@ -1385,18 +1401,18 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-s,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-down  { 
-  background-position: -83px -4px;
+  background-position: -83px -6px;
   text-indent: -9999px;
 }
 
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-n,
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-60-up  { 
-  background-position: -708px -73px; 
+  background-position: -708px -75px; 
 }
 
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-s,
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-60-down  { 
-  background-position: -83px -74px; 
+  background-position: -83px -76px; 
 }
 
 .k-state-hover > * > .k-i-calendar { 
@@ -1994,6 +2010,10 @@ td.k-state-focused.k-state-selected {
 
 // Tree view
 
+.treeview-group {
+  width: 100%;
+}
+
 div.k-treeview {
     margin: 0px;
     padding: 0px;
@@ -2003,6 +2023,11 @@ div.k-treeview {
 
     .k-icon:before {
       content: none;
+    }
+
+    .k-icon.k-i-expand,
+    .k-icon.k-i-collapse  {
+      margin-left: 0;
     }
 }
 .k-treeview span.k-in {
@@ -2136,9 +2161,9 @@ div.k-treeview {
 #exportTree #buttons input[class*="btn-"]{
     margin-left: 10px; /*New UI*/
 }
-ul#exportTreeView li ul li {
-    padding-left: 36px;
-}
+ #exportTreeView > ul > li > ul > li {
+    padding-left: 50px;
+} 
 
 .k-treeview {
     border: 1px solid #9a9b9c !important;
@@ -2195,8 +2220,8 @@ ul#exportTreeView li ul li {
 
   > span {
     position: relative;
-    background: #2a3455;
-    border: 1px solid #2a3455;
+    background: @sage-dark-gray;
+    border: 1px solid @sage-dark-gray;
     display: block;
     padding: 5px;
     font-size: 12px;
@@ -2217,8 +2242,8 @@ ul#exportTreeView li ul li {
     }
 
     &:after {
-      border-color: rgba(136, 183, 213, 0);
-      border-bottom-color: #2a3455;
+      border-color:rgba(194, 225, 245, 0);
+      border-bottom-color: @sage-dark-gray;
       border-width: 7px;
       margin-left: -10px;
     }

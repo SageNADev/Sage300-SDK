@@ -531,6 +531,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded..
+        /// </summary>
+        internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update targeted version of .NET Framework.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
         ///from release {0} to {1}.
         ///
@@ -542,6 +560,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The targeted version of the Microsoft .NET Framework will be updated to version {0} 
+        ///for all projects in the solution..
+        /// </summary>
+        internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
             }
         }
         

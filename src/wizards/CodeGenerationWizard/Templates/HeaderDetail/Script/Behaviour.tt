@@ -1,0 +1,381 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = settings.EntitiesContainerName;
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+    var copyright = settings.Copyright;
+    var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
+    var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
+
+#>
+/* <#=copyright#> */
+
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
+
+"use strict";
+
+var modelData;
+var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
+
+<#=localEntityName#>UI = {
+    <#=localEntityName#>Model: {},
+    ignoreIsDirtyProperties: ["<#=keyFieldName#>"],
+    computedProperties: ["UIMode"],
+    hasKoBindingApplied: false,
+    isKendoControlNotInitialised: false,
+    <#=localKeyFieldName#>: null,
+
+	/**
+     * Initialization
+	 *
+	 * @method init
+	 */
+    init: function () {
+        // initialize grid(s)
+<#
+             PushIndent("        ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+                    var temp = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+					WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
+				}
+			 
+			 }
+             PopIndent();
+#>
+        <#=localEntityName#>UI.initButtons();
+        <#=localEntityName#>UI.initFinders();
+        <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
+        <#=localEntityName#>UISuccess.setkey();
+    },
+
+	/**
+     * Save
+	 *
+	 * @method save<#=entityName#>
+	 */
+    save<#=entityName#>: function () {
+        if ($("#frm<#=containerName#>").valid()) {
+            var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
+            if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
+                <#=localEntityName#>Repository.update(data, <#=localEntityName#>UISuccess.update);
+            } else {
+                <#=localEntityName#>Repository.add(data, <#=localEntityName#>UISuccess.update);
+            }
+        }
+    },
+
+	/**
+     * Initialize the Buttons
+	 *
+	 * @method initButtons
+	 */
+    initButtons: function () {
+        // Import/Export Buttons
+        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+
+        // Key field change event
+        $("#txt<#=keyFieldName#>").bind('blur', function (e) {
+            modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
+                <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+            }
+        });
+
+        // Create New Button
+        $("#btnNew").bind('click', function () {
+            <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+        });
+
+        // Save Button
+        $("#btnSave").bind('click', function () {
+            sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
+        });
+
+        // Delete Button
+        $("#btnDelete").bind('click', function () {
+            if ($("#frm<#=containerName#>").valid()) {
+                var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
+                sg.utls.showKendoConfirmationDialog(function () {
+                    sg.utls.clearValidations("frm<#=containerName#>");
+                    <#=localEntityName#>Repository.delete(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.delete);
+                }, null, message, <#=localEntityName#>Resources.DeleteTitle);
+            }
+        });
+    },
+
+    // Init Dropdowns here
+
+	/**
+     * Initialize the Finders, if any
+	 *
+	 * @method initFinders
+	 */
+    initFinders: function () {
+            sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>",<#        
+        Write("/*TODO Modify the finder property*/ {{viewID:\"{0}\", ", view.Properties[BusinessView.Constants.ViewId]);
+        Write("viewOrder:0, displayFieldNames:[");
+        
+        for( int i=0; i < view.Fields.Count() && i < 4; i++)
+        {
+            if (i > 0)
+                Write(", ");
+
+            Write("\"{0}\"", view.Fields[i].ServerFieldName);
+         }
+        Write("], returnFieldNames:[\"{0}\"],", view.Fields[0].ServerFieldName);
+        WriteLine("filter:null, initKeyValues:[], parentValAsInitKey:true});");
+#>
+    },
+
+	/**
+     * Get
+	 *
+	 * @method get
+	 */
+    get: function () {
+        <#=localEntityName#>Repository.get(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.get);
+    },
+
+	/**
+     * Create
+	 *
+	 * @method create
+	 */
+    create: function () {
+        sg.utls.clearValidations("frm<#=containerName#>");
+        <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
+    },
+
+	/**
+     * Is Dirty check
+	 *
+	 * @method checkIsDirty
+     * @param functionToCall
+     * @param <#=localKeyFieldName#>
+	 */
+    checkIsDirty: function (functionToCall, <#=localKeyFieldName#>) {
+        if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
+            sg.utls.showKendoConfirmationDialog(
+                function () { // Yes
+                    sg.utls.clearValidations("frm<#=containerName#>");
+                    functionToCall.call();
+                },
+                function () { // No
+                    if (sg.controls.GetString(<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
+                        modelData.<#=keyFieldName#>(<#=localKeyFieldName#>);
+                   }
+                   return;
+                },
+                jQuery.validator.format(globalResource.SaveConfirm, <#=localEntityName#>Resources.<#=keyFieldName#>Title, <#=localKeyFieldName#>));
+        } else {
+            functionToCall.call();
+        }
+    }
+};
+
+// Callbacks
+var <#=localEntityName#>UISuccess = {
+
+	/**
+     * Setkey
+	 *
+	 * @method setkey
+	 */
+    setkey: function () {
+        <#=localEntityName#>UI.<#=localKeyFieldName#> = modelData.<#=keyFieldName#>();
+    },
+
+	/**
+     * Get
+	 *
+	 * @method get
+	 * @param jsonResult
+	 */
+    get: function (jsonResult) {
+        if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
+            if (jsonResult.Data != null) {
+                <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+            } else {
+                modelData.UIMode(sg.utls.OperationMode.NEW);
+            }
+            <#=localEntityName#>UISuccess.setkey();
+
+<#
+             PushIndent("            ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+                    var temp = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+					WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
+				}
+			 
+			 }
+             PopIndent();
+#>
+
+        }
+    },
+
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param jsonResult
+	 */
+    update: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+            <#=localEntityName#>UISuccess.setkey();
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+
+	/**
+     * Create
+	 *
+	 * @method create
+	 * @param jsonResult
+	 */
+    create: function (jsonResult) {
+        <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+        <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+        <#=localEntityName#>UISuccess.setkey();
+        sg.controls.Focus($("#txt<#=keyFieldName#>"));
+    },
+
+	/**
+     * Delete
+	 *
+	 * @method delete
+	 * @param jsonResult
+	 */
+    delete: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+            <#=localEntityName#>UISuccess.setkey();
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+
+	/**
+     * Display Result
+	 *
+	 * @method displayResult
+	 * @param jsonResult
+	 * @param uiMode
+	 */
+    displayResult: function (jsonResult, uiMode) {
+        if (jsonResult != null) {
+            if (!<#=localEntityName#>UI.hasKoBindingApplied) {
+                <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(jsonResult);
+                <#=localEntityName#>UI.hasKoBindingApplied = true;
+                modelData = <#=localEntityName#>UI.<#=localEntityName#>Model.Data;
+                <#=localEntityName#>ObservableExtension(<#=localEntityName#>UI.<#=localEntityName#>Model, uiMode);
+                <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty = new ko.dirtyFlag(modelData, <#=localEntityName#>UI.ignoreIsDirtyProperties);
+                ko.applyBindings(<#=localEntityName#>UI.<#=localEntityName#>Model);
+            } else {
+                ko.mapping.fromJS(jsonResult, <#=localEntityName#>UI.<#=localEntityName#>Model);
+                modelData.UIMode(uiMode);
+                if (uiMode != sg.utls.OperationMode.NEW) {
+                    <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+                }
+            }
+
+            if (!<#=localEntityName#>UI.isKendoControlNotInitialised) {
+                <#=localEntityName#>UI.isKendoControlNotInitialised = true;
+            } else {
+                // 
+            }
+        }
+<#
+        PushIndent("        ");
+		foreach(var view in settings.Entities)
+		{
+		    if (view.Options[BusinessView.Constants.GenerateGrid])
+			{
+                var temp = view.Properties[BusinessView.Constants.EntityName];
+                var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+				WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
+			}
+			 
+		}
+        PopIndent();
+#>
+    },
+
+	/**
+     * Initial Load
+	 *
+	 * @method initialLoad
+	 * @param result
+	 */
+    initialLoad: function (result) {
+        if (result) {
+            <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
+        } else {
+            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, <#=localEntityName#>Resources.ProcessFailedMessage);
+        }
+        sg.controls.Focus($("#txt<#=keyFieldName#>"));
+    },
+
+
+	/**
+     * Is New
+	 *
+	 * @method isNew
+	 * @param model
+	 */
+    isNew: function (model) {
+        if (model.<#=keyFieldName#>() === null) {
+           return true;
+        }
+        return false;
+    }
+};
+
+// Initial Entry
+$(function () {
+    <#=localEntityName#>UI.init();
+    $(window).bind('beforeunload', function () {
+        if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
+            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
+        }
+    });
+});
