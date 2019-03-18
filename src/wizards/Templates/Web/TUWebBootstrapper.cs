@@ -27,7 +27,6 @@ namespace $companynamespace$.$applicationid$.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
             RegisterExportImportController(container);
         }
         
@@ -36,14 +35,6 @@ namespace $companynamespace$.$applicationid$.Web
         /// </summary>
         /// <param name="container">The Unity container</param>
         private void RegisterController(IUnityContainer container)
-        {
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
         {
         }
 

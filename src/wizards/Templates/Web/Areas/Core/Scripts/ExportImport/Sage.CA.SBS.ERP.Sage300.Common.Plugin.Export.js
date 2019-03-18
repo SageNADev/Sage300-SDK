@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 /* globals globalResource: false */
 /* globals kendo: false */
@@ -77,6 +77,7 @@ var exportResultRowNumber = 0;
     };
 
     sg.dataMigration = {
+        Account: "account",
         AccountGroup: "accountgroup",
         AccountPermissions: "accountpermission",
         AccountSet: "icaccountset",
