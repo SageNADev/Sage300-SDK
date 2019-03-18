@@ -28,44 +28,10 @@
 #>
 
 {
-"_comment": [
-        "***** example of defining a finder for a grid column *****",
-        {
-            "FieldName": "ITEMNO",
-            "HasFinder": true,
-            "IsCustomData": false,
-            "Finder": {
-                "ViewID": "IC0310",
-                "ViewOrder": 0,
-                "DisplayFieldNames": [
-                    "ITEMNO",
-                    "DESC",
-                    "INACTIVE",
-                    "ITEMBRKID",
-                    "CATEGORY",
-                    "CNTLACCT",
-                    "STOCKUNIT",
-                    "DEFPRICLST"
-                ],
-                "ReturnFieldNames": [
-                    "ITEMNO"
-                ],
-                "InitKeyFieldNames": [
-                    "UNFMTITMNO"
-                ]
-            }
-        },
-        "***** example of defining a custom grid column *****",
-        {
-            "IsCustomData": true,
-            "FieldName": "CustomData1",
-            "CustomData": "receiptUI.callbackRoutine"
-        },
-    ],
-    
    "IsSequenceRevisionList": <#=view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()#>,
    "ReadOnly": false,
    "PageSize": 10,
+   "ViewID":"<#=view.Properties[BusinessView.Constants.ViewId].ToString()#>",
    "ColumnDefinitions": [
 	<#
 		PushIndent("    ");	

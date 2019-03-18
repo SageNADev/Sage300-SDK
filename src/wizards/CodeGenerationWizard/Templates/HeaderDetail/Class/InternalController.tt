@@ -120,15 +120,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 
         #region Internal methods
 
-		/// <summary>
-        /// Get grid definition for a view
-        /// </summary>
-        /// <returns></returns>
-        internal GridDefinition CreateGridDefinition(string rotoId, string jsonFilePath)
-        {
-            return ((BaseRepository)_repository).CreateGridDefinition(rotoId, jsonFilePath);
-        }
-
         /// <summary>
         /// Create a <#=modelName#>
         /// </summary>

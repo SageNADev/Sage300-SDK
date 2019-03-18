@@ -1046,7 +1046,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _allCompositions.CheckedChanged += AllCompositionsCheckedChanged;
 
             // Default to Flat Repository
-            cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.HeaderDetail);
+            cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.Flat);
         }
 
         /// <summary> New Entity</summary>

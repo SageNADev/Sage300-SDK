@@ -122,10 +122,11 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					WriteLine("ViewBag.{1}Grid = ControllerInternal.CreateGridDefinition(\"{0}\", GetGridJsonFilePath(\"{1}Grid\"));", view.Properties[BusinessView.Constants.ViewId],  view.Properties[BusinessView.Constants.EntityName]);
+					WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
 				}
 			 }
 			#>
+
 
             return View(viewModel);
         }

@@ -348,6 +348,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate Views
                 foreach (var businessView in settings.Entities)
                 {
+                    // if we are going to generate grid for a view, only create fields as it contains the entity name
+                    if (businessView.Options[BusinessView.Constants.GenerateGrid])
+                    {
+                        var entityName = businessView.Properties[BusinessView.Constants.EntityName];
+
+
+                        // Create the Model Fields class
+                        CreateClass(businessView,
+                                    entityName + "Fields.cs",
+                                    TransformTemplateToText(businessView, _settings, "Templates.Common.Class.ModelFields"),
+                                    Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
+
+                        continue;
+                    }
+
                     IterateView(businessView);
                 }
             }
@@ -1477,11 +1492,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var isInquiry = type.Equals(RepositoryType.Inquiry);
             var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
 
-            if (isFlat == true ||
-                (isHeaderDetail == true && view.IsPartofHeaderDetailComposition && generateFinder))
+            if (isFlat == true)
             {
                 CreateFlatRepositoryClasses(view);
             }
+
             if (isProcess == true) { CreateProcessRepositoryClasses(view); }
             if (isDynamicQuery == true) { CreateDynamicQueryRepositoryClasses(view); }
             if (isReport == true) { CreateReportRepositoryClasses(view); }

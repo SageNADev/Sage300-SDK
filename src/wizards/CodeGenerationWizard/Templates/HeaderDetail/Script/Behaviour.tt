@@ -64,7 +64,10 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					WriteLine("accpacGrid.init(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+                    var temp = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+					WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
 				}
 			 
 			 }
@@ -140,7 +143,20 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method initFinders
 	 */
     initFinders: function () {
-        sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>", /*TODO. SHOWING AP ACCOUNT SET AS EXAMPLE*/ {viewID:"AP0006", viewOrder:0, displayFieldNames:["ACCTSET", "TEXTDESC"], returnFieldNames:["ACCTSET"], filter:null , parentValAsInitKey:true});
+            sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>",<#        
+        Write("/*TODO Modify the finder property*/ {{viewID:\"{0}\", ", view.Properties[BusinessView.Constants.ViewId]);
+        Write("viewOrder:0, displayFieldNames:[");
+        
+        for( int i=0; i < view.Fields.Count() && i < 4; i++)
+        {
+            if (i > 0)
+                Write(", ");
+
+            Write("\"{0}\"", view.Fields[i].ServerFieldName);
+         }
+        Write("], returnFieldNames:[\"{0}\"],", view.Fields[0].ServerFieldName);
+        WriteLine("filter:null, initKeyValues:[], parentValAsInitKey:true});");
+#>
     },
 
 	/**
@@ -222,7 +238,10 @@ var <#=localEntityName#>UISuccess = {
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					WriteLine("accpacGrid.refresh(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+                    var temp = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+					WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 				}
 			 
 			 }
@@ -310,7 +329,10 @@ var <#=localEntityName#>UISuccess = {
 		{
 		    if (view.Options[BusinessView.Constants.GenerateGrid])
 			{
-				WriteLine("accpacGrid.refresh(\"{0}Grid\");", view.Properties[BusinessView.Constants.EntityName]);
+                var temp = view.Properties[BusinessView.Constants.EntityName];
+                var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+
+				WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 			}
 			 
 		}

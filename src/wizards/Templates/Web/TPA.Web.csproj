@@ -401,7 +401,6 @@
     <Content Include="Areas\$applicationid$\ExternalContent\icon_$lowercaseapplicationid$.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\$applicationid$\Controllers\Finder\" />
     <Folder Include="Areas\$applicationid$\Controllers\Process\" />
     <Folder Include="Areas\$applicationid$\Controllers\Reports\" />
     <Folder Include="Areas\$applicationid$\Models\" />
