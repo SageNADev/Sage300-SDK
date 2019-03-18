@@ -1,11 +1,13 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+
+// @ts-check
 
 "use strict";
 
 /**
  * Functionality for formatting, enabling, disabling and selecting controls.
  */
-(function () {
+(function (sg, $) {
     $(this).parent().addClass("cBox-disabled");
 
     sg.controls = {
@@ -223,29 +225,53 @@
          * @param {boolean} currentModelValue True to enable the element, false to disable it.
          */
         KendoEnableDisable: function (element, currentModelValue) {
-            if (element.type === "radio" || element.type === "checkbox") {
-                sg.controls.ApplyCheckBoxRadioButtonDisable(element);
-            } else if (element.type === "text" && element.className.indexOf("datepicker") > -1) {
-                var datePicker = $(element).data('kendoDatePicker');
-                if (datePicker) {
-                    datePicker.enable(currentModelValue);
-                }
-            } else if (element.type === "select-one") {
-                // If this is a single-select Kendo dropdown, enable it.
-                var dropDown = $(element).data('kendoDropDownList');
-                if (dropDown) {
-                    dropDown.enable(currentModelValue);
-                }
-            } else if (element.type === "text" && element.className.indexOf("kendonumeric") > -1) {
-                var numericTextBox = $(element).data('kendoNumericTextBox');
-                if (numericTextBox) {
-                    numericTextBox.enable(currentModelValue);
-                }
-            }
-            else if (element.type === "text" && element.className.indexOf("numeric") > -1) {
-                sg.controls.enableDisable(element, !currentModelValue);
+            if (!element.type) {return;} // Labels don't contain an element.type attribute.
+			
+            var $elm = $(element);
+            var type = element.type.toLowerCase();
+            var className = element.className;
+
+            switch (type) {
+                case "select-one":
+                    // If this is a single-select Kendo dropdown, enable it.
+                    var dropDown = $elm.data('kendoDropDownList');
+                    if (dropDown) {
+                        dropDown.enable(currentModelValue);
+                    }
+                    break;
+
+                case "radio":
+                case "checkbox":
+                    sg.controls.ApplyCheckBoxRadioButtonDisable(element);
+                    break;
+                     
+                case "text":
+                    if (className.indexOf("datepicker") > -1) {
+                        var datePicker = $elm.data('kendoDatePicker');
+                        if (datePicker) {
+                            datePicker.enable(currentModelValue);
+                        }
+
+                    } else if (className.indexOf("kendonumeric") > -1) {
+                        var numericTextBox = $elm.data('kendoNumericTextBox');
+                        if (numericTextBox) {
+                            numericTextBox.enable(currentModelValue);
+                        }
+
+                    } else if (className.indexOf("numeric") > -1) {
+                        // Is this a kendoNumericTextBox?
+                        var numericTextBox = $elm.data('kendoNumericTextBox');
+                        if (numericTextBox) {
+                            numericTextBox.enable(currentModelValue);
+                        } else {
+                            // Is this a regular text box?
+                            sg.controls.enableDisable(element, !currentModelValue);
+                        }
+                    }
+                    break;
             }
         },
+
         /**
          * Sets a specified element's text to a specified numeric value, formatted to the home currency decimals if applicable.
          *
