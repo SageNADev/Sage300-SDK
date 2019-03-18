@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software, Inc.")]
 [assembly: AssemblyProduct("Sage300UIWizardPackage")]
-[assembly: AssemblyCopyright("Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

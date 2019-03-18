@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,7 +20,6 @@
 
 #region Imports
 using EnvDTE80;
-//using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.Collections.Generic;
@@ -168,11 +167,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #endregion
 
             #region Accpac .NET library update - Comment out if no update required
-            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-                    Resources.ReleaseAllDescSyncAccpacLibs,
-                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
-                                  Constants.PerRelease.FromAccpacNumber,
-                                  Constants.PerRelease.ToAccpacNumber));
+            // Not necessary for 2019.2 release
+            //AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+            //        Resources.ReleaseAllDescSyncAccpacLibs,
+            //        string.Format(Resources.ReleaseAllSyncAccpacLibs,
+            //                      Constants.PerRelease.FromAccpacNumber,
+            //                      Constants.PerRelease.ToAccpacNumber));
             #endregion
 
             #region Release Specific Steps...
@@ -186,7 +186,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-            // No release specific steps for 2019.1
+            AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
+                    Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
+                    string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
+                                  Constants.Common.TargetedDotNetFrameworkVersion));
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -206,7 +209,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             NextStep();
         }
 
-        /// <summary> Build Main Content Step </summary>
+        /// <summary>
+        /// Build Main Content Step
+        /// </summary>
         /// <returns>Content for main screen</returns>
         private static string BuildMainContentStep()
         {
@@ -217,13 +222,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine(Resources.FollowingSteps);
             content.AppendLine("");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
-            // Specific to release
+            // Not necessary for 2019.2 release
+            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+
+            // Begin - Specific to release
 #if ENABLE_TK_244885
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 #endif
-            // No release specific steps for 2019.1
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+
+            // End - Specific to release
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
@@ -351,14 +360,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Show Step Page</summary>
         private void ShowStep()
         {
-            // Update title and text for step
-            var currentStep = _currentWizardStep.ToString("#0");
-            var step = _currentWizardStep.Equals(0)
-                            ? string.Empty
-                            : $"{Resources.Step} {currentStep}{Resources.Dash}";
-
-            lblStepTitle.Text = step + _wizardSteps[_currentWizardStep].Title;
-            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
+            SetStepTitleAndDescription();
 
             // Display information
             lblContent.Text = _wizardSteps[_currentWizardStep].Content;
@@ -369,6 +371,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             splitStep.Panel2Collapsed = !_wizardSteps[_currentWizardStep].ShowCheckbox;
 
             splitSteps.SplitterDistance = SplitterDistance;
+        }
+
+        /// <summary>
+        /// Set the current step title and description text
+        /// </summary>
+        private void SetStepTitleAndDescription()
+        {
+            // Update title and text for step
+            var currentStep = _currentWizardStep.ToString("#0");
+            var step = _currentWizardStep.Equals(0)
+                            ? string.Empty
+                            : $"{Resources.Step} {currentStep}{Resources.Dash}";
+
+            lblStepTitle.Text = step + _wizardSteps[_currentWizardStep].Title;
+            lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
 
         /// <summary>
@@ -493,7 +510,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Stores value in step
             _wizardSteps[_currentWizardStep].CheckboxValue = checkBox.Checked;
         }
-
 #endregion
     }
 }

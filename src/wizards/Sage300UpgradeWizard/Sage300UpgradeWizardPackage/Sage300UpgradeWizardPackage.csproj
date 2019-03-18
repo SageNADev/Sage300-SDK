@@ -69,7 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Items.vstemplate" />
+    <Content Include="Assets\Items.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Assets\__TemplateIcon.ico" />
     <Content Include="ItemTemplates\Items.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

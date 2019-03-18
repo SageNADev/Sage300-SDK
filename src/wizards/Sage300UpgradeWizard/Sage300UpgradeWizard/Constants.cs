@@ -48,6 +48,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             /// <summary> Just a dummy ModuleId </summary>
             public const string DummyModuleId = "XX";
+
+            /// <summary> 
+            /// This is the version of the Microsoft .NET Framework 
+            /// to target for all projects in the solution being upgraded.
+            /// </summary>
+            public const string TargetedDotNetFrameworkVersion = "4.7.2";
+            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.7.2";
         }
 
         /// <summary>
@@ -57,10 +64,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2019.0";
+            public const string FromReleaseNumber = "2019.1";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2019.1";
+            public const string ToReleaseNumber = "2019.2";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.6.0.0";
