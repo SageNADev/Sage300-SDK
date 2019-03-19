@@ -1,0 +1,2 @@
+﻿The targeted version of the Microsoft .NET Framework will be updated to version {0} 
+for all projects in the solution.
