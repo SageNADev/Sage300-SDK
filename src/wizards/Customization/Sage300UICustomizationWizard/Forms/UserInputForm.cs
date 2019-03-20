@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -44,6 +44,8 @@ namespace Sage300UICustomizationWizard
         #region Private Constants
         private static class Constants
         {
+            public const string KendoVersion = "v2019.1.115";
+
             /// <summary> Panel Name for pnlCreateEdit </summary>
             public const string PanelCreateEdit = "pnlCreateEdit";
 
@@ -501,6 +503,7 @@ namespace Sage300UICustomizationWizard
 
             tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
 
+            lblKendoVersionHelp.Text = String.Format(Resources.Template_KendoVersion, Constants.KendoVersion);
         }
 
         /// <summary> Do not allow space characters in content</summary>

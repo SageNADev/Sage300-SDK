@@ -1,0 +1,120 @@
+{
+	ViewName : "OE0240",
+	ModelName: "CreditDebitNote",
+	Description: "OE Credit Debit Notes",
+	Fields :
+	[
+		{
+			Field : "ORDNUMBER",
+			FieldIndex: 2,
+			DataType : "String",
+			Precision: 0,
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "OrderEntry",
+				Action : "Index"
+			}
+		},
+		{
+			Field : "INVNUMBER",
+			FieldIndex: 3,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "InvoiceEntry",
+				Action : "Index"
+			}
+		},
+		{
+			Field : "CRDNUMBER",
+			DataType : "String",
+			FieldIndex: 4,
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "OE",
+				Controller : "CreditDebitNoteEntry",
+				Action : "Index"
+			}
+		},
+		{
+			Field : "CUSTOMER",
+			FieldIndex: 6,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: true,
+			DrilldownUrl:
+			{
+				Area : "AR",
+				Controller : "Customer",
+				Action : "Index"
+			}			
+		},
+		{
+			Field : "PONUMBER",
+			FieldIndex: 21,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "REFERENCE",
+			FieldIndex: 23,
+			DataType : "String",
+			IsFilterable: false,
+			IsDrilldown: false
+		},
+		{
+			Field : "DESC",
+			FieldIndex: 28,
+			DataType : "String",
+			IsFilterable: true,
+			Precision: 3,
+			IsDrilldown: false
+		},
+		{
+			Field : "INVDATE",
+			FieldIndex: 31,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},
+		{
+			Field : "RETDATE",
+			FieldIndex: 45,
+			DataType : "DateTime",
+			IsFilterable: true,
+			IsDrilldown: false
+		},		
+		{
+			Field : "CRDSUBTOT",
+			FieldIndex: 64,
+			DataType : "Decimal",
+			Precision: 3,
+			IsFilterable: true,
+			IsDrilldown: "false"
+		},	
+		{
+			Field : "CRDNETWTX",
+			FieldIndex: 67,
+			DataType : "Decimal",
+			Precision: 3,
+			IsFilterable: true,
+			IsDrilldown: "false"
+		},
+		{
+			Field : "CRRATETYPE",
+			FieldIndex: 69,
+			DataType : "String",
+			IsFilterable: true,
+			IsDrilldown: "false"
+		}			
+	]
+}

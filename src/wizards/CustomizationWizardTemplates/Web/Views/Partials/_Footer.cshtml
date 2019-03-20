@@ -1,0 +1,32 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Core.Configuration
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+
+<footer class="footer">
+    <div class="container">
+        <a class ="logo-sage" href="http://na.sage.com" target="_blank">
+            <img src="~/Content/Images/ui-logo-sage-dark@2x.png" width="50" height="19" />
+        </a>
+        <ul>
+            <li>
+                <a href="@ConfigurationHelper.CopyrightUrl" target="_blank">@HomePageResx.Copyright_Trademarks</a>
+            </li>
+            <li>
+                <a href="@ConfigurationHelper.PolicyUrl" target="_blank">@HomePageResx.Private_Policy</a>
+            </li>
+            @*<li>
+            <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>&nbsp;&nbsp;©&nbsp;@DateTime.Today.Year, @HomePageResx.Copyright_message
+            </li>*@
+            <li>
+                <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>
+            </li>
+            <li>
+                ©&nbsp;@DateTime.Today.Year, @HomePageResx.Copyright_message
+            </li>
+        </ul>
+    </div>
+</footer>
+<script>    
+    $(document).ready(function() {
+     $(".footer").show();
+    });
+</script>

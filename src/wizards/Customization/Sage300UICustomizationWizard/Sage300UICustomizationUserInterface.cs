@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -151,7 +151,7 @@ namespace Sage300UICustomizationWizard
         public void RunFinished()
         {
             var sln = (Solution2)_dte.Solution;
-            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.6.2", "CSharp");
+            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.7.2", "CSharp");
 
             sln.Create(_destinationFolder, _safeprojectname);
 
