@@ -117,137 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Assembly" xml:space="preserve">
-    <value>Assembly:</value>
+  <data name="Msg_Application" xml:space="preserve">
+    <value>Application</value>
   </data>
-  <data name="AssemblyTip" xml:space="preserve">
-    <value>The Assembly file will be created in the Visual Studio Customizard Wizard if an endpoint is needed for this customization</value>
+  <data name="Msg_CommandLineParameter_EnableTemplateUpdates" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish rebuild the \src\wizards\templates\Web\ folder based on sources located elsewhere. If set to false or not specified, the templates folders will not be updated at all.</value>
   </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
+  <data name="Msg_CommandLineParameter_Help" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to view the help for this application.</value>
   </data>
-  <data name="Bootstrapper" xml:space="preserve">
-    <value>Bootstrapper:</value>
+  <data name="Msg_CommandLineParameter_PreBuild" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to run the PreBuild process during the Visual Studio Pre-Build event.</value>
   </data>
-  <data name="BootstrapperTip" xml:space="preserve">
-    <value>The Bootstrapper file will be created in the Visual Studio Customization Wizard if an endpoint is needed for this customization</value>
+  <data name="Msg_CommandLineParameter_PreBuildCustomizationWizardTemplates" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to build the Web.vstemplate file that lives in the \src\wizards\CustomizationWizardTemplates\Web\ folder</value>
   </data>
-  <data name="BusinessPartnerNameTip" xml:space="preserve">
-    <value>The business partner name creating the customization</value>
+  <data name="Msg_CommandLineParameter_RebuildWebDotVstemplateFile" xml:space="preserve">
+    <value>Specifying this flag indicates that you wish to rebuild the Web.vstemplate file that lives in the \src\Wizards\Templates\Web\ folder based on the contents of this and it's sub-folders.</value>
   </data>
-  <data name="CompanyName" xml:space="preserve">
-    <value>Company Name:</value>
+  <data name="Msg_CommandLineParameter_SDKRoot" xml:space="preserve">
+    <value>This is the path to the root Web SDK folder.</value>
   </data>
-  <data name="Compatibility" xml:space="preserve">
-    <value>Compatibility:</value>
+  <data name="Msg_CommandLineParameter_TemplateFolder" xml:space="preserve">
+    <value>The path to the web template folder. If not specified, it will default to \src\Wizards\Templates\Web\</value>
   </data>
-  <data name="CompatibilityTip" xml:space="preserve">
-    <value>The compatibility level of the customization (informational only)</value>
+  <data name="Msg_CommandLineParameter_WebSource" xml:space="preserve">
+    <value>This is the path to the source web files.</value>
   </data>
-  <data name="CustomizationDescription" xml:space="preserve">
-    <value>Description:</value>
+  <data name="Msg_InnerException" xml:space="preserve">
+    <value>Inner Exception</value>
   </data>
-  <data name="CustomizationDescriptionTip" xml:space="preserve">
-    <value>The description of the customization</value>
-  </data>
-  <data name="CustomizationName" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="CustomizationNameTip" xml:space="preserve">
-    <value>A name to identify the customization (informational only)</value>
-  </data>
-  <data name="Dash" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="Dot" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="EULA" xml:space="preserve">
-    <value>EULA:</value>
-  </data>
-  <data name="EULATip" xml:space="preserve">
-    <value>An End User License Agreement file if specified will be included in the Manifest</value>
-  </data>
-  <data name="Filter" xml:space="preserve">
-    <value>JSON Files (Manifest.json)|Manifest.json</value>
-  </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folder:</value>
-  </data>
-  <data name="FolderNameTip" xml:space="preserve">
-    <value>The folder for the customization</value>
-  </data>
-  <data name="Generate" xml:space="preserve">
-    <value>Generate</value>
-  </data>
-  <data name="InvalidModuleLength" xml:space="preserve">
-    <value>The module must be 2 characters</value>
-  </data>
-  <data name="InvalidModuleUsage" xml:space="preserve">
-    <value>The specified module cannot be an application module (i.e. AP, AR, GL, etc.)</value>
-  </data>
-  <data name="InvalidSettingRequiredField" xml:space="preserve">
-    <value>The {0} has not been specified.</value>
-  </data>
-  <data name="KendoFolderInvalid" xml:space="preserve">
-    <value>The Kendo Folder cannot be blank.</value>
-  </data>
-  <data name="KendoLicenseInvalid" xml:space="preserve">
-    <value>The Kendo UI Commercial License must be checked to continue.</value>
-  </data>
-  <data name="Module" xml:space="preserve">
-    <value>Module:</value>
-  </data>
-  <data name="ModuleTip" xml:space="preserve">
-    <value>Specify a module other than any of the application modules (i.e. AP, AR, GL, etc.)</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="Package" xml:space="preserve">
-    <value>Package:</value>
-  </data>
-  <data name="PackageFinderTip" xml:space="preserve">
-    <value>Lookup a customization</value>
-  </data>
-  <data name="PackageIdTip" xml:space="preserve">
-    <value>A 36 character GUID to uniquely identify the customization</value>
-  </data>
-  <data name="Project" xml:space="preserve">
-    <value>Project:</value>
-  </data>
-  <data name="ProjectTip" xml:space="preserve">
-    <value>Specify a project name (default is company name plus customization name)</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sage_300_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\sage_300_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Step" xml:space="preserve">
-    <value>Step</value>
-  </data>
-  <data name="StepDescriptionCreateEdit" xml:space="preserve">
-    <value>This wizard will generate the solution based off of a Customization Manifest (JSON file).</value>
-  </data>
-  <data name="StepDescriptionKendo" xml:space="preserve">
-    <value>Confirm the License and select the Kendo folder.</value>
-  </data>
-  <data name="StepTitleCreateEdit" xml:space="preserve">
-    <value>Generate a Customization Solution</value>
-  </data>
-  <data name="StepTitleKendo" xml:space="preserve">
-    <value>Select Kendo Folder</value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>Version:</value>
-  </data>
-  <data name="VersionTip" xml:space="preserve">
-    <value>The verison for the customization (informational only)</value>
-  </data>
-  <data name="WebCustomization" xml:space="preserve">
-    <value>Web Customization</value>
-  </data>
-  <data name="Template_KendoVersion" xml:space="preserve">
-    <value>The Kendo UI version used in these projects is {0}</value>
+  <data name="Msg_ProgramUsageMessage" xml:space="preserve">
+    <value>Program Name:          {0}
+Version:               {1}
+Build Date:            {2}
+
+Copyright:             (c) 1994-{6} The Sage Group plc or its licensors.  
+                       All rights reserved.
+License:               The MIT Licence (MIT)
+
+Required 3rd party
+programs/components:   {3}
+
+
+Required Parameter(s):
+
+{4}
+
+Optional Parameter(s):
+
+{5}</value>
   </data>
 </root>
