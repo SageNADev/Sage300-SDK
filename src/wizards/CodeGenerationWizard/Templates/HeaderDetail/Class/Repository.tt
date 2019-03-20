@@ -93,6 +93,14 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 <# // define business entity mappers #>
 <# foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
     {
+        // skip entity in a grid
+        bool flag;
+        settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+        if (Convert.ToBoolean(flag))
+        {
+            continue;
+        }
+
         if (settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
         {
             continue;
@@ -126,8 +134,10 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 <# 
             foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
             {
-                    // skip an entity that is not part of the header-detail tree
-                    if (settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity" && e.Attribute("view").Value == entry.Key).Count() == 0)
+                    // skip entity in a grid
+                    bool flag;
+                    settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+                    if (Convert.ToBoolean(flag))
                     {
                         continue;
                     }
@@ -261,6 +271,17 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             {
                 throw ExceptionHelper.RowNotFoundException(CommonResx.DeleteFailedNoRecordMessage);
             }
+            return <#=headerMapperName#>.Map(<#=headerEntityName#>);
+        }
+
+        /// <summary>
+        /// Creates a new <#=headerEntityName#> record
+        /// </summary>
+        /// <returns><#=headerEntityName#> viewModel</returns>
+        public <#=headerModelName#> CreateNewRecord()
+        {
+            CheckRights(<#=headerEntityName#>, SecurityType.Add);
+            <#=headerEntityName#>.Init();
             return <#=headerMapperName#>.Map(<#=headerEntityName#>);
         }
 

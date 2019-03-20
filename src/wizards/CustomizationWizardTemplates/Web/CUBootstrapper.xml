@@ -1,0 +1,5 @@
+<bootstrapper>
+  <assemblies>
+    <add assembly="$safeprojectname$.dll" />	
+  </assemblies>
+</bootstrapper>

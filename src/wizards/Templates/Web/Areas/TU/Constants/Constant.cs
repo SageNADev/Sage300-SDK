@@ -7,10 +7,6 @@ namespace $companynamespace$.$applicationid$.Web.Areas.$applicationid$.Constants
     /// </summary>
     public static class Constants
     {
-        #region Finder
-       
-        #endregion
-
         #region Export/Import
       
         #endregion

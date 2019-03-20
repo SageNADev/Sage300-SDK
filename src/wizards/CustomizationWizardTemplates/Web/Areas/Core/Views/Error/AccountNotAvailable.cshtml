@@ -1,0 +1,22 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
+@{
+    Layout = Shared.GenericLayout;
+}
+
+<div class="wrapper">
+    <div class="msg msg-error">
+        <h2 class="msg-heading">@AccountMessagesResx.TenantNotAvailableTitle</h2>
+        <div class="msg-body">
+            <p>@AccountMessagesResx.TenantNotAvailableMessage</p>
+            <p>
+                @AccountMessagesResx.NeedAssistance
+                &nbsp;<a href="@ConfigurationHelper.ContactSupportUrl" target="_blank">@AccountMessagesResx.ContactSupportLink</a>
+            </p>
+        </div>
+    </div>
+</div>

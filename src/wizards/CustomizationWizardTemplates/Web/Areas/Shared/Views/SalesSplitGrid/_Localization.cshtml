@@ -1,0 +1,22 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using SalesSplitResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.SalesSplitResx;
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+
+<script type="text/javascript">
+
+    var salesSplitGridResources = {
+        SalesPersonCode: '@Html.SageRaw(SalesSplitResx.SalespersonCode)',
+        SalesPerson: '@Html.SageRaw(SalesSplitResx.SalespersonName)',
+        SalesSplitPercentage: '@Html.SageRaw(SalesSplitResx.Percentage)',
+        FinderTitle: '@Html.SageRaw(CommonResx.Select)',
+        DeleteLineConfirm: '@Html.SageRaw(CommonResx.DeleteLineMessage)',
+        DeleteLinesConfirm: '@Html.SageRaw(CommonResx.DeleteLinesMessage)',
+        DeleteTitle: '@Html.SageRaw(CommonResx.Delete)',
+        Primary: '@Html.SageRaw(SalesSplitResx.Primary)',
+    };
+
+
+</script>

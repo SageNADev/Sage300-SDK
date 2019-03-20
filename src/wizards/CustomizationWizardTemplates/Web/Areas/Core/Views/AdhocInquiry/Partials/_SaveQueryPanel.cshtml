@@ -1,0 +1,66 @@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+<div id="saveQueryPanel" class="side-panel side-panel-shadow create-inquiry">
+    <div class="side-panel-wrapper">
+        <div class="header-container">  
+            <h1 class="side-panel-header header-inquiry" id="hCreateInquiry">@InquiryResx.SaveQuery</h1>
+            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnSaveQueryClose"></div>
+        </div>
+        <div class="wrapper">
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.DataSource</label>
+                    <input type="text" id="SaveQueryPanel_DataSource" value="" class="medium" placeholder="" disabled>
+                </div>
+            </div>
+            <div id="saveQueryPanelGrid" class="datagrid-group"></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.QueryName</label>
+                    <input type="text" id="SaveQueryPanel_QueryName" maxlength="50" value="" class="medium">
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <div class="dropdown-group">
+                    <label>@CommonResx.Type</label>
+                    <select class="small single-select" id="SaveQueryPanel_QueryTypeList">
+                        <option>@InquiryResx.Public</option>
+                        <option>@InquiryResx.Private</option>
+                    </select>
+                </div>
+                @*<div class="input-group">
+                    <label>@InquiryResx.DateModified</label>
+                    <input type="text" value="1/12/2017" class="small" id="dateModified" disabled>
+                </div>*@
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.Description</label>
+                    <input type="text" value="" class="medium" id="SaveQueryPanel_QueryDescription">
+                </div>
+            </div>
+            <div class="footer-group">
+                @Html.KoSageButton("btnSaveQueryCancel", new { }, new { @value = CommonResx.Cancel, @id = "btnSaveQueryCancel", @class = "btn btn-secondary" })
+                @Html.KoSageButton("btnSaveQuerySave", new { }, new { @value = CommonResx.Save, @id = "btnSaveQuerySave", @class = "btn btn-primary btn-inquiry-save" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var savedQueryResources = {
+        QueryName: '@Html.SageRaw(InquiryResx.QueryName)',
+        Description: '@Html.SageRaw(InquiryResx.Description)',
+        DateModified: '@Html.SageRaw(InquiryResx.DateModified)',
+        Type: '@Html.SageRaw(CommonResx.Type)',
+        Public: '@Html.SageRaw(InquiryResx.Public)',
+        Private: '@Html.SageRaw(InquiryResx.Private)',
+        Template: '@Html.SageRaw(CommonResx.Template)',
+        Shared: '@Html.SageRaw(InquiryResx.Shared)',
+        Personal: '@Html.SageRaw(InquiryResx.Personal)',
+        DuplicateMessage: '@Html.SageRaw(InquiryGeneralResx.DuplicateMessage)'
+    };
+</script>
