@@ -422,6 +422,15 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Kendo UI version used in these projects is {0}.
+        /// </summary>
+        internal static string Template_KendoVersion {
+            get {
+                return ResourceManager.GetString("Template_KendoVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version {
