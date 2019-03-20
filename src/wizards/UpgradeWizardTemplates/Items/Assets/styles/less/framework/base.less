@@ -1398,6 +1398,10 @@ a[class*="btn-"] {
 
 /* Kendo Controls - Common - borders */
 
+.k-numeric-wrap {
+  display: inline-block; // AT-48050
+}
+
 .k-autocomplete,
 .k-picker-wrap,
 .k-numeric-wrap,
@@ -4246,6 +4250,10 @@ textarea,
     overflow: hidden !important;
     padding: 0;
     margin: 0;
+
+    > .k-overlay {
+      display: none; /*D-39282*/
+    }
   }
 }
 
@@ -5013,38 +5021,46 @@ ul.list-bullet {
   background-color: #fff;
 }
 
-.k-filter-menu .k-button {
-  background-color: #fff;
-  border: 1px solid #255bc7;
-  color: #255bc7;
+.k-filter-menu .k-action-buttons {
+  margin: 0;
+  padding: 0;
 
-  &:hover {
-    background-color: #e8effe;
-    color: #255bc7;
+  .k-button {
+    background-color: #fff;
     border: 1px solid #255bc7;
-  }
+    color: #255bc7;
+    margin: 0;
 
-  &:focus {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    outline: 0;
-  }
+    &:hover {
+      background-color: #e8effe;
+      color: #255bc7;
+      border: 1px solid #255bc7;
+    }
 
-  &.k-primary {
-    background-color: #255bc7;
-    border-color: #2151b1;
-    background-image: none;
-    color: #fff;
-
-    &:hover,
-    &:focus,
-    &:focus:active:not(.k-state-disabled):not([disabled]) {
-      background-color: #1d479c;
-      border: 1px solid #2151b1;
-      color: #fff;
-      outline: 0;
+    &:focus {
       box-shadow: none;
       -webkit-box-shadow: none;
+      outline: 0;
+    }
+
+    &.k-primary {
+      background-color: #255bc7;
+      border-color: #2151b1;
+      background-image: none;
+      color: #fff;
+      float: right;
+      margin-left: 6px;
+
+      &:hover,
+      &:focus,
+      &:focus:active:not(.k-state-disabled):not([disabled]) {
+        background-color: #1d479c;
+        border: 1px solid #2151b1;
+        color: #fff;
+        outline: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+      }
     }
   }
 }

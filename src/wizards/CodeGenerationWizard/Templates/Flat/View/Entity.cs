@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+    #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Entity : EntityBase
     {
@@ -27,131 +27,125 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
         public virtual string TransformText()
         {
             
-            #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 2 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 3 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 4 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 5 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 6 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 7 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 8 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 9 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 10 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 11 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 12 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 13 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 14 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 15 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 16 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 17 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 18 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 19 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 24 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var resxName = view.Properties[BusinessView.Constants.ResxName];
-
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        entityName = settings.EntitiesContainerName;
-        resxName = settings.EntitiesContainerName + "Resx";
-    }
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
@@ -167,128 +161,77 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             #line hidden
             this.Write("@* ");
             
-            #line 44 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 38 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write(" *@\r\n\r\n");
+            this.Write(" *@\r\n\r\n@model ");
             
-            #line 46 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("@model ");
-            
-            #line 50 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models.");
             
-            #line 50 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel\r\n");
-            
-            #line 51 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-}
-else
-{
-
-            
-            #line default
-            #line hidden
-            this.Write("@model ");
-            
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel<");
             
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.");
             
-            #line 56 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write(">\r\n");
+            this.Write(">\r\n@using ");
             
-            #line 57 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-}
-
-            
-            #line default
-            #line hidden
-            this.Write("\r\n@using ");
-            
-            #line 61 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 61 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 61 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms.");
             
-            #line 61 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 41 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
@@ -304,21 +247,21 @@ else
 <script type=""text/javascript"">
     @Html.ConvertToJsVariableUsingNewtonSoft(""");
             
-            #line 70 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 50 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel\", Model)\r\n</script>\r\n\r\n@Html.Partial(\"~/Areas/");
             
-            #line 73 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 53 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write("/Views/");
             
-            #line 73 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 53 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -335,14 +278,14 @@ else
                 <div class=""header-headline"">
                     @Html.SageHeader1Label(""");
             
-            #line 83 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 63 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Header\", ");
             
-            #line 83 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 63 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
@@ -367,14 +310,14 @@ else
         <div class=""search-group"">
             @Html.SageLabelFor(model => model.Data.");
             
-            #line 101 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 81 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @id = \"lbl");
             
-            #line 101 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 81 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -382,21 +325,21 @@ else
             this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
                     ".");
             
-            #line 102 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @sagevalue = \"Data.");
             
-            #line 102 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", @valueUpdate = \"\'input\'\" }, new { @id = \"txt");
             
-            #line 102 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 82 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -404,7 +347,7 @@ else
             this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
                     "geButton(\"btnLoad");
             
-            #line 103 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 83 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -412,14 +355,14 @@ else
             this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
                     "        @Html.KoSageButton(\"btnFinder");
             
-            #line 104 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
             
-            #line 104 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 84 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -427,7 +370,7 @@ else
             this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
                     "a.");
             
-            #line 105 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 85 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -446,7 +389,7 @@ else
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+        #line 1 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

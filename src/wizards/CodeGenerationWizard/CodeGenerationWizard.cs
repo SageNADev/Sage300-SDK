@@ -20,6 +20,7 @@
 
 #region Imports
 using EnvDTE;
+using System.Windows.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard

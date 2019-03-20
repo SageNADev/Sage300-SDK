@@ -117,6 +117,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                         <#=resxName#>.<#=keyFieldName#>));
             }
 
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+			#>
+
+
             return View(viewModel);
         }
 

@@ -305,4 +305,13 @@
   <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
     <value>This step will update the version numbers for some Crystal Reports components.</value>
   </data>
+  <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
+    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
+  </data>
+  <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
+    <value>Update targeted version of .NET Framework</value>
+  </data>
 </root>
