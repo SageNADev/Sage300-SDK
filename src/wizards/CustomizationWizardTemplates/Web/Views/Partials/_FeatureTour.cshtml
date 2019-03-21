@@ -1,0 +1,469 @@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using Constants = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Shared;
+
+<!-- Feature Tour -->
+<div id="firstTimeLogin">
+    
+    <div class="k-overlay"></div>
+    
+    <div class="feature-tour" id="FeatureTour">
+
+        <section class="ft-welcome ft-step">
+            <!--first step: Welcome -->
+            <div class="wrapper">
+                <div class="title">
+                    <span class="tour-icon welcome-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideWelcome <strong>@HomePageResx.FeatureTourSlideWelcome1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideWelcome2 @HomePageResx.FeatureTourSlideWelcome3</p>
+                    <p>@Html.Raw(@HomePageResx.FeatureTourSlideWelcome4)</p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                                <li class="step-indicator"></li>
+                            </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWelcome5)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-kpi ft-step">
+            <!--second step: Widgets -->
+            <div class="wrapper">
+                <div class="connector animated bounce">
+                    <div class="top-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-icon kpi-widget-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideDashboard <strong>@HomePageResx.FeatureTourSlideDashboard1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideDashboard2 @HomePageResx.FeatureTourSlideDashboard3</p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(@HomePageResx.FeatureTourSlideDashboard4)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-window ft-step">
+            <!--third step: Windows -->
+            <div class="wrapper">
+                <div class="connector animated bounceRight">
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-icon window-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideWindowManager <strong>@HomePageResx.FeatureTourSlideWindowManager1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideWindowManager2<br></p>
+                    <p>@HomePageResx.FeatureTourSlideWindowManager3 @HomePageResx.FeatureTourSlideWindowManager4</p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-recent-window ft-step">
+            <!--fourth step: Recently Used Windows -->
+            <div class="wrapper">
+                <div class="connector animated bounceRight">
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-icon recent-window-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideRecentWindows <strong>@HomePageResx.FeatureTourSlideRecentWindows1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideRecentWindows2</p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator active"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-reports ft-step">
+            <!--fifth step: Reports -->
+            <div class="wrapper">
+                <div class="connector animated bounceRight">
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-font-icon glyphicon glyphicon-report"></span>
+                    <h3>@HomePageResx.FeatureTourSlideReports <strong>@HomePageResx.FeatureTourSlideReports1</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideReports2<br></p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator active"></li>
+                            @if (ViewBag.HasARInquiryRight ||
+                                 ViewBag.HasAPInquiryRight ||
+                                 ViewBag.HasGLInquiryRight ||
+                                 ViewBag.HasOEInquiryRight ||
+                                 ViewBag.HasICInquiryRight ||
+                                 ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null &&
+                                 ViewBag.KNActive &&
+                                 (ViewBag.ARActive != null &&
+                                  ViewBag.ARActive ||
+                                  ViewBag.APActive != null &&
+                                  ViewBag.APActive ||
+                                  ViewBag.ICActive != null &&
+                                  ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                    </div>
+                </div>
+            </div>
+        </section>
+        @if (ViewBag.HasARInquiryRight ||
+             ViewBag.HasAPInquiryRight ||
+             ViewBag.HasGLInquiryRight ||
+             ViewBag.HasOEInquiryRight ||
+             ViewBag.HasICInquiryRight ||
+             ViewBag.HasPOInquiryRight)
+        {
+            <section class="ft-inquiries ft-step">
+                <!--sixth step: Inquiries -->
+                <div class="wrapper">
+                    <div class="connector animated bounceRight">
+                        <div class="right-arrow"></div>
+                    </div>
+                    <div class="title">
+                        <span class="tour-font-icon glyphicon glyphicon-doc-search"></span>
+                        <h3>@HomePageResx.FeatureTourSlideInquiries <strong>@HomePageResx.FeatureTourSlideInquiries1</strong></h3>
+                        <span class="icon msgCtrl-close"></span>
+                    </div>
+                    <div class="msg-content">
+                        <p>@HomePageResx.FeatureTourSlideInquiries2<br></p>
+                    </div>
+                    <div class="msg-footer">
+                        <div class="step-indicator-group">
+                            <ul>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator active"></li>
+                                @if (ViewBag.KNActive != null &&
+                                     ViewBag.KNActive &&
+                                     (ViewBag.ARActive != null &&
+                                      ViewBag.ARActive ||
+                                      ViewBag.APActive != null &&
+                                      ViewBag.APActive ||
+                                      ViewBag.ICActive != null &&
+                                      ViewBag.ICActive))
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                @if (ViewBag.HasGlobalSearchLicense)
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                <li class="step-indicator"></li>
+                            </ul>
+                        </div>
+                        <div class="button-group">
+                            <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        @if (ViewBag.KNActive != null &&
+             ViewBag.KNActive &&
+             (ViewBag.ARActive != null &&
+              ViewBag.ARActive ||
+              ViewBag.APActive != null &&
+              ViewBag.APActive ||
+              ViewBag.ICActive != null
+              && ViewBag.ICActive))
+        {
+            <section class="ft-notes ft-step">
+                <!--seventh step: Notes -->
+                <div class="wrapper">
+                    <div class="connector animated bounceRight">
+                        <div class="right-arrow"></div>
+                    </div>
+                    <div class="title">
+                        <span class="tour-font-icon glyphicon glyphicon-note"></span>
+                        <h3>@HomePageResx.FeatureTourSlideNotes <strong>@HomePageResx.FeatureTourSlideNotes1</strong></h3>
+                        <span class="icon msgCtrl-close"></span>
+                    </div>
+                    <div class="msg-content">
+                        <p>@HomePageResx.FeatureTourSlideNotes2<br></p>
+                    </div>
+                    <div class="msg-footer">
+                        <div class="step-indicator-group">
+                            <ul>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                @if (ViewBag.HasARInquiryRight ||
+                                     ViewBag.HasAPInquiryRight ||
+                                     ViewBag.HasGLInquiryRight ||
+                                     ViewBag.HasOEInquiryRight ||
+                                     ViewBag.HasICInquiryRight ||
+                                     ViewBag.HasPOInquiryRight)
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                <li class="step-indicator active"></li>
+                                @if (ViewBag.HasGlobalSearchLicense)
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                <li class="step-indicator"></li>
+                            </ul>
+                        </div>
+                        <div class="button-group">
+                            <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        @if (ViewBag.HasGlobalSearchLicense)
+        {
+            <section class="ft-gs ft-step">
+                <!--eighth step: Global Search -->
+                <div class="wrapper">
+                    <div class="connector animated bounce">
+                        <div class="top-arrow"></div>
+                    </div>
+                    <div class="title">
+                        <span class="tour-font-icon glyphicon glyphicon-magnifying-glass"></span>
+                        <h3>@HomePageResx.FeatureTourSlideGlobalSearch <strong>@HomePageResx.FeatureTourSlideGlobalSearch1</strong></h3>
+                        <span class="icon msgCtrl-close"></span>
+                    </div>
+                    <div class="msg-content">
+                        <p>@HomePageResx.FeatureTourSlideGlobalSearch2<br></p>
+                    </div>
+                    <div class="msg-footer">
+                        <div class="step-indicator-group">
+                            <ul>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                <li class="step-indicator"></li>
+                                @if (ViewBag.HasARInquiryRight ||
+                                     ViewBag.HasAPInquiryRight ||
+                                     ViewBag.HasGLInquiryRight ||
+                                     ViewBag.HasOEInquiryRight ||
+                                     ViewBag.HasICInquiryRight ||
+                                     ViewBag.HasPOInquiryRight)
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                @if (ViewBag.KNActive != null &&
+                                     ViewBag.KNActive &&
+                                     (ViewBag.ARActive != null &&
+                                      ViewBag.ARActive ||
+                                      ViewBag.APActive != null &&
+                                      ViewBag.APActive ||
+                                      ViewBag.ICActive != null &&
+                                      ViewBag.ICActive))
+                                {
+                                    <li class="step-indicator"></li>
+                                }
+                                <li class="step-indicator active"></li>
+                                <li class="step-indicator"></li>
+                            </ul>
+                        </div>
+                        <div class="button-group">
+                            <input class="btn btn-tertiary" type="button" value="@Html.Raw(HomePageResx.FeatureTourSlideWindowManager5)">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        <section class="ft-help ft-step">
+            <!--final step: Help -->
+            <div class="wrapper">
+                <div class="connector animated bounce">
+                    <div class="top-arrow"></div>
+                </div>
+                <div class="title">
+                    <span class="tour-icon help-icon"></span>
+                    <h3>@HomePageResx.FeatureTourSlideHelpCenter1 <strong>@HomePageResx.FeatureTourSlideHelpCenter2</strong></h3>
+                    <span class="icon msgCtrl-close"></span>
+                </div>
+                <div class="msg-content">
+                    <p>@HomePageResx.FeatureTourSlideHelpCenter3</p>
+                    <p>
+                        <a href="@Utilities.GetLearnMoreUrl("677001004")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter8 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001006")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter6 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001007")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter14 <span class="glyphicon glyphicon-next"></span></a><br>
+                        <a href="@Utilities.GetLearnMoreUrl("677001001")" target="_blank">@HomePageResx.FeatureTourSlideHelpCenter10 <span class="glyphicon glyphicon-next"></span></a>
+                    </p>
+                </div>
+                <div class="msg-footer">
+                    <div class="step-indicator-group">
+                        <ul>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            <li class="step-indicator"></li>
+                            @if (ViewBag.HasARInquiryRight || ViewBag.HasAPInquiryRight || ViewBag.HasGLInquiryRight || ViewBag.HasOEInquiryRight || ViewBag.HasICInquiryRight || ViewBag.HasPOInquiryRight)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            @if (ViewBag.HasGlobalSearchLicense)
+                            {
+                                <li class="step-indicator"></li>
+                            }
+                            <li class="step-indicator active"></li>
+                        </ul>
+                    </div>
+                    <div class="button-group">
+                        <input class="btn btn-tertiary" type="button" value="@HomePageResx.FeatureTourSlideHelpCenter12">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+</div>
+
+<!-- First time Login -->
+<script type="text/javascript">
+    var featureTourElements = {
+        firstTimeUser: "@ViewBag.FirstTimeUser"
+    };
+</script>
