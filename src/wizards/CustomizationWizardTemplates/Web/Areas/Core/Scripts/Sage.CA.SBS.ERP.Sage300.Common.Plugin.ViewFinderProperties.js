@@ -88,6 +88,14 @@
                 displayFieldNames: ["CNTLINE", "CONTRACT", "PROJECT", "CATEGORY", "COSTCLASS", "RESOURCE", "AMTINVCTC", "AMTDUETC"],
                 filterTemplate: "IDCUST = \"{0}\" AND IDINVC = \"{1}\"  AND AMTDUETC != 0",
             },
+
+            OpenDocumentDetailsOriginalDetail: {
+                viewID: "AR0200",
+                viewOrder: 0,
+                returnFieldNames: ["CNTLINE"],
+                displayFieldNames: ["CNTLINE", "CONTRACT", "PROJECT", "CATEGORY", "COSTCLASS", "RESOURCE", "BILLDATE", "IDITEM","UNITMEAS", "QTYINVC", "IDDIST", "IDGLACCT", "AMTINVCTC", "AMTDUETC", "SWDISCABL", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
+                filterTemplate: "IDCUST = \"{0}\" AND IDINVC = \"{1}\""
+            }
         }, 
 
         AS: {
