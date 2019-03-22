@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 ko.bindingHandlers.SagekendoGrid =
     {
@@ -323,8 +323,10 @@ ko.bindingHandlers.sagevalue = {
                 }
             }
         }
-        //numeric value to remove culture format 
+		
+        // numeric value to remove culture format 
         if (value && $element.hasClass('numeric') && !$element.is(':disabled')) {
+			
             var culture = kendo.culture();
             var symbol = culture.numberFormat['.'];
             var strValue = value.toString();

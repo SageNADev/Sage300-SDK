@@ -13,8 +13,14 @@
             <li>
                 <a href="@ConfigurationHelper.PolicyUrl" target="_blank">@HomePageResx.Private_Policy</a>
             </li>
+            @*<li>
+            <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>&nbsp;&nbsp;©&nbsp;@DateTime.Today.Year, @HomePageResx.Copyright_message
+            </li>*@
             <li>
-                <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>©@DateTime.Today.Year, @HomePageResx.Copyright_message
+                <a href="@ConfigurationHelper.ContactUrl" target="_blank">@HomePageResx.Contact_Us</a>
+            </li>
+            <li>
+                ©&nbsp;@DateTime.Today.Year, @HomePageResx.Copyright_message
             </li>
         </ul>
     </div>
