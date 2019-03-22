@@ -27,7 +27,6 @@ var cellValTemplate = {
 
 sg.utls.grid = {
     valStack: {
-
     },
     isRetrieved: false,
     finderWasClicked: false,
@@ -58,7 +57,8 @@ sg.utls.grid = {
                 col.PresentationMap = col.PresentationList.reduce(function (map, obj) {
                     map[obj.Value] = obj.Text;
                     return map;
-                }, {});
+                },
+                    {});
                 col.template = '#= sg.utls.grid.getDropdownDisplay(' + [col.field, col.columnId] + ') #';
                 if (col.hidden) {
                     col.attributes.sg_Customizable = false;
@@ -67,15 +67,14 @@ sg.utls.grid = {
                     col.editor = sg.utls.grid.getDropdownEditor.bind({
                         "gridId": gridId
                     });
-                }
-                else {
+                } else {
                     col.editor = $.noop;
                 }
             }
             if (col.dataType === "Decimal") {
-                
+
                 col.attributes = { "class": "align-right" };
-                if(col.hidden) {
+                if (col.hidden) {
                     col.attributes.sg_Customizable = false;
                 }
                 col.template = '#= sg.utls.kndoUI.getFormattedDecimal(' + [col.field, decimalPlace] + ') #';
@@ -156,8 +155,7 @@ sg.utls.grid = {
         var val;
         if (this.FinderReturnField) {
             returnField = this.FinderReturnField;
-        }
-        else {
+        } else {
             returnField = this;
         }
         if (Array.isArray(returnField)) {
@@ -234,7 +232,7 @@ sg.utls.grid = {
         if (cellValTemplate[prev].gridId) {
             grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
         }
-        setTimeout(function() {
+        setTimeout(function () {
             sg.utls.grid.finderWasClicked = false;
         });
     },
@@ -267,7 +265,6 @@ sg.utls.grid = {
     },
 
 
-
     /**
      * This method is used to get the editor for numeric input box
      * @param {any} container The jQuery object representing the container element.
@@ -276,24 +273,54 @@ sg.utls.grid = {
      * options.format {string} The format string of the column specified via the format option.
      * options.model {kendo.data.Model}The model instance to which the current table row is bound.
      * options.values {Array} Array of values specified via the values option.
+     * this.gridId {string} grid Id
+     * this.decimalPlace {number|function} the decmal place
      */
     getNumericEditor: function (container, options) {
         var self = this;
-        var decimalPlace = self.decimalPlace;
-        var data = $("#" + self.gridId).data("kendoGrid").dataSource.data();
+        var decimalPlace;
+        var html;
+
+        //Get the decimal place
+        if (typeof self.decimalPlace === 'number') {
+            decimalPlace = self.decimalPlace;
+        } else {
+            decimalPlace = sg.utls.grid.execFuncByName(self.decimalPlace, window);
+        }
+
+        var finder = sg.utls.grid.generateFinderButton(options, self.finderInfo);
+
         var tbId = "tbGridCell_" + options.field;
-        var html = '<input id="' +
-            tbId +
-            '" type="text"  class="numeric"  name="' +
-            options.field +
-            '" />';
+
+        //get the html element for cell
+        if (finder) {
+            html = '<input id="' +
+                tbId +
+                '" type="text"  class="pr25 numeric"  name="' +
+                options.field +
+                '" />';
+        }
+        else {
+            html = '<input id="' +
+                tbId +
+                '" type="text"  class="numeric"  name="' +
+                options.field +
+                '" />';
+        }
 
         var input = $(html).appendTo(container).kendoNumericTextBox({
             spinners: false,
             step: 0,
+            decimals: decimalPlace,
             format: "n" + decimalPlace,
             restrictDecimals: true
         }).data("kendoNumericTextBox");
+
+        //regist finder event
+        if (finder) {
+            $(finder).appendTo(container);
+            sg.utls.grid.registerFinderEvent(container, options, tbId, self);
+        }
     },
 
     /**
@@ -320,8 +347,136 @@ sg.utls.grid = {
     },
 
     /**
-     * This function is used to construct finder editor for KendoUI grid
-    * This method is used to get the editor for default input box
+     * This function is used to create finder button 
+     * @param {any} options Object
+     * @param {any} finderInfo finder information
+     * options.field { string } The name of the field to which the column is bound.
+     * finderInfo.showFinder {string|bool} provide the function name or bool value to show/hide the finder icon
+     * @return {html} the button element of finder button
+     */
+    generateFinderButton: function (options, finderInfo) {
+        var finder = "";
+        if (finderInfo) {
+            var btnId = sg.utls.grid.generateFinderId(options);
+            var showFinder = false;
+            if (finderInfo.showFinder && typeof finderInfo.showFinder === "boolean") {
+                showFinder = finderInfo.showFinder;
+            } else {
+                //todo will clean  up displayFinder in future
+                showFinder = finderInfo.showFinder
+                    ? sg.utls.grid.execFuncByName(finderInfo.showFinder, window)
+                    : sg.utls.grid.displayFinder(options.model, finderInfo.display);
+            }
+            if (showFinder) {
+                finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' +
+                    options.field +
+                    ',changed:0" id="' +
+                    btnId +
+                    '" name="' +
+                    options.field +
+                    '" tabindex="-1" type="button"></input>';
+            }
+        }
+        return finder;
+    },
+
+    /**
+     * This function is used to generate the finder button id
+     * @param {any} options Object
+     * @return {string} finder button id
+     * options.field { string } The name of the field to which the column is bound.
+     */
+    generateFinderId: function (options) {
+        return "btnGridCell" + options.field;
+    },
+
+    /**
+     * This function is used to register finder button events listener
+     * @param {any} container The jQuery object representing the container element.
+     * @param {any} options Object
+     * options.field { string } The name of the field to which the column is bound.
+     * options.model { kendo.data.Model } The model instance to which the current table row is bound.
+     * @param {any} tbId text box id
+     * @param {any} finderConfiguration finder config object
+     * finderConfiguration.finderInfo.setFinder {string function name} is used to selected the correct finder config from the cell which included the multiple finder configurations
+     */
+    registerFinderEvent: function (container, options, tbId, finderConfiguration) {
+        var btnId = sg.utls.grid.generateFinderId(options);
+        var finderConfig = "";
+        var initKeyValues = [];
+        var finderInfo = "";
+        if (finderConfiguration.finderInfo) {
+            finderInfo = finderConfiguration.finderInfo;
+            var filter = "";
+            if (finderInfo.setFinder) {
+                var finder = sg.utls.grid.execFuncByName(finderInfo.setFinder, window);
+                if (finder === null) {
+                    finder = finderInfo.setFinder;
+                }
+                finderInfo = finder;
+                finderConfig = finderInfo.config;
+
+            }
+            else if (finderConfiguration.finderInfo.multipleFinders) {
+                //todo clean up the multipleFinders and removed the function in future
+                var con = finderConfiguration.finderInfo.multipleFinders.condition;
+                var name;
+                do {
+                    for (var k in con) {
+                        name = k;
+                        break;
+                    }
+                    if (con[name][options.model[name]]) {
+                        con = con[name][options.model[name]];
+                        finderInfo = con;
+                        finderConfig = finderInfo.config;
+                        con = "";
+                    } else {
+                        con = con.condition;
+                    }
+                } while (con);
+            } else {
+                finderConfig = finderInfo.config;
+            }
+        }
+        $("#" + btnId).mousedown(function (e) {
+            //save current state before finder open
+            gridCellFocusSwitch = !gridCellFocusSwitch;
+            sg.utls.grid.savePreviousText(finderConfiguration.gridId,
+                container.context.cellIndex,
+                options.field);
+
+            //Set finder filters
+            if (finderInfo.filters) {
+                finderInfo.filters.forEach(function (value, index, array) {
+                    if (options.model[value]) {
+                        initKeyValues.push(options.model[value]);
+                    }
+                    else {
+                        initKeyValues.push(sg.utls.grid.execFuncByName(value, window));
+                    }
+                });
+
+                var template = $.validator.format(finderConfig.filterTemplate);
+                finderConfig.filter = template(initKeyValues);
+            }
+            //Get current input value on cell
+            var input = $("#" + tbId).val() || "";
+            initKeyValues.push(input);
+            //Set finder init key values
+            finderConfig.initKeyValues = initKeyValues;
+
+            //set view finder
+            sg.viewFinderHelper.setViewFinder(btnId,
+                sg.utls.grid.onFinderSuccess.bind(finderConfig.returnFieldNames),
+                finderConfig,
+                sg.utls.grid.onFinderCancel);
+            sg.utls.grid.finderWasClicked = true;
+        });
+    },
+
+    /**
+    * This function is used to construct finder editor for KendoUI grid
     * @param { any } container The jQuery object representing the container element.
     * @param { any } options Object
     * options.field { string } The name of the field to which the column is bound.
@@ -332,7 +487,6 @@ sg.utls.grid = {
     getFinderEditor: function (container, options) {
         var self = this;
         var tbId = "tbGridCell_" + options.field;
-        var btnId = "btnGridCell" + options.field;
         var html = '<input id="' +
             tbId +
             '" type="text"  class="pr25  txt-upper"  name="' +
@@ -340,90 +494,28 @@ sg.utls.grid = {
             '" data-bind="value:' +
             options.field +
             '" />';
-        var finder = "";
-        var showFinder = sg.utls.grid.displayFinder(options.model, self.finderInfo.display);
-
-        if (showFinder) {
-            finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' +
-                options.field +
-                ',changed:0" id="' +
-                btnId +
-                '" name="' +
-                options.field +
-                '" tabindex="-1" type="button"></input>';
-        }
+        var finder = sg.utls.grid.generateFinderButton(options, self.finderInfo);
         html = html + finder;
         $(html).appendTo(container);
-        if (showFinder) {
-            var finderConfig = "";
-            var initKeyValues = [];
-            var finderInfo = "";
-            if (self.finderInfo) {
-                finderInfo = self.finderInfo;
-                var filter = "";
-                if (self.finderInfo.multipleFinders) {
-                    var con = self.finderInfo.multipleFinders.condition;
-                    var name;
-                    do {
-                        for (var k in con) {
-                            name = k;
-                            break;
-                        }
-                        if (con[name][options.model[name]]) {
-                            con = con[name][options.model[name]];
-                            finderInfo = con;
-                            finderConfig = finderInfo.config;
-                            con = "";
-                        } else {
-                            con = con.condition;
-                        }
-                    } while (con);
-                } else {
-                    finderConfig = finderInfo.config;
-                }
-            }
-            $("#" + btnId).mousedown(function (e) {
-                //save current state before finder open
-                gridCellFocusSwitch = !gridCellFocusSwitch;
-                sg.utls.grid.savePreviousText(self.gridId,
-                    container.context.cellIndex,
-                    options.field);
-
-                //Set finder filters
-                if (finderInfo.filters) {
-                    finderInfo.filters.forEach(function (value, index, array) {
-                        initKeyValues.push(options.model[value]);
-                    });
-
-                    var template = $.validator.format(finderConfig.filterTemplate);
-                    finderConfig.filter = template(initKeyValues);
-                }
-                //Get current input value on cell
-                var input = $("#" + tbId).val() || "";
-                initKeyValues.push(input);
-                //Set finder init key values
-                finderConfig.initKeyValues = initKeyValues;
-
-                //set view finder
-                sg.viewFinderHelper.setViewFinder(btnId,
-                    sg.utls.grid.onFinderSuccess.bind(finderConfig.returnFieldNames),
-                    finderConfig,
-                    sg.utls.grid.onFinderCancel);
-                sg.utls.grid.finderWasClicked = true;
-            });
+        if (finder) {
+            sg.utls.grid.registerFinderEvent(container, options, tbId, self);
         }
     },
 
     /**
-     * This is not for grid
-     * @param {any} name
-     * @param {any} context
+     * This function is used to execute function based on the function name and current context
+     * This is not only for grid
+     * @param {any} name function name
+     * @param {any} context current context
+     * @return {any|null} the result of the function or null value if function does not exist
      */
     execFuncByName: function (name, context) {
         var arr = name.split(".");
         var func = arr.pop();
         for (var i in arr) {
-            context = context[arr[i]];
+            if (arr.hasOwnProperty(i)) {
+                context = context[arr[i]];
+            }
         }
         if (context && context[func]) {
             return context[func].apply(context);
@@ -441,6 +533,7 @@ sg.utls.grid = {
             return true;
         }
         var ret;
+
         if (finderInfo) {
             var condition = finderInfo.condition;
             var n;
