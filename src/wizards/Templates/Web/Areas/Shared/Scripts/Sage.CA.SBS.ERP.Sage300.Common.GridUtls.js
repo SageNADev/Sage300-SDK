@@ -351,13 +351,22 @@ sg.utls.grid = {
      * @param {any} options Object
      * @param {any} finderInfo finder information
      * options.field { string } The name of the field to which the column is bound.
+     * finderInfo.showFinder {string|bool} provide the function name or bool value to show/hide the finder icon
      * @return {html} the button element of finder button
      */
     generateFinderButton: function (options, finderInfo) {
         var finder = "";
         if (finderInfo) {
             var btnId = sg.utls.grid.generateFinderId(options);
-            var showFinder = sg.utls.grid.displayFinder(options.model, finderInfo.display);
+            var showFinder = false;
+            if (finderInfo.showFinder && typeof finderInfo.showFinder === "boolean") {
+                showFinder = finderInfo.showFinder;
+            } else {
+                //todo will clean  up displayFinder in future
+                showFinder = finderInfo.showFinder
+                    ? sg.utls.grid.execFuncByName(finderInfo.showFinder, window)
+                    : sg.utls.grid.displayFinder(options.model, finderInfo.display);
+            }
             if (showFinder) {
                 finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' +
                     options.field +
@@ -388,7 +397,8 @@ sg.utls.grid = {
      * options.field { string } The name of the field to which the column is bound.
      * options.model { kendo.data.Model } The model instance to which the current table row is bound.
      * @param {any} tbId text box id
-     * @param {any} finderConfiguration finder confg object
+     * @param {any} finderConfiguration finder config object
+     * finderConfiguration.finderInfo.setFinder {string function name} is used to selected the correct finder config from the cell which included the multiple finder configurations
      */
     registerFinderEvent: function (container, options, tbId, finderConfiguration) {
         var btnId = sg.utls.grid.generateFinderId(options);
@@ -398,7 +408,17 @@ sg.utls.grid = {
         if (finderConfiguration.finderInfo) {
             finderInfo = finderConfiguration.finderInfo;
             var filter = "";
-            if (finderConfiguration.finderInfo.multipleFinders) {
+            if (finderInfo.setFinder) {
+                var finder = sg.utls.grid.execFuncByName(finderInfo.setFinder, window);
+                if (finder === null) {
+                    finder = finderInfo.setFinder;
+                }
+                finderInfo = finder;
+                finderConfig = finderInfo.config;
+
+            }
+            else if (finderConfiguration.finderInfo.multipleFinders) {
+                //todo clean up the multipleFinders and removed the function in future
                 var con = finderConfiguration.finderInfo.multipleFinders.condition;
                 var name;
                 do {
@@ -513,6 +533,7 @@ sg.utls.grid = {
             return true;
         }
         var ret;
+
         if (finderInfo) {
             var condition = finderInfo.condition;
             var n;
