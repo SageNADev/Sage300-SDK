@@ -54,6 +54,33 @@
             sg.viewFinderHelper.setViewFinder(id, parent, initFinder, null, height, top);
         },
 
+        /**
+         * Parameters for use in creating a View Finder Web screen finder widget.
+         * 
+         * @typedef {object} SetViewFinderProperties
+         * @property {string} properties.viewID - The ID of the view the finder will use.
+         * @property {number} properties.viewOrder - The view's sort-order field.
+         * @property {string[]} properties.displayFieldNames - The names of the view - fields to display in the finder.
+         * @property {string[]} properties.returnFieldNames - Array containing the list of field names for which to return values.
+         * @property {string[]=} properties.initKeyValues - Optional initial key values for the finder. (If omitted, the starting value is blank.)
+         * @property {string=} properties.filter  Optional filter string used for UIs such as Invoice Entry finder to restrict the finder entries displayed.
+         * @property {string=} properties.optionalFieldBindings - True to automatically include optional fields in the search result and filter.
+         * @property {boolean=} [properties.parentValAsInitKey = false] - True to take the initKeyValues from the parent control. (The finder’s key must be one field and the parent must be a control.)
+         * @property {boolean} properties.calculatePageCount - Optional value to ... ?
+         * @property {boolean} [properties.reinterpretInitKeyValues = true] - True to prepare the initKeyValues on the server, false to leave them as- is.
+         */
+
+        /**
+         * Creates a View Finder Web screen finder widget.
+         * 
+         * @param {string} id - The finder control's id.
+         * @param {(string|function)} parent - Either the id of the finder’s parent control (the control that receives the finder value), or 
+         *     a callback function that will be invoked when user selects a record in the finder.
+         * @param {SetViewFinderProperties} properties - Parameters with which to configure the finder.
+         * @param {function=} onCancelCallback - An optional cancel-callback.
+         * @param {number=} height - The optional height of the finder window.
+         * @param {number=} top - The optional top location of the finder window.
+         */
         setViewFinder: function (id, parent, properties, onCancelCallback, height, top) {
             $("#" + id).ViewFinder({
                 properties: properties,
@@ -264,15 +291,16 @@
                 PageNumber: that.options.pageNumber,
                 PageSize: that.options.pageSize,
                 OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings,
-                CalculatePageCount: true
+                CalculatePageCount: true,
+                InitialKeyFieldInDropdownList: that.options.finderProperties.initialKeyFieldInDropdownList,
+                ReinterpretInitKeyValues: true
             };
+            if (that.options.finderProperties.calculatePageCount != null)
+                finderOptions.CalculatePageCount = that.options.finderProperties.calculatePageCount;
 
-<<<<<<< HEAD
-            if (that.options.finderProperties.CalculatePageCount)
-                finderOptions.CalculatePageCount = that.options.finderProperties.CalculatePageCount;
+            if (that.options.finderProperties.reinterpretInitKeyValues != null)
+                finderOptions.ReinterpretInitKeyValues = that.options.finderProperties.reinterpretInitKeyValues;
 
-=======
->>>>>>> ac653f9a5d804debd2cb3ac1331e9bf7fc077b80
             // set the initial key values if caller asks so
             if (that.options.finderProperties.parentValAsInitKey !== null &&
                 that.options.finderProperties.parentValAsInitKey &&
@@ -306,9 +334,6 @@
                     finderLeftPos = (activeWidgetConfigIframe.parents('.k-widget.k-window').width() - finderWidth) / 2;
                 }
             }
-
-            // determine whether page navigation should get hidden/disabled.
-            var hidePageNavigation = ViewFinderGridHelper.HideFinderPageNavigation(finderOptions.ViewID);
 
             var finderHeight = 552;
             if (that.options.height !== undefined && that.options.height !== null && typeof that.options.height === 'number') {
@@ -347,11 +372,6 @@
 
                     this.wrapper.css({ top: finderTopPos });
                     this.wrapper.css({ left: finderLeftPos });
-
-                    // hide page navigation when option is set...
-                    if (hidePageNavigation) {
-                        sg.utls.kndoUI.hidePageNavigation(dialogId);
-                    }
                 },
             }).data("kendoWindow");
 
@@ -379,10 +399,13 @@
             if (data) {
                 $(dialogId).html(data);
 
-                sg.finderOptions.InitKeyValues = initKeyValues;
                 sg.finderOptions.ColumnPreferences = columnPreferences;
-
                 ViewFinderGridHelper.init(sg.finderOptions);
+
+                // if there is initial column filter, show it
+                ViewFinderGridHelper.InitFinderValues(columnFilter);
+                sg.finderOptions.ColumnFilter = columnFilter;
+
                 FinderPreferences.Initialize();
                 var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
                 $titleSpan.html(finderTitle);
@@ -509,8 +532,7 @@
                     retObject = {};
                     for (var i = 0; i < sg.finderOptions.ReturnFieldNames.length; i++) {
                         var cellVal = data[sg.finderOptions.ReturnFieldNames[i]];
-
-                        var column = $.grep(grid.columns, function (column) {
+                        var column = $.grep(ViewFinderGridHelper.columns, function (column) {
                             return column.field === sg.finderOptions.ReturnFieldNames[i];
                         });
 

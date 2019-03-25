@@ -153,14 +153,8 @@
 // --------------------------------------------------
 
 .k-widget.k-window {
-  margin-top: 50px;
   left: 50% !important;
   transform: translate(-50%) !important;
-
-  &.k-window-maximized {
-    max-height: 870px !important;
-    margin-top: 0;
-  }
 }
 
 @media only screen    
@@ -312,6 +306,10 @@ and (max-device-width : 1024px) {
   overflow: hidden !important;
   margin: 0;
   height: 100% !important;
+
+  > .k-overlay {
+    display: none; /*D-39282*/
+  }
 }
 
 // New Finder Window - R8.1 

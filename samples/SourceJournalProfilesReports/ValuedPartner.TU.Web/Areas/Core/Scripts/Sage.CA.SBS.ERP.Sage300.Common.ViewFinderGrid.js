@@ -27,7 +27,6 @@ var ViewFinderGridHelper = {
         this.InitialiseFinderGrid();
         this.InitColumnGrid();
         this.HideFilterControls();
-        this.InitFinderValues();
         this.ButtonClickEvent();
         this.OnBlur();
     },
@@ -44,16 +43,9 @@ var ViewFinderGridHelper = {
         $("#NumericTextBoxDiv").hide();
     },
     InitiateFilterDataToPost: function () {
-        this.columnFilter = { "Field": { "field": "", "title": "" }, "Operator": "", "Value": "" };
+        this.columnFilter = null;
     },
-
-    // determine whether the finder name is in hidePageNavigationFinderList array.
-    HideFinderPageNavigation: function (finderName) {
-
-        var index = $.inArray(finderName, sg.finder.hidePageNavigationFinderList);
-        return (index >= 0);
-
-    },
+    
     InitialiseFinderGrid: function () {
         this.InitiateFilterDataToPost();
         this.finderModel = finderModelDetail;
@@ -131,12 +123,11 @@ var ViewFinderGridHelper = {
         });
     },
     //This will set column, operator and values as per parent screen
-    InitFinderValues: function () {
+    InitFinderValues: function (filter) {
        
+        this.columnFilter = filter;
         var field = null;
-        var filter = this.columnFilter;
-
-        if (filter.Field != undefined) {
+        if (filter!= null && filter.Field != null) {
             field = this.GetFieldObject(filter.Field.field);
         }
 
@@ -214,6 +205,10 @@ var ViewFinderGridHelper = {
             ViewFinderGridHelper.HideFilterControls();
             // remove column filter
             ViewFinderGridHelper.InitiateFilterDataToPost();
+
+            // initialize the initial key values
+            ViewFinderGridHelper.finderOptions.InitKeyValues = [];
+
             $("#div_finder_grid").data("kendoGrid").dataSource.page(1);
             $("#ValueTextBox").show();
         } else if (selectedValue.length > 0) {
@@ -533,12 +528,15 @@ var ViewFinderGridHelper = {
         });
     },
     OnBlur: function () {
-        $("#ValueTextBox").bind('change', function (e) {
-            ViewFinderGridHelper.ExecuteSimpleFilter();
+        $("#ValueTextBox").on('change keypress', function (e) {
+            if (e.type == 'change' || (e.type == 'keypress' && e.which == 13)) {
+                ViewFinderGridHelper.ExecuteSimpleFilter();
+            }
         });
-        //var numeric = $("#NumericTextBox").data('kendoNumericTextBox');
-        $("#NumericTextBox").bind("change", function (e) {
-            ViewFinderGridHelper.ExecuteSimpleFilter();
+        $("#NumericTextBox").on('change keypress', function (e) {
+            if (e.type == 'change' || (e.type == 'keypress' && e.which == 13)) {
+                ViewFinderGridHelper.ExecuteSimpleFilter();
+            }
         });
     },
 };

@@ -266,10 +266,15 @@ table {
 
     .k-numeric-wrap {
       height: 24px;
+      width: 100%;
 
       &.k-expand-padding {
         padding-right: 10px;
       }
+    }
+
+    &.k-numerictextbox.k-input {
+      padding: 0;
     }
   }
 
@@ -302,6 +307,13 @@ table {
       &.with-finder.numeric {
         padding-right: 20px;
       }
+    }
+
+    +input[type="text"] {
+      height: 22px;
+      font-size: 12px;
+      padding: 0;
+      border: none;
     }
   }
 
@@ -942,7 +954,7 @@ table {
       }
 
       .k-i-warning {
-        left: unset;
+        left: auto;
         top: -1px;
         right: 0;
         background-image: none;
@@ -958,7 +970,7 @@ table {
       }
 
       .pr25+.k-i-warning {
-        left:unset;
+        left:auto;
         top: -1px;
         right: 16px;
       }
@@ -976,7 +988,7 @@ table {
       .k-numeric-wrap .k-i-warning {
         top: -1px;
         left: 0;
-        right: unset;
+        right: auto;
       }
     }
 
@@ -1215,8 +1227,8 @@ table {
   }
 }
 
-.k-window.k-widget div#divGridPrefEditCols {
-    margin-top: -65px;
+.k-window-content > div.user-preference {
+    margin-top: -15px;
 }
 
 @-moz-document url-prefix() { 

@@ -1278,7 +1278,7 @@ $.extend(sg.utls, {
      * @param {string} id The value for the window's CSS id attribute.
      * @param {string} title The value for the window's title.
      * @param {function} onClose Handler for the popup's close event.
-     *
+     * @param {object} maxConfig Kendo UI Window configuration object.
      */
     initializeKendoWindowPopup: function(id, title, onClose, maxConfig) {
         var winH = $(window).height();
@@ -1308,6 +1308,11 @@ $.extend(sg.utls, {
                 if (onClose) {
                     onClose(data);
                 }
+
+                //This is to restore the kendoWindow properties on close if we can't destroy the kendow Window (Only applicable in Maximized Window)
+                if (!data.isDefaultPrevented() && maxConfig && maxConfig.actions && this.options.isMaximized) {
+                    this.restore();
+                }
             },
             actions: actions,
             // Open the Kendo Window in the center of the Viewport.
@@ -1323,6 +1328,7 @@ $.extend(sg.utls, {
      * @param {string} id The value for the window's CSS id attribute.
      * @param {string} title The value for the window's title.
      * @param {function} onClose Handler for the popup's close event.
+     * @param {number|string} width Specifies width of the popup.
      */
     initializeKendoWindowPopupWithMaximize: function(id, title, onClose, width) {
         var config = {

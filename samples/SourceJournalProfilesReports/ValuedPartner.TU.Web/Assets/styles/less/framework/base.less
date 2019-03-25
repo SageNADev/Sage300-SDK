@@ -1398,6 +1398,10 @@ a[class*="btn-"] {
 
 /* Kendo Controls - Common - borders */
 
+.k-numeric-wrap {
+  display: inline-block; // AT-48050
+}
+
 .k-autocomplete,
 .k-picker-wrap,
 .k-numeric-wrap,
@@ -4246,6 +4250,10 @@ textarea,
     overflow: hidden !important;
     padding: 0;
     margin: 0;
+
+    > .k-overlay {
+      display: none; /*D-39282*/
+    }
   }
 }
 
