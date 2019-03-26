@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
@@ -22,12 +22,12 @@
     <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@Page.Title</title>
     @Styles.Render("~/Assets/Styles/css/global")
+    <link rel="shortcut icon" href="~/Content/Images/favicon.ico" id="favicon">
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-
     @*Commented for automation*@
     @*@Html.OnlyAllowFromIFrame(Url.Action("index", "Home", new { @area = "Core" }))*@
- 
+
     <!-- Google Analytics -->
     <!-- <script async src='//www.google-analytics.com/analytics.js'></script> -->
     <!-- End Google Analytics -->
