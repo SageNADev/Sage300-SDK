@@ -48,7 +48,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGeneration, GlobalConstants.Version);
+            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
