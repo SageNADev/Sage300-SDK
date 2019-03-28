@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,6 +19,10 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using ACCPAC.Advantage;
+using EnvDTE;
+using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,13 +30,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using EnvDTE;
-using EnvDTE80;
-using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
-using ACCPAC.Advantage;
 using System.Xml.Linq;
-using System.Xml.Serialization;
-using System.Xml;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -607,7 +605,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGeneration, GlobalConstants.Version);
+            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
@@ -2020,7 +2018,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName, businessField.Name));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType, businessField.Type.ToString()));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySize, businessField.Size.ToString()));
-                    
+
+#if ENABLE_TK_244885
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIsCommon, businessField.IsCommon.ToString()));
+                    //fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyAlternateName, businessField.AlternateName.ToString()));
+#endif
+
                     fieldsElement.Add(fieldElement);
                 }
                 entityElement.Add(fieldsElement);

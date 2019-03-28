@@ -81,6 +81,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnIniDialog = new System.Windows.Forms.Button();
             this.lblEntityName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkSequenceRevisionList = new System.Windows.Forms.CheckBox();
             this.chkGenerateGrid = new System.Windows.Forms.CheckBox();
             this.chkGenerateIfExist = new System.Windows.Forms.CheckBox();
             this.chkGenerateClientFiles = new System.Windows.Forms.CheckBox();
@@ -106,7 +107,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkSequenceRevisionList = new System.Windows.Forms.CheckBox();
+            this.chkGenerateEnumerationsInSingleFile = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdResourceInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
@@ -683,6 +684,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chkGenerateEnumerationsInSingleFile);
             this.tabPage2.Controls.Add(this.chkSequenceRevisionList);
             this.tabPage2.Controls.Add(this.chkGenerateGrid);
             this.tabPage2.Controls.Add(this.chkGenerateIfExist);
@@ -697,6 +699,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // chkSequenceRevisionList
+            // 
+            this.chkSequenceRevisionList.AutoSize = true;
+            this.chkSequenceRevisionList.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSequenceRevisionList.Location = new System.Drawing.Point(481, 42);
+            this.chkSequenceRevisionList.Name = "chkSequenceRevisionList";
+            this.chkSequenceRevisionList.Size = new System.Drawing.Size(142, 17);
+            this.chkSequenceRevisionList.TabIndex = 27;
+            this.chkSequenceRevisionList.Text = "Sequence Revision List";
+            this.chkSequenceRevisionList.UseVisualStyleBackColor = true;
+            // 
             // chkGenerateGrid
             // 
             this.chkGenerateGrid.AutoSize = true;
@@ -704,7 +717,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateGrid.Location = new System.Drawing.Point(481, 19);
             this.chkGenerateGrid.Name = "chkGenerateGrid";
             this.chkGenerateGrid.Size = new System.Drawing.Size(98, 17);
-            this.chkGenerateGrid.TabIndex = 25;
+            this.chkGenerateGrid.TabIndex = 26;
             this.chkGenerateGrid.Text = "Generate Grid";
             this.chkGenerateGrid.UseVisualStyleBackColor = true;
             // 
@@ -964,16 +977,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // chkSequenceRevisionList
+            // chkGenerateEnumerationsInSingleFile
             // 
-            this.chkSequenceRevisionList.AutoSize = true;
-            this.chkSequenceRevisionList.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSequenceRevisionList.Location = new System.Drawing.Point(481, 42);
-            this.chkSequenceRevisionList.Name = "chkSequenceRevisionList";
-            this.chkSequenceRevisionList.Size = new System.Drawing.Size(142, 17);
-            this.chkSequenceRevisionList.TabIndex = 26;
-            this.chkSequenceRevisionList.Text = "Sequence Revision List";
-            this.chkSequenceRevisionList.UseVisualStyleBackColor = true;
+            this.chkGenerateEnumerationsInSingleFile.AutoSize = true;
+            this.chkGenerateEnumerationsInSingleFile.Enabled = false;
+            this.chkGenerateEnumerationsInSingleFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGenerateEnumerationsInSingleFile.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.chkGenerateEnumerationsInSingleFile.Location = new System.Drawing.Point(15, 111);
+            this.chkGenerateEnumerationsInSingleFile.Name = "chkGenerateEnumerationsInSingleFile";
+            this.chkGenerateEnumerationsInSingleFile.Size = new System.Drawing.Size(216, 17);
+            this.chkGenerateEnumerationsInSingleFile.TabIndex = 25;
+            this.chkGenerateEnumerationsInSingleFile.Text = "Generate Enumerations in Single File";
+            this.chkGenerateEnumerationsInSingleFile.UseVisualStyleBackColor = true;
             // 
             // Generation
             // 
@@ -1113,6 +1128,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.DataGridView grdEntityCompositions;
         private System.Windows.Forms.CheckBox chkGenerateGrid;
         private System.Windows.Forms.CheckBox chkSequenceRevisionList;
+        private System.Windows.Forms.CheckBox chkGenerateEnumerationsInSingleFile;
     }
 }
 
