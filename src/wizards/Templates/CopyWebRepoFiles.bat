@@ -6,12 +6,12 @@
 :: Purpose: This batch file will do the following:
 ::
 ::          * Remove folders and files from the 
-::            SDK\src\wizards\UpgradeWizardTemplates\Items\ folder
+::            SDK\src\wizards\Templates\Web\ folder
 ::            Note: It does not remove all folders and files, just
 ::                  folders (and files) defined in the psDeleteWebFiles.ps1 script file.
 ::
 ::          * Copy the Columbus-Web artifacts to the 
-::            SDK\src\wizards\UpgradeWizardTemplates\Items\ folder
+::            SDK\src\wizards\Templates\Web\ folder
 ::
 :: Usage Example:
 ::          CopyWebRepoFiles.bat
