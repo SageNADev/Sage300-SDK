@@ -1,7 +1,6 @@
---------------------------------------------------
-- How to update the 'Web' and 'Solution' folders -
---------------------------------------------------
-
+------------------------------------------------------------------------------------------
+-                     How to update the 'Web' and 'Solution' folders                     -
+------------------------------------------------------------------------------------------
 
 1. Update files in the 'Web' folder
 
@@ -15,8 +14,10 @@
 
    Run the batch file 'CreateTemplateZipFiles.bat'
 
-   Once the update zip files have been created, copy the resulting zip archive files
-   to the following folder prior to building the Customization Wizard (Plugin)
+4. Move the resulting zip files to their final destination
 
-   C:\projects\Sage300-SDK\Develop\src\wizards\Customization\Sage300UICustomizationSolution\ProjectTemplates\
+   Run the batch file 'MoveTemplateZipFilesToFinalDestination.bat' 
 
+5. The Customization Wizard can now be rebuilt with the
+   latest Sage 300 Web Screen Framework source code!
+ 
