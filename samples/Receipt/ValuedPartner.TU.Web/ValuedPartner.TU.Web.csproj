@@ -408,12 +408,10 @@
     <Content Include="Areas\TU\Views\Web.config" />
     <Content Include="Areas\TU\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Index.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_DetailGridOptionalField.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_ExchangeRate.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_Localization.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_OptionalFieldGrid.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_Receipt.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_ReceiptGrid.cshtml" />
+    <Content Include="Areas\TU\Views\Receipt\Partials\ReceiptGrid.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
