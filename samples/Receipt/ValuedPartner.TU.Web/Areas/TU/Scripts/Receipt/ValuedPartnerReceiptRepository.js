@@ -34,17 +34,17 @@ var receiptAjax = {
             SimpleFilter: null,
             AdvancedFilter: simpleFilter
         };
+
         return finderOptions;
     }
 };
 
 var receiptRepository = {
-
     isExists: function (receiptNumber, model) {
         var data = { 'id': receiptNumber, 'model': model };
         var result = null;
 
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "Exists"), data, function (jsonResult) {
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "Exists"), data, function (jsonResult) {
             result = jsonResult;
         });
 
@@ -53,65 +53,65 @@ var receiptRepository = {
 
     deleteDetail: function (pageNumber, pageSize, model) {
         var data = { 'pageNumber': pageNumber, 'pageSize': pageSize, 'model': model }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "DeleteDetails"), data, receiptUISuccess.DeleteDetailSucces);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "DeleteDetails"), data, receiptUISuccess.DeleteDetailSucces);
     },
 
     create: function (receiptNumber) {
         var data = { 'receiptNumber': receiptNumber }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "Create"), data, receiptUISuccess.actionSuccess.bind(this, "create"));
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.actionSuccess.bind(this, "create"));
     },
 
     deleteReceipt: function (receiptNumber, sequenceNumber) {
         var data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "Delete"), data, receiptUISuccess.actionSuccess.bind(this, "delete"));
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.actionSuccess.bind(this, "delete"));
     },
 
     add: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "Add"), data, receiptUISuccess.actionSuccess.bind(this, "add"));
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.actionSuccess.bind(this, "add"));
     },
 
     update: function (data) { 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "Save"), data, receiptUISuccess.actionSuccess.bind(this, "update")); 
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.actionSuccess.bind(this, "update")); 
     }, 
 
     getItemType: function (itemNumber) {
         var data = { 'itemId': itemNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Item", "GetItemType"), data, receiptUISuccess.getItemTypeSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Item", "GetItemType"), data, receiptUISuccess.getItemTypeSuccess);
     },
 
 
     get: function (receiptNumber,disableScreen) {
         var data = { 'id': receiptNumber, 'oldRecordDeleted': false, 'isCalledAsPopup': disableScreen };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "GetById"), data, receiptUISuccess.getResult);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetById"), data, receiptUISuccess.getResult);
     },
 
     post: function (model,sequenceNumber, yesNo) {
         var data = {
             'headerModel':ko.mapping.toJS(model), 'sequenceNumber': sequenceNumber, 'yesNo': yesNo
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "Post"), data, receiptUISuccess.actionSuccess.bind(this, "post"));
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.actionSuccess.bind(this, "post"));
     },
 
     checkDate: function (date, eventType) {
         var data = { 'date': date, 'eventType': eventType };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "ValidateDate"), data, receiptUISuccess.checkDate);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "ValidateDate"), data, receiptUISuccess.checkDate);
     },
 
     getVendorDetails: function (id) {
         var data = { 'vendorNumber': id };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "GetVendorDetail"), data, receiptUISuccess.getVendorDetailsSuccess);
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail"), data, receiptUISuccess.getVendorDetailsSuccess);
     },
 
     GetHeaderValues: function (data, eventType) {
         var data = { 'model': data, 'eventType': eventType };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", "GetHeaderValues"), data, receiptUISuccess.GetHeaderValues);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetHeaderValues"), data, receiptUISuccess.GetHeaderValues);
     },
 
     refresh: function (model) {
         var data = {
             model: ko.mapping.toJS(model)
         };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "Refresh"), data, receiptUISuccess.refresh);
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "Refresh"), data, receiptUISuccess.refresh);
     },
 
     setOptionalFieldValue: function (model) {
@@ -119,7 +119,7 @@ var receiptRepository = {
         var data = {
             model: model
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Receipt", receiptUI.isDetailOptionalField ? "SetOptionalFieldValue" : "SetHeaderOptFieldValue"), data, receiptUISuccess.setOptionalFieldValue);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", receiptUI.isDetailOptionalField ? "SetOptionalFieldValue" : "SetHeaderOptFieldValue"), data, receiptUISuccess.setOptionalFieldValue);
     },
      
     checkRateSpread: function(rateType, fromCurrency, rateDate, rate, tocurrency) {
@@ -130,8 +130,9 @@ var receiptRepository = {
             'rate': rate,
             'tocurrency': tocurrency
         };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "CheckRateSpread"), data, receiptUISuccess.getRateSpread);
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread"), data, receiptUISuccess.getRateSpread);
     },
+
     GetExchangeRate: function (rateType, fromCurrency, rateDate, rate, tocurrency) {
         var data = {
             'rateType': rateType,
@@ -140,13 +141,13 @@ var receiptRepository = {
             'rate': rate,
             'tocurrency': tocurrency
         };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "CheckRateSpread"), data, receiptUISuccess.GetExchangeRate);
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread"), data, receiptUISuccess.GetExchangeRate);
     }, 
     
     saveReceiptDetails: function (model) {
         var data = {
             model: ko.mapping.toJS(model)
         }
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("IC", "Receipt", "SaveDetails"), data, receiptUISuccess.onSaveDetailsCompleted);
-    },
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetails"), data, receiptUISuccess.onSaveDetailsCompleted);
+    }
 }

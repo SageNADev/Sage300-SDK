@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -53,11 +53,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Constants
         #region Views path
 
         public const string ReceiptViewPath = "~/Areas/TU/Views/Receipt/Partials/_Receipt.cshtml";
-        public const string ReceiptGridViewPath = "~/Areas/TU/Views/Receipt/Partials/_ReceiptGrid.cshtml";
-        public const string ReceiptOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_OptionalFieldGrid.cshtml";
-        public const string ReceiptDetailOptionalFieldsViewPath = "~/Areas/TU/Views/Receipt/Partials/_DetailGridOptionalField.cshtml";
         public const string ReceiptExchangeRateViewPath = "~/Areas/TU/Views/Receipt/Partials/_ExchangeRate.cshtml";
         public const string ReceiptLocalizationPath = "~/Areas/TU/Views/Receipt/Partials/_Localization.cshtml";
+
         #endregion
     }
 }

@@ -245,7 +245,7 @@
         @Html.SageGrid("rptDetailOptionalFieldGrid", (GridDefinition)@ViewBag.RptDetailOptionalFieldGrid)
     </div>
     <div id="" style="display: none;">
-        @Html.Partial(InventoryControl.ReceiptExchangeRate)
+        @Html.Partial(Constants.ReceiptExchangeRateViewPath)
     </div>
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
