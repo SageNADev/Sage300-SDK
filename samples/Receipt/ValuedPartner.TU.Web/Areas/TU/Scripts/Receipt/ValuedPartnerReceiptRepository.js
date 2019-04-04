@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -21,7 +21,7 @@
 /*global ko*/
 /*global receiptUI*/
 /*global receiptUISuccess*/
-
+ 
 "use strict";
 
 var receiptAjax = { 
@@ -34,12 +34,12 @@ var receiptAjax = {
             SimpleFilter: null,
             AdvancedFilter: simpleFilter
         };
+
         return finderOptions;
     }
 };
 
 var receiptRepository = {
-
     isExists: function (receiptNumber, model) {
         var data = { 'id': receiptNumber, 'model': model };
         var result = null;
@@ -53,38 +53,32 @@ var receiptRepository = {
 
     deleteDetail: function (pageNumber, pageSize, model) {
         var data = { 'pageNumber': pageNumber, 'pageSize': pageSize, 'model': model }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "DeleteDetails"), data, receiptUISuccess.deleteDetailsSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "DeleteDetails"), data, receiptUISuccess.DeleteDetailSucces);
     },
 
     create: function (receiptNumber) {
         var data = { 'receiptNumber': receiptNumber }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.createSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.actionSuccess.bind(this, "create"));
     },
 
     deleteReceipt: function (receiptNumber, sequenceNumber) {
         var data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.deleteSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.actionSuccess.bind(this, "delete"));
     },
 
     add: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.addSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.actionSuccess.bind(this, "add"));
     },
 
     update: function (data) { 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.updateSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.actionSuccess.bind(this, "update")); 
     }, 
 
     getItemType: function (itemNumber) {
         var data = { 'itemId': itemNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("IC", "Item", "GetItemType"), data, receiptUISuccess.getItemTypeSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Item", "GetItemType"), data, receiptUISuccess.getItemTypeSuccess);
     },
 
-    getDefaultItemNumber: function (manufacturerItemNumber, callback) {
-        var data = {
-            'manufacturerItemNo': manufacturerItemNumber
-        };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "ManufacturersItem", "GetDefaultItemNumber"), data, callback);
-    },
 
     get: function (receiptNumber,disableScreen) {
         var data = { 'id': receiptNumber, 'oldRecordDeleted': false, 'isCalledAsPopup': disableScreen };
@@ -95,34 +89,12 @@ var receiptRepository = {
         var data = {
             'headerModel':ko.mapping.toJS(model), 'sequenceNumber': sequenceNumber, 'yesNo': yesNo
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.postSuccess);
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.actionSuccess.bind(this, "post"));
     },
 
-    checkDate: function (date) {
-        var data = { 'date': date };
+    checkDate: function (date, eventType) {
+        var data = { 'date': date, 'eventType': eventType };
         sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "ValidateDate"), data, receiptUISuccess.checkDate);
-    },
-
-    getVendorDescription: function (id) {
-        if (id != null && id.length > 0) {
-            var getfilter = sg.finderHelper.createDefaultFunction("Data_VendorNumber", "VendorNumber", sg.finderOperator.StartsWith);
-            if (getfilter) {
-                var filter = getfilter();
-            }
-            var data = { finderOptions: receiptAjax.ConstructFindOptionsObject(sg.finder.Vendor, filter) };
-            var url = sg.utls.url.buildUrl("Core", "Find", "RefreshGrid");
-            sg.utls.ajaxPostSync(url, data, function (result) {
-                var description = (result && result.Data.length) ? result.Data[0].ShortName : ""; 
-                if (description) {
-                    receiptUI.receiptModel.Data.VendorShortName(description);
-                    $("#Data_VendorName").val(description);
-                } 
-                if (result.Data[0].RateType) {
-                    receiptUI.receiptModel.Data.RateType(result.Data[0].RateType);
-                    $("#Data_RateType").val(result.Data[0].RateType);
-                } 
-            });
-        }
     },
 
     getVendorDetails: function (id) {
@@ -130,107 +102,9 @@ var receiptRepository = {
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail"), data, receiptUISuccess.getVendorDetailsSuccess);
     },
 
-    getReceiptCurrencyDescription: function (id) {
-        if (id != null && id.length > 0) {
-            var getfilter = sg.finderHelper.createDefaultFunction("Data_ReceiptCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith);
-            if (getfilter) {
-                var filter = getfilter();
-            }
-
-            var data = { finderOptions: receiptAjax.ConstructFindOptionsObject(sg.finder.CurrencyCode, filter) };
-            var url = sg.utls.url.buildUrl("Core", "Find", "RefreshGrid");
-            sg.utls.ajaxPostSync(url, data, receiptUISuccess.ReceiptCurrencyResult);
-        }
-    },
-
-    getCostCurrencyDescription: function (id) {
-        if (id != null && id.length > 0) {
-            var getfilter = sg.finderHelper.createDefaultFunction("Data_AdditionalCostCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith);
-            if (getfilter) {
-                var filter = getfilter();
-            }
-
-            var data = { finderOptions: receiptAjax.ConstructFindOptionsObject(sg.finder.CurrencyCode, filter) };
-            var url = sg.utls.url.buildUrl("Core", "Find", "RefreshGrid");
-            sg.utls.ajaxPostSync(url, data, receiptUISuccess.CostCurrencyResult);
-        }
-    },
-
-    getUnitOfMeasure: function (itemNumber, value) {
-        var filters = [[]];
-        filters[0][0] = sg.finderHelper.createFilter("ItemNumber", window.sg.finderOperator.Equal, itemNumber);
-        filters[0][1] = sg.finderHelper.createFilter("UnitOfMeasure", window.sg.finderOperator.Equal, value);
-        var finderOptions = {
-            SearchFinder: sg.finder.ICItemUnitOfMeasure,
-            PageNumber: 0,
-            PageSize: sg.utls.gridPageSize,
-            SortAsc: false,
-            AdvancedFilter: filters
-        };
-        var data = { finderOptions: finderOptions };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Find", "RefreshGrid"), data, receiptUISuccess.unitOfMeasure);
-    }, 
-
-    getHeaderValues: function (data, eventType) {
-        data = { 'model': data, 'eventType': eventType };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetHeaderValues"), data, receiptUISuccess.getHeaderValues);
-    },
-
-    setItemGridValuesModel: function (data, eventType) { 
-        data = { 'model': data, 'eventType': eventType };
-        var url = sg.utls.url.buildUrl("TU", "Receipt", "GetRowValues");
-        sg.utls.ajaxPostSync(url, data, receiptUISuccess.getItemValuesResult);
-    }, 
-
-    setItemValues: function (data, eventType) { 
-        data = { 'model': data, 'eventType': eventType };
-        var url = sg.utls.url.buildUrl("TU", "Receipt", "GetRowValues");
-        sg.utls.ajaxPostSync(url, data, receiptUISuccess.getItemValues);
-    }, 
-
-    getOptionalFieldFinderData: function (optionalField) {
-        var data = { 'optionalField': optionalField.OptionalField };
-        window.sg.utls.ajaxPost(window.sg.utls.url.buildUrl("TU", "Receipt", "GetOptionalFieldFinderData"), data, receiptUISuccess.fillOptionalFieldFinderData);
-    },
-    
-    getDetailOptionalFieldFinderData: function (optionalField) {
-        var data = { 'optionalField': optionalField.OptionalField };
-        window.sg.utls.ajaxPost(window.sg.utls.url.buildUrl("TU", "Receipt", "GetDetailOptFieldFinderData"), data, receiptUISuccess.fillOptionalFieldFinderData);
-    }, 
-
-    saveOptionalFields: function (model) {
-        var data = {
-            receiptOptionalField: ko.mapping.toJS(model),
-            receiptNumber: receiptUI.receiptModel.Data.ReceiptNumber(),
-            isDetail:receiptUI.isDetailOptionalField
-        };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetailOptFields"), data, receiptUISuccess.saveOptionalFields);
-    },
-
-    setDetail: function (model) {
-        if (model) {
-            var data = {
-                currentDetail: ko.mapping.toJS(model)
-            };
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SetDetail"), data, receiptUISuccess.setDetail);
-        }
-
-    },
-
-    refreshDetail: function (model) {
-        var data = {
-            model: ko.mapping.toJS(model)
-        };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "RefreshDetail"), data, receiptUISuccess.refreshDetail);
-    },
-
-    refreshOptField: function () {
-        var data = {};
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "RefreshOptField"), data, function (result) {
-            if (result) {
-                receiptUI.receiptModel.Data.OptionalFields(result);
-            }
-        });
+    GetHeaderValues: function (data, eventType) {
+        var data = { 'model': data, 'eventType': eventType };
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetHeaderValues"), data, receiptUISuccess.GetHeaderValues);
     },
 
     refresh: function (model) {
@@ -270,20 +144,10 @@ var receiptRepository = {
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread"), data, receiptUISuccess.GetExchangeRate);
     }, 
     
-    readHeader: function (model, setHeaderValue) {
-        var data = { 'model': ko.mapping.toJS(model), 'setHeaderValue': setHeaderValue }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "ReadHeader"), data, receiptUISuccess.readHeader);
-    },
-
     saveReceiptDetails: function (model) {
         var data = {
             model: ko.mapping.toJS(model)
-        };
+        }
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetails"), data, receiptUISuccess.onSaveDetailsCompleted);
-    },
-
-    saveDetailOnChange: function (detail) {
-        var data = { detail: detail };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetail"), data, receiptUISuccess.refreshReceiptDetail);
     }
 }

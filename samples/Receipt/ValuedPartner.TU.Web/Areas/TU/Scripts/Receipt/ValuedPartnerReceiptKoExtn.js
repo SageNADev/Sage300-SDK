@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -45,13 +45,14 @@ function receiptObservableExtension(viewModel, uiMode) {
         }
     });
 
+
     // Computed property for setting disable mode based on RecordStatus 
     model.ReceiptMode = ko.computed(function () {
         if (model.IsExists()) {
             if (model.Data.Complete()) {
                 return type.COMPLETE;
             }
-            else if (model.Data.RecordStatus() === recordStatus.ENTERED) {
+            else if (model.Data.RecordStatus() == recordStatus.ENTERED) {
                 return parseInt(model.Data.ReceiptType());
             }
             else {
@@ -63,7 +64,8 @@ function receiptObservableExtension(viewModel, uiMode) {
 
     // Computed property for setting disable mode based on FiscalPeriod 
     model.Data.ComputedYearPeriod = ko.computed(function () {
-        return model.Data.FiscalYear() + " - " + window.sg.utls.strPad(model.Data.FiscalPeriod(), 2, "0");
+        var fiscalYear = model.Data.FiscalYear();
+        return (fiscalYear)? fiscalYear + " - " + window.sg.utls.strPad(model.Data.FiscalPeriod(), 2, "0") : "";
     });
 
     // Computed property for setting disable mode based on receipt type 
@@ -84,9 +86,12 @@ function receiptObservableExtension(viewModel, uiMode) {
     model.disableAdditionalCost = ko.computed(function () {
         if (model.DisableScreen()) {
             return true;
+        } 
+        if (model.Attributes() && model.Attributes.AdditionalCost() === false || parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT) { 
+            return false; 
+        } else {
+            return true;
         }
-        var iType = parseInt(model.Data.ReceiptType());
-        return ( iType === type.RETURN || iType === type.COMPLETE );
     }); 
      
     // Computed property for setting disable mode based on receipt type if only complete
@@ -109,9 +114,9 @@ function receiptObservableExtension(viewModel, uiMode) {
             if (ctrl) {
 
                 //Record status is posted show the control, else hide it. 
-                if (model.UIMode() === sg.utls.OperationMode.NEW || (model.Data.RecordStatus() !== recordStatus.POSTED && parseInt(model.Data.ReceiptType()) === type.RECEIPT) || (parseInt(model.Data.ReceiptType()) === type.COMPLETE && i === 1)) {
+                if (model.UIMode() === sg.utls.OperationMode.NEW || (model.Data.RecordStatus() != recordStatus.POSTED && parseInt(model.Data.ReceiptType()) === type.RECEIPT) || (parseInt(model.Data.ReceiptType()) === type.COMPLETE && i == 1)) {
                     ctrl.wrapper.hide();
-                    if (i !== 1) isVisible = false;
+                    if (i != 1) isVisible = false;
                     if (i === 1) model.IsVisibleAllocType(false);
                 }
                 else if (model.DisableScreen()) {
@@ -120,22 +125,22 @@ function receiptObservableExtension(viewModel, uiMode) {
                     isVisible = false;
                 }
 
-                else if (parseInt(model.Data.ReceiptType()) === type.RETURN && i === 0) {
+                else if (parseInt(model.Data.ReceiptType()) === type.RETURN && i == 0) {
                     ctrl.wrapper.show();
                     ctrl.enable(model.Data.RecordStatus() !== recordStatus.ENTERED);
                     isVisible = true;
                 }
-                else if (parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT && i === 0) {
+                else if (parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT && i == 0) {
                     ctrl.wrapper.show();
                     ctrl.enable(model.Data.RecordStatus() !== recordStatus.ENTERED);
                     isVisible = true;
                 }
-                else if (parseInt(model.Data.ReceiptType()) === type.COMPLETE && i === 0) {
+                else if (parseInt(model.Data.ReceiptType()) === type.COMPLETE && i == 0) {
                     ctrl.wrapper.show();
                     ctrl.enable(false);
                     isVisible = true;
                 }
-                else if (parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT && i === 1) {
+                else if (parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT && i == 1) {
                     ctrl.wrapper.show();
                     ctrl.enable(false);
                     model.IsVisibleAllocType(true);
@@ -159,12 +164,18 @@ function receiptObservableExtension(viewModel, uiMode) {
 
     // Computed property for setting disable mode based on RecordStatus if only complete
     model.IsPosted = ko.computed(function () {
-        return (model.Data.RecordStatus() === recordStatus.POSTED || parseInt(model.Data.ReceiptType()) !== type.RECEIPT || model.DisableScreen()) ? true : false;
+
+        return (model.Data.RecordStatus() === recordStatus.POSTED || parseInt(model.Data.ReceiptType()) != type.RECEIPT || model.DisableScreen()) ? true : false;
     });
 
     // Computed property for setting disable mode based on receipt type if only complete
     model.IsDisableOnlyComplete = ko.computed(function () {
         return parseInt(model.Data.ReceiptType()) === type.COMPLETE || model.DisableScreen() ? true : false;
+    });
+
+    //Subscribe for change event
+    model.Data.ReceiptType.subscribe(function (value) {
+        receiptUI.showHideColumns(value);
     });
 
     // Computed property for setting disable mode based on isControlsDisabledOnReadMode if only complete
@@ -180,20 +191,26 @@ function receiptObservableExtension(viewModel, uiMode) {
     // Computed property for setting disable mode based on RequireLabels if only complete
     model.Data.IsRequireLabel = ko.computed(function () {
         if (model.UIMode() === sg.utls.OperationMode.LOAD || model.UIMode() === sg.utls.OperationMode.NEW) {
-            var isChecked = (parseInt(model.Data.RequireLabels()) === 1) ? true : false;
+            var isChecked = (parseInt(model.Data.RequireLabels()) == 1) ? true : false;
             model.IsRequireChecked(isChecked);
         }
-        return (parseInt(model.Data.RequireLabels()) === 1) ? true : false;
+        return (parseInt(model.Data.RequireLabels()) == 1) ? true : false;
     });
     
     // Computed property for setting disable mode based on ReceiptCurrency if only complete
     model.IsFuncCurrency = ko.computed(function () {
-        return (model.Data.ReceiptCurrency() === model.FuncCurrency() || model.Data.isControlsDisabledOnReadMode());
+        if (model.Data.ReceiptCurrency() == model.FuncCurrency())
+            return true;
+        else if (model.Data.isControlsDisabledOnReadMode())
+            return true;
+        return false;
     }); 
       
     // Computed property for setting disable mode based on ReceiptCurrency if only complete
     model.IsFuncCurrencyDisable = ko.computed(function () {
-        return (model.Data.ReceiptCurrency() === model.FuncCurrency());
+        if (model.Data.ReceiptCurrency() == model.FuncCurrency())
+            return true; 
+        return false;
     });
 
     // Computed property for setting disable mode based on receipt type 
@@ -201,7 +218,7 @@ function receiptObservableExtension(viewModel, uiMode) {
         if (model.DisableScreen()) {
             return true;
         } 
-        if (model.UIMode() === sg.utls.OperationMode.NEW) {
+        if (model.UIMode() == sg.utls.OperationMode.NEW) {
             return false;
         }
         else if (parseInt(model.Data.ReceiptType()) === type.COMPLETE) {
@@ -210,6 +227,8 @@ function receiptObservableExtension(viewModel, uiMode) {
             return false;
         }
     });
+
+
 
     //Subscribe for change event
     model.Data.RequireLabels.subscribe(function (value) {
@@ -276,12 +295,13 @@ function receiptObservableExtension(viewModel, uiMode) {
             return false;
         else
             return true;
+        return false;
     });  
 
     //Computed property for TotalCost 
     model.TotalCost = ko.computed(function () { 
         var decimal = 0;
-        if (model.Data.AdditionalCostCurrency() !== model.Data.ReceiptCurrency()) {
+        if (model.Data.AdditionalCostCurrency() != model.Data.ReceiptCurrency()) {
 
             if (model.lblTotalCost() === receiptResources.TotalReturnCost && parseInt(model.Data.ReceiptType()) === type.RETURN ) {
                 decimal = model.Data.ReceiptCurrencyDecimals();
@@ -293,8 +313,8 @@ function receiptObservableExtension(viewModel, uiMode) {
         else {
             decimal = model.FuncDecimals();
         }
-        var formatted="n3";
-        if (model.DisableScreen()) {
+        var formatted;
+        if (model.DisableScreen() == true) {
             formatted = kendo.toString(parseFloat(model.Data.TotalCostReceiptAdditional()), "n" + decimal);
         }
         else {
@@ -313,13 +333,23 @@ function receiptObservableExtension(viewModel, uiMode) {
         return (parseInt(model.Data.ReceiptType()) === type.RETURN && !model.DisableScreen()) ? model.Data.ReceiptCurrency() : model.Data.AdditionalCostCurrency();
     });
 
+
     //Computed property for TotalExtendedCost 
     model.TotalExtendedCost = ko.computed(function () {
-        var data = model.Data;
-        var decimal = data.ReceiptCurrencyDecimals();
-        var cost = (parseInt(data.ReceiptType()) === type.ADJUSTMENT) ? data.TotalExtendedCostAdjusted() : data.TotalExtendedCostSource();
-        var formatted = kendo.toString(cost, "n" + decimal);
-
+        var decimal = model.Data.ReceiptCurrencyDecimals();
+        var formatted; 
+        if (parseInt(model.Data.ReceiptType()) === type.RECEIPT || parseInt(model.Data.ReceiptType()) === type.COMPLETE) {
+            if (model.IsMulticurrency()) {
+                formatted = kendo.toString(parseFloat(model.Data.TotalExtendedCostSource()), "n" + decimal);
+            }
+            formatted = kendo.toString(parseFloat(model.Data.TotalExtendedCostSource()), "n" + decimal);
+        } else if (parseInt(model.Data.ReceiptType())=== type.RETURN) {
+            formatted = kendo.toString(parseFloat(model.Data.TotalExtendedCostSource()), "n" + decimal);
+        } else if (parseInt(model.Data.ReceiptType()) === type.ADJUSTMENT) {
+            if (model.IsMulticurrency()) {
+                formatted = kendo.toString(parseFloat(model.Data.TotalExtendedCostAdjusted()), "n" + decimal);
+            }
+        }
         return formatted;
     });
 
@@ -339,19 +369,31 @@ function receiptObservableExtension(viewModel, uiMode) {
         return value;
     });
 
+    //Subscribe for change event of ReceiptType
     model.Data.ReceiptType.subscribe(function (value) {
         return value;
     });
     
-    model.Data.IsTotalCostReceiptAdditional = ko.computed(function () {
-        return (receiptUI.receiptModel.Data.ReceiptType() !== 2 && receiptUI.receiptModel.Data.ReceiptType() !== 3) ;
+       model.Data.IsTotalCostReceiptAdditional = ko.computed(function () {
+           if (receiptUI.receiptModel.Data.ReceiptType() != "2" && receiptUI.receiptModel.Data.ReceiptType() != "3") {
+            return true;
+        } else {
+            return false;
+        }
     });
 
     model.Data.IsTotalReturnCost = ko.computed(function () {
-        return (receiptUI.receiptModel.Data.ReceiptType() === 2);
+        if (receiptUI.receiptModel.Data.ReceiptType() == "2") {
+            return true;
+        } else {
+            return false;
+        }
     });
-
     model.Data.IsTotalAdjustmentCost = ko.computed(function () {
-        return (receiptUI.receiptModel.Data.ReceiptType() === 3) ;
+        if (receiptUI.receiptModel.Data.ReceiptType() == "3") {
+            return true;
+        } else {
+            return false;
+        }
     });
 }

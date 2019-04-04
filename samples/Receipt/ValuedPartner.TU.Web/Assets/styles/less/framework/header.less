@@ -190,7 +190,8 @@ body {
           color: #3c424f; /* hiding menu while javascript loaded*/
           height: 3.5rem;
 
-          &.menu-item-with-icon .k-i-arrow-s {
+          &.menu-item-with-icon .k-i-arrow-s,
+          &.menu-item-with-icon .k-i-arrow-60-down {
             display: none;
           }
 
@@ -217,8 +218,13 @@ body {
           background-position: -185px -125px !important;
         }
         
-        &.k-state-default .k-i-arrow-s {
+        &.k-state-default .k-i-arrow-s,
+        &.k-state-default .k-i-arrow-60-down {
           background-position: -185px -125px;
+
+          &:before {
+            content: none;
+          }
         }
 
         &.menu-item-with-icon {
