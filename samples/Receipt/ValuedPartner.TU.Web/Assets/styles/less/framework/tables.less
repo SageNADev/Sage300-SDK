@@ -266,15 +266,10 @@ table {
 
     .k-numeric-wrap {
       height: 24px;
-      width: 100%;
 
       &.k-expand-padding {
         padding-right: 10px;
       }
-    }
-
-    &.k-numerictextbox.k-input {
-      padding: 0;
     }
   }
 
@@ -284,10 +279,6 @@ table {
 
     .k-picker-wrap{
       height: 24px;
-    }
-
-    &.w90pc .k-select {
-      margin-right: 20px;
     }
   }
 
@@ -307,13 +298,6 @@ table {
       &.with-finder.numeric {
         padding-right: 20px;
       }
-    }
-
-    +input[type="text"] {
-      height: 22px;
-      font-size: 12px;
-      padding: 0;
-      border: none;
     }
   }
 
@@ -539,8 +523,7 @@ table {
     }
 
     .k-header {
-      line-height: 2;
-      padding: 6px 10px;
+      padding: @table-cell-padding;
       color: @white;
       font-weight: 700;
       border-color: @table-border-color;
@@ -592,8 +575,8 @@ table {
         text-overflow: clip;
 
           .checkBox {
-            top: 2px;
-            height: 20px;
+          top: 3px;
+          margin-top: -5px;
 
           input[type=checkbox] {
             margin-bottom: -6px;
@@ -602,8 +585,8 @@ table {
       }
 
       &.k-header span.checkBox {
-        top: 2px;
-        height: 20px;
+        top: 3px;
+        margin-top: -5px;
 
         input[type=checkbox] {
           margin-bottom: -6px;
@@ -923,6 +906,8 @@ table {
   // Edit cell styles
   .k-edit-cell {  
     padding: 0 10px;  
+    position: relative;
+
 
     input[type="text"],
     .edit-cell.inpt-text input {
@@ -954,7 +939,7 @@ table {
       }
 
       .k-i-warning {
-        left: auto;
+        left: unset;
         top: -1px;
         right: 0;
         background-image: none;
@@ -970,7 +955,7 @@ table {
       }
 
       .pr25+.k-i-warning {
-        left:auto;
+        left:unset;
         top: -1px;
         right: 16px;
       }
@@ -988,7 +973,7 @@ table {
       .k-numeric-wrap .k-i-warning {
         top: -1px;
         left: 0;
-        right: auto;
+        right: unset;
       }
     }
 
@@ -1002,9 +987,9 @@ table {
       -webkit-min-logical-height: 22px;
       background-color: transparent;
       background-position: 0 0;
-      position: relative;
-      right: 24px;
-      top: 0;
+      position: absolute;
+      right: 10px;
+      top: 5px;
       border: none;
       padding-right: 0 !important;
 
@@ -1020,18 +1005,8 @@ table {
       }
     }
 
-    .edit-container {
-      position:relative;
-
-      .edit-cell.inpt-finder {
-        position: absolute;
-        top: 0;
-        right: -20px;
-      }
-    }
-    
     .k-dropdown {  
-      margin-top: -3px;
+      margin-top: -1px;
       width: calc(100% - 20px);
 
       .k-dropdown-wrap {
@@ -1098,6 +1073,7 @@ table {
       }
 
       &.dp-and-finder {
+        margin-right: 10px;
         width: 95%;
 
         & + .icon.btn-search {
@@ -1227,8 +1203,8 @@ table {
   }
 }
 
-.k-window-content > div.user-preference {
-    margin-top: -15px;
+.k-window.k-widget div#divGridPrefEditCols {
+    margin-top: -65px;
 }
 
 @-moz-document url-prefix() { 
@@ -1407,26 +1383,22 @@ span.highlighted.gray {
 // controlling the grid height
 
 .gh150 .k-grid-content {
-  height: 150px;
-  min-height: 150px;
+  height: 150px !important;
+  min-height: 150px !important;
 }
 
 .gh180 .k-grid-content {
-  height: 180px;
+  height: 180px !important;
 }
 
 .gh320 .k-grid-content {
-  min-height:321px; 
-  max-height:321px; 
+  min-height:321px !important; 
+  max-height:321px !important; 
   height:321px;
 }
 
 .gh400 .k-grid-content {
-  height: 400px;
-}
-
-.k-widget.k-window.k-window-maximized .gh180 .k-grid-content {
-  height:321px;
+  height: 400px !important;
 }
 
 // status window - massage to be truncated
@@ -1527,12 +1499,6 @@ span.highlighted.gray {
 
   .k-textbox {
     height: 30px;
-    border-color: @sage-mid-gray;
-  }
-
-  .k-action-buttons {
-    margin: 0;
-    padding: 0;
   }
 
   .k-button {
@@ -1543,7 +1509,6 @@ span.highlighted.gray {
     -webkit-appearance: none;
     height: 30px;
     border-radius: 0;
-    margin: 6px 0 0;
 
     &:hover {
         background-color: @btn-link-hover-color;
@@ -1582,8 +1547,6 @@ span.highlighted.gray {
       -webkit-appearance: none;
       height: 30px;
       border-radius: 0;
-      float: right;
-      margin-left: 6px;
 
       &:hover {
         background-color: darken(@btn-primary-bg, 10%);

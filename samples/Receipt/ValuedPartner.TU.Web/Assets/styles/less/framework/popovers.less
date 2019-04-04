@@ -153,8 +153,14 @@
 // --------------------------------------------------
 
 .k-widget.k-window {
+  margin-top: 50px;
   left: 50% !important;
   transform: translate(-50%) !important;
+
+  &.k-window-maximized {
+    max-height: 870px !important;
+    margin-top: 0;
+  }
 }
 
 @media only screen    
@@ -173,7 +179,7 @@ and (max-device-width : 1024px) {
 /* Finder Window */
 
 .k-widget.k-window.finder-window {
-    height: 540px !important;
+    height: 550px !important;
 
      input[type=text] {
       width: 210px;
@@ -306,10 +312,6 @@ and (max-device-width : 1024px) {
   overflow: hidden !important;
   margin: 0;
   height: 100% !important;
-
-  > .k-overlay {
-    display: none; /*D-39282*/
-  }
 }
 
 // New Finder Window - R8.1 
@@ -445,9 +447,10 @@ and (max-device-width : 1024px) {
 
     .k-header {
       background-color: #ebedef;
+      height: 40px;
+      padding: 10px 8px;
       color: #2e2e2e;
-      line-height: 2;
-      padding: 6px 10px;
+      line-height: 1.9rem;
       position: relative;
 
       >.k-link {
@@ -565,6 +568,10 @@ and (max-device-width : 1024px) {
   .k-grid tr.k-state-selected td:first-child {
     border-left: 3px solid #255bc7;
     padding-left: 5px;
+  }
+
+  .k-grid tr td {
+      padding: 0 8px;
   }
 
   .k-button:focus:active:not(.k-state-disabled):not([disabled]),
@@ -803,9 +810,10 @@ and (max-device-width : 1024px) {
 
     .k-header {
       background-color: #ebedef;
+      height: 40px;
+      padding: 10px 8px;
       color: #2e2e2e;
-      line-height: 2;
-      padding: 6px 10px;
+      line-height: 1.9rem;
       position: relative;
 
       >.k-link {
@@ -994,10 +1002,6 @@ and (max-device-width : 1024px) {
       margin-right: 0;
     }
   }
-}
-
-#deleteConfirmationParent {
-  margin-top: 150px;
 }
 
 // Session Expiary Popup 

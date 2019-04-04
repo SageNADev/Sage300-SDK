@@ -225,8 +225,8 @@
          * @param {boolean} currentModelValue True to enable the element, false to disable it.
          */
         KendoEnableDisable: function (element, currentModelValue) {
-            if (!element.type) {return;} // Labels don't contain an element.type attribute.
-			
+            if (!element.type) { return; }
+
             var $elm = $(element);
             var type = element.type.toLowerCase();
             var className = element.className;

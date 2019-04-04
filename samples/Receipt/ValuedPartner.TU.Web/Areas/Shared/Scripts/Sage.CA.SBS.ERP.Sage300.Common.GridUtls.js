@@ -1,12 +1,10 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var sg = sg || {};
 sg.utls = sg.utls || {};
 sg.utls.grid = sg.utls.grid || {};
 var gridCellFocusSwitch = false;
-
-//TODO comments this one.
 
 var cellValTemplate = {
     A: {
@@ -26,57 +24,29 @@ var cellValTemplate = {
 };
 
 sg.utls.grid = {
-    valStack: {
-    },
     isRetrieved: false,
-    finderWasClicked: false,
-    updateFailed: false,
-    setDetailFailed: false,
-    addingLine: false,
-    insertIndex: 0,
-    deepCopy: function (obj) {
-        return JSON.parse(JSON.stringify(obj));
-    },
 
     /**
-     * This function is used to construct the grid columns based on information form sever-side
-     * @param {any} gridId grid Id
+     * This function is used to convert the grid column fromat from backend to clientside
      * @param {any} cols grid columns list from backend
-     * @param {any} decimalPlace decimal place(s) for numeric 
-     * @param {any} finderInfo the finder information for columns
-     * @return {Array<Columns>} Kendo Grid Columns
      */
-    formattingColumns: function (gridId, cols, decimalPlace, finderInfo) {
-        cols.forEach(function (col) {
-            var ret = sg.utls.grid.execFuncByName(col.title, window);
-            if (ret) {
-                col.title = ret;
-            }
-            col.attributes = {};
+    formattingColumns: function (gridId, cols, decimalPlace) {
+        cols.forEach(function(col) {
+            
             if (col.PresentationList && col.PresentationList.length > 0) {
-                col.PresentationMap = col.PresentationList.reduce(function (map, obj) {
-                    map[obj.Value] = obj.Text;
-                    return map;
-                },
+                col.PresentationMap = col.PresentationList.reduce(function(map, obj) {
+                        map[obj.Value] = obj.Text;
+                        return map;
+                    },
                     {});
                 col.template = '#= sg.utls.grid.getDropdownDisplay(' + [col.field, col.columnId] + ') #';
-                if (col.hidden) {
-                    col.attributes.sg_Customizable = false;
-                }
                 if (!col.IsReadOnly) {
                     col.editor = sg.utls.grid.getDropdownEditor.bind({
                         "gridId": gridId
                     });
-                } else {
-                    col.editor = $.noop;
                 }
             }
             if (col.dataType === "Decimal") {
-
-                col.attributes = { "class": "align-right" };
-                if (col.hidden) {
-                    col.attributes.sg_Customizable = false;
-                }
                 col.template = '#= sg.utls.kndoUI.getFormattedDecimal(' + [col.field, decimalPlace] + ') #';
                 if (!col.IsReadOnly) {
                     col.editor = sg.utls.grid.getNumericEditor.bind({
@@ -87,20 +57,9 @@ sg.utls.grid = {
                 }
             }
             if (!col.IsReadOnly && col.FinderReturnField && !col.editor) {
-                col.attributes = { "class": "txt-upper" };
-                if (col.hidden) {
-                    col.attributes.sg_Customizable = false;
-                }
-                col.editor = sg.utls.grid.getFinderEditor.bind({
-                    "gridId": gridId,
-                    "colInfo": col,
-                    "finderInfo": finderInfo[col.field]
-                });
+                col.editor = sg.utls.grid.getFinderEditor.bind({"gridId":gridId, "colInfo": col});
             }
             if (!col.IsReadOnly && !col.editor) {
-                if (col.hidden) {
-                    col.attributes.sg_Customizable = false;
-                }
                 col.editor = sg.utls.grid.getDefaultEditor.bind({ "gridId": gridId });
             }
         });
@@ -109,21 +68,19 @@ sg.utls.grid = {
 
     /**
      * This function is used to set the column information for Kendo Grid
-     * @param {any} gridId grid Id
-     * @param {any} columns Columns from model
-     * @param {any} decimalPlace decimal Place(s) for numeric cell
-     * @param {any} customerCols custom columns (not from model)
-     * @param {any} finderInfo finder information
+     * @param {any} gridId
+     * @param {any} columns
+     * @param {any} decimalPlace
      */
-    setColumns: function (gridId, columns, decimalPlace, customerCols, finderInfo) {
+    setColumns: function (gridId, columns, decimalPlace, customerCols) {
         var grid = $("#" + gridId).data("kendoGrid");
         var options = grid.getOptions();
         if (!customerCols)
             customerCols = [];
         if (decimalPlace) {
-            options.columns = customerCols.concat(this.formattingColumns(gridId, columns, decimalPlace, finderInfo));
+            options.columns = customerCols.concat(this.formattingColumns(gridId, columns, decimalPlace));
         } else {
-            options.columns = customerCols.concat(this.formattingColumns(gridId, columns, null, finderInfo));
+            options.columns = customerCols.concat(this.formattingColumns(gridId, columns, null));
         }
         grid.setOptions(options);
     },
@@ -134,7 +91,7 @@ sg.utls.grid = {
      * @param {any} fieldIndex field index
      * @return{string} of display
      */
-    getDropdownDisplay: function (val, fieldIndex) {
+    getDropdownDisplay: function(val, fieldIndex) {
         var grid = $('#GridPJCDetail').getKendoGrid();
         var colInfo = grid.columns.find(function (v, i) {
             var col = grid.columns[i];
@@ -148,40 +105,10 @@ sg.utls.grid = {
 
     /**
      * This function is used to set the value from finder
-     * @param {any} ret the object from finder select
+     * @param {any} ret
      */
     onFinderSuccess: function (ret) {
-        var returnField;
-        var val;
-        if (this.FinderReturnField) {
-            returnField = this.FinderReturnField;
-        } else {
-            returnField = this;
-        }
-        if (Array.isArray(returnField)) {
-            if (returnField.length === 1) {
-                val = ret[returnField[0]];
-            } else {
-                for (var i in returnField) {
-                    val = ret[returnField[i]];
-                    if (val) {
-                        break;
-                    }
-                }
-            }
-        } else {
-            var arr = returnField.split(",");
-            if (arr.length === 1) {
-                val = ret[returnField];
-            } else {
-                for (var i in arr) {
-                    val = ret[arr[i]];
-                    if (val) {
-                        break;
-                    }
-                }
-            }
-        }
+        var val = ret[this.FinderReturnField];
         var prev = gridCellFocusSwitch ? "A" : "B";
         var grid = $("#" + cellValTemplate[prev].gridId).data("kendoGrid");
         var rowIndex = cellValTemplate[prev].row;
@@ -191,147 +118,54 @@ sg.utls.grid = {
             grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
             var row = sg.utls.kndoUI.getSelectedRowData(grid);
             if (row) {
+                sg.utls.grid.isRetrieved = true;
                 row.set(field, val);
                 setTimeout(function () {
                     sg.utls.grid.isRetrieved = false;
                 });
             }
         }
-        gridCellFocusSwitch = !gridCellFocusSwitch;
-        sg.utls.grid.savePreviousText(cellValTemplate[prev].gridId,
-            colIndex,
-            field);
-        setTimeout(function () {
-            sg.utls.grid.finderWasClicked = false;
-        });
     },
-
-    onFinderCancel: function (ret) {
-        var prev = sg.utls.grid.getPrevState();
-        var grid = $("#" + cellValTemplate[prev].gridId).data("kendoGrid");
-        var rowIndex = cellValTemplate[prev].row;
-        var colIndex = cellValTemplate[prev].col;
-        var field = cellValTemplate[prev].field;
-        if (cellValTemplate[prev].gridId) {
-            grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
-        }
-        setTimeout(function () {
-            sg.utls.grid.finderWasClicked = false;
-        });
-    },
-
-    /**
-     * This function is used to reset the focus back 
-     */
-    resetFocus: function () {
-        var prev = sg.utls.grid.getPrevState();
-        var grid = $("#" + cellValTemplate[prev].gridId).data("kendoGrid");
-        var rowIndex = cellValTemplate[prev].row;
-        var colIndex = cellValTemplate[prev].col;
-        var field = cellValTemplate[prev].field;
-        if (cellValTemplate[prev].gridId) {
-            grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
-        }
-        setTimeout(function () {
-            sg.utls.grid.finderWasClicked = false;
-        });
-    },
-
-    resetToPreviousFocus: function () {
-        var prev = sg.utls.grid.getCurrentState();
-        var grid = $("#" + cellValTemplate[prev].gridId).data("kendoGrid");
-        var rowIndex = cellValTemplate[prev].row;
-        var colIndex = cellValTemplate[prev].col;
-        var field = cellValTemplate[prev].field;
-        if (cellValTemplate[prev].gridId) {
-            grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
-        }
-    },
-
-    /**
-     * This function is used to get previous state which was saved
-     * @return {string} the previous state
-     */
-    getPrevState: function () {
-        return gridCellFocusSwitch ? "A" : "B";
-    },
-
-    /**
-     * This function is used to get previous state which was saved
-     * @return {string} the previous state
-     */
-    getCurrentState: function () {
-        return gridCellFocusSwitch ? "B" : "A";
-    },
-
 
     /**
      * This method is used to get the editor for numeric input box
-     * @param {any} container The jQuery object representing the container element.
-     * @param {any} options Object
-     * options.field {string} The name of the field to which the column is bound.
-     * options.format {string} The format string of the column specified via the format option.
-     * options.model {kendo.data.Model}The model instance to which the current table row is bound.
-     * options.values {Array} Array of values specified via the values option.
-     * this.gridId {string} grid Id
-     * this.decimalPlace {number|function} the decmal place
+     * @param {any} container Container
+     * @param {any} options optons
      */
     getNumericEditor: function (container, options) {
         var self = this;
-        var decimalPlace;
-        var html;
-
-        //Get the decimal place
-        if (typeof self.decimalPlace === 'number') {
-            decimalPlace = self.decimalPlace;
-        } else {
-            decimalPlace = sg.utls.grid.execFuncByName(self.decimalPlace, window);
-        }
-
-        var finder = sg.utls.grid.generateFinderButton(options, self.finderInfo);
-
+        sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
+        var decimalPlace = self.decimalPlace;
+        var data = $("#"+self.gridId).data("kendoGrid").dataSource.data();
         var tbId = "tbGridCell_" + options.field;
-
-        //get the html element for cell
-        if (finder) {
-            html = '<input id="' +
-                tbId +
-                '" type="text"  class="pr25 numeric"  name="' +
-                options.field +
-                '" />';
-        }
-        else {
-            html = '<input id="' +
-                tbId +
-                '" type="text"  class="numeric"  name="' +
-                options.field +
-                '" />';
-        }
+        var html = '<input id="' +
+            tbId +
+            '" type="text"  class="numeric"  name="' +
+            options.field +
+            '" />';
 
         var input = $(html).appendTo(container).kendoNumericTextBox({
             spinners: false,
             step: 0,
-            decimals: decimalPlace,
             format: "n" + decimalPlace,
             restrictDecimals: true
         }).data("kendoNumericTextBox");
 
-        //regist finder event
-        if (finder) {
-            $(finder).appendTo(container);
-            sg.utls.grid.registerFinderEvent(container, options, tbId, self);
+        if (self.colInfo.FinderReturnField) {
+            var btnId = "btnGridCell" + options.field;
+            var finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' +
+                options.field +
+                ',changed:0" id="' +
+                btnId +
+                '" name="' +
+                options.field +
+                '" tabindex="-1" type="button"></input>';
+            html = input + finder;
+            $(html).appendTo(container);
+            sg.viewFinderHelper.setViewFinder(btnId, sg.utls.grid.onFinderSuccess, { viewID: "PM0021", viewOrder: 0, displayFieldNames: ["FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"], returnFieldNames: ["FMTCONTNO"] });
         }
     },
 
-    /**
-    * This method is used to get the editor for default input box
-    * @param { any } container The jQuery object representing the container element.
-    * @param { any } options Object
-    * options.field { string } The name of the field to which the column is bound.
-    * options.format { string } The format string of the column specified via the format option.
-    * options.model { kendo.data.Model } The model instance to which the current table row is bound.
-    * options.values { Array } Array of values specified via the values option.
-    */
     getDefaultEditor: function (container, options) {
         var self = this;
         sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
@@ -346,237 +180,52 @@ sg.utls.grid = {
         $(html).appendTo(container);
     },
 
-    /**
-     * This function is used to create finder button 
-     * @param {any} options Object
-     * @param {any} finderInfo finder information
-     * options.field { string } The name of the field to which the column is bound.
-     * finderInfo.showFinder {string|bool} provide the function name or bool value to show/hide the finder icon
-     * @return {html} the button element of finder button
-     */
-    generateFinderButton: function (options, finderInfo) {
-        var finder = "";
-        if (finderInfo) {
-            var btnId = sg.utls.grid.generateFinderId(options);
-            var showFinder = false;
-            if (finderInfo.showFinder && typeof finderInfo.showFinder === "boolean") {
-                showFinder = finderInfo.showFinder;
-            } else {
-                //todo will clean  up displayFinder in future
-                showFinder = finderInfo.showFinder
-                    ? sg.utls.grid.execFuncByName(finderInfo.showFinder, window)
-                    : sg.utls.grid.displayFinder(options.model, finderInfo.display);
-            }
-            if (showFinder) {
-                finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' +
-                    options.field +
-                    ',changed:0" id="' +
-                    btnId +
-                    '" name="' +
-                    options.field +
-                    '" tabindex="-1" type="button"></input>';
-            }
-        }
-        return finder;
-    },
-
-    /**
-     * This function is used to generate the finder button id
-     * @param {any} options Object
-     * @return {string} finder button id
-     * options.field { string } The name of the field to which the column is bound.
-     */
-    generateFinderId: function (options) {
-        return "btnGridCell" + options.field;
-    },
-
-    /**
-     * This function is used to register finder button events listener
-     * @param {any} container The jQuery object representing the container element.
-     * @param {any} options Object
-     * options.field { string } The name of the field to which the column is bound.
-     * options.model { kendo.data.Model } The model instance to which the current table row is bound.
-     * @param {any} tbId text box id
-     * @param {any} finderConfiguration finder config object
-     * finderConfiguration.finderInfo.setFinder {string function name} is used to selected the correct finder config from the cell which included the multiple finder configurations
-     */
-    registerFinderEvent: function (container, options, tbId, finderConfiguration) {
-        var btnId = sg.utls.grid.generateFinderId(options);
-        var finderConfig = "";
-        var initKeyValues = [];
-        var finderInfo = "";
-        if (finderConfiguration.finderInfo) {
-            finderInfo = finderConfiguration.finderInfo;
-            var filter = "";
-            if (finderInfo.setFinder) {
-                var finder = sg.utls.grid.execFuncByName(finderInfo.setFinder, window);
-                if (finder === null) {
-                    finder = finderInfo.setFinder;
-                }
-                finderInfo = finder;
-                finderConfig = finderInfo.config;
-
-            }
-            else if (finderConfiguration.finderInfo.multipleFinders) {
-                //todo clean up the multipleFinders and removed the function in future
-                var con = finderConfiguration.finderInfo.multipleFinders.condition;
-                var name;
-                do {
-                    for (var k in con) {
-                        name = k;
-                        break;
-                    }
-                    if (con[name][options.model[name]]) {
-                        con = con[name][options.model[name]];
-                        finderInfo = con;
-                        finderConfig = finderInfo.config;
-                        con = "";
-                    } else {
-                        con = con.condition;
-                    }
-                } while (con);
-            } else {
-                finderConfig = finderInfo.config;
-            }
-        }
-        $("#" + btnId).mousedown(function (e) {
-            //save current state before finder open
-            gridCellFocusSwitch = !gridCellFocusSwitch;
-            sg.utls.grid.savePreviousText(finderConfiguration.gridId,
-                container.context.cellIndex,
-                options.field);
-
-            //Set finder filters
-            if (finderInfo.filters) {
-                finderInfo.filters.forEach(function (value, index, array) {
-                    if (options.model[value]) {
-                        initKeyValues.push(options.model[value]);
-                    }
-                    else {
-                        initKeyValues.push(sg.utls.grid.execFuncByName(value, window));
-                    }
-                });
-
-                var template = $.validator.format(finderConfig.filterTemplate);
-                finderConfig.filter = template(initKeyValues);
-            }
-            //Get current input value on cell
-            var input = $("#" + tbId).val() || "";
-            initKeyValues.push(input);
-            //Set finder init key values
-            finderConfig.initKeyValues = initKeyValues;
-
-            //set view finder
-            sg.viewFinderHelper.setViewFinder(btnId,
-                sg.utls.grid.onFinderSuccess.bind(finderConfig.returnFieldNames),
-                finderConfig,
-                sg.utls.grid.onFinderCancel);
-            sg.utls.grid.finderWasClicked = true;
-        });
-    },
-
-    /**
-    * This function is used to construct finder editor for KendoUI grid
-    * @param { any } container The jQuery object representing the container element.
-    * @param { any } options Object
-    * options.field { string } The name of the field to which the column is bound.
-    * options.format { string } The format string of the column specified via the format option.
-    * options.model { kendo.data.Model } The model instance to which the current table row is bound.
-    * options.values { Array } Array of values specified via the values option.
-    */
     getFinderEditor: function (container, options) {
         var self = this;
+        sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
+
         var tbId = "tbGridCell_" + options.field;
-        var html = '<input id="' +
-            tbId +
-            '" type="text"  class="pr25  txt-upper"  name="' +
-            options.field +
-            '" data-bind="value:' +
-            options.field +
-            '" />';
-        var finder = sg.utls.grid.generateFinderButton(options, self.finderInfo);
+        var btnId = "btnGridCell" + options.field;
+        var html = '<input id="' + tbId + '" type="text"  class="pr25  txt-upper"  name="' + options.field + '" data-bind="value:' + options.field + '" />';
+        var finder = '<input class="icon btn-search" data-sage300uicontrol="type:Button,name:' + options.field + ',changed:0" id="' + btnId + '" name="' + options.field + '" tabindex="-1" type="button"></input>';
         html = html + finder;
         $(html).appendTo(container);
-        if (finder) {
-            sg.utls.grid.registerFinderEvent(container, options, tbId, self);
+        if (self.colInfo.FinderReturnField === "PROJECT") {
+            sg.viewFinderHelper.setViewFinder(btnId,
+                sg.utls.grid.onFinderSuccess.bind(self.colInfo),
+                {
+                    viewID: "PM0022",
+                    viewOrder: 0,
+                    displayFieldNames: [
+                        "PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT",
+                        "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE",
+                        "ORJENDDATE", "CLOSEDDATE", "CODETAXGRP"
+                    ],
+                    returnFieldNames: ["PROJECT"]
+                });
+        } else {
+            sg.viewFinderHelper.setViewFinder(btnId,
+                sg.utls.grid.onFinderSuccess.bind(self.colInfo),
+                {
+                    viewID: "PM0021",
+                    viewOrder: 0,
+                    displayFieldNames: [
+                        "FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"
+                    ],
+                    returnFieldNames: ["FMTCONTNO"]
+                });
         }
     },
 
     /**
-     * This function is used to execute function based on the function name and current context
-     * This is not only for grid
-     * @param {any} name function name
-     * @param {any} context current context
-     * @return {any|null} the result of the function or null value if function does not exist
+     * This function is used to set up the Dropdown ediotr for Kendo Grid
+     * @param {any} container
+     * @param {any} options
      */
-    execFuncByName: function (name, context) {
-        var arr = name.split(".");
-        var func = arr.pop();
-        for (var i in arr) {
-            if (arr.hasOwnProperty(i)) {
-                context = context[arr[i]];
-            }
-        }
-        if (context && context[func]) {
-            return context[func].apply(context);
-        }
-        return null;
-    },
-
-    /**
-     * 
-     * @param {any} model
-     * @param {any} finderInfo
-     */
-    displayFinder: function (model, finderInfo) {
-        if (!finderInfo) {
-            return true;
-        }
-        var ret;
-
-        if (finderInfo) {
-            var condition = finderInfo.condition;
-            var n;
-            do {
-                for (var k in condition) {
-                    n = k;
-                    break;
-                }
-                if (condition.fromUI) {
-                    //Triger the function
-                    var funcName = condition[n];
-                    ret = sg.utls.grid.execFuncByName(funcName, window);
-                    if (!condition.condition)
-                        return ret;
-                }
-                else if (condition[n][model[n]]) {
-                    ret = condition[n][model[n]];
-                    if (ret !== false && ret !== true) {
-                        condition = ret.condition;
-                        continue;
-                    }
-                    return ret;
-                } else {
-                    condition = condition.condition;
-                }
-            } while (condition);
-        }
-        return false;
-    },
-
-    /**
-     * This function is used to set up the Dropdown editor for Kendo Grid
-    * @param { any } container The jQuery object representing the container element.
-    * @param { any } options Object
-    * options.field { string } The name of the field to which the column is bound.
-    * options.format { string } The format string of the column specified via the format option.
-    * options.model { kendo.data.Model } The model instance to which the current table row is bound.
-    * options.values { Array } Array of values specified via the values option.
-    */
     getDropdownEditor: function (container, options) {
         var self = this;
         sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
-        var grid = $('#' + self.gridId).getKendoGrid();
+        var grid = $('#'+self.gridId).getKendoGrid();
         var colInfo = grid.columns.find(function (v, i) {
             var col = grid.columns[i];
             if (col.field === options.field) {
@@ -597,12 +246,12 @@ sg.utls.grid = {
             value: options.model[options.field]
         });
     },
-
+    
 
     /**
      *retrieve the previous value for grid cell
     */
-    retrievePreviousText: function () {
+    retrievePreviousText: function() {
         var prev = !gridCellFocusSwitch ? "A" : "B";
         var grid = $("#" + cellValTemplate[prev].gridId).data("kendoGrid");
         var rowIndex = cellValTemplate[prev].row;
@@ -615,10 +264,8 @@ sg.utls.grid = {
             if (row) {
                 this.isRetrieved = true;
                 row.set(field, val);
-                setTimeout(function () {
+                setTimeout(function() {
                     sg.utls.grid.isRetrieved = false;
-                    sg.utls.grid.updateFailed = false;
-                    sg.utls.grid.setDetailFailed = false;
                 });
             }
         }
@@ -629,30 +276,25 @@ sg.utls.grid = {
      * @param {any} gridId Gird Id
      * @param {any} colIndex Column Index
      * @param {any} fieldName Column Name
-     * @param {any} val Cell Value
      */
-    savePreviousText: function (gridId, colIndex, fieldName, val) {
+    savePreviousText: function(gridId, colIndex, fieldName) {
         var grid = $("#" + gridId).data("kendoGrid");
         var row = sg.utls.kndoUI.getSelectedRowData(grid);
         var rowIndex = grid.select().index();
-        var curr = sg.utls.grid.getPrevState();
+        var curr = gridCellFocusSwitch ? "A" : "B";
         cellValTemplate[curr].gridId = gridId;
         cellValTemplate[curr].row = rowIndex;
         cellValTemplate[curr].col = colIndex;
         cellValTemplate[curr].field = fieldName;
-        if (val) {
-            cellValTemplate[curr].val = val;
-        } else {
-            cellValTemplate[curr].val = row[fieldName];
-        }
+        cellValTemplate[curr].val = row[fieldName];
     },
 
-    errorMsgClose: function () {
+    errorMsgClose: function() {
         $("#" + this).unbind("keydown");
         sg.utls.grid.retrievePreviousText();
     },
 
-    onError: function (elementId, ret) {
+    onError: function(elementId, ret) {
         $("#" + elementId).keydown(false);
         sg.utls.showMessage(ret, this.errorMsgClose.bind(elementId), false, true);
     },
@@ -694,5 +336,6 @@ sg.utls.grid = {
     getPreviousRow: function () {
         var prev = gridCellFocusSwitch ? "A" : "B";
         return cellValTemplate[prev].row;
-    },
+    }
+
 };
