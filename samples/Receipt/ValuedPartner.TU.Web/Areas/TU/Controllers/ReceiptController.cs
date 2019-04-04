@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,14 +25,14 @@ using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedPartner.TU.Models;
-using ValuedPartner.TU.Resources.Forms;
-using ValuedPartner.TU.Web.Areas.TU.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Web.Areas.TU.Models;
+using ValuedPartner.TU.Resources.Forms;
 
 #endregion
 
@@ -41,7 +41,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
     /// <summary>
     ///  Controller for Receipt view
     /// </summary>
-        public class ReceiptController: MultitenantControllerBase<ReceiptViewModel> 
+    
+    public class ReceiptController : MultitenantControllerBase<ReceiptViewModel>
     {
         #region Private Variables
 
@@ -49,7 +50,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// Variable for controller internal.
         /// </summary>
         public ReceiptControllerInternal ControllerInternal;
-         
+
 
         #endregion
 
@@ -60,7 +61,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="container"></param>
         public ReceiptController(IUnityContainer container) : base(container, ScreenName.ICReceipt)
-        { 
+        {
         }
 
         #endregion
@@ -87,13 +88,19 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>ActionResult.</returns>
         public virtual ActionResult Index(string id = null, bool disableAll = false)
         {
-            ReceiptViewModel receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create(); 
+            ReceiptViewModel receiptViewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id, false, disableAll) : ControllerInternal.Create();
             //Added this make the optionalFields uncheck in UI 
             receiptViewModel.Data.OptionalFields = 0;
             receiptViewModel.Attributes = ControllerInternal.GetDynamicAttributesOfHeader();
             receiptViewModel.UserAccess = ControllerInternal.GetAccessRights();
             ViewBag.UserAccess = ControllerInternal.GetAccessRights();
             receiptViewModel.DisableScreen = disableAll;
+
+            //Define the grid here
+            ViewBag.ReceiptDetailGrid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath("receiptGrid"));
+            ViewBag.RptOptionalFieldGrid = ControllerInternal.CreateOptionalFieldGridDefinition("IC0595");
+            ViewBag.RptDetailOptionalFieldGrid = ControllerInternal.CreateOptionalFieldGridDefinition("IC0585");
+
             return View(receiptViewModel);
         }
 
@@ -105,7 +112,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <param name="isCalledAsPopup">receipt Number</param> 
         /// <returns>Receipt View Model</returns>
         [HttpPost]
-        public virtual JsonNetResult GetById(string id, bool oldRecordDeleted = false,bool isCalledAsPopup=false)
+        public virtual JsonNetResult GetById(string id, bool oldRecordDeleted = false, bool isCalledAsPopup = false)
         {
             try
             {
@@ -209,7 +216,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
             }
         }
 
@@ -265,7 +272,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 return JsonNet(response);
             }
             catch (BusinessException businessException)
-            { 
+            {
                 return JsonNet(BuildErrorModelBase(businessException));
             }
         }
@@ -280,7 +287,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         {
             var response = new ViewModelBase<ReceiptHeader> { UserMessage = new UserMessage { IsSuccess = true } };
             try
-            { 
+            {
                 return JsonNet(ControllerInternal.SaveDetails(model));
             }
             catch (BusinessException businessException)
@@ -307,7 +314,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -350,7 +357,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -378,7 +385,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -403,10 +410,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 return
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, "Exchange Rate"));
-            } 
+            }
         }
 
-        public JsonNetResult GetVendorDetail(string vendorNumber) 
+        public JsonNetResult GetVendorDetail(string vendorNumber)
         {
             try
             {
@@ -415,8 +422,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.VendorNumber));
-            } 
-        } 
+            }
+        }
 
         /// <summary>
         /// Check Bank Rate Date/Posting Date/Payment Date
@@ -431,7 +438,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
 
 
@@ -483,9 +490,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.PostingFailedMessage, businessException, ReceiptHeaderResx.Receipt));
+                return JsonNet(BuildErrorModelBase(CommonResx.PostingFailedMessage, businessException, ReceiptHeaderResx.Receipts));
             }
-        } 
+        }
 
         /// <summary>
         /// Save detail optional field.
@@ -567,7 +574,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -588,7 +595,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -606,7 +613,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -626,7 +633,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             catch (BusinessException businessException)
             {
                 return
-                    JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipt));
+                    JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
             }
         }
 
@@ -643,7 +650,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipt));
+                return JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
             }
         }
 
@@ -684,7 +691,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -703,14 +710,14 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 var modelBase = new ViewModelBase<ModelBase>
                 {
                     Data = result,
-                    UserMessage = new UserMessage {IsSuccess = true,},
+                    UserMessage = new UserMessage { IsSuccess = true, },
                 };
 
                 return JsonNet(modelBase);
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
@@ -725,11 +732,11 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         {
             try
             {
-                return JsonNet(ControllerInternal.GetHeaderValues(model, eventType)); 
+                return JsonNet(ControllerInternal.GetHeaderValues(model, eventType));
             }
             catch (BusinessException businessException)
             {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
             }
         }
 
