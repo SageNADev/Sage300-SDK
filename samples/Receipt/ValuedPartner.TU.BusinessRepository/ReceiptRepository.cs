@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,31 +27,30 @@ using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-using ValuedPartner.TU.BusinessRepository.Mappers;
-using ValuedPartner.TU.Interfaces.BusinessRepository;
-using ValuedPartner.TU.Models;
-using ValuedPartner.TU.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using ValuedPartner.TU.BusinessRepository.Mappers;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.Models;
+using ValuedPartner.TU.Models.Enums;
 using ICModel = Sage.CA.SBS.ERP.Sage300.IC.Models;
 
 #endregion
 
 namespace ValuedPartner.TU.BusinessRepository
 {
-  
     /// <summary>
     /// Repository for Receipt
     /// </summary>
-    public class ReceiptRepository : BaseHeaderDetailRepository, IReceiptRepository 
+    public class ReceiptRepository : BaseHeaderDetailRepository, IReceiptRepository
     {
         #region Business Entity Variables
 
@@ -110,6 +109,19 @@ namespace ValuedPartner.TU.BusinessRepository
         /// </summary>
         private IBusinessEntity _itemUnitOfMeasureEntity;
 
+        /// <summary>
+        /// Validator Filter - Reserved
+        /// </summary>
+        /// <value>The valid record filter.</value>
+        protected Func<ReceiptHeader, Boolean> ValidRecordFilter { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the detail filter.
+        /// </summary>
+        /// <value>The detail filter.</value>
+        public Expression<Func<ReceiptDetail, bool>> DetailFilter { get; set; }
+
         #endregion
 
         #region Private Variables
@@ -149,8 +161,10 @@ namespace ValuedPartner.TU.BusinessRepository
         /// Sets Context and DBLink
         /// </summary>
         /// <param name="context">Context</param>
-        public ReceiptRepository(Context context):base(context)
+        public ReceiptRepository(Context context) : base(context)
         {
+            SetValidRecordFilter();
+
             _mapper = new ReceiptMapper(context);
             _receiptMapper = new ReceiptHeaderMapper(context);
             _receiptDetailMapper = new ReceiptDetailMapper(context);
@@ -191,7 +205,6 @@ namespace ValuedPartner.TU.BusinessRepository
                             new List<IBusinessEntity>
                             {
                                 _receiptHeaderEntity,
-                                _receiptDetailEntity,
                                 _receiptOptionalFieldEntity,
                                 _receiptDetailOptionalFieldEntity,
                                 _receiptDetailSerialNumberEntity,
@@ -199,6 +212,7 @@ namespace ValuedPartner.TU.BusinessRepository
                             }, 0, 10);
                 }
             }
+
             //Setting Receipt Mode 
             var receiptMode = ReceiptType.Receipt;
             if (_receiptHeaderEntity.Exists)
@@ -231,7 +245,6 @@ namespace ValuedPartner.TU.BusinessRepository
                     new List<IBusinessEntity>
                     {
                         _receiptHeaderEntity,
-                        _receiptDetailEntity,
                         _receiptOptionalFieldEntity,
                         _receiptDetailOptionalFieldEntity,
                         _receiptDetailSerialNumberEntity,
@@ -242,14 +255,13 @@ namespace ValuedPartner.TU.BusinessRepository
             return headerModel;
         }
 
-        /// <inheritdoc />
-        ///  <summary>
-        /// Posts the Receipt based on primary key,Sequence Number
-        ///  </summary>
-        ///  <param name="model">model</param>
-        ///  <param name="filter">filter</param>
-        ///  <param name="yesNo">yesNo</param>
-        ///  <returns>Model</returns>
+        /// <summary>
+        ///Posts the Receipt based on primary key,Sequence Number
+        /// </summary>
+        /// <param name="model">model</param>
+        /// <param name="filter">filter</param>
+        /// <param name="yesNo">yesNo</param>
+        /// <returns>Model</returns>
         public virtual ReceiptHeader Post(ReceiptHeader model, Expression<Func<ReceiptHeader, bool>> filter, bool yesNo)
         {
             CheckRights(GetAccessRights(), SecurityType.Delete);
@@ -272,7 +284,6 @@ namespace ValuedPartner.TU.BusinessRepository
             return headerModel;
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Gets the Details
         /// </summary>
@@ -297,7 +308,6 @@ namespace ValuedPartner.TU.BusinessRepository
             return new EnumerableResponse<ReceiptDetail> { Items = new List<ReceiptDetail>(), TotalResultsCount = 0 };
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Creates a new Receipt Header.
         /// </summary>
@@ -320,7 +330,7 @@ namespace ValuedPartner.TU.BusinessRepository
             //Pull the default optional fields 
             _receiptHeaderEntity.SetValue(ReceiptHeader.Fields.ProcessCommand, ProcessCommand.InsertOptionalFields);
             _receiptHeaderEntity.Process();
-            var headerModel = receiptMapper.Map(new List<IBusinessEntity> { _receiptHeaderEntity, _receiptDetailEntity, _receiptOptionalFieldEntity, _receiptDetailOptionalFieldEntity, _receiptDetailSerialNumberEntity, _receiptDetailLotNumberEntity }, 0, 10);
+            var headerModel = receiptMapper.Map(new List<IBusinessEntity> { _receiptHeaderEntity, _receiptOptionalFieldEntity, _receiptDetailOptionalFieldEntity, _receiptDetailSerialNumberEntity, _receiptDetailLotNumberEntity }, 0, 10);
 
             headerModel.RecordStatus = RecordStatus.Entered;
             headerModel.Complete = Complete.No;
@@ -332,13 +342,12 @@ namespace ValuedPartner.TU.BusinessRepository
             return headerModel;
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Method to Add Receipts.
         /// </summary>
         /// <param name="model">Receipt Model</param>
         /// <returns>Receipt Header Model</returns>
-        public  ReceiptHeader Add(ReceiptHeader model)
+        public ReceiptHeader Add(ReceiptHeader model)
         {
             CheckRights(_receiptHeaderEntity, SecurityType.Add);
             CreateBusinessEntities();
@@ -346,7 +355,6 @@ namespace ValuedPartner.TU.BusinessRepository
             var receiptMapper = new ReceiptMapper(Context);
             _receiptMapper.Map(model, _receiptHeaderEntity);
 
-            var details = GetDetailModel(model);
             var details2 = GetReceiptOptionalFieldModel(model).ToList();
             var details3 = GetReceiptDetailOptionalFieldModel(model);
 
@@ -354,13 +362,6 @@ namespace ValuedPartner.TU.BusinessRepository
             {
                 SyncReceiptDetailOptionalField(details3);
                 SyncReceiptOptionalField(details2);
-                SyncReceiptDetails(details);
-
-                if (!details.Any() && model.ReceiptDetail.TotalResultsCount == 0)
-                {
-                    _receiptDetailEntity.ClearRecord();
-                    _receiptDetailEntity.Verify();
-                }
 
                 _receiptHeaderEntity.Verify();
                 _receiptHeaderEntity.Insert();
@@ -401,19 +402,11 @@ namespace ValuedPartner.TU.BusinessRepository
             }
             _receiptMapper.Map(header, _receiptHeaderEntity);
 
-            var details = GetDetailModel(header).ToList();
             var details2 = GetReceiptOptionalFieldModel(model).ToList();
             var details3 = GetReceiptDetailOptionalFieldModel(model);
 
             SyncReceiptDetailOptionalField(details3);
             SyncReceiptOptionalField(details2);
-            SyncReceiptDetails(details);
-
-            if (!details.Any() && header.ReceiptDetail.TotalResultsCount == 0)
-            {
-                _receiptDetailEntity.ClearRecord();
-                _receiptDetailEntity.Verify();
-            }
             _receiptHeaderEntity.Verify();
 
             if (_receiptHeaderEntity.Exists)
@@ -424,7 +417,7 @@ namespace ValuedPartner.TU.BusinessRepository
             {
                 _receiptHeaderEntity.Insert();
             }
-            var headerModel = receiptMapper.Map(new List<IBusinessEntity> { _receiptHeaderEntity, _receiptDetailEntity });
+            var headerModel = receiptMapper.Map(new List<IBusinessEntity> { _receiptHeaderEntity });
             headerModel.Warnings = Helper.GetExceptions(Session);
             //Setting Home Currency 
             headerModel.HomeCurrency = Session.HomeCurrency;
@@ -436,7 +429,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// </summary>
         /// <param name="filter">filter</param>
         /// <returns>Model</returns>
-        public  ReceiptHeader Delete(Expression<Func<ReceiptHeader, bool>> filter)
+        public ReceiptHeader Delete(Expression<Func<ReceiptHeader, bool>> filter)
         {
             CheckRights(_receiptHeaderEntity, SecurityType.Delete);
             CreateBusinessEntities();
@@ -455,11 +448,11 @@ namespace ValuedPartner.TU.BusinessRepository
         /// </summary>
         /// <param name="header">header</param>
         /// <returns>Receipt Detail Model</returns>
-        private IEnumerable<ReceiptDetail> GetDetailModel(ReceiptHeader header)
+        protected IEnumerable<ReceiptDetail> GetDetailModel(ReceiptHeader header)
         {
             var receiptDetail = header.ReceiptDetail;
             if (receiptDetail != null && receiptDetail.Items != null && receiptDetail.Items.Any())
-                return receiptDetail.Items.Count() != 0 ? header.ReceiptDetail.Items.ToList() : null;
+                return receiptDetail.Items.Count() != 0 ? header.ReceiptDetail.Items.Cast<ReceiptDetail>().ToList() : null;
             return new List<ReceiptDetail>();
         }
 
@@ -468,11 +461,11 @@ namespace ValuedPartner.TU.BusinessRepository
         /// </summary>
         /// <param name="header">header</param>
         /// <returns>Receipt ReceiptOptionalField</returns>
-        private IEnumerable<ReceiptOptionalField> GetReceiptOptionalFieldModel(ReceiptHeader header)
+        protected IEnumerable<ReceiptOptionalField> GetReceiptOptionalFieldModel(ReceiptHeader header)
         {
             var receiptOptionalField = header.ReceiptOptionalField;
             if (receiptOptionalField != null && receiptOptionalField.Items != null && receiptOptionalField.Items.Any())
-                return receiptOptionalField.Items.Count() != 0 ? header.ReceiptOptionalField.Items.ToList() : null;
+                return receiptOptionalField.Items.Count() != 0 ? header.ReceiptOptionalField.Items.Cast<ReceiptOptionalField>().ToList() : null;
             return new List<ReceiptOptionalField>();
         }
 
@@ -481,12 +474,108 @@ namespace ValuedPartner.TU.BusinessRepository
         /// </summary>
         /// <param name="header">header</param>
         /// <returns>Receipt ReceiptDetailOptionalField</returns>
-        private IEnumerable<ReceiptDetailOptionalField> GetReceiptDetailOptionalFieldModel(ReceiptHeader header)
+        protected IEnumerable<ReceiptDetailOptionalField> GetReceiptDetailOptionalFieldModel(ReceiptHeader header)
         {
             var receiptDetailOptionalField = header.ReceiptDetailOptionalField;
             if (receiptDetailOptionalField != null && receiptDetailOptionalField.Items != null && receiptDetailOptionalField.Items.Any())
-                return receiptDetailOptionalField.Items.Count() != 0 ? header.ReceiptDetailOptionalField.Items.ToList() : null;
+                return receiptDetailOptionalField.Items.Count() != 0 ? header.ReceiptDetailOptionalField.Items.Cast<ReceiptDetailOptionalField>().ToList() : null;
             return new List<ReceiptDetailOptionalField>();
+        }
+
+        /// <summary>
+        /// Get the ReceiptDetailLotNumber Model
+        /// </summary>
+        /// <param name="header">header</param>
+        /// <returns>Receipt ReceiptDetailLotNumber</returns>
+        protected IEnumerable<ReceiptDetailLotNumber> GetDetail4Model(ReceiptHeader header)
+        {
+            var receiptDetailLotNumber = header.ReceiptDetailLotNumber;
+            if (receiptDetailLotNumber != null && receiptDetailLotNumber.Items != null && receiptDetailLotNumber.Items.Any())
+                return receiptDetailLotNumber.Items.Count() != 0 ? header.ReceiptDetailLotNumber.Items.Cast<ReceiptDetailLotNumber>().ToList() : null;
+            return new List<ReceiptDetailLotNumber>();
+        }
+
+        /// <summary>
+        /// Get the ReceiptDetailSerialNumber Model
+        /// </summary>
+        /// <param name="header">header</param>
+        /// <returns>Receipt detail 5</returns>
+        protected IEnumerable<ReceiptDetailSerialNumber> GetDetail5Model(ReceiptHeader header)
+        {
+            var receiptDetailSerialNumber = header.ReceiptDetailSerialNumber;
+            if (receiptDetailSerialNumber != null && receiptDetailSerialNumber.Items != null && receiptDetailSerialNumber.Items.Any())
+                return receiptDetailSerialNumber.Items.Count() != 0
+                    ? header.ReceiptDetailSerialNumber.Items.Cast<ReceiptDetailSerialNumber>().ToList()
+                    : null;
+            return new List<ReceiptDetailSerialNumber>();
+        }
+
+        /// <summary>
+        /// Map for process detail
+        /// </summary>
+        /// <param name="detail">Receipt Detail</param>
+        /// <param name="detailEntity">Business Entity</param>
+        protected void ProcessMap(ReceiptDetail detail, IBusinessEntity detailEntity)
+        {
+            detailEntity.SetValue(ReceiptDetail.Index.SequenceNumber, detail.SequenceNumber, true);
+            detailEntity.SetValue(ReceiptDetail.Index.LineNumber, detail.LineNumber, true);
+        }
+
+        /// <summary>
+        /// Map for process ReceiptOptionalField
+        /// </summary>
+        /// <param name="detail2">Receipt ReceiptOptionalField</param>
+        /// <param name="detail2Entity">Business Entity</param>
+        protected void ProcessMap2(ReceiptOptionalField detail2, IBusinessEntity detail2Entity)
+        {
+            detail2Entity.SetValue(ReceiptOptionalField.Index.SequenceNumber, detail2.SequenceNumber, true);
+            detail2Entity.SetValue(ReceiptOptionalField.Index.OptionalField, detail2.OptionalField, true);
+        }
+
+        /// <summary>
+        /// Map for process ReceiptDetailOptionalField
+        /// </summary>
+        /// <param name="detail3">Receipt ReceiptDetailOptionalField</param>
+        /// <param name="detail3Entity">Business Entity</param>
+        protected void ProcessMap3(ReceiptDetailOptionalField detail3, IBusinessEntity detail3Entity)
+        {
+            detail3Entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, detail3.SequenceNumber, true);
+            detail3Entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, detail3.LineNumber, true);
+            detail3Entity.SetValue(ReceiptDetailOptionalField.Index.OptionalField, detail3.OptionalField, true);
+        }
+
+        /// <summary>
+        /// Map for process ReceiptDetailLotNumber
+        /// </summary>
+        /// <param name="detail4">Receipt Detail4</param>
+        /// <param name="detail4Entity">Business Entity</param>
+        protected void ProcessMap4(ReceiptDetailLotNumber detail4, IBusinessEntity detail4Entity)
+        {
+            detail4Entity.SetValue(ReceiptDetailLotNumber.Index.SequenceNumber, detail4.SequenceNumber, true);
+            detail4Entity.SetValue(ReceiptDetailLotNumber.Index.LineNumber, detail4.LineNumber, true);
+            detail4Entity.SetValue(ReceiptDetailLotNumber.Index.LotNumber, detail4.LotNumber, true);
+        }
+
+        /// <summary>
+        /// Map for process ReceiptDetailSerialNumber
+        /// </summary>
+        /// <param name="detail5">ReceiptDetailSerialNumber</param>
+        /// <param name="detail5Entity">Business Entity</param>
+        protected void ProcessMap5(ReceiptDetailSerialNumber detail5, IBusinessEntity detail5Entity)
+        {
+            detail5Entity.SetValue(ReceiptDetailSerialNumber.Index.SequenceNumber, detail5.SequenceNumber, true);
+            detail5Entity.SetValue(ReceiptDetailSerialNumber.Index.LineNumber, detail5.LineNumber, true);
+            detail5Entity.SetValue(ReceiptDetailSerialNumber.Index.SerialNumber, detail5.SerialNumber, true);
+        }
+
+        /// <summary>
+        /// Get Details count from Header
+        /// </summary>
+        /// <param name="headerEntity">Header Entity</param>
+        /// <returns>Number of details</returns>
+        protected int GetDetailCount(IBusinessEntity headerEntity)
+        {
+            return 0;
         }
 
         #endregion
@@ -494,9 +583,17 @@ namespace ValuedPartner.TU.BusinessRepository
         #region Private Methods
 
         /// <summary>
+        /// Sets ValidRecord Filter
+        /// </summary>
+        private void SetValidRecordFilter()
+        {
+            ValidRecordFilter = seq => seq.SequenceNumber != 0;
+        }
+
+        /// <summary>
         /// Method to Detail Process
         /// </summary>
-        private void DetailProcess()
+        public void DetailProcess()
         {
             _receiptDetailEntity.SetValue(ReceiptDetail.Index.ProcessCommand, ProcessCommand.InsertOptionalFields, true);
             _receiptDetailEntity.Process();
@@ -527,26 +624,6 @@ namespace ValuedPartner.TU.BusinessRepository
             _receiptDetailEntity.Process();
         }
 
-        /// <summary>
-        /// Synchronizes the detail.
-        /// </summary>
-        /// <param name="details">The details.</param>
-        private void SyncReceiptDetails(IEnumerable<ReceiptDetail> details)
-        {
-            if (details == null) return;
-
-            var allDetails = details as IList<ReceiptDetail> ?? details.ToList();
-            var newLine = allDetails.FirstOrDefault(detail => detail.IsNewLine);
-
-            if (newLine != null )
-            {
-                InsertDetail(newLine);
-            }
-            foreach ( var detail in allDetails.Where(detail => detail.HasChanged || detail.IsDeleted).Where(detail => detail != newLine))
-            {
-                SyncDetail(detail);
-            }
-        }
 
         /// <summary>
         /// Synchronizes the ReceiptOptionalField.
@@ -572,7 +649,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         /// Synchronizes the ReceiptDetailOptionalField.
         /// </summary>
-        /// <param name="details">The details.</param>
+        /// <param name="details3">The details.</param>
         private void SyncReceiptDetailOptionalField(IEnumerable<ReceiptDetailOptionalField> details)
         {
             if (details == null) return;
@@ -593,7 +670,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         /// Sync ReceiptOptionalField Records
         /// </summary>
-        /// <param name="detail">Receipt Optional Field Model</param>
+        /// <param name="detail2">Receipt Optional Field Model</param>
         private void SyncReceiptOptionalField(ReceiptOptionalField detail)
         {
             _receiptOptionalFieldMapper.MapKey(detail, _receiptOptionalFieldEntity);
@@ -625,7 +702,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         /// Sync ReceiptDetailOptionalField Records
         /// </summary>
-        /// <param name="detail">Receipt Detail Optional Field</param>
+        /// <param name="detail3">Receipt Detail Optional Field</param>
         private void SyncReceiptDetailOptionalField(ReceiptDetailOptionalField detail)
         {
             _receiptDetailOptionalFieldMapper.MapKey(detail, _receiptDetailOptionalFieldEntity);
@@ -726,7 +803,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         ///  Insert ReceiptDetailOptionalField records
         /// </summary>
-        /// <param name="newLine">Receipt Detail Optional Field</param>
+        /// <param name="newLine3">Receipt Detail Optional Field</param>
         private void InsertReceiptDetailOptionalField(ReceiptDetailOptionalField newLine)
         {
             _receiptDetailOptionalFieldMapper.Map(newLine, _receiptDetailOptionalFieldEntity);
@@ -799,6 +876,8 @@ namespace ValuedPartner.TU.BusinessRepository
         {
             _receiptHeaderEntity = OpenEntity(ReceiptHeader.EntityName, true);
             _receiptDetailEntity = OpenEntity(ReceiptDetail.EntityName, true);
+
+
             _receiptOptionalFieldEntity = OpenEntity(ReceiptOptionalField.EntityName, true);
             _receiptDetailOptionalFieldEntity = OpenEntity(ReceiptDetailOptionalField.EntityName, true);
             _receiptDetailLotNumberEntity = OpenEntity(ReceiptDetailLotNumber.EntityName, true);
@@ -811,11 +890,11 @@ namespace ValuedPartner.TU.BusinessRepository
 
             _receiptHeaderEntity.Compose(new[] { _receiptDetailEntity.View, _receiptOptionalFieldEntity.View });
 
-            _receiptDetailEntity.Compose(new[] { 
-                _receiptHeaderEntity.View, 
-                _itemEntity.View, 
-                _itemUnitOfMeasureEntity.View, 
-                _categoryEntity.View, 
+            _receiptDetailEntity.Compose(new[] {
+                _receiptHeaderEntity.View,
+                _itemEntity.View,
+                _itemUnitOfMeasureEntity.View,
+                _categoryEntity.View,
                 _locationsEntity.View,
                 _locationDetailEntity.View,
                 _receiptDetailOptionalFieldEntity.View,
@@ -991,10 +1070,14 @@ namespace ValuedPartner.TU.BusinessRepository
             }
             return true;
         }
-        /// <summary>
-        /// Synchronizes the detail models
+
+        // <summary>
+        /// Synchronizes the detail models.
         /// </summary>
-        /// <param name="detail"></param>
+        /// <typeparam name="TU">The type of TU</typeparam>
+        /// <param name="businessEntity">The business entity.</param>
+        /// <param name="mapper">The mapper.</param>
+        /// <param name="detail">The detail.</param>
         /// <returns>True if successfully synced, false otherwise</returns>
         private bool SyncDetailModels(ReceiptDetail detail)
         {
@@ -1033,6 +1116,10 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         /// New Detail Model
         /// </summary>
+        /// <typeparam name="TU">TU model</typeparam>
+        /// <param name="businessEntity">Business entity</param>
+        /// <param name="mapper">Model mapper</param>
+        /// <param name="activeFilter">Filter NOT used</param>
         /// <param name="currentDetail">Detail</param>
         /// <returns>Header model</returns>
         private ReceiptHeader NewDetailModels(ReceiptDetail currentDetail)
@@ -1068,6 +1155,9 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <summary>
         /// Sync Detail Models
         /// </summary>
+        /// <typeparam name="TU">TU model</typeparam>
+        /// <param name="businessEntity">Business entity</param>
+        /// <param name="mapper">Mapper</param>
         /// <param name="details">Details</param>
         /// <returns>True if successful, false otherwise</returns>
         private bool SyncDetailsModels(IEnumerable<ReceiptDetail> details)
@@ -1109,7 +1199,7 @@ namespace ValuedPartner.TU.BusinessRepository
             }
             return optionalFieldUserAccess;
         }
-        
+
         #endregion
 
         #region Public Methods
@@ -1278,7 +1368,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// <param name="pageSize">pageSize</param>
         /// <param name="filter">filter</param>
         /// <returns>List of Optional Field Details</returns>
-        protected virtual EnumerableResponse<ReceiptOptionalField> GetOptionalField(int pageNumber, int pageSize,
+        public virtual EnumerableResponse<ReceiptOptionalField> GetOptionalField(int pageNumber, int pageSize,
             Expression<Func<ReceiptOptionalField, bool>> filter = null)
         {
             IsSessionAvailable();
@@ -1543,12 +1633,12 @@ namespace ValuedPartner.TU.BusinessRepository
 
             foreach (var detail in allDetails.Where(detail => (detail.HasChanged || detail.IsDeleted) && !detail.IsNewLine))
             {
-                isUpdated = isDetail ? SyncDetailOptField(detail) : SyncOptField(detail);
+                isUpdated = isDetail ? SyncDetailOptField(detail) : SyncOptField(detail as ReceiptOptionalField);
                 //UpdateHeader(isDetail);
             }
             foreach (var newLine in allDetails.Where(detail => detail.IsNewLine && detail.OptionalField != null))
             {
-                isUpdated = isDetail ? InsertDetailOptField(newLine) : InsertOptField(newLine);
+                isUpdated = isDetail ? InsertDetailOptField(newLine) : InsertOptField(newLine as ReceiptOptionalField);
                 //UpdateHeader(isDetail);
             }
             return isUpdated;
@@ -1762,7 +1852,6 @@ namespace ValuedPartner.TU.BusinessRepository
                 receiptMapper.Map(new List<IBusinessEntity>
                 {
                     _receiptHeaderEntity,
-                    _receiptDetailEntity,
                     _receiptOptionalFieldEntity,
                     _receiptDetailOptionalFieldEntity,
                     _receiptDetailSerialNumberEntity,
@@ -1795,7 +1884,7 @@ namespace ValuedPartner.TU.BusinessRepository
         /// Additional Access Check for Export and Import
         /// </summary>
         /// <returns>User Access</returns>
-        public  UserAccess GetAccessRights()
+        public UserAccess GetAccessRights()
         {
             var userAccess = base.GetAccessRights(_receiptHeaderEntity);
 
@@ -1817,7 +1906,7 @@ namespace ValuedPartner.TU.BusinessRepository
             userAccess.ResourceSecurity = new Dictionary<string, UserAccess>
             {
                 {ReceiptOptionalField.EntityName, access},
-                {ReceiptDetailOptionalField.EntityName, access}                
+                {ReceiptDetailOptionalField.EntityName, access}
             };
 
             return userAccess;
@@ -1980,11 +2069,11 @@ namespace ValuedPartner.TU.BusinessRepository
             {
                 SyncDetailModels(detail);
             }
-            return _mapper.Map(new List<IBusinessEntity> {_receiptHeaderEntity, _receiptDetailEntity });
+            return _mapper.Map(new List<IBusinessEntity> { _receiptHeaderEntity, _receiptDetailEntity });
         }
 
         #endregion
-        
+
         #region Export Import
 
         /// <summary>
