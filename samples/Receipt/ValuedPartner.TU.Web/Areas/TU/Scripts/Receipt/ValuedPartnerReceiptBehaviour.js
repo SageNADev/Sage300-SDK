@@ -237,7 +237,7 @@ receiptUI = {
     },
     customGridAfterCreate: function (value) {
         //After create detail grid record, create default detail optional fields
-        var url = sg.utls.url.buildUrl("IC", "Receipt", "InsertDetailOptionalField");
+        var url = sg.utls.url.buildUrl("TU", "Receipt", "InsertDetailOptionalField");
         sg.utls.ajaxPostSync(url, null, function () { });
     },
     customGridAfterInsert: function (value) {

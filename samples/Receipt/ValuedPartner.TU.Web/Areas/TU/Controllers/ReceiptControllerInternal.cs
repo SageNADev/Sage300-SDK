@@ -281,6 +281,16 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         }
 
         /// <summary>
+        /// Insert default detail optional field 
+        /// </summary>
+        /// <param name="optionalField">The optional field.</param>
+        /// <returns>Detail Optional Field model</returns>
+        internal void InsertDetailOptionalField()
+        {
+            _repository.DetailProcess();
+        }
+
+        /// <summary>
         /// Creates a Receipt header 
         /// </summary>
         /// <returns>Receipt View Model</returns>
