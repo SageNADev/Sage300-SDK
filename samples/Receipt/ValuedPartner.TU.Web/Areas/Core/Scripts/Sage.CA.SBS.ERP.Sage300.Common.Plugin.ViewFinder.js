@@ -4,6 +4,83 @@
     sg.viewFinderHelper = {
         pageSize: 5,
         cancelFuncCall: $.noop,
+
+        /**
+         * @name getFinderSettings
+         * @description Get the settings for a finder based on ModuleID and ModuleAction
+         * @public
+         * @param {string} moduleId - The module Id as a string
+         * @param {string} moduleAction - The action name as a string
+         * @returns {object} Object representing the finder settings
+         */
+        getFinderSettings: function(moduleId, moduleAction) {
+			return sg.viewFinderProperties[moduleId][moduleAction];
+        },
+        
+        /**
+         * @name initFinder
+         * @desc Generic routine to initialize an individual finder
+         * @private
+         * @param {string} id - The id of the button used to invoke the finder
+         * @param {any} parent - Dual purpose parameter 
+         *                       1. Name of underlying control that will receive the
+         *                          selected item
+         *                       2. Callback when finder item selected                                              
+         * @param {object} properties - Object containing various settings for the finder
+         * @param {object} filter - The optional filter used to filter the finder results
+         * @param {number} height - The optional height of the finder window
+         * @param {number} top - The optional top location of the finder window
+         */
+        initFinder: function(id, parent, properties, filter, height, top) {
+
+            let initFinder = function (viewFinder) {
+                viewFinder.viewID = properties.viewID;
+                viewFinder.viewOrder = properties.viewOrder;
+                viewFinder.displayFieldNames = properties.displayFieldNames;
+                viewFinder.returnFieldNames = properties.returnFieldNames;
+
+                // Optional
+                //     Only useful for UIs such as Invoice Entry finder where you 
+                //     want to restrict the entries to a specific batch
+                //
+                // Note: 
+                //     The following syntax is a workaround for IE which doesn't 
+                //     support default parameters.
+                //
+                var filter = filter || null;
+                viewFinder.filter = filter;
+            };
+
+            sg.viewFinderHelper.setViewFinder(id, parent, initFinder, null, height, top);
+        },
+
+        /**
+         * Parameters for use in creating a View Finder Web screen finder widget.
+         * 
+         * @typedef {object} SetViewFinderProperties
+         * @property {string} properties.viewID - The ID of the view the finder will use.
+         * @property {number} properties.viewOrder - The view's sort-order field.
+         * @property {string[]} properties.displayFieldNames - The names of the view - fields to display in the finder.
+         * @property {string[]} properties.returnFieldNames - Array containing the list of field names for which to return values.
+         * @property {string[]=} properties.initKeyValues - Optional initial key values for the finder. (If omitted, the starting value is blank.)
+         * @property {string=} properties.filter  Optional filter string used for UIs such as Invoice Entry finder to restrict the finder entries displayed.
+         * @property {string=} properties.optionalFieldBindings - True to automatically include optional fields in the search result and filter.
+         * @property {boolean=} [properties.parentValAsInitKey = false] - True to take the initKeyValues from the parent control. (The finder’s key must be one field and the parent must be a control.)
+         * @property {boolean} properties.calculatePageCount - Optional value to ... ?
+         * @property {boolean} [properties.reinterpretInitKeyValues = true] - True to prepare the initKeyValues on the server, false to leave them as- is.
+         */
+
+        /**
+         * Creates a View Finder Web screen finder widget.
+         * 
+         * @param {string} id - The finder control's id.
+         * @param {(string|function)} parent - Either the id of the finder’s parent control (the control that receives the finder value), or 
+         *     a callback function that will be invoked when user selects a record in the finder.
+         * @param {SetViewFinderProperties} properties - Parameters with which to configure the finder.
+         * @param {function=} onCancelCallback - An optional cancel-callback.
+         * @param {number=} height - The optional height of the finder window.
+         * @param {number=} top - The optional top location of the finder window.
+         */
         setViewFinder: function (id, parent, properties, onCancelCallback, height, top) {
             $("#" + id).ViewFinder({
                 properties: properties,

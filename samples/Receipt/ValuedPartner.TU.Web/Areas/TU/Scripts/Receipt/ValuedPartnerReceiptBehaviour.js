@@ -189,9 +189,13 @@ receiptUI = {
     },
 
     updateGridColDecimal: function () {
-        var decimal = receiptUI.receiptModel.Data.ReceiptCurrencyDecimals();
-        var colOptions = [{ "field": "RECPCOST", "precision": decimal }, { "field": "RETURNCOST", "precision": decimal }, { "field": "ADJCOST", "precision": decimal }];
-        sg.viewList.setColumnsOptions("receiptGrid", colOptions);
+        var decimal = receiptUI.receiptModel.Data.ReceiptCurrencyDecimals().toString();
+        var cols = [{ "field": "RECPCOST", "decimal": decimal }, { "field": "RETURNCOST", "decimal": decimal }, { "field": "ADJCOST", "decimal": decimal }];
+        for (var i = 0, length = cols.length; i < length; i++) {
+            var template = sg.viewList.columnTemplate("receiptGrid", cols[i].field);
+            template = template.replace(/[0-9]/g, cols[i].decimal);
+            sg.viewList.columnTemplate("receiptGrid", cols[i].field, template);
+        }
     },
 
     showDetailOptionalField: function () {
@@ -232,8 +236,11 @@ receiptUI = {
     customGridBeforeCreate: function (event) {
     },
     customGridAfterCreate: function (value) {
+        //After create detail grid record, create default detail optional fields
+        var url = sg.utls.url.buildUrl("TU", "Receipt", "InsertDetailOptionalField");
+        sg.utls.ajaxPostSync(url, null, function () { });
     },
-    customGridAfterInserte: function (value) {
+    customGridAfterInsert: function (value) {
     },
     customColumnChanged: function (currentValue, value, event) {
     },
@@ -769,11 +776,18 @@ receiptUI = {
         sg.viewList.allowDelete("receiptGrid", value === type.RECEIPT);
 
         if (receiptUI.receiptModel) {
-            sg.viewList.hideColumns("receiptGrid", ["ADJCOST", "ADJUNITCST", "RETURNQTY", "RETURNCOST"]);
+            var cols = ["ADJCOST", "ADJUNITCST", "RETURNQTY", "RETURNCOST"];
+            cols.forEach(function (colName) {
+                sg.viewList.showColumn("receiptGrid", colName, false);
+            });
             if (value == type.RETURN) {
-                sg.viewList.showColumns("receiptGrid", ["RETURNQTY", "RETURNCOST"]);
+                ["RETURNQTY", "RETURNCOST"].forEach(function (colName) {
+                    sg.viewList.showColumn("receiptGrid", colName, true);
+                });
             } else if (value == type.ADJUSTMENT) {
-                sg.viewList.showColumns("receiptGrid", ["ADJCOST", "ADJUNITCST"]);
+                ["ADJCOST", "ADJUNITCST"].forEach(function (colName) {
+                    sg.viewList.showColumn("receiptGrid", colName, true);
+                });
             }
         }
     },

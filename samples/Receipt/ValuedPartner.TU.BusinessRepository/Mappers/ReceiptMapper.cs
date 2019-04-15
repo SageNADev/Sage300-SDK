@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -21,12 +21,10 @@
 #region Namespaces
 
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
-using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-using ValuedPartner.TU.Models;
 using System.Collections.Generic;
+using ValuedPartner.TU.Models;
 
 #endregion
 
@@ -35,7 +33,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
     /// <summary>
     /// Class for mapping Receipt header and Receipt details.
     /// </summary>
-    public class ReceiptMapper: ModelHierarchyMapper<ReceiptHeader> 
+    public class ReceiptMapper : ModelHierarchyMapper<ReceiptHeader>
     {
         #region Private Properties
 
@@ -92,41 +90,9 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
         /// <param name="filterCount">Filter Count</param>
         /// <returns>Receipt Header Model</returns> 
         public override ReceiptHeader Map(List<IBusinessEntity> entities, int? detailPageNumber = null, int? detailPageSize = null, int? filterCount = null)
-        { 
+        {
             var model = _headerMapper.Map(entities[0]);
-            model.ReceiptDetail = new EnumerableResponse<ReceiptDetail>();
-            var receiptDetail = new List<ReceiptDetail>();
-            var startIndex = CommonUtil.ComputeStartIndex(detailPageNumber, detailPageSize);
-            var endIndex = CommonUtil.ComputeEndIndex(detailPageNumber, detailPageSize, filterCount);
-            var loopCounterEntity1 = 1;
-            var lineNumber = startIndex != 0 ? startIndex : 1;
-            int totalDetailRecords;
-
-            // Map detail entities based on the page number and page size
-            if (detailPageNumber.HasValue && detailPageSize.HasValue)
-            {
-                entities[1].Top();
-
-                do
-                {
-                    if (loopCounterEntity1 >= startIndex)
-                    {
-                        lineNumber = AddReceiptDetail(entities[1], lineNumber, receiptDetail);
-                    }
-                    loopCounterEntity1++;
-                } while (loopCounterEntity1 <= endIndex && entities[1].Next());
-
-                totalDetailRecords = filterCount != null && filterCount.Value != 0 ? filterCount.Value: Helper.GetRecordCount(entities[1]);
-            }
-            else
-            {
-                receiptDetail.Add(_detailMapper.Map(entities[1]));
-                totalDetailRecords = filterCount != null && filterCount.Value != 0 ? filterCount.Value : 0;
-            }
-
-            model.ReceiptDetail.Items = receiptDetail;
-            model.ReceiptDetail.TotalResultsCount = totalDetailRecords;
-            return (ReceiptHeader)model; 
+            return (ReceiptHeader)model;
         }
 
         #endregion

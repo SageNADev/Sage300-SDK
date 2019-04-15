@@ -1068,7 +1068,7 @@ sg.optionalFieldControl = function () {
      */
     function showPopUp(gridName, popupElementId, isReadOnly, filter, parentGridName) {
         if (parentGridName) {
-            sg.viewList.syncCurrentRow(parentGridName);
+            sg.viewList.moveToCurrentRow(parentGridName);
         }
         sg.utls.openKendoWindowPopup('#' + popupElementId, null);
         if (filter) {
@@ -1165,7 +1165,6 @@ sg.optionalFieldControl = function () {
         deleteLine: toolbarDeleteLine,
         getTemplate: getTemplate,
         getListText: getListText,
-
         showPopUp: showPopUp,
         closePopUp: closePopUp,
 

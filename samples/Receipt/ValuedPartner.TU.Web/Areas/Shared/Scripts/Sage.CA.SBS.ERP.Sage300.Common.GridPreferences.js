@@ -154,7 +154,7 @@ GridPreferences = {
         // Detach and Append the container (div) to the current parent, 
         // because this container not gets scrolled along with the page when loaded inside the popup
         var kendoWindowContainer = grid.element.closest('.k-window-content.k-content');
-        if (kendoWindowContainer !== null && kendoWindowContainer.length > 0) {
+        if (kendoWindowContainer !== null && kendoWindowContainer.length > 0 && !kendoWindowContainer.data("kendoWindow").options.isMaximized) {
             sg.utls.GridPrefParentForm = container.parent();
             container.detach();
             grid.element.closest('.k-window-content.k-content').append(container);
@@ -253,7 +253,6 @@ GridPreferences = {
      */
     getSelectedColumns: function (grid) {
         var selectedColumns = [];
-        var columns = grid.columns;
 
         for (var i = 0; i < grid.columns.length; i++) {
             if (typeof grid.columns[i].attributes !== 'undefined' && grid.columns[i].attributes["sg_Hold"] != null && grid.columns[i].attributes["sg_Hold"]) {
@@ -266,15 +265,8 @@ GridPreferences = {
                 selectedColumns.push(GridPreferencesHelper.getGridColumn($(this).attr('data-finder-key'), $(this).is(':checked')));
             }
         });
-
-        selectedColumns = selectedColumns.map(function (c) {
-            var col = c;
-            col.width = columns.filter(function (column) { return column.field === c.field; })[0].width;
-            return col;
-        });
-
         return selectedColumns;
-    }
+    },
 };
 
 var GridPreferencesHelper = GridPreferencesHelper || {};
@@ -396,15 +388,8 @@ GridPreferencesHelper = {
         //Reorder column
         for (var k = 0; k < result.length; k++) {
             for (j = 0; j < grid.columns.length; j++) {
-                //set grid column width
-                var col = grid.columns[j];
-                var sameField = col.field === result[k].field;
-                if (sameField) {
-                    col.width = result[k].width;
-                }
-
-                if (sameField && index < grid.columns.length) {
-                    grid.reorderColumn(index, col);
+                if (grid.columns[j].field === result[k].field && index < grid.columns.length) {
+                    grid.reorderColumn(index, grid.columns[j]);
                     index++;
                     break;
                 }

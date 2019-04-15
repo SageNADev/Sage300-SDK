@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -23,9 +23,9 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using ValuedPartner.TU.Resources.Forms;
 using System;
 using System.ComponentModel.DataAnnotations;
+using ValuedPartner.TU.Resources.Forms;
 
 #endregion
 
@@ -127,10 +127,10 @@ namespace ValuedPartner.TU.Models
           public long IntegerValue {get; set;}
 
           /// <summary>
-          /// Gets or sets YesOrNoValue
+          /// Gets or sets YesNoValue
           /// </summary>
           [Display(Name = "YesNoValue", ResourceType = typeof(ReceiptDetailResx))]
-          public Enums.YesNoValue YesOrNoValue { get; set; }
+          public Enums.YesNoValue YesNoValue { get; set; }
 
           /// <summary>
           /// Gets or sets DateValue

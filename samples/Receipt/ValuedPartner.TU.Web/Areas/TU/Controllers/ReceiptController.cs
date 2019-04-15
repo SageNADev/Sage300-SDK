@@ -636,7 +636,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
             }
         }
-
+        
         /// <summary>
         /// Refreshes the header optional fields.
         /// </summary>
@@ -647,6 +647,23 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             try
             {
                 return JsonNet(ControllerInternal.RefreshOptField());
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
+            }
+        }
+        /// <summary>
+        /// Insert default details optional fields.
+        /// </summary>
+        /// <returns>returns optional field value</returns>
+        [HttpPost]
+        public virtual JsonNetResult InsertDetailOptionalField()
+        {
+            try
+            {
+                ControllerInternal.InsertDetailOptionalField();
+                return null;
             }
             catch (BusinessException businessException)
             {
