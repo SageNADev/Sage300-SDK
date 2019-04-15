@@ -103,7 +103,9 @@
     <Compile Include="Fields\ReceiptOptionalFieldFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptDetail.cs" />
+    <Compile Include="ReceiptDetailLotNumber.cs" />
     <Compile Include="ReceiptDetailOptionalField.cs" />
+    <Compile Include="ReceiptDetailSerialNumber.cs" />
     <Compile Include="ReceiptHeader.cs" />
     <Compile Include="ReceiptOptionalField.cs" />
   </ItemGroup>

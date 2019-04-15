@@ -528,12 +528,15 @@ var ViewFinderGridHelper = {
         });
     },
     OnBlur: function () {
-        $("#ValueTextBox").bind('change', function (e) {
-            ViewFinderGridHelper.ExecuteSimpleFilter();
+        $("#ValueTextBox").on('change keypress', function (e) {
+            if (e.type == 'change' || (e.type == 'keypress' && e.which == 13)) {
+                ViewFinderGridHelper.ExecuteSimpleFilter();
+            }
         });
-        //var numeric = $("#NumericTextBox").data('kendoNumericTextBox');
-        $("#NumericTextBox").bind("change", function (e) {
-            ViewFinderGridHelper.ExecuteSimpleFilter();
+        $("#NumericTextBox").on('change keypress', function (e) {
+            if (e.type == 'change' || (e.type == 'keypress' && e.which == 13)) {
+                ViewFinderGridHelper.ExecuteSimpleFilter();
+            }
         });
     },
 };

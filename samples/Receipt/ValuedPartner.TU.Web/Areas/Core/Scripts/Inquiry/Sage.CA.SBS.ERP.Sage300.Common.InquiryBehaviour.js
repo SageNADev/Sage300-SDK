@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2016-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2016-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var invoiceTypeUI = { Item: 0, Summary: 1, Item_JobRelated: 2, Item_Retainage: 3, Item_JobRelated_Retainage: 4, Summary_JobRelated: 5, Summary_Retainage: 6, Summary_JobRelated_Retainage: 7 };
@@ -692,4 +692,5 @@ $(function() {
     if (InquiryViewModel && InquiryFilterControlList) {
         inquiryUI.init();
     }
+
 });

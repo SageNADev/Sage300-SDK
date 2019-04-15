@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,14 +18,11 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Web.Areas.TU.Controllers;
-using ValuedPartner.TU.Web.Areas.TU.Controllers.Finder;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
-using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
@@ -49,7 +46,6 @@ namespace ValuedPartner.TU.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
             RegisterExportImportController(container);
         }
 
@@ -60,15 +56,6 @@ namespace ValuedPartner.TU.Web
         private void RegisterController(IUnityContainer container)
         {
             UnityUtil.RegisterType<IController, ReceiptController>(container, "TUReceipt");
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
-        {
-            UnityUtil.RegisterType<IFinder, FindReceiptNumberControllerInternal>(container, Constants.ReceiptFinder, new InjectionConstructor(typeof(Context)));
         }
 
         /// <summary>

@@ -35,6 +35,8 @@ sg.viewList = function () {
         _lastErrorResult = {},
         _valid = {},
         _dataChanged = {},
+        _allowInsert = {},
+        _allowDelete = {},
         _readOnlyColumns = {},
         _currentPage = {},
         _filter = {},
@@ -52,21 +54,36 @@ sg.viewList = function () {
      /**
      *   @description Add new line, new line is added after the selected row and set the new line as selected
      *   @param {string} gridName The name of the grid.
+     *   @param {object} rowData The current select row data
      *   @return {void}  
      */
-    function _addLine(gridName) {
+    function _addLine(gridName, rowData) {
         var grid = _getGrid(gridName),
             dataSource = grid.dataSource,
             insertedIndex = grid.select().index() + 1,
             pageSize = dataSource.pageSize(),
+            total = dataSource.total(),
             currentPage = dataSource.page();
 
         if (insertedIndex === pageSize) {
+            if (total / pageSize === currentPage) {
+                rowData = grid.dataItem(grid.select());
+                //No next page, waiting for insert row, then to next page, skip commit checking
+                setTimeout(function () {
+                    dataSource.data()[insertedIndex].skipCommit = true;
+                    dataSource.query({ pageSize: pageSize, page: ++currentPage });
+                    _addLine(gridName, rowData);
+                }, 50);
+            } else {
+                insertedIndex = 0;
+                dataSource.page(++currentPage);
+            }
+        }
+        if (insertedIndex > pageSize) {
             insertedIndex = 0;
-            dataSource.page(++currentPage);
         }
         _setDefaultRow[gridName] = false;
-        _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex);
+        _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, rowData);
     }
 
      /**
@@ -149,6 +166,7 @@ sg.viewList = function () {
             rowData = grid.dataItem(grid.select());
 
         if (!_newLine[gridName] || !rowData.isNewLine) {
+            _sendRequest(gridName, RequestTypeEnum.Update);
             return true;
         }
         _sendRequest(gridName, RequestTypeEnum.Insert);
@@ -1074,7 +1092,7 @@ sg.viewList = function () {
         var grid = _getGrid(gridName),
             record = rowData || grid.dataItem(grid.select());
 
-        if (grid) {
+       if (grid) {
             var data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': record, 'fieldName': fieldName },
                 requestName = _getRequestName(requestType),
                 url = sg.utls.url.buildUrl("Core", "Grid", requestName);
@@ -1302,6 +1320,8 @@ sg.viewList = function () {
         _lastErrorResult[gridName] = {};
         _valid[gridName] = true;
         _dataChanged[gridName] = false;
+        _allowInsert[gridName] = true,
+        _allowDelete[gridName] = true,
         _currentPage[gridName] = 1;
         _filter[gridName] = "";
         _readOnlyColumns[gridName] = [];
@@ -1384,12 +1404,16 @@ sg.viewList = function () {
                 }
                 if (lastRowNumber > -1) {
                     var lastRowData = grid.dataItem("tbody tr:eq(" + lastRowNumber + ")");
-                    if (selectedIndex !== lastRowNumber && lastRowNumber > -1 && lastRowData.isNewLine) {
-                        _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
+                    if (selectedIndex !== lastRowNumber) {
+                        if (lastRowData.isNewLine) {
+                            _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
+                        } else {
+                            _sendRequest(gridName, RequestTypeEnum.Update);
+                        }
                     }
                 }
             },
-            
+
             dataBound: function (e) {
                 var grid = e.sender,
                     rows = this.items(),
@@ -1465,17 +1489,14 @@ sg.viewList = function () {
                     var grid = _getGrid(gridName),
                         count = grid.dataSource.total();
 
-                    if (count === 0) {
-                        $("#btn" + gridName + "Delete").prop("disabled", true);
-                    } else if (e.action === "add") {
-                        $("#btn" + gridName + "Delete").prop("disabled", false);
-                    }
+                    var disabled = count === 0 || !_allowDelete[gridName];
+                    $("#btn" + gridName + "Delete").prop("disabled", disabled);
 
                     if (e.action && e.action !== "sync") {
                         _dataChanged[gridName] = true;
                     }
 
-                    if (e.items.length === 0 && grid.dataSource.page() !== 1) {
+                    if (e.items.length === 0 && count === 0 && grid.dataSource.page() !== 1) {
                         grid.dataSource.page(1);
                     }
 
@@ -1493,7 +1514,7 @@ sg.viewList = function () {
                         if (!isProceed) {
                             return;
                         }
-                        _sendRequest(gridName, e.items[0].isNewLine ? RequestTypeEnum.Refresh : RequestTypeEnum.Update, e.field);
+                        _sendRequest(gridName, e.field === "VALUES" ? RequestTypeEnum.Update : RequestTypeEnum.Refresh, e.field);
                     }
                 },
 
@@ -1526,7 +1547,10 @@ sg.viewList = function () {
                 },
                 //When paging, save the unsaved row
                 requestStart: function (e) {
-                    if (_newLine[gridName] && e.type === "read" && _currentPage[gridName] !== this.page()) {
+                    var row = e.sender.data()[e.sender.pageSize()];
+                    var skipCommit = row && row.hasOwnProperty("skipCommit") && row["skipCommit"];
+
+                    if (_newLine[gridName] && e.type === "read" && _currentPage[gridName] !== this.page() && !skipCommit) {
                         e.preventDefault();
                         if (_commitGrid(gridName)) {
                             _newLine[gridName] = false;
@@ -1663,115 +1687,17 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Get current cell value
-     * @param {string} gridName The grid name
-     * @return {any} return the cell value
-     */
-    function getCurrentCellValue(gridName) {
-        var grid = _getGrid(gridName),
-            row = grid.dataItem(grid.select()),
-            colIdx = grid.select().closest("td").index(),
-            field = grid.columns[colIdx].field;
-
-        return row[field];
-    }
-
-    
-    /**
-     *  @description Sync the current grid select row with server, move the server entity pointer to current entity
-     *  @description Used for parent/details grid(popup)
-     * @param {any} gridName The name of the grid
-     */
-    function syncCurrentRow(gridName) {
+ *  @description Sync the current grid select row with server, move the server entity pointer to current entity
+ *  @description Used for parent/details grid(popup)
+ *  @param {any} gridName The name of the grid
+ */
+    function moveToCurrentRow(gridName) {
         var grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select()),
-            data = { 'viewID': $("#" + gridName).attr('viewID'), "record" : rowData },
+            data = { 'viewID': $("#" + gridName).attr('viewID'), "record": rowData },
             url = sg.utls.url.buildUrl("Core", "Grid", "MoveTo");
 
         sg.utls.ajaxPostSync(url, data, function () { });
-    }
-
-    /**
-     * @description Set multiple grid columns read only.
-     * @param {string} gridName The name of grid
-     * @param {object} columns The grid columns
-     */
-    function setColumnsReadOnly(gridName, columns )  {
-        _readOnlyColumns[gridName] = columns;
-    }
-
-     /**
-       * @description Set columns options
-       * @param {any} gridName The name of the grid
-       * @param {any} newOptions List of column options object
-       */   
-    function setColumnsOptions(gridName, newOptions) {
-        /**
-         * @description Inner function for set one column option, such as dynamically set column decimal place
-         * @param {any} options The grid options
-         * @param {any} obj The new options object
-         */
-        function setColumnOption(options, obj) {
-            var col = options.columns.filter(function (c) { return c.field === obj.field; })[0];
-            if (col) {
-                for (var p in obj) {
-                    if (p === "field") { continue; }
-                    col[p] = obj[p];
-                    if (p === "precision" && col.template) {
-                        col.template = col.template.replace(/[0-9]/g, obj[p].toString());
-                    }
-                }
-            }
-        }
-
-        var grid = _getGrid(gridName);
-        var options = grid.getOptions();
-        if (newOptions) {
-            if (Array.isArray(newOptions)) {
-                newOptions.forEach(function (o) {
-                    setColumnOption(options, o);
-                });
-            } else {
-                setColumnOption(options, o);
-            }
-            grid.setOptions(options);
-        }
-    }
-
-    /**
-     * @description Show multiple grid columns.
-     * @param {string} gridName The name of grid
-     * @param {array} columns The show column name array
-     */
-    function showColumns(gridName, columns) {
-        _showHideColumns(gridName, columns, "showColumn");
-    }
-
-    /**
-     * @description Hide multiple grid columns.
-     * @param {string} gridName The name of grid
-     * @param {array} columns The hide columns name array
-     */
-    function hideColumns(gridName, columns) {
-        _showHideColumns(gridName, columns, "hideColumn");
-    }
-    
-    /**
-     * @description Enable/disabled grid Addline button.
-     * @param {any} gridName The name of the grid
-     * @param {any} enabled A boolean flag
-     */
-    function enableAddButton(gridName, enabled) {
-        $("#btn" + gridName + "Add").prop("disabled", !enabled);
-    }
-
-    /**
-     * @description Enable/disabled grid Delete line button.
-     * @param {any} gridName The name of the grid
-     * @param {any} enabled A boolean flag
-     */
-    function enableDeleteButton(gridName, enabled) {
-        $("#btn" + gridName + "Delete").prop("disabled", !enabled);
     }
 
     /**
@@ -1852,10 +1778,10 @@ sg.viewList = function () {
     function allowInsert(gridName, insertable) {
         if (insertable !== undefined) {
             $("#btn" + gridName + "Add").prop("disabled", !insertable);
+            _allowInsert[gridName] = insertable;
             return;
         }
-        var disabled =  $("#btn" + gridName + "Add").prop("disabled");
-        return !disabled;
+        return _allowInsert[gridName];
     }
     
     /**
@@ -1868,10 +1794,10 @@ sg.viewList = function () {
     function allowDelete(gridName, deletable) {
         if (deletable !== undefined) {
             $("#btn" + gridName + "Delete").prop("disabled", !deletable);
+            _allowDelete[gridName] = deletable;
             return;
         }
-        var disabled = $("#btn" + gridName + "Delete").prop("disabled");
-        return !disabled;
+        return _allowDelete[gridName];
     }
 
     /**
@@ -1959,7 +1885,7 @@ sg.viewList = function () {
             return;
         }
         var editable = grid.options.editable;
-        return typeof editable === "boolean" ? editable : false;
+        return typeof editable === "boolean" ? !editable : false;
     }
 
     /**
@@ -2028,14 +1954,14 @@ sg.viewList = function () {
                 return;
             }
         }
-        var col = typeof column === "string" ? columns[0] : grid.columns[column];
 
+        var schemaFields = grid.dataSource.options.schema.model.fields;
+        var field = typeof column === "string" ? column : grid.columns[column].field;
         if (editable !== undefined) {
-            col.attr("readonly", !editable);
+            schemaFields[field].editable = editable;
+            return;
         }
 
-        var schemaFields = grid.dataSource.schema.model.fields;
-        var field = typeof column === "string" ? column : grid.columns[column].field;
         return schemaFields[field].editable;
     }
 
@@ -2061,16 +1987,7 @@ sg.viewList = function () {
         editColumnSettings: toolbarEditColumn,
         getListText: getListText,
         getTemplate: getTemplate,
-
-        enableAddButton: enableAddButton,
-        enableDeleteButton: enableDeleteButton,
-        getCurrentCellValue: getCurrentCellValue, 
-        hideColumns: hideColumns,
-        showColumns: showColumns,
-        setColumnsReadOnly: setColumnsReadOnly,
-        setColumnsOptions: setColumnsOptions,
-        syncCurrentRow: syncCurrentRow,
-
+        moveToCurrentRow: moveToCurrentRow,
         //Documented public methods
         showColumn: showColumn,
         allowInsert: allowInsert,
@@ -2083,7 +2000,6 @@ sg.viewList = function () {
         columnCount: columnCount,
         columnTitle: columnTitle,
         columnEditable: columnEditable,
-        setValue: setValue,
         isValid: isValid,
         dirty: dirty,
         commit: commit,

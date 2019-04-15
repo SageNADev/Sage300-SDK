@@ -11,7 +11,7 @@
     { "gridAfterDelete": "receiptUI.customGridAfterDelete" },
     { "gridBeforeCreate": "receiptUI.customGridBeforeCreate" },
     { "gridAfterCreate": "receiptUI.customGridAfterCreate" },
-    { "gridAfterInsert": "receiptUI.customGridAfterInserte" }
+    { "gridAfterInsert": "receiptUI.customGridAfterInsert" }
   ],
   "ColumnDefinitions": [
     {

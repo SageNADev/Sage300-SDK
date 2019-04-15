@@ -102,28 +102,38 @@
   font-size: 12px;
   color: #FFF;
   font-family: arial;
-  padding: 15px;
-  top: 29px;
-  left: 5px;
+  padding: 0 10px;
   text-align: left;
-  width: 280px !important;
   background-image: none;
   line-height: inherit;
   box-shadow: none;
 
-  &:before {
-    position: absolute;
-    top: 5px;
-    left: -14px;
-    content: "";
-    width: 14px;
-    height: 14px;
-    border: 7px solid @sage-dark-gray;
-    border-color: transparent @sage-dark-gray transparent transparent;
-  }
-
   .url-link {
     color: @white;
+  }
+
+  &.k-tooltip-validation {
+    background-color: @sage-dark-gray;
+
+    .k-callout-n {
+      border-bottom-color: @sage-dark-gray;
+      left: 20%;
+    }
+
+    .k-icon.k-i-warning {
+      width: 20px;
+      height: 20px;
+
+      &:before {
+        line-height: unset;
+        margin: -1px 0 0;
+      }
+    }
+
+    &.k-invalid-msg {
+      text-transform: initial;
+      margin: .25em 0 !important;
+    }
   }
 }
 
