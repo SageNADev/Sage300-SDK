@@ -22,7 +22,8 @@ sg.viewList = function () {
         Create: 1,
         Insert: 2,
         Update: 3,
-        Refresh: 4
+        Refresh: 4,
+        Delete: 5
     },
     BtnTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}">{2}</button>';
 
@@ -34,9 +35,12 @@ sg.viewList = function () {
         _lastErrorResult = {},
         _valid = {},
         _dataChanged = {},
+        _allowInsert = {},
+        _allowDelete = {},
         _readOnlyColumns = {},
         _currentPage = {},
         _filter = {},
+        _sendChange = {},
         _gridList = [];
 
      /**
@@ -50,21 +54,36 @@ sg.viewList = function () {
      /**
      *   @description Add new line, new line is added after the selected row and set the new line as selected
      *   @param {string} gridName The name of the grid.
+     *   @param {object} rowData The current select row data
      *   @return {void}  
      */
-    function _addLine(gridName) {
+    function _addLine(gridName, rowData) {
         var grid = _getGrid(gridName),
             dataSource = grid.dataSource,
             insertedIndex = grid.select().index() + 1,
             pageSize = dataSource.pageSize(),
+            total = dataSource.total(),
             currentPage = dataSource.page();
 
         if (insertedIndex === pageSize) {
+            if (total / pageSize === currentPage) {
+                rowData = grid.dataItem(grid.select());
+                //No next page, waiting for insert row, then to next page, skip commit checking
+                setTimeout(function () {
+                    dataSource.data()[insertedIndex].skipCommit = true;
+                    dataSource.query({ pageSize: pageSize, page: ++currentPage });
+                    _addLine(gridName, rowData);
+                }, 50);
+            } else {
+                insertedIndex = 0;
+                dataSource.page(++currentPage);
+            }
+        }
+        if (insertedIndex > pageSize) {
             insertedIndex = 0;
-            dataSource.page(++currentPage);
         }
         _setDefaultRow[gridName] = false;
-        _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex);
+        _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, rowData);
     }
 
      /**
@@ -147,6 +166,7 @@ sg.viewList = function () {
             rowData = grid.dataItem(grid.select());
 
         if (!_newLine[gridName] || !rowData.isNewLine) {
+            _sendRequest(gridName, RequestTypeEnum.Update);
             return true;
         }
         _sendRequest(gridName, RequestTypeEnum.Insert);
@@ -210,7 +230,7 @@ sg.viewList = function () {
             template = '#= sg.viewList.getTemplate(data) #';
         }
 
-        if (col.finder && mask && mask.indexOf('C') > 0 ) {
+        if (col.finder && mask && mask.indexOf('ANC') > 0 ) {
             template = kendo.format("#= {0}.toUpperCase() #", col.field);
         }
         if (type === "decimal") {
@@ -321,6 +341,17 @@ sg.viewList = function () {
     }
 
     /**
+     * @description Set editor initail value
+     * @param {string} gridName The name of the grid
+     * @param {any} options Editor options object
+     */
+    function _setEditorInitialValue(gridName, options) {
+        var field = options.field;
+        _lastColField[gridName] = field;
+        _lastErrorResult[gridName][field + "Value"] = options.model[field];
+    }
+
+    /**
      * @description The column finder editor
      * @param {object} container The editor container
      * @param {object} options The column options
@@ -351,17 +382,7 @@ sg.viewList = function () {
         if (refKey) {
             finder.filter = kendo.format("{0}={1}", refKey, model[refKey]);
         }
-        //Set finder initial values
-        var length = finder.InitKeyFieldNames ? finder.InitKeyFieldNames.length : 0;
-        if (length > 0) {
-            for (var i = 0; i < length; i++) {
-                var initField = finder.InitKeyFieldNames[i];
-                var initValue = model.hasOwnProperty(initField) ? model[initField] : initField;
-                finder.initKeyValues.push(initValue);
-            }
-        } else {
-            finder.initKeyValues = [model[field]];
-        }
+
         //Finder has filter, get the filter, set finder calculatePageCount as false
         if (finder.Filter) {
             finder.filter = getFilter();
@@ -440,8 +461,34 @@ sg.viewList = function () {
             }
         }
 
-        sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
-        _lastColField[gridName] = options.field;
+        $("#" + field).on("keydown", function (e) {
+            _sendChange[gridName] = false;
+            if (e.keyCode === 9 || e.keyCode === 13) {
+                _sendChange[gridName] = true;
+             }
+        });
+
+        $("#" + buttonId).mousedown(function (e) {
+            //Set finder initial values
+            var value = $("#" + field).val().toUpperCase();
+            var length = finder.InitKeyFieldNames ? finder.InitKeyFieldNames.length : 0;
+            if (length > 0) {
+                for (var i = 0; i < length; i++) {
+                    var initField = finder.InitKeyFieldNames[i];
+                    var initValue = model.hasOwnProperty(initField) ? model[initField] : initField;
+                    if (length === 1) {
+                        initValue = value;
+                    }
+                    finder.initKeyValues.push(initValue);
+                }
+            } else {
+                finder.initKeyValues = [value];
+            }
+
+            sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
+        });
+
+        _setEditorInitialValue(gridName, options);
     }
 
     /**
@@ -463,7 +510,7 @@ sg.viewList = function () {
             .change(function (e) {
             });
         sg.utls.kndoUI.datePicker(txtId);
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnendEdit'
         _columnCallBackEdit(gridName, field);
@@ -494,7 +541,7 @@ sg.viewList = function () {
             .change(function (e) {
                 options.model.set(field, this.value.replace(/:/g,''));
             });
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnendEdit'
         _columnCallBackEdit(gridName, field);
@@ -532,7 +579,7 @@ sg.viewList = function () {
                     dataSource: presentationList
                 });
         }
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnendEdit'
         _columnCallBackEdit(gridName, field);
@@ -558,7 +605,7 @@ sg.viewList = function () {
             .change(function () {
                 options.model.set(field, this.value);
             });
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnendEdit'
         _columnCallBackEdit(gridName, field);
@@ -583,7 +630,7 @@ sg.viewList = function () {
         });
 
         sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, 16);
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnendEdit'
         _columnCallBackEdit(gridName, field);
@@ -668,7 +715,7 @@ sg.viewList = function () {
             _textEditor(container, options, col, gridName);
         } 
         $(kendo.format("input[name='{0}']", field)).on("change", onChange.bind(null, rowId, field));
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
     }
 
     /**
@@ -813,6 +860,9 @@ sg.viewList = function () {
             case RequestTypeEnum.Update:
                 requestName = "Update";
                 break;
+            case RequestTypeEnum.Delete:
+                requestName = "Delete";
+                break;
         }
         return requestName;
     }
@@ -840,6 +890,9 @@ sg.viewList = function () {
                 break;
             case RequestTypeEnum.Update:
                 isSuccess ? _updateSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
+                break;
+            case RequestTypeEnum.Delete:
+                isSuccess ? _deleteSuccess(gridName, jsonResult) : _deleteError(gridName, jsonResult);
                 break;
             default:
         }
@@ -987,7 +1040,6 @@ sg.viewList = function () {
      */
     function _updateError(gridName, jsonResult, fieldName) {
         var grid = $('#' + gridName).data("kendoGrid"),
-            prevDataSource = grid.dataSource._pristineData,
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
             newLine = _newLine[gridName],
@@ -997,15 +1049,34 @@ sg.viewList = function () {
         sg.utls.showMessage(jsonResult);
     
         setTimeout(function () {
-            var prevRowData = prevDataSource[rowIndex];
-            if (prevRowData) {
-                dataItem[fieldName] = prevRowData[fieldName];
-                _lastErrorResult[gridName].message = "";
-            }
+            _lastErrorResult[gridName].message = "";
+            dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
             var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
             var row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
             grid.editCell(row.find(">td").eq(index));
         });
+    }
+
+    /**
+    * @description Send delete request success, refresh the grid
+    * @param {string} gridName The grid name
+    * @param {object} jsonResult The request call back result
+    * @param {string} fieldName update field name
+    */
+    function _deleteSuccess(gridName, jsonResult) {
+        var grid = $('#' + gridName).data("kendoGrid");
+        grid.dataSource.read();
+    }
+    /**
+     * @description Send delete request error
+     * @param {string} gridName The grid name
+     * @param {any} jsonResult The request call back result
+     * @param {any} fieldName The update field name
+     */
+    function _deleteError(gridName, jsonResult) {
+        var grid = $('#' + gridName).data("kendoGrid");
+        grid.dataSource.read();
+        sg.utls.showMessage(jsonResult);
     }
 
     /**
@@ -1021,7 +1092,7 @@ sg.viewList = function () {
         var grid = _getGrid(gridName),
             record = rowData || grid.dataItem(grid.select());
 
-        if (grid) {
+       if (grid) {
             var data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': record, 'fieldName': fieldName },
                 requestName = _getRequestName(requestType),
                 url = sg.utls.url.buildUrl("Core", "Grid", requestName);
@@ -1249,9 +1320,12 @@ sg.viewList = function () {
         _lastErrorResult[gridName] = {};
         _valid[gridName] = true;
         _dataChanged[gridName] = false;
+        _allowInsert[gridName] = true,
+        _allowDelete[gridName] = true,
         _currentPage[gridName] = 1;
         _filter[gridName] = "";
         _readOnlyColumns[gridName] = [];
+        _sendChange[gridName] = true;
     }
 
     /**
@@ -1270,7 +1344,7 @@ sg.viewList = function () {
      * @description Initialize a grid, creating dataSource to binding grid, register events handler
      * @param {string} gridName The name of the grid.
      * @param {boolean} readOnly Whether the grid allows editing(Optional).
-     * @param {object} updateColumnDefs Function or funcion name. To update the column definitions before build grid columns(Sage 300 internal use)
+     * @param {object} updateColumnDefs Function or funcion name. To update the column definitions before build grid columns
      * @return {object} Return kendo grid object
      */
     function init(gridName, readOnly, updateColumnDefs) {
@@ -1330,12 +1404,16 @@ sg.viewList = function () {
                 }
                 if (lastRowNumber > -1) {
                     var lastRowData = grid.dataItem("tbody tr:eq(" + lastRowNumber + ")");
-                    if (selectedIndex !== lastRowNumber && lastRowNumber > -1 && lastRowData.isNewLine) {
-                        _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
+                    if (selectedIndex !== lastRowNumber) {
+                        if (lastRowData.isNewLine) {
+                            _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
+                        } else {
+                            _sendRequest(gridName, RequestTypeEnum.Update);
+                        }
                     }
                 }
             },
-            
+
             dataBound: function (e) {
                 var grid = e.sender,
                     rows = this.items(),
@@ -1359,8 +1437,10 @@ sg.viewList = function () {
                 }
                 //Custom plug in for 'columnDoubleClick' 
                 grid.tbody.find("td").dblclick(function (grid, e) {
-                    var field = grid.columns[e.target.cellIndex].field;
-                    _columnCallback(gridName, "columnDoubleClick", field);
+                    var col = grid.columns[e.target.cellIndex];
+                    if (col) {
+                        _columnCallback(gridName, "columnDoubleClick", col.field);
+                    }
                 }.bind(null, grid));
             },
 
@@ -1407,18 +1487,26 @@ sg.viewList = function () {
                 batch: true,
                 change: function (e) {
                     var grid = _getGrid(gridName),
-                        rowData = e.items[0];
+                        count = grid.dataSource.total();
+
+                    var disabled = count === 0 || !_allowDelete[gridName];
+                    $("#btn" + gridName + "Delete").prop("disabled", disabled);
 
                     if (e.action && e.action !== "sync") {
                         _dataChanged[gridName] = true;
                     }
 
-                    if (e.items.length === 0 && grid.dataSource.page() !== 1) {
+                    if (e.items.length === 0 && count === 0 && grid.dataSource.page() !== 1) {
                         grid.dataSource.page(1);
                     }
+
                     if (e.action === "itemchange") {
                         e.preventDefault();
                         if (e.field === "OptionalField" || e.field === "OptionalFieldString") {
+                            return;
+                        }
+                        if (!_sendChange[gridName]) {
+                            _sendChange[gridName] = true;
                             return;
                         }
                         //Custom plugin for 'columnChanged'
@@ -1426,7 +1514,7 @@ sg.viewList = function () {
                         if (!isProceed) {
                             return;
                         }
-                        _sendRequest(gridName, e.field === "VALUES" && !rowData.isNewLine ? RequestTypeEnum.Update : RequestTypeEnum.Refresh, e.field);
+                        _sendRequest(gridName, e.field === "VALUES" ? RequestTypeEnum.Update : RequestTypeEnum.Refresh, e.field);
                     }
                 },
 
@@ -1459,7 +1547,10 @@ sg.viewList = function () {
                 },
                 //When paging, save the unsaved row
                 requestStart: function (e) {
-                    if (_newLine[gridName] && e.type === "read" && _currentPage[gridName] !== this.page()) {
+                    var row = e.sender.data()[e.sender.pageSize()];
+                    var skipCommit = row && row.hasOwnProperty("skipCommit") && row["skipCommit"];
+
+                    if (_newLine[gridName] && e.type === "read" && _currentPage[gridName] !== this.page() && !skipCommit) {
                         e.preventDefault();
                         if (_commitGrid(gridName)) {
                             _newLine[gridName] = false;
@@ -1508,10 +1599,10 @@ sg.viewList = function () {
         if (selectedIndex > -1) {
             sg.utls.showKendoConfirmationDialog(
                 function () {
-                    //grid.removeRow('tr:eq(' + (selectedIndex + 1) + ')');
-                    grid.dataSource.remove(rowData);
                     if (!rowData.isNewLine) {
-                        grid.dataSource.sync();
+                        _sendRequest(gridName, RequestTypeEnum.Delete, "");
+                    } else {
+                        grid.dataSource.remove(rowData);
                     }
                     grid.dataSource.read();
                     _gridCallback(gridName, "gridAfterDelete", rowData);
@@ -1596,125 +1687,17 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Get current cell value
-     * @param {string} gridName The grid name
-     * @return {any} return the cell value
-     */
-    function getCurrentCellValue(gridName) {
-        var grid = _getGrid(gridName),
-            row = grid.dataItem(grid.select()),
-            colIdx = grid.select().closest("td").index(),
-            field = grid.columns[colIdx].field;
-
-        return row[field];
-    }
-
-    
-    /**
-     *  @description Sync the current grid select row with server, move the server entity pointer to current entity
-     *  @description Used for parent/details grid(popup)
-     * @param {any} gridName The name of the grid
-     */
-    function syncCurrentRow(gridName) {
+ *  @description Sync the current grid select row with server, move the server entity pointer to current entity
+ *  @description Used for parent/details grid(popup)
+ *  @param {any} gridName The name of the grid
+ */
+    function moveToCurrentRow(gridName) {
         var grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select()),
-            data = { 'viewID': $("#" + gridName).attr('viewID'), "record" : rowData },
+            data = { 'viewID': $("#" + gridName).attr('viewID'), "record": rowData },
             url = sg.utls.url.buildUrl("Core", "Grid", "MoveTo");
 
         sg.utls.ajaxPostSync(url, data, function () { });
-    }
-
-     /**
-     * @description Set grid read only.
-     * @param {string} gridName The name of the grid.
-     * @param {bool} readOnly A boolean flag.
-     * @return {void}
-     */
-    function setGridReadOnly(gridName, readOnly) {
-        _getGrid(gridName).setOptions({ editable: !readOnly });
-    }
-
-    /**
-     * @description Set multiple grid columns read only.
-     * @param {string} gridName The name of grid
-     * @param {object} columns The grid columns
-     */
-    function setColumnsReadOnly(gridName, columns )  {
-        _readOnlyColumns[gridName] = columns;
-    }
-
-     /**
-       * @description Set columns options
-       * @param {any} gridName The name of the grid
-       * @param {any} newOptions List of column options object
-       */   
-    function setColumnsOptions(gridName, newOptions) {
-        /**
-         * @description Inner function for set one column option, such as dynamically set column decimal place
-         * @param {any} options The grid options
-         * @param {any} obj The new options object
-         */
-        function setColumnOption(options, obj) {
-            var col = options.columns.filter(function (c) { return c.field === obj.field; })[0];
-            if (col) {
-                for (var p in obj) {
-                    if (p === "field") { continue; }
-                    col[p] = obj[p];
-                    if (p === "precision" && col.template) {
-                        col.template = col.template.replace(/[0-9]/g, obj[p].toString());
-                    }
-                }
-            }
-        }
-
-        var grid = _getGrid(gridName);
-        var options = grid.getOptions();
-        if (newOptions) {
-            if (Array.isArray(newOptions)) {
-                newOptions.forEach(function (o) {
-                    setColumnOption(options, o);
-                });
-            } else {
-                setColumnOption(options, o);
-            }
-            grid.setOptions(options);
-        }
-    }
-
-    /**
-     * @description Show multiple grid columns.
-     * @param {string} gridName The name of grid
-     * @param {array} columns The show column name array
-     */
-    function showColumns(gridName, columns) {
-        _showHideColumns(gridName, columns, "showColumn");
-    }
-
-    /**
-     * @description Hide multiple grid columns.
-     * @param {string} gridName The name of grid
-     * @param {array} columns The hide columns name array
-     */
-    function hideColumns(gridName, columns) {
-        _showHideColumns(gridName, columns, "hideColumn");
-    }
-    
-    /**
-     * @description Enable/disabled grid Addline button.
-     * @param {any} gridName The name of the grid
-     * @param {any} enabled A boolean flag
-     */
-    function enableAddButton(gridName, enabled) {
-        $("#btn" + gridName + "Add").prop("disabled", !enabled);
-    }
-
-    /**
-     * @description Enable/disabled grid Delete line button.
-     * @param {any} gridName The name of the grid
-     * @param {any} enabled A boolean flag
-     */
-    function enableDeleteButton(gridName, enabled) {
-        $("#btn" + gridName + "Delete").prop("disabled", !enabled);
     }
 
     /**
@@ -1795,10 +1778,10 @@ sg.viewList = function () {
     function allowInsert(gridName, insertable) {
         if (insertable !== undefined) {
             $("#btn" + gridName + "Add").prop("disabled", !insertable);
+            _allowInsert[gridName] = insertable;
             return;
         }
-        var disabled =  $("#btn" + gridName + "Add").prop("disabled");
-        return !disabled;
+        return _allowInsert[gridName];
     }
     
     /**
@@ -1809,12 +1792,12 @@ sg.viewList = function () {
      * @return {boolean} return true if the grid allows delete or null
      */
     function allowDelete(gridName, deletable) {
-        if (insertable !== undefined) {
+        if (deletable !== undefined) {
             $("#btn" + gridName + "Delete").prop("disabled", !deletable);
+            _allowDelete[gridName] = deletable;
             return;
         }
-        var disabled = $("#btn" + gridName + "Delete").prop("disabled");
-        return !disabled;
+        return _allowDelete[gridName];
     }
 
     /**
@@ -1902,7 +1885,7 @@ sg.viewList = function () {
             return;
         }
         var editable = grid.options.editable;
-        return typeof editable === "boolean" ? editable : false;
+        return typeof editable === "boolean" ? !editable : false;
     }
 
     /**
@@ -1971,14 +1954,14 @@ sg.viewList = function () {
                 return;
             }
         }
-        var col = typeof column === "string" ? columns[0] : grid.columns[column];
 
+        var schemaFields = grid.dataSource.options.schema.model.fields;
+        var field = typeof column === "string" ? column : grid.columns[column].field;
         if (editable !== undefined) {
-            col.attr("readonly", !editable);
+            schemaFields[field].editable = editable;
+            return;
         }
 
-        var schemaFields = grid.dataSource.schema.model.fields;
-        var field = typeof column === "string" ? column : grid.columns[column].field;
         return schemaFields[field].editable;
     }
 
@@ -2004,18 +1987,7 @@ sg.viewList = function () {
         editColumnSettings: toolbarEditColumn,
         getListText: getListText,
         getTemplate: getTemplate,
-
-        //Undocument public methods(For Sage 300 web screens use)
-        enableAddButton: enableAddButton,
-        enableDeleteButton: enableDeleteButton,
-        getCurrentCellValue: getCurrentCellValue, 
-        hideColumns: hideColumns,
-        showColumns: showColumns,
-        setGridReadOnly: setGridReadOnly,
-        setColumnsReadOnly: setColumnsReadOnly,
-        setColumnsOptions: setColumnsOptions,
-        syncCurrentRow: syncCurrentRow,
-
+        moveToCurrentRow: moveToCurrentRow,
         //Documented public methods
         showColumn: showColumn,
         allowInsert: allowInsert,
@@ -2028,7 +2000,6 @@ sg.viewList = function () {
         columnCount: columnCount,
         columnTitle: columnTitle,
         columnEditable: columnEditable,
-        setValue: setValue,
         isValid: isValid,
         dirty: dirty,
         commit: commit,

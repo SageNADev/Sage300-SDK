@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div id="antiforgerytoken_holder" data-antiforgerycookiename="@AntiForgeryConfig.CookieName">
+        @Html.AntiForgeryToken()
+    </div>
+</body>
+</html>

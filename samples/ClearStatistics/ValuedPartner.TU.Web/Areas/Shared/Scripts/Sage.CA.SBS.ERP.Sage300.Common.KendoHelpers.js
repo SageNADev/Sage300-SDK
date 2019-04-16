@@ -463,10 +463,13 @@ $.extend(sg.utls.kndoUI, {
     },
 
     /**
-     * Instantiate Drop Down List
+     * Instantiates a Kendo DropDownList widget, and binds the "change" event of the underlying DOM 
+     * element (which gets triggered by Knockout) to code that will “force” the widget to update and 
+     * refresh the UI.
+     * 
      * @method dropDownList
-     * @param {} id
-     * @return 
+     * @param {string} id The CSS id of the element to configure as a DropDownList.
+     * @returns {object} The kendoDropDownList state of the dropdown.
      */
     dropDownList: function (id) {
         // Create the control

@@ -22,7 +22,8 @@ sg.optionalFieldControl = function () {
     RequestTypeEnum = {
         Create: 1,
         Insert: 2,
-        Update: 3
+        Update: 3,
+        Delete: 4
     },
     YesNoList = [{ "Selected": false, "Text": globalResource.Yes, "Value": "1" }, { "Selected": false, "Text": globalResource.No, "Value": "0" }],
     ButtonTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}">{2}</button>';
@@ -34,6 +35,7 @@ sg.optionalFieldControl = function () {
         _lastErrorResult = {},
         _dataChanged = {},
         _filter = {},
+        _sendChange = {},
         _settings = {};
     /**
      * @description Get the kendo grid by name
@@ -185,6 +187,17 @@ sg.optionalFieldControl = function () {
     }
 
      /**
+     * @description Set editor initail value
+     * @param {string} gridName The name of the grid
+     * @param {any} options Editor options object
+     */
+        function _setEditorInitialValue(gridName, options) {
+            var field = options.field;
+            _lastColField[gridName] = field;
+            _lastErrorResult[gridName][field + "Value"] = options.model[field];
+        }
+
+     /**
      * @description The column finder editor
      * @param {object} container The editor container
      * @param {object} options The column options
@@ -211,24 +224,23 @@ sg.optionalFieldControl = function () {
         finder.filter = isValue ? "OPTFIELD=" + model.OPTFIELD : filter;
         finder.displayFieldNames = isValue ? ["VALUE", "VDESC", "TYPE"] : ["LOCATION", "OPTFIELD", "FDESC", "DEFVAL", "TYPE", "LENGTH", "DECIMALS", "SWSET", "VDESC"];
         finder.returnFieldNames = isValue ? ["VALUE", "VDESC"] : ["OPTFIELD"];
-        finder.calculatePageCount = false;
-        var initLocation = filter.split('=').pop();
-        finder.initKeyValues = isValue ? [model.OPTFIELD, model.VALUE] : [initLocation, model.OPTFIELD];
 
-        $("#txtGridColOPTFIELD").on("change", function (e) {
-            var value = this.value.toUpperCase(),
-                errorMsg = kendo.format("Duplicate Optional Field {0}", value.toUpperCase());
+        $("#txtGridColOPTFIELD").on("keydown", function (e) {
+            _sendChange[gridName] = false;
+            if (e.keyCode === 9 || e.keyCode === 13) {
+                var value = this.value.toUpperCase(),
+                    errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
 
-            e.preventDefault();
-            this.value = value;
-            if (_checkDuplicateOptField(gridName, value)) {
-                sg.utls.showMessage(errorMsg);
-                setTimeout(function () {
-                    _lastColField[gridName] = field;
-                    model.set(field, "");
-                }, 50);
-            } else {
-                model.set(field, value);
+                _sendChange[gridName] = true;
+                if (_checkDuplicateOptField(gridName, value)) {
+                    sg.utls.showMessage(errorMsg);
+                    setTimeout(function () {
+                        _lastColField[gridName] = field;
+                        model.set(field, "");
+                    }, 50);
+                } else {
+                    model.set(field, value);
+                }
             }
         });
 
@@ -244,7 +256,7 @@ sg.optionalFieldControl = function () {
                 seq = pad(10, model.SEQUENCENO, ' '),
                 line = model.LINENO ? pad(10, model.LINENO, ' ') : "",
                 optField = pad(12, value, ' '),
-                errorMsg = kendo.format("Duplicate Optional Field {0}", value.toUpperCase());
+                errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
 
             if (field === "OPTFIELD") {
                 if (_checkDuplicateOptField(gridName, value)) {
@@ -253,8 +265,8 @@ sg.optionalFieldControl = function () {
                 } 
                 var keyValue = seq + line + optField;
                 model.set(field, value);
-                model.set("KendoGridAccpacViewPrimaryKey", keyValue);
-                model.set("id", keyValue);
+                model["KendoGridAccpacViewPrimaryKey"] = keyValue;
+                //model.set("id", keyValue);
             } else {
                 model.set(field, value);
             }
@@ -277,15 +289,70 @@ sg.optionalFieldControl = function () {
          */
         function onFinderCancel(options) {
             var grid = _getGrid(gridName);
+            if (options.field === "OPTFIELD") {
+                options.model[options.field] = "";
+            }
+
             if (grid) {
                 var rowIndex = grid.select().index();
                 _setEditCell(grid, rowIndex, options.field);
             }
         }
 
-        sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
-        _lastColField[gridName] = field;
+        $("#" + buttonId).mousedown(function (e) {
+            var value = $("#txtGridCol" + field).val().toUpperCase();
+            var initLocation = filter.split('=').pop();
+            finder.initKeyValues = isValue ? [model.OPTFIELD, model.VALUE] : [initLocation, model.OPTFIELD || value]; 
+            sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
+        });
+
+        _setEditorInitialValue(gridName, options);
     }
+
+    /**
+     * @description The optional field value column finder editor
+     * @param {object} options The column options
+     * @param {string} gridName The grid name
+     * @param {string} btnFinderId The finder button ID
+     */
+    function _setValueFinderEditor(options, gridName, btnFinderId) {
+        var model = options.model,
+            finder = {};
+
+        finder.viewID = "CS0012";
+        finder.viewOrder = 0;
+        finder.filter = "OPTFIELD=" + model.OPTFIELD;
+        finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
+        finder.returnFieldNames = ["VALUE", "VDESC"];
+        finder.initKeyValues = [model.OPTFIELD, model.VALUE];
+
+        /**
+         * @description On select finder row, set the select value
+         * @param {any} options The column options
+         * @param {any} retureFields The finder selected row value
+         */
+        function onFinderSelected(options, retureFields) {
+            var model = options.model,
+                field = options.field,
+                value = retureFields[field];
+
+                model.set(field, value);
+        }
+
+        /**
+         * @description On cancel the finder, focus the last edit cell
+         * @param {any} options The column options
+         */
+        function onFinderCancel(options) {
+            var grid = _getGrid(gridName);
+            if (grid) {
+                var rowIndex = grid.select().index();
+                _setEditCell(grid, rowIndex, options.field);
+            }
+        }
+        sg.viewFinderHelper.setViewFinder(btnFinderId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
+    }
+
     /**
      * @description Column date editor, parse the view date value "yyyymmdd" and diplay the proper date
      * @param {any} container The column kendo container
@@ -297,18 +364,18 @@ sg.optionalFieldControl = function () {
             model = options.model,
             value = options.model.VALUE,
             txtId = "txt" + gridName + field,
-            input = kendo.format('<input data-text-field="{0}" data-value-field="{0}" data-bind="value:{0}" id="{1}" />', field, txtId);
+            input = kendo.format('<input data-text-field="{0}" data-value-field="{0}" data-bind="value:{0}" id="{1}" />', field, txtId),
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text">' + input + '</div>',
+            txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="btnFinderId"/></div></div>',
+            html = txtInput + txtFinder;
 
         if (model.hasOwnProperty('TYPE') && model.TYPE === ValueTypeEnum.Date && !isNaN(value)) {
             model.VALUE = value.toString().length === 8 ? kendo.parseDate(value.toString(), 'yyyyMMdd') : value;
         }
-        $(input)
-            .appendTo(container)
-            .change(function (e) {
-                //options.model.set(field, sg.utls.kndoUI.getDateYYYMMDDFormat(this.value));
-            });
+        $(html).appendTo(container);
         sg.utls.kndoUI.datePicker(txtId);
-        _lastColField[gridName] = field;
+        _setValueFinderEditor(options, gridName, "btnFinderId");
+        _setEditorInitialValue(gridName, options);
     }
     /**
      * @description Column time editor, set the mask for time value input
@@ -318,24 +385,26 @@ sg.optionalFieldControl = function () {
      */
     function _timeEditor(container, options, gridName) {
         var field = options.field,
-            html = kendo.format('<input id="{0}" name="{0}" />', field);
+            input = kendo.format('<input id="{0}" name="{0}" />', field),
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text">' + input + '</div>',
+            txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="btnFinderId"/></div></div>',
+            html = txtInput + txtFinder;
 
-        $(html)
-            .appendTo(container)
-            .kendoMaskedTextBox({
-                mask: "12:34:34",
-                unmaskOnPost: true,
-                rules: {
-                    "1": /[0-2]/,
-                    "2": /[0-3]/,
-                    "3": /[0-5]/,
-                    "4": /[0-9]/
-                }
-            })
-            .change(function (e) {
-                options.model.set(field, this.value);
-            });
-        _lastColField[gridName] = field;
+        $(html).appendTo(container);
+
+        $("#" + field).kendoMaskedTextBox({
+            mask: "12:34:34",
+            unmaskOnPost: true,
+            rules: {
+                "1": /[0-2]/,
+                "2": /[0-3]/,
+                "3": /[0-5]/,
+                "4": /[0-9]/
+            }
+        });
+
+        _setValueFinderEditor(options, gridName, "btnFinderId");
+        _setEditorInitialValue(gridName, options);
     }
     /**
      * @description Column dropdown list editor. Convert model true/false to proper display text
@@ -362,7 +431,7 @@ sg.optionalFieldControl = function () {
                     model[field] = this.value();
                 }
             });
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
     }
 
     /**
@@ -385,7 +454,7 @@ sg.optionalFieldControl = function () {
             .change(function () {
                 options.model.set(field, this.value);
             });
-        _lastColField[gridName] = field;
+        _setEditorInitialValue(gridName, options);
     }
     /**
      * @description Column number editor, binding kendo numeric textbox for validation and display
@@ -397,15 +466,20 @@ sg.optionalFieldControl = function () {
         var field = options.field,
             grid = _getGrid(gridName),
             precision = grid.columns.filter(function (c) { return c.field === field; })[0].precision,
-            html = '<input name="' + field + '"/>';
+            input = kendo.format('<input name="{0}" id="txt{0}"', field),
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text">' + input + '</div>',
+            txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="btnFinderId"/></div></div>',
+            html = txtInput + txtFinder;
 
-        var txtNumeric = $(html).appendTo(container).kendoNumericTextBox({
+        $(html).appendTo(container);
+        var txtNumeric = $("#txtVALUE").kendoNumericTextBox({
             format: "n" + precision,
             spinners: false,
             decimals: precision
         });
         sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, 16);
-        _lastColField[gridName] = field;
+        _setValueFinderEditor(options, gridName, "btnFinderId");
+        _setEditorInitialValue(gridName, options);
     }
      /**
      * @description Column not editable, set no editor
@@ -467,7 +541,7 @@ sg.optionalFieldControl = function () {
             return _noEditor(container, gridName);
         }
         if (f === "OPTFIELD") {
-            return model.OPTFIELD && !model.dirty ? _noEditor(container, gridName) : _finderEditor(container, options, gridName);
+            return model.OPTFIELD ? _noEditor(container, gridName) : _finderEditor(container, options, gridName);
         }
         if (f === "SWREQUIRED" || f === "INITFLAG" ) {
             return _dropdownEditor(container, options, YesNoList, gridName);
@@ -490,6 +564,9 @@ sg.optionalFieldControl = function () {
                 break;
             case RequestTypeEnum.Update:
                 requestName = "Refresh";
+                break;
+            case RequestTypeEnum.Delete:
+                requestName = "Delete";
                 break;
         }
         return requestName;
@@ -514,6 +591,9 @@ sg.optionalFieldControl = function () {
                 break;
             case RequestTypeEnum.Update:
                 isSuccess ? _updateSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
+                break;
+            case RequestTypeEnum.Delete:
+                isSuccess ? _deleteSuccess(gridName, jsonResult) : _deleteError(gridName, jsonResult);
                 break;
             default:
         }
@@ -622,18 +702,38 @@ sg.optionalFieldControl = function () {
      */
     function _updateError(gridName, jsonResult, fieldName) {
         var grid = $('#' + gridName).data("kendoGrid"),
-            prevDataSource = grid.dataSource._pristineData,
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
             dataItem = grid.dataItem(selectRow);
 
         _setModuleVariables(gridName, RowStatusEnum.UPDATE, jsonResult, rowIndex);
         sg.utls.showMessage(jsonResult);
-        var prevRowData = prevDataSource[rowIndex];
-        if (prevRowData) {
-            dataItem[fieldName] = prevRowData[fieldName];
-        }
+        _lastErrorResult[gridName].message = "";
+        //_lastRowNumber[gridName] = -1;
+        dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
         _setEditCell(grid, rowIndex, fieldName);
+    }
+
+    /**
+* @description Send delete request success, refresh the grid
+* @param {string} gridName The grid name
+* @param {object} jsonResult The request call back result
+* @param {string} fieldName update field name
+*/
+    function _deleteSuccess(gridName, jsonResult) {
+        var grid = $('#' + gridName).data("kendoGrid");
+        grid.dataSource.read();
+    }
+    /**
+     * @description Send delete request error
+     * @param {string} gridName The grid name
+     * @param {any} jsonResult The request call back result
+     * @param {any} fieldName The update field name
+     */
+    function _deleteError(gridName, jsonResult) {
+        var grid = $('#' + gridName).data("kendoGrid");
+        grid.dataSource.read();
+        sg.utls.showMessage(jsonResult);
     }
 
     /**
@@ -675,19 +775,41 @@ sg.optionalFieldControl = function () {
     }
 
     /**
+     * @description Reset the optional grid varaibales to default values
+     * @param {string} gridName The name of the grid
+     */
+    function _reset(gridName) {
+        _setDefaultRow[gridName] = true;
+        _lastErrorResult[gridName] = {};
+        _lastRowNumber[gridName] = -1;
+        _lastColField[gridName] = "";
+        _lastRowStatus[gridName] = RowStatusEnum.NONE;
+        _dataChanged[gridName] = false;
+        _sendChange[gridName] = true;
+    }
+
+    /**
      * @description On grid data source data changes
      * @param {string} gridName The grid name
      * @param {object} e The event object
      */
     function _onDataChanged(gridName, e) {
         _dataChanged[gridName] = e.action ? true : false;
-        var grid = _getGrid(gridName);
+        var grid = _getGrid(gridName),
+            count = grid.dataSource.total();
+
+        if (count === 0) {
+            $("#btn" + gridName + "Delete").prop("disabled", true);
+        } else if (e.action === "add") {
+            $("#btn" + gridName + "Delete").prop("disabled", false);
+        }
 
         if (e.items.length === 0 && grid.dataSource.page() !== 1) {
             grid.dataSource.page(1);
         }
         if (e.action === "itemchange") {
-            if (e.field === "OPTFIELD" && e.items[0].OPTFIELD === "") {
+            if (e.field === "OPTFIELD" && (e.items[0].OPTFIELD === "" || !_sendChange[gridName])) {
+                _sendChange[gridName] = true;
                 return;
             }
             _sendRequest(gridName, RequestTypeEnum.Update, e.field);
@@ -697,10 +819,10 @@ sg.optionalFieldControl = function () {
     /**
      * @description Initialize a grid, creating dataSource to binding grid, register events handler
      * @param {string} gridName The name of the grid.
+     * @param {object} settings The optional field settings object
      * @param {boolean} readOnly Whether the grid allows editing(Optional).
-     * @param {object} settings The optional field setting object
      */
-    function init(gridName, readOnly, settings) {
+    function init(gridName, settings, readOnly) {
         var columns = _getGridColumns(gridName),
             addTemplate = kendo.format(ButtonTemplate, 'btn-add', 'sg.optionalFieldControl.addLine(&quot;' + gridName + '&quot;)', globalResource.AddLine, gridName, "Add"),
             delTemplate = kendo.format(ButtonTemplate, 'btn-delete', 'sg.optionalFieldControl.deleteLine(&quot;' + gridName + '&quot;)', globalResource.DeleteLine, gridName, "Delete");
@@ -711,7 +833,7 @@ sg.optionalFieldControl = function () {
             settings.allowDelete = false;
         }
         _settings[gridName] = settings;
-        reset(gridName);
+        _reset(gridName);
 
         $("#" + gridName).kendoGrid({
             height: 450,
@@ -732,12 +854,20 @@ sg.optionalFieldControl = function () {
                     lastRowNumber = _lastRowNumber[gridName],
                     selectedIndex = grid.select().index();
 
-                if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && selectedIndex !== lastRowNumber) {
+                if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && selectedIndex !== lastRowNumber && _lastErrorResult[gridName].message) {
                     setTimeout(function () {
                         grid.select("tr:eq(" + lastRowNumber + ")");
                         sg.utls.showMessage(_lastErrorResult[gridName].message);
                     });
-                } 
+                }
+                if (lastRowNumber > -1) {
+                    var lastRowData = grid.dataSource.data()[lastRowNumber];
+                    if (lastRowData && selectedIndex !== lastRowNumber && lastRowNumber > -1 && !lastRowData.OPTFIELD) {
+                        _showMessage(globalResource.BlankOptionalField);
+                        _lastErrorResult[gridName].colName = "OPTFIELD";
+                        grid.select("tr:eq(" + lastRowNumber + ")");
+                    }
+                }
             },
 
             dataBound: function (e) {
@@ -791,7 +921,7 @@ sg.optionalFieldControl = function () {
                     parameterMap: function (data, operation) {
                         data.viewID = $("#" + gridName).attr('viewID');
                         if (operation === "read") {
-                            reset(gridName);
+                            _reset(gridName);
                             data.filter = _filter[gridName];
                             return JSON.stringify(data);
                         }
@@ -824,9 +954,11 @@ sg.optionalFieldControl = function () {
             sg.utls.showKendoConfirmationDialog(
                 function () {
                     var dataItem = grid.dataItem(grid.select());
-                    grid.dataSource.remove(dataItem);
-                    if (dataItem.OPTFIELD !== "") {
-                        grid.dataSource.sync();
+
+                    if (dataItem.OPTFIELD) {
+                        _sendRequest(gridName, RequestTypeEnum.Delete, "");
+                    } else {
+                        grid.dataSource.remove(dataItem);                        
                     }
                     grid.dataSource.read();
                 },
@@ -843,7 +975,7 @@ sg.optionalFieldControl = function () {
         var grid = _getGrid(gridName),
             rowIndex = grid.select().index();
         // set the row status to update as it is not finished yet due to error
-        if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE) {
+        if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message) {
             setTimeout(function (rowIndex) {
                 grid.select("tr:eq(" + rowIndex + ")");
                 sg.utls.showMessage(_lastErrorResult[gridName].message);
@@ -909,21 +1041,12 @@ sg.optionalFieldControl = function () {
      * @param {bool} readOnly A boolean flag.
      * @return {void}
      */
-    function setGridReadOnly(gridName, readOnly) {
+    function readOnly(gridName, readOnly) {
         _getGrid(gridName).setOptions({ editable: !readOnly });
         if (readOnly) {
             $("#btn" + gridName + "Add").prop("disabled", true);
             $("#btn" + gridName + "Delete").prop("disabled", true);
         }
-    }
-
-    /**
-     * @description Get/Set the current filter for a grid.
-     * @param {any} gridName The name of the grid.
-     * @param {any} filter The filter applied to the grid
-     */
-    function setFilter(gridName, filter) {
-        _filter[gridName] = filter;
     }
 
     /**
@@ -936,20 +1059,7 @@ sg.optionalFieldControl = function () {
     }
 
     /**
-     * @description Reset the optional grid varaibales to default values
-     * @param {string} gridName The name of the grid
-     */
-    function reset(gridName) {
-        _setDefaultRow[gridName] = true;
-        _lastErrorResult[gridName] = {};
-        _lastRowNumber[gridName] = -1;
-        _lastColField[gridName] = "";
-        _lastRowStatus[gridName] = RowStatusEnum.NONE;
-        _dataChanged[gridName] = false;
-    }
-
-    /**
-     * @description On show the popup optional field window, execute this function(for Sage 300 internal use)
+     * @description On show the popup optional field window, execute this function
      * @param {string} gridName The name of the grid
      * @param {string} popupElementId The popup element id
      * @param {boolean} isReadOnly The booelan flag to indicate readonly property
@@ -958,21 +1068,21 @@ sg.optionalFieldControl = function () {
      */
     function showPopUp(gridName, popupElementId, isReadOnly, filter, parentGridName) {
         if (parentGridName) {
-            sg.viewList.syncCurrentRow(parentGridName);
+            sg.viewList.moveToCurrentRow(parentGridName);
         }
         sg.utls.openKendoWindowPopup('#' + popupElementId, null);
         if (filter) {
-            setFilter(gridName, filter);
+            _filter[gridName] = filter;
         }
         if (isReadOnly !== undefined) {
-            setGridReadOnly(gridName, isReadOnly);
+            readOnly(gridName, isReadOnly);
         }
         var grid = $('#' + gridName).data("kendoGrid");
         grid.dataSource.page(1);
     }
 
     /**
-     * @description On close the popup optional field window from details grid, execute this function(for Sage 300 internal use)
+     * @description On close the popup optional field window from details grid, execute this function
      * @param {string} gridName The name of optional grid
      * @param {string} parentGridName The parent grid name
      */
@@ -982,11 +1092,10 @@ sg.optionalFieldControl = function () {
             parentGrid = $("#" + parentGridName).data("kendoGrid"),
             selectedItem = parentGrid.dataItem(parentGrid.select());
 
-        //selectedItem.OptionalField = total > 0 ? globalResource.Yes : globalResource.No;
         if (selectedItem.VALUES !== total) {
             selectedItem.set("VALUES", total);
         }
-        reset(gridName);
+        _reset(gridName);
     }
 
     /**
@@ -1056,17 +1165,13 @@ sg.optionalFieldControl = function () {
         deleteLine: toolbarDeleteLine,
         getTemplate: getTemplate,
         getListText: getListText,
-
-        //Undocument public methods(For Sage 300 web screens use)
-        setGridReadOnly: setGridReadOnly,
-        setFilter: setFilter,
-        reset: reset,
         showPopUp: showPopUp,
         closePopUp: closePopUp,
 
         //Documented public methods
         allowInsert: allowInsert,
         allowDelete: allowDelete,
+        readOnly: readOnly,
         filter: filter,
         dirty: dirty,
         commit: commit,
