@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             
             #line 2 "C:\AAA\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
- /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
