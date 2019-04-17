@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2018 Sage Software, Inc.  All rights reserved.
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -789,8 +789,9 @@ sg.viewList = function () {
         }
 
         if (col.PresentationList) {
-            return _dropdownEditor(container, options, col.PresentationList);
+            return _dropdownEditor(container, options, col.PresentationList, gridName);
         }
+
         if (dataType === "date" || dataType === "datetime" ) {
             return _dateEditor(container, options, gridName);
         }
