@@ -120,7 +120,31 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
         // Save Button
         $("#btnSave").bind('click', function () {
-            sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
+<#
+			PushIndent("            ");
+			bool hasGrid = false;
+			foreach(var view in settings.Entities)
+			{
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					hasGrid = true;
+					var temp = view.Properties[BusinessView.Constants.EntityName];
+					var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+					WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
+					PushIndent("	");
+					WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+					PopIndent();
+					WriteLine("}");
+				}
+			}
+
+			if (!hasGrid){
+				WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+			}
+
+			PopIndent();
+#>
         });
 
         // Delete Button

@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+    #line 1 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Behaviour : BehaviourBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
         public virtual string TransformText()
         {
             
-            #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 1 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 2 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 3 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 4 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 5 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 6 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 7 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 8 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 9 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 10 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 11 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 12 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 13 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 14 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 15 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 16 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 17 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 18 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 19 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 24 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -158,7 +158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             #line hidden
             this.Write("/* ");
             
-            #line 35 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 35 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -167,35 +167,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "ing\r\n// Remove this line if not needed\r\n//@ts-check\r\n\r\n\"use strict\";\r\n\r\nvar mode" +
                     "lData;\r\nvar ");
             
-            #line 44 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 44 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = ");
             
-            #line 44 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 44 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI || {};\r\n\r\n");
             
-            #line 46 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 46 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = {\r\n    ");
             
-            #line 47 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 47 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model: {},\r\n    ignoreIsDirtyProperties: [\"");
             
-            #line 48 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 48 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -203,7 +203,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("\"],\r\n    computedProperties: [\"UIMode\"],\r\n    hasKoBindingApplied: false,\r\n    is" +
                     "KendoControlNotInitialised: false,\r\n    ");
             
-            #line 52 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 52 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -211,7 +211,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write(": null,\r\n\r\n\t/**\r\n     * Initialization\r\n\t *\r\n\t * @method init\r\n\t */\r\n    init: fu" +
                     "nction () {\r\n        // initialize grid(s)\r\n");
             
-            #line 61 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 61 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
              PushIndent("        ");
 			 foreach(var view in settings.Entities)
@@ -232,63 +232,63 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             #line hidden
             this.Write("        ");
             
-            #line 76 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 76 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initButtons();\r\n        ");
             
-            #line 77 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 77 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initFinders();\r\n        ");
             
-            #line 78 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 78 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.initialLoad(");
             
-            #line 78 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 78 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel);\r\n        ");
             
-            #line 79 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 79 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setkey();\r\n    },\r\n\r\n\t/**\r\n     * Save\r\n\t *\r\n\t * @method save");
             
-            #line 85 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 85 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\r\n\t */\r\n    save");
             
-            #line 87 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 87 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(": function () {\r\n        if ($(\"#frm");
             
-            #line 88 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 88 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("\").valid()) {\r\n            var data = sg.utls.ko.toJS(modelData, ");
             
-            #line 89 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 89 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -296,28 +296,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UI.computedProperties);\r\n            if (modelData.UIMode() === sg.utls.Operation" +
                     "Mode.SAVE) {\r\n                ");
             
-            #line 91 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 91 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.update(data, ");
             
-            #line 91 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 91 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.update);\r\n            } else {\r\n                ");
             
-            #line 93 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 93 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.add(data, ");
             
-            #line 93 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 93 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -327,82 +327,82 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "        // Import/Export Buttons\r\n        sg.exportHelper.setExportEvent(\"btnOpt" +
                     "ionExport\", \"");
             
-            #line 105 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 105 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 105 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 105 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
             #line hidden
             this.Write("\", false, $.noop);\r\n        sg.importHelper.setImportEvent(\"btnOptionImport\", \"");
             
-            #line 106 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 106 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 106 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 106 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
             #line hidden
             this.Write("\", false, $.noop);\r\n\r\n        // Key field change event\r\n        $(\"#txt");
             
-            #line 109 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 109 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\").bind(\'blur\', function (e) {\r\n            modelData.");
             
-            #line 110 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 110 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("($(\"#txt");
             
-            #line 110 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 110 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\").val());\r\n            if (sg.controls.GetString(modelData.");
             
-            #line 111 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 111 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("()) !== \"\") {\r\n                ");
             
-            #line 112 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 112 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.checkIsDirty(");
             
-            #line 112 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 112 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.get, ");
             
-            #line 112 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 112 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 112 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 112 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -410,79 +410,96 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write(");\r\n            }\r\n        });\r\n\r\n        // Create New Button\r\n        $(\"#btnNe" +
                     "w\").bind(\'click\', function () {\r\n            ");
             
-            #line 118 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 118 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.checkIsDirty(");
             
-            #line 118 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 118 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.create, ");
             
-            #line 118 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 118 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 118 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 118 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n        });\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").bind(\'click\', fu" +
-                    "nction () {\r\n            sg.utls.SyncExecute(");
+                    "nction () {\r\n");
             
-            #line 123 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            #line 123 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+
+			PushIndent("            ");
+			bool hasGrid = false;
+			foreach(var view in settings.Entities)
+			{
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					hasGrid = true;
+					var temp = view.Properties[BusinessView.Constants.EntityName];
+					var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+					WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
+					PushIndent("	");
+					WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+					PopIndent();
+					WriteLine("}");
+				}
+			}
+
+			if (!hasGrid){
+				WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+			}
+
+			PopIndent();
+
             
             #line default
             #line hidden
-            this.Write("UI.save");
+            this.Write("        });\r\n\r\n        // Delete Button\r\n        $(\"#btnDelete\").bind(\'click\', fu" +
+                    "nction () {\r\n            if ($(\"#frm");
             
-            #line 123 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write(");\r\n        });\r\n\r\n        // Delete Button\r\n        $(\"#btnDelete\").bind(\'click\'" +
-                    ", function () {\r\n            if ($(\"#frm");
-            
-            #line 128 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 152 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("\").valid()) {\r\n                var message = jQuery.validator.format(");
             
-            #line 129 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 153 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.DeleteConfirmMessage, ");
             
-            #line 129 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 153 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 129 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 153 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("Title, modelData.");
             
-            #line 129 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 153 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -490,35 +507,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("());\r\n                sg.utls.showKendoConfirmationDialog(function () {\r\n        " +
                     "            sg.utls.clearValidations(\"frm");
             
-            #line 131 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 155 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("\");\r\n                    ");
             
-            #line 132 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 156 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.delete(modelData.");
             
-            #line 132 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 156 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(), ");
             
-            #line 132 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 156 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.delete);\r\n                }, null, message, ");
             
-            #line 133 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 157 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -538,21 +555,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
     initFinders: function () {
             sg.viewFinderHelper.setViewFinder(""btnFinder");
             
-            #line 146 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 170 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", \"txt");
             
-            #line 146 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 170 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\",");
             
-            #line 146 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 170 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
         
         Write("/*TODO Modify the finder property*/ {{viewID:\"{0}\", ", view.Properties[BusinessView.Constants.ViewId]);
         Write("viewOrder:0, displayFieldNames:[");
@@ -573,21 +590,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("    },\r\n\r\n\t/**\r\n     * Get\r\n\t *\r\n\t * @method get\r\n\t */\r\n    get: function () {\r\n " +
                     "       ");
             
-            #line 168 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 192 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.get(modelData.");
             
-            #line 168 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 192 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(), ");
             
-            #line 168 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 192 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -595,21 +612,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UISuccess.get);\r\n    },\r\n\r\n\t/**\r\n     * Create\r\n\t *\r\n\t * @method create\r\n\t */\r\n  " +
                     "  create: function () {\r\n        sg.utls.clearValidations(\"frm");
             
-            #line 177 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 201 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("\");\r\n        ");
             
-            #line 178 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 202 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.create(");
             
-            #line 178 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 202 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -617,42 +634,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UISuccess.create);\r\n    },\r\n\r\n\t/**\r\n     * Is Dirty check\r\n\t *\r\n\t * @method check" +
                     "IsDirty\r\n     * @param functionToCall\r\n     * @param ");
             
-            #line 186 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 210 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write("\r\n\t */\r\n    checkIsDirty: function (functionToCall, ");
             
-            #line 188 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 212 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(") {\r\n        if (");
             
-            #line 189 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 213 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 189 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 213 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.isDirty() && ");
             
-            #line 189 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 213 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(" != null && ");
             
-            #line 189 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 213 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -660,7 +677,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write(" != \"\") {\r\n            sg.utls.showKendoConfirmationDialog(\r\n                func" +
                     "tion () { // Yes\r\n                    sg.utls.clearValidations(\"frm");
             
-            #line 192 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 216 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -668,28 +685,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("\");\r\n                    functionToCall.call();\r\n                },\r\n            " +
                     "    function () { // No\r\n                    if (sg.controls.GetString(");
             
-            #line 196 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 220 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(") != sg.controls.GetString(modelData.");
             
-            #line 196 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 220 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("())) {\r\n                        modelData.");
             
-            #line 197 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 221 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 197 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 221 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -697,21 +714,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write(");\r\n                   }\r\n                   return;\r\n                },\r\n       " +
                     "         jQuery.validator.format(globalResource.SaveConfirm, ");
             
-            #line 201 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 225 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 201 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 225 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("Title, ");
             
-            #line 201 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 225 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
@@ -719,7 +736,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("));\r\n        } else {\r\n            functionToCall.call();\r\n        }\r\n    }\r\n};\r\n" +
                     "\r\n// Callbacks\r\nvar ");
             
-            #line 209 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 233 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -727,21 +744,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UISuccess = {\r\n\r\n\t/**\r\n     * Setkey\r\n\t *\r\n\t * @method setkey\r\n\t */\r\n    setkey: " +
                     "function () {\r\n        ");
             
-            #line 217 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 241 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 217 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 241 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
             this.Write(" = modelData.");
             
-            #line 217 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 241 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -751,7 +768,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "esult.UserMessage.IsSuccess) {\r\n            if (jsonResult.Data != null) {\r\n    " +
                     "            ");
             
-            #line 229 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 253 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -760,14 +777,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "lse {\r\n                modelData.UIMode(sg.utls.OperationMode.NEW);\r\n           " +
                     " }\r\n            ");
             
-            #line 233 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 257 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setkey();\r\n\r\n");
             
-            #line 235 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 259 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
              PushIndent("            ");
 			 foreach(var view in settings.Entities)
@@ -790,14 +807,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "sonResult\r\n\t */\r\n    update: function (jsonResult) {\r\n        if (jsonResult.Use" +
                     "rMessage.IsSuccess) {\r\n            ");
             
-            #line 262 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 286 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);\r\n            ");
             
-            #line 263 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 287 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -806,35 +823,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "\n\r\n\t/**\r\n     * Create\r\n\t *\r\n\t * @method create\r\n\t * @param jsonResult\r\n\t */\r\n  " +
                     "  create: function (jsonResult) {\r\n        ");
             
-            #line 275 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 299 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);\r\n        ");
             
-            #line 276 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 300 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 276 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 300 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.reset();\r\n        ");
             
-            #line 277 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 301 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.setkey();\r\n        sg.controls.Focus($(\"#txt");
             
-            #line 278 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 302 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -843,28 +860,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "lt\r\n\t */\r\n    delete: function (jsonResult) {\r\n        if (jsonResult.UserMessag" +
                     "e.IsSuccess) {\r\n            ");
             
-            #line 289 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 313 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);\r\n            ");
             
-            #line 290 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 314 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 290 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 314 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty.reset();\r\n            ");
             
-            #line 291 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 315 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -885,112 +902,112 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
         if (jsonResult != null) {
             if (!");
             
-            #line 305 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 329 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.hasKoBindingApplied) {\r\n                ");
             
-            #line 306 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 330 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 306 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 330 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model = ko.mapping.fromJS(jsonResult);\r\n                ");
             
-            #line 307 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 331 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.hasKoBindingApplied = true;\r\n                modelData = ");
             
-            #line 308 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 332 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 308 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 332 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.Data;\r\n                ");
             
-            #line 309 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 333 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("ObservableExtension(");
             
-            #line 309 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 333 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 309 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 333 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model, uiMode);\r\n                ");
             
-            #line 310 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 334 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 310 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 334 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.isModelDirty = new ko.dirtyFlag(modelData, ");
             
-            #line 310 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 334 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.ignoreIsDirtyProperties);\r\n                ko.applyBindings(");
             
-            #line 311 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 335 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 311 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 335 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model);\r\n            } else {\r\n                ko.mapping.fromJS(jsonResult, ");
             
-            #line 313 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 337 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 313 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 337 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -998,14 +1015,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("Model);\r\n                modelData.UIMode(uiMode);\r\n                if (uiMode !=" +
                     " sg.utls.OperationMode.NEW) {\r\n                    ");
             
-            #line 316 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 340 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 316 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 340 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1013,14 +1030,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("Model.isModelDirty.reset();\r\n                }\r\n            }\r\n\r\n            if (" +
                     "!");
             
-            #line 320 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 344 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.isKendoControlNotInitialised) {\r\n                ");
             
-            #line 321 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 345 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1028,7 +1045,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UI.isKendoControlNotInitialised = true;\r\n            } else {\r\n                //" +
                     " \r\n            }\r\n        }\r\n");
             
-            #line 326 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 350 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
         PushIndent("        ");
 		foreach(var view in settings.Entities)
@@ -1051,7 +1068,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
                     "ult\r\n\t */\r\n    initialLoad: function (result) {\r\n        if (result) {\r\n        " +
                     "    ");
             
-            #line 351 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 375 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1059,14 +1076,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UISuccess.displayResult(result, sg.utls.OperationMode.NEW);\r\n        } else {\r\n  " +
                     "          sg.utls.showMessageInfo(sg.utls.msgType.ERROR, ");
             
-            #line 353 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 377 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.ProcessFailedMessage);\r\n        }\r\n        sg.controls.Focus($(\"#txt");
             
-            #line 355 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 379 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1074,7 +1091,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("\"));\r\n    },\r\n\r\n\r\n\t/**\r\n     * Is New\r\n\t *\r\n\t * @method isNew\r\n\t * @param model\r\n" +
                     "\t */\r\n    isNew: function (model) {\r\n        if (model.");
             
-            #line 366 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 390 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1082,7 +1099,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("() === null) {\r\n           return true;\r\n        }\r\n        return false;\r\n    }\r" +
                     "\n};\r\n\r\n// Initial Entry\r\n$(function () {\r\n    ");
             
-            #line 375 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 399 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1090,14 +1107,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("UI.init();\r\n    $(window).bind(\'beforeunload\', function () {\r\n        if (globalR" +
                     "esource.AllowPageUnloadEvent && ");
             
-            #line 377 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 401 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 377 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 401 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -1105,14 +1122,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             this.Write("Model.isModelDirty.isDirty()) {\r\n            return jQuery(\'<div />\').html(jQuery" +
                     ".validator.format(globalResource.SaveConfirm2, ");
             
-            #line 378 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 402 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Resources.");
             
-            #line 378 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+            #line 402 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -1121,7 +1138,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
+        #line 1 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
