@@ -121,25 +121,42 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         // Save Button
         $("#btnSave").bind('click', function () {
 <#
-			PushIndent("            ");
-			bool hasGrid = false;
+			// count number of grids
+			int gridCount = 0;
 			foreach(var view in settings.Entities)
 			{
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
-					hasGrid = true;
+					gridCount++;
+				}
+			}
+
+			PushIndent("            ");
+			foreach(var view in settings.Entities)
+			{
+				// only generate this block of code once - even for multiple grids
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
 					var temp = view.Properties[BusinessView.Constants.EntityName];
 					var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+					// Multiple grids - put a TODO
+					if (gridCount > 1){
+						WriteLine("// TODO: The grid(s) will need to be committed before saving");
+					}
 
 					WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
 					PushIndent("	");
 					WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+					WriteLine("sg.viewList.dirty(\"{0}Grid\", false);", gridName);
 					PopIndent();
 					WriteLine("}");
+					break;
 				}
 			}
 
-			if (!hasGrid){
+			// No grids
+			if (gridCount == 0){
 				WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
 			}
 
