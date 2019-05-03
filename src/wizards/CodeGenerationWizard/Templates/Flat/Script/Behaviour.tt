@@ -90,7 +90,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
         // Key field change event
-        $("#txt<#=keyFieldName#>").bind('blur', function (e) {
+        $("#txt<#=keyFieldName#>").on('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
             if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
                 <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
@@ -98,17 +98,17 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         });
 
         // Create New Button
-        $("#btnNew").bind('click', function () {
+        $("#btnNew").on('click', function () {
             <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
         });
 
         // Save Button
-        $("#btnSave").bind('click', function () {
+        $("#btnSave").on('click', function () {
             sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
         });
 
         // Delete Button
-        $("#btnDelete").bind('click', function () {
+        $("#btnDelete").on('click', function () {
             if ($("#frm<#=containerName#>").valid()) {
                 var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
                 sg.utls.showKendoConfirmationDialog(function () {
@@ -325,7 +325,7 @@ var <#=localEntityName#>UISuccess = {
 // Initial Entry
 $(function () {
     <#=localEntityName#>UI.init();
-    $(window).bind('beforeunload', function () {
+    $(window).on('beforeunload', function () {
         if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
         }

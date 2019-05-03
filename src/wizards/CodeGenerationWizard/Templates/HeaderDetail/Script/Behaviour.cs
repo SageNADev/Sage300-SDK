@@ -219,12 +219,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                    var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 					WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
 				}
-			 
 			 }
+
              PopIndent();
 
             
@@ -358,7 +358,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             
             #line default
             #line hidden
-            this.Write("\").bind(\'blur\', function (e) {\r\n            modelData.");
+            this.Write("\").on(\'blur\', function (e) {\r\n            modelData.");
             
             #line 110 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
@@ -408,7 +408,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             #line default
             #line hidden
             this.Write(");\r\n            }\r\n        });\r\n\r\n        // Create New Button\r\n        $(\"#btnNe" +
-                    "w\").bind(\'click\', function () {\r\n            ");
+                    "w\").on(\'click\', function () {\r\n            ");
             
             #line 118 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
@@ -436,8 +436,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             
             #line default
             #line hidden
-            this.Write(");\r\n        });\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").bind(\'click\', fu" +
-                    "nction () {\r\n");
+            this.Write(");\r\n        });\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").on(\'click\', func" +
+                    "tion () {\r\n");
             
             #line 123 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
 
@@ -485,8 +485,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             
             #line default
             #line hidden
-            this.Write("        });\r\n\r\n        // Delete Button\r\n        $(\"#btnDelete\").bind(\'click\', fu" +
-                    "nction () {\r\n            if ($(\"#frm");
+            this.Write("        });\r\n\r\n        // Delete Button\r\n        $(\"#btnDelete\").on(\'click\', func" +
+                    "tion () {\r\n            if ($(\"#frm");
             
             #line 169 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
@@ -809,12 +809,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                    var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 					WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 				}
-			 
 			 }
+
              PopIndent();
 
             
@@ -1070,12 +1070,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
 		    if (view.Options[BusinessView.Constants.GenerateGrid])
 			{
                 var temp = view.Properties[BusinessView.Constants.EntityName];
-                var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 				WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 			}
-			 
 		}
+
         PopIndent();
 
             
@@ -1121,8 +1121,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Sc
             
             #line default
             #line hidden
-            this.Write("UI.init();\r\n    $(window).bind(\'beforeunload\', function () {\r\n        if (globalR" +
-                    "esource.AllowPageUnloadEvent && ");
+            this.Write("UI.init();\r\n    $(window).on(\'beforeunload\', function () {\r\n        if (globalRes" +
+                    "ource.AllowPageUnloadEvent && ");
             
             #line 418 "C:\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
