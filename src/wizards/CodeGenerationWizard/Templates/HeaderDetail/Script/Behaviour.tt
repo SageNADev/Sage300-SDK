@@ -65,12 +65,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                    var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 					WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
 				}
-			 
 			 }
+
              PopIndent();
 #>
         <#=localEntityName#>UI.initButtons();
@@ -106,7 +106,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
         // Key field change event
-        $("#txt<#=keyFieldName#>").bind('blur', function (e) {
+        $("#txt<#=keyFieldName#>").on('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
             if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
                 <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
@@ -114,17 +114,58 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         });
 
         // Create New Button
-        $("#btnNew").bind('click', function () {
+        $("#btnNew").on('click', function () {
             <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
         });
 
         // Save Button
-        $("#btnSave").bind('click', function () {
-            sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
+        $("#btnSave").on('click', function () {
+<#
+			// count number of grids
+			int gridCount = 0;
+			foreach(var view in settings.Entities)
+			{
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					gridCount++;
+				}
+			}
+
+			PushIndent("            ");
+			foreach(var view in settings.Entities)
+			{
+				// only generate this block of code once - even for multiple grids
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					var temp = view.Properties[BusinessView.Constants.EntityName];
+					var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+					// Multiple grids - put a TODO
+					if (gridCount > 1){
+						WriteLine("// TODO: The grid(s) will need to be committed before saving");
+					}
+
+					WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
+					PushIndent("	");
+					WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+					WriteLine("sg.viewList.dirty(\"{0}Grid\", false);", gridName);
+					PopIndent();
+					WriteLine("}");
+					break;
+				}
+			}
+
+			// No grids
+			if (gridCount == 0){
+				WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+			}
+
+			PopIndent();
+#>
         });
 
         // Delete Button
-        $("#btnDelete").bind('click', function () {
+        $("#btnDelete").on('click', function () {
             if ($("#frm<#=containerName#>").valid()) {
                 var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
                 sg.utls.showKendoConfirmationDialog(function () {
@@ -239,12 +280,12 @@ var <#=localEntityName#>UISuccess = {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                    var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 					WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 				}
-			 
 			 }
+
              PopIndent();
 #>
 
@@ -330,12 +371,12 @@ var <#=localEntityName#>UISuccess = {
 		    if (view.Options[BusinessView.Constants.GenerateGrid])
 			{
                 var temp = view.Properties[BusinessView.Constants.EntityName];
-                var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
+                var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
 
 				WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
 			}
-			 
 		}
+
         PopIndent();
 #>
     },
@@ -373,7 +414,7 @@ var <#=localEntityName#>UISuccess = {
 // Initial Entry
 $(function () {
     <#=localEntityName#>UI.init();
-    $(window).bind('beforeunload', function () {
+    $(window).on('beforeunload', function () {
         if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
         }
