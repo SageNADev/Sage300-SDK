@@ -35,7 +35,7 @@
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage\Sage300\Online\Web</Sage300WebDir>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -47,6 +47,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,10 +150,6 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.BusinessRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -282,6 +279,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -407,6 +408,7 @@
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\ClearStatistics\Partials\_ClearStatistics.cshtml" />
     <Content Include="Areas\Shared\Views\Shared\_GlobalLayout.cshtml" />
+    <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

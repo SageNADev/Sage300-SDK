@@ -1,0 +1,158 @@
+{
+  "IsSequenceRevisionList": true,
+  "GridType": 0,
+  "ReadOnly": false,
+  "PageSize": 10,
+  "ViewID":"IC0580",
+  "CustomFunctions": [
+    { "gridChanged": "receiptUI.customGridChanged" },
+    { "gridAfterSetActiveRecord": "receiptUI.customGridAfterSetActiveRecord" },
+    { "gridBeforeDelete": "receiptUI.customGridBeforeDelete" },
+    { "gridAfterDelete": "receiptUI.customGridAfterDelete" },
+    { "gridBeforeCreate": "receiptUI.customGridBeforeCreate" },
+    { "gridAfterCreate": "receiptUI.customGridAfterCreate" },
+    { "gridAfterInsert": "receiptUI.customGridAfterInsert" }
+  ],
+  "ColumnDefinitions": [
+    {
+      "FieldName": "LINENO",
+      "IsEditable": false,
+      "IsLineNumber": true
+    },
+    {
+      "FieldName": "ITEMNO",
+      "Precision": 0,
+      "HasFinder": true,
+      "IsEditable": "receiptUI.columnIsEditable",
+      "Finder": {
+        "ViewID": "IC0310",
+        "ViewOrder": 0,
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "DESC",
+          "INACTIVE",
+          "ITEMBRKID",
+          "CATEGORY",
+          "CNTLACCT",
+          "STOCKUNIT",
+          "DEFPRICLST"
+        ],
+        "ReturnFieldNames": [
+          "ITEMNO"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO"
+        ]
+      }
+    },
+    {
+      "FieldName": "ITEMDESC",
+      "IsEditable": false
+    },
+    {
+      "FieldName": "LOCATION",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "Precision": 0,
+      "HasFinder": true,
+      "Finder": {
+        "CustomFinder": "receiptUI.initGridLocationFinder",
+        "ViewID": "IC0372",
+        "ViewOrder": 0,
+        "Filter": "ITEMNO=UNFMTITMNO",
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "LOCATION",
+          "DESC",
+          "ACTIVE",
+          "USED",
+          "QTYONHAND",
+          "QTYONORDER",
+          "QTYSALORDR"
+        ],
+        "ReturnFieldNames": [
+          "LOCATION"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO",
+          "LOCATION"
+        ]
+      }
+    },
+    {
+      "FieldName": "RECPQTY",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "FieldName": "RECPUNIT",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "HasFinder": true,
+      "Finder": {
+        "ViewID": "IC0750",
+        "ViewOrder": 0,
+        "Filter": "ITEMNO=UNFMTITMNO",
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "UNIT",
+          "FACTOR"
+        ],
+        "ReturnFieldNames": [
+          "UNIT"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO",
+          "RECPUNIT"
+        ]
+      }
+    },
+    {
+      "FieldName": "UNITCOST",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "FieldName": "RECPCOST",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "FieldName": "LABELS",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "FieldName": "COMMENTS",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "FieldName": "RETURNQTY",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "IsHidden": true
+    },
+    {
+      "FieldName": "RETURNCOST",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "IsHidden": true
+    },
+    {
+      "FieldName": "ADJUNITCST",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "IsHidden": true
+    },
+    {
+      "FieldName": "ADJCOST",
+      "IsEditable": "receiptUI.columnIsEditable",
+      "IsHidden": true
+    },
+    {
+      "FieldName": "MANITEMNO",
+      "IsEditable": "receiptUI.columnIsEditable"
+    },
+    {
+      "IsOptionalField": true,
+      "FieldName": "OptionalField",
+      "ColumnName": "Optional Field",
+      "IsEditable": true,
+      "IsVirtualField": true,
+      "CustomFunctions": [
+        { "OptionalField": "receiptUI.showDetailOptionalField" }
+      ]
+    }
+  ]
+}

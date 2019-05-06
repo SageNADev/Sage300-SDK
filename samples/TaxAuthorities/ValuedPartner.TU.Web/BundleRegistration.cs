@@ -1,6 +1,6 @@
 
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -36,13 +36,11 @@ namespace ValuedPartner.TU.Web
         {
 			#region TaxAuthorities
 			bundles.Add(new Bundle("~/bundles/ValuedPartnerTaxAuthorities").Include(
-				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesBehaviour.js",
-				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesKoExtn.js",
-				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartnerTaxAuthoritiesRepository.js",
+				"~/Areas/TU/Scripts/TaxAuthorities/ValuedPartner.TU.TaxAuthoritiesBehaviour.js",
+                "~/Areas/TU/Scripts/TaxAuthorities/ValuedPartner.TU.TaxAuthoritiesKoExtn.js",
+                "~/Areas/TU/Scripts/TaxAuthorities/ValuedPartner.TU.TaxAuthoritiesRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
-
-
         }
     }
 }

@@ -5,6 +5,11 @@
 ::
 :: Purpose: This batch file will do the following:
 ::
+::          * Remove folders and files from the 
+::            SDK\src\wizards\Templates\Web\ folder
+::            Note: It does not remove all folders and files, just
+::                  folders (and files) defined in the psDeleteWebFiles.ps1 script file.
+::
 ::          * Copy the Columbus-Web artifacts to the 
 ::            SDK\src\wizards\Templates\Web\ folder
 ::
@@ -25,14 +30,12 @@ set myDir=%~dp0
 :: Check for the existence of the CNA2_SOURCE_ROOT environment variable.
 :: ---------------------------------------------------------------------------------------
 if [%CNA2_SOURCE_ROOT%]==[] (
-  echo CNA2_SOURCE_ROOT has not yet been defined.
-  echo Please set CNA2_SOURCE_ROOT to the root folder of the CNA2 source code
+  echo The environment variable ----  CNA2_SOURCE_ROOT ---- has not yet been defined.
+  echo Please set CNA2_SOURCE_ROOT to the root folder of the CNA2 source code.
   echo For Example: Set CNA2_SOURCE_ROOT=C:\projects\SageAzureDev\
-  SET CNA2_SOURCE_ROOT=C:\projects\SageAzureDev\
+  goto :EOF
 )
 
-:: set srcCopyPath=%myDir%..\..\..\..\Columbus-Web
-:: set srcCopyPath=%myDir%..\..\..\..\SageAzureDev\Columbus-Web
 set srcCopyPath=%CNA2_SOURCE_ROOT%Columbus-Web
 if not [%1]==[] (
   set srcCopyPath=%1

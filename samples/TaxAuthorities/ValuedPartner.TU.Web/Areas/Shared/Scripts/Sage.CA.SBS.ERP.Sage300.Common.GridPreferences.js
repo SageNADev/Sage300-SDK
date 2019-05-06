@@ -154,7 +154,7 @@ GridPreferences = {
         // Detach and Append the container (div) to the current parent, 
         // because this container not gets scrolled along with the page when loaded inside the popup
         var kendoWindowContainer = grid.element.closest('.k-window-content.k-content');
-        if (kendoWindowContainer !== null && kendoWindowContainer.length > 0) {
+        if (kendoWindowContainer !== null && kendoWindowContainer.length > 0 && !kendoWindowContainer.data("kendoWindow").options.isMaximized) {
             sg.utls.GridPrefParentForm = container.parent();
             container.detach();
             grid.element.closest('.k-window-content.k-content').append(container);

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -35,14 +35,12 @@ namespace ValuedPartner.TU.Web
         {
 			#region SegmentCodes
 			bundles.Add(new Bundle("~/bundles/ValuedPartnerSegmentCodes").Include(
-				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesBehaviour.js",
-				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesKoExtn.js",
-				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesRepository.js",
-                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartnerSegmentCodesGrid.js",
+				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesBehaviour.js",
+                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesKoExtn.js",
+                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesRepository.js",
+                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesGrid.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
-
-
         }
     }
 }

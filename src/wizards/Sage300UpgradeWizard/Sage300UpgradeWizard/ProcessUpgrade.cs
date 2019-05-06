@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,7 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-//using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.PerRelease;
+using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using System;
 using System.IO;
@@ -94,9 +94,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         SyncWebFiles(title);
                         break;
 
-					case 2:
-                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                        break;
+                    // Not necessary for 2019.2 release
+					//case 2:
+                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
+                    //    break;
 
                     #endregion
 
@@ -107,6 +108,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
+                    case 2:
+                        UpdateTargetedDotNetFrameworkVersion(title);
+                        break;
+
                     #endregion
                 }
             }
@@ -306,6 +311,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Update the targeted version of the .NET Framework for
+        /// all solution projects
+        /// </summary>
+        /// <param name="title">Title of step being processed </param>
+        private void UpdateTargetedDotNetFrameworkVersion(string title)
+        {
+            // Log start of step
+            LogEventStart(title);
+
+            var projects = _settings.Solution.Projects;
+            var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
+            foreach (Project project in projects)
+            {
+                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrading {project.Name} .NET target to {dotNetTargetName}...");
+                project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
+            }
 
             // Log end of step
             LogEventEnd(title);

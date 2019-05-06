@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="treeview-group" style="width:100%">
+                        <div class="treeview-group">
                             <div id="exportTreeView" />
                         </div>
                     </div>
@@ -88,7 +88,7 @@
 
             <div id="CriteriaStringPopup" class="filter-criteria-popup">
                 <div class="wrapper">
-                    <textarea readonly id="txtCriteriaId" name="txtCriteria" rows="4" cols="120" style="min-height: 199px;"></textarea>
+                    <textarea readonly id="txtCriteriaId" name="txtCriteria" rows="4" cols="120"></textarea>
                 </div>
             </div>
 
@@ -145,7 +145,7 @@
         </div>
     </div>
     <div class="import-export-btns clearfix mt20">
-        <div id="lnkDownload" class="right mr10">
+        <div id="lnkDownload" class="align-right">
             @Html.KoSageAnchor("#", CommonResx.Download, null, new { @id = "btnDownload", @class = "btn btn-primary " })
         </div>
     </div>
@@ -165,38 +165,3 @@
     @Html.ConvertToJsVariableUsingNewtonSoft("exportModelData", Model);
 </script>
 
-<style>
-    .k-widget.k-treeview {
-        height: 232px;
-    }
-
-    span.k-icon.k-i-expand {
-        margin-left: 0;
-    }
-
-    span.k-icon.k-i-collapse {
-        margin-left: 0;
-    }
-
-    #exportTreeView {
-        height: 230px;
-        overflow-y: scroll;
-    }
-
-        #exportTreeView > ul > li > ul > li {
-            padding-left: 50px;
-        }
-
-    /*input[type="checkbox"] {
-        width: 5px;
-    }*/
-
-    .inpt-file-container input[type="text"] {
-        width: 74%;
-    }
-
-    #buttons #loadScriptSubmit {
-        margin: 0;
-        float: right;
-    }
-</style>

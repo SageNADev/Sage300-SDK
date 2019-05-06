@@ -36,7 +36,7 @@
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300\programs\Online\Web</Sage300WebDir>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -266,7 +266,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -290,6 +289,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -334,7 +336,6 @@
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -384,12 +385,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartnerSourceJournalProfileReportRepository.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartnerSourceJournalProfileRepository.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
     <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml">
       <SubType>Designer</SubType>

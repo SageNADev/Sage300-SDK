@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -193,6 +193,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Entity </summary>
             public const string PropertyEntity = "entity";
 
+            /// <summary> Property for Entity </summary>
+            public const string PropertyModel = "model";
+
             /// <summary> Property for Include </summary>
             public const string PropertyInclude = "include";
 
@@ -226,6 +229,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Property for Finder </summary>
             public const string PropertyFinder = "finder";
 
+            /// <summary> Property for Grid </summary>
+            public const string PropertyGrid = "grid";
+
+            /// <summary> Property for Grid </summary>
+            public const string PropertySequenceRevisionList = "sequencerevisionlist";
+
             /// <summary> Property for Enablement </summary>
             public const string PropertyEnablement = "enablement";
 
@@ -246,6 +255,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> Property for FieldName </summary>
             public const string PropertyFieldName = "fieldName";
+
+            /// <summary> Property for Key Field </summary>
+            public const string PropertyKeyField = "KeyField";
+
 
             /// <summary> Property for PropertyName </summary>
             public const string PropertyPropertyName = "propertyName";
@@ -335,6 +348,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate Views
                 foreach (var businessView in settings.Entities)
                 {
+                    // if we are going to generate grid for a view, only create fields as it contains the entity name
+                    if (businessView.Options[BusinessView.Constants.GenerateGrid])
+                    {
+                        var entityName = businessView.Properties[BusinessView.Constants.EntityName];
+
+
+                        // Create the Model Fields class
+                        CreateClass(businessView,
+                                    entityName + "Fields.cs",
+                                    TransformTemplateToText(businessView, _settings, "Templates.Common.Class.ModelFields"),
+                                    Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
+
+                        continue;
+                    }
+
                     IterateView(businessView);
                 }
             }
@@ -1049,15 +1077,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             CreateRepositoryClassesByRepositoryType(repoType, view);
 
-            // Create class for finder
-            if (generateFinder == true)
-            {
-                CreateClass(view,
-                            "Find" + entityName + "ControllerInternal.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Common.Class.Finder"),
-                            Constants.WebKey, Constants.SubFolderWebFinderKey);
-            }
-
             if (isRepoTypeHeaderDetail == false)
             {
                 // Update security class
@@ -1473,11 +1492,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var isInquiry = type.Equals(RepositoryType.Inquiry);
             var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
 
-            if (isFlat == true ||
-                (isHeaderDetail == true && view.IsPartofHeaderDetailComposition && generateFinder))
+            if (isFlat == true)
             {
                 CreateFlatRepositoryClasses(view);
             }
+
             if (isProcess == true) { CreateProcessRepositoryClasses(view); }
             if (isDynamicQuery == true) { CreateDynamicQueryRepositoryClasses(view); }
             if (isReport == true) { CreateReportRepositoryClasses(view); }
@@ -1664,8 +1683,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var fileName = "_" + containerName + ".cshtml";
             CreateClass(headerView,
                         fileName,
-                        TransformTemplateToText(headerView, settings, "Templates.Flat.View.Entity"),
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.View.Entity"),
                         Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+            // Create grid json files
+            foreach (var view in settings.Entities)
+            {
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    fileName = view.Properties[BusinessView.Constants.EntityName] + "Grid.json";
+                    CreateClass(view,
+                                fileName,
+                                TransformTemplateToText(view, settings, "Templates.HeaderDetail.View.GridJson"),
+                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                }
+            }
 
             // Register types
             BusinessViewHelper.UpdateHeaderDetailBootStrappers(headerView, settings);
@@ -1688,7 +1720,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Create the Behavior JavaScript file
             CreateClass(headerView,
                         projectName + "." + containerName + "Behaviour.js",
-                        TransformTemplateToText(headerView, settings, "Templates.Flat.Script.Behaviour"),
+                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Script.Behaviour"),
                         Constants.WebKey, Constants.SubFolderWebScriptsKey);
 
             // Create the Knockout Extension JavaScript file

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -42,9 +42,10 @@
     <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@Page.Title</title>
     @Styles.Render("~/Assets/Styles/css/portalcss")
+    @Styles.Render("~/Assets/Styles/css/widgetCss")
+    <link rel="shortcut icon" href="~/Content/Images/favicon.ico" id="favicon">
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Styles.Render("~/Assets/Styles/css/widgetCss")
     @*Set Cookie in case not already set.  Also set user management URL (if any) and flag
         indicating whether or not auto-launching of Notes for an entity is enabled.*@
     @*NOTE: The booleans coming from the C# Razor code end up as literals True/False, which

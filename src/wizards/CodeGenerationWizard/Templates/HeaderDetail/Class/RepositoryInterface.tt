@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -40,9 +40,9 @@
 using <#=companyNamespace#>.<#=moduleId#>.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using System.Linq.Expressions;
 using System;
-
 #endregion
 
 namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository
@@ -80,5 +80,11 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository
         /// <param name="filter">filter for deleting a record</param>
         /// <returns></returns>
         <#=headerModelName#> Delete(Expression<Func<<#=headerModelName#>, Boolean>> filter);
+
+        /// <summary>
+        /// Creates a new <#=entityName#> record
+        /// </summary>
+        /// <returns><#=entityName#> viewModel</returns>
+        <#=headerModelName#> CreateNewRecord();
     }
 }

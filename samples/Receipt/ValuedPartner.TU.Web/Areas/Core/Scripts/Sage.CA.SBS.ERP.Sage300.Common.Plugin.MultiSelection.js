@@ -59,10 +59,16 @@ sg.multiSelectionHelper = {
         var data = new Object();
         data.pageSize = e.data.pageSize;
         data.pageNumber = e.data.page;
-        if (e.data.filter.filters[1]) { data.filterOptions = e.data.filter.filters[1]; }
-        else { data.filterOptions = e.data.filter.filters[0]; }
+        data.filterOptions = e.data.filter.filters[0]; // typing in Portal > Add Report Link > UI Profile MultiSelect box
 
-        sg.utls.ajaxPost(e.data.filter.filters[0].getdataurl,
+        var dataurl;
+        if (e.data.filter.filters[1]) {
+            dataurl = e.data.filter.filters[1].getdataurl;
+        } else {
+            dataurl = e.data.filter.filters[0].getdataurl;
+        }
+
+        sg.utls.ajaxPost(dataurl,
                          data, 
                          function (successData) {
                              e.success({ data: successData.Items, total: successData.TotalResultsCount });

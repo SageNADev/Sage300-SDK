@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -10,136 +10,155 @@
 @Scripts.Render()
 
 @{
-        //Home page key constant
-        const string homepageKey = "101";
+    //Home page key constant
+    const string homepageKey = "101";
 
-        //screen url is not available
-        const string notAvailable = "N/A";
+    //screen url is not available
+    const string notAvailable = "N/A";
 
-        //Get Domain URL according to the enviorment and user
-        var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
+    //Get Domain URL according to the enviorment and user
+    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
 
-        //Prepare menu items collections
-        var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
-        var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
-        var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
+    //Prepare menu items collections
+    var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
+    var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
+    var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
+    var level5Items = Model.Where(m => m.Data.MenuItemLevel == 5).ToList();
+    var level6Items = Model.Where(m => m.Data.MenuItemLevel == 6).ToList();
 
-        var firstItem = 0;
-        var firstNodeClass = "";
+    var firstItem = true;
 }
 
 @*Rendering Menu*@
 @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
 {
-        firstItem = 0;
-        @*2nd Level Menu: Start*@
-        var level2ItemId = level2Item.Data.MenuId;
-        var iconName = level2Item.Data.IconName;
-        var bgImageName = level2Item.Data.MenuBackGoundImage;
-        var iconPath = Path.Combine("../../Content/Images/nav/", iconName);
-        var bgImagePath = Path.Combine("../../Content/Images/nav/", bgImageName);
-        <li class="menu-item top-tier">
-            <div class="nav-icon">
-                <img src=@iconPath width="16" height="16">
-            </div>
-            <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
-            <ul class="std-menu">
-                <img src=@bgImagePath>
-                <li class="sub-heading">@level2Item.Data.MenuName</li>
-                @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
-                {
-                    @*3rd Level Menu Items: Start*@
-                    var level3ItemId = level3Item.Data.MenuId;
-                    var level3ItemClass = level3Item.Data.IsGroupEnd == true ? "menu-group" : "";
+    firstItem = true;
+    @*2nd Level Menu: Start*@
+    var level2ItemId = level2Item.Data.MenuId;
+    var iconName = level2Item.Data.IconName;
+    var bgImageName = level2Item.Data.MenuBackGoundImage;
+    var iconPath = Path.Combine("../../Content/Images/nav/", iconName);
+    var bgImagePath = Path.Combine("../../Content/Images/nav/", bgImageName);
+    <li class="menu-item top-tier">
+        <div class="nav-icon">
+            <img src=@iconPath width="16" height="16">
+        </div>
+        <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
+        <ul class="std-menu">
+            <img src=@bgImagePath>
+            <li class="sub-heading">@level2Item.Data.MenuName</li>
+            @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
+            {
+                Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack = new Stack<List<NavigableMenuViewModel<NavigableMenu>>>();
+                menuStack.Push(level6Items);
+                menuStack.Push(level5Items);
+                menuStack.Push(level4Items);
 
-                    if (firstItem == 0) { firstNodeClass = "active"; } else { firstNodeClass = ""; }
-                    firstItem++;
-                    
-                    <li class="@level3ItemClass">
+                @CreateMenuGroup(level3Item, menuStack, notAvailable, domainUrl, firstItem);
 
-                        <a data-menuid='@level3Item.Data.MenuId' class="@firstNodeClass">
-                            @level3Item.Data.MenuName
-                            @if (level3Item.Data.IsReport == true)
-                            {
-                                <span class="icon-report"></span>
-                            }
-                        </a>
-
-                        @*4th level block start*@
-                        @if (level3Item.Data.UseColGrouping)
-                        {
-                            var colGroupingList = level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
-                            @:<div class="sub-menu-wrap">
-                                        
-                            foreach (var currentColGrouping in colGroupingList)
-                            { 
-                                <div class="menu-section">
-                                <ul>
-                                    @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
-                                    {
-                                        @CreateMenuItem(level4Item, notAvailable, domainUrl);
-                                    }
-                                </ul>
-                                </div>
-                            }
-                            @:</div>
-                        }
-                        else
-                        {
-                            <div class="sub-menu-wrap">
-                                <div class="menu-section">
-                                    <ul>
-                                        @foreach (var level4Item in level4Items.Where(m => m.Data.ParentMenuId == level3ItemId).OrderBy(m => m.Data.MenuItemOrder))
-                                        {
-                                            @CreateMenuItem(level4Item, notAvailable, domainUrl)
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                        }
-                        @*4th level block end*@
-
-                    </li>
-                    @*3rd Level Menu Items: End*@
-                }
-            </ul>
-        </li>
-        @*2nd Level Menu: End*@
+                firstItem = false;
+            }
+        </ul>
+    </li>
+    @*2nd Level Menu: End*@
 }
 
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
 </script>
 
-@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> level4Item, string notAvailable, string domainUrl)
+@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
 {
-    if (level4Item.Data.IsGroupHeader == true)
-    {
+    var parentItemId = parentItem.Data.MenuId;
+    var parentItemClass = parentItem.Data.IsGroupEnd == true ? "menu-group" : "";
+    var hasSubGroup = parentItem.Data.HasSubGroup.HasValue && parentItem.Data.HasSubGroup.Value;
+    var nodeClass = firstItem ? "active" : (hasSubGroup ? "with-menu" : "");
+    var childItems = menuStack.Count > 0 ? menuStack.Pop() : null;
 
-        <li class="sub-heading" data-menuid='@level4Item.Data.MenuId' data-modulename='@level4Item.Data.ModuleName'>
-            @level4Item.Data.MenuName
-        </li>
+    if (childItems == null)
+    {
+        return;
     }
 
-    if (level4Item.Data.Isintelligence == true)
-    {
-        <li class="k-item">
-            <a data-url='@level4Item.Data.ScreenUrl' data-menuid='@level4Item.Data.MenuId' data-isintelligence='@level4Item.Data.Isintelligence' data-modulename='@level4Item.Data.ModuleName'> @level4Item.Data.MenuName</a>
-        </li>
-    }
-    if (level4Item.Data.IsGroupHeader == false && level4Item.Data.Isintelligence == false)
-    {
-        if (level4Item.Data.ScreenUrl == notAvailable)
+    <li class="@parentItemClass">
+
+        <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
+            @parentItem.Data.MenuName
+            @if (parentItem.Data.IsReport == true)
+            {
+                <span class="icon-report"></span>
+            }
+        </a>
+
+        @if (parentItem.Data.UseColGrouping)
         {
-            <li class="k-item">
-                <a data-url='' data-menuid='@level4Item.Data.MenuId' data-parentid='@level4Item.Data.ParentMenuId' data-modulename='@level4Item.Data.ModuleName' data-isreport="@level4Item.Data.IsReport"> @level4Item.Data.MenuName</a>
-            </li>
+            var colGroupingList = childItems.Where(m => m.Data.ParentMenuId == parentItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
+            @:<div class="sub-menu-wrap">
+                foreach (var currentColGrouping in colGroupingList)
+                {
+                    <div class="menu-section">
+                        <ul>
+                            @foreach (var item in childItems.Where(m => m.Data.ParentMenuId == parentItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
+                            {
+                                @CreateMenuItem(item, menuStack, notAvailable, domainUrl);
+                            }
+                        </ul>
+                    </div>
+                }
+            @:</div>
         }
         else
         {
-            <li class="k-item">
-                <a data-url='@domainUrl@level4Item.Data.ScreenUrl' data-menuid='@level4Item.Data.MenuId' data-parentid='@level4Item.Data.ParentMenuId' data-modulename='@level4Item.Data.ModuleName' data-isreport="@level4Item.Data.IsReport"> @level4Item.Data.MenuName</a>
+            <div class="sub-menu-wrap">
+                <div class="menu-section">
+                    <ul>
+                        @foreach (var item in childItems.Where(m => m.Data.ParentMenuId == parentItemId).OrderBy(m => m.Data.MenuItemOrder))
+                        {
+                            @CreateMenuItem(item, menuStack, notAvailable, domainUrl)
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </li>
+}
+
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl)
+{
+    if (menuItem.Data.HasSubGroup.HasValue && menuItem.Data.HasSubGroup.Value)
+    {
+        @CreateMenuGroup(menuItem, menuStack, notAvailable, domainUrl, false);
+    }
+    else
+    {
+        if (menuItem.Data.IsGroupHeader == true)
+        {
+
+            <li class="sub-heading" data-menuid='@menuItem.Data.MenuId' data-modulename='@menuItem.Data.ModuleName'>
+                @menuItem.Data.MenuName
             </li>
+        }
+
+        if (menuItem.Data.Isintelligence == true)
+        {
+            <li class="k-item">
+                <a data-url='@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-isintelligence='@menuItem.Data.Isintelligence' data-modulename='@menuItem.Data.ModuleName'> @menuItem.Data.MenuName</a>
+            </li>
+        }
+        if (menuItem.Data.IsGroupHeader == false && menuItem.Data.Isintelligence == false)
+        {
+            if (menuItem.Data.ScreenUrl == notAvailable)
+            {
+                <li class="k-item">
+                    <a data-url='' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                </li>
+            }
+            else
+            {
+                <li class="k-item">
+                    <a data-url='@domainUrl@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                </li>
+            }
         }
     }
 }

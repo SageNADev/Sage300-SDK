@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
@@ -35,7 +35,7 @@
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300\Online\Web</Sage300WebDir>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -255,6 +255,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -328,9 +332,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartnerSourceCodeRepository.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeBehaviour.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeKoExtn.js" />
+    <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeRepository.js" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

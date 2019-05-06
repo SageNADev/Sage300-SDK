@@ -267,7 +267,7 @@
   }
 
   .datepicker-group input.small {
-      width: 142px !important;
+      width: 141px !important;
   }
 
   .browse-group input[type=text].default{
@@ -564,7 +564,7 @@
   }
 
   .k-tool-icon {
-    background-image: url('@{image-path}/home/editor.png');
+    background: none;
     border: 0;
   }
 
@@ -593,51 +593,12 @@
 
   .k-editor iframe.k-content {
     padding: 10px 0 10px 10px;
+    border: 0;
   }
 
   .editor-container.disabled .k-editor iframe.k-content {
     background-color: #f6f6f6;
     color: #333;
-  }
-
-  .k-tool-icon.k-i-bold {
-    background-position: 0 -2px;
-  }
-
-  .k-tool-icon.k-i-italic {
-    background-position: -27px -2px;
-  }
-
-  .k-tool-icon.k-i-underline {
-    background-position: -55px -2px;
-  }
-
-  .k-tool-icon.k-i-justify-left {
-    background-position: -89px -2px;
-  }
-
-  .k-tool-icon.k-i-justify-center{
-    background-position: -117px -2px;
-  }
-
-  .k-tool-icon.k-i-justify-right {
-    background-position: -146px -2px;
-  }
-
-  .k-tool-icon.k-i-insert-unordered-list{
-    background-position: -180px -2px;
-  }
-
-  .k-tool-icon.k-i-insert-ordered-list{
-    background-position: -208px -2px;
-  }
-
-  .k-tool-icon.k-i-indent{
-    background-position: -235px -2px;
-  }
-
-  .k-tool-icon.k-i-create-link{
-    background-position: -270px -2px;
   }
 
   &.view-notes .k-widget,
@@ -887,6 +848,10 @@
     }
   }
 
+  #commonTemplateList .item-list label {
+    width: unset;
+  }
+
   .tag {
     margin-left: 10px;
     position: absolute;
@@ -959,6 +924,11 @@
   div#profilesMultiSelect-list+.k-animation-container {
     z-index: 1 !important;
   }
+
+  .k-i-arrow-60-down,
+  .k-pager-wrap .k-icon {
+    background: none;
+  }
 }
 
 .k-webkit .k-editor-toolbar, 
@@ -974,3 +944,4 @@
 .k-ie10 .k-editor-toolbar li {
   padding: 0 5px 0 0 ;
 }
+
