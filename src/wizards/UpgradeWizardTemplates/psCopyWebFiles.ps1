@@ -42,12 +42,17 @@ if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Example: $rootCNA2SourceFolder="C:\projects\SageAzureDev\"'
 }
 $verbosepreference = 'continue'
+
+# Source Folder Settings
+$webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 $webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
+
+# Destination Folder Settings
 $webFolderName = "Items"
+
 $absWebFolderPath = "$PSScriptRoot\$webFolderName"
-$webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 
 # ---------------------------------------------------------------------------------------
 # Save the current folder location
@@ -63,7 +68,7 @@ push-location -path $absWebFolderPath
 $webSubPaths.split(',') | Foreach-Object { 
   robocopy /S "$webAssetDirPath\$_" "$_" `
   /xf *.cs *.csproj *.user *.xml *.Sage300.Revaluation*.js *.IC.Common.js _wizard.cshtml packages.config menuBackGroundImage.jpg menuIcon.png `
-  /xd TU obj
+  /xd TU obj bin
 }
 
 # ---------------------------------------------------------------------------------------

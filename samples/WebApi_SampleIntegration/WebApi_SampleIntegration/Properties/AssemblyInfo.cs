@@ -28,9 +28,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WebApi_SampleIntegration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sage")]
+[assembly: AssemblyCompany("Sage Software, Inc.")]
 [assembly: AssemblyProduct("WebApi_SampleIntegration")]
-[assembly: AssemblyCopyright("Copyright © Sage 2016")]
+[assembly: AssemblyCopyright("Copyright © 2018 Sage Software, Inc. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

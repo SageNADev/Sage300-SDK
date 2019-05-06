@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -73,6 +73,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
 using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
@@ -122,11 +123,12 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <summary>
         /// Create a <#=modelName#>
         /// </summary>
-        /// <returns>JSON object for <#=modelName#></returns>
+        /// <returns>view model for  <#=modelName#></returns>
         internal <#=containerName#>ViewModel Create()
         {
-            var viewModel = GetViewModel(new <#=headerModelName#>(), null);
+            var newData = _repository.CreateNewRecord();
 
+            var viewModel = GetViewModel(newData, null);
             viewModel.UserAccess = GetAccessRights();
 
             return viewModel;

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -9,7 +9,6 @@ LabelMenuHelper = {
     screenModelName: null,
 
     initialize: function (data, btnHamburger, viewModelName) {
-
         $(document).off('.labelMenu');
         ko.cleanNode($("#divLabelMenu")[0]);
         $("#" + btnHamburger).attr('tabindex', '-1');

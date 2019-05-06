@@ -1125,6 +1125,10 @@ var InquiryGeneralUI = function () {
         return url;
     }
 
+    $(window).on('beforeunload', function () {
+        sg.utls.releaseSession();
+    });
+
     return {
         //init: initInquiryGeneral,
     };

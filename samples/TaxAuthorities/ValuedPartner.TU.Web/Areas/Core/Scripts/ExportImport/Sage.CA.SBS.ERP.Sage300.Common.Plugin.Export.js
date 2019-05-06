@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 /* globals globalResource: false */
 /* globals kendo: false */
@@ -77,6 +77,7 @@ var exportResultRowNumber = 0;
     };
 
     sg.dataMigration = {
+        Account: "account",
         AccountGroup: "accountgroup",
         AccountPermissions: "accountpermission",
         AccountSet: "icaccountset",
@@ -532,9 +533,9 @@ var exportResultRowNumber = 0;
 
                 if (result.UserMessage !== undefined && result.UserMessage.Errors.length > 0) {
                     window.sg.utls.showMessageInfoInCustomDivWithoutClose(window.sg.utls.msgType.ERROR, result.UserMessage.Errors[0].Message, "loadScriptMessage");
-                    $("#divLoadScript").parent().css({ height: '360px' });
+                    $("#divLoadScript").parent().css({ height: '370px' });
                 } else {
-                    $("#divLoadScript").parent().css({ height: '200px' });
+                    $("#divLoadScript").parent().css({ height: '210px' });
                     var loadModelName = result.Name;
                     var screenName = sg.exportHelper.exportModel.ExportRequest.Name();
                     if (loadModelName !== screenName) {
@@ -606,7 +607,7 @@ var exportResultRowNumber = 0;
             });
 
             $(document).on('click.plugin.export', '#btnLoadScript', function () {
-                $("#divLoadScript").parent().css({ height: '200px' });
+                $("#divLoadScript").parent().css({ height: '210px' });
                 $("#loadScriptMessage").empty();
                 $('#formLoadScript')[0].reset();
                 $("#divLoadScript").kendoWindow({
@@ -618,7 +619,7 @@ var exportResultRowNumber = 0;
                     visible: false,
                     navigatable: true,
                     width: 520,
-                    height: 150,
+                    //height: 150,
                     minHeight: 150,
                     maxHeight: 600,
                     // Custom function to suppot focus within kendo window
@@ -650,7 +651,7 @@ var exportResultRowNumber = 0;
                 var selectedFIle = files[0];
                 $('#btnUploadFile').val(selectedFIle.name);
                 $("#loadScriptMessage").empty();
-                $("#divLoadScript").parent().css({ height: '200px' });
+                $("#divLoadScript").parent().css({ height: '210px' });
             });
         },
 

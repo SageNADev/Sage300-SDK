@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,20 +32,19 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Models.Enums;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+using ICService = Sage.CA.SBS.ERP.Sage300.IC.Interfaces.Services;
 using Options = Sage.CA.SBS.ERP.Sage300.IC.Models.Options;
 using PostingDate = Sage.CA.SBS.ERP.Sage300.IC.Models.Enums.DefaultPostingDate;
 using Type = ValuedPartner.TU.Models.Enums.Type;
-using ICService = Sage.CA.SBS.ERP.Sage300.IC.Interfaces.Services;
-
 
 #endregion
 
@@ -80,15 +79,16 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         // ReSharper disable once StaticFieldInGenericType
         private static string _funcDecimals;
 
-        private IReceiptRepository RepoService
+        private IReceiptRepository _repository
         {
-            get {
+            get
+            {
                 // return _context.Container.Resolve<IReceiptService>(UnityInjectionType.Default, new ParameterOverride("context", _context));
                 return _context.Container.Resolve<IReceiptRepository>(new ParameterOverride("context", _context));
 
             }
         }
-       
+
         private enum Operation
         {
             Create = 0,
@@ -145,14 +145,14 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
 
             if (!string.IsNullOrEmpty(id))
             {
-                data = RepoService.GetById(id);
+                data = _repository.GetById(id);
             }
 
             data.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(data.AdditionalCostCurrency));
             data.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(data.ReceiptCurrency));
             if (data.SequenceNumber == 0)
             {
-                data = RepoService.NewHeader();
+                data = _repository.NewHeader();
                 data.ReceiptNumber = id;
                 isRecordExists = false;
                 data.Warnings = null;
@@ -167,7 +167,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                         Priority = Priority.Error
                     }
                 };
-                data = RepoService.NewHeader();
+                data = _repository.NewHeader();
                 data.Warnings = warnings;
                 isRecordExists = false;
             }
@@ -199,7 +199,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 var items = model.ReceiptDetail.Items.Where(x => x.ItemNumber != null && !(x.IsDeleted && x.IsNewLine));
                 if (items.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                 {
-                    RepoService.SaveDetails(items);
+                    _repository.SaveDetails(items);
                 }
             }
 
@@ -209,7 +209,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 filter = receipt => receipt.SequenceNumber == model.SequenceNumber;
             }
 
-            var receiptDetail = RepoService.GetDetail(pageNumber, pageSize, filter);
+            var receiptDetail = _repository.GetDetail(pageNumber, pageSize, filter);
             if (receiptDetail != null)
             {
                 if (receiptDetail.Items.Any())
@@ -234,7 +234,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal ReceiptViewModel SaveDetail(ReceiptDetail detail)
         {
             _options = GetOptions();
-            var data = RepoService.SaveDetail(detail);
+            var data = _repository.SaveDetail(detail);
 
             var receiptViewModel = new ReceiptViewModel
             {
@@ -265,7 +265,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Header Optional Field model</returns>
         internal ReceiptOptionalField GetOptionalFieldFinderData(string optionalField)
         {
-            var updatedOptionalField = RepoService.GetOptionalFieldFinderData(optionalField);
+            var updatedOptionalField = _repository.GetOptionalFieldFinderData(optionalField);
             return updatedOptionalField;
         }
 
@@ -276,8 +276,18 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Detail Optional Field model</returns>
         internal ReceiptDetailOptionalField GetDetailOptFieldFinderData(string optionalField)
         {
-            var updatedOptionalField = RepoService.GetDetailOptFieldFinderData(optionalField);
+            var updatedOptionalField = _repository.GetDetailOptFieldFinderData(optionalField);
             return updatedOptionalField;
+        }
+
+        /// <summary>
+        /// Insert default detail optional field 
+        /// </summary>
+        /// <param name="optionalField">The optional field.</param>
+        /// <returns>Detail Optional Field model</returns>
+        internal void InsertDetailOptionalField()
+        {
+            _repository.DetailProcess();
         }
 
         /// <summary>
@@ -287,7 +297,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal ReceiptViewModel Create()
         {
 
-            var newData = RepoService.NewHeader();
+            var newData = _repository.NewHeader();
             newData.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(newData.AdditionalCostCurrency));
             return GetViewModel(null, newData, "", Operation.Create);
         }
@@ -309,7 +319,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     var receiptDetail = items as ReceiptDetail[] ?? items.ToArray();
                     if (receiptDetail.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
                     {
-                        RepoService.SaveDetails(receiptDetail);
+                        _repository.SaveDetails((IEnumerable<ReceiptDetail>)receiptDetail);
                     }
                 }
             }
@@ -343,7 +353,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 receiptFilter = receipt => receipt.SequenceNumber == model.SequenceNumber;
             }
 
-            var receiptDetails = RepoService.GetDetail(pageNumber, pageSize, receiptFilter);
+            var receiptDetails = _repository.GetDetail(pageNumber, pageSize, receiptFilter);
             var lineNumber = (pageSize * pageNumber) + 1;
             if (receiptDetails != null)
             {
@@ -379,7 +389,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 // Refresh should be called only once if header model is not mapped with latest model.
                 if (currentRow == null || (!currentRow.IsNewLine))
                 {
-                    RepoService.Refresh(model);
+                    _repository.Refresh(model);
                 }
 
                 if (hasDetails)
@@ -388,7 +398,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     {
                         if (details.Any(x => x.HasChanged))
                         {
-                            if (RepoService.SaveDetails(details))
+                            if (_repository.SaveDetails((IEnumerable<ReceiptDetail>)details))
                             {
                                 if (currentRow != null)
                                 {
@@ -400,7 +410,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
 
                         GetPagedDetail(pageNumber, pageSize);
                         header = CreateDetail(model, pageSize, pageNumber, currentRow);
-                        data = header.ReceiptDetail.Items.FirstOrDefault();
+                        data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
 
                         if (data != null)
                         {
@@ -416,7 +426,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                         }
                         if (details.Any(x => x.IsNewLine))
                         {
-                            RepoService.SaveDetails(details);
+                            _repository.SaveDetails(details as IEnumerable<ReceiptDetail>);
                         }
                         receiptDetails = model.ReceiptDetail.Items.Take(pageSize - 1).ToList();
                         foreach (var setDetail in receiptDetails)
@@ -438,7 +448,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     }
                     if (details.Any(x => x.HasChanged))
                     {
-                        if (RepoService.SaveDetails(details))
+                        if (_repository.SaveDetails((IEnumerable<ReceiptDetail>)details))
                         {
                             if (currentRow != null)
                             {
@@ -450,7 +460,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     var pagedDetails = GetPagedDetail(pageNumber, pageSize, model);
                     var totalRecords = pagedDetails.TotalResultsCount;
                     header = CreateDetail(model, pageSize, pageNumber, currentRow);
-                    data = header.ReceiptDetail.Items.FirstOrDefault();
+                    data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
                     receiptDetails = new List<ReceiptDetail>(pagedDetails.Items.ToList());
                     if (data != null)
                     {
@@ -479,7 +489,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                     return header;
                 }
                 header = CreateDetail(model, pageSize, pageNumber, null);
-                data = header.ReceiptDetail.Items.FirstOrDefault();
+                data = (ReceiptDetail)header.ReceiptDetail.Items.FirstOrDefault();
 
                 if (data != null)
                 {
@@ -512,8 +522,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal ReceiptViewModel Save(ReceiptHeader model)
         {
             model.RecordStatus = RecordStatus.Entered;
-            var data = RepoService.Save(model);
-            var newData = RepoService.NewHeader();
+            var data = _repository.Save(model);
+            var newData = _repository.NewHeader();
             SessionHelper.Remove(_detailOptFieldCacheKey);
 
             return GetViewModel(data, newData, model.ReceiptNumber, Operation.Save);
@@ -530,8 +540,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         {
 
             Expression<Func<ReceiptHeader, Boolean>> filter = receipt => receipt.SequenceNumber == id;
-            var data = RepoService.Post(model, filter, yesNo);
-            var newData = RepoService.NewHeader();
+            var data = _repository.Post(model, filter, yesNo);
+            var newData = _repository.NewHeader();
 
             return GetViewModel(data, newData, model.ReceiptNumber, Operation.Post);
         }
@@ -543,10 +553,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Receipt View Model</returns>
         internal ReceiptViewModel Add(ReceiptHeader model)
         {
-            var data = RepoService.Add(model);
-            var newData = RepoService.NewHeader();
+            var data = _repository.Add(model);
+            var newData = _repository.NewHeader();
 
-            return GetViewModel(data, newData, model.ReceiptNumber, Operation.Add); 
+            return GetViewModel(data, newData, model.ReceiptNumber, Operation.Add);
         }
 
         /// <summary>
@@ -558,8 +568,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal ReceiptViewModel Delete(string receiptNumber, long sequenceNumber)
         {
             Expression<Func<ReceiptHeader, Boolean>> filter = receipt => receipt.ReceiptNumber == receiptNumber;
-            var data = RepoService.Delete(filter);
-            var newData = RepoService.NewHeader();
+            var data = _repository.Delete(filter);
+            var newData = _repository.NewHeader();
 
             return GetViewModel(data, newData, "", Operation.Delete);
         }
@@ -577,7 +587,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 header = model;
             }
-            header = RepoService.ReadHeader(header);
+            header = _repository.ReadHeader(header);
             header.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(header.AdditionalCostCurrency));
             SetHeaderDetails(model, header);
             return header;
@@ -590,8 +600,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Receipt Batch Viewmodel - that contains the info about the saved details</returns>
         internal ReceiptHeader SaveDetails(ReceiptHeader model)
         {
-            RepoService.SaveDetails(model.ReceiptDetail.Items );
-            var refreshedModel = RepoService.Refresh(model);
+            _repository.SaveDetails(model.ReceiptDetail.Items as IEnumerable<ReceiptDetail>);
+            var refreshedModel = _repository.Refresh(model);
             refreshedModel.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(refreshedModel.AdditionalCostCurrency));
             if (refreshedModel.ReceiptDetail.Items.Any())
             {
@@ -622,7 +632,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 }
             }
 
-            var savedOptionalFields = RepoService.SaveDetailOptFields(optionalFields, receiptNumber, isDetail);
+            var savedOptionalFields = _repository.SaveDetailOptFields(optionalFields, receiptNumber, isDetail);
 
             if (!savedOptionalFields) return optionalFields;
             if (optionalFields == null)
@@ -651,8 +661,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns></returns>
         internal ReceiptDetail GetRowValues(ReceiptDetail model, int eventType)
         {
-            var result = RepoService.GetRowValues(model, eventType);
-            if (model.IsNewLine)
+            var result = _repository.GetRowValues(model, eventType);
+            if (model.IsNewLine == true)
             {
                 result.IsNewLine = true;
             }
@@ -667,7 +677,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns></returns>
         internal ReceiptHeader GetHeaderValues(ReceiptHeader model, int eventType)
         {
-            var modelData = RepoService.GetHeaderValues(model, eventType);
+            var modelData = _repository.GetHeaderValues(model, eventType);
             modelData.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(model.AdditionalCostCurrency));
             modelData.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(model.ReceiptCurrency));
             return modelData;
@@ -679,7 +689,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>IC Options</returns>
         internal Options GetOptions()
         {
-            var service = Context.Container.Resolve<ICService.IOptionsService<Options>>(new ParameterOverride("context", Context));
+            var service =
+             Context.Container.Resolve<ICService.IOptionsService<Options>>(new ParameterOverride("context",
+                 Context));
             return service.FirstOrDefault();
         }
 
@@ -793,7 +805,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Returns True if exists, False otherwise</returns>
         internal bool Exists(string id, ReceiptHeader model)
         {
-            return RepoService.Exists(id, model);
+            return _repository.Exists(id, model);
         }
 
         #endregion
@@ -826,8 +838,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>returns ReceiptDetail model</returns>
         public virtual ReceiptDetail SetDetail(ReceiptDetail currentDetail)
         {
-            var model = RepoService.SetDetail(currentDetail);
-            return model == null ? null : model.ReceiptDetail.Items.FirstOrDefault();
+            var model = _repository.SetDetail(currentDetail);
+            return model != null ? model.ReceiptDetail.Items.FirstOrDefault() as ReceiptDetail : null;
         }
 
         /// <summary>
@@ -838,7 +850,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Receipt View Model</returns>
         public virtual ReceiptViewModel RefreshDetail(ReceiptDetail detail, string eventType)
         {
-            var refreshDetail = RepoService.RefreshDetail(detail, eventType);
+            var refreshDetail = _repository.RefreshDetail(detail, eventType);
             var receiptDetail = refreshDetail.ReceiptDetail.Items.FirstOrDefault();
             if (receiptDetail != null)
             {
@@ -848,7 +860,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 ReceiptDetail = new EnumerableResponse<ReceiptDetail>
                 {
-                    Items = new List<ReceiptDetail>{ receiptDetail,}
+                    Items = new List<ReceiptDetail> { receiptDetail, }
                 }
             };
 
@@ -865,7 +877,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Optional field value</returns>
         public virtual string RefreshOptField()
         {
-            return RepoService.RefreshOptField();
+            return _repository.RefreshOptField();
         }
 
         ///<summary>
@@ -875,7 +887,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Refreshed header model</returns>
         internal ReceiptViewModel Refresh(ReceiptHeader model)
         {
-            var data = RepoService.Refresh(model);
+            var data = _repository.Refresh(model);
             data.TotalCostReceiptAdditionalDecimal = Convert.ToInt32(GetCurrencyDecimal(model.AdditionalCostCurrency));
             data.TotalReturnCostDecimal = Convert.ToInt32(GetCurrencyDecimal(model.ReceiptCurrency));
             GetExchangeRate(data);
@@ -894,7 +906,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 model.Value = DateUtil.GetShortDate(model.Value, null);
             }
-            var updatedOptionalField = RepoService.SetOptionalFieldValue(model);
+            var updatedOptionalField = _repository.SetOptionalFieldValue(model);
             if (updatedOptionalField != null)
             {
                 updatedOptionalField.IsNewLine = model.IsNewLine;
@@ -914,7 +926,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 model.Value = DateUtil.GetShortDate(model.Value, null);
             }
-            var updatedOptionalField = RepoService.SetOptionalFieldValue(model);
+            var updatedOptionalField = _repository.SetOptionalFieldValue(model);
             if (updatedOptionalField != null)
             {
                 updatedOptionalField.IsNewLine = model.IsNewLine;
@@ -934,7 +946,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         public virtual EnumerableResponse<ReceiptDetailOptionalField> DeleteOptionalFields(
             EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber, int pageSize, bool isDetail)
         {
-            RepoService.SaveDetailOptFields(model.Items, null, isDetail);
+            _repository.SaveDetailOptFields(model.Items, null, isDetail);
             if (isDetail)
             {
                 var pagedDetail = GetDetailOptFields(pageNumber, pageSize, model);
@@ -973,7 +985,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         {
             if (model == null)
             {
-                return RepoService.GetDetailOptFields(pageNumber, pageSize);
+                return _repository.GetDetailOptFields(pageNumber, pageSize);
             }
 
             var optionalField = model.Items;
@@ -981,7 +993,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             var optionalFieldDetails = optionalField as IList<ReceiptDetailOptionalField> ?? optionalField.ToList();
             if (!optionalFieldDetails.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
             {
-                return RepoService.GetDetailOptFields(pageNumber, pageSize);
+                return _repository.GetDetailOptFields(pageNumber, pageSize);
             }
 
             if (optionalFieldDetails.Any(x => x.OptionalField != null))
@@ -990,10 +1002,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 {
                     FormatDetailOptField(optField);
                 }
-                RepoService.SaveDetailOptFields(optionalFieldDetails, null, true);
+                _repository.SaveDetailOptFields(optionalFieldDetails, null, true);
             }
 
-            return RepoService.GetDetailOptFields(pageNumber, pageSize);
+            return _repository.GetDetailOptFields(pageNumber, pageSize);
         }
 
         /// <summary>
@@ -1007,13 +1019,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             EnumerableResponse<ReceiptDetailOptionalField> model)
         {
             if (model == null)
-                return RepoService.GetOptFields(pageNumber, pageSize);
+                return _repository.GetOptFields(pageNumber, pageSize);
             var optionalField = model.Items;
 
             var optionalFieldDetails = optionalField as IList<ReceiptDetailOptionalField> ?? optionalField.ToList();
             if (!optionalFieldDetails.Any(x => x.HasChanged || x.IsNewLine || x.IsDeleted))
             {
-                return RepoService.GetOptFields(pageNumber, pageSize);
+                return _repository.GetOptFields(pageNumber, pageSize);
             }
 
             if (optionalFieldDetails.Any(x => x.OptionalField != null))
@@ -1022,10 +1034,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 {
                     FormatDetailOptField(optField);
                 }
-                RepoService.SaveDetailOptFields(optionalFieldDetails, null, false);
+                _repository.SaveDetailOptFields(optionalFieldDetails, null, false);
             }
 
-            return RepoService.GetOptFields(pageNumber, pageSize);
+            return _repository.GetOptFields(pageNumber, pageSize);
         }
 
         /// <summary>
@@ -1033,7 +1045,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// </summary>
         /// <param name="currencyCode">The currency code.</param>
         /// <returns></returns>
-        private CurrencyCode GetCurrencyDescription(string currencyCode)
+        public CurrencyCode GetCurrencyDescription(string currencyCode)
         {
             var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
             Expression<Func<CurrencyCode, bool>> filter = code => code.CurrencyCodeId == currencyCode.ToUpper();
@@ -1082,7 +1094,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Receipt ViewModel</returns>
         private ReceiptHeader CreateDetail(ReceiptHeader model, int pageSize, int pageNumber, ReceiptDetail currentRow)
         {
-            var data = RepoService.NewDetail(pageNumber, pageSize, currentRow as ReceiptDetail);
+            var data = _repository.NewDetail(pageNumber, pageSize, currentRow as ReceiptDetail);
 
             if (model.ReceiptDetail.Items != null)
             {
@@ -1109,7 +1121,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         }
 
         /// <summary>
-        /// Get the Entity Service
+        /// Get the Entity _repository
         /// </summary>
         /// <typeparam name="TModel"></typeparam>
         /// <param name="entityName"></param>
@@ -1150,7 +1162,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>CompositeCurrencyRate</returns>
         private CompositeCurrencyRate ValidateExchangeRate(string rateType, string currencyCode, DateTime rateDate)
         {
-            return RepoService.GetCurrencyRateComposite(rateType, currencyCode, rateDate);
+            return _repository.GetCurrencyRateComposite(rateType, currencyCode, rateDate);
         }
 
         /// <summary>
@@ -1165,15 +1177,15 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             return currency != null ? currency.DecimalPlacesString : "0";
         }
 
-        private void ProcessMessage(ReceiptHeader data, out string message )
+        private void ProcessMessage(ReceiptHeader data, out string message)
         {
             var warnings = new List<EntityError>();
-            
+
             if (data.Warnings.Any())
             {
                 var errorMessages = data.Warnings.ToList();
                 var messages = errorMessages.FindAll(x => x.Priority == Priority.Message);
-                message = ( messages.Count > 0) ? messages.FirstOrDefault().Message : "";
+                message = (messages.Count > 0) ? messages.FirstOrDefault().Message : "";
                 var warningMessage = errorMessages.FindAll(x => x.Priority == Priority.Warning);
 
                 if (warningMessage.Count > 0)
@@ -1202,7 +1214,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>view model</returns>
         private ReceiptViewModel GetViewModel(ReceiptHeader data, ReceiptHeader newData, string receiptNumber, Operation operation)
         {
-            string additionalCurrencyDescription;
+
+            var additionalCurrencyDescription = string.Empty;
             var currencyCode = CurrencyDescription(out additionalCurrencyDescription, newData);
             var message = string.Empty;
             var defaultReceiptNumber = string.Empty;
@@ -1217,9 +1230,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             if (operation == Operation.Add || operation == Operation.Post || operation == Operation.Save)
             {
                 ProcessMessage(data, out message);
+
                 if (string.IsNullOrEmpty(message))
                 {
-                    message = string.Format(ReceiptHeaderResx.SaveMessage, receiptNumber);
+                    message = string.Format("*** TODO. NOT SURE WHY RECEIPT SDK SAMPLE HAS THIS MESSAGE*** {0}", receiptNumber);
                 }
                 message += "\n\nSource: " + DateTime.Now.ToString("T");
             }
@@ -1232,7 +1246,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
                 message = null;
             }
 
-            return new ReceiptViewModel 
+            return new ReceiptViewModel
             {
                 Data = newData,
                 Attributes = GetDynamicAttributesOfHeader(),

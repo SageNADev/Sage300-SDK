@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 /* global kendo */
 /* global globalResource */
@@ -34,7 +34,7 @@ var reportBrowseUI = function () {
 
         dlgReportBrowse.kendoWindow({
             title: globalResource.SelectReport,
-            height: '460px',
+            height: '530px',
             width: '500px',
             draggable: true,
             modal: true,
@@ -78,7 +78,7 @@ var reportBrowseUI = function () {
                 },
                 pageSize: 10
             },
-            height: 380,
+            //height: 380,
             filterMenuInit: onFilterMenuInit,
             filterable: { extra: false },
             pageable: {
@@ -116,7 +116,7 @@ var reportBrowseUI = function () {
 
         btnRptSelect.prop("disabled", true);
 
-        $("span.k-icon.k-i-filter:contains('Filter')").attr("id", "btnFilterHamburgerId");
+        $("span.k-icon.k-i-filter").attr("id", "btnFilterHamburgerId");
         return grid;
     }
 

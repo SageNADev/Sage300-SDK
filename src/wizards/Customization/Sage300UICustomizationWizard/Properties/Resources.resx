@@ -247,4 +247,7 @@
   <data name="WebCustomization" xml:space="preserve">
     <value>Web Customization</value>
   </data>
+  <data name="Template_KendoVersion" xml:space="preserve">
+    <value>The Kendo UI version used in these projects is {0}</value>
+  </data>
 </root>

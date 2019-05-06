@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
   Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
@@ -35,7 +35,7 @@
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -47,6 +47,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -280,6 +281,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -338,7 +343,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\TU\Controllers\Finder\FindReceiptNumberControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\ReceiptController.cs" />
     <Compile Include="Areas\TU\Controllers\ReceiptControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\ReceiptViewModel.cs" />
@@ -403,12 +407,10 @@
     <Content Include="Areas\TU\Views\Web.config" />
     <Content Include="Areas\TU\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Index.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_DetailGridOptionalField.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_ExchangeRate.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_Localization.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_OptionalFieldGrid.cshtml" />
     <Content Include="Areas\TU\Views\Receipt\Partials\_Receipt.cshtml" />
-    <Content Include="Areas\TU\Views\Receipt\Partials\_ReceiptGrid.cshtml" />
+    <Content Include="Areas\TU\Views\Receipt\Partials\ReceiptGrid.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -417,6 +419,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\TU\Controllers\Finder\" />
     <Folder Include="Areas\TU\Controllers\Process\" />
     <Folder Include="Areas\TU\Controllers\Reports\" />
     <Folder Include="Areas\TU\Models\Process\" />

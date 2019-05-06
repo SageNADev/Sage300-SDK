@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,14 +20,13 @@
 
 #region Namespaces
 
-using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository.Base.Statefull;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using ValuedPartner.TU.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Collections.Generic;
+using ValuedPartner.TU.Models;
 
 #endregion
 
@@ -193,11 +192,11 @@ namespace ValuedPartner.TU.Interfaces.BusinessRepository
         /// <returns></returns>
         ReceiptHeader Save(ReceiptHeader model);
 
-       /// <summary>
-       /// Delete a record
-       /// </summary>
-       /// <param name="filter">receipt filter</param>
-       /// <returns></returns>
+        /// <summary>
+        ///  Delete record
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         ReceiptHeader Delete(Expression<Func<ReceiptHeader, bool>> filter);
 
         /// <summary>
@@ -233,7 +232,7 @@ namespace ValuedPartner.TU.Interfaces.BusinessRepository
         /// <summary>
         /// Gets the Details
         /// </summary>
-        /// <param name="currentPageNumber">Current Page Number</param>
+        /// <param name="pageNumber">Current Page Number</param>
         /// <param name="pageSize">Number of records to be retrieved per page</param>
         /// <param name="filter">Filter expression</param>
         /// <param name="orderBy">Sorting order of the records</param>
@@ -243,9 +242,14 @@ namespace ValuedPartner.TU.Interfaces.BusinessRepository
         /// <summary>
         /// Sets pointer to the current Detail
         /// </summary>
-        /// <param name="detail">The current detail.</param>
+        /// <param name="currentDetail">The current detail.</param>
         /// <returns>Model with newly set detail</returns>
         ReceiptHeader SetDetail(ReceiptDetail detail);
+        
+        /// <summary>
+        /// Process detail entity for get default optional field 
+        /// </summary>
+        /// <returns></returns>
+        void DetailProcess();
     }
 }
-

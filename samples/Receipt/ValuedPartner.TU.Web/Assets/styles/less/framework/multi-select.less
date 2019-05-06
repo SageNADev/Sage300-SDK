@@ -72,6 +72,7 @@
   clear: left; 
   border-color: #9a9b9c;
   border-radius: 0;
+  border-width: 1px;
 
   &.xlarge {
     width: 940px;
@@ -99,6 +100,8 @@
 
   .k-multiselect-wrap {
     border-radius: 0;
+    border: none;
+    min-height: 28px;
 
     .k-select {
       position: absolute;
@@ -109,16 +112,16 @@
 
     li {
       margin: 1px 5px 1px 1px;
-      padding: 0 10px;
+      padding: 0 16px 0 10px;;
       float: left;
       position: relative;
       border: none;
       background: none;
-      line-height: 1.9;
+      line-height: 1.7;
 
       .k-icon {
-        margin-right: .4em;
-        background-position: -210px -1px;
+        margin-right: 4px;
+        background: none;
         width: 20px;
         height: 20px;
         top: 0;

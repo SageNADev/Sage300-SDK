@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,6 +19,10 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using ACCPAC.Advantage;
+using EnvDTE;
+using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,10 +30,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using EnvDTE;
-using EnvDTE80;
-using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
-using ACCPAC.Advantage;
 using System.Xml.Linq;
 #endregion
 
@@ -605,7 +605,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGeneration, GlobalConstants.Version);
+            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
@@ -1291,6 +1291,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Options tab
             chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
+            chkGenerateGrid.Checked = businessView.Options[BusinessView.Constants.GenerateGrid];
+            chkSequenceRevisionList.Checked = businessView.Options[BusinessView.Constants.SeqenceRevisionList];
             chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
             chkGenerateClientFiles.Checked = businessView.Options[BusinessView.Constants.GenerateClientFiles];
             chkGenerateIfExist.Checked = businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists];
@@ -1479,6 +1481,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties[BusinessView.Constants.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
 
             businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
+            businessView.Options[BusinessView.Constants.GenerateGrid] = chkGenerateGrid.Checked;
+            businessView.Options[BusinessView.Constants.SeqenceRevisionList] = chkSequenceRevisionList.Checked;
             businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
             businessView.Options[BusinessView.Constants.GenerateClientFiles] = chkGenerateClientFiles.Checked;
             businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
@@ -1643,6 +1647,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!repositoryType.Equals(RepositoryType.Report) && !repositoryType.Equals(RepositoryType.DynamicQuery))
             {
                 text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyGrid + "=\"" + businessView.Options[BusinessView.Constants.GenerateGrid].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyEnablement + "=\"" + businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
             }
 
@@ -1801,6 +1806,54 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return headerNode;
         }
 
+        private void ParseXml(String xmlFilename)
+        {
+            var xdoc = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
+
+            _entitiesContainerName = xdoc.Root.Attribute("container").Value;
+
+            // open all the entities
+            foreach (var ent in xdoc.Root.Descendants().Where(e => e.Name == "entity"))
+            {
+                var businessView = new BusinessView();
+
+                businessView.Properties[BusinessView.Constants.ModuleId] = ent.Attribute(ProcessGeneration.Constants.PropertyModule).Value;
+                businessView.Properties[BusinessView.Constants.ViewId] = ent.Attribute(ProcessGeneration.Constants.PropertyViewId).Value;
+
+                ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
+        txtCompany.Text.Trim(), txtVersion.Text.Trim(), businessView.Properties[BusinessView.Constants.ViewId], businessView.Properties[BusinessView.Constants.ModuleId]);
+
+                businessView.Properties[BusinessView.Constants.EntityName] = ent.Attribute(ProcessGeneration.Constants.PropertyEntity).Value;
+                businessView.Properties[BusinessView.Constants.ModelName] = ent.Attribute(ProcessGeneration.Constants.PropertyModel).Value;
+                businessView.Properties[BusinessView.Constants.ResxName] = ent.Attribute(ProcessGeneration.Constants.PropertyResxName).Value;
+
+                // compositions
+                foreach (var compositionElem in ent.Elements().Where(e => e.Name == "compositions").Descendants())
+                {
+                    var composition = new Composition();
+
+                    composition.ViewId = compositionElem.Attribute(ProcessGeneration.Constants.PropertyViewId).Value;
+                    composition.EntityName = compositionElem.Attribute(ProcessGeneration.Constants.PropertyEntity).Value;
+                    composition.Include = bool.Parse(compositionElem.Attribute(ProcessGeneration.Constants.PropertyInclude).Value);
+                    businessView.Compositions.Add(composition);
+                }
+
+
+                // options
+                var option = ent.Elements().Where(e => e.Name == "options").Descendants().First();
+
+                businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
+                businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
+                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList).Value);
+                businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
+                businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
+                businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyIfExists).Value);
+                businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySingleFile).Value);
+
+                _entities.Add(businessView);
+            }
+        }
+
         /// <summary> Next/Generate Navigation </summary>
         /// <remarks>Next wizard step or Generate if last step</remarks>
         private void NextStep()
@@ -1863,6 +1916,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     if (IsCurrentPanel(Constants.PanelGenerateCode))
                     {
                         _xmlEntities = BuildXDocument();
+
+                        //_xmlEntities = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
+                        //ParseXml(@"C:\AAA\apdistributionsetschema.xml");
+
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
 
                         // for header-detail type, mark each entity in the header-detail tree
@@ -1870,7 +1927,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         {
                             // find the header node
                             _headerNode = FindHeaderNode(_xmlEntities);
-
                             
                             var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == ProcessGeneration.Constants.PropertyEntity);
 
@@ -1914,6 +1970,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Make certain properties into attributes
                 entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity, businessView.Properties[BusinessView.Constants.EntityName]));
                 entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModule, businessView.Properties[BusinessView.Constants.ModuleId]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModel, businessView.Properties[BusinessView.Constants.ModelName]));
 
                 // Show view id if not a report
                 if (!repositoryType.Equals(RepositoryType.Report))
@@ -1939,6 +1996,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var optionsElement = new XElement(ProcessGeneration.Constants.PropertyOptions);
                 var optionElement = new XElement(ProcessGeneration.Constants.PropertyOption);
 
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGrid, businessView.Options[BusinessView.Constants.GenerateGrid].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder, businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement, businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyClientFiles, businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString()));
@@ -1956,7 +2014,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var businessField in businessView.Fields)
                 {
                     var fieldElement = new XElement(ProcessGeneration.Constants.PropertyField);
-
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFieldName, businessField.ServerFieldName));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName, businessField.Name));
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType, businessField.Type.ToString()));
@@ -2469,6 +2526,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ModuleId = cboModule.Text.Trim(),
 
                 Entities = _entities,
+
                 XmlEntities = _xmlEntities,
 
                 PromptIfExists = false,
@@ -3098,7 +3156,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
                 _allCompositions.Location = new Point(rect.Location.X + 18, rect.Location.Y + 2);
             }
-
         }
 
 #endregion

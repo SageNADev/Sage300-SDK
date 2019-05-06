@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -70,7 +70,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (generateClientFiles || generateFinder) { UpdateWebBootStrapperNamespaces(view, settings); }
             if (generateClientFiles) { UpdateWebBootStrapper(view, settings); }
-            if (generateFinder) { UpdateWebBootStrapperForFinder(view, settings); }
 
             UpdateBootStrapper(view, settings);
         }
@@ -541,7 +540,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                     "using " + modelProjectNS + ";" ,
                     "using " + webProjectNS + ".Areas." + moduleId + ".Controllers;",
-                    "using " + webProjectNS + ".Areas." + moduleId + ".Controllers.Finder;"
                 };
 
             for (var i = 0; i < namespaces.Length; i++)
@@ -599,48 +597,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Line was not found so we will now insert it.
                     txtLines.Insert(insertionIndex, linesToAdd[i]);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Register types for Finder
-        /// </summary>
-        /// <param name="view">Business View</param>
-        /// <param name="settings">Settings</param>
-        private static void UpdateWebBootStrapperForFinder(BusinessView view, Settings settings)
-        {
-            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
-            var entityName = view.Properties[BusinessView.Constants.EntityName];
-            var modelName = view.Properties[BusinessView.Constants.ModelName];
-            var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
-
-            var filename = moduleId + Constants.WebBootstrapperFilenameBase;
-            var filePath = Path.Combine(pathProj, filename);
-            if (File.Exists(filePath))
-            {
-                var pos = 1;
-
-                // Load the file and make the working lists
-                MakeLists(filePath,
-                          out List<string> trimLines,
-                          out List<string> txtLines);
-
-                string methodSignature = @"private void RegisterFinder(IUnityContainer container)";
-                const string register = "\t\t\tUnityUtil.RegisterType";
-                var lineToAdd = string.Format(register + "<IFinder, Find{0}ControllerInternal<{3}>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", 
-                                               entityName, moduleId.ToLower(), entityName.ToLower(), modelName);
-
-                var methodSignatureIndex = trimLines.IndexOf(methodSignature);
-                var insertionIndex = methodSignatureIndex + 1 + pos;
-
-                // Need to remove the tabs '\t' before doing the lookup.
-                if (trimLines.IndexOf(lineToAdd.Trim()) == Constants.NotFoundInList)
-                {
-                    // Line was not found so we will now insert it.
-                    txtLines.Insert(insertionIndex, lineToAdd);
-                }
-
-                File.WriteAllLines(filePath, txtLines);
             }
         }
 

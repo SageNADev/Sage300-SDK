@@ -35,17 +35,17 @@ namespace ValuedPartner.TU.Web
         {
 			#region SourceJournalProfile
 			bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfile").Include(
-				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileBehaviour.js",
-				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileKoExtn.js",
-				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSourceJournalProfileRepository.js",
+				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileBehaviour.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileKoExtn.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSource.TU.JournalProfileRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
 
             #region SourceJournalProfileReport
             bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfileReport").Include(
-                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportBehaviour.js",
-                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportKoExtn.js",
-                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartnerSourceJournalProfileReportRepository.js",
+                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartner.TU.SourceJournalProfileReportBehaviour.js",
+                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartner.TU.SourceJournalProfileReportKoExtn.js",
+                "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartner.TU.SourceJournalProfileReportRepository.js",
                 "~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
             #endregion
         }

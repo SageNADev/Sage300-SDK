@@ -349,7 +349,7 @@
             this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
             this.lblKendoVersionHelp.Size = new System.Drawing.Size(293, 36);
             this.lblKendoVersionHelp.TabIndex = 6;
-            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2016.2.714";
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2019.1.115";
             // 
             // lblKendoLink
             // 

@@ -225,7 +225,7 @@
     <value>The generated projects require the kendo.all.min.js file in order to compile successfully. A Kendo UI Commercial License must be purchased in order to use this file.</value>
   </data>
   <data name="KendoVersionTip" xml:space="preserve">
-    <value>The Kendo UI version used in these projects is v2016.2.714</value>
+    <value>The Kendo UI version used in these projects is v2019.1.115</value>
   </data>
   <data name="ModuleId" xml:space="preserve">
     <value>Module ID:</value>

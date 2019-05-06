@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -116,6 +116,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
                         <#=resxName#>.<#=keyFieldName#>));
             }
+
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+			#>
+
 
             return View(viewModel);
         }

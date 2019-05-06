@@ -388,7 +388,7 @@
   <data name="ViewNameTip" xml:space="preserve">
     <value>Defaulted from the business view and can be overridden</value>
   </data>
-  <data name="CodeGeneration" xml:space="preserve">
+  <data name="CodeGenerationWizardTitle_Template" xml:space="preserve">
     <value>Code Generation Wizard - V{0}</value>
   </data>
   <data name="AddEntity" xml:space="preserve">

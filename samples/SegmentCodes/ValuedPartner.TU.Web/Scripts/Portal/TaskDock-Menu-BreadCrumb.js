@@ -194,7 +194,7 @@ $(document).ready(function () {
 
     //close submenu after opening a screen
 
-    $(".menu-section a").click(
+    $(".menu-section a:not(.with-menu)").click(
         function () {
             if ($('html').hasClass('page-collapsed')) {
                 $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
@@ -234,7 +234,6 @@ $(document).ready(function () {
     $(".portalIcon.checkBox span.checkBox").removeClass("icon");
 
     initializeMainMenu();
-    initializeExtraMenu();
 
     // Initialize count of currently open UI windows (it should be 0)
     $('#spWindowCount').text($('#dvWindows').children().length);
@@ -354,79 +353,50 @@ $(document).ready(function () {
         }
     }
 
-    function initializeExtraMenu() {
+    function initializeMainMenu() {
         var $menu = $(".side-nav .std-menu");
+        var $subLevelMenu = $(".side-nav .std-menu ul");
 
         $menu.menuAim({
-            activate: activateSubmenu,
-            deactivate: deactivateSubmenu,
-            exitMenu: exitSubmenu
+            activate: function (row) {
+                var $row = $(row);
+                if ($row.hasClass("sub-heading")) { // move on to the first menu (non-header) item if user is moused to header
+                    $row = $row.next();
+                } 
+                $row.find(".sub-menu-wrap").first().show();
+                // clear the possibility of first menu to be active
+                $row.siblings("li:not(.sub-heading)").first().find('a:first').removeClass('active');
+                $row.find("a:first").addClass("active");
+            },
+            deactivate: function (row) {
+                var $row = $(row);
+                if ($row.hasClass("sub-heading")) { // move on to the first menu (non-header) item if user is moused to header
+                    $row = $row.next();
+                } 
+                $row.find(".sub-menu-wrap").first().hide();
+                $row.find("a:first").removeClass('active');
+            }
         });
 
-        function activateSubmenu(row) {
-            var $row = $(row),
-                $submenu = $row.find(".sub-menu-wrap"); //,
-
-            // Show the submenu
-            $submenu.css({
-                display: "block"
-            });
-
-            $row.find("a:first").addClass("active");
-        }
-
-        function deactivateSubmenu(row) {
-            var $row = $(row),
-                $submenu = $row.find(".sub-menu-wrap");
-        }
-
-        function exitSubmenu(row) {
-            var $row = $(row);
-        }
+        $subLevelMenu.menuAim({
+            activate: function (row) {
+                var $submenu = $(row).find(".sub-menu-wrap").first();
+                $submenu.addClass("child");
+                $submenu.show();
+            },
+            deactivate: function (row) {
+                var $submenu = $(row).find(".sub-menu-wrap").first()
+                $submenu.hide();
+                $submenu.removeClass("child");
+            },
+            exitMenu: function (row) {
+                return true; // to deactivate current row
+            }
+        });
 
         $(".side-nav .std-menu li").click(function (e) {
             e.stopPropagation();
             window.scrollTo(0, 0);
-        });
-
-    }
-
-    function initializeMainMenu() {
-        var $menu = $(".side-nav .std-menu");
-
-        $menu.menuAim({
-            activate: activateSubmenu,
-            deactivate: deactivateSubmenu,
-            exitMenu: exitSubmenu
-        });
-
-        function activateSubmenu(row) {
-            var $row = $(row),
-                $submenu = $row.find(".sub-menu-wrap"); //,
-
-            $row.not('.sub-heading').siblings().find('.sub-menu-wrap').hide();
-
-            // Show the submenu
-            $submenu.css({
-                display: 'block'
-            });
-
-            if ($row.hasClass('sub-heading') == false) {
-                $row.find('a:first').addClass('active').end().siblings().find('a:first').removeClass('active');
-            }
-        }
-
-        function deactivateSubmenu(row) {
-            var $row = $(row),
-                $submenu = $row.find(".sub-menu-wrap");
-        }
-
-        function exitSubmenu(row) {
-            var $row = $(row);
-        }
-
-        $(".side-nav .std-menu li").click(function (e) {
-            e.stopPropagation();
         });
 
         $('.side-nav .menu-item').children('label, a, .nav-icon').click(function () {
@@ -858,8 +828,7 @@ $(document).ready(function () {
 
     // TO DO : Move the below piece of code to Index page where you put your frame
     // Invoked from the main menu
-    $(".menu-section a").on("click", function (event) {
-
+    $(".menu-section a:not(.with-menu)").on("click", function(event) {
         // remove home button activated style
         $('#homeNav').removeClass('active').children("a").removeClass('active');
         $('html').removeClass('home-page');
@@ -969,7 +938,7 @@ $(document).ready(function () {
 
             //Add Child items to array
             jQuery.each(MenuList, function (i, val) {
-                if (val.Data.ParentMenuId == parentidVal && val.Data.IsGroupHeader == false) {
+                if (val.Data.ParentMenuId == parentidVal && val.Data.IsGroupHeader == false && val.Data.HasSubGroup == false) {
                     var windowsDockTitle = val.Data.MenuName;
                     //   var title = val.Data.MenuName.length <= 25 ? val.Data.MenuName : val.Data.MenuName.substring(0, 25) + "...";
                     var screenurl = (val.Data.ScreenUrl == "N/A") ? "" : portalBehaviourResources.DomainUrl + val.Data.ScreenUrl;

@@ -261,6 +261,10 @@ a:hover {
             .k-i-close{
                 border: none;
                 background-position:-71px -15px;
+
+                &:before {
+                    content: none;
+                }
             }
         }
     }
@@ -277,6 +281,10 @@ a:hover {
             }
 
         }
+    }
+
+    .message-control {
+        margin-bottom: 0;
     }
 }
 
@@ -314,7 +322,8 @@ a:hover {
         margin-top: -50px !important;
 
         .k-window-actions {
-             top: 3px; 
+            top: -42px;
+            right: 6px;
         }
     }
 }
