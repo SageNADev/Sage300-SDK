@@ -64,16 +64,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2019.1";
+            public const string FromReleaseNumber = "2019.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2019.2";
+            public const string ToReleaseNumber = "2020.0";
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "6.6.0.0";
+            public const string FromAccpacNumber = "6.6.0.10";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.6.0.10";
+            public const string ToAccpacNumber = "6.7.0.0";
         }
     }
 }
