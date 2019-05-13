@@ -167,6 +167,9 @@
   <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -313,5 +316,14 @@
   </data>
   <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
     <value>Update targeted version of .NET Framework</value>
+  </data>
+  <data name="ReleaseAllDescSyncKendoFiles" xml:space="preserve">
+    <value>This step will upgrade the Kendo JavaScript files in the solution.</value>
+  </data>
+  <data name="ReleaseAllTitleSyncKendoFiles" xml:space="preserve">
+    <value>Synchronize Kendo files</value>
+  </data>
+  <data name="CopiedKendoFileFrom" xml:space="preserve">
+    <value>Copied Kendo files from</value>
   </data>
 </root>
