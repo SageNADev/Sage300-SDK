@@ -164,6 +164,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\ReleaseAllSyncKendoFiles.txt" />
     <Content Include="content\ReleaseAllUpgrade.txt" />
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
