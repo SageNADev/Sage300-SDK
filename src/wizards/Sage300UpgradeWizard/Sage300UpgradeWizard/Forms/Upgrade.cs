@@ -160,9 +160,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber),
                     BuildMainContentStep());
 
-            AddStep(Resources.ReleaseAllTitleSyncWebFiles,
-                    Resources.ReleaseAllDescSyncWebFiles,
-                    Resources.ReleaseAllSyncWebFiles);
+            AddStep(Resources.ReleaseAllTitleSyncKendoFiles, Resources.ReleaseAllDescSyncKendoFiles, Resources.ReleaseAllSyncKendoFiles);
+
+            AddStep(Resources.ReleaseAllTitleSyncWebFiles, Resources.ReleaseAllDescSyncWebFiles, Resources.ReleaseAllSyncWebFiles);
 
             #endregion
 
@@ -221,6 +221,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Same for all upgrades
             content.AppendLine(Resources.FollowingSteps);
             content.AppendLine("");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
             // Not necessary for 2019.2 release

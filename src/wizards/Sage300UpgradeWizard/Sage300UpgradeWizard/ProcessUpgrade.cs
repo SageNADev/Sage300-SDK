@@ -19,10 +19,13 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+
 using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
 using System.IO;
+
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -91,11 +94,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				{
                     #region Common Upgrade Steps
                     case 1:
+                        SyncKendoFiles(title);
+                        break;
+
+                    case 2:
                         SyncWebFiles(title);
                         break;
 
                     // Not necessary for 2019.2 release
-					//case 2:
+					//case 3:
                     //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
                     //    break;
 
@@ -108,7 +115,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    case 2:
+                    case 3:
                         UpdateTargetedDotNetFrameworkVersion(title);
                         break;
 
@@ -124,6 +131,31 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         #endregion
 
         #region Private methods
+
+        /// <summary> Synchronization of Kendo files </summary>
+        /// <param name="title">Title of step being processed </param>
+        private void SyncKendoFiles(string title)
+        {
+            // Log start of step
+            LogEventStart(title);
+
+            // Prepare Kendo source paths
+            var webFolder = RegistryHelper.Sage300CWebFolder;
+            var kendoFolderSource = Path.Combine(webFolder, "Scripts", "Kendo");
+            var kendoFileSource = Path.Combine(kendoFolderSource, "kendo.all.min.js");
+
+            // ... and destination paths
+            var kendoFolderDest = Path.Combine(_settings.DestinationWebFolder, "Scripts", "Kendo");
+            var kendoFileDest = Path.Combine(_settings.DestinationWebFolder, kendoFolderDest, "kendo.all.min.js");
+
+            // Copy files
+            File.Copy(kendoFileSource, kendoFileDest, true);
+            Log($"{Resources.CopiedKendoFileFrom} '{kendoFolderSource}' {Resources.To} '{kendoFolderDest}'.");
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
 
         /// <summary> Synchronization of web project files </summary>
         /// <param name="title">Title of step being processed </param>

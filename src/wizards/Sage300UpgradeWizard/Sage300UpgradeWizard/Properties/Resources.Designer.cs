@@ -142,6 +142,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied Kendo files from.
+        /// </summary>
+        internal static string CopiedKendoFileFrom {
+            get {
+                return ResourceManager.GetString("CopiedKendoFileFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         internal static string Dash {
@@ -377,6 +386,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will upgrade the Kendo JavaScript files in the solution..
+        /// </summary>
+        internal static string ReleaseAllDescSyncKendoFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllDescSyncKendoFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This step will upgrade the various global files included in the solution..
         /// </summary>
         internal static string ReleaseAllDescSyncWebFiles {
@@ -396,6 +414,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseAllSyncAccpacLibs {
             get {
                 return ResourceManager.GetString("ReleaseAllSyncAccpacLibs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kendo placeholder.
+        /// </summary>
+        internal static string ReleaseAllSyncKendoFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllSyncKendoFiles", resourceCulture);
             }
         }
         
@@ -442,6 +469,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseAllTitleSyncAccpacLibs {
             get {
                 return ResourceManager.GetString("ReleaseAllTitleSyncAccpacLibs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synchronize Kendo files.
+        /// </summary>
+        internal static string ReleaseAllTitleSyncKendoFiles {
+            get {
+                return ResourceManager.GetString("ReleaseAllTitleSyncKendoFiles", resourceCulture);
             }
         }
         
