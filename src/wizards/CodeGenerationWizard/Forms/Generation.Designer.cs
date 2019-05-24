@@ -81,6 +81,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnIniDialog = new System.Windows.Forms.Button();
             this.lblEntityName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkGenerateEnumerationsInSingleFile = new System.Windows.Forms.CheckBox();
             this.chkSequenceRevisionList = new System.Windows.Forms.CheckBox();
             this.chkGenerateGrid = new System.Windows.Forms.CheckBox();
             this.chkGenerateIfExist = new System.Windows.Forms.CheckBox();
@@ -107,7 +108,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkGenerateEnumerationsInSingleFile = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdResourceInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
@@ -158,7 +158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(83, 22);
             this.txtVersion.TabIndex = 8;
-            this.txtVersion.Text = "66A";
+            this.txtVersion.Text = "67A";
             // 
             // lblPassword
             // 
@@ -360,9 +360,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlCodeType.Controls.Add(this.grpCredentials);
             this.pnlCodeType.Controls.Add(this.lblModule);
             this.pnlCodeType.Controls.Add(this.cboModule);
-            this.pnlCodeType.Location = new System.Drawing.Point(829, 17);
+            this.pnlCodeType.Location = new System.Drawing.Point(49, 42);
             this.pnlCodeType.Name = "pnlCodeType";
-            this.pnlCodeType.Size = new System.Drawing.Size(357, 65);
+            this.pnlCodeType.Size = new System.Drawing.Size(638, 289);
             this.pnlCodeType.TabIndex = 44;
             // 
             // lblCodeTypeFilesHelp
@@ -447,9 +447,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlEntities
             // 
             this.pnlEntities.Controls.Add(this.splitEntities);
-            this.pnlEntities.Location = new System.Drawing.Point(16, 17);
+            this.pnlEntities.Location = new System.Drawing.Point(828, 115);
             this.pnlEntities.Name = "pnlEntities";
-            this.pnlEntities.Size = new System.Drawing.Size(709, 379);
+            this.pnlEntities.Size = new System.Drawing.Size(397, 73);
             this.pnlEntities.TabIndex = 45;
             // 
             // splitEntities
@@ -467,8 +467,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitEntities.Panel2
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
-            this.splitEntities.Size = new System.Drawing.Size(709, 379);
-            this.splitEntities.SplitterDistance = 209;
+            this.splitEntities.Size = new System.Drawing.Size(397, 73);
+            this.splitEntities.SplitterDistance = 40;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -478,7 +478,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(709, 209);
+            this.pnlEntityTree.Size = new System.Drawing.Size(397, 40);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -487,7 +487,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(709, 183);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(397, 14);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -496,7 +496,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(709, 183);
+            this.treeEntities.Size = new System.Drawing.Size(397, 14);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
             this.treeEntities.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseDoubleClick);
@@ -507,7 +507,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntitiesLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEntitiesLabel.Location = new System.Drawing.Point(0, 0);
             this.pnlEntitiesLabel.Name = "pnlEntitiesLabel";
-            this.pnlEntitiesLabel.Size = new System.Drawing.Size(709, 26);
+            this.pnlEntitiesLabel.Size = new System.Drawing.Size(397, 26);
             this.pnlEntitiesLabel.TabIndex = 2;
             // 
             // lblEntities
@@ -517,7 +517,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntities.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblEntities.Location = new System.Drawing.Point(0, 0);
             this.lblEntities.Name = "lblEntities";
-            this.lblEntities.Size = new System.Drawing.Size(709, 13);
+            this.lblEntities.Size = new System.Drawing.Size(397, 13);
             this.lblEntities.TabIndex = 1;
             this.lblEntities.Text = "Right-Click on entities or entity to Add, Edit or Delete";
             // 
@@ -531,7 +531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
             this.tabEntity.SelectedIndex = 0;
-            this.tabEntity.Size = new System.Drawing.Size(709, 166);
+            this.tabEntity.Size = new System.Drawing.Size(397, 29);
             this.tabEntity.TabIndex = 1;
             this.tabEntity.Click += new System.EventHandler(this.tabEntity_Click);
             // 
@@ -555,7 +555,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(701, 140);
+            this.tabPage1.Size = new System.Drawing.Size(389, 3);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -694,10 +694,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(701, 140);
+            this.tabPage2.Size = new System.Drawing.Size(389, 3);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chkGenerateEnumerationsInSingleFile
+            // 
+            this.chkGenerateEnumerationsInSingleFile.AutoSize = true;
+            this.chkGenerateEnumerationsInSingleFile.Enabled = false;
+            this.chkGenerateEnumerationsInSingleFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGenerateEnumerationsInSingleFile.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.chkGenerateEnumerationsInSingleFile.Location = new System.Drawing.Point(15, 111);
+            this.chkGenerateEnumerationsInSingleFile.Name = "chkGenerateEnumerationsInSingleFile";
+            this.chkGenerateEnumerationsInSingleFile.Size = new System.Drawing.Size(216, 17);
+            this.chkGenerateEnumerationsInSingleFile.TabIndex = 25;
+            this.chkGenerateEnumerationsInSingleFile.Text = "Generate Enumerations in Single File";
+            this.chkGenerateEnumerationsInSingleFile.UseVisualStyleBackColor = true;
             // 
             // chkSequenceRevisionList
             // 
@@ -772,7 +785,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.Controls.Add(this.pnlColumns);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(701, 140);
+            this.tabPage3.Size = new System.Drawing.Size(389, 3);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -784,7 +797,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(701, 140);
+            this.pnlColumns.Size = new System.Drawing.Size(389, 3);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -795,7 +808,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 27);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(701, 113);
+            this.grdEntityFields.Size = new System.Drawing.Size(389, 0);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -807,7 +820,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows});
             this.tbrEntity.Location = new System.Drawing.Point(0, 0);
             this.tbrEntity.Name = "tbrEntity";
-            this.tbrEntity.Size = new System.Drawing.Size(701, 27);
+            this.tbrEntity.Size = new System.Drawing.Size(389, 27);
             this.tbrEntity.TabIndex = 17;
             this.tbrEntity.Text = "toolStrip1";
             // 
@@ -846,7 +859,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.Controls.Add(this.pnlComposition);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(701, 140);
+            this.tabPage4.Size = new System.Drawing.Size(389, 3);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -857,7 +870,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(701, 140);
+            this.pnlComposition.Size = new System.Drawing.Size(389, 3);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -868,7 +881,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(701, 140);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(389, 3);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
             // 
@@ -976,19 +989,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // chkGenerateEnumerationsInSingleFile
-            // 
-            this.chkGenerateEnumerationsInSingleFile.AutoSize = true;
-            this.chkGenerateEnumerationsInSingleFile.Enabled = false;
-            this.chkGenerateEnumerationsInSingleFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGenerateEnumerationsInSingleFile.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.chkGenerateEnumerationsInSingleFile.Location = new System.Drawing.Point(15, 111);
-            this.chkGenerateEnumerationsInSingleFile.Name = "chkGenerateEnumerationsInSingleFile";
-            this.chkGenerateEnumerationsInSingleFile.Size = new System.Drawing.Size(216, 17);
-            this.chkGenerateEnumerationsInSingleFile.TabIndex = 25;
-            this.chkGenerateEnumerationsInSingleFile.Text = "Generate Enumerations in Single File";
-            this.chkGenerateEnumerationsInSingleFile.UseVisualStyleBackColor = true;
             // 
             // Generation
             // 
