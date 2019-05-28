@@ -30,106 +30,180 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInputForm));
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.lblModuleId = new System.Windows.Forms.Label();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtApplicationID = new System.Windows.Forms.TextBox();
-            this.txtNamespace = new System.Windows.Forms.TextBox();
-            this.lblNamespace = new System.Windows.Forms.Label();
+            this.lblCompanyName = new MetroFramework.Controls.MetroLabel();
+            this.lblModuleId = new MetroFramework.Controls.MetroLabel();
+            this.txtCompanyName = new MetroFramework.Controls.MetroTextBox();
+            this.txtApplicationID = new MetroFramework.Controls.MetroTextBox();
+            this.txtNamespace = new MetroFramework.Controls.MetroTextBox();
+            this.lblNamespace = new MetroFramework.Controls.MetroLabel();
             this.splitBase = new System.Windows.Forms.SplitContainer();
-            this.lblStepDescription = new System.Windows.Forms.Label();
-            this.lblStepTitle = new System.Windows.Forms.Label();
+            this.lblUpperBorder = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblStepDescription = new MetroFramework.Controls.MetroLabel();
+            this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
             this.pnlInfo = new System.Windows.Forms.Panel();
-            this.txtNamespaceExample = new System.Windows.Forms.TextBox();
-            this.lblNamespaceExample = new System.Windows.Forms.Label();
+            this.txtNamespaceExample = new MetroFramework.Controls.MetroTextBox();
+            this.lblNamespaceExample = new MetroFramework.Controls.MetroLabel();
             this.pnlGenerateSolution = new System.Windows.Forms.Panel();
-            this.lblGenerateHelp = new System.Windows.Forms.Label();
-            this.pnlResourceFiles = new System.Windows.Forms.Panel();
-            this.chkFrench = new System.Windows.Forms.CheckBox();
-            this.chkSpanish = new System.Windows.Forms.CheckBox();
-            this.chkChineseTraditional = new System.Windows.Forms.CheckBox();
-            this.chkChineseSimplified = new System.Windows.Forms.CheckBox();
-            this.chkEnglish = new System.Windows.Forms.CheckBox();
+            this.lblGenerateHelp = new MetroFramework.Controls.MetroLabel();
             this.pnlKendo = new System.Windows.Forms.Panel();
-            this.lblKendoVersionHelp = new System.Windows.Forms.Label();
+            this.lblKendoVersionHelp = new MetroFramework.Controls.MetroLabel();
             this.lblKendoLink = new System.Windows.Forms.LinkLabel();
-            this.lblKendoFolderHelp = new System.Windows.Forms.Label();
-            this.btnKendoDialog = new System.Windows.Forms.Button();
-            this.txtKendoFolder = new System.Windows.Forms.TextBox();
-            this.lblKendoFolder = new System.Windows.Forms.Label();
-            this.chkKendoLicense = new System.Windows.Forms.CheckBox();
+            this.lblKendoFolderHelp = new MetroFramework.Controls.MetroLabel();
+            this.txtKendoFolder = new MetroFramework.Controls.MetroTextBox();
+            this.chkKendoLicense = new MetroFramework.Controls.MetroCheckBox();
+            this.pnlResourceFiles = new System.Windows.Forms.Panel();
+            this.chkFrench = new MetroFramework.Controls.MetroCheckBox();
+            this.chkSpanish = new MetroFramework.Controls.MetroCheckBox();
+            this.chkChineseTraditional = new MetroFramework.Controls.MetroCheckBox();
+            this.chkChineseSimplified = new MetroFramework.Controls.MetroCheckBox();
+            this.chkEnglish = new MetroFramework.Controls.MetroCheckBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.lblLowerBorder = new System.Windows.Forms.Label();
+            this.btnNext = new MetroFramework.Controls.MetroButton();
+            this.btnBack = new MetroFramework.Controls.MetroButton();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
             this.splitBase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).BeginInit();
             this.splitSteps.Panel1.SuspendLayout();
             this.splitSteps.Panel2.SuspendLayout();
             this.splitSteps.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.pnlGenerateSolution.SuspendLayout();
-            this.pnlResourceFiles.SuspendLayout();
             this.pnlKendo.SuspendLayout();
+            this.pnlResourceFiles.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(34, 25);
+            this.lblCompanyName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblCompanyName.Location = new System.Drawing.Point(34, 26);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(90, 13);
+            this.lblCompanyName.Size = new System.Drawing.Size(111, 19);
             this.lblCompanyName.TabIndex = 1;
             this.lblCompanyName.Text = "Company Name:";
             // 
             // lblModuleId
             // 
             this.lblModuleId.AutoSize = true;
-            this.lblModuleId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModuleId.Location = new System.Drawing.Point(60, 51);
+            this.lblModuleId.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblModuleId.Location = new System.Drawing.Point(68, 55);
             this.lblModuleId.Name = "lblModuleId";
-            this.lblModuleId.Size = new System.Drawing.Size(64, 13);
+            this.lblModuleId.Size = new System.Drawing.Size(77, 19);
             this.lblModuleId.TabIndex = 2;
             this.lblModuleId.Text = "Module ID:";
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(125, 22);
+            // 
+            // 
+            // 
+            this.txtCompanyName.CustomButton.Image = null;
+            this.txtCompanyName.CustomButton.Location = new System.Drawing.Point(214, 1);
+            this.txtCompanyName.CustomButton.Name = "";
+            this.txtCompanyName.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtCompanyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCompanyName.CustomButton.TabIndex = 1;
+            this.txtCompanyName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCompanyName.CustomButton.UseSelectable = true;
+            this.txtCompanyName.CustomButton.Visible = false;
+            this.txtCompanyName.Lines = new string[0];
+            this.txtCompanyName.Location = new System.Drawing.Point(147, 25);
+            this.txtCompanyName.MaxLength = 32767;
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(238, 20);
+            this.txtCompanyName.PasswordChar = '\0';
+            this.txtCompanyName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCompanyName.SelectedText = "";
+            this.txtCompanyName.SelectionLength = 0;
+            this.txtCompanyName.SelectionStart = 0;
+            this.txtCompanyName.ShortcutsEnabled = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(238, 25);
+            this.txtCompanyName.Style = MetroFramework.MetroColorStyle.Green;
             this.txtCompanyName.TabIndex = 1;
+            this.txtCompanyName.UseSelectable = true;
+            this.txtCompanyName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCompanyName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtCompanyName.TextChanged += new System.EventHandler(this.txtCompanyName_TextChanged);
             // 
             // txtApplicationID
             // 
             this.txtApplicationID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApplicationID.Location = new System.Drawing.Point(125, 48);
+            // 
+            // 
+            // 
+            this.txtApplicationID.CustomButton.Image = null;
+            this.txtApplicationID.CustomButton.Location = new System.Drawing.Point(83, 1);
+            this.txtApplicationID.CustomButton.Name = "";
+            this.txtApplicationID.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtApplicationID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtApplicationID.CustomButton.TabIndex = 1;
+            this.txtApplicationID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtApplicationID.CustomButton.UseSelectable = true;
+            this.txtApplicationID.CustomButton.Visible = false;
+            this.txtApplicationID.Lines = new string[0];
+            this.txtApplicationID.Location = new System.Drawing.Point(147, 54);
+            this.txtApplicationID.MaxLength = 32767;
             this.txtApplicationID.Name = "txtApplicationID";
-            this.txtApplicationID.Size = new System.Drawing.Size(107, 20);
+            this.txtApplicationID.PasswordChar = '\0';
+            this.txtApplicationID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtApplicationID.SelectedText = "";
+            this.txtApplicationID.SelectionLength = 0;
+            this.txtApplicationID.SelectionStart = 0;
+            this.txtApplicationID.ShortcutsEnabled = true;
+            this.txtApplicationID.Size = new System.Drawing.Size(107, 25);
+            this.txtApplicationID.Style = MetroFramework.MetroColorStyle.Green;
             this.txtApplicationID.TabIndex = 2;
+            this.txtApplicationID.UseSelectable = true;
+            this.txtApplicationID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtApplicationID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtApplicationID.TextChanged += new System.EventHandler(this.txtApplicationID_TextChanged);
             // 
             // txtNamespace
             // 
-            this.txtNamespace.Location = new System.Drawing.Point(125, 74);
+            // 
+            // 
+            // 
+            this.txtNamespace.CustomButton.Image = null;
+            this.txtNamespace.CustomButton.Location = new System.Drawing.Point(214, 1);
+            this.txtNamespace.CustomButton.Name = "";
+            this.txtNamespace.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtNamespace.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNamespace.CustomButton.TabIndex = 1;
+            this.txtNamespace.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNamespace.CustomButton.UseSelectable = true;
+            this.txtNamespace.CustomButton.Visible = false;
+            this.txtNamespace.Lines = new string[0];
+            this.txtNamespace.Location = new System.Drawing.Point(147, 83);
+            this.txtNamespace.MaxLength = 32767;
             this.txtNamespace.Name = "txtNamespace";
-            this.txtNamespace.Size = new System.Drawing.Size(238, 20);
+            this.txtNamespace.PasswordChar = '\0';
+            this.txtNamespace.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNamespace.SelectedText = "";
+            this.txtNamespace.SelectionLength = 0;
+            this.txtNamespace.SelectionStart = 0;
+            this.txtNamespace.ShortcutsEnabled = true;
+            this.txtNamespace.Size = new System.Drawing.Size(238, 25);
+            this.txtNamespace.Style = MetroFramework.MetroColorStyle.Green;
             this.txtNamespace.TabIndex = 3;
+            this.txtNamespace.UseSelectable = true;
+            this.txtNamespace.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNamespace.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtNamespace.TextChanged += new System.EventHandler(this.txtNamespace_TextChanged);
             // 
             // lblNamespace
             // 
             this.lblNamespace.AutoSize = true;
-            this.lblNamespace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamespace.Location = new System.Drawing.Point(56, 77);
+            this.lblNamespace.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblNamespace.Location = new System.Drawing.Point(63, 84);
             this.lblNamespace.Name = "lblNamespace";
-            this.lblNamespace.Size = new System.Drawing.Size(68, 13);
+            this.lblNamespace.Size = new System.Drawing.Size(82, 19);
             this.lblNamespace.TabIndex = 6;
             this.lblNamespace.Text = "Namespace:";
             // 
@@ -137,13 +211,15 @@
             // 
             this.splitBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitBase.IsSplitterFixed = true;
-            this.splitBase.Location = new System.Drawing.Point(0, 0);
+            this.splitBase.Location = new System.Drawing.Point(20, 60);
             this.splitBase.Name = "splitBase";
             this.splitBase.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitBase.Panel1
             // 
             this.splitBase.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitBase.Panel1.Controls.Add(this.lblUpperBorder);
+            this.splitBase.Panel1.Controls.Add(this.pictureBox1);
             this.splitBase.Panel1.Controls.Add(this.lblStepDescription);
             this.splitBase.Panel1.Controls.Add(this.lblStepTitle);
             // 
@@ -151,32 +227,56 @@
             // 
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
-            this.splitBase.Size = new System.Drawing.Size(474, 346);
-            this.splitBase.SplitterDistance = 36;
+            this.splitBase.Size = new System.Drawing.Size(648, 387);
+            this.splitBase.SplitterDistance = 84;
             this.splitBase.TabIndex = 7;
+            // 
+            // lblUpperBorder
+            // 
+            this.lblUpperBorder.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblUpperBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblUpperBorder.Location = new System.Drawing.Point(0, 83);
+            this.lblUpperBorder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpperBorder.Name = "lblUpperBorder";
+            this.lblUpperBorder.Size = new System.Drawing.Size(648, 1);
+            this.lblUpperBorder.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage_logo_square;
+            this.pictureBox1.InitialImage = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage_logo_square;
+            this.pictureBox1.Location = new System.Drawing.Point(574, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // lblStepDescription
             // 
             this.lblStepDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStepDescription.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblStepDescription.Location = new System.Drawing.Point(12, 40);
+            this.lblStepDescription.Location = new System.Drawing.Point(12, 38);
             this.lblStepDescription.Name = "lblStepDescription";
-            this.lblStepDescription.Size = new System.Drawing.Size(450, 26);
+            this.lblStepDescription.Size = new System.Drawing.Size(559, 43);
             this.lblStepDescription.TabIndex = 5;
             this.lblStepDescription.Text = "This is the detailed description";
+            this.lblStepDescription.WrapToLine = true;
             // 
             // lblStepTitle
             // 
             this.lblStepTitle.AutoSize = true;
             this.lblStepTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblStepTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStepTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblStepTitle.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblStepTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepTitle.Location = new System.Drawing.Point(12, 9);
             this.lblStepTitle.Name = "lblStepTitle";
-            this.lblStepTitle.Size = new System.Drawing.Size(206, 21);
+            this.lblStepTitle.Size = new System.Drawing.Size(185, 25);
+            this.lblStepTitle.Style = MetroFramework.MetroColorStyle.Green;
             this.lblStepTitle.TabIndex = 4;
-            this.lblStepTitle.Text = "This is the title of the step";
+            this.lblStepTitle.Text = "Step X - Step Details";
+            this.lblStepTitle.UseStyleColors = true;
             // 
             // splitSteps
             // 
@@ -191,13 +291,13 @@
             // 
             this.splitSteps.Panel1.Controls.Add(this.pnlInfo);
             this.splitSteps.Panel1.Controls.Add(this.pnlGenerateSolution);
-            this.splitSteps.Panel1.Controls.Add(this.pnlResourceFiles);
             this.splitSteps.Panel1.Controls.Add(this.pnlKendo);
+            this.splitSteps.Panel1.Controls.Add(this.pnlResourceFiles);
             // 
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(474, 306);
+            this.splitSteps.Size = new System.Drawing.Size(648, 299);
             this.splitSteps.SplitterDistance = 237;
             this.splitSteps.TabIndex = 5;
             // 
@@ -211,51 +311,174 @@
             this.pnlInfo.Controls.Add(this.lblNamespace);
             this.pnlInfo.Controls.Add(this.txtCompanyName);
             this.pnlInfo.Controls.Add(this.txtApplicationID);
-            this.pnlInfo.Location = new System.Drawing.Point(0, 0);
+            this.pnlInfo.Location = new System.Drawing.Point(478, 10);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(474, 237);
+            this.pnlInfo.Size = new System.Drawing.Size(458, 178);
             this.pnlInfo.TabIndex = 0;
             // 
             // txtNamespaceExample
             // 
             this.txtNamespaceExample.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNamespaceExample.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            // 
+            // 
+            // 
+            this.txtNamespaceExample.CustomButton.Image = null;
+            this.txtNamespaceExample.CustomButton.Location = new System.Drawing.Point(266, 1);
+            this.txtNamespaceExample.CustomButton.Name = "";
+            this.txtNamespaceExample.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtNamespaceExample.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNamespaceExample.CustomButton.TabIndex = 1;
+            this.txtNamespaceExample.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNamespaceExample.CustomButton.UseSelectable = true;
+            this.txtNamespaceExample.CustomButton.Visible = false;
             this.txtNamespaceExample.ForeColor = System.Drawing.Color.OliveDrab;
-            this.txtNamespaceExample.Location = new System.Drawing.Point(124, 110);
+            this.txtNamespaceExample.Lines = new string[0];
+            this.txtNamespaceExample.Location = new System.Drawing.Point(147, 112);
+            this.txtNamespaceExample.MaxLength = 32767;
             this.txtNamespaceExample.Name = "txtNamespaceExample";
+            this.txtNamespaceExample.PasswordChar = '\0';
+            this.txtNamespaceExample.PromptText = "Please enter the above details first.";
             this.txtNamespaceExample.ReadOnly = true;
-            this.txtNamespaceExample.Size = new System.Drawing.Size(317, 13);
+            this.txtNamespaceExample.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNamespaceExample.SelectedText = "";
+            this.txtNamespaceExample.SelectionLength = 0;
+            this.txtNamespaceExample.SelectionStart = 0;
+            this.txtNamespaceExample.ShortcutsEnabled = true;
+            this.txtNamespaceExample.Size = new System.Drawing.Size(290, 25);
+            this.txtNamespaceExample.Style = MetroFramework.MetroColorStyle.Green;
             this.txtNamespaceExample.TabIndex = 4;
-            this.txtNamespaceExample.Text = "Please enter the above details first.";
+            this.txtNamespaceExample.UseSelectable = true;
+            this.txtNamespaceExample.UseStyleColors = true;
+            this.txtNamespaceExample.WaterMark = "Please enter the above details first.";
+            this.txtNamespaceExample.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNamespaceExample.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lblNamespaceExample
             // 
             this.lblNamespaceExample.AutoSize = true;
-            this.lblNamespaceExample.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamespaceExample.Location = new System.Drawing.Point(72, 109);
+            this.lblNamespaceExample.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblNamespaceExample.Location = new System.Drawing.Point(83, 112);
             this.lblNamespaceExample.Name = "lblNamespaceExample";
-            this.lblNamespaceExample.Size = new System.Drawing.Size(52, 13);
+            this.lblNamespaceExample.Size = new System.Drawing.Size(62, 19);
             this.lblNamespaceExample.TabIndex = 8;
             this.lblNamespaceExample.Text = "Example:";
             // 
             // pnlGenerateSolution
             // 
             this.pnlGenerateSolution.Controls.Add(this.lblGenerateHelp);
-            this.pnlGenerateSolution.Location = new System.Drawing.Point(408, 144);
+            this.pnlGenerateSolution.Location = new System.Drawing.Point(291, 54);
             this.pnlGenerateSolution.Name = "pnlGenerateSolution";
-            this.pnlGenerateSolution.Size = new System.Drawing.Size(288, 38);
+            this.pnlGenerateSolution.Size = new System.Drawing.Size(159, 92);
             this.pnlGenerateSolution.TabIndex = 3;
             // 
             // lblGenerateHelp
             // 
-            this.lblGenerateHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenerateHelp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblGenerateHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblGenerateHelp.Location = new System.Drawing.Point(84, 33);
+            this.lblGenerateHelp.Location = new System.Drawing.Point(26, 21);
             this.lblGenerateHelp.Name = "lblGenerateHelp";
-            this.lblGenerateHelp.Size = new System.Drawing.Size(273, 111);
+            this.lblGenerateHelp.Size = new System.Drawing.Size(381, 94);
             this.lblGenerateHelp.TabIndex = 0;
             this.lblGenerateHelp.Text = "Select the \'Generate\' button below to generate the solution based upon the inform" +
     "ation entered and selected in the proceeding steps.";
+            this.lblGenerateHelp.WrapToLine = true;
+            // 
+            // pnlKendo
+            // 
+            this.pnlKendo.Controls.Add(this.lblKendoVersionHelp);
+            this.pnlKendo.Controls.Add(this.lblKendoLink);
+            this.pnlKendo.Controls.Add(this.lblKendoFolderHelp);
+            this.pnlKendo.Controls.Add(this.txtKendoFolder);
+            this.pnlKendo.Controls.Add(this.chkKendoLicense);
+            this.pnlKendo.Location = new System.Drawing.Point(24, 24);
+            this.pnlKendo.Name = "pnlKendo";
+            this.pnlKendo.Size = new System.Drawing.Size(287, 58);
+            this.pnlKendo.TabIndex = 2;
+            // 
+            // lblKendoVersionHelp
+            // 
+            this.lblKendoVersionHelp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblKendoVersionHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoVersionHelp.Location = new System.Drawing.Point(39, 151);
+            this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
+            this.lblKendoVersionHelp.Size = new System.Drawing.Size(421, 43);
+            this.lblKendoVersionHelp.TabIndex = 6;
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2019.1.115";
+            this.lblKendoVersionHelp.WrapToLine = true;
+            // 
+            // lblKendoLink
+            // 
+            this.lblKendoLink.AutoSize = true;
+            this.lblKendoLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKendoLink.Location = new System.Drawing.Point(39, 125);
+            this.lblKendoLink.Name = "lblKendoLink";
+            this.lblKendoLink.Size = new System.Drawing.Size(166, 16);
+            this.lblKendoLink.TabIndex = 5;
+            this.lblKendoLink.TabStop = true;
+            this.lblKendoLink.Text = "Kendo License Agreement";
+            this.lblKendoLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblKendoLink_LinkClicked);
+            // 
+            // lblKendoFolderHelp
+            // 
+            this.lblKendoFolderHelp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblKendoFolderHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblKendoFolderHelp.Location = new System.Drawing.Point(39, 79);
+            this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
+            this.lblKendoFolderHelp.Size = new System.Drawing.Size(421, 40);
+            this.lblKendoFolderHelp.TabIndex = 4;
+            this.lblKendoFolderHelp.Text = "The Kendo UI Commercial License may be obtained by clicking the link below:";
+            this.lblKendoFolderHelp.WrapToLine = true;
+            // 
+            // txtKendoFolder
+            // 
+            // 
+            // 
+            // 
+            this.txtKendoFolder.CustomButton.Image = null;
+            this.txtKendoFolder.CustomButton.Location = new System.Drawing.Point(396, 2);
+            this.txtKendoFolder.CustomButton.Name = "";
+            this.txtKendoFolder.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtKendoFolder.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtKendoFolder.CustomButton.TabIndex = 1;
+            this.txtKendoFolder.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtKendoFolder.CustomButton.UseSelectable = true;
+            this.txtKendoFolder.Enabled = false;
+            this.txtKendoFolder.Lines = new string[0];
+            this.txtKendoFolder.Location = new System.Drawing.Point(42, 51);
+            this.txtKendoFolder.MaxLength = 32767;
+            this.txtKendoFolder.Name = "txtKendoFolder";
+            this.txtKendoFolder.PasswordChar = '\0';
+            this.txtKendoFolder.PromptText = "Kendo Folder";
+            this.txtKendoFolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtKendoFolder.SelectedText = "";
+            this.txtKendoFolder.SelectionLength = 0;
+            this.txtKendoFolder.SelectionStart = 0;
+            this.txtKendoFolder.ShortcutsEnabled = true;
+            this.txtKendoFolder.ShowButton = true;
+            this.txtKendoFolder.ShowClearButton = true;
+            this.txtKendoFolder.Size = new System.Drawing.Size(418, 24);
+            this.txtKendoFolder.Style = MetroFramework.MetroColorStyle.Green;
+            this.txtKendoFolder.TabIndex = 2;
+            this.txtKendoFolder.UseSelectable = true;
+            this.txtKendoFolder.WaterMark = "Kendo Folder";
+            this.txtKendoFolder.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtKendoFolder.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKendoFolder.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.btnKendoDialog_Click);
+            // 
+            // chkKendoLicense
+            // 
+            this.chkKendoLicense.AutoSize = true;
+            this.chkKendoLicense.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chkKendoLicense.Location = new System.Drawing.Point(16, 21);
+            this.chkKendoLicense.Name = "chkKendoLicense";
+            this.chkKendoLicense.Size = new System.Drawing.Size(279, 19);
+            this.chkKendoLicense.Style = MetroFramework.MetroColorStyle.Green;
+            this.chkKendoLicense.TabIndex = 0;
+            this.chkKendoLicense.Text = "Purchased Kendo UI Commercial License?";
+            this.chkKendoLicense.UseCustomForeColor = true;
+            this.chkKendoLicense.UseSelectable = true;
+            this.chkKendoLicense.UseStyleColors = true;
+            this.chkKendoLicense.CheckedChanged += new System.EventHandler(this.chkKendoLicense_CheckedChanged);
             // 
             // pnlResourceFiles
             // 
@@ -264,54 +487,66 @@
             this.pnlResourceFiles.Controls.Add(this.chkChineseTraditional);
             this.pnlResourceFiles.Controls.Add(this.chkChineseSimplified);
             this.pnlResourceFiles.Controls.Add(this.chkEnglish);
-            this.pnlResourceFiles.Location = new System.Drawing.Point(408, 97);
+            this.pnlResourceFiles.Location = new System.Drawing.Point(331, 203);
             this.pnlResourceFiles.Name = "pnlResourceFiles";
-            this.pnlResourceFiles.Size = new System.Drawing.Size(271, 25);
+            this.pnlResourceFiles.Size = new System.Drawing.Size(153, 96);
             this.pnlResourceFiles.TabIndex = 4;
             // 
             // chkFrench
             // 
             this.chkFrench.AutoSize = true;
-            this.chkFrench.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFrench.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkFrench.Location = new System.Drawing.Point(16, 114);
             this.chkFrench.Name = "chkFrench";
-            this.chkFrench.Size = new System.Drawing.Size(61, 17);
+            this.chkFrench.Size = new System.Drawing.Size(66, 19);
+            this.chkFrench.Style = MetroFramework.MetroColorStyle.Green;
             this.chkFrench.TabIndex = 4;
             this.chkFrench.Text = "French";
-            this.chkFrench.UseVisualStyleBackColor = true;
+            this.chkFrench.UseCustomForeColor = true;
+            this.chkFrench.UseSelectable = true;
+            this.chkFrench.UseStyleColors = true;
             // 
             // chkSpanish
             // 
             this.chkSpanish.AutoSize = true;
-            this.chkSpanish.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSpanish.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkSpanish.Location = new System.Drawing.Point(16, 91);
             this.chkSpanish.Name = "chkSpanish";
-            this.chkSpanish.Size = new System.Drawing.Size(67, 17);
+            this.chkSpanish.Size = new System.Drawing.Size(72, 19);
+            this.chkSpanish.Style = MetroFramework.MetroColorStyle.Green;
             this.chkSpanish.TabIndex = 3;
             this.chkSpanish.Text = "Spanish";
-            this.chkSpanish.UseVisualStyleBackColor = true;
+            this.chkSpanish.UseCustomForeColor = true;
+            this.chkSpanish.UseSelectable = true;
+            this.chkSpanish.UseStyleColors = true;
             // 
             // chkChineseTraditional
             // 
             this.chkChineseTraditional.AutoSize = true;
-            this.chkChineseTraditional.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkChineseTraditional.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkChineseTraditional.Location = new System.Drawing.Point(16, 68);
             this.chkChineseTraditional.Name = "chkChineseTraditional";
-            this.chkChineseTraditional.Size = new System.Drawing.Size(124, 17);
+            this.chkChineseTraditional.Size = new System.Drawing.Size(140, 19);
+            this.chkChineseTraditional.Style = MetroFramework.MetroColorStyle.Green;
             this.chkChineseTraditional.TabIndex = 2;
             this.chkChineseTraditional.Text = "Chinese Traditional";
-            this.chkChineseTraditional.UseVisualStyleBackColor = true;
+            this.chkChineseTraditional.UseCustomForeColor = true;
+            this.chkChineseTraditional.UseSelectable = true;
+            this.chkChineseTraditional.UseStyleColors = true;
             // 
             // chkChineseSimplified
             // 
             this.chkChineseSimplified.AutoSize = true;
-            this.chkChineseSimplified.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkChineseSimplified.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkChineseSimplified.Location = new System.Drawing.Point(16, 45);
             this.chkChineseSimplified.Name = "chkChineseSimplified";
-            this.chkChineseSimplified.Size = new System.Drawing.Size(121, 17);
+            this.chkChineseSimplified.Size = new System.Drawing.Size(135, 19);
+            this.chkChineseSimplified.Style = MetroFramework.MetroColorStyle.Green;
             this.chkChineseSimplified.TabIndex = 1;
             this.chkChineseSimplified.Text = "Chinese Simplified";
-            this.chkChineseSimplified.UseVisualStyleBackColor = true;
+            this.chkChineseSimplified.UseCustomForeColor = true;
+            this.chkChineseSimplified.UseSelectable = true;
+            this.chkChineseSimplified.UseStyleColors = true;
             // 
             // chkEnglish
             // 
@@ -319,151 +554,89 @@
             this.chkEnglish.Checked = true;
             this.chkEnglish.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEnglish.Enabled = false;
-            this.chkEnglish.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEnglish.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkEnglish.Location = new System.Drawing.Point(16, 22);
             this.chkEnglish.Name = "chkEnglish";
-            this.chkEnglish.Size = new System.Drawing.Size(64, 17);
+            this.chkEnglish.Size = new System.Drawing.Size(68, 19);
+            this.chkEnglish.Style = MetroFramework.MetroColorStyle.Green;
             this.chkEnglish.TabIndex = 0;
             this.chkEnglish.Text = "English";
-            this.chkEnglish.UseVisualStyleBackColor = true;
-            // 
-            // pnlKendo
-            // 
-            this.pnlKendo.Controls.Add(this.lblKendoVersionHelp);
-            this.pnlKendo.Controls.Add(this.lblKendoLink);
-            this.pnlKendo.Controls.Add(this.lblKendoFolderHelp);
-            this.pnlKendo.Controls.Add(this.btnKendoDialog);
-            this.pnlKendo.Controls.Add(this.txtKendoFolder);
-            this.pnlKendo.Controls.Add(this.lblKendoFolder);
-            this.pnlKendo.Controls.Add(this.chkKendoLicense);
-            this.pnlKendo.Location = new System.Drawing.Point(408, 53);
-            this.pnlKendo.Name = "pnlKendo";
-            this.pnlKendo.Size = new System.Drawing.Size(233, 34);
-            this.pnlKendo.TabIndex = 2;
-            // 
-            // lblKendoVersionHelp
-            // 
-            this.lblKendoVersionHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKendoVersionHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblKendoVersionHelp.Location = new System.Drawing.Point(109, 129);
-            this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
-            this.lblKendoVersionHelp.Size = new System.Drawing.Size(293, 36);
-            this.lblKendoVersionHelp.TabIndex = 6;
-            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2019.1.115";
-            // 
-            // lblKendoLink
-            // 
-            this.lblKendoLink.AutoSize = true;
-            this.lblKendoLink.Location = new System.Drawing.Point(110, 104);
-            this.lblKendoLink.Name = "lblKendoLink";
-            this.lblKendoLink.Size = new System.Drawing.Size(348, 13);
-            this.lblKendoLink.TabIndex = 5;
-            this.lblKendoLink.TabStop = true;
-            this.lblKendoLink.Text = "http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
-            this.lblKendoLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblKendoLink_LinkClicked);
-            // 
-            // lblKendoFolderHelp
-            // 
-            this.lblKendoFolderHelp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKendoFolderHelp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblKendoFolderHelp.Location = new System.Drawing.Point(107, 77);
-            this.lblKendoFolderHelp.Name = "lblKendoFolderHelp";
-            this.lblKendoFolderHelp.Size = new System.Drawing.Size(297, 27);
-            this.lblKendoFolderHelp.TabIndex = 4;
-            this.lblKendoFolderHelp.Text = "The Kendo UI Commercial License may be obtained at:";
-            // 
-            // btnKendoDialog
-            // 
-            this.btnKendoDialog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKendoDialog.BackgroundImage")));
-            this.btnKendoDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnKendoDialog.Enabled = false;
-            this.btnKendoDialog.FlatAppearance.BorderSize = 0;
-            this.btnKendoDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKendoDialog.Location = new System.Drawing.Point(419, 49);
-            this.btnKendoDialog.Name = "btnKendoDialog";
-            this.btnKendoDialog.Size = new System.Drawing.Size(27, 20);
-            this.btnKendoDialog.TabIndex = 3;
-            this.btnKendoDialog.UseVisualStyleBackColor = true;
-            this.btnKendoDialog.Click += new System.EventHandler(this.btnKendoDialog_Click);
-            // 
-            // txtKendoFolder
-            // 
-            this.txtKendoFolder.Enabled = false;
-            this.txtKendoFolder.Location = new System.Drawing.Point(110, 49);
-            this.txtKendoFolder.Name = "txtKendoFolder";
-            this.txtKendoFolder.Size = new System.Drawing.Size(303, 20);
-            this.txtKendoFolder.TabIndex = 2;
-            // 
-            // lblKendoFolder
-            // 
-            this.lblKendoFolder.AutoSize = true;
-            this.lblKendoFolder.Enabled = false;
-            this.lblKendoFolder.Location = new System.Drawing.Point(35, 52);
-            this.lblKendoFolder.Name = "lblKendoFolder";
-            this.lblKendoFolder.Size = new System.Drawing.Size(73, 13);
-            this.lblKendoFolder.TabIndex = 1;
-            this.lblKendoFolder.Text = "Kendo Folder:";
-            // 
-            // chkKendoLicense
-            // 
-            this.chkKendoLicense.AutoSize = true;
-            this.chkKendoLicense.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkKendoLicense.Location = new System.Drawing.Point(16, 21);
-            this.chkKendoLicense.Name = "chkKendoLicense";
-            this.chkKendoLicense.Size = new System.Drawing.Size(236, 17);
-            this.chkKendoLicense.TabIndex = 0;
-            this.chkKendoLicense.Text = "Purchased Kendo UI Commercial License?";
-            this.chkKendoLicense.UseVisualStyleBackColor = true;
-            this.chkKendoLicense.CheckedChanged += new System.EventHandler(this.chkKendoLicense_CheckedChanged);
+            this.chkEnglish.UseCustomForeColor = true;
+            this.chkEnglish.UseSelectable = true;
+            this.chkEnglish.UseStyleColors = true;
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.White;
+            this.pnlButtons.Controls.Add(this.lblLowerBorder);
             this.pnlButtons.Controls.Add(this.btnNext);
             this.pnlButtons.Controls.Add(this.btnBack);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(474, 65);
+            this.pnlButtons.Size = new System.Drawing.Size(648, 58);
             this.pnlButtons.TabIndex = 5;
+            // 
+            // lblLowerBorder
+            // 
+            this.lblLowerBorder.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblLowerBorder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLowerBorder.Location = new System.Drawing.Point(0, 0);
+            this.lblLowerBorder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLowerBorder.Name = "lblLowerBorder";
+            this.lblLowerBorder.Size = new System.Drawing.Size(648, 1);
+            this.lblLowerBorder.TabIndex = 2;
             // 
             // btnNext
             // 
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(394, 28);
+            this.btnNext.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnNext.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnNext.Highlight = true;
+            this.btnNext.Location = new System.Drawing.Point(580, 33);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(68, 25);
+            this.btnNext.Style = MetroFramework.MetroColorStyle.Green;
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseCustomForeColor = true;
+            this.btnNext.UseSelectable = true;
+            this.btnNext.UseStyleColors = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(318, 28);
+            this.btnBack.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnBack.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnBack.Highlight = true;
+            this.btnBack.Location = new System.Drawing.Point(504, 33);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 25);
+            this.btnBack.Style = MetroFramework.MetroColorStyle.Green;
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseCustomForeColor = true;
+            this.btnBack.UseSelectable = true;
+            this.btnBack.UseStyleColors = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UserInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 346);
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(688, 467);
             this.Controls.Add(this.splitBase);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserInputForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solution Generation";
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
+            this.Style = MetroFramework.MetroColorStyle.Green;
+            this.Text = "Solution Generation Wizard";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.UserInputForm_HelpButtonClicked);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserInputForm_FormClosed);
             this.splitBase.Panel1.ResumeLayout(false);
@@ -471,6 +644,7 @@
             this.splitBase.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
             this.splitBase.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitSteps.Panel1.ResumeLayout(false);
             this.splitSteps.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).EndInit();
@@ -478,10 +652,10 @@
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             this.pnlGenerateSolution.ResumeLayout(false);
-            this.pnlResourceFiles.ResumeLayout(false);
-            this.pnlResourceFiles.PerformLayout();
             this.pnlKendo.ResumeLayout(false);
             this.pnlKendo.PerformLayout();
+            this.pnlResourceFiles.ResumeLayout(false);
+            this.pnlResourceFiles.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -489,38 +663,39 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCompanyName;
-        private System.Windows.Forms.Label lblModuleId;
-        private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtApplicationID;
-        private System.Windows.Forms.TextBox txtNamespace;
-        private System.Windows.Forms.Label lblNamespace;
+        private MetroFramework.Controls.MetroLabel lblCompanyName;
+        private MetroFramework.Controls.MetroLabel lblModuleId;
+        private MetroFramework.Controls.MetroTextBox txtCompanyName;
+        private MetroFramework.Controls.MetroTextBox txtApplicationID;
+        private MetroFramework.Controls.MetroTextBox txtNamespace;
+        private MetroFramework.Controls.MetroLabel lblNamespace;
         private System.Windows.Forms.SplitContainer splitBase;
-        private System.Windows.Forms.Label lblStepDescription;
-        private System.Windows.Forms.Label lblStepTitle;
+        private MetroFramework.Controls.MetroLabel lblStepDescription;
+        private MetroFramework.Controls.MetroLabel lblStepTitle;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Panel pnlKendo;
-        private System.Windows.Forms.Label lblKendoVersionHelp;
+        private MetroFramework.Controls.MetroLabel lblKendoVersionHelp;
         private System.Windows.Forms.LinkLabel lblKendoLink;
-        private System.Windows.Forms.Label lblKendoFolderHelp;
-        private System.Windows.Forms.Button btnKendoDialog;
-        private System.Windows.Forms.TextBox txtKendoFolder;
-        private System.Windows.Forms.Label lblKendoFolder;
-        private System.Windows.Forms.CheckBox chkKendoLicense;
+        private MetroFramework.Controls.MetroLabel lblKendoFolderHelp;
+        private MetroFramework.Controls.MetroTextBox txtKendoFolder;
+        private MetroFramework.Controls.MetroCheckBox chkKendoLicense;
         private System.Windows.Forms.Panel pnlGenerateSolution;
-        private System.Windows.Forms.Label lblGenerateHelp;
+        private MetroFramework.Controls.MetroLabel lblGenerateHelp;
         private System.Windows.Forms.Panel pnlResourceFiles;
-        private System.Windows.Forms.CheckBox chkFrench;
-        private System.Windows.Forms.CheckBox chkSpanish;
-        private System.Windows.Forms.CheckBox chkChineseTraditional;
-        private System.Windows.Forms.CheckBox chkChineseSimplified;
-        private System.Windows.Forms.CheckBox chkEnglish;
+        private MetroFramework.Controls.MetroCheckBox chkFrench;
+        private MetroFramework.Controls.MetroCheckBox chkSpanish;
+        private MetroFramework.Controls.MetroCheckBox chkChineseTraditional;
+        private MetroFramework.Controls.MetroCheckBox chkChineseSimplified;
+        private MetroFramework.Controls.MetroCheckBox chkEnglish;
         private System.Windows.Forms.SplitContainer splitSteps;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnNext;
+        private MetroFramework.Controls.MetroButton btnBack;
+        private MetroFramework.Controls.MetroButton btnNext;
         private System.Windows.Forms.ToolTip tooltip;
-        private System.Windows.Forms.TextBox txtNamespaceExample;
-        private System.Windows.Forms.Label lblNamespaceExample;
+        private MetroFramework.Controls.MetroTextBox txtNamespaceExample;
+        private MetroFramework.Controls.MetroLabel lblNamespaceExample;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUpperBorder;
+        private System.Windows.Forms.Label lblLowerBorder;
     }
 }

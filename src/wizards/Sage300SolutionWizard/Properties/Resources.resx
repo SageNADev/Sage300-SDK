@@ -117,137 +117,143 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
+  <data name="NamespaceNameTip" xml:space="preserve">
+    <value>The Namespace is defaulted from the Company Name and may be overwritten. It will be used for the generated code's namespace.</value>
   </data>
-  <data name="CompanyNameInvalid" xml:space="preserve">
-    <value>The Company Name cannot be blank.</value>
-  </data>
-  <data name="Dash" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="Generate" xml:space="preserve">
-    <value>Generate</value>
-  </data>
-  <data name="InvalidSettings" xml:space="preserve">
-    <value>The input values have either not been specified or are invalid</value>
-  </data>
-  <data name="KendoFolderInvalid" xml:space="preserve">
-    <value>The Kendo Folder cannot be blank.</value>
-  </data>
-  <data name="KendoLicenseInvalid" xml:space="preserve">
-    <value>The Kendo UI Commercial License must be checked to continue.</value>
-  </data>
-  <data name="ModuleIdInvalid" xml:space="preserve">
-    <value>The Module ID cannot be blank or contain spaces.</value>
-  </data>
-  <data name="NamespaceInvalid" xml:space="preserve">
-    <value>The Namespace cannot be blank or contain spaces.</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Next</value>
+  <data name="StepTitleResourceFiles" xml:space="preserve">
+    <value>Select Resource Files</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="sage_300_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\sage_300_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Step" xml:space="preserve">
-    <value>Step</value>
+  <data name="KendoLicense" xml:space="preserve">
+    <value>Purchased Kendo UI Commercial License?</value>
   </data>
-  <data name="StepDescriptionGenerate" xml:space="preserve">
-    <value>Ready to generate the solution!</value>
-  </data>
-  <data name="StepDescriptionInfo" xml:space="preserve">
-    <value>The wizard will generate a solution for the Sage 300 application.</value>
-  </data>
-  <data name="StepDescriptionKendo" xml:space="preserve">
-    <value>Confirm the License and select the Kendo folder.</value>
-  </data>
-  <data name="StepTitleGenerate" xml:space="preserve">
-    <value>Generate Solution</value>
-  </data>
-  <data name="StepTitleInfo" xml:space="preserve">
-    <value>Select Information</value>
-  </data>
-  <data name="StepTitleKendo" xml:space="preserve">
-    <value>Select Kendo Folder</value>
-  </data>
-  <data name="AccpacDotNetVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AccpacDotNetVersion.props;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="StepDescriptionResourceFiles" xml:space="preserve">
-    <value>Confirm the Resource Files to create.</value>
-  </data>
-  <data name="StepTitleResourceFiles" xml:space="preserve">
-    <value>Select Resource Files</value>
-  </data>
-  <data name="ChineseSimplified" xml:space="preserve">
-    <value>Chinese Simplified</value>
-  </data>
-  <data name="ChineseTraditional" xml:space="preserve">
-    <value>Chinese Traditional</value>
-  </data>
-  <data name="CompanyName" xml:space="preserve">
-    <value>Company Name:</value>
-  </data>
-  <data name="CompanyNameTip" xml:space="preserve">
-    <value>The Company Name is used to generate the Copyright tags and default the Namespace.</value>
-  </data>
-  <data name="English" xml:space="preserve">
-    <value>English</value>
+  <data name="NamespaceName" xml:space="preserve">
+    <value>Namespace:</value>
   </data>
   <data name="EnglishTip" xml:space="preserve">
     <value>English is the default language.</value>
     <comment>.</comment>
   </data>
-  <data name="French" xml:space="preserve">
-    <value>French</value>
-  </data>
-  <data name="GenerateTip" xml:space="preserve">
-    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.</value>
-  </data>
-  <data name="KendoFolder" xml:space="preserve">
-    <value>Kendo Folder:</value>
-  </data>
-  <data name="KendoFolderDialog" xml:space="preserve">
-    <value>Lookup the location of the kendo.all.min.js file</value>
-  </data>
-  <data name="KendoFolderLinkTip" xml:space="preserve">
-    <value>The Kendo UI Commercial License may be obtained at:</value>
-  </data>
-  <data name="KendoFolderTip" xml:space="preserve">
-    <value>Enter the folder containing the kendo.all.min.js file</value>
-  </data>
-  <data name="KendoLicense" xml:space="preserve">
-    <value>Purchased Kendo UI Commercial License?</value>
-  </data>
-  <data name="KendoLicenseTip" xml:space="preserve">
-    <value>The generated projects require the kendo.all.min.js file in order to compile successfully. A Kendo UI Commercial License must be purchased in order to use this file.</value>
-  </data>
-  <data name="KendoVersionTip" xml:space="preserve">
-    <value>The Kendo UI version used in these projects is v2019.1.115</value>
-  </data>
-  <data name="ModuleId" xml:space="preserve">
-    <value>Module ID:</value>
+  <data name="SolutionGeneration" xml:space="preserve">
+    <value>Solution Generation Wizard</value>
   </data>
   <data name="ModuleIdTip" xml:space="preserve">
     <value>The Module ID is the two character code used to identify a module.</value>
   </data>
-  <data name="NamespaceName" xml:space="preserve">
-    <value>Namespace:</value>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
   </data>
-  <data name="NamespaceNameTip" xml:space="preserve">
-    <value>The Namespace is defaulted from the Company Name and may be overwritten. It will be used for the generated code's namespace.</value>
+  <data name="Dash" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ModuleId" xml:space="preserve">
+    <value>Module ID:</value>
+  </data>
+  <data name="KendoFolder" xml:space="preserve">
+    <value>Kendo Folder:</value>
   </data>
   <data name="NonEnglishTip" xml:space="preserve">
     <value>The {0} language is optional and if selected will be created 
 with keys but no values and must have translated values 
 prior to deployment.</value>
   </data>
-  <data name="Spanish" xml:space="preserve">
-    <value>Spanish</value>
+  <data name="StepTitleGenerate" xml:space="preserve">
+    <value>Generate Solution</value>
   </data>
-  <data name="SolutionGeneration" xml:space="preserve">
-    <value>Solution Generation Wizard</value>
+  <data name="StepDescriptionInfo" xml:space="preserve">
+    <value>The wizard will generate a solution for the Sage 300 application.</value>
+  </data>
+  <data name="AccpacDotNetVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccpacDotNetVersion.props;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ModuleIdInvalid" xml:space="preserve">
+    <value>The Module ID cannot be blank or contain spaces.</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="StepTitleKendo" xml:space="preserve">
+    <value>Select Kendo Folder</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="KendoFolderInvalid" xml:space="preserve">
+    <value>The Kendo Folder cannot be blank.</value>
+  </data>
+  <data name="StepDescriptionGenerate" xml:space="preserve">
+    <value>Ready to generate the solution!</value>
+  </data>
+  <data name="StepDescriptionKendo" xml:space="preserve">
+    <value>Confirm the License and select the Kendo folder.</value>
+  </data>
+  <data name="StepDescriptionResourceFiles" xml:space="preserve">
+    <value>Confirm the Resource Files to create.</value>
+  </data>
+  <data name="ChineseTraditional" xml:space="preserve">
+    <value>Chinese Traditional</value>
+  </data>
+  <data name="InvalidSettings" xml:space="preserve">
+    <value>The input values have either not been specified or are invalid</value>
+  </data>
+  <data name="KendoLicenseInvalid" xml:space="preserve">
+    <value>The Kendo UI Commercial License must be checked to continue.</value>
+  </data>
+  <data name="KendoFolderDialog" xml:space="preserve">
+    <value>Lookup the location of the kendo.all.min.js file</value>
+  </data>
+  <data name="GenerateTip" xml:space="preserve">
+    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="CompanyNameInvalid" xml:space="preserve">
+    <value>The Company Name cannot be blank.</value>
+  </data>
+  <data name="StepTitleInfo" xml:space="preserve">
+    <value>Select Information</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="KendoFolderLinkTip" xml:space="preserve">
+    <value>The Kendo UI Commercial License may be obtained by clicking the link below:</value>
+  </data>
+  <data name="ChineseSimplified" xml:space="preserve">
+    <value>Chinese Simplified</value>
+  </data>
+  <data name="KendoLicenseTip" xml:space="preserve">
+    <value>The generated projects require the kendo.all.min.js file in order to compile successfully. A Kendo UI Commercial License must be purchased in order to use this file.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name:</value>
+  </data>
+  <data name="KendoVersionTip" xml:space="preserve">
+    <value>The Kendo UI version used in these projects is v2019.1.115</value>
+  </data>
+  <data name="KendoFolderTip" xml:space="preserve">
+    <value>Enter the folder containing the kendo.all.min.js file</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="NamespaceInvalid" xml:space="preserve">
+    <value>The Namespace cannot be blank or contain spaces.</value>
+  </data>
+  <data name="CompanyNameTip" xml:space="preserve">
+    <value>The Company Name is used to generate the Copyright tags and default the Namespace.</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sage_logo_square" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage_logo_square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -31,12 +31,13 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
     /// <summary> UI for Code Generation Wizard </summary>
-    public partial class Generation : Form
+    public partial class Generation : MetroForm
     {
         #region Private Variables
 
@@ -605,7 +606,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
+            // Set the application title
+            Text = Resources.CodeGenerationWizard;
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
@@ -643,8 +645,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             lblReportIniFile.Text = Resources.ReportIniFile;
             tooltip.SetToolTip(lblReportIniFile, Resources.ReportIniFileTip);
-
-            tooltip.SetToolTip(btnIniDialog, Resources.ReportIniDialogTip);
 
             lblReportKeys.Text = Resources.ReportKeys;
             tooltip.SetToolTip(lblReportKeys, Resources.ReportKeysTip);
@@ -1170,7 +1170,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             txtReportIniFile.Enabled = enableReportControls;
             cboReportKeys.Enabled = enableReportControls;
             txtReportProgramId.Enabled = enableReportControls;
-            btnIniDialog.Enabled = enableReportControls;
 
             var enableCompositionControls = (repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             grdEntityCompositions.Enabled = enableCompositionControls;
@@ -2118,43 +2117,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="visible">True to show otherwise false </param>
         private void ShowStep(bool visible)
         {
-            // Adjust size
-            if (visible)
-            {
-                if (IsCurrentPanel(Constants.PanelCodeType))
-                {
-                    // Adjust to smaller size
-                    var location = btnBack.Location;
-                    location.X = 320;
-                    btnBack.Location = location;
-
-                    location = btnNext.Location;
-                    location.X = 394;
-                    btnNext.Location = location;
-
-                    var size = ClientSize;
-                    size.Width = 474;
-                    ClientSize = size;
-                    // CenterToScreen();
-                }
-                else
-                {
-                    // Adjust to larger size
-                    var location = btnBack.Location;
-                    location.X = 805;
-                    btnBack.Location = location;
-
-                    location = btnNext.Location;
-                    location.X = 879;
-                    btnNext.Location = location;
-
-                    var size = ClientSize;
-                    size.Width = 959;
-                    ClientSize = size;
-                    // CenterToScreen();
-                }
-            }
-
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
             splitSteps.SplitterDistance = Constants.SplitterDistance;

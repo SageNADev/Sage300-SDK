@@ -23,10 +23,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties;
+using MetroFramework.Forms;
 
 namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 {
-    public partial class UserInputForm : Form
+    public partial class UserInputForm : MetroForm
     {
         #region Private Variables
         /// <summary> Wizard Steps </summary>
@@ -42,6 +43,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 		#region Private Constants
 		private static class Constants
 		{
+            public const string KendoLicenseUrl = @"http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
+
 			/// <summary> Splitter Distance </summary>
 			public const int SplitterDistance = 237;
 
@@ -101,10 +104,10 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             chkKendoLicense.Text = Resources.KendoLicense;
             tooltip.SetToolTip(chkKendoLicense, Resources.KendoLicenseTip);
 
-            lblKendoFolder.Text = Resources.KendoFolder;
-            tooltip.SetToolTip(lblKendoFolder, Resources.KendoFolderTip);
+            //lblKendoFolder.Text = Resources.KendoFolder;
+            //tooltip.SetToolTip(lblKendoFolder, Resources.KendoFolderTip);
 
-            tooltip.SetToolTip(btnKendoDialog, Resources.KendoFolderDialog);
+            //tooltip.SetToolTip(btnKendoDialog, Resources.KendoFolderDialog);
 
             lblKendoFolderHelp.Text = Resources.KendoFolderLinkTip;
 
@@ -507,10 +510,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private void chkKendoLicense_CheckedChanged(object sender, EventArgs e)
         {
             var flag = chkKendoLicense.Checked;
-            lblKendoFolder.Enabled = flag;
             txtKendoFolder.Enabled = flag;
-            btnKendoDialog.Enabled = flag;
-		}
+        }
 
         /// <summary> Kendo License Link</summary>
         /// <param name="sender">Sender object </param>
@@ -521,7 +522,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             lblKendoLink.LinkVisited = true;
 
             // Navigate to a URL.
-            System.Diagnostics.Process.Start(lblKendoLink.Text);
+            System.Diagnostics.Process.Start(Constants.KendoLicenseUrl);
         }
 
         /// <summary>
