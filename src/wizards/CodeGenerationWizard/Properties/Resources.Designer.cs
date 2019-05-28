@@ -125,6 +125,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code Generation Wizard.
+        /// </summary>
+        internal static string CodeGenerationWizard {
+            get {
+                return ResourceManager.GetString("CodeGenerationWizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code Generation Wizard - V{0}.
         /// </summary>
         internal static string CodeGenerationWizardTitle_Template {
@@ -1015,6 +1024,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string ResxNameTip {
             get {
                 return ResourceManager.GetString("ResxNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_logo_square {
+            get {
+                object obj = ResourceManager.GetObject("sage_logo_square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
