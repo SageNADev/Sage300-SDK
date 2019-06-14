@@ -97,6 +97,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserInputForm.resx">
       <DependentUpon>UserInputForm.cs</DependentUpon>
@@ -113,7 +114,6 @@
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
     <None Include="Resources\sage_logo_square.png" />
-    <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\analyzers\cs\Microsoft.VisualStudio.SDK.Analyzers.dll" />
