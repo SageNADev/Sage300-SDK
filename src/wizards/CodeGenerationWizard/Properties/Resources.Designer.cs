@@ -748,6 +748,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Wizard is incompatible with the installed Sage 300 libraries. Please un-register the wizard and register the wizard that is compatible with the installed Sage 300 libraries..
+        /// </summary>
+        internal static string InvalidVersion {
+            get {
+                return ResourceManager.GetString("InvalidVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aplhanumeric.
         /// </summary>
         internal static string IsAlphaNumeric {
