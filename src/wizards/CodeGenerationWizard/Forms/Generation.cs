@@ -288,7 +288,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Code Type Step
 			if (IsCurrentPanel(Constants.PanelCodeType))
 			{
-                valid = ValidCodeTypeStep();
+                try
+                {
+                    valid = ValidCodeTypeStep();
+                }
+                catch
+                {
+                    // Wizard is not compatible with installed Sage 300 libraries
+                    valid = Resources.InvalidVersion;
+                }
             }
 
             // Entities Step

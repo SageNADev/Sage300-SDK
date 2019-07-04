@@ -523,4 +523,7 @@
   <data name="CodeGenerationWizard" xml:space="preserve">
     <value>Code Generation Wizard</value>
   </data>
+  <data name="InvalidVersion" xml:space="preserve">
+    <value>The Wizard is incompatible with the installed Sage 300 libraries. Please un-register the wizard and register the wizard that is compatible with the installed Sage 300 libraries.</value>
+  </data>
 </root>
