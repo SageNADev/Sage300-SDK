@@ -418,7 +418,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kendo placeholder.
+        ///   Looks up a localized string similar to The Kendo UI for jQuery JavaScript library is not packaged with the 
+        ///upgrade wizard for licensing reasons.
+        ///
+        ///However, if a new version is used by Sage during the release cycle, it 
+        ///will require synchronization.
+        ///
+        ///This step will copy the appropriate Kendo files from the local Sage 300
+        ///install..
         /// </summary>
         internal static string ReleaseAllSyncKendoFiles {
             get {
@@ -606,6 +613,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_logo_square {
+            get {
+                object obj = ResourceManager.GetObject("sage-logo-square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

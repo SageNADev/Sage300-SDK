@@ -21,11 +21,12 @@
 using System;
 using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
+using MetroFramework.Forms;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
     /// <summary> UI for Container Name Modal Entry </summary>
-    public partial class ContainerName : Form
+    public partial class ContainerName : MetroForm
     {
         #region Public Properties
         /// <summary> Container Name Property</summary>
@@ -48,7 +49,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
+            Text = Resources.CodeGenerationWizard;
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;

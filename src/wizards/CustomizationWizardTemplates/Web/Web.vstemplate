@@ -48,7 +48,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
-          <ProjectItem ReplaceParameters="true" TargetFileName="PassivePing.cshtml">PassivePing.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_GenericLayout.cshtml">_GenericLayout.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
         </Folder>

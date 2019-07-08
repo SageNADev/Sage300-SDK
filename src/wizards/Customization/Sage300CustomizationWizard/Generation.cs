@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -31,12 +31,13 @@ using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 {
     /// <summary> UI for Standalone Web Customization Wizard </summary>
-    public partial class Generation : Form
+    public partial class Generation : MetroForm
     {
         #region Private Variables
 
@@ -676,10 +677,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             lblAssembly.Text = Resources.Assembly;
             tooltip.SetToolTip(lblAssembly, Resources.AssemblyTip);
 
-            tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
+            //tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
             tooltip.SetToolTip(btnNew, Resources.PackageNewTip);
-            tooltip.SetToolTip(btnFolder, Resources.FolderFinderTip);
-            tooltip.SetToolTip(btnEula, Resources.EulaFinderTip);
+            //tooltip.SetToolTip(btnFolder, Resources.FolderFinderTip);
+            //tooltip.SetToolTip(btnEula, Resources.EulaFinderTip);
             tooltip.SetToolTip(btnDeleteEula, Resources.EulaRemoveTip);
             tooltip.SetToolTip(btnDeleteBootstrapper, Resources.BootstrapperRemoveTip);
             tooltip.SetToolTip(btnDeleteAssembly, Resources.AssemblyRemoveTip);
