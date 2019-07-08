@@ -25,11 +25,12 @@ using System.IO;
 using System.Windows.Forms;
 using Sage300UICustomizationWizard.Properties;
 using Newtonsoft.Json.Linq;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage300UICustomizationWizard
 {
-    public partial class UserInputForm : Form
+    public partial class UserInputForm : MetroForm
     {
         #region Private Variables
 
@@ -44,6 +45,8 @@ namespace Sage300UICustomizationWizard
         #region Private Constants
         private static class Constants
         {
+            public const string KendoLicenseUrl = @"http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
+
             public const string KendoVersion = "v2019.1.115";
 
             /// <summary> Panel Name for pnlCreateEdit </summary>
@@ -501,8 +504,6 @@ namespace Sage300UICustomizationWizard
             lblProject.Text = Resources.Project;
             tooltip.SetToolTip(lblProject, Resources.ProjectTip);
 
-            tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
-
             lblKendoVersionHelp.Text = String.Format(Resources.Template_KendoVersion, Constants.KendoVersion);
         }
 
@@ -532,9 +533,7 @@ namespace Sage300UICustomizationWizard
         /// <param name="e">Event Args </param>
         private void chkKendoLicense_CheckedChanged(object sender, EventArgs e)
         {
-            lblKendoFolder.Enabled = chkKendoLicense.Checked;
             txtKendoFolder.Enabled = chkKendoLicense.Checked;
-            btnKendoDialog.Enabled = chkKendoLicense.Checked;
         }
 
         /// <summary> Kendo License Link</summary>
@@ -546,7 +545,7 @@ namespace Sage300UICustomizationWizard
             lblKendoLink.LinkVisited = true;
 
             // Navigate to a URL.
-            System.Diagnostics.Process.Start(lblKendoLink.Text);
+            System.Diagnostics.Process.Start(Constants.KendoLicenseUrl);
         }
 
         /// <summary> Kendo Folder search dialog</summary>

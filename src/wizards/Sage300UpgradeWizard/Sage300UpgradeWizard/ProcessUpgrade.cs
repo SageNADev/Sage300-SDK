@@ -19,13 +19,11 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
 using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
 using System.IO;
-
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard

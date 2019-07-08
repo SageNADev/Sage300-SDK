@@ -28,12 +28,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> UI for Sage 300 Upgrade Wizard </summary>
-    public partial class Upgrade : Form
+    public partial class Upgrade : MetroForm
     {
         #region Private Variables
 
@@ -160,9 +161,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber),
                     BuildMainContentStep());
 
-            AddStep(Resources.ReleaseAllTitleSyncKendoFiles, Resources.ReleaseAllDescSyncKendoFiles, Resources.ReleaseAllSyncKendoFiles);
+            AddStep(Resources.ReleaseAllTitleSyncKendoFiles, 
+                    Resources.ReleaseAllDescSyncKendoFiles, 
+                    Resources.ReleaseAllSyncKendoFiles);
 
-            AddStep(Resources.ReleaseAllTitleSyncWebFiles, Resources.ReleaseAllDescSyncWebFiles, Resources.ReleaseAllSyncWebFiles);
+            AddStep(Resources.ReleaseAllTitleSyncWebFiles,
+                    Resources.ReleaseAllDescSyncWebFiles,
+                    Resources.ReleaseAllSyncWebFiles);
 
             #endregion
 
@@ -303,6 +308,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     {
                         // Enable back button
                         btnBack.Enabled = true;
+                    }
+                    else
+                    {
+                        // Set the focus on the 'Next' button on the first page
+                        btnNext.Focus();
                     }
 
                     // Increment step
@@ -511,6 +521,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Stores value in step
             _wizardSteps[_currentWizardStep].CheckboxValue = checkBox.Checked;
         }
-#endregion
+        #endregion
     }
 }

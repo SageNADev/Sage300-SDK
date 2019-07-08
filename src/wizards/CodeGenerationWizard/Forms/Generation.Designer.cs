@@ -160,6 +160,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtCompany.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCompany.CustomButton.UseSelectable = true;
             this.txtCompany.CustomButton.Visible = false;
+            this.txtCompany.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtCompany.Lines = new string[] {
         "SAMLTD"};
             this.txtCompany.Location = new System.Drawing.Point(287, 57);
@@ -172,6 +173,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtCompany.SelectionStart = 0;
             this.txtCompany.ShortcutsEnabled = true;
             this.txtCompany.Size = new System.Drawing.Size(83, 25);
+            this.txtCompany.Style = MetroFramework.MetroColorStyle.Green;
             this.txtCompany.TabIndex = 10;
             this.txtCompany.Text = "SAMLTD";
             this.txtCompany.UseSelectable = true;
@@ -193,6 +195,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtVersion.CustomButton.UseSelectable = true;
             this.txtVersion.CustomButton.Visible = false;
+            this.txtVersion.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtVersion.Lines = new string[] {
         "67A"};
             this.txtVersion.Location = new System.Drawing.Point(287, 27);
@@ -205,6 +208,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.SelectionStart = 0;
             this.txtVersion.ShortcutsEnabled = true;
             this.txtVersion.Size = new System.Drawing.Size(83, 25);
+            this.txtVersion.Style = MetroFramework.MetroColorStyle.Green;
             this.txtVersion.TabIndex = 8;
             this.txtVersion.Text = "67A";
             this.txtVersion.UseSelectable = true;
@@ -259,6 +263,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPassword.CustomButton.UseSelectable = true;
             this.txtPassword.CustomButton.Visible = false;
+            this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtPassword.Lines = new string[] {
         "ADMIN"};
             this.txtPassword.Location = new System.Drawing.Point(84, 57);
@@ -304,6 +309,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUser.CustomButton.UseSelectable = true;
             this.txtUser.CustomButton.Visible = false;
+            this.txtUser.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtUser.Lines = new string[] {
         "ADMIN"};
             this.txtUser.Location = new System.Drawing.Point(84, 27);
@@ -316,6 +322,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtUser.SelectionStart = 0;
             this.txtUser.ShortcutsEnabled = true;
             this.txtUser.Size = new System.Drawing.Size(115, 25);
+            this.txtUser.Style = MetroFramework.MetroColorStyle.Green;
             this.txtUser.TabIndex = 4;
             this.txtUser.Text = "ADMIN";
             this.txtUser.UseSelectable = true;
@@ -324,9 +331,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // cboRepositoryType
             // 
-            this.cboRepositoryType.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cboRepositoryType.FormattingEnabled = true;
-            this.cboRepositoryType.ItemHeight = 19;
+            this.cboRepositoryType.ItemHeight = 23;
             this.cboRepositoryType.Items.AddRange(new object[] {
             "Flat",
             "Process",
@@ -336,7 +342,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             "HeaderDetail"});
             this.cboRepositoryType.Location = new System.Drawing.Point(98, 27);
             this.cboRepositoryType.Name = "cboRepositoryType";
-            this.cboRepositoryType.Size = new System.Drawing.Size(141, 25);
+            this.cboRepositoryType.Size = new System.Drawing.Size(141, 29);
             this.cboRepositoryType.Style = MetroFramework.MetroColorStyle.Green;
             this.cboRepositoryType.TabIndex = 1;
             this.cboRepositoryType.UseSelectable = true;
@@ -518,9 +524,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlCodeType.Controls.Add(this.grpCredentials);
             this.pnlCodeType.Controls.Add(this.lblModule);
             this.pnlCodeType.Controls.Add(this.cboModule);
-            this.pnlCodeType.Location = new System.Drawing.Point(829, 27);
+            this.pnlCodeType.Location = new System.Drawing.Point(832, 29);
             this.pnlCodeType.Name = "pnlCodeType";
-            this.pnlCodeType.Size = new System.Drawing.Size(478, 73);
+            this.pnlCodeType.Size = new System.Drawing.Size(719, 55);
             this.pnlCodeType.TabIndex = 44;
             // 
             // lblCodeTypeFilesHelp
@@ -590,12 +596,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // cboModule
             // 
-            this.cboModule.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cboModule.FormattingEnabled = true;
-            this.cboModule.ItemHeight = 19;
+            this.cboModule.ItemHeight = 23;
             this.cboModule.Location = new System.Drawing.Point(97, 297);
             this.cboModule.Name = "cboModule";
-            this.cboModule.Size = new System.Drawing.Size(56, 25);
+            this.cboModule.Size = new System.Drawing.Size(56, 29);
             this.cboModule.Style = MetroFramework.MetroColorStyle.Green;
             this.cboModule.TabIndex = 19;
             this.cboModule.UseSelectable = true;

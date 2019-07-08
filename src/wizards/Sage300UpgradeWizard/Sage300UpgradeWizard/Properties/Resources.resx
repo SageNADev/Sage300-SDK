@@ -117,145 +117,166 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StepDescriptionMain" xml:space="preserve">
+    <value>Upgrade from {0} to {1}</value>
+  </data>
+  <data name="EndUpgradeProcess" xml:space="preserve">
+    <value>End Upgrade Process</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
+    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
+  </data>
+  <data name="GenerateXMLDocFile" xml:space="preserve">
+    <value>Generate XML documentation file</value>
+  </data>
+  <data name="FoundPostBuildEventEntry" xml:space="preserve">
+    <value>Found PostBuildEvent Entry</value>
+  </data>
+  <data name="ReleaseSpecificDescExternalContentFolder" xml:space="preserve">
+    <value>This step will create and populate the new ExternalContent folder.</value>
+  </data>
+  <data name="ShowLog" xml:space="preserve">
+    <value>Show Log</value>
+  </data>
+  <data name="ReleaseAllUpgraded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllUpgraded.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="CopiedAllFilesFrom" xml:space="preserve">
+    <value>Copied all files from</value>
+  </data>
+  <data name="EnsureBackup" xml:space="preserve">
+    <value>Note: Before proceeding ensure a backup has been performed!</value>
+  </data>
+  <data name="AddReplaceFile" xml:space="preserve">
+    <value>Add/Replace file: </value>
+  </data>
+  <data name="FollowingSteps" xml:space="preserve">
+    <value>The following steps will be performed:</value>
+  </data>
+  <data name="BeforeUpdate" xml:space="preserve">
+    <value>Before update</value>
+  </data>
+  <data name="UpgradeLibrary" xml:space="preserve">
+    <value>Upgrade library from {0} to {1}</value>
+  </data>
+  <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
+    <value>Consolidation of Enumeration Files</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="PostBuildEventTextExistsButIsEmpty" xml:space="preserve">
+    <value>PostBuildEvent text exists but is empty</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>deleted</value>
+  </data>
+  <data name="ReleaseAllTitleSyncWebFiles" xml:space="preserve">
+    <value>Synchronize Web Files</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="SolutionDirectory" xml:space="preserve">
+    <value>Solution Directory</value>
+  </data>
+  <data name="StepTitleMain" xml:space="preserve">
+    <value>Solution and Projects Upgrade</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
+    <value>Update targeted version of .NET Framework</value>
+  </data>
+  <data name="SolutionUpgrade" xml:space="preserve">
+    <value>Solution Upgrade Wizard - V{0}</value>
+  </data>
+  <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
+    <value>This step will upgrade the Accpac Libraries references.</value>
+  </data>
+  <data name="MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry" xml:space="preserve">
+    <value>Main menu node found but does not have existing MEnuBackGoundImage entry.</value>
+  </data>
+  <data name="ReleaseAllTitleRecompile" xml:space="preserve">
+    <value>Recompile</value>
+  </data>
+  <data name="ReleaseSpecificDescConsolidateEnumerations" xml:space="preserve">
+    <value>This step will automatically convert all the distinct enumeration files into a single file called 'Enumerations.cs' on a per-folder basis.</value>
+  </data>
+  <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Dash" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="ReleaseAllUpgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllUpgrade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseAllTitleSyncAccpacLibs" xml:space="preserve">
+    <value>Synchronize Accpac Libraries</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="Exists" xml:space="preserve">
+    <value>exists</value>
+  </data>
+  <data name="DoesNotExist" xml:space="preserve">
+    <value>does not exist</value>
+  </data>
+  <data name="BeginUpgradeProcess" xml:space="preserve">
+    <value>Begin Upgrade Process...</value>
+  </data>
+  <data name="ReleaseSpecificDescAspnetClientFolder" xml:space="preserve">
+    <value>This is a manual step that may need to be performed by our development partners.</value>
+  </data>
+  <data name="MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry" xml:space="preserve">
+    <value>Main menu node found but does not have existing IconName entry.</value>
   </data>
   <data name="Browser" xml:space="preserve">
     <value>IEXPLORE.EXE</value>
     <comment>Browser to use</comment>
   </data>
-  <data name="AddReplaceFile" xml:space="preserve">
-    <value>Add/Replace file: </value>
+  <data name="AfterUpdate" xml:space="preserve">
+    <value>AfterUpdate</value>
+  </data>
+  <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
+    <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="Dash" xml:space="preserve">
-    <value> - </value>
-  </data>
-  <data name="End" xml:space="preserve">
-    <value>End</value>
-  </data>
-  <data name="EnsureBackup" xml:space="preserve">
-    <value>Note: Before proceeding ensure a backup has been performed!</value>
-  </data>
-  <data name="Finish" xml:space="preserve">
-    <value>Finish</value>
-  </data>
-  <data name="FollowingSteps" xml:space="preserve">
-    <value>The following steps will be performed:</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="ProcessingStep" xml:space="preserve">
-    <value>Processing {0}...</value>
-  </data>
-  <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
-    <value>This step will upgrade the Accpac Libraries references.</value>
-  </data>
-  <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
-    <value>This step will upgrade the various global files included in the solution.</value>
-  </data>
-  <data name="ReleaseAllDescConfirmation" xml:space="preserve">
-    <value>Ready to begin the upgrade.</value>
-  </data>
-  <data name="ReleaseAllDescRecompile" xml:space="preserve">
-    <value>The Solution and Project files have been upgraded.</value>
-  </data>
-  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllTitleSyncAccpacLibs" xml:space="preserve">
-    <value>Synchronize Accpac Libraries</value>
-  </data>
-  <data name="ReleaseAllTitleSyncWebFiles" xml:space="preserve">
-    <value>Synchronize Web Files</value>
-  </data>
-  <data name="ReleaseAllTitleConfirmation" xml:space="preserve">
-    <value>Confirmation</value>
-  </data>
-  <data name="ReleaseAllTitleRecompile" xml:space="preserve">
-    <value>Recompile</value>
-  </data>
-  <data name="ReleaseAllUpgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllUpgrade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllUpgraded" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllUpgraded.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ShowLog" xml:space="preserve">
-    <value>Show Log</value>
-  </data>
-  <data name="SolutionUpgrade" xml:space="preserve">
-    <value>Solution Upgrade Wizard - V{0}</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="Step" xml:space="preserve">
-    <value>Step</value>
-  </data>
-  <data name="StepDescriptionMain" xml:space="preserve">
-    <value>Upgrade from {0} to {1}</value>
-  </data>
-  <data name="StepTitleMain" xml:space="preserve">
-    <value>Solution and Projects Upgrade</value>
-  </data>
-  <data name="Upgrade" xml:space="preserve">
-    <value>Upgrade</value>
-  </data>
-  <data name="UpgradeLibrary" xml:space="preserve">
-    <value>Upgrade library from {0} to {1}</value>
-  </data>
-  <data name="GenerateXMLDocFile" xml:space="preserve">
-    <value>Generate XML documentation file</value>
-  </data>
-  <data name="AfterUpdate" xml:space="preserve">
-    <value>AfterUpdate</value>
-  </data>
-  <data name="BeforeUpdate" xml:space="preserve">
-    <value>Before update</value>
-  </data>
-  <data name="CompanyName" xml:space="preserve">
-    <value>Company Name</value>
-  </data>
-  <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
-    <value>Exception thrown. Possible locked file</value>
+  <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
+    <value>This step will update the version numbers for some Crystal Reports components.</value>
   </data>
   <data name="ExtractedModuleId" xml:space="preserve">
     <value>Extracted moduleid</value>
-  </data>
-  <data name="FoundPostBuildEventEntry" xml:space="preserve">
-    <value>Found PostBuildEvent Entry</value>
-  </data>
-  <data name="InsertedCommand" xml:space="preserve">
-    <value>Inserted command</value>
-  </data>
-  <data name="MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry" xml:space="preserve">
-    <value>Main menu node found but does not have existing IconName entry.</value>
-  </data>
-  <data name="MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry" xml:space="preserve">
-    <value>Main menu node found but does not have existing MEnuBackGoundImage entry.</value>
-  </data>
-  <data name="PostBuildEventTextExistsButIsEmpty" xml:space="preserve">
-    <value>PostBuildEvent text exists but is empty</value>
-  </data>
-  <data name="Processing" xml:space="preserve">
-    <value>Processing</value>
-  </data>
-  <data name="Project" xml:space="preserve">
-    <value>Project</value>
-  </data>
-  <data name="SolutionDirectory" xml:space="preserve">
-    <value>Solution Directory</value>
   </data>
   <data name="SolutionProjects" xml:space="preserve">
     <value>Solution Projects</value>
@@ -263,59 +284,41 @@
   <data name="SolutionProjectsToBeProcessed" xml:space="preserve">
     <value>Solution projects to be processed</value>
   </data>
-  <data name="ReleaseSpecificDescConsolidateEnumerations" xml:space="preserve">
-    <value>This step will automatically convert all the distinct enumeration files into a single file called 'Enumerations.cs' on a per-folder basis.</value>
-  </data>
-  <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
-    <value>Consolidation of Enumeration Files</value>
-  </data>
   <data name="ReleaseSpecificUpdateConsolidateEnumerations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateConsolidateEnumerations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseSpecificDescExternalContentFolder" xml:space="preserve">
-    <value>This step will create and populate the new ExternalContent folder.</value>
-  </data>
-  <data name="ReleaseSpecificDescAspnetClientFolder" xml:space="preserve">
-    <value>This is a manual step that may need to be performed by our development partners.</value>
-  </data>
-  <data name="BeginUpgradeProcess" xml:space="preserve">
-    <value>Begin Upgrade Process...</value>
-  </data>
-  <data name="CopiedAllFilesFrom" xml:space="preserve">
-    <value>Copied all files from</value>
-  </data>
-  <data name="Deleted" xml:space="preserve">
-    <value>deleted</value>
-  </data>
-  <data name="DoesNotExist" xml:space="preserve">
-    <value>does not exist</value>
-  </data>
-  <data name="EndUpgradeProcess" xml:space="preserve">
-    <value>End Upgrade Process</value>
-  </data>
-  <data name="Exists" xml:space="preserve">
-    <value>exists</value>
-  </data>
-  <data name="File" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="To" xml:space="preserve">
-    <value>to</value>
-  </data>
-  <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
-    <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
-  </data>
-  <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
-    <value>This step will update the version numbers for some Crystal Reports components.</value>
-  </data>
-  <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
+  <data name="ReleaseAllDescConfirmation" xml:space="preserve">
+    <value>Ready to begin the upgrade.</value>
   </data>
   <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>Update targeted version of .NET Framework</value>
+  <data name="ReleaseAllDescRecompile" xml:space="preserve">
+    <value>The Solution and Project files have been upgraded.</value>
+  </data>
+  <data name="ProcessingStep" xml:space="preserve">
+    <value>Processing {0}...</value>
+  </data>
+  <data name="InsertedCommand" xml:space="preserve">
+    <value>Inserted command</value>
+  </data>
+  <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
+    <value>Exception thrown. Possible locked file</value>
+  </data>
+  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
+    <value>This step will upgrade the various global files included in the solution.</value>
+  </data>
+  <data name="ReleaseAllTitleConfirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="sage-logo-square" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage-logo-square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopiedKendoFileFrom" xml:space="preserve">
+    <value>Copied Kendo files from</value>
   </data>
   <data name="ReleaseAllDescSyncKendoFiles" xml:space="preserve">
     <value>This step will upgrade the Kendo JavaScript files in the solution.</value>
@@ -323,7 +326,7 @@
   <data name="ReleaseAllTitleSyncKendoFiles" xml:space="preserve">
     <value>Synchronize Kendo files</value>
   </data>
-  <data name="CopiedKendoFileFrom" xml:space="preserve">
-    <value>Copied Kendo files from</value>
+  <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
