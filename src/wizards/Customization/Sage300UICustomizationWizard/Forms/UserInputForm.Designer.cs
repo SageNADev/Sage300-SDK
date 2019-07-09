@@ -919,6 +919,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(980, 629);
             this.Controls.Add(this.splitBase);
             this.HelpButton = true;
