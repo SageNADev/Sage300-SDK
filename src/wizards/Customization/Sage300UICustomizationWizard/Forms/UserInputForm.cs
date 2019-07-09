@@ -178,6 +178,7 @@ namespace Sage300UICustomizationWizard
                 if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
                 {
                     btnNext.Text = Resources.Generate;
+                    btnNext.Enabled = chkKendoLicense.Checked;
                 }
 
                 // Update title and text for step
@@ -227,7 +228,7 @@ namespace Sage300UICustomizationWizard
         /// <summary> Show Step Title</summary>
         private void ShowStepTitle()
         {
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+            lblStepTitle.Text = Resources.Step + " " + (_currentWizardStep + 1).ToString("#0") + " " + Resources.Dash + " " + 
                                 _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
@@ -534,6 +535,7 @@ namespace Sage300UICustomizationWizard
         private void chkKendoLicense_CheckedChanged(object sender, EventArgs e)
         {
             txtKendoFolder.Enabled = chkKendoLicense.Checked;
+            btnNext.Enabled = chkKendoLicense.Checked;
         }
 
         /// <summary> Kendo License Link</summary>
