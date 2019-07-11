@@ -73,17 +73,21 @@ namespace MergeISVProject
 			return Encoding.GetEncoding(DefaultCodePage).GetString(byteArray);
 		}
 
-		/// <summary>
-		/// Get the name of this application and it's version number
-		/// Values are returned via output string parameters
-		/// </summary>
-		/// <param name="name">Application Name</param>
-		/// <param name="ver">Application Version</param>
-		public static void GetAppNameAndVersion(out string name, out string ver)
+        /// <summary>
+        /// Get some information from the application
+        /// Values are returned via output string parameters
+        /// </summary>
+        /// <param name="name">Application Name</param>
+        /// <param name="ver">Application Version</param>
+        /// <param name="copyright">Application Copyright</param>
+        public static void GetAppInformation(out string name, out string ver, out string copyright)
 		{
-			name = typeof(Program).Assembly.GetName().Name + ".exe";
-			ver = typeof(Program).Assembly.GetName().Version.ToString();
-		}
-		#endregion
-	}
+            var currentAssembly = typeof(Program).Assembly;
+            var info = FileVersionInfo.GetVersionInfo(typeof(Program).Assembly.Location);
+            name = info.InternalName;
+            ver = info.ProductVersion;
+            copyright = info.LegalCopyright;
+        }
+        #endregion
+    }
 }

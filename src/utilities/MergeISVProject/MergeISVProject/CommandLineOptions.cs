@@ -85,12 +85,17 @@ namespace MergeISVProject
 		/// </summary>
 		public string ApplicationVersion { get; set; }
 
-		/// <summary>
-		/// This will contain the list of all errors that
-		/// occurred when attempting to load and parse the
-		/// command-line options.
-		/// </summary>
-		public List<string> LoadErrors { get; private set; }
+        /// <summary>
+        /// This will contain the copyright information of the application
+        /// </summary>
+        public string ApplicationCopyright { get; set; }
+
+        /// <summary>
+        /// This will contain the list of all errors that
+        /// occurred when attempting to load and parse the
+        /// command-line options.
+        /// </summary>
+        public List<string> LoadErrors { get; private set; }
 
 		/// <summary>
 		/// This will contain the formatted message 
@@ -205,18 +210,20 @@ namespace MergeISVProject
 			// Empty constructor for unit testing purposes
 		}
 
-		/// <summary>
-		/// The primary constructor
-		/// </summary>
-		/// <param name="appName">The name of the application</param>
-		/// <param name="appVersion">The version number of the application</param>
-		/// <param name="args">The argument list passed in via the command-line</param>
-		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
-		public CommandLineOptions(string appName, string appVersion, string[] args, string prefix=DEFAULT_PREFIX)
+        /// <summary>
+        /// The primary constructor
+        /// </summary>
+        /// <param name="appName">The name of the application</param>
+        /// <param name="appVersion">The version number of the application</param>
+        /// <param name="appCopyright">The copyright information for the application</param>
+        /// <param name="args">The argument list passed in via the command-line</param>
+        /// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
+        public CommandLineOptions(string appName, string appVersion, string appCopyright, string[] args, string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
             ApplicationName = appName;
             ApplicationVersion = appVersion;
+            ApplicationCopyright = appCopyright;
 
 			// If the argument array has only a single entry, then the
 			// arguments list will likely have /r/n characters in it
@@ -586,6 +593,7 @@ namespace MergeISVProject
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 																   ApplicationVersion,
+                                                                   ApplicationCopyright,
 																   required3rdPartyComponents,
 																   requiredParams,
 																   optionalParams);

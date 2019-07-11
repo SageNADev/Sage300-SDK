@@ -53,9 +53,11 @@ namespace MergeISVProject
 			//Utilities.GetAppNameAndVersion(out string appName, out string appVersion); // C# V7+ 
 			string appName = string.Empty;
 			string appVersion = string.Empty;
-			Utilities.GetAppNameAndVersion(out appName, out appVersion); // C# V6+ 
+            string appCopyright = string.Empty;
+            Utilities.GetAppInformation(out appName, out appVersion, out appCopyright); // C# V6+ 
 
-			_Options = new CommandLineOptions(appName, appVersion, args);
+
+            _Options = new CommandLineOptions(appName, appVersion, appCopyright, args);
 			_Logger = new Logger(logfilename: LOGFILENAME,
 									logfolder: Directory.GetCurrentDirectory(),
 									enabled: _Options.Log.OptionValue);
