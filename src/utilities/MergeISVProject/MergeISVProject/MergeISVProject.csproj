@@ -103,14 +103,17 @@ set SDKRootDir=$(SolutionDir)..\..\..\
 REM \bin\utilities\
 set Destination=%25SDKRootDir%25bin\utilities\
 copy %25Source%25 %25Destination%25
+echo Copied to %25Destination%25
 
 REM \src\wizards\Templates\Web\
 set Destination=%25SDKRootDir%25src\wizards\Templates\Web\
 copy %25Source%25 %25Destination%25
+echo Copied to %25Destination%25
 
 REM \src\wizards\UpgradeWizardTemplates\Items\
 set Destination=%25SDKRootDir%25src\wizards\UpgradeWizardTemplates\Items\
 copy %25Source%25 %25Destination%25
+echo Copied to %25Destination%25
 
 
 

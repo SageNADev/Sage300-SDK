@@ -50,14 +50,10 @@ namespace MergeISVProject
 		/// <param name="args">The command-line arguments list</param>
 		private static void InitializeComponents(string[] args)
 		{
-			//Utilities.GetAppNameAndVersion(out string appName, out string appVersion); // C# V7+ 
-			string appName = string.Empty;
-			string appVersion = string.Empty;
-            string appCopyright = string.Empty;
-            Utilities.GetAppInformation(out appName, out appVersion, out appCopyright); // C# V6+ 
+            string appName, appVersion, appCopyright, buildDate, buildYear;
+            Utilities.GetAppInformation(out appName, out appVersion, out appCopyright, out buildDate, out buildYear); // C# V6+ 
 
-
-            _Options = new CommandLineOptions(appName, appVersion, appCopyright, args);
+            _Options = new CommandLineOptions(appName, appVersion, appCopyright, buildDate, buildYear, args);
 			_Logger = new Logger(logfilename: LOGFILENAME,
 									logfolder: Directory.GetCurrentDirectory(),
 									enabled: _Options.Log.OptionValue);

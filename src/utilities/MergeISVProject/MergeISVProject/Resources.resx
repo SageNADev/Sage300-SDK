@@ -255,22 +255,23 @@
   <data name="Msg_ProgramUsageMessage" xml:space="preserve">
     <value>Program Name:          {0}
 Version:               {1}
+Build Date:            {2}
 
-Copyright:             {2}  
+Copyright:             {3}  
                        All rights reserved.
 License:               The MIT Licence (MIT)
 
 Required 3rd party
-programs/components:   {3}
+programs/components:   {4}
 
 
 Required Parameter(s):
 
-{4}
+{5}
 
 Optional Parameter(s):
 
-{5}</value>
+{6}</value>
   </data>
   <data name="Msg_Rename1To2" xml:space="preserve">
     <value>Rename '{0}' to '{1}'</value>

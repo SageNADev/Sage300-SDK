@@ -468,22 +468,23 @@ namespace MergeISVProject {
         /// <summary>
         ///   Looks up a localized string similar to Program Name:          {0}
         ///Version:               {1}
+        ///Build Date:            {2}
         ///
-        ///Copyright:             {2}  
+        ///Copyright:             {3}  
         ///                       All rights reserved.
         ///License:               The MIT Licence (MIT)
         ///
         ///Required 3rd party
-        ///programs/components:   {3}
+        ///programs/components:   {4}
         ///
         ///
         ///Required Parameter(s):
         ///
-        ///{4}
+        ///{5}
         ///
         ///Optional Parameter(s):
         ///
-        ///{5}.
+        ///{6}.
         /// </summary>
         internal static string Msg_ProgramUsageMessage {
             get {
