@@ -3128,7 +3128,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-#endregion
-
+        #endregion
     }
 }

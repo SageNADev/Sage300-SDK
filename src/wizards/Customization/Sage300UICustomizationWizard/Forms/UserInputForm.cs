@@ -68,7 +68,7 @@ namespace Sage300UICustomizationWizard
             public const string ApplicationModules = "AP,AR,AS,BK,TX,CS,GL,IC,OE,PO,";
 
             /// <summary> Splitter Distance </summary>
-            public const int SplitterDistance = 415;
+            public const int SplitterDistance = 540;
 
             /// <summary> Single space character </summary>
             public const char SingleSpaceCharacter = ' ';
