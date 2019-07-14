@@ -145,9 +145,6 @@
   <data name="FoundPostBuildEventEntry" xml:space="preserve">
     <value>Found PostBuildEvent Entry</value>
   </data>
-  <data name="ReleaseSpecificDescExternalContentFolder" xml:space="preserve">
-    <value>This step will create and populate the new ExternalContent folder.</value>
-  </data>
   <data name="ShowLog" xml:space="preserve">
     <value>Show Log</value>
   </data>
@@ -253,9 +250,6 @@
   <data name="BeginUpgradeProcess" xml:space="preserve">
     <value>Begin Upgrade Process...</value>
   </data>
-  <data name="ReleaseSpecificDescAspnetClientFolder" xml:space="preserve">
-    <value>This is a manual step that may need to be performed by our development partners.</value>
-  </data>
   <data name="MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry" xml:space="preserve">
     <value>Main menu node found but does not have existing IconName entry.</value>
   </data>
@@ -271,9 +265,6 @@
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
-  </data>
-  <data name="ReleaseSpecificDescCrystalReportsVersionNumberUpdate" xml:space="preserve">
-    <value>This step will update the version numbers for some Crystal Reports components.</value>
   </data>
   <data name="ExtractedModuleId" xml:space="preserve">
     <value>Extracted moduleid</value>
@@ -292,6 +283,15 @@
   </data>
   <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReleaseSpecificTitleUpdateMultisession" xml:space="preserve">
+    <value>Multiple Sessions framework changes</value>
+  </data>
+  <data name="ReleaseSpecificDescUpdateMultisession" xml:space="preserve">
+    <value>This step will need to be done manually.</value>
+  </data>
+  <data name="ReleaseSpecificUpdateMultisession" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateMultisession.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ReleaseAllDescRecompile" xml:space="preserve">
     <value>The Solution and Project files have been upgraded.</value>

@@ -27,7 +27,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using MetroFramework.Forms;
 #endregion
 
@@ -172,12 +171,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #endregion
 
             #region Accpac .NET library update - Comment out if no update required
-            // Not necessary for 2019.2 release
-            //AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-            //        Resources.ReleaseAllDescSyncAccpacLibs,
-            //        string.Format(Resources.ReleaseAllSyncAccpacLibs,
-            //                      Constants.PerRelease.FromAccpacNumber,
-            //                      Constants.PerRelease.ToAccpacNumber));
+
+            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+                    Resources.ReleaseAllDescSyncAccpacLibs,
+                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
+                                  Constants.PerRelease.FromAccpacNumber,
+                                  Constants.PerRelease.ToAccpacNumber));
+
             #endregion
 
             #region Release Specific Steps...
@@ -191,10 +191,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-            AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
-                    Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
-                    string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
-                                  Constants.Common.TargetedDotNetFrameworkVersion));
+            // Keep this around for the inevitable .NET framework 4.8 upgrade
+            //AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
+            //        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
+            //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
+            //                      Constants.Common.TargetedDotNetFrameworkVersion));
+
+            AddStep(Resources.ReleaseSpecificTitleUpdateMultisession,
+                    Resources.ReleaseSpecificDescUpdateMultisession,
+                    Resources.ReleaseSpecificUpdateMultisession);
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -228,15 +234,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine("");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
-
-            // Not necessary for 2019.2 release
-            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
 
             // Begin - Specific to release
 #if ENABLE_TK_244885
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 #endif
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+            // Keep this around for the inevitable .NET framework 4.8 upgrade
+            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMultisession}");
 
             // End - Specific to release
 
