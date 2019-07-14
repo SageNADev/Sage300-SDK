@@ -152,13 +152,16 @@ glIntegrationUI = {
         });
         return dataSource;
     },
+
     initBrowserBackIsDirty: function () {
-        $(window).bind('beforeunload', function () {
-            if (glIntegrationUI.glIntegrationModel.isModelDirty.isDirty()) {
-                return $('<div />').html($.validator.format(globalResource.SaveConfirm2, glIntegrationResources.Title)).text();
+        $(window).on('beforeunload', function () {
+            var dirty = glIntegrationUI.glIntegrationModel.isModelDirty.isDirty();
+            if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+                return sg.utls.getDirtyMessage(glIntegrationResources.Title);
             }
         });
     },
+
     initPopupWindow: function () {
         //sg.utls.intializeKendoWindowPopup('#window', "GL Integration Details");
         //extend popup behaviours

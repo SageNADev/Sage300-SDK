@@ -69,17 +69,99 @@ $.extend(sg.utls.msgType, {
     ERROR: "error", INFO: "info", SUCCESS: "success", WARNING: "warning"
 });
 
+// Use to do string format, kind of like String.format in C#
+String.prototype.format = function () {
+    var str = this;
+    for (var i = 0; i < arguments.length; i++) {
+        var reg = new RegExp("\\{" + i + "\\}", "gm");
+        str = str.replace(reg, arguments[i]);
+    }
+    return str;
+};
+
 $.extend(sg.utls.url, {
+
+    // Predefined Urls
+    loginUrl: function (isAdmin) { return sg.utls.url.buildUrl("Core", "Authentication", isAdmin ? "AdminLogin" : "Login"); },
+    logoutUrl: function () { return sg.utls.url.buildUrl("Core", "Authentication", "Logout"); },
+    saveGridPreferencesUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"); },
+    getGridPreferencesUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "GetGridPreferences"); },
+    logJavascriptErrorUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "LogJavascriptError"); },
+    logJavascriptMessageUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "LogJavascriptMessage"); },
+    releaseSessionUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"); },
+    destroyPoolUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "DestroyPool"); },
+    destroySessionUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "Destroy"); },
+    getApplicationConfigUrl: function () { return sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"); },
+
     baseUrl: function () {
         return $("#hdnUrl").val();
     },
-    buildUrl: function (area, controller, action) {
+
+    /**
+     * @name buildUrl
+     * @description Build a fully-qualified url
+     * @param {string} area - The string representing the area name
+     * @param {string} controller  - The string representing the controller name
+     * @param {string} action  - The string representing the action name
+     * @param {string} parameters  - The string representing the parameters
+     * @returns {string} The fully-qualified url
+     */
+    buildUrl: function (area, controller, action, parameters) {
+        // MultSessions TODO - This will always include the session, but certain Core routes do not require it
+        // Thus, will need to add session to all routes OR call a routine that removes the session from the route
+        // when it is not needed
         var siteUrl = sg.utls.url.baseUrl(),
             slash = "/";
+
+        // Ensure that parameters are valid objects
+        if (!area) { area = ""; }
+        if (!controller) { controller = ""; }
+        if (!action) { action = ""; }
+        if (!parameters) { parameters = ""; }
+
+        // Build the rest of the url and return
         siteUrl += area.length > 0 ? area : "";
         siteUrl += controller.length > 0 ? slash + controller : "";
         siteUrl += action.length > 0 ? slash + action : "";
+        siteUrl += parameters.length > 0 ? slash + parameters : "";
         return siteUrl;
+    },
+
+    /**
+     * @name extractAreaAndControllerFromPartialUrl
+     * @description This method will extract the area and controller names from a partial url.
+     *              Example: AR/Customer -> Area = AR, Controller = Customer
+     * @param {string} partialUrl - This is the partial url Ex: AR/Customer
+     * @return { object } - Json object representing the extracted area and controller names
+     */
+    extractAreaAndControllerFromPartialUrl: function (partialUrl) {
+        var payload = null;
+        if (partialUrl && partialUrl.length > 0) {
+            var parts = partialUrl.split("/");
+            payload = { AreaName: parts[0], ControllerName: parts[1] };
+        }
+        return payload;
+    },
+
+    /**
+     * @name extractAreaControllerActionAndParametersFromPartialUrl
+     * @description This method will extract the area, controller, action and parameters from a partial url.
+     *              Example: AR/Customer/Index/?id=1234 -> Area = AR, Controller = Customer, Action = Index, Parameters = ?id=1234
+     * @param {string} partialUrl - This is the partial url Ex: AR/Customer/Index/?id=1234
+     * @return { object } - Json object representing the extracted area, controller, action and parameters
+     */
+    extractAreaControllerActionAndParametersFromPartialUrl: function (partialUrl) {
+        var payload = null;
+        if (partialUrl && partialUrl.length > 0) {
+            var parts = partialUrl.split("/");
+            payload = {
+                AreaName: parts[0],
+                ControllerName: parts[1],
+                ActionName: parts[2],
+                ParametersName: parts[3]
+            };
+        }
+        return payload;
     },
 
     getParameterByName: function (name, url) {
@@ -93,6 +175,68 @@ $.extend(sg.utls.url, {
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     },
+
+    /**
+     * @name isSameOrigin
+     * @description Compare the original url with the current url to
+     *              see if they are from the same origin
+     * @returns {boolean} true = same origin | false = different origin
+     */
+    isSameOrigin: function () {
+        var sage300Origin = $("#Sage300Origin").val();
+        var currentOrigin = window.location.href;
+        var a1 = $('<a>', { href: sage300Origin })[0];
+        var a2 = $('<a>', { href: currentOrigin })[0];
+        return a1.protocol === a2.protocol &&
+            a1.hostname === a2.hostname &&
+            a1.port === a2.port;
+    },
+
+    /**
+     * @name urlEncode
+     * @description Url encode a string
+     *              Note: This method is the same as sg.utls.urlEncode
+     *                    and is duplicated here for consistency purposes
+     * @param {string} url - The url to encode
+     * @returns {string} The encoded string
+     */
+    urlEncode: function (url) {
+        var encodedUrl;
+
+        if (url.indexOf("?") > -1) {
+            var allUrlComponents = url.split("?");
+            var urlComponent = allUrlComponents[0];
+            var allQueryStrings = allUrlComponents[1].split("&");
+
+            encodedUrl = urlComponent;
+
+
+            for (var i = 0; i < allQueryStrings.length; i++) {
+                var queryStringPairs = allQueryStrings[i].split("=");
+                var encodedQueryStringValue = sg.utls.textEncode(queryStringPairs[1]);
+                var literal = (i == 0) ? "?" : "&";
+                encodedUrl = encodedUrl + literal + queryStringPairs[0] + "=" + encodedQueryStringValue;
+            }
+        } else {
+            encodedUrl = url;
+        }
+
+        return encodedUrl;
+    },
+
+    /**
+     * @name buildCacheBuster
+     * @description Create an url parameter meant to invalidate the cache
+     * @returns {string} return an url parameter for cache busting
+     */
+    buildCacheBuster: function () {
+        var cb = ""; 
+        if (sg.utls.isInternetExplorer()) {
+            // Generate date + random number to make the URL unique
+            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000));
+        }
+        return cb;
+    }
 });
 
 $.extend(sg.utls, {
@@ -186,9 +330,9 @@ $.extend(sg.utls, {
     },
 
     isSameOrigin: function () {
-        var requestBaseUrl = sg.utls.getCookie("baseUrl");
-        if (requestBaseUrl) {
-            return requestBaseUrl === window.location.protocol + window.location.host;
+        var url = window.location.href;
+        if (sessionStorage["productId"] || url.indexOf("productId") > 0) {
+            return false;
         }
         return true;
     },
@@ -202,7 +346,8 @@ $.extend(sg.utls, {
     },
 
     isKendoIframe: function () {
-        if (sg.utls.isSameOrigin()) {
+        var isPortal = window.top.$('iframe.screenIframe:visible');
+        if (sg.utls.isSameOrigin() && isPortal) {
             var kendoIframe = window.top.$('iframe.screenIframe:visible').contents().find('.k-content-frame:visible');
             return kendoIframe.length > 0;
         }
@@ -240,6 +385,12 @@ $.extend(sg.utls, {
         return text.replace(/:/g, "");
     },
 
+    /**
+     * @name getFirefoxSpecialKeys
+     * @description TODO Enter a description
+     * @param {object} e - TODO Enter a description
+     * @returns {array} TODO Enter a description
+     */
     getFirefoxSpecialKeys: function (e) {
         var fields = [8, 9];
         // to enable copy paste in firefox
@@ -256,57 +407,58 @@ $.extend(sg.utls, {
         }
         return fields;
     },
+
     /**
-     * Gets a value indicating whether the current browser is Internet Explorer.
-     * 
+     * @name isInternetExplorer
+     * @description Gets a value indicating whether the current browser is Internet Explorer.
      * @returns {boolean} True if the browser is Internet Explorer, otherwise false. 
      */
     isInternetExplorer: function () {
+        var isIE = $.browser.msie;
         var ua = window.navigator.userAgent;
-        if ($.browser.msie || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0) {
-            return true;
-        }
-        return false;
+        var tridentFound = ua.indexOf('Trident/') > 0;
+        var edgeFound = ua.indexOf('Edge/') > 0;
+
+        return (isIE || tridentFound || edgeFound);
     },
+
     /**
-     * Gets a value indicating whether the current browser is Mozilla Firefox.
-     * 
+     * @name isMozillaFirefox
+     * @description Gets a value indicating whether the current browser is Mozilla Firefox.
      * @returns {boolean} True if the browser is Mozilla Firefox, otherwise false. 
      */
     isMozillaFirefox: function () {
-        if ($.browser.mozilla && sg.utls.isInternetExplorer() == false) {
-            return true;
-        }
-        return false;
+        var isMozilla = $.browser.mozilla;
+        var isIE = sg.utls.isInternetExplorer();
+
+        return (isMozilla && !isIE);
     },
+
     /**
-     * Gets a value indicating whether the current browser is Google Chrome.
-     * 
+     * @name isChrome
+     * @description Gets a value indicating whether the current browser is Google Chrome.
      * @returns {boolean} True if the browser is Google Chrome, otherwise false. 
      */
     isChrome: function () {
-
-        var isChrome = navigator.userAgent.indexOf('Chrome') != -1;
-
-        return isChrome;
-
+        var _isChrome = navigator.userAgent.indexOf('Chrome') != -1;
+        return _isChrome;
     },
+
     /**
-     * Gets a value indicating whether the current browser is Apple Safari.
-     * 
+     * @name isSafari
+     * @description Gets a value indicating whether the current browser is Apple Safari.
      * @returns {boolean} True if the browser is Apple Safari, otherwise false. 
      */
     isSafari: function () {
 
-        var isSafari = (navigator.userAgent.indexOf('Safari') != -1
-                            && navigator.userAgent.indexOf('Chrome') == -1)
-
-        return isSafari;
-
+        var _isSafari = (navigator.userAgent.indexOf('Safari') != -1
+            && navigator.userAgent.indexOf('Chrome') == -1);
+        return _isSafari;
     },
+
     /**
-     * Gets a value indicating whether the current browser is operating on a mobile device.
-     * 
+     * @name isMobile
+     * @description Gets a value indicating whether the current browser is operating on a mobile device.
      * @returns {boolean} True if the browser is operating on a mobile device, otherwise false. 
      */
     isMobile: function () {
@@ -323,59 +475,203 @@ $.extend(sg.utls, {
                     $this.attr("maxlength", data.valLengthMax);
             }
         });
-
     },
+
     registerDestroySession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            $(window).bind('unload', function () {
-                if (globalResource.AllowPageUnloadEvent) {
-                    sg.utls.destroySession();
-                }
+            $(window).on('unload', function () {
+                sg.utls.destroySession();
             });
         }
     },
+
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
             sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
         }
     },
+
     destroySessions: function () {
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
-        sage.cache.clearAll();
+        sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
+
     destroySession: function () {
-        sage.cache.clearAll();
+        // Do not want to remove session from storage (will do this when page closes/logs out/etc.)
+        var sessionId = sage.cache.session.get("session");
+        sage.cache.session.clearAll();
+        sage.cache.session.set("session", sessionId);
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
     },
 
-    logOut: function (isAdminLogout) {
+    /**
+     * @name logOut
+     * @description Log the current user out
+     * @param {boolean} isAdminLogout - Are we logging out of the administration page?
+     */
+	logOut: function (isAdminLogout) {
 
-        var isAdminLogout = (typeof isAdminLogout !== 'undefined') ? isAdminLogout : false;
+        var portalWnd = sg.utls.getPortalWindow();
+        var globalRes = sg.utls.getPortalGlobalResource();
 
-        var signOutLink = sg.utls.url.buildUrl("Core", "Authentication", "Logout");
-        var loginLink = sg.utls.url.buildUrl("Core", "Authentication", isAdminLogout ? "AdminLogin" : "Login");
-        var topWnd = window.top == null ? window : window.top;
+        var sessionId = sg.utls.getSessionId();
+        sg.utls.logMessage("Calling sg.utls.logOut() for context session id = '" + sessionId + "'");
 
-        // Note: Potential tech debt here as this event will get fired AFTER the login has been redirected
-        // to. Therefore, checks have been placed in the AuthenticationController.Login method to check for this
-        // use case where the data still exists in the IIS cache
+        var currentCompany = sg.utls.getCurrentCompanyName();
+        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, currentCompany);
+        var title = globalRes.SignOutConfirmation;
+        var btnYes = globalRes.SignOut;
+        var btnNo = globalRes.Cancel;
 
-        //Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. Just ask the user log out first due to time consuming
-        $('#dvWindows').find('span').each(function (index, element) {
-                var currentIframeId = $(this).attr("frameId");
-                $("#" + currentIframeId).attr("src", "about:blank");
-        });
+        var callbackYes = function () {
 
-        $(topWnd).bind('unload', function () {
+            // We want to disable beforeunload event handling
+            portalWnd.pageUnloadEventManager.disable();
+
+            sg.utls.logMessage("Log out confirmed for context session id = '" + sessionId + "'");
+
+            isAdminLogout = typeof isAdminLogout !== 'undefined' ? isAdminLogout : false;
+
+            var logoutLink = sg.utls.url.logoutUrl();
+            var loginLink = sg.utls.url.loginUrl(isAdminLogout);
+
+            // Note: Potential tech debt here as this event will get fired AFTER the login has been redirected to.
+            // Therefore, checks have been placed in the AuthenticationController.Login method to check for this
+            // use case where the data still exists in the IIS cache
+
+            // Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. 
+            // Just ask the user log out first due to time consuming
+
+            // Set the src attribute for all iframes (where screens live)
+            // This will initiate the 'beforunload' event in each active screen/module
+            //sg.utls.clearSrcAttributeFromAllActiveModuleIFrames();
+
+            if (!isAdminLogout) {
+
+                // We need to reduce the number of active screens (or modules) 
+                // from the overall count because we're in the process of
+                // logging out.
+                sg.utls.updateOpenScreenCount();
+                if (!openScreenCountManager.anyActiveScreens()) {
+                    // There are currently no active screens running so let's
+                    // notify sibling tabs to enable their session date pickers
+                    key = "ALLSESSIONS_EnablePortalSessionDatePicker";
+                    var randomValue = sg.utls.makeRandomString(5);
+                    sage.cache.local.set(key, randomValue);
+                }
+            }
+
             sg.utls.destroyPoolForReport(true);
-            sage.cache.clearAll();
-            sg.utls.ajaxPost(signOutLink);
+            sage.cache.session.clearAll();
+
+            // Log out on server side, server side cleanup MUST happen before redirection or the login page 
+            // will load with an incorrect hdnUrl, leading to problems if signing in again as a different user.
+            sg.utls.ajaxPostWithPromise(logoutLink).done(function () {
+                portalWnd.location.href = loginLink + "?logout=true"; // Redirect to login page on client side
+            });
+
+			sg.utls.initiateLogoutInOtherTabsForSession(sessionId);
+        };
+
+        var callbackNo = function () {
+            // Just reset the flag back to it's default
+            portalWnd.pageUnloadEventManager.enable();
+            return;
+        };
+
+        sg.utls.showConfirmationDialogYesNo(callbackYes, callbackNo, message, title, btnYes, btnNo);
+    },
+
+    /**
+     * @name initiateLogoutInOtherTabsForSession
+     * @description Set a localStorage cache entry to facilitate log out
+     *              for other tabs that share the same sessionId
+     * @param {string} sessionId - The session id
+     */
+    initiateLogoutInOtherTabsForSession: function (sessionId) {
+        var key = sessionId + "_LogoutInitiated";
+        sage.cache.local.set(key, new Date().getTime().toString());
+    },
+
+
+    /**
+     * @name clearSrcAttributeFromAllActiveModuleIFrames
+     * @description Get the iframe ID's for all currently active screens
+     *              from the Window Manager popup and set the src attribute
+     *              for each to 'about:blank'
+     */
+    clearSrcAttributeFromAllActiveModuleIFrames: function() {
+        $('#dvWindows').find("[command='Add']").each(function (index, element) {
+            var currentIframeId = $(this).attr("frameId");
+            $("#" + currentIframeId).attr("src", "about:blank");
+        });
+    },
+
+    /**
+     * @name updateOpenScreenCount
+     * @description Ensure that the open screen count is reduced 
+     *              (or eliminated) if the tab/browser is closed.
+     */
+    updateOpenScreenCount: function() {
+
+        // Get the current active module count for this tab
+        var openScreenCountForTab = openScreenCountManager.getCountForCurrentTab();
+
+        // Get the overall active module count (all tabs)
+        var overallCount = openScreenCountManager.get();
+
+        // Overall active module count AFTER current tab is closed
+        var updatedCount = overallCount - openScreenCountForTab;
+
+        if(updatedCount > 0) {
+            openScreenCountManager.set(updatedCount);
+        } else {
+            // There are no more open modules so we can remove the cached number
+            openScreenCountManager.remove();
+        }
+    },
+
+    /**
+     * @name extractSessionidFromWindow
+     * @description Extract the context session id from the url
+     * @returns {string} The extracted context session id
+     */
+    extractSessionIdFromWindow: function () {
+
+        var sessionId = "";
+        var paths = sg.utls.getPortalWindow().location.pathname.split('/');
+
+        // Get the 'SessionID', well it's actually User-Company to be more correct
+        var index = paths.indexOf("OnPremise") + 1 || paths.indexOf("Core") - 1;
+        sessionId = paths[index];
+        return sessionId;
+    },
+
+    /**
+     * @name getSessionId
+     * @description Get the context session id from the hidden field
+     * @returns {string} sessionId
+     */
+    getSessionId: function () {
+        var sessionId = $("#ContextSessionId").val();
+        return sessionId;
+    },
+
+    /**
+     * @name getCurrentCompanyName
+     * @description Get the current company name from the top level menu via jquery
+     * @returns {string} The current company name
+     */
+    getCurrentCompanyName: function () {
+        var companyName = "";
+        $("#companyNameMenu").find('.txt-top-menu').each(function (index, element) {
+            companyName = $(this).text();
         });
 
-        topWnd.location.href = loginLink + "?logout=true";
+        return companyName.trim();
     },
 
     unbindEvent: function (eventName) {
@@ -387,6 +683,7 @@ $.extend(sg.utls, {
             }
         });
     },
+
     destroyPoolForReport: function (callAsync) {
         if (globalResource.ReportUrl === "Report") {
             var reportUrl = $("#hdnUrl").val() + "../" + globalResource.ReportUrl + "/ReportViewer.aspx/DestroyPool";
@@ -398,6 +695,7 @@ $.extend(sg.utls, {
             }
         }
     },
+
     modelDialog: function (title, htmlData) {
         $("#exportImportDialog").html(htmlData).dialog({
             minWidth: 400,
@@ -415,14 +713,19 @@ $.extend(sg.utls, {
             dialogClass: "no-close ui-dialog-zindex"
         });
     },
+
     isRequired: function (element) {
         return ($(element).attr("data-val-required") != null);
     },
+
     homeCurrency: null,
+
     isPhoneNumberFormatRequired: null,
+
     loadHomeCurrency: function () {
         sg.utls.ajaxCache(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"), {}, ajaxSuccess.getCurrency, "HomeCurrency");
     },
+
     openDialog: function (ajaxUrl, title) {
         var data = { ContextToken: $("#ContextToken").val() };
         $.ajax({
@@ -443,15 +746,20 @@ $.extend(sg.utls, {
             }
         });
     },
+
     getHomeCurrency: function () {
         var data = {};
         if (sg.utls.homeCurrency === null) {
             sg.utls.ajaxPost(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"), data, ajaxSuccess.getCurrency);
         }
-
     },
+
     openReport: function (reportToken, checkTitle, callbackOnClose) {
-        var reportUrl = $("#hdnUrl").val() + "../" + globalResource.ReportUrl + "/ReportViewer.aspx?token=" + reportToken;
+        //report use web forms, not using route, session id put on query string
+        var reportUrlFormat = $("#hdnUrl").val() + "../../WebForms/ReportViewer.aspx?token={0}&session={1}";
+        var urls = $("#hdnUrl").val().split('/').filter(function (el) { return el; });
+        var reportUrl = kendo.format(reportUrlFormat, reportToken, urls[urls.length-1]);
+
         if (!sg.utls.isPortalIntegrated()) {
             window.open(reportUrl);
         } else {
@@ -461,12 +769,12 @@ $.extend(sg.utls, {
                 reportName = $("section.header-group-1 h3").html();
             }
             if (checkTitle !== undefined && typeof checkTitle == 'string') {
-                reportName = checkTitle
+                reportName = checkTitle;
             }
             window.top.postMessage("isReport" + " " + reportUrl + " " + reportName + " " + $('form').prop('action'), "*");
 
             // If provided a callback, bind it to the report (crystal) window
-            if (callbackOnClose !== undefined) {
+            if (sg.utls.isFunction(callbackOnClose)) {
                 // Need to delay a bit for the window to be established
                 setTimeout(function () {
                     // Get the iFrame object where the report is loaded
@@ -475,17 +783,16 @@ $.extend(sg.utls, {
                         // Get the report window
                         var reportWin = iFrameObject.contentWindow;
                         // Need to bind to an event   
-                        $(iFrameObject).load(function () {
+                        $(iFrameObject).on("load", function () {
                             // Bind to the before unload event
-                            $(reportWin).bind("beforeunload", function () {
+                            $(reportWin).on("beforeunload", function () {
                                 // Invoke the callback
                                 callbackOnClose.call();
-                            })
-                        })
+                            });
+                        });
                     }
                 }, 500);
             }
-
         }
     },
 
@@ -529,6 +836,7 @@ $.extend(sg.utls, {
         var data = { 'notesOptions': options };
         window.top.postMessage(data, "*");
     },
+
     // Ask the portal to open Notes Center to display notes (if any) for the given AR customer.
     showCustomerNotes: function (customerNumber) {
         var options = {
@@ -537,6 +845,7 @@ $.extend(sg.utls, {
         };
         sg.utls.showNotes(options);
     },
+
     // Ask the portal to open Notes Center to display notes (if any) for the given IC item.
     showInventoryItemNotes: function (itemNumber) {
         var options = {
@@ -545,6 +854,7 @@ $.extend(sg.utls, {
         };
         sg.utls.showNotes(options);
     },
+
     // Ask the portal to open Notes Center to display notes (if any) for the given AP vendor.
     showVendorNotes: function (vendorNumber) {
         var options = {
@@ -603,12 +913,6 @@ $.extend(sg.utls, {
         })();
     },
 
-    getCookie: function(name) {
-        var re = new RegExp(name + "=([^;]+)");
-        var value = re.exec(document.cookie);
-        return (value != null) ? unescape(value[1]) : null;
-    },
-
     ajaxInternal: function (ajaxUrl, ajaxData, successHandler, dataType, type, isAsync, errorHandler) {
         sg.utls.ajaxRunning = true;
         var baseUrl = sg.utls.getCookie("baseUrl");
@@ -652,34 +956,99 @@ $.extend(sg.utls, {
     },
 
     /**
-     * Invokes a specified callback method after a 5 ms delay, to give any tab-out events that fire
-     * (which should happen within roughly 1 ms, after which finders may be called) time to complete their respective execution.
+     * @name SyncExecute
+     * @description Invokes a specified callback method after a 5 ms delay, 
+     *              to give any tab-out events that fire (which should happen 
+     *              within roughly 1 ms, after which finders may be called) 
+     *              time to complete their respective execution.
      * 
-     * @param {function} callbackFunction The callback function to invoke.
+     * @param {function} callback The callback function to invoke.
      *
      */
-    SyncExecute: function (callbackFunction) {
+    SyncExecute: function (callback) {
+        var DELAY_MS = 5;
         setTimeout(function () {
             if (sg.utls.ajaxRunning === true) {
-                sg.utls.functionsToCall.push(callbackFunction);
+                sg.utls.functionsToCall.push(callback);
             } else {
-                callbackFunction();
-            };
-        }, 5);
+                if (sg.utls.isFunction(callback)) {
+                    callback();
+                } 
+            }
+        }, DELAY_MS);
     },
+
     fireStackedCalls: function () {
         while (sg.utls.functionsToCall.length > 0) {
-            toCall = sg.utls.functionsToCall.pop();
-            if (toCall) {
+            var toCall = sg.utls.functionsToCall.pop();
+            if (sg.utls.isFunction(toCall)) {
                 toCall();
             }
         }
     },
+
     removeStackedCalls: function () {
         while (sg.utls.functionsToCall.length > 0) {
             var functionToCall = sg.utls.functionsToCall.pop();
         }
     },
+
+    // TODO: This is ripped from TM and TS, should go through TM and TS and replace those calls with this
+    // one in global instead of having copies in global, TM.Common and TS.Common. In the long term, we
+    // should revisit all the ajax helper wrappers and consolidate/remove some of them. This one is more useful
+    // than the old ajaxPost because it returns a promise
+    ajaxPostWithPromise: function (url, data) {
+        var dataJson = JSON.stringify(data);
+        return $.ajaxq("SageQueue", {
+            url: url,
+            data: dataJson,
+            type: "post",
+            headers: sg.utls.getHeadersForAjax(),
+            async: true,
+            dataType: "json",
+            contentType: "application/json",
+            beforeSend: function () {
+                $("#ajaxSpinner").fadeIn(1);
+                sg.utls.showMessagesInViewPort();
+            },
+
+            error: function () {
+                // If the url that led to the error was the logout url, redirect them anyways
+                // i.e. if the browser cache is wiped
+                if (url === sg.utls.url.logoutUrl()) {
+                    var portalWnd = sg.utls.getPortalWindow();
+                    var loginLink = sg.utls.url.loginUrl();
+                    portalWnd.location.href = loginLink + "?logout=true"; // Redirect to login page on client side
+                }
+            },
+
+            complete: function () {
+                $("#ajaxSpinner").fadeOut(1);
+            }
+        }).then(sg.utls.sagePromise, sg.utls.sageAjaxError);
+    },
+
+    sagePromise: function (response) {
+        var d = $.Deferred();
+        var errors = true;
+        var userMessage = response.UserMessage;
+        if (userMessage) {
+            if (userMessage.IsSuccess) {
+                errors = false;
+            }
+        }
+        else {
+            errors = false;
+        }
+        errors ? d.reject(response) : d.resolve(response);
+        return d;
+    },
+
+    sageAjaxError: function (ret) {
+        //TODO redirection 
+        sg.utls.showMessage(ret, $.noop, false, false);
+    },
+
     ajaxErrorHandler: function (jqXhr, textStatus, errorThrown) {
         $('#ajaxSpinner').slideUp();
         if (jqXhr != null && jqXhr.responseText != null && jqXhr.responseText != "" && jqXhr.status != "401") {
@@ -696,15 +1065,19 @@ $.extend(sg.utls, {
     ajaxGet: function (ajaxUrl, ajaxData, successHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "get", true, sg.utls.ajaxErrorHandler);
     },
+
     recursiveAjaxPost: function (ajaxUrl, ajaxData, successHandler, abortHandler) {
         return sg.utls.recursiveAjax(ajaxUrl, ajaxData, successHandler, abortHandler, "json", "post");
     },
+
     ajaxPost: function (ajaxUrl, ajaxData, successHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", true, sg.utls.ajaxErrorHandler);
     },
+
     ajaxCrossDomainPost: function (ajaxUrl, ajaxData, successHandler, errorHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "jsonp", "post", true, errorHandler);
     },
+
     ajaxPostHtml: function (ajaxUrl, ajaxData, successHandler, errorHandler) {
         var customErrorHandler;
         if (errorHandler) {
@@ -714,18 +1087,23 @@ $.extend(sg.utls, {
         }
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "html", "post", true, customErrorHandler);
     },
+
     ajaxPostHtmlSync: function (ajaxUrl, ajaxData, successHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "html", "post", false, sg.utls.ajaxErrorHandler);
     },
+
     ajaxPostSync: function (ajaxUrl, ajaxData, successHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", false, sg.utls.ajaxErrorHandler);
     },
+
     ajaxCachePostHtml: function (ajaxUrl, ajaxData, successHandler, key) {
         sg.utls.ajaxCacheInternal(ajaxUrl, ajaxData, successHandler, "html", "post", false, key);
     },
+
     ajaxCache: function (ajaxUrl, ajaxData, successHandler, key) {
         sg.utls.ajaxCacheInternal(ajaxUrl, ajaxData, successHandler, "json", "post", false, key);
     },
+
     ajaxCacheInternal: function (ajaxUrl, ajaxData, successHandler, dataType, type, isAsync, key) {
         var data = ajaxData;
         data = JSON.stringify(data);
@@ -747,19 +1125,22 @@ $.extend(sg.utls, {
 
     getHeadersForAjax: function () {
         var tokenName = sg.utls.getAntiForgeryTokenName();
-        var headers = { ContextToken: $("#ContextToken").val(), ScreenName: $("#ScreenName").val() };
+        var headers = { ContextToken: $("#ContextToken").val(), ScreenName: $("#ScreenName").val(), product: sessionStorage.getItem("productId") };
         headers[tokenName] = sg.utls.getAntiForgeryToken();
-        return headers
+        return headers;
     },
+
     saveGridPreferences: function (key, value) {
         var data = { key: key, value: value }
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"), data, function (successData) {
         });
     },
+
     getGridPreferences: function (key, successHandler) {
         var data = { key: key }
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", "GetGridPreferences"), data, successHandler);
     },
+
     clearValidations: function (formId) {
         $("#" + formId).each(function () {
             $(this).find(".field-validation-error").empty();
@@ -767,17 +1148,21 @@ $.extend(sg.utls, {
 
         $("#message").hide();
     },
+
     getContext: function (data) {
         data.ContextToken = $("#ContextToken").val();
         data.ScreenName = $("#ScreenName").val();
         return data;
     },
+
     getAntiForgeryToken: function () {
         return $("#antiforgerytoken_holder input[type='hidden'][name='__RequestVerificationToken']").val();
     },
+
     getAntiForgeryTokenName: function () {
         return $("#antiforgerytoken_holder[data-antiforgerycookiename]").data("antiforgerycookiename");
     },
+
     getFormatedDialogHtml: function (okButtonId, cancelButtonId) {
 
         var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
@@ -800,6 +1185,7 @@ $.extend(sg.utls, {
 	        "</div>" +
         "</div>";
     },
+
     showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId) {
 
         var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? "#" + okButtonId : "#kendoConfirmationAcceptButton";
@@ -810,9 +1196,8 @@ $.extend(sg.utls, {
                 title: '',
                 resizable: false,
                 modal: true,
-                minWidth: "30%",
-                maxWidth: "60%",
-                Height: "30%",
+                minWidth: 500,
+                maxWidth: 760,
                 activate: sg.utls.kndoUI.onActivate
             });
             kendoWindow.data("kendoWindow").content($("#dialog-confirmation").html()).center().open();
@@ -921,9 +1306,8 @@ $.extend(sg.utls, {
             title: '',
             resizable: false,
             modal: true,
-            minWidth: 400,
+            minWidth: 500,
             maxWidth: 760,
-            Height: 240,
             // Custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -989,7 +1373,7 @@ $.extend(sg.utls, {
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
 
         if (positionDialogTitleInHeader) {
-            divDeleteConfirmParent.find('#' + dialogId + '_wnd_title').text(title);
+            divDeleteConfirmParent.find('#' + dialogId + '_wnd_title').html(title);
         }
 
         // Setting message position to viewport top.
@@ -1004,9 +1388,8 @@ $.extend(sg.utls, {
             title: '',
             resizable: false,
             modal: true,
-            minWidth: 400,
+            minWidth: 500,
             maxWidth: 760,
-            Height: 240,
             //custom function to suppot focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1070,7 +1453,7 @@ $.extend(sg.utls, {
             "</script>";
         $(template).appendTo('body');
 
-        // This kendoWindow visiblity check is added for the defect D-07638
+        // This kendoWindow visibility check is added for the defect D-07638
         var wnd = $('#' + DialogID).data("kendoWindow");
         if (wnd != null && !wnd.element.is(":hidden")) {
             return;
@@ -1080,9 +1463,9 @@ $.extend(sg.utls, {
             title: '',
             resizable: false,
             modal: true,
-            minWidth: 400,
-            maxWidth: 760,
-            Height: 240,
+            minWidth: 600,
+            maxWidth: 960,
+
             // custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1097,7 +1480,6 @@ $.extend(sg.utls, {
         });
 
         // Set the message text
-        //kendoWindow.find("#body-text").html(sg.utls.htmlEncode(messageIn));
         var msg = messageIn.replace(/\n/g, '<br/>');
         kendoWindow.find("#body-text" + randomPostfix).html(msg);
 
@@ -1105,7 +1487,10 @@ $.extend(sg.utls, {
 
         _setButtonCallbacks();
 
-        kendoWindow.parent().addClass('modelBox');
+        // Little x button gets shifted upwards when
+        // following line is enabled. Looks funny.
+        //kendoWindow.parent().addClass('modelBox');
+
         kendoWindow.parent().attr('id', DialogParentID);
         var $divConfirmParent = $('#' + DialogParentID);
         $divConfirmParent.css('position', 'absolute');
@@ -1113,7 +1498,7 @@ $.extend(sg.utls, {
 
         _setDialogTitle();
 
-        /// Setting message position to viewport top.
+        // Set message position to viewport top.
         sg.utls.showMessagesInViewPort2(DialogParentID);
 
         function _setDialogTitle() {
@@ -1125,7 +1510,7 @@ $.extend(sg.utls, {
             }
 
             // Set the modal dialog caption (title) text
-            $divConfirmParent.find('#' + DialogID + '_wnd_title').text(title);
+            $divConfirmParent.find('#' + DialogID + '_wnd_title').html(title);
         }
 
         function _setButtonLabels() {
@@ -1143,8 +1528,8 @@ $.extend(sg.utls, {
                 noLabel = globalResource.No;
             }
 
-            kendoWindow.find("#kendoConfirmationAcceptButton" + randomPostfix).val(yesLabel);
-            kendoWindow.find("#kendoConfirmationCancelButton" + randomPostfix).val(noLabel);
+            kendoWindow.find("#kendoConfirmationAcceptButton" + randomPostfix).val($("<div>").html(yesLabel).text());
+            kendoWindow.find("#kendoConfirmationCancelButton" + randomPostfix).val($("<div>").html(noLabel).text());
         }
 
         function _setButtonCallbacks() {
@@ -1172,8 +1557,9 @@ $.extend(sg.utls, {
 
     /**
      * @name showMessagesInViewPort2
-     * @desc Show all messages in viewport area 
+     * @desc Show all messages in viewport area
      * @private
+     * @param {string} parentDialogID - The id of the parent dialog
      */
     showMessagesInViewPort2: function (parentDialogID) {
         // Call the main global version first
@@ -1207,7 +1593,7 @@ $.extend(sg.utls, {
     /**
      * @name makeRandomString
      * @description Returns a random string of alphabetical letters of a designated length
-     * @param len
+     * @param {number} len - The string length to return
      * @returns {string} The random string of designated length
      */
     makeRandomString: function (len) {
@@ -1224,9 +1610,8 @@ $.extend(sg.utls, {
             title: '',
             resizable: false,
             modal: true,
-            minWidth: 400,
+            minWidth: 500,
             maxWidth: 760,
-            Height: 240,
             //custom function to suppot focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1260,7 +1645,8 @@ $.extend(sg.utls, {
     },
 
     /**
-     * Creates a unique GUID; intended for use when opening multiple kendo iframe windows, where the url should be unique.
+     * Creates a unique GUID; intended for use when opening multiple kendo iframe windows, 
+     * where the url should be unique.
      *
      * @returns {String} A string representing a GUID. 
      */
@@ -1318,8 +1704,24 @@ $.extend(sg.utls, {
             // Open the Kendo Window in the center of the Viewport.
             open: function () {
                 sg.utls.setKendoWindowPosition(this);
+                sg.utls.mobileKendoAdjustment(this.element, ".k-window-content", "popupMobile");
             },
         }).data("kendoWindow");
+
+    },
+
+    /**
+     * @name mobileKendoAdjustment
+     * @description Positioning a Kendo popup window to the top in Mobile/iPad (Fix for D-39462).
+     * @param {any} element TODO - Add description
+     * @param {string} contentDiv find the CSS id of the window's content div.
+     * @param {string} kendowWindowId Add the value for the window's id attribute.
+     */
+    mobileKendoAdjustment: function (element, contentDiv, kendowWindowId) {
+        if (sg.utls.isMobile()) {
+            element.closest(contentDiv).parent().attr('id', kendowWindowId);
+            $(window.top).scrollTop(0);
+        }
     },
 
     /**
@@ -1397,10 +1799,12 @@ $.extend(sg.utls, {
         });
 
     },
+
     closeKendoWindowPopup: function (id, data) {
         var kendoWindow = $(id).data("kendoWindow");
         kendoWindow.close();
     },
+
     showConfirmationDialog: function (callbackYes, callbackNo, message) {
         if (message != null) $("#confirmDialog").text(message);
         $("#confirmDialogMessage").show();
@@ -1428,6 +1832,7 @@ $.extend(sg.utls, {
             }
         });
     },
+
     showMessage: function (result, handler, isModal, isModalTransparent) {
 
         if (result.UserMessage != null) {
@@ -1551,7 +1956,9 @@ $.extend(sg.utls, {
             }
         }
     },
-    // showMessageInEnumerableResponse : To show any messages within EnumerableResponse<T>. This method does not contain any UserMessage
+
+    // showMessageInEnumerableResponse : To show any messages within EnumerableResponse<T>. 
+    // This method does not contain any UserMessage
     showMessageInEnumerableResponse: function (result, divId, showCloseIcon) {
         if (result != null) {
             if (!divId) {
@@ -1659,6 +2066,7 @@ $.extend(sg.utls, {
             }
         }
     },
+
     showMessagePopup: function (result, divId) {
         clearTimeout(fnTimeout);
         if (result.UserMessage != null) {
@@ -1753,6 +2161,7 @@ $.extend(sg.utls, {
             }
         }
     },
+
     showMessagePopupWithoutClose: function (result, divId) {
         clearTimeout(fnTimeout);
         if (result.UserMessage != null) {
@@ -1845,15 +2254,18 @@ $.extend(sg.utls, {
             }
         }
     },
+
     showMessagePopupInfo: function (messageType, message, div) {
         sg.utls.showMessageInfoInCustomDiv(messageType, message, div);
     },
+
     isSuccessMessage: function (message) {
         var css = "message-control";
         css = css + " success-msg";
         var messageHTML = "<div class='" + css + "'><div class='top'></div><div class='title'><span class='icon success-icon'></span><h3>" + message + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> </div></div><div class='msg-overlay'></div>";
         return messageHTML;
     },
+
     showValidationMessage: function (message) {
         var messageHTML = "";
         if (message != null) {
@@ -1865,8 +2277,10 @@ $.extend(sg.utls, {
             $("#message").html(messageHTML);
         }
     },
-    //Converts an array to html list
-    //isJSArray is default to false to handle objects in c# viewmodel format; isJSArray is set to true when handling a javascript array
+
+    // Converts an array to html list
+    // isJSArray is default to false to handle objects in c# viewmodel format; 
+    // isJSArray is set to true when handling a javascript array
     generateList: function (object, defaultErrorMsg, isJSArray) {
         var objectHtml = "";
         if (object != null) {
@@ -1917,6 +2331,7 @@ $.extend(sg.utls, {
         }
         return objectHtml;
     },
+
     generateMessage: function (defaultErrorMsg) {
         var objectHtml = "<ul>";
         if (defaultErrorMsg != null) {
@@ -1925,12 +2340,15 @@ $.extend(sg.utls, {
             return objectHtml;
         }
     },
+
     showMessageInfo: function (messageType, message) {
         sg.utls.showMessageInfoInCustomDiv(messageType, message, "message");
     },
+
     showProcessMessageInfo: function (messageType, message, divId) {
         sg.utls.showMessageInfoInCustomDivWithoutCloseIcon(messageType, message, divId);
     },
+
     showMessageInfoInCustomDivWithoutCloseIcon: function (messageType, message, divId) {
         var messageSeverity = globalResource.ShowMessageBoxTitle;
         if (messageType == 1) {
@@ -1957,6 +2375,7 @@ $.extend(sg.utls, {
         messageDiv.show();
         messageDiv.html(messageHTML);
     },
+
     showMessageInfoInCustomDiv: function (messageType, message, divId) {
         var messageHTML = "";
         var messageDivId = "#" + divId;
@@ -1991,6 +2410,7 @@ $.extend(sg.utls, {
 
         messageDiv.show();
     },
+
     showMessageInfoInCustomDivWithoutClose: function (messageType, message, divId) {
         var messageHTML = "";
         var messageDivId = "#" + divId;
@@ -2016,9 +2436,11 @@ $.extend(sg.utls, {
         messageDiv.show();
         messageDiv.html(messageHTML);
     },
+
     showCustomMessagePopupInfoWithoutClose: function (messageType, message, div) {
         sg.utls.showMessageInfoInCustomDivWithoutClose(messageType, message, div);
     },
+
     setFinder: function (id, searchFinder, filter, onSelectCallBack, onCancelCallBack, title, field) {
         $("#" + id).Finder({
             searchFinder: searchFinder,
@@ -2033,18 +2455,23 @@ $.extend(sg.utls, {
             id: id
         });
     },
+
     getTextBoxVal: function (id) {
         return $("#" + id).val().trim();
     },
+
     toUpperCase: function (val) {
         return val != null ? val.toUpperCase().trim() : "";
     },
+
     toLowerCase: function (val) {
         return val != null ? val.toLowerCase().trim() : "";
     },
+
     toTrim: function (val) {
         return val != null ? val.trim() : "";
     },
+
     toInt: function (val, radix) {
         if (radix) {
             return val != null ? parseInt(val, radix) : 0;
@@ -2052,17 +2479,21 @@ $.extend(sg.utls, {
             return val != null ? parseInt(val) : 0;
         }
     },
+
     toFloat: function (val) {
         return val != null ? parseFloat(val) : 0;
     },
+
     toFixedDown: function (number, digits) {
         var re = new RegExp("(-?\\d+\\.\\d{" + digits + "})");
         var m = number.toString().match(re);
         return m ? parseFloat(m[1]) : parseFloat(number.toFixed(digits));
     },
+
     isAnObject: function (val) {
         return $.isPlainObject(val);
     },
+
     formSubmit: function (id, path, method, params) {
         $("#" + id).remove(); // remove the new form if already exists
 
@@ -2093,6 +2524,7 @@ $.extend(sg.utls, {
         document.body.appendChild(form);
         form.submit();
     },
+
     focus: function (id) {
         $("#" + id).focus();
     },
@@ -2104,6 +2536,7 @@ $.extend(sg.utls, {
             }
         });
     },
+
     maskPeriodStart: function (selector, separator) {
         var expression = "AA" + separator + "AA";
         $(selector).mask(expression, {
@@ -2113,9 +2546,11 @@ $.extend(sg.utls, {
 
         });
     },
+
     maskTimeformat: function (selector) {
         $(selector).mask("00:00:00");
     },
+
     maskSourceCode: function (clas) {
         if (clas.length > 0) {
             $("." + clas).mask('AD-BB', {
@@ -2124,41 +2559,6 @@ $.extend(sg.utls, {
                     D: { pattern: /[A-Za-z ]/ },
                     B: { pattern: /[A-Za-z0-9]/ }
                 }
-            });
-        }
-    },
-    maskSourceLedger: function (clas) {
-        if (clas.length > 0) {
-            $(".sg-mask-sourceledger").mask('AA', {
-                'translation': { A: { pattern: /[A-Za-z]/ } }
-            });
-        }
-    },
-    maskRateType: function (clas) {
-        if (clas.length > 0) {
-            $(".sg-mask-ratetype").mask('AA', {
-                'translation': { A: { pattern: /[A-Za-z0-9]/ } }
-            });
-        }
-    },
-    maskBankCode: function (clas) {
-        if (clas.length > 0) {
-            $(".sg-mask-bankcode").mask('AAAAAAAA', {
-                'translation': { A: { pattern: /[A-Za-z0-9]/ } }
-            });
-        }
-    },
-    maskApplication: function (clas) {
-        if (clas.length > 0) {
-            $(".sg-mask-Application").mask('AA', {
-                'translation': { A: { pattern: /[A-Za-z0-9]/ } }
-            });
-        }
-    },
-    maskBatchNumber: function (clas) {
-        if (clas.length > 0) {
-            $(".sg-mask-batchnumber").mask('AAAAAA', {
-                'translation': { A: { pattern: /[0-9]/ } }
             });
         }
     },
@@ -2177,6 +2577,7 @@ $.extend(sg.utls, {
     trim: function (str, chars) {
         return ltrim(rtrim(str, chars), chars);
     },
+
     ltrim: function (str, chars) {
         if (str != null) {
             chars = chars || "\\s";
@@ -2184,6 +2585,7 @@ $.extend(sg.utls, {
         }
         return "";
     },
+
     rtrim: function (str, chars) {
         if (str != null) {
             chars = chars || "\\s";
@@ -2191,6 +2593,7 @@ $.extend(sg.utls, {
         }
         return "";
     },
+
     strPad: function (i, l, s) {
         var o = i.toString();
         if (!s) {
@@ -2201,6 +2604,7 @@ $.extend(sg.utls, {
         }
         return o;
     },
+
     maxLength: function (pattern, modifiers, val) {
         var regex = new RegExp(pattern, modifiers);
         if (!regex.test(val)) {
@@ -2209,14 +2613,17 @@ $.extend(sg.utls, {
             return false;
         }
     },
+
     removeDelimeter: function (str, chars) {
         var regex = new RegExp("^" + chars + "+$|(" + chars + ")+", "g");
         var result = str != null && str.length > 0 ? str.replace(regex, "") : "";
         return result;
     },
+
     replaceHtmlChar: function (str) {
         return str.replace("&#39;", "'");
     },
+
     formatMessage: function (name, params) {
         var data = "";
         if (name != null && name.length > 0) {
@@ -2228,9 +2635,11 @@ $.extend(sg.utls, {
         } else
             return data;
     },
+
     addPlaceHolder: function (selector, value) {
         $(selector).prop("placeholder", value);
     },
+
     unmask: function (selector) {
         var maskedInput = $(selector).data('mask');
         if (maskedInput) {
@@ -2241,16 +2650,20 @@ $.extend(sg.utls, {
             $(document).off('DOMNodeInserted.mask', selector);
         }
     },
+
     addMaxLength: function (selector, value) {
         $(selector).prop("maxlength", value);
     },
+
     setCharAt: function (str, index, chr) {
         if (index > str.length - 1) return str;
         return str.substr(0, index) + chr + str.substr(index + 1);
     },
+
     padLeadingZero: function (str, max) {
         return str.length < max ? sg.utls.padLeadingZero("0" + str, max) : str;
     },
+
     checkIfValidTimeFormat: function (value) {
         var hour = "00";
         var minute = "00";
@@ -2275,6 +2688,7 @@ $.extend(sg.utls, {
         var formattedTimeValue = sg.utls.padLeadingZero(hour.toString(), 2) + ":" + sg.utls.padLeadingZero(minute.toString(), 2) + ":" + sg.utls.padLeadingZero(seconds.toString(), 2);
         return formattedTimeValue;
     },
+
     getEnumItemByValue: function (enumItems, value) {
         var result = null;
         $.each(enumItems, function (index, item) {
@@ -2285,6 +2699,7 @@ $.extend(sg.utls, {
         });
         return result;
     },
+
     getEnumItemByText: function (enumItems, text) {
         var result = null;
         $.each(enumItems, function (index, item) {
@@ -2295,10 +2710,12 @@ $.extend(sg.utls, {
         });
         return result;
     },
+
     getDecimalThousandFormat: function (str) {
         var parts = str.split(".");
         return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
     },
+
     replaceComma: function (str) {
         if (str != null && str.length > 0) {
             var patt = new RegExp(sg.utls.regExp.COMMA, "gi");
@@ -2306,10 +2723,12 @@ $.extend(sg.utls, {
         }
         return "";
     },
+
     generatekey: function () {
         var date = new Date();
         return date.getTime();
     },
+
     padChar: function (str, max) {
         var char = "";
         for (var i = 0; char.length < max; i++) {
@@ -2317,6 +2736,7 @@ $.extend(sg.utls, {
         }
         return char;//.length < max ? sg.utls.padChar(str + str, max) : str;
     },
+
     getMinValue: function (defaultChar, precisionLength, maxDigitAllowed, isDecimal) {
         var intPart = sg.utls.padChar(defaultChar, maxDigitAllowed - precisionLength);
         var decimalPart = sg.utls.padChar(defaultChar, precisionLength);
@@ -2327,9 +2747,11 @@ $.extend(sg.utls, {
         else
             return parseInt(value, 10);
     },
+
     getMaxVale: function (defaultChar, precisionLength, maxDigitAllowed, isDecimal) {
         return sg.utls.getMaxValue(defaultChar, precisionLength, maxDigitAllowed, isDecimal);
     },
+
     getMaxValue: function (defaultChar, precisionLength, maxDigitAllowed, isDecimal) {
         var intPart = sg.utls.padChar(defaultChar, maxDigitAllowed - precisionLength);
         var decimalPart = sg.utls.padChar(defaultChar, precisionLength);
@@ -2340,6 +2762,7 @@ $.extend(sg.utls, {
         else
             return parseInt(value, 10);
     },
+
     formatPhoneNumber: function (value, isApplyFormat) {
         if (isApplyFormat) {
             return "(" + value.substr(0, 3) + ") " + value.substr(3, 3) + "-" + value.substr(6);
@@ -2347,8 +2770,8 @@ $.extend(sg.utls, {
             return value;
     },
 
-    //This function is added to apply phone and fax in a grid. 
-    //This is used as a template grid column.
+    // This function is added to apply phone and fax in a grid. 
+    // This is used as a template grid column.
     formatPhoneNumberForGrid: function (value, isApplyFormat) {
         if (value) {
             if (isApplyFormat) {
@@ -2359,10 +2782,9 @@ $.extend(sg.utls, {
         return "(         )    -";
     },
 
-
-    //Made a format function that takes either a collection or an array as arguments, below are example usuage.
-    //format("i can speak {language} since i was {age}",{language:'javascript',age:10});
-    //format("i can speak {0} since i was {1}",'javascript',10});
+    // Made a format function that takes either a collection or an array as arguments, below are example usuage.
+    // format("i can speak {language} since i was {age}",{language:'javascript',age:10});
+    // format("i can speak {0} since i was {1}",'javascript',10});
     formatString: function (str, col) {
         col = typeof col === 'object' ? col : Array.prototype.slice.call(arguments, 1);
 
@@ -2373,21 +2795,21 @@ $.extend(sg.utls, {
         });
     },
 
-    //This method enables or disables kendoNumericTextbox based on id and boolean value
+    // This method enables or disables kendoNumericTextbox based on id and boolean value
     enableNumericTextbox: function (id, enablement) {
         if ($("#" + id).data("kendoNumericTextBox") != undefined) {
             $("#" + id).data("kendoNumericTextBox").enable(enablement);
         }
     },
 
-    //This method enables or disables Kendo Dropdown based on id and boolean value
+    // This method enables or disables Kendo Dropdown based on id and boolean value
     enableKendoDropdown: function (id, enablement) {
         if ($("#" + id).data("kendoDropDownList") != undefined) {
             $("#" + id).data("kendoDropDownList").enable(enablement);
         }
     },
 
-    /// Show all messages in viewport area
+    // Show all messages in viewport area
     showMessagesInViewPort: function () {
         if (!sg.utls.isSameOrigin()) {
             return;
@@ -2486,6 +2908,7 @@ $.extend(sg.utls, {
             left: ($(window).innerWidth() - kendoWindow.wrapper.width()) / 2
         });
     },
+
     initFormValidation: function () {
         $("input[data-val-length-max]").each(function () {
             var $this = $(this);
@@ -2506,12 +2929,13 @@ $.extend(sg.utls, {
     },
 
     /**
-     * Parameters to initialize the hamburger menu items.
-     * @method labelMenuParams
-     * @param {} Id - Id of the menu.
-     * @param {} Value - Display text of the menu.
-     * @param {} callback - click event of the menu.
-     * @param {} koAttributes - ko attributes of the menu.
+     * @name labelMenuParams
+     * @description Parameters to initialize the hamburger menu items.
+     * @param {any} Id - Id of the menu.
+     * @param {any} Value - Display text of the menu.
+     * @param {function} callback - click event of the menu.
+     * @param {object} koAttributes - ko attributes of the menu.
+     * @returns {object} TODO - Add Description Here
      */
     labelMenuParams: function (Id, Value, callback, koAttributes) {
         var obj = { Id: Id, Value: Value, callback: callback };
@@ -2523,34 +2947,15 @@ $.extend(sg.utls, {
         return obj;
     },
 
-    //Function to return the encoded value. 
+    // Function to return the encoded value. 
     textEncode: function (value) {
         value = sg.controls.GetString(value);
         return encodeURIComponent(value);
     },
-    //Function to encode the query string values from the URL
+
+    // Function to encode the query string values from the URL
     urlEncode: function (url) {
-        var encodedUrl;
-
-        if (url.indexOf("?") > -1) {
-            var allUrlComponents = url.split("?");
-            var urlComponent = allUrlComponents[0];
-            var allQueryStrings = allUrlComponents[1].split("&");
-
-            encodedUrl = urlComponent;
-
-
-            for (var i = 0; i < allQueryStrings.length; i++) {
-                var queryStringPairs = allQueryStrings[i].split("=");
-                var encodedQueryStringValue = sg.utls.textEncode(queryStringPairs[1]);
-                var literal = (i == 0) ? "?" : "&";
-                encodedUrl = encodedUrl + literal + queryStringPairs[0] + "=" + encodedQueryStringValue;
-            }
-        } else {
-            encodedUrl = url;
-        }
-
-        return encodedUrl;
+       return sg.utls.url.urlEncode(url);
     },
 
     RedirectToTimeoutLanding: function () {
@@ -2566,7 +2971,8 @@ $.extend(sg.utls, {
         });
 
         // For Admin login, call AdminSessionExpired. Otherwise, SessionExpired. 
-        window.location.replace(sg.utls.url.buildUrl("Core", "Authentication", (typeof customScreenUI !== "undefined" && customScreenUI.adminLogin) ? "AdminSessionExpired" : "SessionExpired"));
+        window.location.replace(sg.utls.url.buildUrl("Core", "Authentication",
+            (typeof customScreenUI !== "undefined" && customScreenUI.adminLogin) ? "AdminSessionExpired" : "SessionExpired"));
     },
 
     mergeGridConfiguration: function (propertiesArray, targetConfig, sourceConfig) {
@@ -2594,7 +3000,8 @@ $.extend(sg.utls, {
         }
     },
 
-    //Note: When changing the parameters, make sure to change the createInquiryURLWithParameters function under TaskDock-Menu-BreadCrumb.js as well
+    // Note: When changing the parameters, make sure to change the createInquiryURLWithParameters 
+    // function under TaskDock- Menu - BreadCrumb.js as well
     getInquiryParameterData: function (url, module, feature, target, value, title) {
         return sg.utls.formatString("{\"url\":\"{0}\",\"module\":\"{1}\",\"feature\":\"{2}\",\"target\":\"{3}\", \"value\":\"{4}\", \"title\":\"{5}\"}", url, module, feature, target, value, title);
     },
@@ -2607,15 +3014,169 @@ $.extend(sg.utls, {
     },
 
     saveUserPreferences: function (key, value) {
-        var data = { key: key, value: value }
+        var data = { key: key, value: value };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveUserPreference"), data, function(result) {
             console.log("SaveUserPreferences: " + result); //result is either true or false
         });
     },
+
     getUserPreferences: function (key, successHandler) {
-        var data = { key: key }
+        var data = { key: key };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetUserPreference"), data, successHandler);
     },
+
+    /**
+     * @name enablePortalSessionDatePicker
+     * @description Enable the portal session date picker
+     */
+    enablePortalSessionDatePicker: function () {
+        $('#spnSessionDate').removeClass('disabled');
+        $('#sessionDatelabel').removeClass('disabled');
+        $('#sessionDateIcon').removeClass('disabled');
+        $('#sessionDateIcon').removeClass('glyphicon-lock');
+        $('#sessionDateIcon').addClass('glyphicon-calendar-1');
+    },
+
+    /**
+     * @name disablePortalSessionDatePicker
+     * @description Disable the portal session date picker
+     *              Note: Close any visible date pickers as well
+     */
+    disablePortalSessionDatePicker: function () {
+        $('#spnSessionDate').addClass('disabled');
+        $('#sessionDatelabel').addClass('disabled');
+        $('#sessionDateIcon').addClass('disabled');
+        $('#sessionDateIcon').removeClass('glyphicon-calendar-1');
+        $('#sessionDateIcon').addClass('glyphicon-lock');
+
+        // D-39978 - Close the date picker if selector is disabled
+        try {
+            if (sessionDateCookieSetup) {
+                var datePicker = sessionDateCookieSetup.getControl();
+                if (datePicker) {
+                    datePicker.close();
+                }
+            }
+        } catch (e) {
+            // Likely sessionDateCookieSetup is undefined.
+            // Just ignore this exception.
+        }
+    },
+
+    /**
+     * @name logMessage
+     * @description Log a message to the Sage 300 Webscreen server log file
+     * @param {string} message - The message to log to the server
+     */
+    logMessage: function (message) {
+        var data = {
+            Message: message,
+            Url: "",
+            Line: ""
+        };
+
+        var url = sg.utls.url.logJavascriptMessageUrl();
+        sg.utls.ajaxPost(url, data, $.noop);
+    },
+
+    /**
+     * @name getPortalWindow
+     * @description Get a reference to the top-level portal window
+     *              Parent window for all iframes
+     * @returns {object} Reference to the top-level portal window
+     */
+    getPortalWindow: function () {
+        var portalWnd = window.top ? window.top : window;
+        return portalWnd;
+    },
+
+    /**
+     * @name getPortalGlobalResource
+     * @description Get a reference to the top-level globalResource javascript object
+     * @returns {object} Reference to the top-level globalResource javascript object
+     */
+    getPortalGlobalResource: function () {
+        var portalWnd = sg.utls.getPortalWindow();
+        return portalWnd.globalResource;
+    },
+
+    /**
+    /**
+     * @name isFunction
+     * @description Determine if the supplied object is a valid javascript function
+     * @param {function} o - The object to check
+     * @returns {boolean} true : object is a function | false : object is not a function
+     */
+    isFunction: function (o) {
+        return o && typeof o === "function";
+    },
+
+    /**
+     * @name tabKeyHandler
+     * @description Handler for when tab key is pressed
+     * @param {object} e - Event arguments
+     */
+    tabKeyHandler: function(e) {
+        var code = e.keyCode || e.which;
+        if(code === sg.constants.KeyCodeEnum.Tab) {
+            sg.utls.hideNotesCenter();
+        }
+    },
+
+    /**
+     * @name isPageUnloadEventEnabled
+     * @description Get the Page unload event flag
+     * @param {boolean} isDirty - Dirty flag(s) from behaviour file
+     * @returns {boolean} true - Allow page unload event | false - Disallow page unload event
+     */
+    isPageUnloadEventEnabled: function (isDirty) {
+        var pageUnloadEventFlag = sg.utls.getPortalWindow().pageUnloadEventManager.isEnabled();
+        return pageUnloadEventFlag && isDirty;
+    },
+
+    /**
+     * @name getDirtyMessage
+     * @description Build and return a string that represents the default dirty text
+     * @param {string} title - The title of the message
+     * @returns {string} The full message text
+     */
+    getDirtyMessage: function (title) {
+        var globalRes = sg.utls.getPortalGlobalResource();
+        var text = $.validator.format(globalRes.SaveConfirm2, title);
+        return sg.utls.buildMessageText(text);
+    },
+
+    /**
+     * @name buildMessageText
+     * @description Build a message
+     * @param {string} text - The message text to use
+     * @returns {string} The message text
+     */
+    buildMessageText: function (text) {
+        return $('<div />').html(text).text();
+    },
+
+    //initBackgroundImageCycling: function () {
+    //    var TIMEOUT_MS = 2000;
+    //    var timer;
+    //    var body = $('body');
+    //    var backgrounds = new Array(
+    //        'url(../../../../Assets/images/login/image1.jpg) ',
+    //        'url(../../../../Assets/images/login/image2.jpg) ',
+    //        'url(../../../../Assets/images/login/image3.jpg) ');
+    //    var index = 0;
+    //    setTimeout(nextBackground, TIMEOUT_MS);
+
+    //    function nextBackground() {
+    //        index = ++index % backgrounds.length;
+    //        var imagePath = backgrounds[index];
+    //        body.css('background', imagePath);
+    //        if (index > 2) {
+    //            index = 0;
+    //        }
+    //        timer = setTimeout(nextBackground, TIMEOUT_MS);
+    //    }
+    //}
 });
 
 $.extend(sg.utls.ko, {
@@ -2634,6 +3195,7 @@ $.extend(sg.utls.ko, {
         }
         return -1;
     },
+
     arrayFirstItemOf: function (array, predicate, predicateOwner) {
         for (var i = 0, j = array.length; i < j; i++) {
             if (predicate.call(predicateOwner, array[i])) {
@@ -2654,6 +3216,7 @@ $.extend(sg.utls.ko, {
         }
         return false;
     },
+
     getChangedItems: function (observableArray) {
         var changedItems = [];
 
@@ -2667,6 +3230,7 @@ $.extend(sg.utls.ko, {
 
         return changedItems;
     },
+
     removeDeletedRows: function (observableArray) {
         observableArray.remove(function (item) {
             return item.IsDeleted() === true;
@@ -2749,7 +3313,7 @@ var AllowedInput =
 $(document).on("keypress", "[formatTextbox='numeric']", function (e) {
     var numericKeys = AllowedInput.Numeric;
     if (numericKeys.length == 0) {
-        for (var i = 48; i <= 57; i++)
+        for (var i = sg.constants.KeyCodeEnum.Zero; i <= sg.constants.KeyCodeEnum.Nine; i++)
             numericKeys.push(i);
         AllowedInput.Numeric = numericKeys;
     }
@@ -2767,14 +3331,20 @@ $(document).on("keypress", "[formatTextbox='numeric']", function (e) {
             return false;
     }
 });
+
 $(document).on("keypress", "[formatTextbox='alpha']", function (e) {
     var alphaKeys = AllowedInput.Alpha;
 
     if (alphaKeys.length == 0) {
-        for (var i = 65; i <= 90; i++)
+
+        // Upper case
+        for (var i = sg.constants.KeyCodeEnum.A; i <= sg.constants.KeyCodeEnum.Z; i++)
             alphaKeys.push(i);
-        for (i = 97; i <= 122; i++)
+
+        // Lower case
+        for (i = sg.constants.KeyCodeEnum.a; i <= sg.constants.KeyCodeEnum.z; i++)
             alphaKeys.push(i);
+
         AllowedInput.Alpha = alphaKeys;
     }
 
@@ -2791,21 +3361,27 @@ $(document).on("keypress", "[formatTextbox='alpha']", function (e) {
             return false;
     }
 });
+
 $(document).on("keypress", "[formatTextbox='date']", function (e) {
     var charCode = (e.which) ? e.which : e.keyCode;
     var separator = globalResource.DateSeparator;
-    var separaterCode;
+    var separatorCode;
     switch (separator) {
         case "-":
-            separaterCode = 45;
+            separatorCode = sg.constants.KeyCodeEnum.Dash;
             break;
+
         case ".":
-            separaterCode = 46;
+            separatorCode = sg.constants.KeyCodeEnum.Period;
             break;
+
         case "/":
-            separaterCode = 47;
+            separatorCode = sg.constants.KeyCodeEnum.ForwardSlash;
             break;
-        default: separaterCode = 32;
+
+        default:
+            separatorCode = sg.constants.KeyCodeEnum.Space;
+            break;
     }
     if (navigator.userAgent.indexOf("Firefox") != -1) {
         var fields = sg.utls.getFirefoxSpecialKeys(e);
@@ -2813,54 +3389,44 @@ $(document).on("keypress", "[formatTextbox='date']", function (e) {
             return true;
         }
     }
-    if ((charCode >= 48 && charCode <= 57)
-         || (charCode === separaterCode) || (charCode === 8) || (charCode === 9) ||
-        (sg.utls.isCtrlKeyPressed && (charCode === 99 || charCode === 118))) {
+
+    var isNumeric = (charCode >= sg.constants.KeyCodeEnum.Zero &&
+                     charCode <= sg.constants.KeyCodeEnum.Nine);
+    var isBackspace = (charCode === sg.constants.KeyCodeEnum.Backspace);
+    var isTab = (charCode === sg.constants.KeyCodeEnum.Tab);
+    var isSeparator = (charCode === separatorCode);
+    var isCorV = (charCode === sg.constants.KeyCodeEnum.c || charCode === sg.constants.KeyCodeEnum.v);
+
+    return (isNumeric || isSeparator || isBackspace || isTab || (sg.utls.isCtrlKeyPressed && isCorV));
+});
+
+$(document).on("keypress", "[formatTextbox='alphaNumeric']", function (e) {
+    var key = e.key;
+    var pattern = XRegExp('^[\\p{L}\\d]+$');
+    if (pattern.test(key))
+    {
         return true;
     }
     return false;
 });
-$(document).on("keypress", "[formatTextbox='alphaNumeric']", function (e) {
-    var alphaNumericKeys = AllowedInput.AlphaNumeric;
 
-    if (alphaNumericKeys.length == 0) {
-        for (var i = 48; i <= 57; i++)
-            alphaNumericKeys.push(i);
-        for (var i = 65; i <= 90; i++)
-            alphaNumericKeys.push(i);
-        for (i = 97; i <= 122; i++)
-            alphaNumericKeys.push(i);
-        AllowedInput.AlphaNumeric = alphaNumericKeys;
-    }
-    var k;
-    // code for Ie and Chrome browser
-    if (!(navigator.userAgent.search("Firefox") > -1)) {
-        k = e.which;
-        if (!(alphaNumericKeys.indexOf(k) >= 0))
-            e.preventDefault();
-    } else {
-        k = e.which == 0 ? e.keyCode : e.which;
-        var fields = sg.utls.getFirefoxSpecialKeys(e);
-        if (!((alphaNumericKeys.indexOf(k) >= 0) || (fields.indexOf(k) >= 0)))
-            return false;
-    }
-});
 $(document).on("keyup", ".grid-upper", function () {
     $(this).val(sg.utls.toUpperCase($(this).val()));
 });
+
 $(document).on("focusout", "[prefixZero='true']", function (e) {
     if (e.currentTarget.value.length < e.currentTarget.maxLength) {
         this.value = sg.utls.kndoUI.getTextValue(e.currentTarget.maxLength - e.currentTarget.value.length) + e.currentTarget.value;
     }
 });
+
 $(document).on("keypress", "[formatTextbox='time']", function (e) {
     var charCode = (e.which) ? e.which : e.keyCode;
-    var separaterCode = 58;
-    if ((charCode >= 48 && charCode <= 57) || (charCode === separaterCode)) {
-        return true;
-    }
-    return false;
+    var isNumeric = (charCode >= sg.constants.KeyCodeEnum.Zero && charCode <= sg.constants.KeyCodeEnum.Nine);
+    var isSeparator = (charCode === sg.constants.KeyCodeEnum.Colon);
+    return (isNumeric || isSeparator);
 });
+
 $(document).on("focusout", "[formatTextbox='time']", function (e) {
     var value = $(this).val();
     var patt = new RegExp(sg.utls.regExp.TIME, sg.utls.regExp.ONLYGLOBAL);
@@ -2882,7 +3448,7 @@ window.onerror = function (msg, url, line) {
     };
 
     if (!sg.utls.hasTriedToNotify) {
-        sg.utls.hasTriedToNotify = true;//to avoid recursive loop
+        sg.utls.hasTriedToNotify = true; // To avoid recursive loop
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", "LogJavascriptError"), data, function () { sg.utls.hasTriedToNotify = false });
     }
 };
@@ -2890,17 +3456,16 @@ window.onerror = function (msg, url, line) {
 /**
  * Add Sage-specific functionality to the jQuery namespace.
  */
+// @ts-ignore
 $(function () {
-
     if (sg.utls.isPortalIntegrated()) {
         window.top.SessionManager.ResetSessionTimer();
         var events = 'ajaxSend';
-        $(document).bind($.trim((events + ' ').split(' ').join('.idleTimer ')), window.top.SessionManager.ResetSessionTimer);
-    }
+        $(document).on($.trim((events + ' ').split(' ').join('.idleTimer ')), window.top.SessionManager.ResetSessionTimer); 
 
-    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
-    ga('create', 'UA-47089329-1', 'auto');
-    ga('send', 'pageview');
+        var sessionId = sg.utls.getSessionId();
+        sage.cache.local.set(sessionId + "_LoggedIn", new Date().getTime().toString());
+    }
 
     kendo.culture(globalResource.Culture);
 
@@ -2915,8 +3480,8 @@ $(function () {
     var screenHome = "999999";
     var isHomePage = self.location === top.location && $("#ScreenName").val() === screenHome;
 
-    //In Home page on mouse click, this event is executing and hence success message is not displaying, so if the page is home 
-    //then don't execute this code
+    // In Home page on mouse click, this event is executing and hence success message is not displaying, so if the page is home 
+    // then don't execute this code
     if (!isHomePage) {
         $("body").on("click", function () {
             var successControl = $(this).find("#success");
@@ -2943,19 +3508,19 @@ $(function () {
         $(this).parent(".sub-menu").show();
     });
 
-    //Set flag if shift key is pressed. Used for grid tabbing
-    $(document).bind('keyup keydown', function (e) {
+    // Set flag if shift key is pressed. Used for grid tabbing
+    $(document).on('keyup keydown', function (e) {
         sg.utls.isShiftKeyPressed = e.shiftKey;
         sg.utls.isCtrlKeyPressed = e.ctrlKey;
         var keyCode = e.keyCode || e.which;
-        if (keyCode === 9) {
+        if (keyCode === sg.constants.KeyCodeEnum.Tab) {
             sg.utls.istabKeyPressed = true;
         }
 
         return true;
     });
 
-    $(document).bind('mouseup mousedown', function (e) {
+    $(document).on('mouseup mousedown', function (e) {
         sg.utls.istabKeyPressed = false;
     });
 
@@ -2966,7 +3531,7 @@ $(function () {
             $this.attr("maxlength", data.valLengthMax);
     });
 
-    //This may not be required.
+    // This may not be required.
     $("input[data-val-range-max]").each(function () {
         var $this = $(this);
         var data = $this.data();
@@ -2986,18 +3551,6 @@ $(function () {
         $(this).children(".sub-menu").hide();
     });
 
-    function editCell() {
-        $(document).on("focus", ".k-edit-cell", function () {
-            if ($(this).find("input").length > 1) {
-                var parentWidth = $(this).width();
-                var inputWidth = parentWidth - 30 + "px";
-
-                $(".grid_inpt").css("width", inputWidth);
-            }
-        });
-
-    };
-
     // Highlight all the text inside after focusing on a numeric textbox
     $(document).on('focus', '.k-input', function () {
         var input = $(this);
@@ -3009,6 +3562,10 @@ $(function () {
         }
     });
 
+    /**
+     * @name pageUnloadHandler
+     * @description TODO - Add method descripiton
+     */
     function PageUnloadHandler() {
         if (!sg.utls.isSameOrigin()) {
             return;
@@ -3025,68 +3582,161 @@ $(function () {
     }
 
     if (isHomePage) {
-        $(window).bind('unload', function () {
+        //
+        // Portal Page
+        //
+		sessionStorage["productId"] = "";        $(window).on('unload', function () {
             PageUnloadHandler();
-            if (globalResource.AllowPageUnloadEvent) {
-                //destroy session after calling compelted
-                sg.utls.destroySessions();
-            }
+            sg.utls.updateOpenScreenCount();
         });
+
         $(window).scroll(function () {
-            //console.log('Global scroll event is raised.');
-            //sg.utls.scrollPosition = $(window.top).scrollTop();
             sg.utls.showMessagesInViewPort();
         });
     } else {
+        //
+        // Non-Portal Page
+        //
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length > 0 && sessionPerPage.val() === "True") {
-            $(window).bind('unload', function () {
+            $(window).on('unload', function () {
                 PageUnloadHandler();
-                if (globalResource.AllowPageUnloadEvent) {
-                    sg.utls.destroySession();
-                }
+                sg.utls.destroySession();
             });
-        }
-        else {
-            $(window).bind('unload', function () {
+        } else {
+            $(window).on('unload', function (e) {
                 window.name = "unloadediFrame";
                 PageUnloadHandler();
             });
         }
     }
 
-
     jQuery.validator.addMethod("format", function (source, parameters) {
         return $.validator.format(source, parameters);
     });
 
-
-    //For some reason, clicking the pencil button in a grid will also trigger a close event in Mac Safari browser
+    // For some reason, clicking the pencil button in a grid will also trigger a close event in Mac Safari browser
     if (sg.utls.isSafari()) {
-        $(".datagrid-group").bind("mousedown", function (e) {
+        $(".datagrid-group").on("mousedown", function (e) {
             if ($(e.target).is('input:button')) {
                 e.preventDefault();
                 e.stopImmediatePropagation();
             }
         });
     }
+   
+    /**
+     * Add receive message and post message for set product key from outside application, such as CRM
+     * @param {any} e: message 
+     */
+    function receiveMessage(e) {
+        // Set product key to session storage to identify request from outside application iframe
+        if ( e.data && e.data.id === "SetProductKey") {
+            sessionStorage["productId"] = e.data.key;
+        }
+        // Reset Sage300 client side timer to prevent UI side timeout 
+        if (e.data && e.data.id === "ResetSage300Timer") {
+            var sessionId = sg.utls.getSessionId();
+            var key = sessionId + "_ResetSessionTimer";
+            localStorage[key] = new Date().getTime().toString();
+        }
+    }
+    window.addEventListener('message', receiveMessage);
+    window.parent.postMessage({ id: 'Sage300Loaded' }, "*");
 
+    // Multiple tab pages sign out as one of tab page logout
+    $(window).on('storage', function (e) {
+        if (e && e.originalEvent && e.originalEvent.key) {
+            var key = e.originalEvent.key;
 
+            if (key === "modernizr") {
+                // We don't care about this so just return
+                return;
+            } else {
+                // Extract the sessionId and message from the key
+                var parts = key.split('_');
+                var sessionIdFromKey = parts[0];
+                var message = parts[1];
+
+                if (message === "UpdatePortalSessionDate") {
+                    var sessionDateFromLocalStorage = sage.cache.local.get(key);
+                    var dt = kendo.toString(sessionDateFromLocalStorage, 'MMM dd, yyyy');
+                    // Set session date in top menu
+                    $("#spnSessionDate").html(dt);
+                    return;
+
+                } else if (message === "DisablePortalSessionDatePicker") {
+
+                    sg.utls.disablePortalSessionDatePicker();
+                    return;
+
+                } else if (message === "EnablePortalSessionDatePicker") {
+
+                    sg.utls.enablePortalSessionDatePicker();
+                    return;
+                } else if (message === "Sage300Timeout") {
+
+                    window.parent.postMessage({ id: 'Sage300Logout' }, "*");
+                    return;
+                } else if (message === "LogoutInitiated") {
+
+                    // This code will be executed for each active tab/browser 
+
+                    var url = location.href;
+                    var isAdminTab = url.indexOf("AS/CustomScreen") > 0;
+                    var sessionId = sg.utls.getSessionId();
+
+                    // Only run this if the message sessionId is the same
+                    // as the current sessionId
+
+                    if (sessionIdFromKey === sessionId) {
+                        // Get the index of the sessionId from the url
+                        var idx = url.indexOf(sessionId);
+
+                        // If sessionId was found in the url
+                        if (idx > 0) {
+
+                            var index = url.indexOf('OnPremise');
+
+                            // This will allow us to bypass the 'beforeunload' event handling in all behaviour 
+                            // files in response to logging out in a different tab page(same user and company) 
+                            // This will avoid displaying the ugly little browser confirmation dialog box.
+                            // Note: This block is only relevant when running in Sage 300 Portal, not CRM
+                            if (sg && sg.utls && sg.utls.getPortalWindow) {
+                                var portalWnd = sg.utls.getPortalWindow();
+                                if (portalWnd.pageUnloadEventManager) {
+                                    portalWnd.pageUnloadEventManager.disable();
+                                }
+                            }
+
+                            var loginUrl = url.substring(0, index > 0 ? index : idx);
+                            if (isAdminTab) {
+                                loginUrl += "admin";
+                            }
+                            // Log out, post message to outside application that use Sage 300 screens
+                            if (sessionStorage["productId"]) {
+                                // Running in CRM
+                                window.parent.postMessage({ id: 'Sage300Logout' }, "*");
+                            } else {
+                                // Running in Portal, for KPI widget windows should not set to login page
+                                if (location.href.indexOf('/KPI/') < 0) {
+                                    location.href = loginUrl;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    //sg.utls.initBackgroundImageCycling();
+
+    // Outside request(like CRM) not increase count, prevent cross domain issues
+    if (!sg.utls.isSameOrigin()) {
+        return;
+    }
 });
-
-
-
-
-
-
-
-
-//script to check the div has scrollbars
-//usage
-//$('div:hasScroll') //all divs that have scrollbars
-//$('div').filter(':hasScroll') //same but better
-//$(this).closest(':hasScroll(y)') //find the parent with the vert scrollbar
-//$list.is(':hasScroll(x)') //are there any horizontal scrollbars in the list?
 
 (function ($) {
     function hasScroll(el, index, match) {
@@ -3109,10 +3759,10 @@ $(function () {
             if (sX === scroll) { return true; }
         } else if (axis === 'y') {
             if (sY === hidden || sY === visible) { return false; }
-            if (sY === scroll) { return true };
+            if (sY === scroll) { return true; }
         }
 
-        //Compare client and scroll dimensions to see if a scrollbar is needed
+        // Compare client and scroll dimensions to see if a scrollbar is needed
         return $el.innerHeight() < el.scrollHeight
             || $el.innerWidth() < el.scrollWidth;
     }

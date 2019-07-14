@@ -95,7 +95,8 @@ sg.multiSelectionHelper = {
             if (isTheSame)
                 return;
             else {
-                $("#" + controlName).data("kendoMultiSelect").value([]);
+		//Do not need to clean up from data source, not sure the reason to clean up
+                //$("#" + controlName).data("kendoMultiSelect").value([]);
                 currentValue = data;
             }
             // End of block.

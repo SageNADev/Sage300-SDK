@@ -504,7 +504,7 @@ var exportResultRowNumber = 0;
             });
 
             $(document).on('click.plugin.export', '#btnSaveScript', function () {
-                globalResource.AllowPageUnloadEvent = false;
+                pageUnloadEventManager.disable();
 
                 var data = { viewModel: ko.mapping.toJS(sg.exportHelper.exportModel) };
                 that._exportData(data, false);
@@ -525,7 +525,7 @@ var exportResultRowNumber = 0;
               
                 //This is required so that is dirty message defined on beforeunload event will not fire.
                 setTimeout(function () {
-                    globalResource.AllowPageUnloadEvent = true;
+                    pageUnloadEventManager.enable();
                 }, 10);
             });
 
@@ -704,30 +704,30 @@ var exportResultRowNumber = 0;
                 transport: {
                     read: function (options) {
                         
-                        function setFilterString() {
-                            var keyValues = sg.exportHelper.exportKeys;
-                            if (keyValues) {
-                                keyValues = (typeof keyValues === "function") ? keyValues() : keyValues;
-                                if (keyValues && keyValues.length > 0 && keyValues[0].trim()) {
-                                    var table = exportModelData.ExportRequest.DataMigrationList[0];
-                                    var keys = table.Items.filter(function (f) { return f.IsKey; });
-                                    var filters = table.FilterString;
-                                    var length = Math.min(keyValues.length, keys.length);
-                                    var keyFilters = "";
-                                    var filter = "";
-                                    for (var i = 0; i < length; i++) {
-                                        filter = keys[i].columnName + " = " + keyValues[i];
-                                        keyFilters += (i === 0) ? filter : " AND " + filter;
-                                    }
-                                    if (keyFilters) {
-                                        filters = (filters) ? keyFilters + " AND (" + filters + ")" : keyFilters;
-                                        table.FilterString = filters;
-                                    }
-                                }
-                            }
-                        }
+                        //function setFilterString() {
+                        //    var keyValues = sg.exportHelper.exportKeys;
+                        //    if (keyValues) {
+                        //        keyValues = (typeof keyValues === "function") ? keyValues() : keyValues;
+                        //        if (keyValues && keyValues.length > 0 && keyValues[0].trim()) {
+                        //            var table = exportModelData.ExportRequest.DataMigrationList[0];
+                        //            var keys = table.Items.filter(function (f) { return f.IsKey; });
+                        //            var filters = table.FilterString;
+                        //            var length = Math.min(keyValues.length, keys.length);
+                        //            var keyFilters = "";
+                        //            var filter = "";
+                        //            for (var i = 0; i < length; i++) {
+                        //                filter = keys[i].columnName + " = " + keyValues[i];
+                        //                keyFilters += (i === 0) ? filter : " AND " + filter;
+                        //            }
+                        //            if (keyFilters) {
+                        //                filters = (filters) ? keyFilters + " AND (" + filters + ")" : keyFilters;
+                        //                table.FilterString = filters;
+                        //            }
+                        //        }
+                        //    }
+                        //}
 
-                        setFilterString();
+                        that._setFilterString();
                         var paramters = {
                             currentPageNumber: (grid) ? grid.dataSource.page() -1 : 0,
                             pageSize: 10,
@@ -811,6 +811,11 @@ var exportResultRowNumber = 0;
             sg.exportHelper.abortPolling = false;
             if (that.options.keys !== $.noop) {
                 sg.exportHelper.exportModel.ExportRequest.Keys(that.options.keys.call());
+                //resign the DataMigrationList if user passed the keys in
+                that._setFilterString();
+                sg.exportHelper.exportModel.ExportRequest.DataMigrationList(exportModelData.ExportRequest
+                    .DataMigrationList);
+
             }
             $("#ExportTabstrip").hide();
             $("#btnClose").hide();
@@ -857,6 +862,32 @@ var exportResultRowNumber = 0;
 
                 for (var j = 0; j < len; j++) {
                     exportItems[j].print = subNodeLoaded ? treeItems[j].checked : parentChecked;
+                }
+            }
+        },
+
+        /**
+         * This function is used to build DataMigrationList filter string based on keys
+         */
+        _setFilterString: function() {
+            var keyValues = sg.exportHelper.exportKeys;
+            if(keyValues) {
+                keyValues = (typeof keyValues === "function") ? keyValues() : keyValues;
+                if (keyValues && keyValues.length > 0 && keyValues[0].trim()) {
+                    var table = exportModelData.ExportRequest.DataMigrationList[0];
+                    var keys = table.Items.filter(function (f) { return f.IsKey; });
+                    var filters = table.FilterString;
+                    var length = Math.min(keyValues.length, keys.length);
+                    var keyFilters = "";
+                    var filter = "";
+                    for (var i = 0; i < length; i++) {
+                        filter = keys[i].columnName + " = " + keyValues[i];
+                        keyFilters += (i === 0) ? filter : " AND " + filter;
+                    }
+                    if (keyFilters) {
+                        filters = (filters) ? keyFilters + " AND (" + filters + ")" : keyFilters;
+                        table.FilterString = filters;
+                    }
                 }
             }
         },
