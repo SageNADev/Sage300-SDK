@@ -529,15 +529,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
-        /// </summary>
-        internal static string ReleaseSpecificDescAspnetClientFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescAspnetClientFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
         /// </summary>
         internal static string ReleaseSpecificDescConsolidateEnumerations {
@@ -547,20 +538,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will update the version numbers for some Crystal Reports components..
+        ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
-        internal static string ReleaseSpecificDescCrystalReportsVersionNumberUpdate {
+        internal static string ReleaseSpecificDescUpdateMultisession {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescCrystalReportsVersionNumberUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will create and populate the new ExternalContent folder..
-        /// </summary>
-        internal static string ReleaseSpecificDescExternalContentFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescExternalContentFolder", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateMultisession", resourceCulture);
             }
         }
         
@@ -579,6 +561,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple Sessions framework changes.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateMultisession {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMultisession", resourceCulture);
             }
         }
         
@@ -603,6 +594,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to handle multiple sessions in
+        ///Sage 300c 2020.0, several files need to be altered for the solution to
+        ///compile and run after the upgrade process.
+        ///
+        ///The upgrade wizard is unable to automatically perform this
+        ///modification and therefore this step will require manual modifications.
+        ///
+        ///The following files are affected (all within the Namespace.Web project):
+        ///	- XXAreaRegistration.cs
+        ///	- Global.asax.cs
+        ///	- Web.config
+        ///
+        ///Please refer to the &apos;Multiple Sessions changes&apos; s [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateMultisession {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateMultisession", resourceCulture);
             }
         }
         

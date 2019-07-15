@@ -99,10 +99,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         SyncWebFiles(title);
                         break;
 
-                    // Not necessary for 2019.2 release
-					//case 3:
-                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                    //    break;
+                    case 3:
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
+                        break;
 
                     #endregion
 
@@ -113,8 +112,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    case 3:
-                        UpdateTargetedDotNetFrameworkVersion(title);
+
+                    case 4:
+                        UpdateMultisession(title);
                         break;
 
                     #endregion
@@ -332,38 +332,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Process the 'aspnet_client' folder changes
+        /// Multisession changes
+        /// Update XXAreaRegistration.cs with new session in route
+        /// Update Global.asax.cs with new Context object properties, 
+        /// updated AuthenticationManager.LoginResult parameters
+        /// and removal of the DestroyPool call from Session_End
+        /// Update Web.config with new timer mechanism
         /// </summary>
-        /// <param name="title">The title to display for this step</param>
-        public void ProcessAspnetClientFolder(string title)
+        /// <param name="title"></param>
+        private void UpdateMultisession(string title)
         {
             // Log start of step
             LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
-        }
-
-        /// <summary>
-        /// Update the targeted version of the .NET Framework for
-        /// all solution projects
-        /// </summary>
-        /// <param name="title">Title of step being processed </param>
-        private void UpdateTargetedDotNetFrameworkVersion(string title)
-        {
-            // Log start of step
-            LogEventStart(title);
-
-            var projects = _settings.Solution.Projects;
-            var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
-            foreach (Project project in projects)
-            {
-                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrading {project.Name} .NET target to {dotNetTargetName}...");
-                project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
-            }
 
             // Log end of step
             LogEventEnd(title);
