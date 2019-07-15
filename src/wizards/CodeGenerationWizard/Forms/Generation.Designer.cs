@@ -222,7 +222,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblPassword.Location = new System.Drawing.Point(7, 58);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(70, 19);
+            this.lblPassword.Size = new System.Drawing.Size(73, 20);
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password:";
             // 
@@ -233,7 +233,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblUser.Location = new System.Drawing.Point(37, 29);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(40, 19);
+            this.lblUser.Size = new System.Drawing.Size(41, 20);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "User:";
             // 
@@ -244,7 +244,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblVersion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblVersion.Location = new System.Drawing.Point(225, 28);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(57, 19);
+            this.lblVersion.Size = new System.Drawing.Size(60, 20);
             this.lblVersion.TabIndex = 7;
             this.lblVersion.Text = "Version:";
             // 
@@ -290,7 +290,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblCompany.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblCompany.Location = new System.Drawing.Point(211, 58);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(71, 19);
+            this.lblCompany.Size = new System.Drawing.Size(75, 20);
             this.lblCompany.TabIndex = 9;
             this.lblCompany.Text = "Company:";
             // 
@@ -332,7 +332,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // cboRepositoryType
             // 
             this.cboRepositoryType.FormattingEnabled = true;
-            this.cboRepositoryType.ItemHeight = 23;
+            this.cboRepositoryType.ItemHeight = 24;
             this.cboRepositoryType.Items.AddRange(new object[] {
             "Flat",
             "Process",
@@ -342,7 +342,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             "HeaderDetail"});
             this.cboRepositoryType.Location = new System.Drawing.Point(98, 27);
             this.cboRepositoryType.Name = "cboRepositoryType";
-            this.cboRepositoryType.Size = new System.Drawing.Size(141, 29);
+            this.cboRepositoryType.Size = new System.Drawing.Size(141, 30);
             this.cboRepositoryType.Style = MetroFramework.MetroColorStyle.Green;
             this.cboRepositoryType.TabIndex = 1;
             this.cboRepositoryType.UseSelectable = true;
@@ -354,7 +354,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblRepositoryType.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblRepositoryType.Location = new System.Drawing.Point(15, 30);
             this.lblRepositoryType.Name = "lblRepositoryType";
-            this.lblRepositoryType.Size = new System.Drawing.Size(76, 19);
+            this.lblRepositoryType.Size = new System.Drawing.Size(82, 20);
             this.lblRepositoryType.TabIndex = 0;
             this.lblRepositoryType.Text = "Code Type:";
             // 
@@ -364,7 +364,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblViewID.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblViewID.Location = new System.Drawing.Point(19, 15);
             this.lblViewID.Name = "lblViewID";
-            this.lblViewID.Size = new System.Drawing.Size(59, 19);
+            this.lblViewID.Size = new System.Drawing.Size(63, 20);
             this.lblViewID.TabIndex = 2;
             this.lblViewID.Text = "View ID:";
             // 
@@ -383,6 +383,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtViewID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtViewID.CustomButton.UseSelectable = true;
             this.txtViewID.CustomButton.Visible = false;
+            this.txtViewID.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtViewID.Lines = new string[0];
             this.txtViewID.Location = new System.Drawing.Point(83, 13);
             this.txtViewID.MaxLength = 32767;
@@ -440,14 +441,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
             this.splitBase.Size = new System.Drawing.Size(997, 605);
-            this.splitBase.SplitterDistance = 89;
+            this.splitBase.SplitterDistance = 88;
             this.splitBase.TabIndex = 9;
             // 
             // lblUpperBorder
             // 
             this.lblUpperBorder.BackColor = System.Drawing.Color.Gainsboro;
             this.lblUpperBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUpperBorder.Location = new System.Drawing.Point(0, 88);
+            this.lblUpperBorder.Location = new System.Drawing.Point(0, 87);
             this.lblUpperBorder.Name = "lblUpperBorder";
             this.lblUpperBorder.Size = new System.Drawing.Size(997, 1);
             this.lblUpperBorder.TabIndex = 53;
@@ -483,7 +484,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepTitle.Location = new System.Drawing.Point(6, 6);
             this.lblStepTitle.Name = "lblStepTitle";
-            this.lblStepTitle.Size = new System.Drawing.Size(185, 25);
+            this.lblStepTitle.Size = new System.Drawing.Size(191, 25);
             this.lblStepTitle.Style = MetroFramework.MetroColorStyle.Green;
             this.lblStepTitle.TabIndex = 2;
             this.lblStepTitle.Text = "Step X - Step Details";
@@ -510,7 +511,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(997, 512);
+            this.splitSteps.Size = new System.Drawing.Size(997, 513);
             this.splitSteps.SplitterDistance = 430;
             this.splitSteps.TabIndex = 52;
             // 
@@ -590,7 +591,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblModule.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblModule.Location = new System.Drawing.Point(30, 301);
             this.lblModule.Name = "lblModule";
-            this.lblModule.Size = new System.Drawing.Size(59, 19);
+            this.lblModule.Size = new System.Drawing.Size(63, 20);
             this.lblModule.TabIndex = 11;
             this.lblModule.Text = "Module:";
             // 
@@ -751,6 +752,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtReportIniFile.CustomButton.TabIndex = 1;
             this.txtReportIniFile.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtReportIniFile.CustomButton.UseSelectable = true;
+            this.txtReportIniFile.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtReportIniFile.Lines = new string[0];
             this.txtReportIniFile.Location = new System.Drawing.Point(83, 45);
             this.txtReportIniFile.MaxLength = 32767;
@@ -785,8 +787,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtEntityName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEntityName.CustomButton.UseSelectable = true;
             this.txtEntityName.CustomButton.Visible = false;
+            this.txtEntityName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEntityName.Lines = new string[0];
-            this.txtEntityName.Location = new System.Drawing.Point(528, 45);
+            this.txtEntityName.Location = new System.Drawing.Point(534, 45);
             this.txtEntityName.MaxLength = 32767;
             this.txtEntityName.Name = "txtEntityName";
             this.txtEntityName.PasswordChar = '\0';
@@ -809,18 +812,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportKeys.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblReportKeys.Location = new System.Drawing.Point(19, 79);
             this.lblReportKeys.Name = "lblReportKeys";
-            this.lblReportKeys.Size = new System.Drawing.Size(59, 19);
+            this.lblReportKeys.Size = new System.Drawing.Size(63, 20);
             this.lblReportKeys.TabIndex = 7;
             this.lblReportKeys.Text = "Reports:";
             // 
             // cboReportKeys
             // 
-            this.cboReportKeys.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cboReportKeys.FormattingEnabled = true;
-            this.cboReportKeys.ItemHeight = 19;
+            this.cboReportKeys.ItemHeight = 24;
             this.cboReportKeys.Location = new System.Drawing.Point(83, 77);
             this.cboReportKeys.Name = "cboReportKeys";
-            this.cboReportKeys.Size = new System.Drawing.Size(189, 25);
+            this.cboReportKeys.Size = new System.Drawing.Size(189, 30);
             this.cboReportKeys.Style = MetroFramework.MetroColorStyle.Green;
             this.cboReportKeys.TabIndex = 8;
             this.cboReportKeys.UseSelectable = true;
@@ -840,8 +842,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtResxName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtResxName.CustomButton.UseSelectable = true;
             this.txtResxName.CustomButton.Visible = false;
+            this.txtResxName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtResxName.Lines = new string[0];
-            this.txtResxName.Location = new System.Drawing.Point(528, 109);
+            this.txtResxName.Location = new System.Drawing.Point(534, 111);
             this.txtResxName.MaxLength = 32767;
             this.txtResxName.Name = "txtResxName";
             this.txtResxName.PasswordChar = '\0';
@@ -863,7 +866,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportIniFile.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblReportIniFile.Location = new System.Drawing.Point(27, 47);
             this.lblReportIniFile.Name = "lblReportIniFile";
-            this.lblReportIniFile.Size = new System.Drawing.Size(51, 19);
+            this.lblReportIniFile.Size = new System.Drawing.Size(55, 20);
             this.lblReportIniFile.TabIndex = 4;
             this.lblReportIniFile.Text = "Ini File:";
             // 
@@ -882,8 +885,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtReportProgramId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtReportProgramId.CustomButton.UseSelectable = true;
             this.txtReportProgramId.CustomButton.Visible = false;
+            this.txtReportProgramId.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtReportProgramId.Lines = new string[0];
-            this.txtReportProgramId.Location = new System.Drawing.Point(83, 109);
+            this.txtReportProgramId.Location = new System.Drawing.Point(83, 111);
             this.txtReportProgramId.MaxLength = 32767;
             this.txtReportProgramId.Name = "txtReportProgramId";
             this.txtReportProgramId.PasswordChar = '\0';
@@ -904,9 +908,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.lblResxName.AutoSize = true;
             this.lblResxName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblResxName.Location = new System.Drawing.Point(448, 116);
+            this.lblResxName.Location = new System.Drawing.Point(448, 111);
             this.lblResxName.Name = "lblResxName";
-            this.lblResxName.Size = new System.Drawing.Size(79, 19);
+            this.lblResxName.Size = new System.Drawing.Size(86, 20);
             this.lblResxName.TabIndex = 15;
             this.lblResxName.Text = "Resx Name:";
             // 
@@ -916,7 +920,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblReportProgramId.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblReportProgramId.Location = new System.Drawing.Point(-5, 111);
             this.lblReportProgramId.Name = "lblReportProgramId";
-            this.lblReportProgramId.Size = new System.Drawing.Size(83, 19);
+            this.lblReportProgramId.Size = new System.Drawing.Size(88, 20);
             this.lblReportProgramId.TabIndex = 9;
             this.lblReportProgramId.Text = "Program ID:";
             // 
@@ -934,8 +938,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtModelName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtModelName.CustomButton.UseSelectable = true;
             this.txtModelName.CustomButton.Visible = false;
+            this.txtModelName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtModelName.Lines = new string[0];
-            this.txtModelName.Location = new System.Drawing.Point(528, 77);
+            this.txtModelName.Location = new System.Drawing.Point(534, 79);
             this.txtModelName.MaxLength = 32767;
             this.txtModelName.Name = "txtModelName";
             this.txtModelName.PasswordChar = '\0';
@@ -958,7 +963,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblModelName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblModelName.Location = new System.Drawing.Point(436, 80);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(91, 19);
+            this.lblModelName.Size = new System.Drawing.Size(99, 20);
             this.lblModelName.TabIndex = 13;
             this.lblModelName.Text = "Model Name:";
             // 
@@ -968,7 +973,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntityName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblEntityName.Location = new System.Drawing.Point(440, 46);
             this.lblEntityName.Name = "lblEntityName";
-            this.lblEntityName.Size = new System.Drawing.Size(87, 19);
+            this.lblEntityName.Size = new System.Drawing.Size(93, 20);
             this.lblEntityName.TabIndex = 11;
             this.lblEntityName.Text = "Entity Name:";
             // 
@@ -1003,7 +1008,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateEnumerationsInSingleFile.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkGenerateEnumerationsInSingleFile.Location = new System.Drawing.Point(15, 111);
             this.chkGenerateEnumerationsInSingleFile.Name = "chkGenerateEnumerationsInSingleFile";
-            this.chkGenerateEnumerationsInSingleFile.Size = new System.Drawing.Size(248, 19);
+            this.chkGenerateEnumerationsInSingleFile.Size = new System.Drawing.Size(267, 20);
             this.chkGenerateEnumerationsInSingleFile.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateEnumerationsInSingleFile.TabIndex = 25;
             this.chkGenerateEnumerationsInSingleFile.Text = "Generate Enumerations in Single File";
@@ -1018,7 +1023,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkSequenceRevisionList.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkSequenceRevisionList.Location = new System.Drawing.Point(428, 42);
             this.chkSequenceRevisionList.Name = "chkSequenceRevisionList";
-            this.chkSequenceRevisionList.Size = new System.Drawing.Size(162, 19);
+            this.chkSequenceRevisionList.Size = new System.Drawing.Size(174, 20);
             this.chkSequenceRevisionList.Style = MetroFramework.MetroColorStyle.Green;
             this.chkSequenceRevisionList.TabIndex = 27;
             this.chkSequenceRevisionList.Text = "Sequence Revision List";
@@ -1033,7 +1038,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateGrid.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkGenerateGrid.Location = new System.Drawing.Point(428, 19);
             this.chkGenerateGrid.Name = "chkGenerateGrid";
-            this.chkGenerateGrid.Size = new System.Drawing.Size(111, 19);
+            this.chkGenerateGrid.Size = new System.Drawing.Size(117, 20);
             this.chkGenerateGrid.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateGrid.TabIndex = 26;
             this.chkGenerateGrid.Text = "Generate Grid";
@@ -1048,7 +1053,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateIfExist.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkGenerateIfExist.Location = new System.Drawing.Point(15, 88);
             this.chkGenerateIfExist.Name = "chkGenerateIfExist";
-            this.chkGenerateIfExist.Size = new System.Drawing.Size(203, 19);
+            this.chkGenerateIfExist.Size = new System.Drawing.Size(220, 20);
             this.chkGenerateIfExist.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateIfExist.TabIndex = 24;
             this.chkGenerateIfExist.Text = "Generate if Files Already Exist";
@@ -1063,7 +1068,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateClientFiles.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkGenerateClientFiles.Location = new System.Drawing.Point(15, 65);
             this.chkGenerateClientFiles.Name = "chkGenerateClientFiles";
-            this.chkGenerateClientFiles.Size = new System.Drawing.Size(376, 19);
+            this.chkGenerateClientFiles.Size = new System.Drawing.Size(406, 20);
             this.chkGenerateClientFiles.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateClientFiles.TabIndex = 23;
             this.chkGenerateClientFiles.Text = "Generate Client Files (Controllers, Razor Views, JavaScript)";
@@ -1079,7 +1084,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateFinder.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkGenerateFinder.Location = new System.Drawing.Point(15, 19);
             this.chkGenerateFinder.Name = "chkGenerateFinder";
-            this.chkGenerateFinder.Size = new System.Drawing.Size(123, 19);
+            this.chkGenerateFinder.Size = new System.Drawing.Size(130, 20);
             this.chkGenerateFinder.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateFinder.TabIndex = 21;
             this.chkGenerateFinder.Text = "Generate Finder";
@@ -1092,7 +1097,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateDynamicEnablement.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chkGenerateDynamicEnablement.Location = new System.Drawing.Point(15, 42);
             this.chkGenerateDynamicEnablement.Name = "chkGenerateDynamicEnablement";
-            this.chkGenerateDynamicEnablement.Size = new System.Drawing.Size(214, 19);
+            this.chkGenerateDynamicEnablement.Size = new System.Drawing.Size(230, 20);
             this.chkGenerateDynamicEnablement.Style = MetroFramework.MetroColorStyle.Green;
             this.chkGenerateDynamicEnablement.TabIndex = 22;
             this.chkGenerateDynamicEnablement.Text = "Generate Dynamic Enablement";
@@ -1282,7 +1287,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(997, 78);
+            this.pnlButtons.Size = new System.Drawing.Size(997, 79);
             this.pnlButtons.TabIndex = 2;
             // 
             // btnCancel
@@ -1367,7 +1372,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // Generation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1037, 685);
