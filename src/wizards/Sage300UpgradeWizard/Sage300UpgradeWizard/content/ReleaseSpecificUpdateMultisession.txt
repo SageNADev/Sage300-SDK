@@ -9,6 +9,7 @@ The following files are affected (all within the Namespace.Web project):
 	- XXAreaRegistration.cs
 	- Global.asax.cs
 	- Web.config
+	- All JavaScript behaviour files
 
 Please refer to the 'Multiple Sessions changes' subsection in the 
 Sage 300 Upgrade Guide for 2019.2 to 2020.0 in the docs folder of the Web 
