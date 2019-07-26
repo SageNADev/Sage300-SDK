@@ -169,6 +169,19 @@
                                     "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
                                     "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"],
                 //optionalFieldBindings: "IC0313,IC0377[0]"
+            },
+
+            Receipt: {
+                viewID: "IC0590",
+                viewOrder: 2,
+                displayFieldNames: ["RECPNUMBER", "RECPDESC", "RECPDATE", "FISCYEAR", "FISCPERIOD", "PONUM", "REFERENCE", "RECPTYPE",
+                    "RATEOP", "VENDNUMBER", "RECPCUR", "RECPRATE", "RATETYPE", "RATEDATE", "RATEOVRRD", "ADDCOST", "ADDCOSTHM", "ADDCOSTSRC",
+                    "ADDCUR", "TOTCSTHM", "TOTCSTSRC", "NUMCSTDETL", "LABELS", "ADDCSTTYPE", "ORIGTOTSRC", "ORIGTOTHM", "ADDCSTHOME", "TOTALCOST",
+                    "RECPDECIML", "VENDNAME", "VENDEXISTS", "STATUS"],
+                returnFieldNames: ["RECPNUMBER", "SEQUENCENO"],
+                parentValAsInitKey: true, //$("#txtReceiptNumber").val() === "*** NEW ***" ? false : true,
+                filter: "DELETED = 0",
+                //viewFinder.optionalFieldBindings = "IC0595, IC0377[2]";  // comment out for now as CSFND doesn't support filterCount yet
             }
         },
 
@@ -317,6 +330,39 @@
                 returnFieldNames: ["MISCCODE"]
             },
         },
+
+        PR: { //Payroll
+            CAEmployeeTimecard: {
+                viewID: "CP0102",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "ENDDATE", "TCARDDESC", "STATUS"],
+                returnFieldNames: ["EMPLOYEE", "ENDDATE"],
+                hidePageNavigation: true
+            },
+            CAEmployee: {
+                viewID: "CP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                hidePageNavigation: true
+            },
+            USEmployeeTimecard: {
+                viewID: "UP0102",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "ENDDATE", "TCARDDESC", "STATUS"],
+                returnFieldNames: ["EMPLOYEE", "ENDDATE"],
+                hidePageNavigation: true
+            },
+            USEmployee: {
+                viewID: "UP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                hidePageNavigation: true
+            }
+        }
     };
 
 })(this.sg = this.sg || {}, this.sg.viewFinderProperties = this.sg.viewFinderProperties || {}, jQuery);
