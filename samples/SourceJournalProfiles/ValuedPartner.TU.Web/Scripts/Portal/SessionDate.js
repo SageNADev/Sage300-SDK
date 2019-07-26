@@ -1,65 +1,67 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
+//@ts-check
 "use strict";
 
-$(function () {
+var SessionDateCookieSetup = function () {
 
-    $("#frmPortal").submit(function (event) {
-        // prevent the default submission of the form
-        event.preventDefault();
-    });
+    var constants = {
+        CONTROL_ID: "#datePicker",
+        DATE_FORMAT: 'MMM dd, yyyy',
+        CALENDARCLOSE_DELAY_MS: 300
+    };
 
-    sessionDateCookieSetup.init();
+    var verifySessionDateUrl = sg.utls.url.buildUrl("Core", "Home", "isInvalidSessionDate");
+    var warningType = { Inactive: 0, Locked: 1, NotInCalender: 2 };
+    var isDatePickerOpen = false;
 
-    //keep track of changes made in the date picker textbox
-    $("#datePicker").on('input', function () {
-        $(this).data('currentValue', $(this).val());
-    });
-});
+    // Verification of Session Date Succeeds
+    var onSuccess = {
+        process: function(jsonResult) {
+            if (jsonResult) {
+                var portalWnd = window.top ? window.top : window;
+                var title = '';
+                switch (jsonResult.type) {
+                    case warningType.NotInCalender:
+                        title = portalWnd.globalResource.SessionDateNotInCalendar_Title;
+                        break;
 
-var verifySessionDateUrl = sg.utls.url.buildUrl("Core", "Home", "isInvalidSessionDate");
-var warningType = { Inactive: 0, Locked: 1, NotInCalender: 2};
-var sessionDateCookieSetup = sessionDateCookieSetup || {};
-var isDatePickerOpen = false;
+                    case warningType.Inactive:
+                        title = portalWnd.globalResource.SessionDateinInactiveYear_Title;
+                        break;
 
-// Verification of Sesssion Date Succeeds
-var onSuccess = {
-    process: function(jsonResult) {
-        if (jsonResult) {
-            switch (jsonResult.type) {
-                case warningType.NotInCalender:
-                    sg.utls.showMessageDialog(null, null, jsonResult.Message, sg.utls.DialogBoxType.Continue,
-                        globalResource.SessionDateNotInCalendar_Title, sg.utls.getFormatedDialogHtml());
-                    break;
-                case warningType.Inactive:
-                    sg.utls.showMessageDialog(null, null, jsonResult.Message, sg.utls.DialogBoxType.Continue,
-                        globalResource.SessionDateinInactiveYear_Title, sg.utls.getFormatedDialogHtml());
-                    break;
-                case warningType.Locked:
-                    sg.utls.showMessageDialog(null, null, jsonResult.Message, sg.utls.DialogBoxType.Continue,
-                        globalResource.SessionDateinLockedPeriod_Title, sg.utls.getFormatedDialogHtml());
-                    break;
+                    case warningType.Locked:
+                        title = portalWnd.globalResource.SessionDateinLockedPeriod_Title;
+                        break;
+                }
+
+                sg.utls.showMessageDialog(null, null, jsonResult.Message, sg.utls.DialogBoxType.Continue,
+                    title, sg.utls.getFormatedDialogHtml());
             }
-        }
-        
-   }
-};
+       }
+    };
 
-sessionDateCookieSetup = {
-    init: function () {
-        sessionDateCookieSetup.readSessionDateCookie();
-        sessionDateCookieSetup.sessionDateClick();
+    /**
+     * @name isSessionDateSelectorEnabled
+     * @description Check to see if the session date selector is enabled or disabled
+     * @returns {boolean} true : enabled | false : disabled
+     */
+    function isSessionDateSelectorEnabled() {
+        var flag = $("#sessionDateIcon").hasClass("disabled");
+        return !flag;
+    }
 
-        window.sg.utls.ajaxPost(verifySessionDateUrl, null, onSuccess.process);
-    },
-
-    /*modifying session date in session date cookie*/
-    saveSessionDate: function() {
+    /**
+     * @name saveSessionDate
+     * @description Modifying session date in session date cookie
+     */
+    function saveSessionDate() {
         if ($("#frmPortal").valid()) {
-            var selectedDateValue = $("#datePicker").data("kendoDatePicker").value();
+            var selectedDateValue = _public.getControl().value();
 
             if (selectedDateValue) {
-                // NOTE!!! Has to be done this way because the session date format in the cookie is fix between server and client, bad design, but oh well ....
+                // NOTE!!! Has to be done this way because the session date format in the cookie is fixed
+                // between server and client, bad design, but oh well ....
                 var selectedDate = selectedDateValue.getMonth() + 1 + "/" + selectedDateValue.getDate() + "/" + selectedDateValue.getFullYear();
                 var todayDate = new Date();
                 var sessionDateString = (selectedDate + " " + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds()).toString();
@@ -72,125 +74,242 @@ sessionDateCookieSetup = {
                 $.cookie(sg.utls.SessionCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
 
                 var spanSessionDate = $("#spnSessionDate").text();
-                if (kendo.toString(selectedDateValue, 'MMM dd, yyyy') !== spanSessionDate) {
-                    window.sg.utls.ajaxPost(verifySessionDateUrl, null, onSuccess.process);
+                var formattedDate = kendo.toString(selectedDateValue, constants.DATE_FORMAT); 
+                if (formattedDate !== spanSessionDate) {
+                    sg.utls.ajaxPost(verifySessionDateUrl, null, onSuccess.process);
                 }
-                $("#spnSessionDate").html(kendo.toString(selectedDateValue, 'MMM dd, yyyy'));
+                $("#spnSessionDate").html(formattedDate);
 
-                var result = {};
-                result.UserMessage = {};
-                result.UserMessage.Message = portalBehaviourResources.SessionSuccessMsg;
-                result.UserMessage.IsSuccess = true;
-                sg.utls.showMessage(result);                  
-            }
-        }    
-    },
+                showSuccessMessage();
 
-    /* formatting session date before display */
-    readSessionDateCookie: function () {
-        var formattedDate = kendo.toString(sessionDateCookieSetup.parseCookieDate(), 'MMM dd, yyyy');
-        $("#spnSessionDate").html(formattedDate);
-    },
-
-    /* reads session date from cookie and parses it */
-    parseCookieDate: function () {
-        var selectedDateValue = $.cookie(sg.utls.SessionCookieName).split('|')[0].split(' ')[0];
-        var d = selectedDateValue.split('/');
-        // NOTE!!! Has to be done this way because the session date format in the cookie is fix between server and client, bad design, but oh well ....
-        return (d.length === 3) ? kendo.parseDate(d[2] + '-' + d[0] + '-' + d[1]) : kendo.parseDate(new Date());
-    },
-
-    /* session date click */
-    sessionDateClick: function () {
-        $("#spnSessionDate").on("click", function (e) {
-            sessionDateCookieSetup.sessionDateClickCommon(e);
-        });
-        $("#sessionDatelabel").on("click", function (e) {
-            sessionDateCookieSetup.sessionDateClickCommon(e);
-        });
-        $("#sessionDateIcon").on("click", function (e) {
-            sessionDateCookieSetup.sessionDateClickCommon(e);
-        });
-    },
-
-    sessionDateClickCommon: function (e) {
-
-        if ($("#sessionDateIcon").hasClass("disabled")) {
-            sg.utls.showMessageInfo(sg.utls.msgType.WARNING, portalBehaviourResources.SessionDateDisabledInfo);
-        } else {
-            //if DatePicker is open, prevent it from opening again.
-            if (isDatePickerOpen) return;
-
-            $("#datePicker").data("kendoDatePicker").value(sessionDateCookieSetup.parseCookieDate());
-            $("#datePicker").focus();
-
-            if ($("#divDatePicker").css("display") === "none") {
-                sessionDateCookieSetup.openCalendar();
-                sessionDateCookieSetup.calendarClose();
+                // Put the new session date into local storage and let the message handler
+                // update the session date on any other open tabs for this user/company.
+                var key = "ALLSESSIONS_UpdatePortalSessionDate";
+                sage.cache.local.set(key, formattedDate);
             }
         }
-    },
+    }
 
-    calendarClose: function(event) {
-        var datePicker = $("#datePicker").data("kendoDatePicker");
-        datePicker.bind("close", function(event) {
-            sg.utls.clearValidations("frmPortal");
-            var $textBox = $('#datePicker');
-            var formValid = $("#frmPortal").valid();
-            var value = $textBox.data('currentValue');
-
-            if (formValid && value != null && value.length > 0) {
-                datePicker.value(value);
-                $textBox.data('currentValue', '');
+    /**
+     * @name showSuccessMessage
+     * @description Display the session date updated successfully message
+     */
+    function showSuccessMessage() {
+        var result = {
+            UserMessage: {
+                Message: portalBehaviourResources.SessionSuccessMsg,
+                IsSuccess: true
             }
+        };
+        sg.utls.showMessage(result);
+    }
 
-            var currentDate = datePicker.value();
+    /**
+     * @name readSessionDateCookie
+     * @description Formatting session date before display
+     */
+    function readSessionDateCookie() {
+        var formattedDate = kendo.toString(parseCookieDate(), constants.DATE_FORMAT);
+        $("#spnSessionDate").html(formattedDate);
+    }
 
-            // NOTE!!! Has to be done this way because the session date format in the cookie is fix between server and client, bad design, but oh well ....
-            var array = $.cookie(sg.utls.SessionCookieName).split("|");
-            if (typeof array[0] !== 'undefined') {
-                var dt = array[0].split(' ');
-                if (dt.length === 2) {
-                    var d = dt[0].split('/');
-                    if (d.length === 3) {
-                        //Save session date if date in cookie is different from the current date
-                        if (parseInt(d[0], 10) !== (currentDate.getMonth() + 1) ||
-                            parseInt(d[1], 10) !== currentDate.getDate() ||
-                            parseInt(d[2], 10) !== currentDate.getFullYear()) {
-                            sessionDateCookieSetup.saveSessionDate();
+    /**
+     * @name parseCookieDate
+     * @description Reads session date from cookie and parses it
+     * @returns {Date} The parsed date from the cookie
+     */
+    function parseCookieDate() {
+        var selectedDateValue = $.cookie(sg.utls.SessionCookieName).split('|')[0].split(' ')[0];
+        var d = selectedDateValue.split('/');
+        // NOTE!!! Has to be done this way because the session date format in the cookie is fixed
+        // between server and client, bad design, but oh well ....
+        return (d.length === 3) ? kendo.parseDate(d[2] + '-' + d[0] + '-' + d[1]) : kendo.parseDate(new Date());
+    }
+
+    /**
+     * @name sessionDateClick
+     * @description Session date click handler
+     */
+    function sessionDateClick() {
+        $("#spnSessionDate, #sessionDatelabel, #sessionDateIcon").on("click", function (e) {
+            sessionDateClickCommon(e);
+        });
+    }
+
+    /**
+     * @name sessionDateClickCommon
+     * @description Click handler for session date selector
+     * @param {any} e - The event
+     */
+    function sessionDateClickCommon(e) {
+
+        if (!isSessionDateSelectorEnabled()) {
+            sg.utls.showMessageInfo(sg.utls.msgType.WARNING, portalBehaviourResources.SessionDateDisabledInfo);
+            return;
+        }
+
+        // If DatePicker is open, prevent it from opening again.
+        if (isDatePickerOpen) {
+            return;
+        }
+
+        _public.getControl().value(parseCookieDate());
+        $(constants.CONTROL_ID).focus();
+
+        if ($("#divDatePicker").css("display") === "none") {
+            openCalendar();
+            initCalendarCloseHandler(e);
+        }
+    }
+
+    /**
+     * @name initCalendarCloseHandler
+     * @description Hookup the session date selector close handler
+     * @param {any} event - The event
+     */
+    function initCalendarCloseHandler(event) {
+        var datePicker = _public.getControl();
+        datePicker.bind("close", function (event) {
+
+            // See if the Session Date selector has been disabled by another active screen
+            if (isSessionDateSelectorEnabled()) {
+                sg.utls.clearValidations("frmPortal");
+                var $textBox = $(constants.CONTROL_ID);
+                var formValid = $("#frmPortal").valid();
+                var value = $textBox.data('currentValue');
+
+                if (formValid && value && value.length > 0) {
+                    datePicker.value(value);
+                    $textBox.data('currentValue', '');
+                }
+
+                var currentDate = datePicker.value();
+
+                // NOTE!!! Has to be done this way because the session date format in the cookie is fixed
+                // between server and client, bad design, but oh well ....
+                var array = $.cookie(sg.utls.SessionCookieName).split("|");
+                if (typeof array[0] !== 'undefined') {
+                    var dt = array[0].split(' ');
+                    if (dt.length === 2) {
+                        var d = dt[0].split('/');
+                        if (d.length === 3) {
+                            // Save session date if date in cookie is different from the current date
+                            if (parseInt(d[0], 10) !== (currentDate.getMonth() + 1) ||
+                                parseInt(d[1], 10) !== currentDate.getDate() ||
+                                parseInt(d[2], 10) !== currentDate.getFullYear()) {
+                                saveSessionDate();
+                            }
                         }
                     }
                 }
+            } else {
+                // D-39978
+                // Session date selector is disabled so we won't allow selection of a new date
+                // even though date popup is visible. The session date selector may have been
+                // disabled by the opening of a screen in another tab while the date selector
+                // was visible. Let's just close the calendar window instead
             }
+
+            // Code below will close the date picker
             datePicker.unbind('close');
             $("#divDatePicker").hide();
             $(".last_container").css("top", "-23px");
 
-            //Delay 300 milliseconds to allow Kendo DatePicker to close properly
+            // Delay 300 milliseconds to allow Kendo DatePicker to close properly
             setTimeout(function () {
                 isDatePickerOpen = false;
-            }, 300);
-        })
-    },
+            }, constants.CALENDARCLOSE_DELAY_MS);
 
-    openCalendar: function () {
+        });
+    }
+
+    /**
+     * @name openCalendar
+     * @description TODO - Add description here
+     */
+    function openCalendar() {
 
         $("#divDatePicker").show();
         $(".last_container").css("top", "4px");
-        var datePicker = $("#datePicker").data("kendoDatePicker");
+        var datePicker = _public.getControl();
 
-        // NOTE!!! Has to be done this way because the session date format in the cookie is fix between server and client, bad design, but oh well ....
+        // NOTE!!! Has to be done this way because the session date format in the cookie is fixed
+        // between server and client, bad design, but oh well ....
         var array = $.cookie(sg.utls.SessionCookieName).split("|");
         if (typeof array[0] !== 'undefined') {
             var dt = array[0].split(' ');
             if (dt.length === 2) {
                 var d = dt[0].split('/');
                 if (d.length === 3) {
-                    $("#datePicker").data("kendoDatePicker").value(new Date(d[2], d[0] - 1, d[1]));
+                    datePicker.value(new Date(d[2], d[0] - 1, d[1]));
                 }
             }
         }
         datePicker.open();
         isDatePickerOpen = true;
     }
-}
+
+    var _public = {
+
+        id: constants.CONTROL_ID,
+
+        /**
+         * @name init
+         * @description Main initialization function
+         * @public
+         */
+        init: function () {
+            readSessionDateCookie();
+            sessionDateClick();
+
+            sg.utls.ajaxPost(verifySessionDateUrl, null, onSuccess.process);
+
+            // If there are any open modules active, disable the Session Date Picker
+            var activeModuleCount = openScreenCountManager.get();
+            if (activeModuleCount) {
+                if (activeModuleCount > 0) {
+                    sg.utls.disablePortalSessionDatePicker();
+                } else {
+                    sg.utls.enablePortalSessionDatePicker();
+                }
+            } else {
+                // Couldn't find the screen count in localStorage
+                // Probably means there are no open, active modules
+                // OK to enable Portal Session Date Picker
+                sg.utls.enablePortalSessionDatePicker();
+            }
+        },
+
+        /**
+         * @name getControl
+         * @description Get a reference to the kendo calendar control
+         * @public
+         * @returns {object} The kendo calendar control reference
+         */
+        getControl: function() {
+            return $(constants.CONTROL_ID).data("kendoDatePicker");
+        }
+    };
+
+    return _public;
+};
+
+// Declare this at global scope so it's available elsewheree.
+var sessionDateCookieSetup;
+$(function () {
+
+    $("#frmPortal").submit(function (event) {
+        // prevent the default submission of the form
+        event.preventDefault();
+    });
+
+    sessionDateCookieSetup = new SessionDateCookieSetup();
+    if (sessionDateCookieSetup) {
+        sessionDateCookieSetup.init();
+    }
+
+    // Keep track of changes made in the date picker textbox
+    $(sessionDateCookieSetup.id).on('input', function () {
+        $(this).data('currentValue', $(this).val());
+    });
+});
