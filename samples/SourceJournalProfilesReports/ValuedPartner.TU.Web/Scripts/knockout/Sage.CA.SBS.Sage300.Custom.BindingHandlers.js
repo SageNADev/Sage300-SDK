@@ -275,7 +275,8 @@ ko.bindingHandlers.sagevalue = {
         var value = ko.utils.unwrapObservable(valueAccessor());
         if (element.type === "text" && $(element).hasClass('txt-upper')) {
             if (value) {
-                valueAccessor()(value.toUpperCase());
+                var valueUpper = value.toUpperCase();
+                valueAccessor()(valueUpper);
             }
         }
         var result = ko.bindingHandlers.value.init.apply(this, arguments);
@@ -290,8 +291,8 @@ ko.bindingHandlers.sagevalue = {
         var $element = $(element);
 
         if (element.type === "text") {
+            var newValue = '';
             if (value) {
-
                 // formatTextbox restricts disallowed characters.
                 //
                 // When disallowed values are copy-pasted, the values are corrected using Javascript, 
@@ -299,11 +300,8 @@ ko.bindingHandlers.sagevalue = {
                 // truncate the disallowed characters and update Knockout correctly.
                 var attr = $element.attr('formatTextbox');
                 if (attr != undefined) {
-                    var invalidChars;
-                    if (attr === 'alphaNumeric') {
-                        invalidChars = /[^0-9A-Za-z]/gi;
-                    }
-                    else if (attr === 'alpha') {
+                    var invalidChars = /^$/;
+                    if (attr === 'alpha') {
                         invalidChars = /[^A-Za-z]/gi;
                     }
                     else if (attr === 'numeric') {
@@ -311,15 +309,26 @@ ko.bindingHandlers.sagevalue = {
                     }
 
                     value = $element.val();
+
+                    if (attr === 'alphaNumeric') {
+                        var pattern = XRegExp('^[\\p{L}\\d]+$');
+                        var matches = value.match(pattern);
+
+                        if (matches !== null) {
+                            newValue = matches.join('');
+                        }
+                        valueAccessor()(newValue); 
+                    }
                     if (invalidChars.test(value)) {
-                        var newValue = value.replace(invalidChars, "");
+                        newValue = value.replace(invalidChars, "");
                         $element.val(newValue);
                         valueAccessor()(newValue);
                     }
                 }
 
                 if ($element.hasClass('txt-upper')) {
-                    valueAccessor()(valueAccessor()().toUpperCase());
+                    newValue = valueAccessor()().toUpperCase();
+                    valueAccessor()(newValue);
                 }
             }
         }

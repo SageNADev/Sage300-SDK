@@ -45,7 +45,7 @@ namespace ValuedPartner.TU.Web.WebForms
         /// <param name="e"></param>
         protected override void OnInit(EventArgs e)
         {
-            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult();
+            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult(String.Empty);
             if (ConfigurationHelper.IsOnPremise)
             {
                 var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", HttpContext.Current.Session.SessionID));
@@ -72,7 +72,7 @@ namespace ValuedPartner.TU.Web.WebForms
         /// <returns></returns>
         public static bool IsUserAuthenticated()
         {
-            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult();
+            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult(String.Empty);
 
             return (userTenantInfo != null);
         }

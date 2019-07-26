@@ -54,7 +54,7 @@ namespace ValuedPartner.TU.Web
         /// <param name="context">The context.</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("TU_Tenant", "{tenantAlias}/TU/{controller}/{action}/{id}",
+            context.MapRoute("TU_Tenant", "{tenantAlias}/{session}/TU/{controller}/{action}/{id}",
             new { action = "Index", id = UrlParameter.Optional });
         }
 
