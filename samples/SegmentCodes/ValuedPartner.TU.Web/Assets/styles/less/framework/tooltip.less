@@ -157,3 +157,97 @@ div[class*="-group"] > label + .help-icon {
   top: 0;
   right: 0;
 }
+
+/*!
+ * Kendo custom CSS
+ */
+
+.k-widget.k-tooltip {
+  top: -4px;
+  padding: 4px 0 3px 10px;
+  text-align: center;
+  color: #bbb;
+  font-family: monospace;
+  background-color: #243741;
+}
+
+.k-widget.k-tooltip .template-wrapper p {
+    margin: 0;
+}
+
+.k-tooltip .k-icon {
+  background: none;
+  opacity: 0.5;
+  top: -1px;
+  height: 20px;
+}
+
+.k-tooltip .k-icon:before {
+  color: #fff;
+  font-size: 14px;
+}
+
+.k-tooltip .k-icon:hover {
+  opacity: 1;
+}
+
+
+.k-tooltip .k-icon:focus {
+  outline: none;
+}
+
+.k-tooltip .k-callout.k-callout-s {
+  border-top-color: #243741;
+}
+
+.k-tooltip .k-callout.k-callout-n {
+    border-bottom-color: #243741;
+}
+
+.txt-tooltip-purple {
+  color: #fe8eff;
+}
+
+.txt-tooltip-blue {
+  color: #72d3ff;
+}
+
+.txt-tooltip-yellow {
+  color: #fcff86;
+}
+
+.btn-dev-tool {
+  position: fixed;
+  top: 58px;
+  right: -184px;
+  margin-right: 0;
+  -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    z-index: 1000000000;
+    /*border: 1px solid #ccc;*/
+    padding: 0 10px 0 0;
+    background-color: #fff;
+    color: #bbb;
+    font-family: monospace;
+}
+.btn-dev-tool:hover {
+  right: -2px;
+  background-color: #243741;
+  border: 1px solid #ccc;
+  color: #fff;
+}
+
+.btn-dev-tool>.k-icon {
+  background-image: none;
+  vertical-align: middle;
+  width: 24px;
+  color: #fe8eff;
+}
+
+.k-tabstrip-top>.k-tabstrip-items .k-state-active.k-state-border-down {
+  background: none;
+  border-bottom-color: #fff;
+  border-bottom-width: 2px;
+}

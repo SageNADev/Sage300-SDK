@@ -29,9 +29,10 @@
 
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("homeViewModel", Model)    ;
-    
+
 </script>
 
 <script src="~/Areas/Shared/Scripts/Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js"></script>
 @Html.SetSessionVariables();
 
+<input type="hidden" id="txtCloseTabToLogout" name="CloseTabToLogout" value=@System.Configuration.ConfigurationManager.AppSettings["CloseTabToLogout"]>
