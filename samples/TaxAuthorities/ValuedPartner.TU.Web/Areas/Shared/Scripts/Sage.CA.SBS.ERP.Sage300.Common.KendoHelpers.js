@@ -55,11 +55,10 @@ $.extend(sg.utls.kndoUI, {
         }
     },
     /**
-     * Used to show the columns of a grid
      * @method showGridColumns
-     * @param {} grid - Instance of the grid
-     * @param {} colsArrayToHide - Array of columns to be hidden
-     * @return 
+     * @description Used to show the columns of a grid
+     * @param {object} grid - Instance of the grid
+     * @param {array} colsArrayToHide - Array of columns to be hidden
      */
     showGridColumns: function (grid, colsArrayToHide) {
         if (grid) {
@@ -73,12 +72,11 @@ $.extend(sg.utls.kndoUI, {
         }
     },
     /**
-     * Used to change the name of a column in a grid
      * @method changeColumnName
-     * @param {} gridName - Name of the grid (not the instance)
-     * @param {} columnName - Name of column
-     * @param {} headerValue - Name to which it should be changed to
-     * @return 
+     * @description Used to change the name of a column in a grid
+     * @param {string} gridName - Name of the grid (not the instance)
+     * @param {string} columnName - Name of column
+     * @param {string} headerValue - Name to which it should be changed to
      */
     changeColumnName: function (gridName, columnName, headerValue) {
         $("#" + gridName + " th[data-field=" + columnName + "]").html(headerValue);

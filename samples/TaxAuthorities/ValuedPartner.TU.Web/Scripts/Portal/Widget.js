@@ -343,8 +343,9 @@ $(document).ready(function () {
             updateLayout(true);
         }
         $("#breadcrumb").hide();
-        //When Home Menu is clicked
-        screenId = defaultScreenId;
+
+        // When Home Menu is clicked (TODO - Need to test this)
+        taskDockMenuBreadCrumbManager.setDefaultScreenId();
     });
 
     widgetOrder = $.parseJSON(NavigableMenuDetail.WidgetOrders);
