@@ -313,9 +313,10 @@ var sourceCodeObject = {
 // Initial Entry
 $(function () {
     sourceCodeUI.init();
-    $(window).bind('beforeunload', function () {
-        if (globalResource.AllowPageUnloadEvent && sourceCodeUI.sourceCodeModel.isModelDirty.isDirty()) {
-            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, sourceCodeResources.SourceCodeTitle)).text();
+    $(window).on('beforeunload', function () {
+        var dirty = sourceCodeUI.sourceCodeModel.isModelDirty.isDirty();
+        if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+            return sg.utls.getDirtyMessage(sourceCodeResources.SourceCodeTitle);
         }
     });
 });

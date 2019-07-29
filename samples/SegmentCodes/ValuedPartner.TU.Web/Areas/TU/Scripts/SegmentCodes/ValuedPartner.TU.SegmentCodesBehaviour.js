@@ -1,6 +1,6 @@
 
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -375,9 +375,10 @@ var segmentCodesUISuccess = {
 // Initial Entry
 $(function () {
     segmentCodesUI.init();
-    $(window).bind('beforeunload', function () {
-        if (globalResource.AllowPageUnloadEvent && segmentCodesUI.segmentCodesModel.isModelDirty.isDirty()) {
-            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, segmentCodesResources.SegmentNumberTitle)).text();
+    $(window).on('beforeunload', function () {
+        var dirty = segmentCodesUI.segmentCodesModel.isModelDirty.isDirty();
+        if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+            return sg.utls.getDirtyMessage(segmentCodesResources.SegmentNumberTitle);
         }
     });
 });

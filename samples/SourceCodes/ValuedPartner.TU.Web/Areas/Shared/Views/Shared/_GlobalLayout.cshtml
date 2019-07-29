@@ -39,7 +39,7 @@
     </div>
     @Html.Partial("~/Views/Partials/_CommonLayout.cshtml")
     <div ondragstart="return false" draggable="false" class="wraper">
-         @RenderBody()
+        @RenderBody()
     </div>
 
     <script id="delete-confirmation" type="text/x-kendo-template">
@@ -53,7 +53,7 @@
                 <div class="modelBox_controlls">
                     <input type="button" class="btn btn-secondary delete-cancelled" id="kendoConfirmationCancelledButton" value=@CommonResx.Cancel />
                     <input type="button" class="btn btn-secondary delete-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
-                    <input type="button" class="btn btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />  
+                    <input type="button" class="btn btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
                 </div>
             </div>
         </div>
@@ -75,8 +75,6 @@
     </script>
     <div id="exportImportDialog"></div>
 
-
-
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/knockout")
@@ -95,8 +93,6 @@
     }
 
     @RenderSection("scripts", required: false)
-
-
 </body>
 
-</html>
+</html >
