@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -41,7 +41,7 @@ loginUI = {
         }
 
         loginUI.initEvents();
-        loginUIUnities.initCompaniesDropDown();
+        loginUIUtilities.initCompaniesDropDown();
         if (!model.CompanyListEnabled) {
             for (var index in model.Companies) {
                 var company = model.Companies[index];
@@ -50,6 +50,11 @@ loginUI = {
         }
         loginUI.initialLoad(model);
 
+        // login page should not go back
+        history.pushState(null, document.title, location.href);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, document.title, location.href);
+        });
 
         // Set focus
         $("#txtUserId").focus();
@@ -78,7 +83,10 @@ loginUI = {
     initEvents: function () {
         // Sign in button
         $("#btnLogin").bind('click', function () {
-            var company = loginUI.model.ForAdmin() && loginUI.model.CompanyListEnabled() ? $("#SystemId").val() : $("#CompanyId").val();
+
+            var forAdmin = loginUI.model.ForAdmin();
+            var companyListEnabled = loginUI.model.CompanyListEnabled();
+            var company = (forAdmin && companyListEnabled) ? $("#SystemId").val() : $("#CompanyId").val();
 
             var data = {
                 company: company,
@@ -523,7 +531,7 @@ loginUI = {
     }
 };
 
-var loginUIUnities = {
+var loginUIUtilities = {
     /**
      * Initialize company drop down list
      * @returns {} 
@@ -597,30 +605,30 @@ var loginUIUnities = {
 
 var loginUICallback = {
     /**
-     * This function is used to bind the companies dropdown list 
-     * @param {} ret is call back data from server 
-     * @returns {} 
+     * @name getCompaniesSuccess
+     * @description This function is used to bind the companies dropdown list
+     * @param {object} ret is call back data from server 
      */
     getCompaniesSuccess: function (ret) {
         loginUI.pageInit = false;
         if (loginUI.model.ForAdmin()) {
-            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+            loginUIUtilities.bindSysCompaniesDropDown(ret.companyList);
             return;
         }
-        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        loginUIUtilities.bindCompaniesDropDown(ret.companyList, ret.companyId);
     },
 
     /**
-     * This function is used to handle the invailed user with error message
-     * @param {} ret 
-     * @returns {} 
+     * @name getCompaniesFailedWithErrorMsg
+     * @description This function is used to handle the invailed user with error message
+     * @param {object} ret - TODO - Add Description
      */
     getCompaniesFailedWithErrorMsg: function (ret) {
         loginUI.pageInit = true;
         if (loginUI.model.ForAdmin()) {
-            loginUIUnities.bindSysCompaniesDropDown(ret.companyList);
+            loginUIUtilities.bindSysCompaniesDropDown(ret.companyList);
         }
-        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        loginUIUtilities.bindCompaniesDropDown(ret.companyList, ret.companyId);
         $('#CompanyId').data("kendoDropDownList").value(ret.companyId);
         //pop-up the error
         if (ret.companyId && !loginUI.companiesSecureMap[ret.companyId] && loginUI.enterToLogin) {
@@ -632,36 +640,35 @@ var loginUICallback = {
     },
 
     /**
-     * This function is used to handle the invailed user without error message
-     * @param {} ret 
-     * @returns {} 
+     * @name getCompaniesFailedWithoutErrorMsg
+     * @description This function is used to handle the invailed user without error message
+     * @param {object} ret - TODO - Add Description
      */
     getCompaniesFailedWithoutErrorMsg: function (ret) {
         loginUI.pageInit = true;
-        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        loginUIUtilities.bindCompaniesDropDown(ret.companyList, ret.companyId);
         if (ret.companyId && !loginUI.companiesSecureMap[ret.companyId] && loginUI.enterToLogin) {
             $("#btnLogin").click();
         } else {
             loginUI.enterToLogin = false;
             setTimeout(function() {
-                $("#txtPassword").focus()
+                $("#txtPassword").focus();
             });
         }
     },
 
     /**
-     * This function is used to handle user Id changed without focus blur
-     * @param {} ret 
-     * @returns {} 
+     * @name updateUserId
+     * @description This function is used to handle user Id changed without focus blur
+     * @param {object} ret - TODO - Add Description
      */
     updatedUserId: function (ret) {
-        loginUIUnities.initCompaniesDropDown();
+        loginUIUtilities.initCompaniesDropDown();
         loginUI.pageInit = true;
-        loginUIUnities.bindCompaniesDropDown(ret.companyList, ret.companyId);
+        loginUIUtilities.bindCompaniesDropDown(ret.companyList, ret.companyId);
     },
 
     loginResult: function (jsonResult) {
-
         if (jsonResult != null) {
             if (jsonResult.IsSuccess) {
                 // Success. Re-direct to home page now that credentials have been set
@@ -670,6 +677,7 @@ var loginUICallback = {
                     var systemId = $("#SystemId").data('kendoDropDownList').text();
                     url = url.replace("Core/Home", "AS/CustomScreen?id=Import&systemDbId=" + systemId);
                 }
+
                 window.location.replace(url);
             } else {
                 // Not a success. Display errors/warnings or redirect
@@ -707,6 +715,7 @@ var loginUICallback = {
 
 $(function () {
     loginUI.init(LoginViewModel);
+    sessionStorage["productId"] = "";
 });
 
 affixFooter(); // initialize footer fix if no scrollbar

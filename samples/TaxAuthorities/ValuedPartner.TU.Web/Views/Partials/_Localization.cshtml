@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration
@@ -23,7 +23,7 @@
         EditTitle: '@Html.SageRaw(@KPICommonResx.EditTitleModalTitle)',
         Printed: '@Html.SageRaw(@HomeResx.Printed)',
         SignOut: '@Html.SageRaw(@HomeResx.TopNav_Sign_out)',
-        DomainUrl: '@(Request.ApplicationPath != "/" ? Request.ApplicationPath + Utilities.GetUrlPrefix() : Utilities.GetUrlPrefix())',
+        DomainUrl: '@(Request.ApplicationPath != "/" ? Request.ApplicationPath + Utilities.GetUrlPrefix(@ViewBag.SessionId) : Utilities.GetUrlPrefix(@ViewBag.SessionId))',
         ReportNameTemplate: '@Html.SageRaw(@KPICommonResx.ReportNameTemplate)',
         PagetitleInManager: '@Html.SageRaw(@KPICommonResx.PagetitleInManager)',
         ManageUsers: '@Html.SageRaw(@HomeResx.TopNav_Manage_Users)',
