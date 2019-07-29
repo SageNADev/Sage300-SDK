@@ -1,6 +1,6 @@
 ﻿
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -59,7 +59,8 @@ namespace ValuedPartner.TU.Web
                 var recordId = Guid.NewGuid();
                 var context = new Context
                 {
-                    SessionId = HttpContext.Current.Session.SessionID,
+                    AspNetSessionId = HttpContext.Current.Session.SessionID,
+                    SessionId = "SAMPLE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
                     ProductUserId = recordId,
@@ -80,7 +81,7 @@ namespace ValuedPartner.TU.Web
                     new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
                 };
 				
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
+                authenticationManager.LoginResult("SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
@@ -88,7 +89,8 @@ namespace ValuedPartner.TU.Web
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = HttpContext.Current.Request.Url.AbsoluteUri + url;
+                    //url = HttpContext.Current.Request.Url.AbsoluteUri + url;
+                    url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
                     Response.Redirect(url);
                 }
             }
@@ -182,9 +184,6 @@ namespace ValuedPartner.TU.Web
         private void Session_End(object sender, EventArgs e)
         {
             //This will never be called if sessions are stored in azure cache
-
-            CommonService.DestroyPool(Session.SessionID);
-
             ActiveSessionManager.RemoveSession(Session.SessionID);
         }
 
