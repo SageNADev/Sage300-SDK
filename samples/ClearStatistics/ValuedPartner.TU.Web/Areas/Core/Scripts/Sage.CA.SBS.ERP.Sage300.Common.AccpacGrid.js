@@ -942,7 +942,7 @@ sg.viewList = function () {
                 isSuccess ? _refreshSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
                 break;
             case RequestTypeEnum.Update:
-                isSuccess ? _updateSuccess(gridName, jsonResult, uid, insertedIndex) : _updateError(gridName, jsonResult, fieldName);
+                isSuccess ? _updateSuccess(gridName, jsonResult, uid, insertedIndex) : _updateError(gridName, jsonResult, fieldName, uid);
                 break;
             case RequestTypeEnum.Delete:
                 isSuccess ? _deleteSuccess(gridName, jsonResult) : _deleteError(gridName, jsonResult);
@@ -1164,8 +1164,9 @@ sg.viewList = function () {
      * @param {string} gridName The grid name
      * @param {any} jsonResult The request call back result
      * @param {any} fieldName The update field name
+     * @param {string} uid The unique id used to identify the updated row
      */
-    function _updateError(gridName, jsonResult, fieldName) {
+    function _updateError(gridName, jsonResult, fieldName, uid) {
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
@@ -1178,7 +1179,14 @@ sg.viewList = function () {
         sg.utls.showMessage(jsonResult);
     
         var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
-        var row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+        var row;
+        if (uid) {
+            row = grid.table.find("[data-uid=" + uid + "]");
+            _lastRowNumber[gridName] = row.index();
+            grid.select(row);
+        } else {
+            row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+        }
         grid._lastCellIndex = index - 1;
         grid.editCell(row.find(">td").eq(index));
         _skipMoveTo[gridName] = true;
@@ -1218,10 +1226,11 @@ sg.viewList = function () {
      * @param {any} jsonResult The request call back result
      * @param {string} fieldName The changed field name
      */
-    function _refreshRow(gridName, jsonResult,fieldName) {
+    function _refreshRow(gridName, jsonResult, fieldName) {
         var grid = $('#' + gridName).data("kendoGrid"),
             refreshRowData = grid.dataItem(grid.select()),
-            uid = refreshRowData.uid;
+            uid = refreshRowData.uid,
+            status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName];
 
         if (refreshRowData) {
             for (var field in jsonResult.Data) {
@@ -1233,11 +1242,11 @@ sg.viewList = function () {
             grid.refresh();
             var row = grid.table.find("[data-uid=" + uid + "]");
             grid.select(row);
-            var rowIndex = grid.select().index(); 
+            var rowIndex = grid.select().index();
             if (colIndex) {
-                grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
+                _setNextEditCell(grid, refreshRowData, row, colIndex);
             }
-            refreshRowData.dirty = false;
+            _setModuleVariables(gridName, status, "", rowIndex, true, false);
         }
     }
 
@@ -1501,7 +1510,7 @@ sg.viewList = function () {
         var viewColumns = grid.columns.filter(function (c) {
             return c.hidden === false;
         });
-        return cellIndex > -1 ? viewColumns[cellIndex].field : "";
+        return cellIndex > -1 && cellIndex < viewColumns.length ? viewColumns[cellIndex].field : "";
     }
     /**
      * @description Initialize a grid, creating dataSource to binding grid, register events handler
@@ -1571,8 +1580,8 @@ sg.viewList = function () {
                 }
                 //Skip insert or update if the record is out of range of the page size
                 if (lastRowNumber > -1 && lastRowNumber < pageSize) {
-                    var lastRowData = grid.dataItem("tbody tr:eq(" + lastRowNumber + ")");
                     if (selectedIndex !== lastRowNumber) {
+                        var lastRowData = grid.dataSource.data()[lastRowNumber];
                         if (lastRowData.isNewLine) {
                             _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
                         } else if (lastRowData.dirty) {
@@ -1930,6 +1939,8 @@ sg.viewList = function () {
         if (gridName) {
             if (!isEmpty(gridName)) {
                 result = _commitGrid(gridName, callBack);
+            } else if (callBack && typeof callBack === "function") {
+                callBack(true);
             }
         } else {
             for (var i = 0, length = _gridList.length; i < length; i++) {
@@ -1938,6 +1949,8 @@ sg.viewList = function () {
                     if (!result) {
                         break;
                     }
+                } else if (callBack && typeof callBack === "function") {
+                    callBack(true);
                 }
             }
         }

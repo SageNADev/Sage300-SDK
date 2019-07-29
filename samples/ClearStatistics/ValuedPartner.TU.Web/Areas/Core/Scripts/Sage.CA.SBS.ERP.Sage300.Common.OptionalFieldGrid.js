@@ -250,7 +250,7 @@ sg.optionalFieldControl = function () {
         finder.viewID = isValue ? "CS0012" : viewId;
         finder.viewOrder = 0;
         finder.filter = isValue ? "OPTFIELD=" + model.OPTFIELD : filter;
-        finder.displayFieldNames = isValue ? ["VALUE", "VDESC"] : ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"];
+        finder.displayFieldNames = isValue ? ["VALIFTEXT", "VDESC"] : ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"];
         finder.returnFieldNames = isValue ? ["VALUE", "VDESC"] : ["OPTFIELD"];
 
         $("#txtGridColOPTFIELD, #txtGridColVALUE").on("change", function (e) {
@@ -358,7 +358,25 @@ sg.optionalFieldControl = function () {
         finder.viewID = "CS0012";
         finder.viewOrder = 0;
         finder.filter = "OPTFIELD=" + model.OPTFIELD;
-        finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
+        switch (model.TYPE) {
+        case ValueTypeEnum.Date:
+            finder.displayFieldNames = ["VALIFDATE", "VDESC"];
+            break;
+        case ValueTypeEnum.Integer:
+            finder.displayFieldNames = ["VALIFLONG", "VDESC"];
+            break;
+        case ValueTypeEnum.Amount:
+            finder.displayFieldNames = ["VALIFMONEY", "VDESC"];
+            break;
+        case ValueTypeEnum.Time:
+            finder.displayFieldNames = ["VALIFTIME", "VDESC"];
+            break;
+        case ValueTypeEnum.Number:
+            finder.displayFieldNames = ["VALIFNUM", "VDESC"];
+            break;
+        default:
+            finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
+        }
         finder.returnFieldNames = ["VALUE", "VDESC"];
         finder.initKeyValues = [model.OPTFIELD, model.VALUE];
 
@@ -501,7 +519,7 @@ sg.optionalFieldControl = function () {
     function _numericEditor(container, options, gridName) {
         var field = options.field,
             grid = _getGrid(gridName),
-            precision = grid.columns.filter(function (c) { return c.field === field; })[0].precision,
+            precision = options.model.DECIMALS,
             input = kendo.format('<input name="{0}" id="txt{0}" />', field),
             txtInput = '<div class="edit-container"><div class="edit-cell inpt-text">' + input + '</div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="btnFinderId"/></div></div>',
@@ -736,14 +754,64 @@ sg.optionalFieldControl = function () {
                 dataItem[field] = jsonResult.Data[field];
             }
         }
-        grid.refresh();
+        //For Yes/No type, make sure the value not empty, default value get from VALIFBOOL field
+        if (dataItem.TYPE === ValueTypeEnum.YesNo && dataItem.VALUE === "") {
+            dataItem.VALUE = dataItem.VALIFBOOL ? "1" : "0";
+        }
+
+        //Grid refresh will remove text editor, it will trigger text editor blur event will cause error. We pre remove the editor
+        var textEditor = $('input[name=VALUE]');
+        if (textEditor && textEditor.length > 0) {
+            textEditor.remove();
+        }
+
+        //Try...catch used for unpredicted behaviours that we don't want to break the code
+        try {
+            grid.refresh();
+        } catch (e) {
+            console.log(e);
+        }
+
         var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
         var row = _selectGridRow(grid, jsonResult.Data["KendoGridAccpacViewPrimaryKey"]);
         _setNextEditCell(grid, dataItem, row, index + 1);
 
         if (fieldName === "OPTFIELD") {
+            var isDefault = dataItem.TYPE === ValueTypeEnum.Text || dataItem.TYPE === ValueTypeEnum.Date ? dataItem.VALIDATE && !dataItem.ALLOWNULL : dataItem.VALIDATE;
+            if (isDefault) {
+                _getDefaultValue(gridName, dataItem.OPTFIELD);
+                return;
+            }
             _sendRequest(gridName, RequestTypeEnum.Insert, "");
         }
+    }
+
+    /**
+     * Get default value for insert record, send insert request 
+     * @param {string} gridName The grid name
+     * @param {string} optionalField The optional field
+     */
+    function _getDefaultValue(gridName, optionalField) {
+        var grid = $('#' + gridName).data("kendoGrid"),
+            selectRow = grid.select(),
+            dataItem = grid.dataItem(selectRow),
+            url = sg.utls.url.buildUrl("Core", "ViewFinder", "RefreshGrid"),
+            finder = {};
+        
+        finder.viewID = "CS0012";
+        finder.viewOrder = 0;
+        finder.filter = "OPTFIELD=" + optionalField;
+        finder.displayFieldNames = ["VALUE", "VDESC"];
+        finder.returnFieldNames = ["VALUE", "VDESC"];
+
+        sg.utls.ajaxPostSync(url, finder, function (jsonResult) {
+            if (jsonResult.Data && jsonResult.Data.length > 0 ) {
+                dataItem.VALUE = jsonResult.Data[0].VALUE;
+                dataItem.VDESC = jsonResult.Data[0].VDESC;
+                dataItem.SWSET = 1;
+                _sendRequest(gridName, RequestTypeEnum.Insert, "");
+            }
+        });
     }
     /**
      * @description Send update request error
