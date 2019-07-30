@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -45,10 +45,11 @@ namespace ValuedPartner.TU.Web.WebForms
         /// <param name="e"></param>
         protected override void OnInit(EventArgs e)
         {
-            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult(String.Empty);
+            var sessionId = Request.QueryString["session"];
+            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult(sessionId);
             if (ConfigurationHelper.IsOnPremise)
             {
-                var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", HttpContext.Current.Session.SessionID));
+                var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", sessionId));
                 if (File.Exists(path))
                 {
                     var userTenantInfo = File.ReadAllText(path);
@@ -59,7 +60,7 @@ namespace ValuedPartner.TU.Web.WebForms
 
             if (AuthenticatedUser == null)
             {
-                Response.RedirectToRoute(new { area = "Core", controller = "Authentication", action = "Login"});
+                Response.RedirectToRoute(new { area = "Core", controller = "Authentication", action = "Login" });
                 Response.End();
             }
 
@@ -69,10 +70,11 @@ namespace ValuedPartner.TU.Web.WebForms
         /// <summary>
         /// Determines whether [is user authenticated].
         /// </summary>
+        /// <param name="sessionId">Session Id</param>
         /// <returns></returns>
-        public static bool IsUserAuthenticated()
+        public static bool IsUserAuthenticated(string sessionId)
         {
-            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult(String.Empty);
+            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult(sessionId);
 
             return (userTenantInfo != null);
         }

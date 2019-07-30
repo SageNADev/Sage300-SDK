@@ -27,7 +27,7 @@ var sourceJournalProfileReportUI = sourceJournalProfileReportUI || {};
 sourceJournalProfileReportUI = {
     sourceJournalProfileReportModel: {},
     init: function () {
-        sourceJournalProfileReportOnSucess.display(sourceJournalProfileReportModel);
+        sourceJournalProfileReportOnSuccess.display(sourceJournalProfileReportModel);
         sourceJournalProfileReportUI.initButton();
         sourceJournalProfileReportUI.initFinders();
 
@@ -40,8 +40,8 @@ sourceJournalProfileReportUI = {
         var dataControlIdOrSuccessCallback = onFinderSuccess.FromProfile;
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, finderFilter.getFromProfileFilter);
 
-        var buttonId = "btnToSrcJournalFinder";
-        var dataControlIdOrSuccessCallback = onFinderSuccess.ToProfile;
+        buttonId = "btnToSrcJournalFinder";
+        dataControlIdOrSuccessCallback = onFinderSuccess.ToProfile;
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, finderFilter.getToProfileFilter);
     },
 
@@ -70,9 +70,9 @@ sourceJournalProfileReportUI = {
 
                 }, 150);
             }
-        })
-    },
-}
+        });
+    }
+};
 
 
 var onFinderSuccess = {
@@ -112,7 +112,7 @@ var finderFilter = {
         return filters;
     },
 }
-var sourceJournalProfileReportOnSucess = {
+var sourceJournalProfileReportOnSuccess = {
     display: function (result) {
         if (result != null) {
             if (!sourceJournalProfileReportUI.hasKoApplied) {
