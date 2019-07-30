@@ -60,9 +60,16 @@ namespace ValuedPartner.TU.Web
                 var context = new Context
                 {
                     AspNetSessionId = HttpContext.Current.Session.SessionID,
-                    SessionId = "SAMPLE",
+
+                    // gvg - 20190730 
+                    // It appears as though the SessionId must be set
+                    // to the correct, deterministic value based on the
+                    // company and user account. Setting it to something
+                    // else does not appear to work correctly.
+                    SessionId = "QURNSU4tU0FNTFRE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
+
                     ProductUserId = recordId,
                     TenantId = recordId,
                     TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,
@@ -89,7 +96,6 @@ namespace ValuedPartner.TU.Web
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    //url = HttpContext.Current.Request.Url.AbsoluteUri + url;
                     url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
                     Response.Redirect(url);
                 }
