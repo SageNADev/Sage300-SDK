@@ -34,7 +34,6 @@ var sourceJournalProfileUI = {
     hasInvalidData: false,
     stockTransactionInquiryUIMode: { DEFAULT: 0, LOAD: 1 },
     UIMode: ko.observable(0),
-    sourceJournalChange: ko.observable(""),
     sourceJournalLineId: null,
     previousValue: null,
     loadChangedSourceJournal: false,
@@ -135,7 +134,7 @@ var sourceJournalProfileUI = {
             sg.utls.SyncExecute(sourceJournalProfileUtility.deleteSourceJournalLine);
         });
 
-        $("#btnDeleteSourceJounalProfile").bind('click', function () {
+        $("#btnDeleteSourceJounalProfile").on('click', function () {
             $('#message').empty();
             if ($("#frmSourceJournalProfile").valid()) {
                 var message = jQuery.validator.format(sourceJournalProfileResources.DeleteConfirmMessage, sourceJournalProfileResources.SourceJournalProfile, sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName());
@@ -148,10 +147,9 @@ var sourceJournalProfileUI = {
             }
         });
 
-        $("#btnNewSourceJournal").bind("click", function (e) {
+        $("#btnNewSourceJournal").on("click", function (e) {
             sourceJournalProfileUI.checkIsDirty(sourceJournalRepository.create);
         });
-
     },
 
     sourceJournalChange: function () {

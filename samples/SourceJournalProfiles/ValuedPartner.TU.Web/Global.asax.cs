@@ -96,7 +96,7 @@ namespace ValuedPartner.TU.Web
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = HttpContext.Current.Request.Url.AbsoluteUri + url;
+                    url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
                     Response.Redirect(url);
                 }
             }

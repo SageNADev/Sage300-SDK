@@ -338,9 +338,7 @@
     <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
     <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
     <Content Include="TUBootstrapper.xml" />
-    <Content Include="TUMenuDetails.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -382,7 +380,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\TU\Views\Web.config" />
     <Content Include="Areas\TU\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TU\Views\SourceCode\Index.cshtml" />
