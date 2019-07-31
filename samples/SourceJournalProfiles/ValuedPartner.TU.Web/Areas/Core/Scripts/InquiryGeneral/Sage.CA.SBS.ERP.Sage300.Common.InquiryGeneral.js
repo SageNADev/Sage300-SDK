@@ -538,7 +538,7 @@ var InquiryGeneralUI = function () {
         }
 
         if (item.IsDummy) {
-            template = '<img src="../../../../Content/Images/nav/drilldown.png" height="16" width="16"  style="float:middle">';
+            template = '<img src="../../../../../Content/Images/nav/drilldown.png" height="16" width="16"  style="float:middle">';
         }
 
         return template;
