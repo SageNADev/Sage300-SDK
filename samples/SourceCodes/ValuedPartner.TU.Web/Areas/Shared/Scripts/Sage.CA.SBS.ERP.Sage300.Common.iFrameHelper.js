@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 
@@ -268,18 +268,14 @@ $.extend(sg.utls.iFrameHelper = {
                 // refresh function will get called after the page load is complete, we get height after the page is loaded.
                 //var contentFrame = sg.utls.iFrameHelper.getContentFrame();
                 var contentHeight;
-                //For call outside from Sage 300c portal
+                // For call outside from Sage 300c portal
                 var sameOrigin = sg.utls.isSameOrigin();
                 if (!sameOrigin) {
                     contentHeight = 780;
                     return;
                 }
-                if (window.top.$('iframe.screenIframe:visible').length == 0) {
-                    contentHeight = 780;
-                    return;
-                }
-                //For call outside from Sage 300c portal
-                if (window.top.$('iframe.screenIframe:visible').length == 0) {
+                // For call outside from Sage 300c portal
+                if (window.top.$('iframe.screenIframe:visible').length === 0) {
                     contentHeight = 780;
                     return;
                 }
@@ -287,7 +283,7 @@ $.extend(sg.utls.iFrameHelper = {
                 var iframeContent = window.top.$('iframe.screenIframe:visible').contents().find('#' + id);
                 contentHeight = iframeContent.contents().find('body').height();
 
-                if (contentHeight == null) {
+                if (contentHeight === null) {
                     iframeContent = $('#' + id);
                     contentHeight = iframeContent.contents().height();
                 }
@@ -295,7 +291,7 @@ $.extend(sg.utls.iFrameHelper = {
                 // based on the height setting the scroll (by default it will be enabled, disabed based on the page height).
                 if (contentHeight < maxHeight) {
                     iframeContent.contents().find('html').css('overflow-y', 'auto');
-                };
+                }
             },
 
             //Open Kendo Window
@@ -305,6 +301,7 @@ $.extend(sg.utls.iFrameHelper = {
                 this.element.closest(".popup-iframe").css({
                     height: height - 50, // to adjust the height
                 });
+                
                 var sameOrigin = sg.utls.isSameOrigin();
                 if (sameOrigin) {
                     var leftPos = ($(window.top).innerWidth() - this.wrapper.width()) / 2;
@@ -324,6 +321,8 @@ $.extend(sg.utls.iFrameHelper = {
                     top: scrollPos,
                     left: leftPos
                 });
+
+                sg.utls.mobileKendoAdjustment(this.element, ".popup-iframe", "popupMobile");
             }
         }).data("kendoWindow").open();
 

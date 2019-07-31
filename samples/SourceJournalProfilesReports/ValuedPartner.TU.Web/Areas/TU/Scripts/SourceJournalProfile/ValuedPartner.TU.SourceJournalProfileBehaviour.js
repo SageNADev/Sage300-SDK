@@ -91,7 +91,6 @@ sourceJournalProfileUI = {
                 }, null, message, sourceJournalProfileResources.DeleteTitle);
             }
         });
-
     },
 
     // Init Dropdowns here
@@ -134,7 +133,6 @@ sourceJournalProfileUI = {
             functionToCall.call();
         }
     }
-
 };
 
 // Callbacks
@@ -243,7 +241,6 @@ var sourceJournalProfileUISuccess = {
         }
         return false;
     }
-
 };
 
 // Finder Filter
@@ -259,10 +256,10 @@ var sourceJournalProfileFilter = {
 // Initial Entry
 $(function () {
     sourceJournalProfileUI.init();
-    $(window).bind('beforeunload', function () {
-        if (globalResource.AllowPageUnloadEvent && sourceJournalProfileUI.sourceJournalProfileModel.isModelDirty.isDirty()) {
-            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, sourceJournalProfileResources.SourceJournalNameTitle)).text();
+    $(window).on('beforeunload', function () {
+        var dirty = sourceJournalProfileUI.sourceJournalProfileModel.isModelDirty.isDirty();
+        if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+            return sg.utls.getDirtyMessage(sourceJournalProfileResources.SourceJournalNameTitle);
         }
     });
-
 });

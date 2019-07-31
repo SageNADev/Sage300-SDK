@@ -79,5 +79,23 @@
     <Isintelligence>false</Isintelligence>
     <ModuleName>TU</ModuleName>
   </item>
+  <item>
+    <MenuID>TU4001</MenuID>
+    <MenuName>TU4001</MenuName>
+    <ResourceKey>TUClearStatistics</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/ClearStatistics</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>2</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUClearStatistics</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
   <!--Fourth Level Menu Items Section End-->
 </Navigation>
