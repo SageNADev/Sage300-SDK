@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
 "use strict";
 
 var SourceJournalProfileReportRepository = SourceJournalProfileReportRepository || {};
@@ -25,13 +26,16 @@ var SourceJournalProfileReportRepository = SourceJournalProfileReportRepository 
 SourceJournalProfileReportRepository = {
     executeSourceJournalProfileReportRepositoryReport: function (viewModel) {
         var data = SourceJournalProfileReportRepository.getUnobservableData(viewModel);
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "SourceJournalProfileReport", "Execute"), data, sourceJournalProfileReportOnSucess.executeSourceJournalProfileReport);
+        var url = sg.utls.url.buildUrl("TU", "SourceJournalProfileReport", "Execute");
+        var callback = sourceJournalProfileReportOnSuccess.executeSourceJournalProfileReport;
+        sg.utls.ajaxPost(url, data, callback);
     },
+
     getUnobservableData: function (model) {
         var data = {
             report: ko.mapping.toJS(model)
         };
         return data;
-    },
-}
+    }
+};
 
