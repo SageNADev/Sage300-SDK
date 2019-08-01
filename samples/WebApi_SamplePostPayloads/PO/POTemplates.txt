@@ -1,0 +1,15 @@
+{
+  "TemplateCode": "ACT2",
+  "Description": "Active POs",
+  "PurchaseOrderType": "Active",
+  "FOBPoint": "",
+  "OnHold": false,
+  "ShipToLocation": "1",
+  "BillToLocation": "1",
+  "DESC": "",
+  "Reference": "",
+  "Comment": "",
+  "ShipVia": "CTL",
+  "TaxGroup": "USDTAX",
+  "TermsCode": "N30"
+}

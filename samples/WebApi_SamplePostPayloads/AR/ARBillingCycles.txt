@@ -1,0 +1,6 @@
+{
+      "BillingCycleKey": "BILL2",
+      "Description": "Bi-monthly Billing Cycle",
+      "BillingCycleFrequency": 19,
+      "RemitToName": "Sample Company Ltd."
+}  

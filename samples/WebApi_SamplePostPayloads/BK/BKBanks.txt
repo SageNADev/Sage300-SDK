@@ -1,0 +1,38 @@
+{
+  "BankCode": "SEA3",
+  "Description": "333 Seattle Tacoma Bank",
+  "Multicurrency": true,
+  "StatementCurrency": "USD",
+  "BankAccountNumber": "902-758801",
+  "BankAccount": "1020",
+  "WriteOffAccount": "6110",
+  "CreditCardChargesAccount": "6115",
+  "ErrorSpread": 1,
+  "BankCurrencies": [
+    {
+      "BankCode": "SEA3",
+      "CurrencyCode": "USD",
+      "CheckRateType": "SP",
+      "DepositRateType": "SP",
+      "ExchangeGainAccount": "7100",
+      "ExchangeLossAccount": "7110",
+      "RoundingAccount": "7200",
+      "CurrencyDescription": "U.S. Dollars",
+      "UpdateOperation": "Unspecified"
+    }
+  ],
+  "CheckStocks": [
+    {
+      "BankCode": "SEA3",
+      "CheckStockCode": "APCK",
+      "Description": "AP Laser Check Stocks",
+      "NextCheckNumber": 1,
+      "StockType": "CombinedCheckAndAdvice",
+      "CheckForm": "APCHK01.RPT",
+      "AdviceForm": "",
+      "AdviceLinesPerPage": 19,
+      "Language": "English",
+      "UpdateOperation": "Unspecified"
+    }
+   ]
+}

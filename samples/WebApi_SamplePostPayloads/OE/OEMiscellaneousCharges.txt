@@ -1,0 +1,7 @@
+{
+  "Currency": "CAD",
+  "MiscellaneousChargeCode": "HC2",
+  "Description": "Handling Charges 2",
+  "MiscellaneousChargeRevenueAccount": "4200",
+  "Amount": 20
+}

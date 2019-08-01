@@ -1,0 +1,10 @@
+{
+  "CurrencyCodeKey": "US2",
+  "Description": "U.S. Dollars 2",
+  "Symbol": "$",
+  "DecimalPlaces": "Num2",
+  "SymbolPosition": "Beforewithspace",
+  "ThousandsSeparator": "Comma",
+  "DecimalSeparator": "Period",
+  "NegativeDisplay": "Brackets"
+}

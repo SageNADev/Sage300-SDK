@@ -1,0 +1,5 @@
+{
+  "SourceLedger": "GL",
+  "SourceType": "01",
+  "Description": "G/L 01"
+}

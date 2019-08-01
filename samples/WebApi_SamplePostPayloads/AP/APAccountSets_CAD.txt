@@ -1,0 +1,10 @@
+{
+  "AccountSetCode": "ACCTX",
+  "Description": "Accounts Payable from Web API",
+  "PayablesControlAccount": "2020",
+  "DiscountsAccount": "6550",
+  "PrepaymentAccount": "1440",
+  "CurrencyCodeForAccount": "CAD",
+  "RetainageAccount": "2025"
+}
+
