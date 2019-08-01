@@ -1,0 +1,14 @@
+{
+  "AccountSetCode": "ACCUSA",
+  "Description": "Accounts payable From Web API",
+  "PayablesControlAccount": "2015",
+  "DiscountsAccount": "6550",
+  "PrepaymentAccount": "1440",
+  "CurrencyCodeForAccount": "USD",
+  "UnrealizedExchangeGainAccount": "3500",
+  "UnrealizedExchangeLossAccount": "3510",
+  "ExchangeGainAccount": "7100",
+  "ExchangeLossAccount": "7110",
+  "RetainageAccount": "2025",
+  "ExchangeRoundingAccount": "7200"
+}

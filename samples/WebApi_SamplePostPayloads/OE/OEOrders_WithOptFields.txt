@@ -1,0 +1,31 @@
+{
+  "CustomerNumber": "1400",
+  "OrderDescription": "Order Entry",
+  "OrderDate": "2020-01-15",
+  "OrderDetails": [
+    {
+      "LineType": "Item",
+      "Item": "A1-105/0",
+      "Location": "1",
+      "QuantityOrdered": 8,
+	  "OrderDetailOptionalFields": [
+        {
+          "LineNumber": 32,
+          "OptionalField": "QUANTITY",
+          "Value": "123"
+        }
+      ]
+    },
+    {
+      "LineType": "Miscellaneous",
+      "MiscellaneousChargesCode": "HC",
+      "ExtendedAmount": 20.25
+    }
+  ],
+    "OrderOptionalFields": [
+    {
+      "OptionalField": "UPSZONE",
+      "Value": "RED"
+    }
+  ]	
+}

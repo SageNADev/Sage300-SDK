@@ -1,0 +1,6 @@
+{
+  "DistributionCodeKey": "INV2",
+  "Description": "Purchase of inventory - WEBAPI",
+  "GLAccount": "1300",
+  "Discountable": "Yes"
+}

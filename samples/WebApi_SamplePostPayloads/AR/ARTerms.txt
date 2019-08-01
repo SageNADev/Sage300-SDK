@@ -1,0 +1,22 @@
+{
+  "TermsCode": "2N31",
+  "Description": "2% - 10 days, Net 31",
+  "UsePaymentSchedule": "No",
+  "CalculationBaseForDiscountwithTax": "Excluded",
+  "DiscountType": "DaysFromInvoiceDate",
+  "DueDateType": "DaysFromInvoiceDate",
+  "NumberOfPayments": 1,
+  "TotalPercentDue": 100,
+  "TermsPaymentSchedules": [
+    {
+      "TermsCode": "2N31",
+      "PaymentNumber": 1,
+      "PercentDue": 100,
+      "DiscountPercent": 2,
+      "DiscountNumberOfDays": 10,
+      "DiscountDayOfMonth": 0,
+      "DueNumberOfDays": 31,
+      "DueDayOfMonth": 0
+    }
+  ]
+}

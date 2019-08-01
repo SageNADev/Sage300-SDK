@@ -1,0 +1,5 @@
+{
+  "DistributionCode": "INT2",
+  "Description": "Interest Revenues",
+  "GLAccount": "4220"
+}

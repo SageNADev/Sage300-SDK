@@ -1,0 +1,21 @@
+{
+  "CustomerNumber": "1400",
+  "OrderDescription": "Order Entry",
+  "OrderDate": "2020-01-15",
+  "InvoiceWillBeProduced": true,
+  "OrderDetails": [
+    {
+      "LineType": "Item",
+      "Item": "A1-105/0",
+      "Location": "1",
+      "QuantityOrdered": 20,
+      "QuantityShipped": 20
+    },
+    {
+      "LineType": "Miscellaneous",
+      "MiscellaneousChargesCode": "HC",
+      "ExtendedAmount": 20.25
+    }
+  ]
+}
+

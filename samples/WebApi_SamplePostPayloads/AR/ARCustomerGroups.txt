@@ -1,0 +1,12 @@
+{
+  "GroupCode": "WHL2",
+  "Description": "Wholesale Sales Group 222",
+  "AccountSet": "TRADE",
+  "BillingCycle": "BILLMT",
+  "InterestProfile": "INTWHS",
+  "AccountType": "OpenItem",
+  "Terms": "N30",
+  "AllowEditOfCreditLimit": "Yes",
+  "CreditLimit1Currency": "CAD",
+  "CreditLimit1Amount": 7500
+}

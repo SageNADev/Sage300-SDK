@@ -1,0 +1,19 @@
+{
+  "CustomerNumber": "1501",
+  "ShortName": "1501",
+  "GroupCode": "WHL",
+  "NationalAccount": "",
+  "Status": "Active",
+  "OnHold": "No",
+  "CustomerName": "Customer 1501",
+  "AccountSet": "USA",
+  "BillingCycle": "BILLMT",
+  "InterestProfile": "INTWHS",
+  "CurrencyCode": "USD",
+  "PrintStatements": "Yes",
+  "AccountType": "OpenItem",
+  "Terms": "N30",
+  "TaxGroup": "USDTAX",
+  "CreditLimitCustomerCurrency": 12345,
+  "CustomerPriceList": "WHS"
+}

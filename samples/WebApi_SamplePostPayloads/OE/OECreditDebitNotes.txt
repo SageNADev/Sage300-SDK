@@ -1,0 +1,28 @@
+{
+  "CNUniquifier": 1793,
+  "CustomerNumber": "1500",
+  "Reference": "webapi",
+  "Description": "OE Credit Note",
+  "CreditDebitNoteDate": "2020-01-05",
+  "CreditDebitNoteType": "CreditNote",
+  "CreditDebitDetails": [
+    {
+      "CNUniquifier": 1793,
+      "LineNumber": 32,
+      "LineType": "Item",
+      "Item": "A1-105/0",
+      "MiscellaneousChargesCode": "",
+      "Location": "4",
+      "QuantityReturned": 2,
+      "CreditDebitNoteUOM": "Ea.",
+      "UnitPrice": 5.94
+    },
+	{
+      "CNUniquifier": 1793,
+      "LineNumber": 32,
+      "LineType": "Miscellaneous",
+      "MiscellaneousChargesCode": "HC",
+      "ExtendedAmountMiscellaneousCharge": 18.10
+    }  
+  ]
+}
