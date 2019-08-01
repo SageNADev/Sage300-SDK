@@ -87,11 +87,12 @@ populated with values from the **SAMLTD** database.
 
 *	Running a POST endpoint with same content for setup screens like GL Accounts will result in an error 
   since the record already exists. Either delete the record first or modify the contents of the payload
+  
 *	For some endpoints, there are different examples:
-**	OEOrders endpoint:
-***	OEOrders_OrdersOnly.txt
-***	OEOrders_WithOptFields.txt
-***	OEOrders_WithShipmentsandInvoice.txt
-**	ARReceiptAndAdjustmentBatches endpoint:
-***	ARReceiptAndAdjustmentBatches_Adjustment.txt (AR Adjustment Entry)
-***	ARReceiptAndAdjustmentBatches_Prepayment.txt (AR Receipts – Prepayment type)
+  *	OEOrders endpoint:
+    *	OEOrders_OrdersOnly.txt
+    *	OEOrders_WithOptFields.txt
+    *	OEOrders_WithShipmentsandInvoice.txt
+  *	ARReceiptAndAdjustmentBatches endpoint:
+    *	ARReceiptAndAdjustmentBatches_Adjustment.txt (AR Adjustment Entry)
+    *	ARReceiptAndAdjustmentBatches_Prepayment.txt (AR Receipts – Prepayment type)
