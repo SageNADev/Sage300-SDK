@@ -212,7 +212,8 @@ var exportResultRowNumber = 0;
         VendorDetail: "icvendordetail",
         VendorGroup: "vendorgroup",
         WeightUnitOfMeasure: "weightunitsofmeasure",
-        WithholdingTaxRates: "withholdingtaxrates"
+        WithholdingTaxRates: "withholdingtaxrates",
+        EmployeeTimecard: "premployeetimecard"
     };
 }(sg || {}, jQuery));
 

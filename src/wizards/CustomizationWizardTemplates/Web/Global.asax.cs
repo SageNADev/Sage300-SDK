@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 #region
 
@@ -31,7 +31,6 @@ namespace $safeprojectname$
 
         private void Session_Start(object sender, EventArgs e)
         {
-
             if (!_isAuthenticated)
             {
                 var authenticationManager = new AuthenticationManagerOnPremise();
@@ -39,7 +38,8 @@ namespace $safeprojectname$
                 var recordId = Guid.NewGuid();
                 var context = new Context
                 {
-                    SessionId = HttpContext.Current.Session.SessionID,
+                    AspNetSessionId = HttpContext.Current.Session.SessionID,
+                    SessionId = "QURNSU4tU0FNTFRE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
                     ProductUserId = recordId,
@@ -59,7 +59,7 @@ namespace $safeprojectname$
                     new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
                 };
 
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
+                authenticationManager.LoginResult("SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
@@ -67,7 +67,7 @@ namespace $safeprojectname$
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = HttpContext.Current.Request.Url.AbsoluteUri + url;
+                    url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
                     Response.Redirect(url);
                 }
             }
@@ -78,10 +78,8 @@ namespace $safeprojectname$
         /// </summary>
         protected void Application_Start()
         {
-
             // Register areas and routes
             AreaRegistration.RegisterAllAreas();
-
 
             UMClientConfig.Register();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -103,7 +101,6 @@ namespace $safeprojectname$
             ModelBinders.Binders.DefaultBinder = new CustomModelBinder();
 
             AsyncManagerConfig.Register();
-
         }
 
         /// <summary>
@@ -137,9 +134,6 @@ namespace $safeprojectname$
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Session_End(object sender, EventArgs e)
         {
-            //This will never be called if sessions are stored in azure cache
-
-            CommonService.DestroyPool(Session.SessionID);
         }
 
         /// <summary>

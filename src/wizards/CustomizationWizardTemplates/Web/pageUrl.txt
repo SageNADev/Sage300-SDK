@@ -1,1 +1,1 @@
-OnPremise/$module$/$project$Customization
+OnPremise/{0}/$module$/$project$Customization
