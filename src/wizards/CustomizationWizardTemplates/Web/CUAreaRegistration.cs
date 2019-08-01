@@ -36,7 +36,7 @@ namespace $safeprojectname$
         /// <param name="context">The context.</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("$module$_Tenant", "{tenantAlias}/$module$/{controller}/{action}/{id}",
+            context.MapRoute("$module$_Tenant", "{tenantAlias}/{session}/$module$/{controller}/{action}/{id}",
             new { action = "Index", id = UrlParameter.Optional });
         }
 
