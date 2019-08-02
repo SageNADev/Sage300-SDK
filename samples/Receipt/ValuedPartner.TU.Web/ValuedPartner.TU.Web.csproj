@@ -360,6 +360,7 @@
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Receipt\ValuedPartnerReceiptRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">
