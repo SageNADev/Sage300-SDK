@@ -146,6 +146,8 @@ receiptUI = {
     exitExchangeRateChange: false,
 
     //For using new grid and optional grid
+
+    //Dynamically define column edit property for grid column use
     columnIsEditable: function (colName) {
         var model = receiptUI.receiptModel;
         var rptType = model.Data.ReceiptType();
@@ -170,11 +172,12 @@ receiptUI = {
         return true;
     },
 
-    updateGridModel: function() {
+    //Update grid model run time before build grid
+    updateGridModel: function () {
         var vm = receiptViewModel;
         var gridColDefs = receiptGridModel.ColumnDefinitions;
 
-        var fields = ["RECPQTY", "RETURNQTY", "UNITCOST", "ADJUNITCST", "RECPCOST", "RETURNCOST", "ADJCOST" ];
+        var fields = ["RECPQTY", "RETURNQTY", "UNITCOST", "ADJUNITCST", "RECPCOST", "RETURNCOST", "ADJCOST"];
         fields.forEach(function (f) {
             if (f.indexOf("QTY") > -1) {
                 var pricison = vm.IsFracQty ? vm.FracDecimals : 0;
@@ -182,12 +185,13 @@ receiptUI = {
                 pricison = 6;
             } else {
                 pricison = vm.ReceiptCurrencyDecimals || vm.FuncDecimals || 3;
-            } 
+            }
             var col = gridColDefs.filter(function (c) { return c.FieldName === f; })[0];
             col.Precision = pricison;
         });
     },
 
+    //Update column decimal place using column template
     updateGridColDecimal: function () {
         var decimal = receiptUI.receiptModel.Data.ReceiptCurrencyDecimals().toString();
         var cols = [{ "field": "RECPCOST", "decimal": decimal }, { "field": "RETURNCOST", "decimal": decimal }, { "field": "ADJCOST", "decimal": decimal }];
@@ -198,6 +202,32 @@ receiptUI = {
         }
     },
 
+    //Convert integer time seconds to time string format like timecard screen
+    convertIntToTime: function (intTime) {
+        var date = new Date(null);
+        date.setSeconds(intTime);
+        var timeString = date.toISOString().substr(11, 8);
+        return timeString;
+    },
+
+    showGridTimeColumn: function (e, column) {
+        column.Template = '#=receiptUI.convertIntToTime(data.RECPQTY)#';
+    },
+
+    updateFinderFilter: function (record, finder) {
+        //finder.Filter = "RECPQTY=111";
+    },
+
+    showCustomIcon: function (e, column) {
+        column.Template = kendo.template('<span style="padding-right:50px;">Yes</span><input class="icon pencil-edit" type="button">');
+    },
+
+    showIcons: function (e, column) {
+        //data is current record, such data.VENDNAME
+        column.Template = kendo.template('<input class="icon pencil-edit" type="button"><input value="AA" id="btnAA" type="button"><input value="BB" id="btnBB" type="button">');
+    },
+
+    //Show detail optional field in popup window
     showDetailOptionalField: function () {
         var grid = $('#receiptGrid').data("kendoGrid"),
             selectedRow = sg.utls.kndoUI.getSelectedRowData(grid),
@@ -207,6 +237,7 @@ receiptUI = {
         sg.optionalFieldControl.showPopUp("rptDetailOptionalFieldGrid", "detailOptionalField", isReadOnly, filter, "receiptGrid");
     },
 
+    //Show optional field in popup window
     showOptionalField: function () {
         var isReadOnly = receiptUI.receiptModel.IsDisableOnlyComplete();
         sg.optionalFieldControl.showPopUp("rptOptionalFieldGrid", "optionalField", isReadOnly);
@@ -237,8 +268,24 @@ receiptUI = {
     },
     customGridAfterCreate: function (value) {
         //After create detail grid record, create default detail optional fields
-        var url = sg.utls.url.buildUrl("TU", "Receipt", "InsertDetailOptionalField");
+        var url = sg.utls.url.buildUrl("IC", "Receipt", "InsertDetailOptionalField");
         sg.utls.ajaxPostSync(url, null, function () { });
+
+        //Binding custom grid button click event after create
+        setTimeout(function () {
+            $("input.icon").click(function (e) {
+                //sg.utls.showMessageInfo(sg.utls.msgType.INFO, "First button click");
+            });
+
+            $("#btnAA").click(function (e) {
+                sg.utls.showMessageInfo(sg.utls.msgType.WARNING, "Second button click");
+            });
+
+            $("#btnBB").click(function (e) {
+                sg.utls.showMessageInfo(sg.utls.msgType.INFO, "Third button click");
+            });
+        }, 500);
+
     },
     customGridAfterInsert: function (value) {
     },
@@ -250,9 +297,14 @@ receiptUI = {
     },
     customColumnBeforeFinder: function (value, options) {
     },
-    customColumnBeforeEdit: function (value, event) {
+    customColumnBeforeEdit: function (value, event, fieldName) {
+        event.preventDefault();
     },
     customColumnStartEdit: function (value, editor) {
+        $(editor).after('<input class="icon pencil-edit" style="margin-left:-20px;" id="btnDetailJobs" tabindex="-1" type="button" />');
+        $("input.icon").click(function () {
+            //sg.utls.showMessageInfo(sg.utls.msgType.INFO, "editor button click");
+        });
     },
     customColumnEndEdit: function (value, editor) {
     },
@@ -358,7 +410,7 @@ receiptUI = {
 
         //Save receipt
         $("#btnSave").bind('click', function () {
-            if (sg.viewList.commit()) {
+            if (sg.viewList.commit("receiptGrid")) {
                 sg.utls.SyncExecute(receiptUI.save);
                 sg.viewList.dirty("receiptGrid", false);
             }
@@ -366,7 +418,7 @@ receiptUI = {
 
         //Receipt Post Functionality
         $("#btnPost").bind('click', function () {
-            if (sg.viewList.commit() && $("#frmReceipt").valid()) {
+            if (sg.viewList.commit("receiptGrid") && $("#frmReceipt").valid()) {
                 receiptPost();
                 sg.viewList.dirty("receiptGrid", false);
             }
@@ -733,7 +785,7 @@ receiptUI = {
         sg.viewFinderHelper.setViewFinder("btnRateTypeFinder", "Data_RateType", this.initRateTypeFinder);
         sg.viewFinderHelper.setViewFinder("btnExchangeRateFinder", "txtpopupExchangeRate", this.initExchangeRateFinder);
     },
-    
+
     //Init Hamburgers
     initHamburgers: function () {
         var listExchangeRate = [
@@ -747,7 +799,7 @@ receiptUI = {
 
     typeSelectionChanged: function (e) {
         var selectedvalue = $('#Data_ReceiptType').data("kendoDropDownList").dataItem().value;
-        if (selectedvalue ) {
+        if (selectedvalue) {
             receiptUI.showHideColumns(selectedvalue);
             receiptUI.receiptModel.Data.ReceiptType(selectedvalue);
             receiptRepository.refresh(receiptUI.receiptModel.Data);
@@ -766,7 +818,7 @@ receiptUI = {
         var colIndex = GridPreferencesHelper.getColumnIndex('#receiptGrid', field);
         grid.hideColumn(colIndex);
         grid.columns[colIndex].attributes['sg_Customizable'] = false;
-    },    
+    },
 
     showHideColumns: function (value) {
         var grid = $('#receiptGrid').data("kendoGrid");
@@ -1150,6 +1202,24 @@ var receiptUISuccess = {
                 receiptUI.receiptModel.isModelDirty.reset();
             }
             receiptUISuccess.updateGridButtonState();
+
+            //Binding custom grid button click event after load
+            setTimeout(function () {
+                $("input.icon").click(function (e) {
+                    //sg.utls.showMessageInfo(sg.utls.msgType.INFO, "First button click");
+                });
+
+                $("#btnAA").click(function (e) {
+                    sg.utls.showMessageInfo(sg.utls.msgType.WARNING, "Second button click");
+                });
+
+                $("#btnBB").click(function (e) {
+                    sg.utls.showMessageInfo(sg.utls.msgType.INFO, "Third button click");
+                });
+            }, 500);
+
+            //sg.viewList.readOnly("receiptGrid", true);
+
         }
     },
 

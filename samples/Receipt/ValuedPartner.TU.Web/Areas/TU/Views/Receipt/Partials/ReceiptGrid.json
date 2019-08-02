@@ -20,10 +20,13 @@
       "IsLineNumber": true
     },
     {
+      "FieldName": "SEQUENCENO"
+    },	
+    {
       "FieldName": "ITEMNO",
       "Precision": 0,
       "HasFinder": true,
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "Finder": {
         "ViewID": "IC0310",
         "ViewOrder": 0,
@@ -47,12 +50,32 @@
     },
     {
       "FieldName": "ITEMDESC",
-      "IsEditable": false
+      "IsEditable": false,
+      "DrillDownUrl": "IC/Item/Index",
+      "Parameters": [
+        {
+          "Name": "id",
+          "Field": "ITEMNO"
+        }
+      ]
+    },
+    {
+      "FieldName": "CATEGORY",
+      "CustomFunctions": [
+        { "columnBeforeFinder": "receiptUI.updateFinderFilter" },
+        { "columnBeforeEdit": "receiptUI.customColumnBeforeEdit" }
+      ]
+    },
+    {
+      "FieldName": "RECPTYPE"
     },
     {
       "FieldName": "LOCATION",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "Precision": 0,
+	  "CustomFunctions": [
+      { "columnBeforeFinder": "receiptUI.updateFinderFilter" }
+      ],
       "HasFinder": true,
       "Finder": {
         "CustomFinder": "receiptUI.initGridLocationFinder",
@@ -80,11 +103,14 @@
     },
     {
       "FieldName": "RECPQTY",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true,
+      "CustomFunctions": [
+        { "columnBeforeDisplay": "receiptUI.showGridTimeColumn" }
+      ]
     },
     {
       "FieldName": "RECPUNIT",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "HasFinder": true,
       "Finder": {
         "ViewID": "IC0750",
@@ -106,43 +132,43 @@
     },
     {
       "FieldName": "UNITCOST",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true
     },
     {
       "FieldName": "RECPCOST",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true
     },
     {
       "FieldName": "LABELS",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true
     },
     {
       "FieldName": "COMMENTS",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true
     },
     {
       "FieldName": "RETURNQTY",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "IsHidden": true
     },
     {
       "FieldName": "RETURNCOST",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "IsHidden": true
     },
     {
       "FieldName": "ADJUNITCST",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "IsHidden": true
     },
     {
       "FieldName": "ADJCOST",
-      "IsEditable": "receiptUI.columnIsEditable",
+      "IsEditable": true,
       "IsHidden": true
     },
     {
       "FieldName": "MANITEMNO",
-      "IsEditable": "receiptUI.columnIsEditable"
+      "IsEditable": true
     },
     {
       "IsOptionalField": true,
