@@ -304,7 +304,7 @@
             this.btnDeleteAssembly.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteAssembly.BackgroundImage")));
             this.btnDeleteAssembly.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDeleteAssembly.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteAssembly.Location = new System.Drawing.Point(440, 353);
+            this.btnDeleteAssembly.Location = new System.Drawing.Point(448, 359);
             this.btnDeleteAssembly.Name = "btnDeleteAssembly";
             this.btnDeleteAssembly.Size = new System.Drawing.Size(25, 25);
             this.btnDeleteAssembly.TabIndex = 27;
@@ -316,7 +316,7 @@
             this.btnDeleteBootstrapper.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteBootstrapper.BackgroundImage")));
             this.btnDeleteBootstrapper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDeleteBootstrapper.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteBootstrapper.Location = new System.Drawing.Point(440, 325);
+            this.btnDeleteBootstrapper.Location = new System.Drawing.Point(448, 327);
             this.btnDeleteBootstrapper.Name = "btnDeleteBootstrapper";
             this.btnDeleteBootstrapper.Size = new System.Drawing.Size(25, 25);
             this.btnDeleteBootstrapper.TabIndex = 26;
@@ -328,7 +328,7 @@
             this.btnDeleteEula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteEula.BackgroundImage")));
             this.btnDeleteEula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDeleteEula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteEula.Location = new System.Drawing.Point(584, 272);
+            this.btnDeleteEula.Location = new System.Drawing.Point(588, 279);
             this.btnDeleteEula.Name = "btnDeleteEula";
             this.btnDeleteEula.Size = new System.Drawing.Size(25, 25);
             this.btnDeleteEula.TabIndex = 25;
@@ -350,7 +350,7 @@
             this.txtEula.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEula.CustomButton.UseSelectable = true;
             this.txtEula.Lines = new string[0];
-            this.txtEula.Location = new System.Drawing.Point(122, 272);
+            this.txtEula.Location = new System.Drawing.Point(126, 279);
             this.txtEula.MaxLength = 32767;
             this.txtEula.Name = "txtEula";
             this.txtEula.PasswordChar = '\0';
@@ -374,7 +374,7 @@
             // 
             this.lblEula.AutoSize = true;
             this.lblEula.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblEula.Location = new System.Drawing.Point(75, 274);
+            this.lblEula.Location = new System.Drawing.Point(75, 279);
             this.lblEula.Name = "lblEula";
             this.lblEula.Size = new System.Drawing.Size(45, 19);
             this.lblEula.TabIndex = 17;
@@ -396,7 +396,7 @@
             this.txtAssembly.CustomButton.UseSelectable = true;
             this.txtAssembly.CustomButton.Visible = false;
             this.txtAssembly.Lines = new string[0];
-            this.txtAssembly.Location = new System.Drawing.Point(122, 354);
+            this.txtAssembly.Location = new System.Drawing.Point(126, 359);
             this.txtAssembly.MaxLength = 32767;
             this.txtAssembly.Name = "txtAssembly";
             this.txtAssembly.PasswordChar = '\0';
@@ -417,7 +417,7 @@
             // 
             this.lblAssembly.AutoSize = true;
             this.lblAssembly.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblAssembly.Location = new System.Drawing.Point(50, 352);
+            this.lblAssembly.Location = new System.Drawing.Point(50, 359);
             this.lblAssembly.Name = "lblAssembly";
             this.lblAssembly.Size = new System.Drawing.Size(70, 19);
             this.lblAssembly.TabIndex = 22;
@@ -439,7 +439,7 @@
             this.txtBootstrapper.CustomButton.UseSelectable = true;
             this.txtBootstrapper.CustomButton.Visible = false;
             this.txtBootstrapper.Lines = new string[0];
-            this.txtBootstrapper.Location = new System.Drawing.Point(122, 325);
+            this.txtBootstrapper.Location = new System.Drawing.Point(126, 327);
             this.txtBootstrapper.MaxLength = 32767;
             this.txtBootstrapper.Name = "txtBootstrapper";
             this.txtBootstrapper.PasswordChar = '\0';
@@ -482,7 +482,7 @@
             this.txtVersion.CustomButton.Visible = false;
             this.txtVersion.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtVersion.Lines = new string[0];
-            this.txtVersion.Location = new System.Drawing.Point(122, 228);
+            this.txtVersion.Location = new System.Drawing.Point(126, 232);
             this.txtVersion.MaxLength = 18;
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.PasswordChar = '\0';
@@ -513,7 +513,7 @@
             this.txtCompatibility.CustomButton.UseSelectable = true;
             this.txtCompatibility.CustomButton.Visible = false;
             this.txtCompatibility.Lines = new string[0];
-            this.txtCompatibility.Location = new System.Drawing.Point(122, 199);
+            this.txtCompatibility.Location = new System.Drawing.Point(126, 201);
             this.txtCompatibility.MaxLength = 60;
             this.txtCompatibility.Name = "txtCompatibility";
             this.txtCompatibility.PasswordChar = '\0';
@@ -533,7 +533,7 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblVersion.Location = new System.Drawing.Point(63, 230);
+            this.lblVersion.Location = new System.Drawing.Point(63, 232);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(57, 19);
             this.lblVersion.TabIndex = 15;
@@ -564,7 +564,7 @@
             this.txtCompanyName.CustomButton.UseSelectable = true;
             this.txtCompanyName.CustomButton.Visible = false;
             this.txtCompanyName.Lines = new string[0];
-            this.txtCompanyName.Location = new System.Drawing.Point(122, 152);
+            this.txtCompanyName.Location = new System.Drawing.Point(126, 157);
             this.txtCompanyName.MaxLength = 60;
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.PasswordChar = '\0';
@@ -595,7 +595,7 @@
             this.txtCustomizationDescription.CustomButton.UseSelectable = true;
             this.txtCustomizationDescription.CustomButton.Visible = false;
             this.txtCustomizationDescription.Lines = new string[0];
-            this.txtCustomizationDescription.Location = new System.Drawing.Point(122, 123);
+            this.txtCustomizationDescription.Location = new System.Drawing.Point(126, 126);
             this.txtCustomizationDescription.MaxLength = 255;
             this.txtCustomizationDescription.Name = "txtCustomizationDescription";
             this.txtCustomizationDescription.PasswordChar = '\0';
@@ -626,7 +626,7 @@
             this.txtCustomizationName.CustomButton.UseSelectable = true;
             this.txtCustomizationName.CustomButton.Visible = false;
             this.txtCustomizationName.Lines = new string[0];
-            this.txtCustomizationName.Location = new System.Drawing.Point(122, 94);
+            this.txtCustomizationName.Location = new System.Drawing.Point(126, 95);
             this.txtCustomizationName.MaxLength = 60;
             this.txtCustomizationName.Name = "txtCustomizationName";
             this.txtCustomizationName.PasswordChar = '\0';
@@ -646,7 +646,7 @@
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCompanyName.Location = new System.Drawing.Point(9, 149);
+            this.lblCompanyName.Location = new System.Drawing.Point(9, 157);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(111, 19);
             this.lblCompanyName.TabIndex = 11;
@@ -656,7 +656,7 @@
             // 
             this.lblCustomizationDescription.AutoSize = true;
             this.lblCustomizationDescription.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCustomizationDescription.Location = new System.Drawing.Point(39, 123);
+            this.lblCustomizationDescription.Location = new System.Drawing.Point(39, 126);
             this.lblCustomizationDescription.Name = "lblCustomizationDescription";
             this.lblCustomizationDescription.Size = new System.Drawing.Size(81, 19);
             this.lblCustomizationDescription.TabIndex = 9;
@@ -687,7 +687,7 @@
             this.txtFolderName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtFolderName.CustomButton.UseSelectable = true;
             this.txtFolderName.Lines = new string[0];
-            this.txtFolderName.Location = new System.Drawing.Point(122, 48);
+            this.txtFolderName.Location = new System.Drawing.Point(126, 51);
             this.txtFolderName.MaxLength = 255;
             this.txtFolderName.Name = "txtFolderName";
             this.txtFolderName.PasswordChar = '\0';
@@ -712,7 +712,7 @@
             // 
             this.lblFolder.AutoSize = true;
             this.lblFolder.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblFolder.Location = new System.Drawing.Point(70, 48);
+            this.lblFolder.Location = new System.Drawing.Point(70, 51);
             this.lblFolder.Name = "lblFolder";
             this.lblFolder.Size = new System.Drawing.Size(50, 19);
             this.lblFolder.TabIndex = 4;
@@ -724,7 +724,7 @@
             this.btnNew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNew.BackgroundImage")));
             this.btnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNew.Location = new System.Drawing.Point(529, 18);
+            this.btnNew.Location = new System.Drawing.Point(533, 20);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(25, 25);
             this.btnNew.TabIndex = 3;
@@ -751,7 +751,7 @@
             this.txtPackageId.CustomButton.UseSelectable = true;
             this.txtPackageId.CustomButton.UseVisualStyleBackColor = false;
             this.txtPackageId.Lines = new string[0];
-            this.txtPackageId.Location = new System.Drawing.Point(122, 18);
+            this.txtPackageId.Location = new System.Drawing.Point(126, 20);
             this.txtPackageId.MaxLength = 36;
             this.txtPackageId.Name = "txtPackageId";
             this.txtPackageId.PasswordChar = '\0';
