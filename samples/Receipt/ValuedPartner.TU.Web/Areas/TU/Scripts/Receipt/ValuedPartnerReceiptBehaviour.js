@@ -1462,18 +1462,19 @@ var receiptGridUtility = {
 
 $(document).ready(function () {
     receiptUI.init();
-    $(window).bind('beforeunload', function () {
+    $(window).on('beforeunload', function () {
         var gridDirty = sg.viewList.dirty("receiptGrid");
         var model = receiptUI.receiptModel;
         var modelDirty = model.isModelDirty.isDirty();
-        if (globalResource.AllowPageUnloadEvent && (gridDirty || modelDirty) && !model.DisableScreen()) {
-            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, receiptResources.Receipts)).text();
+        var dirty = (gridDirty || modelDirty) && !model.DisableScreen();
+
+        if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+            return sg.utls.getDirtyMessage(receiptResources.Receipts);
         }
     });
-    $(window).bind('unload', function () {
-        if (globalResource.AllowPageUnloadEvent) {
-            sg.utls.destroySession();
-        }
+
+    $(window).on('unload', function () {
+        sg.utls.destroySession();
     });
 });
 
