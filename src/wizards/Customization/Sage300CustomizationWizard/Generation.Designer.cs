@@ -932,7 +932,7 @@
             this.txtControlsBehavior.CustomButton.UseSelectable = true;
             this.txtControlsBehavior.CustomButton.Visible = false;
             this.txtControlsBehavior.Lines = new string[0];
-            this.txtControlsBehavior.Location = new System.Drawing.Point(470, 138);
+            this.txtControlsBehavior.Location = new System.Drawing.Point(479, 137);
             this.txtControlsBehavior.MaxLength = 32767;
             this.txtControlsBehavior.Name = "txtControlsBehavior";
             this.txtControlsBehavior.PasswordChar = '\0';
@@ -953,7 +953,7 @@
             // 
             this.lblModuleId.AutoSize = true;
             this.lblModuleId.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblModuleId.Location = new System.Drawing.Point(27, 50);
+            this.lblModuleId.Location = new System.Drawing.Point(27, 47);
             this.lblModuleId.Name = "lblModuleId";
             this.lblModuleId.Size = new System.Drawing.Size(75, 19);
             this.lblModuleId.TabIndex = 1;
@@ -963,7 +963,7 @@
             // 
             this.lblControlsBehavior.AutoSize = true;
             this.lblControlsBehavior.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlsBehavior.Location = new System.Drawing.Point(373, 138);
+            this.lblControlsBehavior.Location = new System.Drawing.Point(385, 137);
             this.lblControlsBehavior.Name = "lblControlsBehavior";
             this.lblControlsBehavior.Size = new System.Drawing.Size(88, 19);
             this.lblControlsBehavior.TabIndex = 13;
@@ -973,7 +973,7 @@
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCategory.Location = new System.Drawing.Point(32, 78);
+            this.lblCategory.Location = new System.Drawing.Point(34, 77);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(68, 19);
             this.lblCategory.TabIndex = 3;
@@ -995,7 +995,7 @@
             this.txtControlsConfig.CustomButton.UseSelectable = true;
             this.txtControlsConfig.CustomButton.Visible = false;
             this.txtControlsConfig.Lines = new string[0];
-            this.txtControlsConfig.Location = new System.Drawing.Point(470, 107);
+            this.txtControlsConfig.Location = new System.Drawing.Point(479, 107);
             this.txtControlsConfig.MaxLength = 32767;
             this.txtControlsConfig.Name = "txtControlsConfig";
             this.txtControlsConfig.PasswordChar = '\0';
@@ -1029,7 +1029,7 @@
             // 
             this.lblControlsConfig.AutoSize = true;
             this.lblControlsConfig.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlsConfig.Location = new System.Drawing.Point(357, 106);
+            this.lblControlsConfig.Location = new System.Drawing.Point(369, 107);
             this.lblControlsConfig.Name = "lblControlsConfig";
             this.lblControlsConfig.Size = new System.Drawing.Size(104, 19);
             this.lblControlsConfig.TabIndex = 11;
@@ -1039,7 +1039,7 @@
             // 
             this.lblTargetScreen.AutoSize = true;
             this.lblTargetScreen.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblTargetScreen.Location = new System.Drawing.Point(8, 106);
+            this.lblTargetScreen.Location = new System.Drawing.Point(9, 107);
             this.lblTargetScreen.Name = "lblTargetScreen";
             this.lblTargetScreen.Size = new System.Drawing.Size(93, 19);
             this.lblTargetScreen.TabIndex = 5;
@@ -1060,7 +1060,7 @@
             this.txtScreenName.CustomButton.UseSelectable = true;
             this.txtScreenName.CustomButton.Visible = false;
             this.txtScreenName.Lines = new string[0];
-            this.txtScreenName.Location = new System.Drawing.Point(470, 77);
+            this.txtScreenName.Location = new System.Drawing.Point(479, 77);
             this.txtScreenName.MaxLength = 60;
             this.txtScreenName.Name = "txtScreenName";
             this.txtScreenName.PasswordChar = '\0';
@@ -1093,7 +1093,7 @@
             // 
             this.lblScreenName.AutoSize = true;
             this.lblScreenName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblScreenName.Location = new System.Drawing.Point(369, 78);
+            this.lblScreenName.Location = new System.Drawing.Point(381, 77);
             this.lblScreenName.Name = "lblScreenName";
             this.lblScreenName.Size = new System.Drawing.Size(92, 19);
             this.lblScreenName.TabIndex = 9;
@@ -1103,7 +1103,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblDescription.Location = new System.Drawing.Point(380, 50);
+            this.lblDescription.Location = new System.Drawing.Point(392, 47);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(81, 19);
             this.lblDescription.TabIndex = 7;
@@ -1124,7 +1124,7 @@
             this.txtDescription.CustomButton.UseSelectable = true;
             this.txtDescription.CustomButton.Visible = false;
             this.txtDescription.Lines = new string[0];
-            this.txtDescription.Location = new System.Drawing.Point(470, 47);
+            this.txtDescription.Location = new System.Drawing.Point(479, 47);
             this.txtDescription.MaxLength = 255;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
