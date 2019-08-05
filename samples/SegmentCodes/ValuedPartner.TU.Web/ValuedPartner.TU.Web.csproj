@@ -351,6 +351,7 @@
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesGrid.js" />
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesKoExtn.js" />
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

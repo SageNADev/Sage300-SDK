@@ -335,6 +335,7 @@
     <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeBehaviour.js" />
     <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeKoExtn.js" />
     <Content Include="Areas\TU\Scripts\SourceCode\ValuedPartner.TU.SourceCodeRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

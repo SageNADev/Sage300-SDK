@@ -362,11 +362,19 @@ GridPreferencesHelper = {
     * @method getColumnIndex      
     * @param {} gridName - name of the grid
     * @param {} columnName - column name
+    * @param {} ignoreHidden - flag to ignoreHidden column
     */
-    getGridColumnIndex: function ($grid, columnName) {
+    getGridColumnIndex: function ($grid, columnName, ignoreHidden) {
         var colIndex = null;
-        for (var i = 0; i < $grid.columns.length; i++) {
-            if ($grid.columns[i].field === columnName) {
+        var cols = $grid.columns;
+        if(ignoreHidden) {
+            cols = $.grep($grid.columns, function (n, i){
+                return n.hidden === false;
+            });
+        }
+    
+        for (var i = 0; i < cols.length; i++) {
+            if (cols[i].field === columnName) {
                 colIndex = i;
                 break;
             }

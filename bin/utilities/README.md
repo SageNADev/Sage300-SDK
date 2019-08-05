@@ -2,9 +2,12 @@
 
 ## WebTemplateGenerator.exe
 
-As of the 2019.2 release of the Sage 300 Web SDK, this program is used by the Sage300UICustomizationWizard (Plugin). 
-It's purpose is to facilitate the rebuilding of the Web.vstemplate file that exists in the 
-src\wizards\CustomizationWizardTemplates\Web\ folder of the SDK. 
+As of the 2020.0 release of the Sage 300 Web SDK, this program is used by the Sage300UICustomizationWizard (Plugin)
+and the Sage300UIWizardPackage (solution wizard). 
+
+It's purpose is to facilitate the rebuilding of the Web.vstemplate files that exist in 
+src\wizards\CustomizationWizardTemplates\Web (customization wizard) and 
+src\wizards\Templates\Web (solution wizard). 
 
 ## MergeISVProject.exe
 
@@ -27,13 +30,6 @@ prior to building the solution. This is important if you have previously built i
 have accessed the Sage 300 web screens as the worker role will be holding onto some assemblies and
 the deployment of these files to your local Sage 300's **Worker** folder may not be successful. Be 
 sure to re-start IIS after the deployment if you have stopped it prior to the build.
-
-## Sage300Utilities.exe
-
-As of the 2018.2 release of the Sage 300 Web SDK, this program is used by the Sage300UIWizardPackage. 
-It's purpose is to facilitate the rebuilding of all of the templates that exist in the \src\Templates\ 
-folder of the SDK. In the future, this application will be enhanced to provide additional functionality 
-to other wizards.
 
 ## Generating JavaScript for Grids
 

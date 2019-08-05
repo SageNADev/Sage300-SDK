@@ -68,7 +68,6 @@
     <Compile Include="CustomAttributes\IsExistingFolderAttribute.cs" />
     <Compile Include="CustomAttributes\OptionalArgumentAttribute.cs" />
     <Compile Include="CustomAttributes\RequiredArgumentAttribute.cs" />
-    <Compile Include="CustomExceptions\WebTemplateGeneratorException.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Interfaces\ICommandLineOptions.cs" />
     <Compile Include="Interfaces\ILogger.cs" />

@@ -358,6 +358,7 @@
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsBehaviour.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsKoExtn.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

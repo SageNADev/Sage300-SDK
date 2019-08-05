@@ -1,1 +1,1 @@
-/OnPremise/{0}/TU/TaxAuthorities
+OnPremise/{0}/TU/TaxAuthorities

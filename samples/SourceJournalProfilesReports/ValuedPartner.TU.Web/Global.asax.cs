@@ -51,7 +51,6 @@ namespace ValuedPartner.TU.Web
 
         private void Session_Start(object sender, EventArgs e)
         {
-
             if (!_isAuthenticated)
             {
                 var authenticationManager = new AuthenticationManagerOnPremise();
@@ -60,16 +59,9 @@ namespace ValuedPartner.TU.Web
                 var context = new Context
                 {
                     AspNetSessionId = HttpContext.Current.Session.SessionID,
-
-                    // gvg - 20190730 
-                    // It appears as though the SessionId must be set
-                    // to the correct, deterministic value based on the
-                    // company and user account. Setting it to something
-                    // else does not appear to work correctly.
                     SessionId = "QURNSU4tU0FNTFRE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
-
                     ProductUserId = recordId,
                     TenantId = recordId,
                     TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,

@@ -368,7 +368,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblModule.AutoSize = true;
             this.lblModule.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblModule.Location = new System.Drawing.Point(58, 258);
+            this.lblModule.Location = new System.Drawing.Point(58, 257);
             this.lblModule.Name = "lblModule";
             this.lblModule.Size = new System.Drawing.Size(59, 19);
             this.lblModule.TabIndex = 17;
@@ -411,7 +411,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblProject.AutoSize = true;
             this.lblProject.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblProject.Location = new System.Drawing.Point(63, 287);
+            this.lblProject.Location = new System.Drawing.Point(63, 286);
             this.lblProject.Name = "lblProject";
             this.lblProject.Size = new System.Drawing.Size(54, 19);
             this.lblProject.TabIndex = 19;
@@ -479,7 +479,7 @@ namespace Sage300UICustomizationWizard
             this.txtAssembly.CustomButton.UseSelectable = true;
             this.txtAssembly.CustomButton.Visible = false;
             this.txtAssembly.Lines = new string[0];
-            this.txtAssembly.Location = new System.Drawing.Point(127, 353);
+            this.txtAssembly.Location = new System.Drawing.Point(127, 352);
             this.txtAssembly.MaxLength = 32767;
             this.txtAssembly.Name = "txtAssembly";
             this.txtAssembly.PasswordChar = '\0';
@@ -500,7 +500,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblAssembly.AutoSize = true;
             this.lblAssembly.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblAssembly.Location = new System.Drawing.Point(47, 353);
+            this.lblAssembly.Location = new System.Drawing.Point(47, 352);
             this.lblAssembly.Name = "lblAssembly";
             this.lblAssembly.Size = new System.Drawing.Size(70, 19);
             this.lblAssembly.TabIndex = 23;
@@ -523,7 +523,7 @@ namespace Sage300UICustomizationWizard
             this.txtBootstrapper.CustomButton.UseSelectable = true;
             this.txtBootstrapper.CustomButton.Visible = false;
             this.txtBootstrapper.Lines = new string[0];
-            this.txtBootstrapper.Location = new System.Drawing.Point(127, 324);
+            this.txtBootstrapper.Location = new System.Drawing.Point(127, 323);
             this.txtBootstrapper.MaxLength = 32767;
             this.txtBootstrapper.Name = "txtBootstrapper";
             this.txtBootstrapper.PasswordChar = '\0';
@@ -544,7 +544,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblBootstrapper.AutoSize = true;
             this.lblBootstrapper.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblBootstrapper.Location = new System.Drawing.Point(30, 327);
+            this.lblBootstrapper.Location = new System.Drawing.Point(30, 323);
             this.lblBootstrapper.Name = "lblBootstrapper";
             this.lblBootstrapper.Size = new System.Drawing.Size(87, 19);
             this.lblBootstrapper.TabIndex = 21;
@@ -624,7 +624,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblVersion.Location = new System.Drawing.Point(60, 189);
+            this.lblVersion.Location = new System.Drawing.Point(60, 191);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(57, 19);
             this.lblVersion.TabIndex = 13;
@@ -634,7 +634,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblCompatibility.AutoSize = true;
             this.lblCompatibility.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCompatibility.Location = new System.Drawing.Point(24, 161);
+            this.lblCompatibility.Location = new System.Drawing.Point(24, 162);
             this.lblCompatibility.Name = "lblCompatibility";
             this.lblCompatibility.Size = new System.Drawing.Size(93, 19);
             this.lblCompatibility.TabIndex = 11;
@@ -769,7 +769,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblCustomizationName.AutoSize = true;
             this.lblCustomizationName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCustomizationName.Location = new System.Drawing.Point(69, 76);
+            this.lblCustomizationName.Location = new System.Drawing.Point(69, 75);
             this.lblCustomizationName.Name = "lblCustomizationName";
             this.lblCustomizationName.Size = new System.Drawing.Size(48, 19);
             this.lblCustomizationName.TabIndex = 5;
@@ -815,7 +815,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblFolder.AutoSize = true;
             this.lblFolder.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblFolder.Location = new System.Drawing.Point(67, 48);
+            this.lblFolder.Location = new System.Drawing.Point(67, 46);
             this.lblFolder.Name = "lblFolder";
             this.lblFolder.Size = new System.Drawing.Size(50, 19);
             this.lblFolder.TabIndex = 3;
@@ -864,7 +864,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblPackageId.AutoSize = true;
             this.lblPackageId.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblPackageId.Location = new System.Drawing.Point(55, 20);
+            this.lblPackageId.Location = new System.Drawing.Point(55, 17);
             this.lblPackageId.Name = "lblPackageId";
             this.lblPackageId.Size = new System.Drawing.Size(62, 19);
             this.lblPackageId.TabIndex = 0;
