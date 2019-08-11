@@ -38,8 +38,8 @@
             </div>
         </div>
     </div>
-
-
+@if (ViewBag.TimeCardUser == null || !ViewBag.TimeCardUser)
+{
     <!--Reports button -->
     <div class="quick-menu-item quick-menu-reports" id="btnViewReports">
         <i class="glyphicon glyphicon-report" title="@HomePageResx.QuickMenu_CustomerReport"></i>
@@ -49,14 +49,15 @@
         <i class="glyphicon glyphicon-doc-search" title="@HomePageResx.QuickMenu_Inquiries"></i>
     </div>
     <!--Notes Center -->
-    @if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+    if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
     {
         <div class="quick-menu-item quick-menu-notes" id="btnViewNotes" title="@HomePageResx.QuickMenu_Notes">
             <i class="glyphicon glyphicon-note"></i>
         </div>
-        }
+    }
+}
     </div>
-        
+
 </div>
 
 <!--End Quick Menu (draggable sidebar)-->

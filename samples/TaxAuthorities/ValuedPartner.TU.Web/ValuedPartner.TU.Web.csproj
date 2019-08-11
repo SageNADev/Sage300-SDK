@@ -354,6 +354,7 @@
     <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesBehaviour.js" />
     <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesKoExtn.js" />
     <Content Include="Areas\TU\Scripts\TaxAuthorities\ValuedPartner.TU.TaxAuthoritiesRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

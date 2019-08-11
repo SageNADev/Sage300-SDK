@@ -1,0 +1,4 @@
+{
+  "RateTypeKey": "01",
+  "Description": "Daily spot rate 01"
+ 

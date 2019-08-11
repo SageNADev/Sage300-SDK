@@ -1,0 +1,36 @@
+{
+  "UnformattedAccount": "9991",
+  "Description": "9991",
+  "AccountType": "IncomeStatement",
+  "NormalBalanceDRCR": "Debit",
+  "Status": "Active",
+  "PostToAccount": "Detail",
+  "QuantitiesAllowed": "No",
+  "UnitOfMeasure": "",
+  "AllocationsAllowed": "NoAllocation",
+  "AllocOffsetAccount": "",
+  "AllocSourceType": "",
+  "Multicurrency": "Yes",
+  "SpecificCurrency": "SpecificCurrencies",
+  "ControlAccount": "No",
+  "AllocationPercentTotal": 0,
+  "StructureCode": "ACC",
+  "DefaultCurrencyCode": "CAD",
+  "AccountGroupCode": "22",
+  "RollupSwitch": "No",
+  "AccountValidCurrencies": [
+    {
+      "AccountNumber": "9991",
+      "CurrencyCode": "CAD",
+      "RevaluationSwitch": "Donotrevalue",
+      "RevaluationCode": ""
+    },
+    {
+      "AccountNumber": "9991",
+      "CurrencyCode": "USD",
+      "RevaluationSwitch": "Donotrevalue",
+      "RevaluationCode": ""
+    }
+  ],
+  "ControlAccountSubledgers": []
+}

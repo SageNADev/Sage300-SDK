@@ -1,0 +1,38 @@
+{
+  "BatchRecordType": "CA",
+  "BatchNumber": 146,
+  "BatchDate": "2020-01-05",
+  "Description": "prepay",
+  "NumberOfEntries": 1,
+  "BankCode": "SEATAC",
+  "DefaultBankCurrency": "USD",
+  "ReceiptsAdjustments": [
+    {
+      "BatchType": "CA",
+      "BatchNumber": 146,
+      "EntryNumber": 1,
+      "CustomerNumber": "1500",
+      "ReceiptDateAdjustmentDate": "2020-01-05",
+      "EntryDescription": "1",
+      "EntryReference": "",
+      "BankReceiptAmount": 22,
+      "CustomerReceiptAmount": 22,
+      "TotalCustomerAmountApplied": 22,
+      "ReceiptTransactionType": "Prepayment",
+      "CustomerUnappliedAmount": 0,
+      "AppliedReceiptsAdjustments": [
+        {
+          "BatchType": "CA",
+          "BatchNumber": 146,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "CustomerNumber": "1500",
+          "PaymentNumber": 1,
+          "CustomerReceiptAmount": 22
+        }
+      ]
+    }
+  ]
+}
+
+

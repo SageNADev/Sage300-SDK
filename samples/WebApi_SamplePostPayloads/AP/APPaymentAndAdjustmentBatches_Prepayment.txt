@@ -1,0 +1,40 @@
+{
+  "BatchSelector": "PY",
+  "BatchNumber": 83,
+  "BatchDate": "2020-01-05",
+  "Description": "test prepayment",
+  "BankCode": "SEATAC",
+  "BankCurrencyCode": "USD",
+  "ProcessCommandCode": "UnlockBatchResource",
+  "PaymentsAdjustments": [
+    {
+      "BatchType": "PY",
+      "BatchNumber": 83,
+      "EntryNumber": 1,
+      "CheckNumber": "000000000000",
+      "VendorNumber": "1500",
+      "PaymentDateAdjustmentDate": "2020-01-05",
+      "EntryDescription": "entry 1",
+      "VendorPayeeName": "Gould Manufacturing Ltd.",
+      "CheckAmountInBankCurrency": 35,
+      "CheckAmountInVendorCurrency": 35,
+      "TotalPrepayVendorCurrency": 35,
+      "PaymentTransactionType": "Prepayment",
+      "CheckPrintRequired": "Yes",
+      "EntryReference": "",
+      "CheckPrintedStatus": "Notprinted",
+      "AppliedPayments": [
+        {
+          "BatchType": "PY",
+          "BatchNumber": 83,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "VendorNumber": "1500",
+          "PaymentType": "Prepayment",
+		  "PaymentAmount": 35
+        }
+      ]
+    }
+  ]
+}
+

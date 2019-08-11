@@ -1,0 +1,12 @@
+{
+  "CategoryCode": "Z1",
+  "Description": "Accessories Z1",
+  "CostOfGoodsSoldAccount": "5010-100-10",
+  "SalesAccount": "4010-100-10",
+  "ReturnsAccount": "4100",
+  "CostVarianceAccount": "5500",
+  "CommissionPaid": true,
+  "CommissionRate": 10,
+  "DamagedGoodsAccount": "4070",
+  "InternalUsageAccount": "5410-100-10"
+}

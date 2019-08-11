@@ -1,0 +1,17 @@
+{
+  "SalespersonKey": "B1",
+  "EmployeeNumber": "B1",
+  "Name": "Blake Trevor",
+  "CommissionsPaid": "Yes",
+  "AnnualSalesTarget": 100341,
+  "MaximumSalesForRate1": 10000,
+  "MaximumSalesForRate2": 20000,
+  "MaximumSalesForRate3": 0,
+  "MaximumSalesForRate4": 0,
+  "CommissionRate1": 10,
+  "CommissionRate2": 20,
+  "CommissionRate3": 0,
+  "CommissionRate4": 0,
+  "CommissionRate5": 0,
+  "CommissionableSales": 0
+}

@@ -1,0 +1,33 @@
+{
+  "UnformattedItemNumber": "ITEM51",
+  "Description": "ITEM51",
+  "StructureCode": "LONG",
+  "Category": "A1",
+  "AccountSetCode": "AVG",
+  "StockItem": true,
+  "StockingUnitOfMeasure": "Ea",
+  "DefaultPriceListCode": "RTL",
+  "UnitWeight": 0,
+  "KittingItem": false,
+  "WeightUnitOfMeasure": "lbs.",
+  "ItemUnitsOfMeasure": [
+    {
+      "ItemNumber": "ITEM51",
+      "UnitOfMeasure": "2's",
+      "ConversionFactor": 2,
+      "FACTOR": 2
+    },
+    {
+      "ItemNumber": "ITEM51",
+      "UnitOfMeasure": "Box",
+      "ConversionFactor": 10,
+      "FACTOR": 10
+    },
+    {
+      "ItemNumber": "ITEM51",
+      "UnitOfMeasure": "Ea",
+      "ConversionFactor": 1,
+      "FACTOR": 1
+    }
+  ]
+}

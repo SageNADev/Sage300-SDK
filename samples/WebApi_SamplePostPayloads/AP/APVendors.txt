@@ -1,0 +1,7 @@
+{
+  "VendorNumber": "1401",
+  "ShortName": "1401",
+  "GroupCode": "INV",
+  "OnHold": "NotOnHold",
+  "VendorName": "1401 Name"
+}

@@ -1,0 +1,21 @@
+{
+      "ItemNumber": "ARITEM1",
+      "CommodityCode": "",
+      "Description": "AR Item1",
+      "DistributionCode": "ITEM",
+      "Comment": "webapi",
+      "Discountable": "Yes",
+      "RevenueAccount": "4000-200-20",
+      "InventoryAccount": "1300",
+      "COGSAccount": "5000-200-20",
+      "ItemPricing": [
+        {
+          "ItemNumber": "ARITEM1",
+          "CurrencyCode": "CAD",
+          "UnitOfMeasure": "FT",
+          "ItemCost": 0.578,
+          "ItemPrice": 1.25,
+          "TaxBase": 0
+        }
+    ]
+}    

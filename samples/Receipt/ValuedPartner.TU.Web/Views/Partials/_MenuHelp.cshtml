@@ -42,13 +42,14 @@
                 <a href=@Utilities.GetLearnMoreUrl("677001008") target="_blank">@HelpResx.Portal_WhatsNew</a>
             </span>
         </li>
-
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link" id="featureTourLink">
-                <a>@HelpResx.Resources_FeatureTour</a>
-            </span>
-        </li>
-
+        @if (ViewBag.TimeCardUser == null || !ViewBag.TimeCardUser)
+        {
+            <li class="k-item k-state-default" role="menuitem">
+                <span class="k-link" id="featureTourLink">
+                    <a>@HelpResx.Resources_FeatureTour</a>
+                </span>
+            </li>
+        }
         <li class="k-item k-state-default" role="menuitem">
             <span class="k-link">
                 <a href=@ConfigurationHelper.ProductDocumentsUrl target="_blank">@HelpResx.Portal_ProductDocuments</a>

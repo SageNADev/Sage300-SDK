@@ -1,0 +1,12 @@
+{
+  "UnformattedAccount": "9991",
+  "Description": "9991",
+  "AccountType": "BalanceSheet",
+  "NormalBalanceDRCR": "Credit",
+  "Status": "Active",
+  "StructureCode": "ACC",
+  "AccountGroupCode": "22"
+}
+
+
+

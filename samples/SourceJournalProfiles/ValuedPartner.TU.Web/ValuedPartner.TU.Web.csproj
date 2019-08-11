@@ -337,6 +337,7 @@
     <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileBehaviour.js" />
     <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
     <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
+    <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />
     <Content Include="Customization\ScreenDefinitions.xml">

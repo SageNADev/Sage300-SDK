@@ -1,0 +1,4 @@
+{
+  "CreditCardTypeKey": "VISA2",
+  "Description": "Visa Card2"
+}
