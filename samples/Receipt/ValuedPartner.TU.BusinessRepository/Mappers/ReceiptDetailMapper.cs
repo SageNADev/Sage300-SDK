@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,13 +20,13 @@
 
 #region Namespace
 
-using System;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using ACCPAC.Advantage;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using System;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Models.Enums;
-using ACCPAC.Advantage;
 
 #endregion
 
@@ -35,7 +35,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
     /// <summary>
     /// Class for ReceiptDetail mapping
     /// </summary>
-    public class ReceiptDetailMapper: ModelMapper<ReceiptDetail>  
+    public class ReceiptDetailMapper : ModelMapper<ReceiptDetail>
     {
         #region Constructor
 
@@ -113,7 +113,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
             model.PopupLT = entity.GetValue<int>(ReceiptDetail.Index.PopupLT);
             model.CloseLT = entity.GetValue<bool>(ReceiptDetail.Index.CloseLT);
             model.OptionalFields = entity.GetValue<long>(ReceiptDetail.Index.OptionalFields);
-			model.ProcessCommand = (ProcessCommand)(entity.GetValue<int>(ReceiptDetail.Index.ProcessCommand));
+            model.ProcessCommand = (ProcessCommand)(entity.GetValue<int>(ReceiptDetail.Index.ProcessCommand));
             model.SerialQuantity = entity.GetValue<long>(ReceiptDetail.Index.SerialQuantity);
             model.LotQuantity = entity.GetValue<decimal>(ReceiptDetail.Index.LotQuantity);
             model.SerialQuantityReturned = entity.GetValue<long>(ReceiptDetail.Index.SerialQuantityReturned);
@@ -121,7 +121,7 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers
             model.SerialLotQuantityToProcess = entity.GetValue<decimal>(ReceiptDetail.Index.SerialLotQuantityToProcess);
             model.NumberOfLotsToGenerate = entity.GetValue<decimal>(ReceiptDetail.Index.NumberOfLotsToGenerate);
             model.QuantityperLot = entity.GetValue<decimal>(ReceiptDetail.Index.QuantityperLot);
-			model.ReceiptType = (ReceiptType)(entity.GetValue<int>(ReceiptDetail.Index.ReceiptType));
+            model.ReceiptType = (ReceiptType)(entity.GetValue<int>(ReceiptDetail.Index.ReceiptType));
             model.AllocateFromSerial = entity.GetValue<string>(ReceiptDetail.Index.AllocateFromSerial);
             model.AllocateFromLot = entity.GetValue<string>(ReceiptDetail.Index.AllocateFromLot);
             model.SerialLotWindowHandle = entity.GetValue<long>(ReceiptDetail.Index.SerialLotWindowHandle);

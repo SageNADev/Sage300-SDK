@@ -1,0 +1,23 @@
+{
+  "ReceiptDate": "2020-01-15",
+  "Vendor": "1400",
+  "Description": "PO Receipt desc",
+  "ReceiptLine2s": [
+    {
+      "LineNumber": 10,
+      "ItemNumber": "A1-105/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityReceived": 3,
+	  "UnitCost": 1.10
+    },
+    {
+      "LineNumber": 20,
+      "ItemNumber": "A1-450/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityReceived": 5,
+      "UnitCost": 2.10
+    }
+  ]
+}

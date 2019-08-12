@@ -1,0 +1,9 @@
+{
+  "ScheduleCode": "30",
+  "Description": "Monthly schedule",
+  "Interval": "Monthly",
+  "Frequency": "Every",
+  "UserMode": "NoUsers",
+  "UserID": "",
+  "RunDate": "2019-07-01"
+}

@@ -1,9 +1,7 @@
-# Clear Statstics Sample
+# Clear Statistics Sample
 
 The Clear Statistics Sample provides a working solution that illustrates the Process code
-type. Like the other samples, a Kendo file must be added to the project before compiling
-(these instructions are found in the README file in the Samples folder). This sample has additional
-steps that must be performed prior to running the sample.
+type. This sample has additional steps that must be performed prior to running the sample.
 
 ## Clear Statistics Script
 
@@ -18,7 +16,7 @@ in order for it to be invoked from the Portal button logic of the Database Setup
 
 ### Stop the Sage CNA Windows Service
 
-The Sage CNA Windows Service is a service that faciliates the work flow implementation. Therefore,
+The Sage CNA Windows Service is a service that facilitates the work flow implementation. Therefore,
 this service must be stopped in order to proceed with not only applying the patch files, but for 
 also compiling the sample solution in Release mode. In the final release of 2017.1, this step will
 not be required as these patch files will be included in the release and the utility that deploys
@@ -32,7 +30,6 @@ service once the binaries are copied.
 ### Build the Clear Statistics sample
 
 * Load the **ClearStatistics.sln**
-* Be sure to follow the instructions for adding the Kendo min file first
 * Build the solution in **Debug** mode first to ensure that all builds successfully
 * Change the solution's mode to **Release**
 * Select **Clean Build** to perform a clean first

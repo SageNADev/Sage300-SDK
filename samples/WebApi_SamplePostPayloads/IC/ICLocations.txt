@@ -1,0 +1,5 @@
+{
+  "LocationKey": "LOCA1",
+  "Name": "Location A1",
+  "LocationType": "Physical"
+}

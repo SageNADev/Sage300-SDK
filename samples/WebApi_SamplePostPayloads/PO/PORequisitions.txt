@@ -1,0 +1,13 @@
+    {
+      "RequisitionDate": "2020-11-23",
+      "Vendor": "1200",
+	  "Description": "PO Requisition",
+      "Location": "1",
+      "RequisitionLines": [
+        {
+          "ItemNumber": "A1-103/0",
+          "Location": "1",
+          "QuantityOrdered": 990
+        }
+      ]
+    }

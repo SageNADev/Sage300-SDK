@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,10 +25,6 @@ using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft.Win32;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard;
 
@@ -67,10 +63,9 @@ namespace Sage.Sage300MenuExtension
             Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
         }
 
-
-
         /////////////////////////////////////////////////////////////////////////////
         // Overridden Package Implementation
+
         #region Package Members
 
         /// <summary>
@@ -92,6 +87,7 @@ namespace Sage.Sage300MenuExtension
                 mcs.AddCommand( menuItem );
             }
         }
+
         #endregion
 
         /// <summary>
@@ -107,6 +103,5 @@ namespace Sage.Sage300MenuExtension
             var codeGenerator = new CodeGenerationWizard();
             codeGenerator.Execute(dte.Solution);
         }
-
     }
 }

@@ -1,0 +1,13 @@
+{
+  "Code": "CCT2",
+  "Name": "Cross-Country Trucking Lines2",
+  "AddressLine1": "#404",
+  "City": "Vancouver",
+  "StateProvince": "BC",
+  "ZipPostalCode": "V2D3S7",
+  "Country": "Canada",
+  "PhoneNumber": "6045554444",
+  "FaxNumber": "6045554444",
+  "Contact": "Dispatcher",
+  "Comment": "Next day pickup"
+}

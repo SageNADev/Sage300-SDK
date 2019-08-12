@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+
+using System;
 using System.Globalization;
 using System.IO;
 using System.Web;
@@ -34,12 +36,13 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         protected void Page_Init(object sender, EventArgs e)
         {
             var token = Request.QueryString["token"];
+            var sessionId = Request.QueryString["session"];
             string reportDocumentKey = "ReportDocument_" + token;
 
             // set the page hidden variable.
             hiddenToken.Value = token;
 
-            var report = GetReport(token);
+            var report = GetReport(token, sessionId);
 
             if (report == null)
             {
@@ -50,7 +53,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             CommonUtil.SetCulture(report.Context.Language);
 
             //Check whether this report belongs to the same user.If not don't do anything.
-            if (report.Context.SessionId != Session.SessionID)
+            if (report.Context.SessionId != sessionId)
             {
                 errorLabel.Text = CommonResx.NotAuthorizedMesage;
                 return;
@@ -107,11 +110,12 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         [WebMethod]
         public static bool Release(string token)
         {
-            var report = GetReport(token);
+            var sessionId = HttpContext.Current.Request.RequestContext.RouteData.Values.ContainsKey("session")
+                ? HttpContext.Current.Request.RequestContext.RouteData.Values["session"].ToString()
+                : string.Empty;
+            var report = GetReport(token, sessionId);
 
-            var sessionId = HttpContext.Current.Session.SessionID;
-
-            if (IsUserAuthenticated() && report != null && report.Context.SessionId == sessionId)
+            if (IsUserAuthenticated(sessionId) && report != null && report.Context.SessionId == sessionId)
             {
                 if (report.ReportProcessType.HasFlag(ReportProcessType.OnClose))
                 {
@@ -172,17 +176,18 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         }
 
         /// <summary>
-        /// Get The report from cache based on key
+        /// Get the report from cache based on key
         /// </summary>
         /// <param name="key">Key</param>
+        /// <param name="sessionId">Session id</param>
         /// <returns>Report</returns>
-        private static Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.Report GetReport(string key)
+        private static Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.Report GetReport(string key, string sessionId)
         {
             try
             {
                 if (ConfigurationHelper.IsOnPremise)
                 {
-                    var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.rpt", HttpContext.Current.Session.SessionID));
+                    var path = Path.Combine(RegistryHelper.SharedDataDirectory, $"{sessionId}.rpt");
                     if (File.Exists(path))
                     {
                         var report = File.ReadAllText(path);

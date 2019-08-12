@@ -1,0 +1,12 @@
+{
+  "RecordStatus": "Entered",
+  "ShipDate": "2020-01-19",
+  "ShipmentDetails": [
+    {
+      "ItemNumber": "A1-400/0",
+      "Location": "1",
+      "Quantity": 3,
+      "UnitPrice": 54.95
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -26,14 +26,14 @@
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var resxName = view.Properties[BusinessView.ResxName];
-    var modelName = view.Properties[BusinessView.ModelName];
-    var entityName = view.Properties[BusinessView.EntityName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var keyFieldName = view.Keys.FirstOrDefault();
     var containerName = settings.EntitiesContainerName;
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
-	var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.ModelName];
+	var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 #>
 // <#=copyright#>
 
@@ -116,6 +116,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
                         <#=resxName#>.<#=keyFieldName#>));
             }
+
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid])
+				{
+					WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
+				}
+			 }
+			#>
+
 
             return View(viewModel);
         }

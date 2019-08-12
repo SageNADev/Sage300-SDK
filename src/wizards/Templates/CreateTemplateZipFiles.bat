@@ -1,4 +1,23 @@
 @echo off
+:: ---------------------------------------------------------------------------------------
+:: File: CreateTemplateZipFiles.bat 
+::
+:: Purpose: This batch file will do the following:
+::
+::          * Create zip archives of the following:
+::            - BusinessRepository
+::            - Interfaces
+::            - Models
+::            - Resources
+::            - Services
+::            - Web
+::            - Sage300SolutionTemplate
+::
+:: Usage Example:
+::          CreateTemplateZipFiles.bat
+::
+:: ---------------------------------------------------------------------------------------
+
 setlocal
 
 set zipDestinationPath=.
@@ -17,8 +36,9 @@ call :Zip Sage300SolutionTemplate
 
 goto :EOF
 
-REM ***********************************
-REM *** Function Definitions
+:: ---------------------------------------------------------------------------------------
+:: Function Definitions
+:: ---------------------------------------------------------------------------------------
 
 :Zip
   setlocal
@@ -29,3 +49,5 @@ REM *** Function Definitions
     "%zipDir%" "%zipDestinationPath%\%zipFolderName%.zip"
   @echo off
   goto :EOF
+
+:: End of file

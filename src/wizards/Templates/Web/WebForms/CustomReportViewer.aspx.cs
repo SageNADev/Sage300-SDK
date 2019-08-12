@@ -1,16 +1,12 @@
-﻿using System;
-using System.Globalization;
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+
+using System;
 using System.IO;
-using System.Web;
-using System.Web.Services;
 using ACCPAC.Advantage;
-using Microsoft.Win32;
 using CrystalDecisions.CrystalReports.Engine;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
-using CrystalDecisions.Shared;
 using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Landlord;
@@ -30,6 +26,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         protected void Page_Init(object sender, EventArgs e)
         {
             var reportName = Request.QueryString["reportName"].ToString();
+            var sessionId = Request.QueryString["session"];
 
             if (string.IsNullOrEmpty(reportName))
             {
@@ -41,11 +38,6 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             report.Context = JsonSerializer.Deserialize<Sage.CA.SBS.ERP.Sage300.Common.Models.Context>(Session["Context"].ToString());
             CommonUtil.SetCulture(report.Context.Language);
 
-            if (report.Context.SessionId != Session.SessionID)
-            {
-                errorLabel.Text = CommonResx.NotAuthorizedMesage;
-                return;
-            }
             report.Context.Container = ConfigurationHelper.Container;
 
             ReportDocument reportDocument;

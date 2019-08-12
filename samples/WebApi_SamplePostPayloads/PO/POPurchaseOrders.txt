@@ -1,0 +1,33 @@
+{
+  "PurchaseOrderDate": "2020-01-15",
+  "Vendor": "1400",
+  "Description": "PO PURCHASE ORDER description",
+  "Reference": "reference",
+  "Comment": "comment",
+  "PurchaseOrderLines": [
+    {
+      "LineNumber": 1000,
+      "ItemNumber": "A1-105/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityOrdered": 10,
+      "UnitCost":5
+    },
+    {
+      "LineNumber": 2000,
+      "ItemNumber": "A1-655/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityOrdered": 20,
+      "UnitCost":15
+    },
+    {
+      "LineNumber": 3000,
+      "ItemNumber": "A1-650/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityOrdered": 30,
+      "UnitCost":3
+    }
+  ]
+}

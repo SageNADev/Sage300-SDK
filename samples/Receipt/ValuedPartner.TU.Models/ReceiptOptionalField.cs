@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -23,9 +23,9 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using ValuedPartner.TU.Resources.Forms;
 using System;
 using System.ComponentModel.DataAnnotations;
+using ValuedPartner.TU.Resources.Forms;
 
 #endregion
 

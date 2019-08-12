@@ -1,9 +1,0 @@
-<bootstrapper>
-  <assemblies>
-    <add assembly="ValuedPartner.TU.*.dll" />
-    <add assembly="ValuedPartner.Web.dll" />	
-  </assemblies>
-  <menuresx>
-    <add assembly="ValuedPartner.TU.Resources" name="MenuResx" />
-  </menuresx>
-</bootstrapper>

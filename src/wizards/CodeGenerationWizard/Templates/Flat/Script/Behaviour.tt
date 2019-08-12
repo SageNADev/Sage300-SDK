@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -23,21 +23,20 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-    var containerName = entityName;
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        containerName = settings.EntitiesContainerName;
-    }
-
-    var moduleId = view.Properties[BusinessView.ModuleId];
+    var containerName = entityName; 
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
     var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
     var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
 
 #>
 /* <#=copyright#> */
+
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
 
 "use strict";
 
@@ -52,7 +51,11 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     isKendoControlNotInitialised: false,
     <#=localKeyFieldName#>: null,
 
-    // Init
+	/**
+     * Initialization
+	 *
+	 * @method init
+	 */
     init: function () {
     <#=localEntityName#>UI.initButtons();
     <#=localEntityName#>UI.initFinders();
@@ -60,7 +63,11 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     <#=localEntityName#>UISuccess.setkey();
     },
 
-    // Save
+	/**
+     * Save
+	 *
+	 * @method save<#=entityName#>
+	 */
     save<#=entityName#>: function () {
         if ($("#frm<#=containerName#>").valid()) {
             var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
@@ -72,36 +79,36 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         }
     },
 
-    // Init Buttons
+	/**
+     * Initialize the Buttons
+	 *
+	 * @method initButtons
+	 */
     initButtons: function () {
         // Import/Export Buttons
         sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
-        // Key field with Finder
-        $("#txt<#=keyFieldName#>").bind('blur', function (e) {
+        // Key field change event
+        $("#txt<#=keyFieldName#>").on('blur', function (e) {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
-            sg.delayOnBlur("btnFinder<#=keyFieldName#>", function () {
-                if (sg.controls.GetString(modelData.<#=keyFieldName#>()) != "") {
-                    if (sg.controls.GetString(<#=localEntityName#>UI.<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
-                        <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
-                    }
-                }
-            });
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
+                <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+            }
         });
 
         // Create New Button
-        $("#btnNew").bind('click', function () {
+        $("#btnNew").on('click', function () {
             <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
         });
 
         // Save Button
-        $("#btnSave").bind('click', function () {
+        $("#btnSave").on('click', function () {
             sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
         });
 
         // Delete Button
-        $("#btnDelete").bind('click', function () {
+        $("#btnDelete").on('click', function () {
             if ($("#frm<#=containerName#>").valid()) {
                 var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
                 sg.utls.showKendoConfirmationDialog(function () {
@@ -110,29 +117,58 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
                 }, null, message, <#=localEntityName#>Resources.DeleteTitle);
             }
         });
-
     },
 
     // Init Dropdowns here
 
-    // Init Finders, if any
+	/**
+     * Initialize the Finders, if any
+	 *
+	 * @method initFinders
+	 */
     initFinders: function () {
-        var title = jQuery.validator.format(<#=localEntityName#>Resources.FinderTitle, <#=localEntityName#>Resources.<#=keyFieldName#>Title);
-        sg.finderHelper.setFinder("btnFinder<#=keyFieldName#>", "<#=moduleId.ToLower()#><#=view.Properties[BusinessView.EntityName].ToLower()#>", <#=localEntityName#>UISuccess.finderSuccess, $.noop, title, <#=localEntityName#>Filter.getFilter);
+            sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>",<#        
+        Write("/*TODO Modify the finder property*/ {{viewID:\"{0}\", ", view.Properties[BusinessView.Constants.ViewId]);
+        Write("viewOrder:0, displayFieldNames:[");
+        
+        for( int i=0; i < view.Fields.Count() && i < 4; i++)
+        {
+            if (i > 0)
+                Write(", ");
+
+            Write("\"{0}\"", view.Fields[i].ServerFieldName);
+         }
+        Write("], returnFieldNames:[\"{0}\"],", view.Fields[0].ServerFieldName);
+        WriteLine("filter:null, initKeyValues:[], parentValAsInitKey:true});");
+#>
     },
 
-    // Get
+	/**
+     * Get
+	 *
+	 * @method get
+	 */
     get: function () {
         <#=localEntityName#>Repository.get(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.get);
     },
 
-    // Create
+	/**
+     * Create
+	 *
+	 * @method create
+	 */
     create: function () {
         sg.utls.clearValidations("frm<#=containerName#>");
         <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
     },
 
-    // Is Dirty check
+	/**
+     * Is Dirty check
+	 *
+	 * @method checkIsDirty
+     * @param functionToCall
+     * @param <#=localKeyFieldName#>
+	 */
     checkIsDirty: function (functionToCall, <#=localKeyFieldName#>) {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
             sg.utls.showKendoConfirmationDialog(
@@ -151,18 +187,26 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
             functionToCall.call();
         }
     }
-
 };
 
 // Callbacks
 var <#=localEntityName#>UISuccess = {
 
-    // Setkey
+	/**
+     * Setkey
+	 *
+	 * @method setkey
+	 */
     setkey: function () {
         <#=localEntityName#>UI.<#=localKeyFieldName#> = modelData.<#=keyFieldName#>();
     },
 
-    // Get
+	/**
+     * Get
+	 *
+	 * @method get
+	 * @param jsonResult
+	 */
     get: function (jsonResult) {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
             if (jsonResult.Data != null) {
@@ -174,7 +218,12 @@ var <#=localEntityName#>UISuccess = {
         }
     },
 
-    // Update
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param jsonResult
+	 */
     update: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
@@ -183,7 +232,12 @@ var <#=localEntityName#>UISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    // Create
+	/**
+     * Create
+	 *
+	 * @method create
+	 * @param jsonResult
+	 */
     create: function (jsonResult) {
         <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
         <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
@@ -191,7 +245,12 @@ var <#=localEntityName#>UISuccess = {
         sg.controls.Focus($("#txt<#=keyFieldName#>"));
     },
 
-    // Delete
+	/**
+     * Delete
+	 *
+	 * @method delete
+	 * @param jsonResult
+	 */
     delete: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
@@ -201,7 +260,13 @@ var <#=localEntityName#>UISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    // Display Result
+	/**
+     * Display Result
+	 *
+	 * @method displayResult
+	 * @param jsonResult
+	 * @param uiMode
+	 */
     displayResult: function (jsonResult, uiMode) {
         if (jsonResult != null) {
             if (!<#=localEntityName#>UI.hasKoBindingApplied) {
@@ -227,7 +292,12 @@ var <#=localEntityName#>UISuccess = {
         }
     },
 
-    // Initial Load
+	/**
+     * Initial Load
+	 *
+	 * @method initialLoad
+	 * @param result
+	 */
     initialLoad: function (result) {
         if (result) {
             <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
@@ -237,50 +307,27 @@ var <#=localEntityName#>UISuccess = {
         sg.controls.Focus($("#txt<#=keyFieldName#>"));
     },
 
-    // Finder Success
-    finderSuccess: function (data) {
-        if (data != null) {
-            <#=localEntityName#>UI.finderData = data;
-            <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UISuccess.setFinderData, <#=localEntityName#>UI.<#=localKeyFieldName#>);
-        }
-    },
 
-    // Set Finder
-    setFinderData: function () {
-        var data = <#=localEntityName#>UI.finderData;
-        sg.utls.clearValidations("frm<#=containerName#>");
-        <#=localEntityName#>UI.finderData = null;
-        <#=localEntityName#>Repository.get(data.<#=keyFieldName#>, <#=localEntityName#>UISuccess.get);
-    },
-
-    // Is New
+	/**
+     * Is New
+	 *
+	 * @method isNew
+	 * @param model
+	 */
     isNew: function (model) {
         if (model.<#=keyFieldName#>() === null) {
            return true;
         }
         return false;
     }
-
-};
-
-// Finder Filter
-var <#=localEntityName#>Filter = {
-    getFilter: function () {
-        var filters = [[]];
-        var <#=localEntityName#>Name = $("#txt<#=keyFieldName#>").val();
-		var operator = (isNaN(<#=localEntityName#>Name)) ? sg.finderOperator.StartsWith : sg.finderOperator.Equal;
-        filters[0][0] = sg.finderHelper.createFilter("<#=keyFieldName#>", operator, <#=localEntityName#>Name);
-        return filters;
-    }
 };
 
 // Initial Entry
 $(function () {
     <#=localEntityName#>UI.init();
-    $(window).bind('beforeunload', function () {
+    $(window).on('beforeunload', function () {
         if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
         }
     });
-
 });

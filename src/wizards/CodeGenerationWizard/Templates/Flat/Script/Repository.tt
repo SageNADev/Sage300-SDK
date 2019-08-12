@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -22,9 +22,9 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-    var moduleId = view.Properties[BusinessView.ModuleId];
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
 	if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
     {
@@ -32,6 +32,10 @@
     }
 #>
 /* <#=copyright#> */
+
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
 
 "use strict";
 
@@ -46,34 +50,62 @@ var <#=localEntityName#>Ajax = {
 
 var <#=localEntityName#>Repository = {
 
-    // Get
+	/**
+     * Get
+	 *
+	 * @method get
+	 * @param id
+	 * @param callbackMethod
+	 */
     get: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Get", data, callbackMethod);
     },
 
-    // Create
+	/**
+     * Create
+	 *
+	 * @method create
+	 * @param callbackMethod
+	 */
     create: function(callbackMethod) {
         var data = {};
         <#=localEntityName#>Ajax.call("Create", data, callbackMethod);
     },
 
-    // Delete
+	/**
+     * Delete
+	 *
+	 * @method delete
+	 * @param id
+	 * @param callbackMethod
+	 */
     delete: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Delete", data, callbackMethod);
     },
 
-    // Add
+	/**
+     * Add
+	 *
+	 * @method add
+	 * @param data
+	 * @param callbackMethod
+	 */
     add: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Add", data, callbackMethod);
     },
 
-    // Update
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
+	 */
     update: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Save", data, callbackMethod);
     }
 
     // Additional methods go here
-
 };

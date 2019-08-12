@@ -1,0 +1,184 @@
+{
+  "IsSequenceRevisionList": true,
+  "GridType": 0,
+  "ReadOnly": false,
+  "PageSize": 10,
+  "ViewID":"IC0580",
+  "CustomFunctions": [
+    { "gridChanged": "receiptUI.customGridChanged" },
+    { "gridAfterSetActiveRecord": "receiptUI.customGridAfterSetActiveRecord" },
+    { "gridBeforeDelete": "receiptUI.customGridBeforeDelete" },
+    { "gridAfterDelete": "receiptUI.customGridAfterDelete" },
+    { "gridBeforeCreate": "receiptUI.customGridBeforeCreate" },
+    { "gridAfterCreate": "receiptUI.customGridAfterCreate" },
+    { "gridAfterInsert": "receiptUI.customGridAfterInsert" }
+  ],
+  "ColumnDefinitions": [
+    {
+      "FieldName": "LINENO",
+      "IsEditable": false,
+      "IsLineNumber": true
+    },
+    {
+      "FieldName": "SEQUENCENO"
+    },	
+    {
+      "FieldName": "ITEMNO",
+      "Precision": 0,
+      "HasFinder": true,
+      "IsEditable": true,
+      "Finder": {
+        "ViewID": "IC0310",
+        "ViewOrder": 0,
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "DESC",
+          "INACTIVE",
+          "ITEMBRKID",
+          "CATEGORY",
+          "CNTLACCT",
+          "STOCKUNIT",
+          "DEFPRICLST"
+        ],
+        "ReturnFieldNames": [
+          "ITEMNO"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO"
+        ]
+      }
+    },
+    {
+      "FieldName": "ITEMDESC",
+      "IsEditable": false,
+      "DrillDownUrl": "IC/Item/Index",
+      "Parameters": [
+        {
+          "Name": "id",
+          "Field": "ITEMNO"
+        }
+      ]
+    },
+    {
+      "FieldName": "CATEGORY",
+      "CustomFunctions": [
+        { "columnBeforeFinder": "receiptUI.updateFinderFilter" },
+        { "columnBeforeEdit": "receiptUI.customColumnBeforeEdit" }
+      ]
+    },
+    {
+      "FieldName": "RECPTYPE"
+    },
+    {
+      "FieldName": "LOCATION",
+      "IsEditable": true,
+      "Precision": 0,
+	  "CustomFunctions": [
+      { "columnBeforeFinder": "receiptUI.updateFinderFilter" }
+      ],
+      "HasFinder": true,
+      "Finder": {
+        "CustomFinder": "receiptUI.initGridLocationFinder",
+        "ViewID": "IC0372",
+        "ViewOrder": 0,
+        "Filter": "ITEMNO=UNFMTITMNO",
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "LOCATION",
+          "DESC",
+          "ACTIVE",
+          "USED",
+          "QTYONHAND",
+          "QTYONORDER",
+          "QTYSALORDR"
+        ],
+        "ReturnFieldNames": [
+          "LOCATION"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO",
+          "LOCATION"
+        ]
+      }
+    },
+    {
+      "FieldName": "RECPQTY",
+      "IsEditable": true,
+      "CustomFunctions": [
+        { "columnBeforeDisplay": "receiptUI.showGridTimeColumn" }
+      ]
+    },
+    {
+      "FieldName": "RECPUNIT",
+      "IsEditable": true,
+      "HasFinder": true,
+      "Finder": {
+        "ViewID": "IC0750",
+        "ViewOrder": 0,
+        "Filter": "ITEMNO=UNFMTITMNO",
+        "DisplayFieldNames": [
+          "ITEMNO",
+          "UNIT",
+          "FACTOR"
+        ],
+        "ReturnFieldNames": [
+          "UNIT"
+        ],
+        "InitKeyFieldNames": [
+          "UNFMTITMNO",
+          "RECPUNIT"
+        ]
+      }
+    },
+    {
+      "FieldName": "UNITCOST",
+      "IsEditable": true
+    },
+    {
+      "FieldName": "RECPCOST",
+      "IsEditable": true
+    },
+    {
+      "FieldName": "LABELS",
+      "IsEditable": true
+    },
+    {
+      "FieldName": "COMMENTS",
+      "IsEditable": true
+    },
+    {
+      "FieldName": "RETURNQTY",
+      "IsEditable": true,
+      "IsHidden": true
+    },
+    {
+      "FieldName": "RETURNCOST",
+      "IsEditable": true,
+      "IsHidden": true
+    },
+    {
+      "FieldName": "ADJUNITCST",
+      "IsEditable": true,
+      "IsHidden": true
+    },
+    {
+      "FieldName": "ADJCOST",
+      "IsEditable": true,
+      "IsHidden": true
+    },
+    {
+      "FieldName": "MANITEMNO",
+      "IsEditable": true
+    },
+    {
+      "IsOptionalField": true,
+      "FieldName": "OptionalField",
+      "ColumnName": "Optional Field",
+      "IsEditable": true,
+      "IsVirtualField": true,
+      "CustomFunctions": [
+        { "OptionalField": "receiptUI.showDetailOptionalField" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Items</DefaultName>
+    <Name>Items</Name>
+    <Description>Upgrade Web project Items</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+	<ProjectItem SubType="" TargetFileName="$fileinputname$.props" ReplaceParameters="false">AccpacDotNetVersion.props</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

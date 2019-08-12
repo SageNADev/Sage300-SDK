@@ -1,0 +1,33 @@
+﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+
+<div id="openQueryPanel" class="side-panel side-panel-shadow create-inquiry">
+    <div class="side-panel-wrapper">
+        <div class="header-container">  
+            <h1 class="side-panel-header header-inquiry" id="hOpenQuery">@InquiryResx.OpenQuery</h1>
+            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnOpenQueryClose"></div>
+        </div>
+        <div class="wrapper">
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.DataSource</label>
+                    <input type="text" id="openQueryPanel_DataSource" value="" class="medium" placeholder="" disabled>
+                </div>
+            </div>
+            <div id="openQueryPanelGrid" class="datagrid-group"></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label>@InquiryResx.Description</label>
+                    <input type="text" value="" class="medium" id="OpenQueryPanel_QueryDescription" disabled>
+                </div>
+            </div>
+            <div class="footer-group">
+                @Html.KoSageButton("btnOpenQueryCancel", new { }, new { @value = CommonResx.Cancel, @id = "btnOpenQueryCancel", @class = "btn btn-secondary" })
+                @Html.KoSageButton("btnOpenQuery", new { }, new { @value = CommonResx.Open, @id = "btnOpenQuery", @class = "btn btn-primary btn-inquiry-save" })
+            </div>
+        </div>
+    </div>
+</div>
+
+

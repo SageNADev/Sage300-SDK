@@ -33,7 +33,6 @@ namespace  $companynamespace$.$applicationid$.Services
         /// <param name="container">The Unity container</param>
         private void RegisterService(IUnityContainer container)
         {
-
         }
 
         /// <summary>
@@ -42,7 +41,6 @@ namespace  $companynamespace$.$applicationid$.Services
         /// <param name="container">The Unity container</param>
         private void RegisterRepositories(IUnityContainer container)
         {
-            
         }
     }
 }

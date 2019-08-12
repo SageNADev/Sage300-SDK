@@ -1,38 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" 
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!-- The MIT License (MIT) -->
-  <!-- Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. -->
-  <!-- -->
-  <!-- Permission is hereby granted, free of charge, to any person obtaining a copy of -->
-  <!-- this software and associated documentation files (the "Software"), to deal in -->
-  <!-- the Software without restriction, including without limitation the rights to use, -->
-  <!-- copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the -->
-  <!-- Software, and to permit persons to whom the Software is furnished to do so, -->
-  <!-- subject to the following conditions: -->
-  <!-- -->
-  <!-- The above copyright notice and this permission notice shall be included in all -->
-  <!-- copies or substantial portions of the Software. -->
-  <!-- -->
-  <!-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, -->
-  <!-- INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A -->
-  <!-- PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT -->
-  <!-- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF -->
-  <!-- CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE -->
-  <!-- OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+  <!-- The MIT License (MIT)
+       Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. 
+          
+       Permission is hereby granted, free of charge, to any person obtaining a copy of
+       this software and associated documentation files (the "Software"), to deal in
+       the Software without restriction, including without limitation the rights to use,
+       copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+       Software, and to permit persons to whom the Software is furnished to do so,
+       subject to the following conditions:
+     
+       The above copyright notice and this permission notice shall be included in all
+       copies or substantial portions of the Software.
+          
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+       INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+       PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+       HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+       CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+       OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-  <!--  This is the file that defines the actual layout and type of the commands.
-        It is divided in different sections (e.g. command definition, command
-        placement, ...), with each defining a specific set of properties.
-        See the comment before each section for more details about how to
-        use it. -->
+       This is the file that defines the actual layout and type of the commands.
+       It is divided in different sections (e.g. command definition, command
+       placement, ...), with each defining a specific set of properties.
+       See the comment before each section for more details about how to
+       use it.
 
-  <!--  The VSCT compiler (the tool that translates this file into the binary 
-        format that VisualStudio will consume) has the ability to run a preprocessor 
-        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
-        it is possible to define includes and macros with the same syntax used 
-        in C++ files. Using this ability of the compiler here, we include some files 
-        defining some of the constants that we will use inside the file. -->
+       The VSCT compiler (the tool that translates this file into the binary 
+       format that VisualStudio will consume) has the ability to run a preprocessor 
+       on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
+       it is possible to define includes and macros with the same syntax used 
+       in C++ files. Using this ability of the compiler here, we include some files 
+       defining some of the constants that we will use inside the file.
+  -->
 
   <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
   <Extern href="stdidcmd.h"/>
@@ -41,8 +43,6 @@
   <Extern href="vsshlids.h"/>
     
   <Extern href="define.h"/>
-
-
 
   <!--The Commands section is where we the commands, menus and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
@@ -61,18 +61,15 @@
          group as the part of a menu contained between two lines. The parent of a group 
          must be a menu. -->
     <Groups>
-
       <Group guid="guidSage300UpgradeMenuExtensionCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_SOLUTION_CONTEXT_MENU_UNDOCUMENTED"/>
       </Group>
-      
-
-
     </Groups>
     
     <!--Buttons section. -->
     <!--This section defines the elements the user can interact with, like a menu command or a button 
         or combo box in a toolbar. -->
+
     <Buttons>
       <!--To define a menu group you have to specify its ID, the parent menu and its display priority. 
           The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
@@ -81,17 +78,18 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-
-      <Button guid="guidSage300UpgradeMenuExtensionCmdSet" id="cmdidSage300UpgradeWizard" priority="0x0100" type="Button">
+      <Button guid="guidSage300UpgradeMenuExtensionCmdSet" 
+              id="cmdidSage300UpgradeWizard" 
+              priority="0x0100" 
+              type="Button">
         <Parent guid="guidSage300UpgradeMenuExtensionCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Sage 300 2018.1 Upgrade Wizard</ButtonText>
+          <ButtonText>Sage 300 2020.0 Upgrade Wizard</ButtonText>
         </Strings>
       </Button>
-
     </Buttons>
-   
+
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
     <Bitmaps>
       <!--  The bitmap id is defined in a way that is a little bit different from the others: 
@@ -100,14 +98,8 @@
             inside a button definition. An important aspect of this declaration is that the element id 
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
-      
     </Bitmaps>
- 
   </Commands>
-
-
-
-
 
   <Symbols>
     <!-- This is the package guid. -->
@@ -115,12 +107,9 @@
     
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidSage300UpgradeMenuExtensionCmdSet" value="{efcb2057-f513-4b39-ae85-cccc9b644877}">
-
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidSage300UpgradeWizard" value="0x0100" />
     </GuidSymbol>
-    
-    
     
     <GuidSymbol name="guidImages" value="{d228e5e7-9569-405e-9f50-fa51a80f16fc}" >
       <IDSymbol name="bmpPic1" value="1" />
@@ -131,5 +120,4 @@
       <IDSymbol name="bmpPicStrikethrough" value="6" />
     </GuidSymbol>
   </Symbols>
-
 </CommandTable>

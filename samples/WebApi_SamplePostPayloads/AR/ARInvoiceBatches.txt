@@ -1,0 +1,116 @@
+{
+  "BatchNumber": 75,
+  "BatchDate": "2020-01-15",
+  "Description": "TEST WEBAPI",
+  "Invoices": [
+    {
+      "BatchNumber": 75,
+      "EntryNumber": 1,
+      "CustomerNumber": "1400",
+      "DocumentType": "Invoice",
+      "DocumentDate": "2020-01-15",
+      "DueDate": "2020-01-15",
+      "InvoiceType": "Summary",
+      "InvoiceDetails": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "DistributionCode": "CACCSE",
+          "ExtendedAmountWithTIP": 200
+        }
+      ],
+      "InvoicePaymentSchedules": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 1,
+          "PaymentNumber": 1,
+          "AmountDue": 226,
+          "DueDate": "2020-01-15"
+        }
+      ]
+    },
+    {
+      "BatchNumber": 75,
+      "EntryNumber": 2,
+      "CustomerNumber": "1400",
+      "DocumentType": "DebitNote",
+      "DocumentDate": "2020-01-15",
+      "DueDate": "2020-01-15",
+      "InvoiceType": "Summary", 
+      "InvoiceDetails": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 2,
+          "LineNumber": 20,
+          "DistributionCode": "CACCSE",
+          "ExtendedAmountWithTIP": 20
+        }
+      ],
+      "InvoicePaymentSchedules": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 2,
+          "PaymentNumber": 1,
+          "DueDate": "2020-01-15",
+          "AmountDue": 22.6
+        }
+      ]
+    },
+    {
+      "BatchNumber": 75,
+      "EntryNumber": 3,
+      "CustomerNumber": "1400",
+      "DocumentType": "CreditNote",
+      "DocumentDate": "2020-01-15",
+      "DueDate": "2020-01-15",
+      "InvoiceType": "Summary",
+      "InvoiceDetails": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 3,
+          "LineNumber": 20,
+          "DistributionCode": "CACCSE",
+          "ExtendedAmountWithTIP": 30
+        }
+      ],
+      "InvoicePaymentSchedules": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 3,
+          "PaymentNumber": 1,
+          "DueDate": "2020-01-15",
+          "AmountDue": 33.9
+        }
+      ]
+    },
+    {
+      "BatchNumber": 75,
+      "EntryNumber": 4,
+      "CustomerNumber": "1400",
+      "DocumentType": "4",
+      "TransactionType": "InterestCharge",
+      "DocumentDate": "2020-01-15",
+      "DueDate": "2020-01-15",
+      "InvoiceType": "Summary",
+      "InvoiceDetails": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 4,
+          "LineNumber": 20,
+          "DistributionCode": "CACCSE",
+          "ExtendedAmountWithTIP": 40
+        }
+      ],
+      "InvoicePaymentSchedules": [
+        {
+          "BatchNumber": 75,
+          "EntryNumber": 4,
+          "PaymentNumber": 1,
+          "DueDate": "2020-01-15",
+          "AmountDue": 40
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -23,19 +23,13 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
-    var resxName = view.Properties[BusinessView.ResxName];
-
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-        entityName = settings.EntitiesContainerName;
-        resxName = settings.EntitiesContainerName + "Resx";
-    }
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var keyFieldName = view.Keys.FirstOrDefault();
-    var modelName = view.Properties[BusinessView.ModelName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
@@ -43,21 +37,7 @@
 #>
 @* <#=copyright#> *@
 
-<#
-    if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-    {
-#>
-@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
-<#
-}
-else
-{
-#>
 @model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
-<#
-}
-#>
-
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants

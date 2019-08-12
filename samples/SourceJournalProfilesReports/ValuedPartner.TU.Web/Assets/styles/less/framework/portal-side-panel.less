@@ -1,0 +1,947 @@
+//
+// Side Panel Styles
+// --------------------------------------------------
+
+
+/*Notes Panel*/
+
+.side-panel {
+  border-right: 1px solid #ccc;
+  background-color: #ebedef;
+  z-index: 30; 
+  position: fixed;
+  box-sizing: border-box;
+  outline: 0;
+  right: -450px;
+  bottom: 0;
+  top: 0;
+  width: 420px;
+  display: block;
+  height: 100%;
+    -webkit-transition-property: right;
+       -moz-transition-property: right;
+         -o-transition-property: right;
+            transition-property: right;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transition-timing-function: linear;
+       -moz-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+
+  &.slide-in {
+    right: 0;
+  }
+
+  &.add-notes {
+      z-index: 31;
+  }
+
+  &.slide-in-note-edit {
+    right: 420px;
+  }
+
+  &.side-panel-shadow {
+    -webkit-box-shadow: -30px 0 30px -30px rgba(0,0,0,.35);
+    box-shadow: -30px 0 30px -30px rgba(0,0,0,.35);
+  }
+
+  .btn {
+    font-weight: normal;
+
+    &.btn-add:focus,
+    &.btn-add:visited {
+        color: @white;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .header-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px 20px 10px 16px;
+    border-bottom: 1px solid @white;
+
+    .side-panel-header {
+      color: #51534a;
+      font-size: 19px;
+
+      &:before {
+        font-family: "Sage Armonye Icons";
+        font-style: normal;
+        font-size: 28px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        margin-right:5px;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        vertical-align: middle;
+      }
+
+      &.header-notes:before {
+        content: "\77";
+      }
+
+      &.header-reports:before {
+        content: "\6e";
+        top: -2px;
+        position: relative;
+      }
+
+      &.header-vpf:before {
+        content: "\ea5e";
+        top: -2px;
+        position: relative;
+      }
+
+      &.header-inquiry:before {
+        content: "\58";
+        top: -2px;
+        position: relative;
+      }
+    }
+
+    .glyphicon-close.dismiss {
+      position: absolute;
+      top: 24px;
+      right: 14px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  .button-container {
+    padding: 10px 20px 0;
+
+    > button {
+      margin-right: 6px;
+    }
+  }
+
+  .btn.dismiss:before {
+    content: "\2297";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 14px;
+    vertical-align: middle;
+    margin-left: -6px;
+    margin-right: 6px;
+  }
+
+  .btn.delete:before {
+    content: "\4b";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left:-10px;
+    margin-right: 3px;
+  }
+
+  .btn.restore:before {
+    content: "\e033";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left: -8px;
+    margin-right: 4px;
+  }
+
+  .btn.no-border[disabled],
+  .btn.no-border[disabled]:hover {
+    color: #bababc;
+    cursor: default;
+  }
+
+  .btn-circle {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-add {
+    background-color: #ed1c5f;
+    border: none;
+    color: #fff;
+    top: 13px;
+    right: 53px;
+    position: absolute;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 20px 0 40px;
+  }
+
+  .btn-add-disabled,
+  .btn-add[disabled] {
+    background: #f6f6f6;
+    border: 1px solid #ececef;
+    color: #bababc;
+    top: 13px;
+    right: 53px;
+    position: absolute;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 20px 0 40px;
+  }
+
+  .btn-add:before,
+  .btn-add-disabled:before {
+    content: "\2b";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 20px;
+    vertical-align: middle;
+    left: 10px;
+    top: 4px;
+    position: absolute;
+  }
+
+  .btn-add:hover {
+    background-color: #646466;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .btn.edit-note:before,
+  .btn.edit-report:before {
+    content: "\77";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left:-10px;
+    margin-right: 3px;
+  }
+
+  .btn.read-note:before {
+    content: "\77";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left:-10px;
+    margin-right: 3px;
+  }
+
+  .file-name {
+    font-size: 12px;
+    color: #828a86;
+    padding: 10px 20px 0 0;
+  }
+
+  .content-container {
+    margin: 0 0 20px;
+    padding: 0 20px 0;
+  }
+
+  &.create-report .content-container {
+    margin: 0;
+    padding: 20px 20px 0;
+  }
+
+  .input-group input[type=text].medium {
+      width: 362px;
+  }
+
+  .datepicker-group .k-datepicker.default {
+      width:163px;
+  }
+
+  .input-group input[type=text].small,
+  .dropdown-group .k-dropdown.small {
+      width: 171px;
+  }
+
+  .datepicker-group input.small {
+      width: 141px !important;
+  }
+
+  .browse-group input[type=text].default{
+      width: 249px;
+  }
+
+  .browse-group .fileUpload {
+      margin-left: 10px;
+  }
+
+  .note-box {
+    background-color: #fff;
+    padding: 10px 12px 5px;
+    margin: 10px 0;
+    max-height: 100px;
+    color: #2e2e2e;
+    border: 1px solid #ccc;
+  }
+
+  .note-box.vendor {
+    border: 1px solid #ffdd4f;
+  }
+
+  .note-box-buttons {
+    padding-top: 4px;
+  }
+
+  .note-box-content {
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom: 1px solid #ebedef;
+    padding-bottom: 10px;
+  }
+
+  .report-content {
+    margin: 0 16px;
+  }
+
+  .report-list {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px dotted #fff;
+    background-image: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:before {
+      content: "\6e";
+      font-family: "Sage Armonye Icons";
+      color: @sage-blue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      speak: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      vertical-align: middle;
+      margin-right: 5px;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .report-item {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 296px;
+    display: inline-block;
+    top: 3px;
+    position: relative;
+    text-overflow: ellipsis;
+    color: #2e2e2e;
+
+    &:hover {
+      cursor: pointer;
+      color: @sage-link;
+  }
+  }
+
+  .k-state-selected .report-item,
+  .report-item:visited,
+  .report-item:active,
+  .report-list:hover .report-item {
+    color: @sage-link;
+  }
+
+  .btn-report-menu {
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    width: 16px;
+    height: 16px;
+
+    .glyphicon-menu {
+      background: none;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        color: @sage-link;
+      }
+    }
+  }
+
+  .report-buttons {
+    background-color: #fff;
+    padding: 5px 0 5px 10px;
+    color: #2e2e2e;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 24px;
+    right: 4px;
+    z-index: 1;
+    display: none;
+  }
+
+  .report-footer {
+    margin: 10px 5px 80px 12px;
+
+    .k-grid {
+      border: none;
+
+      .k-grid-pager {
+        background: none;
+        border: none !important;
+      }
+    }
+
+    .k-pager-numbers .k-state-selected {
+      -webkit-border-radius: 0;
+           -o-border-radius: 0;
+              border-radius: 0;
+      border-color: #ebedef;
+      width: 26px;
+      margin: 0 4px;
+      color: #51534a;
+    }
+
+    .k-pager-wrap > a.k-state-disabled:hover {
+        background-color: #f6f6f6;
+    }
+  }
+
+  .btn.no-border {
+    border: 0;
+    background: none;
+    padding: 0 8px;
+    margin-right: 10px;
+    min-width: 0;
+
+    &:hover {
+      color: #1d479c;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .btn.show-more {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-show-more {
+    height: 125px;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  &.add-notes .footer-group {
+    border-top: 1px solid #fff;
+    text-align: center;
+    margin: 0 0 100px;
+  }
+
+  .footer-group {
+    border-top: 1px solid #fff;
+    text-align: center;
+    padding-bottom: 80px;
+
+    .btn {
+      margin: 0 4px;
+      float: none;
+    }
+  }
+
+  .editor-container {
+    margin: 20px 0;
+
+    &:focus {
+      box-shadow: 0 0 6px #169fda !important;
+      -webkit-box-shadow: 0 0 6px #169fda !important;
+      -moz-box-shadow: 0 0 6px #169fda !important;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+      -kthtml-transition: all .2s linear;
+      transition: all .2s linear;
+    }
+  }
+
+  &.add-notes .input-group.full-width {
+    width: 100%;
+  }
+
+  .form-basic .dropdown-group {
+    width: 150px;
+    margin: 10px 10px 0 18px;
+  }
+
+  &.view-notes .form-basic .input-group {
+    margin: -10px 0 0 18px;
+  }
+
+  &.view-notes .form-basic .finder-group {
+    margin: 0 0 0 50px;
+    top: 1px;
+  }
+
+  &.add-notes .search-group .default {
+    width:100px !important;
+  }
+
+  .filter-wrapper {
+    border-bottom: 1px solid #fff;
+    padding: 15px 20px 0;
+    margin-bottom: 17px;
+
+    div[class*="-group"] {
+      margin-bottom: 8px;
+    }
+
+    .dropdown-group {
+      width:169px !important;
+    }
+
+    .search-group .default {
+      width:100px !important;
+    }
+
+    .go-group .default {
+      width:140px !important;
+    }
+
+    .dropdown-group .k-dropdown.medium {
+      width: 365px;
+    }
+  }
+
+  .side-panel-wrapper .dropdown-group .k-dropdown.medium {
+    width: 379px;
+  }
+
+  .margin-left-small {
+    margin-left: 10px;
+  }
+
+  .margin-right-small {
+    margin-right: 10px;
+  }
+
+  /*Kendo Editor Icons*/
+
+  .k-button-group .k-tool {
+      border-width: 0;
+      width:30px;
+      height:30px;
+      margin:0;
+  }
+
+  .k-tool.k-group-start {
+      border-radius: 0;
+  }
+
+  .k-button-group .k-tool.k-group-end {
+      border-right-width: 0;
+      border-radius: 0;
+  }
+
+  .k-button-group .k-tool.k-state-hover {
+      background: #ebebeb;
+  }
+
+  .k-button-group .k-tool.k-state-selected {
+      background: #dbdbdb;
+  }
+
+  .k-tool-icon {
+    background: none;
+    border: 0;
+  }
+
+  .k-secondary .k-button-group .k-tool {
+    border-radius: 0 0 0 0 ;
+    border: 0;
+  }
+
+  .k-state-selected, 
+  .k-state-selected:link,
+  .k-state-selected:visited,
+  .k-secondary .k-button-group .k-tool:hover {
+    background-color: #ebedef;
+  }
+
+  table.k-editor {
+    border-spacing: 0;
+    height: 200px;
+    border-color: #9a9b9c;
+  }
+
+  .k-editor .k-editable-area {
+    border: 0;
+    font-size: 14px;
+  }
+
+  .k-editor iframe.k-content {
+    padding: 10px 0 10px 10px;
+    border: 0;
+  }
+
+  .editor-container.disabled .k-editor iframe.k-content {
+    background-color: #f6f6f6;
+    color: #333;
+  }
+
+  &.view-notes .k-widget,
+  &.view-reports .k-widget {
+    border-width: 0;
+    background: none;
+  }
+
+  &.view-reports h2 {
+    font-size: 16px;
+    line-height: 1.3em;
+    font-family: foco;
+    color: #4d4f53;
+    text-align: center;
+  }
+
+  &.view-reports h3 {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: -30px;
+  }
+
+  .note-box:hover {
+    background-color: #e8effe;
+  }
+
+  .note-box.k-state-selected,
+  .note-box:active, 
+  .note-box.active {
+    background-color: #e8effe;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.15);
+  }
+
+  &.create-report .dropdown-group .default {
+    width: 339px;
+  }
+
+  &.create-report .multiselect-group .default { /** Custom Report**/  
+    width: 320px;
+    float: left;
+  }
+
+  /* Pagination styles for side panel */
+
+  .k-grid {
+      border: none;
+      margin-top: 20px;
+  }
+
+  .k-grid .k-grid-pager {
+      border: none !important;
+      padding: 0 0 55px;
+  }
+
+  .k-grid .k-pager-first {
+      margin-left: 0;
+  }
+
+  .k-grid .k-grid-pager .k-pager-info {
+      padding: 0;
+  }
+
+  .k-grid .k-grid-pager .k-pager-input {
+      padding: 0 5px;
+  }
+
+  .k-pager-wrap>a.k-state-disabled,
+  .k-pager-wrap>a.k-state-disabled:hover {
+      border-color: #ececef;
+      background-color: #f6f6f6;
+  }
+
+  .k-edit-form-container .k-edit-buttons {
+      padding: 10px 0;
+  }
+
+  .k-edit-form-container .k-edit-buttons .k-button {
+      float: right;
+      margin-left: 10px;
+  }
+
+  .k-editor-dialog .k-button {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #fff;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 12px;
+      line-height: 1.428;
+      border-radius: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      min-width: 120px;
+      font-weight: 700;
+      color: @sage-link;
+      border: 1px solid @sage-link;
+  }
+
+  .k-editor-dialog .k-button:focus,
+  .k-editor-dialog .k-button:active {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      border: 1px solid @sage-link;
+  }
+  .k-editor-dialog .k-button:hover {
+      background: #e8effe;
+      border: 1px solid @sage-link;
+      color: @sage-link;
+  }
+
+  .k-editor-dialog .k-primary {
+      background-color: @sage-link;
+      color: @white;
+      background-image: none;
+  }
+
+  .k-editor-dialog .k-button.k-primary:hover {
+      background-color: #1d479c;
+      color: @white;
+  }
+
+  .k-state-focused .k-editor-dialog .k-input {
+      border: 1px solid #9a9b9c !important;
+  }
+
+  &.view-inquiry,
+  &.create-inquiry {
+    
+    .wrapper {
+      padding: 20px;
+
+      .k-content,
+      .k-content.k-state-active {
+        background: none;
+      }
+    }
+
+    /* Query List/Grid Styles */
+
+    .k-grid {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      width: 362px;
+
+      .k-grid-header {
+        height: 30px;
+
+        .k-header {
+          padding: .5em .6em .4em .6em;
+
+          > .k-link .k-i-arrow-s,
+          > .k-link:hover .k-i-arrow-s,
+          > .k-link .k-i-arrow-n,
+          > .k-link:hover .k-i-arrow-n {
+            font-family: "Sage Armonye Icons";
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            font-size: 14px;
+            background: none;
+            float: none;
+            margin-left: 2px;
+          }
+
+          > .k-link .k-i-arrow-s:before {
+            content: "\25b2";
+            top: 8px;
+            position: relative;
+          }
+
+          > .k-link .k-i-arrow-n:before {
+            content: "\25bc";
+            top: 8px;
+            position: relative;
+          }
+        }
+      }
+
+      .k-grid-content {
+        min-height: 151px;
+
+        td {
+          padding: 0 .6em ;
+        }
+      }
+
+      tr.k-state-selected > td:first-child {
+        padding-left: 10px;
+      }
+    }
+
+    .ctrl-group-inline label {
+      margin-top: 0;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .ctrl-group-inline > div {
+      min-width: 80px;
+      float: left;
+    }
+
+    .message-control.multiWarn-msg {
+      width: 100%;
+
+      .title .multiWarn-icon {
+        background-color: #00a4cf;
+      }
+    }
+  }
+
+  .k-tabstrip .k-tabstrip-items .k-item.k-state-active {
+    background: #ebedef;
+  }
+
+  .k-tabstrip .k-item.k-state-default.k-first.k-tab-on-top {
+    border-left-color: @sage-link;
+  }
+
+  .item-list {
+    position: relative;
+    padding: 8px 0;
+    border-bottom: 1px dotted @white;
+
+    &:hover,
+    label:hover {
+        cursor: pointer;
+        background-color: #dbdbde;
+    }
+
+    label {
+      display: block;
+      width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  #commonTemplateList .item-list label {
+    width: unset;
+  }
+
+  .tag {
+    margin-left: 10px;
+    position: absolute;
+    right:0;
+    min-width: 66px;
+    font-size: 11px;
+  } 
+
+  #inquiryTabStrip-1 .item-list label {
+    width: 100%;
+    white-space: pre-wrap;
+  }
+
+  /* Tooltip */
+
+  .info-icon {
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-size: 24px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    color: #3c424f;
+    font-size: 1rem;
+    margin-left: 5px;
+
+    &:before {
+      content: "\a1";
+    }
+  }
+
+  .k-widget.k-tooltip {
+    background-color: #3c424f;
+    border-radius: 0;
+    font-size: 12px;
+    color: #FFF;
+    font-family: arial;
+    padding: 15px;
+    top: -52px;
+    right: -34px;
+    text-align: left;
+    width: 300px!important;
+    background-image: none;
+    line-height: inherit;
+    box-shadow: none;
+    position: absolute;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #3c424f;
+      position: absolute;
+      right: 20px;
+      bottom: -6px;
+    }
+  }
+
+  .k-callout-e {
+    display: none
+  }
+
+  div#profilesMultiSelect-list+.k-animation-container {
+    z-index: 1 !important;
+  }
+
+  .k-i-arrow-60-down,
+  .k-pager-wrap .k-icon {
+    background: none;
+  }
+}
+
+.k-webkit .k-editor-toolbar, 
+.k-ff .k-editor-toolbar, 
+.k-ie9 .k-editor-toolbar {
+  background-color: #fafafa;
+  border-bottom: 1px solid #ccc;
+}
+
+.k-webkit .k-editor-toolbar li, 
+.k-ff .k-editor-toolbar li, 
+.k-ie9 .k-editor-toolbar li, 
+.k-ie10 .k-editor-toolbar li {
+  padding: 0 5px 0 0 ;
+}
+

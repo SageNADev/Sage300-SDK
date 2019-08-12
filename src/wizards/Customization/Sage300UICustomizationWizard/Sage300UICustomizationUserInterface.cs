@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.TemplateWizard;
@@ -26,16 +27,21 @@ using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using Microsoft.Win32;
+#endregion
 
 namespace Sage300UICustomizationWizard
 {
     /// <summary> Registry Helper Class </summary>
     public static class RegistryHelper
     {
-        /// <summary>
-        /// The path to the Registry Key where the name of the shared folder is stored
-        /// </summary>
-        private const string ConfigurationKey = "SOFTWARE\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
+        /// <summary> Private Constants </summary>
+        private static class Constants
+        {
+            /// <summary>
+            /// The path to the Registry Key where the name of the shared folder is stored
+            /// </summary>
+            public const string ConfigurationKey = "SOFTWARE\\ACCPAC International, Inc.\\ACCPAC\\Configuration";
+        }
 
         /// <summary>
         /// The name of the Registry Value containing the name of the shared folder
@@ -46,7 +52,7 @@ namespace Sage300UICustomizationWizard
             {
                 // Get the registry key
                 var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-                var configurationKey = baseKey.OpenSubKey(ConfigurationKey);
+                var configurationKey = baseKey.OpenSubKey(Constants.ConfigurationKey);
 
                 // Find path tp shared folder
                 return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web");
@@ -57,40 +63,45 @@ namespace Sage300UICustomizationWizard
     /// <summary> Class for UI Wizard </summary>
     public class Sage300UICustomizationUserInterface : IWizard
     {
+        #region Public Constants
+        public static class Constants
+        {
+            /// <summary> Property for Name </summary>
+            public const string PropertyName = "Name";
 
-        /// <summary> Property for Name </summary>
-        public const string PropertyName = "Name";
+            /// <summary> Property for PackageId </summary>
+            public const string PropertyPackageId = "PackageId";
 
-        /// <summary> Property for PackageId </summary>
-        public const string PropertyPackageId = "PackageId";
+            /// <summary> Property for Description </summary>
+            public const string PropertyDescription = "Description";
 
-        /// <summary> Property for Description </summary>
-        public const string PropertyDescription = "Description";
+            /// <summary> Property for BusinessPartnerName </summary>
+            public const string PropertyBusinessPartnerName = "BusinessPartnerName";
 
-        /// <summary> Property for BusinessPartnerName </summary>
-        public const string PropertyBusinessPartnerName = "BusinessPartnerName";
+            /// <summary> Property for SageCompatibility </summary>
+            public const string PropertySageCompatibility = "SageCompatibility";
 
-        /// <summary> Property for SageCompatibility </summary>
-        public const string PropertySageCompatibility = "SageCompatibility";
+            /// <summary> Property for EULA </summary>
+            public const string PropertyEula = "EULA";
 
-        /// <summary> Property for EULA </summary>
-        public const string PropertyEula = "EULA";
+            /// <summary> Property for Bootstrapper </summary>
+            public const string PropertyBootstrapper = "Bootstrapper";
 
-        /// <summary> Property for Bootstrapper </summary>
-        public const string PropertyBootstrapper = "Bootstrapper";
+            /// <summary> Property for Assembly </summary>
+            public const string PropertyAssembly = "Assembly";
 
-        /// <summary> Property for Assembly </summary>
-        public const string PropertyAssembly = "Assembly";
+            /// <summary> Property for Version </summary>
+            public const string PropertyVersion = "Version";
 
-        /// <summary> Property for Version </summary>
-        public const string PropertyVersion = "Version";
+            /// <summary> Suffix for Bootstrapper XML </summary>
+            public const string XmlBootstrapperSuffix = "Bootstrapper.xml";
 
-        /// <summary> Suffix for Bootstrapper XML </summary>
-        public const string XmlBootstrapperSuffix = "Bootstrapper.xml";
+            /// <summary> Suffix for Project DLL </summary>
+            public const string DllProjectSuffix = ".dll";
+        }
+        #endregion
 
-        /// <summary> Suffix for Project DLL </summary>
-        public const string DllProjectSuffix = ".dll";
-
+        #region Private Variables
         /// <summary> Business Partner Name ($companyname$) </summary>
         private string _companyName;
         /// <summary> Module ($module$) </summary>
@@ -105,7 +116,6 @@ namespace Sage300UICustomizationWizard
         private string _customizationFileName;
         /// <summary> Kendo Folder </summary>
         private string _kendoFolder;
-
         /// <summary> Solution folder specified by user before wizard appears </summary>
         private string _solutionFolder;
         /// <summary> Destination folder for solution </summary>
@@ -113,7 +123,9 @@ namespace Sage300UICustomizationWizard
 
         private DTE _dte;
         private string _safeprojectname;
+        #endregion
 
+        #region Public Methods
         /// <summary> Before opening file </summary>
         /// <param name="projectItem">Project Item</param>
         /// <remarks>Called before opening any item that has the OpenInEditor attribute</remarks>
@@ -139,7 +151,7 @@ namespace Sage300UICustomizationWizard
         public void RunFinished()
         {
             var sln = (Solution2)_dte.Solution;
-            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.6.2", "CSharp");
+            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.7.2", "CSharp");
 
             sln.Create(_destinationFolder, _safeprojectname);
 
@@ -149,18 +161,18 @@ namespace Sage300UICustomizationWizard
             sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _assemblyName);
 
             // Remove properties from Manifest first
-            if (_customizationManifest.Property(PropertyBootstrapper) != null)
+            if (_customizationManifest.Property(Constants.PropertyBootstrapper) != null)
             {
-                _customizationManifest.Property(PropertyBootstrapper).Remove();
+                _customizationManifest.Property(Constants.PropertyBootstrapper).Remove();
             }
-            if (_customizationManifest.Property(PropertyAssembly) != null)
+            if (_customizationManifest.Property(Constants.PropertyAssembly) != null)
             {
-                _customizationManifest.Property(PropertyAssembly).Remove();
+                _customizationManifest.Property(Constants.PropertyAssembly).Remove();
             }
 
             // Update Manifest with new file names for Assembly and Bootstrapper
-            _customizationManifest.Property(PropertyDescription).AddAfterSelf(new JProperty(PropertyBootstrapper, _projectName + _moduleName + XmlBootstrapperSuffix));
-            _customizationManifest.Property(PropertyBootstrapper).AddAfterSelf(new JProperty(PropertyAssembly, _assemblyName + DllProjectSuffix));
+            _customizationManifest.Property(Constants.PropertyDescription).AddAfterSelf(new JProperty(Constants.PropertyBootstrapper, _projectName + _moduleName + Constants.XmlBootstrapperSuffix));
+            _customizationManifest.Property(Constants.PropertyBootstrapper).AddAfterSelf(new JProperty(Constants.PropertyAssembly, _assemblyName + Constants.DllProjectSuffix));
 
             // Delete file
             File.Delete(_customizationFileName);
@@ -258,11 +270,7 @@ namespace Sage300UICustomizationWizard
         /// <param name="filePath">File path</param>
         /// <returns>True</returns>
         /// <remarks>Called for item templates not project templates</remarks>
-        public bool ShouldAddProjectItem(string filePath)
-        {
-            return true;
-        }
-
-
+        public bool ShouldAddProjectItem(string filePath) => true;
+        #endregion
     }
 }

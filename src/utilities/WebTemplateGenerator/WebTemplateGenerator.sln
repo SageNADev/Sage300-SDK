@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTemplateGenerator", "WebTemplateGenerator\WebTemplateGenerator.csproj", "{434D6183-B918-4F5A-AD98-36C6D95C612C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{434D6183-B918-4F5A-AD98-36C6D95C612C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434D6183-B918-4F5A-AD98-36C6D95C612C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434D6183-B918-4F5A-AD98-36C6D95C612C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434D6183-B918-4F5A-AD98-36C6D95C612C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90BD28CD-3C92-4683-B7EE-BDDBF75BE27D}
+	EndGlobalSection
+EndGlobal

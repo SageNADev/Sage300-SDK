@@ -1,0 +1,43 @@
+{
+  "BatchRecordType": "AD",
+  "BatchNumber": 2,
+  "BatchDate": "2020-11-02",
+  "Description": "test adjustment webapi",
+  "ReceiptsAdjustments": [
+    {
+      "BatchType": "AD",
+      "BatchNumber": 2,
+      "EntryNumber": 1,
+      "CustomerNumber": "1200",
+      "ReceiptDateAdjustmentDate": "2020-11-02",
+      "EntryDescription": "webapi",
+      "EntryReference": "",
+      "AppliedReceiptsAdjustments": [
+        {
+          "BatchType": "AD",
+          "BatchNumber": 2,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "CustomerNumber": "1200",
+          "DocumentNumber": "TR-INV-003",
+          "PaymentNumber": 1,
+          "Description": "",
+          "Reference": "",
+          "AdjustmentGLDistributions": [
+            {
+              "BatchType": "AD",
+              "BatchNumber": 2,
+              "EntryNumber": 1,
+              "LineNumber": 20,
+              "SequenceNumber": 1,
+              "TransactionType": 81,
+              "DistributionAmount": -1,
+              "DistributionCode": "DESK",
+              "DistributionGLAccount": "4030"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The MIT License (MIT) 
+  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+ 
+  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+  this software and associated documentation files (the "Software"), to deal in 
+  the Software without restriction, including without limitation the rights to use, 
+  copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+  Software, and to permit persons to whom the Software is furnished to do so, 
+  subject to the following conditions:
+ 
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+ 
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<Navigation>
+  <!--TODO configure the menus for integrated with sage 300c-->
+  <!--Second Level Menu Item, define the menu showed on Sage 300 online portal menu bar-->
+  <item>
+    <MenuID>TU2000</MenuID>
+    <MenuName>TU2000</MenuName>
+    <ResourceKey>MenuKey2000</ResourceKey>
+    <ParentMenuID>101</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>2</MenuItemLevel>
+    <MenuItemOrder>4</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <IconName>../../../../Areas/TU/ExternalContent/icon_tu.png</IconName>
+    <MenuBackGoundImage>../../../../Areas/TU/ExternalContent/bg_menu_tu.jpg</MenuBackGoundImage>
+  </item>
+  <!--Third Level Menu Items Section Starts-->
+  <item>
+    <MenuID>TU3000</MenuID>
+    <MenuName>TU3000</MenuName>
+    <ResourceKey>MenuKey3000</ResourceKey>
+    <ParentMenuID>TU2000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>3</MenuItemLevel>
+    <MenuItemOrder>1</MenuItemOrder>
+    <ColOrder>-1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+  </item>
+  <!--Fourth Level Menu Items Section Starts-->
+  <item>
+    <MenuID>TU4000</MenuID>
+    <MenuName>TU4000</MenuName>
+    <ResourceKey>MenuKey4000</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>true</IsGroupHeader>
+    <ScreenURL>N/A</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>1</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>N/A</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <item>
+    <MenuID>TU4001</MenuID>
+    <MenuName>TU4001</MenuName>
+    <ResourceKey>TUClearStatistics</ResourceKey>
+    <ParentMenuID>TU3000</ParentMenuID>
+    <IsGroupHeader>false</IsGroupHeader>
+    <ScreenURL>TU/ClearStatistics</ScreenURL>
+    <MenuItemLevel>4</MenuItemLevel>
+    <MenuItemOrder>2</MenuItemOrder>
+    <ColOrder>1</ColOrder>
+    <SecurityResourceKey>TUClearStatistics</SecurityResourceKey>
+    <IsReport>false</IsReport>
+    <IsActive>true</IsActive>
+    <IsGroupEnd>false</IsGroupEnd>
+    <IsWidget>false</IsWidget>
+    <Isintelligence>false</Isintelligence>
+    <ModuleName>TU</ModuleName>
+  </item>
+  <!--Fourth Level Menu Items Section End-->
+</Navigation>

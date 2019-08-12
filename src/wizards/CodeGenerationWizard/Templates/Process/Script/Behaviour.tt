@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -23,13 +23,17 @@
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
-    var entityName = view.Properties[BusinessView.EntityName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-    var moduleId = view.Properties[BusinessView.ModuleId].ToLower();
-    var moduleIdUpper = view.Properties[BusinessView.ModuleId];
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId].ToLower();
+    var moduleIdUpper = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
 #>
 /* <#=copyright#> */
+
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
 
 "use strict";
 
@@ -38,6 +42,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
 <#=localEntityName#>UI = {
     <#=localEntityName#>Model: {},
     computedProperties: [],
+
+	/**
+     * Initialization
+	 *
+	 * @method init
+	 */
     init: function () {     
         // Initialize the controls and apply kendo bindings 
         <#=localEntityName#>UI.initKendoBindings();          
@@ -50,30 +60,65 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
         ko.applyBindings(<#=localEntityName#>UI.<#=localEntityName#>Model);
     },
     
+	/**
+     * Initialize the Kendo bindings
+	 *
+	 * @method initKendoBindings
+	 */
     initKendoBindings: function () {
         <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(<#=entityName#>ViewModel);       
         <#=moduleId#><#=entityName#>KoExtn.<#=moduleId#><#=entityName#>ModelExtension(<#=localEntityName#>UI.<#=localEntityName#>Model);
     },
 
+	/**
+     * Initialize the Finder
+	 *
+	 * @method initFinder
+	 */
     initFinder: function() {
     },
 
+	/**
+     * Initialize the Check Boxes
+	 *
+	 * @method initCheckBox
+	 */
     initCheckBox: function () {
     },
     
+	/**
+     * Initialize the Blur binding
+	 *
+	 * @method initBlur
+	 */
     initBlur:function() {
     },    
 
+	/**
+     * Initialize Textbox bindings
+	 *
+	 * @method initTextBox
+	 */
     initTextBox: function ()
     {
     },
     
+	/**
+     * Initialize the Buttons
+	 *
+	 * @method initButtons
+	 */
     initButtons: function () {
         $("#btnProcess").click(function (e) {
             sg.utls.SyncExecute(<#=localEntityName#>UI.process);
         });
     },
     
+	/**
+     * Process
+	 *
+	 * @method process
+	 */
     process: function () {
         // debugger;
         sg.utls.isProcessRunning = true;
@@ -100,12 +145,22 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
         }
     },
     
+	/**
+     * Initialize the Process UI
+	 *
+	 * @method initProcessUI
+	 */
     initProcessUI: function() {
         var progressUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Progress");
         var cancelUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Cancel");
         window.progressUI.init(progressUrl, cancelUrl, <#=localEntityName#>UI.<#=localEntityName#>Model, screenName, onSuccess.onProcessComplete);
     },
 
+	/**
+     * Validation
+	 *
+	 * @method Validation
+	 */
     Validation: function () {
         var errorRangeMessage = "";
         var inputValid = true;
@@ -124,6 +179,11 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
 };
 
 var onSuccess = {
+	/**
+     * Process Success
+	 *
+	 * @method process
+	 */
     process: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             var model = <#=localEntityName#>UI.<#=localEntityName#>Model;
@@ -133,6 +193,12 @@ var onSuccess = {
             sg.utls.showMessage(jsonResult);
         }
     },
+
+	/**
+     * On Process Complete
+	 *
+	 * @method onProcessComplete
+	 */
     onProcessComplete: function (result) {
         if (result.ProcessResult.Results.length <= 0) {
             $("#processingResultGrid").hide();
@@ -147,6 +213,13 @@ var onFinderSuccess = {
 };
 
 var <#=localEntityName#>Utility = {   
+	/**
+     * Check the Dirty Flag
+	 *
+	 * @method checkIsDirty
+	 * @param yesFunctionToCall
+	 * @param noFunctionToCall
+	 */
     checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty && <#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,22 +18,36 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
+using EnvDTE80;
+using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Interfaces;
 using System.Collections.Generic;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 {
     /// <summary> Settings class to hold info UI Settings </summary>
     [System.SerializableAttribute]
-    public class Settings
+    public class Settings : ISettings
     {
         #region Public Properties
         /// <summary> Upgrade Steps </summary>
         public List<WizardStep> WizardSteps { get; set; }
+
         /// <summary> Source Folder </summary>
         public string SourceFolder { get; set; }
+
+        /// <summary> Location of Accpac props file </summary>
+        public string PropsSourceFolder { get; set; }
+
         /// <summary> Destination Web Folder </summary>
         public string DestinationWebFolder { get; set; }
+
+        /// <summary> Destination Solution Folder </summary>
+        public string DestinationSolutionFolder { get; set; }
+
+        /// <summary> The Solution object </summary>
+        public Solution2 Solution { get; set; }
         #endregion
     }
-
 }

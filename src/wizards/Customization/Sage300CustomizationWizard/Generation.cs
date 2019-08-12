@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,13 +31,15 @@ using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
+using MetroFramework.Forms;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 {
     /// <summary> UI for Standalone Web Customization Wizard </summary>
-    public partial class Generation : Form
+    public partial class Generation : MetroForm
     {
-        #region Private Vars
+        #region Private Variables
 
         /// <summary> Process Generation logic </summary>
         private ProcessGeneration _generation;
@@ -108,37 +111,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         #endregion
 
         #region Private Constants
+        private class Constants
+        {
+            /// <summary> New Control Text </summary>
+            public const string NewControlText = "NewControl";
 
-        /// <summary> New Control Text </summary>
-        private const string NewControlText = "NewControl";
+            /// <summary> New Screen Text </summary>
+            public const string NewScreenText = "NewScreen";
 
-        /// <summary> New Screen Text </summary>
-        private const string NewScreenText = "NewScreen";
+            /// <summary> Panel Name for pnlCreateEdit </summary>
+            public const string PanelCreateEdit = "pnlCreateEdit";
 
-        /// <summary> Panel Name for pnlCreateEdit </summary>
-        private const string PanelCreateEdit = "pnlCreateEdit";
+            /// <summary> Panel Name for pnlScreens </summary>
+            public const string PanelScreens = "pnlScreens";
 
-        /// <summary> Panel Name for pnlScreens </summary>
-        private const string PanelScreens = "pnlScreens";
+            /// <summary> Panel Name for pnlGenerated </summary>
+            public const string PanelGenerated = "pnlGenerated";
 
-        /// <summary> Panel Name for pnlGenerated </summary>
-        private const string PanelGenerated = "pnlGenerated";
+            /// <summary> Panel Name for pnlGenerate </summary>
+            public const string PanelGenerate = "pnlGenerate";
 
-        /// <summary> Panel Name for pnlGenerate </summary>
-        private const string PanelGenerate = "pnlGenerate";
+            /// <summary> Panel Name for pnlControls </summary>
+            public const string PanelControls = "pnlControls";
 
-        /// <summary> Panel Name for pnlControls </summary>
-        private const string PanelControls = "pnlControls";
+            /// <summary> Control Type TabPage </summary>
+            public const string ControlTypeTabPage = "TabPage";
 
-        /// <summary> Control Type TabPage </summary>
-        private const string ControlTypeTabPage = "TabPage";
+            /// <summary> Control Type Panel </summary>
+            public const string ControlTypePanel = "Panel";
 
-        /// <summary> Control Type Panel </summary>
-        private const string ControlTypePanel = "Panel";
-
-        /// <summary> Splitter Distance </summary>
-        private const int SplitterDistance = 415;
-
+            /// <summary> Splitter Distance </summary>
+            public const int SplitterDistance = 415;
+        }
         #endregion
 
         #region Private Enums
@@ -451,9 +455,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private static XElement NewControlElement()
         {
             // Build new element
-            var element = new XElement(NewControlText);
-            element.Add(new XAttribute(ProcessGeneration.AttributeId, NewControlText));
-            element.Add(new XAttribute(ProcessGeneration.AttributeType, ""));
+            var element = new XElement(Constants.NewControlText);
+            element.Add(new XAttribute(ProcessGeneration.Constants.AttributeId, Constants.NewControlText));
+            element.Add(new XAttribute(ProcessGeneration.Constants.AttributeType, ""));
 
             return element;
         }
@@ -478,7 +482,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private static Screen NewScreen()
         {
             // Build new screen
-            return new Screen {TargetScreen = NewScreenText};
+            return new Screen {TargetScreen = Constants.NewScreenText };
         }
 
         /// <summary> New screen tree node</summary>
@@ -673,10 +677,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             lblAssembly.Text = Resources.Assembly;
             tooltip.SetToolTip(lblAssembly, Resources.AssemblyTip);
 
-            tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
+            //tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
             tooltip.SetToolTip(btnNew, Resources.PackageNewTip);
-            tooltip.SetToolTip(btnFolder, Resources.FolderFinderTip);
-            tooltip.SetToolTip(btnEula, Resources.EulaFinderTip);
+            //tooltip.SetToolTip(btnFolder, Resources.FolderFinderTip);
+            //tooltip.SetToolTip(btnEula, Resources.EulaFinderTip);
             tooltip.SetToolTip(btnDeleteEula, Resources.EulaRemoveTip);
             tooltip.SetToolTip(btnDeleteBootstrapper, Resources.BootstrapperRemoveTip);
             tooltip.SetToolTip(btnDeleteAssembly, Resources.AssemblyRemoveTip);
@@ -772,7 +776,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             // Define source
             _allScreens = new Dictionary<string, List<string>>();
 
-            // ScreeName constants from application with attributes
+            // ScreenName constants from application with attributes
             var modelsDll =
                 Assembly.LoadFile(Path.Combine(RegistryHelper.Sage300CWebFolder,
                     @"Sage.CA.SBS.ERP.Sage300.Common.Models.dll"));
@@ -797,9 +801,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 // var customization = (bool)(module.GetType().GetProperty("Customization").GetValue(module, null));
 
                 // Load screen source
-                var moduleId = (string) (module.GetType().GetProperty(ProcessGeneration.PropertyModuleId).GetValue(module, null));
-                var category = (string) (module.GetType().GetProperty(ProcessGeneration.PropertyCategory).GetValue(module, null));
-                var screenName = (string) (module.GetType().GetProperty(ProcessGeneration.PropertyName).GetValue(module, null));
+                var moduleId = (string) (module.GetType().GetProperty(ProcessGeneration.Constants.PropertyModuleId).GetValue(module, null));
+                var category = (string) (module.GetType().GetProperty(ProcessGeneration.Constants.PropertyCategory).GetValue(module, null));
+                var screenName = (string) (module.GetType().GetProperty(ProcessGeneration.Constants.PropertyName).GetValue(module, null));
                 var value = field.Name;
 
                 // Skip these module(s)
@@ -810,12 +814,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
                 // Add module with category
                 BuildScreen(moduleId, category);
+
                 // Add module + category with screenName
                 BuildScreen(moduleId + category, screenName);
+
                 // Add module + category + screenName with value (constant itself)
                 BuildScreen(moduleId + category + screenName, value);
+
                 // Add "Manifest"+ moduleId + category + value with screenName (for reverse lookup)
-                BuildScreen(ProcessGeneration.Manifest + moduleId + category + value, screenName);
+                BuildScreen(ProcessGeneration.Constants.Manifest + moduleId + category + value, screenName);
             }
         }
 
@@ -855,7 +862,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private void NextStep()
         {
             // Finished?
-            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
+            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelGenerated))
             {
                 Close();
             }
@@ -863,7 +870,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             {
                 // Proceed to next wizard step or start generation if last step
                 if (!_currentWizardStep.Equals(-1) &&
-                    _wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerate))
+                    _wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelGenerate))
                 {
                     // Setup display before processing
                     _gridInfo.Clear();
@@ -895,19 +902,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     _currentWizardStep++;
 
                     // if Step is Controls, expand tree control
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelControls))
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelControls))
                     {
                         treeControls.ExpandAll();
                     }
 
                     // if Step is Screens, expand tree control
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelScreens))
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelScreens))
                     {
                         treeScreens.ExpandAll();
                     }
 
                     // Update Generate Controls if Step is Generate
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerate))
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelGenerate))
                     {
                         // Load controls based upon screens in the previous steps
                         ClearGenerateControls();
@@ -934,7 +941,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     ShowStep(true);
 
                     // Update text of Next button?
-                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerate))
+                    if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelGenerate))
                     {
                         btnNext.Text = Resources.Generate;
                     }
@@ -955,7 +962,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 ShowStep(false);
 
                 // Proceed back a step or home if done
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelGenerated))
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelGenerated))
                 {
                     btnBack.Text = Resources.Back;
                     btnNext.Text = Resources.Next;
@@ -990,19 +997,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var valid = string.Empty;
 
             // Create/Edit Step
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelCreateEdit))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelCreateEdit))
             {
                 valid = ValidCreateEditStep();
             }
 
             // Screens Step
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelScreens))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelScreens))
             {
                 valid = ValidScreensStep();
             }
 
             // Controls Step
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelControls))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelControls))
             {
                 valid = ValidControlsStep();
             }
@@ -1081,14 +1088,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         {
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
-            splitSteps.SplitterDistance = SplitterDistance;
+            splitSteps.SplitterDistance = Constants.SplitterDistance;
         }
 
         /// <summary> Show Step Title</summary>
         private void ShowStepTitle()
         {
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
-                                _wizardSteps[_currentWizardStep].Title;
+            //// Update title and text for step
+            var currentStep = (_currentWizardStep + 1).ToString("#0");
+            var stepText = (_currentWizardStep + 1).Equals(0)
+                            ? string.Empty
+                            : $"{Resources.Step} {currentStep} {Resources.Dash} ";
+
+            lblStepTitle.Text = stepText + _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
 
@@ -1155,21 +1167,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var manifest = JObject.Parse(File.ReadAllText(fileName));
 
             // Properties
-            txtPackageId.Text = (string) manifest.SelectToken(ProcessGeneration.PropertyPackageId);
-            txtCustomizationName.Text = (string) manifest.SelectToken(ProcessGeneration.PropertyName);
-            txtCustomizationDescription.Text = (string) manifest.SelectToken(ProcessGeneration.PropertyDescription);
-            txtCompanyName.Text = (string) manifest.SelectToken(ProcessGeneration.PropertyBusinessPartnerName);
-            txtCompatibility.Text = (string) manifest.SelectToken(ProcessGeneration.PropertySageCompatibility);
-            txtVersion.Text = (string) manifest.SelectToken(ProcessGeneration.PropertyVersion);
+            txtPackageId.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyPackageId);
+            txtCustomizationName.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyName);
+            txtCustomizationDescription.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyDescription);
+            txtCompanyName.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyBusinessPartnerName);
+            txtCompatibility.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertySageCompatibility);
+            txtVersion.Text = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyVersion);
 
-            txtBootstrapper.Text = (string)manifest.SelectToken(ProcessGeneration.PropertyBootstrapper);
-            txtAssembly.Text = (string)manifest.SelectToken(ProcessGeneration.PropertyAssembly);
+            txtBootstrapper.Text = (string)manifest.SelectToken(ProcessGeneration.Constants.PropertyBootstrapper);
+            txtAssembly.Text = (string)manifest.SelectToken(ProcessGeneration.Constants.PropertyAssembly);
 
             // Get location from folder where found
             var path = Path.GetDirectoryName(fileName);
             txtFolderName.Text = path;
 
-            var eula = (string) manifest.SelectToken(ProcessGeneration.PropertyEula);
+            var eula = (string) manifest.SelectToken(ProcessGeneration.Constants.PropertyEula);
             if (!string.IsNullOrEmpty(eula))
             {
                 if (path != null)
@@ -1182,16 +1194,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
             // Read JSON to get the Screen Controls
             var webScreens =
-                from json in manifest[ProcessGeneration.PropertyWebScreens]
+                from json in manifest[ProcessGeneration.Constants.PropertyWebScreens]
                 select new
                 {
-                    ScreenName = (string) json[ProcessGeneration.PropertyScreenName],
-                    ScreenDescription = (string) json[ProcessGeneration.PropertyScreenDescription],
-                    TargetScreen = (string) json[ProcessGeneration.PropertyTargetScreen],
-                    Category = (string) json[ProcessGeneration.PropertyCategory],
-                    ControlsConfiguration = (string) json[ProcessGeneration.PropertyControlsConfiguration],
-                    ControlsBehavior = (string) json[ProcessGeneration.PropertyControlsBehavior],
-                    Module = (string) json[ProcessGeneration.PropertyModule]
+                    ScreenName = (string) json[ProcessGeneration.Constants.PropertyScreenName],
+                    ScreenDescription = (string) json[ProcessGeneration.Constants.PropertyScreenDescription],
+                    TargetScreen = (string) json[ProcessGeneration.Constants.PropertyTargetScreen],
+                    Category = (string) json[ProcessGeneration.Constants.PropertyCategory],
+                    ControlsConfiguration = (string) json[ProcessGeneration.Constants.PropertyControlsConfiguration],
+                    ControlsBehavior = (string) json[ProcessGeneration.Constants.PropertyControlsBehavior],
+                    Module = (string) json[ProcessGeneration.Constants.PropertyModule]
                 };
 
             // Clear binding list bound to grid
@@ -1277,33 +1289,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             // Add properties
             var manifest = new JObject
             {
-                new JProperty(ProcessGeneration.PropertyGeneratedMessage, Resources.GeneratedMessage),
-                new JProperty(ProcessGeneration.PropertyGeneratedWarning, Resources.GeneratedWarning),
-                new JProperty(ProcessGeneration.PropertyBusinessPartnerName, txtCompanyName.Text.Trim()),
-                new JProperty(ProcessGeneration.PropertyPackageId, txtPackageId.Text.Trim()),
-                new JProperty(ProcessGeneration.PropertySageCompatibility, txtCompatibility.Text.Trim()),
-                new JProperty(ProcessGeneration.PropertyName, txtCustomizationName.Text.Trim()),
-                new JProperty(ProcessGeneration.PropertyDescription, txtCustomizationDescription.Text.Trim()),
-                new JProperty(ProcessGeneration.PropertyVersion, txtVersion.Text.Trim())
+                new JProperty(ProcessGeneration.Constants.PropertyGeneratedMessage, Resources.GeneratedMessage),
+                new JProperty(ProcessGeneration.Constants.PropertyGeneratedWarning, Resources.GeneratedWarning),
+                new JProperty(ProcessGeneration.Constants.PropertyBusinessPartnerName, txtCompanyName.Text.Trim()),
+                new JProperty(ProcessGeneration.Constants.PropertyPackageId, txtPackageId.Text.Trim()),
+                new JProperty(ProcessGeneration.Constants.PropertySageCompatibility, txtCompatibility.Text.Trim()),
+                new JProperty(ProcessGeneration.Constants.PropertyName, txtCustomizationName.Text.Trim()),
+                new JProperty(ProcessGeneration.Constants.PropertyDescription, txtCustomizationDescription.Text.Trim()),
+                new JProperty(ProcessGeneration.Constants.PropertyVersion, txtVersion.Text.Trim())
             };
 
             // Add EULA if specified
             if (!string.IsNullOrEmpty(txtEula.Text.Trim()))
             {
                 var eula = Path.GetFileName(txtEula.Text.Trim());
-                manifest.Add(new JProperty(ProcessGeneration.PropertyEula, eula));
+                manifest.Add(new JProperty(ProcessGeneration.Constants.PropertyEula, eula));
             }
 
             // Add Bootstrapper if specified
             if (!string.IsNullOrEmpty(txtBootstrapper.Text.Trim()))
             {
-                manifest.Add(new JProperty(ProcessGeneration.PropertyBootstrapper, txtBootstrapper.Text.Trim()));
+                manifest.Add(new JProperty(ProcessGeneration.Constants.PropertyBootstrapper, txtBootstrapper.Text.Trim()));
             }
 
             // Add Assembly if specified
             if (!string.IsNullOrEmpty(txtAssembly.Text.Trim()))
             {
-                manifest.Add(new JProperty(ProcessGeneration.PropertyAssembly, txtAssembly.Text.Trim()));
+                manifest.Add(new JProperty(ProcessGeneration.Constants.PropertyAssembly, txtAssembly.Text.Trim()));
             }
 
             // Create array of screens
@@ -1315,10 +1327,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
                 var webScreens = new JObject
                 {
-                    new JProperty(ProcessGeneration.PropertyScreenName, screen.ScreenName),
-                    new JProperty(ProcessGeneration.PropertyScreenDescription, screen.Description),
-                    new JProperty(ProcessGeneration.PropertyCategory, screen.Category),
-                    new JProperty(ProcessGeneration.PropertyTargetScreen, key)
+                    new JProperty(ProcessGeneration.Constants.PropertyScreenName, screen.ScreenName),
+                    new JProperty(ProcessGeneration.Constants.PropertyScreenDescription, screen.Description),
+                    new JProperty(ProcessGeneration.Constants.PropertyCategory, screen.Category),
+                    new JProperty(ProcessGeneration.Constants.PropertyTargetScreen, key)
                 };
 
                 // Only add if there are controls for this screen
@@ -1327,16 +1339,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 // Find node for this screen and evaluate if controls
                 if (treeNodes.Where(treeNode => treeNode.Name.Equals(key)).Any(treeNode => treeNode.Nodes.Count > 0))
                 {
-                    webScreens.Add(new JProperty(ProcessGeneration.PropertyControlsConfiguration, screen.ControlsConfiguration));
+                    webScreens.Add(new JProperty(ProcessGeneration.Constants.PropertyControlsConfiguration, screen.ControlsConfiguration));
                 }
 
-                webScreens.Add(new JProperty(ProcessGeneration.PropertyControlsBehavior, screen.ControlsBehavior));
-                webScreens.Add(new JProperty(ProcessGeneration.PropertyModule, screen.ModuleId.ToString()));
+                webScreens.Add(new JProperty(ProcessGeneration.Constants.PropertyControlsBehavior, screen.ControlsBehavior));
+                webScreens.Add(new JProperty(ProcessGeneration.Constants.PropertyModule, screen.ModuleId.ToString()));
 
                 jArray.Add(webScreens);
             }
 
-            manifest.Add(new JProperty(ProcessGeneration.PropertyWebScreens, jArray));
+            manifest.Add(new JProperty(ProcessGeneration.Constants.PropertyWebScreens, jArray));
 
             return manifest;
         }
@@ -1346,9 +1358,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private XDocument CreateCombinedDocument()
         {
             // New combined document for binding to tree
-            var xDocument = new XDocument(new XElement(ProcessGeneration.ElementScreens));
+            var xDocument = new XDocument(new XElement(ProcessGeneration.Constants.ElementScreens));
             // Create element to hold screen(s) for customization
-            var screensElements = xDocument.Descendants(ProcessGeneration.ElementScreens).First();
+            var screensElements = xDocument.Descendants(ProcessGeneration.Constants.ElementScreens).First();
 
             // Iterate screen(s) to load XML(s), if available, and load into a single document
             foreach (var screen in _screens)
@@ -1356,7 +1368,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 // Load Document for screen
                 var screenDocument = LoadXml(txtFolderName.Text.Trim(), screen);
                 // Get descendants of Screen
-                var screenElements = screenDocument.Descendants(ProcessGeneration.ElementScreen);
+                var screenElements = screenDocument.Descendants(ProcessGeneration.Constants.ElementScreen);
                 // Add these decendants to Screens decendants
                 screensElements.Add(screenElements);
             }
@@ -1427,7 +1439,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             // Placement is not required if a Tab page OR the control being added is in a container control
             var node = (XElement)_clickedControlTreeNode.Tag;
             var type = string.Empty;
-            var attribute = node.Attribute(ProcessGeneration.AttributeType);
+            var attribute = node.Attribute(ProcessGeneration.Constants.AttributeType);
             if (attribute != null)
             {
                 type = attribute.Value;
@@ -1436,7 +1448,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             {
                 txtPlacementID.Enabled = false;
             }
-            else if ((type.Equals(ControlTypeTabPage) || type.Equals(ControlTypePanel)))
+            else if ((type.Equals(Constants.ControlTypeTabPage) || type.Equals(Constants.ControlTypePanel)))
             {
                 txtPlacementID.Enabled = false;
             }
@@ -1675,10 +1687,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // filter[0] is constant name in ScreenName.cs
-            txtDescription.Text = filter[0] + ProcessGeneration.CustomDescriptionSuffix;
-            txtScreenName.Text = filter[0] + ProcessGeneration.CustomNameSuffix;
-            txtControlsConfig.Text = filter[0] + ProcessGeneration.XmlFileNameSuffix;
-            txtControlsBehavior.Text = filter[0] + ProcessGeneration.JavaScriptFileNameSuffix;
+            txtDescription.Text = filter[0] + ProcessGeneration.Constants.CustomDescriptionSuffix;
+            txtScreenName.Text = filter[0] + ProcessGeneration.Constants.CustomNameSuffix;
+            txtControlsConfig.Text = filter[0] + ProcessGeneration.Constants.XmlFileNameSuffix;
+            txtControlsBehavior.Text = filter[0] + ProcessGeneration.Constants.JavaScriptFileNameSuffix;
         }
 
         /// <summary> Get Filter</summary>
@@ -1749,9 +1761,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             {
                 // File does not yet exist. So, genernate the screen element
                 var key = screen.TargetScreen; //GetTargetScreen(screen.ModuleId.ToString() + screen.Category + screen.TargetScreen);
-                xDocument = new XDocument(new XElement(ProcessGeneration.ElementScreen));
-                var screenElement = xDocument.Descendants(ProcessGeneration.ElementScreen).First();
-                screenElement.Add(new XAttribute(ProcessGeneration.AttributeName, key));
+                xDocument = new XDocument(new XElement(ProcessGeneration.Constants.ElementScreen));
+                var screenElement = xDocument.Descendants(ProcessGeneration.Constants.ElementScreen).First();
+                screenElement.Add(new XAttribute(ProcessGeneration.Constants.AttributeName, key));
             }
 
             return xDocument;
@@ -1764,7 +1776,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             treeScreens.Nodes.Clear();
 
             // Add top level node
-            var screensNode = new TreeNode(ProcessGeneration.ElementScreens) {Name = ProcessGeneration.ElementScreens};
+            var screensNode = new TreeNode(ProcessGeneration.Constants.ElementScreens) {Name = ProcessGeneration.Constants.ElementScreens };
             treeScreens.Nodes.Add(screensNode);
 
             // Iterate screens and add
@@ -1791,7 +1803,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             treeControls.Nodes.Clear();
 
             // Add top level node
-            var screensNode = new TreeNode(ProcessGeneration.ElementScreens) {Tag = xDocument};
+            var screensNode = new TreeNode(ProcessGeneration.Constants.ElementScreens) {Tag = xDocument};
             treeControls.Nodes.Add(screensNode);
 
             BuildNodes(screensNode, xDocument.Root);
@@ -1833,9 +1845,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var nodeName = string.Empty;
 
             // Different name based upon screen or control
-            if (element.Name.LocalName.Equals(ProcessGeneration.ElementScreen))
+            if (element.Name.LocalName.Equals(ProcessGeneration.Constants.ElementScreen))
             {
-                var nameAttribute = element.Attributes(ProcessGeneration.AttributeName).FirstOrDefault();
+                var nameAttribute = element.Attributes(ProcessGeneration.Constants.AttributeName).FirstOrDefault();
                 if (nameAttribute != null)
                 {
                     nodeName = nameAttribute.Value;
@@ -1843,7 +1855,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
             else
             {
-                var idAttribute = element.Attributes(ProcessGeneration.AttributeId).FirstOrDefault();
+                var idAttribute = element.Attributes(ProcessGeneration.Constants.AttributeId).FirstOrDefault();
                 if (idAttribute != null)
                 {
                     nodeName = idAttribute.Value;
@@ -1863,7 +1875,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 var element = (XElement) node;
 
                 // If node is for a screen, then return the name (from the attribute)
-                if (element != null && element.Name.LocalName.Equals(ProcessGeneration.ElementScreen))
+                if (element != null && element.Name.LocalName.Equals(ProcessGeneration.Constants.ElementScreen))
                 {
                     return element;
                 }
@@ -1882,7 +1894,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var element = (XElement)node;
 
             // Get screen name
-            var nameAttribute = element.Attributes(ProcessGeneration.AttributeName).First();
+            var nameAttribute = element.Attributes(ProcessGeneration.Constants.AttributeName).First();
             var screenName = nameAttribute.Value;
 
             // Find tree node in tree screen 
@@ -1898,7 +1910,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 var screen = (Screen)treeNode.Tag;
                 var hasControls = element.HasElements;
 
-                screen.ControlsConfiguration = hasControls ? screenName + ProcessGeneration.XmlFileNameSuffix : string.Empty;
+                screen.ControlsConfiguration = hasControls ? screenName + ProcessGeneration.Constants.XmlFileNameSuffix : string.Empty;
                 treeNode.Text = BuildScreenText(screen);
 
                 break;
@@ -1923,7 +1935,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
             // Start with element name
             var text = "<" + element.Name.LocalName + " ";
-            var containerOrScreen = element.Name.LocalName == ProcessGeneration.ElementScreen;
+            var containerOrScreen = element.Name.LocalName == ProcessGeneration.Constants.ElementScreen;
 
             // Add attributes
             foreach (var attribute in element.Attributes())
@@ -1931,13 +1943,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 var attributeName = attribute.Name.LocalName;
 
                 // Special cases
-                if (attributeName.Equals(ProcessGeneration.AttributeXsi))
+                if (attributeName.Equals(ProcessGeneration.Constants.AttributeXsi))
                 {
-                    attributeName = ProcessGeneration.AttributeXmlnsXsi;
+                    attributeName = ProcessGeneration.Constants.AttributeXmlnsXsi;
                 }
-                else if (attributeName.Equals(ProcessGeneration.AttributeNoNamespaceSchemaLocation))
+                else if (attributeName.Equals(ProcessGeneration.Constants.AttributeNoNamespaceSchemaLocation))
                 {
-                    attributeName = ProcessGeneration.AttributeXsiNoNamespaceSchemaLocation;
+                    attributeName = ProcessGeneration.Constants.AttributeXsiNoNamespaceSchemaLocation;
                 }
 
                 text += attributeName + "=\"" + attribute.Value + "\" ";
@@ -1948,9 +1960,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     continue;
                 }
                 // Need to determine if container for closing of tooltip
-                if (attribute.Name == ProcessGeneration.AttributeType)
+                if (attribute.Name == ProcessGeneration.Constants.AttributeType)
                 {
-                    containerOrScreen = attribute.Value == ControlTypeTabPage || attribute.Value == ControlTypePanel;
+                    containerOrScreen = attribute.Value == Constants.ControlTypeTabPage || attribute.Value == Constants.ControlTypePanel;
                 }
             }
 
@@ -1965,13 +1977,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <returns>Text</returns>
         private static string BuildScreenText(Screen screen)
         {
-            var text = ProcessGeneration.PropertyModule + "=\"" + screen.ModuleId.ToString() + "\" ";
-            text += ProcessGeneration.PropertyCategory + "=\"" + screen.Category + "\" ";
-            text += ProcessGeneration.PropertyScreen + "=\"" + screen.TargetScreen + "\" ";
-            text += ProcessGeneration.PropertyDescription + "=\"" + screen.Description + "\" ";
-            text += ProcessGeneration.PropertyName + "=\"" + screen.ScreenName + "\" ";
-            text += ProcessGeneration.PropertyXml + "=\"" + screen.ControlsConfiguration + "\" ";
-            text += ProcessGeneration.PropertyJs + "=\"" + screen.ControlsBehavior + "\" ";
+            var text = ProcessGeneration.Constants.PropertyModule + "=\"" + screen.ModuleId.ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyCategory + "=\"" + screen.Category + "\" ";
+            text += ProcessGeneration.Constants.PropertyScreen + "=\"" + screen.TargetScreen + "\" ";
+            text += ProcessGeneration.Constants.PropertyDescription + "=\"" + screen.Description + "\" ";
+            text += ProcessGeneration.Constants.PropertyName + "=\"" + screen.ScreenName + "\" ";
+            text += ProcessGeneration.Constants.PropertyXml + "=\"" + screen.ControlsConfiguration + "\" ";
+            text += ProcessGeneration.Constants.PropertyJs + "=\"" + screen.ControlsBehavior + "\" ";
 
             return text;
         }
@@ -2079,10 +2091,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                     key = screen.TargetScreen;
 
                     var xDocument = (XDocument)treeControls.Nodes[0].Tag;
-                    var screensElement = xDocument.Descendants(ProcessGeneration.ElementScreens).First();
+                    var screensElement = xDocument.Descendants(ProcessGeneration.Constants.ElementScreens).First();
 
-                    var screenElement = new XElement(ProcessGeneration.ElementScreen);
-                    screenElement.Add(new XAttribute(ProcessGeneration.AttributeName, key));
+                    var screenElement = new XElement(ProcessGeneration.Constants.ElementScreen);
+                    screenElement.Add(new XAttribute(ProcessGeneration.Constants.AttributeName, key));
                     screensElement.Add(screenElement);
 
                     treeControls.Nodes[0].Nodes.Add(NewControlTreeNode(screenElement));
@@ -2100,7 +2112,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                             var element = (XElement) treeNode.Tag;
                             if (element.HasAttributes)
                             {
-                                var nameAttribute = element.Attributes(ProcessGeneration.AttributeName).FirstOrDefault();
+                                var nameAttribute = element.Attributes(ProcessGeneration.Constants.AttributeName).FirstOrDefault();
                                 if (nameAttribute != null)
                                 {
                                     if (nameAttribute.Value.Equals(currentkey))
@@ -2277,7 +2289,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             {
                 // Get existing element and type
                 var element = (XElement) _clickedControlTreeNode.Tag;
-                var typeAttribute = element.Attributes(ProcessGeneration.AttributeType).FirstOrDefault();
+                var typeAttribute = element.Attributes(ProcessGeneration.Constants.AttributeType).FirstOrDefault();
 
                 if (typeAttribute != null)
                 {
@@ -2286,9 +2298,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
                     // Compare old type to new type
                     // NOTE: Okay to go from a non-container to container
-                    if (oldType.Equals(ControlTypeTabPage) || oldType.Equals(ControlTypePanel))
+                    if (oldType.Equals(Constants.ControlTypeTabPage) || oldType.Equals(Constants.ControlTypePanel))
                     {
-                        if (!newType.Equals(ControlTypeTabPage) || !newType.Equals(ControlTypePanel))
+                        if (!newType.Equals(Constants.ControlTypeTabPage) || !newType.Equals(Constants.ControlTypePanel))
                         {
                             return Resources.InvalidSettingControlTypeChange;
                         }
@@ -2448,7 +2460,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Do nothing if Screens was clicked
-            if (e.Node.Text.Equals(ProcessGeneration.ElementScreens))
+            if (e.Node.Text.Equals(ProcessGeneration.Constants.ElementScreens))
             {
                 return;
             }
@@ -2463,14 +2475,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var node = (XElement)e.Node.Tag;
             var nodeName = node.Name.LocalName;
             var type = string.Empty;
-            var attribute = node.Attribute(ProcessGeneration.AttributeType);
+            var attribute = node.Attribute(ProcessGeneration.Constants.AttributeType);
             if (attribute != null)
             {
                 type = attribute.Value;
             }
 
             // Show Add Control menu if Screen was clicked
-            if (nodeName.Equals(ProcessGeneration.ElementScreen))
+            if (nodeName.Equals(ProcessGeneration.Constants.ElementScreen))
             {
                 // Context menu to contain "Add"
                 _contextMenu.MenuItems.Clear();
@@ -2485,7 +2497,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Show Add, Edit, Delete menu if Container Control (Tab Page/Panel) was clicked
-            if (nodeName.Equals(ProcessGeneration.ElementControl) && (type.Equals(ControlTypeTabPage) || type.Equals(ControlTypePanel)))
+            if (nodeName.Equals(ProcessGeneration.Constants.ElementControl) && (type.Equals(Constants.ControlTypeTabPage) || type.Equals(Constants.ControlTypePanel)))
             {
                 // Context menu to contain "Add, Edit, Delete
                 _contextMenu.MenuItems.Clear();
@@ -2502,7 +2514,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Show Insert Before, Insert After, Edit, Delete menu if Control was clicked
-            if (nodeName.Equals(ProcessGeneration.ElementControl))
+            if (nodeName.Equals(ProcessGeneration.Constants.ElementControl))
             {
                 // Context menu to contain "Insert Before, Insert After, Edit, Delete
                 _contextMenu.MenuItems.Clear();
@@ -2576,73 +2588,73 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 element.RemoveAttributes();
 
                 // Control Name
-                element.Add(new XAttribute(ProcessGeneration.AttributeId, txtControlName.Text.Trim()));
+                element.Add(new XAttribute(ProcessGeneration.Constants.AttributeId, txtControlName.Text.Trim()));
 
                 // Control Type
-                element.Add(new XAttribute(ProcessGeneration.AttributeType, cboControlType.SelectedItem.ToString()));
+                element.Add(new XAttribute(ProcessGeneration.Constants.AttributeType, cboControlType.SelectedItem.ToString()));
 
                 // Control Label
                 if (txtControlLabel.Enabled && txtControlLabel.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeLabel, txtControlLabel.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeLabel, txtControlLabel.Text.Trim()));
                 }
 
                 // Control Binding
                 if (txtControlBinding.Enabled && txtControlBinding.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeBinding, txtControlBinding.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeBinding, txtControlBinding.Text.Trim()));
                 }
 
                 // Placement ID
                 if (txtPlacementID.Enabled && txtPlacementID.Text.Trim().Length > 0)
                 {
                     element.Add(new XAttribute((chkBeforeID.Checked ? 
-                        ProcessGeneration.AttributeBeforeId : 
-                        ProcessGeneration.AttributeAfterId), txtPlacementID.Text.Trim()));
+                        ProcessGeneration.Constants.AttributeBeforeId : 
+                        ProcessGeneration.Constants.AttributeAfterId), txtPlacementID.Text.Trim()));
                 }
 
                 // Header Placement ID
                 if (txtHeaderPlacementID.Enabled && txtHeaderPlacementID.Text.Trim().Length > 0)
                 {
                     element.Add(new XAttribute((chkBeforeHeaderID.Checked ? 
-                        ProcessGeneration.AttributeHeaderBeforeId : 
-                        ProcessGeneration.AttributeHeaderAfterId), txtHeaderPlacementID.Text.Trim()));
+                        ProcessGeneration.Constants.AttributeHeaderBeforeId : 
+                        ProcessGeneration.Constants.AttributeHeaderAfterId), txtHeaderPlacementID.Text.Trim()));
                 }
 
                 // Detail Placement ID
                 if (txtDetailPlacementID.Enabled && txtDetailPlacementID.Text.Trim().Length > 0)
                 {
                     element.Add(new XAttribute((chkBeforeDetailID.Checked ? 
-                        ProcessGeneration.AttributeDetailBeforeId : 
-                        ProcessGeneration.AttributeDetailAfterId), txtDetailPlacementID.Text.Trim()));
+                        ProcessGeneration.Constants.AttributeDetailBeforeId : 
+                        ProcessGeneration.Constants.AttributeDetailAfterId), txtDetailPlacementID.Text.Trim()));
                 }
 
                 // Max Length
                 if (txtMaxLength.Enabled && txtMaxLength.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeMaxLength, txtMaxLength.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeMaxLength, txtMaxLength.Text.Trim()));
                 }
 
                 // Cols
                 if (txtControlCols.Enabled && txtControlCols.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeCols, txtControlCols.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeCols, txtControlCols.Text.Trim()));
                 }
 
                 // Rows
                 if (txtControlRows.Enabled && txtControlRows.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeRows, txtControlRows.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeRows, txtControlRows.Text.Trim()));
                 }
 
                 // Finder Text ID
                 if (txtFinderTextID.Enabled && txtFinderTextID.Text.Trim().Length > 0)
                 {
-                    element.Add(new XAttribute(ProcessGeneration.AttributeFinderTextId, txtFinderTextID.Text.Trim()));
+                    element.Add(new XAttribute(ProcessGeneration.Constants.AttributeFinderTextId, txtFinderTextID.Text.Trim()));
                 }
 
                 // Update tree node name
-                element.Name = ProcessGeneration.ElementControl;
+                element.Name = ProcessGeneration.Constants.ElementControl;
                 treeNode.Text = BuildControlText(element);
                 treeNode.Tag = element;
 
@@ -2683,42 +2695,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var element = (XElement)treeNode.Tag;
 
             // Control Name
-            var attribute = element.Attribute(ProcessGeneration.AttributeId);
+            var attribute = element.Attribute(ProcessGeneration.Constants.AttributeId);
             if (attribute != null)
             {
                 txtControlName.Text = attribute.Value;
             }
 
             // Control Type
-            attribute = element.Attribute(ProcessGeneration.AttributeType);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeType);
             if (attribute != null)
             {
                 cboControlType.Text = attribute.Value;
             }
 
             // Control Label
-            attribute = element.Attribute(ProcessGeneration.AttributeLabel);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeLabel);
             if (attribute != null)
             {
                 txtControlLabel.Text = attribute.Value;
             }
 
             // Control Binding
-            attribute = element.Attribute(ProcessGeneration.AttributeBinding);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeBinding);
             if (attribute != null)
             {
                 txtControlBinding.Text = attribute.Value;
             }
 
             // Placement ID
-            attribute = element.Attribute(ProcessGeneration.AttributeBeforeId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeBeforeId);
             if (attribute != null)
             {
                 txtPlacementID.Text = attribute.Value;
                 chkBeforeID.Checked = true;
             }
 
-            attribute = element.Attribute(ProcessGeneration.AttributeAfterId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeAfterId);
             if (attribute != null)
             {
                 txtPlacementID.Text = attribute.Value;
@@ -2726,14 +2738,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Header Placement ID
-            attribute = element.Attribute(ProcessGeneration.AttributeHeaderBeforeId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeHeaderBeforeId);
             if (attribute != null)
             {
                 txtHeaderPlacementID.Text = attribute.Value;
                 chkBeforeHeaderID.Checked = true;
             }
 
-            attribute = element.Attribute(ProcessGeneration.AttributeHeaderAfterId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeHeaderAfterId);
             if (attribute != null)
             {
                 txtHeaderPlacementID.Text = attribute.Value;
@@ -2741,14 +2753,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Detail Placement ID
-            attribute = element.Attribute(ProcessGeneration.AttributeDetailBeforeId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeDetailBeforeId);
             if (attribute != null)
             {
                 txtDetailPlacementID.Text = attribute.Value;
                 chkBeforeDetailID.Checked = true;
             }
 
-            attribute = element.Attribute(ProcessGeneration.AttributeDetailAfterId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeDetailAfterId);
             if (attribute != null)
             {
                 txtDetailPlacementID.Text = attribute.Value;
@@ -2756,28 +2768,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Max Length
-            attribute = element.Attribute(ProcessGeneration.AttributeMaxLength);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeMaxLength);
             if (attribute != null)
             {
                 txtMaxLength.Text = attribute.Value;
             }
 
             // Cols
-            attribute = element.Attribute(ProcessGeneration.AttributeCols);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeCols);
             if (attribute != null)
             {
                 txtControlCols.Text = attribute.Value;
             }
 
             // Rows
-            attribute = element.Attribute(ProcessGeneration.AttributeRows);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeRows);
             if (attribute != null)
             {
                 txtControlRows.Text = attribute.Value;
             }
 
             // Finder Text ID
-            attribute = element.Attribute(ProcessGeneration.AttributeFinderTextId);
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeFinderTextId);
             if (attribute != null)
             {
                 txtFinderTextID.Text = attribute.Value;
@@ -2796,7 +2808,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             cboModuleId.Text = screen.ModuleId.ToString();
             cboCategory.Text = screen.Category;
             cboTargetScreen.Text =
-                GetTargetScreen(ProcessGeneration.Manifest + screen.ModuleId.ToString() + screen.Category +
+                GetTargetScreen(ProcessGeneration.Constants.Manifest + screen.ModuleId.ToString() + screen.Category +
                                 screen.TargetScreen);
             txtDescription.Text = screen.Description;
             txtScreenName.Text = screen.ScreenName;
@@ -2913,13 +2925,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Screens
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelScreens))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelScreens))
             {
                 SaveScreen();
             }
 
             // Controls
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelControls))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelControls))
             {
                 SaveControl();
             }
@@ -2931,13 +2943,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Screens
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelScreens))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelScreens))
             {
                 CancelScreen();
             }
 
             // Controls
-            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(PanelControls))
+            if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelControls))
             {
                 CancelControl();
             }
@@ -2962,7 +2974,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             }
 
             // Show Add and Delete All menu if Screens was clicked
-            if (e.Node.Name.Equals(ProcessGeneration.ElementScreens))
+            if (e.Node.Name.Equals(ProcessGeneration.Constants.ElementScreens))
             {
                 // Context menu to contain "Add, Delete All"
                 _contextMenu.MenuItems.Clear();
@@ -3009,6 +3021,5 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         }
 
         #endregion
-
     }
 }

@@ -1,0 +1,25 @@
+{
+      "SequenceNumber": 3139,
+      "Description": "transit transfer",
+      "DocumentDate": "2020-03-31",
+      "Reference": "webapi",
+      "AdditionalCost": 0,
+      "ProrationMethod": "ProratebyQuantity",
+      "RecordStatus": "Entered",
+      "DocumentType": "TransitTransfer",
+      "TransferDetails": [
+        {
+          "SequenceNumber": 3139,
+          "LineNumber": 1000,
+          "ItemNumber": "A1-105/0",
+          "FromLocation": "1",
+          "ToLocation": "2",
+          "QuantityTransferred": 1,
+          "UnitOfMeasure": "Ea.",
+          "Comments": "comment detail 1",
+          "GoodsInTransitLocation": "TRANS",
+          "DetailLineNumber": 1,
+          "QuantityRequested": 5
+        }
+      ]
+}

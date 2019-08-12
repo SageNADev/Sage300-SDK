@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -31,118 +31,118 @@ using TypeEnum = ValuedPartner.TU.Models.Enums;
 
 namespace ValuedPartner.TU.BusinessRepository.Mappers
 {
-     /// <summary>
-     /// Class for Receipt Detail Optional Field mapping
-     /// </summary>
-    public class ReceiptDetailOptionalFieldMapper: ModelMapper<ReceiptDetailOptionalField>  
-     {
-          #region Constructor
+    /// <summary>
+    /// Class for Receipt Detail Optional Field mapping
+    /// </summary>
+    public class ReceiptDetailOptionalFieldMapper : ModelMapper<ReceiptDetailOptionalField>
+    {
+        #region Constructor
 
-          /// <summary>
-          /// Constructor to set the Context
-          /// </summary>
-          /// <param name="context">Context</param>
-          public ReceiptDetailOptionalFieldMapper(Context context) 
-               : base(context)
-          {
-          }
+        /// <summary>
+        /// Constructor to set the Context
+        /// </summary>
+        /// <param name="context">Context</param>
+        public ReceiptDetailOptionalFieldMapper(Context context)
+             : base(context)
+        {
+        }
 
-          #endregion
+        #endregion
 
-          #region IModelMapper methods
+        #region IModelMapper methods
 
-          /// <summary>
-          /// Get Mapper
-          /// </summary>
-          /// <param name="entity">Business Entity</param>
-          /// <returns>Mapped Model</returns>
-          public override ReceiptDetailOptionalField Map(IBusinessEntity entity)
-          {
-               var model = base.Map(entity);
+        /// <summary>
+        /// Get Mapper
+        /// </summary>
+        /// <param name="entity">Business Entity</param>
+        /// <returns>Mapped Model</returns>
+        public override ReceiptDetailOptionalField Map(IBusinessEntity entity)
+        {
+            var model = base.Map(entity);
 
-               model.SequenceNumber = entity.GetValue<long>(ReceiptDetailOptionalField.Index.SequenceNumber);
-               model.LineNumber = entity.GetValue<int>(ReceiptDetailOptionalField.Index.LineNumber);
-               model.OptionalField = entity.GetValue<string>(ReceiptDetailOptionalField.Index.OptionalField);
-               model.Value = entity.GetValue<string>(ReceiptDetailOptionalField.Index.Value);
-               model.Type = EnumUtility.GetEnum<TypeEnum.Type>(entity.GetValue<string>(ReceiptDetailOptionalField.Index.Type));
-               model.Length = entity.GetValue<int>(ReceiptDetailOptionalField.Index.Length);
-               model.Decimals = entity.GetValue<int>(ReceiptDetailOptionalField.Index.Decimals);
-               model.AllowBlank = (TypeEnum.AllowBlank)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.AllowBlank));
-               model.Validate = (TypeEnum.Validate)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.Validate));
-               model.ValueSet = (TypeEnum.ValueSet)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.ValueSet));
-               model.TypedValueFieldIndex = entity.GetValue<long>(ReceiptDetailOptionalField.Index.TypedValueFieldIndex);
-               model.TextValue = entity.GetValue<string>(ReceiptDetailOptionalField.Index.TextValue);
-               model.AmountValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.AmountValue);
-               model.NumberValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.NumberValue);
-               model.IntegerValue = entity.GetValue<long>(ReceiptDetailOptionalField.Index.IntegerValue);
-               model.YesNoValue = (TypeEnum.YesNoValue)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.YesNoValue));
-               model.DateValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.DateValue);
-               model.TimeValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.TimeValue);
-               model.OptionalFieldDescription = entity.GetValue<string>(ReceiptDetailOptionalField.Index.OptionalFieldDescription);
-               model.ValueDescription = entity.GetValue<string>(ReceiptDetailOptionalField.Index.ValueDescription);
+            model.SequenceNumber = entity.GetValue<long>(ReceiptDetailOptionalField.Index.SequenceNumber);
+            model.LineNumber = entity.GetValue<int>(ReceiptDetailOptionalField.Index.LineNumber);
+            model.OptionalField = entity.GetValue<string>(ReceiptDetailOptionalField.Index.OptionalField);
+            model.Value = entity.GetValue<string>(ReceiptDetailOptionalField.Index.Value);
+            model.Type = EnumUtility.GetEnum<TypeEnum.Type>(entity.GetValue<string>(ReceiptDetailOptionalField.Index.Type));
+            model.Length = entity.GetValue<int>(ReceiptDetailOptionalField.Index.Length);
+            model.Decimals = entity.GetValue<int>(ReceiptDetailOptionalField.Index.Decimals);
+            model.AllowBlank = (TypeEnum.AllowBlank)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.AllowBlank));
+            model.Validate = (TypeEnum.Validate)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.Validate));
+            model.ValueSet = (TypeEnum.ValueSet)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.ValueSet));
+            model.TypedValueFieldIndex = entity.GetValue<long>(ReceiptDetailOptionalField.Index.TypedValueFieldIndex);
+            model.TextValue = entity.GetValue<string>(ReceiptDetailOptionalField.Index.TextValue);
+            model.AmountValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.AmountValue);
+            model.NumberValue = entity.GetValue<decimal>(ReceiptDetailOptionalField.Index.NumberValue);
+            model.IntegerValue = entity.GetValue<long>(ReceiptDetailOptionalField.Index.IntegerValue);
+            model.YesNoValue = (TypeEnum.YesNoValue)(entity.GetValue<int>(ReceiptDetailOptionalField.Index.YesNoValue));
+            model.DateValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.DateValue);
+            model.TimeValue = entity.GetValue<DateTime>(ReceiptDetailOptionalField.Index.TimeValue);
+            model.OptionalFieldDescription = entity.GetValue<string>(ReceiptDetailOptionalField.Index.OptionalFieldDescription);
+            model.ValueDescription = entity.GetValue<string>(ReceiptDetailOptionalField.Index.ValueDescription);
 
-               return model;
-          }
+            return model;
+        }
 
-          /// <summary>
-          /// SetValue Mapper
-          /// </summary>
-          /// <param name="model">Model</param>
-          /// <param name="entity">Business Entity</param>
-          public override void Map(ReceiptDetailOptionalField model, IBusinessEntity entity)
-          {
-               if (model == null)
-               {
-                    return;
-               }
+        /// <summary>
+        /// SetValue Mapper
+        /// </summary>
+        /// <param name="model">Model</param>
+        /// <param name="entity">Business Entity</param>
+        public override void Map(ReceiptDetailOptionalField model, IBusinessEntity entity)
+        {
+            if (model == null)
+            {
+                return;
+            }
 
-               entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, model.SequenceNumber);
-               entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, model.LineNumber);
-               entity.SetValue(ReceiptDetailOptionalField.Index.OptionalField, model.OptionalField);
-               
-               if (model.ValueSet == TypeEnum.ValueSet.No) return;
-               switch (model.Type)
-               {
-                   case Models.Enums.Type.Text:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.TextValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.Integer:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.IntegerValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.Amount:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.AmountValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.Number:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.NumberValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.Date:
-                       if (string.IsNullOrEmpty(model.Value))
-                       {
-                           model.Value = null;
-                       }
-                       entity.SetValue(ReceiptDetailOptionalField.Index.DateValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.Time:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.TimeValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-                   case Models.Enums.Type.YesOrNo:
-                       entity.SetValue(ReceiptDetailOptionalField.Index.YesNoValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
-                       break;
-               }
-          }
+            entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, model.SequenceNumber);
+            entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, model.LineNumber);
+            entity.SetValue(ReceiptDetailOptionalField.Index.OptionalField, model.OptionalField);
 
-          /// <summary>
-          /// Map Key
-          /// </summary>
-          /// <param name="model">Model</param>
-          /// <param name="entity">Business Entity</param>
-          public override void MapKey(ReceiptDetailOptionalField model, IBusinessEntity entity)
-          {
-               entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, model.SequenceNumber);
-               entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, model.LineNumber);
-               entity.SetValue(ReceiptDetailOptionalField.Index.OptionalField, model.OptionalField);
-          }
+            if (model.ValueSet == TypeEnum.ValueSet.No) return;
+            switch (model.Type)
+            {
+                case Models.Enums.Type.Text:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.TextValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.Integer:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.IntegerValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.Amount:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.AmountValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.Number:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.NumberValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.Date:
+                    if (string.IsNullOrEmpty(model.Value))
+                    {
+                        model.Value = null;
+                    }
+                    entity.SetValue(ReceiptDetailOptionalField.Index.DateValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.Time:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.TimeValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+                case Models.Enums.Type.YesOrNo:
+                    entity.SetValue(ReceiptDetailOptionalField.Index.YesNoValue, model.Value, model.Validate == TypeEnum.Validate.Yes);
+                    break;
+            }
+        }
 
-          #endregion
-     }
+        /// <summary>
+        /// Map Key
+        /// </summary>
+        /// <param name="model">Model</param>
+        /// <param name="entity">Business Entity</param>
+        public override void MapKey(ReceiptDetailOptionalField model, IBusinessEntity entity)
+        {
+            entity.SetValue(ReceiptDetailOptionalField.Index.SequenceNumber, model.SequenceNumber);
+            entity.SetValue(ReceiptDetailOptionalField.Index.LineNumber, model.LineNumber);
+            entity.SetValue(ReceiptDetailOptionalField.Index.OptionalField, model.OptionalField);
+        }
+
+        #endregion
+    }
 }

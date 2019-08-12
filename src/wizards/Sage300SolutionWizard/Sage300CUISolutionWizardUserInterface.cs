@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2017 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.TemplateWizard;
@@ -26,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 {
@@ -58,20 +59,30 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
     /// <summary> Class for UI Wizard </summary>
     public class Sage300CUISolutionWizardUserInterface : IWizard
     {
+        #region Private Constants
+        private static class Constants
+        {
+            public const int NumberOfSupportedLanguages = 5;
+        }
+        #endregion
+
+        #region Private Variables
         private string _companyName;
         private string _applicationId;
+        private string _lowercaseapplicationId;
         private string _solutionFolder;
         private string _destinationFolder;
-        private DTE _dte;
+        private DTE	   _dte;
         private string _safeprojectname;
         private string _namespace;
         private string _sage300Webfolder;
         private string _kendoFolder;
-        private bool _includeEnglish;
-        private bool _includeChineseSimplified;
-        private bool _includeChineseTraditional;
-        private bool _includeSpanish;
-        private bool _includeFrench;
+        private bool   _includeEnglish;
+        private bool   _includeChineseSimplified;
+        private bool   _includeChineseTraditional;
+        private bool   _includeSpanish;
+        private bool   _includeFrench;
+        #endregion
 
 
         /// <summary> Before opening file </summary>
@@ -111,7 +122,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
             var parameters = "$companyname$" + "=" + _companyName + "|$applicationid$=" + _applicationId +
                                 "|$companynamespace$=" + _namespace +
-                                "|$sage300webfolder$=" + _sage300Webfolder;
+                                "|$sage300webfolder$=" + _sage300Webfolder +
+                                "|$lowercaseapplicationid$=" + _lowercaseapplicationId;
 
             foreach (var proj in projects)
             {
@@ -121,12 +133,17 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 {
                     var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
 
-                    // Before the web project is created, the props file must be manually copied first since the web csproj file attempts
-                    // to import it to resolve ACCPAC references
+                    // Before the web project is created, the props file must be manually 
+                    // copied first since the web csproj file attempts to import it to 
+                    // resolve ACCPAC references
                     File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
                                             Properties.Resources.AccpacDotNetVersion);
 
-                    sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _namespace + "." + _applicationId + "." + proj, false);
+                    var projectName = _namespace + "." + _applicationId + "." + proj;
+                    sln.AddFromTemplate(FileName:    sourceFilenameAndParameters, 
+                                        Destination: destFolder, 
+                                        ProjectName: projectName, 
+                                        Exclusive:   false);
 
                     // Newly added web project (first one added)
                     var item = sln.Projects.GetEnumerator();
@@ -143,22 +160,39 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
                     // Add to project
                     webProject.ProjectItems.AddFromFile(allMinFileDest);
+
+                    //// Remove aspnet_client from project (but folder will remain)
+                    //foreach (ProjectItem projectItem in webProject.ProjectItems)
+                    //{
+                    //    // Remove if aspnet_client
+                    //    if (projectItem.Name.Equals("aspnet_client"))
+                    //    {
+                    //        // Remove from project
+                    //        projectItem.Remove();
+                    //    }
+                    //}
+
                 }
                 else
                 {
-                    sln.AddFromTemplate(sourceFilenameAndParameters, Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj), 
-                        _namespace + "." + _applicationId + "." + proj, false);
+                    var destination = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
+                    var projectName = _namespace + "." + _applicationId + "." + proj;
+                    sln.AddFromTemplate(FileName:    sourceFilenameAndParameters,
+                                        Destination: destination, 
+                                        ProjectName: projectName, 
+                                        Exclusive:   false);
 
                     // If project is Resources, remove language resources not selected
                     if (proj.Equals("Resources"))
                     {
                         // Get resources project just added
                         var item = sln.Projects.GetEnumerator();
-                        for (var i = 0; i < 5; i++)
+                        for (var i = 0; i < Constants.NumberOfSupportedLanguages; i++)
                         {
                             item.MoveNext();
                         }
                         var project = (Project)item.Current;
+
                         // Iterate files in resources project
                         foreach (ProjectItem projectItem in project.ProjectItems)
                         {
@@ -215,6 +249,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 // save parameters
                 _companyName = inputForm.ThirdPartyCompanyName.Trim();
                 _applicationId = inputForm.ThirdPartyApplicationId.Trim();
+                _lowercaseapplicationId = _applicationId.ToLower();
                 _namespace = inputForm.CompanyNamespace.Trim();
                 _sage300Webfolder = webFolder;
                 _kendoFolder = inputForm.KendoFolder.Trim();
@@ -229,6 +264,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 replacementsDictionary.Add("$applicationid$", _applicationId);
                 replacementsDictionary.Add("$companynamespace$", _namespace);
                 replacementsDictionary.Add("$sage300webfolder$", _sage300Webfolder);
+                replacementsDictionary.Add("$lowercaseapplicationid$", _lowercaseapplicationId);
 
             }
             catch
