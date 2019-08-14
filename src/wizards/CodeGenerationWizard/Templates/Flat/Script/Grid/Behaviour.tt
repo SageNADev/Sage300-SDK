@@ -1,0 +1,153 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = entityName;
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+    var copyright = settings.Copyright;
+
+#>
+/* <#=copyright#> */
+
+// Add the following commented line to enable TypeScript static type checking
+// Remove this line if not needed
+//@ts-check
+
+"use strict";
+
+var modelData;
+var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
+
+<#=localEntityName#>UI = {
+    <#=localEntityName#>Model: {},
+    computedProperties: ["UIMode"],
+    hasKoBindingApplied: false,
+    isKendoControlNotInitialised: false,
+
+	/**
+     * Initialization
+	 *
+	 * @method init
+	 */
+    init: function () {
+        // initialize grid(s)
+<#
+             PushIndent("        ");
+             var temp = view.Properties[BusinessView.Constants.EntityName];
+             var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+	  		 WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
+             PopIndent();
+#>
+        <#=localEntityName#>UI.initButtons();
+        <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
+    },
+
+	/**
+     * Save
+	 *
+	 * @method save<#=entityName#>
+	 */
+    save<#=entityName#>: function () {
+        if ($("#frm<#=containerName#>").valid()) {
+            var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
+            <#=localEntityName#>Repository.post(data, <#=localEntityName#>UISuccess.post);
+        }
+    },
+
+	/**
+     * Initialize the Buttons
+	 *
+	 * @method initButtons
+	 */
+    initButtons: function () {
+        // Import/Export Buttons
+        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
+
+        // Save Button
+        $("#btnSave").on('click', function () {
+<#
+			PushIndent("            ");
+			temp = view.Properties[BusinessView.Constants.EntityName];
+			gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+			WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
+			PushIndent("	");
+			WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+			WriteLine("sg.viewList.dirty(\"{0}Grid\", false);", gridName);
+			PopIndent();
+			WriteLine("}");
+			PopIndent();
+#>
+        });
+    },
+
+// Callbacks
+var <#=localEntityName#>UISuccess = {
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param jsonResult
+	 */
+    post: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+		
+	/**
+     * Display Result
+	 *
+	 * @method displayResult
+	 * @param jsonResult
+	 * @param uiMode
+	 */
+	displayResult: function (jsonResult, uiMode) {
+<#
+        PushIndent("        ");
+        temp = view.Properties[BusinessView.Constants.EntityName];
+        gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+		WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
+        PopIndent();
+#>
+    },
+
+	/**
+     * Initial Load
+	 *
+	 * @method initialLoad
+	 * @param result
+	 */
+    initialLoad: function (result) {
+        if (result) {
+            <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
+        } else {
+            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, <#=localEntityName#>Resources.ProcessFailedMessage);
+        }
+    },
+};

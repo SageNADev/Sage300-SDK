@@ -282,6 +282,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>True for valid step other wise false</returns>
         private bool ValidateStep()
         {
+#if (SKIP_MANUAL_ENTER_ENTITIES)
+            return true;
+#else
             // Locals
             var valid = string.Empty;
 
@@ -312,6 +315,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             return string.IsNullOrEmpty(valid);
+#endif
         }
 
         /// <summary> Valid CodeType Step</summary>
@@ -1815,9 +1819,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         private void ParseXml(String xmlFilename)
         {
-            var xdoc = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
+            var xdoc = XDocument.Load(xmlFilename);
 
-            _entitiesContainerName = xdoc.Root.Attribute("container").Value;
+            _entitiesContainerName = xdoc.Root.Attribute("container")?.Value;
 
             // open all the entities
             foreach (var ent in xdoc.Root.Descendants().Where(e => e.Name == "entity"))
@@ -1851,7 +1855,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
                 businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
-                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList).Value);
+                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList)?.Value??"false");
                 businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
                 businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
                 businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyIfExists).Value);
@@ -1922,10 +1926,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Create XML if Step is Generate
                     if (IsCurrentPanel(Constants.PanelGenerateCode))
                     {
-                        _xmlEntities = BuildXDocument();
+#if (SKIP_MANUAL_ENTER_ENTITIES)
+                        _xmlEntities = XDocument.Load(@"C:\$$$\GL0021.xml");
+                        ParseXml(@"C:\$$$\GL0021.xml");
+#else
 
-                        //_xmlEntities = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
-                        //ParseXml(@"C:\AAA\apdistributionsetschema.xml");
+                        _xmlEntities = BuildXDocument();
+#endif
 
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
 
@@ -3128,6 +3135,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        #endregion
+#endregion
     }
 }

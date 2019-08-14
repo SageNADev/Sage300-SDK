@@ -15,7 +15,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+    #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class Repository : RepositoryBase
     {
@@ -26,121 +26,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
         public virtual string TransformText()
         {
             
-            #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 2 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 3 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 4 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 5 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 6 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 7 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 8 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 9 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 10 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 11 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 12 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 13 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 14 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 15 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 16 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 17 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 18 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 19 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 23 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 23 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -157,7 +157,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             this.Write("/* ");
             
-            #line 34 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 34 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -166,7 +166,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "ing\r\n// Remove this line if not needed\r\n//@ts-check\r\n\r\n\"use strict\";\r\n\r\n// Ajax " +
                     "call to controller\r\nvar ");
             
-            #line 43 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 43 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -174,14 +174,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("Ajax = {\r\n\r\n    call: function (method, data, callbackMethod) {\r\n        var url " +
                     "= sg.utls.url.buildUrl(\"");
             
-            #line 46 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 46 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 46 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 46 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -189,7 +189,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             this.Write("\", method);\r\n        sg.utls.ajaxPost(url, data, callbackMethod);\r\n    }\r\n};\r\n\r\nv" +
                     "ar ");
             
-            #line 51 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 51 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -198,7 +198,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "am callbackMethod\r\n\t */\r\n    get: function(id, callbackMethod) {\r\n        var da" +
                     "ta = { \'id\': id };\r\n        ");
             
-            #line 62 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 62 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -207,7 +207,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "@method create\r\n\t * @param callbackMethod\r\n\t */\r\n    create: function(callbackMe" +
                     "thod) {\r\n        var data = {};\r\n        ");
             
-            #line 73 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 73 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -216,7 +216,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     " * @method delete\r\n\t * @param id\r\n\t * @param callbackMethod\r\n\t */\r\n    delete: f" +
                     "unction(id, callbackMethod) {\r\n        var data = { \'id\': id };\r\n        ");
             
-            #line 85 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 85 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -225,7 +225,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "@method add\r\n\t * @param data\r\n\t * @param callbackMethod\r\n\t */\r\n    add: function" +
                     "(data, callbackMethod) {\r\n        ");
             
-            #line 96 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 96 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -234,17 +234,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
                     "@method update\r\n\t * @param data\r\n\t * @param callbackMethod\r\n\t */\r\n    update: fu" +
                     "nction(data, callbackMethod) {\r\n        ");
             
-            #line 107 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            #line 107 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("Ajax.call(\"Save\", data, callbackMethod);\r\n    }\r\n\r\n    // Additional methods go h" +
+            this.Write("Ajax.call(\"Save\", data, callbackMethod);\r\n    }\r\n\r\n\t/**\r\n     * Post\r\n\t *\r\n\t * @m" +
+                    "ethod update\r\n\t * @param data\r\n\t * @param callbackMethod\r\n\t */\r\n    post: functi" +
+                    "on(data, callbackMethod) {\r\n        ");
+            
+            #line 118 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("Ajax.call(\"Post\", data, callbackMethod);\r\n    }\r\n\r\n    // Additional methods go h" +
                     "ere\r\n};");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\Sage300-SDK\Develop\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
+        #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

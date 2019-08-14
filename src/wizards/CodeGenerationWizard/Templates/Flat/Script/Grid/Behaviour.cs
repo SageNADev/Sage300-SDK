@@ -7,17 +7,18 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
+namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Grid
 {
+    using System.Linq;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+    #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class RepositoryInterface : RepositoryInterfaceBase
+    public partial class Behaviour : BehaviourBase
     {
 #line hidden
         /// <summary>
@@ -26,202 +27,360 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 2 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 3 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 4 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 5 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 6 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 7 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 8 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 9 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 10 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 11 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 12 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 13 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 14 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 15 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 16 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 17 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 18 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 19 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 23 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 24 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
 
     // Locals
-    var moduleId = settings.ModuleId;
-    var copyright = settings.Copyright;
-    var companyNamespace = settings.CompanyNamespace;
-    var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = entityName;
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+    var copyright = settings.Copyright;
+
 
             
             #line default
             #line hidden
-            this.Write("// ");
+            this.Write("/* ");
             
-            #line 31 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 33 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n#region Namespace\r\n\r\nusing ");
+            this.Write(" */\r\n\r\n// Add the following commented line to enable TypeScript static type check" +
+                    "ing\r\n// Remove this line if not needed\r\n//@ts-check\r\n\r\n\"use strict\";\r\n\r\nvar mode" +
+                    "lData;\r\nvar ");
             
-            #line 35 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 35 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            #line 42 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write(".Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;\r\n\r\n#endregi" +
-                    "on\r\n\r\nnamespace ");
+            this.Write("UI = ");
             
-            #line 40 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 40 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            #line 42 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write(".Interfaces.BusinessRepository\r\n{\r\n    /// <summary>\r\n    /// Interface I");
+            this.Write("UI || {};\r\n\r\n");
             
-            #line 43 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 44 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI = {\r\n    ");
+            
+            #line 45 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("Model: {},\r\n    computedProperties: [\"UIMode\"],\r\n    hasKoBindingApplied: false,\r" +
+                    "\n    isKendoControlNotInitialised: false,\r\n\r\n\t/**\r\n     * Initialization\r\n\t *\r\n\t" +
+                    " * @method init\r\n\t */\r\n    init: function () {\r\n        // initialize grid(s)\r\n");
+            
+            #line 57 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+
+             PushIndent("        ");
+             var temp = view.Properties[BusinessView.Constants.EntityName];
+             var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+	  		 WriteLine("sg.viewList.init(\"{0}Grid\");", gridName);
+             PopIndent();
+
+            
+            #line default
+            #line hidden
+            this.Write("        ");
+            
+            #line 64 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.initButtons();\r\n        ");
+            
+            #line 65 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UISuccess.initialLoad(");
+            
+            #line 65 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            
+            #line default
+            #line hidden
+            this.Write("ViewModel);\r\n    },\r\n\r\n\t/**\r\n     * Save\r\n\t *\r\n\t * @method save");
+            
+            #line 71 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("Entity\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">Where T is type of <see c" +
-                    "ref=\"");
+            this.Write("\r\n\t */\r\n    save");
             
-            #line 45 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("\"/></typeparam>\r\n    public interface I");
-            
-            #line 46 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+            #line 73 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("Entity<T> : IBusinessRepository<T>, ISecurity \r\n        where T : ");
+            this.Write(": function () {\r\n        if ($(\"#frm");
             
-            #line 47 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
+            #line 74 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
-            this.Write(", new()\r\n    {\r\n    }\r\n}\r\n");
+            this.Write("\").valid()) {\r\n            var data = sg.utls.ko.toJS(modelData, ");
+            
+            #line 75 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.computedProperties);\r\n            ");
+            
+            #line 76 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("Repository.post(data, ");
+            
+            #line 76 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UISuccess.post);\r\n        }\r\n    },\r\n\r\n\t/**\r\n     * Initialize the Buttons\r\n\t *\r\n" +
+                    "\t * @method initButtons\r\n\t */\r\n    initButtons: function () {\r\n        // Import" +
+                    "/Export Buttons\r\n        sg.exportHelper.setExportEvent(\"btnOptionExport\", \"");
+            
+            #line 87 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
+            
+            #line default
+            #line hidden
+            
+            #line 87 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
+            
+            #line default
+            #line hidden
+            this.Write("\", false, $.noop);\r\n        sg.importHelper.setImportEvent(\"btnOptionImport\", \"");
+            
+            #line 88 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
+            
+            #line default
+            #line hidden
+            
+            #line 88 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
+            
+            #line default
+            #line hidden
+            this.Write("\", false, $.noop);\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").on(\'click\', f" +
+                    "unction () {\r\n");
+            
+            #line 92 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+
+			PushIndent("            ");
+			temp = view.Properties[BusinessView.Constants.EntityName];
+			gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+			WriteLine("if (sg.viewList.commit(\"{0}Grid\")) {{", gridName);
+			PushIndent("	");
+			WriteLine("sg.utls.SyncExecute({0}UI.save{1});", localEntityName, entityName);
+			WriteLine("sg.viewList.dirty(\"{0}Grid\", false);", gridName);
+			PopIndent();
+			WriteLine("}");
+			PopIndent();
+
+            
+            #line default
+            #line hidden
+            this.Write("        });\r\n    },\r\n\r\n// Callbacks\r\nvar ");
+            
+            #line 108 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UISuccess = {\r\n\t/**\r\n     * Update\r\n\t *\r\n\t * @method update\r\n\t * @param jsonResul" +
+                    "t\r\n\t */\r\n    post: function (jsonResult) {\r\n        if (jsonResult.UserMessage.I" +
+                    "sSuccess) {\r\n            ");
+            
+            #line 117 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write(@"UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+		
+	/**
+     * Display Result
+	 *
+	 * @method displayResult
+	 * @param jsonResult
+	 * @param uiMode
+	 */
+	displayResult: function (jsonResult, uiMode) {
+");
+            
+            #line 130 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+
+        PushIndent("        ");
+        temp = view.Properties[BusinessView.Constants.EntityName];
+        gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
+
+		WriteLine("sg.viewList.refresh(\"{0}Grid\");", gridName);
+        PopIndent();
+
+            
+            #line default
+            #line hidden
+            this.Write("    },\r\n\r\n\t/**\r\n     * Initial Load\r\n\t *\r\n\t * @method initialLoad\r\n\t * @param res" +
+                    "ult\r\n\t */\r\n    initialLoad: function (result) {\r\n        if (result) {\r\n        " +
+                    "    ");
+            
+            #line 148 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UISuccess.displayResult(result, sg.utls.OperationMode.NEW);\r\n        } else {\r\n  " +
+                    "          sg.utls.showMessageInfo(sg.utls.msgType.ERROR, ");
+            
+            #line 150 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("Resources.ProcessFailedMessage);\r\n        }\r\n    },\r\n};\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\RepositoryInterface.tt"
+        #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
@@ -303,7 +462,7 @@ if ((settingsValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class RepositoryInterfaceBase
+    public class BehaviourBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

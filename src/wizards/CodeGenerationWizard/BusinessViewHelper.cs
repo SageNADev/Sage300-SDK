@@ -69,9 +69,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
 
             if (generateClientFiles || generateFinder) { UpdateWebBootStrapperNamespaces(view, settings); }
-            if (generateClientFiles) { UpdateWebBootStrapper(view, settings); }
 
-            UpdateBootStrapper(view, settings);
+            if (generateClientFiles)
+            {
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    UpdateHeaderDetailBootStrappers(view, settings);
+                }
+                else
+                {
+                    UpdateWebBootStrapper(view, settings);
+                    UpdateBootStrapper(view, settings);
+                }
+            }
         }
 
         public static void UpdateHeaderDetailBootStrappers(BusinessView view, Settings settings)
@@ -651,10 +661,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 };
 
                 const string register = "\t\t\tUnityUtil.RegisterType";
+
+                var containerName = settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? settings.EntitiesContainerName : entityName;
+
                 string[] linesToAdd =
                 {
-                    string.Format(register + "<IController, {0}Controller>(container, \"{1}{0}\");", settings.EntitiesContainerName, moduleId),
-                    string.Format(register + "<IExportImportController, ImportExportControllerInternal<I{0}Repository>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", settings.EntitiesContainerName, moduleId.ToLower(), settings.EntitiesContainerName.ToLower())
+                    string.Format(register + "<IController, {0}Controller>(container, \"{1}{0}\");", containerName, moduleId),
+                    string.Format(register + "<IExportImportController, ImportExportControllerInternal<I{0}Repository>>(container, \"{1}{2}\", new InjectionConstructor(typeof(Context)));", containerName, moduleId.ToLower(), containerName.ToLower())
                 };
 
                 for (var i = 0; i < methodSignatures.Length; i++)
@@ -693,7 +706,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 var register = "\t\t\tUnityUtil.RegisterType";
                 string methodSignature = @"private void RegisterService(IUnityContainer container)";
-                string lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", settings.EntitiesContainerName, settings.EntitiesContainerName);
+
+                string lineToAdd;
+
+                if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+                    lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", entityName, entityName);
+                else
+                    lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", entityName, entityName);
 
                 string[] namespaces =
                 {

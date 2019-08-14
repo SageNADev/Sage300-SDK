@@ -1,0 +1,133 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+   // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var containerName = entityName;
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
+	"Web.Areas." + moduleId : moduleId + ".Web");
+	var headerModelName = modelName;
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using Microsoft.Practices.Unity;
+using System.Web.Mvc;
+using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+using <#=companyNamespace#>.<#=moduleId#>.Resources.Forms;
+using <#=companyNamespace#>.<#=webModuleNamespace#>.Models;
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
+{
+    /// <summary>
+    /// <#=containerName#> Public Controller
+    /// </summary>
+    public class <#=containerName#>Controller : MultitenantControllerBase<<#=containerName#>ViewModel>
+    {
+        #region Public variables
+
+        /// <summary>
+        /// Gets or sets the internal controller
+        /// </summary>
+        public <#=containerName#>ControllerInternal ControllerInternal { get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor for <#=containerName#>
+        /// </summary>
+        /// <param name="container">Unity Container</param>
+        public <#=containerName#>Controller(IUnityContainer container)
+            : base(container,"<#=moduleId#><#=containerName#>")
+        {
+        }
+
+        #endregion
+
+        #region Initialize MultitenantControllerBase
+
+        /// <summary>
+        /// Override Initialize method
+        /// </summary>
+        /// <param name="requestContext">Request Context</param>
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            ControllerInternal = new <#=containerName#>ControllerInternal(Context);
+        }
+
+        #endregion
+
+        #region Public methods
+
+	    /// <summary>
+        /// Load screen
+        /// </summary>
+        /// <returns>JSON object for <#=modelName#></returns>
+        public virtual ActionResult Index()
+        {
+            <#=containerName#>ViewModel viewModel;
+
+			<#
+			WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
+			#>
+			viewModel = ControllerInternal.Create();
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// Commit revision list to database
+        /// </summary>
+        [HttpPost]
+        public virtual JsonNetResult Post()
+        {
+            try
+            {
+				ControllerInternal.Post();
+				return JsonNet(new object());
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        #endregion
+    }
+}

@@ -77,13 +77,27 @@
     </header>
 
     <div class="form-group">
-        <div class="search-group">
+
+	<# 
+	if (view.Options[BusinessView.Constants.GenerateGrid])
+	{
+		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
+		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
+	}
+	else
+	{
+    #>
+		<div class="search-group">
             @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
             @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
             @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
             @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
             @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
         </div>
+	<#
+	}
+	#>
+
     </div>
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))

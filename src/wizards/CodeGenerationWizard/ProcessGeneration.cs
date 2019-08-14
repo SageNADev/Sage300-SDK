@@ -349,7 +349,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var businessView in settings.Entities)
                 {
                     // if we are going to generate grid for a view, only create fields as it contains the entity name
-                    if (businessView.Options[BusinessView.Constants.GenerateGrid])
+                    if (businessView.Options[BusinessView.Constants.GenerateGrid] && _settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
                     {
                         var entityName = businessView.Properties[BusinessView.Constants.EntityName];
 
@@ -1541,51 +1541,89 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
             var entityName = view.Properties[BusinessView.Constants.EntityName];
 
-            // Create the Business Repository Interface class
-            CreateClass(view,
-                        "I" + entityName + "Entity.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.RepositoryInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
-
-
-            // Create the Service Interface class
-            CreateClass(view,
-                        "I" + entityName + "Service.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.ServiceInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
-
-            // Create the Service class
-            CreateClass(view,
-                        entityName + "EntityService.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.Service"),
-                        Constants.ServicesKey, Constants.SubFolderServicesKey);
-
             if (generateClientFiles)
             {
-                // Create the ViewModel class
-                CreateClass(view,
-                            entityName + "ViewModel.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
-                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
 
-                // Create the Internal Controller class
-                CreateClass(view,
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    // Create the ViewModel class
+                    CreateClass(view,
+                                entityName + "ViewModel.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Grid.ViewModel"),
+                                Constants.WebKey, Constants.SubFolderWebViewModelKey);
+
+                    // Create the Repository class
+                    CreateClass(view,
+                                entityName + "Repository.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Grid.Repository"),
+                                Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
+
+                    // Create the Business Repository Interface class
+                    CreateClass(view,
+                                "I" + entityName + "Repository.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Grid.RepositoryInterface"),
+                                Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
+
+
+                    // Create the Internal Controller class
+                    CreateClass(view,
+                            entityName + "ControllerInternal.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.Grid.InternalController"),
+                            Constants.WebKey, Constants.SubFolderWebControllersKey);
+
+                    // Create the public Controller class
+                    CreateClass(view,
+                                entityName + "Controller.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Grid.Controller"),
+                                Constants.WebKey, Constants.SubFolderWebControllersKey);
+                }
+                else
+                {
+                    // Create the ViewModel class
+                    CreateClass(view,
+                                entityName + "ViewModel.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.ViewModel"),
+                                Constants.WebKey, Constants.SubFolderWebViewModelKey);
+
+                    // Create the Business Repository Interface class
+                    CreateClass(view,
+                                "I" + entityName + "Entity.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.RepositoryInterface"),
+                                Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
+
+
+                    // Create the Service Interface class
+                    CreateClass(view,
+                                "I" + entityName + "Service.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.ServiceInterface"),
+                                Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
+
+                    // Create the Service class
+                    CreateClass(view,
+                                entityName + "EntityService.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Service"),
+                                Constants.ServicesKey, Constants.SubFolderServicesKey);
+
+                    // Create the Repository class
+                    CreateClass(view,
+                                entityName + "Repository.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Repository"),
+                                Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
+
+                    // Create the Internal Controller class
+                    CreateClass(view,
                             entityName + "ControllerInternal.cs",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Class.InternalController"),
                             Constants.WebKey, Constants.SubFolderWebControllersKey);
 
-                // Create the public Controller class
-                CreateClass(view,
-                            entityName + "Controller.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
-                            Constants.WebKey, Constants.SubFolderWebControllersKey);
-            }
+                    // Create the public Controller class
+                    CreateClass(view,
+                                entityName + "Controller.cs",
+                                TransformTemplateToText(view, _settings, "Templates.Flat.Class.Controller"),
+                                Constants.WebKey, Constants.SubFolderWebControllersKey);
 
-            // Create the Repository class
-            CreateClass(view,
-                        entityName + "Repository.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Flat.Class.Repository"),
-                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
+                }
+            }
 
             // Create partial view.cshtml
             if (generateClientFiles)
@@ -1595,6 +1633,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             fileName,
                             TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+                // Create grid json files
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    fileName = view.Properties[BusinessView.Constants.EntityName] + "Grid.json";
+                    CreateClass(view,
+                                fileName,
+                                TransformTemplateToText(view, _settings, "Templates.HeaderDetail.View.GridJson"),
+                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                }
             }
 
             // Register types
@@ -1619,11 +1667,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var projectName =
                 _settings.Projects[Constants.WebKey][view.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
-                // Create the Behavior JavaScript file
-                CreateClass(view,
+                if (view.Options[BusinessView.Constants.GenerateGrid])
+                {
+                    // Create the Behavior JavaScript file
+                    CreateClass(view,
+                            projectName + "." + entityName + "Behaviour.js",
+                            TransformTemplateToText(view, _settings, "Templates.Flat.Script.Grid.Behaviour"),
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
+
+                }
+                else
+                {
+                    // Create the Behavior JavaScript file
+                    CreateClass(view,
                             projectName + "." + entityName + "Behaviour.js",
                             TransformTemplateToText(view, _settings, "Templates.Flat.Script.Behaviour"),
                             Constants.WebKey, Constants.SubFolderWebScriptsKey);
+                }
 
                 // Create the Knockout Extension JavaScript file
                 CreateClass(view,

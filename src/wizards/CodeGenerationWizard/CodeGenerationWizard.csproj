@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SKIP_MANUAL_ENTER_ENTITIES</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>true</RegisterForComInterop>
@@ -139,6 +139,41 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
+    <Compile Include="Templates\Flat\Class\Grid\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Grid\InternalController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalController.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Grid\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Grid\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\Grid\ViewModel.cs">
+      <DependentUpon>ViewModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Flat\Class\RepositoryInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\Script\Grid\Behaviour.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Behaviour.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\HeaderDetail\Script\Behaviour.cs">
       <DependentUpon>Behaviour.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -235,11 +270,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Repository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Flat\Class\RepositoryInterface.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepositoryInterface.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Flat\Class\Service.cs">
       <AutoGen>True</AutoGen>
@@ -725,6 +755,30 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Templates\Flat\Class\Grid\ViewModel.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModel.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Grid\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Grid\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Script\Grid\Behaviour.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Behaviour.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Grid\InternalController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\Class\Grid\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
     <None Include="Resources\sage_logo_square.png" />
     <None Include="Templates\HeaderDetail\View\GridJson.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
