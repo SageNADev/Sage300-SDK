@@ -62,7 +62,6 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
              PopIndent();
 #>
         <#=localEntityName#>UI.initButtons();
-        <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
     },
 
 	/**
@@ -72,8 +71,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 */
     save<#=entityName#>: function () {
         if ($("#frm<#=containerName#>").valid()) {
-            var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
-            <#=localEntityName#>Repository.post(data, <#=localEntityName#>UISuccess.post);
+            <#=localEntityName#>Repository.post(<#=localEntityName#>UISuccess.post);
         }
     },
 

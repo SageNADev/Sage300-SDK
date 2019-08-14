@@ -241,14 +241,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             this.Write("Ajax.call(\"Save\", data, callbackMethod);\r\n    },\r\n\r\n\t/**\r\n     * Post\r\n\t *\r\n\t * @" +
                     "method update\r\n\t * @param data\r\n\t * @param callbackMethod\r\n\t */\r\n    post: funct" +
-                    "ion(data, callbackMethod) {\r\n        ");
+                    "ion(callbackMethod) {\r\n        ");
             
             #line 118 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("Ajax.call(\"Post\", data, callbackMethod);\r\n    }\r\n\r\n    // Additional methods go h" +
+            this.Write("Ajax.call(\"Post\", null, callbackMethod);\r\n    }\r\n\r\n    // Additional methods go h" +
                     "ere\r\n};");
             return this.GenerationEnvironment.ToString();
         }

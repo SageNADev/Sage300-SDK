@@ -213,58 +213,37 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             
             #line default
             #line hidden
-            this.Write("UI.initButtons();\r\n        ");
+            this.Write("UI.initButtons();\r\n    },\r\n\r\n\t/**\r\n     * Save\r\n\t *\r\n\t * @method save");
             
-            #line 65 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
-            
-            #line default
-            #line hidden
-            this.Write("UISuccess.initialLoad(");
-            
-            #line 65 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel);\r\n    },\r\n\r\n\t/**\r\n     * Save\r\n\t *\r\n\t * @method save");
-            
-            #line 71 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 70 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\r\n\t */\r\n    save");
             
-            #line 73 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 72 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(": function () {\r\n        if ($(\"#frm");
             
-            #line 74 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 73 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
-            this.Write("\").valid()) {\r\n            var data = sg.utls.ko.toJS(modelData, ");
+            this.Write("\").valid()) {\r\n            ");
             
-            #line 75 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 74 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.computedProperties);\r\n            ");
+            this.Write("Repository.post(");
             
-            #line 76 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
-            
-            #line default
-            #line hidden
-            this.Write("Repository.post(data, ");
-            
-            #line 76 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 74 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -273,26 +252,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
                     "\t * @method initButtons\r\n\t */\r\n    initButtons: function () {\r\n        // Import" +
                     "/Export Buttons\r\n        sg.exportHelper.setExportEvent(\"btnOptionExport\", \"");
             
-            #line 87 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 85 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 87 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 85 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
             #line hidden
             this.Write("\", false, $.noop);\r\n        sg.importHelper.setImportEvent(\"btnOptionImport\", \"");
             
-            #line 88 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 86 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId.ToLower()));
             
             #line default
             #line hidden
             
-            #line 88 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 86 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName.ToLower()));
             
             #line default
@@ -300,7 +279,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             this.Write("\", false, $.noop);\r\n\r\n        // Save Button\r\n        $(\"#btnSave\").on(\'click\', f" +
                     "unction () {\r\n");
             
-            #line 92 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 90 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
 
 			PushIndent("            ");
 			temp = view.Properties[BusinessView.Constants.EntityName];
@@ -318,7 +297,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             #line hidden
             this.Write("        });\r\n    },\r\n};\r\n\r\n// Callbacks\r\nvar ");
             
-            #line 109 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 107 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -327,7 +306,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
                     "t\r\n\t */\r\n    post: function (jsonResult) {\r\n        if (jsonResult.UserMessage.I" +
                     "sSuccess) {\r\n            ");
             
-            #line 118 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 116 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -347,7 +326,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
 	displayResult: function (jsonResult, uiMode) {
 ");
             
-            #line 131 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 129 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
 
         PushIndent("        ");
         temp = view.Properties[BusinessView.Constants.EntityName];
@@ -361,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             #line hidden
             this.Write("    },\r\n};\r\n\r\n// Initial Entry\r\n$(function () {\r\n    ");
             
-            #line 144 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 142 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
