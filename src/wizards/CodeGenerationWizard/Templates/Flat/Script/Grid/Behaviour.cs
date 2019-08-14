@@ -316,9 +316,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             
             #line default
             #line hidden
-            this.Write("        });\r\n    },\r\n\r\n// Callbacks\r\nvar ");
+            this.Write("        });\r\n    },\r\n};\r\n\r\n// Callbacks\r\nvar ");
             
-            #line 108 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 109 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -327,7 +327,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
                     "t\r\n\t */\r\n    post: function (jsonResult) {\r\n        if (jsonResult.UserMessage.I" +
                     "sSuccess) {\r\n            ");
             
-            #line 117 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 118 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -347,7 +347,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
 	displayResult: function (jsonResult, uiMode) {
 ");
             
-            #line 130 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 131 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
 
         PushIndent("        ");
         temp = view.Properties[BusinessView.Constants.EntityName];
@@ -359,24 +359,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script.Gri
             
             #line default
             #line hidden
-            this.Write("    },\r\n\r\n\t/**\r\n     * Initial Load\r\n\t *\r\n\t * @method initialLoad\r\n\t * @param res" +
-                    "ult\r\n\t */\r\n    initialLoad: function (result) {\r\n        if (result) {\r\n        " +
-                    "    ");
+            this.Write("    },\r\n};\r\n\r\n// Initial Entry\r\n$(function () {\r\n    ");
             
-            #line 148 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
+            #line 144 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UISuccess.displayResult(result, sg.utls.OperationMode.NEW);\r\n        } else {\r\n  " +
-                    "          sg.utls.showMessageInfo(sg.utls.msgType.ERROR, ");
-            
-            #line 150 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Grid\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
-            
-            #line default
-            #line hidden
-            this.Write("Resources.ProcessFailedMessage);\r\n        }\r\n    },\r\n};\r\n");
+            this.Write("UI.init();\r\n});\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

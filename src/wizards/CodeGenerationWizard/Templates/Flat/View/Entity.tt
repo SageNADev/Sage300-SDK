@@ -36,8 +36,21 @@
 
 #>
 @* <#=copyright#> *@
+<#
+if (view.Options[BusinessView.Constants.GenerateGrid])
+{
+#>
+	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
+<#
+}
+else
+{
+#>
+	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
+<#
+}
+#>
 
-@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants

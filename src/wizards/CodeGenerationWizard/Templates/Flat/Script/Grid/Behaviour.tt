@@ -103,6 +103,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 #>
         });
     },
+};
 
 // Callbacks
 var <#=localEntityName#>UISuccess = {
@@ -136,18 +137,9 @@ var <#=localEntityName#>UISuccess = {
         PopIndent();
 #>
     },
-
-	/**
-     * Initial Load
-	 *
-	 * @method initialLoad
-	 * @param result
-	 */
-    initialLoad: function (result) {
-        if (result) {
-            <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
-        } else {
-            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, <#=localEntityName#>Resources.ProcessFailedMessage);
-        }
-    },
 };
+
+// Initial Entry
+$(function () {
+    <#=localEntityName#>UI.init();
+});

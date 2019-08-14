@@ -105,7 +105,7 @@ var <#=localEntityName#>Repository = {
 	 */
     update: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Save", data, callbackMethod);
-    }
+    },
 
 	/**
      * Post

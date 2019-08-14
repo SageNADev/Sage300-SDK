@@ -707,12 +707,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var register = "\t\t\tUnityUtil.RegisterType";
                 string methodSignature = @"private void RegisterService(IUnityContainer container)";
 
-                string lineToAdd;
-
-                if (settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
-                    lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", entityName, entityName);
-                else
-                    lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", entityName, entityName);
+                var containerName = settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? settings.EntitiesContainerName : entityName;
+                string lineToAdd = string.Format(register + "<I{0}Repository, {0}Repository>(container);", containerName, containerName);
 
                 string[] namespaces =
                 {
