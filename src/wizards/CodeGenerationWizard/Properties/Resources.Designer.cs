@@ -658,7 +658,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;Generate Grid&apos; option is an invalid selection for {0} because it doesn&apos;t support a revision list or it is not a flat view..
+        ///   Looks up a localized string similar to The &apos;Generate Grid&apos; option is an invalid selection for {0} because it doesn&apos;t support a revision list..
         /// </summary>
         internal static string InvalidGridView {
             get {

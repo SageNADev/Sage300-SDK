@@ -1510,6 +1510,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
+            if (repositoryType.Equals(RepositoryType.HeaderDetail) && businessView.Options[BusinessView.Constants.GenerateGrid])
+            {
+                // make sure it support revision list
+                if ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
+                {
+                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             // Add/Update to tree
             businessView.Text = businessView.Properties[BusinessView.Constants.EntityName];
@@ -2161,6 +2170,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void InitWizardSteps()
         {
             var repositoryType = GetRepositoryType();
+
+            // uncheck generate grid option
+            chkGenerateGrid.Checked = false;
+            chkSequenceRevisionList.Visible = false;
+
+            if (repositoryType == RepositoryType.Flat ||
+                repositoryType == RepositoryType.HeaderDetail)
+            {
+                chkGenerateGrid.Visible = true;
+            }
+            else
+            {
+                chkGenerateGrid.Visible = false;
+            }
 
             // Default
             btnBack.Enabled = false;
@@ -2921,6 +2944,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     // Assign to the grids
                     AssignGrids(businessView);
+
+                    chkGenerateGrid.Checked = false;
+                    chkGenerateFinder.Enabled = true;
+
+                    if (GetRepositoryType() == RepositoryType.HeaderDetail &&
+                        ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionSequenced ||
+                        (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionOrdered))
+                    {
+                        chkGenerateGrid.Checked = true;
+                        chkGenerateFinder.Checked = false;
+                        chkGenerateFinder.Enabled = false;
+                    }
                 }
             }
             catch (Exception ex)

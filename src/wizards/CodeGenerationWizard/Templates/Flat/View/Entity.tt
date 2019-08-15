@@ -75,13 +75,20 @@ else
                 <div class="header-headline">
                     @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
-                <div class="header-options">
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })	
+	<#
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    #>
+			<div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
                         @Html.KoSageButton("btnNew", null, new { @value = CommonResx.CreateNew, @id = "btnNew", @class = "btn btn-primary" })
                     }
                 </div>
+<#
+}
+#>
             </div>
             <div class="flag-required">
                 <span class="req-option">@CommonResx.RequiredLegend</span>
@@ -116,7 +123,15 @@ else
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary" })
-            @Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
-        }
+
+    <#
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    #>
+			@Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
+	<#
+	}
+	#>
+      }
     </section>
 </div>

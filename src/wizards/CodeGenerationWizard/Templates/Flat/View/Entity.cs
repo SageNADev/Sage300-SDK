@@ -341,27 +341,38 @@ else
             
             #line default
             #line hidden
-            this.Write(@".Entity)
-                </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
-                <div class=""header-options"">
+            this.Write(".Entity)\r\n                </div>\r\n                @Html.Partial(Core.OptionsMenu," +
+                    " Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })\t" +
+                    "\r\n\t");
+            
+            #line 79 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    
+            
+            #line default
+            #line hidden
+            this.Write(@"			<div class=""header-options"">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
                         @Html.KoSageButton(""btnNew"", null, new { @value = CommonResx.CreateNew, @id = ""btnNew"", @class = ""btn btn-primary"" })
                     }
                 </div>
-            </div>
-            <div class=""flag-required"">
-                <span class=""req-option"">@CommonResx.RequiredLegend</span>
-            </div>
-        </section>
-    </header>
-
-    <div class=""form-group"">
-
-	");
+");
             
-            #line 94 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 89 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("            </div>\r\n            <div class=\"flag-required\">\r\n                <spa" +
+                    "n class=\"req-option\">@CommonResx.RequiredLegend</span>\r\n            </div>\r\n    " +
+                    "    </section>\r\n    </header>\r\n\r\n    <div class=\"form-group\">\r\n\r\n\t");
+            
+            #line 101 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -377,14 +388,14 @@ else
             this.Write("\t\t<div class=\"search-group\">\r\n            @Html.SageLabelFor(model => model.Data." +
                     "");
             
-            #line 104 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 111 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @id = \"lbl");
             
-            #line 104 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 111 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -392,21 +403,21 @@ else
             this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
                     ".");
             
-            #line 105 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 112 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @sagevalue = \"Data.");
             
-            #line 105 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 112 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", @valueUpdate = \"\'input\'\" }, new { @id = \"txt");
             
-            #line 105 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 112 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -414,7 +425,7 @@ else
             this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
                     "geButton(\"btnLoad");
             
-            #line 106 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 113 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -422,14 +433,14 @@ else
             this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
                     "        @Html.KoSageButton(\"btnFinder");
             
-            #line 107 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 114 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
             
-            #line 107 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 114 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -437,14 +448,14 @@ else
             this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
                     "a.");
             
-            #line 108 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 115 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(")\r\n        </div>\r\n\t");
             
-            #line 110 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 117 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	}
 	
@@ -457,10 +468,28 @@ else
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton(""btnSave"", new { }, new { @value = CommonResx.Save, @id = ""btnSave"", @class = ""btn btn-primary"" })
-            @Html.KoSageButton(""btnDelete"", new { }, new { @value = CommonResx.Delete, @id = ""btnDelete"", @class = ""btn btn-primary"" })
-        }
-    </section>
-</div>");
+
+    ");
+            
+            #line 127 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t@Html.KoSageButton(\"btnDelete\", new { }, new { @value = CommonResx.Delete, @id" +
+                    " = \"btnDelete\", @class = \"btn btn-primary\" })\r\n\t");
+            
+            #line 132 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+
+	}
+	
+            
+            #line default
+            #line hidden
+            this.Write("      }\r\n    </section>\r\n</div>");
             return this.GenerationEnvironment.ToString();
         }
         

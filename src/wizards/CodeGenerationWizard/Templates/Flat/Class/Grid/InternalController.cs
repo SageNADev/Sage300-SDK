@@ -150,7 +150,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
     var resxName = view.Properties[BusinessView.Constants.ResxName];
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var containerName = modelName;
+    var containerName = entityName;
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
