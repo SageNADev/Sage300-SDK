@@ -160,9 +160,9 @@
       <DependentUpon>RepositoryInterface.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Flat\Class\Grid\ViewModel.cs">
-      <DependentUpon>ViewModel.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Flat\Class\RepositoryInterface.cs">
       <AutoGen>True</AutoGen>

@@ -16,9 +16,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+    #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class InternalController : InternalControllerBase
+    public partial class Repository : RepositoryBase
     {
 #line hidden
         /// <summary>
@@ -27,140 +27,135 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
         public virtual string TransformText()
         {
             
-            #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 2 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 3 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 4 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 5 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 6 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 7 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 8 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 9 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 10 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 11 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 12 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 13 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 14 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 15 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 16 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 17 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 18 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 19 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 24 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var resxName = view.Properties[BusinessView.Constants.ResxName];
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var containerName = entityName;
-    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
-	"Web.Areas." + moduleId : moduleId + ".Web");
-
 
             
             #line default
             #line hidden
-            this.Write("\r\n// ");
+            this.Write("// ");
             
-            #line 38 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 32 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -170,247 +165,203 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
 #region Namespace
 
 using System;
-using System.Linq;
-using Microsoft.Practices.Unity;
 using System.Linq.Expressions;
-using System.Collections.Generic;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
 using ");
             
-            #line 52 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 46 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 52 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 46 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(".BusinessRepository.Mappers;\r\nusing ");
+            
+            #line 47 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 47 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.BusinessRepository;\r\nusing ");
             
-            #line 53 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 48 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 53 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 48 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Models;\r\nusing ");
-            
-            #line 54 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 54 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Resources.Forms;\r\nusing ");
-            
-            #line 55 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 55 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 59 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 52 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 59 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
+            #line 52 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
-            this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
+            this.Write(".BusinessRepository\r\n{\r\n    /// <summary>\r\n    /// Class ");
             
-            #line 62 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write(" Internal Controller\r\n    /// </summary>\r\n    public class ");
-            
-            #line 64 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            #line 55 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("ControllerInternal : ImportExportControllerInternal<I");
+            this.Write(" Repository\r\n    /// </summary>\r\n    public class ");
             
-            #line 64 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("Repository>\r\n    {\r\n        #region Private variables\r\n         \r\n        /// <su" +
-                    "mmary>\r\n        /// Variable for storing context.\r\n        /// </summary>\r\n     " +
-                    "   private readonly Context _context;\r\n\r\n        private I");
-            
-            #line 73 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            #line 57 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("Repository _repository\r\n        {\r\n            get {\r\n                return _con" +
-                    "text.Container.Resolve<I");
+            this.Write("Repository : BaseHeaderDetailRepository, I");
             
-            #line 76 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("Repository>(new ParameterOverride(\"context\", _context));\r\n            }\r\n        " +
-                    "}\r\n\r\n        #endregion\r\n\r\n        #region Constructor\r\n\r\n        /// <summary>\r" +
-                    "\n        /// New instance of <see cref=\"");
-            
-            #line 85 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            #line 57 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("ControllerInternal\"/>\r\n        /// </summary>\r\n        /// <param name=\"context\">" +
-                    "Context</param>\r\n        public ");
-            
-            #line 88 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ControllerInternal(Context context)\r\n            : base(context)\r\n        {\r\n    " +
-                    "        _context = context;\r\n        }\r\n\r\n        #endregion\r\n\r\n\t\t#region Intern" +
-                    "al methods\r\n\r\n        /// <summary>\r\n        /// Create a ");
-            
-            #line 99 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n        /// </summary>\r\n        /// <returns>view model for  ");
-            
-            #line 101 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("</returns>\r\n        internal ");
-            
-            #line 102 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel Create()\r\n        {\r\n\t        var viewModel = GetViewModel(new ");
-            
-            #line 104 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("(), null);\r\n            viewModel.UserAccess = GetAccessRights();\r\n\r\n            " +
-                    "return viewModel;\r\n        }\r\n\r\n        /// <summary>\r\n        /// commit the re" +
-                    "vision list to database\r\n        /// </summary>\r\n        internal ");
-            
-            #line 113 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write(@"ViewModel Post()
-        {
-            _repository.Post();
-
-			var userMessage = new UserMessage(null, CommonResx.SaveSuccessMessage);
-            return GetViewModel(null, userMessage);
-        }
-		
-        #endregion
-
-		#region Private methods
+            this.Write(@"Repository
+    {
+        #region Variables
 
         /// <summary>
-        /// Generic routine to return a view model for ");
+        /// Business Entity
+        /// </summary>
+        private IBusinessEntity _businessEntity;
+
+        #endregion
+
+        #region Constructor
+
+		/// <summary>
+        /// Sets Context and DBLink
+        /// </summary>
+        /// <param name=""context"">Context</param>
+        public ");
             
-            #line 126 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 74 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(@"Repository(Context context):base(context)
+        {
+            CreateBusinessEntities();
+        }
+
+        #endregion
+
+        #region Protected/public methods
+
+        /// <summary>
+        /// Additional Access Check for Export and Import
+        /// </summary>
+        /// <returns>User Access</returns>
+        public UserAccess GetAccessRights()
+        {
+            var userAccess = base.GetAccessRights(_businessEntity);
+            if (SecurityCheck(Security.");
+            
+            #line 90 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write("Import))\r\n            {\r\n                userAccess.SecurityType |= SecurityType." +
+                    "Import;\r\n            }\r\n            if (SecurityCheck(Security.");
+            
+            #line 94 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(@"Export))
+            {
+                userAccess.SecurityType |= SecurityType.Export;
+            }
+            return userAccess;
+        }
+
+         /// <summary>
+        /// Open business entity
+        /// </summary>
+        protected override void CreateBusinessEntities()
+		{
+            _businessEntity = OpenEntity(");
+            
+            #line 106 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
+            this.Write(@".EntityName, true);
+        }
+
+		/// <summary>
+        /// commit revision list to database 
+        /// </summary>
+        public void Post()
+        {
+            _businessEntity.Post();
+        }
+
+
+        #endregion
+
+        #region Import/Export methods
+
+        /// <summary>
+        /// Get export or import business entity property
+        /// </summary>
+        /// <param name=""option"">export/import option, default to null</param>
+        /// <param name=""isExport"">true if for export, default to false</param>
+        /// <returns>Business Entity Property</returns>
+        public override BusinessEntityProperty GetExportImportBusinessEntityProperty(string option = null, bool isExport = false)
+        {
+            return new BusinessEntityProperty(");
             
-            #line 128 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 130 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("</param>\r\n        /// <param name=\"userMessage\">User Message for ");
-            
-            #line 129 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("</param>\r\n        /// <returns>View Model for ");
-            
-            #line 130 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write("</returns>\r\n        private ");
-            
-            #line 131 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel GetViewModel(");
-            
-            #line 131 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write(" model, UserMessage userMessage)\r\n        {\r\n            return new ");
-            
-            #line 133 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel\r\n            {\r\n                Data = model,\r\n                UserMess" +
-                    "age = userMessage\r\n            };\r\n        }\r\n\r\n        #endregion\r\n\r\n\t}\r\n}");
+            this.Write(".EntityName, ViewKeyType.UserSpecified);\r\n        }\r\n\r\n        #endregion\r\n    }\r" +
+                    "\n}");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+        #line 1 "C:\$$$\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Repository.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
@@ -492,7 +443,7 @@ if ((settingsValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class InternalControllerBase
+    public class RepositoryBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
