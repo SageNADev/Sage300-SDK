@@ -1502,8 +1502,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (repositoryType.Equals(RepositoryType.Flat) && businessView.Options[BusinessView.Constants.GenerateGrid])
             {
                 // make sure it support revision list
-                if ((businessView.Protocol ^ ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
-                     (businessView.Protocol ^ ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
+                if ((businessView.Protocol & ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
+                     (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
                 {
                     DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
                     return;
