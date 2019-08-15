@@ -404,6 +404,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Options.Clear();
             businessView.Properties.Clear();
             businessView.Compositions.Clear();
+            businessView.Protocol = view.InstanceProtcol;
 
             businessView.Properties[BusinessView.Constants.ViewId] = view.ViewID;
             businessView.Properties[BusinessView.Constants.ModuleId] = moduleId;

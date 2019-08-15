@@ -556,15 +556,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     if (!businessView.Text.Equals(ProcessGeneration.Constants.NewEntityText) && 
                          businessView.Properties[BusinessView.Constants.EntityName].Equals(entityName))
                     {
-                        dupeFound = true;
-                        break;
+                        return Resources.InvalidEntityDuplicate;
                     }
-                }
-
-                // If a dupe is found, this is invalid
-                if (dupeFound)
-                {
-                    return Resources.InvalidEntityDuplicate;
                 }
             }
 
@@ -1504,6 +1497,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 businessView.Compositions = _entityCompositions.ToList();
             }
+
+            // extra check for flat repo if we are geneting grid for it
+            if (repositoryType.Equals(RepositoryType.Flat) && businessView.Options[BusinessView.Constants.GenerateGrid])
+            {
+                // make sure it support revision list
+                if ((businessView.Protocol ^ ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
+                     (businessView.Protocol ^ ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
+                {
+                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
 
             // Add/Update to tree
             businessView.Text = businessView.Properties[BusinessView.Constants.EntityName];

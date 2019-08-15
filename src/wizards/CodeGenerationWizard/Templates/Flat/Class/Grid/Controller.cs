@@ -350,8 +350,7 @@ using ");
         {
             try
             {
-				ControllerInternal.Post();
-				return JsonNet(new object());
+				return JsonNet(ControllerInternal.Post());
             }
             catch (BusinessException businessException)
             {

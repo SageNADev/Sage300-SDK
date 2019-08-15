@@ -334,18 +334,21 @@ using ");
             
             #line default
             #line hidden
-            this.Write(@"(), null);
-            viewModel.UserAccess = GetAccessRights();
-
-            return viewModel;
-        }
-
-        /// <summary>
-        /// commit the revision list to database
-        /// </summary>
-        internal void Post()
+            this.Write("(), null);\r\n            viewModel.UserAccess = GetAccessRights();\r\n\r\n            " +
+                    "return viewModel;\r\n        }\r\n\r\n        /// <summary>\r\n        /// commit the re" +
+                    "vision list to database\r\n        /// </summary>\r\n        internal ");
+            
+            #line 113 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            
+            #line default
+            #line hidden
+            this.Write(@"ViewModel Post()
         {
             _repository.Post();
+
+			var userMessage = new UserMessage(null, CommonResx.SaveSuccessMessage);
+            return GetViewModel(null, userMessage);
         }
 		
         #endregion
@@ -355,49 +358,49 @@ using ");
         /// <summary>
         /// Generic routine to return a view model for ");
             
-            #line 123 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 126 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 125 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 128 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <param name=\"userMessage\">User Message for ");
             
-            #line 126 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 129 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>View Model for ");
             
-            #line 127 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 130 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        private ");
             
-            #line 128 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 131 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel GetViewModel(");
             
-            #line 128 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 131 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" model, UserMessage userMessage)\r\n        {\r\n            return new ");
             
-            #line 130 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
+            #line 133 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\InternalController.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default

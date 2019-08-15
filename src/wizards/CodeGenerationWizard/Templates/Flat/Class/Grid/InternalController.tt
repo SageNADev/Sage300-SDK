@@ -110,9 +110,12 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <summary>
         /// commit the revision list to database
         /// </summary>
-        internal void Post()
+        internal <#=containerName#>ViewModel Post()
         {
             _repository.Post();
+
+			var userMessage = new UserMessage(null, CommonResx.SaveSuccessMessage);
+            return GetViewModel(null, userMessage);
         }
 		
         #endregion
