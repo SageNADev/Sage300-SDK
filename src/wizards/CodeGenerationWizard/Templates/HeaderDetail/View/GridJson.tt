@@ -24,6 +24,7 @@
 <#
    
     var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var isRepoTypeHeaderDetail = settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
 
 #>
 
@@ -37,7 +38,7 @@
 		PushIndent("    ");	
 		foreach(var field in view.Fields)
 		{
-			if (field.IsKey)
+			if (isRepoTypeHeaderDetail && field.IsKey )
 				continue;
 
 			WriteLine("{");

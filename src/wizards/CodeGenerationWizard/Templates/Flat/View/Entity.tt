@@ -36,8 +36,21 @@
 
 #>
 @* <#=copyright#> *@
+<#
+if (view.Options[BusinessView.Constants.GenerateGrid])
+{
+#>
+	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
+<#
+}
+else
+{
+#>
+	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
+<#
+}
+#>
 
-@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -62,13 +75,20 @@
                 <div class="header-headline">
                     @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
-                <div class="header-options">
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })	
+	<#
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    #>
+			<div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
                         @Html.KoSageButton("btnNew", null, new { @value = CommonResx.CreateNew, @id = "btnNew", @class = "btn btn-primary" })
                     }
                 </div>
+<#
+}
+#>
             </div>
             <div class="flag-required">
                 <span class="req-option">@CommonResx.RequiredLegend</span>
@@ -77,19 +97,41 @@
     </header>
 
     <div class="form-group">
-        <div class="search-group">
+
+	<# 
+	if (view.Options[BusinessView.Constants.GenerateGrid])
+	{
+		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
+		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
+	}
+	else
+	{
+    #>
+		<div class="search-group">
             @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
             @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
             @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
             @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
             @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
         </div>
+	<#
+	}
+	#>
+
     </div>
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary" })
-            @Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
-        }
+
+    <#
+	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	{
+    #>
+			@Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
+	<#
+	}
+	#>
+      }
     </section>
 </div>

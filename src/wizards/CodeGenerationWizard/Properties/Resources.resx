@@ -526,4 +526,7 @@
   <data name="InvalidVersion" xml:space="preserve">
     <value>The Wizard is incompatible with the installed Sage 300 libraries. Please un-register the wizard and register the wizard that is compatible with the installed Sage 300 libraries.</value>
   </data>
+  <data name="InvalidGridView" xml:space="preserve">
+    <value>The 'Generate Grid' option is an invalid selection for {0} because it doesn't support a revision list.</value>
+  </data>
 </root>

@@ -105,6 +105,17 @@ var <#=localEntityName#>Repository = {
 	 */
     update: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Save", data, callbackMethod);
+    },
+
+	/**
+     * Post
+	 *
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
+	 */
+    post: function(callbackMethod) {
+        <#=localEntityName#>Ajax.call("Post", null, callbackMethod);
     }
 
     // Additional methods go here
