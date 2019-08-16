@@ -7,10 +7,10 @@
     <RefBuildAccpacAdvantageTypesVersion>6.7.0.0</RefBuildAccpacAdvantageTypesVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefBuildCOMSVRInteropVersion)' == '' ">
-    <RefBuildCOMSVRInteropVersion>6.7.0.10</RefBuildCOMSVRInteropVersion>
+    <RefBuildCOMSVRInteropVersion>6.7.0.0</RefBuildCOMSVRInteropVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefBuildAccpacAdvantageServerVersion)' == '' ">
-    <RefBuildAccpacAdvantageServerVersion>6.7.0.10</RefBuildAccpacAdvantageServerVersion>
+    <RefBuildAccpacAdvantageServerVersion>6.7.0.0</RefBuildAccpacAdvantageServerVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RefInternalVersion)' == '' ">
     <RefInternalVersion>67A</RefInternalVersion>

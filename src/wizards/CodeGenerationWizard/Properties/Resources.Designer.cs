@@ -658,6 +658,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The &apos;Generate Grid&apos; option is an invalid selection for {0} because it doesn&apos;t support a revision list..
+        /// </summary>
+        internal static string InvalidGridView {
+            get {
+                return ResourceManager.GetString("InvalidGridView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The solution does not contain all required Sage 300 projects..
         /// </summary>
         internal static string InvalidProjects {
