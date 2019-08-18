@@ -1,0 +1,25 @@
+
+{
+   "IsSequenceRevisionList": false,
+   "ReadOnly": false,
+   "PageSize": 10,
+   "ViewID":"IC0620",
+   "ColumnDefinitions": [
+	  {
+        "FieldName": "SEGVAL",
+        "IsEditable": true,
+        "IsLineNumber": false,
+        "HasFinder": false,
+        "IsCustomData": false,
+        "IsHidden": false
+    },
+    {
+        "FieldName": "DESC",
+        "IsEditable": true,
+        "IsLineNumber": false,
+        "HasFinder": false,
+        "IsCustomData": false,
+        "IsHidden": false
+    },
+	]
+ }
