@@ -350,7 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesGrid.js" />
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesKoExtn.js" />
     <Content Include="Areas\TU\Scripts\SegmentCodes\ValuedPartner.TU.SegmentCodesRepository.js" />
     <Content Include="pageUrl.txt" />
