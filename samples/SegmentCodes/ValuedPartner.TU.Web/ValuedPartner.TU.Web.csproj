@@ -159,6 +159,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.dll</HintPath>
+    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
@@ -332,7 +335,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\TU\Controllers\Finder\FindSegmentCodesControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\SegmentCodesController.cs" />
     <Compile Include="Areas\TU\Controllers\SegmentCodesControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\SegmentCodesViewModel.cs" />
@@ -403,7 +405,6 @@
     <Content Include="Areas\TU\Views\SegmentCodes\Index.cshtml" />
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_SegmentCodes.cshtml" />
-    <Content Include="Areas\TU\Views\SegmentCodes\Partials\_SegmentCodeGrid.cshtml" />
     <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
