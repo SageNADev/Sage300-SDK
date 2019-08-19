@@ -34,13 +34,14 @@ namespace ValuedPartner.TU.Web
         internal static void RegisterBundles(BundleCollection bundles)
         {
 			#region SegmentCodes
-			bundles.Add(new Bundle("~/bundles/ValuedPartnerSegmentCodes").Include(
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerTUSegmentCodes").Include(
 				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesBehaviour.js",
-                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesKoExtn.js",
-                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesRepository.js",
-                "~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesGrid.js",
+				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesKoExtn.js",
+				"~/Areas/TU/Scripts/SegmentCodes/ValuedPartner.TU.SegmentCodesRepository.js",
 				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
 			#endregion
+
+
         }
     }
 }

@@ -21,19 +21,84 @@
 
 "use strict";
 
-/*global segmentCodesUISuccess*/
+// Ajax call to controller
+var segmentCodesAjax = {
+
+    call: function (method, data, callbackMethod) {
+        var url = sg.utls.url.buildUrl("TU", "SegmentCodes", method);
+        sg.utls.ajaxPost(url, data, callbackMethod);
+    }
+};
 
 var segmentCodesRepository = {
 
-    segmentCodeUsed: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "SegmentCodes", "AreSegmentCodesDeletable"), data.model, segmentCodesUISuccess.segmentCodeUsed);
+	/**
+     * Get
+	 *
+	 * @method get
+	 * @param id
+	 * @param callbackMethod
+	 */
+    get: function(id, callbackMethod) {
+        var data = { 'id': id };
+        segmentCodesAjax.call("Get", data, callbackMethod);
     },
 
-    exists: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "SegmentCodes", "Exists"), data, segmentCodesUISuccess.segmentCodeValid);
+	/**
+     * Create
+	 *
+	 * @method create
+	 * @param callbackMethod
+	 */
+    create: function(callbackMethod) {
+        var data = {};
+        segmentCodesAjax.call("Create", data, callbackMethod);
     },
 
-    save: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "SegmentCodes", "Save"), data, segmentCodesUISuccess.save);
+	/**
+     * Delete
+	 *
+	 * @method delete
+	 * @param id
+	 * @param callbackMethod
+	 */
+    delete: function(id, callbackMethod) {
+        var data = { 'id': id };
+        segmentCodesAjax.call("Delete", data, callbackMethod);
     },
+
+	/**
+     * Add
+	 *
+	 * @method add
+	 * @param data
+	 * @param callbackMethod
+	 */
+    add: function(data, callbackMethod) {
+        segmentCodesAjax.call("Add", data, callbackMethod);
+    },
+
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
+	 */
+    update: function(data, callbackMethod) {
+        segmentCodesAjax.call("Save", data, callbackMethod);
+    },
+
+	/**
+     * Post
+	 *
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
+	 */
+    post: function(callbackMethod) {
+        segmentCodesAjax.call("Post", null, callbackMethod);
+    }
+
+    // Additional methods go here
 };
