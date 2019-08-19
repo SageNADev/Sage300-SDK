@@ -18,6 +18,8 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using ValuedPartner.TU.Interfaces.BusinessRepository;
+using ValuedPartner.TU.BusinessRepository;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
@@ -51,8 +53,7 @@ namespace ValuedPartner.TU.Services
         /// <param name="container">The Unity container</param>
         private void RegisterService(IUnityContainer container)
         {
-			UnityUtil.RegisterType<Interfaces.Services.ISegmentCodesService<Models.SegmentCodes>, SegmentCodesEntityService<Models.SegmentCodes>>(container);
-
+			UnityUtil.RegisterType<ISegmentCodesRepository, SegmentCodesRepository>(container);
         }
 
         /// <summary>
@@ -61,10 +62,6 @@ namespace ValuedPartner.TU.Services
         /// <param name="container">The Unity container</param>
         private void RegisterRepositories(IUnityContainer container)
         {
-			UnityUtil.RegisterType<IExportImportRepository, BusinessRepository.SegmentCodesRepository<Models.SegmentCodes>>(container, "tusegmentcodes", new InjectionConstructor(typeof(Context)));
-			UnityUtil.RegisterType(container, typeof(Interfaces.BusinessRepository.ISegmentCodesEntity<Models.SegmentCodes>), typeof(BusinessRepository.SegmentCodesRepository<Models.SegmentCodes>), UnityInjectionType.Default, new InjectionConstructor(typeof(Context)));
-			UnityUtil.RegisterType(container, typeof(Interfaces.BusinessRepository.ISegmentCodesEntity<Models.SegmentCodes>), typeof(BusinessRepository.SegmentCodesRepository<Models.SegmentCodes>), UnityInjectionType.Session, new InjectionConstructor(typeof(Context), typeof(IBusinessEntitySession)));
-
         }
     }
 }

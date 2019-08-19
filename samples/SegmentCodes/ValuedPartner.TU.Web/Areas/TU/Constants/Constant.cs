@@ -25,14 +25,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Constants
     /// </summary>
     public static class Constants
     {
-        #region Finder
-
-        #endregion
-
         #region Export/Import
 
         #endregion
-        
+
         /// <summary>
         /// Module Id
         /// </summary>

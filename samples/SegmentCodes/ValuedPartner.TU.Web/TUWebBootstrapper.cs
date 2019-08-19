@@ -18,9 +18,10 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Web.Areas.TU.Controllers;
-using ValuedPartner.TU.Web.Areas.TU.Controllers.Finder;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
@@ -48,7 +49,6 @@ namespace ValuedPartner.TU.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
             RegisterExportImportController(container);
         }
 
@@ -58,16 +58,7 @@ namespace ValuedPartner.TU.Web
         /// <param name="container">The Unity container</param>
         private void RegisterController(IUnityContainer container)
         {
-			UnityUtil.RegisterType<IController, SegmentCodesController<SegmentCodes>>(container, "TUSegmentCodes");
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
-        {
-			UnityUtil.RegisterType<IFinder, FindSegmentCodesControllerInternal<SegmentCodes>>(container, "tusegmentcodes", new InjectionConstructor(typeof(Context)));
+			UnityUtil.RegisterType<IController, SegmentCodesController>(container, "TUSegmentCodes");
         }
 
         /// <summary>
@@ -76,7 +67,7 @@ namespace ValuedPartner.TU.Web
         /// <param name="container">The Unity container</param>
         private void RegisterExportImportController(IUnityContainer container)
         {
-			UnityUtil.RegisterType<IExportImportController, SegmentCodesControllerInternal<SegmentCodes>>(container, "tusegmentcodes", new InjectionConstructor(typeof(Context)));
+			UnityUtil.RegisterType<IExportImportController, ImportExportControllerInternal<ISegmentCodesRepository>>(container, "tusegmentcodes", new InjectionConstructor(typeof(Context)));
         }
     }
 }
