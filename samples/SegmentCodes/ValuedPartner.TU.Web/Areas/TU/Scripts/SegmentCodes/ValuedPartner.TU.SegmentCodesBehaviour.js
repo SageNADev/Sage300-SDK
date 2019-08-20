@@ -53,11 +53,12 @@ segmentCodesUI = {
     initDropDownList: function () {
         $("#SegmentNameList").kendoDropDownList({
             change: function () {
-                var select = $("#SegmentNameList").data("kendoDropDownList").select();
-                var value = segmentCodesUI.segments[select].Value;
-                sg.viewList.filter("segmentCodesGrid", 'SEGMENT=' + value);
-                sg.viewList.refresh("segmentCodesGrid");
-
+                if (sg.viewList.commit("segmentCodesGrid")) {
+                    var select = $("#SegmentNameList").data("kendoDropDownList").select();
+                    var value = segmentCodesUI.segments[select].Value;
+                    sg.viewList.filter("segmentCodesGrid", 'SEGMENT=' + value);
+                    sg.viewList.refresh("segmentCodesGrid");
+                }
             }
         });
     },
@@ -110,6 +111,90 @@ segmentCodesUI = {
             }
         });
     },
+
+    /**
+     * Grid customize function: After create new reocrd, update the key and segment value based on dropdown list select value
+     * @param {any} record: select row data
+     */
+    gridAfterCreate: function (record) {
+        var segment = record.SEGMENT;
+        var value = $("#SegmentNameList").data("kendoDropDownList").select() + 1;
+        var key = record.KendoGridAccpacViewPrimaryKey.replace(segment, value);
+        record.set("SEGMENT", value);
+
+        var grid = $("#segmentCodesGrid").data("kendoGrid");
+        var ds = grid.dataSource;
+        var row = ds.data().filter(function (r) { return r.SEGVAL === ""; })[0];
+        row.KendoGridAccpacViewPrimaryKey = key;
+        row.id = key;
+    },
+
+    /**
+     * Grid customize function: After grid record value changed, update the key value based on dropdown list select value
+     * @param {any} record: select row data
+     */
+
+    gridchanged: function (record, fieldName) {
+        if (fieldName === "SEGVAL") {
+            var grid = $("#segmentCodesGrid").data("kendoGrid");
+            var segval = record.SEGVAL;
+            var data = grid.dataSource.data();
+            var row = data.filter(function (r) { return r.SEGVAL === segval; })[0];
+            var oldKey = row.KendoGridAccpacViewPrimaryKey;
+            var newKey = oldKey.substring(0, oldKey.length - segval.length - 1) + segval;
+            row.KendoGridAccpacViewPrimaryKey = newKey;
+            row.id = newKey;
+        }
+    },
+
+    /**
+     * Column customize function: After record value changed, update the key value based on dropdown list select value
+     * @param {any} record: select row data
+     */
+
+    columnChanged: function (record, event, fieldName) {
+        if (fieldName === "SEGVAL") {
+            var grid = $("#segmentCodesGrid").data("kendoGrid");
+            var segval = record.SEGVAL;
+            var data = grid.dataSource.data();
+            var row = data.filter(function (r) { return r.SEGVAL === segval; })[0];
+            var oldKey = row.KendoGridAccpacViewPrimaryKey;
+            var newKey = oldKey.substring(0, oldKey.length - segval.length - 1) + segval;
+            row.KendoGridAccpacViewPrimaryKey = newKey;
+            row.id = newKey;
+        }
+    },
+
+    /**
+     * Customize segment code value input length based on dropdown list
+     * @param {any} record: select row data
+     */
+
+    columnStartEdit: function (record, event, field, editor) {
+        var value = $("#SegmentNameList").data("kendoDropDownList").select();
+        var length = 2;
+        switch (value) {
+            case 0:
+                length = 2;
+                break;
+            case 1:
+                length = 3;
+                break;
+            case 2:
+                length = 1;
+                break;
+            case 3:
+                length = 5;
+                break;
+            case 4:
+                length = 4;
+                break;
+            case 5:
+                length = 20;
+                break;
+        }
+        editor.prop('maxLength', length);
+    }
 };
 
 // Callbacks
