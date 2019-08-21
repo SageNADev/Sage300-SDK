@@ -4,10 +4,6 @@
   "PageSize": 10,
   "ViewID": "IC0620",
   "GridDataServiceController": "TU/SegmentCodesGridController",
-  "CustomFunctions": [
-    { "gridAfterCreate": "segmentCodesUI.gridAfterCreate" },
-    { "gridChanged": "segmentCodesUI.gridchanged" }
-  ],
   "ColumnDefinitions": [
     {
       "FieldName": "SEGVAL",
@@ -17,7 +13,6 @@
       "IsCustomData": false,
       "IsHidden": false,
       "CustomFunctions": [
-        { "columnChanged": "segmentCodesUI.columnChanged" },
         { "columnStartEdit": "segmentCodesUI.columnStartEdit" }
       ]
     },
