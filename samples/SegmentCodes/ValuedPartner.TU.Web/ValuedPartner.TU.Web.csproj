@@ -405,6 +405,7 @@
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_Localization.cshtml" />
     <Content Include="Areas\TU\Views\SegmentCodes\Partials\_SegmentCodes.cshtml" />
     <Content Include="Areas\Core\Views\Find\ViewFinder.cshtml" />
+    <Content Include="Areas\TU\Views\SegmentCodes\Partials\SegmentCodesGrid.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
