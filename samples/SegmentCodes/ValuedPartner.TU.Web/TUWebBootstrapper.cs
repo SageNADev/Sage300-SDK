@@ -59,6 +59,7 @@ namespace ValuedPartner.TU.Web
         private void RegisterController(IUnityContainer container)
         {
 			UnityUtil.RegisterType<IController, SegmentCodesController>(container, "TUSegmentCodes");
+            UnityUtil.RegisterType<IController, SegmentCodesGridController>(container, "TUSegmentCodesGrid");
         }
 
         /// <summary>

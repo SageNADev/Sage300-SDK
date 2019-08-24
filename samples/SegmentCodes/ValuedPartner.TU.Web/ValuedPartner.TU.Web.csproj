@@ -336,6 +336,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\TU\Controllers\SegmentCodesController.cs" />
+    <Compile Include="Areas\TU\Controllers\SegmentCodesGridController.cs" />
     <Compile Include="Areas\TU\Controllers\SegmentCodesControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\SegmentCodesViewModel.cs" />
     <Compile Include="TUAreaRegistration.cs" />
