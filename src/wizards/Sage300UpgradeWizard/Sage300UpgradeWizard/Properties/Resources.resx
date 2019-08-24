@@ -329,4 +329,22 @@
   <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="SearchingInAllProjectDirectoriesInstead" xml:space="preserve">
+    <value>Seaching in all project directories instead.</value>
+  </data>
+  <data name="Template_AccpacPropsFileNotFoundInRootOfSolutionFolder" xml:space="preserve">
+    <value>{0} was not found in the root of the solution folder.</value>
+  </data>
+  <data name="Template_AttemptingToUpdateAllCsprojFiles" xml:space="preserve">
+    <value>Attempting to update all csproj files to reference the solution root folder based {0} file.</value>
+  </data>
+  <data name="Template_RemovingAllCopiesOfAccpacPropsFile" xml:space="preserve">
+    <value>Removing all copies of {0} located in project folders.</value>
+  </data>
+  <data name="Template_XCopiesOfPropsFileWereFound" xml:space="preserve">
+    <value>{0} copies of {1} were found:</value>
+  </data>
+  <data name="UpdatesToSupportMultipleSessionsAreAManualStep" xml:space="preserve">
+    <value>The updates to support multiple sessions must be made manually.</value>
+  </data>
 </root>
