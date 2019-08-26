@@ -117,6 +117,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\PropsFileManager.cs" />
     <Compile Include="Utilities\RegistryHelper.cs" />
     <Compile Include="Sage300UpgradeWizard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

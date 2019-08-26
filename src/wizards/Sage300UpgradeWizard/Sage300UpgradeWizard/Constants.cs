@@ -26,6 +26,25 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
     public static class Constants
     {
         /// <summary>
+        /// These are per-release constants and will likely
+        /// change for each release of the Upgrade Wizard
+        /// </summary>
+        public static class PerRelease
+        {
+            /// <summary> From Release Number </summary>
+            public const string FromReleaseNumber = "2019.2";
+
+            /// <summary> To Release Number </summary>
+            public const string ToReleaseNumber = "2020.0";
+
+            /// <summary> From Accpac Number </summary>
+            public const string FromAccpacNumber = "6.6.0.10";
+
+            /// <summary> To Accpac Number </summary>
+            public const string ToAccpacNumber = "6.7.0.0";
+        }
+
+        /// <summary>
         /// These are common constants that won't
         /// vary between releases of the Upgrade Wizard
         /// </summary>
@@ -55,25 +74,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const string TargetedDotNetFrameworkVersion = "4.7.2";
             public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.7.2";
-        }
-
-        /// <summary>
-        /// These are per-release constants and will likely
-        /// change for each release of the Upgrade Wizard
-        /// </summary>
-        public static class PerRelease
-        {
-            /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2019.2";
-
-            /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2020.0";
-
-            /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "6.6.0.10";
-
-            /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.7.0.0";
         }
     }
 }

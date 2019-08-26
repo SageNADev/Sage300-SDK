@@ -609,8 +609,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///	- XXAreaRegistration.cs
         ///	- Global.asax.cs
         ///	- Web.config
+        ///	- All JavaScript behaviour files
         ///
-        ///Please refer to the &apos;Multiple Sessions changes&apos; s [rest of string was truncated]&quot;;.
+        ///Please refer t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUpdateMultisession {
             get {
@@ -635,6 +636,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
             get {
                 object obj = ResourceManager.GetObject("sage-logo-square", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seaching in all project directories instead..
+        /// </summary>
+        internal static string SearchingInAllProjectDirectoriesInstead {
+            get {
+                return ResourceManager.GetString("SearchingInAllProjectDirectoriesInstead", resourceCulture);
             }
         }
         
@@ -720,11 +730,56 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} was not found in the root of the solution folder..
+        /// </summary>
+        internal static string Template_AccpacPropsFileNotFoundInRootOfSolutionFolder {
+            get {
+                return ResourceManager.GetString("Template_AccpacPropsFileNotFoundInRootOfSolutionFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attempting to update all csproj files to reference the solution root folder based {0} file..
+        /// </summary>
+        internal static string Template_AttemptingToUpdateAllCsprojFiles {
+            get {
+                return ResourceManager.GetString("Template_AttemptingToUpdateAllCsprojFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removing all copies of {0} located in project folders..
+        /// </summary>
+        internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
+            get {
+                return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} copies of {1} were found:.
+        /// </summary>
+        internal static string Template_XCopiesOfPropsFileWereFound {
+            get {
+                return ResourceManager.GetString("Template_XCopiesOfPropsFileWereFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to to.
         /// </summary>
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to support multiple sessions must be made manually..
+        /// </summary>
+        internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
             }
         }
         
