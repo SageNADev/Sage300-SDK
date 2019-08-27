@@ -7,16 +7,9 @@ It does not happen every release, but every once in a while when the Sage 300 ap
 complete and the Web SDK is being finalized, an issue is discovered that must be patched
 for developers on the current release not to be impacted.
 
-An issue was discovered in the grid framework that affects the grid for a Flat Code
-Type screen:
-
-* The override of the Sage Grid Controller did not result in the controller being invoked.
-* While the key field of a grid in a Header-Detail Code Type is correct, the key
-  field of a grid in a Flat Code Type screen was returning an incorrect value.
-
-> This issue does not affect customers as the new grid for Flat Code Type Screens
-  is not implemented in any Sage 300 Web Screen. However, it will affect a
-  developer creating a grid in a Flat Code Type screen.
+An issue was recently discovered in the grid framework where overriding the Sage Grid
+Controller did not result in the custom controller being invoked. As a result, the 
+developer could not override the CRUD operations for a grid on the server side.
 
 > This patch will be part of the Sage 300 2020.1 release as part of the codebase.
 
