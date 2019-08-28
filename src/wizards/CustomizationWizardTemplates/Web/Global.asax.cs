@@ -53,7 +53,7 @@ namespace $safeprojectname$
 					ScreenContext = new ScreenContext(),
                 };
 
-				var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
+                var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
                 context.ScreenContext.ScreenName = "None";
                 context.SessionId = Encoding.UTF8.Base64Encode(sessionId);
 				
