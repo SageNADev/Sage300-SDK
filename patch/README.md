@@ -1,7 +1,7 @@
 
 # Patch
 
-## New Grid Framework Patch for the Flat Code Type 
+## New Grid Framework Patch
 
 It does not happen every release, but every once in a while when the Sage 300 application is
 complete and the Web SDK is being finalized, an issue is discovered that must be patched
