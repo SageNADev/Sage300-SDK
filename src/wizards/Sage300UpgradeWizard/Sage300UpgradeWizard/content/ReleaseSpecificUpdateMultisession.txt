@@ -8,6 +8,7 @@ modification and therefore this step will require manual modifications.
 The following files are affected (all within the Namespace.Web project):
 	- XXAreaRegistration.cs
 	- Global.asax.cs
+	- PageUrl.txt
 	- Web.config
 	- All JavaScript behaviour files
 

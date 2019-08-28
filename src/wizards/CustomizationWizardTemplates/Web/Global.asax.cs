@@ -5,6 +5,7 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Web;
@@ -12,6 +13,7 @@ using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -39,7 +41,6 @@ namespace $safeprojectname$
                 var context = new Context
                 {
                     AspNetSessionId = HttpContext.Current.Session.SessionID,
-                    SessionId = "QURNSU4tU0FNTFRE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
                     ProductUserId = recordId,
@@ -51,7 +52,10 @@ namespace $safeprojectname$
                     Container = BootstrapTaskManager.Container,
 					ScreenContext = new ScreenContext(),
                 };
-				context.ScreenContext.ScreenName = "None";
+
+                var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
+                context.ScreenContext.ScreenName = "None";
+                context.SessionId = Encoding.UTF8.Base64Encode(sessionId);
 				
                 //Set default company information
                 var companies = new List<Organization>

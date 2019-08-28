@@ -45,6 +45,7 @@ sg.viewList = function () {
         _sendChange = {},
         _selectRowUid = {},
         _skipMoveTo = {},
+        _pagingRowData = {},
         _gridList = [];
 
      /**
@@ -70,7 +71,10 @@ sg.viewList = function () {
             currentPage = dataSource.page();
             rowData = rowData || grid.dataItem(grid.select());
 
-        // If the current record reaches maximum of current page but not the last record, go to next page
+        // If the current record reaches maximum of current page but not the last record, go to next page, keep rowData for next page create new record to use 
+        if (insertedIndex === pageSize) {
+            _pagingRowData[gridName] = rowData;
+        }
         if (insertedIndex === pageSize && total / pageSize !== currentPage) {
             insertedIndex = 0;
             dataSource.page(++currentPage);
@@ -79,6 +83,7 @@ sg.viewList = function () {
         }
         if (insertedIndex > pageSize) {
             insertedIndex = 0;
+            rowData = _pagingRowData[gridName];
         }
         _setDefaultRow[gridName] = false;
         //If the record is dirty, update the current row first before adding a new row
@@ -1251,6 +1256,26 @@ sg.viewList = function () {
     }
 
     /**
+     * @description: Get custom controller url
+     * @param {string} gridName: grid name
+     * @param {string} requestName: request name
+     * @returns {string} return custom controller url
+     */
+    function _getRequestUrl(gridName, requestName) {
+        var url = sg.utls.url.buildUrl("Core", "Grid", requestName);
+        var controllerUrl = window[gridName + "Model"].GridDataServiceController;
+
+        if (controllerUrl && controllerUrl.indexOf('/') > -1) {
+            if (controllerUrl.endsWith("Controller")) {
+                controllerUrl = controllerUrl.replace("Controller", "");
+            }
+            var defaultUrl = controllerUrl.startsWith("/") ? "/Core/Grid" : "Core/Grid";
+            url = url.replace(defaultUrl, controllerUrl);
+        }
+        return url;
+    }
+
+    /**
      * @description Send sync ajax request
      * @param {string} gridName The grid name
      * @param {number} requestType The request type
@@ -1267,7 +1292,7 @@ sg.viewList = function () {
         if (grid) {
             var data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': record, 'fieldName': fieldName },
                 requestName = _getRequestName(requestType),
-                url = sg.utls.url.buildUrl("Core", "Grid", requestName);
+                url = _getRequestUrl(gridName, requestName);
 
             if (requestType === RequestTypeEnum.Refresh) {
                 data.isNewRecord = isNewLine || false;
@@ -1721,7 +1746,7 @@ sg.viewList = function () {
 
                 transport: {
                     read: {
-                        url: window.sg.utls.url.buildUrl("Core", "Grid", "Read"),
+                        url: _getRequestUrl(gridName, "Read"),
                         contentType: "application/json",
                         type: "POST",
                         headers: sg.utls.getHeadersForAjax()

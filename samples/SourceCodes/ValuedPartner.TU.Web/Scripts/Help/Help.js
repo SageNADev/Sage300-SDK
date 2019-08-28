@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var navUrl;
@@ -30,7 +30,7 @@ $(document).ready(function () {
         $('#widgetHplayout').hide();
 
         //When footer logo is clicked
-        screenId = defaultScreenId;
+        taskDockMenuBreadCrumbManager.setDefaultScreenId();
 
         $('#breadcrumb').hide();
 

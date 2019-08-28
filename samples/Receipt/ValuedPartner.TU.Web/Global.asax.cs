@@ -23,12 +23,14 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
 using System.IO;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -57,7 +59,6 @@ namespace ValuedPartner.TU.Web
                 var context = new Context
                 {
                     AspNetSessionId = HttpContext.Current.Session.SessionID,
-                    SessionId = "QURNSU4tU0FNTFRE",
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
                     ProductUserId = recordId,
@@ -69,7 +70,9 @@ namespace ValuedPartner.TU.Web
                     ScreenContext = new ScreenContext()
                 };
 
+                var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
                 context.ScreenContext.ScreenName = "None";
+                context.SessionId = Encoding.UTF8.Base64Encode(sessionId);
 
                 var companies = new List<Organization> {
                     new Organization() {
