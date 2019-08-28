@@ -78,6 +78,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendoGrid.js">knockout-kendoGrid.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="xregexp-all.js">xregexp-all.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="xregexp-all.min.js">xregexp-all.min.js</ProjectItem>
         <Folder Name="AjaxQ" TargetFolderName="AjaxQ">
           <ProjectItem ReplaceParameters="true" TargetFileName="ajaxq.js">ajaxq.js</ProjectItem>
         </Folder>
@@ -141,6 +143,7 @@
         </Folder>
         <Folder Name="Portal" TargetFolderName="Portal">
           <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="OpenScreenCountManager.js">OpenScreenCountManager.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="RecentWindows.js">RecentWindows.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
@@ -369,6 +372,7 @@
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
           <Folder Name="Scripts" TargetFolderName="Scripts">
+            <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Controls.js">Sage.CA.SBS.ERP.Sage300.Common.Controls.js</ProjectItem>

@@ -147,6 +147,7 @@ table col[class*="col-"] {
   float: none;
   display: table-column;
 }
+
 table {
   td,
   th {
@@ -307,13 +308,6 @@ table {
       &.with-finder.numeric {
         padding-right: 20px;
       }
-    }
-
-    +input[type="text"] {
-      height: 22px;
-      font-size: 12px;
-      padding: 0;
-      border: none;
     }
   }
 
@@ -995,7 +989,8 @@ table {
     .edit-cell.inpt-text .btn-finder, 
     .edit-cell.inpt-text .btn-search,
     .btn-finder, 
-    .btn-search {  
+    .btn-search, 
+    .pencil-edit {  
       height: 22px;
       width: 22px;
       margin: 0;
@@ -1020,8 +1015,24 @@ table {
       }
     }
 
+    .pencil-edit {
+      background-position: -607px -2px;
+      top: 2px;
+    }
+
     .edit-container {
       position:relative;
+
+      .edit-cell.inpt-text {
+
+        .k-widget.k-numerictextbox {
+          width: 100%;
+
+          .k-numeric-wrap {
+            width: 100%;
+          }
+        }
+      }
 
       .edit-cell.inpt-finder {
         position: absolute;
@@ -1065,6 +1076,7 @@ table {
 
     .k-datepicker {
       margin:0;
+      width: ~"calc(100% - 25px)";
 
       .k-picker-wrap {
         height: 24px;

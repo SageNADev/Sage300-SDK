@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -28,7 +28,7 @@
     const string notAvailable = "N/A";
 
     //Get Domain URL according to the enviorment and user
-    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
+    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix(ViewBag.SessionId);
 
     //Prepare menu items collections
     var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
@@ -48,13 +48,36 @@
     {
         if (ViewBag.IsSIRCEnable == true)
         {
-
             @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content,
                 NavigationResx.SIR_Title,
                 NavigationResx.SIR_Msg1,
                 NavigationResx.SIR_Msg2,
                 NavigationResx.SIR_Btn)))
-            <li class="divider"></li>
+        }
+    }
+    else if (level2Item.Data.IsRootItem.HasValue && level2Item.Data.IsRootItem.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
+    {
+        string menuLabel = null;
+        string iconPath = null;
+        string dualEmployeeTCParameter = "?dualEmployeeTC=false";
+
+        if (!(ViewBag.IsCATimeCardEnable == true && ViewBag.IsUSTimeCardEnable == true))
+        {
+            menuLabel = NavigationResx.PR_EmployeeTimeCard;
+            iconPath = @"..\..\..\Content\Images\nav\PR\icon_timecard.png";
+        }
+        else
+        {
+            dualEmployeeTCParameter = "?dualEmployeeTC=true";
+        }
+
+        if (ViewBag.IsCATimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/1")
+        {
+            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_CA, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_canada.png")
+        }
+        else if (ViewBag.IsUSTimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/0")
+        {
+            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_US, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_us.png")
         }
     }
     else
@@ -77,7 +100,6 @@
         {
             bgImagePath = "../../External/Content/Images/nav/default_bg_image.jpg";
         }
-
         <li class="menu-item top-tier menu-sdk">
             <div class="nav-icon">
                 <img src=@iconPath width="16" height="16">
@@ -107,6 +129,12 @@
     @Html.ConvertToJsVariableUsingNewtonSoft("PluginMenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
 </script>
 
+@helper CreatePayRollMenu(string content, string label, string[] urlSegments, string screenUrl, string parameter, string iconPath)
+{
+    @Html.Raw(HttpUtility.HtmlDecode(
+        string.Format(content, label, string.Join(string.Empty, urlSegments, 0, 4) + screenUrl + parameter, iconPath)));
+}
+
 @helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
 {
     var parentItemId = parentItem.Data.MenuId;
@@ -119,7 +147,6 @@
     {
         return;
     }
-
     <li class="@parentItemClass">
         <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
             @parentItem.Data.MenuName

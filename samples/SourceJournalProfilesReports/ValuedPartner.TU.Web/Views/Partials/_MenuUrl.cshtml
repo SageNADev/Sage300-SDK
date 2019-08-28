@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -17,7 +17,7 @@
     const string notAvailable = "N/A";
 
     //Get Domain URL according to the enviorment and user
-    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix();
+    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix(ViewBag.SessionId);
 
     //Prepare menu items collections
     var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
@@ -30,6 +30,7 @@
 }
 
 @*Rendering Menu*@
+
 @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
 {
     firstItem = true;
@@ -37,9 +38,9 @@
     var level2ItemId = level2Item.Data.MenuId;
     var iconName = level2Item.Data.IconName;
     var bgImageName = level2Item.Data.MenuBackGoundImage;
-    var iconPath = Path.Combine("../../Content/Images/nav/", iconName);
-    var bgImagePath = Path.Combine("../../Content/Images/nav/", bgImageName);
-    <li class="menu-item top-tier">
+    var iconPath = Path.Combine("../../../Content/Images/nav/", iconName);
+    var bgImagePath = Path.Combine("../../../Content/Images/nav/", bgImageName);
+    <li class="menu-item top-tier menu-core">
         <div class="nav-icon">
             <img src=@iconPath width="16" height="16">
         </div>

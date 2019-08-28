@@ -1,0 +1,17 @@
+{
+  "ToCurrency": "CAD",
+  "RateType": "01",
+  "TableDescription": "Currency rate table",
+  "DateMatching": "Earlier",
+  "RateOperation": "Multiply",
+  "SourceOfRates": "National Post",
+  "CurrencyRateDetail": [
+    {
+      "ToCurrency": "CAD",
+      "RateType": "01",
+      "FromCurrency": "USD",
+      "RateDate": "2020-01-05",
+      "Rate": 1.31
+    }
+  ]
+}

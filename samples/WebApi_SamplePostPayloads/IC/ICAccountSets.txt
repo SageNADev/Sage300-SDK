@@ -1,0 +1,15 @@
+{
+  "AccountSetCode": "FIFO2",
+  "Description": "FIFO 2",
+  "CostingMethod": "FIFO",
+  "InventoryControlAccount": "1300",
+  "PayablesClearingAccount": "2040",
+  "AdjustmentWriteOffAccount": "6340",
+  "AssemblyCostCreditAccount": "6350",
+  "NonstockClearingAccount": "2050",
+  "TransferClearingAccount": "2055",
+  "ShipmentClearingAccount": "1310",
+  "DisassemblyExpenseAccount": "6070",
+  "PhysicalInventoryAdjustmentAccount": "6340",
+  "CreditDebitNoteClearingAccount": "1330"
+}

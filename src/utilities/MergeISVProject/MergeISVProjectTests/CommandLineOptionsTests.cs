@@ -9,6 +9,10 @@ namespace MergeISVProjectTests
     {
 		private const string APPNAME = "MergeISVProject.exe";
 		private const string APPVERSION = "V1.0.0.0";
+        private const string APPCOPYRIGHT = "Copyright 2019";
+        private const string APPBUILDDATE = "January 1, 2019";
+        private const string APPBUILDYEAR = "2019";
+
 
 		/// <summary>
 		/// Test passing zero command-line arguments
@@ -19,8 +23,8 @@ namespace MergeISVProjectTests
 			// Arrange
 			string[] args = { };
 
-			// Act
-			var options = new CommandLineOptions("AppName", "V1.0", args);
+            // Act
+            var options = new CommandLineOptions("AppName", "V1.0", "Copyright 2019", "January 1, 2018", "2018", args);
 			bool anyErrors = options.AnyErrors();
 
 			// Assert
@@ -37,7 +41,7 @@ namespace MergeISVProjectTests
 			string[] args = BuildArgumentArray();
 
 			// Act
-			var options = new CommandLineOptions(APPNAME, APPVERSION, args);
+			var options = new CommandLineOptions(APPNAME, APPVERSION, APPCOPYRIGHT, APPBUILDDATE, APPBUILDYEAR, args);
 			var anyErrors = options.AnyErrors();
 
 			// Assert

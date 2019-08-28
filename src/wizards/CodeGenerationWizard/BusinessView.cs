@@ -21,6 +21,7 @@
 #region Namespaces
 using System.Linq;
 using System.Collections.Generic;
+using ACCPAC.Advantage;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -95,6 +96,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Compositions is the collection of entity compositions </summary>
         public List<Composition> Compositions { get; set; }
+
+        /// <summary> View Protocol </summary>
+        public ViewProtocol Protocol { get; set; }
 
         /// <summary> Is this part of a HeaderDetail Composition? </summary>
         public bool IsPartofHeaderDetailComposition { get; set; }

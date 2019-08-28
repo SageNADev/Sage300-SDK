@@ -21,6 +21,8 @@
 #region Imports
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 #endregion
@@ -73,17 +75,57 @@ namespace MergeISVProject
 			return Encoding.GetEncoding(DefaultCodePage).GetString(byteArray);
 		}
 
-		/// <summary>
-		/// Get the name of this application and it's version number
-		/// Values are returned via output string parameters
-		/// </summary>
-		/// <param name="name">Application Name</param>
-		/// <param name="ver">Application Version</param>
-		public static void GetAppNameAndVersion(out string name, out string ver)
+        /// <summary>
+        /// Get some information from the application
+        /// Values are returned via output string parameters
+        /// </summary>
+        /// <param name="name">Application Name</param>
+        /// <param name="ver">Application Version</param>
+        /// <param name="copyright">Application Copyright</param>
+        /// <param name="buildDate">Application Build Date</param>
+        /// <param name="buildYear">Application Build Year</param>
+        public static void GetAppInformation(out string name, out string ver, out string copyright, out string buildDate, out string buildYear)
 		{
-			name = typeof(Program).Assembly.GetName().Name + ".exe";
-			ver = typeof(Program).Assembly.GetName().Version.ToString();
-		}
-		#endregion
-	}
+            var currentAssembly = typeof(Program).Assembly;
+            var info = FileVersionInfo.GetVersionInfo(typeof(Program).Assembly.Location);
+            name = info.InternalName;
+            ver = info.ProductVersion;
+            copyright = info.LegalCopyright;
+
+            var linkerTime = Assembly.GetExecutingAssembly().GetLinkerTime();
+            buildDate = linkerTime.ToString(@"dddd, MMMM dd,yyyy @ HH:mm:ss");
+            buildYear = linkerTime.Year.ToString();
+        }
+
+        /// <summary>
+        /// Get the application timestamp value
+        /// This is an extension method for the dotnet 'Assembly' class
+        /// </summary>
+        /// <param name="assembly">The assembly</param>
+        /// <param name="target">The target timezone. Defaults to null</param>
+        /// <returns></returns>
+        public static DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
+        {
+            var filePath = assembly.Location;
+            const int PeHeaderOffset = 60;
+            const int LinkerTimestampOffset = 8;
+
+            var buffer = new byte[2048];
+
+            using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                stream.Read(buffer, 0, 2048);
+
+            var offset = BitConverter.ToInt32(buffer, PeHeaderOffset);
+            var secondsSince1970 = BitConverter.ToInt32(buffer, offset + LinkerTimestampOffset);
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var linkTimeUtc = epoch.AddSeconds(secondsSince1970);
+
+            var tz = target ?? TimeZoneInfo.Local;
+            var localTime = TimeZoneInfo.ConvertTimeFromUtc(linkTimeUtc, tz);
+
+            return localTime;
+        }
+        #endregion
+    }
 }

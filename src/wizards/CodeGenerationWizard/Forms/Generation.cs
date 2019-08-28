@@ -31,12 +31,13 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
     /// <summary> UI for Code Generation Wizard </summary>
-    public partial class Generation : Form
+    public partial class Generation : MetroForm
     {
         #region Private Variables
 
@@ -281,13 +282,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>True for valid step other wise false</returns>
         private bool ValidateStep()
         {
+#if (SKIP_MANUAL_ENTER_ENTITIES)
+            return true;
+#else
             // Locals
             var valid = string.Empty;
 
             // Code Type Step
 			if (IsCurrentPanel(Constants.PanelCodeType))
 			{
-                valid = ValidCodeTypeStep();
+                try
+                {
+                    valid = ValidCodeTypeStep();
+                }
+                catch
+                {
+                    // Wizard is not compatible with installed Sage 300 libraries
+                    valid = Resources.InvalidVersion;
+                }
             }
 
             // Entities Step
@@ -303,6 +315,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             return string.IsNullOrEmpty(valid);
+#endif
         }
 
         /// <summary> Valid CodeType Step</summary>
@@ -543,15 +556,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     if (!businessView.Text.Equals(ProcessGeneration.Constants.NewEntityText) && 
                          businessView.Properties[BusinessView.Constants.EntityName].Equals(entityName))
                     {
-                        dupeFound = true;
-                        break;
+                        return Resources.InvalidEntityDuplicate;
                     }
-                }
-
-                // If a dupe is found, this is invalid
-                if (dupeFound)
-                {
-                    return Resources.InvalidEntityDuplicate;
                 }
             }
 
@@ -605,7 +611,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = string.Format(Resources.CodeGenerationWizardTitle_Template, GlobalConstants.Version);
+            // Set the application title
+            Text = Resources.CodeGenerationWizard;
 
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
@@ -643,8 +650,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             lblReportIniFile.Text = Resources.ReportIniFile;
             tooltip.SetToolTip(lblReportIniFile, Resources.ReportIniFileTip);
-
-            tooltip.SetToolTip(btnIniDialog, Resources.ReportIniDialogTip);
 
             lblReportKeys.Text = Resources.ReportKeys;
             tooltip.SetToolTip(lblReportKeys, Resources.ReportKeysTip);
@@ -1170,7 +1175,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             txtReportIniFile.Enabled = enableReportControls;
             cboReportKeys.Enabled = enableReportControls;
             txtReportProgramId.Enabled = enableReportControls;
-            btnIniDialog.Enabled = enableReportControls;
 
             var enableCompositionControls = (repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             grdEntityCompositions.Enabled = enableCompositionControls;
@@ -1494,6 +1498,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 businessView.Compositions = _entityCompositions.ToList();
             }
 
+            // extra check for flat repo if we are geneting grid for it
+            if (repositoryType.Equals(RepositoryType.Flat) && businessView.Options[BusinessView.Constants.GenerateGrid])
+            {
+                // make sure it support revision list
+                if ((businessView.Protocol & ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
+                     (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
+                {
+                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (repositoryType.Equals(RepositoryType.HeaderDetail) && businessView.Options[BusinessView.Constants.GenerateGrid])
+            {
+                // make sure it support revision list
+                if ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
+                {
+                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             // Add/Update to tree
             businessView.Text = businessView.Properties[BusinessView.Constants.EntityName];
 
@@ -1808,9 +1834,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         private void ParseXml(String xmlFilename)
         {
-            var xdoc = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
+            var xdoc = XDocument.Load(xmlFilename);
 
-            _entitiesContainerName = xdoc.Root.Attribute("container").Value;
+            _entitiesContainerName = xdoc.Root.Attribute("container")?.Value;
 
             // open all the entities
             foreach (var ent in xdoc.Root.Descendants().Where(e => e.Name == "entity"))
@@ -1844,7 +1870,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
                 businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
-                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList).Value);
+                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList)?.Value??"false");
                 businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
                 businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
                 businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyIfExists).Value);
@@ -1915,10 +1941,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Create XML if Step is Generate
                     if (IsCurrentPanel(Constants.PanelGenerateCode))
                     {
-                        _xmlEntities = BuildXDocument();
+#if (SKIP_MANUAL_ENTER_ENTITIES)
+                        _xmlEntities = XDocument.Load(@"C:\$$$\GL0021.xml");
+                        ParseXml(@"C:\$$$\GL0021.xml");
+#else
 
-                        //_xmlEntities = XDocument.Load(@"C:\AAA\apdistributionsetschema.xml");
-                        //ParseXml(@"C:\AAA\apdistributionsetschema.xml");
+                        _xmlEntities = BuildXDocument();
+#endif
 
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
 
@@ -2118,43 +2147,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="visible">True to show otherwise false </param>
         private void ShowStep(bool visible)
         {
-            // Adjust size
-            if (visible)
-            {
-                if (IsCurrentPanel(Constants.PanelCodeType))
-                {
-                    // Adjust to smaller size
-                    var location = btnBack.Location;
-                    location.X = 320;
-                    btnBack.Location = location;
-
-                    location = btnNext.Location;
-                    location.X = 394;
-                    btnNext.Location = location;
-
-                    var size = ClientSize;
-                    size.Width = 474;
-                    ClientSize = size;
-                    // CenterToScreen();
-                }
-                else
-                {
-                    // Adjust to larger size
-                    var location = btnBack.Location;
-                    location.X = 805;
-                    btnBack.Location = location;
-
-                    location = btnNext.Location;
-                    location.X = 879;
-                    btnNext.Location = location;
-
-                    var size = ClientSize;
-                    size.Width = 959;
-                    ClientSize = size;
-                    // CenterToScreen();
-                }
-            }
-
             _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
             _wizardSteps[_currentWizardStep].Panel.Visible = visible;
             splitSteps.SplitterDistance = Constants.SplitterDistance;
@@ -2178,6 +2170,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void InitWizardSteps()
         {
             var repositoryType = GetRepositoryType();
+
+            // uncheck generate grid option
+            chkGenerateGrid.Checked = false;
+            chkSequenceRevisionList.Visible = false;
+
+            if (repositoryType == RepositoryType.Flat ||
+                repositoryType == RepositoryType.HeaderDetail)
+            {
+                chkGenerateGrid.Visible = true;
+            }
+            else
+            {
+                chkGenerateGrid.Visible = false;
+            }
 
             // Default
             btnBack.Enabled = false;
@@ -2938,6 +2944,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     // Assign to the grids
                     AssignGrids(businessView);
+
+                    chkGenerateGrid.Checked = false;
+                    chkGenerateFinder.Enabled = true;
+
+                    if (GetRepositoryType() == RepositoryType.HeaderDetail &&
+                        ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionSequenced ||
+                        (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionOrdered))
+                    {
+                        chkGenerateGrid.Checked = true;
+                        chkGenerateFinder.Checked = false;
+                        chkGenerateFinder.Enabled = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -3159,6 +3177,5 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
 #endregion
-
     }
 }

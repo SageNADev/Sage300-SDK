@@ -25,69 +25,12 @@ using System.Collections;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using ValuedPartner.TU.Models;
-using ValuedPartner.TU.Models.Enums;
 using System.Collections.Generic;
+
 #endregion
 
 namespace ValuedPartner.TU.Web.Areas.TU.Models
 {
-    /// <summary>
-    /// Class for SegmentCodesViewModel
-    /// </summary>
-    /// <typeparam name="T">Where T is type of <see cref="SegmentCodes"/></typeparam>
-    public class SegmentCodesViewModel<T> : ViewModelBase<T> 
-        where T : SegmentCodes, new()
-    {
-        /// <summary>
-        /// Segment Codes View Model Class constructor
-        /// </summary>
-        public SegmentCodesViewModel()
-        {
-            Segments = new List<SegmentName>();
-            SegmentCodes = new EnumerableResponse<T> { Items = new List<T>() };
-        }
-        /// <summary>
-        /// SegmentNumber list
-        /// </summary>
-        public List<SegmentName> Segments { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the Segment Codes used
-        /// </summary>
-
-        public EnumerableResponse<T> SegmentCodes { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Segment name length
-        /// </summary>
-        public int SegmentNameLength { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Segment number
-        /// </summary>
-        public string SegmentNumber { get; set; }
-
-        /// <summary>
-        /// Property For IsValidSegmentCode
-        /// </summary>
-        public bool IsValidSegmentCode { get; set; }
-
-        /// <summary>
-        /// Property For IsValidAccount
-        /// </summary>
-        public bool IsSegmentCodeUsed { get; set; }
-
-        /// <summary>
-        /// Duplicate error message
-        /// </summary>
-        public string ErrorMessage { get; set; }
-
-        /// <summary>
-        /// Duplicate error message
-        /// </summary>
-        public List<string> DeletedSegmentCodes { get; set; }
-    }
-
     /// <summary>
     /// Segment List
     /// </summary>
@@ -113,4 +56,16 @@ namespace ValuedPartner.TU.Web.Areas.TU.Models
         /// </summary>
         public int SegmentLength { get; set; }
     }
+    /// <summary>
+    /// Class for SegmentCodesViewModel
+    /// </summary>
+    public class SegmentCodesViewModel : ViewModelBase<SegmentCodes>
+    {
+        /// <summary>
+        /// SegmentNumber list
+        /// </summary>
+        public List<SegmentName> Segments { get; set; }
+
+    }
 }
+					

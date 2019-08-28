@@ -25,11 +25,12 @@ using System.IO;
 using System.Windows.Forms;
 using Sage300UICustomizationWizard.Properties;
 using Newtonsoft.Json.Linq;
+using MetroFramework.Forms;
 #endregion
 
 namespace Sage300UICustomizationWizard
 {
-    public partial class UserInputForm : Form
+    public partial class UserInputForm : MetroForm
     {
         #region Private Variables
 
@@ -44,6 +45,8 @@ namespace Sage300UICustomizationWizard
         #region Private Constants
         private static class Constants
         {
+            public const string KendoLicenseUrl = @"http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
+
             public const string KendoVersion = "v2019.1.115";
 
             /// <summary> Panel Name for pnlCreateEdit </summary>
@@ -65,7 +68,7 @@ namespace Sage300UICustomizationWizard
             public const string ApplicationModules = "AP,AR,AS,BK,TX,CS,GL,IC,OE,PO,";
 
             /// <summary> Splitter Distance </summary>
-            public const int SplitterDistance = 415;
+            public const int SplitterDistance = 510;
 
             /// <summary> Single space character </summary>
             public const char SingleSpaceCharacter = ' ';
@@ -175,6 +178,7 @@ namespace Sage300UICustomizationWizard
                 if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
                 {
                     btnNext.Text = Resources.Generate;
+                    btnNext.Enabled = chkKendoLicense.Checked;
                 }
 
                 // Update title and text for step
@@ -224,7 +228,7 @@ namespace Sage300UICustomizationWizard
         /// <summary> Show Step Title</summary>
         private void ShowStepTitle()
         {
-            lblStepTitle.Text = Resources.Step + (_currentWizardStep + 1).ToString("#0") + Resources.Dash +
+            lblStepTitle.Text = Resources.Step + " " + (_currentWizardStep + 1).ToString("#0") + " " + Resources.Dash + " " + 
                                 _wizardSteps[_currentWizardStep].Title;
             lblStepDescription.Text = _wizardSteps[_currentWizardStep].Description;
         }
@@ -501,8 +505,6 @@ namespace Sage300UICustomizationWizard
             lblProject.Text = Resources.Project;
             tooltip.SetToolTip(lblProject, Resources.ProjectTip);
 
-            tooltip.SetToolTip(btnPackageFinder, Resources.PackageFinderTip);
-
             lblKendoVersionHelp.Text = String.Format(Resources.Template_KendoVersion, Constants.KendoVersion);
         }
 
@@ -532,9 +534,8 @@ namespace Sage300UICustomizationWizard
         /// <param name="e">Event Args </param>
         private void chkKendoLicense_CheckedChanged(object sender, EventArgs e)
         {
-            lblKendoFolder.Enabled = chkKendoLicense.Checked;
             txtKendoFolder.Enabled = chkKendoLicense.Checked;
-            btnKendoDialog.Enabled = chkKendoLicense.Checked;
+            btnNext.Enabled = chkKendoLicense.Checked;
         }
 
         /// <summary> Kendo License Link</summary>
@@ -546,7 +547,7 @@ namespace Sage300UICustomizationWizard
             lblKendoLink.LinkVisited = true;
 
             // Navigate to a URL.
-            System.Diagnostics.Process.Start(lblKendoLink.Text);
+            System.Diagnostics.Process.Start(Constants.KendoLicenseUrl);
         }
 
         /// <summary> Kendo Folder search dialog</summary>

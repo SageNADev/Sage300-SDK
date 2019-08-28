@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ValuedPartner.TU.BusinessRepository")]
-[assembly: AssemblyCopyright("Copyright © 2018 ValuedPartner")]
+[assembly: AssemblyCopyright("Copyright © 2019 ValuedPartner")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

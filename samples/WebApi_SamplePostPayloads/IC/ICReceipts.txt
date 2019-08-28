@@ -1,0 +1,33 @@
+{
+  "SequenceNumber": 321,
+  "Description": "IC Receipts",
+  "ReceiptDate": "2020-01-02",
+  "Reference": "REF WEBAPI",
+  "ReceiptType": "Receipt",
+  "RecordStatus": "Entered",
+  "VendorNumber": "1400",
+  "AdditionalCost": 10.50,
+  "AdditionalCostCurrency": "CAD",
+  "ReceiptDetails": [
+    {
+      "SequenceNumber": 321,
+      "LineNumber": 100,
+      "ItemNumber": "A1-105/0",
+      "Location": "4",
+      "QuantityReceived": 30,
+      "QuantityReturned": 0,
+      "UnitOfMeasure": "Ea.",
+      "UnitCost": 2.3
+    },
+	{
+      "SequenceNumber": 321,
+      "LineNumber": 200,
+      "ItemNumber": "A1-655/0",
+      "Location": "4",
+      "QuantityReceived": 100,
+      "QuantityReturned": 0,
+      "UnitOfMeasure": "Ea.",
+      "UnitCost": 0.15
+    }
+  ]
+}

@@ -19,7 +19,11 @@
 
     @Html.Hidden("ProductUserId", context.ProductUserId) @*TODO this has to be removed *@
     @Html.Hidden("TenantId", context.TenantId) @*TODO this has to be removed *@
+
+    @Html.Hidden("ContextSessionId", context.SessionId)
+
 }
 
 @Html.Hidden("ScreenName", screenName)
+@Html.Hidden("Sage300Origin", HttpContext.Current.Request.Url.OriginalString)
 @Html.SageUrl(new Dictionary<string, object>() { { "id", "hdnUrl" }, { "name", "hdnUrl" } })

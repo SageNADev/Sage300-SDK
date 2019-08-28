@@ -1,1 +1,1 @@
-/OnPremise/TU/SourceJournalProfileReport
+OnPremise/{0}/TU/SourceJournalProfileReport

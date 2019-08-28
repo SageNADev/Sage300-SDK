@@ -1,0 +1,10 @@
+{
+  "RevaluationCodeKey": "SPOT2",
+  "Description": "Monetary Assets & Liabilities",
+  "RevalueBy": "Balances",
+  "RateType": "SP",
+  "SourceCodeID": "GL",
+  "SourceType": "RV",
+  "UnrealizedExchangeGainAcctID": "3500200",
+  "UnrealizedExchangeLossAcctID": "3510200"
+}

@@ -63,9 +63,13 @@ folders in order to segregate the documentation:
 
 ### help
 
-The **help** folder contains the CHM files for the documented assemblies
+The **help** folder contains CHM files
 
-> **Only the Common and Core assemblies are documented at this time**
+> **Only the Common and Core assemblies for web screens are documented at this time**
+
+The following sub-folder contains help files for the Classic (Desktop) SDK:
+
+* classic
 
 ### maps
 

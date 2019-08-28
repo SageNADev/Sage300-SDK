@@ -215,7 +215,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Kendo UI Commercial License may be obtained at:.
+        ///   Looks up a localized string similar to The Kendo UI Commercial License may be obtained by clicking the link below:.
         /// </summary>
         internal static string KendoFolderLinkTip {
             get {
@@ -348,6 +348,16 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         internal static System.Drawing.Bitmap sage_300_logo {
             get {
                 object obj = ResourceManager.GetObject("sage_300_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_logo_square {
+            get {
+                object obj = ResourceManager.GetObject("sage_logo_square", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

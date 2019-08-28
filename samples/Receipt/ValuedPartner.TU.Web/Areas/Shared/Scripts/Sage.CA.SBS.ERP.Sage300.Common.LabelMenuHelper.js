@@ -76,9 +76,9 @@ LabelMenuHelper = {
                 if (!sg.utls.isSameOrigin()) {
                     return;
                 }
-
-                var isPortal = window.top.$('iframe.screenIframe:visible').length > 0;
-                var parentForm = (isPortal) ? window.top.$('iframe.screenIframe:visible').contents().find('form:first') : window.top;
+                var iFrame = window.top.$('iframe.screenIframe:visible');
+                var isPortal = iFrame && iFrame.length > 0;
+                var parentForm = isPortal ? iFrame.contents().find('form:first') : window.top;
                 var kendoWindowContainer = container.closest('.k-window-content.k-content');
                 if (parentForm !== null && parentForm.length > 0 && kendoWindowContainer !== null && kendoWindowContainer.length > 0) {
                     container.detach();

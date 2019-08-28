@@ -24,7 +24,7 @@
 
 <!DOCTYPE html>
 @{
-    Page.Title = @CommonResx.Title;
+    Page.Title = @CommonResx.Title + " [" + @Model.CompanyName + "]";
 }
 @{
     var menuUrlList = ViewBag.MenuUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
@@ -146,12 +146,12 @@
                                 </ul>
                             </li>
                             @*<li class="menu-item-with-icon" id="topMenuSettings">
-                                <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
-                                <ul>
-                                    <li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
-                                    <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
-                                </ul>
-                            </li>*@
+                                    <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
+                                    <ul>
+                                        <li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
+                                        <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                                    </ul>
+                                </li>*@
                             <li class="menu-item-with-icon" id="topMenuTools">
                                 <i class="settings tootls glyphicon glyphicon-md glyphicon-lightning" title="@NavigationResx.ToolsTitle"><span>@NavigationResx.Tools</span></i>
                             </li>
@@ -170,10 +170,9 @@
                         </li>
                         <li class="divider"></li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
-                        <li class="divider"></li>
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
-                    <div id="menuPrefTogglerAlt" >
+                    <div id="menuPrefTogglerAlt">
                         <button id="btnExpandMenuAlt" class="btn-nav-expand" title="@NavigationResx.ExpandMenu"></button>
                         <button id="btnCollapseMenuAlt" class="btn-nav-collapse" title="@NavigationResx.CollapseMenu"></button>
                     </div>
@@ -226,9 +225,12 @@
                 <div id="html-classes"></div>
                 <div id="widgetHplayout" class="container" style="display: block">
                     <div class="main_title">
-                        <div class="addWidgetHL">
-                            <div class="top-buttons addWidgets"><span>@HomePageResx.AddWidgets</span></div>
-                        </div>
+                        @if (ViewBag.TimeCardUser == null || !ViewBag.TimeCardUser)
+                        {
+                            <div class="addWidgetHL">
+                                <div class="top-buttons addWidgets"><span>@HomePageResx.AddWidgets</span></div>
+                            </div>
+                        }
                     </div>
                     <div class="widgetHpCotainer">
                         <img src="~/Content/Images/widgetHP-img.png" />
@@ -301,20 +303,20 @@
             </div>
             <div class="msg-content"> @HomePageResx.MaxWindowExceeded </div>
         </div>
-    <!--Quick Menu (draggable sidebar)-->
+        <!--Quick Menu (draggable sidebar)-->
         @Html.Partial(Constants.QuickMenu)
 
         if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
         {
-    <!--Note Editor Panel-->
+            <!--Note Editor Panel-->
             @Html.Partial(NoteConstants.NoteEditor, new NoteViewModel<Note>())
 
-    <!--Notes Center -->
+            <!--Notes Center -->
             @Html.Partial(NoteConstants.NotesCenter, new NotesSearchViewModel<NotesSearch>())
             @Scripts.Render("~/bundles/note")
         }
 
-    <!--Custom Report-->
+        <!--Custom Report-->
         @Html.Partial(AsConstants.CustomReport, new ViewDataDictionary { { "IsAdmin", ViewBag.isAdmin } })
         if (ViewBag.isAdmin)
         {
@@ -322,14 +324,14 @@
         }
         @Scripts.Render("~/bundles/CustomReport")
 
-    <!--Start Inquiries-->
+        <!--Start Inquiries-->
         @Html.Partial("~/Areas/Core/Views/Inquiry/_InquiryTool.cshtml")
         @Scripts.Render("~/bundles/InquiryPanelUI")
         @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_SaveQueryPanel.cshtml")
         @Html.Partial("~/Areas/Core/Views/AdhocInquiry/Partials/_OpenQueryPanel.cshtml")
         @Scripts.Render("~/bundles/SaveInquiryQuery")
 
-    <!--End Inquiries-->
+        <!--End Inquiries-->
 
         <script id="delete-confirmation" type="text/x-kendo-template">
             <div class="fild_set">
@@ -369,7 +371,7 @@
         @Scripts.Render("~/bundles/shared")
         @Scripts.Render("~/bundles/portal")
         @Scripts.Render("~/bundles/core")
-    <!-- put condition for wizard here -->
+        <!-- put condition for wizard here -->
         if (ViewBag.NewTenantModel != null)
         {
             @Html.Partial(CoreConstants.Wizard, ViewBag.NewTenantModel as Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenantViewModel<Sage.CA.SBS.ERP.Sage300.Core.Web.Models.NewTenant>)

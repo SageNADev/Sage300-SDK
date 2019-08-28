@@ -1,0 +1,10 @@
+{
+  "AdditionalCostKey": "DUTY2",
+  "Description": "Duty on imports 2",
+  "ExpenseAccount": "",
+  "Amount": 11,
+  "Currency": "CAD",
+  "ProrationMethod": "ProrateManually",
+  "ReprorationMethod": "Leave",
+  "ReturnAccount": ""
+}

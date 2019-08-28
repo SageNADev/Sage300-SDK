@@ -406,6 +406,10 @@
                 ViewFinderGridHelper.InitFinderValues(columnFilter);
                 sg.finderOptions.ColumnFilter = columnFilter;
 
+                if (that.options.properties.hidePageNavigation) {
+                    sg.utls.kndoUI.hidePageNavigation(dialogId);
+                }
+
                 FinderPreferences.Initialize();
                 var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
                 $titleSpan.html(finderTitle);

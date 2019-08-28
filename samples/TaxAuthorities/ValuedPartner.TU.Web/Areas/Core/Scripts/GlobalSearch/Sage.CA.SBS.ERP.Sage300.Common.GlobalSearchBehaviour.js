@@ -77,13 +77,23 @@ globalSearchUI = {
         
             $(".item-ID").click(function () {
                 var webDetailInfoArray = this.dataset.webdetailinfo.split(";"); // <screenid>;<parameter name>;<parameter value>; ... <parameter name>;<parameter value>;
-                window.parent.globalSearchDrillDownParameter = "";
-                if ((webDetailInfoArray.length - 1) % 2 === 0) { //To make sure the remaining values except the screen id exist in pairs.
+                var breadCrumbManager = window.parent.taskDockMenuBreadCrumbManager;
+
+                breadCrumbManager.setGlobalSearchDrillDownParameter("");
+
+                // To make sure the remaining values except the screen id exist in pairs.
+                if ((webDetailInfoArray.length - 1) % 2 === 0) { 
+
+                    var params = "";
                     for (var x = 1; x < webDetailInfoArray.length; x++) {
-                        if (window.parent.globalSearchDrillDownParameter !== "") { window.parent.globalSearchDrillDownParameter += "&" }; //To combine the parameters. 
-                        window.parent.globalSearchDrillDownParameter += webDetailInfoArray[x] + "=" + webDetailInfoArray[++x];
+                        if (params !== "") {
+                            params += "&";
+                        }
+                        params += webDetailInfoArray[x] + "=" + webDetailInfoArray[++x];
                     }
-                };
+
+                    breadCrumbManager.setGlobalSearchDrillDownParameter(params);
+                }
                 $("a[data-menuid=" + webDetailInfoArray[0] + "]", window.parent.document.body)[0].click();
             });
         }
@@ -95,12 +105,13 @@ globalSearchUI = {
             var values = [];
             globalSearchUI.getCheckedEntity($("#searchableEntityTreeView").data("kendoTreeView").dataSource.view(), values);
             if (values.length == 0) {
-                sg.utls.showKendoMessageDialog(function () { }, globalSearchResource.noSelection)
+                sg.utls.showKendoMessageDialog(function () { }, globalSearchResource.noSelection);
             } else {
                 if ($("#searchResultPager").data().kendoPager.page() === 0) {
                     $("#bodySearchResultListView").data().kendoListView.dataSource.read();
                 } else {
-                    // set pager to 1 will set the pager back to 1 (as new search is about to happen) and trigger the datasource to read again which as the result, will to search again
+                    // set pager to 1 will set the pager back to 1 (as new search is about to happen) 
+                    // and trigger the datasource to read again which as the result, will to search again
                     $("#searchResultPager").data().kendoPager.page(1);
                 }
             }
@@ -201,7 +212,7 @@ globalSearchUI = {
 $(document).ready(function () {
     globalSearchUI.init();
 
-    $(window).bind('beforeunload', function () {
+    $(window).on('beforeunload', function () {
         $(parent.document.getElementById("globalSearch")).removeClass("active");
     });
 });

@@ -1,0 +1,41 @@
+{
+  "BatchSelector": "AD",
+  "BatchDate": "2020-06-30",
+  "Description": "ADJUSTMENT - WEBAPI",
+  "PaymentsAdjustments": [
+    {
+      "BatchType": "AD",
+      "BatchNumber": 3,
+      "EntryNumber": 1,
+      "VendorNumber": "1200",
+      "PaymentDateAdjustmentDate": "2020-06-30",
+      "EntryDescription": "Entry description webapi",
+      "AppliedPayments": [
+        {
+          "BatchType": "AD",
+          "BatchNumber": 3,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "VendorNumber": "1200",
+          "DocumentNumber": "12345",
+          "PaymentType": "Adjustment",
+          "DocumentDate": "2020-06-30",
+          "AdjustmentGLDistributions": [
+            {
+              "BatchType": "AD",
+              "BatchNumber": 3,
+              "EntryNumber": 1,
+              "LineNumber": 20,
+              "SequenceNumber": 1,
+              "TransactionType": 81,
+              "DistributionAmount": 1,
+              "DistributionCode": "INV",
+              "DistributionGLAccount": "1300",
+              "DocumentLineNumber": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

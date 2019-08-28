@@ -1,0 +1,27 @@
+{
+  "RecurringChargeCode": "ONCALL",
+  "CustomerNumber": "1400",
+  "Description": "Webapi",
+  "EffectiveDate": "2020-01-01",
+  "ExpirationDate": null,
+  "InvoiceDescription": "Webapi",
+  "Schedule": "MONTHLY",
+  "RecurringChargeDetails": [
+    {
+      "RecurringChargeCode": "ONCALL",
+      "CustomerNumber": "1400",
+      "LineNumber": 1,
+      "DistributionCode": "CACCSE",
+      "ExtendedAmountWithTIP": 100,
+      "RevenueAccount": "4010-100-30"
+    },
+    {
+      "RecurringChargeCode": "ONCALL",
+      "CustomerNumber": "1400",
+      "LineNumber": 2,
+      "DistributionCode": "CACCSW",
+      "ExtendedAmountWithTIP": 200,
+      "RevenueAccount": "4010-100-40"
+    }
+  ]
+}

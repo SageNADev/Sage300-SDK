@@ -599,9 +599,10 @@ var onFinderSuccess = {
 // Initial Entry
 $(function () {
     taxAuthoritiesUI.init();
-    $(window).bind('beforeunload', function () {
-        if (globalResource.AllowPageUnloadEvent && taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty()) {
-            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, taxAuthoritiesResources.TaxAuthorityTitle)).text();
+    $(window).on('beforeunload', function () {
+        var dirty = taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty();
+        if (sg.utls.isPageUnloadEventEnabled(dirty)) {
+            return sg.utls.getDirtyMessage(taxAuthoritiesResources.TaxAuthorityTitle);
         }
     });
 });

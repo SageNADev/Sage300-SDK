@@ -1,0 +1,29 @@
+{
+  "BatchNumber": 109,
+  "BatchDate": "2020-01-18",
+  "Description": "TEST WEBAPI",
+  "Invoices": [
+    {
+      "BatchNumber": 109,
+      "EntryNumber": 1,
+      "VendorNumber": "1200",
+      "DocumentNumber": "APCN109-01C",
+      "DocumentType": "CreditNote",
+      "InvoiceDescription": "CREDIT NOTE DESCRIPTION1",
+      "DocumentDate": "2020-01-21",
+      "DueDate": "2020-02-25",
+      "DocumentTotalIncludingTax": 86.6,
+      "InvoiceDetails": [
+        {
+          "BatchNumber": 109,
+          "EntryNumber": 1,
+          "LineNumber": 20,
+          "DistributionCode": "INV",
+          "DistributedAmount": 80
+        }
+      ]
+    }
+  ]
+}
+
+

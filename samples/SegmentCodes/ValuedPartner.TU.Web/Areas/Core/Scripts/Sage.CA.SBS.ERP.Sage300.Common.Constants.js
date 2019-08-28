@@ -26,5 +26,5 @@ sg.utls.InquiryPreferences = {
 };
 
 sg.utls.localStorageKeys = {
-    RECENT_WINDOWS_BASE: 'RecentWindowsStore-'
+    RECENT_WINDOWS_BASE: '_RecentlyUsedWindows'
 };

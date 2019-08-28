@@ -19,13 +19,11 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
-using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
-
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -81,7 +79,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #endregion
 
             // Does the AccpacDotNetVersion.props file exist in the Solution folder?
-            AccpacPropsFileOriginallyInSolutionfolder = IsAccpacDotNetVersionPropsLocatedInSolutionFolder();
+            AccpacPropsFileOriginallyInSolutionfolder = PropsFileManager.IsAccpacDotNetVersionPropsLocatedInSolutionFolder(_settings);
 
             // Start at step 1 and ignore last two steps
             for (var index = 0; index < _settings.WizardSteps.Count; index++)
@@ -94,17 +92,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				{
                     #region Common Upgrade Steps
                     case 1:
+                        LogSpacerLine('-');
                         SyncKendoFiles(title);
                         break;
 
                     case 2:
+                        LogSpacerLine('-');
                         SyncWebFiles(title);
                         break;
 
-                    // Not necessary for 2019.2 release
-					//case 3:
-                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                    //    break;
+                    case 3:
+                        LogSpacerLine('-');
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
+                        break;
 
                     #endregion
 
@@ -115,8 +115,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    case 3:
-                        UpdateTargetedDotNetFrameworkVersion(title);
+
+                    case 4:
+                        LogSpacerLine('-');
+                        UpdateMultisession(title);
                         break;
 
                     #endregion
@@ -249,48 +251,60 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Log start of step
             LogEventStart(title);
 
-            if (accpacPropsOriginallyInSolutionFolder == true)
+            // Was the Accpac props file originally found in the solution folder?
+            if (accpacPropsOriginallyInSolutionFolder == false)
             {
-                CopyAccpacPropsFileToSolutionFolder();
+                msg = String.Format(Resources.Template_AccpacPropsFileNotFoundInRootOfSolutionFolder, Constants.Common.AccpacPropsFile);
+                Log(msg);
 
-                // Log detail
-                msg = string.Format(Resources.UpgradeLibrary,
-                                        Constants.PerRelease.FromAccpacNumber,
-                                        Constants.PerRelease.ToAccpacNumber);
+                msg = Resources.SearchingInAllProjectDirectoriesInstead;
+                Log(msg);
+
+                // Accpac Props file is likely located in one or more folders OTHER THAN the solution root.
+                // We will then find them and update the csproj file located in the same folder to point to a
+                // version of the props file that will live in the solution root instead.
+                IEnumerable<string> list = FileUtilities.EnumerateFiles(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
+                var fileCount = ((List<string>)list).Count;
+                if (fileCount > 0)
+                {
+                    msg = String.Format(Resources.Template_XCopiesOfPropsFileWereFound, fileCount, Constants.Common.AccpacPropsFile);
+                    Log(msg);
+
+                    foreach (var file in list)
+                    {
+                        msg = $"     {file}\n";
+                        Log(msg);
+                    }
+
+                    msg = String.Format(Resources.Template_AttemptingToUpdateAllCsprojFiles, Constants.Common.AccpacPropsFile);
+                    Log(msg);
+
+                    PropsFileManager.UpdateAccpacPropsFileReferencesInProjects(list);
+
+                    msg = String.Format(Resources.Template_RemovingAllCopiesOfAccpacPropsFile, Constants.Common.AccpacPropsFile);
+                    Log(msg);
+
+                    PropsFileManager.RemoveAccpacPropsFromProjectFolders(list);
+                }
             }
             else
             {
-                msg = Resources.AccpacPropsFileDoesNotExistInSolutionFolder;
+                // Accpac props file was found in the root of the solution folder.
+                // Not necessary to look elsewhere for it :)
             }
 
+
+            // Always copy the new props file to the solution root
+            PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
+
+            msg = string.Format(Resources.UpgradeLibrary,
+                                Constants.PerRelease.FromAccpacNumber,
+                                Constants.PerRelease.ToAccpacNumber);
             Log(msg);
 
             // Log end of step
             LogEventEnd(title);
             Log("");
-        }
-
-        /// <summary>
-        /// Copy the AccpacDotNetProps file to the Solution folder
-        /// </summary>
-        private void CopyAccpacPropsFileToSolutionFolder()
-        {
-            var sourcePath = Path.Combine(_settings.PropsSourceFolder, Constants.Common.AccpacPropsFile);
-            var destPath = Path.Combine(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
-            File.Copy(sourcePath, destPath, overwrite: true);
-        }
-
-        /// <summary>
-        /// Is there a copy of the AccpacDotNetversion.props file in the Solution folder?
-        /// </summary>
-        /// <returns>
-        /// true : AccpacDotNetVersion.props is in Solution folder 
-        /// false: AccpacDotNetVersion.props is in not in the Solution folder 
-        /// </returns>
-        private bool IsAccpacDotNetVersionPropsLocatedInSolutionFolder()
-        {
-            return File.Exists(Path.Combine(_settings.DestinationSolutionFolder, 
-                                            Constants.Common.AccpacPropsFile));
         }
 
         /// <summary>
@@ -334,38 +348,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Process the 'aspnet_client' folder changes
+        /// Multisession changes
+        /// Update XXAreaRegistration.cs with new session in route
+        /// Update Global.asax.cs with new Context object properties, 
+        /// updated AuthenticationManager.LoginResult parameters
+        /// and removal of the DestroyPool call from Session_End
+        /// Update Web.config with new timer mechanism
         /// </summary>
-        /// <param name="title">The title to display for this step</param>
-        public void ProcessAspnetClientFolder(string title)
+        /// <param name="title"></param>
+        private void UpdateMultisession(string title)
         {
             // Log start of step
             LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
-        }
-
-        /// <summary>
-        /// Update the targeted version of the .NET Framework for
-        /// all solution projects
-        /// </summary>
-        /// <param name="title">Title of step being processed </param>
-        private void UpdateTargetedDotNetFrameworkVersion(string title)
-        {
-            // Log start of step
-            LogEventStart(title);
-
-            var projects = _settings.Solution.Projects;
-            var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
-            foreach (Project project in projects)
-            {
-                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrading {project.Name} .NET target to {dotNetTargetName}...");
-                project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
-            }
+            var msg = Resources.UpdatesToSupportMultipleSessionsAreAManualStep;
+            Log(msg);
 
             // Log end of step
             LogEventEnd(title);

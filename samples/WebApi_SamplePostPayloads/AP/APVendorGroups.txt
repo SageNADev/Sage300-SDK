@@ -1,0 +1,18 @@
+{
+  "GroupCode": "INVX",
+  "Description": "Inventory Purchases - WEBAPI",
+  "AccountSet": "TRADE",
+  "CurrencyCode": "CAD",
+  "RateType": "SP",
+  "BankCode": "CCB",
+  "PrintSeparateChecks": "No",
+  "DistributionSet": "",
+  "DistributionCode": "",
+  "GeneralLedgerAccountNumber": "1300",
+  "Terms": "N30",
+  "DuplicateAmountCode": "None",
+  "DuplicateDateCode": "None",
+  "TaxGroup": "BCTAX",
+  "PaymentCode": "CHECKCAD",
+  "DistributionType": "GLAccount"
+}

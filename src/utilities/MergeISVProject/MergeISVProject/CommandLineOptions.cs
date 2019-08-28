@@ -85,12 +85,28 @@ namespace MergeISVProject
 		/// </summary>
 		public string ApplicationVersion { get; set; }
 
-		/// <summary>
-		/// This will contain the list of all errors that
-		/// occurred when attempting to load and parse the
-		/// command-line options.
-		/// </summary>
-		public List<string> LoadErrors { get; private set; }
+        /// <summary>
+        /// This will contain the copyright information of the application
+        /// </summary>
+        public string ApplicationCopyright { get; set; }
+
+        /// <summary>
+        /// This will contain the build date of the application
+        /// </summary>
+        public string ApplicationBuildDate { get; set; }
+
+        /// <summary>
+        /// This will contain the build year of the application
+        /// Used for the copyright range 
+        /// </summary>
+        public string ApplicationBuildYear { get; set; }
+
+        /// <summary>
+        /// This will contain the list of all errors that
+        /// occurred when attempting to load and parse the
+        /// command-line options.
+        /// </summary>
+        public List<string> LoadErrors { get; private set; }
 
 		/// <summary>
 		/// This will contain the formatted message 
@@ -205,18 +221,30 @@ namespace MergeISVProject
 			// Empty constructor for unit testing purposes
 		}
 
-		/// <summary>
-		/// The primary constructor
-		/// </summary>
-		/// <param name="appName">The name of the application</param>
-		/// <param name="appVersion">The version number of the application</param>
-		/// <param name="args">The argument list passed in via the command-line</param>
-		/// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
-		public CommandLineOptions(string appName, string appVersion, string[] args, string prefix=DEFAULT_PREFIX)
+        /// <summary>
+        /// The primary constructor
+        /// </summary>
+        /// <param name="appName">The name of the application</param>
+        /// <param name="appVersion">The version number of the application</param>
+        /// <param name="appCopyright">The copyright information for the application</param>
+		/// <param name="buildDate">The string representation of the build date and time</param>
+		/// <param name="buildYear">The string representation of the build year</param>
+        /// <param name="args">The argument list passed in via the command-line</param>
+        /// <param name="prefix">Optional: The prefix string used when specifying command-line arguments</param>
+        public CommandLineOptions(string appName, 
+                                  string appVersion, 
+                                  string appCopyright, 
+                                  string buildDate, 
+                                  string buildYear, 
+                                  string[] args, 
+                                  string prefix=DEFAULT_PREFIX)
         {
             OptionPrefix = prefix;
             ApplicationName = appName;
             ApplicationVersion = appVersion;
+            ApplicationCopyright = appCopyright;
+            ApplicationBuildDate = buildDate;
+            ApplicationBuildYear = buildYear;
 
 			// If the argument array has only a single entry, then the
 			// arguments list will likely have /r/n characters in it
@@ -582,13 +610,16 @@ namespace MergeISVProject
 		{
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
-			var required3rdPartyComponents = "WebGrease.dll, WG.exe, Newtonsoft.Json.dll, Antlr3.Runtime.dll";
+            var required3rdPartyComponents = "WebGrease.dll, WG.exe, Newtonsoft.Json.dll, Antlr3.Runtime.dll";
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 																   ApplicationVersion,
+                                                                   ApplicationBuildDate,
+                                                                   ApplicationCopyright,
 																   required3rdPartyComponents,
 																   requiredParams,
-																   optionalParams);
+																   optionalParams,
+                                                                   ApplicationBuildYear);
 			msg += divider;
 			return msg;
 		}

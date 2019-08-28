@@ -23,7 +23,9 @@ sg.viewList = function () {
         Insert: 2,
         Update: 3,
         Refresh: 4,
-        Delete: 5
+        Delete: 5,
+        MoveTo: 6,
+        RefreshRow :7
     },
     BtnTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}">{2}</button>';
 
@@ -41,10 +43,13 @@ sg.viewList = function () {
         _currentPage = {},
         _filter = {},
         _sendChange = {},
+        _selectRowUid = {},
+        _skipMoveTo = {},
+        _pagingRowData = {},
         _gridList = [];
 
      /**
-     *   @description get kenod grid.
+     *   @description get kendo grid.
      *   @param {string} gridName The name of the grid.
      *   @return {object} The kendo grid  
      */
@@ -64,32 +69,35 @@ sg.viewList = function () {
             pageSize = dataSource.pageSize(),
             total = dataSource.total(),
             currentPage = dataSource.page();
+            rowData = rowData || grid.dataItem(grid.select());
 
+        // If the current record reaches maximum of current page but not the last record, go to next page, keep rowData for next page create new record to use 
         if (insertedIndex === pageSize) {
-            if (total / pageSize === currentPage) {
-                rowData = grid.dataItem(grid.select());
-                //No next page, waiting for insert row, then to next page, skip commit checking
-                setTimeout(function () {
-                    dataSource.data()[insertedIndex].skipCommit = true;
-                    dataSource.query({ pageSize: pageSize, page: ++currentPage });
-                    _addLine(gridName, rowData);
-                }, 50);
-            } else {
-                insertedIndex = 0;
-                dataSource.page(++currentPage);
-            }
+            _pagingRowData[gridName] = rowData;
+        }
+        if (insertedIndex === pageSize && total / pageSize !== currentPage) {
+            insertedIndex = 0;
+            dataSource.page(++currentPage);
+            // Paging send extra moveto request, skip to send the request
+            _skipMoveTo[gridName] = true;
         }
         if (insertedIndex > pageSize) {
             insertedIndex = 0;
+            rowData = _pagingRowData[gridName];
         }
         _setDefaultRow[gridName] = false;
-        _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, rowData);
+        //If the record is dirty, update the current row first before adding a new row
+        if (rowData && rowData.dirty) {
+            _sendRequest(gridName, RequestTypeEnum.Update, "", false, insertedIndex, rowData);
+        } else {
+            _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, rowData);
+        }
     }
 
      /**
      *   @description Set current editable cell
      *   @param {Object} grid The name of the grid.
-     *   @param {Number} rowIndex The slected row index.
+     *   @param {Number} rowIndex The selected row index.
      *   @param {string} columnName The column name.
      *   @return {void}  
      */
@@ -101,7 +109,7 @@ sg.viewList = function () {
      /**
      *   @description Set next editable cell as current cell.
      *   @param {Object} grid The name of the grid.
-     *   @param {Object} model The slected row model.
+     *   @param {Object} model The selected row model.
      *   @param {Object} row The current row.
      *   @param {Number} startIndex The column name.
      *   @return {void}  
@@ -159,17 +167,21 @@ sg.viewList = function () {
     /**
      * @description Save the the current line to send ajax request
      * @param {string} gridName The current grid name
+     * @param {function} callBack The callBack function after the action is completed
      * @return {boolean} A boolean flag to indicate the current grid valid status
      */
-    function _commitGrid(gridName) {
+    function _commitGrid(gridName, callBack) {
         var grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select());
 
-        if (!_newLine[gridName] || !rowData.isNewLine) {
-            _sendRequest(gridName, RequestTypeEnum.Update);
-            return true;
+        if (rowData) {
+            if (!_newLine[gridName] || !rowData.isNewLine) {
+                _sendRequest(gridName, RequestTypeEnum.Update, undefined, undefined, undefined, undefined, callBack);
+                return true;
+            }
+            _sendRequest(gridName, RequestTypeEnum.Insert, undefined, undefined, undefined, undefined, callBack);
         }
-        _sendRequest(gridName, RequestTypeEnum.Insert);
+
         return _valid[gridName];
     }
 
@@ -216,7 +228,7 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Get grid column tempalte for display value properly
+     * @description Get grid column template for display value properly
      * @param {object} col The grid column object
      * @return {object} The column template
      */
@@ -278,9 +290,11 @@ sg.viewList = function () {
             _columnSettingCallback(gridName, "columnBeforeDisplay", column);
 
             col.title = column.ColumnName;
+            col.isPrimaryKeyField = column.IsPrimaryKeyField;
             col.field = column.FieldName;
             col.dataType = dataType;
             col.width = column.Width || 180;
+            col.fieldSize = column.FieldSize;
             col.headerWidth = col.width;
             col.attributes = { "class": attr };
             col.headerAttributes = { "class": attr };
@@ -335,13 +349,13 @@ sg.viewList = function () {
      * @param {string} functionName The function full name, including namespace
      * @return {function} The function expression
      */
-    function _getFuntion(functionName) {
+    function _getFunction(functionName) {
         var ns = functionName.split('.');
         return ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[functionName];
     }
 
     /**
-     * @description Set editor initail value
+     * @description Set editor initial value
      * @param {string} gridName The name of the grid
      * @param {any} options Editor options object
      */
@@ -366,7 +380,7 @@ sg.viewList = function () {
             buttonId = "btnFinderGridCol" + field.toLowerCase(),
             maskProps = _getTextBoxProps(mask),
             className = maskProps.class,
-            maxlength = maskProps.maxLength,
+            maxlength = col.FieldSize || maskProps.maxLength,
             txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" maxlength="{1}" class="{2}"/></div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>',
             html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId);
@@ -391,13 +405,10 @@ sg.viewList = function () {
 
         //Custom define filter
         if (finder.CustomFinder) {
-            finder = _getFuntion(finder.CustomFinder)(finder);
+            finder = _getFunction(finder.CustomFinder)(finder);
         } 
 
-        //Custom plug in for 'columnBeforeFinder', custom function set the column finder options
-        _columnCallback(gridName, "columnBeforeFinder", field, finder);
-
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
 
         /**
@@ -423,7 +434,7 @@ sg.viewList = function () {
          * @param {any} returnValue The return value
          */
         function setCustomFinderValue(options, col, returnValue) {
-            var callback = _getFuntion(col.customData[0] || col.CustomFunctions[0]);
+            var callback = _getFunction(col.customData[0] || col.CustomFunctions[0]);
             var key = callback(true);
             var rowId = options.model[key];
             callback(false, rowId, false, returnValue, field);
@@ -446,6 +457,7 @@ sg.viewList = function () {
          */
         function onFinderSelected(options, col, value) {
             var returnValue = value[Object.keys(value)[0]];
+            _sendChange[gridName] = true;
             options.model.set(options.field, returnValue);
         }
         
@@ -455,6 +467,7 @@ sg.viewList = function () {
          */
         function onFinderCancel(options) {
             var grid = _getGrid(gridName);
+            _sendChange[gridName] = true;
             if (grid) {
                 var rowIndex = grid.select().index();
                 _setEditCell(grid, rowIndex, options.field);
@@ -462,21 +475,20 @@ sg.viewList = function () {
         }
 
         $("#" + field).on("keydown", function (e) {
-            _sendChange[gridName] = false;
-            if (e.keyCode === 9 || e.keyCode === 13) {
-                _sendChange[gridName] = true;
-             }
+            _sendChange[gridName] = true;
         });
 
         $("#" + buttonId).mousedown(function (e) {
             //Set finder initial values
+            _sendChange[gridName] = false;
             var value = $("#" + field).val().toUpperCase();
             var length = finder.InitKeyFieldNames ? finder.InitKeyFieldNames.length : 0;
+            finder.initKeyValues = [];
             if (length > 0) {
                 for (var i = 0; i < length; i++) {
                     var initField = finder.InitKeyFieldNames[i];
                     var initValue = model.hasOwnProperty(initField) ? model[initField] : initField;
-                    if (length === 1) {
+                    if (length === 1 || field === initField) {
                         initValue = value;
                     }
                     finder.initKeyValues.push(initValue);
@@ -484,6 +496,8 @@ sg.viewList = function () {
             } else {
                 finder.initKeyValues = [value];
             }
+            //Custom plug in for 'columnBeforeFinder', custom function set the column finder options
+            _columnCallback(gridName, "columnBeforeFinder", field, finder);
 
             sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
         });
@@ -492,7 +506,7 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Column date editor, parse the view date value "yyyymmdd" and diplay the proper date
+     * @description Column date editor, parse the view date value "yyyymmdd" and display the proper date
      * @param {any} container The column kendo container
      * @param {any} options The column options
      * @param {any} gridName The grid name
@@ -509,10 +523,10 @@ sg.viewList = function () {
             .appendTo(container)
             .change(function (e) {
             });
-        sg.utls.kndoUI.datePicker(txtId);
+        sg.utls.kndoUI.datePicker(field);
         _setEditorInitialValue(gridName, options);
 
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
     }
 
@@ -543,7 +557,7 @@ sg.viewList = function () {
             });
         _setEditorInitialValue(gridName, options);
 
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
     }
 
@@ -581,7 +595,7 @@ sg.viewList = function () {
         }
         _setEditorInitialValue(gridName, options);
 
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
     }
 
@@ -594,10 +608,10 @@ sg.viewList = function () {
      */
     function _textEditor(container, options, col, gridName) {
         var mask = col.PresentationMask,
+            field = options.field,
             maskProps = mask ? _getTextBoxProps(mask) : "",
             className = maskProps ? maskProps.class : "",
-            maxlength = maskProps ? maskProps.maxLength : 64,
-            field = options.field,
+            maxlength = col.FieldSize || maskProps ? maskProps.maxLength : 64,
             html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" />', field, className, maxlength);
 
         $(html).addClass('k-input k-textbox')
@@ -607,7 +621,7 @@ sg.viewList = function () {
             });
         _setEditorInitialValue(gridName, options);
 
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
     }
 
@@ -615,24 +629,58 @@ sg.viewList = function () {
      * @description Column number editor, binding kendo numeric textbox for validation and display
      * @param {any} container The column kendo editor container
      * @param {any} options The column options
+     * @param {any} col The edit column
      * @param {string} gridName The grid name
      */
-    function _numericEditor(container, options, gridName) {
+    function _numericEditor(container, options, col, gridName) {
         var field = options.field,
             grid = _getGrid(gridName),
             precision = grid.columns.filter(function (c) { return c.field === field; })[0].precision,
+            dataType = col.DataType.toLowerCase(),
+            size = col.FieldSize,
+            maxLength, max, min = 0,
             html = kendo.format('<input id="{0}" name="{0}" />', field);
+
+        switch (dataType) {
+            case "int":
+            case "integer":
+            case "int16":
+                min = -32768;
+                max = 32767;
+                maxLength = 5;
+                break;
+            case "long":
+            case "int32":
+                min = -2147483648;
+                max = 2147483647;
+                maxLength = 10;
+                break;
+            case "byte":
+                min = 0;
+                max = 255;
+                maxLength = 3;
+                break;
+            case "decimal":
+                max = Math.pow(10, size * 2) - 1;
+                min = - 1 * max;
+                maxLength = 2 * size;
+                if (maxLength > 16) {
+                    maxLength = 16;
+                }
+        }
 
         var txtNumeric = $(html).appendTo(container).kendoNumericTextBox({
             format: "n" + precision,
             spinners: false,
+            min: min, 
+            max: max,
             decimals: precision
         });
 
-        sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, 16);
+        sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, maxLength - precision);
         _setEditorInitialValue(gridName, options);
 
-        //Custom plug in for 'columnStartEdit' and 'columnendEdit'
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
     }
 
@@ -642,7 +690,15 @@ sg.viewList = function () {
      * @param {any} gridName The grid name
      */
     function _noEditor(container, gridName) {
-        sg.utls.kndoUI.nonEditable($('#' + gridName).data("kendoGrid"), container);
+        var grid = $('#' + gridName).data("kendoGrid");
+        grid.closeCell();
+        if (container.context.cellIndex === 0 && sg.utls.isShiftKeyPressed) {
+            var prevRowIndex = sg.utls.kndoUI.getSelectedRowIndex(grid) - 1;
+            if (prevRowIndex >= 0) {
+                grid.select(grid.tbody.find(">tr:eq(" + prevRowIndex + ")"));
+            }
+        } 
+        sg.utls.kndoUI.skipTab(grid, container.context.cellIndex);
     }
 
     /**
@@ -658,7 +714,7 @@ sg.viewList = function () {
 
         $(html).appendTo(container);
         options.model.OptionalField = options.model.VALUES > 0 ? globalResource.Yes : globalResource.No;
-        var callback = _getFuntion(col.CustomFunctions[0].OptionalField);
+        var callback = _getFunction(col.CustomFunctions[0].OptionalField);
         //$("#btnDetailOptionalField").on("click", callback());
         $("#btnDetailOptionalField").on("click", function () {
             if (typeof callback === "function") {
@@ -687,7 +743,7 @@ sg.viewList = function () {
             callback(false, rowId, false, e.target.value, field);
         }
         
-        var callback = _getFuntion(col.customFunctions[0] || col.CustomFunctions[0]),
+        var callback = _getFunction(col.customFunctions[0] || col.CustomFunctions[0]),
             key = callback(true),
             rowId = options.model[key],
             customCol = callback(false, rowId, false),
@@ -708,7 +764,7 @@ sg.viewList = function () {
             col.Finder = colDef.Finder;
             _finderEditor(container, options, col, gridName);
         } else if (colDef.DataType === "Decimal") {
-            _numericEditor(container, options, gridName);
+            _numericEditor(container, options, col, gridName);
         } else if (colDef.DataType === "DateTime") {
             _dateEditor(container, options, gridName);
         } else {
@@ -736,7 +792,7 @@ sg.viewList = function () {
             } else if (type === ValueTypeEnum.Time) {
                 _timeEditor(container, options, gridName);
             } else if (type === ValueTypeEnum.Number || type === ValueTypeEnum.Integer || type === ValueTypeEnum.Amount) {
-                _numericEditor(container, options, gridName);
+                _numericEditor(container, options, col, gridName);
             } else if (type === ValueTypeEnum.YesNo) {
                 var presentationList = [{ "Selected": false, "Text": globalResource.Yes, "Value": "1" }, { "Selected": false, "Text": globalResource.No, "Value": "0" }];
                 _dropdownEditor(container, options, presentationList, gridName, false);
@@ -765,19 +821,13 @@ sg.viewList = function () {
         if (col.ReferenceField) {
             return _dynamicEditor(container, options, col, gridName);
         }
-        //Parse column IsEditable property, it may be function to define it editable
-        if (col.IsEditable) {
-            var value = col.IsEditable.toLowerCase();
-            if (value === "true" || value === "false") {
-                if (value === "false") {
-                    return _noEditor(container, gridName);
-                }
-            } else {
-                var isEditable = _getFuntion(col.IsEditable)(options.field);
-                if (!isEditable) {
-                    return _noEditor(container, gridName);
-                }
-            }
+
+        if (!col.IsEditable) {
+            return _noEditor(container, gridName);
+        }
+        //Primary key column only editable for new line
+        if (col.IsPrimaryKeyField && !options.model.isNewLine) {
+            return _noEditor(container, gridName);
         }
 
         if (col.IsOptionalField) {
@@ -791,7 +841,6 @@ sg.viewList = function () {
         if (col.PresentationList) {
             return _dropdownEditor(container, options, col.PresentationList, gridName);
         }
-
         if (dataType === "date" || dataType === "datetime" ) {
             return _dateEditor(container, options, gridName);
         }
@@ -801,7 +850,7 @@ sg.viewList = function () {
         }
 
         if (numbers.indexOf(dataType) > -1 ) {
-            return _numericEditor(container, options, gridName);
+            return _numericEditor(container, options, col, gridName);
         }
 
         return _textEditor(container, options, col, gridName);
@@ -864,6 +913,12 @@ sg.viewList = function () {
             case RequestTypeEnum.Delete:
                 requestName = "Delete";
                 break;
+            case RequestTypeEnum.MoveTo:
+                requestName = "MoveTo";
+                break;
+            case RequestTypeEnum.RefreshRow:
+                requestName = "RefreshCurrentRecord";
+                break;
         }
         return requestName;
     }
@@ -877,8 +932,10 @@ sg.viewList = function () {
      * @param {string} fieldName The field name
      * @param {boolean} isNewLine The boolean flag to indicate is a new line
      * @param {Number} insertedIndex The inserted line index
+     * @param {string} uid The unique id used to identify update row  
+     * @param {function} callBack The callBack function after the action is completed
      */
-    function _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex) {
+    function _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex, uid, callBack) {
         switch (requestType) {
             case RequestTypeEnum.Create:
                 isSuccess ? _createSuccess(gridName, jsonResult, insertedIndex) : _createError(gridName, jsonResult);
@@ -887,15 +944,22 @@ sg.viewList = function () {
                 isSuccess ? _insertSuccess(gridName, jsonResult, isNewLine) : _insertError(gridName, jsonResult);
                 break;
             case RequestTypeEnum.Refresh:
-                isSuccess ? _updateSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
+                isSuccess ? _refreshSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
                 break;
             case RequestTypeEnum.Update:
-                isSuccess ? _updateSuccess(gridName, jsonResult, fieldName) : _updateError(gridName, jsonResult, fieldName);
+                isSuccess ? _updateSuccess(gridName, jsonResult, uid, insertedIndex) : _updateError(gridName, jsonResult, fieldName, uid);
                 break;
             case RequestTypeEnum.Delete:
                 isSuccess ? _deleteSuccess(gridName, jsonResult) : _deleteError(gridName, jsonResult);
                 break;
+            case RequestTypeEnum.RefreshRow:
+                _refreshRow(gridName, jsonResult, fieldName);
+                break;
             default:
+        }
+
+        if(callBack && typeof callBack === "function"){
+            callBack(isSuccess);
         }
     }
 
@@ -921,11 +985,20 @@ sg.viewList = function () {
      */
     function _insertRow(gridName, data, keyValue, index) {
         var grid = $('#' + gridName).data("kendoGrid"),
-            dataSource = grid.dataSource;
-
-        data.isNewLine = true;
-        dataSource.insert(index, data);
-        grid.refresh();
+            dataSource = grid.dataSource,
+            currentPage = dataSource.page(),
+            pageSize = dataSource.pageSize();
+        // If the current record reaches maximum of current page, make it a dummy record and go to next page
+        if (index === pageSize) {
+            data.skipCommit = true;
+            dataSource.insert(index, data);
+            dataSource.query({ pageSize: pageSize, page: ++currentPage });
+            _skipMoveTo[gridName] = true;
+        } else {
+            data.isNewLine = true;
+            dataSource.insert(index, data);
+            grid.refresh();
+        }
         var row = _selectGridRow(grid, keyValue);
         _setModuleVariables(gridName, RowStatusEnum.INSERT, "", index, true, false, true);
         _setNextEditCell(grid, grid.dataSource.options.schema.model, row, 0);
@@ -972,9 +1045,21 @@ sg.viewList = function () {
     function _insertSuccess(gridName, jsonResult, isNewLine) {
         var grid = $('#' + gridName).data("kendoGrid"),
             keyId = jsonResult.Data["KendoGridAccpacViewPrimaryKey"],
-            rowData = grid.dataSource.get(keyId);
+            rowData = sg.utls.kndoUI.getRowByKey(grid.dataSource.data(), "KendoGridAccpacViewPrimaryKey", keyId);
 
-        rowData.isNewLine = false;
+        if (rowData) {
+            rowData.isNewLine = false;
+        } else {
+            grid.dataSource.data().forEach(function (row) { row.isNewLine = false;});
+        }
+
+        // could be just warnings, but still need to show to users
+        if(jsonResult && jsonResult.UserMessage && 
+            (jsonResult.UserMessage.Warnings && jsonResult.UserMessage.Warnings ||
+             jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors)){
+            sg.utls.showMessage(jsonResult);
+        }
+
         _setInsertNewLine(gridName);
             if (isNewLine) {
             _addLine(gridName);
@@ -995,7 +1080,7 @@ sg.viewList = function () {
        // _setModuleVariables(gridName, RowStatusEnum.INSERT, jsonResult, rowIndex, false, false, false);
         _lastErrorResult[gridName].message = jsonResult;
         _lastErrorResult[gridName].colName = _lastColField[gridName];
-
+        _skipMoveTo[gridName] = true;
         sg.utls.showMessage(jsonResult);
         grid.select("tr:eq(" + rowIndex + ")");
         setTimeout(function () {
@@ -1005,32 +1090,78 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Send update request success, refresh the grid and select row and column
-     * @param {string} gridName The grid name
-     * @param {object} jsonResult The request call back result
-     * @param {string} fieldName update field name
-     */
-    function _updateSuccess(gridName, jsonResult, fieldName) {
+ * @description Refresh request success, refresh the grid and select row and column
+ * @param {string} gridName The grid name
+ * @param {object} jsonResult The request call back result
+ * @param {string} fieldName The changed field name
+ */
+    function _refreshSuccess(gridName, jsonResult, fieldName) {
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
-            newLine = _newLine[gridName],
             status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName],
             dataItem = grid.dataItem(selectRow);
 
-        _gridCallback(gridName, "gridChanged", jsonResult.Data);
-        _setModuleVariables(gridName, status, "", rowIndex, true, false, newLine);
+        _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName);
+        _setModuleVariables(gridName, status, "", rowIndex, true, false);
 
-        for (var field in jsonResult.Data) {
-            if (field in dataItem) {
-                dataItem[field] = jsonResult.Data[field];
+        if (dataItem) {
+            for (var field in jsonResult.Data) {
+                if (dataItem.hasOwnProperty(field)) {
+                    dataItem[field] = jsonResult.Data[field];
+                }
             }
         }
+
+        var lastCellIndex = grid._lastCellIndex;
+        var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
         grid.refresh();
+
+        // After grid refresh, use kendo grid row unique id and column index to select grid row and column
+        var uid = _selectRowUid[gridName] || dataItem.uid;
         var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
-        var row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
-        _setNextEditCell(grid, dataItem, row, index + 1);
-        _postMessage(gridName, "UpdateLine", jsonResult.Data, fieldName );
+        var colIndex = selectRowChanged ? lastCellIndex : index + 1; 
+        var row = grid.table.find("[data-uid=" + uid + "]");
+
+        if (row.length === 1) {
+            grid.select(row);
+            _setNextEditCell(grid, dataItem, row, colIndex);
+        }
+    }
+
+    /**
+     * @description Update request success, set update row dirty flag as false
+     * @param {string} gridName The grid name
+     * @param {object} jsonResult The request call back result
+     * @param {string} uid The unique id used to identify update row
+     * @param {short} insertedIndex A flag to indicate whether a insert request is pending
+     */
+    function _updateSuccess(gridName, jsonResult, uid, insertedIndex) {
+        var grid = $('#' + gridName).data("kendoGrid"),
+            rowIndex = grid.select().index(),
+            status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName];
+
+        _gridCallback(gridName, "gridUpdated", jsonResult.Data, "");
+        _setModuleVariables(gridName, status, "", rowIndex, true, false);
+
+        // could be just warnings, but still need to show to users
+        if(jsonResult && jsonResult.UserMessage && 
+            (jsonResult.UserMessage.Warnings && jsonResult.UserMessage.Warnings ||
+             jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors)){
+            sg.utls.showMessage(jsonResult);
+        }
+
+        //Update row is not the same as select row when update, find update row
+        if (uid) {
+            var updateRow = grid.table.find("[data-uid=" + uid + "]");
+            if (updateRow.length === 1) {
+                var dataItem = grid.dataItem(updateRow);
+                dataItem.dirty = false;
+            }
+        }
+        if (insertedIndex !== null && insertedIndex > -1) {
+            _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, jsonResult.Data);
+        }
     }
 
     /**
@@ -1038,46 +1169,110 @@ sg.viewList = function () {
      * @param {string} gridName The grid name
      * @param {any} jsonResult The request call back result
      * @param {any} fieldName The update field name
+     * @param {string} uid The unique id used to identify the updated row
      */
-    function _updateError(gridName, jsonResult, fieldName) {
+    function _updateError(gridName, jsonResult, fieldName, uid) {
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
             newLine = _newLine[gridName],
             dataItem = grid.dataItem(selectRow);
 
-        _setModuleVariables(gridName, RowStatusEnum.UPDATE, jsonResult, rowIndex, false, false, newLine);
+        //Return previous valid value when update error
+        dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
+        _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
         sg.utls.showMessage(jsonResult);
     
-        setTimeout(function () {
-            _lastErrorResult[gridName].message = "";
-            dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
-            var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
-            var row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
-            grid.editCell(row.find(">td").eq(index));
-        });
+        var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
+        var row;
+        if (uid) {
+            row = grid.table.find("[data-uid=" + uid + "]");
+            _lastRowNumber[gridName] = row.index();
+            grid.select(row);
+        } else {
+            row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+        }
+        grid._lastCellIndex = index - 1;
+        grid.editCell(row.find(">td").eq(index));
+        _skipMoveTo[gridName] = true;
     }
 
     /**
-    * @description Send delete request success, refresh the grid
+    * @description Send delete request success, refresh the grid, reset error object
     * @param {string} gridName The grid name
     * @param {object} jsonResult The request call back result
     * @param {string} fieldName update field name
     */
     function _deleteSuccess(gridName, jsonResult) {
-        var grid = $('#' + gridName).data("kendoGrid");
-        grid.dataSource.read();
+        _lastErrorResult[gridName] = {};
+        _dataChanged[gridName] = true;
+
+        var grid = $('#' + gridName).data("kendoGrid"),
+            ds = grid.dataSource,
+            page = ds.page(),
+            length = ds.data().length;
+
+        page > 1 ? ds.page(length > 1 ? page : page - 1) : ds.page(1);
     }
     /**
      * @description Send delete request error
      * @param {string} gridName The grid name
      * @param {any} jsonResult The request call back result
-     * @param {any} fieldName The update field name
      */
     function _deleteError(gridName, jsonResult) {
         var grid = $('#' + gridName).data("kendoGrid");
         grid.dataSource.read();
         sg.utls.showMessage(jsonResult);
+    }
+
+    /**
+     * @description Refresh current select row
+     * @param {string} gridName The grid name
+     * @param {any} jsonResult The request call back result
+     * @param {string} fieldName The changed field name
+     */
+    function _refreshRow(gridName, jsonResult, fieldName) {
+        var grid = $('#' + gridName).data("kendoGrid"),
+            refreshRowData = grid.dataItem(grid.select()),
+            uid = refreshRowData.uid,
+            status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName];
+
+        if (refreshRowData) {
+            for (var field in jsonResult.Data) {
+                if (refreshRowData.hasOwnProperty(field)) {
+                    refreshRowData[field] = jsonResult.Data[field];
+                }
+            }
+            var colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName) + 1;
+            grid.refresh();
+            var row = grid.table.find("[data-uid=" + uid + "]");
+            grid.select(row);
+            var rowIndex = grid.select().index();
+            if (colIndex) {
+                _setNextEditCell(grid, refreshRowData, row, colIndex);
+            }
+            _setModuleVariables(gridName, status, "", rowIndex, true, false);
+        }
+    }
+
+    /**
+     * @description: Get custom controller url
+     * @param {string} gridName: grid name
+     * @param {string} requestName: request name
+     * @returns {string} return custom controller url
+     */
+    function _getRequestUrl(gridName, requestName) {
+        var url = sg.utls.url.buildUrl("Core", "Grid", requestName);
+        var controllerUrl = window[gridName + "Model"].GridDataServiceController;
+
+        if (controllerUrl && controllerUrl.indexOf('/') > -1) {
+            if (controllerUrl.endsWith("Controller")) {
+                controllerUrl = controllerUrl.replace("Controller", "");
+            }
+            var defaultUrl = controllerUrl.startsWith("/") ? "/Core/Grid" : "Core/Grid";
+            url = url.replace(defaultUrl, controllerUrl);
+        }
+        return url;
     }
 
     /**
@@ -1088,22 +1283,27 @@ sg.viewList = function () {
      * @param {boolean} isNewLine The boolean flag to indicate whether add new line
      * @param {number} insertedIndex The inserted line index
      * @param {object} rowData The grid row data
+     * @param {function} callBack The callBack function after the action is completed
      */
-    function _sendRequest(gridName, requestType, fieldName, isNewLine, insertedIndex, rowData) {
+    function _sendRequest(gridName, requestType, fieldName, isNewLine, insertedIndex, rowData, callBack) {
         var grid = _getGrid(gridName),
             record = rowData || grid.dataItem(grid.select());
 
-       if (grid) {
+        if (grid) {
             var data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': record, 'fieldName': fieldName },
                 requestName = _getRequestName(requestType),
-                url = sg.utls.url.buildUrl("Core", "Grid", requestName);
+                url = _getRequestUrl(gridName, requestName);
 
+            if (requestType === RequestTypeEnum.Refresh) {
+                data.isNewRecord = isNewLine || false;
+            }
+                
             sg.utls.ajaxPostSync(url, data, function (jsonResult) {
                 var isSuccess = true;
-                if (jsonResult && (jsonResult.UserMessage.Errors || jsonResult.UserMessage.Warning)) {
+                if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0 ) {
                     isSuccess = false;
                 }
-                _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex);
+                _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex, rowData ? rowData.uid : "", callBack);
             });
         }
     }
@@ -1143,11 +1343,6 @@ sg.viewList = function () {
      * @param {any} editor The editor
      */
     function _columnCallBackEdit(gridName, field) {
-        //Custom plug in for 'columnStartEdit', custom function when start edit
-        $("#" + field).focus(function () {
-            _columnCallback(gridName, "columnStartEdit", field, "", this);
-        });
-
         //Custom plug in for 'columnEndEdit', custom function when editor lost focus
         $("#" + field).blur(function () {
             _columnCallback(gridName, "columnEndEdit", field, "", this);
@@ -1178,7 +1373,7 @@ sg.viewList = function () {
             if (cbFunctions.length > 0) {
                 var cbFuncName = cbFunctions[0][functionName];
                 if (cbFuncName) {
-                    var callback = _getFuntion(cbFuncName);
+                    var callback = _getFunction(cbFuncName);
                     if (callback && typeof callback === "function") {
                         var event = _getEventObject(),
                             record = grid.dataItem(grid.select()),
@@ -1187,14 +1382,12 @@ sg.viewList = function () {
                         switch (functionName) {
                             case "columnDoubleClick":
                             case "columnBeforeEdit":
-                                callback(record, event);
+                            case "columnChanged":
+                                callback(record, event, field);
                                 return event.isProceed();
                             case "columnStartEdit":
                             case "columnEndEdit":
-                                callback(record, editor);
-                                return true;
-                            case "columnChanged":
-                                callback(event);
+                                callback(record, event, field, editor);
                                 return event.isProceed();
                             case "columnBeforeDisplay":
                                 callback(value, event);
@@ -1224,7 +1417,7 @@ sg.viewList = function () {
             if (cbFunctions.length > 0) {
                 var cbFuncName = cbFunctions[0][functionName];
                 if (cbFuncName) {
-                    var callback = _getFuntion(cbFuncName);
+                    var callback = _getFunction(cbFuncName);
                     if (callback && typeof callback === "function") {
                         callback(null, column);
                     }
@@ -1239,9 +1432,10 @@ sg.viewList = function () {
      * @param {string} gridName The grid name
      * @param {string} functionName The call back function name
      * @param {string} record The selected row data
+     * @param {string} fieldName The changed field name
      * @return {boolean} The boolean flag to indicate whether continue or stop
      */
-    function _gridCallback(gridName, functionName, record) {
+    function _gridCallback(gridName, functionName, record, fieldName) {
         var viewModel = window[gridName + "Model"];
         var data = viewModel.CustomFunctions;
         if (data && data instanceof Array ) {
@@ -1249,7 +1443,7 @@ sg.viewList = function () {
             if (cbFunctions.length > 0) {
                 var cbFuncName = cbFunctions[0][functionName];
                 if (cbFuncName) {
-                    var callback = _getFuntion(cbFuncName);
+                    var callback = _getFunction(cbFuncName);
                     if (callback && typeof callback === "function") {
                         var grid = _getGrid(gridName),
                             event = _getEventObject();
@@ -1257,6 +1451,9 @@ sg.viewList = function () {
                        record = record || grid.dataItem(grid.select());
                        switch (functionName) {
                             case "gridChanged":
+                            case "gridUpdated":
+                               callback(record, fieldName);
+                               return true;
                             case "gridAfterSetActiveRecord":
                             case "gridAfterDelete":
                             case "gridAfterCreate":
@@ -1264,8 +1461,6 @@ sg.viewList = function () {
                                callback(record);
                                return true;
                             case "gridBeforeCreate":
-                               callback(event);
-                               return event.isProceed();
                             case "gridBeforeDelete":
                                callback(record, event);
                                return event.isProceed();
@@ -1327,6 +1522,7 @@ sg.viewList = function () {
         _filter[gridName] = "";
         _readOnlyColumns[gridName] = [];
         _sendChange[gridName] = true;
+        _selectRowUid[gridName] = "";
     }
 
     /**
@@ -1339,7 +1535,7 @@ sg.viewList = function () {
         var viewColumns = grid.columns.filter(function (c) {
             return c.hidden === false;
         });
-        return cellIndex > -1 ? viewColumns[cellIndex].field : "";
+        return cellIndex > -1 && cellIndex < viewColumns.length ? viewColumns[cellIndex].field : "";
     }
     /**
      * @description Initialize a grid, creating dataSource to binding grid, register events handler
@@ -1351,7 +1547,7 @@ sg.viewList = function () {
     function init(gridName, readOnly, updateColumnDefs) {
 
         if (updateColumnDefs) {
-            typeof updateColumnDefs === "function" ? updateColumnDefs() : _getFuntion(updateColumnDefs)();
+            typeof updateColumnDefs === "function" ? updateColumnDefs() : _getFunction(updateColumnDefs)();
         }
 
         window.addEventListener("message", _receiveMessage, false);
@@ -1388,7 +1584,8 @@ sg.viewList = function () {
                     errorMessage = _lastErrorResult[gridName].message,
                     row = grid.select(),
                     selectedIndex = row.index(),
-                    record = grid.dataItem(row);
+                    record = grid.dataItem(row),
+                    pageSize = grid.dataSource.pageSize();
 
                 //custom call back when select new row
                 if (selectedIndex !== lastRowNumber) {
@@ -1401,17 +1598,33 @@ sg.viewList = function () {
                         grid.select("tr:eq(" + lastRowNumber + ")");
                         sg.utls.showMessage(error);
                     }.bind(null, errorMessage));
-                    return;
+
+                    if(!errorMessage.UserMessage.IsSuccess){
+                        return;
+                    }
                 }
-                if (lastRowNumber > -1) {
-                    var lastRowData = grid.dataItem("tbody tr:eq(" + lastRowNumber + ")");
+                //Skip insert or update if the record is out of range of the page size
+                if (lastRowNumber > -1 && lastRowNumber < pageSize) {
                     if (selectedIndex !== lastRowNumber) {
+                        var lastRowData = grid.dataSource.data()[lastRowNumber];
                         if (lastRowData.isNewLine) {
                             _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
-                        } else {
-                            _sendRequest(gridName, RequestTypeEnum.Update);
+                        } else if (lastRowData.dirty) {
+                            _sendRequest(gridName, RequestTypeEnum.Update, "", false, -1, lastRowData);
                         }
                     }
+                }
+                if (record) {
+                    if (record.uid !== _selectRowUid[gridName]) {
+                        // Paging and refresh/update error cause send extra moveto request, skip to send this request
+                        if (_skipMoveTo[gridName]) {
+                            _skipMoveTo[gridName] = false;
+                        } else {
+                            var rowData = grid.dataItem(grid.select());
+                            _sendRequest(gridName, RequestTypeEnum.MoveTo, "", rowData.isNewLine, -1, rowData);
+                        }
+                    }
+                    _selectRowUid[gridName] = record.uid;
                 }
             },
 
@@ -1422,7 +1635,7 @@ sg.viewList = function () {
                     pageSize = grid.dataSource.pageSize(),
                     ps = pageSize - 1;
 
-                //Generate display index,
+                //Generate display index for sequence number column
                 $(rows).each(function () {
                     var index = $(this).index() + 1 + pageSize * (page - 1);
                     var rowLabel = $(this).find(".displayIndex");
@@ -1457,10 +1670,15 @@ sg.viewList = function () {
             edit: function (e) {
                 var readOnlyColumns = _readOnlyColumns[gridName],
                     column = this.columns[e.container.index()],
+                    grid = e.sender,
                     field = column.field;
 
-                if (readOnlyColumns.indexOf(field) > -1) {
-                    $("#" + column).attr("readonly", true);
+                // custom plug in for 'columnStartEdit'
+                var isEditable = _columnCallback(gridName, "columnStartEdit", field, "", e.container.find("[name='" + field + "']"));
+
+                if (readOnlyColumns.indexOf(field) > -1 || !isEditable) {
+                    var curCell = $('#' +gridName).find(".k-edit-cell");
+                    grid.editCell(curCell.next());
                 }
             },
 
@@ -1515,13 +1733,20 @@ sg.viewList = function () {
                         if (!isProceed) {
                             return;
                         }
-                        _sendRequest(gridName, e.field === "VALUES" ? RequestTypeEnum.Update : RequestTypeEnum.Refresh, e.field);
+                        var newLine = e.items && e.items.length > 0 && e.items[0].isNewLine;
+                        _sendRequest(gridName, RequestTypeEnum.Refresh, e.field, newLine);
+                    }
+
+                    //Adding line at the end of a page will create a dummy line to allow navigating to the next page
+                    //Here we will add the actual line on the new page
+                    if (e.action === undefined && e.items.length === 0 && count !== 0) {
+                        _addLine(gridName);
                     }
                 },
 
                 transport: {
                     read: {
-                        url: window.sg.utls.url.buildUrl("Core", "Grid", "Read"),
+                        url: _getRequestUrl(gridName, "Read"),
                         contentType: "application/json",
                         type: "POST",
                         headers: sg.utls.getHeadersForAjax()
@@ -1557,7 +1782,7 @@ sg.viewList = function () {
                             _newLine[gridName] = false;
                             _currentPage[gridName] = this.page();
                             this.page(this.page());
-                        }
+                        } 
                         return;
                     }
                     _currentPage[gridName] = this.page();
@@ -1603,9 +1828,13 @@ sg.viewList = function () {
                     if (!rowData.isNewLine) {
                         _sendRequest(gridName, RequestTypeEnum.Delete, "");
                     } else {
-                        grid.dataSource.remove(rowData);
+                        var ds = grid.dataSource;
+                        ds.remove(rowData);
+                        _newLine[gridName] = false;
+                        // Set the correct current page
+                        var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
+                        ds.page(page);
                     }
-                    grid.dataSource.read();
                     _gridCallback(gridName, "gridAfterDelete", rowData);
                 },
                 function () { },
@@ -1621,7 +1850,7 @@ sg.viewList = function () {
         var grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select());
         //has update error, show error message and return
-        if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE) {
+        if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message !== "") {
             setTimeout(function () {
                 grid.select("tr:eq(" + _lastRowNumber[gridName] + ")");
                 sg.utls.showMessage(_lastErrorResult[gridName].message);
@@ -1683,8 +1912,8 @@ sg.viewList = function () {
      * @return {string} return the text by value
      */
     function getListText(field, dataItem) {
-        var list = this.filter(function (i) { return i.Value.toLowerCase() === dataItem[field].toString().toLowerCase(); });
-        return list && list.length > 0 ? list[0].Text : dataItem[field];
+        var list = this.filter(function (i) { return i.Value.toLowerCase() === (dataItem[field] ? dataItem[field].toString().toLowerCase() : ""); });
+        return list && list.length > 0 ? list[0].Text : (dataItem[field] ? dataItem[field] : "");
     }
 
     /**
@@ -1727,17 +1956,26 @@ sg.viewList = function () {
     /**
      * @description Commit unsaved changes in a grid to the server.
      * @param {string} gridName The name of grid. If omitted, commit changes in all view list grids to the server.
+     * @param {function} callBack The callBack function after the action is completed
      * @return {boolean} Return a boolean flag to indicate success or not
      */
-    function commit(gridName) {
+    function commit(gridName, callBack) {
         var result = true;
         if (gridName) {
-            result = _commitGrid(gridName);
+            if (!isEmpty(gridName)) {
+                result = _commitGrid(gridName, callBack);
+            } else if (callBack && typeof callBack === "function") {
+                callBack(true);
+            }
         } else {
             for (var i = 0, length = _gridList.length; i < length; i++) {
-                result = _commitGrid(_gridList[i]);
-                if (!result) {
-                    break;
+                if (!isEmpty(_gridList[i])) {
+                    result = _commitGrid(_gridList[i], callBack);
+                    if (!result) {
+                        break;
+                    }
+                } else if (callBack && typeof callBack === "function") {
+                    callBack(true);
                 }
             }
         }
@@ -1756,7 +1994,7 @@ sg.viewList = function () {
         function refreshGrid(gridName) {
             var grid = _getGrid(gridName);
             if (grid) {
-                grid.dataSource.read();
+                grid.dataSource.page(1);
             }
         }
 
@@ -1883,6 +2121,12 @@ sg.viewList = function () {
         var grid = _getGrid(gridName) || init(gridName);
         if (readOnly !== undefined) {
             grid.setOptions({ editable: !readOnly });
+
+            $("#btn" + gridName + "Add").prop("disabled", readOnly);
+            $("#btn" + gridName + "Delete").prop("disabled", readOnly);
+            _allowDelete[gridName] = !readOnly;
+            _allowInsert[gridName] = !readOnly;
+
             return;
         }
         var editable = grid.options.editable;
@@ -1979,6 +2223,48 @@ sg.viewList = function () {
         selectRow.set(fieldname, value);
     }
 
+    /**
+     * @description Return bool value to indicate if the grid is empty
+     * @param {any} gridName The name of the grid.
+     * @return {booean} A Boolean flag
+     */
+    function isEmpty(gridName) {
+        var grid = _getGrid(gridName);
+        var dataSource = grid.dataSource;
+
+        return dataSource.view().length === 0;
+    }
+    /**
+     * Reset grid status, cancel last row edit
+     * @param {any} gridName The grid name
+     * @param {boolean} ignoreRead The flag to determinate if grid data read should be executed
+     */
+    function cancel(gridName, ignoreRead) {
+        var grid = _getGrid(gridName);
+        _setModuleVariables(gridName, RowStatusEnum.NONE, "", -1, true, false, false);
+        grid.clearSelection();
+
+        if(!ignoreRead){
+            grid.dataSource.read();
+        }
+    }
+    /**
+     * Refresh current select row
+     * @param {string} gridName The grid name
+     * @param {string} fieldName The field name
+     */
+    function refreshCurrentRow(gridName, fieldName) {
+        _sendRequest(gridName, RequestTypeEnum.RefreshRow, fieldName);
+    }
+
+    /**
+     * Update current select row
+     * @param {any} gridName The grid name
+     */
+    function updateCurrentRow(gridName) {
+        _sendRequest(gridName, RequestTypeEnum.Update);
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -2004,6 +2290,10 @@ sg.viewList = function () {
         isValid: isValid,
         dirty: dirty,
         commit: commit,
-        refresh: refresh
+        refresh: refresh,
+        refreshCurrentRow: refreshCurrentRow,
+        updateCurrentRow: updateCurrentRow,
+        isEmpty: isEmpty,
+        cancel: cancel
     };
 }();

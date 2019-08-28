@@ -1,0 +1,21 @@
+{
+  "ReturnSequenceKey": 20988,
+  "ReturnDate": "2020-01-15",
+  "TemplateCode": "",
+  "Vendor": "1400",
+  "Description": "PO RETURNS",
+  "Reference": "",
+  "Comment": "",
+  "ShipVia": "",
+  "ReturnLines": [
+    {
+      "ReturnSequenceKey": 20988,
+      "LineNumber": 1000,
+      "ItemNumber": "A1-405/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityReturned": 3,
+      "UnitCost": 3.15
+    }
+  ]
+}

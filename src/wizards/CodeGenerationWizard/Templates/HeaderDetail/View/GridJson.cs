@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+    #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class GridJson : GridJsonBase
     {
@@ -27,124 +27,125 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
         public virtual string TransformText()
         {
             
-            #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 2 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 3 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 4 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 5 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 6 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 7 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 8 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 9 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 10 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 11 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 12 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 13 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 14 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 15 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 16 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 17 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 18 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 19 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 24 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
    
     var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var isRepoTypeHeaderDetail = settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
 
 
             
@@ -152,26 +153,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line hidden
             this.Write("\r\n{\r\n   \"IsSequenceRevisionList\": ");
             
-            #line 31 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 32 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(",\r\n   \"ReadOnly\": false,\r\n   \"PageSize\": 10,\r\n   \"ViewID\":\"");
             
-            #line 34 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 35 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(view.Properties[BusinessView.Constants.ViewId].ToString()));
             
             #line default
             #line hidden
             this.Write("\",\r\n   \"ColumnDefinitions\": [\r\n\t");
             
-            #line 36 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 37 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
 		PushIndent("    ");	
 		foreach(var field in view.Fields)
 		{
-			if (field.IsKey)
+			if (isRepoTypeHeaderDetail && field.IsKey )
 				continue;
 
 			WriteLine("{");
@@ -194,7 +195,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "c:\$$$\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+        #line 1 "C:\CNA2-Dev\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

@@ -418,7 +418,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kendo placeholder.
+        ///   Looks up a localized string similar to The Kendo UI for jQuery JavaScript library is not packaged with the 
+        ///upgrade wizard for licensing reasons.
+        ///
+        ///However, if a new version is used by Sage during the release cycle, it 
+        ///will require synchronization.
+        ///
+        ///This step will copy the appropriate Kendo files from the local Sage 300
+        ///install..
         /// </summary>
         internal static string ReleaseAllSyncKendoFiles {
             get {
@@ -522,15 +529,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is a manual step that may need to be performed by our development partners..
-        /// </summary>
-        internal static string ReleaseSpecificDescAspnetClientFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescAspnetClientFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
         /// </summary>
         internal static string ReleaseSpecificDescConsolidateEnumerations {
@@ -540,20 +538,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will update the version numbers for some Crystal Reports components..
+        ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
-        internal static string ReleaseSpecificDescCrystalReportsVersionNumberUpdate {
+        internal static string ReleaseSpecificDescUpdateMultisession {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescCrystalReportsVersionNumberUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will create and populate the new ExternalContent folder..
-        /// </summary>
-        internal static string ReleaseSpecificDescExternalContentFolder {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescExternalContentFolder", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateMultisession", resourceCulture);
             }
         }
         
@@ -572,6 +561,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple Sessions framework changes.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateMultisession {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMultisession", resourceCulture);
             }
         }
         
@@ -600,12 +598,53 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to handle multiple sessions in
+        ///Sage 300c 2020.0, several files need to be altered for the solution to
+        ///compile and run after the upgrade process.
+        ///
+        ///The upgrade wizard is unable to automatically perform this
+        ///modification and therefore this step will require manual modifications.
+        ///
+        ///The following files are affected (all within the Namespace.Web project):
+        ///	- XXAreaRegistration.cs
+        ///	- Global.asax.cs
+        ///	- Web.config
+        ///	- All JavaScript behaviour files
+        ///
+        ///Please refer t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateMultisession {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateMultisession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The targeted version of the Microsoft .NET Framework will be updated to version {0} 
         ///for all projects in the solution..
         /// </summary>
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_logo_square {
+            get {
+                object obj = ResourceManager.GetObject("sage-logo-square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seaching in all project directories instead..
+        /// </summary>
+        internal static string SearchingInAllProjectDirectoriesInstead {
+            get {
+                return ResourceManager.GetString("SearchingInAllProjectDirectoriesInstead", resourceCulture);
             }
         }
         
@@ -691,11 +730,56 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} was not found in the root of the solution folder..
+        /// </summary>
+        internal static string Template_AccpacPropsFileNotFoundInRootOfSolutionFolder {
+            get {
+                return ResourceManager.GetString("Template_AccpacPropsFileNotFoundInRootOfSolutionFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attempting to update all csproj files to reference the solution root folder based {0} file..
+        /// </summary>
+        internal static string Template_AttemptingToUpdateAllCsprojFiles {
+            get {
+                return ResourceManager.GetString("Template_AttemptingToUpdateAllCsprojFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removing all copies of {0} located in project folders..
+        /// </summary>
+        internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
+            get {
+                return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} copies of {1} were found:.
+        /// </summary>
+        internal static string Template_XCopiesOfPropsFileWereFound {
+            get {
+                return ResourceManager.GetString("Template_XCopiesOfPropsFileWereFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to to.
         /// </summary>
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to support multiple sessions must be made manually..
+        /// </summary>
+        internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
             }
         }
         

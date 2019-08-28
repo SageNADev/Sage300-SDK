@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
 
 using System;
 using System.IO;
@@ -27,10 +27,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         /// <param name="e"></param>
         protected override void OnInit(EventArgs e)
         {
-            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult();
+            var sessionId = Request.QueryString["session"];
+            AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult(sessionId);
             if (ConfigurationHelper.IsOnPremise)
             {
-                var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", HttpContext.Current.Session.SessionID));
+                var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", sessionId));
                 if (File.Exists(path))
                 {
                     var userTenantInfo = File.ReadAllText(path);
@@ -51,10 +52,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         /// <summary>
         /// Determines whether [is user authenticated].
         /// </summary>
+        /// <param name="sessionId">Session Id</param>
         /// <returns></returns>
-        public static bool IsUserAuthenticated()
+        public static bool IsUserAuthenticated(string sessionId)
         {
-            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult();
+            var userTenantInfo = SignOnHelper.GetStoredUserSignOnResult(sessionId);
 
             return (userTenantInfo != null);
         }

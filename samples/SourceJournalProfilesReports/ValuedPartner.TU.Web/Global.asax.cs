@@ -1,6 +1,6 @@
 ﻿
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,6 +24,7 @@
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Core.Web;
@@ -32,6 +33,7 @@ using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -51,7 +53,6 @@ namespace ValuedPartner.TU.Web
 
         private void Session_Start(object sender, EventArgs e)
         {
-
             if (!_isAuthenticated)
             {
                 var authenticationManager = new AuthenticationManagerOnPremise();
@@ -59,7 +60,7 @@ namespace ValuedPartner.TU.Web
                 var recordId = Guid.NewGuid();
                 var context = new Context
                 {
-                    SessionId = HttpContext.Current.Session.SessionID,
+                    AspNetSessionId = HttpContext.Current.Session.SessionID,
                     ApplicationUserId = "ADMIN",
                     Company = "SAMLTD",
                     ProductUserId = recordId,
@@ -72,7 +73,9 @@ namespace ValuedPartner.TU.Web
                     Container = BootstrapTaskManager.Container
                 };
 
+                var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
                 context.ScreenContext.ScreenName = "None";
+                context.SessionId = Encoding.UTF8.Base64Encode(sessionId);
 
 				//Set default company information
                 var companies =  new List<Organization>
@@ -80,7 +83,7 @@ namespace ValuedPartner.TU.Web
                     new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
                 };
 				
-                authenticationManager.LoginResult(HttpContext.Current.Session.SessionID, "SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
+                authenticationManager.LoginResult("SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
                 _isAuthenticated = true;
 
                 //Redirect to the last generated page
@@ -88,7 +91,7 @@ namespace ValuedPartner.TU.Web
                 if (File.Exists(fileUrlPath))
                 {
                     var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = HttpContext.Current.Request.Url.AbsoluteUri + url;
+                    url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
                     Response.Redirect(url);
                 }
             }
@@ -99,10 +102,8 @@ namespace ValuedPartner.TU.Web
         /// </summary>
         protected void Application_Start()
         {
-
             // Register areas and routes
             AreaRegistration.RegisterAllAreas();
-
 
             UMClientConfig.Register();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -182,9 +183,6 @@ namespace ValuedPartner.TU.Web
         private void Session_End(object sender, EventArgs e)
         {
             //This will never be called if sessions are stored in azure cache
-
-            CommonService.DestroyPool(Session.SessionID);
-
             ActiveSessionManager.RemoveSession(Session.SessionID);
         }
 

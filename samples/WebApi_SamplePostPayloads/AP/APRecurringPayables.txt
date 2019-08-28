@@ -1,0 +1,27 @@
+    {
+      "VendorNumber": "1890",
+      "RecurringPayableCode": "EQUIP2",
+      "Description": "Equipment Rental",
+      "EffectiveDate": "2019-01-01",
+      "ExpirationType": "NoExpiration",
+      "ExpirationDate": null,
+      "MaximumNumberOfInvoices": 0,
+      "MaximumTotalInvoiceAmount": 8500,
+      "PONumber": "FACTORY OFFICE",
+      "InvoiceDescription": "Weekly equipment rental",
+      "CurrencyCode": "USD",
+      "DistributedTotalBeforeTaxes": 500,
+      "InvoiceSubtotal": 500,
+      "Schedule": "MONTHLY",
+      "DocumentTotal": 500,
+      "RecurringPayableDetails": [
+        {
+          "VendorNumber": "1890",
+          "RecurringPayableCode": "EQUIPMENT",
+          "LineNumber": 1,
+          "DistributionCode": "EQUIP",
+          "GLAccount": "6260",
+          "DistributedAmount": 500
+        }
+      ]
+    }  

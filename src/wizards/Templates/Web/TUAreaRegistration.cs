@@ -36,7 +36,7 @@ namespace $companynamespace$.$applicationid$.Web
         /// <param name="context">The context.</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("$applicationid$_Tenant", "{tenantAlias}/$applicationid$/{controller}/{action}/{id}",
+            context.MapRoute("$applicationid$_Tenant", "{tenantAlias}/{session}/$applicationid$/{controller}/{action}/{id}",
             new { action = "Index", id = UrlParameter.Optional });
         }
 
