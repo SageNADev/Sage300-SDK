@@ -79,7 +79,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                             accpacReport.SetParam(parameter.Id, value);
                         }
 
+                        var userId = session.GetSession().UserID;
+                        EvictUserWatcher.AddUserIdToPauseEviction(userId);
                         reportDocument = accpacReport.GetReportDocument();
+                        EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+
                         watcher.Print("Report Document Created.");
 
                         // store the report object in the memory
@@ -123,6 +127,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 }
 
                 string reportDocumentKey = "ReportDocument_" + token;
+
+                // close the report document object 
+                InMemoryCacheProvider.Instance.Get<ReportDocument>(reportDocumentKey)?.Close();
+
+                // remove it from the cache (will trigger Dispose call on the object)
                 InMemoryCacheProvider.Instance.Remove(reportDocumentKey);
                 return true;
             }
@@ -187,7 +196,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             {
                 if (ConfigurationHelper.IsOnPremise)
                 {
+                    CommonUtil.ValidatePathName(RegistryHelper.SharedDataDirectory);
+                    CommonUtil.ValidateFileName(sessionId);
+
                     var path = Path.Combine(RegistryHelper.SharedDataDirectory, $"{sessionId}.rpt");
+                    
                     if (File.Exists(path))
                     {
                         var report = File.ReadAllText(path);

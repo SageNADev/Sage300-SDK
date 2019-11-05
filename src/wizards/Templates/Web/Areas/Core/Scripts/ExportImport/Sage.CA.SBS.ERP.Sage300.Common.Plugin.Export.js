@@ -534,9 +534,9 @@ var exportResultRowNumber = 0;
 
                 if (result.UserMessage !== undefined && result.UserMessage.Errors.length > 0) {
                     window.sg.utls.showMessageInfoInCustomDivWithoutClose(window.sg.utls.msgType.ERROR, result.UserMessage.Errors[0].Message, "loadScriptMessage");
-                    $("#divLoadScript").parent().css({ height: '370px' });
+                    $("#divLoadScript").parent().css({ height: '390px' });
                 } else {
-                    $("#divLoadScript").parent().css({ height: '210px' });
+                    $("#divLoadScript").parent().css({ height: '230px' });
                     var loadModelName = result.Name;
                     var screenName = sg.exportHelper.exportModel.ExportRequest.Name();
                     if (loadModelName !== screenName) {
@@ -608,7 +608,7 @@ var exportResultRowNumber = 0;
             });
 
             $(document).on('click.plugin.export', '#btnLoadScript', function () {
-                $("#divLoadScript").parent().css({ height: '210px' });
+                $("#divLoadScript").parent().css({ height: '230px' });
                 $("#loadScriptMessage").empty();
                 $('#formLoadScript')[0].reset();
                 $("#divLoadScript").kendoWindow({
@@ -652,7 +652,7 @@ var exportResultRowNumber = 0;
                 var selectedFIle = files[0];
                 $('#btnUploadFile').val(selectedFIle.name);
                 $("#loadScriptMessage").empty();
-                $("#divLoadScript").parent().css({ height: '210px' });
+                $("#divLoadScript").parent().css({ height: '230px' });
             });
         },
 

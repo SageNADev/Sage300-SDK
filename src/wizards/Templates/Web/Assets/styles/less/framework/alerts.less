@@ -9,30 +9,38 @@
   padding: 0 0 0 50px;
 
   &:before {
-    content: "";
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
+    background: #003349;
+    content: '';
     display: block;
+    left: 0;
+    top: 0;
     position: absolute;
-    background: @brand-success url('@{image-path}/ui/sprite_icons.png') no-repeat -645px -43px;
-    background-size: 1350px 135px;
+    height: 100%;
+    width: 32px;
+  }
+
+  &:after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -799px -29px ;
+    background-size: 900px 90px;
+    opacity: 1;
+    position: absolute;
+    top: ~"calc(50% - 16px)";
   }
 
   .heading {
-    background-color: @gray-dark;
-    color: #fff;
-    height: 50px;
-    padding: 16px;
-    margin: 0 0 10px 0;
+    background-color: @white;
+    border: 1px solid #9a9b9c;
+    border-bottom: 0;
   }
 
   .msg-content {
     background-color: @white;
-    border: 1px solid @sage-gray;
-    margin: -10px 0 0 -50px;
-    padding: 20px 20px 14px 65px;
+    margin-bottom: 20px;
+    border: 1px solid #9a9b9c;
+    border-top: 0px;
 
     ul, ol {
     padding: 6px 0 0 15px;
@@ -45,29 +53,38 @@
   
   &.msg-info {
     &:before {
-      background-position: -399px -43px;
       background-color: @brand-info;
+    }
+
+    &:after {
+      background-position: -267px -29px;
     }
   }
 
   &.msg-warning {
     &:before {
-      background-position: -449px -43px;
       background-color: @brand-warning;
+    }
+
+    &:after {
+      background-position: -300px -29px;
     }
   }
 
   &.msg-error {
     &:before {
-      background-position: -500px -43px;
       background-color: @brand-danger;
+    }
+
+    &:after {
+      background-position: -334px -29px;
     }
   }
 
   &.msg-box-shadow {
-    box-shadow: rgba(0,0,0,0.45) 0 0 30px;
-    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 30px;
-    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 30px;
+    box-shadow: rgba(0,0,0,0.15) 0 0 15px;
+    -webkit-box-shadow: rgba(0,0,0,0.15) 0 0 15px;
+    -moz-box-shadow: rgba(0,0,0,0.15) 0 0 15px;
   }
 }
 
@@ -138,12 +155,11 @@
 
 #success .success-msg {
     width: 700px;
-    background-color: #4d4f53;
     margin: 0 auto;
     min-height: 50px; 
-    box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
 }
 
 #message {
@@ -154,13 +170,12 @@
     z-index: 999999;
     margin-top: 160px;
     padding-top: 0 !important;
-    box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.45) 0 0 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px;
 }
 
 .message {
-    text-align: center;
     padding: 0px;
     position: absolute;
     width: 100%;
@@ -173,7 +188,95 @@
     z-index: 10;
     position: relative;
     .box-sizing(border-box);
+
+    &:before {
+      background: #003349;
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      width: 32px;
+    }
+
+    &:after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -799px -29px ;
+      background-size: 900px 90px;
+      opacity: 1;
+      position: absolute;
+      top: ~"calc(50% - 16px)";
+    }
+
+    &.multiError-msg:before{
+      background-color: @brand-danger;
+    }
+
+    &.multiWarn-msg:before{
+      background-color: @brand-warning;
+    }
+
+    &.multiInfo-msg:before {
+      background-color: @brand-info;
+    }
+    
+    &.success-msg:before {
+      background-color: @sage-green;
+    }
+
+    &.multiError-msg:after{
+      background-position: -334px -29px ;
+    }
+
+    &.multiWarn-msg:after{
+      background-position: -300px -29px ;
+    }
+
+    &.multiInfo-msg:after {
+      background-position: -267px -29px ;
+    }
+
+    &.success-msg:after {
+      background-position: -799px -29px ;
+    }
+
+    .title { 
+       background-color: @white;
+       border: 1px solid #9a9b9c;
+       border-bottom: 0;
+    }
+
+    .msg-content { 
+       background-color: @white;
+       border: 1px solid #9a9b9c;
+       border-top: 0;
+       padding: 0 16px 16px 50px;
+    }
+
+    &.multiError-msg .title,
+    &.multiError-msg .msg-content {
+      border-color: @brand-danger;
+    }
+
+    &.multiWarn-msg .title,
+    &.multiWarn-msg .msg-content {
+      border-color: @brand-warning;
+    }
+
+    &.multiInfo-msg .title,
+    &.multiInfo-msg .msg-content  {
+      border-color: @brand-info;
+    }
+    
+    &.success-msg .title,
+    &.success-msg .msg-content {
+      border-color: @sage-green;
+    }
 }
+
 .message-control .title {
    overflow: hidden;
 }
@@ -183,37 +286,20 @@
 }
 
 #success .message-control .title {
-    overflow: hidden;
-    position: relative;
+    min-height: 50px;
+    border-bottom: 1px solid @sage-green;
 }
 
 .message-control .title h3 {
-    color: #fff;
     font-size: 14px;
-    font-weight: normal;
-    margin-left: 70px;
+    font-weight: bold;
+    margin-left: 50px;
     text-align: left;
-    margin-top: 19px;
-}
-
-.message-control .msg-content { 
-    padding: 20px 20px 20px 70px;
-    color: #4d4f53;
-    overflow: auto;
-    border: 1px solid #9a9b9c;
-    border-top: 0px;
-    background: #fff !important;
-    text-align: left;
+    margin-top: 16px;
 }
 
 .message-control .msg-content>li {
     line-height: 24px; 
-}
-
-.container_popUp .message-control .msg-content { 
-    margin-bottom: 20px;
-    border: 1px solid #9a9b9c;
-    border-top: 0px;
 }
 
 .message-control .msg-content p {
@@ -222,10 +308,10 @@
 
 .message-control .msg-content ul, .message-control .msg-content ol {
    margin-left: 15px;
-   margin-bottom: 12px;
+   margin-bottom: 0;
 }
 .message-control .msg-content ul li, .message-control .msg-content ol li {
-    margin-bottom: 7px;
+    margin-bottom: 0;
     margin-left: -40px;
     padding-top: 3px;
     padding-left: 0px;
@@ -270,6 +356,7 @@
 .msg-content .button-group,
 .msg-body .button-group  {
     margin-top: 0;
+    float: none !important;
 }
 
 /* hide the close button in success message*/
@@ -277,35 +364,24 @@
     display: none;
 }
 
-.message-control.success-msg .title .success-icon { 
-    background-size: 1350px 135px;
-    background-position: -645px -42px;
-    background-color: #38c72a;
-    width: 50px;
-    height: 50px;
-    float: left;
-}
-
 .message-control.success-msg .msg-content {
    display: none;
+}
+
+.popupWindow .message-control.success-msg .msg-content,
+.k-window-content.k-content .message-control.success-msg .msg-content {
+  display: block;
+  padding: 0 16px 8px;
 }
 
 .message-control.multiError-msg, .message-control.multiWarn-msg, .message-control.multiInfo-msg {
     width: 700px;
 }
 
-.message-control.multiError-msg .title, 
-.message-control.multiWarn-msg .title, 
-.message-control.multiInfo-msg .title, 
-.message-control.success-msg .title { 
-   background-color: #3c424f;
-}
 .message-control.multiError-msg .multiError-icon, 
 .message-control.multiWarn-msg .multiWarn-icon, 
 .message-control.multiInfo-msg .multiInfo-icon {
-   width: 50px;
-   min-height: 50px;
-   float: left;
+   display: none;
 }
 .message-control.multiError-msg .title .msgCtrl-close, 
 .message-control.multiWarn-msg .title .msgCtrl-close, 
@@ -315,9 +391,9 @@
    padding: 0px;
    width: 30px;
    height: 30px;
-   right: 10px;
-   background-position: -207px -29px;
-   top: 10px;
+   right: 6px;
+   background-position: -207px -64px;
+   top: 8px;
    text-indent: 9999px; /* hide Close text */
 }
 
@@ -349,15 +425,15 @@
 .container_popUp .message-control{width:100%}
 
 .message-control.multiError-msg .msg-content.with-grid {
-  padding-left: 20px;
 
   .k-grid-content {
     max-height: 300px;
+    overflow-y: auto;
 
     td {
       white-space: normal;
       line-height: 1.5;
-      padding: 10px;
+      padding: @padding-small-vertical;
     }
   }
 }
