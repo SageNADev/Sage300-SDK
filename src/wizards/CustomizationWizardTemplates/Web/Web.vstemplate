@@ -70,6 +70,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js">jquery.form.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js.map">jquery.form.min.js.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.js">jquery.signalR-2.4.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.min.js">jquery.signalR-2.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
@@ -245,6 +247,7 @@
             <Folder Name="Authentication" TargetFolderName="Authentication">
               <ProjectItem ReplaceParameters="true" TargetFileName="OnPremiseLogin.cshtml">OnPremiseLogin.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.cshtml">RedirectToLogin.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="SessionEvicted.cshtml">SessionEvicted.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="SessionExpired.cshtml">SessionExpired.cshtml</ProjectItem>
               <Folder Name="Partials" TargetFolderName="Partials">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
@@ -255,7 +258,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotAvailable.cshtml">AccountNotAvailable.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotProvisioned.cshtml">AccountNotProvisioned.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="AuthorizedError.cshtml">AuthorizedError.cshtml</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="Error404.cshtml">Error404.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="ICTNotAvailable.cshtml">ICTNotAvailable.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="MissingModules.cshtml">MissingModules.cshtml</ProjectItem>
@@ -390,6 +392,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js">Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SignalR.js">Sage.CA.SBS.ERP.Sage300.Common.SignalR.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js">Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js">Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.URL.js">Sage.CA.SBS.ERP.Sage300.Common.URL.js</ProjectItem>
