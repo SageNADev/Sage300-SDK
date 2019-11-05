@@ -149,8 +149,9 @@ sg.utls.grid = {
     /**
      * This function is used to set the value from finder
      * @param {any} ret the object from finder select
+     * @param {string} id the id of source
      */
-    onFinderSuccess: function (ret) {
+    onFinderSuccess: function (ret, id) {
         var returnField;
         var val;
         if (this.FinderReturnField) {

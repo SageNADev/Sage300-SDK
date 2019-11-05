@@ -38,7 +38,7 @@ td.grid_Cell_Number_Right_Align {
   }
   // Bottom align for column headings
   > thead > tr > th {
-    background-color: #686c76;
+    background-color: @sage-dark-gray;
     color: @white;
   }
   // Remove top border from thead by default
@@ -441,7 +441,6 @@ table {
 
 // grid-control buttons and other options placed here.
 .gridcontrols-group {
-    background-color: #f7f8f8; 
     display: block; 
     padding: 10px 10px 0 10px;
     border: 1px solid @table-border-color;
@@ -527,6 +526,7 @@ table {
   .k-grid-header {
     background-image: none;
     background-color: @table-header-bg;
+    padding-right: 0 !important; //D-39964
 
     > .k-grid-header-wrap {
       border-right: 0;
@@ -537,16 +537,16 @@ table {
       padding: 6px 10px;
       color: @white;
       font-weight: 700;
-      border-color: @table-border-color;
+      border-color: @sage-mid-gray;
       background-color: @table-header-bg;
       background-image: none;
       box-sizing: border-box;
 
       &:focus,
       &.k-state-focused { // Keyboard-binding
-        box-shadow: inset 0 0 0 1px #00a4cf;
-        -webkit-box-shadow: inset 0 0 0 1px #00a4cf;
-        -moz-box-shadow: inset 0 0 0 1px #00a4cf; 
+        box-shadow: inset 0 0 0 1px @input-border-focus;
+        -webkit-box-shadow: inset 0 0 0 1px @input-border-focus;
+        -moz-box-shadow: inset 0 0 0 1px @input-border-focus; 
       }
 
       >.k-link {
@@ -569,8 +569,13 @@ table {
     padding: @table-cell-padding @table-cell-padding 0;
   }
 
+  &.gh180 .k-grid-header, 
+  &#inquiryGrid .k-grid-header,
+  &.grid-vscroll .k-grid-header,  {
+    padding-right: 17px !important; //D-39964 (adding padding to the grid has vertical scrollbar)
+  }
+
   tr {
-    background-color: @table-bg-accent;
 
     &:hover {
       background-color: @table-bg-hover;
@@ -608,18 +613,19 @@ table {
     td {
       border: 0;
       padding: 0 10px; 
-      line-height: 30px;
+      line-height: 29px;
       height: 30px;
       max-height: 30px;
       background-color: inherit; 
       white-space: nowrap;
       box-sizing: border-box;
+      border-bottom: 1px solid @table-border-color;
 
       &.k-state-focused,
       &.k-state-focused:focus { // Keyboard-binding
-        box-shadow: inset 0 0 0 1px #00a4cf;
-        -webkit-box-shadow: inset 0 0 0 1px #00a4cf;
-        -moz-box-shadow: inset 0 0 0 1px #00a4cf; 
+        box-shadow: inset 0 0 0 1px @input-border;
+        -webkit-box-shadow: inset 0 0 0 1px @input-border;
+        -moz-box-shadow: inset 0 0 0 1px @input-border; 
       }
 
       &.k-state-selected:hover {
@@ -917,12 +923,12 @@ table {
   // Edit cell styles
   .k-edit-cell {  
     padding: 0 10px;  
+    position: relative;
 
     input[type="text"],
     .edit-cell.inpt-text input {
       height: 24px; 
       font-size: 12px;
-      border: 1px solid @input-border-focus;
       padding: 0 5px;
       background-color: @white;
       border-radius: 0;
@@ -936,7 +942,6 @@ table {
     }
 
     .k-numeric-wrap {
-      border: 0;
       height: 22px;
 
       input.k-state-invalid {
@@ -997,9 +1002,9 @@ table {
       -webkit-min-logical-height: 22px;
       background-color: transparent;
       background-position: 0 0;
-      position: relative;
-      right: 24px;
-      top: 0;
+      position: absolute;
+      right: 12px;
+      top: 5px;
       border: none;
       padding-right: 0 !important;
 
@@ -1037,7 +1042,7 @@ table {
       .edit-cell.inpt-finder {
         position: absolute;
         top: 0;
-        right: -20px;
+        right: -10px;
       }
     }
     
@@ -1153,15 +1158,18 @@ table {
 
 .user-preference {
   background: @white;
-  border:1px solid #ababab; 
+  border:1px solid @table-border-color; 
   max-width: 274px;
   min-width: 260px;
-  margin-top: 7px;
-  margin-left: 0;
+  margin-top: 5px;
+  margin-left: -1px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+  -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
 
   &#divFinderPrefEditCols {
-    margin-top: -12px;
-    margin-left: -10px;
+    margin-top: -2px;
+    margin-left: 1px;
   }
 
   table { 
@@ -1174,7 +1182,7 @@ table {
     }
 
     thead > tr > td {
-      background-color: #686c76;
+      background-color: @sage-dark-gray;
       color: @white;
       padding: 10px 0;
       text-align: center;
@@ -1188,8 +1196,8 @@ table {
     height: 155px; 
 
     table th {
-      border-bottom: 1px solid #ababab;
-      padding: 2px 0 3px 34px;
+      border-bottom: 1px solid @table-border-color;
+      padding: 0 0 0 34px;
       vertical-align: top;
       text-align: left;
     }
@@ -1198,7 +1206,7 @@ table {
       display: block;
       background: url(../../../Content/Images/edit-columns-icon.png) no-repeat 10px 14px;
       cursor: pointer;
-      border-bottom: 1px solid #ababab;
+      border-bottom: 1px solid @table-border-color;
       padding: 2px 0 3px 34px;
       vertical-align: top;
     }
@@ -1209,7 +1217,7 @@ table {
       margin-top: 2px;
       display: inline-block;
       font-size: 12px;
-      width: 180px;
+      width: 170px;
     }
 
     .ctrl-group > div {
@@ -1218,8 +1226,7 @@ table {
   }
 
   input[class*="btn-"] { 
-    float: right;
-    margin: 5px;
+    margin: 5px 0;
   }
 
   a { 
@@ -1227,13 +1234,14 @@ table {
     font-size: 12px; 
     line-height: 10px; 
     cursor: pointer;
+    margin: 8px 0;
   }
 
   tfoot {
     text-align: center;
 
     td {
-      padding: 2px 0;
+      padding: 0;
       border-top: 1px solid @table-border-color;
     }
   }
@@ -1774,7 +1782,7 @@ div.spreadsheet {
 .fgrid table {
 
   td:first-child {
-  background-color: #686c76;
+  background-color: @sage-dark-gray;
   color: @white;
   border-bottom: 1px solid #dbdbde;
   }

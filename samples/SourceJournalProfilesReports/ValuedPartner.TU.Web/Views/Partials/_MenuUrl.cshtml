@@ -39,14 +39,12 @@
     var iconName = level2Item.Data.IconName;
     var bgImageName = level2Item.Data.MenuBackGoundImage;
     var iconPath = Path.Combine("../../../Content/Images/nav/", iconName);
-    var bgImagePath = Path.Combine("../../../Content/Images/nav/", bgImageName);
-    <li class="menu-item top-tier menu-core">
+    <li class="menu-item top-tier menu-core" id="@level2Item.Data.MenuName">
         <div class="nav-icon">
-            <img src=@iconPath width="16" height="16">
+            <img src=@iconPath width="20" height="20">
         </div>
         <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
         <ul class="std-menu">
-            <img src=@bgImagePath>
             <li class="sub-heading">@level2Item.Data.MenuName</li>
             @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
             {
@@ -60,12 +58,23 @@
                 firstItem = false;
             }
         </ul>
+
     </li>
     @*2nd Level Menu: End*@
 }
 
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
+</script>
+
+<script>
+    var mainToolTip = null;
+</script>
+
+<script id="tooltipTemplate" type="text/x-kendo-template">
+    <div class="template-wrapper">
+        <p>#=$(target).siblings("a")[0].innerText#</p>
+    </div>
 </script>
 
 @helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
@@ -85,10 +94,6 @@
 
         <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
             @parentItem.Data.MenuName
-            @if (parentItem.Data.IsReport == true)
-            {
-                <span class="icon-report"></span>
-            }
         </a>
 
         @if (parentItem.Data.UseColGrouping)

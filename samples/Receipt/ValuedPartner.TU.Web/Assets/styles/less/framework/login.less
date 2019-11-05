@@ -126,8 +126,12 @@ a:hover {
 
 .header {
     height: 3.5rem;
-    background-color: #3c424f;
-    box-shadow: 0 2px 4px rgba(0,0,0,.24);
+    background-color: @white;
+    padding-top: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,.2);
 }
 
 .footer {
@@ -163,7 +167,6 @@ a:hover {
 .header > .wrapper,
 .main-body > .wrapper {
     width: 940px;
-    padding: 16px;
     margin: 0 auto;
     position: relative;
 }
@@ -191,69 +194,103 @@ a:hover {
 /* message boxes */
 
 .msg {
-    margin: 0 0 20px;
+    margin: 0 auto 20px;
+    position: relative;
+    width: 700px;
+
+    &:before {
+    background: #003349;
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+  }
+
+  &:after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -799px -29px ;
+    background-size: 900px 90px;
+    opacity: 1;
+    position: absolute;
+    top: ~"calc(50% - 16px)";
+  }
+
+  &.msg-info {
+    &:before{
+      background-color: @brand-info;
+    }
+
+    &:after {
+      background-position: -267px -29px;
+    }
+
+    .msg-heading,
+    .msg-body {
+      border-color: @brand-info;
+    }
+  }
+
+  &.msg-warning {
+    &:before {
+      background-color: @brand-warning;
+    }
+
+    &:after {
+      background-position: -300px -29px;
+    }
+
+    .msg-heading,
+    .msg-body {
+      border-color: @brand-warning;
+    }
+  }
+
+  &.msg-error {
+    &:before {
+      background-color: @brand-danger;
+    }
+
+    &:after {
+      background-position: -334px -29px;
+    }
+
+    .msg-heading,
+    .msg-body {
+      border-color: @brand-danger;
+    }
+  }
 }
 
 .msg-heading {
-    background-color: #3c414e;
-    font-weight: normal;
-    height: 50px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #fff;
-    line-height: 50px;
-    position: relative;
-    padding-left: 65px;
-
-    &:before {
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        top: 0;
-        left: 0;
-        content: "";
-        background: #41a940 url('@{image-path}/ui/sprite_msg.png') no-repeat -47px 9px; /* default is confirmation */
-    }
+    background-color: @white;
+    border: 1px solid #9a9b9c;
+    border-bottom: 0;
+    padding: 16px 16px 16px 50px;
+    font-weight: bold;
 }
 
 .msg-body {
-    padding: 20px 15px 20px 65px;
+    background-color: @white;
+    margin-bottom: 20px;
     border: 1px solid #9a9b9c;
     border-top: 0px;
-    background: #fff;
-    text-align: left;
-}
-
-.msg-info .msg-heading:before {
-    background-color: #009fda;
-    background-position: 9px 9px;
-}
-
-.msg-warning .msg-heading:before {
-    background-color: #ff5800;
-    background-position: -103px 9px;
-}
-
-.msg-error .msg-heading:before {
-    background-color: #ff0000;
-    background-position: -159px 9px;
+    padding: 0 16px 16px 50px;
 }
 
 .k-window {
     border: none !important;
     background: @white;
-    box-shadow:             rgba(0,0,0,0.45) 0 0 30px;
-    -webkit-box-shadow:     rgba(0,0,0,0.45) 0 0 30px;
-    -moz-box-shadow:        rgba(0,0,0,0.45) 0 0 30px;
+    box-shadow:             rgba(0,0,0,0.15) 0 0 30px;
+    -webkit-box-shadow:     rgba(0,0,0,0.15) 0 0 30px;
+    -moz-box-shadow:        rgba(0,0,0,0.15) 0 0 30px;
     padding-bottom: 0;
 
     .k-window-titlebar.k-header {
-        font-size: 14px;
-        background: #3c424f;
-        color: #fff;
-        border-radius: 0;
-        height: 50px;
 
         .k-window-actions .k-link.k-state-hover { 
             background: none;
@@ -276,8 +313,8 @@ a:hover {
             margin: 0;
 
             .msg-content {
-                border: none;
                 padding-bottom: 0;
+                padding-top: 16px;
             }
 
         }
@@ -322,8 +359,8 @@ a:hover {
         margin-top: -50px !important;
 
         .k-window-actions {
-            top: -42px;
-            right: 6px;
+            top: -39px;
+            right: 10px;
         }
     }
 }
@@ -353,13 +390,13 @@ input[class*="btn-"] {
 .btn-secondary { 
     font-weight: 700; 
     color: #fff; 
-    padding: 1px 40px 0 40px; 
     font-size: 90%; margin:0; 
     height: 30px; 
     white-space: nowrap; 
     overflow: hidden; 
     text-overflow: ellipsis; 
     max-width: 300px;
+    padding: 0 20px;
 
     &:disabled  { 
         background: #eaeaea; 
@@ -369,12 +406,12 @@ input[class*="btn-"] {
 }
 
 .btn-primary { 
-    background: @sage-link; 
-    border: 1px solid @sage-link;
+    background: @btn-primary-bg; 
+    border: 1px solid @btn-primary-border;
 
     &:hover { 
-        background: #1d479c; 
-        border: 1px solid @sage-link;
+        background: darken(@btn-primary-bg, 10%);
+        border: 1px solid @btn-primary-border;
     }
 
     &:focus { /*New UI: Focus style added for primary button*/
@@ -394,30 +431,11 @@ input[class*="btn-"] {
 }
 
 .btn-secondary { 
-    background: #fff; 
     color: @sage-link;
-    border: 1px solid @sage-link;
+}
 
-    .btn-secondary:hover { 
-        background: #e8effe; 
-        color: @sage-link;
-        border: 1px solid @sage-link;
-    }
-
-    &:focus { /*New UI: Focus style added for secondary button*/
-        color: @sage-link;
-        border:1px solid @sage-link;
-        background-color: #e8effe;
-        -webkit-transition: all .2s linear;
-        -o-transition: all .2s linear;
-        -moz-transition: all .2s linear;
-        -ms-transition: all .2s linear;
-        -kthtml-transition: all .2s linear;
-        transition: all .2s linear;
-        -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
-
-    }
+.button-group {
+    text-align: right;
 }
 
 /* Change Password popup css -------------------------------------------------- */
@@ -531,11 +549,6 @@ input[class*="btn-"] {
         input[type=password]{
             width: 310px;
             height: 36px !important;
-            border-color: #ccc;
-
-            &:focus {
-                border-color: @input-border-focus;
-            }
         }
 
         .dropdown-group {
@@ -548,18 +561,15 @@ input[class*="btn-"] {
 
                 .k-dropdown-wrap {
                     height: 36px;
-                    border-color: #ccc;
 
                     &.k-state-default:focus,
                     &.k-state-focused,
                     &.k-state-focused .k-input {
-                        border-color: @input-border-focus;
                         -webkit-box-shadow: none;
                         box-shadow: none);
                     }
 
                     .k-select {
-                        border-left: 1px solid #ccc;
                         width: 36px;
                     }
 

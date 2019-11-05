@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 var URL = {
 
@@ -27,7 +27,7 @@ var URL = {
 	  * @returns {any} The value of the specified parameter
 	*/
 	getUrlParameter: function (param) {
-		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		var sPageURL = window.location.search.substring(1),
 			sURLVariables = sPageURL.split('&'),
 			sParameterName,
 			i;
@@ -36,6 +36,7 @@ var URL = {
 			sParameterName = sURLVariables[i].split('=');
 
 			if (sParameterName[0] === param) {
+				sParameterName[1] = decodeURIComponent(sParameterName[1]) ;
 				return sParameterName[1] === undefined ? true : sParameterName[1];
 			}
 		}

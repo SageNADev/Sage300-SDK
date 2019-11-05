@@ -86,44 +86,36 @@
   }
 
   .widgetHpCotainer {
-    color: #9a9b9c;
-    font-family: foco;
-    width: 960px;
-    margin: 47px auto 0;
-    width: 453px;
+    width: 750px;
+    margin: 10% auto;
 
-    h1 {
-      font-size: 48px;
-      line-height: 1.15em;
-      font-family: foco;
-      font-weight: 100;
-      margin-top: 60px;
-      text-align: center;
+    .empty-state-postage {
+      float: left;
+      margin: 0 30px 0 20px;
+      width: 400px;
+
+      img {
+        width: 100%;
+      }
     }
 
-    div {
-      text-align: center;
-      cursor: pointer;
+    .empty-state-text {
+      float: left;
+      width: 300px;
+      color: #003348;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
 
-      #lnkAddWidgets {
+      h1 {
         font-size: 24px;
         line-height: 1.15em;
-        font-family: foco;
-        color: #9a9b9c;
-
-        &:hover {
-          color: #9a9b9c;
-          text-decoration: none;
-        }
+        font-weight: bold;
+        margin-top: 50px;
       }
 
-      span.GoArrow {
-        width: 15px;
-        height: 20px;
-        background: url('@{image-path}/home/startup-sprite.png') no-repeat -91px -97px;
-        display: inline-block;
-        cursor: pointer;
-      }
+      .empty-state-message {
+        margin: 24px 0;
+      } 
     }
   }
 }
@@ -135,9 +127,9 @@
   left:50%;
   margin-left:-330px;
   z-index:999;
-  box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-  -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-  -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+  box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+  -webkit-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+  -moz-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
 }
 
 .message-control.pFixTop { /*New UI: added box-shadow and positioned at top 180px*/
@@ -146,9 +138,9 @@
     left: 50%;
     margin: 0 0 0 -350px;
     padding-top: 0;
-    box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+    -webkit-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
 }
 
 #message modal-msg {
@@ -156,9 +148,9 @@
 }
 
 .message-control .multiWarn-msg {
-  -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-  -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-  box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+  -webkit-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+  -moz-box-shadow: rgba(0,0,0,0.15) 0 0 10px;
+  box-shadow: rgba(0,0,0,0.15) 0 0 10px;
 }
 
 .k-window .modal-msg.k-window-content {
@@ -167,7 +159,7 @@
 
 .modal-msg {
   .msg-content {
-    padding: 20px 20px 0 70px;
+    padding: 16px 16px 16px 50px;
     border: 1px solid #9a9b9c;
     border-top: 0px;
   }
@@ -204,7 +196,7 @@
   cursor: pointer;
 
   > span {
-    color: @sage-link;
+    color: @sage-blue;
     white-space: nowrap;
 
     &:before {
@@ -252,11 +244,12 @@
   position: relative;
   min-width:960px;
   background: none;
+  padding-left: 2px;
 
   ul.bc {
     font-size: 12px;
     font-family: arial;
-    padding: 12px 0px 0px 0;
+    padding: 12px 0px 0px;
     display: inline;
     float: left;
 
@@ -516,9 +509,9 @@
 /* KPI Setting Modal Window
 ----------------------------------------------------------------------------------------------------*/
 .k-widget.k-window {
-     -webkit-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-        -moz-box-shadow: rgba(0,0,0,0.45) 0 0 10px;
-             box-shadow: rgba(0,0,0,0.45) 0 0 10px;
+     -webkit-box-shadow: rgba(0,0,0,0.15) 0 0 15px;
+        -moz-box-shadow: rgba(0,0,0,0.15) 0 0 15px;
+             box-shadow: rgba(0,0,0,0.15) 0 0 15px;
 }
 
 .btnsettingsPopUp {
