@@ -230,7 +230,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine("");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+
+            #region Accpac .NET library update - Comment out if no update required
+            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+            #endregion
 
             // Begin - Specific to release
 #if ENABLE_TK_244885
