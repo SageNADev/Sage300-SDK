@@ -172,11 +172,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Accpac .NET library update - Comment out if no update required
 
-            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-                    Resources.ReleaseAllDescSyncAccpacLibs,
-                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
-                                  Constants.PerRelease.FromAccpacNumber,
-                                  Constants.PerRelease.ToAccpacNumber));
+            //AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+            //        Resources.ReleaseAllDescSyncAccpacLibs,
+            //        string.Format(Resources.ReleaseAllSyncAccpacLibs,
+            //                      Constants.PerRelease.FromAccpacNumber,
+            //                      Constants.PerRelease.ToAccpacNumber));
 
             #endregion
 
@@ -196,10 +196,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
             //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
             //                      Constants.Common.TargetedDotNetFrameworkVersion));
-
-            AddStep(Resources.ReleaseSpecificTitleUpdateMultisession,
-                    Resources.ReleaseSpecificDescUpdateMultisession,
-                    Resources.ReleaseSpecificUpdateMultisession);
 
             #endregion
 
@@ -242,8 +238,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 #endif
             // Keep this around for the inevitable .NET framework 4.8 upgrade
             //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
-
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateMultisession}");
 
             // End - Specific to release
 
