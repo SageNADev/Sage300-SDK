@@ -11,7 +11,7 @@
     width: 40%;
 
     .multilist {
-      border: 1px solid @sage-light-gray;
+      border: 1px solid @sage-mid-gray;
       height: 200px;
       overflow-y: auto;
       width: 100%;
@@ -26,7 +26,6 @@
         user-select: none;
 
         &:nth-child(odd) { 
-          background-color: @table-bg-accent;
         }
 
         &:nth-child(even) { 
@@ -60,6 +59,7 @@
 
     button {
       margin: 5px;
+      min-width: 120px;
     }
   }
 }
@@ -172,9 +172,7 @@
 }
 
 .multiselect-group .k-multiselect.k-state-focused{
-    border-color: #66afe9;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    .focus-input-box;
 }
 
 .k-multiselect.k-state-focused>.k-multiselect-wrap>.k-i-close,

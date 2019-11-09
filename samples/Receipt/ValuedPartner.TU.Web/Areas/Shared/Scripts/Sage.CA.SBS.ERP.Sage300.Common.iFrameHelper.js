@@ -192,8 +192,6 @@ $.extend(sg.utls.iFrameHelper = {
             visible: false,
             iframe: true,
             content: sg.utls.urlEncode(url),
-            minWidth: 1020,
-            minHeight: 550,
             maxHeight: maxHeight,
             height: height,
             width: width,

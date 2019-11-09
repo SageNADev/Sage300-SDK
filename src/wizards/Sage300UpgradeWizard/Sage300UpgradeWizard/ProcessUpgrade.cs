@@ -101,10 +101,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         SyncWebFiles(title);
                         break;
 
-                    case 3:
-                        LogSpacerLine('-');
-                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                        break;
+                    #endregion
+
+                    #region Accpac .NET library update - Comment out if no update required
+
+                    //case 3:
+                    //    LogSpacerLine('-');
+                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
+                    //    break;
 
                     #endregion
 
@@ -115,12 +119,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-
-                    case 4:
-                        LogSpacerLine('-');
-                        UpdateMultisession(title);
-                        break;
-
                     #endregion
                 }
             }
@@ -345,29 +343,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             {
                 Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
             }
-        }
-
-        /// <summary>
-        /// Multisession changes
-        /// Update XXAreaRegistration.cs with new session in route
-        /// Update Global.asax.cs with new Context object properties, 
-        /// updated AuthenticationManager.LoginResult parameters
-        /// and removal of the DestroyPool call from Session_End
-        /// Update Web.config with new timer mechanism
-        /// </summary>
-        /// <param name="title"></param>
-        private void UpdateMultisession(string title)
-        {
-            // Log start of step
-            LogEventStart(title);
-
-            // Nothing to do. This is a manual partner step :)
-            var msg = Resources.UpdatesToSupportMultipleSessionsAreAManualStep;
-            Log(msg);
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
         }
 
 #if ENABLE_TK_244885

@@ -284,15 +284,6 @@
   <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateMultisession" xml:space="preserve">
-    <value>Multiple Sessions framework changes</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateMultisession" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
-  <data name="ReleaseSpecificUpdateMultisession" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateMultisession.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="ReleaseAllDescRecompile" xml:space="preserve">
     <value>The Solution and Project files have been upgraded.</value>
   </data>

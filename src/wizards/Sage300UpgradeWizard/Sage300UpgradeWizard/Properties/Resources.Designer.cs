@@ -538,15 +538,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateMultisession", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -561,15 +552,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Multiple Sessions framework changes.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMultisession", resourceCulture);
             }
         }
         
@@ -594,28 +576,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes required to handle multiple sessions in
-        ///Sage 300c 2020.0, several files need to be altered for the solution to
-        ///compile and run after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this
-        ///modification and therefore this step will require manual modifications.
-        ///
-        ///The following files are affected (all within the Namespace.Web project):
-        ///	- XXAreaRegistration.cs
-        ///	- Global.asax.cs
-        ///	- Web.config
-        ///	- All JavaScript behaviour files
-        ///
-        ///Please refer t [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateMultisession", resourceCulture);
             }
         }
         

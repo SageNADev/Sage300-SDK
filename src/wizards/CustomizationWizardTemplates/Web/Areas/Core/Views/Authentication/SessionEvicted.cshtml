@@ -1,0 +1,32 @@
+﻿@* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@{
+    Layout = Shared.GenericLayout;
+}
+
+<div class="wrapper">
+    <div class="msg msg-warning">
+        <h2 id="lblEvictConfirmation" class="msg-heading">@CommonResx.EvictionHeaderMessage</h2>
+        <div id="txtEvicted" class="msg-body">
+            <p>@CommonResx.EvictionConfirmationMsg</p>
+            <div class="button-group">
+                <input id="btnEvictConfirmed" class="btn btn-primary" name="btnSignIn" type="button" value="@CommonResx.OK" onclick="HandleRedirectToLogin()">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    @{
+        var urlHelper = new System.Web.Mvc.UrlHelper(Html.ViewContext.RequestContext);
+    }
+    function HandleRedirectToLogin() {
+        var topWnd = window.top == null ? window : window.top;
+        topWnd.location.href = '@urlHelper.Action(ViewBag.Action, ViewBag.Controller)';
+    }
+
+</script>

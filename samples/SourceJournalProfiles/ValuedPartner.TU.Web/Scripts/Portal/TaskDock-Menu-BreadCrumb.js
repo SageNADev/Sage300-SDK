@@ -1034,6 +1034,21 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         // Reload/refresh widget layout 
         updateLayout(false);
+
+        // create tooltip when menu is closed
+        if (!mainToolTip) {
+            mainToolTip = $("#listPrimary").kendoTooltip({
+                filter: "li.menu-item > div.nav-icon",
+                content: kendo.template($("#tooltipTemplate").html()),
+                width: 120,
+                position: "right",
+                animation: {
+                    open: {
+                        effects: "zoom"
+                    }
+                }
+            }).data("kendoTooltip");
+        }
     }
 
     /**
@@ -1050,6 +1065,12 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         // Reload/refresh widget layout 
         updateLayout(false);
+
+        // remove tooltip when menu is expanded
+        if (mainToolTip) {
+            mainToolTip.destroy();
+            mainToolTip = null;
+        }
     }
 
     /**
@@ -1132,19 +1153,10 @@ var TaskDockMenuBreadCrumbManager = function () {
             /* open menu */
             /* ---------------------------------------------------------- */
 
-            $("#listPrimary").hover(
-                function () {
-                    if ($('html').hasClass('page-collapsed')) {
-                        $('#navbarSide').removeClass('side-nav-collapsed').addClass('active');
-                    } else {
-                        $('#navbarSide').addClass('active');
-                    }
-                });
-
             $(".menu-item.top-tier").click(
                 function () {
                     if ($('html').hasClass('page-collapsed')) {
-                        $(this).parents('#navbarSide').removeClass('side-nav-collapsed').addClass('active').closest('.std-menu').addClass('active');
+                        $(this).parents('#navbarSide').addClass('active').closest('.std-menu').addClass('active');
                     } else {
                         $(this).parents('#navbarSide').addClass('active').closest('.std-menu.active').removeClass('active');
                     }
@@ -1155,6 +1167,17 @@ var TaskDockMenuBreadCrumbManager = function () {
                     }
                 }
             );
+
+            /* hiding tooltip */
+            /* ---------------------------------------------------------- */
+
+            //$(".std-menu").hover(
+            //    function () {
+            //        if (mainToolTip) {
+            //            mainToolTip.hide();
+            //        }
+            //    }
+            //);
 
             /* close menu */
             /* ---------------------------------------------------------- */
@@ -1609,4 +1632,3 @@ window.addEventListener("message", function (e) {
         }
     }
 }, false);
-

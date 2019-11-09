@@ -219,7 +219,15 @@ sg.optionalFieldControl = function () {
      * @param {any} options Editor options object
      */
         function _setEditorInitialValue(gridName, options) {
-            var field = options.field;
+            var field = options.field,
+                swset = options.model["SWSET"],
+                type = options.model["TYPE"];
+            if (field === "VALUE" && swset === 0) {
+                options.model[field] = "";
+                if ([6, 8, 100].indexOf(type) > -1) {
+                    options.model[field] = 0;
+                } 
+            }
             _lastColField[gridName] = field;
             _lastErrorResult[gridName][field + "Value"] = options.model[field];
         }
@@ -264,7 +272,7 @@ sg.optionalFieldControl = function () {
         $("#txtGridColOPTFIELD, #txtGridColVALUE").on("keydown", function (e) {
             _sendChange[gridName] = false;
             if (e.keyCode === 9 || e.keyCode === 13) {
-                var value = this.value.toUpperCase(),
+                var value = field === "VALUE" ? this.value : this.value.toUpperCase(),
                     errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
 
                 _sendChange[gridName] = true;
@@ -353,6 +361,7 @@ sg.optionalFieldControl = function () {
      */
     function _setValueFinderEditor(options, gridName, btnFinderId) {
         var model = options.model,
+            swset = options.model["SWSET"],
             finder = {};
 
         finder.viewID = "CS0012";
@@ -378,7 +387,8 @@ sg.optionalFieldControl = function () {
             finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
         }
         finder.returnFieldNames = ["VALUE", "VDESC"];
-        finder.initKeyValues = [model.OPTFIELD, model.VALUE];
+        var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
+        finder.initKeyValues = [model.OPTFIELD, value];
 
         /**
          * @description On select finder row, set the select value
@@ -447,7 +457,7 @@ sg.optionalFieldControl = function () {
         $(html).appendTo(container);
 
         $("#" + field).kendoMaskedTextBox({
-            mask: "12:34:34",
+            mask: "14:34:34",
             unmaskOnPost: true,
             rules: {
                 "1": /[0-2]/,
@@ -808,7 +818,7 @@ sg.optionalFieldControl = function () {
             if (jsonResult.Data && jsonResult.Data.length > 0 ) {
                 dataItem.VALUE = jsonResult.Data[0].VALUE;
                 dataItem.VDESC = jsonResult.Data[0].VDESC;
-                dataItem.SWSET = 1;
+                //dataItem.SWSET = 1;
                 _sendRequest(gridName, RequestTypeEnum.Insert, "");
             }
         });
@@ -926,6 +936,10 @@ sg.optionalFieldControl = function () {
         if (count === 0) {
             $("#btn" + gridName + "Delete").prop("disabled", true);
         } else if (e.action === "add") {
+            $("#btn" + gridName + "Delete").prop("disabled", false);
+        }
+        else {
+            //To enable the delete button if records loaded by default
             $("#btn" + gridName + "Delete").prop("disabled", false);
         }
 
@@ -1132,7 +1146,7 @@ sg.optionalFieldControl = function () {
             value = data.VALUE,
             decimals = data.DECIMALS;
 
-        if (value === null) {
+        if (value === null || data.SWSET === 0) {
             return "";
         } else if (type === ValueTypeEnum.YesNo) {
             return value.trim() === "1" ? globalResource.Yes : globalResource.No;

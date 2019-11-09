@@ -3,9 +3,9 @@
 // --------------------------------------------------
 
 .k-overlay {
-  background-color: @white;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+  background-color: rgba(0,20,29,0.6);
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
 }
 
 .k-overlay-transparent {
@@ -169,6 +169,10 @@
   transform: translate(-50%) !important;
 }
 
+.k-widget.k-window.k-window-maximized {
+  margin-top: 0;
+}
+
 .k-mobile .k-widget.k-window#popupMobile {
   top: 0 !important;
 }
@@ -189,7 +193,6 @@ and (max-device-width : 1024px) {
 /* Finder Window */
 
 .k-widget.k-window.finder-window {
-    height: 540px !important;
 
      input[type=text] {
       width: 210px;
@@ -200,45 +203,57 @@ and (max-device-width : 1024px) {
     border-radius:0px;
 }
 .k-window-titlebar{
-    padding: 10px 20px;
-    background: #3c424f;
+    padding: 16px 20px 12px;
+    background: @gray-lighter;
     top: 0;
     margin-top: 0 !important;
     height: auto;
     .box-sizing(border-box);
 }
 .k-window-titlebar .k-window-title{
-    color: @white;
-    font-weight: bold;
-    font-size: 14px;
     line-height: 24px;
-    padding-left: 13px;
+    position: static;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 2px;
 }
 .k-window-titlebar .k-window-actions{
-    right: 15px;
     opacity: 1;
-    top: 6px;
+    top: 10px;
+    right: 10px;
 }
 
 .k-window-titlebar .k-window-action {
   padding: 0;
-  width: 20px;
+  width: 30px;
   height: 30px;
+  top: 10px;
+  position: relative;
+  margin-left: 6px;
 }
 .k-window-titlebar .k-window-actions .k-i-close{
-    height: 30px;
-    background-position: -210px -31px;
+    background-image: none;
+    color: @sage-mid-gray;
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
     opacity: 1;
 
     &:hover,
     &:focus {
-      background-position: -210px -31px;
       outline: none;
       border: none;
     }
 
     &:before {
-      content: none;
+      content: "\78";
     }
 }
 .k-window-titlebar .k-state-hover {
@@ -317,7 +332,7 @@ and (max-device-width : 1024px) {
 }
 
 .k-window .popup-iframe {
-  max-height: ~"calc(100% - 24px)" !important;
+  max-height: ~"calc(100% - 55px)" !important;
   overflow: hidden !important;
   margin: 0;
   height: 100% !important;
@@ -339,8 +354,7 @@ and (max-device-width : 1024px) {
   .k-link.k-state-hover>.k-i-window-maximize,
   .k-link.k-link:not(.k-state-disabled):hover>.k-i-maximize,
   .k-link.k-link:not(.k-state-disabled):hover>.k-i-window-maximize, {
-    background-position: -852px -33px;
-    right: 15px;
+    background-position: -849px 4px;
     top: 0;
     position: absolute;
 
@@ -355,8 +369,7 @@ and (max-device-width : 1024px) {
   .k-link.k-state-hover>.k-i-window-restore,
   .k-link.k-link:not(.k-state-disabled):hover>.k-i-restore,
   .k-link.k-link:not(.k-state-disabled):hover>.k-i-window-restore {
-    background-position: -879px -33px;
-    right: 15px;
+    background-position: -875px 4px;
     top: 0;
     position: absolute;
 
@@ -388,9 +401,7 @@ and (max-device-width : 1024px) {
   /*Finder window gridcontrol*/
 
   .gridcontrols-group {
-    border: 0;
     background-color: #fff;
-    padding: 0;
 
     .label-gridcontrl {
       font-size: 12px;
@@ -404,7 +415,7 @@ and (max-device-width : 1024px) {
       &:hover,
       &.active {
         background-color: #f5f5f5;
-        color: #255bc7;
+        color: @sage-blue;
       }
 
       &.active:after {
@@ -413,7 +424,7 @@ and (max-device-width : 1024px) {
         top: 29px;
         left: 0;
         right: 0;
-        border-top: 2px solid #255bc7;
+        border-top: 2px solid @sage-blue;
       }
 
       &:focus,
@@ -427,7 +438,7 @@ and (max-device-width : 1024px) {
       background: none;
       padding: 0;
       margin: 0;
-      color: #255bc7;
+      color: @sage-blue;
       min-width: initial;
       margin-left: 30px;
 
@@ -456,11 +467,8 @@ and (max-device-width : 1024px) {
   /*Finder Grid*/
 
   .k-grid .k-grid-header {
-    background-color: #ebedef;
 
     .k-header {
-      background-color: #ebedef;
-      color: #2e2e2e;
       line-height: 2;
       padding: 6px 10px;
       position: relative;
@@ -485,7 +493,7 @@ and (max-device-width : 1024px) {
           background-color: #ced0d1;
 
           .k-i-filter:before {
-            color: #255bc7;
+            color: @sage-blue;
           }
         }
 
@@ -495,13 +503,13 @@ and (max-device-width : 1024px) {
       }
 
       .k-filter-row {
-        background-color: #ebedef;
+        background-color: @gray-lighter;
 
         .k-filtercell {
         
           .k-i-filter:hover:before,
           .k-i-filter:before {
-            color: #255bc7;
+            color: @sage-blue;
           }
 
           .k-header {
@@ -578,7 +586,7 @@ and (max-device-width : 1024px) {
   }
 
   .k-grid tr.k-state-selected td:first-child {
-    border-left: 3px solid #255bc7;
+    border-left: 3px solid @sage-blue;
     padding-left: 5px;
   }
 
@@ -596,7 +604,7 @@ and (max-device-width : 1024px) {
 }
 
 .k-window.k-window-maximized  .k-window-content {
-  max-height: ~"calc(100% - 24px)" !important;
+  max-height: ~"calc(100% - 74px)" !important;
 
   .k-window-maximized .k-grid {
     height: 732px !important;
@@ -614,20 +622,20 @@ and (max-device-width : 1024px) {
 .k-window-titlebar {
 
   .k-window-title {
-    line-height: 20px;
+    line-height: 24px;
     position: static;
-    padding-left: 2px;
+    paddingft: 8px 2px;
     display: inline-block;
+    font-size: 20px;
   }   
 
   .script-btn-group {
     display: inline-block;
     margin-left: 40px;
     position: absolute;
-    top: 12px;
+    top: 28px;
 
     .btn-script {
-      color: #a7faef;
       font-size: 12px;
       padding: 0;
       min-width: auto;
@@ -650,7 +658,7 @@ and (max-device-width : 1024px) {
       }
 
       &:hover {
-        color: #d4feef;
+        color: #005995;
       }
 
       &.script-load:before {
@@ -814,11 +822,8 @@ and (max-device-width : 1024px) {
   }
 
   .k-grid .k-grid-header {
-    background-color: #ebedef;
 
     .k-header {
-      background-color: #ebedef;
-      color: #2e2e2e;
       line-height: 2;
       padding: 6px 10px;
       position: relative;
@@ -962,7 +967,7 @@ and (max-device-width : 1024px) {
           top: 0;
           left: 8px;
           text-align: left;
-          color: #255bc7;
+          color: @sage-blue;
           font-size: 12px;
           z-index: 1;
           display: flex;
