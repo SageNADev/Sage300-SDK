@@ -80,9 +80,9 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                         }
 
                         var userId = session.GetSession().UserID;
-                        EvictUserWatcher.AddUserIdToPauseEviction(userId);
+                        //EvictUserWatcher.AddUserIdToPauseEviction(userId);
                         reportDocument = accpacReport.GetReportDocument();
-                        EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+                        //EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
 
                         watcher.Print("Report Document Created.");
 
