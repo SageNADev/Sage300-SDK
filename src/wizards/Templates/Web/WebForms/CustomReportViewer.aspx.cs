@@ -50,9 +50,9 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 var accpacReport = session.SelectReport(reportFullName, "", null);
 
                 var userId = session.GetSession().UserID;
-                //EvictUserWatcher.AddUserIdToPauseEviction(userId);
+                EvictUserWatcher.AddUserIdToPauseEviction(userId);
                 reportDocument = accpacReport.GetReportDocument();
-                //EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+                EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
             }
 
             if (reportDocument != null)

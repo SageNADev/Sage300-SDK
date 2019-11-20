@@ -309,6 +309,8 @@
     <Compile Include="$applicationid$AreaRegistration.cs" />
     <Compile Include="$applicationid$WebBootstrapper.cs" />
     <Compile Include="BundleRegistration.cs" />
+	<Compile Include="EvictUserWatcher.cs" />
+    <Compile Include="SageWebReportDocument.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

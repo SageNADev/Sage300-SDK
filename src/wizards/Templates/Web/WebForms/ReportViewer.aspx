@@ -30,6 +30,7 @@
             <CR:CrystalReportViewer ID="CrystalReportViewerSage300" PrintMode="Pdf" runat="server" AutoDataBind="true" EnableDatabaseLogonPrompt="False" ToolPanelView="None" EnableParameterPrompt="False" ReuseParameterValuesOnRefresh="True" />
         </div>
         <asp:HiddenField ID="hiddenToken" runat="server"></asp:HiddenField>
+        <asp:HiddenField ID="hiddenSessionId" runat="server"></asp:HiddenField>
         <div></div>
     </form>
 </body>

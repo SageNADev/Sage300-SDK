@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 /* global kendo */
 /* exported InquiryGeneralUI */
@@ -250,7 +250,16 @@ var InquiryGeneralUI = function () {
                 window.parent.postMessage({ event_id: 'SaveTemplate', inquiryTitle: "Inquiry - " + savedInquiryTitle }, '*');
             }
         }
+    }
 
+    function exportDownload(jsonResult) {
+       if (jsonResult) {
+          if (jsonResult.Errors) {
+             sg.utls.showMessage(jsonResult);
+          } else {
+             window.location = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DownloadExport") + '?fileId=' + jsonResult.FileId + '&filename=' + InquiryGeneralViewModel.Title;
+          }
+       }
     }
 
     function deleteTemplate(jsonResult) {
@@ -936,78 +945,26 @@ var InquiryGeneralUI = function () {
         $("#divShowGrandTotals > span").addClass("selected");
         $("#chkShowGrandTotals").prop("checked", true);
 
-        function exportData(that) {
+       function exportData(that) {
+            var grid = $("#inquiryGrid").data("kendoGrid");
+            var filter = grid.getOptions().dataSource.filter;
+            var fields = grid.columns.filter(function (f) { return !f.hidden; });
+
+            // Convert all dates in filter to a culture invariant format
+            if (filter) {
+               var datetimefields = fields.filter(function (f) { return f.dataType.toLowerCase() === "datetime"; }); // cache datetime fields for better performance
+               filter = convertToCultureInvariantDate(filter, datetimefields);
+            }
+
+            var value = {
+               templateId: InquiryGeneralViewModel.TemplateId,
+               fields: fields,
+               filter: filter
+            };
+
             var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Export");
-            var orderClause = InquiryGeneralViewModel.OrderByClause;
-            var sql = InquiryGeneralViewModel.Sql;
-            var cols = grid.columns;
-            var displayFields = cols.filter(function (f) { return !f.hidden; });
-            var titles = displayFields.map(function (f) { return f.title; }).join(',');
-            var fields = displayFields.map(function (f) { return f.field; });
-            var needSanity = false;
-            var selectFields = InquiryGeneralViewModel.SelectClause.split(',');
-            if (selectFields && selectFields.length > 0) {
-                needSanity = selectFields[0].indexOf('.') > 0;
-            }
-            var sanityFields = (needSanity) ? selectFields.map(function (f) {return (f.indexOf('.') > -1 ? f.split('.')[1] : f) .replace('[', '').replace(']', '');}) : selectFields;
-            var orderByFields = orderClause ? orderClause.split(',') : [];
-            var selectFieldsStr = "";
-            var idx = 0, field = "";
-
-            //select fields string, add table prefix for each display field
-            for (var i = 0; i < fields.length; i++) {
-                field = fields[i];
-                idx = sanityFields.indexOf(field);
-                if (idx == -1) {
-                    for (var j = 0, len = selectFields.length; j < len; j++) {
-                        if (selectFields[j].indexOf(field) > -1) {
-                            idx = j;
-                            break;
-                        }
-                    }
-                }
-                selectFieldsStr += (i < fields.length - 1) ? selectFields[idx] + ',' : selectFields[idx];
-            }
-            //order by fields string
-            var orderbyStr = (orderClause) ? " order by " : "";
-            for (var j = 0; j < orderByFields.length; j++) {
-                field = orderByFields[j].split(' ');
-                idx = sanityFields.indexOf(field[0]);
-                var formatter = (j === orderByFields.length - 1) ? "{0} {1}" : "{0} {1},";
-                orderbyStr += kendo.format(formatter, selectFields[idx], field[1]);
-            }
-            // filter string
-            var whereClause = ""; //InquiryGeneralViewModel.WhereClause;
-            var filter = (grid.dataSource) ? grid.dataSource.filter() : null;
-            if (filter && filter.filters.length > 0) {
-                var filterString = getFilterString(filter);
-                var filterFields = filter.filters.map(function (f) {
-                    if (f.field) {
-                        return f.field;
-                    } else if (f.filters && f.filters.length > 0) {
-                        return f.filters[0].field;
-                    }
-                });
-
-                filterFields = filterFields.filter(function (item, pos) {
-                    return filterFields.indexOf(item) == pos;
-                });
-
-                for (var k = 0; k < filterFields.length; k++) {
-                    var item = filterFields[k];
-                    idx = sanityFields.indexOf(item);
-                    var regx = new RegExp(item, 'g');
-                    var newItem = selectFields[idx];
-                    filterString = filterString.replace(regx, newItem);
-                }
-                if (filterString && filterString.indexOf('%') > -1 ) {
-                    filterString = encodeURIComponent(filterString);
-                }
-                whereClause = (sql.toLowerCase().indexOf(" where ") < 0 ? " where " : " and ") + filterString;
-            }
-            sql = sql.replace('SELECTSTR', selectFieldsStr) + whereClause + orderbyStr;
-            that.href = url + "/?sql=" + sql + "&titleStr=" + titles + "&name=" + InquiryGeneralViewModel.Title;
-        };
+            sg.utls.ajaxPost(url, value, exportDownload);
+        }
 
         $("a#inquiryExport").click(function () {
             exportData(this);
@@ -1016,7 +973,7 @@ var InquiryGeneralUI = function () {
         var form = document.getElementById('frmInquiryGeneral');
         form.onsubmit = function () {
             return false;
-        }
+        };
     }
 
     //Init iFrame popup detail window

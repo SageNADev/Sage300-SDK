@@ -188,12 +188,18 @@ var TaskDockMenuBreadCrumbManager = function () {
             activate: function (row) {
                 var $submenu = $(row).find(".sub-menu-wrap").first();
                 $submenu.addClass("child");
+
+                if ($(row).find("div:first").length) {
+                    $(row).find("a:first").addClass("active");
+                }
+                
                 $submenu.show();
             },
             deactivate: function (row) {
-                var $submenu = $(row).find(".sub-menu-wrap").first()
+                var $submenu = $(row).find(".sub-menu-wrap").first();
                 $submenu.hide();
                 $submenu.removeClass("child");
+                $(row).find("a:first").removeClass("active");
             },
             exitMenu: function (row) {
                 // To deactivate current row
@@ -418,7 +424,10 @@ var TaskDockMenuBreadCrumbManager = function () {
                     }
                 });
 
-                var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid + '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText + '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
+                // this is the HTML for label in the window manager
+                var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid +
+                    '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText +
+                    '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
                 $('#dvWindows').append($divWindow);
 
                 recentWindowsMenu.populateRecentWindow($iframe, menuid, parentid, targetUrl, windowText);
@@ -770,6 +779,7 @@ var TaskDockMenuBreadCrumbManager = function () {
         if (evtData.indexOf("isInquiry") >= 0 || evtData.indexOf("isInquiryGeneral") >= 0) {
             postMessageData = evtData.split(" ");
             var parameter = JSON.parse(decodeURI(postMessageData[1]));
+            parameter.title = kendo.htmlEncode(parameter.title);
             targetUrl = (evtData.indexOf("isInquiryGeneral") < 0) ? createInquiryURLWithParameters(parameter) : sg.utls.formatString("{0}/?templateId={1}&name={2}&dsId={3}", parameter.url, parameter.templateId, parameter.name, parameter.id);
 
             $('#screenLayout').show();
@@ -799,7 +809,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             postMessageData = evtData.split(" ");
             targetUrl = postMessageData[1];
-            var reportName = postMessageData.splice(0, 2);
+            postMessageData.splice(0, 2);
 
             var urlParser = $('<a>', { href: postMessageData[postMessageData.length - 1] })[0];
             var a = $("#listPrimary li > a[data-url='" + urlParser.pathname + "']");
