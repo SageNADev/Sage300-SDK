@@ -159,7 +159,7 @@ inquiryPanelUI = {
         for (var i = 0, length = list.length; i < length; i++) {
             var span = list[i].Type.trim() == "Public" ? "<span class='tag tag-pill tag-default'>Public</span>" : "<span class='tag tag-pill tag-info'>Private</span>";
             var tElement = template.replace("{span}", (showTag) ? span : "");
-            var subElement = kendo.format(tElement, list[i].DataSourceId, list[i].TemplateId, list[i].Name, list[i].Name);
+            var subElement = kendo.format(tElement, list[i].DataSourceId, list[i].TemplateId, list[i].Name, kendo.htmlEncode(list[i].Name));
             element.append(subElement);
         }
 

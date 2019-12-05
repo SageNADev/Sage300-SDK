@@ -148,6 +148,7 @@ var exportResultRowNumber = 0;
         Location: "location",
         LotNumber: "lotnumber",
         ManufacturersItem: "icmanufacturersitem",
+        MTOptionalField: "mtoptionalfield",
         NationalAccount: "nationalaccount",
         OEEmailMessage: "oeemailmessage",
         OEInvoiceEntry: "oeinvoiceentry",

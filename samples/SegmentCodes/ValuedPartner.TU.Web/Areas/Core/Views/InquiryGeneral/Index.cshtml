@@ -21,7 +21,7 @@
                         @Html.KoSageButton("btnDeleteQuery", new { }, new { @value = InquiryGeneralResx.DeleteQuery, @id = "btnDeleteQuery", @class = "btn btn-secondary" })
                         @Html.KoSageButton("btnOpenQuery", new { }, new { @value = InquiryGeneralResx.OpenQuery, @id = "btnOpenQuery", @class = "btn btn-secondary" })
                         @Html.KoSageButton("btnSaveQuery", new { }, new { @value = InquiryGeneralResx.SaveQuery, @id = "btnSaveQuery", @class = "btn btn-primary btn-inquiry-save" })
-                        <a href="@Url.Action("Export", "InquiryGeneral")" class="btn btn-primary" type="button" id="inquiryExport">@InquiryGeneralResx.Export</a>
+                        @Html.KoSageButton("btnExportQuery", new { }, new { @value = InquiryGeneralResx.Export, @id = "btnExportQuery", @class = "btn btn-primary" })
                     </div>
                 </div>
             </section>

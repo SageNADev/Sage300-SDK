@@ -4,6 +4,7 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using System.Collections;
 
 @model List<NavigableMenuViewModel<NavigableMenu>>
 
@@ -48,7 +49,7 @@
             <li class="sub-heading">@level2Item.Data.MenuName</li>
             @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
             {
-                Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack = new Stack<List<NavigableMenuViewModel<NavigableMenu>>>();
+                Stack menuStack = new Stack();
                 menuStack.Push(level6Items);
                 menuStack.Push(level5Items);
                 menuStack.Push(level4Items);
@@ -77,13 +78,13 @@
     </div>
 </script>
 
-@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
+@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack menuStack, string notAvailable, string domainUrl, bool firstItem)
 {
     var parentItemId = parentItem.Data.MenuId;
     var parentItemClass = parentItem.Data.IsGroupEnd == true ? "menu-group" : "";
     var hasSubGroup = parentItem.Data.HasSubGroup.HasValue && parentItem.Data.HasSubGroup.Value;
     var nodeClass = firstItem ? "active" : (hasSubGroup ? "with-menu" : "");
-    var childItems = menuStack.Count > 0 ? menuStack.Pop() : null;
+    var childItems = (List<NavigableMenuViewModel<NavigableMenu>>) (menuStack.Count > 0 ? menuStack.Peek() : null);
 
     if (childItems == null)
     {
@@ -129,11 +130,13 @@
     </li>
 }
 
-@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl)
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack menuStack, string notAvailable, string domainUrl)
 {
     if (menuItem.Data.HasSubGroup.HasValue && menuItem.Data.HasSubGroup.Value)
     {
-        @CreateMenuGroup(menuItem, menuStack, notAvailable, domainUrl, false);
+        var subMenuStack = (Stack) menuStack.Clone();
+        subMenuStack.Pop();
+        @CreateMenuGroup(menuItem, subMenuStack, notAvailable, domainUrl, false);
     }
     else
     {

@@ -109,8 +109,15 @@
   line-height: inherit;
   box-shadow: none;
 
-  .url-link {
+  .url-link,
+  a {
     color: @white;
+    text-decoration: underline;
+    font-weight: bold;
+
+    &:hover {
+      color: @input-border-focus;
+    }
   }
 
   &.k-tooltip-validation {
