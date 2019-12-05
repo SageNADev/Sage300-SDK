@@ -2448,7 +2448,7 @@ $.extend(sg.utls, {
         var css = "message-control";
 
         //Use generateList() to handle multiple errors scenario
-        var encodedMessage = Array.isArray(message) ? sg.utls.generateList(message, null, true) : message;
+        var encodedMessage = Array.isArray(message) ? sg.utls.generateList(message, null, true) : sg.utls.htmlEncode(message);
 
         if (messageType == sg.utls.msgType.ERROR) {
             //To Stop Synchronous Function Calls stored in stack in case of any Error.

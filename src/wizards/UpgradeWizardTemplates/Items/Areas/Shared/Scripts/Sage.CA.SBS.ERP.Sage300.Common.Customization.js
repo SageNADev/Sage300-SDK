@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var Customization = Customization || {};
@@ -157,13 +157,6 @@ Customization = {
             return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
         }
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-    },
-
-    getColTemplate: function (data) {
-        var selected = data.Enabled ? "selected" : "";
-        var checked = data.Enabled ? "checked" : "";
-        var template = '<span class="icon checkBox ' + selected + '"><input class="Enabled" name="Enabled" type="checkbox" ' + checked + ' /> </span>';
-        return (data.Type != "Label" && data.Show) ? template : "";
     },
 
     getShowColumnTemplate: function (data) {

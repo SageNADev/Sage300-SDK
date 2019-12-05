@@ -127,7 +127,15 @@ body {
         margin-right: 6px;
         color: #003348;
       }
+
       /* Session Date Widget */
+      &.session-date {
+        .disabled {
+          color: unset;
+          opacity: .8;
+          filter: alpha(opacity=80);
+        }
+      }
 
       .session-date-widget-container {
         display: none;
@@ -363,4 +371,113 @@ body {
     }
   }
 }
+
+/* header / Company Theme Color */
+/* ----------------------------------------------------------------------------------- */
+
+.header-global.dark-bg .globalNavigation  {
+  .last_container,
+  .last_container .glyphicon,
+  .top_nav #topMenu>li,
+  .top_nav #topMenu>li.k-item>.k-link,
+  .top_nav #topMenu>li.k-item>.k-link .global-search>span, 
+  .top_nav #topMenu>li.k-item>.k-link .help>span, 
+  .top_nav #topMenu>li.k-item>.k-link .settings>span {
+    color: @white;
+  }
+
+  #topMenuTools>.k-link,
+  #topMenuTools>.k-link span,
+  .top_nav #topMenu>li.k-state-border-down>.k-link,
+  .top_nav #topMenu>li.k-state-border-down>.k-link span {
+    color: #003348 !important;
+  }
+
+  .top_nav #topMenu>li.k-state-default .k-i-arrow-60-down, 
+  .top_nav #topMenu>li.k-state-default .k-i-arrow-s {
+    background-position: -183px -124px;
+  }
+
+  .top_nav #topMenu>li.k-state-border-down .k-i-arrow-60-down,
+  .top_nav #topMenu>li.k-state-border-down .k-i-arrow-s {
+    background-position: -185px -157px;
+  }
+}
+
+
+.header-global.light-bg {
+  
+}
+
+.color-picker {
+  position: fixed;
+  top: -125px;
+  background-color: #003348;
+  height: 180px;
+  width: ~"calc(100% - 40px)";
+  -webkit-transition-property: top;
+  -moz-transition-property: top;
+  -o-transition-property: top;
+  transition-property: top;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  z-index: -1;
+
+  .wrapper-color-picker {
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  .column {
+    margin-top: 20px;
+    padding-top: 6px;
+    float: left;
+    width: 300px;
+    text-align: center;
+
+    &:first-child {
+      border-right: 1px solid #054762;
+    }
+
+    .title {
+      color: #ffc116;
+      font-size: 13px;
+      font-weight: normal;
+      padding: 0 0 20px;
+    }
+
+    #palette {
+      vertical-align: top;
+      display: inline-block;
+    }
+    .k-colorpicker {
+        vertical-align: top;
+        margin: 20px 0;
+    }
+  }
+
+  #btnColorPickerClose {
+    color: #809ca8;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    cursor: pointer;
+
+    &:hover {
+      color: @white;
+    }
+  }
+}
+
+.color-picker-show {
+    top: 56px;
+}
+
+
 

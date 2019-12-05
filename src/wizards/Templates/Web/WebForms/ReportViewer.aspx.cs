@@ -6,7 +6,6 @@ using System.IO;
 using System.Web;
 using System.Web.Services;
 using ACCPAC.Advantage;
-using CrystalDecisions.CrystalReports.Engine;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
@@ -41,6 +40,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
 
             // set the page hidden variable.
             hiddenToken.Value = token;
+            hiddenSessionId.Value = sessionId;
 
             var report = GetReport(token, sessionId);
 
@@ -63,7 +63,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
 
             bool isNew;
 
-            var reportDocument = InMemoryCacheProvider.Instance.Get<ReportDocument>(reportDocumentKey);
+            var reportDocument = InMemoryCacheProvider.Instance.Get<SageWebReportDocument>(reportDocumentKey);
 
             if (reportDocument == null)
             {
@@ -80,9 +80,17 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                         }
 
                         var userId = session.GetSession().UserID;
-                        //EvictUserWatcher.AddUserIdToPauseEviction(userId);
-                        reportDocument = accpacReport.GetReportDocument();
-                        //EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+                        EvictUserWatcher.AddUserIdToPauseEviction(userId);
+
+                        try
+                        {
+                            reportDocument = new SageWebReportDocument(accpacReport.GetReportDocument());
+                        }
+                        finally
+                        {
+                            // make sure we remove that from EvictUserWatcher no matter what happen
+                            EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+                        }
 
                         watcher.Print("Report Document Created.");
 
@@ -94,7 +102,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
 
             if (reportDocument != null)
             {
-                CrystalReportViewerSage300.ReportSource = reportDocument;
+                CrystalReportViewerSage300.ReportSource = reportDocument.CrystalReportDocument;
                 CrystalReportViewerSage300.DataBind();
                 SetLogoPath(reportDocument, report);
             }
@@ -110,13 +118,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         /// Releases the report resource for the given token.
         /// </summary>
         /// <param name="token">The token.</param>
+        /// <param name="sessionId">SessionId of current session</param>
         /// <returns></returns>
         [WebMethod]
-        public static bool Release(string token)
+        public static bool Release(string token, string sessionId)
         {
-            var sessionId = HttpContext.Current.Request.RequestContext.RouteData.Values.ContainsKey("session")
-                ? HttpContext.Current.Request.RequestContext.RouteData.Values["session"].ToString()
-                : string.Empty;
             var report = GetReport(token, sessionId);
 
             if (IsUserAuthenticated(sessionId) && report != null && report.Context.SessionId == sessionId)
@@ -127,9 +133,6 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 }
 
                 string reportDocumentKey = "ReportDocument_" + token;
-
-                // close the report document object 
-                InMemoryCacheProvider.Instance.Get<ReportDocument>(reportDocumentKey)?.Close();
 
                 // remove it from the cache (will trigger Dispose call on the object)
                 InMemoryCacheProvider.Instance.Remove(reportDocumentKey);
@@ -234,13 +237,13 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         /// </summary>
         /// <param name="reportDocument">reportDocument</param>
         /// <param name="report">report</param>
-        private void SetLogoPath(ReportDocument reportDocument, Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.Report report)
+        private void SetLogoPath(SageWebReportDocument reportDocument, Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.Report report)
         {
-            var hasLogo = reportDocument.ParameterFields.Find("LogoPath", "");
+            var hasLogo = reportDocument.CrystalReportDocument.ParameterFields.Find("LogoPath", "");
             if (hasLogo != null)
             {
                 var logoPath = GetLogoUri(report);
-                reportDocument.SetParameterValue("LogoPath", logoPath);
+                reportDocument.CrystalReportDocument.SetParameterValue("LogoPath", logoPath);
             }
         }
 

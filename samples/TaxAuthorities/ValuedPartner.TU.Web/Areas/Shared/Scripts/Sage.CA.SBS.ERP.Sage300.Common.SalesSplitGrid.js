@@ -1,7 +1,6 @@
-﻿"use strict";
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
-
-
+"use strict";
 
 var salesPersonColumnName = {
     Delete: "Delete",
@@ -89,27 +88,27 @@ var gridSaleColConfig = {
         }
         return column;
     },
+
     getCheckTemplate: function (isHeader) {
         var id = isHeader ? "selectAllsalChk" : "selectsalChk";
         var template = "<input type='checkbox' " + (isHeader ? "id='" : "class='") + id + "' />";
         return sg.controls.ApplyCheckboxStyle(template);
     },
+
     getperTemplate: function () {
         var template = null;
-        template = '#= saleSplitGridUI.getFormattedValue( SalesSplitPercentage) #';
+        template = '#: saleSplitGridUI.getFormattedValue(SalesSplitPercentage) #';
         return template;
-
     },
+
     getCodeTemplate: function () {
         var template = null;
-        template = '#= saleSplitGridUI.getFormattedSalesCode( SalesPersonCode) #';
+        template = '#: saleSplitGridUI.getFormattedSalesCode(SalesPersonCode) #';
         return template;
-
     }
 }
 
 var saleSplitGridUI = {
-
     addNewSalesLine: function () {
         var newLineExist = false;
         var btnAddLineId = "btnSalesSplitAddLine";
@@ -134,7 +133,7 @@ var saleSplitGridUI = {
 
                 grid.dataSource.insert(saleSplitGridUI.dataIndex, SalesPersonNewLine(saleSplitGridUI.dataIndex));
                 var focusIndex = window.GridPreferencesHelper.getColumnIndex('#' + saleSplitGridUI.gridId, "SalesPersonCode");
-                var cell = grid.tbody.find(">tr:eq(" + (saleSplitGridUI.dataIndex-1) + ") >td:eq(" + 3 + ")");
+                var cell = grid.tbody.find(">tr:eq(" + (saleSplitGridUI.dataIndex - 1) + ") >td:eq(" + 3 + ")");
                 grid.editCell(cell);
                 return true;
             }
@@ -145,6 +144,7 @@ var saleSplitGridUI = {
         }
 
     },
+
     deleteLine: function (gridId, chkAllId, confirmationMsg, btnDeleteId) {
         sg.utls.showKendoConfirmationDialog(
             //Click on Yes
@@ -166,8 +166,8 @@ var saleSplitGridUI = {
                 });
                 grid.tbody.find(":checked").closest("tr").each(function (index) {
                     var row = $(this);
-                        grid.removeRow(row);
-                   
+                    grid.removeRow(row);
+
                 });
                 if (i > 0) {
                     saleSplitGridUI.deletesaleperson(ko.mapping.toJS(saleSplitGridUI.items.Data), ko.mapping.toJS(list));
@@ -189,6 +189,7 @@ var saleSplitGridUI = {
             confirmationMsg, salesSplitGridResources.DeleteTitle);
         return false;
     },
+
     deleteMsg: function (checkId, deleteClass) {
         var confirmationMsg = null;
         if ($(deleteClass + ':checked').length > 1) {
@@ -202,28 +203,29 @@ var saleSplitGridUI = {
     getFormattedSalesCode: function (fieldValue) {
         return fieldValue != null ? fieldValue.toUpperCase() : "";
     },
+
     getFormattedValue: function (fieldValue) {
-        if (fieldValue != null)
+        if (fieldValue != null) {
             fieldValue = sg.utls.kndoUI.getFormattedDecimalNumber(!isNaN(parseFloat(fieldValue)) ? parseFloat(fieldValue) : 0, 5);
-        else {
+        } else {
             fieldValue = sg.utls.kndoUI.getFormattedDecimalNumber(0, 5);
         }
-        return '<label class="numeric">' + fieldValue + '</label>';
+
+        return fieldValue;
     },
 
     init: function (params) {
-
-
         saleSplitGridUI.gridId = params.gridId,
-        saleSplitGridUI.modelData = params.modelData,
-        saleSplitGridUI.items = params.items,
-        saleSplitGridUI.preferencesTypeId = params.preferencesTypeId;
+            saleSplitGridUI.modelData = params.modelData,
+            saleSplitGridUI.items = params.items,
+            saleSplitGridUI.preferencesTypeId = params.preferencesTypeId;
         saleSplitGridUI.salesperchange = params.salesperchange,
-        saleSplitGridUI.deletesaleperson = params.deletesaleperson,
-        saleSplitGridUI.change = params.change,
-        saleSplitGridUI.initButton();
+            saleSplitGridUI.deletesaleperson = params.deletesaleperson,
+            saleSplitGridUI.change = params.change,
+            saleSplitGridUI.initButton();
         saleSplitGridUI.initsalCheckBox();
     },
+
     gridId: "",
     btnDeleteLineId: "btnSalesSplitDeleteLine",
     btnAddLineId: "btnSalesSplitAddLine",
@@ -444,10 +446,10 @@ var saleSplitGridUI = {
             columns: [
                 gridSaleColConfig.getColumn(salesPersonColumnName.Delete, false, "", "first-cell", gridSaleColConfig.getCheckTemplate(false), gridSaleColConfig.getCheckTemplate(true), gridColConfig.checkboxEditor),
                 { field: salesPersonColumnName.SeqNo, hidden: true, attributes: { sg_Customizable: false } },
-                  { field: "Primary", title: "", hidden: false, headerTemplate: '<label for="check-all"></label>', attributes: { sg_Customizable: false }, editor: gridSaleColConfig.noEditor },
+                { field: "Primary", title: "", hidden: false, headerTemplate: '<label for="check-all"></label>', attributes: { sg_Customizable: false }, editor: gridSaleColConfig.noEditor },
                 gridSaleColConfig.getColumn(salesPersonColumnName.SalesPersonCode, false, salesSplitGridResources.SalesPersonCode, "", gridSaleColConfig.getCodeTemplate(), null, gridSaleColConfig.SalesPersonEditor),
                 gridSaleColConfig.getColumn(salesPersonColumnName.SalesPerson, false, salesSplitGridResources.SalesPerson, "", null, null, gridSaleColConfig.noEditor),
-                gridSaleColConfig.getColumn(salesPersonColumnName.SalesSplitPercentage, false, salesSplitGridResources.SalesSplitPercentage, "", gridSaleColConfig.getperTemplate(), null, gridSaleColConfig.percentageEditor),
+                gridSaleColConfig.getColumn(salesPersonColumnName.SalesSplitPercentage, false, salesSplitGridResources.SalesSplitPercentage, "align-right", gridSaleColConfig.getperTemplate(), null, gridSaleColConfig.percentageEditor),
                 { field: salesPersonColumnName.IsNewLine, hidden: true, attributes: { sg_Customizable: false } },
                 { field: salesPersonColumnName.IsDeleted, hidden: true, attributes: { sg_Customizable: false } },
             ],
@@ -458,10 +460,9 @@ var saleSplitGridUI = {
             // Fired when the user selects a table row or cell in the grid
             change: function (e) {
                 if (saleSplitGridUI && saleSplitGridUI.change) {
-                    saleSplitGridUI.change(e);    
+                    saleSplitGridUI.change(e);
                 }
             }
-
         };
     }
 };
