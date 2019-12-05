@@ -1,0 +1,11 @@
+﻿Global files (CSS, CSHTML, JavaScript, etc.) are maintained by Sage.
+
+If these files are modified or enhanced during the release cycle, they
+will require synchronization.
+
+The following files will be evaluated:
+
+     * Existing common files will be updated, if needed
+     * New common files will be added, if any
+     * Third party libraries will be upgraded, if needed
+     * Web content files will be synchronized
