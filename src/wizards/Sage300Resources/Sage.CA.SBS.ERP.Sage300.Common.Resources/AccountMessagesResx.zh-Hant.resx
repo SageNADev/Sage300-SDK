@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSetupMessage1" xml:space="preserve">
+    <value>等待幾分鐘，然後點擊登入按鈕再試一次。當您的帳戶準備就緒後，您就可以登入並開始使用Sage 300。</value>
+  </data>
+  <data name="AccountSetupMessage2" xml:space="preserve">
+    <value>在我們設定您的帳戶時，您可以訪問幫助中心並閱覽有關Sage 300使用入門的資訊。</value>
+  </data>
+  <data name="AccountSetupTitle" xml:space="preserve">
+    <value>請等候我們設定您的帳戶</value>
+  </data>
+  <data name="ContactSupportLink" xml:space="preserve">
+    <value>聯絡客戶支援</value>
+  </data>
+  <data name="NeedAssistance" xml:space="preserve">
+    <value>需要協助？</value>
+  </data>
+  <data name="SessionDateinInactiveYear" xml:space="preserve">
+    <value>您的工作階段日期在您定義的會計年曆中一個閒置的會計期間範圍內。您可能需要選擇一個不同的工作階段日期以避免處理交易時發生錯誤。</value>
+  </data>
+  <data name="SessionDateinInactiveYear_Title" xml:space="preserve">
+    <value>工作階段日期在閒置的會計年度中</value>
+  </data>
+  <data name="SessionDateinLockedPeriod" xml:space="preserve">
+    <value>您的工作階段日期在您定義的會計年曆中一個鎖定的會計期間範圍內。您可能需要選擇一個不同的工作階段日期以避免處理交易時發生錯誤。</value>
+  </data>
+  <data name="SessionDateinLockedPeriod_Title" xml:space="preserve">
+    <value>工作階段日期在鎖定的會計年度中</value>
+  </data>
+  <data name="SessionDateLocked" xml:space="preserve">
+    <value>工作階段期間被鎖定</value>
+  </data>
+  <data name="SessionDateNotActive" xml:space="preserve">
+    <value>工作階段年度為閒置</value>
+  </data>
+  <data name="SessionDateNotInCalendar" xml:space="preserve">
+    <value>您的工作階段日期在該公司定義的會計年曆範圍之外。您可能需要選擇一個不同的工作階段日期以避免處理交易時發生錯誤。</value>
+  </data>
+  <data name="SessionDateNotInCalendar_Title" xml:space="preserve">
+    <value>工作階段日期不在會計年曆中</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="TenantNotAvailableMessage" xml:space="preserve">
+    <value>您試圖存取的帳戶不可用。它可能被閒置，暫停，或遇到一個臨時性問題。</value>
+  </data>
+  <data name="TenantNotAvailableTitle" xml:space="preserve">
+    <value>帳戶不可用</value>
+  </data>
+  <data name="VisitHelpCenter" xml:space="preserve">
+    <value>訪問幫助中心</value>
+  </data>
+  <data name="MissingModules_Description" xml:space="preserve">
+    <value>Sage 300網頁螢幕需要總帳，但尚未為此一公司啟用它。要繼續，採取下列步驟之一：</value>
+  </data>
+  <data name="MissingModules_Header" xml:space="preserve">
+    <value>需要總帳</value>
+  </data>
+  <data name="MissingModules_SignIn" xml:space="preserve">
+    <value>再次登入</value>
+    <comment>Button</comment>
+  </data>
+  <data name="MissingModules_Step1" xml:space="preserve">
+    <value>使用桌面螢幕為此一公司管理資訊和交易</value>
+  </data>
+  <data name="MissingModules_Step2" xml:space="preserve">
+    <value>登入另一個總帳已為其啟用的公司</value>
+  </data>
+  <data name="MissingModules_Step3" xml:space="preserve">
+    <value>請您的管理員為此一公司啟用總帳</value>
+  </data>
+  <data name="ICTNotAvailable_Description" xml:space="preserve">
+    <value>Sage 300網頁螢幕對公司間交易（ICT）的公司不可用。要使用網頁螢幕請登入到一個非ICT公司。</value>
+  </data>
+  <data name="ICTNotAvailable_Header" xml:space="preserve">
+    <value>公司間交易公司不可用</value>
+  </data>
+  <data name="IncorrectAcctOrPwd" xml:space="preserve">
+    <value>用戶代號或密碼不正確。再試一次。</value>
+  </data>
+  <data name="NoAuthorizedCompany" xml:space="preserve">
+    <value>您未獲授權開啟任何公司。聯絡您的系統管理員獲取幫助。</value>
+  </data>
+</root>

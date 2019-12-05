@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgeUnapCashPP" xml:space="preserve">
+    <value>帳析收款、未核銷現金和預付款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgeUnapCNDN" xml:space="preserve">
+    <value>帳析未核銷貸項通知單和借項通知單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>帳析期間（天）</value>
+  </data>
+  <data name="AllowAdjInRcptBtch" xml:space="preserve">
+    <value>允許在收款批次中調整</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowBlankCommentType" xml:space="preserve">
+    <value>允許空置備註類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditAftDepPrt" xml:space="preserve">
+    <value>允許列印存款單後編輯</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditExternalBatches" xml:space="preserve">
+    <value>允許編輯外部批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditImported" xml:space="preserve">
+    <value>允許編輯匯入的批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditOfStatistics" xml:space="preserve">
+    <value>允許編輯統計</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditPrtInvcs" xml:space="preserve">
+    <value>允許列印發票後編輯</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditPrtRcpts" xml:space="preserve">
+    <value>允許列印收款後編輯</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowPrintingInvcs" xml:space="preserve">
+    <value>允許列印發票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowPrintingOfDeposits" xml:space="preserve">
+    <value>允許列印存款單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BaseRetainageAmountOn" xml:space="preserve">
+    <value>保留款金額基於</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalculateTaxesAuto" xml:space="preserve">
+    <value>自動計算稅額</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalculateTaxReportingAuto" xml:space="preserve">
+    <value>自動計算稅務報告金額</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckForPendingPayment" xml:space="preserve">
+    <value>包括待處理交易</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>連絡人</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateDepositAutomatically" xml:space="preserve">
+    <value>建立收款批次時建立存款單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustAndGroupStats" xml:space="preserve">
+    <value>客戶和群組統計</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustNatAndGroupStats" xml:space="preserve">
+    <value>客戶、統一帳戶和群組統計</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerComments" xml:space="preserve">
+    <value>客戶備註</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultBankCode" xml:space="preserve">
+    <value>預設銀行代碼</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCommentDays" xml:space="preserve">
+    <value>預設失效天數</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCommentType" xml:space="preserve">
+    <value>預設備註類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultDetailTaxClassTo1" xml:space="preserve">
+    <value>預設設定明細稅級到1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultFollowUpDays" xml:space="preserve">
+    <value>預設跟進天數</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultInvoiceType" xml:space="preserve">
+    <value>預設發票類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultOrderOpenDocs" xml:space="preserve">
+    <value>未結憑證預設順序</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPaymCode" xml:space="preserve">
+    <value>預設付款代碼</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPercentage" xml:space="preserve">
+    <value>預設保留款百分比</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPeriod" xml:space="preserve">
+    <value>預設留存期間（天）</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPostingDate" xml:space="preserve">
+    <value>預設過帳日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultRetainageExchangeRate" xml:space="preserve">
+    <value>預設保留款匯率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultTrxType" xml:space="preserve">
+    <value>預設交易類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocNumbering" xml:space="preserve">
+    <value>憑證編號</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>應收帳款選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>傳真</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForceBatchListing" xml:space="preserve">
+    <value>強制列出所有批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForcePrtDepSlips" xml:space="preserve">
+    <value>強制列印存款單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InclTaxInStatistics" xml:space="preserve">
+    <value>統計中包括稅費</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InterestInvoice" xml:space="preserve">
+    <value>利息發票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceOptions" xml:space="preserve">
+    <value>發票選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="KeepStatistics" xml:space="preserve">
+    <value>保留統計</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextAdjtBatchNum" xml:space="preserve">
+    <value>下一調整批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextAdjtPostSeq" xml:space="preserve">
+    <value>下一調整過帳序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextBatchSeq" xml:space="preserve">
+    <value>下一批次和過帳序列編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextInvcBatchNumber" xml:space="preserve">
+    <value>下一發票批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextInvcPostingSeq" xml:space="preserve">
+    <value>下一發票過帳序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRcptBatchNum" xml:space="preserve">
+    <value>下一收款批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRcptPostSeq" xml:space="preserve">
+    <value>下一收款過帳序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRefundBatchNum" xml:space="preserve">
+    <value>下一退款批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRefundPostSeq" xml:space="preserve">
+    <value>下一退款過帳序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRevlPostSeq" xml:space="preserve">
+    <value>下一重評價過帳序號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Numbering" xml:space="preserve">
+    <value>編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PeriodType" xml:space="preserve">
+    <value>期間類型</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="PrintZeroBalStmts" xml:space="preserve">
+    <value>列印零餘額對帳單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>處理</value>
+  </data>
+  <data name="ProcessingOptions" xml:space="preserve">
+    <value>處理選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ProcessRecurChgs" xml:space="preserve">
+    <value>處理週期性收費</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReceiptOptions" xml:space="preserve">
+    <value>收款選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RefundOptions" xml:space="preserve">
+    <value>退款選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportTax" xml:space="preserve">
+    <value>報告稅務</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>保留款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ScheduleToUse" xml:space="preserve">
+    <value>使用自動建立保留款憑證排程</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowItemCost" xml:space="preserve">
+    <value>顯示產品成本</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SortChecksBy" xml:space="preserve">
+    <value>排序支票按</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>對帳單</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StatsWarning" xml:space="preserve">
+    <value>變更此一選項可能導致不正確的統計報告。您僅應該在年末變更此一選項。如果您在年中某時變更它，編輯統計以更正各個期間的合計。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>交易</value>
+  </data>
+  <data name="UseItemCmmtAsDef" xml:space="preserve">
+    <value>使用產品備註作為預設值</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseRetainage" xml:space="preserve">
+    <value>保留款核算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseSeparateDocuments" xml:space="preserve">
+    <value>建立保留款憑證時使用另外的憑證編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>調整</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>貸項通知單</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借項通知單</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocLength" xml:space="preserve">
+    <value>長度</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocPrefix" xml:space="preserve">
+    <value>首碼</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocumentNumbers" xml:space="preserve">
+    <value>憑證編號</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>憑證類型</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>發票</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="NextNumber" xml:space="preserve">
+    <value>下一編號</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>預付款</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>收款</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>退款</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>未核銷現金</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="RecurringCharge" xml:space="preserve">
+    <value>週期性收費</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>多幣別</value>
+    <comment>Processing-Tab</comment>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>目前</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>天數</value>
+  </data>
+  <data name="ScheduleCodeNotFoundMessage" xml:space="preserve">
+    <value>無法找到排程代碼{0}。</value>
+    <comment>Retainage Tab</comment>
+  </data>
+  <data name="RetainagePercentWarning" xml:space="preserve">
+    <value>保留款百分比必須介於0和100之間。</value>
+    <comment>Retainage Tab</comment>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>付款代碼</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>銀行代碼</value>
+  </data>
+  <data name="BankCodeDesc" xml:space="preserve">
+    <value>銀行代碼描述</value>
+  </data>
+  <data name="BlankPaymentCode" xml:space="preserve">
+    <value>付款代碼不能空置。</value>
+  </data>
+  <data name="PaymentCodeDescription" xml:space="preserve">
+    <value>付款代碼描述</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>排程</value>
+    <comment>Retainage Tab</comment>
+  </data>
+</root>

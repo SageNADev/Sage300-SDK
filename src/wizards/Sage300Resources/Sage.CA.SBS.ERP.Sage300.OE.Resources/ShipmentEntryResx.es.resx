@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>IO - Ingreso de Envíos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnShip" xml:space="preserve">
+    <value>Enviar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Shipment" xml:space="preserve">
+    <value>Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentDate" xml:space="preserve">
+    <value>Fecha de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromMultipleOrder" xml:space="preserve">
+    <value>Desde Órdenes Múltiples</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentSubtotal" xml:space="preserve">
+    <value>Subtotal de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LessShipmentDiscount" xml:space="preserve">
+    <value>Menos Descuento de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipUOM" xml:space="preserve">
+    <value>UM de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CompletesOrder" xml:space="preserve">
+    <value>Concluye Orden</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateShipFromOrders" xml:space="preserve">
+    <value>Crear Envío desde Órdenes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ZoomTittleItemTaxes" xml:space="preserve">
+    <value>Impuestos de Detalle - IO Ingreso de Envíos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentAmount" xml:space="preserve">
+    <value>Monto de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CompleteStatus" xml:space="preserve">
+    <value>Estado Concluido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Concluido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Incomplete" xml:space="preserve">
+    <value>Incompleto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt1" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt2" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Factura: {0}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt3" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. Número de Factura: {1}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt4" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Cheque/Recibo: {0}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt5" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. Número de Cheque/Recibo: {1}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt6" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Factura: {0}. Número de Cheque/Recibo: {1}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintFormPrompt7" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. Número de Factura: {1}. Número de Cheque/Recibo: {2}. ¿Desea imprimir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PickingSlip" xml:space="preserve">
+    <value>Comprobante de Selección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Factura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentDtlOptFlds" xml:space="preserve">
+    <value>IO – Campos Opcionales de Detalle de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentWeightUOM" xml:space="preserve">
+    <value>UM de Peso de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OEPrepayments" xml:space="preserve">
+    <value>IO - Anticipos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxCalculation" xml:space="preserve">
+    <value>La clase fiscal de artículo o cliente no es válida para este envío.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShiPostingFailed" xml:space="preserve">
+    <value>Falló el asentamiento. Debe ingresar el envío nuevamente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoAllocateSNFailed" xml:space="preserve">
+    <value>No se asignaron los números de serie porque han caducado.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingFailedWithSPSCharge" xml:space="preserve">
+    <value>Falló el asentamiento. Ya se ha procesado un pago por tarjeta de crédito en Sage Payment Solutions para este envió. Abra una sesión en el terminal virtual de Sage para verificar el estado de la transacción.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExcludeOrdFromShipment" xml:space="preserve">
+    <value>¿Realmente desea excluir esta orden del envío?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReplaceShipmentDetails" xml:space="preserve">
+    <value>¿Desea reemplazar la información de envío que ingresó por la información de la orden {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveShipment" xml:space="preserve">
+    <value>¿Desea asentar este envío?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>¿Está seguro de de que desea eliminar el envío {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintPickingSlip" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. ¿Desea imprimir el comprobante de selección?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostDoneNoPrint" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentNegInventory" xml:space="preserve">
+    <value>El envío reducirá la cantidad de artículos en esta ubicación por debajo de cero.  ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintInvoice" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Envío: {0}. Número de Factura: {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveWithoutCharge" xml:space="preserve">
+    <value>Ya se ha pre-autorizado y procesado un anticipo con tarjeta de crédito para un envío parcial de esta orden. Puede procesar un pago adicional para el envío actual antes de asentarlo. ¿Desea continuar y asentar este envío sin procesar un pago adicional?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Ingresado por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApprovedLimit" xml:space="preserve">
+    <value>Límite Aprobado</value>
+  </data>
+  <data name="BillToAddressLine1" xml:space="preserve">
+    <value>Línea Dirección de Facturación 1</value>
+  </data>
+  <data name="BillToAddressLine2" xml:space="preserve">
+    <value>Línea Dirección de Facturación 2</value>
+  </data>
+  <data name="BillToAddressLine3" xml:space="preserve">
+    <value>Línea Dirección de Facturación 3</value>
+  </data>
+  <data name="BillToAddressLine4" xml:space="preserve">
+    <value>Línea Dirección de Facturación 4</value>
+  </data>
+  <data name="BillToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactFax" xml:space="preserve">
+    <value>Fax del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactPhone" xml:space="preserve">
+    <value>Teléfono del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToCountry" xml:space="preserve">
+    <value>País (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToZipPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Facturación)</value>
+  </data>
+  <data name="DefaultLocationCode" xml:space="preserve">
+    <value>Código de Ubicación Predeterminada</value>
+  </data>
+  <data name="ExpectedShipDate" xml:space="preserve">
+    <value>Fecha Prevista de Envío</value>
+  </data>
+  <data name="FreeOnBoardPoint" xml:space="preserve">
+    <value>Punto Franco a Bordo</value>
+  </data>
+  <data name="ICDayEndTransNumber" xml:space="preserve">
+    <value>CI - Número de Transacción de Final de Día</value>
+  </data>
+  <data name="NoLinesQtyShipped" xml:space="preserve">
+    <value>Cantidad de Líneas Cantidad Enviada</value>
+  </data>
+  <data name="NumberOfLinesonShipment" xml:space="preserve">
+    <value>Número de Líneas en Envío</value>
+  </data>
+  <data name="NumberOfShipments" xml:space="preserve">
+    <value>Cantidad de Envíos</value>
+  </data>
+  <data name="OrderPrintStatus" xml:space="preserve">
+    <value>Estado de Impresión de Orden</value>
+  </data>
+  <data name="OverCreditLimit" xml:space="preserve">
+    <value>Límite de Crédito Excedido</value>
+  </data>
+  <data name="RequiresShippingLabels" xml:space="preserve">
+    <value>Requiere Etiquetas de Envío</value>
+  </data>
+  <data name="ShipmentComment" xml:space="preserve">
+    <value>Comentario de Envío</value>
+  </data>
+  <data name="ShipmentCompleted" xml:space="preserve">
+    <value>Envío Concluido</value>
+  </data>
+  <data name="ShipmentCompletionDate" xml:space="preserve">
+    <value>Fecha de Culminación de Envío</value>
+  </data>
+  <data name="ShipmentDescription" xml:space="preserve">
+    <value>Descripción de Envío</value>
+  </data>
+  <data name="ShipmentDiscMiscCharges" xml:space="preserve">
+    <value>Cargos Varios Descuento de Envío</value>
+  </data>
+  <data name="ShipmentDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento de Envío</value>
+  </data>
+  <data name="ShipmentDiscountAmountOverrid" xml:space="preserve">
+    <value>Sustitución de Monto de Descuento de Envío</value>
+  </data>
+  <data name="ShipmentDiscountBase" xml:space="preserve">
+    <value>Base de Descuento de Envío</value>
+  </data>
+  <data name="ShipmentDiscountPercentage" xml:space="preserve">
+    <value>Porcentaje de Descuento de Envío</value>
+  </data>
+  <data name="ShipmentExclTaxTotal" xml:space="preserve">
+    <value>Total de Impuesto Excluido del Envío</value>
+  </data>
+  <data name="ShipmentFiscalPeriod" xml:space="preserve">
+    <value>Período Fiscal de Envío</value>
+  </data>
+  <data name="ShipmentFiscalYear" xml:space="preserve">
+    <value>Año Fiscal de Envío</value>
+  </data>
+  <data name="ShipmentHomeCurrency" xml:space="preserve">
+    <value>Moneda Local de Envío</value>
+  </data>
+  <data name="ShipmentInclTaxTotal" xml:space="preserve">
+    <value>Total de Impuesto Incluido del Envío</value>
+  </data>
+  <data name="ShipmentItemTotalAmount" xml:space="preserve">
+    <value>Monto Total de Artículos de Envío</value>
+  </data>
+  <data name="ShipmentNoOfPrepayments" xml:space="preserve">
+    <value>Cantidad de Anticipos del Envío</value>
+  </data>
+  <data name="ShipmentRate" xml:space="preserve">
+    <value>Tasa de Envío</value>
+  </data>
+  <data name="ShipmentRateDateMatching" xml:space="preserve">
+    <value>Coincidencia de Fecha de Tasa de Envío</value>
+  </data>
+  <data name="ShipmentRateOperator" xml:space="preserve">
+    <value>Operador de Tasa de Envío</value>
+  </data>
+  <data name="ShipmentRateOverrideFlag" xml:space="preserve">
+    <value>Indicador de Sustitución de Tasa de Envío</value>
+  </data>
+  <data name="ShipmentReference" xml:space="preserve">
+    <value>Referencia de Envío</value>
+  </data>
+  <data name="ShipmentSourceCurrency" xml:space="preserve">
+    <value>Moneda de Origen de Envío</value>
+  </data>
+  <data name="ShipmentSpread" xml:space="preserve">
+    <value>Margen de Envío</value>
+  </data>
+  <data name="ShipmentSubtotalAmount" xml:space="preserve">
+    <value>Monto Subtotal de Envío</value>
+  </data>
+  <data name="ShipmentTotal" xml:space="preserve">
+    <value>Total de Envío</value>
+  </data>
+  <data name="ShipmentTotalBeforeTax" xml:space="preserve">
+    <value>Total de Envío Antes de Impuestos</value>
+  </data>
+  <data name="ShipmentTotalEstWeight" xml:space="preserve">
+    <value>Peso Estimado Total de Envío</value>
+  </data>
+  <data name="ShipmentTotalMiscCharges" xml:space="preserve">
+    <value>Cargos Varios Total de Envío</value>
+  </data>
+  <data name="ShipmentTotalWithInvDisc" xml:space="preserve">
+    <value>Total de Envío con Descuento de Factura</value>
+  </data>
+  <data name="ShipmentTrackingNumber" xml:space="preserve">
+    <value>Número de Seguimiento de Envío</value>
+  </data>
+  <data name="ShipmentUniquifier" xml:space="preserve">
+    <value>Número Singular de Envío</value>
+  </data>
+  <data name="ShippingLabelsPrinted" xml:space="preserve">
+    <value>Etiquetas de Envío Impresas</value>
+  </data>
+  <data name="ShipToAddressLine1" xml:space="preserve">
+    <value>Línea Dirección de Envío 1</value>
+  </data>
+  <data name="ShipToAddressLine2" xml:space="preserve">
+    <value>Línea Dirección de Envío 2</value>
+  </data>
+  <data name="ShipToAddressLine3" xml:space="preserve">
+    <value>Línea Dirección de Envío 3</value>
+  </data>
+  <data name="ShipToAddressLine4" xml:space="preserve">
+    <value>Línea Dirección de Envío 4</value>
+  </data>
+  <data name="ShipToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactFax" xml:space="preserve">
+    <value>Fax de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactPhone" xml:space="preserve">
+    <value>Teléfono de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToEmail" xml:space="preserve">
+    <value>Correo-E (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToLocationCode" xml:space="preserve">
+    <value>Código Dirección de Envío</value>
+  </data>
+  <data name="ShipViaCodeDescription" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+  </data>
+  <data name="Allowpartialshipments" xml:space="preserve">
+    <value>Admitir Envíos Parciales</value>
+  </data>
+  <data name="CreateInvoiceFromShipment" xml:space="preserve">
+    <value>Crear Factura desde Envío</value>
+  </data>
+  <data name="GenerateShipFromMultOrders" xml:space="preserve">
+    <value>Generar Envío Desde Órdenes Múltiples</value>
+  </data>
+  <data name="GenerateShipFromSingleOrder" xml:space="preserve">
+    <value>Generar Envío Desde Orden Única</value>
+  </data>
+  <data name="PerformShipAll" xml:space="preserve">
+    <value>Realizar Enviar Todo</value>
+  </data>
+  <data name="ShipmentAmountDue" xml:space="preserve">
+    <value>Monto de Envío a Pagar</value>
+  </data>
+  <data name="ShipmentHomeCurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda Local de Envío</value>
+  </data>
+  <data name="ShipmentRateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa de Envío</value>
+  </data>
+  <data name="ShipmentRateTypeDescription" xml:space="preserve">
+    <value>Descripción Tipo de Tasa de Envío</value>
+  </data>
+  <data name="ShipmentRunningTotal" xml:space="preserve">
+    <value>Total Corriente de Envío</value>
+  </data>
+  <data name="ShipmentSourceCurrDesc" xml:space="preserve">
+    <value>Descripción Moneda de Origen de Envío</value>
+  </data>
+  <data name="ShipmentSourceCurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda de Origen de Envío</value>
+  </data>
+  <data name="ShipmentTotalPayment" xml:space="preserve">
+    <value>Pago Total de Envío</value>
+  </data>
+  <data name="ShipToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToCountry" xml:space="preserve">
+    <value>País (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToZipPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Envío)</value>
+  </data>
+  <data name="TRShipmentCurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda de Envío RF</value>
+  </data>
+  <data name="TRShipmentRateTypeDescriptio" xml:space="preserve">
+    <value>Descripción Tipo de Tasa de Envío RF</value>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>el</value>
+  </data>
+  <data name="PriceListDescription" xml:space="preserve">
+    <value>Descripción de Lista de Precios</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+  </data>
+  <data name="TermsDescription" xml:space="preserve">
+    <value>Descripción de Condiciones</value>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>Número de Artículo del Fabricante</value>
+    <comment>Used in Detail Grid</comment>
+  </data>
+  <data name="TaxReportingCurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="CurrentQuantityOutstanding" xml:space="preserve">
+    <value>Cantidad Actual Pendiente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastCost" xml:space="preserve">
+    <value>Último Costo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderQuantityBackordered" xml:space="preserve">
+    <value>Cantidad de Órdenes en Espera</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderQuantityCommitted" xml:space="preserve">
+    <value>Cantidad de Órdenes Comprometidas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderQuantityOrdered" xml:space="preserve">
+    <value>Cantidad de Órdenes Solicitadas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderQuantityShippedtodate" xml:space="preserve">
+    <value>Cantidad de Órdenes Enviadas a la Fecha</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTrueQuantityCommitted" xml:space="preserve">
+    <value>Cantidad Comprometida Real de Órdenes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad de Envío</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentUnitCost" xml:space="preserve">
+    <value>Costo Unitario de Envío</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Envío</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentUnitPrice" xml:space="preserve">
+    <value>Precio Unitario de Envío</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostOfGoods" xml:space="preserve">
+    <value>Costo de Bienes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedShipmentCost" xml:space="preserve">
+    <value>Costo de Envío Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NegativeInventoryLevelOnDele" xml:space="preserve">
+    <value>Nivel de Inventario Negativo A Eliminar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDetailNumber" xml:space="preserve">
+    <value>Número Detalle de Orden</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PMTransactionNumber" xml:space="preserve">
+    <value>Número Transacción de PM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingWeightUOM" xml:space="preserve">
+    <value>UM de Peso de Cálculo de Precios</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefreshOrderQtyatUpdate" xml:space="preserve">
+    <value>Renovar Cantidad Orden al Actualizar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainageAmountOverride" xml:space="preserve">
+    <value>Sustitución de Monto de Retención</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentCompletesOrderDetail" xml:space="preserve">
+    <value>El Envío Concluye el Detalle de Orden</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StoredInDatabaseTable" xml:space="preserve">
+    <value>Guardado en Tabla de Base de Datos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentAverageCost" xml:space="preserve">
+    <value>Costo Promedio de Envío Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentCost1" xml:space="preserve">
+    <value>Costo de Envío Total 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentCost2" xml:space="preserve">
+    <value>Costo de Envío Total 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentLastCost" xml:space="preserve">
+    <value>Último Costo de Envío Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentMostRecentCost" xml:space="preserve">
+    <value>Costo Más Reciente de Envío Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalShipmentStandardCost" xml:space="preserve">
+    <value>Costo Estándar de Envío Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WeightConversionFactor" xml:space="preserve">
+    <value>Unidad de Medida de Peso</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrintConfirmation" xml:space="preserve">
+    <value>Desea imprimir?</value>
+  </data>
+  <data name="PostingCompleted" xml:space="preserve">
+    <value>Asentamiento concluido.</value>
+  </data>
+  <data name="CommentsInstructions" xml:space="preserve">
+    <value>Comentarios/Instrucciones</value>
+  </data>
+  <data name="CommentsInstructionsType" xml:space="preserve">
+    <value>Tipo de comentarios/instrucciones</value>
+  </data>
+  <data name="OE0190" xml:space="preserve">
+    <value>Comentarios Instrucciones de Envío</value>
+  </data>
+  <data name="OE0691" xml:space="preserve">
+    <value>Detalles de Envío</value>
+  </data>
+  <data name="OE0692" xml:space="preserve">
+    <value>Envíos</value>
+  </data>
+  <data name="OE0702" xml:space="preserve">
+    <value>Campos Opcionales de Detalle de Envío</value>
+  </data>
+  <data name="OE0704" xml:space="preserve">
+    <value>Campos Opcionales de Envío</value>
+  </data>
+  <data name="OE0708" xml:space="preserve">
+    <value>Números de Lote de Detalle de Envío</value>
+  </data>
+  <data name="OE0709" xml:space="preserve">
+    <value>Números de Serie de Detalle de Envío</value>
+  </data>
+</root>

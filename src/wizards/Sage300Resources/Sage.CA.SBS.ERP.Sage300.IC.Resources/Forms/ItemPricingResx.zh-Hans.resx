@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Approval" xml:space="preserve">
+    <value>批准</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="BaseAmount" xml:space="preserve">
+    <value>基数金额</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseConversionFactor" xml:space="preserve">
+    <value>基价转换系数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseCostBase" xml:space="preserve">
+    <value>基数成本基数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseExchangeRate" xml:space="preserve">
+    <value>基数汇率</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseLocation" xml:space="preserve">
+    <value>基数地点</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BasePercentage" xml:space="preserve">
+    <value>基数百分比</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BasePriceCalc" xml:space="preserve">
+    <value>使用成本计算的基价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="BasePriceForMultiple" xml:space="preserve">
+    <value>多重计量单位的基价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="BasePriceForSingle" xml:space="preserve">
+    <value>单一计量单位的基价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="BaseRateDate" xml:space="preserve">
+    <value>基数汇率日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseRateOperator" xml:space="preserve">
+    <value>基数汇率运算符</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseRateOveridden" xml:space="preserve">
+    <value>基数汇率撤换</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="BaseRateType" xml:space="preserve">
+    <value>基数汇率</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CheckIUE" xml:space="preserve">
+    <value>检查（单位：个）</value>
+    <comment>Price Check - List</comment>
+  </data>
+  <data name="CostConvertedPlusAmount" xml:space="preserve">
+    <value>汇率转换后的成本加金额</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CostConvertedPlusPercentage" xml:space="preserve">
+    <value>汇率转换后的成本加百分比</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CostMarginBase" xml:space="preserve">
+    <value>成本/毛利基数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CostPlusaFixedAm" xml:space="preserve">
+    <value>成本加固定金额</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="CostPlusPercentage" xml:space="preserve">
+    <value>成本加成百分比</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CreateNewPriceListCode" xml:space="preserve">
+    <value>创建新价目表代码</value>
+    <comment>Context Menu Option</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>币种描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>客户类型</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="DecimalsInPrice" xml:space="preserve">
+    <value>价格小数位数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultBasePrice" xml:space="preserve">
+    <value>默认基价</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="DefaultBasePriceUsing" xml:space="preserve">
+    <value>默认基价使用</value>
+    <comment>Default Base Price - List</comment>
+  </data>
+  <data name="DefaultBaseUnit" xml:space="preserve">
+    <value>默认基价单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultBaseWeightUnit" xml:space="preserve">
+    <value>默认基价重量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultSalePrice" xml:space="preserve">
+    <value>默认售价</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="DefaultSalePriceUsing" xml:space="preserve">
+    <value>默认售价使用</value>
+    <comment>Default Sale Price - List</comment>
+  </data>
+  <data name="DefaultSaleUnit" xml:space="preserve">
+    <value>默认销货单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultSaleWeightUnit" xml:space="preserve">
+    <value>默认销售重量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>折扣</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="DiscountAmountPU" xml:space="preserve">
+    <value>折扣金额（定价单位）</value>
+    <comment>Discounts - Table Column</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount1" xml:space="preserve">
+    <value>折扣/加成金额1</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount2" xml:space="preserve">
+    <value>折扣/加成金额2</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount3" xml:space="preserve">
+    <value>折扣/加成金额3</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount4" xml:space="preserve">
+    <value>折扣/加成金额4</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount5" xml:space="preserve">
+    <value>折扣/加成金额5</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage1" xml:space="preserve">
+    <value>折扣/加成百分比1</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage2" xml:space="preserve">
+    <value>折扣/加成百分比2</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage3" xml:space="preserve">
+    <value>折扣/加成百分比3</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage4" xml:space="preserve">
+    <value>折扣/加成百分比4</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage5" xml:space="preserve">
+    <value>折扣/加成百分比5</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DiscountOrMarkupPriceBy" xml:space="preserve">
+    <value>折扣/加成价格按</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>除</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="Edit1" xml:space="preserve">
+    <value>编辑…</value>
+    <comment>Link</comment>
+  </data>
+  <data name="EditBasePrice" xml:space="preserve">
+    <value>编辑基价</value>
+    <comment>Context Menu Option</comment>
+  </data>
+  <data name="EditSalePrice" xml:space="preserve">
+    <value>编辑售价</value>
+    <comment>Context Menu Option</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>存货控制货品定价</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>固定金额</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="ItemPrices" xml:space="preserve">
+    <value>货品价格</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Landed" xml:space="preserve">
+    <value>抵岸</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="LastExchangeRateChangeDate" xml:space="preserve">
+    <value>上次汇率改变日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="LastMarkupCostChangeDate" xml:space="preserve">
+    <value>上次加成成本改变日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="LastUnitCost" xml:space="preserve">
+    <value>上一单位成本</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="LocationDesc" xml:space="preserve">
+    <value>地点描述</value>
+    <comment>Default Base Price - Field</comment>
+  </data>
+  <data name="MarkupConversionFactor" xml:space="preserve">
+    <value>加成转换系数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="MarkupOnAverage" xml:space="preserve">
+    <value>按平均成本加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnLanded" xml:space="preserve">
+    <value>按抵岸加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnLast" xml:space="preserve">
+    <value>按上一单位成本加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnMarkup" xml:space="preserve">
+    <value>按加成成本加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnMost" xml:space="preserve">
+    <value>按最近成本加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnStandard" xml:space="preserve">
+    <value>按标准成本加成</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupUnitOfMeasure" xml:space="preserve">
+    <value>加成计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="MarkupWeightUnitOfMeasure" xml:space="preserve">
+    <value>加成重量计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>乘</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="NoDefault" xml:space="preserve">
+    <value>没有默认</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PreviousExchangeRate" xml:space="preserve">
+    <value>上一汇率</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PreviousMarkupCost" xml:space="preserve">
+    <value>上一加成成本</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PriceListDesc" xml:space="preserve">
+    <value>价目表描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceListEndDate" xml:space="preserve">
+    <value>价目表截止日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PriceListStartDate" xml:space="preserve">
+    <value>价目表起始日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="Prices" xml:space="preserve">
+    <value>价格</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PricingUnitOfMeasure" xml:space="preserve">
+    <value>定价计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PricingWeightUnitOfMeasure" xml:space="preserve">
+    <value>定价重量计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityLevel1" xml:space="preserve">
+    <value>数量层级1</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityLevel2" xml:space="preserve">
+    <value>数量层级2</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityLevel3" xml:space="preserve">
+    <value>数量层级3</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityLevel4" xml:space="preserve">
+    <value>数量层级4</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityLevel5" xml:space="preserve">
+    <value>数量层级5</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityPurchasedUE" xml:space="preserve">
+    <value>采购数量（单位：个）</value>
+    <comment>Discounts - Table Column</comment>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>汇率运算</value>
+    <comment>Default Base Price - Field</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>汇率类型描述</value>
+    <comment>Default Base Price - Field</comment>
+  </data>
+  <data name="RoundDown" xml:space="preserve">
+    <value>舍尾</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="RoundNo" xml:space="preserve">
+    <value>不舍入</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="RoundUp" xml:space="preserve">
+    <value>按最低</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="SaleConversionFactor" xml:space="preserve">
+    <value>销售转换系数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleCostBase" xml:space="preserve">
+    <value>销售成本基数</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleEndDate" xml:space="preserve">
+    <value>销售截止日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleLocation" xml:space="preserve">
+    <value>销售地点</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SalePercentage" xml:space="preserve">
+    <value>销售百分比</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SalePriceCalc" xml:space="preserve">
+    <value>使用成本计算的售价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="SalePriceForMultiple" xml:space="preserve">
+    <value>多个计量单位的售价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="SalePriceForSingle" xml:space="preserve">
+    <value>单一计量单位的售价</value>
+    <comment>Prices - List Option</comment>
+  </data>
+  <data name="SaleRateType" xml:space="preserve">
+    <value>销售汇率类型</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SalesMargin" xml:space="preserve">
+    <value>销售毛利</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="SaleStartDate" xml:space="preserve">
+    <value>销售起始日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleUnitOfMeasure" xml:space="preserve">
+    <value>销售计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleWeightUnitOfMeasure" xml:space="preserve">
+    <value>销售重量计量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SellingPriceBasedOn" xml:space="preserve">
+    <value>售价基于</value>
+    <comment>Grid Column</comment>
+  </data>
+  <data name="UnitPrice" xml:space="preserve">
+    <value>单价</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="VolumeDiscounts" xml:space="preserve">
+    <value>数量折扣</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="WeightLevel1" xml:space="preserve">
+    <value>重量层级 1</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="WeightLevel2" xml:space="preserve">
+    <value>重量层级 2</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="WeightLevel3" xml:space="preserve">
+    <value>重量层级 3</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="WeightLevel4" xml:space="preserve">
+    <value>重量层级 4</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="WeightLevel5" xml:space="preserve">
+    <value>重量层级 5</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleAmount" xml:space="preserve">
+    <value>销售金额</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleExchangeRate" xml:space="preserve">
+    <value>销售汇率</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleRateDate" xml:space="preserve">
+    <value>销售汇率日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CalcBaseExchRateExists" xml:space="preserve">
+    <value>计算基本汇率存在</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CalcSaleExchRateExists" xml:space="preserve">
+    <value>计算销售汇率存在</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CheckItemExistence" xml:space="preserve">
+    <value>检查货品存在</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="ItemLocationCostAllowable" xml:space="preserve">
+    <value>允许的货品地点成本</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="RateDoesNotExist" xml:space="preserve">
+    <value>汇率不存在</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="RateExists" xml:space="preserve">
+    <value>汇率存在</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="RateIsCalculated" xml:space="preserve">
+    <value>汇率已计算</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleRateOperator" xml:space="preserve">
+    <value>销售汇率运算符</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleRateOveridden" xml:space="preserve">
+    <value>销售汇率撤换</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="ItemNumberDescription" xml:space="preserve">
+    <value>货品编号描述</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="MarkupPercentage" xml:space="preserve">
+    <value>加成百分比</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="ItemPriceTitle" xml:space="preserve">
+    <value>货品价格</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CalculateBasePriceUsing" xml:space="preserve">
+    <value>计算基价使用</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CalculateSalePriceUsing" xml:space="preserve">
+    <value>计算售价使用</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultBasePriceUsingaCost" xml:space="preserve">
+    <value>默认基价使用一个成本</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultSalePriceUsingaCost" xml:space="preserve">
+    <value>默认售价使用一个成本</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="CostPlusAmount" xml:space="preserve">
+    <value>成本加金额</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="ExchangeRateMessage" xml:space="preserve">
+    <value>该币种没有汇率。</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="LogicalLocationMessage" xml:space="preserve">
+    <value>地点代码&quot;{0}&quot;指向一个逻辑地点，不能在此指定。逻辑地点仅可以用于存货控制转移。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InActiveMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot;不是活动的。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvalidLocationDetailMessage" xml:space="preserve">
+    <value>无法为货品&quot;{1}&quot;找到地点&quot;{0}&quot;。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvalidLocationDetailMessage1" xml:space="preserve">
+    <value>无法找到地点明细记录。价格将被设为零。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LocationMessage" xml:space="preserve">
+    <value>尚未输入{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ItemPrice" xml:space="preserve">
+    <value>货品价格</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>添加了新的{0} &quot;{1}&quot;, &quot;{2}&quot;, &quot;{3}&quot;。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="IC0480" xml:space="preserve">
+    <value>货品定价</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="IC0481" xml:space="preserve">
+    <value>定价价格检查</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="IC0482" xml:space="preserve">
+    <value>货品定价明细</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="IC0490" xml:space="preserve">
+    <value>价目表税务机构</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DateError" xml:space="preserve">
+    <value>销售截止日期必须迟于销售起始日期。</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="DefaultUnit" xml:space="preserve">
+    <value>默认单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="LastPriceChangeDate" xml:space="preserve">
+    <value>上一价格更改日期</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PreviousPrice" xml:space="preserve">
+    <value>前一价格</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="PriceDetailType" xml:space="preserve">
+    <value>价格明细类型</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="QuantityUnit" xml:space="preserve">
+    <value>数量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleEnd" xml:space="preserve">
+    <value>销售截止</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="SaleStart" xml:space="preserve">
+    <value>销售起始</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="TaxIncludedInPrice" xml:space="preserve">
+    <value>价格含税</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="WeightUnit" xml:space="preserve">
+    <value>重量单位</value>
+    <comment>Used In Finder/Export/Import</comment>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用户标识</value>
+  </data>
+  <data name="DeleteDefaultUnitMessage" xml:space="preserve">
+    <value>不能删除默认计量单位。</value>
+  </data>
+  <data name="NotAllowedLocationMessage" xml:space="preserve">
+    <value>货品不允许于这一地点。</value>
+  </data>
+  <data name="SaleDateValidationMessage" xml:space="preserve">
+    <value>销售截止日期必须迟于销售起始日期。</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot;, &quot;{2}&quot;, &quot;{3}&quot;中有未保存的更改。是否继续？</value>
+  </data>
+  <data name="CheckDefaultWUOM" xml:space="preserve">
+    <value>检查（按默认重量计量单位）</value>
+    <comment>List Label</comment>
+  </data>
+  <data name="MarkupAmountPricingUnits" xml:space="preserve">
+    <value>加成金额（定价单位）</value>
+    <comment>List Label</comment>
+  </data>
+</root>

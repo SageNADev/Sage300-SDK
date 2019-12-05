@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>存貨控制轉移</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="DetailZoomForm" xml:space="preserve">
+    <value>存貨控制轉移明細</value>
+    <comment>Modal Screen Title</comment>
+  </data>
+  <data name="TransferDate" xml:space="preserve">
+    <value>轉移日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProrationMethod" xml:space="preserve">
+    <value>攤配方法</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferQty" xml:space="preserve">
+    <value>轉移數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferUnit" xml:space="preserve">
+    <value>轉移單位</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ManualProration" xml:space="preserve">
+    <value>手動攤配</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedWeight" xml:space="preserve">
+    <value>總重量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>憑證日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromLoc" xml:space="preserve">
+    <value>從地點</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToLoc" xml:space="preserve">
+    <value>到地點</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GITLoc" xml:space="preserve">
+    <value>在途貨物地點</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnHand" xml:space="preserve">
+    <value>在手數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnSO" xml:space="preserve">
+    <value>銷售單上數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnPO" xml:space="preserve">
+    <value>採購訂單上的數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyAvailable" xml:space="preserve">
+    <value>可用數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StockingUOM" xml:space="preserve">
+    <value>庫存計量單位</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GITLocation" xml:space="preserve">
+    <value>在途貨物地點</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequestedQty" xml:space="preserve">
+    <value>要求數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceivedQty" xml:space="preserve">
+    <value>已進貨數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferedQty" xml:space="preserve">
+    <value>已轉移數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OutstandingQty" xml:space="preserve">
+    <value>未結清數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferedToDate" xml:space="preserve">
+    <value>累計轉移</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceivedToDate" xml:space="preserve">
+    <value>累計進貨</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>已完成</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptQty" xml:space="preserve">
+    <value>收貨數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptUnit" xml:space="preserve">
+    <value>進貨</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TranHdrOptFlds" xml:space="preserve">
+    <value>存貨控制轉移標頭自選欄位</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TranDtlOptFlds" xml:space="preserve">
+    <value>存貨控制轉移明細自選欄位</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferSlipPrinted" xml:space="preserve">
+    <value>轉移單已列印</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>過帳日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpectedArrivalDate" xml:space="preserve">
+    <value>預期到貨</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostInsufficentQty" xml:space="preserve">
+    <value>此一轉移將把&lt;從地點&gt;的產品數量減少到零以下。是否繼續？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DeleteTransfer" xml:space="preserve">
+    <value>是否確要刪除轉移{0}？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PostInsufficentGITQty" xml:space="preserve">
+    <value>此一轉移將把貨物在途地點的產品數量減少到零以下。是否繼續？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PromptToDeleteTransfer" xml:space="preserve">
+    <value>FF</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostedDoPrint" xml:space="preserve">
+    <value>是否列印轉移單？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="TransferNumberBalnk" xml:space="preserve">
+    <value>轉移編號不能為一個在途進貨編號空置。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FromTransferNumber" xml:space="preserve">
+    <value>從轉移編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromTransferSequenceNo" xml:space="preserve">
+    <value>從轉移序列編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0730" xml:space="preserve">
+    <value>轉移明細</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0733" xml:space="preserve">
+    <value>轉移明細批別編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0735" xml:space="preserve">
+    <value>交易明細自選欄位</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0738" xml:space="preserve">
+    <value>轉移明細系列編號</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0740" xml:space="preserve">
+    <value>轉移標頭</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0741" xml:space="preserve">
+    <value>轉移自選欄位</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="ConversionFactorQtyRequested" xml:space="preserve">
+    <value>要求數量轉換係數</value>
+    <comment>Transfer Details Field</comment>
+  </data>
+  <data name="FromTransferDetailLineNo" xml:space="preserve">
+    <value>從轉移明細行編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GLControlAmount" xml:space="preserve">
+    <value>總帳控制金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LineCompleted" xml:space="preserve">
+    <value>行已完成</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotQuantityReceived" xml:space="preserve">
+    <value>進貨的批別數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProratedAdditionalCost" xml:space="preserve">
+    <value>攤配的附加成本</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialQuantityReceived" xml:space="preserve">
+    <value>已接收系列數量</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialReceived" xml:space="preserve">
+    <value>已接收系列</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostInsufficentQtyError" xml:space="preserve">
+    <value>數量不夠，無法轉移。</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityTransferError" xml:space="preserve">
+    <value>轉移數量不能超過要求的數量。</value>
+    <comment>Error</comment>
+  </data>
+</root>

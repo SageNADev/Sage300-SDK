@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>活动</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>地址行1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>地址行2</value>
+    <comment>``</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>地址行3</value>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>地址行4</value>
+  </data>
+  <data name="APVendor" xml:space="preserve">
+    <value>应付帐款供应商</value>
+  </data>
+  <data name="AverageDaystoPay" xml:space="preserve">
+    <value>平均付款天数</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>银行代码</value>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>支票语言</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>市/县</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>联系人</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>联系人</value>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>联系人电邮</value>
+  </data>
+  <data name="ContactsFax" xml:space="preserve">
+    <value>联系人传真</value>
+  </data>
+  <data name="ContactsPhone" xml:space="preserve">
+    <value>联系人电话</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>国家</value>
+  </data>
+  <data name="CPRSCode" xml:space="preserve">
+    <value>1099/CPRS代码</value>
+  </data>
+  <data name="CPRSCodeDescription" xml:space="preserve">
+    <value>1099/CPRS代码描述</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="CreditLimit" xml:space="preserve">
+    <value>信贷限额</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>币种描述</value>
+  </data>
+  <data name="DeliveryMethod" xml:space="preserve">
+    <value>送交方法</value>
+  </data>
+  <data name="DistribitionCodeDescription" xml:space="preserve">
+    <value>分布代码描述</value>
+  </data>
+  <data name="DistributeBy" xml:space="preserve">
+    <value>分布按</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>分布集合</value>
+  </data>
+  <data name="DistributionSetDescription" xml:space="preserve">
+    <value>分布集合描述</value>
+  </data>
+  <data name="DuplicateInvoiceChecking" xml:space="preserve">
+    <value>重复发票检查</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>电邮</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>传真</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>传真</value>
+  </data>
+  <data name="GenSepPmntForEachInv" xml:space="preserve">
+    <value>对各个发票分别生成付款</value>
+  </data>
+  <data name="GroupCode" xml:space="preserve">
+    <value>群组代码</value>
+  </data>
+  <data name="GroupCodeDescription" xml:space="preserve">
+    <value>群组代码描述</value>
+  </data>
+  <data name="InactiveAsOf" xml:space="preserve">
+    <value>闲置（至日期）</value>
+  </data>
+  <data name="Invoicing" xml:space="preserve">
+    <value>开发票</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>上一维护日期</value>
+  </data>
+  <data name="LegalName" xml:space="preserve">
+    <value>法定名称</value>
+  </data>
+  <data name="NumberofPayments" xml:space="preserve">
+    <value>付款次数</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>搁置</value>
+  </data>
+  <data name="OpenInvoiceCount" xml:space="preserve">
+    <value>开放发票计数</value>
+  </data>
+  <data name="OpenInvoiceCountOut" xml:space="preserve">
+    <value>开放发票清点</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="OutstandingBalance" xml:space="preserve">
+    <value>未结清余额</value>
+  </data>
+  <data name="OutstandingRetainage" xml:space="preserve">
+    <value>未结保留款</value>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>付款代码</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="PrepaymentAmount" xml:space="preserve">
+    <value>预付款金额</value>
+  </data>
+  <data name="PrepaymentCount" xml:space="preserve">
+    <value>预付款计数</value>
+  </data>
+  <data name="PrimaryRemitTo" xml:space="preserve">
+    <value>主汇款至</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>处理</value>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>汇率类型</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>汇率类型描述</value>
+  </data>
+  <data name="RegistrationNumber" xml:space="preserve">
+    <value>注册编号</value>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>保留款百分比</value>
+  </data>
+  <data name="RetainageTerms" xml:space="preserve">
+    <value>保留款条款</value>
+  </data>
+  <data name="RetentionPeriodDays" xml:space="preserve">
+    <value>留存期间（天）</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>简称</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>起始日期</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>省/市/区</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>统计</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>税务机构</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>税级</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>税务代码</value>
+  </data>
+  <data name="TaxCodeDescription" xml:space="preserve">
+    <value>税务代码描述</value>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>税组</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>税组描述</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>已含税</value>
+  </data>
+  <data name="TaxNumber" xml:space="preserve">
+    <value>税务编号</value>
+  </data>
+  <data name="TaxReporting" xml:space="preserve">
+    <value>税务报告</value>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>条款代码</value>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>条款代码描述</value>
+  </data>
+  <data name="TotalDaystoPay" xml:space="preserve">
+    <value>合计付款天数</value>
+  </data>
+  <data name="TotalInvoicesPaid" xml:space="preserve">
+    <value>合计已付发票</value>
+  </data>
+  <data name="VendorAccountStatus" xml:space="preserve">
+    <value>供应商科目状态</value>
+  </data>
+  <data name="VendorAndAmount" xml:space="preserve">
+    <value>供应商和金额</value>
+  </data>
+  <data name="VendorAndDate" xml:space="preserve">
+    <value>供应商和日期</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供应商名称</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供应商编号</value>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>网站</value>
+  </data>
+  <data name="ZeroAmountChecking" xml:space="preserve">
+    <value>零金额检查</value>
+  </data>
+  <data name="AmountRetainedFuncCurr" xml:space="preserve">
+    <value>留存金额－功能币种</value>
+  </data>
+  <data name="AmountRetainedVendCurr" xml:space="preserve">
+    <value>留存金额－供应商币种</value>
+  </data>
+  <data name="AmountWithCurrency" xml:space="preserve">
+    <value>有币种金额</value>
+  </data>
+  <data name="AmountWithoutCurrency" xml:space="preserve">
+    <value>无币种金额</value>
+  </data>
+  <data name="ApVersion" xml:space="preserve">
+    <value>应用程序版本</value>
+  </data>
+  <data name="AveragePayment" xml:space="preserve">
+    <value>平均付款</value>
+  </data>
+  <data name="BalanceDueinFunctionCurrency" xml:space="preserve">
+    <value>功能币种到期余额</value>
+  </data>
+  <data name="BalanceDueinVendorCurrency" xml:space="preserve">
+    <value>供应商币种到期余额</value>
+  </data>
+  <data name="CprsTaxNumber" xml:space="preserve">
+    <value>1099/CPRS税号</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客户编号</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>数据库</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>上一维护日期</value>
+  </data>
+  <data name="DateofHighestBalance" xml:space="preserve">
+    <value>最高余额日期</value>
+  </data>
+  <data name="DateofHighestBalanceLastYr" xml:space="preserve">
+    <value>去年最高余额日期</value>
+  </data>
+  <data name="DateofLargestInvoice" xml:space="preserve">
+    <value>最大发票日期</value>
+  </data>
+  <data name="DateofLargestInvoiceLastYr" xml:space="preserve">
+    <value>去年最大发票日期</value>
+  </data>
+  <data name="DateofLastActivity" xml:space="preserve">
+    <value>上一活动日期</value>
+  </data>
+  <data name="DateofLastAdjustment" xml:space="preserve">
+    <value>上一调整日期</value>
+  </data>
+  <data name="DateofLastCreditNote" xml:space="preserve">
+    <value>上一贷项通知单日期</value>
+  </data>
+  <data name="DateofLastDebitNote" xml:space="preserve">
+    <value>上一借项通知单日期</value>
+  </data>
+  <data name="DateofLastDiscount" xml:space="preserve">
+    <value>上一折扣日期</value>
+  </data>
+  <data name="DateofLastInvoice" xml:space="preserve">
+    <value>上一发票日期</value>
+  </data>
+  <data name="DateofLastPayment" xml:space="preserve">
+    <value>上一付款日期</value>
+  </data>
+  <data name="DateofLastRevaluation" xml:space="preserve">
+    <value>上一重估日期</value>
+  </data>
+  <data name="DaysRetained" xml:space="preserve">
+    <value>保留天数</value>
+  </data>
+  <data name="DistributionType" xml:space="preserve">
+    <value>分配类型</value>
+  </data>
+  <data name="DuplicateInvoiceCode" xml:space="preserve">
+    <value>重复的发票代码</value>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>总帐科目</value>
+  </data>
+  <data name="HighBalLastYearFunctionCurrency" xml:space="preserve">
+    <value>去年最高余额 - 功能币种</value>
+  </data>
+  <data name="HighBalLastYrVendCurrency" xml:space="preserve">
+    <value>去年最高余额 - 供应商币种</value>
+  </data>
+  <data name="HighestBalanceFunctionCurrency" xml:space="preserve">
+    <value>最高余额 - 功能币种</value>
+  </data>
+  <data name="HighestBalanceVendCurrency" xml:space="preserve">
+    <value>最高余额 - 供应商币种</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>闲置日期</value>
+  </data>
+  <data name="LargestInvestLastYearFunctionCurrency" xml:space="preserve">
+    <value>去年最大发票 - 功能币种</value>
+  </data>
+  <data name="LargestInvLastYrVendCurrency" xml:space="preserve">
+    <value>去年最大发票 - 供应商币种</value>
+  </data>
+  <data name="LargestInvoiceFunctionCurrency" xml:space="preserve">
+    <value>最大发票 - 功能币种</value>
+  </data>
+  <data name="LargestInvoiceVendCurrency" xml:space="preserve">
+    <value>最大发票 - 供应商币种</value>
+  </data>
+  <data name="LastAdjAmtFunctionCurrency" xml:space="preserve">
+    <value>上一调整金额 - 功能币种</value>
+  </data>
+  <data name="LastAdjAmtVendCurrency" xml:space="preserve">
+    <value>上一调整金额 - 供应商币种</value>
+  </data>
+  <data name="LastCrNoteAmtFunctionCurrency" xml:space="preserve">
+    <value>上一贷项通知单金额 - 功能币种</value>
+  </data>
+  <data name="LastDiscountAmtFunctionCurrency" xml:space="preserve">
+    <value>上一折扣金额 - 功能币种</value>
+  </data>
+  <data name="LastDiscountAmtVendCurrency" xml:space="preserve">
+    <value>上一折扣金额 - 供应商币种</value>
+  </data>
+  <data name="LastDrNoteAmtFunctionCurrency" xml:space="preserve">
+    <value>上一借项通知单金额 - 功能币种</value>
+  </data>
+  <data name="LastDrNoteAmtVendCurrency" xml:space="preserve">
+    <value>上一借项通知单金额 - 供应商币种</value>
+  </data>
+  <data name="LastInvoiceAmtVendCurrency" xml:space="preserve">
+    <value>上一发票金额 - 供应商币种</value>
+  </data>
+  <data name="LastPaymentFunctionCurrency" xml:space="preserve">
+    <value>上一付款 - 功能币种</value>
+  </data>
+  <data name="LastPaymentVendCurrency" xml:space="preserve">
+    <value>上一付款 - 供应商币种</value>
+  </data>
+  <data name="LastRevaluationBalance" xml:space="preserve">
+    <value>上一重估余额</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>模式</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="NumberofDaystoPay" xml:space="preserve">
+    <value>付款天数</value>
+  </data>
+  <data name="NumberofLargestInvoice" xml:space="preserve">
+    <value>金额最大发票数</value>
+  </data>
+  <data name="NumberofLargestInvoiceLastY" xml:space="preserve">
+    <value>去年最大发票数目</value>
+  </data>
+  <data name="NumberofOpenInvoices" xml:space="preserve">
+    <value>未结清发票数</value>
+  </data>
+  <data name="NumberofPaidInvoices" xml:space="preserve">
+    <value>已付发票数</value>
+  </data>
+  <data name="NumberofPrepaidInvoices" xml:space="preserve">
+    <value>预付发票数</value>
+  </data>
+  <data name="PercentRetained" xml:space="preserve">
+    <value>保留百分比</value>
+  </data>
+  <data name="PrimaryRemitToLocation" xml:space="preserve">
+    <value>主汇款至地点</value>
+  </data>
+  <data name="PrintSeparateChecks" xml:space="preserve">
+    <value>分别打印支票</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>处理指令代码</value>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>保留款条款代码</value>
+  </data>
+  <data name="SubjectToWithHold" xml:space="preserve">
+    <value>有待搁置</value>
+  </data>
+  <data name="SuppressIntegration" xml:space="preserve">
+    <value>抑制整合</value>
+  </data>
+  <data name="TaxClassCode1" xml:space="preserve">
+    <value>税级代码1</value>
+  </data>
+  <data name="TaxClassCode2" xml:space="preserve">
+    <value>税级代码2</value>
+  </data>
+  <data name="TaxClassCode3" xml:space="preserve">
+    <value>税级代码3</value>
+  </data>
+  <data name="TaxClassCode4" xml:space="preserve">
+    <value>税级代码4</value>
+  </data>
+  <data name="TaxClassCode5" xml:space="preserve">
+    <value>税级代码5</value>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>已含税1</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>已含税2</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>已含税3</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>已含税4</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>已含税5</value>
+  </data>
+  <data name="TaxRegistrationCode1" xml:space="preserve">
+    <value>税务登记代码1</value>
+  </data>
+  <data name="TaxRegistrationCode2" xml:space="preserve">
+    <value>税务登记代码2</value>
+  </data>
+  <data name="TaxRegistrationCode3" xml:space="preserve">
+    <value>税务登记代码3</value>
+  </data>
+  <data name="TaxRegistrationCode4" xml:space="preserve">
+    <value>税务登记代码4</value>
+  </data>
+  <data name="TaxRegistrationCode5" xml:space="preserve">
+    <value>税务登记代码5</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>条款</value>
+  </data>
+  <data name="TotalInvoicesPaidFunctionCurrency" xml:space="preserve">
+    <value>合计已付发票 - 功能币种</value>
+  </data>
+  <data name="TotalInvoicesPaidVendorCurrency" xml:space="preserve">
+    <value>合计已付发票 - 供应商币种</value>
+  </data>
+  <data name="TotalNumberofPayments" xml:space="preserve">
+    <value>付款数合计</value>
+  </data>
+  <data name="TotalPrepaidInvoiceFunctionCurrency" xml:space="preserve">
+    <value>合计应付发票功能币种</value>
+  </data>
+  <data name="TotalPrepaidInvoiceVendCurrency" xml:space="preserve">
+    <value>合计应付发票供应商币种</value>
+  </data>
+  <data name="VendorOptionalFieldValues" xml:space="preserve">
+    <value>供应商可选字段值</value>
+  </data>
+  <data name="Zero1099AmountWarning" xml:space="preserve">
+    <value>零 1099 金额警告</value>
+  </data>
+  <data name="ParticipantId" xml:space="preserve">
+    <value>参加者标识</value>
+  </data>
+  <data name="LastCrNoteAmtVendCurrency" xml:space="preserve">
+    <value>上一贷项通知单金额 - 供应商币种</value>
+  </data>
+  <data name="LastInvoiceAmtFunctionCurrency" xml:space="preserve">
+    <value>上一发票金额 - 功能币种</value>
+  </data>
+  <data name="NextClientUniqueID" xml:space="preserve">
+    <value>下一客户唯一标识</value>
+  </data>
+  <data name="AP0015" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="AP0407" xml:space="preserve">
+    <value>供应商可选字段值</value>
+  </data>
+  <data name="HighBalLastYrFuncCurr" xml:space="preserve">
+    <value>去年最高余额 - 功能币种</value>
+  </data>
+  <data name="HighBalLastYrVendCurr" xml:space="preserve">
+    <value>去年最高余额 - 供应商币种</value>
+  </data>
+  <data name="HighestBalanceFuncCurr" xml:space="preserve">
+    <value>最高余额 - 功能币种</value>
+  </data>
+  <data name="HighestBalanceVendCurr" xml:space="preserve">
+    <value>最高余额 - 供应商币种</value>
+  </data>
+  <data name="LargestInvoiceFuncCurr" xml:space="preserve">
+    <value>最大发票 - 功能币种</value>
+  </data>
+  <data name="LargestInvoiceVendCurr" xml:space="preserve">
+    <value>最大发票 - 供应商币种</value>
+  </data>
+  <data name="LargInvLastYrFuncCurr" xml:space="preserve">
+    <value>去年最大发票 - 功能币种</value>
+  </data>
+  <data name="LargInvLastYrVendCurr" xml:space="preserve">
+    <value>去年最大发票 - 供应商币种</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="ExchangeGain" xml:space="preserve">
+    <value>汇兑收益</value>
+  </data>
+  <data name="ExchangeLoss" xml:space="preserve">
+    <value>汇兑损失</value>
+  </data>
+  <data name="ExpenseTax" xml:space="preserve">
+    <value>计费税款</value>
+  </data>
+  <data name="ExternalCostTransactions" xml:space="preserve">
+    <value>外部成本交易</value>
+  </data>
+  <data name="MiscellaneousPayment" xml:space="preserve">
+    <value>杂项付款</value>
+  </data>
+  <data name="PayablesControl" xml:space="preserve">
+    <value>应付款控制</value>
+  </data>
+  <data name="PurchaseDiscount" xml:space="preserve">
+    <value>采购折扣</value>
+  </data>
+  <data name="RecoverableTax" xml:space="preserve">
+    <value>可退回税</value>
+  </data>
+  <data name="TypedDefaultValueFieldIndex" xml:space="preserve">
+    <value>键入的默认值字段索引</value>
+  </data>
+  <data name="UnrealizedExchangeGain" xml:space="preserve">
+    <value>未实现汇兑收益</value>
+  </data>
+  <data name="UnrealizedExchangeLoss" xml:space="preserve">
+    <value>未实现汇兑损失</value>
+  </data>
+  <data name="TaxReportingCurMisMatch" xml:space="preserve">
+    <value>税组{0}有一个税务报告币种{1}不同于科目集合币种{2}。</value>
+  </data>
+  <data name="VendorCurrencyMismatch" xml:space="preserve">
+    <value>无法更改到科目集合{0}。您只能更改到与供应商当前科目集合有相同币种代码的科目集合。</value>
+  </data>
+  <data name="HighestBalanceLastYear" xml:space="preserve">
+    <value>上年度最高余额</value>
+  </data>
+  <data name="HighestBalanceThisYear" xml:space="preserve">
+    <value>本年度最高金额</value>
+  </data>
+  <data name="LargestInvoiceLastYear" xml:space="preserve">
+    <value>上年度最大发票</value>
+  </data>
+  <data name="LargestInvoiceThisYear" xml:space="preserve">
+    <value>本年度最大发票</value>
+  </data>
+  <data name="LastAdjustment" xml:space="preserve">
+    <value>上一调整</value>
+  </data>
+  <data name="LastCreditNote" xml:space="preserve">
+    <value>上一贷项通知单</value>
+  </data>
+  <data name="LastDebitNote" xml:space="preserve">
+    <value>上一借项通知单</value>
+  </data>
+  <data name="LastDiscount" xml:space="preserve">
+    <value>上一折扣</value>
+  </data>
+  <data name="LastInvoice" xml:space="preserve">
+    <value>上一发票日期</value>
+  </data>
+  <data name="LastPayment" xml:space="preserve">
+    <value>上一付款</value>
+  </data>
+  <data name="LastRevaluation" xml:space="preserve">
+    <value>上一重估</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="AP0014" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="AP0019" xml:space="preserve">
+    <value>统计</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应付帐款供应商</value>
+  </data>
+  <data name="CompanyProfile" xml:space="preserve">
+    <value>公司概览</value>
+  </data>
+  <data name="TaxNote2Sw" xml:space="preserve">
+    <value>对SW的税务注释</value>
+  </data>
+  <data name="VendorLegalName" xml:space="preserve">
+    <value>供应商法定名称</value>
+  </data>
+  <data name="Comments10Of10" xml:space="preserve">
+    <value>备注10之10</value>
+  </data>
+  <data name="Comments1Of10" xml:space="preserve">
+    <value>备注10之1</value>
+  </data>
+  <data name="Comments2Of10" xml:space="preserve">
+    <value>备注10之2</value>
+  </data>
+  <data name="Comments3Of10" xml:space="preserve">
+    <value>备注10之3</value>
+  </data>
+  <data name="Comments4Of10" xml:space="preserve">
+    <value>备注10之4</value>
+  </data>
+  <data name="Comments5Of10" xml:space="preserve">
+    <value>备注10之5</value>
+  </data>
+  <data name="Comments6Of10" xml:space="preserve">
+    <value>备注10之6</value>
+  </data>
+  <data name="Comments7Of10" xml:space="preserve">
+    <value>备注10之7</value>
+  </data>
+  <data name="Comments8Of10" xml:space="preserve">
+    <value>备注10之8</value>
+  </data>
+  <data name="Comments9Of10" xml:space="preserve">
+    <value>备注10之9</value>
+  </data>
+  <data name="FollowupDate" xml:space="preserve">
+    <value>跟进日期</value>
+  </data>
+  <data name="ReverseCount" xml:space="preserve">
+    <value>回转计数</value>
+  </data>
+  <data name="CommentNumber" xml:space="preserve">
+    <value>备注编号</value>
+  </data>
+  <data name="BusinessRegistrationNumber" xml:space="preserve">
+    <value>商业注册号</value>
+  </data>
+  <data name="CreateNewContact" xml:space="preserve">
+    <value>创建新联系人</value>
+  </data>
+  <data name="ShowDocFor" xml:space="preserve">
+    <value>显示其凭证</value>
+  </data>
+  <data name="ViewContactDetails" xml:space="preserve">
+    <value>查看联系人明细</value>
+  </data>
+</root>

@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BatchReadyToPost" xml:space="preserve">
+    <value>批次已設為待過帳。您可以檢視批次內容，但您不能編輯日誌分錄。</value>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>建立新分錄</value>
+  </data>
+  <data name="CreditsC" xml:space="preserve">
+    <value>貸項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitsC" xml:space="preserve">
+    <value>借項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>總帳日誌分錄</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntriesC" xml:space="preserve">
+    <value>數目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryMode" xml:space="preserve">
+    <value>輸入模式</value>
+  </data>
+  <data name="EntryModeNormal" xml:space="preserve">
+    <value>正常分錄模式</value>
+  </data>
+  <data name="EntryModeQuick" xml:space="preserve">
+    <value>快速分錄模式</value>
+  </data>
+  <data name="JournalDetail" xml:space="preserve">
+    <value>日誌明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="JournalDetailClearConfirmation" xml:space="preserve">
+    <value>清除此一分錄的明細？</value>
+  </data>
+  <data name="JournalEntry" xml:space="preserve">
+    <value>日誌分錄</value>
+  </data>
+  <data name="QuantityC" xml:space="preserve">
+    <value>數量</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>迴轉批次？</value>
+  </data>
+  <data name="SourceCodeDescription" xml:space="preserve">
+    <value>來源代碼描述</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>值描述</value>
+  </data>
+  <data name="SourceCodeErrorMessage" xml:space="preserve">
+    <value>無法找到來源代碼&quot;{0}-{1}&quot;。</value>
+  </data>
+  <data name="JournalBatch" xml:space="preserve">
+    <value>日誌批次</value>
+  </data>
+  <data name="JournalHeader" xml:space="preserve">
+    <value>日誌標題</value>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>新建批次</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>批次編號</value>
+  </data>
+  <data name="NoOfErrors" xml:space="preserve">
+    <value>錯誤數目</value>
+  </data>
+  <data name="QuantityTotal" xml:space="preserve">
+    <value>數量合計</value>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>來源分類帳</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="AutoReverse" xml:space="preserve">
+    <value>自動迴轉</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>批次</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>過帳日期</value>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>分錄編號</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>原始</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>原始含首碼</value>
+  </data>
+  <data name="Originator" xml:space="preserve">
+    <value>始發者</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>來源代碼</value>
+  </data>
+  <data name="Destination" xml:space="preserve">
+    <value>目的地</value>
+  </data>
+  <data name="OutofBalanceBy" xml:space="preserve">
+    <value>差額</value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>分錄描述</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>過帳序列</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>匯率日期</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>路線編號</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>年度/期間</value>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>科目描述</value>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>批次描述</value>
+  </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>建立迴轉批次</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>貸項</value>
+  </data>
+  <data name="AcctFormatted" xml:space="preserve">
+    <value>科目格式化</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="AcctUnitofMeasure" xml:space="preserve">
+    <value>科目計量單位</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>建立的迴轉分錄編號</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="CurrencyRateDateMatching" xml:space="preserve">
+    <value>幣別匯率日期匹配</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateOperator" xml:space="preserve">
+    <value>幣別匯率運算子</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateTable" xml:space="preserve">
+    <value>匯率類型</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="EntryPeriod" xml:space="preserve">
+    <value>分錄期間</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="EntryYear" xml:space="preserve">
+    <value>分錄年度</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="HomeCurrency" xml:space="preserve">
+    <value>本位幣別</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>新描述</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="RouteDescription" xml:space="preserve">
+    <value>路線描述</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SourceCurrencyDecimals" xml:space="preserve">
+    <value>來源幣別小數位數</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SpecificReversalPeriod" xml:space="preserve">
+    <value>特定迴轉期間</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="SpecificReversalYear" xml:space="preserve">
+    <value>特定迴轉年度</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>自選欄位描述</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="OrigDescription" xml:space="preserve">
+    <value>原始描述</value>
+    <comment>Added this for display in JournalEntry model</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>文本值</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易編號</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>借項</value>
+  </data>
+  <data name="FunctionalCredit" xml:space="preserve">
+    <value>功能幣別貸項</value>
+  </data>
+  <data name="FunctionalDebit" xml:space="preserve">
+    <value>功能幣別借項</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>參考</value>
+  </data>
+  <data name="SourceCredit" xml:space="preserve">
+    <value>來源幣別貸項</value>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>來源幣別</value>
+  </data>
+  <data name="SourceDebit" xml:space="preserve">
+    <value>來源幣別借項</value>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>來源類型</value>
+  </data>
+  <data name="GL0006" xml:space="preserve">
+    <value>日誌標頭</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0010" xml:space="preserve">
+    <value>日誌明細</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="DeletedBatch" xml:space="preserve">
+    <value>批次已被刪除所以無法編輯。</value>
+  </data>
+  <data name="CurrencySpreadRange" xml:space="preserve">
+    <value>輸入的匯率超出匯率表指定的差額範圍。</value>
+  </data>
+  <data name="BatchSummary" xml:space="preserve">
+    <value>批次彙總</value>
+  </data>
+  <data name="GL0402" xml:space="preserve">
+    <value>日誌明細自選欄位</value>
+    <comment>Used In Export Import</comment>
+  </data>
+  <data name="ActiveSwitch" xml:space="preserve">
+    <value>活動開關</value>
+  </data>
+  <data name="DateLastEdited" xml:space="preserve">
+    <value>上一編輯日期</value>
+  </data>
+  <data name="DeleteSwitch" xml:space="preserve">
+    <value>可供刪除開關</value>
+  </data>
+  <data name="EditSwitch" xml:space="preserve">
+    <value>可供編輯開關</value>
+  </data>
+  <data name="ICTRelated" xml:space="preserve">
+    <value>ICT相關</value>
+  </data>
+  <data name="NextEntryNumber" xml:space="preserve">
+    <value>下一分錄編號</value>
+  </data>
+  <data name="OriginalStatus" xml:space="preserve">
+    <value>原始狀態</value>
+  </data>
+  <data name="PostingSwitch" xml:space="preserve">
+    <value>可供過帳開關</value>
+  </data>
+  <data name="PrintingSwitch" xml:space="preserve">
+    <value>可供列印開關</value>
+  </data>
+  <data name="RevaluationRecognizedBatch" xml:space="preserve">
+    <value>重評價(已確認)批次</value>
+  </data>
+  <data name="NumberOfDecimalsForQty" xml:space="preserve">
+    <value>數量小數位數</value>
+  </data>
+  <data name="NumberOfEntries" xml:space="preserve">
+    <value>分錄數目</value>
+  </data>
+  <data name="ProvisionalPostSwitch" xml:space="preserve">
+    <value>預過帳合格開關</value>
+  </data>
+  <data name="AcctControlSwitch" xml:space="preserve">
+    <value>科目控制開關</value>
+  </data>
+  <data name="AcctExists" xml:space="preserve">
+    <value>科目存在</value>
+  </data>
+  <data name="AcctMulticurrencySwitch" xml:space="preserve">
+    <value>科目多幣別開關</value>
+  </data>
+  <data name="AcctOptionalFlds" xml:space="preserve">
+    <value>科目自選欄位</value>
+  </data>
+  <data name="AcctQtySwitch" xml:space="preserve">
+    <value>科目數量開關</value>
+  </data>
+  <data name="AcctSpecificCurrenciesSwitch" xml:space="preserve">
+    <value>科目特定幣別開關</value>
+  </data>
+  <data name="AcctStatus" xml:space="preserve">
+    <value>科目狀態</value>
+  </data>
+  <data name="AcctTransactionOptionalFlds" xml:space="preserve">
+    <value>科目交易自選欄位</value>
+  </data>
+  <data name="CompanyId" xml:space="preserve">
+    <value>公司代號</value>
+  </data>
+  <data name="CurrencyRateSpread" xml:space="preserve">
+    <value>幣別匯率差額</value>
+  </data>
+  <data name="DestExists" xml:space="preserve">
+    <value>目的地存在</value>
+  </data>
+  <data name="DestHomeCurrencyDecimals" xml:space="preserve">
+    <value>目的地本位幣別小數位數</value>
+  </data>
+  <data name="DestMulticurrencySwitch" xml:space="preserve">
+    <value>科目多幣別開關</value>
+  </data>
+  <data name="DestOptionalFlds" xml:space="preserve">
+    <value>目的地自選欄位</value>
+  </data>
+  <data name="DestQtyDecimals" xml:space="preserve">
+    <value>目的地數量小數位數</value>
+  </data>
+  <data name="DestQtySwitch" xml:space="preserve">
+    <value>目的地數量開關</value>
+  </data>
+  <data name="DestStatus" xml:space="preserve">
+    <value>目的地狀態</value>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>下鑽應用程式來源</value>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>下鑽連結編號</value>
+  </data>
+  <data name="DrillDownNumber" xml:space="preserve">
+    <value>下鑽編號</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>下鑽類型</value>
+  </data>
+  <data name="ErrorBatch" xml:space="preserve">
+    <value>錯誤批次</value>
+  </data>
+  <data name="ErrorEntry" xml:space="preserve">
+    <value>錯誤分錄</value>
+  </data>
+  <data name="NumberofDetails" xml:space="preserve">
+    <value>明細數目</value>
+  </data>
+  <data name="OrigExists" xml:space="preserve">
+    <value>原始存在</value>
+  </data>
+  <data name="OrigHomeCurrencyDecimals" xml:space="preserve">
+    <value>原始本位幣別小數位數</value>
+  </data>
+  <data name="OrigMulticurrencySwitch" xml:space="preserve">
+    <value>原始多幣別開關</value>
+  </data>
+  <data name="OrigQtyDecimals" xml:space="preserve">
+    <value>原始數量小數位數</value>
+  </data>
+  <data name="OrigQtySwitch" xml:space="preserve">
+    <value>原始數量開關</value>
+  </data>
+  <data name="OrigStatus" xml:space="preserve">
+    <value>原始狀態</value>
+  </data>
+  <data name="Processswitches" xml:space="preserve">
+    <value>處理開關</value>
+  </data>
+  <data name="RouteExists" xml:space="preserve">
+    <value>路線存在</value>
+  </data>
+  <data name="RouteStatus" xml:space="preserve">
+    <value>路線狀態</value>
+  </data>
+  <data name="SourceCodeExists" xml:space="preserve">
+    <value>來源代碼存在</value>
+  </data>
+  <data name="SourceCodeExists1" xml:space="preserve">
+    <value>來源代碼存在</value>
+  </data>
+  <data name="SourceCurrencyAmount" xml:space="preserve">
+    <value>來源幣別金額</value>
+  </data>
+  <data name="SpecificReversalPeriod1" xml:space="preserve">
+    <value>特定迴轉期間</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已設</value>
+  </data>
+  <data name="DrillDown" xml:space="preserve">
+    <value>下鑽到來源交易</value>
+    <comment>Drill Down button tooltip</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>憑證日期</value>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>輸入者</value>
+  </data>
+</root>

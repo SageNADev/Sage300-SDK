@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>销售订单发票分录</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnItemTax" xml:space="preserve">
+    <value>货品/税务</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemTaxClass" xml:space="preserve">
+    <value>货品税级</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceNotExist" xml:space="preserve">
+    <value>发票不存在。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FrmDetailZoom" xml:space="preserve">
+    <value>货品/税务－销售订单发票分录</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>发票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidInvoiceNumber" xml:space="preserve">
+    <value>货品编号不存在。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxCalculation" xml:space="preserve">
+    <value>这一发票的客户或货品税级无效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidShipmentNumber" xml:space="preserve">
+    <value>发运编号%1不存在。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvPostingFailed" xml:space="preserve">
+    <value>过帐失败。您必须再次输入发票。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingFailedWithSPSCharge" xml:space="preserve">
+    <value>过帐失败。一个信用卡付款已在Sage Payment Solutions中为这一发票进行了处理。登录到Sage Virtual Terminal复查交易状态。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromMultipleShipments" xml:space="preserve">
+    <value>从多个发货</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateInvoiceFromShipments" xml:space="preserve">
+    <value>从发货创建发票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OEPrepayments" xml:space="preserve">
+    <value>销售订单发票预付款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentNo" xml:space="preserve">
+    <value>发货编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceDtlOptFlds" xml:space="preserve">
+    <value>销售订单发票明细可选字段</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceWeightUOM" xml:space="preserve">
+    <value>发票重量计量单位</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>过帐日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExcludeShipFromInvoice" xml:space="preserve">
+    <value>是否确要从发票中排除这一发货？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReplaceInvoiceDetails" xml:space="preserve">
+    <value>是否用发运{0}中的信息代替输入的发票信息？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveInvoice" xml:space="preserve">
+    <value>是否过帐这一发票？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>是否确要删除发票%1？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostDone" xml:space="preserve">
+    <value>过帐已完成。发票编号：{0}。是否打印该发票？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostDoneNoPrint" xml:space="preserve">
+    <value>过帐已完成。发票编号：{0}。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceNegInventory" xml:space="preserve">
+    <value>发货将减少这一地点的货品数量到零以下。是否继续？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceNegInventoryForKit" xml:space="preserve">
+    <value>发票将把这一地点至少一个部件的货品数量减少到零以下。是否继续？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentDiscountable" xml:space="preserve">
+    <value>可折扣</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>输入者</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CompletionDate" xml:space="preserve">
+    <value>完成日期</value>
+  </data>
+  <data name="DocumentDiscountBaseWithTax" xml:space="preserve">
+    <value>凭证有税折扣基数</value>
+  </data>
+  <data name="DocumentDiscountBasewoTax" xml:space="preserve">
+    <value>凭证无税折扣基数</value>
+  </data>
+  <data name="ForceTaxCalculation" xml:space="preserve">
+    <value>强制税务计算</value>
+  </data>
+  <data name="FreeOnBoardPoint" xml:space="preserve">
+    <value>离岸价格点</value>
+  </data>
+  <data name="FromHowManyShipments" xml:space="preserve">
+    <value>从多少发货</value>
+  </data>
+  <data name="GenerateInvFromMultShips" xml:space="preserve">
+    <value>从多个发运中生成发票</value>
+  </data>
+  <data name="GenerateInvFromSingleShip" xml:space="preserve">
+    <value>从单一发运中生成发票</value>
+  </data>
+  <data name="GOCALCTAX" xml:space="preserve">
+    <value>计算税费</value>
+  </data>
+  <data name="ICDayEndTransNumber" xml:space="preserve">
+    <value>存货控制日终处理交易编号</value>
+  </data>
+  <data name="InvoiceAmountDue" xml:space="preserve">
+    <value>发票到期金额</value>
+  </data>
+  <data name="InvoiceDisconMiscCharges" xml:space="preserve">
+    <value>杂项收费发票折扣</value>
+  </data>
+  <data name="InvoiceDiscountAmount" xml:space="preserve">
+    <value>发票折扣金额</value>
+  </data>
+  <data name="InvoiceDiscountAmountOverride" xml:space="preserve">
+    <value>发票折扣金额撤换</value>
+  </data>
+  <data name="InvoiceDiscountBase" xml:space="preserve">
+    <value>发票折扣基数</value>
+  </data>
+  <data name="InvoiceDiscountPercentage" xml:space="preserve">
+    <value>发票折扣百分比</value>
+  </data>
+  <data name="InvoiceExcludedTaxTotAmount" xml:space="preserve">
+    <value>发票未含税合计金额</value>
+  </data>
+  <data name="InvoiceFiscalYear" xml:space="preserve">
+    <value>发票财务年度</value>
+  </data>
+  <data name="InvoiceIncludedTaxTotalAmount" xml:space="preserve">
+    <value>发票已含税合计金额</value>
+  </data>
+  <data name="InvoiceItemTotalAmount" xml:space="preserve">
+    <value>发票货品总金额</value>
+  </data>
+  <data name="InvoicePaymentDiscount" xml:space="preserve">
+    <value>发票付款折扣</value>
+  </data>
+  <data name="InvoicePaymntInCustomerCurr" xml:space="preserve">
+    <value>以客户币种表示的发票付款</value>
+  </data>
+  <data name="InvoiceRunningTotal" xml:space="preserve">
+    <value>发票运行合计</value>
+  </data>
+  <data name="InvoiceSubtotalAmount" xml:space="preserve">
+    <value>发票金额小计</value>
+  </data>
+  <data name="InvoiceTotalBeforeTax" xml:space="preserve">
+    <value>税前发票合计</value>
+  </data>
+  <data name="InvoiceTotalEstimatedWeight" xml:space="preserve">
+    <value>发票预估重量合计</value>
+  </data>
+  <data name="InvoiceTotalMiscCharges" xml:space="preserve">
+    <value>发票杂项收费合计</value>
+  </data>
+  <data name="InvoiceTotalWithInvoiceDisc" xml:space="preserve">
+    <value>含发票折扣发票合计</value>
+  </data>
+  <data name="InvoiceTotalWithTax" xml:space="preserve">
+    <value>发票含税合计</value>
+  </data>
+  <data name="LocationCodeDescription" xml:space="preserve">
+    <value>地点描述</value>
+  </data>
+  <data name="NumberOfLinesInInvoice" xml:space="preserve">
+    <value>发票行号</value>
+  </data>
+  <data name="NumberOfTermsPayments" xml:space="preserve">
+    <value>分期付款数目</value>
+  </data>
+  <data name="OEPendingBalance" xml:space="preserve">
+    <value>销售订单待处理余额</value>
+  </data>
+  <data name="PaymentHomeCurrencyDesc" xml:space="preserve">
+    <value>付款本位币种描述</value>
+  </data>
+  <data name="PaymentSchedules" xml:space="preserve">
+    <value>付款排程</value>
+  </data>
+  <data name="PaymentSourceCurrencyDesc" xml:space="preserve">
+    <value>付款来源币种描述</value>
+  </data>
+  <data name="PerformCreditLimitCheck" xml:space="preserve">
+    <value>执行信贷限额检查</value>
+  </data>
+  <data name="POSTDATE" xml:space="preserve">
+    <value>过帐日期</value>
+  </data>
+  <data name="PrepaymentBankCode" xml:space="preserve">
+    <value>预付款银行代码</value>
+  </data>
+  <data name="PrepaymentBatchNumber" xml:space="preserve">
+    <value>预付款批次编号</value>
+  </data>
+  <data name="PrepaymentCheckDate" xml:space="preserve">
+    <value>预付款支票日期</value>
+  </data>
+  <data name="PrepaymentCheckNumber" xml:space="preserve">
+    <value>预付款支票编号</value>
+  </data>
+  <data name="PrepaymentDateMatch" xml:space="preserve">
+    <value>预付款日期匹配</value>
+  </data>
+  <data name="PrepaymentFiscalPeriod" xml:space="preserve">
+    <value>预付款财务期间</value>
+  </data>
+  <data name="PrepaymentFiscalYear" xml:space="preserve">
+    <value>预付款财务年度</value>
+  </data>
+  <data name="PrepaymentHomeCurrency" xml:space="preserve">
+    <value>本位币种预付款</value>
+  </data>
+  <data name="PrepaymentInBankCurrency" xml:space="preserve">
+    <value>银行币种预付款</value>
+  </data>
+  <data name="PrepaymentRate" xml:space="preserve">
+    <value>预付款汇率</value>
+  </data>
+  <data name="PrepaymentRateDate" xml:space="preserve">
+    <value>预付款汇率日期</value>
+  </data>
+  <data name="PrepaymentRateOperator" xml:space="preserve">
+    <value>预付款汇率运算符</value>
+  </data>
+  <data name="PrepaymentRateType" xml:space="preserve">
+    <value>预付款汇率类型</value>
+  </data>
+  <data name="PrepaymentReceiptType" xml:space="preserve">
+    <value>预付款收款类型</value>
+  </data>
+  <data name="PrepaymentSourceCurrency" xml:space="preserve">
+    <value>预付款来源币种</value>
+  </data>
+  <data name="PrepaymentSpread" xml:space="preserve">
+    <value>预付款误差</value>
+  </data>
+  <data name="PriceListCode" xml:space="preserve">
+    <value>价目表代码</value>
+  </data>
+  <data name="PriceListCodeDescription" xml:space="preserve">
+    <value>价目表描述</value>
+  </data>
+  <data name="RecalcMultiPaymentDates" xml:space="preserve">
+    <value>重新计算多个付款日期</value>
+  </data>
+  <data name="RECALCTAX" xml:space="preserve">
+    <value>重新计算税费</value>
+  </data>
+  <data name="RequiresShippingLabels" xml:space="preserve">
+    <value>要求发货标签</value>
+  </data>
+  <data name="ShipmentPaymentsTotal" xml:space="preserve">
+    <value>发货付款合计</value>
+  </data>
+  <data name="ShippingLabelsPrinted" xml:space="preserve">
+    <value>发货标签已打印</value>
+  </data>
+  <data name="ShipViaCodeDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="TaxGroupCodeDescription" xml:space="preserve">
+    <value>税组描述</value>
+  </data>
+  <data name="TaxReportingShipmentTRCurr" xml:space="preserve">
+    <value>税务报告发货（TR）币种</value>
+  </data>
+  <data name="TaxVersion" xml:space="preserve">
+    <value>税务版本</value>
+  </data>
+  <data name="TermsPaymentsAsOfDate" xml:space="preserve">
+    <value>日期条件付款</value>
+  </data>
+  <data name="TermsRateOverride" xml:space="preserve">
+    <value>条件汇率撤换</value>
+  </data>
+  <data name="TotalTermsAmountDue" xml:space="preserve">
+    <value>条款到期金额合计</value>
+  </data>
+  <data name="TRShipmentCurrencyDescription" xml:space="preserve">
+    <value>税务报告发货币种描述</value>
+  </data>
+  <data name="TRShipmentRate" xml:space="preserve">
+    <value>税务报告发货汇率</value>
+  </data>
+  <data name="TRShipmentRateDate" xml:space="preserve">
+    <value>税务报告发货汇率日期</value>
+  </data>
+  <data name="TRShipmentRateDateMatching" xml:space="preserve">
+    <value>税务报告发货汇率日期匹配</value>
+  </data>
+  <data name="TRShipmentRateOperator" xml:space="preserve">
+    <value>税务报告发货汇率运算符</value>
+  </data>
+  <data name="TRShipmentRateOverrideFlag" xml:space="preserve">
+    <value>税务报告发货汇率撤换旗标</value>
+  </data>
+  <data name="TRShipmentRateType" xml:space="preserve">
+    <value>税务报告发货汇率类型</value>
+  </data>
+  <data name="TRShipmentRateTypeDescription" xml:space="preserve">
+    <value>税务报告发货汇率类型描述</value>
+  </data>
+  <data name="TRShipmentSpread" xml:space="preserve">
+    <value>税务报告发货分布范围</value>
+  </data>
+  <data name="Allowpartialshipments" xml:space="preserve">
+    <value>运行部分发货</value>
+  </data>
+  <data name="CustomerDiscountLevel" xml:space="preserve">
+    <value>客户折扣等级</value>
+  </data>
+  <data name="DosConvert" xml:space="preserve">
+    <value>Dos转换</value>
+  </data>
+  <data name="GenerateFromMultipleShipments" xml:space="preserve">
+    <value>从多个发货生成</value>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>有保留款</value>
+  </data>
+  <data name="InvoiceFiscalPeriod" xml:space="preserve">
+    <value>发票财务期间</value>
+  </data>
+  <data name="InvoicePrinted" xml:space="preserve">
+    <value>发票已打印</value>
+  </data>
+  <data name="InvoiceStatus" xml:space="preserve">
+    <value>发票状态</value>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>作业相关</value>
+  </data>
+  <data name="NumberOfLabels" xml:space="preserve">
+    <value>标签数目</value>
+  </data>
+  <data name="PaymentRateTypeDescription" xml:space="preserve">
+    <value>付款汇率类型描述</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>付款类型</value>
+  </data>
+  <data name="PreAuthExistsForInvoice" xml:space="preserve">
+    <value>发票预授权已存在</value>
+  </data>
+  <data name="PrepaymentApplyTo" xml:space="preserve">
+    <value>预付款核销到</value>
+  </data>
+  <data name="ProcessOECommand" xml:space="preserve">
+    <value>处理销售订单指令</value>
+  </data>
+  <data name="ProcessOIPCommand" xml:space="preserve">
+    <value>处理OIP指令</value>
+  </data>
+  <data name="RetainageExchangeRate" xml:space="preserve">
+    <value>保留款汇率</value>
+  </data>
+  <data name="TaxAuthority1Description" xml:space="preserve">
+    <value>税务机构1描述</value>
+  </data>
+  <data name="TaxAuthority2Description" xml:space="preserve">
+    <value>税务机构2描述</value>
+  </data>
+  <data name="TaxAuthority3Description" xml:space="preserve">
+    <value>税务机构3描述</value>
+  </data>
+  <data name="TaxAuthority4Description" xml:space="preserve">
+    <value>税务机构4描述</value>
+  </data>
+  <data name="TaxAuthority5Description" xml:space="preserve">
+    <value>税务机构5描述</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>币种代码</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>汇率类型描述</value>
+  </data>
+  <data name="TaxReportingCurrency" xml:space="preserve">
+    <value>税务报告币种</value>
+  </data>
+  <data name="TaxReportingCurrencyDescription" xml:space="preserve">
+    <value>税务报告币种描述</value>
+  </data>
+  <data name="TaxReportingCurrInvoiceExchangeRate" xml:space="preserve">
+    <value>税务报告币种发票汇率</value>
+  </data>
+  <data name="TaxReportingCurrShipmentExchangeRate" xml:space="preserve">
+    <value>税务报告币种发货汇率</value>
+  </data>
+  <data name="BlankInvoiceNumberMsg" xml:space="preserve">
+    <value>发票编号不能空置</value>
+  </data>
+  <data name="MultipleShipments" xml:space="preserve">
+    <value>从发货创建发票</value>
+  </data>
+  <data name="ShipmentNoDoesNotExistsErrorMsg" xml:space="preserve">
+    <value>发运编号{0}不存在。</value>
+  </data>
+  <data name="HaveCommentsInstructions" xml:space="preserve">
+    <value>存在备注/指示</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ItemAccountSet" xml:space="preserve">
+    <value>货品科目集合</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingUnitPrice" xml:space="preserve">
+    <value>定价单价</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceApprovedBy" xml:space="preserve">
+    <value>价格核准人</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedPrice" xml:space="preserve">
+    <value>总价格</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemPricing" xml:space="preserve">
+    <value>货品定价</value>
+  </data>
+  <data name="ShipViaCode" xml:space="preserve">
+    <value>发运经由代码</value>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>币种汇率</value>
+  </data>
+  <data name="InvoiceDetails" xml:space="preserve">
+    <value>发票明细</value>
+  </data>
+  <data name="InvoiceNoNegativeDiscountPercent" xml:space="preserve">
+    <value>折扣百分比不能为负数。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceNoMoreThan100DiscountPercent" xml:space="preserve">
+    <value>折扣百分比必须小于或等于100%。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MiscCharges" xml:space="preserve">
+    <value>杂项收费</value>
+  </data>
+  <data name="CommentsInstructionsType" xml:space="preserve">
+    <value>备注/指示类型</value>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>明细编号</value>
+  </data>
+  <data name="InvoiceUniquifier" xml:space="preserve">
+    <value>发票唯一标识符</value>
+  </data>
+  <data name="LineUniquifier" xml:space="preserve">
+    <value>行唯一标识符</value>
+  </data>
+  <data name="CommentsInstructions" xml:space="preserve">
+    <value>备注/指示</value>
+  </data>
+  <data name="OE0160" xml:space="preserve">
+    <value>发票备注指示</value>
+  </data>
+  <data name="OE0400" xml:space="preserve">
+    <value>发票明细</value>
+  </data>
+  <data name="OE0401" xml:space="preserve">
+    <value>发票明细可选字段</value>
+  </data>
+  <data name="OE0406" xml:space="preserve">
+    <value>发票明细批别编号</value>
+  </data>
+  <data name="OE0407" xml:space="preserve">
+    <value>发票明细系列编号</value>
+  </data>
+  <data name="OE0420" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="OE0422" xml:space="preserve">
+    <value>发票可选字段</value>
+  </data>
+  <data name="OE0427" xml:space="preserve">
+    <value>多个发货到发票</value>
+  </data>
+  <data name="OE0720" xml:space="preserve">
+    <value>发票付款排程</value>
+  </data>
+</root>
