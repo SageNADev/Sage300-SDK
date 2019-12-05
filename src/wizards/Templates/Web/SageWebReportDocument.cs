@@ -1,20 +1,21 @@
 ﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
 
 using CrystalDecisions.CrystalReports.Engine;
-using Sage.CA.SBS.ERP.Sage300.Core.Interfaces;
 using System;
 
 namespace $companynamespace$.$applicationid$.Web
 {
     /// <summary>
-    /// A wrapper class or Crystal report document
+    /// A wrapper around the Crystal's ReportDocument. We had problem about ReportDocuments not being closed properly when 
+    /// the web report screens are closed. This could result reaching the Crystal's 75 reports limit on a given time.
+    /// With this wrapper, we can guarantee that when this object is disposed, ReportDocument will be closed and disposed as well.
     /// </summary>
-    public class SageWebReportDocument : IClosable, IDisposable
+    public class SageWebReportDocument: IDisposable
     {
         /// <summary>
         /// Private Crystal report document
         /// </summary>
-        public ReportDocument ReportDocument { get; private set; }
+        public ReportDocument CrystalReportDocument { get; private set; }
 
         /// <summary>
         /// Constructor with Crystal report document
@@ -22,13 +23,7 @@ namespace $companynamespace$.$applicationid$.Web
         /// <param name="rp"></param>
         public SageWebReportDocument(ReportDocument rp)
         {
-            ReportDocument = rp;
-        }
-
-        /// <inheritdoc />
-        public void Close()
-        {
-            ReportDocument?.Close();
+            CrystalReportDocument = rp;
         }
 
         #region IDisposable Support
@@ -44,7 +39,8 @@ namespace $companynamespace$.$applicationid$.Web
             {
                 if (disposing)
                 {
-                    ReportDocument?.Dispose();
+                    CrystalReportDocument?.Close();
+                    CrystalReportDocument?.Dispose();
                 }
 
                 disposedValue = true;
