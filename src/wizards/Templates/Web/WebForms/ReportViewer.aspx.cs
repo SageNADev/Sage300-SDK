@@ -86,11 +86,6 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                         {
                             reportDocument = new SageWebReportDocument(accpacReport.GetReportDocument());
                         }
-                        catch
-                        {
-                            // just throws back up, all we want is to execute the finally block
-                            throw;
-                        }
                         finally
                         {
                             // make sure we remove that from EvictUserWatcher no matter what happen
@@ -107,7 +102,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
 
             if (reportDocument != null)
             {
-                CrystalReportViewerSage300.ReportSource = reportDocument.ReportDocument;
+                CrystalReportViewerSage300.ReportSource = reportDocument.CrystalReportDocument;
                 CrystalReportViewerSage300.DataBind();
                 SetLogoPath(reportDocument, report);
             }
@@ -138,9 +133,6 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 }
 
                 string reportDocumentKey = "ReportDocument_" + token;
-
-                // close the report document object 
-                InMemoryCacheProvider.Instance.Get<SageWebReportDocument>(reportDocumentKey)?.Close();
 
                 // remove it from the cache (will trigger Dispose call on the object)
                 InMemoryCacheProvider.Instance.Remove(reportDocumentKey);
@@ -247,11 +239,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
         /// <param name="report">report</param>
         private void SetLogoPath(SageWebReportDocument reportDocument, Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.Report report)
         {
-            var hasLogo = reportDocument.ReportDocument.ParameterFields.Find("LogoPath", "");
+            var hasLogo = reportDocument.CrystalReportDocument.ParameterFields.Find("LogoPath", "");
             if (hasLogo != null)
             {
                 var logoPath = GetLogoUri(report);
-                reportDocument.ReportDocument.SetParameterValue("LogoPath", logoPath);
+                reportDocument.CrystalReportDocument.SetParameterValue("LogoPath", logoPath);
             }
         }
 

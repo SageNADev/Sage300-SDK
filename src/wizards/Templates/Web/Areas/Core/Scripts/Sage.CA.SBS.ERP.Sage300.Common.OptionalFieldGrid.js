@@ -5,6 +5,11 @@ var sg = sg || {};
 
 sg.optionalFieldControl = function () {
 
+    var GridUtls = {
+        addingLine: false,
+        updateFailed: false
+    };
+
     var RowStatusEnum = {
         UPDATE: 1,
         INSERT: 2,
@@ -41,6 +46,7 @@ sg.optionalFieldControl = function () {
         _sendChange = {},
         _lastLine = -1,
         _gridName = "",
+        _isFinderButton = false,
         _settings = {};
 
     /**
@@ -91,7 +97,7 @@ sg.optionalFieldControl = function () {
         grid.select("tr:eq(" + rowIndex + ")");
         grid.editCell(grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex));
         setTimeout(function () {
-            sg.utls.grid.updateFailed = false;
+            GridUtls.updateFailed = false;
         });
     }
 
@@ -276,7 +282,9 @@ sg.optionalFieldControl = function () {
 
         $("#" + buttonId).mousedown(function (e) {
             isFinderButton = true;
+            _isFinderButton = true;
         });
+
 
         $("#txtGridColOPTFIELD, #txtGridColVALUE").on("keydown", function (e) {
             _sendChange[gridName] = false;
@@ -311,6 +319,7 @@ sg.optionalFieldControl = function () {
                 optField = pad(12, value, ' '),
                 errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
 
+            _isFinderButton = false;
             if (field === "OPTFIELD") {
                 if (_checkDuplicateOptField(gridName, value)) {
                     _showMessage(errorMsg);
@@ -342,6 +351,7 @@ sg.optionalFieldControl = function () {
          */
         function onFinderCancel(options) {
             var grid = _getGrid(gridName);
+            _isFinderButton = false;
             if (options.field === "OPTFIELD") {
                 options.model[options.field] = "";
             }
@@ -354,6 +364,7 @@ sg.optionalFieldControl = function () {
 
         $("#" + buttonId).mousedown(function (e) {
             var value = $("#txtGridCol" + field).val().toUpperCase();
+            _isFinderButton = true;
             var initLocation = filter.split('=').pop();
             finder.initKeyValues = isValue ? [model.OPTFIELD, value || model.VALUE] : [initLocation, model.OPTFIELD || value];
             sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
@@ -409,6 +420,7 @@ sg.optionalFieldControl = function () {
                 field = options.field,
                 value = retureFields[field];
 
+            _isFinderButton = false;
             model.set(field, value);
         }
 
@@ -418,6 +430,7 @@ sg.optionalFieldControl = function () {
          */
         function onFinderCancel(options) {
             var grid = _getGrid(gridName);
+            _isFinderButton = false;
             if (grid) {
                 var rowIndex = grid.select().index();
                 _setEditCell(grid, rowIndex, options.field);
@@ -449,6 +462,9 @@ sg.optionalFieldControl = function () {
         sg.utls.kndoUI.datePicker(txtId);
         _setValueFinderEditor(options, gridName, "btnFinderId");
         _setEditorInitialValue(gridName, options);
+        $("#btnFinderId").mousedown(function () {
+            _isFinderButton = true;
+        });
     }
     /**
      * @description Column time editor, set the mask for time value input
@@ -478,6 +494,11 @@ sg.optionalFieldControl = function () {
 
         _setValueFinderEditor(options, gridName, "btnFinderId");
         _setEditorInitialValue(gridName, options);
+
+        $("#btnFinderId").unbind();
+        $("#btnFinderId").mousedown(function () {
+            _isFinderButton = true;
+        });
     }
     /**
      * @description Column dropdown list editor. Convert model true/false to proper display text
@@ -502,6 +523,10 @@ sg.optionalFieldControl = function () {
                 dataSource: presentationList,
                 change: function (e) {
                     model[field] = this.value();
+                },
+                close: function (e) {
+                    //save the value
+                    _sendRequest("" + _gridName, RequestTypeEnum.Save, "");
                 }
             });
         _setEditorInitialValue(gridName, options);
@@ -559,8 +584,10 @@ sg.optionalFieldControl = function () {
 
         var editBox = $("#txtVALUE").data("kendoNumericTextBox");
         var mouseClick = false;
+        _isFinderButton = false;
         $("#btnFinderId").mousedown(function () {
             mouseClick = true;
+            _isFinderButton = true;
         });
         editBox.bind("change", function () {
             $("#btnFinderId").focus();
@@ -715,17 +742,21 @@ sg.optionalFieldControl = function () {
      * @param {number} insertedIndex The inserted line index
      */
     function _createSuccess(gridName, jsonResult) {
-        sg.utls.grid.addingLine = true;
+        GridUtls.addingLine = true;
         var grid = $('#' + gridName).data("kendoGrid"),
             insertedIndex = grid.select().index() + 1,
             dataSource = grid.dataSource;
-        _lastRowNumber[gridName] = insertedIndex;
+        if (insertedIndex >= grid.dataSource.pageSize()) {
+            insertedIndex = 0;
+        }
+        //Due to we set the delay 100 here, the related delay will be 100 as well
         setTimeout(function () {
             dataSource.insert(insertedIndex, jsonResult.Data);
             grid.refresh();
             var row = _selectGridRow(grid, jsonResult.Data["KendoGridAccpacViewPrimaryKey"]);
             _setNextEditCell(grid, dataSource.options.schema.model, row, 0);
             _lastRowStatus[gridName] = RowStatusEnum.INSERT;
+            _lastRowNumber[gridName] = insertedIndex;
         }, 100);
     }
 
@@ -744,7 +775,7 @@ sg.optionalFieldControl = function () {
      * @param {string} gridName The grid name
      */
     function _insertSuccess(gridName) {
-        sg.utls.grid.updateFailed = false;
+        GridUtls.updateFailed = false;
         _lastRowStatus[gridName] === RowStatusEnum.NONE;
         //_dataChanged[gridName] = false;
     }
@@ -755,7 +786,7 @@ sg.optionalFieldControl = function () {
      * @param {object} jsonResult The request call back result
      */
     function _insertError(gridName, jsonResult) {
-        sg.utls.grid.updateFailed = true;
+        GridUtls.updateFailed = true;
         var grid = $('#' + gridName).data("kendoGrid");
         var rowIndex = grid.select().index();
         sg.utls.showMessage(jsonResult, errorMsgClose.bind(gridName, _lastLine, _lastColField[gridName]), false, true);
@@ -776,7 +807,7 @@ sg.optionalFieldControl = function () {
     */
     function _updateSuccess(gridName, jsonResult, fieldName) {
         //todo reset the value when error happened
-        sg.utls.grid.updateFailed = false;
+        GridUtls.updateFailed = false;
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
@@ -853,7 +884,7 @@ sg.optionalFieldControl = function () {
      * @param {any} fieldName The update field name
      */
     function _updateError(gridName, jsonResult, fieldName) {
-        sg.utls.grid.updateFailed = true;
+        GridUtls.updateFailed = true;
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
@@ -886,7 +917,7 @@ sg.optionalFieldControl = function () {
     }
 
     function _saveSuccess(gridName, jsonResult) {
-        sg.utls.grid.addingLine = false;
+        GridUtls.addingLine = false;
     }
 
     /**
@@ -984,7 +1015,7 @@ sg.optionalFieldControl = function () {
             if (e.field === "OPTFIELD") {
                 type = RequestTypeEnum.Update;
                 //update the adding line
-                sg.utls.grid.addingLine = false;
+                GridUtls.addingLine = false;
             }
             _sendRequest(gridName, type, e.field);
         }
@@ -1030,8 +1061,9 @@ sg.optionalFieldControl = function () {
                     lastRowNumber = _lastRowNumber[gridName],
                     selectedIndex = grid.select().index();
                 _lastLine = lastRowNumber;
+                _gridName = gridName;
                 //todo need to know the line exists, otherwise inter it
-                if (lastRowNumber > -1 && lastRowNumber !== selectedIndex && !sg.utls.grid.addingLine && !sg.utls.grid.updateFailed) {
+                if (lastRowNumber > -1 && lastRowNumber !== selectedIndex && !GridUtls.addingLine && !GridUtls.updateFailed) {
                     _lastRowNumber[gridName] = selectedIndex;
                     _sendRequest(gridName, RequestTypeEnum.Save, "");
                 }
@@ -1046,8 +1078,8 @@ sg.optionalFieldControl = function () {
                     grid.select("tr:eq(0)");
                 }
                 setTimeout(function () {
-                    sg.utls.grid.addingLine = false;
-                });
+                    GridUtls.addingLine = false;
+                }, 100);
             },
 
             pageable: {
@@ -1155,7 +1187,7 @@ sg.optionalFieldControl = function () {
                 preventEvent = true;
             }
         }
-        if (sg.utls.grid.updateFailed || preventEvent || sg.utls.grid.addingLine) {
+        if (GridUtls.updateFailed || preventEvent || GridUtls.addingLine) {
             return;
         }
 
@@ -1168,7 +1200,9 @@ sg.optionalFieldControl = function () {
             }.bind(null, rowIndex));
             return;
         }
-        _addLine(gridName);
+        setTimeout(function () {
+            _addLine(gridName);
+        }, 100);
     }
 
     /**
@@ -1369,7 +1403,7 @@ sg.optionalFieldControl = function () {
         var trigger = false;
         var grid = $("#" + _gridName).data("kendoGrid");
         //Ignore if inside finder was clicked
-        if (!sg.utls.grid.finderWasClicked && !sg.utls.grid.updateFailed) {
+        if (!GridUtls.finderWasClicked && !GridUtls.updateFailed) {
             var target;
             if (e.target && e.relatedTarget === null) {
                 target = $("#" + _gridName).find(e.target);
@@ -1381,11 +1415,17 @@ sg.optionalFieldControl = function () {
                 target = $("#" + _gridName).find(e.target);
                 var elmType;
                 var elmId;
+                var isDeleteBtn;
                 if (e.relatedTarget) {
                     elmType = (e.relatedTarget.type === 'button');
                     elmId = (!e.relatedTarget.id.includes("btnFinderGridCol"));
+                    isDeleteBtn = (e.relatedTarget.id === "btn" + _gridName + "Delete" || e.relatedTarget.id === "btnFinderId");
                 }
-                if (elmType && elmId && !sg.utls.grid.addingLine) {
+                if (elmType && elmId && !GridUtls.addingLine && !isDeleteBtn) {
+                    trigger = true;
+                }
+                //else if (e.target.id === 'txtGridColVALUE' && e.target.getAttribute("data-bind") === 'value:VALUE' && $("#" + e.target.id).val()) {
+                else if (e.target.getAttribute("data-bind") === 'value:VALUE' && $("#" + e.target.id).val() && !_isFinderButton) {
                     trigger = true;
                 }
             }
@@ -1395,11 +1435,11 @@ sg.optionalFieldControl = function () {
                 if (target.length === 0) {
                     var regex = /div_[a-zA-Z0-9_.-]*_dialog/g;
                     var found = e.relatedTarget.id.match(regex);
-                    if (e.relatedTarget.id !== "btnFinderGridColoptfield" && !found) {
+                    if (e.relatedTarget.id !== "btnFinderGridColoptfield" && !found && e.relatedTarget.id !== "deleteConfirmation") {
                         trigger = true;
                     }
                 }
-                else if (e.relatedTarget.name === "OPTFIELD" && _lastRowStatus[_gridName] === RowStatusEnum.UPDATE ) {
+                else if (e.relatedTarget.name === "OPTFIELD" && _lastRowStatus[_gridName] === RowStatusEnum.UPDATE) {
                     trigger = true;
                 }
                 else {
@@ -1411,8 +1451,10 @@ sg.optionalFieldControl = function () {
                 }
             }
         }
-        if (trigger) {
+        if (trigger && _lastRowNumber[_gridName] !== -1) {
             //trigger update or insert....
+            //check we have the pre select line.
+
             _sendRequest("" + _gridName, RequestTypeEnum.Save, "");
             grid.closeCell($("#" + _gridName + "td:eq(1)"));
         }

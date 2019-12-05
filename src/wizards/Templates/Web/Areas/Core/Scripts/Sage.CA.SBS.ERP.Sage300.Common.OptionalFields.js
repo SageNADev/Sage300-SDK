@@ -1673,33 +1673,35 @@ var optionalFieldUIGrid =
                     // represent numeric optional fields are right aligned.
                     //
 
-                    // Get the grid
+                    // Get the grid data
                     var data = grid.dataSource.data();
-                    $.each(data, function (index, item) {
+                    $.each(data, function (index, row) {
 
-                        var rowType = item.Type;
+                        var rowType = row.Type;
                         var $row = grid.tbody.find(">tr:eq(" + index + ")");
                         var isRowTypeNumeric =  rowType === optionalFieldTypeEnum.Amount ||
                                                 rowType === optionalFieldTypeEnum.Number ||
                                                 rowType === optionalFieldTypeEnum.Integer;
 
-                        // Iterate each cell in the row
-                        $row.find('td').each(function () {
-                            var $td = $(this);
-                            var cellValue = $(this).html();
+                        if (isRowTypeNumeric) {
+                            // Iterate each cell in the row
+                            $row.find('td').each(function () {
+                                var $td = $(this);
+                                var cellValue = $(this).html();
 
-                            // Convert cell content to a number (if possible)
-                            var cellValueAsNumber = '';
-                            var temp = Number(cellValue);
-                            if (!isNaN(temp)) {
-                                cellValueAsNumber = temp;
-                            }
+                                // Convert cell content to a number (if possible)
+                                var cellValueAsNumber = '';
+                                var temp = Number(cellValue);
+                                if (!isNaN(temp)) {
+                                    cellValueAsNumber = temp;
+                                }
 
-                            // Add the alignment class if necessary
-                            if (isRowTypeNumeric && typeof cellValueAsNumber === 'number') {
-                                $td.addClass('align-right');
-                            }
-                        });
+                                // Add the alignment class for cells containing numbers only.
+                                if (typeof cellValueAsNumber === 'number') {
+                                    $td.addClass('align-right');
+                                }
+                            });
+                        }
                     });
 
                     //

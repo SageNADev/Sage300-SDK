@@ -41,7 +41,7 @@
                     operatorText = "=";
                     break;
                 case "neq":
-                    operatorText = "!="; 
+                    operatorText = "!=";
                     break;
                 case "gte":
                     operatorText = ">=";
@@ -75,16 +75,30 @@
                     if (!field) {
                         continue;
                     }
+
                     var type = field.dataType.toLowerCase();
+                    var isNumericType = numberType.indexOf(type) > -1;
+
+                    // datetime
                     var value = (type === "datetime") ? kendo.toString(kendo.parseDate(child.value), "d") : child.value; 
+
+                    // handle where clause in query
                     value = value.replace(/'/g, '');
+
+                    // enumerations
                     if (field.presentation) {
                         value = field.presentation.filter(function (item) { return item.Value == value; })[0].Text;
                     }
-                    var format = numberType.indexOf(type) > -1 ? "{0} {1} {2}" : "{0} {1} '{2}'";
-                    if (numberType.indexOf(type) > -1) {
+
+                    // numbers
+                    if (isNumericType) {
                         value = kendo.toString(kendo.parseFloat(value, "en-US"), "n" + field.precision);
-                    }
+                    } 
+
+                    // encode strings
+                    value = (type === "string") ? kendo.htmlEncode(value) : value;
+
+                    var format = isNumericType ? "{0} {1} {2}" : "{0} {1} '{2}'";
                     var title = field.title;
                     filterText += kendo.format(format, title, this.operatorText(child), value);
                 }
@@ -269,7 +283,7 @@ var InquiryGeneralUI = function () {
             $("#btnDeleteQuery").prop("disabled", true);
             $("#btnSaveQuery").prop("disabled", true);
             //$("#btnOpenQuery").prop("disabled", true);
-            //$("#inquiryExport").prop("disabled", true);
+            $("#btnExportQuery").prop("disabled", true);
             window.parent.postMessage({ event_id: 'DeleteTemplate' }, '*');
         }
     }
@@ -928,8 +942,7 @@ var InquiryGeneralUI = function () {
         });
 
         $("#btnExportQuery").click(function () {
-            var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Export");
-            sg.utls.ajaxPost(url, {sql:""}, null);
+            exportData();
         });
 
         $("#btnDeleteQuery").click(function () {
@@ -945,7 +958,7 @@ var InquiryGeneralUI = function () {
         $("#divShowGrandTotals > span").addClass("selected");
         $("#chkShowGrandTotals").prop("checked", true);
 
-       function exportData(that) {
+       function exportData() {
             var grid = $("#inquiryGrid").data("kendoGrid");
             var filter = grid.getOptions().dataSource.filter;
             var fields = grid.columns.filter(function (f) { return !f.hidden; });
@@ -966,9 +979,6 @@ var InquiryGeneralUI = function () {
             sg.utls.ajaxPost(url, value, exportDownload);
         }
 
-        $("a#inquiryExport").click(function () {
-            exportData(this);
-        });
         // prevent page refresh
         var form = document.getElementById('frmInquiryGeneral');
         form.onsubmit = function () {

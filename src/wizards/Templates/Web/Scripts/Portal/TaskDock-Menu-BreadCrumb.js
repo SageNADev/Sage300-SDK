@@ -831,11 +831,11 @@ var TaskDockMenuBreadCrumbManager = function () {
             // Checking isKPI so that reportName is appended to show in windows doc when opened from KPI.
             var windowText;
             if (isKPI == true) {
-                windowText = kpiReportName;
+                windowText = kendo.htmlEncode(kpiReportName);
                 isKPI = false;
             } else {
                 postMessageData.splice(postMessageData.length - 1, 1);
-                windowText = postMessageData.join(" ");
+                windowText = kendo.htmlEncode(postMessageData.join(" "));
             }
 
             // only add Report to the window name if it is a report page and it does not have one
