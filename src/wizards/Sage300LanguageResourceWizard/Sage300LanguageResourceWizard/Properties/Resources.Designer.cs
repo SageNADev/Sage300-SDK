@@ -61,15 +61,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Accpac library was not found in the solution folder. No upgrade was necessary..
-        /// </summary>
-        internal static string AccpacPropsFileDoesNotExistInSolutionFolder {
-            get {
-                return ResourceManager.GetString("AccpacPropsFileDoesNotExistInSolutionFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add/Replace file: .
         /// </summary>
         internal static string AddReplaceFile {
@@ -102,6 +93,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string BeforeUpdate {
             get {
                 return ResourceManager.GetString("BeforeUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Begin.
+        /// </summary>
+        internal static string Begin {
+            get {
+                return ResourceManager.GetString("Begin", resourceCulture);
             }
         }
         
@@ -268,11 +268,11 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate XML documentation file.
+        ///   Looks up a localized string similar to Generate.
         /// </summary>
-        internal static string GenerateXMLDocFile {
+        internal static string Generate {
             get {
-                return ResourceManager.GetString("GenerateXMLDocFile", resourceCulture);
+                return ResourceManager.GetString("Generate", resourceCulture);
             }
         }
         
@@ -286,30 +286,48 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This wizard will help you generate boilerplate code for handling new languages in Sage 300. It will make a copy of the english language resources for each module that you can then manually translate into the language you&apos;ve specified..
+        /// </summary>
+        internal static string Introduction_Content {
+            get {
+                return ResourceManager.GetString("Introduction_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Introduction.
+        /// </summary>
+        internal static string Introduction_Title {
+            get {
+                return ResourceManager.GetString("Introduction_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The solution is not a valid Sage 300 Resources solution..
+        /// </summary>
+        internal static string InvalidSolution {
+            get {
+                return ResourceManager.GetString("InvalidSolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Main menu node found but does not have existing IconName entry..
-        /// </summary>
-        internal static string MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry {
-            get {
-                return ResourceManager.GetString("MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Main menu node found but does not have existing MEnuBackGoundImage entry..
-        /// </summary>
-        internal static string MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry {
-            get {
-                return ResourceManager.GetString("MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry", resourceCulture);
             }
         }
         
@@ -355,51 +373,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string Project {
             get {
                 return ResourceManager.GetString("Project", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ready to begin the upgrade..
-        /// </summary>
-        internal static string ReleaseAllDescConfirmation {
-            get {
-                return ResourceManager.GetString("ReleaseAllDescConfirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The Solution and Project files have been upgraded..
-        /// </summary>
-        internal static string ReleaseAllDescRecompile {
-            get {
-                return ResourceManager.GetString("ReleaseAllDescRecompile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the Accpac Libraries references..
-        /// </summary>
-        internal static string ReleaseAllDescSyncAccpacLibs {
-            get {
-                return ResourceManager.GetString("ReleaseAllDescSyncAccpacLibs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the Kendo JavaScript files in the solution..
-        /// </summary>
-        internal static string ReleaseAllDescSyncKendoFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllDescSyncKendoFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will upgrade the various global files included in the solution..
-        /// </summary>
-        internal static string ReleaseAllDescSyncWebFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllDescSyncWebFiles", resourceCulture);
             }
         }
         
@@ -453,51 +426,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmation.
-        /// </summary>
-        internal static string ReleaseAllTitleConfirmation {
-            get {
-                return ResourceManager.GetString("ReleaseAllTitleConfirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recompile.
-        /// </summary>
-        internal static string ReleaseAllTitleRecompile {
-            get {
-                return ResourceManager.GetString("ReleaseAllTitleRecompile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Synchronize Accpac Libraries.
-        /// </summary>
-        internal static string ReleaseAllTitleSyncAccpacLibs {
-            get {
-                return ResourceManager.GetString("ReleaseAllTitleSyncAccpacLibs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Synchronize Kendo files.
-        /// </summary>
-        internal static string ReleaseAllTitleSyncKendoFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllTitleSyncKendoFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Synchronize Web Files.
-        /// </summary>
-        internal static string ReleaseAllTitleSyncWebFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllTitleSyncWebFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
         ///
         ///Note: Please be sure you have backed up the Solution and Project 
@@ -529,60 +457,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert all the distinct enumeration files into a single file called &apos;Enumerations.cs&apos; on a per-folder basis..
-        /// </summary>
-        internal static string ReleaseSpecificDescConsolidateEnumerations {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescConsolidateEnumerations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateMultisession", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Consolidation of Enumeration Files.
-        /// </summary>
-        internal static string ReleaseSpecificTitleConsolidateEnumerations {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleConsolidateEnumerations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded..
-        /// </summary>
-        internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Multiple Sessions framework changes.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateMultisession", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update targeted version of .NET Framework.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
         ///from release {0} to {1}.
         ///
@@ -608,10 +482,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         ///The following files are affected (all within the Namespace.Web project):
         ///	- XXAreaRegistration.cs
         ///	- Global.asax.cs
+        ///	- PageUrl.txt
         ///	- Web.config
         ///	- All JavaScript behaviour files
-        ///
-        ///Please refer t [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUpdateMultisession {
             get {
@@ -626,6 +500,26 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ve selected &apos;{0}&apos; as the language for your new resources. If you are satisfied with your choice, press the &apos;Generate&apos; button below. If you wish to change this language choice, press the &apos;Back&apos; button below to go back to the language selection page. 
+        ///
+        ///If there are already existing resources for the language you&apos;ve selected, they will be overwritten..
+        /// </summary>
+        internal static string Review_Content_Template {
+            get {
+                return ResourceManager.GetString("Review_Content_Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review.
+        /// </summary>
+        internal static string Review_Title {
+            get {
+                return ResourceManager.GetString("Review_Title", resourceCulture);
             }
         }
         
@@ -645,6 +539,24 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string SearchingInAllProjectDirectoriesInstead {
             get {
                 return ResourceManager.GetString("SearchingInAllProjectDirectoriesInstead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the language for the new resources.
+        /// </summary>
+        internal static string SelectLanguage_Description {
+            get {
+                return ResourceManager.GetString("SelectLanguage_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Language.
+        /// </summary>
+        internal static string SelectLanguage_Title {
+            get {
+                return ResourceManager.GetString("SelectLanguage_Title", resourceCulture);
             }
         }
         
@@ -685,15 +597,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
-        /// </summary>
-        internal static string SolutionUpgrade {
-            get {
-                return ResourceManager.GetString("SolutionUpgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string Start {
@@ -712,74 +615,11 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
-        /// </summary>
-        internal static string StepDescriptionMain {
-            get {
-                return ResourceManager.GetString("StepDescriptionMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Solution and Projects Upgrade.
-        /// </summary>
-        internal static string StepTitleMain {
-            get {
-                return ResourceManager.GetString("StepTitleMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} was not found in the root of the solution folder..
-        /// </summary>
-        internal static string Template_AccpacPropsFileNotFoundInRootOfSolutionFolder {
-            get {
-                return ResourceManager.GetString("Template_AccpacPropsFileNotFoundInRootOfSolutionFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Attempting to update all csproj files to reference the solution root folder based {0} file..
-        /// </summary>
-        internal static string Template_AttemptingToUpdateAllCsprojFiles {
-            get {
-                return ResourceManager.GetString("Template_AttemptingToUpdateAllCsprojFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Removing all copies of {0} located in project folders..
-        /// </summary>
-        internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
-            get {
-                return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} copies of {1} were found:.
-        /// </summary>
-        internal static string Template_XCopiesOfPropsFileWereFound {
-            get {
-                return ResourceManager.GetString("Template_XCopiesOfPropsFileWereFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to to.
         /// </summary>
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The updates to support multiple sessions must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
             }
         }
         
@@ -793,11 +633,20 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
+        ///   Looks up a localized string similar to Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you&apos;ve specified. To begin, press the &apos;Begin&apos; button below..
         /// </summary>
-        internal static string UpgradeLibrary {
+        internal static string WelcomeContent {
             get {
-                return ResourceManager.GetString("UpgradeLibrary", resourceCulture);
+                return ResourceManager.GetString("WelcomeContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage 300 Language Resource Wizard.
+        /// </summary>
+        internal static string WizardTitle {
+            get {
+                return ResourceManager.GetString("WizardTitle", resourceCulture);
             }
         }
     }

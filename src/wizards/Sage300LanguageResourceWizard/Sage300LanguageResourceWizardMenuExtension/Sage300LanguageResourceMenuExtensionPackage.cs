@@ -98,7 +98,6 @@ namespace Sage300LanguageResourceWizardMenuExtension
         private void MenuItemCallback(object sender, EventArgs e)
         {
             var dte = (DTE2)GetService(typeof(DTE));
-            // New wizard
             var wizard = new Sage300LanguageResource();
             wizard.Execute(dte.Solution);
         }

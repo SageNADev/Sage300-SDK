@@ -102,6 +102,13 @@
   </Commands>
 
   <Symbols>
+    
+    <!-- 
+      Developer Note:
+      
+      The following guids are defined in the file Guids.cs 
+    -->
+    
     <!-- This is the package guid. -->
     <GuidSymbol name="guidSage300LanguageResourceMenuExtensionPkg" value="{38086752-eef6-4ca4-953b-067c31cb97d3}" />
     

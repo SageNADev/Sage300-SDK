@@ -27,9 +27,11 @@ namespace Sage300LanguageResourceWizardMenuExtension
 {
     static class GuidList
     {
-        //public const string guidSage300LanguageResourceMenuExtensionPkgString = "01147425-4520-45ad-8f04-52c37b853569";
-        //public const string guidSage300LanguageResourceMenuExtensionCmdSetString = "efcb2057-f513-4b39-ae85-cccc9b644877";
-
+        /*
+         * Developer Note:
+         * 
+         *  If you are reusing this project for another project, please ensure you generate new guids below
+         */
         public const string guidSage300LanguageResourceMenuExtensionPkgString = "38086752-eef6-4ca4-953b-067c31cb97d3";
         public const string guidSage300LanguageResourceMenuExtensionCmdSetString = "44c3f082-499c-4eff-8020-aff49d893f8c";
 

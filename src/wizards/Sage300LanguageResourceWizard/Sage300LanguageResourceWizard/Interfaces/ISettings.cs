@@ -27,19 +27,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Interfaces
 {
     public interface ISettings
     {
-        /// <summary> Upgrade Steps </summary>
-        List<WizardStep> WizardSteps { get; set; }
-
-        /// <summary> Source Folder </summary>
-        string SourceFolder { get; set; }
-
-        /// <summary> Destination Web Folder </summary>
-        string DestinationWebFolder { get; set; }
-
-        /// <summary> Destination Solution Folder </summary>
-        string DestinationSolutionFolder { get; set; }
-
         /// <summary> The current solution object </summary>
         Solution2 Solution { get; set; }
+
+        /// <summary> The language to use when creating the new resources </summary>
+        Language Language { get; set; }
     }
 }

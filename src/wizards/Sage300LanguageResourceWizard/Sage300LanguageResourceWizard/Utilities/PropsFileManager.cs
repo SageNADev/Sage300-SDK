@@ -103,27 +103,27 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Utilities
             }
         }
 
-        /// <summary>
-        /// Copy the AccpacDotNetProps file to the Solution folder
-        /// </summary>
-        public static void CopyAccpacPropsFileToSolutionFolder(Settings settings)
-        {
-            var sourcePath = Path.Combine(settings.PropsSourceFolder, Constants.Common.AccpacPropsFile);
-            var destPath = Path.Combine(settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
-            File.Copy(sourcePath, destPath, overwrite: true);
-        }
+        ///// <summary>
+        ///// Copy the AccpacDotNetProps file to the Solution folder
+        ///// </summary>
+        //public static void CopyAccpacPropsFileToSolutionFolder(Settings settings)
+        //{
+        //    var sourcePath = Path.Combine(settings.PropsSourceFolder, Constants.Common.AccpacPropsFile);
+        //    var destPath = Path.Combine(settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
+        //    File.Copy(sourcePath, destPath, overwrite: true);
+        //}
 
-        /// <summary>
-        /// Is there a copy of the AccpacDotNetversion.props file in the Solution folder?
-        /// </summary>
-        /// <returns>
-        /// true : AccpacDotNetVersion.props is in Solution folder 
-        /// false: AccpacDotNetVersion.props is in not in the Solution folder 
-        /// </returns>
-        public static bool IsAccpacDotNetVersionPropsLocatedInSolutionFolder(Settings settings)
-        {
-            return File.Exists(Path.Combine(settings.DestinationSolutionFolder,
-                                            Constants.Common.AccpacPropsFile));
-        }
+        ///// <summary>
+        ///// Is there a copy of the AccpacDotNetversion.props file in the Solution folder?
+        ///// </summary>
+        ///// <returns>
+        ///// true : AccpacDotNetVersion.props is in Solution folder 
+        ///// false: AccpacDotNetVersion.props is in not in the Solution folder 
+        ///// </returns>
+        //public static bool IsAccpacDotNetVersionPropsLocatedInSolutionFolder(Settings settings)
+        //{
+        //    return File.Exists(Path.Combine(settings.DestinationSolutionFolder,
+        //                                    Constants.Common.AccpacPropsFile));
+        //}
     }
 }

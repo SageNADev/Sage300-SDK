@@ -40,20 +40,23 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
-			var payloadFileName = Constants.ItemsZipName;
 			var sln = (Solution2)solution;
-			var templatePath = sln.GetProjectItemTemplate(payloadFileName, Constants.CSharpName);
 
-			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath, sln))
-			{
-				form.ShowDialog();
-			}
-		}
+            using (var form = new WizardForm(sln))
+            {
+                // Only display wizard if solution is the Sage300Resources solution
+                if (form.ValidPrerequisites(solution))
+                {
+                    // Display wizard modally
+                    form.ShowDialog();
+                }
+            }
+        }
 
-		/// <summary> Get Destination default </summary>
-		/// <param name="solution">Solution</param>
-		/// <returns>Destination or Empty String</returns>
-		public string DestinationDefault(Solution solution)
+        /// <summary> Get Destination default </summary>
+        /// <param name="solution">Solution</param>
+        /// <returns>Destination or Empty String</returns>
+        public string DestinationDefault(Solution solution)
         {
             Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             var retVal = string.Empty;

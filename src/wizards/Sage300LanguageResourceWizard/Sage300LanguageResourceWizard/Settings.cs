@@ -31,23 +31,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
     public class Settings : ISettings
     {
         #region Public Properties
-        /// <summary> Upgrade Steps </summary>
-        public List<WizardStep> WizardSteps { get; set; }
-
-        /// <summary> Source Folder </summary>
-        public string SourceFolder { get; set; }
-
-        /// <summary> Location of Accpac props file </summary>
-        public string PropsSourceFolder { get; set; }
-
-        /// <summary> Destination Web Folder </summary>
-        public string DestinationWebFolder { get; set; }
-
-        /// <summary> Destination Solution Folder </summary>
-        public string DestinationSolutionFolder { get; set; }
 
         /// <summary> The Solution object </summary>
         public Solution2 Solution { get; set; }
+
+        /// <summary> The language to use when creating the new resources </summary>
+        public Language Language { get; set; }
+
         #endregion
     }
 }

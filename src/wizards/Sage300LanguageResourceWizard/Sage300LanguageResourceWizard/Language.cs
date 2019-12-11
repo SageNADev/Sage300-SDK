@@ -18,28 +18,26 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Windows.Forms;
+#region Imports
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+#endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 {
-    /// <summary> Class to hold information for wizard step </summary>
-    public class WizardStep
+    public class Language
     {
-        #region Public Properties
-        /// <summary> Wizard Step Title </summary>
-        public string Title { get; set; }
+        /// <summary>
+        /// The language code designation
+        /// </summary>
+        public string Code { get; set; }
 
-        /// <summary> Wizard Step Description </summary>
-        public string Description { get; set; }
-
-        /// <summary> Wizard Step Panel </summary>
-        public Panel Panel { get; set; }
-        #endregion
-
-        #region Public Methods
-        #endregion
-
-        #region Private Methods
-        #endregion
+        /// <summary>
+        /// The language name (for display purposes in the wizard's form)
+        /// </summary>
+        public string Name { get; set; }
     }
 }

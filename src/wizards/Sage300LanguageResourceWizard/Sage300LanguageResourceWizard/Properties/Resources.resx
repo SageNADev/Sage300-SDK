@@ -120,8 +120,8 @@
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="StepDescriptionMain" xml:space="preserve">
-    <value>Upgrade from {0} to {1}</value>
+  <data name="SelectLanguage_Description" xml:space="preserve">
+    <value>Select the language for the new resources</value>
   </data>
   <data name="EndUpgradeProcess" xml:space="preserve">
     <value>End Upgrade Process</value>
@@ -135,12 +135,6 @@
   </data>
   <data name="Processing" xml:space="preserve">
     <value>Processing</value>
-  </data>
-  <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
-  </data>
-  <data name="GenerateXMLDocFile" xml:space="preserve">
-    <value>Generate XML documentation file</value>
   </data>
   <data name="FoundPostBuildEventEntry" xml:space="preserve">
     <value>Found PostBuildEvent Entry</value>
@@ -169,12 +163,6 @@
   <data name="BeforeUpdate" xml:space="preserve">
     <value>Before update</value>
   </data>
-  <data name="UpgradeLibrary" xml:space="preserve">
-    <value>Upgrade library from {0} to {1}</value>
-  </data>
-  <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
-    <value>Consolidation of Enumeration Files</value>
-  </data>
   <data name="To" xml:space="preserve">
     <value>to</value>
   </data>
@@ -190,9 +178,6 @@
   <data name="Deleted" xml:space="preserve">
     <value>deleted</value>
   </data>
-  <data name="ReleaseAllTitleSyncWebFiles" xml:space="preserve">
-    <value>Synchronize Web Files</value>
-  </data>
   <data name="Project" xml:space="preserve">
     <value>Project</value>
   </data>
@@ -202,26 +187,8 @@
   <data name="SolutionDirectory" xml:space="preserve">
     <value>Solution Directory</value>
   </data>
-  <data name="StepTitleMain" xml:space="preserve">
-    <value>Solution and Projects Upgrade</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>Update targeted version of .NET Framework</value>
-  </data>
-  <data name="SolutionUpgrade" xml:space="preserve">
-    <value>Solution Upgrade Wizard - V{0}</value>
-  </data>
-  <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
-    <value>This step will upgrade the Accpac Libraries references.</value>
-  </data>
-  <data name="MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry" xml:space="preserve">
-    <value>Main menu node found but does not have existing MEnuBackGoundImage entry.</value>
-  </data>
-  <data name="ReleaseAllTitleRecompile" xml:space="preserve">
-    <value>Recompile</value>
-  </data>
-  <data name="ReleaseSpecificDescConsolidateEnumerations" xml:space="preserve">
-    <value>This step will automatically convert all the distinct enumeration files into a single file called 'Enumerations.cs' on a per-folder basis.</value>
+  <data name="SelectLanguage_Title" xml:space="preserve">
+    <value>Select Language</value>
   </data>
   <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -231,9 +198,6 @@
   </data>
   <data name="ReleaseAllUpgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllUpgrade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllTitleSyncAccpacLibs" xml:space="preserve">
-    <value>Synchronize Accpac Libraries</value>
   </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
@@ -250,18 +214,12 @@
   <data name="BeginUpgradeProcess" xml:space="preserve">
     <value>Begin Upgrade Process...</value>
   </data>
-  <data name="MainMenuNodeFoundButDoesNotHaveExistingIconNameEntry" xml:space="preserve">
-    <value>Main menu node found but does not have existing IconName entry.</value>
-  </data>
   <data name="Browser" xml:space="preserve">
     <value>IEXPLORE.EXE</value>
     <comment>Browser to use</comment>
   </data>
   <data name="AfterUpdate" xml:space="preserve">
     <value>AfterUpdate</value>
-  </data>
-  <data name="AccpacPropsFileDoesNotExistInSolutionFolder" xml:space="preserve">
-    <value>The Accpac library was not found in the solution folder. No upgrade was necessary.</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -278,23 +236,11 @@
   <data name="ReleaseSpecificUpdateConsolidateEnumerations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateConsolidateEnumerations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseAllDescConfirmation" xml:space="preserve">
-    <value>Ready to begin the upgrade.</value>
-  </data>
   <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateMultisession" xml:space="preserve">
-    <value>Multiple Sessions framework changes</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateMultisession" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
   <data name="ReleaseSpecificUpdateMultisession" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseSpecificUpdateMultisession.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseAllDescRecompile" xml:space="preserve">
-    <value>The Solution and Project files have been upgraded.</value>
   </data>
   <data name="ProcessingStep" xml:space="preserve">
     <value>Processing {0}...</value>
@@ -308,23 +254,11 @@
   <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
-    <value>This step will upgrade the various global files included in the solution.</value>
-  </data>
-  <data name="ReleaseAllTitleConfirmation" xml:space="preserve">
-    <value>Confirmation</value>
-  </data>
   <data name="sage-logo-square" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sage-logo-square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CopiedKendoFileFrom" xml:space="preserve">
     <value>Copied Kendo files from</value>
-  </data>
-  <data name="ReleaseAllDescSyncKendoFiles" xml:space="preserve">
-    <value>This step will upgrade the Kendo JavaScript files in the solution.</value>
-  </data>
-  <data name="ReleaseAllTitleSyncKendoFiles" xml:space="preserve">
-    <value>Synchronize Kendo files</value>
   </data>
   <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -332,19 +266,36 @@
   <data name="SearchingInAllProjectDirectoriesInstead" xml:space="preserve">
     <value>Seaching in all project directories instead.</value>
   </data>
-  <data name="Template_AccpacPropsFileNotFoundInRootOfSolutionFolder" xml:space="preserve">
-    <value>{0} was not found in the root of the solution folder.</value>
+  <data name="WizardTitle" xml:space="preserve">
+    <value>Sage 300 Language Resource Wizard</value>
   </data>
-  <data name="Template_AttemptingToUpdateAllCsprojFiles" xml:space="preserve">
-    <value>Attempting to update all csproj files to reference the solution root folder based {0} file.</value>
+  <data name="Review_Title" xml:space="preserve">
+    <value>Review</value>
   </data>
-  <data name="Template_RemovingAllCopiesOfAccpacPropsFile" xml:space="preserve">
-    <value>Removing all copies of {0} located in project folders.</value>
+  <data name="Introduction_Content" xml:space="preserve">
+    <value>This wizard will help you generate boilerplate code for handling new languages in Sage 300. It will make a copy of the english language resources for each module that you can then manually translate into the language you've specified.</value>
   </data>
-  <data name="Template_XCopiesOfPropsFileWereFound" xml:space="preserve">
-    <value>{0} copies of {1} were found:</value>
+  <data name="Introduction_Title" xml:space="preserve">
+    <value>Introduction</value>
   </data>
-  <data name="UpdatesToSupportMultipleSessionsAreAManualStep" xml:space="preserve">
-    <value>The updates to support multiple sessions must be made manually.</value>
+  <data name="InvalidSolution" xml:space="preserve">
+    <value>The solution is not a valid Sage 300 Resources solution.</value>
+  </data>
+  <data name="Begin" xml:space="preserve">
+    <value>Begin</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Review_Content_Template" xml:space="preserve">
+    <value>You've selected '{0}' as the language for your new resources. If you are satisfied with your choice, press the 'Generate' button below. If you wish to change this language choice, press the 'Back' button below to go back to the language selection page. 
+
+If there are already existing resources for the language you've selected, they will be overwritten.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="WelcomeContent" xml:space="preserve">
+    <value>Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you've specified. To begin, press the 'Begin' button below.</value>
   </data>
 </root>
