@@ -61,20 +61,29 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add/Replace file: .
+        ///   Looks up a localized string similar to {0}Adding {1} to the project..
         /// </summary>
-        internal static string AddReplaceFile {
+        internal static string AddingFileToTheProject_PaddedTemplate {
             get {
-                return ResourceManager.GetString("AddReplaceFile", resourceCulture);
+                return ResourceManager.GetString("AddingFileToTheProject_PaddedTemplate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AfterUpdate.
+        ///   Looks up a localized string similar to Adding new language resources....
         /// </summary>
-        internal static string AfterUpdate {
+        internal static string AddingNewLanguageResources {
             get {
-                return ResourceManager.GetString("AfterUpdate", resourceCulture);
+                return ResourceManager.GetString("AddingNewLanguageResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you wish to proceed?.
+        /// </summary>
+        internal static string AreYouSureYouWishToProceed {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWishToProceed", resourceCulture);
             }
         }
         
@@ -88,15 +97,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Before update.
-        /// </summary>
-        internal static string BeforeUpdate {
-            get {
-                return ResourceManager.GetString("BeforeUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Begin.
         /// </summary>
         internal static string Begin {
@@ -106,47 +106,38 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Begin Upgrade Process....
+        ///   Looks up a localized string similar to Begin Language Resource Creation Process....
         /// </summary>
-        internal static string BeginUpgradeProcess {
+        internal static string BeginLanguageResourceCreationProcess {
             get {
-                return ResourceManager.GetString("BeginUpgradeProcess", resourceCulture);
+                return ResourceManager.GetString("BeginLanguageResourceCreationProcess", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IEXPLORE.EXE.
+        ///   Looks up a localized string similar to Close.
         /// </summary>
-        internal static string Browser {
+        internal static string Close {
             get {
-                return ResourceManager.GetString("Browser", resourceCulture);
+                return ResourceManager.GetString("Close", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company Name.
+        ///   Looks up a localized string similar to Confirmation.
         /// </summary>
-        internal static string CompanyName {
+        internal static string Confirmation {
             get {
-                return ResourceManager.GetString("CompanyName", resourceCulture);
+                return ResourceManager.GetString("Confirmation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copied all files from.
+        ///   Looks up a localized string similar to {0}Copying {1} to {2}.
         /// </summary>
-        internal static string CopiedAllFilesFrom {
+        internal static string CopyingFromTo_PaddedTemplate {
             get {
-                return ResourceManager.GetString("CopiedAllFilesFrom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copied Kendo files from.
-        /// </summary>
-        internal static string CopiedKendoFileFrom {
-            get {
-                return ResourceManager.GetString("CopiedKendoFileFrom", resourceCulture);
+                return ResourceManager.GetString("CopyingFromTo_PaddedTemplate", resourceCulture);
             }
         }
         
@@ -160,24 +151,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to deleted.
-        /// </summary>
-        internal static string Deleted {
-            get {
-                return ResourceManager.GetString("Deleted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to does not exist.
-        /// </summary>
-        internal static string DoesNotExist {
-            get {
-                return ResourceManager.GetString("DoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to End.
         /// </summary>
         internal static string End {
@@ -187,83 +160,41 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to End Upgrade Process.
+        ///   Looks up a localized string similar to End Language Resource Creation Process.
         /// </summary>
-        internal static string EndUpgradeProcess {
+        internal static string EndLanguageResourceCreationProcess {
             get {
-                return ResourceManager.GetString("EndUpgradeProcess", resourceCulture);
+                return ResourceManager.GetString("EndLanguageResourceCreationProcess", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Note: Before proceeding ensure a backup has been performed!.
+        ///   Looks up a localized string similar to {0} already exists. Overwriting....
         /// </summary>
-        internal static string EnsureBackup {
+        internal static string FileAlreadyExists_Overwriting_Template {
             get {
-                return ResourceManager.GetString("EnsureBackup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exception thrown. Possible locked file.
-        /// </summary>
-        internal static string ExceptionThrownPossibleLockedFile {
-            get {
-                return ResourceManager.GetString("ExceptionThrownPossibleLockedFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to exists.
-        /// </summary>
-        internal static string Exists {
-            get {
-                return ResourceManager.GetString("Exists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Extracted moduleid.
-        /// </summary>
-        internal static string ExtractedModuleId {
-            get {
-                return ResourceManager.GetString("ExtractedModuleId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File.
-        /// </summary>
-        internal static string File {
-            get {
-                return ResourceManager.GetString("File", resourceCulture);
+                return ResourceManager.GetString("FileAlreadyExists_Overwriting_Template", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
-        internal static string Finish {
+        internal static string Finish_Title {
             get {
-                return ResourceManager.GetString("Finish", resourceCulture);
+                return ResourceManager.GetString("Finish_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The following steps will be performed:.
+        ///   Looks up a localized string similar to The creation of the new language resources has completed successfully. 
+        ///
+        ///Press the &apos;Show Log&apos; button below to view the log file.
+        ///Press the &apos;Close&apos; button below to close this wizard..
         /// </summary>
-        internal static string FollowingSteps {
+        internal static string FinishContent {
             get {
-                return ResourceManager.GetString("FollowingSteps", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Found PostBuildEvent Entry.
-        /// </summary>
-        internal static string FoundPostBuildEventEntry {
-            get {
-                return ResourceManager.GetString("FoundPostBuildEventEntry", resourceCulture);
+                return ResourceManager.GetString("FinishContent", resourceCulture);
             }
         }
         
@@ -273,24 +204,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string Generate {
             get {
                 return ResourceManager.GetString("Generate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inserted command.
-        /// </summary>
-        internal static string InsertedCommand {
-            get {
-                return ResourceManager.GetString("InsertedCommand", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This wizard will help you generate boilerplate code for handling new languages in Sage 300. It will make a copy of the english language resources for each module that you can then manually translate into the language you&apos;ve specified..
-        /// </summary>
-        internal static string Introduction_Content {
-            get {
-                return ResourceManager.GetString("Introduction_Content", resourceCulture);
             }
         }
         
@@ -341,171 +254,30 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PostBuildEvent text exists but is empty.
+        ///   Looks up a localized string similar to Path : {0}.
         /// </summary>
-        internal static string PostBuildEventTextExistsButIsEmpty {
+        internal static string Path_Template {
             get {
-                return ResourceManager.GetString("PostBuildEventTextExistsButIsEmpty", resourceCulture);
+                return ResourceManager.GetString("Path_Template", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Processing.
+        ///   Looks up a localized string similar to Project : {0}.
         /// </summary>
-        internal static string Processing {
+        internal static string Project_Template {
             get {
-                return ResourceManager.GetString("Processing", resourceCulture);
+                return ResourceManager.GetString("Project_Template", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Processing {0}....
-        /// </summary>
-        internal static string ProcessingStep {
-            get {
-                return ResourceManager.GetString("ProcessingStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Project.
-        /// </summary>
-        internal static string Project {
-            get {
-                return ResourceManager.GetString("Project", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The versions of the Accpac Libraries are stored in a property file.
+        ///   Looks up a localized string similar to You&apos;ve selected &apos;{0}&apos; as the language for your new resources. 
         ///
-        ///Certain projects reference these libraries and the reference number 
-        ///has changed from {0} to {1}. 
+        ///If you are satisfied with your choice and wish to proceed, press the &apos;Generate&apos; button below. 
+        ///If you wish to change your language choice, press the &apos;Back&apos; button below to go back to the language selection page. 
         ///
-        ///This step will upgrade the AccpacDotNetVersion.props file..
-        /// </summary>
-        internal static string ReleaseAllSyncAccpacLibs {
-            get {
-                return ResourceManager.GetString("ReleaseAllSyncAccpacLibs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The Kendo UI for jQuery JavaScript library is not packaged with the 
-        ///upgrade wizard for licensing reasons.
-        ///
-        ///However, if a new version is used by Sage during the release cycle, it 
-        ///will require synchronization.
-        ///
-        ///This step will copy the appropriate Kendo files from the local Sage 300
-        ///install..
-        /// </summary>
-        internal static string ReleaseAllSyncKendoFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllSyncKendoFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Global files (CSS, CSHTML, JavaScript, etc.) are maintained by Sage.
-        ///
-        ///If these files are modified or enhanced during the release cycle, they
-        ///will require synchronization.
-        ///
-        ///The following files will be evaluated:
-        ///
-        ///     * Existing common files will be updated, if needed
-        ///     * New common files will be added, if any
-        ///     * Third party libraries will be upgraded, if needed
-        ///     * Web content files will be synchronized.
-        /// </summary>
-        internal static string ReleaseAllSyncWebFiles {
-            get {
-                return ResourceManager.GetString("ReleaseAllSyncWebFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
-        ///
-        ///Note: Please be sure you have backed up the Solution and Project 
-        ///files before proceeding!
-        ///.
-        /// </summary>
-        internal static string ReleaseAllUpgrade {
-            get {
-                return ResourceManager.GetString("ReleaseAllUpgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please review the upgrade log file by selecting the {0} button.
-        ///
-        ///Please review the upgrade instructions document for any manual steps 
-        ///still needed to be performed.
-        ///
-        ///The Sage 300 {1} Upgrade Wizard may be uninstalled by selecting 
-        ///Tools\Extensions and Updates... from the Visual Studio Toolbar.
-        ///
-        ///Please reload and recompile the solution.
-        ///.
-        /// </summary>
-        internal static string ReleaseAllUpgraded {
-            get {
-                return ResourceManager.GetString("ReleaseAllUpgraded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
-        ///from release {0} to {1}.
-        ///
-        ///Instead of creating a different, unique enumeration file for each unique enumeration,
-        ///the code generation wizard will now consolidate enumerations into a single file on
-        ///a per-directory basis in the Models project. This file is called &apos;Enumerations.cs&apos;
-        ///.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateConsolidateEnumerations {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes required to handle multiple sessions in
-        ///Sage 300c 2020.0, several files need to be altered for the solution to
-        ///compile and run after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this
-        ///modification and therefore this step will require manual modifications.
-        ///
-        ///The following files are affected (all within the Namespace.Web project):
-        ///	- XXAreaRegistration.cs
-        ///	- Global.asax.cs
-        ///	- PageUrl.txt
-        ///	- Web.config
-        ///	- All JavaScript behaviour files
-        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateMultisession {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateMultisession", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The targeted version of the Microsoft .NET Framework will be updated to version {0} 
-        ///for all projects in the solution..
-        /// </summary>
-        internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You&apos;ve selected &apos;{0}&apos; as the language for your new resources. If you are satisfied with your choice, press the &apos;Generate&apos; button below. If you wish to change this language choice, press the &apos;Back&apos; button below to go back to the language selection page. 
-        ///
+        ///** CAUTION ** 
         ///If there are already existing resources for the language you&apos;ve selected, they will be overwritten..
         /// </summary>
         internal static string Review_Content_Template {
@@ -534,11 +306,11 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seaching in all project directories instead..
+        ///   Looks up a localized string similar to Selected Language : [{0}] {1}.
         /// </summary>
-        internal static string SearchingInAllProjectDirectoriesInstead {
+        internal static string SelectedLanguage_Template {
             get {
-                return ResourceManager.GetString("SearchingInAllProjectDirectoriesInstead", resourceCulture);
+                return ResourceManager.GetString("SelectedLanguage_Template", resourceCulture);
             }
         }
         
@@ -570,38 +342,20 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Directory.
-        /// </summary>
-        internal static string SolutionDirectory {
-            get {
-                return ResourceManager.GetString("SolutionDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Solution Projects.
-        /// </summary>
-        internal static string SolutionProjects {
-            get {
-                return ResourceManager.GetString("SolutionProjects", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Solution projects to be processed.
-        /// </summary>
-        internal static string SolutionProjectsToBeProcessed {
-            get {
-                return ResourceManager.GetString("SolutionProjectsToBeProcessed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         
@@ -615,25 +369,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to to.
-        /// </summary>
-        internal static string To {
-            get {
-                return ResourceManager.GetString("To", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade.
-        /// </summary>
-        internal static string Upgrade {
-            get {
-                return ResourceManager.GetString("Upgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you&apos;ve specified. To begin, press the &apos;Begin&apos; button below..
+        ///   Looks up a localized string similar to Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: 
+        ///
+        ///English, French, Spanish, Chinese - Simplified and Chinese - Traditional
+        ///
+        ///This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you&apos;ve specified. 
+        ///
+        ///To begin, press the &apos;Begin&apos; button below..
         /// </summary>
         internal static string WelcomeContent {
             get {

@@ -1,6 +1,0 @@
-﻿The versions of the Accpac Libraries are stored in a property file.
-
-Certain projects reference these libraries and the reference number 
-has changed from {0} to {1}. 
-
-This step will upgrade the AccpacDotNetVersion.props file.

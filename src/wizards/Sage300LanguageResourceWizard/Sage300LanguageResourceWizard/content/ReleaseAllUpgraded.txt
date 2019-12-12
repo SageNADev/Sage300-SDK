@@ -1,9 +1,0 @@
-﻿Please review the upgrade log file by selecting the {0} button.
-
-Please review the upgrade instructions document for any manual steps 
-still needed to be performed.
-
-The Sage 300 {1} Upgrade Wizard may be uninstalled by selecting 
-Tools\Extensions and Updates... from the Visual Studio Toolbar.
-
-Please reload and recompile the solution.

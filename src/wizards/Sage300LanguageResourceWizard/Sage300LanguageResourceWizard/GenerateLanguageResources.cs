@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-//using Microsoft.Build.Evaluation;
+using System.Windows.Forms;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
@@ -65,13 +65,16 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 		public void Process(Settings settings)
 		{
             LogSpacerLine('-');
-            Log(Resources.BeginUpgradeProcess);
+            Log(Resources.BeginLanguageResourceCreationProcess);
             LogSpacerLine();
 
-            LaunchProcessingEvent("Adding new language resources...");
+            LaunchProcessingEvent(Resources.AddingNewLanguageResources);
 
             // Save settings for local usage
             _settings = settings;
+
+            var selectedLanguageCode = _settings.Language.Code;
+            Log(String.Format(Resources.SelectedLanguage_Template, selectedLanguageCode, _settings.Language.Name));
 
             var projects = GetProjects(_settings.Solution);
 
@@ -83,8 +86,9 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
                 // Get the project path
                 var projectPath = Path.GetDirectoryName(project.FullName);
+                Log(string.Format(Resources.Project_Template, new FileInfo(project.FullName).Name));
+                Log(string.Format(Resources.Path_Template, projectPath));
 
-                //var regex = new Regex();
                 var files = Directory.GetFiles(projectPath, "*Resx.resx", SearchOption.AllDirectories);
 
                 foreach (var file in files)
@@ -100,24 +104,31 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     var extension = fi.Extension;
 
                     // Build the name for the new language resource file.
-                    var selectedLanguageCode = _settings.Language.Code;
                     var newName = $"{nameOnly}.{selectedLanguageCode}{extension}";
 
-                    LaunchProcessingEvent($"{projectName} - {newName}");
+                    LaunchProcessingEvent($"     {newName}");
 
                     // Build the full path to the new file
                     var newFilePath = Path.Combine(directoryName, newName);
 
+                    if (File.Exists(newFilePath))
+                    {
+                        Log(String.Format(Resources.FileAlreadyExists_Overwriting_Template, newName));
+                    }
+
                     // copy it!
                     File.Copy(file, newFilePath, overwrite: true);
+                    var prefixPadding = new String(' ', 10);
+                    Log(String.Format(Resources.CopyingFromTo_PaddedTemplate, prefixPadding, new FileInfo(file).Name, newName));
 
                     // ...and add to the project
                     project.ProjectItems.AddFromFile(newFilePath);
+                    Log(String.Format(Resources.AddingFileToTheProject_PaddedTemplate, prefixPadding, newName));
                 }
             }
 
             LogSpacerLine();
-            Log(Resources.EndUpgradeProcess);
+            Log(Resources.EndLanguageResourceCreationProcess);
             LogSpacerLine('-');
         }
 
@@ -125,8 +136,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
         #region Private methods
 
-        /// <summary> Gets projects </summary>
-        /// <param name="solution">Solution </param>
+        /// <summary> Gets the list of projects from the solution</summary>
+        /// <param name="solution">The Solution object</param>
         /// <returns>List of projects</returns>
         private static IEnumerable<Project> GetProjects(_Solution solution)
         {

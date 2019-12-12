@@ -1,8 +1,0 @@
-﻿The Kendo UI for jQuery JavaScript library is not packaged with the 
-upgrade wizard for licensing reasons.
-
-However, if a new version is used by Sage during the release cycle, it 
-will require synchronization.
-
-This step will copy the appropriate Kendo files from the local Sage 300
-install.

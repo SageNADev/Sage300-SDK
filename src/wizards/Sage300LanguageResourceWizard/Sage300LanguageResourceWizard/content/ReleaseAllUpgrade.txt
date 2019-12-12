@@ -1,4 +1,0 @@
-﻿A log file will be generated with the results of the upgrade.
-
-Note: Please be sure you have backed up the Solution and Project 
-files before proceeding!

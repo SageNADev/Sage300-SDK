@@ -123,8 +123,8 @@
   <data name="SelectLanguage_Description" xml:space="preserve">
     <value>Select the language for the new resources</value>
   </data>
-  <data name="EndUpgradeProcess" xml:space="preserve">
-    <value>End Upgrade Process</value>
+  <data name="EndLanguageResourceCreationProcess" xml:space="preserve">
+    <value>End Language Resource Creation Process</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -133,147 +133,35 @@
   <data name="End" xml:space="preserve">
     <value>End</value>
   </data>
-  <data name="Processing" xml:space="preserve">
-    <value>Processing</value>
-  </data>
-  <data name="FoundPostBuildEventEntry" xml:space="preserve">
-    <value>Found PostBuildEvent Entry</value>
-  </data>
   <data name="ShowLog" xml:space="preserve">
     <value>Show Log</value>
-  </data>
-  <data name="ReleaseAllUpgraded" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllUpgraded.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Finish" xml:space="preserve">
-    <value>Finish</value>
-  </data>
-  <data name="CopiedAllFilesFrom" xml:space="preserve">
-    <value>Copied all files from</value>
-  </data>
-  <data name="EnsureBackup" xml:space="preserve">
-    <value>Note: Before proceeding ensure a backup has been performed!</value>
-  </data>
-  <data name="AddReplaceFile" xml:space="preserve">
-    <value>Add/Replace file: </value>
-  </data>
-  <data name="FollowingSteps" xml:space="preserve">
-    <value>The following steps will be performed:</value>
-  </data>
-  <data name="BeforeUpdate" xml:space="preserve">
-    <value>Before update</value>
-  </data>
-  <data name="To" xml:space="preserve">
-    <value>to</value>
-  </data>
-  <data name="Upgrade" xml:space="preserve">
-    <value>Upgrade</value>
-  </data>
-  <data name="PostBuildEventTextExistsButIsEmpty" xml:space="preserve">
-    <value>PostBuildEvent text exists but is empty</value>
-  </data>
-  <data name="CompanyName" xml:space="preserve">
-    <value>Company Name</value>
-  </data>
-  <data name="Deleted" xml:space="preserve">
-    <value>deleted</value>
-  </data>
-  <data name="Project" xml:space="preserve">
-    <value>Project</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="SolutionDirectory" xml:space="preserve">
-    <value>Solution Directory</value>
-  </data>
   <data name="SelectLanguage_Title" xml:space="preserve">
     <value>Select Language</value>
-  </data>
-  <data name="ReleaseAllSyncWebFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncWebFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Dash" xml:space="preserve">
     <value> - </value>
   </data>
-  <data name="ReleaseAllUpgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllUpgrade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="File" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="Step" xml:space="preserve">
     <value>Step</value>
   </data>
-  <data name="Exists" xml:space="preserve">
-    <value>exists</value>
-  </data>
-  <data name="DoesNotExist" xml:space="preserve">
-    <value>does not exist</value>
-  </data>
-  <data name="BeginUpgradeProcess" xml:space="preserve">
-    <value>Begin Upgrade Process...</value>
-  </data>
-  <data name="Browser" xml:space="preserve">
-    <value>IEXPLORE.EXE</value>
-    <comment>Browser to use</comment>
-  </data>
-  <data name="AfterUpdate" xml:space="preserve">
-    <value>AfterUpdate</value>
+  <data name="BeginLanguageResourceCreationProcess" xml:space="preserve">
+    <value>Begin Language Resource Creation Process...</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="ExtractedModuleId" xml:space="preserve">
-    <value>Extracted moduleid</value>
-  </data>
-  <data name="SolutionProjects" xml:space="preserve">
-    <value>Solution Projects</value>
-  </data>
-  <data name="SolutionProjectsToBeProcessed" xml:space="preserve">
-    <value>Solution projects to be processed</value>
-  </data>
-  <data name="ReleaseSpecificUpdateConsolidateEnumerations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateConsolidateEnumerations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseSpecificUpdateTargetedDotNetFrameworkVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReleaseSpecificUpdateMultisession" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateMultisession.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ProcessingStep" xml:space="preserve">
-    <value>Processing {0}...</value>
-  </data>
-  <data name="InsertedCommand" xml:space="preserve">
-    <value>Inserted command</value>
-  </data>
-  <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
-    <value>Exception thrown. Possible locked file</value>
-  </data>
-  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="sage-logo-square" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sage-logo-square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CopiedKendoFileFrom" xml:space="preserve">
-    <value>Copied Kendo files from</value>
-  </data>
-  <data name="ReleaseAllSyncKendoFiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="SearchingInAllProjectDirectoriesInstead" xml:space="preserve">
-    <value>Seaching in all project directories instead.</value>
   </data>
   <data name="WizardTitle" xml:space="preserve">
     <value>Sage 300 Language Resource Wizard</value>
   </data>
   <data name="Review_Title" xml:space="preserve">
     <value>Review</value>
-  </data>
-  <data name="Introduction_Content" xml:space="preserve">
-    <value>This wizard will help you generate boilerplate code for handling new languages in Sage 300. It will make a copy of the english language resources for each module that you can then manually translate into the language you've specified.</value>
   </data>
   <data name="Introduction_Title" xml:space="preserve">
     <value>Introduction</value>
@@ -288,14 +176,66 @@
     <value>Generate</value>
   </data>
   <data name="Review_Content_Template" xml:space="preserve">
-    <value>You've selected '{0}' as the language for your new resources. If you are satisfied with your choice, press the 'Generate' button below. If you wish to change this language choice, press the 'Back' button below to go back to the language selection page. 
+    <value>You've selected '{0}' as the language for your new resources. 
 
+If you are satisfied with your choice and wish to proceed, press the 'Generate' button below. 
+If you wish to change your language choice, press the 'Back' button below to go back to the language selection page. 
+
+** CAUTION ** 
 If there are already existing resources for the language you've selected, they will be overwritten.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language:</value>
   </data>
   <data name="WelcomeContent" xml:space="preserve">
-    <value>Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you've specified. To begin, press the 'Begin' button below.</value>
+    <value>Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: 
+
+English, French, Spanish, Chinese - Simplified and Chinese - Traditional
+
+This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you've specified. 
+
+To begin, press the 'Begin' button below.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AddingFileToTheProject_PaddedTemplate" xml:space="preserve">
+    <value>{0}Adding {1} to the project.</value>
+  </data>
+  <data name="AddingNewLanguageResources" xml:space="preserve">
+    <value>Adding new language resources...</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CopyingFromTo_PaddedTemplate" xml:space="preserve">
+    <value>{0}Copying {1} to {2}</value>
+  </data>
+  <data name="FileAlreadyExists_Overwriting_Template" xml:space="preserve">
+    <value>{0} already exists. Overwriting...</value>
+  </data>
+  <data name="FinishContent" xml:space="preserve">
+    <value>The creation of the new language resources has completed successfully. 
+
+Press the 'Show Log' button below to view the log file.
+Press the 'Close' button below to close this wizard.</value>
+  </data>
+  <data name="Finish_Title" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Path_Template" xml:space="preserve">
+    <value>Path : {0}</value>
+  </data>
+  <data name="Project_Template" xml:space="preserve">
+    <value>Project : {0}</value>
+  </data>
+  <data name="SelectedLanguage_Template" xml:space="preserve">
+    <value>Selected Language : [{0}] {1}</value>
+  </data>
+  <data name="AreYouSureYouWishToProceed" xml:space="preserve">
+    <value>Are you sure you wish to proceed?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
   </data>
 </root>

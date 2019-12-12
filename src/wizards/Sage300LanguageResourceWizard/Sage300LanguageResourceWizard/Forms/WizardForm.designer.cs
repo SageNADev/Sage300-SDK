@@ -38,6 +38,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
             this.splitStep = new System.Windows.Forms.SplitContainer();
+            this.pnlFinish = new System.Windows.Forms.Panel();
+            this.lblFinish_Content = new MetroFramework.Controls.MetroLabel();
             this.pnlReview = new System.Windows.Forms.Panel();
             this.lblReview_ContentTemplate = new MetroFramework.Controls.MetroLabel();
             this.pnlWelcome = new System.Windows.Forms.Panel();
@@ -49,7 +51,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblUpperBorder = new System.Windows.Forms.Label();
             this.checkBox = new MetroFramework.Controls.MetroCheckBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.lblProcessing = new MetroFramework.Controls.MetroLabel();
+            this.lblStatus = new MetroFramework.Controls.MetroLabel();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.btnNext = new MetroFramework.Controls.MetroButton();
             this.btnBack = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
@@ -65,6 +68,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.splitStep.Panel1.SuspendLayout();
             this.splitStep.Panel2.SuspendLayout();
             this.splitStep.SuspendLayout();
+            this.pnlFinish.SuspendLayout();
             this.pnlReview.SuspendLayout();
             this.pnlWelcome.SuspendLayout();
             this.pnlSelectLanguage.SuspendLayout();
@@ -97,8 +101,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // 
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
-            this.splitBase.Size = new System.Drawing.Size(839, 608);
-            this.splitBase.SplitterDistance = 139;
+            this.splitBase.Size = new System.Drawing.Size(839, 656);
+            this.splitBase.SplitterDistance = 149;
             this.splitBase.SplitterWidth = 5;
             this.splitBase.TabIndex = 9;
             // 
@@ -161,7 +165,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // 
             this.splitSteps.Panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(839, 464);
+            this.splitSteps.Size = new System.Drawing.Size(839, 502);
             this.splitSteps.SplitterDistance = 300;
             this.splitSteps.SplitterWidth = 5;
             this.splitSteps.TabIndex = 0;
@@ -179,6 +183,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // splitStep.Panel1
             // 
             this.splitStep.Panel1.BackColor = System.Drawing.Color.Aqua;
+            this.splitStep.Panel1.Controls.Add(this.pnlFinish);
             this.splitStep.Panel1.Controls.Add(this.pnlReview);
             this.splitStep.Panel1.Controls.Add(this.pnlWelcome);
             this.splitStep.Panel1.Controls.Add(this.pnlSelectLanguage);
@@ -195,13 +200,34 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.splitStep.SplitterWidth = 5;
             this.splitStep.TabIndex = 0;
             // 
+            // pnlFinish
+            // 
+            this.pnlFinish.Controls.Add(this.lblFinish_Content);
+            this.pnlFinish.Location = new System.Drawing.Point(17, 142);
+            this.pnlFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFinish.Name = "pnlFinish";
+            this.pnlFinish.Size = new System.Drawing.Size(240, 72);
+            this.pnlFinish.TabIndex = 6;
+            // 
+            // lblFinish_Content
+            // 
+            this.lblFinish_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFinish_Content.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblFinish_Content.Location = new System.Drawing.Point(0, 0);
+            this.lblFinish_Content.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinish_Content.Name = "lblFinish_Content";
+            this.lblFinish_Content.Size = new System.Drawing.Size(240, 72);
+            this.lblFinish_Content.TabIndex = 5;
+            this.lblFinish_Content.Text = "The creation of the new language resources has completed successfully.\r\n\r\n";
+            this.lblFinish_Content.WrapToLine = true;
+            // 
             // pnlReview
             // 
             this.pnlReview.Controls.Add(this.lblReview_ContentTemplate);
-            this.pnlReview.Location = new System.Drawing.Point(473, 162);
+            this.pnlReview.Location = new System.Drawing.Point(473, 25);
             this.pnlReview.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReview.Name = "pnlReview";
-            this.pnlReview.Size = new System.Drawing.Size(343, 123);
+            this.pnlReview.Size = new System.Drawing.Size(343, 72);
             this.pnlReview.TabIndex = 4;
             // 
             // lblReview_ContentTemplate
@@ -211,7 +237,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblReview_ContentTemplate.Location = new System.Drawing.Point(0, 0);
             this.lblReview_ContentTemplate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReview_ContentTemplate.Name = "lblReview_ContentTemplate";
-            this.lblReview_ContentTemplate.Size = new System.Drawing.Size(343, 123);
+            this.lblReview_ContentTemplate.Size = new System.Drawing.Size(343, 72);
             this.lblReview_ContentTemplate.TabIndex = 5;
             this.lblReview_ContentTemplate.Text = resources.GetString("lblReview_ContentTemplate.Text");
             this.lblReview_ContentTemplate.WrapToLine = true;
@@ -219,10 +245,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // pnlWelcome
             // 
             this.pnlWelcome.Controls.Add(this.lblWelcome_Content);
-            this.pnlWelcome.Location = new System.Drawing.Point(24, 162);
+            this.pnlWelcome.Location = new System.Drawing.Point(13, 20);
             this.pnlWelcome.Margin = new System.Windows.Forms.Padding(4);
             this.pnlWelcome.Name = "pnlWelcome";
-            this.pnlWelcome.Size = new System.Drawing.Size(244, 123);
+            this.pnlWelcome.Size = new System.Drawing.Size(244, 77);
             this.pnlWelcome.TabIndex = 4;
             // 
             // lblWelcome_Content
@@ -232,7 +258,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblWelcome_Content.Location = new System.Drawing.Point(0, 0);
             this.lblWelcome_Content.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome_Content.Name = "lblWelcome_Content";
-            this.lblWelcome_Content.Size = new System.Drawing.Size(244, 123);
+            this.lblWelcome_Content.Size = new System.Drawing.Size(244, 77);
             this.lblWelcome_Content.TabIndex = 2;
             this.lblWelcome_Content.Text = resources.GetString("lblWelcome_Content.Text");
             this.lblWelcome_Content.WrapToLine = true;
@@ -241,10 +267,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // 
             this.pnlSelectLanguage.Controls.Add(this.cboLanguage);
             this.pnlSelectLanguage.Controls.Add(this.lblLanguage);
-            this.pnlSelectLanguage.Location = new System.Drawing.Point(301, 162);
+            this.pnlSelectLanguage.Location = new System.Drawing.Point(296, 24);
             this.pnlSelectLanguage.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSelectLanguage.Name = "pnlSelectLanguage";
-            this.pnlSelectLanguage.Size = new System.Drawing.Size(140, 123);
+            this.pnlSelectLanguage.Size = new System.Drawing.Size(140, 73);
             this.pnlSelectLanguage.TabIndex = 3;
             // 
             // cboLanguage
@@ -312,27 +338,38 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // pnlButtons
             // 
             this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
-            this.pnlButtons.Controls.Add(this.lblProcessing);
+            this.pnlButtons.Controls.Add(this.lblStatus);
+            this.pnlButtons.Controls.Add(this.textBoxStatus);
             this.pnlButtons.Controls.Add(this.btnNext);
             this.pnlButtons.Controls.Add(this.btnBack);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(839, 159);
+            this.pnlButtons.Size = new System.Drawing.Size(839, 197);
             this.pnlButtons.TabIndex = 0;
             // 
-            // lblProcessing
+            // lblStatus
             // 
-            this.lblProcessing.AutoSize = true;
-            this.lblProcessing.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblProcessing.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblProcessing.Location = new System.Drawing.Point(12, 12);
-            this.lblProcessing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProcessing.Name = "lblProcessing";
-            this.lblProcessing.Size = new System.Drawing.Size(79, 20);
-            this.lblProcessing.TabIndex = 2;
-            this.lblProcessing.Text = "Processing";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblStatus.Location = new System.Drawing.Point(10, 6);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(49, 20);
+            this.lblStatus.TabIndex = 4;
+            this.lblStatus.Text = "Status";
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStatus.Location = new System.Drawing.Point(9, 29);
+            this.textBoxStatus.Multiline = true;
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxStatus.Size = new System.Drawing.Size(830, 119);
+            this.textBoxStatus.TabIndex = 3;
             // 
             // btnNext
             // 
@@ -340,7 +377,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.btnNext.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnNext.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.btnNext.Highlight = true;
-            this.btnNext.Location = new System.Drawing.Point(747, 12);
+            this.btnNext.Location = new System.Drawing.Point(748, 162);
             this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(91, 31);
@@ -356,7 +393,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.btnBack.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnBack.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.btnBack.Highlight = true;
-            this.btnBack.Location = new System.Drawing.Point(648, 12);
+            this.btnBack.Location = new System.Drawing.Point(649, 162);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(91, 31);
@@ -371,7 +408,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(893, 707);
+            this.ClientSize = new System.Drawing.Size(893, 755);
             this.Controls.Add(this.splitBase);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -400,6 +437,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.splitStep.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitStep)).EndInit();
             this.splitStep.ResumeLayout(false);
+            this.pnlFinish.ResumeLayout(false);
             this.pnlReview.ResumeLayout(false);
             this.pnlWelcome.ResumeLayout(false);
             this.pnlSelectLanguage.ResumeLayout(false);
@@ -422,7 +460,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private MetroFramework.Controls.MetroButton btnNext;
         private System.Windows.Forms.SplitContainer splitStep;
         private MetroFramework.Controls.MetroCheckBox checkBox;
-        private MetroFramework.Controls.MetroLabel lblProcessing;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
@@ -433,6 +470,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private MetroFramework.Controls.MetroLabel lblWelcome_Content;
         private System.Windows.Forms.Panel pnlReview;
         private MetroFramework.Controls.MetroLabel lblReview_ContentTemplate;
+        private System.Windows.Forms.TextBox textBoxStatus;
+        private MetroFramework.Controls.MetroLabel lblStatus;
+        private System.Windows.Forms.Panel pnlFinish;
+        private MetroFramework.Controls.MetroLabel lblFinish_Content;
     }
 }
 

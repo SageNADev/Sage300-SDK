@@ -1,6 +1,0 @@
-﻿The way the Code Generation Wizard builds and stores enumerations has changed 
-from release {0} to {1}.
-
-Instead of creating a different, unique enumeration file for each unique enumeration,
-the code generation wizard will now consolidate enumerations into a single file on
-a per-directory basis in the Models project. This file is called 'Enumerations.cs'

@@ -59,6 +59,11 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private readonly StringBuilder _log = new StringBuilder();
 
         /// <summary>
+        /// Destination folder for the log file
+        /// </summary>
+        private readonly string _destinationFolder;
+
+        /// <summary>
         /// TODO - Add Description
         /// </summary>
         private Language _selectedLanguage = new Language();
@@ -71,8 +76,11 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             public const string PanelWelcome = "pnlWelcome";
             public const string PanelSelectLanguage = "pnlSelectLanguage";
             public const string PanelReview = "pnlReview";
+            public const string PanelFinish = "pnlFinish";
 
             public const string InvalidLanguageCode = "--";
+
+            public const string LogFileName = "Sage300LanguageResourceWizardLog.txt";
 
             public const int StartingStep = -1;
         }
@@ -111,10 +119,22 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             ResetBackgroundColors();
 
+            _destinationFolder = GetSolutionFolder(solution);
+
             // Display first step
             InitialStep();
         }
         #endregion
+
+        /// <summary>
+        /// Get the solution folder from the solution object
+        /// </summary>
+        /// <param name="solution">The solution object</param>
+        /// <returns></returns>
+        private string GetSolutionFolder(Solution2 solution)
+        {
+            return Path.GetDirectoryName(solution.FullName);
+        }
 
         /// <summary>
         /// Reset panel background colors to transparent
@@ -177,266 +197,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             return (solution != null);
         }
 
-        ///// <summary> Determine if Projects in Solution are valid </summary>
-        ///// <param name="solution">Solution </param>
-        ///// <returns>True if valid otherwise false</returns>
-        //private bool ValidProjects(_Solution solution)
-        //{
-        //    try
-        //    {
-        //        // Locals
-        //        //var solutionFolder = Path.GetDirectoryName(solution.FullName);
-        //        var projects = GetProjects(solution);
-
-        //        // Iterate solution to get projects for analysis and usage
-        //        foreach (var project in projects)
-        //        {
-        //            var projectName = Path.GetFileNameWithoutExtension(project.FullName);
-        //            if (string.IsNullOrEmpty(projectName))
-        //            {
-        //                continue;
-        //            }
-
-        //            var segments = projectName.Split('.');
-        //            var key = segments[segments.Length - 1];
-        //            var module = segments[segments.Length - 2];
-
-        //            // Grab the company namespace from the Business Repository project
-        //            if (key.Equals(ProcessGeneration.Constants.BusinessRepositoryKey))
-        //            {
-        //                _companyNamespace = projectName.Substring(0,
-        //                    projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
-        //            }
-
-        //            // Determine which language resources to include
-        //            if (key.Equals(ProcessGeneration.Constants.ResourcesKey))
-        //            {
-        //                SetLanguageFlagsBasedOnExistingProjectResourceFiles(project.ProjectItems);
-        //            }
-
-        //            // The Web project name is different from other ones. It should be derived from the folder name
-        //            if (key.Equals(ProcessGeneration.Constants.WebKey))
-        //            {
-        //                var parts = project.FullName.Split('\\');
-        //                // Last part is web project name
-        //                projectName = parts[parts.Length - 1].Replace(".csproj", string.Empty);
-
-        //                // Need to determine if area structure vs. non-area structure
-        //                var projectFolder = Path.GetDirectoryName(project.FullName);
-        //                if (!string.IsNullOrEmpty(projectFolder))
-        //                {
-        //                    var areaPath = Path.Combine(projectFolder, "Areas");
-        //                    var areaStructure = Directory.Exists(areaPath);
-
-        //                    // Store for later use in generation
-        //                    _doesAreasExist = areaStructure;
-        //                    _webProjectIncludesModule = false;
-
-        //                    if (areaStructure)
-        //                    {
-        //                        // Iterate directories looking for the "module folder
-        //                        var directories = Directory.GetDirectories(areaPath);
-        //                        foreach (var moduleParts in from directory in directories
-        //                                                    let modulePath = Path.Combine(directory, "Constants")
-        //                                                    where Directory.Exists(modulePath)
-        //                                                    select directory.Split('\\'))
-        //                        {
-        //                            module = moduleParts[moduleParts.Length - 1];
-
-        //                            // Determine if module is in project name
-        //                            _webProjectIncludesModule = projectName.Contains("." + module + ".");
-
-        //                            break;
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        // Non-Area structure project
-        //                        module = parts[parts.Length - 2];
-        //                    }
-        //                }
-
-        //                // We will use the copyright from this project for all generated files
-        //                _copyright = GetCopyright(project);
-        //            }
-
-        //            var projectInfo = new ProjectInfo
-        //            {
-        //                ProjectFolder = Path.GetDirectoryName(project.FullName),
-        //                ProjectName = projectName,
-        //                Project = project
-        //            };
-
-        //            // Add to list of projects by type and module
-        //            if (_projects.ContainsKey(key))
-        //            {
-        //                _projects[key].Add(module, projectInfo);
-        //            }
-        //            else
-        //            {
-        //                _projects.Add(key, new Dictionary<string, ProjectInfo> { { module, projectInfo } });
-        //            }
-        //        }
-
-        //    }
-        //    catch
-        //    {
-        //        // No action as will be reviewed by caller                    
-        //    }
-
-        //    // Must have all projects to be valid
-        //    return (_projects.ContainsKey(ProcessGeneration.Constants.BusinessRepositoryKey) &&
-        //            _projects.ContainsKey(ProcessGeneration.Constants.InterfacesKey) &&
-        //            _projects.ContainsKey(ProcessGeneration.Constants.ModelsKey) &&
-        //            _projects.ContainsKey(ProcessGeneration.Constants.ResourcesKey) &&
-        //            _projects.ContainsKey(ProcessGeneration.Constants.ServicesKey) &&
-        //            _projects.ContainsKey(ProcessGeneration.Constants.WebKey));
-        //}
-
-        ///// <summary> Gets projects </summary>
-        ///// <param name="solution">Solution </param>
-        ///// <returns>List of projects</returns>
-        //private static IEnumerable<Project> GetProjects(_Solution solution)
-        //{
-        //    // Locals
-        //    var projects = solution.Projects;
-        //    var list = new List<Project>();
-        //    var item = projects.GetEnumerator();
-
-        //    try
-        //    {
-        //        // Iterate 
-        //        while (item.MoveNext())
-        //        {
-        //            var project = (Project)item.Current;
-
-        //            if (project == null)
-        //            {
-        //                continue;
-        //            }
-
-        //            // only add project folder
-        //            if (project.Kind == ProjectKinds.vsProjectKindSolutionFolder)
-        //            {
-        //                list.AddRange(GetSolutionFolderProjects(project));
-        //            }
-        //            else
-        //            {
-        //                list.Add(project);
-        //            }
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        // No action as it will be reviewed by caller
-        //    }
-
-        //    return list;
-        //}
-
-        ///// <summary> Gets projects in solution folder </summary>
-        ///// <param name="project">Project </param>
-        ///// <returns>List of projects</returns>
-        //private static IEnumerable<Project> GetSolutionFolderProjects(Project project)
-        //{
-        //    // Locals
-        //    var list = new List<Project>();
-
-        //    // Iterate projects
-        //    for (var projectItem = 1; projectItem <= project.ProjectItems.Count; projectItem++)
-        //    {
-        //        var subProject = project.ProjectItems.Item(projectItem).SubProject;
-
-        //        if (subProject == null)
-        //        {
-        //            continue;
-        //        }
-
-        //        // Recursion for another solution folder
-        //        if (subProject.Kind.Equals(ProjectKinds.vsProjectKindSolutionFolder))
-        //        {
-        //            list.AddRange(GetSolutionFolderProjects(subProject));
-        //        }
-        //        else
-        //        {
-        //            list.Add(subProject);
-        //        }
-        //    }
-
-        //    return list;
-        //}
-
-        ///// <summary> Get copyright of project </summary>
-        ///// <param name="project">Project </param>
-        ///// <returns>Copyright from AssemblyInfo of project</returns>
-        //private static string GetCopyright(Project project)
-        //{
-        //    var retVal = string.Empty;
-
-        //    try
-        //    {
-        //        // Iterate project looking for the AssemblyInfo class
-        //        foreach (ProjectItem projectItem in project.ProjectItems)
-        //        {
-        //            if (projectItem.Name.Equals("Properties"))
-        //            {
-        //                foreach (ProjectItem assemblyItem in projectItem.ProjectItems)
-        //                {
-        //                    retVal = GetCopyrightAttribute(assemblyItem.Properties.Item("LocalPath").Value.ToString());
-        //                    break;
-        //                }
-
-        //            }
-
-        //            // Break early out of outer loop
-        //            if (!string.IsNullOrEmpty(retVal))
-        //            {
-        //                break;
-        //            }
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        // Swallow error
-        //    }
-
-        //    return retVal;
-        //}
-
-        ///// <summary> Get copyright attribute </summary>
-        ///// <param name="fileName">Assembly Info file name </param>
-        ///// <returns>Copyright from AssemblyInfo of project</returns>
-        //private static string GetCopyrightAttribute(string fileName)
-        //{
-        //    // Locals
-        //    var retVal = string.Empty;
-
-        //    try
-        //    {
-        //        // Read resource info file
-        //        var lines = File.ReadAllLines(@fileName);
-
-        //        // Iterate and search for "AssemblyCopyright attribute
-        //        foreach (
-        //            var parsedLine in from line in lines where line.Contains("AssemblyCopyright") select line.Split('"')
-        //        )
-        //        {
-        //            if (parsedLine.Length > 0)
-        //            {
-        //                retVal = parsedLine[1];
-        //            }
-        //            break;
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        // Swallow error
-        //    }
-
-        //    return retVal;
-        //}
-
-
         /// <summary> Initialize panel </summary>
         private void InitPanel(Panel panel)
         {
@@ -452,29 +212,185 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             InitPanel(pnlWelcome);
             InitPanel(pnlSelectLanguage);
             InitPanel(pnlReview);
+            InitPanel(pnlFinish);
         }
 
         /// <summary>
         /// Set up the language drop down list
+        /// Note: List source: https://www.science.co.il/language/Codes.php
         /// </summary>
         private void InitLanguageList()
         {
             List<Language> languages = new List<Language>();
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = "- Select Language -" });
+            languages.Add(new Language { Code = "ab", Name = "Abkhazian" });
+            languages.Add(new Language { Code = "aa", Name = "Afar" });
+            languages.Add(new Language { Code = "af", Name = "Afrikaans" });
+            languages.Add(new Language { Code = "sq", Name = "Albanian" });
+            languages.Add(new Language { Code = "am", Name = "Amharic" });
+            languages.Add(new Language { Code = "ar", Name = "Arabic" });
+            languages.Add(new Language { Code = "an", Name = "Aragonese" });
+            languages.Add(new Language { Code = "hy", Name = "Armenian" });
+            languages.Add(new Language { Code = "as", Name = "Assamese" });
+            languages.Add(new Language { Code = "ae", Name = "Avestan" });
+            languages.Add(new Language { Code = "ay", Name = "Aymara" });
+            languages.Add(new Language { Code = "az", Name = "Azerbaijani" });
+            languages.Add(new Language { Code = "ba", Name = "Bashkir" });
+            languages.Add(new Language { Code = "eu", Name = "Basque" });
+            languages.Add(new Language { Code = "be", Name = "Belarusian" });
+            languages.Add(new Language { Code = "bn", Name = "Bengali" });
+            languages.Add(new Language { Code = "bh", Name = "Bihari" });
+            languages.Add(new Language { Code = "bi", Name = "Bislama" });
+            languages.Add(new Language { Code = "bs", Name = "Bosnian" });
+            languages.Add(new Language { Code = "br", Name = "Breton" });
             languages.Add(new Language { Code = "bg", Name = "Bulgarian" });
+            languages.Add(new Language { Code = "my", Name = "Burmese" });
+            languages.Add(new Language { Code = "ca", Name = "Catalan" });
+            languages.Add(new Language { Code = "ch", Name = "Chamorro" });
+            languages.Add(new Language { Code = "ce", Name = "Chechen" });
+            languages.Add(new Language { Code = "cu", Name = "Church Slavic; Slavonic; Old Bulgarian" });
+            languages.Add(new Language { Code = "cv", Name = "Chuvash" });
+            languages.Add(new Language { Code = "kw", Name = "Cornish" });
+            languages.Add(new Language { Code = "co", Name = "Corsican" });
+            languages.Add(new Language { Code = "hr", Name = "Croatian" });
             languages.Add(new Language { Code = "cs", Name = "Czech" });
             languages.Add(new Language { Code = "da", Name = "Danish" });
+            languages.Add(new Language { Code = "dv", Name = "Divehi, Dhivehi, Maldivian" });
             languages.Add(new Language { Code = "nl", Name = "Dutch" });
+            languages.Add(new Language { Code = "dz", Name = "Dzongkha" });
+            languages.Add(new Language { Code = "eo", Name = "Esperanto" });
+            languages.Add(new Language { Code = "et", Name = "Estonian" });
+            languages.Add(new Language { Code = "fo", Name = "Faroese" });
+            languages.Add(new Language { Code = "fj", Name = "Fijian" });
             languages.Add(new Language { Code = "fi", Name = "Finnish" });
+            languages.Add(new Language { Code = "gd", Name = "Gaelic, Scottish Gaelic" });
+            languages.Add(new Language { Code = "gl", Name = "Galician" });
+            languages.Add(new Language { Code = "ka", Name = "Georgian" });
             languages.Add(new Language { Code = "de", Name = "German" });
+            languages.Add(new Language { Code = "el", Name = "Greek, Modern(1453 -)" });
+            languages.Add(new Language { Code = "gn", Name = "Guarani" });
+            languages.Add(new Language { Code = "gu", Name = "Gujarati" });
+            languages.Add(new Language { Code = "ht", Name = "Haitian, Haitian Creole" });
+            languages.Add(new Language { Code = "ha", Name = "Hausa" });
+            languages.Add(new Language { Code = "he", Name = "Hebrew" });
+            languages.Add(new Language { Code = "hz", Name = "Herero" });
+            languages.Add(new Language { Code = "hi", Name = "Hindi" });
+            languages.Add(new Language { Code = "ho", Name = "Hiri Motu" });
+            languages.Add(new Language { Code = "hu", Name = "Hungarian" });
+            languages.Add(new Language { Code = "is", Name = "Icelandic" });
+            languages.Add(new Language { Code = "io", Name = "Ido" });
+            languages.Add(new Language { Code = "id", Name = "Indonesian" });
+            languages.Add(new Language { Code = "ia", Name = "Interlingua(International Auxiliary Language Association)" });
+            languages.Add(new Language { Code = "ie", Name = "Interlingue" });
+            languages.Add(new Language { Code = "iu", Name = "Inuktitut" });
+            languages.Add(new Language { Code = "ik", Name = "Inupiaq" });
+            languages.Add(new Language { Code = "ga", Name = "Irish" });
             languages.Add(new Language { Code = "it", Name = "Italian" });
+            languages.Add(new Language { Code = "ja", Name = "Japanese" });
+            languages.Add(new Language { Code = "jv", Name = "Javanese" });
+            languages.Add(new Language { Code = "kl", Name = "Kalaallisut" });
+            languages.Add(new Language { Code = "kn", Name = "Kannada" });
+            languages.Add(new Language { Code = "ks", Name = "Kashmiri" });
+            languages.Add(new Language { Code = "kk", Name = "Kazakh" });
+            languages.Add(new Language { Code = "km", Name = "Khmer" });
+            languages.Add(new Language { Code = "ki", Name = "Kikuyu, Gikuyu" });
+            languages.Add(new Language { Code = "rw", Name = "Kinyarwanda" });
+            languages.Add(new Language { Code = "ky", Name = "Kirghiz" });
+            languages.Add(new Language { Code = "kv", Name = "Komi" });
+            languages.Add(new Language { Code = "ko", Name = "Korean" });
+            languages.Add(new Language { Code = "kj", Name = "Kuanyama, Kwanyama" });
+            languages.Add(new Language { Code = "ku", Name = "Kurdish" });
+            languages.Add(new Language { Code = "lo", Name = "Lao" });
+            languages.Add(new Language { Code = "la", Name = "Latin" });
+            languages.Add(new Language { Code = "lv", Name = "Latvian" });
+            languages.Add(new Language { Code = "li", Name = "Limburgan, Limburger, Limburgish" });
+            languages.Add(new Language { Code = "ln", Name = "Lingala" });
+            languages.Add(new Language { Code = "lt", Name = "Lithuanian" });
+            languages.Add(new Language { Code = "lb", Name = "Luxembourgish, Letzeburgesch" });
+            languages.Add(new Language { Code = "mk", Name = "Macedonian" });
+            languages.Add(new Language { Code = "mg", Name = "Malagasy" });
+            languages.Add(new Language { Code = "ms", Name = "Malay" });
+            languages.Add(new Language { Code = "ml", Name = "Malayalam" });
+            languages.Add(new Language { Code = "mt", Name = "Maltese" });
+            languages.Add(new Language { Code = "gv", Name = "Manx" });
+            languages.Add(new Language { Code = "mi", Name = "Maori" });
+            languages.Add(new Language { Code = "mr", Name = "Marathi" });
+            languages.Add(new Language { Code = "mh", Name = "Marshallese" });
+            languages.Add(new Language { Code = "mo", Name = "Moldavian" });
+            languages.Add(new Language { Code = "mn", Name = "Mongolian" });
+            languages.Add(new Language { Code = "na", Name = "Nauru" });
+            languages.Add(new Language { Code = "nv", Name = "Navaho, Navajo" });
+            languages.Add(new Language { Code = "nd", Name = "Ndebele, North" });
+            languages.Add(new Language { Code = "nr", Name = "Ndebele, South" });
+            languages.Add(new Language { Code = "ng", Name = "Ndonga" });
+            languages.Add(new Language { Code = "ne", Name = "Nepali" });
+            languages.Add(new Language { Code = "se", Name = "Northern Sami" });
             languages.Add(new Language { Code = "no", Name = "Norwegian" });
+            languages.Add(new Language { Code = "nb", Name = "Norwegian Bokmal" });
+            languages.Add(new Language { Code = "nn", Name = "Norwegian Nynorsk" });
+            languages.Add(new Language { Code = "ny", Name = "Nyanja, Chichewa, Chewa" });
+            languages.Add(new Language { Code = "oc", Name = "Occitan(post 1500), Provencal" });
+            languages.Add(new Language { Code = "or", Name = "Oriya" });
+            languages.Add(new Language { Code = "om", Name = "Oromo" });
+            languages.Add(new Language { Code = "os", Name = "Ossetian, Ossetic" });
+            languages.Add(new Language { Code = "pi", Name = "Pali" });
+            languages.Add(new Language { Code = "pa", Name = "Panjabi" });
+            languages.Add(new Language { Code = "fa", Name = "Persian" });
             languages.Add(new Language { Code = "pl", Name = "Polish" });
             languages.Add(new Language { Code = "pt", Name = "Portuguese" });
+            languages.Add(new Language { Code = "ps", Name = "Pushto" });
+            languages.Add(new Language { Code = "qu", Name = "Quechua" });
+            languages.Add(new Language { Code = "rm", Name = "Raeto - Romance" });
             languages.Add(new Language { Code = "ro", Name = "Romanian" });
+            languages.Add(new Language { Code = "rn", Name = "Rundi" });
             languages.Add(new Language { Code = "ru", Name = "Russian" });
+            languages.Add(new Language { Code = "sm", Name = "Samoan" });
+            languages.Add(new Language { Code = "sg", Name = "Sango" });
+            languages.Add(new Language { Code = "sa", Name = "Sanskrit" });
+            languages.Add(new Language { Code = "sc", Name = "Sardinian" });
+            languages.Add(new Language { Code = "sr", Name = "Serbian" });
+            languages.Add(new Language { Code = "sn", Name = "Shona" });
+            languages.Add(new Language { Code = "Yi", Name = "Sichuan" });
+            languages.Add(new Language { Code = "sd", Name = "Sindhi" });
+            languages.Add(new Language { Code = "si", Name = "Sinhala, Sinhalese" });
+            languages.Add(new Language { Code = "sk", Name = "Slovak" });
+            languages.Add(new Language { Code = "sl", Name = "Slovenian" });
+            languages.Add(new Language { Code = "so", Name = "Somali" });
+            languages.Add(new Language { Code = "st", Name = "Sotho, Southern" });
+            languages.Add(new Language { Code = "su", Name = "Sundanese" });
+            languages.Add(new Language { Code = "sw", Name = "Swahili" });
+            languages.Add(new Language { Code = "ss", Name = "Swati" });
             languages.Add(new Language { Code = "sv", Name = "Swedish" });
+            languages.Add(new Language { Code = "tl", Name = "Tagalog" });
+            languages.Add(new Language { Code = "ty", Name = "Tahitian" });
+            languages.Add(new Language { Code = "tg", Name = "Tajik" });
+            languages.Add(new Language { Code = "ta", Name = "Tamil" });
+            languages.Add(new Language { Code = "tt", Name = "Tatar" });
+            languages.Add(new Language { Code = "te", Name = "Telugu" });
+            languages.Add(new Language { Code = "th", Name = "Thai" });
+            languages.Add(new Language { Code = "bo", Name = "Tibetan" });
+            languages.Add(new Language { Code = "ti", Name = "Tigrinya" });
+            languages.Add(new Language { Code = "to", Name = "Tonga(Tonga Islands)" });
+            languages.Add(new Language { Code = "ts", Name = "Tsonga" });
+            languages.Add(new Language { Code = "tn", Name = "Tswana" });
+            languages.Add(new Language { Code = "tr", Name = "Turkish" });
+            languages.Add(new Language { Code = "tk", Name = "Turkmen" });
+            languages.Add(new Language { Code = "tw", Name = "Twi" });
+            languages.Add(new Language { Code = "ug", Name = "Uighur" });
             languages.Add(new Language { Code = "uk", Name = "Ukrainian" });
+            languages.Add(new Language { Code = "ur", Name = "Urdu" });
+            languages.Add(new Language { Code = "uz", Name = "Uzbek" });
+            languages.Add(new Language { Code = "vi", Name = "Vietnamese" });
+            languages.Add(new Language { Code = "vo", Name = "Volapuk" });
+            languages.Add(new Language { Code = "wa", Name = "Walloon" });
+            languages.Add(new Language { Code = "cy", Name = "Welsh" });
+            languages.Add(new Language { Code = "fy", Name = "Western Frisian" });
+            languages.Add(new Language { Code = "wo", Name = "Wolof" });
+            languages.Add(new Language { Code = "xh", Name = "Xhosa" });
+            languages.Add(new Language { Code = "yi", Name = "Yiddish" });
+            languages.Add(new Language { Code = "yo", Name = "Yoruba" });
+            languages.Add(new Language { Code = "za", Name = "Zhuang, Chuang" });
+            languages.Add(new Language { Code = "zu", Name = "Zulu" });
 
             cboLanguage.DataSource = languages;
             cboLanguage.DisplayMember = "Name";
@@ -541,6 +457,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             AddStep(Resources.Review_Title,
                     String.Empty,
                     pnlReview);
+
+            AddStep(Resources.Finish_Title,
+                    String.Empty,
+                    pnlFinish);
         }
 
         /// <summary> Add wizard step </summary>
@@ -572,6 +492,9 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         {
             if (_currentWizardStep == Constants.StartingStep)
             {
+                lblStatus.Visible = false;
+                textBoxStatus.Visible = false;
+
                 // Buttons
                 DisableBackButton();
                 btnNext.Text = Resources.Begin;
@@ -619,19 +542,32 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             else
             {
                 // Proceed to next wizard step or start processing if processing step
-                if (!IsInitialStep() && _currentWizardStep.Equals(totalSteps - 1))
+                if (!IsInitialStep() && _currentWizardStep.Equals(totalSteps - 2))
                 {
-                    // Setup display before processing
-                    ProcessingSetup(false);
-
-                    _settings = new Settings
+                    var confirmationResult = MessageBox.Show(Resources.AreYouSureYouWishToProceed, 
+                                                             Resources.Confirmation, 
+                                                             MessageBoxButtons.OKCancel);
+                    if (confirmationResult == DialogResult.OK)
                     {
-                        Solution = _solution,
-                        Language = _selectedLanguage
-                    };
+                        DisableButtons();
 
-                    // Start background worker for processing (async)
-                    wrkBackground.RunWorkerAsync(_settings);
+                        lblStatus.Visible = true;
+                        textBoxStatus.Visible = true;
+
+                        _settings = new Settings
+                        {
+                            Solution = _solution,
+                            Language = _selectedLanguage
+                        };
+
+                        // Start background worker for processing (async)
+                        wrkBackground.RunWorkerAsync(_settings);
+                    }
+                }
+                else if (!IsInitialStep() && _currentWizardStep.Equals(totalSteps - 1))
+                {
+                    // Close the wizard
+                    this.Close();
                 }
                 else
                 {
@@ -647,15 +583,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
                     // Increment step
                     _currentWizardStep++;
-
-                    //if (_currentWizardStep == 2)
-                    //{
-                    //    GetSelectedLanguage();
-
-                    //    var contentText = Resources.Review_Content_Template;
-                    //    contentText = contentText.Replace("{0}", _selectedLanguage.Name);
-                    //    lblReview_ContentTemplate.Text = contentText;
-                    //}
 
                     // Update title, text and panel for the step
                     ShowStep(true);
@@ -685,6 +612,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // Proceed if not on first step
             if (_currentWizardStep > 0)
             {
+                if (_currentWizardStep.Equals(totalSteps - 1))
+                {
+                    var logPath = Path.Combine(_destinationFolder, Constants.LogFileName);
+                    System.Diagnostics.Process.Start(logPath);
+                    return;
+                }
+
                 ShowStep(false);
 
                 _currentWizardStep--;
@@ -737,6 +671,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                 EnableBackButton();
                 EnableNextButton();
             }
+            else if (_currentWizardStep == 3)
+            {
+                btnNext.Text = Resources.Close;
+                EnableBackButton();
+                EnableNextButton();
+            }
         }
 
         /// <summary>
@@ -766,6 +706,14 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// <param name="enable">Enable/Disable flag</param>
         private void EnableOrDisableButton(Button btn, bool enable) => btn.Enabled = enable;
 
+        /// <summary>
+        /// Disable the Back and Next buttons
+        /// </summary>
+        private void DisableButtons()
+        {
+            DisableBackButton();
+            DisableNextButton();
+        }
         /// <summary> Show Step Page</summary>
         private void ShowStep(bool visible)
         {
@@ -791,6 +739,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     var contentText = Resources.Review_Content_Template;
                     contentText = contentText.Replace("{0}", _selectedLanguage.Name);
                     lblReview_ContentTemplate.Text = contentText;
+                }
+                else if (_currentWizardStep == 3)
+                {
+                    lblFinish_Content.Text = Resources.FinishContent;
                 }
             }
         }
@@ -818,15 +770,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// </summary>
         private void WriteLogFile()
         {
-            //var logFilePath = Path.Combine(_destinationFolder, Constants.Common.LogFileName);
-            //File.WriteAllText(logFilePath, _log.ToString());
+            var logFilePath = Path.Combine(_destinationFolder, Constants.LogFileName);
+            File.WriteAllText(logFilePath, _log.ToString());
         }
 
-        /// <summary> Setup processing display </summary>
-        /// <param name="enableToolbar">True to enable otherwise false</param>
-        private void ProcessingSetup(bool enableToolbar)
+        /// <summary>Setup processing display</summary>
+        /// <param name="enable">true : enable | false : disable</param>
+        private void ProcessingSetup(bool enable)
         {
-            pnlButtons.Enabled = enableToolbar;
+            pnlButtons.Enabled = enable;
             pnlButtons.Refresh();
         }
 
@@ -834,9 +786,9 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// <param name="text">Text to display in status bar</param>
         private void Processing(string text)
         {
-            lblProcessing.Text = string.IsNullOrEmpty(text) ? text : string.Format(Resources.ProcessingStep, text);
-
-            pnlButtons.Refresh();
+            textBoxStatus.AppendText(Environment.NewLine);
+            textBoxStatus.AppendText(text);
+            textBoxStatus.Update();
         }
 
         /// <summary> Update processing display </summary>
@@ -873,11 +825,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             // Display final step
             btnBack.Text = Resources.ShowLog;
-            btnNext.Text = Resources.Finish;
+            btnNext.Text = Resources.Close;
+            EnableBackButton();
+            EnableNextButton();
 
             // Write out log file with upgrade being complete
             WriteLogFile();
-
         }
 
         /// <summary> Help Button</summary>
@@ -939,10 +892,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         #endregion
 
         /// <summary>
-        /// TODO - Add Description
+        /// Language combobox change event handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The event source</param>
+        /// <param name="e">The event arguments</param>
         private void cboLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
