@@ -1237,7 +1237,7 @@ sg.optionalFieldControl = function () {
         } else if (type === ValueTypeEnum.Integer || type === ValueTypeEnum.Amount || type === ValueTypeEnum.Number) {
             return '<span style="float:right">' + sg.utls.kndoUI.getFormattedDecimalNumber(value || 0, decimals) + '</span>';
         } else {
-            return value;
+            return sg.utls.htmlEncode(value);
         }
     }
 
