@@ -574,7 +574,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme color framework changes.
+        ///   Looks up a localized string similar to Theme color changes.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateThemeColor {
             get {
@@ -608,7 +608,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to As part of the framework changes required to handle theme color in
+        ///Sage 300c 2020.2, several files need to be altered for the solution to
+        ///adapt the changes after the upgrade process.
+        ///
+        ///The upgrade wizard is unable to automatically perform this
+        ///modification and therefore this step will require manual modifications.
+        ///
+        ///All JavaScript files with kendo window created need to be updated if there
+        ///is any customized popup needs to apply the theme.
+        ///
+        ///Please refer to the &apos;Theme Color changes&apos; subsection in the  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUpdateThemeColor {
             get {
