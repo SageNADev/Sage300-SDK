@@ -108,12 +108,11 @@ var importResultRowNumber = 0;
                 close: function () {
                     that._destroyKendoWindow();
                 },
-                //Open Kendo Window in center of the Viewport
-                open: function () {
-                    sg.utls.setKendoWindowPosition(this);
-                },
+                //Open Kendo Window in center of the Viewport. Also set title bar color
+                open: sg.utls.kndoUI.onOpen,
+
                 //custom function to suppot focus within kendo window
-                activate: sg.utls.kndoUI.onActivate
+                activate: sg.utls.kndoUI.onActivate,
             }).data("kendoWindow");
 
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "ExportImport", "ExportImportOptions"), data, function (successData) {
@@ -164,12 +163,10 @@ var importResultRowNumber = 0;
                 close: function () {
                     that._destroyKendoWindow();
                 },
-                //Open Kendo Window in center of the Viewport
-                open: function () {
-                    sg.utls.setKendoWindowPosition(this);
-                },
+                //Open Kendo Window in center of the Viewport. Also set title bar color
+                open: sg.utls.kndoUI.onOpen,
                 //custom function to suppot focus within kendo window
-                activate: sg.utls.kndoUI.onActivate
+                activate: sg.utls.kndoUI.onActivate,
             }).data("kendoWindow");
 
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "ExportImport", "ImportIndex"), data, function (successData) {

@@ -70,7 +70,7 @@ globalSearchUI = {
 
     initSearchResult: function () {
         if (this.dataSource.data().length === 0) {
-            $("#resultMessage").html($.validator.format(globalSearchResources.NoResult, $("#globalSearchBox").val()));
+            $("#resultMessage").text($.validator.format(globalSearchResources.NoResult, $("#globalSearchBox").val()));
             $("#resultMessage").show();
         } else {
             $("#resultMessage").hide();

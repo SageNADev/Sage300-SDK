@@ -1372,6 +1372,10 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 500,
             maxWidth: 760,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             // Custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1454,8 +1458,12 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 500,
             maxWidth: 760,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             //custom function to suppot focus within kendo window
-            activate: sg.utls.kndoUI.onActivate
+            activate: sg.utls.kndoUI.onActivate,
         });
 
         kendoWindow.data("kendoWindow").content($(dialogId).html()).center().open();
@@ -1529,7 +1537,10 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 600,
             maxWidth: 960,
-
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             // custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1765,6 +1776,7 @@ $.extend(sg.utls, {
             open: function () {
                 sg.utls.setKendoWindowPosition(this);
                 sg.utls.mobileKendoAdjustment(this.element, ".k-window-content", "popupMobile");
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             },
         }).data("kendoWindow");
         if (maxConfig && maxConfig.height) {
@@ -3224,6 +3236,49 @@ $.extend(sg.utls, {
     buildMessageText: function (text) {
         return $('<div />').html(text).text();
     },
+    /**
+     * @name setBackgroundColor
+     * @description Set the background color from user preference for the header section,
+     *   also change the font color depending on the brightness
+     * @param {object} element - The html object to be set color with
+     */
+    setBackgroundColor: function (element) {
+        if (element && $.isFunction(element.css) && element.css("background-color")) {
+            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"), {}, function (result) {
+                sg.utls.setBackgroundColorHex(element, result);
+            });
+        }
+    },
+    /**
+     * @name setBackgroundColorHex
+     * @description Set the background color from user preference for the header section,
+     *   also change the font color depending on the brightness
+     * @param {object} element - The html object to be set color with
+     * @param {string} color - A Hex color code
+     */
+    setBackgroundColorHex: function (element, color) {
+        if (element && color) {
+            element.css("background-color", color);
+            var hexcolor = color.replace("#", "");
+            var r = parseInt(hexcolor.substr(0, 2), 16);
+            var g = parseInt(hexcolor.substr(2, 2), 16);
+            var b = parseInt(hexcolor.substr(4, 2), 16);
+
+            // https://www.w3.org/TR/AERT/#color-contrast
+            var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+
+            if (yiq > 125) {
+                // set font to black
+                element.removeClass("dark-bg");
+                element.addClass("light-bg");
+            } else {
+                //set font to white
+                element.removeClass("light-bg");
+                element.addClass("dark-bg");
+            }
+        }
+
+    }
 
     //initBackgroundImageCycling: function () {
     //    var TIMEOUT_MS = 2000;
