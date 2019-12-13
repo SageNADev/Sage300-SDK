@@ -538,6 +538,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateThemeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -565,6 +574,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme color framework changes.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateThemeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
         ///from release {0} to {1}.
         ///
@@ -586,6 +604,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ReleaseSpecificUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateThemeColor", resourceCulture);
             }
         }
         
@@ -740,6 +767,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
             get {
                 return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to support theme color must be made manually..
+        /// </summary>
+        internal static string UpdatesToSupportThemeColorAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToSupportThemeColorAreAManualStep", resourceCulture);
             }
         }
         
