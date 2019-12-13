@@ -703,8 +703,8 @@ div[class*="-group"] > label + .link{
 div[class*="-group"] label.disabled, 
 a.disabled, 
 .disabled {
-  color:#bababc !important;
-  cursor:default;
+  color: #999a9b;
+  cursor: default;
 }
 
 .child label.left {
@@ -4214,6 +4214,12 @@ textarea,
       font-weight: bold;
       width: 95%;
       float: left;
+    }
+
+    &.dark-bg .k-window-title,
+    &.dark-bg .k-window-actions .k-i-close {
+      font-weight: normal;
+      color: @white;
     }
   }
 

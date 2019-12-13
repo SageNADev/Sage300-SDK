@@ -320,6 +320,8 @@ $.extend(sg.utls.iFrameHelper = {
                     left: leftPos
                 });
 
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
                 sg.utls.mobileKendoAdjustment(this.element, ".popup-iframe", "popupMobile");
             }
         }).data("kendoWindow").open();

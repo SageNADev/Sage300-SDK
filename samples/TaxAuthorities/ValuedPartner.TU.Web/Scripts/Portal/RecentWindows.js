@@ -348,18 +348,12 @@ var RecentWindowsMenu = function () {
                 // from Open Window
 
                 // Remove everything but Area and controller
-                var targetUrlSimplified = simplifyTargetUrl(targetUrl);
+                var targetUrlSimplified = kendo.htmlEncode(simplifyTargetUrl(targetUrl));
 
                 var iframeId = $iframe.attr('id');
                 var id = 'dvRW' + iframeId;
-                var t = '<div id="' + id + '" class="rcbox">\
-                                        <span data-menuid="' + menuid + '"\
-                                              data-parentid="' + parentid + '"\
-                                              data-url="' + targetUrlSimplified + '"\
-                                              frameId="' + iframeId + '"\
-                                              command="Add" rank="1">' + windowText + '\
-                                        </span>\
-                                     </div>';
+                var t = '<div id="' + id + '" class="rcbox"><span data-menuid="' + menuid + '"data-parentid="' + parentid +
+                    '"data-url="' + targetUrlSimplified + '"frameId="' + iframeId + '"command="Add" rank="1">' + windowText + '</span></div>';
                 var $menuItem = $(t);
 
                 removeRecentWindowsDuplicatedOrAboveLimit(menuid);

@@ -374,6 +374,8 @@ Customization = {
             open: function (e) {
                 Customization.isModelDirty = false;
                 this.wrapper.css({ top: 100 });
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             },
 
             close: function (e) {
