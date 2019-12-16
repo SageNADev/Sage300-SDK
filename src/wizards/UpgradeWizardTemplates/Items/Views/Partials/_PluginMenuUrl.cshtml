@@ -49,7 +49,7 @@
         if (ViewBag.IsSIRCEnable == true)
         {
             @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content,
-                NavigationResx.SIR_Title,
+                NavigationResx.SIR_Msg1,
                 NavigationResx.SIR_Msg1,
                 NavigationResx.SIR_Msg2,
                 NavigationResx.SIR_Btn)))
@@ -64,7 +64,7 @@
         if (!(ViewBag.IsCATimeCardEnable == true && ViewBag.IsUSTimeCardEnable == true))
         {
             menuLabel = NavigationResx.PR_EmployeeTimeCard;
-            iconPath = @"..\..\..\Content\Images\nav\PR\icon_timecard.png";
+            iconPath = @"..\..\..\Content\Images\nav\PR\icon_timecard.svg";
         }
         else
         {
@@ -73,11 +73,11 @@
 
         if (ViewBag.IsCATimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/1")
         {
-            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_CA, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_canada.png")
+            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_CA, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_canada.svg")
         }
         else if (ViewBag.IsUSTimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/0")
         {
-            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_US, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_us.png")
+            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_US, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_us.svg")
         }
     }
     else
@@ -94,19 +94,18 @@
         var physicalBgImagePath = Server.MapPath(bgImagePath);
         if (!File.Exists(physicalIconPath))
         {
-            iconPath = "../../External/Content/Images/nav/default_icon.png";
+            iconPath = "../../External/Content/Images/nav/default_icon.svg";
         }
         if (!File.Exists(physicalBgImagePath))
         {
             bgImagePath = "../../External/Content/Images/nav/default_bg_image.jpg";
         }
-        <li class="menu-item top-tier menu-sdk">
+        <li class="menu-item top-tier menu-sdk" title="@level2Item.Data.MenuName">
             <div class="nav-icon">
-                <img src=@iconPath width="16" height="16">
+                <img src=@iconPath width="20" height="20">
             </div>
             <a>@level2Item.Data.MenuName</a>
             <ul class="std-menu">
-                <img src=@bgImagePath>
                 <li class="sub-heading">@level2Item.Data.MenuName</li>
                 @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
                 {

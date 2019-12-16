@@ -31,6 +31,8 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             AuthenticatedUser = SignOnHelper.GetStoredUserSignOnResult(sessionId);
             if (ConfigurationHelper.IsOnPremise)
             {
+                CommonUtil.ValidateFileName(sessionId);
+                CommonUtil.ValidatePathName(RegistryHelper.SharedDataDirectory);
                 var path = Path.Combine(RegistryHelper.SharedDataDirectory, string.Format("{0}.auth", sessionId));
                 if (File.Exists(path))
                 {

@@ -48,7 +48,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 var reportPath = repository.GetSharedDirectory(report.Context.TenantId);
                 var reportFullName = Path.Combine(reportPath, "Reports", reportName);
                 var accpacReport = session.SelectReport(reportFullName, "", null);
+
+                var userId = session.GetSession().UserID;
+                EvictUserWatcher.AddUserIdToPauseEviction(userId);
                 reportDocument = accpacReport.GetReportDocument();
+                EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
             }
 
             if (reportDocument != null)

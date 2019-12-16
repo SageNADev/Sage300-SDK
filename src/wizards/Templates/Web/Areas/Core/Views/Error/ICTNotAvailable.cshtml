@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
@@ -17,18 +17,16 @@
                 <input class="btn btn-primary" id="btnSignIn" name="btnSignIn" type="button" value="@AccountMessagesResx.MissingModules_SignIn" onclick="HandleRedirectToLogin()">
             </div>
         </div>
-
     </div>
 </div>
 
 @Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/shared")
 
 <script type="text/javascript">
-
     @{
         var urlHelper = new System.Web.Mvc.UrlHelper(Html.ViewContext.RequestContext);
     }
+
     function HandleRedirectToLogin() {
         var topWnd = window.top == null ? window : window.top;
         topWnd.location.href = '@urlHelper.Action("Login", "Authentication")';
@@ -40,5 +38,4 @@
             $('#btnSignIn').click();
         }
     });
-
 </script>

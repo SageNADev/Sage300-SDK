@@ -83,10 +83,37 @@
          */
         setViewFinder: function (id, parent, properties, onCancelCallback, height, top) {
             $("#" + id).ViewFinder({
+                sourceId: id,
                 properties: properties,
                 parent: parent,
                 cancel: onCancelCallback,
                 height: height,  
+                top: top
+            });
+        },
+
+        /**
+         * Creates a View Finder Web screen finder widget. This provide extra arguments for separated handler and default filter override function
+         * 
+         * @param {string} id - The finder control's id.
+         * @param {(string|function)} parent - Either the id of the finder’s parent control (the control that receives the finder value), or 
+         *     a callback function that will be invoked when user selects a record in the finder.
+         * @param {SetViewFinderProperties} properties - Parameters with which to configure the finder.
+         * @param {function=} onSuccessCallBack - An optional success-callback.
+         * @param {function=} onCancelCallback - An optional cancel-callback.
+         * @param {function=} filterAction - An optional action that will be called when the finder is loaded. If provide the action must return a string containing the filter to be applied.
+         * @param {number=} height - The optional height of the finder window.
+         * @param {number=} top - The optional top location of the finder window.
+         */
+        setViewFinderEx: function (id, parent, properties, onSuccessCallBack, onCancelCallback, filterAction, height, top) {
+            $("#" + id).ViewFinder({
+                sourceId: id,
+                properties: properties,
+                parent: parent,
+                success: onSuccessCallBack,
+                cancel: onCancelCallback,
+                filterAction: filterAction,
+                height: height,
                 top: top
             });
         },
@@ -268,45 +295,51 @@
             }
         },
         _doAjax: function (that) {
+            var theOptions = that.options;
 
-            if (typeof that.options.properties === 'function') {
-                if (that.options.finderProperties === null) {
-                    that.options.finderProperties = {};
+            if (typeof theOptions.properties === 'function') {
+                if (theOptions.finderProperties === null) {
+                    theOptions.finderProperties = {};
                 }
 
-                that.options.properties(that.options.finderProperties);
+                theOptions.properties(theOptions.finderProperties);
             }
             else {
-                that.options.finderProperties = that.options.properties;
+                theOptions.finderProperties = theOptions.properties;
             }
 
             var finderOptions = {
-                ViewID: that.options.finderProperties.viewID,
-                ViewOrder: that.options.finderProperties.viewOrder,
-                DisplayFieldNames: that.options.finderProperties.displayFieldNames,
-                ReturnFieldNames: that.options.finderProperties.returnFieldNames,
-                InitKeyValues: that.options.finderProperties.initKeyValues,
-                Filter: that.options.finderProperties.filter,
+                ViewID: theOptions.finderProperties.viewID,
+                ViewOrder: theOptions.finderProperties.viewOrder,
+                DisplayFieldNames: theOptions.finderProperties.displayFieldNames,
+                ReturnFieldNames: theOptions.finderProperties.returnFieldNames,
+                InitKeyValues: theOptions.finderProperties.initKeyValues,
+                Filter: theOptions.finderProperties.filter,
                 ColumnFilter: null,  // no column filter initially
-                PageNumber: that.options.pageNumber,
-                PageSize: that.options.pageSize,
-                OptionalFieldBindings: that.options.finderProperties.optionalFieldBindings,
+                PageNumber: theOptions.pageNumber,
+                PageSize: theOptions.pageSize,
+                OptionalFieldBindings: theOptions.finderProperties.optionalFieldBindings,
                 CalculatePageCount: true,
-                InitialKeyFieldInDropdownList: that.options.finderProperties.initialKeyFieldInDropdownList,
+                InitialKeyFieldInDropdownList: theOptions.finderProperties.initialKeyFieldInDropdownList,
                 ReinterpretInitKeyValues: true
             };
-            if (that.options.finderProperties.calculatePageCount != null)
-                finderOptions.CalculatePageCount = that.options.finderProperties.calculatePageCount;
 
-            if (that.options.finderProperties.reinterpretInitKeyValues != null)
-                finderOptions.ReinterpretInitKeyValues = that.options.finderProperties.reinterpretInitKeyValues;
+            if (typeof theOptions.filterAction === 'function') {
+                finderOptions.Filter = theOptions.filterAction();
+            }
+
+            if (theOptions.finderProperties.calculatePageCount)
+                finderOptions.CalculatePageCount = theOptions.finderProperties.calculatePageCount;
+
+            if (theOptions.finderProperties.reinterpretInitKeyValues)
+                finderOptions.ReinterpretInitKeyValues = theOptions.finderProperties.reinterpretInitKeyValues;
 
             // set the initial key values if caller asks so
-            if (that.options.finderProperties.parentValAsInitKey !== null &&
-                that.options.finderProperties.parentValAsInitKey &&
-                that.options.parent !== 'function') {
+            if (theOptions.finderProperties.parentValAsInitKey !== null &&
+                theOptions.finderProperties.parentValAsInitKey &&
+                theOptions.parent !== 'function') {
 
-                var ctrl = $("#" + that.options.parent);
+                var ctrl = $("#" + theOptions.parent);
 
                 if (ctrl.hasClass("txt-upper")) {
                     finderOptions.InitKeyValues = [ctrl.val().toUpperCase()];
@@ -336,15 +369,15 @@
             }
 
             var finderHeight = 552;
-            if (that.options.height !== undefined && that.options.height !== null && typeof that.options.height === 'number') {
-                finderHeight = that.options.height;
+            if (theOptions.height !== undefined && theOptions.height !== null && typeof theOptions.height === 'number') {
+                finderHeight = theOptions.height;
             }
 
-            var top = that.options.top;
+            var top = theOptions.top;
 
             kendoWindow = $(dialogId).html("<span class='sage_loading'></span>").kendoWindow({
                 modal: true,
-                title: that.options.title,
+                title: theOptions.title,
                 resizable: false,
                 draggable: true,
                 scrollable: false,
@@ -379,7 +412,7 @@
             kendoWindow.bind("close", function () {
                 that._triggerChange(that);
                 kendoWindow.destroy();
-                var cancel = that.options.cancel;
+                var cancel = theOptions.cancel;
                 if (cancel) {
                     cancel();
                 }
@@ -463,9 +496,10 @@
                     .on('click',
                         function() {
                             that._triggerChange(that);
-                            var cancel = that.options.cancel;
+                            var theOptions = that.options;
+                            var cancel = theOptions.cancel;
                             if (cancel) {
-                                $(this).on('click', cancel());
+                                $(this).on('click', cancel(theOptions.sourceId));
                             }
                             var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
                             finderWin.destroy();
@@ -584,14 +618,20 @@
             var dataSelected = that._selectGrid(that);
             if (that._isNullOrUndefined(dataSelected)) {
                 $('.selectKendoGrid').attr("disabled", false).removeClass("btnStyle2Disabled");
+                var theOptions = that.options;
 
-                if (typeof that.options.parent === 'function') {
-                    that.options.parent(dataSelected);
-                }
-                else {
-                    $("#" + that.options.parent).val(dataSelected[Object.keys(dataSelected)[0]]);
-                    $("#" + that.options.parent).trigger("change");
-                    $("#" + that.options.parent).trigger("blur");
+                if (theOptions.success) {
+                    theOptions.success(dataSelected, theOptions.sourceId);
+                } else {
+                    var theParent = theOptions.parent;
+                    if (typeof theParent === 'function') {
+                        theParent(dataSelected, theOptions.sourceId);
+                    }
+                    else {
+                        $("#" + theParent).val(dataSelected[Object.keys(dataSelected)[0]]);
+                        $("#" + theParent).trigger("change");
+                        $("#" + theParent).trigger("blur");
+                    }
                 }
 
                 var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");

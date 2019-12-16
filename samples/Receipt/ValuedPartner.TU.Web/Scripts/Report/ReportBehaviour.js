@@ -4,7 +4,8 @@ $(function () {
     $(window).on("beforeunload", function() {
 
         var token = $('#hiddenToken').val();
-        var data = { "token": token };
+        var sessionId = $('#hiddenSessionId').val();
+        var data = { "token": token, "sessionId": sessionId };
 
         $.ajax({
             type: "post",

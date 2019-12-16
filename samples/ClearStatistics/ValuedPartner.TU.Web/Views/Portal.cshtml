@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.HomeViewModel
@@ -34,5 +34,9 @@
 
 <script src="~/Areas/Shared/Scripts/Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js"></script>
 @Html.SetSessionVariables();
+
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+<script src="~/Areas/Shared/Scripts/Sage.CA.SBS.ERP.Sage300.Common.SignalR.js"></script>
+@Html.EstablishSignalRConnection((string)@ViewBag.SessionId);
 
 <input type="hidden" id="txtCloseTabToLogout" name="CloseTabToLogout" value=@System.Configuration.ConfigurationManager.AppSettings["CloseTabToLogout"]>

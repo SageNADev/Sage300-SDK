@@ -454,7 +454,7 @@ setCriteriaUI = {
                 }
                 var title = e.sender.columns[colIndex].title;
                 title = globalResource.CreateFilterPopUpTitle.replace('{0}', "'" + title + "'");
-                setCriteriaUI.showPopupWindow("#CriteriaExprId", title, true, colIndex, 400);
+                setCriteriaUI.showPopupWindow("#CriteriaExprId", title, true, colIndex, 720);
             },
         });
 
@@ -585,14 +585,14 @@ setCriteriaUI = {
             }
             var title = grid.columns[colIndex].title;
             title = globalResource.CreateFilterPopUpTitle.replace('{0}', "'" + title + "'");
-            setCriteriaUI.showPopupWindow("#CriteriaExprId", title, true, colIndex, 400);
+            setCriteriaUI.showPopupWindow("#CriteriaExprId", title, true, colIndex, 720);
         });
     },
 
     showPopupWindow: function (id, title, isExprWin, colIndex, width) {
         $("#ExpColumnDropdown").closest(".k-widget").hide();
         var w = (isExprWin) ? width : 800;
-        var h = (isExprWin) ? 164 : 358;
+        var h = (isExprWin) ? 194 : 388;
         if (isExprWin) {
             setCriteriaUI.initExprWindow(colIndex);
         }

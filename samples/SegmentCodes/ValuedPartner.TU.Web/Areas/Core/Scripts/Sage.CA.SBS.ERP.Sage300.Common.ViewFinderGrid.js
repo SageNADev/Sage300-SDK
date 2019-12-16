@@ -511,8 +511,14 @@ var ViewFinderGridHelper = {
                     value = valueTextbox.val().toUpperCase();
                 } else {
                     value = valueTextbox.val();
+                    if (value.indexOf(':') > -1) {
+                        var timeValue = value.replace(/:/g, '');
+                        if (!isNaN(timeValue)) {
+                            value = timeValue;
+                        }
+                    }
                 }
-                var data = { Field: field, Operator: $("#OperatorDropdown").val(), Value: value };
+                data = { Field: field, Operator: $("#OperatorDropdown").val(), Value: value };
                 this.columnFilter = data;
             }
 

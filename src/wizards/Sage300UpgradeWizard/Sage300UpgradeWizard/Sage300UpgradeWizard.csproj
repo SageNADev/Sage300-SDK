@@ -180,7 +180,6 @@
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
-    <Content Include="content\ReleaseSpecificUpdateMultisession.txt" />
     <Content Include="content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />

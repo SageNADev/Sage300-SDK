@@ -1,0 +1,579 @@
+//
+// CRM Inquiry Screen
+// --------------------------------------------------
+
+.form-screen.crm {
+  
+  // Grid Header Styles
+
+  .k-grid .k-grid-header {
+    background-color: #ebedef;
+
+    .k-header {
+      background-color: #ebedef;
+      height: 40px;
+      padding: 10px 8px 12px;
+      color: #2e2e2e;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus,
+      &.k-state-focused {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+      }
+
+      >.k-link {
+        color: #2e2e2e;
+        text-decoration: none;
+        line-height: 2;
+      }
+
+      >.k-grid-filter {
+        width: 24px;
+        height: 24px;
+        padding: 4px 3px;
+        top: -3px;
+
+        .k-i-filter:hover:before {
+          color: #255bc7;
+        }
+
+        &.k-state-border-down,
+        &.k-state-active {
+          background-color: #ced0d1;
+
+          .k-i-filter:before {
+            color: #255bc7;
+          }
+        }
+      }
+
+      &.groupable {
+        background-color: #e2d6e4;
+        cursor: move;
+      }
+    }
+  }
+
+  .k-icon.k-i-filter,
+  .k-icon.k-i-arrow-n,
+  .k-icon.k-i-arrow-s,
+  .k-icon.k-i-arrowhead-s {
+      font-family: "Sage Armonye Icons";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      font-size: 1.75rem;
+      padding: .75rem 0 0;
+      background: none;
+      width: 16px;
+      height: 30px;
+  }
+
+  .k-icon.k-i-filter:before {
+    content: "\46";
+    color: #6b6c6d;
+  }
+
+  .k-icon.k-i-arrow-n:before {
+    content: "\25b2";
+    color: #63076d;
+  }
+
+  .k-icon.k-i-arrow-s:before {
+    content: "\25bc";
+    color: #63076d;
+  }
+
+  .k-icon.k-i-arrowhead-s:before {
+    content: "\e9e1";
+    color: #6b6c6d;
+    font-size: 16px;
+    top: 13px;
+    right: -4px;
+    position: relative;
+  }
+
+  .k-header-column-menu {
+    width: 24px;
+    height: 40px;
+    margin: -14px -8px;
+
+    &.k-state-border-down,
+    &.k-state-active {
+      background: @sage-gray;
+      
+      .k-icon:before {
+        color: #63076d;
+      }
+    }     
+  }
+
+  // Grid Content Styles
+
+  .k-grid {
+
+    tr.k-state-selected td:first-child {
+      border-left: 3px solid #255bc7;
+      padding-left: 5px;
+    }
+
+    tr td {
+      padding: 0 8px;
+    }
+
+    tr.k-grouping-row {
+      background-color: #ebedef;
+
+      .k-i-expand {
+        background-position: -728px 4px;
+      }
+
+      .k-i-collapse {
+        background-position: -84px 4px;
+      }
+    }
+
+    .k-group-footer {
+      text-align: right;
+      background-color: #dbdbde;
+
+      #footer {
+        text-align: left;
+      }
+    }
+
+    .k-grid-footer {
+      padding-right: 0 !important;
+      background-color: #dbdbde;
+
+      &:hover {
+        ouline: none;
+      }
+
+      .k-footer-template {
+          background-color: #dbdbde;
+
+          td:not(:first-child) {
+            text-align: right;
+          }
+      }
+
+      .k-grid-footer-locked td,
+      #footer {
+        text-align: left;
+      }
+    }
+  }
+  
+
+  // Grid Control Styles
+
+  .gridcontrols-group {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+
+    .label-gridcontrl {
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    button[class*=pagesize-] {
+      position: relative;
+      padding: 7px 5px;
+      font-size: 12px;
+    }
+
+    button[class*=pagesize-]:hover,
+    button[class*=pagesize-].active {
+      background-color: #f5f5f5;
+      color: #255bc7;
+    }
+
+    button[class*=pagesize-]:focus,
+    button[class*=pagesize-]:active {
+      outline: none;
+    }
+
+    button[class*=pagesize-].active:after {
+      content: "";
+      position: absolute;
+      top: 29px;
+      left: 0;
+      right: 0;
+      border-top: 2px solid #255bc7;
+    }
+
+    button.btn-edit {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      color: #255bc7;
+      min-width: initial;
+      margin-left: 30px;
+
+      &:before {
+        content: "\2217";
+        background: none;
+        font-family: "Sage Armonye Icons";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        font-size: 1.75rem;
+        top: 0px;
+        left: -22px;
+      }
+
+      &:focus {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+      }
+    }
+
+    .btn-delete {
+      border: none;
+      background: none;
+      color: #255bc7;
+      padding: 0;
+      margin: 0;
+      min-width: auto;
+      margin-left: 30px;
+
+      &:before {
+        top: 0;
+        left: -22px;
+        font-family: "Sage Armonye Icons";
+        content: "\4b";
+        background: none;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        font-size: 1.75rem;
+      }
+
+      &:focus {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+      }
+    }
+  }
+
+  .staticgrid-group {
+    min-width: 100%;
+  }
+}
+
+
+// Kendo Filter Menu Styles 
+
+.k-filter-menu {
+
+  .k-datetimepicker {
+    margin-bottom:3px;
+    min-width: 174px;
+
+    .k-i-calendar{
+      background-position: -54px 3px;
+      margin: 0 1px;
+    }
+
+    .k-state-hover .k-link:hover .k-i-calendar {
+      background-position: -54px 3px;
+    }
+  }
+
+  .k-picker-wrap.k-state-default .k-select:hover {
+    background-color: #e3e3e7;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: color,background-color;
+    transition-property: color,background-color;
+  }
+
+  .k-numeric-wrap .k-link {
+      padding-top: 2px;
+  }
+
+  .k-button.k-primary {
+    margin-right: 0;
+    float: right;
+  }
+}
+
+.k-header.k-drag-clue {
+  background: #ebedef;
+  border-color: #676b75;
+  height: 24px;
+  border-radius: 0;
+  padding: 4px 8px 6px !important;
+  width: auto !important;
+
+  > .k-icon {
+        width: 16px;
+        height: 16px;
+
+        &.k-drag-status {
+          background-position: -832px -3px;
+        }
+    }
+}
+
+.k-reorder-cue .k-icon {
+  position: absolute;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+
+  &.k-i-arrow-s {
+    background-position: -92px -8px;
+    top: 0;
+  }
+
+  &.k-i-arrow-n {
+    background-position: -717px -8px;
+    bottom: -4px;
+  }
+}
+
+.k-block {
+  background: #686c76;
+  padding: 6px 4px;
+  color: #fff;
+  border-radius: 0;
+  border-bottom: 0;
+
+  .k-message {
+    display: inline-block;
+    font-size: 12px;
+    padding: 0;
+    color: #fe0;
+    line-height: 1.5;
+    margin: 0.4em 0.5rem;
+
+    span {
+      color: #fff !important;
+    }
+
+    button.glyphicon {
+      color: #fff;
+      top: 1px;
+      margin: 0 6px 0 2px;
+      width: 16px;
+
+      &:before {
+        content: "\78";
+        font-size: 10px;
+        top: 3px;
+        position: relative;
+      }
+
+      &:hover:before {
+        content: "\2297";
+        font-size: 14px;
+        top: 1px;
+      }
+    }
+  }
+}
+
+.k-column-menu .k-sprite,
+.k-column-menu .k-state-hover .k-sprite{
+  font-family: "Sage Armonye Icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 1.5rem;
+  padding: 1.45rem 0 0 0.5rem;
+  background: none;
+  color: #6b6c6d;
+
+  &.k-i-columns:before {
+    content: "\31";
+  }
+
+  &.k-filter:before {
+    content: "\46";
+  }
+
+  &.k-i-lock:before {
+    content: "\44";
+  }
+
+  &.k-i-unlock:before {
+    content: "\e040";
+  }
+}
+
+.k-menu .k-item>.k-link>.k-i-arrow-e,
+.k-menu .k-item>.k-link:hover>.k-i-arrow-e {
+  background-position: -730px -3px;
+}
+
+.k-column-menu .k-menu .k-sort-asc,
+.k-column-menu .k-menu .k-sort-desc {
+    display: none;
+}
+
+.k-columns-item>.k-animation-container .k-group .k-item>.k-link {
+  padding: 6px 10px;
+  min-width: auto;
+  width: 100%;
+
+  input[type=checkbox] {
+    margin: -4px 4px 0 0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+  }
+}
+
+// Kendo Filter - Grouping and Aggregating Styles
+
+.k-grouping-header {
+  padding: 8px 10px;
+  background: #722a79;
+  color: #fff;
+  border: 0;
+
+  .k-group-indicator {
+    border-radius: 0;
+    padding: 0;
+    margin-left: 0;
+
+    .k-link {
+      color: #fff;
+      margin-top: 2px;
+
+      &:hover {
+        .k-i-sarrow-n {
+          background-position: -705px -72px;
+        }
+
+        .k-i-sarrow-s {
+          background-position: -80px -71px;
+        }
+      }
+    }
+
+    .k-icon {
+      height: 20px;
+
+      &.k-i-sarrow-n {
+        background-position: -705px -37px;
+      }
+
+      &.k-i-sarrow-s {
+        background-position: -80px -36px;
+      }
+    }
+
+    .k-button-icon .k-i-group-delete {
+      background-position: -204px -35px;
+    }
+
+    .k-button-icon:hover .k-i-group-delete {
+      background-position: -204px -35px;
+    }
+  }
+}
+
+.inquiry-panel-body {
+  position: relative;
+
+  .alert:before {
+    content: "\61";
+    font-family: "Sage Armonye Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 3rem;
+    text-transform: none;
+    color: #ffffff;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    background: #38c72a;
+    border-radius: .25rem 0 0 .25rem;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 4rem;
+  }
+
+  .alert-sm {
+    color: inherit;
+    background-color: transparent;
+    padding: 1rem 1rem 1rem 4rem;
+    box-shadow: none;
+    border: 0;
+    position: relative;
+
+    &:before {
+      background: transparent;
+      color: #38c72a;
+    }
+  }
+
+  .alert-info:before {
+    content: "\a1";
+  }
+
+  .alert-sm.alert-info:before {
+    color: #00a4cf;
+  }
+
+  .bd-clipboard {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    .glyphicon {
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      padding: .5rem;
+      font-size: 75%;
+      color: #818a91;
+      cursor: pointer;
+      background-color: transparent;
+      border-radius: 4px;
+
+      &:hover {
+        color: #fff;
+        background-color: #255bc7;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.k-animation-container .k-column-menu {
+  top: -1px;
+
+  .k-menu-group {
+    max-height: 560px !important;
+
+    .k-content {
+      border-top: 1px solid #c5c5c5;
+    }
+  }
+}

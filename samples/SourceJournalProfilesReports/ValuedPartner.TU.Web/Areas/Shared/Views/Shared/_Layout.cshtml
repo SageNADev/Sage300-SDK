@@ -19,6 +19,7 @@
 
 <html>
 <head>
+    <!-- _Layout.cshtml -->
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="x-ua-compatible" content="IE=11, IE=Edge" /> <!-- Use Internet Explorer 11 and above Standards mode -->
     <title>@Page.Title</title>
@@ -28,7 +29,7 @@
 
     @*Commented for automation*@
     @*@Html.OnlyAllowFromIFrame(Url.Action("index", "Home", new { @area = "Core" }))*@
-    
+
     <!-- Google Analytics -->
     <!-- <script async src='//www.google-analytics.com/analytics.js'></script> -->
     <!-- End Google Analytics -->

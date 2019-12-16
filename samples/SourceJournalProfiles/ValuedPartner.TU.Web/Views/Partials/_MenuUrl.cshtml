@@ -4,6 +4,7 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using System.Collections;
 
 @model List<NavigableMenuViewModel<NavigableMenu>>
 
@@ -39,18 +40,16 @@
     var iconName = level2Item.Data.IconName;
     var bgImageName = level2Item.Data.MenuBackGoundImage;
     var iconPath = Path.Combine("../../../Content/Images/nav/", iconName);
-    var bgImagePath = Path.Combine("../../../Content/Images/nav/", bgImageName);
-    <li class="menu-item top-tier menu-core">
+    <li class="menu-item top-tier menu-core" id="@level2Item.Data.MenuName">
         <div class="nav-icon">
-            <img src=@iconPath width="16" height="16">
+            <img src=@iconPath width="20" height="20">
         </div>
         <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
         <ul class="std-menu">
-            <img src=@bgImagePath>
             <li class="sub-heading">@level2Item.Data.MenuName</li>
             @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
             {
-                Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack = new Stack<List<NavigableMenuViewModel<NavigableMenu>>>();
+                Stack menuStack = new Stack();
                 menuStack.Push(level6Items);
                 menuStack.Push(level5Items);
                 menuStack.Push(level4Items);
@@ -60,6 +59,7 @@
                 firstItem = false;
             }
         </ul>
+
     </li>
     @*2nd Level Menu: End*@
 }
@@ -68,13 +68,23 @@
     @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
 </script>
 
-@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
+<script>
+    var mainToolTip = null;
+</script>
+
+<script id="tooltipTemplate" type="text/x-kendo-template">
+    <div class="template-wrapper">
+        <p>#=$(target).siblings("a")[0].innerText#</p>
+    </div>
+</script>
+
+@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack menuStack, string notAvailable, string domainUrl, bool firstItem)
 {
     var parentItemId = parentItem.Data.MenuId;
     var parentItemClass = parentItem.Data.IsGroupEnd == true ? "menu-group" : "";
     var hasSubGroup = parentItem.Data.HasSubGroup.HasValue && parentItem.Data.HasSubGroup.Value;
     var nodeClass = firstItem ? "active" : (hasSubGroup ? "with-menu" : "");
-    var childItems = menuStack.Count > 0 ? menuStack.Pop() : null;
+    var childItems = (List<NavigableMenuViewModel<NavigableMenu>>) (menuStack.Count > 0 ? menuStack.Peek() : null);
 
     if (childItems == null)
     {
@@ -85,10 +95,6 @@
 
         <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
             @parentItem.Data.MenuName
-            @if (parentItem.Data.IsReport == true)
-            {
-                <span class="icon-report"></span>
-            }
         </a>
 
         @if (parentItem.Data.UseColGrouping)
@@ -124,11 +130,13 @@
     </li>
 }
 
-@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl)
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack menuStack, string notAvailable, string domainUrl)
 {
     if (menuItem.Data.HasSubGroup.HasValue && menuItem.Data.HasSubGroup.Value)
     {
-        @CreateMenuGroup(menuItem, menuStack, notAvailable, domainUrl, false);
+        var subMenuStack = (Stack) menuStack.Clone();
+        subMenuStack.Pop();
+        @CreateMenuGroup(menuItem, subMenuStack, notAvailable, domainUrl, false);
     }
     else
     {

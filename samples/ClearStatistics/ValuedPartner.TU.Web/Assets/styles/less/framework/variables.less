@@ -7,29 +7,29 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@sage-green:				#41a940;
-@sage-bright-green:			#38c72a;
-@sage-dark-gray:			#3c424f;
-@sage-mid-gray:				#8e8a86;
-@sage-gray:					#cccccc;
-@sage-light-gray:			#e0e1dd;
+@sage-green:				#00B000;
+@sage-bright-green:			#00DC00;
+@sage-dark-gray:			#335C6D;
+@sage-mid-gray:				#668592;
+@sage-gray:					#CCD6DB;
+@sage-light-gray:			#E6EBED;
 @sage-purple:				#6639b7;
-@sage-blue:					#00a4cf;
-@sage-orange:				#ff5400;
-@sage-red:					#ff1e00;
-@sage-link:					#255bc7;
+@sage-blue:					#0077C8;
+@sage-orange:				#E96400;
+@sage-red:					#C7384F;
+@sage-link:					#0077C8;
 
 @white:						#ffffff;
-@gray-darker:				@sage-dark-gray;
-@gray-dark:					@sage-dark-gray;
-@gray-dim:					@sage-mid-gray;
-@gray:						@sage-mid-gray;
-@gray-silver:				@sage-gray;
+@gray-darker:				rgba(0,0,0,.65);
+@gray-dark:					rgba(0,0,0,.55);
+@gray-dim:					rgba(0,0,0,.3);
+@gray:						rgba(0,0,0,.3);
+@gray-silver:				#E6EBED;
 @gray-light:				@sage-light-gray;
-@gray-lighter:				#f6f6f6;
+@gray-lighter:				#F2F5F6;
 @black:						#000000;
 
-@brand-primary:				#1963f6;
+@brand-primary:				#0077c8;
 @brand-secondary:			@sage-green;
 @brand-success:				@sage-bright-green;
 @brand-info:				@sage-blue;
@@ -45,7 +45,7 @@
 //** Background color for `<body>`.
 @body-bg:					    #fff;
 //** Global text color on `<body>`.
-@text-color:				  	@gray-dark;
+@text-color:				  	rgba(0,0,0,0.9);
 
 //** Global textual link color.
 @link-color:				  	@sage-link;
@@ -57,7 +57,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  	Arial, "Helvetica Neue", Helvetica, sans-serif;
+@font-family-sans-serif:  	'Open Sans', Arial, sans-serif;
 @font-family-serif:       	Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   	Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -146,14 +146,14 @@
 //** Default background color used for all tables.
 @table-bg:                      transparent;
 //** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
+@table-bg-accent:               #f2f5f6;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                #e8effe;
-@table-bg-active:               #b1ddf3;
-@table-header-bg:  				#686c76;
+@table-bg-hover:                #f2f5f6;
+@table-bg-active:               #d9e0e4;
+@table-header-bg:  				#335c6d;
 
 //** Border color for table and cell borders.
-@table-border-color:            #dbdbde;
+@table-border-color:            #d9e0e4;
 
 
 //== Buttons
@@ -162,7 +162,7 @@
 
 @btn-font-weight:               normal;
 
-@btn-default-color:             @sage-dark-gray;
+@btn-default-color:             @black;
 @btn-default-bg:                #f1f1f3;
 @btn-default-border:            @sage-mid-gray;
 
@@ -206,18 +206,18 @@
 //** `<input>` background color
 @input-bg:                       #fff;
 //** `<input disabled>` background color
-@input-bg-disabled:              @gray-lighter;
+@input-bg-disabled:              #f2f5f6;
 
 //** Text color for `<input>`s
-@input-color:                    @gray-darker;
+@input-color:                    @black;
 //** `<input>` border color
 @input-border:                   @sage-mid-gray;
 //** `<input disabled>` border color
-@input-border-disabled:          @gray-lighter;
+@input-border-disabled:          @sage-gray;
 //** `<input>` border radius
 @input-border-radius:            @border-radius-base;
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             #ffb500;
 
 //** Placeholder text color
 @input-color-placeholder:        @gray;

@@ -84,6 +84,7 @@ $.extend(sg.utls.url, {
     // Predefined Urls
     loginUrl: function (isAdmin) { return sg.utls.url.buildUrl("Core", "Authentication", isAdmin ? "AdminLogin" : "Login"); },
     logoutUrl: function () { return sg.utls.url.buildUrl("Core", "Authentication", "Logout"); },
+    evictUrl: function() { return sg.utls.url.buildUrl("Core", "Authentication", "SessionEvicted"); },
     saveGridPreferencesUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"); },
     getGridPreferencesUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "GetGridPreferences"); },
     logJavascriptErrorUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "LogJavascriptError"); },
@@ -508,6 +509,59 @@ $.extend(sg.utls, {
     },
 
     /**
+     * @name userEviction
+     * @description User is being evicted
+     */
+    userEviction: function () {
+        var isAdminLogout = location.href.indexOf("AS/CustomScreen") > 0;
+
+        var portalWnd = sg.utls.getPortalWindow();
+        var sessionId = sg.utls.getSessionId();
+        sg.utls.logMessage("Notifying user in sg.utls.userEviction() of eviction for context session id = '" + sessionId + "'");
+
+        // We want to disable beforeunload event handling
+        portalWnd.pageUnloadEventManager.disable();
+
+        var logoutLink = sg.utls.url.logoutUrl();
+        var evictUrl = sg.utls.url.evictUrl();
+        if (isAdminLogout) {
+            evictUrl += "?isAdminLogin=true";
+        }
+        // Note: Potential tech debt here as this event will get fired AFTER the login has been redirected to.
+        // Therefore, checks have been placed in the AuthenticationController.Login method to check for this
+        // use case where the data still exists in the IIS cache
+
+        // Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. 
+        // Just ask the user to log out first due to time consuming
+        
+        if (!isAdminLogout) {
+
+            // We need to reduce the number of active screens (or modules) 
+            // from the overall count because we're in the process of
+            // logging out.
+            sg.utls.updateOpenScreenCount();
+            if (!openScreenCountManager.anyActiveScreens()) {
+                // There are currently no active screens running so let's
+                // notify sibling tabs to enable their session date pickers
+                key = "ALLSESSIONS_EnablePortalSessionDatePicker";
+                var randomValue = sg.utls.makeRandomString(5);
+                sage.cache.local.set(key, randomValue);
+            }
+        }
+
+        sg.utls.destroyPoolForReport(true);
+        sage.cache.session.clearAll();
+
+        // Log out on server side, server side cleanup MUST happen before redirection or the login page 
+        // will load with an incorrect hdnUrl, leading to problems if signing in again as a different user.
+        sg.utls.ajaxPostWithPromise(logoutLink).done(function () {
+            portalWnd.location.href = evictUrl;
+        });
+
+        sg.utls.initiateEvictInOtherTabsForSession(sessionId);
+    },
+
+    /**
      * @name logOut
      * @description Log the current user out
      * @param {boolean} isAdminLogout - Are we logging out of the administration page?
@@ -596,6 +650,16 @@ $.extend(sg.utls, {
         sage.cache.local.set(key, new Date().getTime().toString());
     },
 
+    /**
+     * @name initiateEvictInOtherTabsForSession
+     * @description Set a localStorage cache entry to facilitate evict user
+     *              for other tabs that share the same sessionId
+     * @param {string} sessionId - The session id
+     */
+    initiateEvictInOtherTabsForSession: function (sessionId) {
+        var key = sessionId + "_EvictInitiated";
+        sage.cache.local.set(key, new Date().getTime().toString());
+    },
 
     /**
      * @name clearSrcAttributeFromAllActiveModuleIFrames
@@ -1678,11 +1742,7 @@ $.extend(sg.utls, {
             draggable: false,
             scrollable: true,
             visible: false,
-            //maxWidth: maxWidth,
-            minWidth: 900,
-            minHeight: 300,
             width: width,
-            //maxHeight: 600,
             // Custom function to support focus within Kendo Window.
             activate: sg.utls.kndoUI.onActivate,
             close: function(data) {
@@ -1707,6 +1767,9 @@ $.extend(sg.utls, {
                 sg.utls.mobileKendoAdjustment(this.element, ".k-window-content", "popupMobile");
             },
         }).data("kendoWindow");
+        if (maxConfig && maxConfig.height) {
+            kendoWindow.setOptions({ height: maxConfig.height });
+        }
 
     },
 
@@ -1731,11 +1794,13 @@ $.extend(sg.utls, {
      * @param {string} title The value for the window's title.
      * @param {function} onClose Handler for the popup's close event.
      * @param {number|string} width Specifies width of the popup.
+     * @param {number|string} height Specifies height of the popup.
      */
-    initializeKendoWindowPopupWithMaximize: function(id, title, onClose, width) {
+    initializeKendoWindowPopupWithMaximize: function(id, title, onClose, width, height) {
         var config = {
             actions: ["Maximize", "Close"],
-            width: width
+            width: width,
+            height: height
         };
         this.initializeKendoWindowPopup(id, title, onClose, config);
     },
@@ -2383,7 +2448,7 @@ $.extend(sg.utls, {
         var css = "message-control";
 
         //Use generateList() to handle multiple errors scenario
-        var encodedMessage = Array.isArray(message) ? sg.utls.generateList(message, null, true) : message;
+        var encodedMessage = Array.isArray(message) ? sg.utls.generateList(message, null, true) : sg.utls.htmlEncode(message);
 
         if (messageType == sg.utls.msgType.ERROR) {
             //To Stop Synchronous Function Calls stored in stack in case of any Error.
@@ -2687,6 +2752,10 @@ $.extend(sg.utls, {
         }
         var formattedTimeValue = sg.utls.padLeadingZero(hour.toString(), 2) + ":" + sg.utls.padLeadingZero(minute.toString(), 2) + ":" + sg.utls.padLeadingZero(seconds.toString(), 2);
         return formattedTimeValue;
+    },
+
+    getTimeValue: function (value) {
+        return value.length > 12 ? value.substring(11) : "";
     },
 
     getEnumItemByValue: function (enumItems, value) {
@@ -3644,6 +3713,58 @@ $(function () {
     window.addEventListener('message', receiveMessage);
     window.parent.postMessage({ id: 'Sage300Loaded' }, "*");
 
+    function redirectInCurrentTab(sessionIdFromKey, message) {
+        var url = location.href;
+        var isAdminTab = url.indexOf("AS/CustomScreen") > 0;
+        var sessionId = sg.utls.getSessionId();
+
+        // Only redirect if the sessionId from the cache message is the same as the current sessionId
+        if (sessionIdFromKey === sessionId) {
+
+            // Get the index of the sessionId from the url
+            var idx = url.indexOf(sessionId);
+
+            // If sessionId was found in the url
+            if (idx > 0) {
+                // This will allow us to bypass the 'beforeunload' event handling in all behaviour 
+                // files in response to logging out in a different tab page(same user and company) 
+                // This will avoid displaying the ugly little browser confirmation dialog box.
+                // Note: This block is only relevant when running in Sage 300 Portal, not CRM
+                if (sg && sg.utls && sg.utls.getPortalWindow) {
+                    var portalWnd = sg.utls.getPortalWindow();
+                    if (portalWnd.pageUnloadEventManager) {
+                        portalWnd.pageUnloadEventManager.disable();
+                    }
+                }
+
+                var redirectUrl = "";
+                if (message === "EvictInitiated") {
+                    redirectUrl = sg.utls.url.evictUrl();
+                    if (isAdminTab) {
+                        redirectUrl += "?isAdminLogin=true";
+                    }
+                } else {
+                    var index = url.indexOf('OnPremise');
+                    redirectUrl = url.substring(0, index > 0 ? index : idx);
+                    if (isAdminTab) {
+                        redirectUrl += "admin";
+                    }
+                }
+
+                // Log out, post message to outside application that use Sage 300 screens
+                if (sessionStorage["productId"]) {
+                    // Running in CRM
+                    window.parent.postMessage({ id: 'Sage300Logout' }, "*");
+                } else {
+                    // Running in Portal, for KPI widget windows should not set to login page
+                    if (location.href.indexOf('/KPI/') < 0) {
+                        location.href = redirectUrl;
+                    }
+                }
+            }
+        }
+    }
+
     // Multiple tab pages sign out as one of tab page logout
     $(window).on('storage', function (e) {
         if (e && e.originalEvent && e.originalEvent.key) {
@@ -3678,53 +3799,9 @@ $(function () {
 
                     window.parent.postMessage({ id: 'Sage300Logout' }, "*");
                     return;
-                } else if (message === "LogoutInitiated") {
-
+                } else if (message === "LogoutInitiated" || message === "EvictInitiated") {
                     // This code will be executed for each active tab/browser 
-
-                    var url = location.href;
-                    var isAdminTab = url.indexOf("AS/CustomScreen") > 0;
-                    var sessionId = sg.utls.getSessionId();
-
-                    // Only run this if the message sessionId is the same
-                    // as the current sessionId
-
-                    if (sessionIdFromKey === sessionId) {
-                        // Get the index of the sessionId from the url
-                        var idx = url.indexOf(sessionId);
-
-                        // If sessionId was found in the url
-                        if (idx > 0) {
-
-                            var index = url.indexOf('OnPremise');
-
-                            // This will allow us to bypass the 'beforeunload' event handling in all behaviour 
-                            // files in response to logging out in a different tab page(same user and company) 
-                            // This will avoid displaying the ugly little browser confirmation dialog box.
-                            // Note: This block is only relevant when running in Sage 300 Portal, not CRM
-                            if (sg && sg.utls && sg.utls.getPortalWindow) {
-                                var portalWnd = sg.utls.getPortalWindow();
-                                if (portalWnd.pageUnloadEventManager) {
-                                    portalWnd.pageUnloadEventManager.disable();
-                                }
-                            }
-
-                            var loginUrl = url.substring(0, index > 0 ? index : idx);
-                            if (isAdminTab) {
-                                loginUrl += "admin";
-                            }
-                            // Log out, post message to outside application that use Sage 300 screens
-                            if (sessionStorage["productId"]) {
-                                // Running in CRM
-                                window.parent.postMessage({ id: 'Sage300Logout' }, "*");
-                            } else {
-                                // Running in Portal, for KPI widget windows should not set to login page
-                                if (location.href.indexOf('/KPI/') < 0) {
-                                    location.href = loginUrl;
-                                }
-                            }
-                        }
-                    }
+                    redirectInCurrentTab(sessionIdFromKey, message);
                 }
             }
         }

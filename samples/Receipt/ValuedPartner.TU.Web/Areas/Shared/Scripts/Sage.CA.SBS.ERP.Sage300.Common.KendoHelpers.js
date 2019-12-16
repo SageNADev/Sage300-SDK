@@ -1152,7 +1152,8 @@ $.extend(sg.utls.kndoUI, {
      */
     showMouseOverToolTip: function (id, text) {
         $("#" + id).kendoTooltip({
-            width: 120,
+            autoHide: false,
+            width: 200,
             position: "right",
             content: function () {
                 return text; // set the element text as content of the tooltip

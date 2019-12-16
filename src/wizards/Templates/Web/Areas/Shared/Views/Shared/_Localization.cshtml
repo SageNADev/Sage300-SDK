@@ -72,8 +72,8 @@
         DuplicateOptionalField: '@Html.SageRaw(CommonResx.DuplicateOptionalField)',
         BlankOptionalField: '@Html.SageRaw(CommonResx.BlankOptionalField)',
 
-        Yes: '@CommonResx.Yes',
-        No: '@CommonResx.No',
+        Yes: '@Html.SageRaw(CommonResx.Yes)',
+        No: '@Html.SageRaw(CommonResx.No)',
         OK: '@CommonResx.OK',
         Cancel: '@CommonResx.Cancel',
         Close: '@CommonResx.Close',
@@ -110,6 +110,11 @@
         CustomizationDescription: '@Html.SageRaw(@CommonResx.CustomizationDescription)',
         UIProfiles: '@Html.SageRaw(@CommonResx.UIProfiles)',
         FinderTitle: '@Html.SageRaw(CommonResx.Select)',
-        ShowMessageTime: '@System.Configuration.ConfigurationManager.AppSettings["ShowMessageTime"]'
+        ShowMessageTime: '@System.Configuration.ConfigurationManager.AppSettings["ShowMessageTime"]',
+
+        RequireValidEmail: '@Html.SageRaw(CommonResx.RequireValidEmail)',
+        ContactInactive: '@Html.SageRaw(CommonResx.ContactInactive)',
+        ContactNotExist: '@Html.SageRaw(CommonResx.ContactNotExist)',
+        ContactExist: '@Html.SageRaw(CommonResx.ContactExist)'
     }
 </script>
