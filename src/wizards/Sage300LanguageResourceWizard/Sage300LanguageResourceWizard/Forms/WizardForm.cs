@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -31,6 +31,7 @@ using MetroFramework.Forms;
 using System.Windows.Forms;
 using EnvDTE;
 using System.Drawing;
+using MetroFramework;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
@@ -64,7 +65,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private readonly string _destinationFolder;
 
         /// <summary>
-        /// TODO - Add Description
+        /// The selected language
         /// </summary>
         private Language _selectedLanguage = new Language();
 
@@ -73,16 +74,24 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         #region Private Constants
         private static class Constants
         {
-            public const string PanelWelcome = "pnlWelcome";
-            public const string PanelSelectLanguage = "pnlSelectLanguage";
-            public const string PanelReview = "pnlReview";
-            public const string PanelFinish = "pnlFinish";
-
             public const string InvalidLanguageCode = "--";
 
             public const string LogFileName = "Sage300LanguageResourceWizardLog.txt";
 
-            public const int StartingStep = -1;
+            public static Color StatusBoxForegroundColor = Color.Black;
+            public static Color StatusBoxBackgroundColor = Color.White;
+
+            /// <summary>
+            /// Mnemonic names for Step indicies
+            /// </summary>
+            public static class Steps
+            {
+                public const int Initial = -1;
+                public const int Start = 0;
+                public const int SelectLanguage = 1;
+                public const int Review = 2;
+                public const int Closing = 3;
+            }
         }
         #endregion
 
@@ -119,6 +128,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             ResetBackgroundColors();
 
+            SetStatusBoxColors();
+
             _destinationFolder = GetSolutionFolder(solution);
 
             // Display first step
@@ -142,13 +153,19 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// </summary>
         private void ResetBackgroundColors()
         {
-            // Reset the colors
             splitBase.BackColor = Color.Transparent;
             splitBase.Panel1.BackColor = Color.Transparent;
-            splitStep.Panel1.BackColor = Color.Transparent;
-            splitStep.Panel2.BackColor = Color.Transparent;
             splitSteps.Panel2.BackColor = Color.Transparent;
             splitSteps.BackColor = Color.Transparent;
+        }
+
+        /// <summary>
+        /// Set the foreground and background colors for the status box
+        /// </summary>
+        private void SetStatusBoxColors()
+        {
+            textBoxStatus.ForeColor = Constants.StatusBoxForegroundColor;
+            textBoxStatus.BackColor = Constants.StatusBoxBackgroundColor;
         }
 
         /// <summary> Are the prerequisites valid for executing the wizard </summary>
@@ -157,24 +174,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// <returns>True if valid otherwise false</returns>
         public bool ValidPrerequisites(Solution solution)
         {
-            // TODO - Get these working...
-
             // Validate solution
             if (!ValidSolution(solution))
             {
                 DisplayMessage(Resources.InvalidSolution, MessageBoxIcon.Error);
                 return false;
             }
-
-            //// Validate projects
-            //if (!ValidProjects(solution))
-            //{
-            //    //DisplayMessage(Resources.InvalidProjects, MessageBoxIcon.Error);
-            //    return false;
-            //}
-
-            //// Build modules dropdowns for validations
-            ////BuildModules();
 
             return true;
         }
@@ -221,8 +226,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// </summary>
         private void InitLanguageList()
         {
+            var divider = new String('-', 60);
             List<Language> languages = new List<Language>();
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = "- Select Language -" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ab", Name = "Abkhazian" });
             languages.Add(new Language { Code = "aa", Name = "Afar" });
             languages.Add(new Language { Code = "af", Name = "Afrikaans" });
@@ -235,6 +242,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "ae", Name = "Avestan" });
             languages.Add(new Language { Code = "ay", Name = "Aymara" });
             languages.Add(new Language { Code = "az", Name = "Azerbaijani" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ba", Name = "Bashkir" });
             languages.Add(new Language { Code = "eu", Name = "Basque" });
             languages.Add(new Language { Code = "be", Name = "Belarusian" });
@@ -245,6 +253,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "br", Name = "Breton" });
             languages.Add(new Language { Code = "bg", Name = "Bulgarian" });
             languages.Add(new Language { Code = "my", Name = "Burmese" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ca", Name = "Catalan" });
             languages.Add(new Language { Code = "ch", Name = "Chamorro" });
             languages.Add(new Language { Code = "ce", Name = "Chechen" });
@@ -254,15 +263,19 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "co", Name = "Corsican" });
             languages.Add(new Language { Code = "hr", Name = "Croatian" });
             languages.Add(new Language { Code = "cs", Name = "Czech" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "da", Name = "Danish" });
             languages.Add(new Language { Code = "dv", Name = "Divehi, Dhivehi, Maldivian" });
             languages.Add(new Language { Code = "nl", Name = "Dutch" });
             languages.Add(new Language { Code = "dz", Name = "Dzongkha" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "eo", Name = "Esperanto" });
             languages.Add(new Language { Code = "et", Name = "Estonian" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "fo", Name = "Faroese" });
             languages.Add(new Language { Code = "fj", Name = "Fijian" });
             languages.Add(new Language { Code = "fi", Name = "Finnish" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "gd", Name = "Gaelic, Scottish Gaelic" });
             languages.Add(new Language { Code = "gl", Name = "Galician" });
             languages.Add(new Language { Code = "ka", Name = "Georgian" });
@@ -270,6 +283,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "el", Name = "Greek, Modern(1453 -)" });
             languages.Add(new Language { Code = "gn", Name = "Guarani" });
             languages.Add(new Language { Code = "gu", Name = "Gujarati" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ht", Name = "Haitian, Haitian Creole" });
             languages.Add(new Language { Code = "ha", Name = "Hausa" });
             languages.Add(new Language { Code = "he", Name = "Hebrew" });
@@ -277,6 +291,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "hi", Name = "Hindi" });
             languages.Add(new Language { Code = "ho", Name = "Hiri Motu" });
             languages.Add(new Language { Code = "hu", Name = "Hungarian" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "is", Name = "Icelandic" });
             languages.Add(new Language { Code = "io", Name = "Ido" });
             languages.Add(new Language { Code = "id", Name = "Indonesian" });
@@ -286,8 +301,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "ik", Name = "Inupiaq" });
             languages.Add(new Language { Code = "ga", Name = "Irish" });
             languages.Add(new Language { Code = "it", Name = "Italian" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ja", Name = "Japanese" });
             languages.Add(new Language { Code = "jv", Name = "Javanese" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "kl", Name = "Kalaallisut" });
             languages.Add(new Language { Code = "kn", Name = "Kannada" });
             languages.Add(new Language { Code = "ks", Name = "Kashmiri" });
@@ -300,6 +317,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "ko", Name = "Korean" });
             languages.Add(new Language { Code = "kj", Name = "Kuanyama, Kwanyama" });
             languages.Add(new Language { Code = "ku", Name = "Kurdish" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "lo", Name = "Lao" });
             languages.Add(new Language { Code = "la", Name = "Latin" });
             languages.Add(new Language { Code = "lv", Name = "Latvian" });
@@ -307,6 +325,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "ln", Name = "Lingala" });
             languages.Add(new Language { Code = "lt", Name = "Lithuanian" });
             languages.Add(new Language { Code = "lb", Name = "Luxembourgish, Letzeburgesch" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "mk", Name = "Macedonian" });
             languages.Add(new Language { Code = "mg", Name = "Malagasy" });
             languages.Add(new Language { Code = "ms", Name = "Malay" });
@@ -318,6 +337,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "mh", Name = "Marshallese" });
             languages.Add(new Language { Code = "mo", Name = "Moldavian" });
             languages.Add(new Language { Code = "mn", Name = "Mongolian" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "na", Name = "Nauru" });
             languages.Add(new Language { Code = "nv", Name = "Navaho, Navajo" });
             languages.Add(new Language { Code = "nd", Name = "Ndebele, North" });
@@ -329,21 +349,26 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "nb", Name = "Norwegian Bokmal" });
             languages.Add(new Language { Code = "nn", Name = "Norwegian Nynorsk" });
             languages.Add(new Language { Code = "ny", Name = "Nyanja, Chichewa, Chewa" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "oc", Name = "Occitan(post 1500), Provencal" });
             languages.Add(new Language { Code = "or", Name = "Oriya" });
             languages.Add(new Language { Code = "om", Name = "Oromo" });
             languages.Add(new Language { Code = "os", Name = "Ossetian, Ossetic" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "pi", Name = "Pali" });
             languages.Add(new Language { Code = "pa", Name = "Panjabi" });
             languages.Add(new Language { Code = "fa", Name = "Persian" });
             languages.Add(new Language { Code = "pl", Name = "Polish" });
             languages.Add(new Language { Code = "pt", Name = "Portuguese" });
             languages.Add(new Language { Code = "ps", Name = "Pushto" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "qu", Name = "Quechua" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "rm", Name = "Raeto - Romance" });
             languages.Add(new Language { Code = "ro", Name = "Romanian" });
             languages.Add(new Language { Code = "rn", Name = "Rundi" });
             languages.Add(new Language { Code = "ru", Name = "Russian" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "sm", Name = "Samoan" });
             languages.Add(new Language { Code = "sg", Name = "Sango" });
             languages.Add(new Language { Code = "sa", Name = "Sanskrit" });
@@ -361,6 +386,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "sw", Name = "Swahili" });
             languages.Add(new Language { Code = "ss", Name = "Swati" });
             languages.Add(new Language { Code = "sv", Name = "Swedish" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "tl", Name = "Tagalog" });
             languages.Add(new Language { Code = "ty", Name = "Tahitian" });
             languages.Add(new Language { Code = "tg", Name = "Tajik" });
@@ -376,19 +402,25 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             languages.Add(new Language { Code = "tr", Name = "Turkish" });
             languages.Add(new Language { Code = "tk", Name = "Turkmen" });
             languages.Add(new Language { Code = "tw", Name = "Twi" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "ug", Name = "Uighur" });
             languages.Add(new Language { Code = "uk", Name = "Ukrainian" });
             languages.Add(new Language { Code = "ur", Name = "Urdu" });
             languages.Add(new Language { Code = "uz", Name = "Uzbek" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "vi", Name = "Vietnamese" });
             languages.Add(new Language { Code = "vo", Name = "Volapuk" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "wa", Name = "Walloon" });
             languages.Add(new Language { Code = "cy", Name = "Welsh" });
             languages.Add(new Language { Code = "fy", Name = "Western Frisian" });
             languages.Add(new Language { Code = "wo", Name = "Wolof" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "xh", Name = "Xhosa" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "yi", Name = "Yiddish" });
             languages.Add(new Language { Code = "yo", Name = "Yoruba" });
+            languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
             languages.Add(new Language { Code = "za", Name = "Zhuang, Chuang" });
             languages.Add(new Language { Code = "zu", Name = "Zulu" });
 
@@ -428,7 +460,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             btnBack.Enabled = false;
 
             // Current Step
-            _currentWizardStep = Constants.StartingStep;
+            _currentWizardStep = Constants.Steps.Initial;
 
             // Init wizard steps
             _wizardSteps.Clear();
@@ -436,9 +468,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             HidePanels();
 
             SetupSteps();
-
-            // Hide this checkbox. Not sure why it's on the form.
-            checkBox.Visible = false;
         }
 
         /// <summary>
@@ -490,16 +519,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// </summary>
         private void InitialStep()
         {
-            if (_currentWizardStep == Constants.StartingStep)
+            if (IsInitialStep())
             {
                 lblStatus.Visible = false;
                 textBoxStatus.Visible = false;
 
-                // Buttons
-                DisableBackButton();
-                btnNext.Text = Resources.Begin;
-                EnableNextButton();
-                btnNext.Focus();
+                SetupButtons();
 
                 // Increment step
                 _currentWizardStep++;
@@ -515,7 +540,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// <returns>true : initial step | false : not the initial step</returns>
         private bool IsInitialStep()
         {
-            return _currentWizardStep == Constants.StartingStep;
+            return _currentWizardStep == Constants.Steps.Initial;
         }
 
         /// <summary>
@@ -525,7 +550,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private bool IsLastStep()
         {
             var totalSteps = _wizardSteps.Count;
-            return _currentWizardStep == totalSteps;
+            return _currentWizardStep == totalSteps - 1;
         }
 
         /// <summary> Next/Generate Navigation </summary>
@@ -544,15 +569,48 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                 // Proceed to next wizard step or start processing if processing step
                 if (!IsInitialStep() && _currentWizardStep.Equals(totalSteps - 2))
                 {
-                    var confirmationResult = MessageBox.Show(Resources.AreYouSureYouWishToProceed, 
-                                                             Resources.Confirmation, 
-                                                             MessageBoxButtons.OKCancel);
-                    if (confirmationResult == DialogResult.OK)
+                    // See if there are already resource files for the language specified
+                    // If there are, give the user a warning that they will be overwritten
+
+                    var proceed = false;
+                    var solutionPath = Path.GetDirectoryName(_solution.FullName);
+                    var anyLanguageFiles = Directory.GetFiles(solutionPath, $"*Resx.{_selectedLanguage.Code}.resx", SearchOption.AllDirectories).Count() > 0;
+                    if (anyLanguageFiles)
+                    {
+                        // Language files already exist confirmation dialog
+                        var result1 = MetroMessageBox.Show(this,
+                                                           String.Format(Resources.LanguageResourcesAlreadyExist_Template, _selectedLanguage.Name),
+                                                           Resources.Confirmation,
+                                                           MessageBoxButtons.OKCancel,
+                                                           MessageBoxIcon.Question);
+
+                        proceed = (result1 == DialogResult.OK);
+                    } 
+                    else
+                    {
+                        // General confirmation dialog
+                        var result2 = MetroMessageBox.Show(this,
+                                                           Resources.AreYouSureYouWishToProceed,
+                                                           Resources.Confirmation,
+                                                           MessageBoxButtons.OKCancel,
+                                                           MessageBoxIcon.Question);
+
+                        proceed = (result2 == DialogResult.OK);
+                    }
+
+                    if (proceed)
                     {
                         DisableButtons();
 
-                        lblStatus.Visible = true;
-                        textBoxStatus.Visible = true;
+                        // Update the pages step title (Special case)
+                        // and then disable them while doing the actual processing
+                        var currentStep = _currentWizardStep.ToString("#0");
+                        var step = $"{Resources.Step} {currentStep}{Resources.Dash}";
+                        lblStepTitle.Text = step + Resources.GeneratingResources;
+                        lblReview_ContentTemplate.Text = String.Format(Resources.PleaseWaitWhileResourcesAreGenerated_Template, 
+                                                                       _selectedLanguage.Name);
+
+                        ActivateStatusWindow();
 
                         _settings = new Settings
                         {
@@ -563,11 +621,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                         // Start background worker for processing (async)
                         wrkBackground.RunWorkerAsync(_settings);
                     }
-                }
-                else if (!IsInitialStep() && _currentWizardStep.Equals(totalSteps - 1))
-                {
-                    // Close the wizard
-                    this.Close();
                 }
                 else
                 {
@@ -587,9 +640,18 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     // Update title, text and panel for the step
                     ShowStep(true);
 
-                    UpdateButtons();
+                    SetupButtons();
                 }
             }
+        }
+
+        /// <summary>
+        /// Display the status label and window
+        /// </summary>
+        private void ActivateStatusWindow()
+        {
+            lblStatus.Visible = true;
+            textBoxStatus.Visible = true;
         }
 
         /// <summary>
@@ -610,7 +672,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             var totalSteps = _wizardSteps.Count;
 
             // Proceed if not on first step
-            if (_currentWizardStep > 0)
+            if (_currentWizardStep > Constants.Steps.Start)
             {
                 if (_currentWizardStep.Equals(totalSteps - 1))
                 {
@@ -625,7 +687,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
                 ShowStep(true);
 
-                UpdateButtons();
+                SetupButtons();
             }
         }
 
@@ -640,20 +702,30 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         }
 
         /// <summary>
-        /// Update the buttons (enable/disable/set label text)
+        /// Setup the buttons (enable/disable/set label text)
         /// </summary>
-        private void UpdateButtons()
+        private void SetupButtons()
         {
-            if (_currentWizardStep == 0)
+            if (IsInitialStep())
             {
-                btnNext.Text = Resources.Begin;
                 DisableBackButton();
+
+                btnNext.Text = Resources.Begin;
+                EnableNextButton();
+                btnNext.Focus();
+            }
+            else if (_currentWizardStep == Constants.Steps.Start)
+            {
+                DisableBackButton();
+
+                btnNext.Text = Resources.Begin;
                 EnableNextButton();
             }
-            else if (_currentWizardStep == 1)
+            else if (_currentWizardStep == Constants.Steps.SelectLanguage)
             {
-                btnNext.Text = Resources.Next;
                 EnableBackButton();
+
+                btnNext.Text = Resources.Next;
 
                 if (IsValidLanguageSelected())
                 {
@@ -665,17 +737,21 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                 }
                 
             }
-            else if (_currentWizardStep == 2)
+            else if (_currentWizardStep == Constants.Steps.Review)
             {
-                btnNext.Text = Resources.Generate;
                 EnableBackButton();
+
+                btnNext.Text = Resources.Generate;
                 EnableNextButton();
             }
-            else if (_currentWizardStep == 3)
+            else if (_currentWizardStep == Constants.Steps.Closing)
             {
-                btnNext.Text = Resources.Close;
+                // Display final step
                 EnableBackButton();
+                btnBack.Text = Resources.ShowLog;
+
                 EnableNextButton();
+                btnNext.Text = Resources.Close;
             }
         }
 
@@ -714,25 +790,25 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             DisableBackButton();
             DisableNextButton();
         }
+
         /// <summary> Show Step Page</summary>
         private void ShowStep(bool visible)
         {
             SetStepTitleAndDescription();
-
-            if (_currentWizardStep > -1)
+            if (!IsInitialStep())
             {
                 _wizardSteps[_currentWizardStep].Panel.Dock = visible ? DockStyle.Fill : DockStyle.None;
                 _wizardSteps[_currentWizardStep].Panel.Visible = visible;
 
-                if (_currentWizardStep == 0)
+                if (_currentWizardStep == Constants.Steps.Start)
                 {
                     lblWelcome_Content.Text = Resources.WelcomeContent;
                 }
-                else if (_currentWizardStep == 1)
+                else if (_currentWizardStep == Constants.Steps.SelectLanguage)
                 {
                     lblLanguage.Text = Resources.Language;
                 }
-                else if (_currentWizardStep == 2)
+                else if (_currentWizardStep == Constants.Steps.Review)
                 {
                     GetSelectedLanguage();
 
@@ -740,7 +816,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     contentText = contentText.Replace("{0}", _selectedLanguage.Name);
                     lblReview_ContentTemplate.Text = contentText;
                 }
-                else if (_currentWizardStep == 3)
+                else if (_currentWizardStep == Constants.Steps.Closing)
                 {
                     lblFinish_Content.Text = Resources.FinishContent;
                 }
@@ -752,7 +828,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// </summary>
         private void SetStepTitleAndDescription()
         {
-            if (_currentWizardStep > -1)
+            if (!IsInitialStep())
             {
                 // Update title and text for step
                 var currentStep = _currentWizardStep.ToString("#0");
@@ -766,7 +842,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         }
 
         /// <summary>
-        /// Write log file to upgrade solution folder
+        /// Write log file to solution folder
         /// </summary>
         private void WriteLogFile()
         {
@@ -820,27 +896,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             _currentWizardStep++;
 
-            // Update title and text for step
             ShowStep(true);
 
-            // Display final step
-            btnBack.Text = Resources.ShowLog;
-            btnNext.Text = Resources.Close;
-            EnableBackButton();
-            EnableNextButton();
+            SetupButtons();
 
             // Write out log file with upgrade being complete
             WriteLogFile();
-        }
-
-        /// <summary> Help Button</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Disabled help until DPP wiki is available</remarks>
-        private void Generation_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            // Display wiki link
-            //System.Diagnostics.Process.Start(Resources.Browser, Resources.WikiLink);
         }
 
         /// <summary> Localize </summary>
@@ -879,15 +940,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         {
             var callBack = new LogCallback(Log);
             Invoke(callBack, text);
-        }
-
-        /// <summary> Store value selected in Wizard step</summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        private void checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            // Stores value in step
-            //_wizardSteps[_currentWizardStep].CheckboxValue = checkBox.Checked;
         }
         #endregion
 

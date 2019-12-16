@@ -233,14 +233,14 @@
         xAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="lblWelcome_Content.Text" xml:space="preserve">
+    <value>Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you've specified. To begin, press the 'Begin' button below.</value>
+  </data>
   <data name="lblReview_ContentTemplate.Text" xml:space="preserve">
     <value>You've selected '{0}' as the language for your new resources. If you are satisfied with your choice, press the 'Generate' button below. If you wish to change this language choice, press the 'Back' button below to go back to the language selection page. 
 
-If there are already existing resources for the language you've selected, they will be overwritten.
+
 </value>
-  </data>
-  <data name="lblWelcome_Content.Text" xml:space="preserve">
-    <value>Welcome to the Sage 300 Language Resource Wizard. This wizard will assist you in the creation of language resources other than the ones already supported by Sage 300. Presently Sage 300 supports the following languages: English, French, Spanish, Chinese - Simplified and Chinese - Traditional. This wizard will make a copy of the english language resources for each module that you can then manually translate into the language you've specified. To begin, press the 'Begin' button below.</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

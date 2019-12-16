@@ -180,9 +180,7 @@
 
 If you are satisfied with your choice and wish to proceed, press the 'Generate' button below. 
 If you wish to change your language choice, press the 'Back' button below to go back to the language selection page. 
-
-** CAUTION ** 
-If there are already existing resources for the language you've selected, they will be overwritten.</value>
+</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language:</value>
@@ -211,8 +209,8 @@ To begin, press the 'Begin' button below.</value>
   <data name="CopyingFromTo_PaddedTemplate" xml:space="preserve">
     <value>{0}Copying {1} to {2}</value>
   </data>
-  <data name="FileAlreadyExists_Overwriting_Template" xml:space="preserve">
-    <value>{0} already exists. Overwriting...</value>
+  <data name="FileAlreadyExists_Overwriting_PaddedTemplate" xml:space="preserve">
+    <value>{0}{1} already exists. Overwriting...</value>
   </data>
   <data name="FinishContent" xml:space="preserve">
     <value>The creation of the new language resources has completed successfully. 
@@ -237,5 +235,24 @@ Press the 'Close' button below to close this wizard.</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CreationProcessCompleted" xml:space="preserve">
+    <value>The new language resources have been created successfully.</value>
+  </data>
+  <data name="LanguageResourcesAlreadyExist_Template" xml:space="preserve">
+    <value>It appears as though there are already one or more '{0}' resource files.
+
+If you continue, these '{0}' resource files will be overwritten.
+
+Do you wish to continue?</value>
+  </data>
+  <data name="GeneratingResources" xml:space="preserve">
+    <value>Generating Resources</value>
+  </data>
+  <data name="PleaseWaitWhileResourcesAreGenerated_Template" xml:space="preserve">
+    <value>Please wait while the {0} language resources are being generated...</value>
   </data>
 </root>

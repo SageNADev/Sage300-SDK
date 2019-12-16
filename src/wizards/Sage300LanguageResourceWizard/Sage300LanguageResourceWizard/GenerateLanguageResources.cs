@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,7 +22,6 @@
 using EnvDTE;
 using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties;
-using Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,7 +37,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 	#region Private Variables
 		/// <summary> Settings from UI </summary>
 		private Settings _settings;
-		private string _backupFolder = String.Empty;
     #endregion
 
     #region Public Delegates
@@ -86,6 +84,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
                 // Get the project path
                 var projectPath = Path.GetDirectoryName(project.FullName);
+                LogSpacerLine();
                 Log(string.Format(Resources.Project_Template, new FileInfo(project.FullName).Name));
                 Log(string.Format(Resources.Path_Template, projectPath));
 
@@ -111,14 +110,14 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     // Build the full path to the new file
                     var newFilePath = Path.Combine(directoryName, newName);
 
+                    var prefixPadding = new String(' ', 10);
                     if (File.Exists(newFilePath))
                     {
-                        Log(String.Format(Resources.FileAlreadyExists_Overwriting_Template, newName));
+                        Log(String.Format(Resources.FileAlreadyExists_Overwriting_PaddedTemplate, prefixPadding, newName));
                     }
 
                     // copy it!
                     File.Copy(file, newFilePath, overwrite: true);
-                    var prefixPadding = new String(' ', 10);
                     Log(String.Format(Resources.CopyingFromTo_PaddedTemplate, prefixPadding, new FileInfo(file).Name, newName));
 
                     // ...and add to the project
@@ -127,6 +126,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                 }
             }
 
+            LaunchProcessingEvent(Resources.CreationProcessCompleted);
+            Log(Resources.CreationProcessCompleted);
             LogSpacerLine();
             Log(Resources.EndLanguageResourceCreationProcess);
             LogSpacerLine('-');

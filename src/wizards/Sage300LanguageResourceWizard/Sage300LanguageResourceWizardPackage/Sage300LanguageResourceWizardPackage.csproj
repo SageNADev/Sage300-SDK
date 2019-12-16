@@ -103,7 +103,8 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetName).vsix $(ProjectDir)..\..\..\..\bin\wizards\</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).vsix $(ProjectDir)..\..\..\..\bin\wizards\
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

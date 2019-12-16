@@ -142,6 +142,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The new language resources have been created successfully..
+        /// </summary>
+        internal static string CreationProcessCompleted {
+            get {
+                return ResourceManager.GetString("CreationProcessCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         internal static string Dash {
@@ -169,11 +178,20 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} already exists. Overwriting....
+        ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string FileAlreadyExists_Overwriting_Template {
+        internal static string Error {
             get {
-                return ResourceManager.GetString("FileAlreadyExists_Overwriting_Template", resourceCulture);
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}{1} already exists. Overwriting....
+        /// </summary>
+        internal static string FileAlreadyExists_Overwriting_PaddedTemplate {
+            get {
+                return ResourceManager.GetString("FileAlreadyExists_Overwriting_PaddedTemplate", resourceCulture);
             }
         }
         
@@ -208,6 +226,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generating Resources.
+        /// </summary>
+        internal static string GeneratingResources {
+            get {
+                return ResourceManager.GetString("GeneratingResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Introduction.
         /// </summary>
         internal static string Introduction_Title {
@@ -231,6 +258,19 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         internal static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It appears as though there are already one or more &apos;{0}&apos; resource files.
+        ///
+        ///If you continue, these &apos;{0}&apos; resource files will be overwritten.
+        ///
+        ///Do you wish to continue?.
+        /// </summary>
+        internal static string LanguageResourcesAlreadyExist_Template {
+            get {
+                return ResourceManager.GetString("LanguageResourcesAlreadyExist_Template", resourceCulture);
             }
         }
         
@@ -263,6 +303,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please wait while the {0} language resources are being generated....
+        /// </summary>
+        internal static string PleaseWaitWhileResourcesAreGenerated_Template {
+            get {
+                return ResourceManager.GetString("PleaseWaitWhileResourcesAreGenerated_Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project : {0}.
         /// </summary>
         internal static string Project_Template {
@@ -276,9 +325,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard.Properties {
         ///
         ///If you are satisfied with your choice and wish to proceed, press the &apos;Generate&apos; button below. 
         ///If you wish to change your language choice, press the &apos;Back&apos; button below to go back to the language selection page. 
-        ///
-        ///** CAUTION ** 
-        ///If there are already existing resources for the language you&apos;ve selected, they will be overwritten..
+        ///.
         /// </summary>
         internal static string Review_Content_Template {
             get {
