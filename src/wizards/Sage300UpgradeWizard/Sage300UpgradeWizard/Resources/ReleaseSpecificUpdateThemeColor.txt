@@ -2,12 +2,12 @@ As part of the framework changes required to handle theme color in
 Sage 300c 2020.2, several files need to be altered for the solution to
 adapt the changes after the upgrade process.
 
-The upgrade wizard is unable to automatically perform this
-modification and therefore this step will require manual modifications.
+The upgrade wizard is unable to automatically perform this modification and
+therefore this step will require manual modifications.
 
-All JavaScript files with kendo window created need to be updated if there
-is any customized popup needs to apply the theme.
+Any JavaScript file with customized kendo window defined needs to be updated
+if the customized popup needs to apply the theme.
 
-Please refer to the 'Theme Color changes' subsection in the 
-Sage 300 Upgrade Guide for 2020.1 to 2020.2 in the docs folder of the Web 
-SDK for detailed instructions. The samples code may also be used as a guide.
+Please refer to the 'Theme Color changes' subsection in the Sage 300
+Upgrade Guide for 2020.1 to 2020.2 in the docs folder of the Web SDK for
+detailed instructions. The samples code may also be used as a guide.
