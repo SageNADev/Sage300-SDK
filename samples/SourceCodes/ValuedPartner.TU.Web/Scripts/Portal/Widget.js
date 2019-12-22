@@ -655,10 +655,6 @@ $(document).ready(function () {
                     actions: ["Close"],
                     resizable: false,
                     width: 843,
-                    open: function () {
-                        // For custom theme color
-                        sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                    },
                     activate: function () {
                         setConfigFrameSource('iframeWidgetConfiguration1', configurationUrl);
                     }
@@ -676,10 +672,6 @@ $(document).ready(function () {
                     actions: ["Close"],
                     resizable: false,
                     width: 640,
-                    open: function () {
-                        // For custom theme color
-                        sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                    },
                     activate: function () {
                         setConfigFrameSource('iframeWidgetConfiguration', configurationUrl);
                     }
@@ -698,10 +690,6 @@ $(document).ready(function () {
                 actions: ["Close"],
                 resizable: false,
                 width: 640,
-                open: function () {
-                    // For custom theme color
-                    sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                },
                 activate: function () {
                     setConfigFrameSource('iframeWidgetEditTitle', editTitleUrl);
                 }
@@ -754,40 +742,4 @@ if (window.addEventListener) {
 
 $(function () {
     homeUI.displayOptions(homeViewModel);
-});
-
-
-function setColor(e) {
-    sg.utls.saveUserPreferences("color", e.value);
-    sg.utls.setBackgroundColor($("#header"));
-}
-
-$("#palette").kendoColorPalette({
-    columns: 4,
-    tileSize: {
-        width: 34,
-        height: 19
-    },
-    palette: [
-        "#f0d0c9", "#e2a293", "#c7384f", "#73052a",
-        "#d9d2e0", "#c8bad6", "#8c68ae", "#663399",
-        "#fcecd5", "#f9d682", "#f7b319", "#ff7d00",
-        "#c8dbc6", "#33b033", "#1f7106", "#3c424f",
-        "#c6d9f0", "#8db3e2", "#0260a0", "#003348"
-    ],
-    change: setColor
-});
-
-$("#picker").kendoColorPicker({
-    value: "#ffffff",
-    buttons: false,
-    select: setColor
-});      
-
-$("#btnColorPicker").click(function () {
-    $("#colorPicker").addClass("color-picker-show");
-});
-
-$("#btnColorPickerClose").click(function () {
-    $("#colorPicker").removeClass("color-picker-show");
 });

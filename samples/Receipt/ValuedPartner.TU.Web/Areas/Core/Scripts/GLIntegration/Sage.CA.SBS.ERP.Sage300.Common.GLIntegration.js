@@ -176,10 +176,6 @@ glIntegrationUI = {
             minHeight: 300,
             //custom function to suppot focus within kendo window
             activate: sg.utls.kndoUI.onActivate,
-            open: function () {
-                // For custom theme color
-                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-            },
             close: function (e) {
                 if (glIntegrationUI.glIntegrationModel.Data.koIsGLTransactionDetailDirty() === true) {
                     e.preventDefault();

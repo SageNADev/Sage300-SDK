@@ -55,8 +55,6 @@ var reportBrowseUI = function () {
 
             open: function () {
                 this.wrapper.css({ top: 100 });
-                // For custom theme color
-                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             }
         }).data("kendoWindow");
     }

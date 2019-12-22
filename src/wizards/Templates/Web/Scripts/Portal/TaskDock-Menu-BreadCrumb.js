@@ -1137,8 +1137,6 @@ var TaskDockMenuBreadCrumbManager = function () {
             $('#homeNav > a').addClass('active');
             $('#topMenuTools').addClass('active');
 
-            sg.utls.setBackgroundColor($("#header"));
-
             var isWidgetEmptyLnkClicked = false;
 
             var menu = $("#topMenu").kendoMenu({ openOnClick: true, closeOnClick: true }).data("kendoMenu");
@@ -1586,12 +1584,6 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             $("#globalSearch").on('click', function () {
                 sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "GlobalSearch", "IsServiceRunning"), {}, openGlobalSearch);
-            });
-
-            $("#btnColorPickerDB").on('click', function () {
-                var data = { key: "colour" };
-                sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", "DeleteUserPreference"), data);
-                sg.utls.setBackgroundColor($("#header"));
             });
 
             $("#btnIntelligence").click(function () {

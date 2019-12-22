@@ -34,15 +34,6 @@ $.extend(sg.utls.kndoUI, {
         });
     },
 
-    /**
-     * @method onOpen
-     * @description Open Kendo Window in center of the Viewport. Also set title bar color
-     */
-    onOpen: function () {
-        sg.utls.setKendoWindowPosition(this);
-        sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-    },
-
     //Kendo grid helpers
     /**
      * Used to hide the columns of a grid

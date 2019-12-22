@@ -31,7 +31,7 @@
                 <a class="item-ID" data-webdetailinfo='#: data["webdetailinfo"] #'>
                     <div>
                         #for (var i = 0; i < Header.length; i++) {#
-                        <span>#: data["FieldName-" + Header[i]] #</span>: <span>#: data[Header[i]] #</span>&nbsp;
+                        <span>#= data["FieldName-" + Header[i]] #</span>: <span>#= data[Header[i]] #</span>&nbsp;
                         #}#
                     </div>
                 </a>
@@ -41,12 +41,12 @@
                 #  if (i > 0){#
                 <span aria-hidden="true" class="glyphicon glyphicon-next"></span>
                 #  }#
-                <span>#: Path[i] #</span>
+                <span>#= Path[i] #</span>
                 #}#
             </p>
             <div>
                 #for (var i = 0; i < Fields.length; i++) {#
-                <p><span>#: data["FieldName-" + Fields[i]]#</span>: <span>#: data[Fields[i]] #</span></p>
+                <p><span>#= data["FieldName-" + Fields[i]]#</span>: <span>#= data[Fields[i]] #</span></p>
                 #}#
             </div>
         </div>
