@@ -538,6 +538,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateThemeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -565,6 +574,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme color changes.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateThemeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The way the Code Generation Wizard builds and stores enumerations has changed 
         ///from release {0} to {1}.
         ///
@@ -586,6 +604,25 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to handle theme color in
+        ///Sage 300c 2020.2, several files need to be altered for the solution to
+        ///adapt the changes after the upgrade process.
+        ///
+        ///The upgrade wizard is unable to automatically perform this
+        ///modification and therefore this step will require manual modifications.
+        ///
+        ///All JavaScript files with kendo window created need to be updated if there
+        ///is any customized popup needs to apply the theme.
+        ///
+        ///Please refer to the &apos;Theme Color changes&apos; subsection in the  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateThemeColor {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateThemeColor", resourceCulture);
             }
         }
         
@@ -740,6 +777,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
             get {
                 return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to support theme color must be made manually..
+        /// </summary>
+        internal static string UpdatesToSupportThemeColorAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToSupportThemeColorAreAManualStep", resourceCulture);
             }
         }
         

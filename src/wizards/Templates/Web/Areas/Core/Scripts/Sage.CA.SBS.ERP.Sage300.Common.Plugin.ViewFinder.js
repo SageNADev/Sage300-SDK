@@ -405,6 +405,9 @@
 
                     this.wrapper.css({ top: finderTopPos });
                     this.wrapper.css({ left: finderLeftPos });
+
+                    // For custom theme color
+                    sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
                 },
             }).data("kendoWindow");
 

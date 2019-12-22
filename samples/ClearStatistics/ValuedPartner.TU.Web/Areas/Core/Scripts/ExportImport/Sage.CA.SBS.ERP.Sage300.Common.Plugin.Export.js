@@ -268,14 +268,12 @@ var exportResultRowNumber = 0;
                 minHeight: 100,
                 maxHeight: 600,
                 actions: ["Close"],
+                //Open Kendo Window in center of the Viewport. Also set title bar color
+                open: sg.utls.kndoUI.onOpen,
                 //custom function to suppot focus within kendo window
                 activate: sg.utls.kndoUI.onActivate,
                 close: function () {
                     that._destroyKendoWindow();
-                },
-                //Open Kendo Window in center of the Viewport
-                open: function () {
-                    sg.utls.setKendoWindowPosition(this);
                 },
             }).data("kendoWindow");
 
@@ -325,16 +323,14 @@ var exportResultRowNumber = 0;
                 minHeight: 200,
                 maxHeight: 800,
                 actions: ["Close"],
+                //Open Kendo Window in center of the Viewport. Also set title bar color
+                open: sg.utls.kndoUI.onOpen,
                 //custom function to suppot focus within kendo window
                 activate: sg.utls.kndoUI.onActivate,
                 close: function () {
                     that._destroyKendoWindow();
                     sg.exportHelper.initCriteriaTabPage = true;
                     sg.exportHelper.initPreviewTabPage = true;
-                },
-                //Open Kendo Window in center of the Viewport
-                open: function () {
-                    sg.utls.setKendoWindowPosition(this);
                 },
             }).data("kendoWindow");
 
@@ -597,12 +593,10 @@ var exportResultRowNumber = 0;
                     width: 1000,
                     minHeight: 200,
                     maxHeight: 850,
+                    //Open Kendo Window in center of the Viewport. Also set title bar color
+                    open: sg.utls.kndoUI.onOpen,
                     // Custom function to suppot focus within kendo window
                     activate: sg.utls.kndoUI.onActivate,
-                    //Open Kendo Window in center of the Viewport
-                    open: function () {
-                        sg.utls.setKendoWindowPosition(this);
-                    },
                     close: function () {
                     },
                 }).data("kendoWindow").open();
@@ -624,12 +618,10 @@ var exportResultRowNumber = 0;
                     //height: 150,
                     minHeight: 150,
                     maxHeight: 600,
+                    //Open Kendo Window in center of the Viewport. Also set title bar color
+                    open: sg.utls.kndoUI.onOpen,
                     // Custom function to suppot focus within kendo window
                     activate: sg.utls.kndoUI.onActivate,
-                    //Open Kendo Window in center of the Viewport
-                    open: function () {
-                        sg.utls.setKendoWindowPosition(this);
-                    },
                 }).data("kendoWindow").open();
             });
 
