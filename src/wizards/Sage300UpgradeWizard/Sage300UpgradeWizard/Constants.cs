@@ -32,10 +32,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2020.1";
+            public const string FromReleaseNumber = "2020.0";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2020.2";
+            public const string ToReleaseNumber = "2020.1";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.7.0.0";

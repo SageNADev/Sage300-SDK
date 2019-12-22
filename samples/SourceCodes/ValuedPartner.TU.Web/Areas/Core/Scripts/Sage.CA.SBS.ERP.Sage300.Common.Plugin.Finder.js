@@ -574,9 +574,6 @@
                     if (hidePageNavigation) {
                         sg.utls.kndoUI.hidePageNavigation(dialogId);
                     }
-
-                    // For custom theme color
-                    sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
                 },
             }).data("kendoWindow");
 

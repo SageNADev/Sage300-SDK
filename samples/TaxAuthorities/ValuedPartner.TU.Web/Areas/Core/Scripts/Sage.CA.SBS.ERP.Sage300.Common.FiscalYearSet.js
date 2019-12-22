@@ -123,10 +123,6 @@ var fiscalyearSetUI = {
                 width: 0,
                 minHeight: 0,
                 maxHeight: 0,
-                open: function () {
-                    // For custom theme color
-                    sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                }
                 activate: sg.utls.kndoUI.onActivate
             }).data("kendoWindow");
 

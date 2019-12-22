@@ -34,8 +34,9 @@ progressUI = {
             close: function () {
                 progressUI.onKendoWindowClose();
             },
-            //Open Kendo Window in center of the Viewport. Also set title bar color
-            open: sg.utls.kndoUI.onOpen,
+            open: function () {
+                sg.utls.setKendoWindowPosition(this);
+            },
             //custom function to suppot focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         }).data("kendoWindow").center();

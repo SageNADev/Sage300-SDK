@@ -342,21 +342,6 @@ table {
     }
   }
 
-  .btn-finder,
-  .btn-fiscal-picker,
-  .btn-go, 
-  .btn-more, 
-  .btn-numeric, 
-  .btn-plus, 
-  .btn-search {
-
-    &:focus { 
-      outline: none;  
-      border: none;
-      .box-shadow(none);
-    }
-  }
-
   .k-state-default .k-select {
     border: none;
     width: 26px;
@@ -886,7 +871,7 @@ table {
     .pencil-wrapper {
       position: relative;
       height: 28px;
-      background: none;
+      background-color: inherit;
 
       .pencil-txt {
         display: inline-block;
@@ -1130,7 +1115,7 @@ table {
       }
 
       &.dp-and-finder {
-        width: 94%;
+        width: 95%;
 
         & + .icon.btn-search {
           right: 0;
@@ -1201,21 +1186,6 @@ table {
       color: @white;
       padding: 10px 0;
       text-align: center;
-    }
-
-    .btn-finder,
-    .btn-fiscal-picker,
-    .btn-go, 
-    .btn-more, 
-    .btn-numeric, 
-    .btn-plus, 
-    .btn-search {
-
-      &:focus { 
-        outline: none;  
-        border: none;
-        .box-shadow(none);
-      }
     }
   }
 
