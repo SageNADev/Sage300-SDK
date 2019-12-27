@@ -344,10 +344,10 @@
   <data name="ReleaseSpecificTitleUpdateThemeColor" xml:space="preserve">
     <value>Theme color changes</value>
   </data>
-  <data name="ReleaseSpecificUpdateThemeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReleaseSpecificUpdateThemeColor.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="UpdatesToSupportThemeColorAreAManualStep" xml:space="preserve">
     <value>The updates to support theme color must be made manually.</value>
+  </data>
+  <data name="ReleaseSpecificUpdateThemeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateThemeColor.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

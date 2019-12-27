@@ -612,13 +612,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///Sage 300c 2020.2, several files need to be altered for the solution to
         ///adapt the changes after the upgrade process.
         ///
-        ///The upgrade wizard is unable to automatically perform this
-        ///modification and therefore this step will require manual modifications.
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
         ///
-        ///All JavaScript files with kendo window created need to be updated if there
-        ///is any customized popup needs to apply the theme.
+        ///Any JavaScript file that defines a customized Kendo window needs to be updated
+        ///for the customized popup to apply the new theme colors.
         ///
-        ///Please refer to the &apos;Theme Color changes&apos; subsection in the  [rest of string was truncated]&quot;;.
+        ///Please refer to the &apos;Theme Color changes&apos; subsecti [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUpdateThemeColor {
             get {
