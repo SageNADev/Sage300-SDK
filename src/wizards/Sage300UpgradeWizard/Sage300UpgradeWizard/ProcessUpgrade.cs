@@ -119,12 +119,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    #endregion
-                    
-                    case 4:
+
+                    case 3:
                         LogSpacerLine('-');
                         UpdateThemeColor(title);
                         break;
+
+                        #endregion
                 }
             }
 

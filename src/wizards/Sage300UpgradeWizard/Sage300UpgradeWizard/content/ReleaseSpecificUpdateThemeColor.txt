@@ -5,8 +5,8 @@ adapt the changes after the upgrade process.
 The upgrade wizard is unable to automatically perform this modification and
 therefore this step will require manual modifications.
 
-Any JavaScript file with customized kendo window defined needs to be updated
-if the customized popup needs to apply the theme.
+Any JavaScript file that defines a customized Kendo window needs to be updated
+for the customized popup to apply the new theme colors.
 
 Please refer to the 'Theme Color changes' subsection in the Sage 300
 Upgrade Guide for 2020.1 to 2020.2 in the docs folder of the Web SDK for
