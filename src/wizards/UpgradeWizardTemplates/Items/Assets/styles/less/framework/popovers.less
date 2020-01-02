@@ -1044,3 +1044,51 @@ and (max-device-width : 1024px)  {
       }
 }
 
+/* Popup header / Company Theme Color */
+/* ----------------------------------------------------------------------------------- */
+
+.k-window-titlebar.dark-bg {
+  
+  .k-window-title,
+  .k-window-actions .k-i-close{
+    color: @white;
+    font-weight: normal;
+  }
+
+  .k-window-actions .k-i-window-maximize{
+    background-position: -849px -32px;
+  }
+
+  .k-window-actions .k-i-window-restore{
+    background-position: -875px -32px;
+  }
+
+  .btn {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+  }
+}
+
+.k-window-titlebar.light-bg {
+  
+  .k-window-title,
+  .k-window-actions .k-i-close{
+    color: #003348;
+    font-weight: normal;
+  }
+
+  .btn {
+    color: #003348;
+
+    &:hover {
+      color: #003348;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+  }
+}
