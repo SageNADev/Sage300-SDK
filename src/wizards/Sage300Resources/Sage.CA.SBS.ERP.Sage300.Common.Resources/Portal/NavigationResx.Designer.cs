@@ -4093,6 +4093,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customize Theme Color.
+        /// </summary>
+        public static string SetCompanyColor {
+            get {
+                return ResourceManager.GetString("SetCompanyColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Theme Color from Database.
+        /// </summary>
+        public static string SetCompanyColorDB {
+            get {
+                return ResourceManager.GetString("SetCompanyColorDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {

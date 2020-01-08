@@ -37,12 +37,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 	#region Private Variables
 		/// <summary> Settings from UI </summary>
 		private Settings _settings;
-    #endregion
+        #endregion
 
-    #region Public Delegates
+        #region Public Delegates
         /// <summary> Delegate to update UI with name of the step being processed </summary>
         /// <param name="text">Text for UI</param>
-        public delegate void ProcessingEventHandler(string text);
+        /// <param name="progressAmount">Progress amount specifier</param>
+        public delegate void ProcessingEventHandler(string text, int progressAmount);
 
         /// <summary> Delegate to update log with status of the step being processed </summary>
         /// <param name="text">Text for UI</param>
@@ -62,11 +63,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            var progressAmount = 0;
+
             LogSpacerLine('-');
             Log(Resources.BeginLanguageResourceCreationProcess);
             LogSpacerLine();
 
-            LaunchProcessingEvent(Resources.AddingNewLanguageResources);
+            LaunchProcessingEvent(Resources.AddingNewLanguageResources, progressAmount);
 
             // Save settings for local usage
             _settings = settings;
@@ -76,11 +79,14 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             var projects = GetProjects(_settings.Solution);
 
+            var projectCount = GetProjectCount(projects);
+            var incrementAmount = CalculateIncrement(projectCount);
+
             // Iterate solution to get projects for analysis and usage
             foreach (var project in projects)
             {
                 var projectName = project.Name;
-                LaunchProcessingEvent(projectName);
+                LaunchProcessingEvent(projectName, progressAmount);
 
                 // Get the project path
                 var projectPath = Path.GetDirectoryName(project.FullName);
@@ -105,7 +111,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     // Build the name for the new language resource file.
                     var newName = $"{nameOnly}.{selectedLanguageCode}{extension}";
 
-                    LaunchProcessingEvent($"     {newName}");
+                    LaunchProcessingEvent($"     {newName}", progressAmount);
 
                     // Build the full path to the new file
                     var newFilePath = Path.Combine(directoryName, newName);
@@ -124,9 +130,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
                     project.ProjectItems.AddFromFile(newFilePath);
                     Log(String.Format(Resources.AddingFileToTheProject_PaddedTemplate, prefixPadding, newName));
                 }
+
+                progressAmount += incrementAmount;
             }
 
-            LaunchProcessingEvent(Resources.CreationProcessCompleted);
+            progressAmount = 100;
+            LaunchProcessingEvent(Resources.CreationProcessCompleted, progressAmount);
             Log(Resources.CreationProcessCompleted);
             LogSpacerLine();
             Log(Resources.EndLanguageResourceCreationProcess);
@@ -136,6 +145,50 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         #endregion
 
         #region Private methods
+
+        /// <summary>
+        /// Get the number of projects from the IEnumerable
+        /// </summary>
+        /// <param name="projects">The projects collection</param>
+        /// <returns>The number of projects in the collection</returns>
+        private static int GetProjectCount(IEnumerable<Project> projects)
+        {
+            var count = 0;
+
+            ICollection<Project> c = projects as ICollection<Project>;
+            if (c != null)
+            {
+                count = c.Count;
+            }
+            else
+            {
+                using (IEnumerator<Project> enumerator = projects.GetEnumerator())
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
+
+        /// <summary>
+        /// Calculate the increment amount based on the number of projects in the solution
+        /// </summary>
+        /// <param name="projectCount">The number of projects in the solution</param>
+        /// <returns>The increment amount</returns>
+        private static int CalculateIncrement(int projectCount)
+        {
+            var increment = 0;
+            if (projectCount > 0)
+            {
+                increment = 100 / projectCount;
+            }
+
+            return increment;
+        }
 
         /// <summary> Gets the list of projects from the solution</summary>
         /// <param name="solution">The Solution object</param>
@@ -210,9 +263,15 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             return list;
         }
 
-        /// <summary> Update UI </summary>
-        /// <param name="text">Step name</param>
-        private void LaunchProcessingEvent(string text) => ProcessingEvent?.Invoke(text);
+        /// <summary>
+        /// Update UI
+        /// </summary>
+        /// <param name="text">Message text</param>
+        /// <param name="progressAmount">Progress amount</param>
+        private void LaunchProcessingEvent(string text, int progressAmount)
+        {
+            ProcessingEvent?.Invoke(text, progressAmount);
+        }
 
         /// <summary>
         /// Update log

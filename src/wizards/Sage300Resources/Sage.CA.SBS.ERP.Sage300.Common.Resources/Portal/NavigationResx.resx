@@ -1599,4 +1599,12 @@
   <data name="MT_Contacts_Contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
+  <data name="SetCompanyColor" xml:space="preserve">
+    <value>Customize Theme Color</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="SetCompanyColorDB" xml:space="preserve">
+    <value>Set Theme Color from Database</value>
+    <comment>Settings Menu</comment>
+  </data>
 </root>

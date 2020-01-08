@@ -1,18 +1,18 @@
 @echo off
 
 :: ---------------------------------------------------------------------------------------
-:: File: UpdateResourceProjects.bat 
+:: File: UpdateLocalResourceProjects.bat 
 ::
 :: Purpose: This batch file will do the following:
 ::
 ::          * Remove all Resource projects from 
 ::            SDK\src\wizards\Sage300Resources\ folder
 ::
-::			    * Copy all Columbus-Web Resource projects to 
+::			* Copy all Columbus-Web Resource projects to 
 ::            SDK\src\wizards\Sage300Resources\ folder
 ::
 :: Usage Example:
-::          UpdateResourceProjects.bat
+::          UpdateLocalResourceProjects.bat
 ::
 :: ---------------------------------------------------------------------------------------
 

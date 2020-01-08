@@ -99,7 +99,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
         /// <summary> Delegate to update UI with name of the step being processed </summary>
         /// <param name="text">Text for UI</param>
-        private delegate void ProcessingCallback(string text);
+        /// <param name="progressAmount">The new progress value</param>
+        private delegate void ProcessingCallback(string text, int progressAmount);
 
         /// <summary> Delegate to update log with status of the step being processed </summary>
         /// <param name="text">Text for UI</param>
@@ -124,7 +125,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 			InitWizardSteps();
 			InitEvents();
 			ProcessingSetup(true);
-			Processing("");
+			Processing("", 0);
 
             ResetBackgroundColors();
 
@@ -134,6 +135,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
             // Display first step
             InitialStep();
+
+            progressBar.Hide();
         }
         #endregion
 
@@ -230,199 +233,199 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             List<Language> languages = new List<Language>();
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = "- Select Language -" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ab", Name = "Abkhazian" });
-            languages.Add(new Language { Code = "aa", Name = "Afar" });
-            languages.Add(new Language { Code = "af", Name = "Afrikaans" });
-            languages.Add(new Language { Code = "sq", Name = "Albanian" });
-            languages.Add(new Language { Code = "am", Name = "Amharic" });
-            languages.Add(new Language { Code = "ar", Name = "Arabic" });
-            languages.Add(new Language { Code = "an", Name = "Aragonese" });
-            languages.Add(new Language { Code = "hy", Name = "Armenian" });
-            languages.Add(new Language { Code = "as", Name = "Assamese" });
-            languages.Add(new Language { Code = "ae", Name = "Avestan" });
-            languages.Add(new Language { Code = "ay", Name = "Aymara" });
-            languages.Add(new Language { Code = "az", Name = "Azerbaijani" });
+            languages.Add(new Language { Code = "ab", Name = "Abkhazian [ab]" });
+            languages.Add(new Language { Code = "aa", Name = "Afar [aa]" });
+            languages.Add(new Language { Code = "af", Name = "Afrikaans [af]" });
+            languages.Add(new Language { Code = "sq", Name = "Albanian [sq]" });
+            languages.Add(new Language { Code = "am", Name = "Amharic [am]" });
+            languages.Add(new Language { Code = "ar", Name = "Arabic [ar]" });
+            languages.Add(new Language { Code = "an", Name = "Aragonese [an]" });
+            languages.Add(new Language { Code = "hy", Name = "Armenian [hy]" });
+            languages.Add(new Language { Code = "as", Name = "Assamese [as]" });
+            languages.Add(new Language { Code = "ae", Name = "Avestan [ae]" });
+            languages.Add(new Language { Code = "ay", Name = "Aymara [ay]" });
+            languages.Add(new Language { Code = "az", Name = "Azerbaijani [az]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ba", Name = "Bashkir" });
-            languages.Add(new Language { Code = "eu", Name = "Basque" });
-            languages.Add(new Language { Code = "be", Name = "Belarusian" });
-            languages.Add(new Language { Code = "bn", Name = "Bengali" });
-            languages.Add(new Language { Code = "bh", Name = "Bihari" });
-            languages.Add(new Language { Code = "bi", Name = "Bislama" });
-            languages.Add(new Language { Code = "bs", Name = "Bosnian" });
-            languages.Add(new Language { Code = "br", Name = "Breton" });
-            languages.Add(new Language { Code = "bg", Name = "Bulgarian" });
-            languages.Add(new Language { Code = "my", Name = "Burmese" });
+            languages.Add(new Language { Code = "ba", Name = "Bashkir [ba]" });
+            languages.Add(new Language { Code = "eu", Name = "Basque [eu]" });
+            languages.Add(new Language { Code = "be", Name = "Belarusian [be]" });
+            languages.Add(new Language { Code = "bn", Name = "Bengali [bn]" });
+            languages.Add(new Language { Code = "bh", Name = "Bihari [bh]" });
+            languages.Add(new Language { Code = "bi", Name = "Bislama [bi]" });
+            languages.Add(new Language { Code = "bs", Name = "Bosnian [bs]" });
+            languages.Add(new Language { Code = "br", Name = "Breton [br]" });
+            languages.Add(new Language { Code = "bg", Name = "Bulgarian [bg]" });
+            languages.Add(new Language { Code = "my", Name = "Burmese [my]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ca", Name = "Catalan" });
-            languages.Add(new Language { Code = "ch", Name = "Chamorro" });
-            languages.Add(new Language { Code = "ce", Name = "Chechen" });
-            languages.Add(new Language { Code = "cu", Name = "Church Slavic; Slavonic; Old Bulgarian" });
-            languages.Add(new Language { Code = "cv", Name = "Chuvash" });
-            languages.Add(new Language { Code = "kw", Name = "Cornish" });
-            languages.Add(new Language { Code = "co", Name = "Corsican" });
-            languages.Add(new Language { Code = "hr", Name = "Croatian" });
-            languages.Add(new Language { Code = "cs", Name = "Czech" });
+            languages.Add(new Language { Code = "ca", Name = "Catalan [ca]" });
+            languages.Add(new Language { Code = "ch", Name = "Chamorro [ch]" });
+            languages.Add(new Language { Code = "ce", Name = "Chechen [ce]" });
+            languages.Add(new Language { Code = "cu", Name = "Church Slavic; Slavonic; Old Bulgarian [cu]" });
+            languages.Add(new Language { Code = "cv", Name = "Chuvash [cv]" });
+            languages.Add(new Language { Code = "kw", Name = "Cornish [kw]" });
+            languages.Add(new Language { Code = "co", Name = "Corsican [co]" });
+            languages.Add(new Language { Code = "hr", Name = "Croatian [hr]" });
+            languages.Add(new Language { Code = "cs", Name = "Czech [cs]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "da", Name = "Danish" });
-            languages.Add(new Language { Code = "dv", Name = "Divehi, Dhivehi, Maldivian" });
-            languages.Add(new Language { Code = "nl", Name = "Dutch" });
-            languages.Add(new Language { Code = "dz", Name = "Dzongkha" });
+            languages.Add(new Language { Code = "da", Name = "Danish [da]" });
+            languages.Add(new Language { Code = "dv", Name = "Divehi, Dhivehi, Maldivian [dv]" });
+            languages.Add(new Language { Code = "nl", Name = "Dutch [nl]" });
+            languages.Add(new Language { Code = "dz", Name = "Dzongkha [dz]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "eo", Name = "Esperanto" });
-            languages.Add(new Language { Code = "et", Name = "Estonian" });
+            languages.Add(new Language { Code = "eo", Name = "Esperanto [eo]" });
+            languages.Add(new Language { Code = "et", Name = "Estonian [et]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "fo", Name = "Faroese" });
-            languages.Add(new Language { Code = "fj", Name = "Fijian" });
-            languages.Add(new Language { Code = "fi", Name = "Finnish" });
+            languages.Add(new Language { Code = "fo", Name = "Faroese [fo]" });
+            languages.Add(new Language { Code = "fj", Name = "Fijian [fj]" });
+            languages.Add(new Language { Code = "fi", Name = "Finnish [fi]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "gd", Name = "Gaelic, Scottish Gaelic" });
-            languages.Add(new Language { Code = "gl", Name = "Galician" });
-            languages.Add(new Language { Code = "ka", Name = "Georgian" });
-            languages.Add(new Language { Code = "de", Name = "German" });
-            languages.Add(new Language { Code = "el", Name = "Greek, Modern(1453 -)" });
-            languages.Add(new Language { Code = "gn", Name = "Guarani" });
-            languages.Add(new Language { Code = "gu", Name = "Gujarati" });
+            languages.Add(new Language { Code = "gd", Name = "Gaelic, Scottish Gaelic [gd]" });
+            languages.Add(new Language { Code = "gl", Name = "Galician [gl]" });
+            languages.Add(new Language { Code = "ka", Name = "Georgian [ka]" });
+            languages.Add(new Language { Code = "de", Name = "German [de]" });
+            languages.Add(new Language { Code = "el", Name = "Greek, Modern(1453 -) [el]" });
+            languages.Add(new Language { Code = "gn", Name = "Guarani [gn]" });
+            languages.Add(new Language { Code = "gu", Name = "Gujarati [gu]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ht", Name = "Haitian, Haitian Creole" });
-            languages.Add(new Language { Code = "ha", Name = "Hausa" });
-            languages.Add(new Language { Code = "he", Name = "Hebrew" });
-            languages.Add(new Language { Code = "hz", Name = "Herero" });
-            languages.Add(new Language { Code = "hi", Name = "Hindi" });
-            languages.Add(new Language { Code = "ho", Name = "Hiri Motu" });
-            languages.Add(new Language { Code = "hu", Name = "Hungarian" });
+            languages.Add(new Language { Code = "ht", Name = "Haitian, Haitian Creole [ht]" });
+            languages.Add(new Language { Code = "ha", Name = "Hausa [ha]" });
+            languages.Add(new Language { Code = "he", Name = "Hebrew [he]" });
+            languages.Add(new Language { Code = "hz", Name = "Herero [hz]" });
+            languages.Add(new Language { Code = "hi", Name = "Hindi [hi]" });
+            languages.Add(new Language { Code = "ho", Name = "Hiri Motu [ho]" });
+            languages.Add(new Language { Code = "hu", Name = "Hungarian [hu]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "is", Name = "Icelandic" });
-            languages.Add(new Language { Code = "io", Name = "Ido" });
-            languages.Add(new Language { Code = "id", Name = "Indonesian" });
-            languages.Add(new Language { Code = "ia", Name = "Interlingua(International Auxiliary Language Association)" });
-            languages.Add(new Language { Code = "ie", Name = "Interlingue" });
-            languages.Add(new Language { Code = "iu", Name = "Inuktitut" });
-            languages.Add(new Language { Code = "ik", Name = "Inupiaq" });
-            languages.Add(new Language { Code = "ga", Name = "Irish" });
-            languages.Add(new Language { Code = "it", Name = "Italian" });
+            languages.Add(new Language { Code = "is", Name = "Icelandic [is]" });
+            languages.Add(new Language { Code = "io", Name = "Ido [io]" });
+            languages.Add(new Language { Code = "id", Name = "Indonesian [id]" });
+            languages.Add(new Language { Code = "ia", Name = "Interlingua(International Auxiliary Language Association) [ia]" });
+            languages.Add(new Language { Code = "ie", Name = "Interlingue [ie]" });
+            languages.Add(new Language { Code = "iu", Name = "Inuktitut [iu]" });
+            languages.Add(new Language { Code = "ik", Name = "Inupiaq [ik]" });
+            languages.Add(new Language { Code = "ga", Name = "Irish [ga]" });
+            languages.Add(new Language { Code = "it", Name = "Italian [it]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ja", Name = "Japanese" });
-            languages.Add(new Language { Code = "jv", Name = "Javanese" });
+            languages.Add(new Language { Code = "ja", Name = "Japanese [ja]" });
+            languages.Add(new Language { Code = "jv", Name = "Javanese [jv]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "kl", Name = "Kalaallisut" });
-            languages.Add(new Language { Code = "kn", Name = "Kannada" });
-            languages.Add(new Language { Code = "ks", Name = "Kashmiri" });
-            languages.Add(new Language { Code = "kk", Name = "Kazakh" });
-            languages.Add(new Language { Code = "km", Name = "Khmer" });
-            languages.Add(new Language { Code = "ki", Name = "Kikuyu, Gikuyu" });
-            languages.Add(new Language { Code = "rw", Name = "Kinyarwanda" });
-            languages.Add(new Language { Code = "ky", Name = "Kirghiz" });
-            languages.Add(new Language { Code = "kv", Name = "Komi" });
-            languages.Add(new Language { Code = "ko", Name = "Korean" });
-            languages.Add(new Language { Code = "kj", Name = "Kuanyama, Kwanyama" });
-            languages.Add(new Language { Code = "ku", Name = "Kurdish" });
+            languages.Add(new Language { Code = "kl", Name = "Kalaallisut [kl]" });
+            languages.Add(new Language { Code = "kn", Name = "Kannada [kn]" });
+            languages.Add(new Language { Code = "ks", Name = "Kashmiri [ks]" });
+            languages.Add(new Language { Code = "kk", Name = "Kazakh [kk]" });
+            languages.Add(new Language { Code = "km", Name = "Khmer [km]" });
+            languages.Add(new Language { Code = "ki", Name = "Kikuyu, Gikuyu [ki]" });
+            languages.Add(new Language { Code = "rw", Name = "Kinyarwanda [rw]" });
+            languages.Add(new Language { Code = "ky", Name = "Kirghiz [ky]" });
+            languages.Add(new Language { Code = "kv", Name = "Komi [kv]" });
+            languages.Add(new Language { Code = "ko", Name = "Korean [ko]" });
+            languages.Add(new Language { Code = "kj", Name = "Kuanyama, Kwanyama [kj]" });
+            languages.Add(new Language { Code = "ku", Name = "Kurdish [ku]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "lo", Name = "Lao" });
-            languages.Add(new Language { Code = "la", Name = "Latin" });
-            languages.Add(new Language { Code = "lv", Name = "Latvian" });
-            languages.Add(new Language { Code = "li", Name = "Limburgan, Limburger, Limburgish" });
-            languages.Add(new Language { Code = "ln", Name = "Lingala" });
-            languages.Add(new Language { Code = "lt", Name = "Lithuanian" });
-            languages.Add(new Language { Code = "lb", Name = "Luxembourgish, Letzeburgesch" });
+            languages.Add(new Language { Code = "lo", Name = "Lao [lo]" });
+            languages.Add(new Language { Code = "la", Name = "Latin [la]" });
+            languages.Add(new Language { Code = "lv", Name = "Latvian [lv]" });
+            languages.Add(new Language { Code = "li", Name = "Limburgan, Limburger, Limburgish [li]" });
+            languages.Add(new Language { Code = "ln", Name = "Lingala [ln]" });
+            languages.Add(new Language { Code = "lt", Name = "Lithuanian [lt]" });
+            languages.Add(new Language { Code = "lb", Name = "Luxembourgish, Letzeburgesch [lb]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "mk", Name = "Macedonian" });
-            languages.Add(new Language { Code = "mg", Name = "Malagasy" });
-            languages.Add(new Language { Code = "ms", Name = "Malay" });
-            languages.Add(new Language { Code = "ml", Name = "Malayalam" });
-            languages.Add(new Language { Code = "mt", Name = "Maltese" });
-            languages.Add(new Language { Code = "gv", Name = "Manx" });
-            languages.Add(new Language { Code = "mi", Name = "Maori" });
-            languages.Add(new Language { Code = "mr", Name = "Marathi" });
-            languages.Add(new Language { Code = "mh", Name = "Marshallese" });
-            languages.Add(new Language { Code = "mo", Name = "Moldavian" });
-            languages.Add(new Language { Code = "mn", Name = "Mongolian" });
+            languages.Add(new Language { Code = "mk", Name = "Macedonian [mk]" });
+            languages.Add(new Language { Code = "mg", Name = "Malagasy [mg]" });
+            languages.Add(new Language { Code = "ms", Name = "Malay [ms]" });
+            languages.Add(new Language { Code = "ml", Name = "Malayalam [ml]" });
+            languages.Add(new Language { Code = "mt", Name = "Maltese [mt]" });
+            languages.Add(new Language { Code = "gv", Name = "Manx [gv]" });
+            languages.Add(new Language { Code = "mi", Name = "Maori [mi]" });
+            languages.Add(new Language { Code = "mr", Name = "Marathi [mr]" });
+            languages.Add(new Language { Code = "mh", Name = "Marshallese [mh]" });
+            languages.Add(new Language { Code = "mo", Name = "Moldavian [mo]" });
+            languages.Add(new Language { Code = "mn", Name = "Mongolian [mn]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "na", Name = "Nauru" });
-            languages.Add(new Language { Code = "nv", Name = "Navaho, Navajo" });
-            languages.Add(new Language { Code = "nd", Name = "Ndebele, North" });
-            languages.Add(new Language { Code = "nr", Name = "Ndebele, South" });
-            languages.Add(new Language { Code = "ng", Name = "Ndonga" });
-            languages.Add(new Language { Code = "ne", Name = "Nepali" });
-            languages.Add(new Language { Code = "se", Name = "Northern Sami" });
-            languages.Add(new Language { Code = "no", Name = "Norwegian" });
-            languages.Add(new Language { Code = "nb", Name = "Norwegian Bokmal" });
-            languages.Add(new Language { Code = "nn", Name = "Norwegian Nynorsk" });
-            languages.Add(new Language { Code = "ny", Name = "Nyanja, Chichewa, Chewa" });
+            languages.Add(new Language { Code = "na", Name = "Nauru [na]" });
+            languages.Add(new Language { Code = "nv", Name = "Navaho, Navajo [nv]" });
+            languages.Add(new Language { Code = "nd", Name = "Ndebele, North [nd]" });
+            languages.Add(new Language { Code = "nr", Name = "Ndebele, South [nr]" });
+            languages.Add(new Language { Code = "ng", Name = "Ndonga [ng]" });
+            languages.Add(new Language { Code = "ne", Name = "Nepali [ne]" });
+            languages.Add(new Language { Code = "se", Name = "Northern Sami [se]" });
+            languages.Add(new Language { Code = "no", Name = "Norwegian [no]" });
+            languages.Add(new Language { Code = "nb", Name = "Norwegian Bokmal [nb]" });
+            languages.Add(new Language { Code = "nn", Name = "Norwegian Nynorsk [nn]" });
+            languages.Add(new Language { Code = "ny", Name = "Nyanja, Chichewa, Chewa [ny]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "oc", Name = "Occitan(post 1500), Provencal" });
-            languages.Add(new Language { Code = "or", Name = "Oriya" });
-            languages.Add(new Language { Code = "om", Name = "Oromo" });
-            languages.Add(new Language { Code = "os", Name = "Ossetian, Ossetic" });
+            languages.Add(new Language { Code = "oc", Name = "Occitan(post 1500), Provencal [oc]" });
+            languages.Add(new Language { Code = "or", Name = "Oriya [or]" });
+            languages.Add(new Language { Code = "om", Name = "Oromo [om]" });
+            languages.Add(new Language { Code = "os", Name = "Ossetian, Ossetic [os]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "pi", Name = "Pali" });
-            languages.Add(new Language { Code = "pa", Name = "Panjabi" });
-            languages.Add(new Language { Code = "fa", Name = "Persian" });
-            languages.Add(new Language { Code = "pl", Name = "Polish" });
-            languages.Add(new Language { Code = "pt", Name = "Portuguese" });
-            languages.Add(new Language { Code = "ps", Name = "Pushto" });
+            languages.Add(new Language { Code = "pi", Name = "Pali [pi]" });
+            languages.Add(new Language { Code = "pa", Name = "Panjabi [pa]" });
+            languages.Add(new Language { Code = "fa", Name = "Persian [fa]" });
+            languages.Add(new Language { Code = "pl", Name = "Polish [pl]" });
+            languages.Add(new Language { Code = "pt", Name = "Portuguese [pt]" });
+            languages.Add(new Language { Code = "ps", Name = "Pushto [ps]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "qu", Name = "Quechua" });
+            languages.Add(new Language { Code = "qu", Name = "Quechua [qu]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "rm", Name = "Raeto - Romance" });
-            languages.Add(new Language { Code = "ro", Name = "Romanian" });
-            languages.Add(new Language { Code = "rn", Name = "Rundi" });
-            languages.Add(new Language { Code = "ru", Name = "Russian" });
+            languages.Add(new Language { Code = "rm", Name = "Raeto - Romance [rm]" });
+            languages.Add(new Language { Code = "ro", Name = "Romanian [ro]" });
+            languages.Add(new Language { Code = "rn", Name = "Rundi [rn]" });
+            languages.Add(new Language { Code = "ru", Name = "Russian [ru]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "sm", Name = "Samoan" });
-            languages.Add(new Language { Code = "sg", Name = "Sango" });
-            languages.Add(new Language { Code = "sa", Name = "Sanskrit" });
-            languages.Add(new Language { Code = "sc", Name = "Sardinian" });
-            languages.Add(new Language { Code = "sr", Name = "Serbian" });
-            languages.Add(new Language { Code = "sn", Name = "Shona" });
-            languages.Add(new Language { Code = "Yi", Name = "Sichuan" });
-            languages.Add(new Language { Code = "sd", Name = "Sindhi" });
-            languages.Add(new Language { Code = "si", Name = "Sinhala, Sinhalese" });
-            languages.Add(new Language { Code = "sk", Name = "Slovak" });
-            languages.Add(new Language { Code = "sl", Name = "Slovenian" });
-            languages.Add(new Language { Code = "so", Name = "Somali" });
-            languages.Add(new Language { Code = "st", Name = "Sotho, Southern" });
-            languages.Add(new Language { Code = "su", Name = "Sundanese" });
-            languages.Add(new Language { Code = "sw", Name = "Swahili" });
-            languages.Add(new Language { Code = "ss", Name = "Swati" });
-            languages.Add(new Language { Code = "sv", Name = "Swedish" });
+            languages.Add(new Language { Code = "sm", Name = "Samoan [sm]" });
+            languages.Add(new Language { Code = "sg", Name = "Sango [sg]" });
+            languages.Add(new Language { Code = "sa", Name = "Sanskrit [sa]" });
+            languages.Add(new Language { Code = "sc", Name = "Sardinian [sc]" });
+            languages.Add(new Language { Code = "sr", Name = "Serbian [sr]" });
+            languages.Add(new Language { Code = "sn", Name = "Shona [sn]" });
+            languages.Add(new Language { Code = "yi", Name = "Sichuan [yi]" });
+            languages.Add(new Language { Code = "sd", Name = "Sindhi [sd]" });
+            languages.Add(new Language { Code = "si", Name = "Sinhala, Sinhalese [si]" });
+            languages.Add(new Language { Code = "sk", Name = "Slovak [sk]" });
+            languages.Add(new Language { Code = "sl", Name = "Slovenian [sl]" });
+            languages.Add(new Language { Code = "so", Name = "Somali [so]" });
+            languages.Add(new Language { Code = "st", Name = "Sotho, Southern [st]" });
+            languages.Add(new Language { Code = "su", Name = "Sundanese [su]" });
+            languages.Add(new Language { Code = "sw", Name = "Swahili [sw]" });
+            languages.Add(new Language { Code = "ss", Name = "Swati [ss]" });
+            languages.Add(new Language { Code = "sv", Name = "Swedish [sv]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "tl", Name = "Tagalog" });
-            languages.Add(new Language { Code = "ty", Name = "Tahitian" });
-            languages.Add(new Language { Code = "tg", Name = "Tajik" });
-            languages.Add(new Language { Code = "ta", Name = "Tamil" });
-            languages.Add(new Language { Code = "tt", Name = "Tatar" });
-            languages.Add(new Language { Code = "te", Name = "Telugu" });
-            languages.Add(new Language { Code = "th", Name = "Thai" });
-            languages.Add(new Language { Code = "bo", Name = "Tibetan" });
-            languages.Add(new Language { Code = "ti", Name = "Tigrinya" });
-            languages.Add(new Language { Code = "to", Name = "Tonga(Tonga Islands)" });
-            languages.Add(new Language { Code = "ts", Name = "Tsonga" });
-            languages.Add(new Language { Code = "tn", Name = "Tswana" });
-            languages.Add(new Language { Code = "tr", Name = "Turkish" });
-            languages.Add(new Language { Code = "tk", Name = "Turkmen" });
-            languages.Add(new Language { Code = "tw", Name = "Twi" });
+            languages.Add(new Language { Code = "tl", Name = "Tagalog [tl]" });
+            languages.Add(new Language { Code = "ty", Name = "Tahitian [ty]" });
+            languages.Add(new Language { Code = "tg", Name = "Tajik [tg]" });
+            languages.Add(new Language { Code = "ta", Name = "Tamil [ta]" });
+            languages.Add(new Language { Code = "tt", Name = "Tatar [tt]" });
+            languages.Add(new Language { Code = "te", Name = "Telugu [te]" });
+            languages.Add(new Language { Code = "th", Name = "Thai [th]" });
+            languages.Add(new Language { Code = "bo", Name = "Tibetan [bo]" });
+            languages.Add(new Language { Code = "ti", Name = "Tigrinya [ti]" });
+            languages.Add(new Language { Code = "to", Name = "Tonga(Tonga Islands) [to]" });
+            languages.Add(new Language { Code = "ts", Name = "Tsonga [ts]" });
+            languages.Add(new Language { Code = "tn", Name = "Tswana [tn]" });
+            languages.Add(new Language { Code = "tr", Name = "Turkish [tr]" });
+            languages.Add(new Language { Code = "tk", Name = "Turkmen [tk]" });
+            languages.Add(new Language { Code = "tw", Name = "Twi [tw]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "ug", Name = "Uighur" });
-            languages.Add(new Language { Code = "uk", Name = "Ukrainian" });
-            languages.Add(new Language { Code = "ur", Name = "Urdu" });
-            languages.Add(new Language { Code = "uz", Name = "Uzbek" });
+            languages.Add(new Language { Code = "ug", Name = "Uighur [ug]" });
+            languages.Add(new Language { Code = "uk", Name = "Ukrainian [uk]" });
+            languages.Add(new Language { Code = "ur", Name = "Urdu [ur]" });
+            languages.Add(new Language { Code = "uz", Name = "Uzbek [uz]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "vi", Name = "Vietnamese" });
-            languages.Add(new Language { Code = "vo", Name = "Volapuk" });
+            languages.Add(new Language { Code = "vi", Name = "Vietnamese [vi]" });
+            languages.Add(new Language { Code = "vo", Name = "Volapuk [vo]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "wa", Name = "Walloon" });
-            languages.Add(new Language { Code = "cy", Name = "Welsh" });
-            languages.Add(new Language { Code = "fy", Name = "Western Frisian" });
-            languages.Add(new Language { Code = "wo", Name = "Wolof" });
+            languages.Add(new Language { Code = "wa", Name = "Walloon [wa]" });
+            languages.Add(new Language { Code = "cy", Name = "Welsh [cy]" });
+            languages.Add(new Language { Code = "fy", Name = "Western Frisian [fy]" });
+            languages.Add(new Language { Code = "wo", Name = "Wolof [wo]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "xh", Name = "Xhosa" });
+            languages.Add(new Language { Code = "xh", Name = "Xhosa [xh]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "yi", Name = "Yiddish" });
-            languages.Add(new Language { Code = "yo", Name = "Yoruba" });
+            languages.Add(new Language { Code = "yi", Name = "Yiddish [yi]" });
+            languages.Add(new Language { Code = "yo", Name = "Yoruba [yo]" });
             languages.Add(new Language { Code = Constants.InvalidLanguageCode, Name = divider });
-            languages.Add(new Language { Code = "za", Name = "Zhuang, Chuang" });
-            languages.Add(new Language { Code = "zu", Name = "Zulu" });
+            languages.Add(new Language { Code = "za", Name = "Zhuang, Chuang [za]" });
+            languages.Add(new Language { Code = "zu", Name = "Zulu [zu]" });
 
             cboLanguage.DataSource = languages;
             cboLanguage.DisplayMember = "Name";
@@ -634,7 +637,6 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
                     ShowStep(false);
 
-                    // Increment step
                     _currentWizardStep++;
 
                     // Update title, text and panel for the step
@@ -646,12 +648,13 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         }
 
         /// <summary>
-        /// Display the status label and window
+        /// Display the status label, window and progress bar
         /// </summary>
         private void ActivateStatusWindow()
         {
             lblStatus.Visible = true;
             textBoxStatus.Visible = true;
+            progressBar.Show();
         }
 
         /// <summary>
@@ -791,7 +794,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             DisableNextButton();
         }
 
-        /// <summary> Show Step Page</summary>
+        /// <summary>
+        /// Show Step Page
+        /// </summary>
+        /// <param name="visible">true = visible | false = not visible</param>
         private void ShowStep(bool visible)
         {
             SetStepTitleAndDescription();
@@ -860,20 +866,33 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
 
         /// <summary> Update processing display </summary>
         /// <param name="text">Text to display in status bar</param>
-        private void Processing(string text)
+        private void Processing(string text, int progressCount)
         {
             textBoxStatus.AppendText(Environment.NewLine);
             textBoxStatus.AppendText(text);
             textBoxStatus.Update();
+
+            // Update the progress bar
+            SetProgress(progressCount);
+        }
+
+        /// <summary>
+        /// Method to update the progress bar value
+        /// </summary>
+        /// <param name="percentage">The percentage to set on the progress bar</param>
+        private void SetProgress(int percentage)
+        {
+            progressBar.Value = percentage > 100 ? 100 : percentage;
         }
 
         /// <summary> Update processing display </summary>
         /// <param name="text">Text to display</param>
+        /// <param name="progressAmount">The new progress amount</param>
         /// <remarks>Invoked from threaded process</remarks>
-        private void ProcessingEvent(string text)
+        private void ProcessingEvent(string text, int progressAmount)
         {
             var callBack = new ProcessingCallback(Processing);
-            Invoke(callBack, text);
+            Invoke(callBack, text, progressAmount);
         }
 
         /// <summary> Background worker started event </summary>
@@ -882,7 +901,8 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         /// <remarks>Background worker will run process</remarks>
         private void wrkBackground_DoWork(object sender, DoWorkEventArgs e)
         {
-            _upgrade.Process((Settings)e.Argument);
+            Settings settings = (Settings)e.Argument;
+            _upgrade.Process(settings);
         }
 
         /// <summary> Background worker completed event </summary>
@@ -892,7 +912,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private void wrkBackground_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             ProcessingSetup(true);
-            Processing("");
+            Processing("", 100);
 
             _currentWizardStep++;
 

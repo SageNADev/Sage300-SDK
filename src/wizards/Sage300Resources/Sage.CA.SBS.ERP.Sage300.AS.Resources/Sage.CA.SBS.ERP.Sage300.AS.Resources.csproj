@@ -127,8 +127,12 @@
     <EmbeddedResource Include="EnumerationsResx.fr.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\ASCustomReportResx.es.resx" />
-    <EmbeddedResource Include="Forms\ASCustomReportResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ASCustomReportResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ASCustomReportResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ASCustomReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ASCustomReportResx.Designer.cs</LastGenOutput>

@@ -48,6 +48,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.cboLanguage = new MetroFramework.Controls.MetroComboBox();
             this.lblLanguage = new MetroFramework.Controls.MetroLabel();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.progressBar = new MetroFramework.Controls.MetroProgressBar();
             this.lblBottomSeparator = new System.Windows.Forms.Label();
             this.lblStatus = new MetroFramework.Controls.MetroLabel();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
@@ -271,6 +272,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // pnlButtons
             // 
             this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
+            this.pnlButtons.Controls.Add(this.progressBar);
             this.pnlButtons.Controls.Add(this.lblBottomSeparator);
             this.pnlButtons.Controls.Add(this.lblStatus);
             this.pnlButtons.Controls.Add(this.textBoxStatus);
@@ -280,6 +282,14 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(628, 205);
             this.pnlButtons.TabIndex = 0;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(62, 12);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(563, 16);
+            this.progressBar.Style = MetroFramework.MetroColorStyle.Green;
+            this.progressBar.TabIndex = 6;
             // 
             // lblBottomSeparator
             // 
@@ -295,7 +305,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblStatus.AutoSize = true;
             this.lblStatus.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblStatus.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblStatus.Location = new System.Drawing.Point(8, 11);
+            this.lblStatus.Location = new System.Drawing.Point(8, 8);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(47, 19);
             this.lblStatus.TabIndex = 4;
@@ -307,12 +317,12 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.textBoxStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxStatus.Location = new System.Drawing.Point(7, 30);
-            this.textBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxStatus.Location = new System.Drawing.Point(7, 32);
+            this.textBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStatus.Multiline = true;
             this.textBoxStatus.Name = "textBoxStatus";
             this.textBoxStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxStatus.Size = new System.Drawing.Size(619, 138);
+            this.textBoxStatus.Size = new System.Drawing.Size(619, 136);
             this.textBoxStatus.TabIndex = 3;
             // 
             // btnNext
@@ -406,6 +416,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
         private MetroFramework.Controls.MetroLabel lblFinish_Content;
         private System.Windows.Forms.Label lblBottomSeparator;
         private System.Windows.Forms.Label lblTopSeparator;
+        private MetroFramework.Controls.MetroProgressBar progressBar;
     }
 }
 
