@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+  </data>
+  <data name="AP0035" xml:space="preserve">
+    <value>Cabecera de Criterios de Selección</value>
+  </data>
+  <data name="AP0036" xml:space="preserve">
+    <value>Detalles de Criterios de Selección</value>
+  </data>
+  <data name="AP0411" xml:space="preserve">
+    <value>Campos Opc. de Criterios de Selección</value>
+  </data>
+  <data name="BankCurrencyCode" xml:space="preserve">
+    <value>Código Moneda del Banco</value>
+  </data>
+  <data name="BankExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Bancario</value>
+  </data>
+  <data name="BankMatch" xml:space="preserve">
+    <value>Equiparación de Banco</value>
+  </data>
+  <data name="BankRateOperator" xml:space="preserve">
+    <value>Operador de Tasa Bancaria</value>
+  </data>
+  <data name="BankRateOverridden" xml:space="preserve">
+    <value>Tasa Bancaria Sustituida</value>
+  </data>
+  <data name="BankRateType" xml:space="preserve">
+    <value>Tipo Tasa Bancaria</value>
+  </data>
+  <data name="CsvFilename" xml:space="preserve">
+    <value>Nombre de Archivo CSV</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+  </data>
+  <data name="DocumentstoProcess" xml:space="preserve">
+    <value>Documentos a Procesar</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/P - Códigos de Selección de Pago</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ExcludeVendor" xml:space="preserve">
+    <value>Excluir Proveedor</value>
+  </data>
+  <data name="ExcludeVendorNumber" xml:space="preserve">
+    <value>Excluir Número de Proveedor</value>
+  </data>
+  <data name="FromDiscountDate" xml:space="preserve">
+    <value>Desde Fecha del Descuento</value>
+  </data>
+  <data name="FromGroupCode" xml:space="preserve">
+    <value>Desde Código de Grupo</value>
+  </data>
+  <data name="FromOptionalFieldValue" xml:space="preserve">
+    <value>Desde Valor de Campo Opcional</value>
+  </data>
+  <data name="FromPaymentCode" xml:space="preserve">
+    <value>Desde Código de Pago</value>
+  </data>
+  <data name="GeneratedSelectionCriteria" xml:space="preserve">
+    <value>Criterios de Selección Generados</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+  </data>
+  <data name="JobApplyMethod" xml:space="preserve">
+    <value>Método a Aplicar del Trabajo</value>
+  </data>
+  <data name="MaximumPaymentAmount" xml:space="preserve">
+    <value>Monto Máximo del Pago</value>
+  </data>
+  <data name="MinimumPaymentAmount" xml:space="preserve">
+    <value>Monto Mínimo del Pago</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="PaymentBankCode" xml:space="preserve">
+    <value>Código de Banco del Pago</value>
+  </data>
+  <data name="PaymentSelectionCode" xml:space="preserve">
+    <value>Códigos de Selección de Pago</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Código de Comando Procesar</value>
+  </data>
+  <data name="SelectDocumentsby" xml:space="preserve">
+    <value>Seleccionar Documentos por</value>
+  </data>
+  <data name="SelectionCodeDescription" xml:space="preserve">
+    <value>Descripción de Código de Selección</value>
+  </data>
+  <data name="SelectionCriteria" xml:space="preserve">
+    <value>Criterios de Selección</value>
+  </data>
+  <data name="SelectionCriteriaHeader" xml:space="preserve">
+    <value>Cabecera de Criterios de Selección</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valor Texto</value>
+  </data>
+  <data name="ThruAccountSet" xml:space="preserve">
+    <value>Hasta Grupo de Cuentas</value>
+  </data>
+  <data name="ThruDiscountDate" xml:space="preserve">
+    <value>Hasta Fecha de Descuento</value>
+  </data>
+  <data name="ThruGroupCode" xml:space="preserve">
+    <value>Hasta Código de Grupo</value>
+  </data>
+  <data name="ThruOptionalFieldValue" xml:space="preserve">
+    <value>Hasta Valor de Campo Opcional</value>
+  </data>
+  <data name="ThruPaymentCode" xml:space="preserve">
+    <value>Hasta Código de Pago</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="VendorCurrencyCode" xml:space="preserve">
+    <value>Código de Moneda del Proveedor</value>
+  </data>
+  <data name="VendorExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio del Proveedor</value>
+  </data>
+  <data name="VendorRateDate" xml:space="preserve">
+    <value>Fecha de Tasa del Proveedor</value>
+  </data>
+  <data name="VendorRateOperator" xml:space="preserve">
+    <value>Operador de Tasa del Proveedor</value>
+  </data>
+  <data name="VendorRateOverridden" xml:space="preserve">
+    <value>Tasa de Proveedor Sustituida</value>
+  </data>
+  <data name="VendorRateType" xml:space="preserve">
+    <value>Tipo de Tasa del Proveedor</value>
+  </data>
+  <data name="YesOrNoValue" xml:space="preserve">
+    <value>Valor Sí/No</value>
+  </data>
+  <data name="DateDue" xml:space="preserve">
+    <value>Plazo</value>
+  </data>
+  <data name="ThruVendorNumber" xml:space="preserve">
+    <value>Hasta Número de Proveedor</value>
+  </data>
+  <data name="Vendorswithanybankcode" xml:space="preserve">
+    <value>Proveedores con Cualquier Código de Banco</value>
+  </data>
+  <data name="Vendorswithpaymentbankcodeonly" xml:space="preserve">
+    <value>Sólo Proveedores con Código de Banco de Pago</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Fecha Último Mantenimiento</value>
+  </data>
+  <data name="DocumentstoProcess_Processforceddocumentsonly" xml:space="preserve">
+    <value>Procesar Sólo los Documentos Forzados</value>
+  </data>
+  <data name="RateTypeInvalid" xml:space="preserve">
+    <value>El tipo de tasa &quot;{0}&quot; no está definido en Servicios Comunes.</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Código de Banco</value>
+  </data>
+</root>

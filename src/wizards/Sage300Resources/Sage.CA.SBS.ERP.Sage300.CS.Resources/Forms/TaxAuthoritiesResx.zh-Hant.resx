@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountsTABCap" xml:space="preserve">
+    <value>科目</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="AllTaxInPrice" xml:space="preserve">
+    <value>允許價內稅</value>
+    <comment>Profile - Checkbox</comment>
+  </data>
+  <data name="DltErrcnfrm" xml:space="preserve">
+    <value>使用此一稅務機構的所有稅級和稅率都將被刪除。這可能導致使用此一稅務機構的程式功能發生錯誤。</value>
+  </data>
+  <data name="DltErrtxgrp" xml:space="preserve">
+    <value>此一稅務機構正用於一個稅組。</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>稅務機構</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ExpAcct" xml:space="preserve">
+    <value>費用科目</value>
+    <comment>Accounts  - Field</comment>
+  </data>
+  <data name="ExpAcctDesc" xml:space="preserve">
+    <value>費用科目描述</value>
+    <comment>Accounts  - Field</comment>
+  </data>
+  <data name="Expconst" xml:space="preserve">
+    <value>費用</value>
+    <comment>String Literal</comment>
+  </data>
+  <data name="ExpSeparate" xml:space="preserve">
+    <value>單獨計費</value>
+    <comment>Accounts - Check Box</comment>
+  </data>
+  <data name="GLAcctconst" xml:space="preserve">
+    <value>總帳科目</value>
+    <comment>String Literal</comment>
+  </data>
+  <data name="Liabilityconst" xml:space="preserve">
+    <value>負債</value>
+    <comment>String Literal</comment>
+  </data>
+  <data name="MaxTaxAll" xml:space="preserve">
+    <value>納稅上限</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="NoTxChar" xml:space="preserve">
+    <value>徵稅起點</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="ProfileTABCap" xml:space="preserve">
+    <value>概況</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Recoconst" xml:space="preserve">
+    <value>可退回</value>
+    <comment>String Literal</comment>
+  </data>
+  <data name="RecoRate" xml:space="preserve">
+    <value>可退稅率</value>
+    <comment>Accounts - Field</comment>
+  </data>
+  <data name="RecoTxAcct" xml:space="preserve">
+    <value>可退稅科目</value>
+    <comment>Accounts - Field</comment>
+  </data>
+  <data name="RecoTxAcctDesc" xml:space="preserve">
+    <value>可退稅科目描述</value>
+    <comment>Accounts - Field</comment>
+  </data>
+  <data name="RepLevel" xml:space="preserve">
+    <value>報告層級</value>
+    <comment>Profile - List</comment>
+  </data>
+  <data name="RepTaxRetainage" xml:space="preserve">
+    <value>在保留款憑證上報告</value>
+    <comment>Profile - List</comment>
+  </data>
+  <data name="TX0001" xml:space="preserve">
+    <value>稅級</value>
+  </data>
+  <data name="TX0002" xml:space="preserve">
+    <value>稅務機構</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TxAmtError" xml:space="preserve">
+    <value>最大稅額不能少於最小稅額。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="TxAuthDesc" xml:space="preserve">
+    <value>稅務機構描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TxAuthRecType" xml:space="preserve">
+    <value>稅務機構</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TxBase" xml:space="preserve">
+    <value>稅基</value>
+    <comment>Profile - List</comment>
+  </data>
+  <data name="TxLiabilityAcct" xml:space="preserve">
+    <value>應稅科目</value>
+    <comment>Accounts - Field</comment>
+  </data>
+  <data name="TxLiabilityAcctDesc" xml:space="preserve">
+    <value>稅務債務科目描述</value>
+    <comment>Accounts - Field</comment>
+  </data>
+  <data name="TxRecover" xml:space="preserve">
+    <value>可退稅</value>
+    <comment>Accounts - Checkbox</comment>
+  </data>
+  <data name="TxRepCurr" xml:space="preserve">
+    <value>稅務報告幣別</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="TxRepCurrDesc" xml:space="preserve">
+    <value>稅務報告幣別描述</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="TxType" xml:space="preserve">
+    <value>稅務類型</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefName" xml:space="preserve">
+    <value>參考名稱</value>
+  </data>
+  <data name="RefNumber" xml:space="preserve">
+    <value>參考編號</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="AccountWithHolding" xml:space="preserve">
+    <value>預扣稅科目</value>
+  </data>
+  <data name="InputTaxAccount" xml:space="preserve">
+    <value>預扣稅科目</value>
+  </data>
+  <data name="OutputTaxAccount" xml:space="preserve">
+    <value>銷項稅科目</value>
+  </data>
+  <data name="AccountWithHoldingDesc" xml:space="preserve">
+    <value>預扣稅科目描述</value>
+  </data>
+  <data name="InputTaxAccountDesc" xml:space="preserve">
+    <value>進項稅科目描述</value>
+  </data>
+  <data name="OutputTaxAccountDesc" xml:space="preserve">
+    <value>銷項稅科目描述</value>
+  </data>
+  <data name="ReverseCharge" xml:space="preserve">
+    <value>迴轉收費</value>
+  </data>
+</root>

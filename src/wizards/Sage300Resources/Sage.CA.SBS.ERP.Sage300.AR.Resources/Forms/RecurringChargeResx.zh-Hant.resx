@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>稅額合計</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>起始日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpirationType" xml:space="preserve">
+    <value>失效類型</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDescription" xml:space="preserve">
+    <value>發票描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceTotalBeforeTax" xml:space="preserve">
+    <value>稅前發票合計</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceTotalIncludingTax" xml:space="preserve">
+    <value>商業發票：含稅合計</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastBatchNumberPosted" xml:space="preserve">
+    <value>上一過帳批次數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastEntryNumberPosted" xml:space="preserve">
+    <value>上一過帳分錄數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceAmountPosted" xml:space="preserve">
+    <value>上一過帳發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceDateGenerated" xml:space="preserve">
+    <value>上一產生發票日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceDatePosted" xml:space="preserve">
+    <value>上一過帳發票日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceNumberPosted" xml:space="preserve">
+    <value>上一過帳發票數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastLineNumber" xml:space="preserve">
+    <value>上一行號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPostingSequenceNumber" xml:space="preserve">
+    <value>上一過帳序列編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MaximumNumberOfInvoices" xml:space="preserve">
+    <value>發票最大數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MaximumTotalInvoiceAmount" xml:space="preserve">
+    <value>最大合計發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextScheduledDate" xml:space="preserve">
+    <value>下一發票日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>自選欄位數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostedNumberOfInvoices" xml:space="preserve">
+    <value>已過帳發票數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostedTotalInvoiceAmount" xml:space="preserve">
+    <value>已過帳合計發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecurringChargeCode" xml:space="preserve">
+    <value>週期性收費代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>發運經由描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Taxable" xml:space="preserve">
+    <value>應稅</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>稅額1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>稅額2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>稅額3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>稅額4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>稅額5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>稅務機構1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>稅務機構2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>稅務機構3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>稅務機構4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>稅務機構5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>稅基1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>稅基2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>稅基3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>稅基4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>稅基5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>稅級1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>稅級2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>稅級3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>稅級4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>稅級5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxOverride" xml:space="preserve">
+    <value>稅款撤換</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnpostedNumberofInvoices" xml:space="preserve">
+    <value>未過帳發票數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnpostedTotalInvoiceAmount" xml:space="preserve">
+    <value>未過帳合計發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YTDTotalInvoiceAmount" xml:space="preserve">
+    <value>年度至今合計發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleLink" xml:space="preserve">
+    <value>排程連結</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>應收帳款週期性收費</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="TaxCannotBeDistributed" xml:space="preserve">
+    <value>所有稅務被計算時不能分配稅務。</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="CustomerOnHold" xml:space="preserve">
+    <value>所選客戶{0}已被擱置。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>允許空置</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0046" xml:space="preserve">
+    <value>週期性收費</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0047" xml:space="preserve">
+    <value>週期性收費明細</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0404" xml:space="preserve">
+    <value>週期性收費明細自選欄位</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0405" xml:space="preserve">
+    <value>週期性收費自選欄位</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>類別</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>合約</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>小數位數</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="DistributedAmountBeforeTax" xml:space="preserve">
+    <value>稅前分攤金額</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ExtendedAmountwoTIP" xml:space="preserve">
+    <value>總金額（不含價內稅）</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ExtendedAmountwTIP" xml:space="preserve">
+    <value>總金額（含價內稅）</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>產品編號</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>自選欄位描述</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFieldValue" xml:space="preserve">
+    <value>自選欄位值</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>價格</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ProjectCategoryResource" xml:space="preserve">
+    <value>專案/類別資源</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>專案</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>已含稅1</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>已含稅2</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>已含稅3</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>已含稅4</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>已含稅5</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>稅率1</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>稅率2</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>稅率3</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>稅率4</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>稅率5</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>鍵入的值欄位索引</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>計量單位</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>驗證</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已設</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxTotalsTab" xml:space="preserve">
+    <value>稅務/合計</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="CreateInvoice" xml:space="preserve">
+    <value>建立發票</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrentAmount" xml:space="preserve">
+    <value>目前金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrentCount" xml:space="preserve">
+    <value>目前計數</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>客戶資訊</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="InactiveAsOf" xml:space="preserve">
+    <value>閒置（至日期）</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecurringChargeDescription" xml:space="preserve">
+    <value>週期性收費描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleCodeDesc" xml:space="preserve">
+    <value>排程描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>排程資訊</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="ShipToInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>發運至資訊</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="TermsDescription" xml:space="preserve">
+    <value>條款描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceAmount" xml:space="preserve">
+    <value>發票金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>發票日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>發票數目</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiced" xml:space="preserve">
+    <value>合計已開發票</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Unposted" xml:space="preserve">
+    <value>未過帳</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AddToAnExistingBatch" xml:space="preserve">
+    <value>增加到一個現有批次</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="CreateaNewBatch" xml:space="preserve">
+    <value>建立一個新批次</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="InvoiceBatch" xml:space="preserve">
+    <value>發票批次</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="NextScheduled" xml:space="preserve">
+    <value>下一排程</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>其它</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+</root>

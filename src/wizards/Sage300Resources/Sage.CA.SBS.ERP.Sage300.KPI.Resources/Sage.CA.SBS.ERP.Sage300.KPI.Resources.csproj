@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61D85679-029D-4163-A8B5-5F2C00DC3CF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.KPI.Resources</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.KPI.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\ActivityTrendResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivityTrendResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryItemPerformanceResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryItemPerformanceResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesPerSalespersonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesPerSalespersonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="KPICommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KPICommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerationsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerationsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ActivityTrendResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActivityTrendResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivityTrendResx.es.resx" />
+    <EmbeddedResource Include="Forms\ActivityTrendResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ActivityTrendResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ActivityTrendResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InventoryItemPerformanceResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.es.resx" />
+    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.fr.resx" />
+    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SalesPerSalespersonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.es.resx" />
+    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.fr.resx" />
+    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="KPICommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>KPICommonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KPICommonResx.es.resx" />
+    <EmbeddedResource Include="KPICommonResx.fr.resx" />
+    <EmbeddedResource Include="KPICommonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="KPICommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="EnumerationsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumerationsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumerationsResx.es.resx" />
+    <EmbeddedResource Include="EnumerationsResx.fr.resx" />
+    <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgeUnapCashPP" xml:space="preserve">
+    <value>Age Receipts, Unapplied Cash and Unapplied Prepayments</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgeUnapCNDN" xml:space="preserve">
+    <value>Age Unapplied Credit Notes and Debit Notes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>Aging Periods (Days)</value>
+  </data>
+  <data name="AllowAdjInRcptBtch" xml:space="preserve">
+    <value>Allow Adjustments In Receipt Batches</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowBlankCommentType" xml:space="preserve">
+    <value>Allow Blank Comment Type</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditAftDepPrt" xml:space="preserve">
+    <value>Allow Edit After Deposit Slip Printed</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditExternalBatches" xml:space="preserve">
+    <value>Allow Edit of External Batches</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditImported" xml:space="preserve">
+    <value>Allow Edit of Imported Batches</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditOfStatistics" xml:space="preserve">
+    <value>Allow Edit of Statistics</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditPrtInvcs" xml:space="preserve">
+    <value>Allow Edit After Invoice Printed</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowEditPrtRcpts" xml:space="preserve">
+    <value>Allow Edit After Receipt Printed</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowPrintingInvcs" xml:space="preserve">
+    <value>Allow Printing of Invoices</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowPrintingOfDeposits" xml:space="preserve">
+    <value>Allow Printing of Deposit Slips</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BaseRetainageAmountOn" xml:space="preserve">
+    <value>Base Retainage Amount on</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalculateTaxesAuto" xml:space="preserve">
+    <value>Calculate Tax Amounts Automatically</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalculateTaxReportingAuto" xml:space="preserve">
+    <value>Calculate Tax Reporting Amounts Automatically</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckForPendingPayment" xml:space="preserve">
+    <value>Include Pending Transactions</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateDepositAutomatically" xml:space="preserve">
+    <value>Create Deposit Slip When Receipt Batch Is Created</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustAndGroupStats" xml:space="preserve">
+    <value>Customer and Group Statistics</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustNatAndGroupStats" xml:space="preserve">
+    <value>Customer, National Account and Group Statistics</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerComments" xml:space="preserve">
+    <value>Customer Comments</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultBankCode" xml:space="preserve">
+    <value>Default Bank Code</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCommentDays" xml:space="preserve">
+    <value>Default Number of Days for Expiry</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCommentType" xml:space="preserve">
+    <value>Default Comment Type</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultDetailTaxClassTo1" xml:space="preserve">
+    <value>Default Detail Tax Class to 1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultFollowUpDays" xml:space="preserve">
+    <value>Default Number of Days for Follow-Up</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultInvoiceType" xml:space="preserve">
+    <value>Default Invoice Type</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultOrderOpenDocs" xml:space="preserve">
+    <value>Default Order of Open Documents</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPaymCode" xml:space="preserve">
+    <value>Default Payment Code</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPercentage" xml:space="preserve">
+    <value>Default Retainage Percentage</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPeriod" xml:space="preserve">
+    <value>Default Retention Period (Days)</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPostingDate" xml:space="preserve">
+    <value>Default Posting Date</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultRetainageExchangeRate" xml:space="preserve">
+    <value>Default Retainage Exchange Rate</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultTrxType" xml:space="preserve">
+    <value>Default Transaction Type</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocNumbering" xml:space="preserve">
+    <value>Document Numbering</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R Options</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForceBatchListing" xml:space="preserve">
+    <value>Force Listing of All Batches</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForcePrtDepSlips" xml:space="preserve">
+    <value>Force Printing of Deposit Slips</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InclTaxInStatistics" xml:space="preserve">
+    <value>Include Tax In Statistics</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InterestInvoice" xml:space="preserve">
+    <value>Interest Invoice</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceOptions" xml:space="preserve">
+    <value>Invoice Options</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="KeepStatistics" xml:space="preserve">
+    <value>Keep Statistics</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextAdjtBatchNum" xml:space="preserve">
+    <value>Next Adjustment Batch</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextAdjtPostSeq" xml:space="preserve">
+    <value>Next Adjustment Posting Sequence</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextBatchSeq" xml:space="preserve">
+    <value>Next Batch and Posting Sequence Numbers</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextInvcBatchNumber" xml:space="preserve">
+    <value>Next Invoice Batch</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextInvcPostingSeq" xml:space="preserve">
+    <value>Next Invoice Posting Sequence</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRcptBatchNum" xml:space="preserve">
+    <value>Next Receipt Batch</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRcptPostSeq" xml:space="preserve">
+    <value>Next Receipt Posting Sequence</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRefundBatchNum" xml:space="preserve">
+    <value>Next Refund Batch</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRefundPostSeq" xml:space="preserve">
+    <value>Next Refund Posting Sequence</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextRevlPostSeq" xml:space="preserve">
+    <value>Next Revaluation Posting Sequence</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Numbering" xml:space="preserve">
+    <value>Numbering</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PeriodType" xml:space="preserve">
+    <value>Period Type</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PrintZeroBalStmts" xml:space="preserve">
+    <value>Print Zero-Balance Statements</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="ProcessingOptions" xml:space="preserve">
+    <value>Processing Options</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ProcessRecurChgs" xml:space="preserve">
+    <value>Process Recurring Charges</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReceiptOptions" xml:space="preserve">
+    <value>Receipt Options</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RefundOptions" xml:space="preserve">
+    <value>Refund Options</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportTax" xml:space="preserve">
+    <value>Report Tax</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>Retainage</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ScheduleToUse" xml:space="preserve">
+    <value>Schedule to Use for Automatic Creation of Retainage Documents</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowItemCost" xml:space="preserve">
+    <value>Show Item Cost</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SortChecksBy" xml:space="preserve">
+    <value>Sort Checks By</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>Statement</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StatsWarning" xml:space="preserve">
+    <value>Changing this option can cause incorrect reporting of statistics. You should change this option only at year end. If you change it in the middle of a year, edit statistics to correct the totals for each period.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="UseItemCmmtAsDef" xml:space="preserve">
+    <value>Use Item Comment As Default</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseRetainage" xml:space="preserve">
+    <value>Retainage Accounting</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseSeparateDocuments" xml:space="preserve">
+    <value>Use Separate Document Numbers When Creating Retainage Documents</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Credit Note</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Debit Note</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocLength" xml:space="preserve">
+    <value>Length</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocPrefix" xml:space="preserve">
+    <value>Prefix</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocumentNumbers" xml:space="preserve">
+    <value>Document Numbers</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Document Type</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="NextNumber" xml:space="preserve">
+    <value>Next Number</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Prepayment</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Receipt</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Refund</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>Unapplied Cash</value>
+    <comment>Numbering Tab</comment>
+  </data>
+  <data name="RecurringCharge" xml:space="preserve">
+    <value>Recurring Charge</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>Multicurrency</value>
+    <comment>Processing-Tab</comment>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>Over</value>
+  </data>
+  <data name="ScheduleCodeNotFoundMessage" xml:space="preserve">
+    <value>Cannot find Schedule Code {0}.</value>
+    <comment>Retainage Tab</comment>
+  </data>
+  <data name="RetainagePercentWarning" xml:space="preserve">
+    <value>Retainage percent must be between 0 and 100.</value>
+    <comment>Retainage Tab</comment>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>Payment Code</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Bank Code</value>
+  </data>
+  <data name="BankCodeDesc" xml:space="preserve">
+    <value>Bank Code Description</value>
+  </data>
+  <data name="BlankPaymentCode" xml:space="preserve">
+    <value>Payment Code cannot be blank.</value>
+  </data>
+  <data name="PaymentCodeDescription" xml:space="preserve">
+    <value>Payment Code Description</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Schedule</value>
+    <comment>Retainage Tab</comment>
+  </data>
+</root>

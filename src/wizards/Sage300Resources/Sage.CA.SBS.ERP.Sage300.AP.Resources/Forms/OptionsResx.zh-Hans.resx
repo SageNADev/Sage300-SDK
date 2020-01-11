@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccumulateBy" xml:space="preserve">
+    <value>累计按</value>
+    <comment>Processing - List</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>调整</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="AgeUnapCNDN" xml:space="preserve">
+    <value>帐析未核销贷项通知单和借项通知单</value>
+    <comment>Processing - List</comment>
+  </data>
+  <data name="AgeUnapPP" xml:space="preserve">
+    <value>帐析未核销预付款</value>
+    <comment>Processing - List</comment>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>帐析期间（天）</value>
+    <comment>Processing - Table</comment>
+  </data>
+  <data name="AllowAdjInPaymBtch" xml:space="preserve">
+    <value>允许在付款批次中调整</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="AllowEditExternalBatches" xml:space="preserve">
+    <value>允许编辑外部批次</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="AllowEditImported" xml:space="preserve">
+    <value>允许编辑导入的批次</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="AllowEditof1099CPRSAmounts" xml:space="preserve">
+    <value>允许编辑1099/CPRS金额</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="AllowEditOfStatistics" xml:space="preserve">
+    <value>允许编辑统计</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="AllowEditSystem" xml:space="preserve">
+    <value>允许编辑系统生成的批次</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="AllowRmitToChange" xml:space="preserve">
+    <value>允许更改汇款至信息</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="BaseRetainageAmountOn" xml:space="preserve">
+    <value>保留款金额基于</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="CheckForDuplicateChecks" xml:space="preserve">
+    <value>检查重复支票</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="CheckForPendingPayment" xml:space="preserve">
+    <value>包括待处理交易</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>联系人</value>
+    <comment>Company - Field</comment>
+  </data>
+  <data name="Default1099FromDocTot" xml:space="preserve">
+    <value>默认1099/CPRS金额</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="DefaultBankCode" xml:space="preserve">
+    <value>默认银行代码</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="DefaultCommentDays" xml:space="preserve">
+    <value>默认保留供应商备注天数</value>
+    <comment>Processing - List</comment>
+  </data>
+  <data name="DefaultDetailTaxClassTo1" xml:space="preserve">
+    <value>默认设置明细税级到 1</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="DefaultOrderOpenDocs" xml:space="preserve">
+    <value>未结凭证默认顺序</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="DefaultPaymentCode" xml:space="preserve">
+    <value>默认付款代码</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="DefaultPercentage" xml:space="preserve">
+    <value>默认保留款百分比</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="DefaultPeriod" xml:space="preserve">
+    <value>默认留存期间（天）</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="DefaultPostingDate" xml:space="preserve">
+    <value>默认过帐日期</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="DefaultRetainageExchangeRate" xml:space="preserve">
+    <value>默认保留款汇率</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="DefaultTrxType" xml:space="preserve">
+    <value>默认交易类型</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应付帐款选项</value>
+    <comment>Screen Name</comment>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>传真</value>
+    <comment>Company - Field</comment>
+  </data>
+  <data name="ForceBatchListing" xml:space="preserve">
+    <value>强制列出所有批次</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>功能币种</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="InclTaxInStatistics" xml:space="preserve">
+    <value>统计中包括税费</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="InvoiceOptions" xml:space="preserve">
+    <value>发票选项</value>
+    <comment>Transactions - Group</comment>
+  </data>
+  <data name="InvoiceTaxAmountCtrl" xml:space="preserve">
+    <value>默认税额</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="InvoiceTaxBaseCtrl" xml:space="preserve">
+    <value>默认税基</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="InvoiceTaxReportingCtrl" xml:space="preserve">
+    <value>默认税务报告</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="KeepStatistics" xml:space="preserve">
+    <value>保留统计</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="LastInvoiced" xml:space="preserve">
+    <value>上一开发票日期</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>多币种</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="NextAdjtBatchNum" xml:space="preserve">
+    <value>下一调整批次</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextAdjtPostSeq" xml:space="preserve">
+    <value>下一调整过帐序列</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextBatchSeq" xml:space="preserve">
+    <value>下一批次和过帐序列编号</value>
+    <comment>Numbering - Table</comment>
+  </data>
+  <data name="NextInvcBatchNumber" xml:space="preserve">
+    <value>下一发票批次</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextInvcPostingSeq" xml:space="preserve">
+    <value>下一发票过帐序列</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextPaymBatchNum" xml:space="preserve">
+    <value>下一付款批次</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextPaymPostSeq" xml:space="preserve">
+    <value>下一付款过帐序列</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NextRevlPostSeq" xml:space="preserve">
+    <value>下一重估过帐序列号</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="NoDaysAdvanceCreateDocs" xml:space="preserve">
+    <value>提前创建保留款凭证天数</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="Numbering" xml:space="preserve">
+    <value>编号</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>付款</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="PaymentOptions" xml:space="preserve">
+    <value>付款选项</value>
+    <comment>Transactions - Group</comment>
+  </data>
+  <data name="PeriodType" xml:space="preserve">
+    <value>期间类型</value>
+    <comment>Processing - List</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>电话</value>
+    <comment>Company - Field</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>预付款</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>处理</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="ProcessingOptions" xml:space="preserve">
+    <value>处理选项</value>
+    <comment>Processing - Group</comment>
+  </data>
+  <data name="RecurringPayable" xml:space="preserve">
+    <value>经常性应付</value>
+    <comment>Numbering - Field</comment>
+  </data>
+  <data name="ReportTax" xml:space="preserve">
+    <value>报告税务</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>保留款</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RetainageAccounting" xml:space="preserve">
+    <value>保留款核算</value>
+    <comment>Processing - Option</comment>
+  </data>
+  <data name="ScheduleToUse" xml:space="preserve">
+    <value>使用自动创建保留款凭证排程</value>
+    <comment>Retainage - Field</comment>
+  </data>
+  <data name="SortChecksBy" xml:space="preserve">
+    <value>排序支票按</value>
+    <comment>Transactions - List</comment>
+  </data>
+  <data name="StatsWarning" xml:space="preserve">
+    <value>更改这一选项可能导致不正确的统计报告。您仅应该在年末更改这一选项。如果您在年中某时更改它，编辑统计以更正各个期间的合计。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>交易</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Use1099CPRSReporting" xml:space="preserve">
+    <value>使用1099/CPRS报告</value>
+    <comment>Transactions - Option</comment>
+  </data>
+  <data name="VendorAndGroupStats" xml:space="preserve">
+    <value>供应商和群组统计</value>
+    <comment>Processing - Group</comment>
+  </data>
+  <data name="BankCodeDesc" xml:space="preserve">
+    <value>银行代码描述</value>
+    <comment>Transaction Tab - Field</comment>
+  </data>
+  <data name="PaymentCodeDescription" xml:space="preserve">
+    <value>付款代码描述</value>
+    <comment>Transaction Tab - Field </comment>
+  </data>
+  <data name="DocumentNumbers" xml:space="preserve">
+    <value>凭证编号</value>
+    <comment>Ap-Options-Numbering</comment>
+  </data>
+  <data name="RetainagePercentWarning" xml:space="preserve">
+    <value>保留款百分比必须介于0和100 之间。</value>
+    <comment>Retainage Tab</comment>
+  </data>
+  <data name="DocumentNumbering" xml:space="preserve">
+    <value>凭证编号</value>
+    <comment>Retainage Tab </comment>
+  </data>
+</root>

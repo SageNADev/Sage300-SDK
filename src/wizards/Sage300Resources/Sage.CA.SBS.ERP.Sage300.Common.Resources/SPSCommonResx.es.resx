@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Agregar Detalles de Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Dirección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotChargeZeroAmount" xml:space="preserve">
+    <value>El monto de la transacción debe ser mayor que cero.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLocatePreviousTransaction" xml:space="preserve">
+    <value>No se puede encontrar la transacción en el historial de transacciones de tarjeta de crédito.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CardHolderName" xml:space="preserve">
+    <value>Titular de la Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CardID" xml:space="preserve">
+    <value>ID de Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCBilling" xml:space="preserve">
+    <value>Detalles de Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCDetails" xml:space="preserve">
+    <value>Detalles de Tarjeta de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCExpiryDate" xml:space="preserve">
+    <value>Fecha de Caducidad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCNumber" xml:space="preserve">
+    <value>Número de Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentarios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditCardInfo" xml:space="preserve">
+    <value>Información de Tarjeta de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardCurrencyNotExists" xml:space="preserve">
+    <value>El ID de Tarjeta {0} para el Número de Cliente {1} no existe en la moneda {2}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardInactive" xml:space="preserve">
+    <value>El ID de Tarjeta {0} no está activo para el Número de Cliente {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardNotExists" xml:space="preserve">
+    <value>No se encuentra el ID de Tarjeta {0} para el Número de Cliente {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardProcessingCodeNotExists" xml:space="preserve">
+    <value>No se encuentra el ID de Tarjeta {0} para el Número de Cliente {1} para el Código de Procesamiento {2}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerID" xml:space="preserve">
+    <value>Número de Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Nombre del Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultBillingAddress" xml:space="preserve">
+    <value>Igual a la Dirección del Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCard" xml:space="preserve">
+    <value>Usar Como Tarjeta Predeterminada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCardFlag" xml:space="preserve">
+    <value>Tarjeta Predeterminada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Descripción Tarjeta de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar Detalles de Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Procesamiento de Pagos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrReportExt" xml:space="preserve">
+    <value>Seleccione un archivo .RPT.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MerchantIDForProcessingCodeNotDefined" xml:space="preserve">
+    <value>Debe configurar una cuenta comercial que use el código de procesamiento {0} antes de procesar una transacción de tarjeta de crédito.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MerchantIDNotDefined" xml:space="preserve">
+    <value>Debe configurar un código de procesamiento antes de ingresar detalles de tarjeta de crédito.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenReportFile" xml:space="preserve">
+    <value>Abrir Archivo de Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ProcessingCode" xml:space="preserve">
+    <value>Código de Procesamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportFilter" xml:space="preserve">
+    <value>Reportes Crystal (*.RPT)|*.RPT|Todos los Archivos (*.*)|*.*||</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode000000" xml:space="preserve">
+    <value>Se produjo un error de servidor al conectarse con Sage Payment Solutions. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900000" xml:space="preserve">
+    <value>Ingrese un número de orden válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900001" xml:space="preserve">
+    <value>Ingrese un nombre válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900002" xml:space="preserve">
+    <value>Ingrese una dirección válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900003" xml:space="preserve">
+    <value>Ingrese una ciudad válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900004" xml:space="preserve">
+    <value>Ingrese un estado o una provincia válidos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900005" xml:space="preserve">
+    <value>Ingrese un código postal válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900006" xml:space="preserve">
+    <value>Ingrese un país válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900007" xml:space="preserve">
+    <value>Ingrese un número de teléfono válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900008" xml:space="preserve">
+    <value>Ingrese un número de fax válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900009" xml:space="preserve">
+    <value>Ingrese una dirección de correo electrónico válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900010" xml:space="preserve">
+    <value>Ingrese un nombre de dirección de envío válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900011" xml:space="preserve">
+    <value>Ingrese una dirección de envío válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900012" xml:space="preserve">
+    <value>Ingrese una ciudad de envío válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900013" xml:space="preserve">
+    <value>Ingrese un estado o una provincia válidos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900014" xml:space="preserve">
+    <value>Ingrese un código postal de envío válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900015" xml:space="preserve">
+    <value>Ingrese un país de envío válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900016" xml:space="preserve">
+    <value>Ingrese un número de tarjeta de crédito válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900017" xml:space="preserve">
+    <value>Ingrese una fecha de caducidad válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900018" xml:space="preserve">
+    <value>Ingrese un CVV válido (Valor de verificación de tarjeta).</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900019" xml:space="preserve">
+    <value>El total general no puede ser cero. Verifique el monto del subtotal, de los gastos de envío y de los impuestos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900020" xml:space="preserve">
+    <value>No ingresó el código de transacción o su formato no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900021" xml:space="preserve">
+    <value>No ingresó el código de autorización o su formato no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900022" xml:space="preserve">
+    <value>Ingrese una referencia válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900023" xml:space="preserve">
+    <value>No ingresó Seguimiento de datos o su formato no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900024" xml:space="preserve">
+    <value>El formato del número de seguimiento no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900025" xml:space="preserve">
+    <value>Ingrese un número de cliente válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900026" xml:space="preserve">
+    <value>Ingrese una empresa de envío válida.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900027" xml:space="preserve">
+    <value>El valor recurrente debe ser 0 o 1.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900028" xml:space="preserve">
+    <value>El formato del valor recurrente no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900029" xml:space="preserve">
+    <value>El valor recurrente de Intervalo debe ser numérico.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900030" xml:space="preserve">
+    <value>No ingresó el valor recurrente Indefinido o su formato no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900031" xml:space="preserve">
+    <value>El valor recurrente de Tiempos para Procesar debe ser numérico.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900032" xml:space="preserve">
+    <value>El formato del valor recurrente Días No Hábiles no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900033" xml:space="preserve">
+    <value>No ingresó el grupo recurrente o no se encontró el grupo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900034" xml:space="preserve">
+    <value>No ingresó el valor recurrente Fecha de inicio o su formato no es válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900035" xml:space="preserve">
+    <value>El número de identificación que ingresó no es correcto.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900100" xml:space="preserve">
+    <value>Error de validación de datos desconocida. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910000" xml:space="preserve">
+    <value>No se permite la transacción que intenta enviar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910001" xml:space="preserve">
+    <value>No se permiten las transacciones de tipo tarjeta Visa.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910002" xml:space="preserve">
+    <value>No se permiten las transacciones de tipo tarjeta Mastercard.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910003" xml:space="preserve">
+    <value>No se permiten las transacciones de tipo tarjeta American Express.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910004" xml:space="preserve">
+    <value>No se permiten las transacciones de tipo tarjeta Discover.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910005" xml:space="preserve">
+    <value>No se permiten las transacciones de tipo tarjeta.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode911911" xml:space="preserve">
+    <value>ID o clave de cuenta comercial incorrecto.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920000" xml:space="preserve">
+    <value>No se puede encontrar el registro solicitado. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920001" xml:space="preserve">
+    <value>No se pudo emitir el crédito porque Sage Payment Solutions no pudo encontrar una venta correspondiente dentro de los 6 últimos meses. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920002" xml:space="preserve">
+    <value>El Servicio de Verificación de Direcciones no pudo verificar la dirección.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920050" xml:space="preserve">
+    <value>No puede anular una transacción de débito.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCodeUNKNOWN" xml:space="preserve">
+    <value>Se produjo un error visanet.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsInvalidSPSRequestXML" xml:space="preserve">
+    <value>Ha ocurrido un problema durante el procesamiento porque la solicitud XML está en blanco.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsInvalidSPSResponseXML" xml:space="preserve">
+    <value>Sage Payment Solutions devolvió una respuesta XML no válida. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunication" xml:space="preserve">
+    <value>Se produjo un error al conectarse con Sage Payment Solutions. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunicationRecovery" xml:space="preserve">
+    <value>No pudo solucionar un error de comunicación con Sage Payment Solutions. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunicationStartup" xml:space="preserve">
+    <value>No se puede iniciar comunicación con Sage Payment Solutions.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessInternet" xml:space="preserve">
+    <value>Error de conexión a Internet.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessInvalidRequestData" xml:space="preserve">
+    <value>Los datos de la solicitud no son válidos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessModuleConfigurationNotFound" xml:space="preserve">
+    <value>No se puede encontrar la configuración del módulo Sage Payment Solutions. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessSuccess" xml:space="preserve">
+    <value>Sage Payment Solutions procesó esta transacción correctamente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessTimeout" xml:space="preserve">
+    <value>Se agotó el tiempo de espera para la operación de Sage Payment Solutions.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessUnknown" xml:space="preserve">
+    <value>Se produjo un error desconocido. Comuníquese con Sage Payment Solutions para obtener ayuda.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessUserCanceled" xml:space="preserve">
+    <value>Transacción cancelada.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsSpsResponse" xml:space="preserve">
+    <value>Mensaje original de Sage Payment Solutions:</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado/Provincia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo de Tarjeta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Zipcode" xml:space="preserve">
+    <value>Código Postal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCardWarning" xml:space="preserve">
+    <value>La tarjeta predeterminada no se puede marcar como inactiva. ¿Desea continuar?</value>
+  </data>
+  <data name="ProcessingCodeChangeWarning" xml:space="preserve">
+    <value>Si usted cambia el código de procesamiento de esta tarjeta, se borrarán los detalles de la tarjeta de crédito y usted tendrá que volver a ingresarlos. ¿Desea cambiar el código de procesamiento y borrar los detalles de la tarjeta de crédito?</value>
+  </data>
+  <data name="SageExchangeVault" xml:space="preserve">
+    <value>Sage Exchange - Vault</value>
+  </data>
+  <data name="CannotVoidSettledTransaction" xml:space="preserve">
+    <value>No puede anular esta transacción porque se liquidó en Sage Payment Solutions.</value>
+  </data>
+  <data name="ExpectingYPTRAN_Record" xml:space="preserve">
+    <value>Ha ocurrido un problema durante el procesamiento. Detalles del error: Se espera un registro pendiente YPTRAN existente.</value>
+  </data>
+  <data name="InvalidTransactionStatus" xml:space="preserve">
+    <value>Ha ocurrido un problema durante el procesamiento. Detalles del error: La transacción {0} tiene un estado de transacción {1} no válido.</value>
+  </data>
+  <data name="InvalidXMLRequestResponse" xml:space="preserve">
+    <value>Ha ocurrido un problema durante el procesamiento. Detalles del error: Código de acción solicitud/respuesta no válida.</value>
+  </data>
+  <data name="NotAuthorizedYP" xml:space="preserve">
+    <value>No está autorizado para usar Procesamiento de Pagos.</value>
+  </data>
+  <data name="PreauthExpired" xml:space="preserve">
+    <value>La pre-autorización caducó.</value>
+  </data>
+  <data name="PreviousTransactionNotApproved" xml:space="preserve">
+    <value>No se aprobó la transacción anterior.</value>
+  </data>
+  <data name="PreviousTransNotApproved" xml:space="preserve">
+    <value>La transacción anterior no fue aprobada.</value>
+  </data>
+  <data name="TransactionVoided" xml:space="preserve">
+    <value>Se anuló la transacción en Sage Payment Solutions.</value>
+  </data>
+  <data name="PaymentNotSettled" xml:space="preserve">
+    <value>No puede aplicar un reembolso porque no se liquidó la transacción en Sage Payment Solutions. De abrir una sesión en Sage Virtual Terminal y liquidar la transacción antes de poder aplicar el reembolso.</value>
+  </data>
+  <data name="OriginalTransVoided" xml:space="preserve">
+    <value>No puede aplicar un reembolso porque se anuló la transacción original en Sage Payment Solutions.</value>
+  </data>
+  <data name="ApprovedForAutomaticPayments" xml:space="preserve">
+    <value>Aprobada para Pagos Automáticos</value>
+  </data>
+  <data name="PreauthorizationAdjusted" xml:space="preserve">
+    <value>Se ajustó esta pre-autorización en Sage Payment Solutions, o se capturó anteriormente.</value>
+  </data>
+  <data name="PreauthorizationSettled" xml:space="preserve">
+    <value>Se liquidó esta pre-autorización en Sage Payment Solutions.</value>
+  </data>
+  <data name="PreauthorizationVoided" xml:space="preserve">
+    <value>Se anuló esta pre-autorización en Sage Payment Solutions.</value>
+  </data>
+</root>

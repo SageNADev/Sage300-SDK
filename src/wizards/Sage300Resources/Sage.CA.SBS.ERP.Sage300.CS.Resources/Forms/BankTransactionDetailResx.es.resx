@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BankStatementType" xml:space="preserve">
+    <value>Tipo de Estado de Cuenta Bancario</value>
+  </data>
+  <data name="CanReverseInvoice" xml:space="preserve">
+    <value>Puede Revertir Factura</value>
+  </data>
+  <data name="CurrentPeriodsWriteOff" xml:space="preserve">
+    <value>Cancelación del Período Actual</value>
+  </data>
+  <data name="DetailTransactionType" xml:space="preserve">
+    <value>Tipo de Transacción Detalle</value>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Descripción de Código de Distribución</value>
+  </data>
+  <data name="DocumentPostedDate" xml:space="preserve">
+    <value>Fecha Asentamiento del Documento</value>
+  </data>
+  <data name="DrilldownLink" xml:space="preserve">
+    <value>Vínculo de Búsqueda Detallada</value>
+  </data>
+  <data name="DrilldownType" xml:space="preserve">
+    <value>Tipo de Búsqueda Detallada</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Tipo de Asiento</value>
+  </data>
+  <data name="FiscalBankErrors" xml:space="preserve">
+    <value>Errores Bancarios Período Fiscal</value>
+  </data>
+  <data name="FiscalBookAmount" xml:space="preserve">
+    <value>Monto del Libro Período Fiscal</value>
+  </data>
+  <data name="FiscalCleared" xml:space="preserve">
+    <value>Compensado Período Fiscal</value>
+  </data>
+  <data name="FiscalClearedToCurrent" xml:space="preserve">
+    <value>Compensado Hasta Período Fiscal Actual</value>
+  </data>
+  <data name="FiscalClearedToFuture" xml:space="preserve">
+    <value>Compensado Hasta Período Fiscal Futuro</value>
+  </data>
+  <data name="FiscalCreditCardCharge" xml:space="preserve">
+    <value>Cargo Tarjeta de Crédito Período Fiscal</value>
+  </data>
+  <data name="FiscalExchangeGain" xml:space="preserve">
+    <value>Ganancia Cambiaria Período Fiscal</value>
+  </data>
+  <data name="FiscalExchangeLoss" xml:space="preserve">
+    <value>Pérdida Cambiaria Período Fiscal</value>
+  </data>
+  <data name="FiscalFunctionalAmount" xml:space="preserve">
+    <value>Monto Funcional Período Fiscal</value>
+  </data>
+  <data name="FiscalOriginalTransactionAmount" xml:space="preserve">
+    <value>Monto de Transacción Original Período Fiscal</value>
+  </data>
+  <data name="FiscalOutstandingAmount" xml:space="preserve">
+    <value>Monto Pendiente Período Fiscal</value>
+  </data>
+  <data name="FiscalRemainingAmount" xml:space="preserve">
+    <value>Monto Remanente Período Fiscal</value>
+  </data>
+  <data name="FiscalTransactionRemainingIn" xml:space="preserve">
+    <value>Remanente de Transacción en Tránsito Período Fiscal</value>
+  </data>
+  <data name="FiscalWriteOffs" xml:space="preserve">
+    <value>Cancelaciones Período Fiscal</value>
+  </data>
+  <data name="FiscalWriteOffToThisPeriod" xml:space="preserve">
+    <value>Cancelación En Este Período Fiscal</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Moneda Funcional</value>
+  </data>
+  <data name="GLAccountDescription" xml:space="preserve">
+    <value>Descripción Cuenta del LM</value>
+  </data>
+  <data name="LastReconciliationStatus" xml:space="preserve">
+    <value>Estado de Última Conciliación</value>
+  </data>
+  <data name="Line" xml:space="preserve">
+    <value>Línea</value>
+  </data>
+  <data name="LineCanReverseInvoice" xml:space="preserve">
+    <value>Línea Puede Revertir Factura</value>
+  </data>
+  <data name="LineCreditCard" xml:space="preserve">
+    <value>Línea Tarjeta de Crédito</value>
+  </data>
+  <data name="LineExchangeDifference" xml:space="preserve">
+    <value>Línea Diferencia de Cambio</value>
+  </data>
+  <data name="LineOutstanding" xml:space="preserve">
+    <value>Línea Pendiente</value>
+  </data>
+  <data name="LineReconciled" xml:space="preserve">
+    <value>Línea Conciliada</value>
+  </data>
+  <data name="NoOfDaysSinceReconciled" xml:space="preserve">
+    <value>Número de Días desde Conciliación</value>
+  </data>
+  <data name="OFXTransactionID" xml:space="preserve">
+    <value>ID de Transacción OFX</value>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>Código de Pago</value>
+  </data>
+  <data name="PostedFiscalClearedToFuture" xml:space="preserve">
+    <value>Compensado Asentado Hasta Período Fiscal Futuro</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento</value>
+  </data>
+  <data name="ReconcileByDetailOutstanding" xml:space="preserve">
+    <value>Conciliar por Detalle Pendiente</value>
+  </data>
+  <data name="ReconcileByDetailReconciled" xml:space="preserve">
+    <value>Conciliar por Detalle Conciliado</value>
+  </data>
+  <data name="ReconciledandJournaledTransaction" xml:space="preserve">
+    <value>Transacción Conciliada y Registrada en LD</value>
+  </data>
+  <data name="ReconciledBy" xml:space="preserve">
+    <value>Conciliado Por</value>
+  </data>
+  <data name="ReconciliationAmountDelta" xml:space="preserve">
+    <value>Delta de Monto de Conciliación</value>
+  </data>
+  <data name="ReconciliationCreditCardCharges" xml:space="preserve">
+    <value>Cargo Tarjeta de Crédito de Conciliación</value>
+  </data>
+  <data name="ReconciliationError" xml:space="preserve">
+    <value>Error de Conciliación</value>
+  </data>
+  <data name="ReconciliationErrorPending" xml:space="preserve">
+    <value>Error de Conciliación Pendiente</value>
+  </data>
+  <data name="ReconciliationExchangeGain" xml:space="preserve">
+    <value>Ganancia Cambiaria de Conciliación</value>
+  </data>
+  <data name="ReconciliationExchangeLoss" xml:space="preserve">
+    <value>Pérdida Cambiaria de Conciliación</value>
+  </data>
+  <data name="ReconciliationPeriod" xml:space="preserve">
+    <value>Período de Conciliación</value>
+  </data>
+  <data name="ReconciliationSpread" xml:space="preserve">
+    <value>Margen de Conciliación</value>
+  </data>
+  <data name="ReconciliationSuggestion" xml:space="preserve">
+    <value>Sugerencia de Conciliación</value>
+  </data>
+  <data name="ReconciliationTarget" xml:space="preserve">
+    <value>Meta de Conciliación</value>
+  </data>
+  <data name="ReconciliationYear" xml:space="preserve">
+    <value>Año de Conciliación</value>
+  </data>
+  <data name="RemittanceID" xml:space="preserve">
+    <value>ID de Remesa</value>
+  </data>
+  <data name="ReversalOrReturnDate" xml:space="preserve">
+    <value>Fecha Reversión/Devolución</value>
+  </data>
+  <data name="ReverseInvoice" xml:space="preserve">
+    <value>Revertir Factura</value>
+  </data>
+  <data name="SourceDocumentNumber" xml:space="preserve">
+    <value>Número Documento de Origen</value>
+  </data>
+  <data name="SourceTransactionAmount" xml:space="preserve">
+    <value>Monto de Transacción de Origen</value>
+  </data>
+  <data name="StatementAmount" xml:space="preserve">
+    <value>Monto de Estado de Cuenta</value>
+  </data>
+  <data name="StatementCurrency" xml:space="preserve">
+    <value>Moneda de Estado de Cuenta</value>
+  </data>
+  <data name="SummatedTransactionAmount" xml:space="preserve">
+    <value>Monto de Transacción Sumado</value>
+  </data>
+  <data name="TotalBookAmount" xml:space="preserve">
+    <value>Monto del Libro Total</value>
+  </data>
+  <data name="TotalRemainingAmount" xml:space="preserve">
+    <value>Monto Total Remanente</value>
+  </data>
+  <data name="TransactionAmount" xml:space="preserve">
+    <value>Monto de Transacción</value>
+  </data>
+  <data name="TransactionDetailLine" xml:space="preserve">
+    <value>Línea de Detalle de Transacción</value>
+  </data>
+  <data name="TransactionDetailStatus" xml:space="preserve">
+    <value>Estado de Detalle de Transacción</value>
+  </data>
+  <data name="TransactionReference" xml:space="preserve">
+    <value>Referencia de Transacción</value>
+  </data>
+  <data name="WriteOffAmount" xml:space="preserve">
+    <value>Monto de Cancelación</value>
+  </data>
+</root>

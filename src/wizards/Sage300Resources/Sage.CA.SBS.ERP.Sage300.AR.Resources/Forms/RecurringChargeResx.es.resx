@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>Monto Total de Impuestos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>Fecha de Inicio</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpirationType" xml:space="preserve">
+    <value>Tipo de Caducidad</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDescription" xml:space="preserve">
+    <value>Descripción de Factura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceTotalBeforeTax" xml:space="preserve">
+    <value>Total de Factura Antes de Impuestos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceTotalIncludingTax" xml:space="preserve">
+    <value>Total de Factura Incluyendo Impuestos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastBatchNumberPosted" xml:space="preserve">
+    <value>Último Número de Lote Asentado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastEntryNumberPosted" xml:space="preserve">
+    <value>Último Número de Asiento Asentado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceAmountPosted" xml:space="preserve">
+    <value>Monto de Última Factura Asentada</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceDateGenerated" xml:space="preserve">
+    <value>Fecha de Última Factura Generada</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceDatePosted" xml:space="preserve">
+    <value>Fecha de Última Factura Asentada</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceNumberPosted" xml:space="preserve">
+    <value>Último Número de Factura Asentado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastLineNumber" xml:space="preserve">
+    <value>Último Número de Línea</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPostingSequenceNumber" xml:space="preserve">
+    <value>Último Número de Secuencia de Asentamiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MaximumNumberOfInvoices" xml:space="preserve">
+    <value>Cantidad Máxima de Facturas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MaximumTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total Máximo de Facturas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextScheduledDate" xml:space="preserve">
+    <value>Fecha Factura Siguiente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Cantidad de Campos Opcionales</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostedNumberOfInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Asentadas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostedTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas Asentadas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecurringChargeCode" xml:space="preserve">
+    <value>Código Cargo Recurrente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>Descripción Vía de Envío</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Taxable" xml:space="preserve">
+    <value>Imponible</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autoridad Fiscal 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autoridad Fiscal 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autoridad Fiscal 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autoridad Fiscal 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autoridad Fiscal 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Base de Impuesto 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Base de Impuesto 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Base de Impuesto 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Base de Impuesto 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Base de Impuesto 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxOverride" xml:space="preserve">
+    <value>Sustitución de Impuesto</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnpostedNumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Sin Asentar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnpostedTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas Sin Asentar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YTDTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas YTD</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleLink" xml:space="preserve">
+    <value>Vínculo de Programa</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/C - Cargos Recurrentes</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="TaxCannotBeDistributed" xml:space="preserve">
+    <value>No se pueden distribuir impuestos cuando todos los impuestos son calculados.</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="CustomerOnHold" xml:space="preserve">
+    <value>El cliente seleccionado {0} está retenido.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0046" xml:space="preserve">
+    <value>Cargos Recurrentes</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0047" xml:space="preserve">
+    <value>Detalles de Cargo Recurrente</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0404" xml:space="preserve">
+    <value>Campos Opc. Detalle Cargo Recurrente</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AR0405" xml:space="preserve">
+    <value>Campos Opcionales de Cargo Recurrente</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Categoría</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Contrato</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="DistributedAmountBeforeTax" xml:space="preserve">
+    <value>Monto Distribuido Antes de Impuestos</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ExtendedAmountwoTIP" xml:space="preserve">
+    <value>Monto Total sin TIP</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ExtendedAmountwTIP" xml:space="preserve">
+    <value>Monto Total con TIP</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Número de Artículo</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de Línea</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campo Opcional</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Campos Opcionales</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OptionalFieldValue" xml:space="preserve">
+    <value>Valor de Campo Opcional</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Precio</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ProjectCategoryResource" xml:space="preserve">
+    <value>Recurso de Proyecto/Categoría</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Proyecto</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Impuesto Incluido 1</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Impuesto Incluido 2</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Impuesto Incluido 3</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Impuesto Incluido 4</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Impuesto Incluido 5</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tasa Fiscal 1</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tasa Fiscal 2</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tasa Fiscal 3</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tasa Fiscal 4</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tasa Fiscal 5</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="TaxTotalsTab" xml:space="preserve">
+    <value>Impuesto/Totales</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="CreateInvoice" xml:space="preserve">
+    <value>Crear Factura</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrentAmount" xml:space="preserve">
+    <value>Monto Actual</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrentCount" xml:space="preserve">
+    <value>Conteo Actual</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Información de Cliente</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="InactiveAsOf" xml:space="preserve">
+    <value>Inactivo (al)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecurringChargeDescription" xml:space="preserve">
+    <value>Descripción de Cargo Recurrente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleCodeDesc" xml:space="preserve">
+    <value>Descripción de Programa</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Detalles del Programa</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="ShipToInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Detalles de Envío</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="TermsDescription" xml:space="preserve">
+    <value>Descripción de Condiciones</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Fecha de factura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiced" xml:space="preserve">
+    <value>Total Facturado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Unposted" xml:space="preserve">
+    <value>Sin Asentar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AddToAnExistingBatch" xml:space="preserve">
+    <value>Agregar a un Lote Existente</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="CreateaNewBatch" xml:space="preserve">
+    <value>Crear un Lote Nuevo</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="InvoiceBatch" xml:space="preserve">
+    <value>Lote de Facturas</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="NextScheduled" xml:space="preserve">
+    <value>Programa Siguiente</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otro</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+</root>

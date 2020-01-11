@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFilter" xml:space="preserve">
+    <value>Ajouter filtre</value>
+  </data>
+  <data name="ARDocumentInquiry" xml:space="preserve">
+    <value>Consultation de document client de CC</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Ajustements</value>
+  </data>
+  <data name="APVendorsTransactions" xml:space="preserve">
+    <value>Transactions et fournisseurs de CF</value>
+  </data>
+  <data name="ARCustomersTransactions" xml:space="preserve">
+    <value>Transactions et clients de CC</value>
+  </data>
+  <data name="ARTemplate" xml:space="preserve">
+    <value>{0} de CC</value>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>Solde courant</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Numéro de client</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Date du document</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Date d'échéance</value>
+  </data>
+  <data name="Equal" xml:space="preserve">
+    <value>Est égale à</value>
+  </data>
+  <data name="GLAccountsNetChanges" xml:space="preserve">
+    <value>Variations et comptes du GL</value>
+  </data>
+  <data name="GLAccountsTransactions" xml:space="preserve">
+    <value>Transactions et comptes du GL</value>
+  </data>
+  <data name="Greater" xml:space="preserve">
+    <value>Est supérieur à</value>
+  </data>
+  <data name="ICContractPricing" xml:space="preserve">
+    <value>Prix forfaitaire de GS</value>
+  </data>
+  <data name="ICTransactions" xml:space="preserve">
+    <value>Transaction de GS</value>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Est inférieur à</value>
+  </data>
+  <data name="OEInvoices" xml:space="preserve">
+    <value>Factures de CmC</value>
+  </data>
+  <data name="OEOrders" xml:space="preserve">
+    <value>Commandes de CmC</value>
+  </data>
+  <data name="OESales" xml:space="preserve">
+    <value>Ventes de CmC</value>
+  </data>
+  <data name="OETransactions" xml:space="preserve">
+    <value>Transactions de CmC</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Numéro commande</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>N° bon commande</value>
+  </data>
+  <data name="POTransactions" xml:space="preserve">
+    <value>Transactions de CmF</value>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>Encaissements</value>
+  </data>
+  <data name="RecurringCharges" xml:space="preserve">
+    <value>Frais périodiques</value>
+  </data>
+  <data name="Refunds" xml:space="preserve">
+    <value>Remboursements</value>
+  </data>
+  <data name="ShipmentNumber" xml:space="preserve">
+    <value>Numéro expédition</value>
+  </data>
+  <data name="AR_DocumentType_CreditNote" xml:space="preserve">
+    <value>Note de crédit</value>
+  </data>
+  <data name="AR_DocumentType_DebitNote" xml:space="preserve">
+    <value>Note de débit</value>
+  </data>
+  <data name="AR_DocumentType_Interest" xml:space="preserve">
+    <value>Intérêt</value>
+  </data>
+  <data name="AR_DocumentType_Invoice" xml:space="preserve">
+    <value>Facture</value>
+  </data>
+  <data name="AR_DocumentType_Prepayment" xml:space="preserve">
+    <value>Paiement anticipé</value>
+  </data>
+  <data name="AR_DocumentType_Receipt" xml:space="preserve">
+    <value>Encaissement</value>
+  </data>
+  <data name="AR_DocumentType_Refund" xml:space="preserve">
+    <value>Remboursement</value>
+  </data>
+  <data name="AR_DocumentType_UnappliedCash" xml:space="preserve">
+    <value>Comptant non imputé</value>
+  </data>
+  <data name="AR_DocumentType_MiscReceipt" xml:space="preserve">
+    <value>Encaissement divers</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Type de document</value>
+  </data>
+  <data name="FullyPaid" xml:space="preserve">
+    <value>Payé intégralement</value>
+  </data>
+  <data name="Includes" xml:space="preserve">
+    <value>Inclut</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>Devise du client</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+  </data>
+  <data name="RangeErrorEmptyFromValue" xml:space="preserve">
+    <value>Vous devez spécifier une valeur pour le champ {0}</value>
+  </data>
+  <data name="RangeErrorFromValueGreater" xml:space="preserve">
+    <value>La valeur initiale de la plage {0} doit être inférieure à la valeur finale.</value>
+  </data>
+  <data name="CustomerInquiryTitle" xml:space="preserve">
+    <value>{0} de Client de CC</value>
+  </data>
+  <data name="APVendorDocuments" xml:space="preserve">
+    <value>Documents fournisseurs</value>
+  </data>
+  <data name="CustomerDocumentsCust" xml:space="preserve">
+    <value>Documents du client (Devise du client)</value>
+  </data>
+  <data name="CustomerDocumentsFunc" xml:space="preserve">
+    <value>Documents du client (Devise fonctionnelle)</value>
+  </data>
+  <data name="GLNetChanges" xml:space="preserve">
+    <value>Variations du GL</value>
+  </data>
+  <data name="GLTransactions" xml:space="preserve">
+    <value>Transactions du GL</value>
+  </data>
+  <data name="ICInventoryItems" xml:space="preserve">
+    <value>Articles de stock</value>
+  </data>
+  <data name="OESalesHistory" xml:space="preserve">
+    <value>Historique des ventes de CmC</value>
+  </data>
+  <data name="POPurchaseHistory" xml:space="preserve">
+    <value>Historique des achats</value>
+  </data>
+  <data name="POPurchaseOrders" xml:space="preserve">
+    <value>Bons de commande</value>
+  </data>
+  <data name="PrivateTypeDesc" xml:space="preserve">
+    <value>Privée - Seul l'utilisateur qui a créé cette requête peut l'utiliser</value>
+  </data>
+  <data name="PublicTypeDesc" xml:space="preserve">
+    <value>Publique - Tous les utilisateurs autorisés peuvent utiliser cette requête</value>
+  </data>
+  <data name="QueryName" xml:space="preserve">
+    <value>Nom de requête</value>
+  </data>
+  <data name="SelectDataSource" xml:space="preserve">
+    <value>Sélectionnez une source de données</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privée</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Publique</value>
+  </data>
+  <data name="Query" xml:space="preserve">
+    <value>Requête</value>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>Modèle</value>
+  </data>
+  <data name="SaveReplaceConfirmMessage" xml:space="preserve">
+    <value>La requête {0} {1} existe déjà. Voulez-vous la remplacer?</value>
+  </data>
+  <data name="SaveQuerySuccessMessage" xml:space="preserve">
+    <value>La requête a été enregistrée.</value>
+  </data>
+  <data name="DateModified" xml:space="preserve">
+    <value>Date de modification</value>
+  </data>
+  <data name="InvalidQueryName" xml:space="preserve">
+    <value>Le nom de la requête ne peut ni être vide ni contenir les caractères suivants : \ / : * ? &lt; &gt; | "</value>
+  </data>
+  <data name="ApplyFilters" xml:space="preserve">
+    <value>Appliquer des filtres</value>
+  </data>
+  <data name="DeleteQuery" xml:space="preserve">
+    <value>Supprimer la requête</value>
+  </data>
+  <data name="ResetFilters" xml:space="preserve">
+    <value>Réinitialiser les filtres</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SaveQuery" xml:space="preserve">
+    <value>Enregistrer la requête</value>
+  </data>
+  <data name="PrivateQueries" xml:space="preserve">
+    <value>Requêtes privées</value>
+  </data>
+  <data name="PublicQueries" xml:space="preserve">
+    <value>Requêtes publiques</value>
+  </data>
+  <data name="OpenQuery" xml:space="preserve">
+    <value>Ouvrir la requête</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Source de données</value>
+  </data>
+  <data name="TabMessage" xml:space="preserve">
+    <value>Vous n'avez pas de requêtes personnalisées. Pour créer une requête personnalisée, modifiez une requête standard et enregistrez-là.</value>
+    <comment>Customized Tab Message</comment>
+  </data>
+  <data name="TabMessageHeadline" xml:space="preserve">
+    <value>Aucune requête personnalisée</value>
+    <comment>Customized Tab Message</comment>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>Personnel</value>
+  </data>
+  <data name="Shared" xml:space="preserve">
+    <value>Partagé</value>
+  </data>
+  <data name="CustomQueries" xml:space="preserve">
+    <value>Requêtes personnalisées</value>
+  </data>
+  <data name="StandQueries" xml:space="preserve">
+    <value>Requêtes standards</value>
+  </data>
+</root>

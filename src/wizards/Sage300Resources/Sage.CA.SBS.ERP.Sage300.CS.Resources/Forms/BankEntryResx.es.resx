@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActEntryRestartWarn" xml:space="preserve">
+    <value>Existe un registro de reinicio de asentamiento de ingresos para el banco {0}.  Debe completar el asentamiento de ingresos antes de editar ingresos de este banco.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ActRecRestartErr" xml:space="preserve">
+    <value>Existe un registro de reinicio de asentamiento de conciliaciones para el banco {0}.  Utilice la pantalla Asentar Conciliaciones para completar el asentamiento de conciliaciones antes de editar o asentar ingresos de este banco.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BankAcct" xml:space="preserve">
+    <value>Cuenta bancaria</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Código de Banco</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankCodeDesc" xml:space="preserve">
+    <value>Descripción de Banco</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankEntryType" xml:space="preserve">
+    <value>Tipo de Asiento Bancario</value>
+    <comment>List</comment>
+  </data>
+  <data name="BankInactive" xml:space="preserve">
+    <value>El banco {0} está inactivo.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BANKNOTEXISTNOTEDITABLE" xml:space="preserve">
+    <value>Ha ocurrido un problema al recuperar la información para el banco {0} y no se pudo guardar el asiento bancario. Verifique la información de configuración del banco {0}.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BankRequiredInDetail" xml:space="preserve">
+    <value>Ingrese un código de banco antes de crear una línea de detalle.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="CREATEDIST" xml:space="preserve">
+    <value>Crear Distribución</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="DepositAmt" xml:space="preserve">
+    <value>Monto de Depósito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DISTCODE" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DISTCODEDESC" xml:space="preserve">
+    <value>Descripción de Código de Distribución</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DISTSet" xml:space="preserve">
+    <value>Grupo de Distribución</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DistSetDesc" xml:space="preserve">
+    <value>Descripción Grupo de Distribución</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Asiento Bancario</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EntryDesc" xml:space="preserve">
+    <value>Descripción Asiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EntryNo" xml:space="preserve">
+    <value>Número de Asiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ErrorCreateDist" xml:space="preserve">
+    <value>Ha ocurrido un problema al crear la distribución. Por favor vuelva a intentar.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFACCOUNT" xml:space="preserve">
+    <value>No puede crear un asiento bancario nuevo porque la cuenta del LM {0} no es válida. Verifique la integridad de los datos para determinar la causa del error.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFBANK" xml:space="preserve">
+    <value>No puede crear un asiento bancario nuevo porque una especificación para el banco {0} no es válida o no se configuró el código de banco predeterminado. Verifique la integridad de los datos para determinar el error, y luego corrija el parámetro del banco {1} o cambie el código de banco predeterminado en Opciones Bancarias.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFDISTCODE" xml:space="preserve">
+    <value>No puede crear un asiento bancario nuevo porque una especificación para el código de distribución {0} no es válida o no se configuró el código de distribución predeterminado. Verifique la integridad de los datos para determinar el error, y luego corrija el parámetro en el registro del código de distribución {1} o cambie el código de distribución predeterminado en Opciones Bancarias.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="FroBankRate" xml:space="preserve">
+    <value>Desde Tasa Bancaria</value>
+    <comment>Rates - Table Column</comment>
+  </data>
+  <data name="FuncDepositAm" xml:space="preserve">
+    <value>Monto de Depósito Funcional</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="FuncTransferAm" xml:space="preserve">
+    <value>Monto de Transferencia Funcional</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Tipo de Pago</value>
+    <comment>List</comment>
+  </data>
+  <data name="POSTINGDATE" xml:space="preserve">
+    <value>Fecha Asiento Bancario</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fecha de Tasa</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="RATEOVERRIDE" xml:space="preserve">
+    <value>Sustitución de Tasa</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="SaveBeforeChangePostDate" xml:space="preserve">
+    <value>Cambiar la fecha del asiento bancario para una empresa de monedas múltiples podría alterar la tasa de moneda o la tasa de la moneda de reporte fiscal. Primero debe guardar el asiento bancario para poder continuar. ¿Desea continuar?</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ToBankRate" xml:space="preserve">
+    <value>Hasta Tasa Bancaria</value>
+    <comment>Rates - Table Column</comment>
+  </data>
+  <data name="TransferAm" xml:space="preserve">
+    <value>Monto de Transferencia</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="TransferDepCon" xml:space="preserve">
+    <value>Conversión de Transferencia - Depósito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="WarnBlankTaxGroup" xml:space="preserve">
+    <value>Seleccione un grupo fiscal para los detalles de asientos gravables.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Número de Secuencia</value>
+  </data>
+  <data name="BankEntryAmount" xml:space="preserve">
+    <value>Monto de Asiento Bancario</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BankEntryTotalFuncCurrency" xml:space="preserve">
+    <value>Asiento Bancario Total (Moneda Funcional)</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BankEntryTotalSourceCurrency" xml:space="preserve">
+    <value>Asiento Bancario Total (Moneda de Origen)</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>Monto Funcional</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AgingRecondays" xml:space="preserve">
+    <value>Antigüedad Días de Conciliación</value>
+  </data>
+  <data name="BankEntryCurrency" xml:space="preserve">
+    <value>Moneda de Asiento Bancario</value>
+  </data>
+  <data name="CompletedStatus" xml:space="preserve">
+    <value>Estado Completo</value>
+  </data>
+  <data name="DateCreated" xml:space="preserve">
+    <value>Fecha de Creación</value>
+  </data>
+  <data name="DefaultNewDocumentNumber" xml:space="preserve">
+    <value>Nuevo Número Documento Predeterminado</value>
+  </data>
+  <data name="EntryTotalWithoutTax" xml:space="preserve">
+    <value>Asiento Total Sin Impuesto</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Tipo de Asiento</value>
+  </data>
+  <data name="FiscalEntryAmount" xml:space="preserve">
+    <value>Monto Asiento Fiscal</value>
+  </data>
+  <data name="FuncEntryTotalWithoutTax" xml:space="preserve">
+    <value>Asiento Total Sin Impuesto Funcional</value>
+  </data>
+  <data name="NumberofLines" xml:space="preserve">
+    <value>Número de Líneas</value>
+  </data>
+  <data name="OFXTransactionID" xml:space="preserve">
+    <value>ID de Transacción OFX</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento</value>
+  </data>
+  <data name="ReconciledEntryAmount" xml:space="preserve">
+    <value>Monto Asiento Conciliado</value>
+  </data>
+  <data name="RunId" xml:space="preserve">
+    <value>ID de Ejecución</value>
+  </data>
+  <data name="BankEntryTotFunc" xml:space="preserve">
+    <value>Total de Asiento Funcional</value>
+  </data>
+  <data name="BankEntryTotSour" xml:space="preserve">
+    <value>Total de Asientos</value>
+  </data>
+  <data name="DepositType" xml:space="preserve">
+    <value>Tipo de Depósito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankEntrySerialNumber" xml:space="preserve">
+    <value>Número Serie de Asiento Bancario</value>
+    <comment>field</comment>
+  </data>
+  <data name="BankEntryCurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda de Asiento Bancario</value>
+    <comment>Finder field</comment>
+  </data>
+  <data name="BankEntryPeriod" xml:space="preserve">
+    <value>Período de Asiento Bancario</value>
+    <comment>Finder - field</comment>
+  </data>
+  <data name="BankEntryYear" xml:space="preserve">
+    <value>Año de Asiento Bancario</value>
+    <comment>Finder - field</comment>
+  </data>
+  <data name="BankStatementCurrency" xml:space="preserve">
+    <value>Moneda de Estado de Cuenta Bancaria</value>
+    <comment>finder field</comment>
+  </data>
+  <data name="BK0450" xml:space="preserve">
+    <value>Cabecera de Asiento Bancario</value>
+  </data>
+  <data name="BK0460" xml:space="preserve">
+    <value>Detalle de Asiento Bancario</value>
+  </data>
+  <data name="BankEntryCurrencyDesc1" xml:space="preserve">
+    <value>Descripción Moneda de Asiento Bancario</value>
+  </data>
+  <data name="WarnTaxGroupBlank" xml:space="preserve">
+    <value>El detalle del asiento es gravable pero el grupo fiscal está en blanco.</value>
+  </data>
+  <data name="NoMatchingRateInCurrencyTable" xml:space="preserve">
+    <value>La tabla de tasas del Servidor de Monedas no tiene una tasa coincidente definida para el código de moneda de origen {0}, tipo de tasa {1} y fecha de tasa {2}.</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="EntryRateInformationRequired" xml:space="preserve">
+    <value>Debe guardar sus actualizaciones de Asientos Bancarios antes de cambiar la información de tasa del asiento. ¿Desea continuar?</value>
+    <comment>Confirmation message</comment>
+  </data>
+</root>

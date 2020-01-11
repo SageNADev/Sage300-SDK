@@ -1,0 +1,4352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AP_1099CPRSCodes_Article1" xml:space="preserve">
+    <value>添加1099/CPRS代码</value>
+  </data>
+  <data name="AP_1099CPRSCodes_Article2" xml:space="preserve">
+    <value>关于1099/CPRS代码</value>
+  </data>
+  <data name="AP_1099CPRSCodes_Screen" xml:space="preserve">
+    <value>应付帐款1099/CPRS代码屏幕</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Article1" xml:space="preserve">
+    <value>添加，修改，或删除1099或CPRS供应商金额</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Article2" xml:space="preserve">
+    <value>查找1099或CPRS供应商金额</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Screen" xml:space="preserve">
+    <value>应付帐款1099/CPRS查询屏幕</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Article1" xml:space="preserve">
+    <value>电子申报1099报表</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Article2" xml:space="preserve">
+    <value>应付帐款打印1099/1096表格屏幕</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Screen" xml:space="preserve">
+    <value>应付帐款1099电子申报屏幕</value>
+  </data>
+  <data name="AP_AccountSets_Article1" xml:space="preserve">
+    <value>添加或修改科目集合</value>
+  </data>
+  <data name="AP_AccountSets_Article2" xml:space="preserve">
+    <value>关于科目集合</value>
+  </data>
+  <data name="AP_AccountSets_Screen" xml:space="preserve">
+    <value>应付帐款科目集合屏幕</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Article1" xml:space="preserve">
+    <value>打印已帐析现金需求报表</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Screen" xml:space="preserve">
+    <value>应付帐款已帐析现金需求报表</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Article1" xml:space="preserve">
+    <value>打印已帐析应付款报表</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Screen" xml:space="preserve">
+    <value>应付帐款已帐析应付款报表</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Article1" xml:space="preserve">
+    <value>打印已帐析保留款报表</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Screen" xml:space="preserve">
+    <value>应付帐款已帐析保留款报表</value>
+  </data>
+  <data name="AP_BatchListing_Report_Article1" xml:space="preserve">
+    <value>打印批次列表</value>
+  </data>
+  <data name="AP_BatchListing_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_BatchListing_Report_Screen" xml:space="preserve">
+    <value>应付帐款批次列表报表</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Article1" xml:space="preserve">
+    <value>打印支票登记簿</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Screen" xml:space="preserve">
+    <value>应付帐款支票登记簿报表</value>
+  </data>
+  <data name="AP_ControlPayments_Article1" xml:space="preserve">
+    <value>核销付款控制</value>
+  </data>
+  <data name="AP_ControlPayments_Article2" xml:space="preserve">
+    <value>关于控制付款</value>
+  </data>
+  <data name="AP_ControlPayments_Screen" xml:space="preserve">
+    <value>应付帐款控制付款屏幕</value>
+  </data>
+  <data name="AP_CreateGLBatch_Article1" xml:space="preserve">
+    <value>关于创建总帐交易</value>
+  </data>
+  <data name="AP_CreateGLBatch_Article2" xml:space="preserve">
+    <value>创建总帐交易批次</value>
+  </data>
+  <data name="AP_CreateGLBatch_Screen" xml:space="preserve">
+    <value>应付帐款创建总帐批次屏幕</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Article1" xml:space="preserve">
+    <value>自动创建付款批次</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Article2" xml:space="preserve">
+    <value>使用付款批次</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Screen" xml:space="preserve">
+    <value>应付帐款创建付款批次屏幕</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Article1" xml:space="preserve">
+    <value>关于处理经常性应付款</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Article2" xml:space="preserve">
+    <value>处理经常性应付款</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Screen" xml:space="preserve">
+    <value>应付帐款创建经常性应付批次屏幕</value>
+  </data>
+  <data name="AP_DistributionCodes_Article1" xml:space="preserve">
+    <value>添加或修改分布代码</value>
+  </data>
+  <data name="AP_DistributionCodes_Article2" xml:space="preserve">
+    <value>关于分布代码</value>
+  </data>
+  <data name="AP_DistributionCodes_Screen" xml:space="preserve">
+    <value>应付帐款分布代码屏幕</value>
+  </data>
+  <data name="AP_DistributionSets_Article1" xml:space="preserve">
+    <value>添加或修改分布集合</value>
+  </data>
+  <data name="AP_DistributionSets_Article2" xml:space="preserve">
+    <value>关于分布集合</value>
+  </data>
+  <data name="AP_DistributionSets_Screen" xml:space="preserve">
+    <value>应付帐款分布集合屏幕</value>
+  </data>
+  <data name="AP_EmailMessages_Article1" xml:space="preserve">
+    <value>添加或修改电邮讯息</value>
+  </data>
+  <data name="AP_EmailMessages_Article2" xml:space="preserve">
+    <value>关于电邮讯息</value>
+  </data>
+  <data name="AP_EmailMessages_Screen" xml:space="preserve">
+    <value>应付帐款电邮讯息屏幕</value>
+  </data>
+  <data name="AP_GL_Integration_Article1" xml:space="preserve">
+    <value>选择应付帐款总帐整合选项</value>
+  </data>
+  <data name="AP_GL_Integration_Article2" xml:space="preserve">
+    <value>关于与总帐一道使用应付帐款</value>
+  </data>
+  <data name="AP_GL_Integration_Screen" xml:space="preserve">
+    <value>应付帐款总帐整合屏幕</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>打印总帐交易报表</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>应付帐款总帐交易报表</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Article1" xml:space="preserve">
+    <value>创建一个新发票批次</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Article2" xml:space="preserve">
+    <value>关于应付帐款中的批次处理</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Screen" xml:space="preserve">
+    <value>应付帐款发票批次清单屏幕</value>
+  </data>
+  <data name="AP_InvoiceEntry_Article1" xml:space="preserve">
+    <value>输入发票</value>
+  </data>
+  <data name="AP_InvoiceEntry_Article2" xml:space="preserve">
+    <value>关于处理发票，贷项通知单，借项通知单，和利息</value>
+  </data>
+  <data name="AP_InvoiceEntry_Screen" xml:space="preserve">
+    <value>应付帐款发票分录屏幕</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Article1" xml:space="preserve">
+    <value>打印信函和标签</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Screen" xml:space="preserve">
+    <value>应付帐款信函和标签报表</value>
+  </data>
+  <data name="AP_Module" xml:space="preserve">
+    <value>浏览应付帐款文章</value>
+  </data>
+  <data name="AP_OptionalFields_Article1" xml:space="preserve">
+    <value>添加或修改可选字段</value>
+  </data>
+  <data name="AP_OptionalFields_Article2" xml:space="preserve">
+    <value>关于应付帐款可选字段</value>
+  </data>
+  <data name="AP_OptionalFields_Screen" xml:space="preserve">
+    <value>应付帐款可选字段屏幕</value>
+  </data>
+  <data name="AP_Options_Article1" xml:space="preserve">
+    <value>选择应付帐款选项</value>
+  </data>
+  <data name="AP_Options_Article2" xml:space="preserve">
+    <value>关于选择应付帐款选项</value>
+  </data>
+  <data name="AP_Options_Screen" xml:space="preserve">
+    <value>应付帐款选项屏幕</value>
+  </data>
+  <data name="AP_PaymentBatchList_Article1" xml:space="preserve">
+    <value>列出付款批次</value>
+  </data>
+  <data name="AP_PaymentBatchList_Article2" xml:space="preserve">
+    <value>关于应付帐款中的批次处理</value>
+  </data>
+  <data name="AP_PaymentBatchList_Screen" xml:space="preserve">
+    <value>应付帐款付款批次清单屏幕</value>
+  </data>
+  <data name="AP_PaymentCodes_Article1" xml:space="preserve">
+    <value>添加或修改付款代码</value>
+  </data>
+  <data name="AP_PaymentCodes_Article2" xml:space="preserve">
+    <value>关于付款选择代码</value>
+  </data>
+  <data name="AP_PaymentCodes_Screen" xml:space="preserve">
+    <value>应付帐款付款代码屏幕</value>
+  </data>
+  <data name="AP_PaymentEntry_Article1" xml:space="preserve">
+    <value>输入和核销付款</value>
+  </data>
+  <data name="AP_PaymentEntry_Article2" xml:space="preserve">
+    <value>关于付款分录</value>
+  </data>
+  <data name="AP_PaymentEntry_Screen" xml:space="preserve">
+    <value>应付帐款付款分录屏幕</value>
+  </data>
+  <data name="AP_PaymentInquiry_Article1" xml:space="preserve">
+    <value>查找供应商付款信息</value>
+  </data>
+  <data name="AP_PaymentInquiry_Article2" xml:space="preserve">
+    <value>应付帐款付款信息屏幕</value>
+  </data>
+  <data name="AP_PaymentInquiry_Screen" xml:space="preserve">
+    <value>应付帐款付款查询屏幕</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Article1" xml:space="preserve">
+    <value>添加付款选择代码</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Article2" xml:space="preserve">
+    <value>关于付款选择代码</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Screen" xml:space="preserve">
+    <value>应付帐款付款选择代码屏幕</value>
+  </data>
+  <data name="AP_PostBatches_Article1" xml:space="preserve">
+    <value>过帐一个批次范围</value>
+  </data>
+  <data name="AP_PostBatches_Article2" xml:space="preserve">
+    <value>关于应付帐款中的批次处理</value>
+  </data>
+  <data name="AP_PostBatches_Screen" xml:space="preserve">
+    <value>应收帐款过帐批次屏幕</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Article1" xml:space="preserve">
+    <value>打印过帐错误报表</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Screen" xml:space="preserve">
+    <value>应付帐款过帐错误报表</value>
+  </data>
+  <data name="AP_Print10991096Forms_Article1" xml:space="preserve">
+    <value>打印1099/1096表格</value>
+  </data>
+  <data name="AP_Print10991096Forms_Article2" xml:space="preserve">
+    <value>应付帐款1099电子申报屏幕</value>
+  </data>
+  <data name="AP_Print10991096Forms_Screen" xml:space="preserve">
+    <value>应付帐款打印1099/1096表格屏幕</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Article1" xml:space="preserve">
+    <value>关于已打印支票</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Article2" xml:space="preserve">
+    <value>打印付款批次支票</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Screen" xml:space="preserve">
+    <value>应付帐款打印支票屏幕</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Article1" xml:space="preserve">
+    <value>打印T5018 (CPRS)表格</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Article2" xml:space="preserve">
+    <value>应付帐款T5018电子申报屏幕</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Screen" xml:space="preserve">
+    <value>应付帐款打印T5018 (CPRS)表格屏幕</value>
+  </data>
+  <data name="AP_RecurringPayables_Article1" xml:space="preserve">
+    <value>处理经常性应付款</value>
+  </data>
+  <data name="AP_RecurringPayables_Article2" xml:space="preserve">
+    <value>关于经常性应付款</value>
+  </data>
+  <data name="AP_RecurringPayables_Screen" xml:space="preserve">
+    <value>应付帐款经常性应付报表</value>
+  </data>
+  <data name="AP_Setup_EmailMessages_LearnMore" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore2" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore3" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore4" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Article1" xml:space="preserve">
+    <value>电子申报T5018 (CPRS)信息税表</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Article2" xml:space="preserve">
+    <value>应付帐款打印T5018 (CPRS)表格屏幕</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Screen" xml:space="preserve">
+    <value>应付帐款T5018 (CPRS)电子申报屏幕</value>
+  </data>
+  <data name="AP_Terms_Article1" xml:space="preserve">
+    <value>添加或修改条款代码</value>
+  </data>
+  <data name="AP_Terms_Article2" xml:space="preserve">
+    <value>关于条款代码</value>
+  </data>
+  <data name="AP_Terms_Screen" xml:space="preserve">
+    <value>应付帐款条款屏幕</value>
+  </data>
+  <data name="AP_VendorActivity_Article1" xml:space="preserve">
+    <value>查看供应商活动</value>
+  </data>
+  <data name="AP_VendorActivity_Article2" xml:space="preserve">
+    <value>应付帐款供应商屏幕</value>
+  </data>
+  <data name="AP_VendorActivity_Screen" xml:space="preserve">
+    <value>应付帐款供应商活动屏幕</value>
+  </data>
+  <data name="AP_VendorGroups_Article1" xml:space="preserve">
+    <value>添加，修改，和删除供应商群组</value>
+  </data>
+  <data name="AP_VendorGroups_Article2" xml:space="preserve">
+    <value>关于供应商群组</value>
+  </data>
+  <data name="AP_VendorGroups_Screen" xml:space="preserve">
+    <value>应付帐款供应商群组屏幕</value>
+  </data>
+  <data name="AP_VendorsReport_Article1" xml:space="preserve">
+    <value>关于设置供应商记录</value>
+  </data>
+  <data name="AP_VendorsReport_Article2" xml:space="preserve">
+    <value>打印应付帐款报表</value>
+  </data>
+  <data name="AP_VendorsReport_Screen" xml:space="preserve">
+    <value>应付帐款供应商报表</value>
+  </data>
+  <data name="AP_Vendors_Article1" xml:space="preserve">
+    <value>添加，修改，或删除供应商</value>
+  </data>
+  <data name="AP_Vendors_Article2" xml:space="preserve">
+    <value>关于设置供应商记录</value>
+  </data>
+  <data name="AP_Vendors_Screen" xml:space="preserve">
+    <value>应付帐款供应商屏幕</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Article1" xml:space="preserve">
+    <value>打印供应商交易报表</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Article2" xml:space="preserve">
+    <value>打印应付帐款表格的可自定义格式</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Screen" xml:space="preserve">
+    <value>应付帐款供应商交易报表</value>
+  </data>
+  <data name="AP_YearEnd_Article1" xml:space="preserve">
+    <value>关于应付帐款中的年末处理</value>
+  </data>
+  <data name="AP_YearEnd_Article2" xml:space="preserve">
+    <value>开始一个新财务年度</value>
+  </data>
+  <data name="AP_YearEnd_Screen" xml:space="preserve">
+    <value>应付帐款年末屏幕</value>
+  </data>
+  <data name="AR_AccountSets_Article1" xml:space="preserve">
+    <value>添加或修改科目集合</value>
+  </data>
+  <data name="AR_AccountSets_Article2" xml:space="preserve">
+    <value>关于科目集合</value>
+  </data>
+  <data name="AR_AccountSets_Screen" xml:space="preserve">
+    <value>应收帐款科目集合屏幕</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款已帐析保留款报表</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Screen" xml:space="preserve">
+    <value>应收帐款已帐析保留款报表</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款已帐析试算表报表</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Screen" xml:space="preserve">
+    <value>应收帐款已帐析试算表报表</value>
+  </data>
+  <data name="AR_BatchListing_Report_Article1" xml:space="preserve">
+    <value>打印批次列表</value>
+  </data>
+  <data name="AR_BatchListing_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_BatchListing_Report_Screen" xml:space="preserve">
+    <value>应收帐款批次列表报表</value>
+  </data>
+  <data name="AR_BillingCycles_Article1" xml:space="preserve">
+    <value>添加或修改帐单周期</value>
+  </data>
+  <data name="AR_BillingCycles_Article2" xml:space="preserve">
+    <value>关于帐单周期</value>
+  </data>
+  <data name="AR_BillingCycles_Screen" xml:space="preserve">
+    <value>应收帐款帐单周期屏幕</value>
+  </data>
+  <data name="AR_CommentTypes_Article1" xml:space="preserve">
+    <value>关于客户备注</value>
+  </data>
+  <data name="AR_CommentTypes_Article2" xml:space="preserve">
+    <value>设置应收帐款</value>
+  </data>
+  <data name="AR_CommentTypes_Screen" xml:space="preserve">
+    <value>应收帐款备注类型屏幕</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Article1" xml:space="preserve">
+    <value>自动创建利息批次</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Article2" xml:space="preserve">
+    <value>关于利息批次的可选字段</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Screen" xml:space="preserve">
+    <value>应收帐款创建利息批次屏幕</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Article1" xml:space="preserve">
+    <value>在应收帐款中创建总帐交易的批次</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Article2" xml:space="preserve">
+    <value>应收帐款创建利息批次屏幕</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Screen" xml:space="preserve">
+    <value>应收帐款创建总帐批次屏幕</value>
+  </data>
+  <data name="AR_CustomerGroups_Article1" xml:space="preserve">
+    <value>添加，修改，和删除客户群组</value>
+  </data>
+  <data name="AR_CustomerGroups_Article2" xml:space="preserve">
+    <value>关于客户群组</value>
+  </data>
+  <data name="AR_CustomerGroups_Screen" xml:space="preserve">
+    <value>应收帐款客户群组屏幕</value>
+  </data>
+  <data name="AR_Customers_Article1" xml:space="preserve">
+    <value>添加和修改客户记录</value>
+  </data>
+  <data name="AR_Customers_Article2" xml:space="preserve">
+    <value>关于应收帐款客户</value>
+  </data>
+  <data name="AR_Customers_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款客户报表</value>
+  </data>
+  <data name="AR_Customers_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_Customers_Report_Screen" xml:space="preserve">
+    <value>应收帐款客户报表</value>
+  </data>
+  <data name="AR_Customers_Screen" xml:space="preserve">
+    <value>应收帐款客户屏幕</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款客户交易报表</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Screen" xml:space="preserve">
+    <value>应收帐款客户交易报表</value>
+  </data>
+  <data name="AR_DistributionCodes_Article1" xml:space="preserve">
+    <value>添加或修改分布代码</value>
+  </data>
+  <data name="AR_DistributionCodes_Article2" xml:space="preserve">
+    <value>关于分布代码</value>
+  </data>
+  <data name="AR_DistributionCodes_Screen" xml:space="preserve">
+    <value>应收帐款分布代码屏幕</value>
+  </data>
+  <data name="AR_DunningMessages_Article1" xml:space="preserve">
+    <value>添加或修改催款讯息</value>
+  </data>
+  <data name="AR_DunningMessages_Article2" xml:space="preserve">
+    <value>设置应收帐款</value>
+  </data>
+  <data name="AR_DunningMessages_Screen" xml:space="preserve">
+    <value>应收帐款催款讯息屏幕</value>
+  </data>
+  <data name="AR_EmailMessages_Article1" xml:space="preserve">
+    <value>添加或修改电邮讯息</value>
+  </data>
+  <data name="AR_EmailMessages_Article2" xml:space="preserve">
+    <value>电邮讯息变量</value>
+  </data>
+  <data name="AR_EmailMessages_Screen" xml:space="preserve">
+    <value>应收帐款电邮讯息屏幕</value>
+  </data>
+  <data name="AR_GL_Integration_Article1" xml:space="preserve">
+    <value>选择应收帐款总帐整合选项</value>
+  </data>
+  <data name="AR_GL_Integration_Article2" xml:space="preserve">
+    <value>关于与总帐一道使用应收帐款</value>
+  </data>
+  <data name="AR_GL_Integration_Screen" xml:space="preserve">
+    <value>应收帐款总帐整合屏幕</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款总帐交易报表</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>应收帐款总帐交易报表</value>
+  </data>
+  <data name="AR_InterestProfiles_Article1" xml:space="preserve">
+    <value>添加或修改利息概览</value>
+  </data>
+  <data name="AR_InterestProfiles_Article2" xml:space="preserve">
+    <value>关于利息概览</value>
+  </data>
+  <data name="AR_InterestProfiles_Screen" xml:space="preserve">
+    <value>应收帐款利息概览屏幕</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Article1" xml:space="preserve">
+    <value>过帐发票批次</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Article2" xml:space="preserve">
+    <value>关于发票，贷项通知单，和借项通知单</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Screen" xml:space="preserve">
+    <value>应付帐款发票批次清单屏幕</value>
+  </data>
+  <data name="AR_InvoiceEntry_Article1" xml:space="preserve">
+    <value>向客户开发票</value>
+  </data>
+  <data name="AR_InvoiceEntry_Article2" xml:space="preserve">
+    <value>关于输入发票信息</value>
+  </data>
+  <data name="AR_InvoiceEntry_Screen" xml:space="preserve">
+    <value>应收帐款发票分录屏幕</value>
+  </data>
+  <data name="AR_Invoices_Article1" xml:space="preserve">
+    <value>打印应收帐款发票</value>
+  </data>
+  <data name="AR_Invoices_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_Invoices_Screen" xml:space="preserve">
+    <value>应收帐款发票屏幕</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款货品销售历史报表</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Screen" xml:space="preserve">
+    <value>应收帐款货品销售历史报表</value>
+  </data>
+  <data name="AR_Labels_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款标签</value>
+  </data>
+  <data name="AR_Labels_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款表格的可自定义格式</value>
+  </data>
+  <data name="AR_Labels_Report_Screen" xml:space="preserve">
+    <value>应收帐款标签报表</value>
+  </data>
+  <data name="AR_Module" xml:space="preserve">
+    <value>浏览应收帐款文章</value>
+  </data>
+  <data name="AR_NationalAccounts_Article1" xml:space="preserve">
+    <value>添加，修改，和删除统一帐户</value>
+  </data>
+  <data name="AR_NationalAccounts_Article2" xml:space="preserve">
+    <value>关于统一帐户</value>
+  </data>
+  <data name="AR_NationalAccounts_Screen" xml:space="preserve">
+    <value>应收帐款统一帐户屏幕</value>
+  </data>
+  <data name="AR_OptionalFields_Article1" xml:space="preserve">
+    <value>添加或修改可选字段</value>
+  </data>
+  <data name="AR_OptionalFields_Article2" xml:space="preserve">
+    <value>关于应收帐款中的可选字段</value>
+  </data>
+  <data name="AR_OptionalFields_Screen" xml:space="preserve">
+    <value>应收帐款可选字段屏幕</value>
+  </data>
+  <data name="AR_Options_Article1" xml:space="preserve">
+    <value>选择应收帐款处理选项</value>
+  </data>
+  <data name="AR_Options_Article2" xml:space="preserve">
+    <value>设置应收帐款</value>
+  </data>
+  <data name="AR_Options_Screen" xml:space="preserve">
+    <value>应收帐款选项屏幕</value>
+  </data>
+  <data name="AR_PaymentCodes_Article1" xml:space="preserve">
+    <value>添加或修改付款代码</value>
+  </data>
+  <data name="AR_PaymentCodes_Article2" xml:space="preserve">
+    <value>关于应收帐款编码方案</value>
+  </data>
+  <data name="AR_PaymentCodes_Screen" xml:space="preserve">
+    <value>应收帐款付款代码屏幕</value>
+  </data>
+  <data name="AR_PostBatches_Article1" xml:space="preserve">
+    <value>过帐一个批次范围</value>
+  </data>
+  <data name="AR_PostBatches_Article2" xml:space="preserve">
+    <value>关于过帐批次</value>
+  </data>
+  <data name="AR_PostBatches_Screen" xml:space="preserve">
+    <value>应收帐款过帐批次屏幕</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款过帐错误报表</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Screen" xml:space="preserve">
+    <value>应收帐款过帐错误报表</value>
+  </data>
+  <data name="AR_Processing_YearEnd_LearnMore" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Article1" xml:space="preserve">
+    <value>添加，编辑，或删除收款批次</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Article2" xml:space="preserve">
+    <value>关于处理进货</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Screen" xml:space="preserve">
+    <value>应收帐款收款批次清单屏幕</value>
+  </data>
+  <data name="AR_ReceiptEntry_Article1" xml:space="preserve">
+    <value>过帐收款批次</value>
+  </data>
+  <data name="AR_ReceiptEntry_Article2" xml:space="preserve">
+    <value>处理现金销售或杂项收款</value>
+  </data>
+  <data name="AR_ReceiptEntry_Screen" xml:space="preserve">
+    <value>应收帐款收款分录屏幕</value>
+  </data>
+  <data name="AR_Receipts_Article1" xml:space="preserve">
+    <value>打印收款</value>
+  </data>
+  <data name="AR_Receipts_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_Receipts_Screen" xml:space="preserve">
+    <value>应收帐款收款屏幕</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Article1" xml:space="preserve">
+    <value>打印应收帐款经常性收费报表</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Article2" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Screen" xml:space="preserve">
+    <value>应收帐款经常性收费报表</value>
+  </data>
+  <data name="AR_Salespersons_Article1" xml:space="preserve">
+    <value>添加或修改业务员记录</value>
+  </data>
+  <data name="AR_Salespersons_Article2" xml:space="preserve">
+    <value>关于业务员佣金率</value>
+  </data>
+  <data name="AR_Salespersons_Screen" xml:space="preserve">
+    <value>应收帐款业务员屏幕</value>
+  </data>
+  <data name="AR_Setup_EmailMessages_LearnMore" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="AR_ShipToLocations_Article1" xml:space="preserve">
+    <value>查看一个客户的发货至地点</value>
+  </data>
+  <data name="AR_ShipToLocations_Article2" xml:space="preserve">
+    <value>关于发货至地点</value>
+  </data>
+  <data name="AR_ShipToLocations_Screen" xml:space="preserve">
+    <value>应收帐款发货至地点屏幕</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Article1" xml:space="preserve">
+    <value>打印客户对帐单</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Article2" xml:space="preserve">
+    <value>打印信函和标签</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Screen" xml:space="preserve">
+    <value>应收帐款对帐单/信函/标签报表</value>
+  </data>
+  <data name="AR_Terms_Article1" xml:space="preserve">
+    <value>添加或修改条款代码</value>
+  </data>
+  <data name="AR_Terms_Article2" xml:space="preserve">
+    <value>关于应收帐款编码方案</value>
+  </data>
+  <data name="AR_Terms_Screen" xml:space="preserve">
+    <value>应收帐款条款屏幕</value>
+  </data>
+  <data name="AR_YearEnd_Article1" xml:space="preserve">
+    <value>开始一个新财务年度</value>
+  </data>
+  <data name="AR_YearEnd_Article2" xml:space="preserve">
+    <value>关于年末处理</value>
+  </data>
+  <data name="AR_YearEnd_Screen" xml:space="preserve">
+    <value>应收帐款年末屏幕</value>
+  </data>
+  <data name="AS_DataIntegrity_Article1" xml:space="preserve">
+    <value>检查数据一致性</value>
+  </data>
+  <data name="AS_DataIntegrity_Article2" xml:space="preserve">
+    <value>关于安全群组</value>
+  </data>
+  <data name="AS_DataIntegrity_Screen" xml:space="preserve">
+    <value>数据一致性屏幕</value>
+  </data>
+  <data name="AS_Module" xml:space="preserve">
+    <value>浏览管理文章</value>
+  </data>
+  <data name="AS_RestartMaintenance_Article1" xml:space="preserve">
+    <value>管理服务安全授权</value>
+  </data>
+  <data name="AS_RestartMaintenance_Article2" xml:space="preserve">
+    <value>关于安全群组</value>
+  </data>
+  <data name="AS_RestartMaintenance_Screen" xml:space="preserve">
+    <value>重启维护屏幕</value>
+  </data>
+  <data name="AS_SecurityGroups_Article1" xml:space="preserve">
+    <value>添加，编辑，或删除安全群组</value>
+  </data>
+  <data name="AS_SecurityGroups_Article2" xml:space="preserve">
+    <value>关于安全群组</value>
+  </data>
+  <data name="AS_SecurityGroups_Screen" xml:space="preserve">
+    <value>安全群组屏幕</value>
+  </data>
+  <data name="AS_UserAuthorizations_Article1" xml:space="preserve">
+    <value>分派用户到安全群组</value>
+  </data>
+  <data name="AS_UserAuthorizations_Article2" xml:space="preserve">
+    <value>管理服务安全授权</value>
+  </data>
+  <data name="AS_UserAuthorizations_Screen" xml:space="preserve">
+    <value>用户授权屏幕</value>
+  </data>
+  <data name="AS_Users_Article1" xml:space="preserve">
+    <value>添加和管理用户</value>
+    <comment>CSH ID 19005002</comment>
+  </data>
+  <data name="AS_Users_Article2" xml:space="preserve">
+    <value>分派用户到安全群组</value>
+    <comment>CSH ID 19005003</comment>
+  </data>
+  <data name="AS_Users_Screen" xml:space="preserve">
+    <value>用户屏幕</value>
+    <comment>CSH ID 19005001</comment>
+  </data>
+  <data name="Bank_Banks_Article1" xml:space="preserve">
+    <value>添加银行</value>
+    <comment>CSH ID 37034002</comment>
+  </data>
+  <data name="Bank_Banks_Article2" xml:space="preserve">
+    <value>设置银行服务</value>
+    <comment>CSH ID 37034003</comment>
+  </data>
+  <data name="Bank_Banks_Screen" xml:space="preserve">
+    <value>银行屏幕</value>
+    <comment>CSH ID 37034001</comment>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Article1" xml:space="preserve">
+    <value>打印银行支票/付款登记簿报表</value>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Article2" xml:space="preserve">
+    <value>关于银行服务报表</value>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Screen" xml:space="preserve">
+    <value>银行支票/付款登记簿报表</value>
+  </data>
+  <data name="BK_BankClearHistory_Article1" xml:space="preserve">
+    <value>创建银行历史</value>
+  </data>
+  <data name="BK_BankClearHistory_Article2" xml:space="preserve">
+    <value>清除交易</value>
+  </data>
+  <data name="BK_BankClearHistory_Screen" xml:space="preserve">
+    <value>银行清除历史屏幕</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Article1" xml:space="preserve">
+    <value>在银行服务中创建总帐批次</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Article2" xml:space="preserve">
+    <value>指定何时以及如何为总帐创建批次</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Screen" xml:space="preserve">
+    <value>银行创建总帐批次屏幕</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Article1" xml:space="preserve">
+    <value>打印存款登记簿报表</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Article2" xml:space="preserve">
+    <value>关于银行服务报表</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Screen" xml:space="preserve">
+    <value>银行存款登记簿报表</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Article1" xml:space="preserve">
+    <value>打印银行存款状态报表</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Article2" xml:space="preserve">
+    <value>存款调节状态</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Screen" xml:space="preserve">
+    <value>银行存款状态报表</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Article1" xml:space="preserve">
+    <value>添加和编辑分布代码</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Article2" xml:space="preserve">
+    <value>银行分布集合屏幕</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Screen" xml:space="preserve">
+    <value>银行分布代码屏幕</value>
+  </data>
+  <data name="BK_BankDistributionSets_Article1" xml:space="preserve">
+    <value>添加和编辑分布集合</value>
+  </data>
+  <data name="BK_BankDistributionSets_Article2" xml:space="preserve">
+    <value>银行分布代码屏幕</value>
+  </data>
+  <data name="BK_BankDistributionSets_Screen" xml:space="preserve">
+    <value>银行分布集合屏幕</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Article1" xml:space="preserve">
+    <value>打印银行分录过帐日志</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Article2" xml:space="preserve">
+    <value>银行过帐分录屏幕</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Screen" xml:space="preserve">
+    <value>银行分录过帐日志报表</value>
+  </data>
+  <data name="BK_BankEntry_Article1" xml:space="preserve">
+    <value>添加银行分录</value>
+  </data>
+  <data name="BK_BankEntry_Article2" xml:space="preserve">
+    <value>纠正数据录入错误</value>
+  </data>
+  <data name="BK_BankEntry_Screen" xml:space="preserve">
+    <value>银行分录屏幕</value>
+  </data>
+  <data name="BK_BankGL_Integration_Article1" xml:space="preserve">
+    <value>分派信息到总帐交易</value>
+  </data>
+  <data name="BK_BankGL_Integration_Article2" xml:space="preserve">
+    <value>关于与总帐一道使用银行服务</value>
+  </data>
+  <data name="BK_BankGL_Integration_Screen" xml:space="preserve">
+    <value>银行总帐整合屏幕</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Article1" xml:space="preserve">
+    <value>打印银行总帐交易报表</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Article2" xml:space="preserve">
+    <value>关于银行服务报表</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Screen" xml:space="preserve">
+    <value>银行总帐交易报表</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
+    <value>关于OFX对帐单</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
+    <value>银行调节OFX对帐单屏幕</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
+    <value>导入OFX对帐单</value>
+  </data>
+  <data name="BK_BankOptions_Article1" xml:space="preserve">
+    <value>设置银行服务</value>
+  </data>
+  <data name="BK_BankOptions_Article2" xml:space="preserve">
+    <value>关于激活银行服务</value>
+  </data>
+  <data name="BK_BankOptions_Screen" xml:space="preserve">
+    <value>银行选项屏幕</value>
+  </data>
+  <data name="BK_BankPostEntries_Article1" xml:space="preserve">
+    <value>添加银行分录</value>
+  </data>
+  <data name="BK_BankPostEntries_Article2" xml:space="preserve">
+    <value>银行分录屏幕</value>
+  </data>
+  <data name="BK_BankPostEntries_Screen" xml:space="preserve">
+    <value>银行过帐分录屏幕</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Article1" xml:space="preserve">
+    <value>过帐银行调节</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Article2" xml:space="preserve">
+    <value>关于过帐调节</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Screen" xml:space="preserve">
+    <value>银行过帐调节屏幕</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
+    <value>调节OFX对帐单</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
+    <value>关于OFX对帐单</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
+    <value>银行调节OFX对帐单屏幕</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
+    <value>调节银行科目</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Article2" xml:space="preserve">
+    <value>关于建立银行余额</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Screen" xml:space="preserve">
+    <value>银行调节对帐单屏幕</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Article1" xml:space="preserve">
+    <value>打印银行调节过帐日志</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Article2" xml:space="preserve">
+    <value>关于银行服务报表</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Screen" xml:space="preserve">
+    <value>银行调节过帐日志报表</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Article1" xml:space="preserve">
+    <value>打印银行调节报表</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Article2" xml:space="preserve">
+    <value>调节银行科目</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Screen" xml:space="preserve">
+    <value>银行调节报表</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Article1" xml:space="preserve">
+    <value>打印银行调节状态报表</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Article2" xml:space="preserve">
+    <value>调节银行科目</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Screen" xml:space="preserve">
+    <value>银行调节状态报表</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Article1" xml:space="preserve">
+    <value>回转交易</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Article2" xml:space="preserve">
+    <value>关于交易屏幕</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Screen" xml:space="preserve">
+    <value>银行回转交易屏幕</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Article1" xml:space="preserve">
+    <value>查看银行科目的交易</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Article2" xml:space="preserve">
+    <value>关于交易屏幕</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Screen" xml:space="preserve">
+    <value>银行交易历史查询屏幕</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Article1" xml:space="preserve">
+    <value>打印银行交易列表报表</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Article2" xml:space="preserve">
+    <value>银行交易历史查询屏幕</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Screen" xml:space="preserve">
+    <value>银行交易列表报表</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Article1" xml:space="preserve">
+    <value>银行转帐屏幕</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Article2" xml:space="preserve">
+    <value>打印银行转帐过帐日志</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Screen" xml:space="preserve">
+    <value>银行转帐过帐日志报表</value>
+  </data>
+  <data name="BK_BankTransfers_Article1" xml:space="preserve">
+    <value>转移资金</value>
+  </data>
+  <data name="BK_BankTransfers_Article2" xml:space="preserve">
+    <value>输入交易明细的税务信息</value>
+  </data>
+  <data name="BK_BankTransfers_Screen" xml:space="preserve">
+    <value>银行转帐屏幕</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Article1" xml:space="preserve">
+    <value>打印银行提款状态报表</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Article2" xml:space="preserve">
+    <value>提款调节状态</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Screen" xml:space="preserve">
+    <value>银行提款状态报表</value>
+  </data>
+  <data name="BK_Module" xml:space="preserve">
+    <value>浏览银行服务文章</value>
+  </data>
+  <data name="CNA_Screen_Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="CS_CompanyProfile_Article1" xml:space="preserve">
+    <value>创建您的公司概览</value>
+  </data>
+  <data name="CS_CompanyProfile_Article2" xml:space="preserve">
+    <value>关于汇兑收益和损失核算</value>
+  </data>
+  <data name="CS_CompanyProfile_Screen" xml:space="preserve">
+    <value>公司概览屏幕</value>
+  </data>
+  <data name="CS_CurrencyCodes_Article1" xml:space="preserve">
+    <value>添加，编辑，或删除币种代码</value>
+  </data>
+  <data name="CS_CurrencyCodes_Article2" xml:space="preserve">
+    <value>设置多币种公司</value>
+  </data>
+  <data name="CS_CurrencyCodes_Screen" xml:space="preserve">
+    <value>币种代码屏幕</value>
+  </data>
+  <data name="CS_CurrencyRates_Article1" xml:space="preserve">
+    <value>添加，编辑，或删除币种表和汇率</value>
+  </data>
+  <data name="CS_CurrencyRates_Article2" xml:space="preserve">
+    <value>传播币种汇率</value>
+  </data>
+  <data name="CS_CurrencyRates_Screen" xml:space="preserve">
+    <value>币种汇率屏幕</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Article1" xml:space="preserve">
+    <value>添加币种汇率类型</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Article2" xml:space="preserve">
+    <value>删除币种汇率类型</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Screen" xml:space="preserve">
+    <value>币种汇率类型屏幕</value>
+  </data>
+  <data name="CS_FiscalCalendar_Article1" xml:space="preserve">
+    <value>维护会计日历</value>
+  </data>
+  <data name="CS_FiscalCalendar_Article2" xml:space="preserve">
+    <value>添加一个新财务年度</value>
+  </data>
+  <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
+    <value>财务日历屏幕</value>
+  </data>
+  <data name="CS_Module" xml:space="preserve">
+    <value>浏览管理文章</value>
+    <comment>CSH ID 71000001</comment>
+  </data>
+  <data name="CS_OptionalFields_Article1" xml:space="preserve">
+    <value>创建可选字段</value>
+  </data>
+  <data name="CS_OptionalFields_Article2" xml:space="preserve">
+    <value>关于公共服务</value>
+  </data>
+  <data name="CS_OptionalFields_Screen" xml:space="preserve">
+    <value>可选字段屏幕</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Article1" xml:space="preserve">
+    <value>设计您的总帐</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Article2" xml:space="preserve">
+    <value>添加和维护科目</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Screen" xml:space="preserve">
+    <value>总帐科目屏幕</value>
+  </data>
+  <data name="GL_Module" xml:space="preserve">
+    <value>浏览总帐文章</value>
+  </data>
+  <data name="GL_PostingJournals_Article1" xml:space="preserve">
+    <value>打印总帐过帐日志报表</value>
+    <comment>CSH ID 168021002</comment>
+  </data>
+  <data name="GL_PostingJournals_Article2" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168021003</comment>
+  </data>
+  <data name="GL_PostingJournals_Screen" xml:space="preserve">
+    <value>总帐过帐日志屏幕</value>
+    <comment>CSH ID 168021001</comment>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Article1" xml:space="preserve">
+    <value>实施年末处理</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Article2" xml:space="preserve">
+    <value>创建新年度</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Screen" xml:space="preserve">
+    <value>总帐创建新年度屏幕</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Article1" xml:space="preserve">
+    <value>关于经常性分录</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Article2" xml:space="preserve">
+    <value>设置经常性分录</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Screen" xml:space="preserve">
+    <value>总帐创建经常性分录批次屏幕</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Article1" xml:space="preserve">
+    <value>实施年末处理</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Article2" xml:space="preserve">
+    <value>实施期末维护</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Screen" xml:space="preserve">
+    <value>总帐期末维护屏幕</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Article1" xml:space="preserve">
+    <value>总帐批次清单屏幕</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Article2" xml:space="preserve">
+    <value>打印总帐批次列表报表</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Screen" xml:space="preserve">
+    <value>总帐批次列表报表</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Article1" xml:space="preserve">
+    <value>打印总帐科目表报表</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Article2" xml:space="preserve">
+    <value>总帐科目中储存的信息</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Screen" xml:space="preserve">
+    <value>总帐科目表屏幕</value>
+  </data>
+  <data name="GL_Reports_PostingJournals_Article1" xml:space="preserve">
+    <value>打印总帐过帐日志报表</value>
+    <comment>CSH ID 168021002</comment>
+  </data>
+  <data name="GL_Reports_PostingJournals_Article2" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168021003</comment>
+  </data>
+  <data name="GL_Reports_PostingJournals_Screen" xml:space="preserve">
+    <value>总帐过帐日志报表</value>
+    <comment>CSH ID 168021001</comment>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Article1" xml:space="preserve">
+    <value>打印总帐交易列表报表</value>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Article2" xml:space="preserve">
+    <value>关于总帐中的交易处理</value>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Screen" xml:space="preserve">
+    <value>总帐交易列表屏幕</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Article1" xml:space="preserve">
+    <value>关于总帐中的可选字段</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Article2" xml:space="preserve">
+    <value>打印总帐交易明细可选字段报表</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Screen" xml:space="preserve">
+    <value>总帐交易明细可选字段屏幕</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Article1" xml:space="preserve">
+    <value>关于暂过帐</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Article2" xml:space="preserve">
+    <value>打印总帐试算表报表</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Screen" xml:space="preserve">
+    <value>总帐试算表报表</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Article1" xml:space="preserve">
+    <value>关于科目群组</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Article2" xml:space="preserve">
+    <value>设置总帐来使用科目群组</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Screen" xml:space="preserve">
+    <value>总帐科目群组屏幕</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Article1" xml:space="preserve">
+    <value>关于科目结构</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Article2" xml:space="preserve">
+    <value>添加结构代码</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Screen" xml:space="preserve">
+    <value>总帐科目结构屏幕</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Article1" xml:space="preserve">
+    <value>关于总帐中的可选字段</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Article2" xml:space="preserve">
+    <value>分派可选字段到科目</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Screen" xml:space="preserve">
+    <value>总帐可选字段屏幕</value>
+  </data>
+  <data name="GL_Setup_Options_Article1" xml:space="preserve">
+    <value>总帐设置选项</value>
+  </data>
+  <data name="GL_Setup_Options_Article2" xml:space="preserve">
+    <value>关于设置总帐</value>
+  </data>
+  <data name="GL_Setup_Options_Screen" xml:space="preserve">
+    <value>总帐选项屏幕</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Article1" xml:space="preserve">
+    <value>设置经常性分录</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Article2" xml:space="preserve">
+    <value>关于经常性分录</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Screen" xml:space="preserve">
+    <value>总帐经常性分录屏幕</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Article1" xml:space="preserve">
+    <value>关于节段代码</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Article2" xml:space="preserve">
+    <value>添加节段代码</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Screen" xml:space="preserve">
+    <value>总帐节段代码屏幕</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Article1" xml:space="preserve">
+    <value>关于来源代码</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Article2" xml:space="preserve">
+    <value>添加来源代码</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Screen" xml:space="preserve">
+    <value>总帐来源代码屏幕</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Article1" xml:space="preserve">
+    <value>关于查看批次信息</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Article2" xml:space="preserve">
+    <value>打印总帐批次列表报表</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Screen" xml:space="preserve">
+    <value>总帐批次清单屏幕</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Article1" xml:space="preserve">
+    <value>关于总帐中的交易处理</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Article2" xml:space="preserve">
+    <value>添加日志分录</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Screen" xml:space="preserve">
+    <value>总帐日志分录屏幕</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Article1" xml:space="preserve">
+    <value>过帐交易批次</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Article2" xml:space="preserve">
+    <value>关于查看批次信息</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Screen" xml:space="preserve">
+    <value>总帐过帐批次屏幕</value>
+  </data>
+  <data name="IC_AccountSets_Article1" xml:space="preserve">
+    <value>关于科目集合</value>
+    <comment>CSH ID 211004002</comment>
+  </data>
+  <data name="IC_AccountSets_Article2" xml:space="preserve">
+    <value>添加科目集合</value>
+    <comment>CSH ID 211004003</comment>
+  </data>
+  <data name="IC_AccountSets_Screen" xml:space="preserve">
+    <value>存货控制科目集合屏幕</value>
+    <comment>CSH ID 211004001</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211046002</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Article2" xml:space="preserve">
+    <value>打印合约定价报表</value>
+    <comment>CSH ID 211046003</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Screen" xml:space="preserve">
+    <value>存货控制合约定价报表</value>
+    <comment>CSH ID 211046001</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 211002002</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Article2" xml:space="preserve">
+    <value>创建一个总帐交易的批次</value>
+    <comment>CSH ID 211002003</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Screen" xml:space="preserve">
+    <value>存货控制创建总帐批次屏幕</value>
+    <comment>CSH ID 211002001</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Article1" xml:space="preserve">
+    <value>关于日终处理</value>
+    <comment>CSH ID 211038002</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Article2" xml:space="preserve">
+    <value>实施日终处理</value>
+    <comment>CSH ID 211038003</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Screen" xml:space="preserve">
+    <value>存货控制日终处理屏幕</value>
+    <comment>CSH ID 211038001</comment>
+  </data>
+  <data name="IC_GL_Integration_Artcicle1" xml:space="preserve">
+    <value>关于与总帐一道使用存货控制</value>
+    <comment>CSH ID 211016002</comment>
+  </data>
+  <data name="IC_GL_Integration_Artcicle2" xml:space="preserve">
+    <value>更改存货控制总帐整合选项</value>
+    <comment>CSH ID 211016003</comment>
+  </data>
+  <data name="IC_GL_Integration_Screen" xml:space="preserve">
+    <value>存货控制总帐整合屏幕</value>
+    <comment>CSH ID 211016001</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211010002</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>打印总帐交易报表</value>
+    <comment>CSH ID 211010003</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>存货控制总帐交易报表</value>
+    <comment>CSH ID 211010001</comment>
+  </data>
+  <data name="IC_ItemStructures_Article1" xml:space="preserve">
+    <value>关于货品编号格式</value>
+    <comment>CSH ID 211014002</comment>
+  </data>
+  <data name="IC_ItemStructures_Article2" xml:space="preserve">
+    <value>添加货品结构</value>
+    <comment>CSH ID 211014003</comment>
+  </data>
+  <data name="IC_ItemStructures_Screen" xml:space="preserve">
+    <value>存货控制货品结构屏幕</value>
+    <comment>CSH ID 211014001</comment>
+  </data>
+  <data name="IC_Items_Article1" xml:space="preserve">
+    <value>关于设置存货货品</value>
+    <comment>CSH ID 211022002</comment>
+  </data>
+  <data name="IC_Items_Article2" xml:space="preserve">
+    <value>添加货品记录</value>
+    <comment>CSH ID 211022003</comment>
+  </data>
+  <data name="IC_Items_Screen" xml:space="preserve">
+    <value>存货控制货品屏幕</value>
+    <comment>CSH ID 211022001</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
+    <value>存货控制货品屏幕</value>
+    <comment>CSH ID 211035002</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Article2" xml:space="preserve">
+    <value>添加条码或制造商编号到货品</value>
+    <comment>CSH ID 211035003</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Screen" xml:space="preserve">
+    <value>存货控制制造商货品屏幕</value>
+    <comment>CSH ID 211035001</comment>
+  </data>
+  <data name="IC_OptionalFields_Article1" xml:space="preserve">
+    <value>关于在交易中使用可选字段</value>
+    <comment>CSH ID 211005002</comment>
+  </data>
+  <data name="IC_OptionalFields_Article2" xml:space="preserve">
+    <value>为存货控制记录和交易设置可选字段</value>
+    <comment>CSH ID 211005003</comment>
+  </data>
+  <data name="IC_OptionalFields_Screen" xml:space="preserve">
+    <value>存货控制可选字段屏幕</value>
+    <comment>CSH ID 211005001</comment>
+  </data>
+  <data name="IC_Options_Article1" xml:space="preserve">
+    <value>关于存货控制处理选项</value>
+    <comment>CSH ID 211001002</comment>
+  </data>
+  <data name="IC_Options_Article2" xml:space="preserve">
+    <value>更改存货控制处理选项</value>
+    <comment>CSH ID 211001003</comment>
+  </data>
+  <data name="IC_Options_Screen" xml:space="preserve">
+    <value>存货控制选项屏幕</value>
+    <comment>CSH ID 211001001</comment>
+  </data>
+  <data name="IC_SegmentCodes_Article1" xml:space="preserve">
+    <value>关于节段代码</value>
+    <comment>CSH ID 211003002</comment>
+  </data>
+  <data name="IC_SegmentCodes_Article2" xml:space="preserve">
+    <value>关于为地点撤换总帐科目节段</value>
+    <comment>CSH ID 211003003</comment>
+  </data>
+  <data name="IC_SegmentCodes_Screen" xml:space="preserve">
+    <value>存货控制节段代码屏幕</value>
+    <comment>CSH ID 211003001</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211047002</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Article2" xml:space="preserve">
+    <value>打印售价/毛利分析报表</value>
+    <comment>CSH ID 211047003</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Screen" xml:space="preserve">
+    <value>存货控制售价/毛利分析报表</value>
+    <comment>CSH ID 211047001</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Article1" xml:space="preserve">
+    <value>关于存货控制处理选项</value>
+    <comment>CSH ID 211006002</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Article2" xml:space="preserve">
+    <value>添加或编辑交易统计</value>
+    <comment>CSH ID 211006003</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Screen" xml:space="preserve">
+    <value>存货控制交易统计屏幕</value>
+    <comment>CSH ID 211006001</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Article1" xml:space="preserve">
+    <value>关于计量单位</value>
+    <comment>CSH ID 211009002</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Article2" xml:space="preserve">
+    <value>分派计量单位到货品</value>
+    <comment>CSH ID 211009003</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Screen" xml:space="preserve">
+    <value>存货控制计量单位屏幕</value>
+    <comment>CSH ID 211009001</comment>
+  </data>
+  <data name="IC_VendorDetails_Article1" xml:space="preserve">
+    <value>关于供应商明细</value>
+  </data>
+  <data name="IC_VendorDetails_Article2" xml:space="preserve">
+    <value>添加供应商信息到货品</value>
+  </data>
+  <data name="IC_VendorDetails_Screen" xml:space="preserve">
+    <value>存货控制供应商明细屏幕</value>
+    <comment>CSH ID 211031001</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Article1" xml:space="preserve">
+    <value>关于计量单位</value>
+    <comment>CSH ID 211012002</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Article2" xml:space="preserve">
+    <value>分派重量计量单位到货品</value>
+    <comment>CSH ID 211012003</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Screen" xml:space="preserve">
+    <value>存货控制重量计量单位屏幕</value>
+    <comment>CSH ID 211012001</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369026002</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369026003</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Screen" xml:space="preserve">
+    <value>销售订单已帐析销货单报表</value>
+    <comment>CSH ID 369026001</comment>
+  </data>
+  <data name="OE_CreateBatch_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 369012002</comment>
+  </data>
+  <data name="OE_CreateBatch_Article2" xml:space="preserve">
+    <value>在销售订单中创建一个总帐交易的批次</value>
+    <comment>CSH ID 369012003</comment>
+  </data>
+  <data name="OE_CreateBatch_Screen" xml:space="preserve">
+    <value>销售订单创建批次屏幕。</value>
+    <comment>CSH ID 369012001</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369028002</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369028003</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Screen" xml:space="preserve">
+    <value>销售订单发票操作报表</value>
+    <comment>CSH ID 369028001</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369029002</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369029003</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Screen" xml:space="preserve">
+    <value>销售订单销售历史报表</value>
+    <comment>CSH ID 369029001</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369025002</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369025003</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Screen" xml:space="preserve">
+    <value>销售订单交易清单报表</value>
+    <comment>CSH ID 369025001</comment>
+  </data>
+  <data name="Portal_Article1" xml:space="preserve">
+    <value>入门</value>
+  </data>
+  <data name="Portal_Article2" xml:space="preserve">
+    <value>查找和了解有关特性</value>
+  </data>
+  <data name="Portal_Article3" xml:space="preserve">
+    <value>设置主页挂件</value>
+  </data>
+  <data name="Portal_Article4" xml:space="preserve">
+    <value>打印报表</value>
+  </data>
+  <data name="Portal_Articles" xml:space="preserve">
+    <value>文章</value>
+  </data>
+  <data name="Portal_Reports" xml:space="preserve">
+    <value>打印报表</value>
+    <comment>CSH ID 377002001</comment>
+  </data>
+  <data name="Portal_Reports_Article1" xml:space="preserve">
+    <value>Sage 300报表</value>
+    <comment>CSH ID 377002002</comment>
+  </data>
+  <data name="Portal_Reports_Article2" xml:space="preserve">
+    <value>关于报表的替换格式</value>
+    <comment>CSH ID 377002003</comment>
+  </data>
+  <data name="Portal_Reports_Article3" xml:space="preserve">
+    <value>浏览报表打印文章</value>
+    <comment>CSH ID 377002004</comment>
+  </data>
+  <data name="PO_CreateBatch_Article1" xml:space="preserve">
+    <value>关于采购订单中的定期处理</value>
+    <comment>CSH ID 405017002</comment>
+  </data>
+  <data name="PO_CreateBatch_Article2" xml:space="preserve">
+    <value>在采购订单中创建一个总帐交易批次</value>
+    <comment>CSH ID 405017003</comment>
+  </data>
+  <data name="PO_CreateBatch_Screen" xml:space="preserve">
+    <value>采购订单创建批次屏幕</value>
+    <comment>CSH ID 405017001</comment>
+  </data>
+  <data name="PO_GL_Integration_Article1" xml:space="preserve">
+    <value>关于总帐整合选项</value>
+    <comment>CSH ID 405008002</comment>
+  </data>
+  <data name="PO_GL_Integration_Article2" xml:space="preserve">
+    <value>更改总帐整合选项</value>
+    <comment>CSH ID 405008003</comment>
+  </data>
+  <data name="PO_GL_Integration_Screen" xml:space="preserve">
+    <value>采购订单总帐整合屏幕</value>
+    <comment>CSH ID 405008001</comment>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>资源</value>
+  </data>
+  <data name="Resources_ContactSupport" xml:space="preserve">
+    <value>联系技术支持</value>
+  </data>
+  <data name="Resources_FeatureTour" xml:space="preserve">
+    <value>特性之旅</value>
+  </data>
+  <data name="Resources_HelpCenter" xml:space="preserve">
+    <value>帮助中心</value>
+  </data>
+  <data name="Resources_SageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="Resources_SageUniversity" xml:space="preserve">
+    <value>Sage大学</value>
+  </data>
+  <data name="Resources_ShareIdeas" xml:space="preserve">
+    <value>分享您的想法</value>
+  </data>
+  <data name="Search_Help" xml:space="preserve">
+    <value>搜索帮助</value>
+  </data>
+  <data name="TX_Module" xml:space="preserve">
+    <value>浏览税务服务文章</value>
+  </data>
+  <data name="TX_TaxAuthorities_Article1" xml:space="preserve">
+    <value>添加税务机构</value>
+  </data>
+  <data name="TX_TaxAuthorities_Article2" xml:space="preserve">
+    <value>删除税务机构</value>
+  </data>
+  <data name="TX_TaxAuthorities_Screen" xml:space="preserve">
+    <value>税务机构屏幕</value>
+  </data>
+  <data name="TX_TaxClasses_Article1" xml:space="preserve">
+    <value>添加税级</value>
+  </data>
+  <data name="TX_TaxClasses_Article2" xml:space="preserve">
+    <value>删除税级</value>
+  </data>
+  <data name="TX_TaxClasses_Screen" xml:space="preserve">
+    <value>税级屏幕</value>
+  </data>
+  <data name="TX_TaxGroups_Article1" xml:space="preserve">
+    <value>添加税组</value>
+  </data>
+  <data name="TX_TaxGroups_Article2" xml:space="preserve">
+    <value>关于税组中税务机构的顺序</value>
+  </data>
+  <data name="TX_TaxGroups_Screen" xml:space="preserve">
+    <value>税组屏幕</value>
+  </data>
+  <data name="TX_TaxRates_Article1" xml:space="preserve">
+    <value>输入税率</value>
+  </data>
+  <data name="TX_TaxRates_Article2" xml:space="preserve">
+    <value>添加税务机构</value>
+  </data>
+  <data name="TX_TaxRates_Screen" xml:space="preserve">
+    <value>税率屏幕</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Article1" xml:space="preserve">
+    <value>打印税务追踪报表</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Article2" xml:space="preserve">
+    <value>报表打印选项</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Screen" xml:space="preserve">
+    <value>税务追踪报表</value>
+  </data>
+  <data name="YP_Module" xml:space="preserve">
+    <value>浏览付款处理文章</value>
+    <comment>CSH ID 640000001</comment>
+  </data>
+  <data name="YP_Options_Article1" xml:space="preserve">
+    <value>设置付款处理</value>
+    <comment>CSH ID 640001002</comment>
+  </data>
+  <data name="YP_Options_Article2" xml:space="preserve">
+    <value>添加和维护处理代码</value>
+    <comment>CSH ID 640001003</comment>
+  </data>
+  <data name="YP_Options_Screen" xml:space="preserve">
+    <value>付款处理选项屏幕</value>
+    <comment>CSH ID 640001001</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Article1" xml:space="preserve">
+    <value>关于处理代码</value>
+    <comment>CSH ID 640002002</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Article2" xml:space="preserve">
+    <value>添加和维护处理代码</value>
+    <comment>CSH ID 640002003</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Screen" xml:space="preserve">
+    <value>付款处理代码屏幕</value>
+    <comment>CSH ID 640002001</comment>
+  </data>
+  <data name="IC_Categories_Article1" xml:space="preserve">
+    <value>关于类别</value>
+    <comment>CSH ID 211008002</comment>
+  </data>
+  <data name="IC_Categories_Article2" xml:space="preserve">
+    <value>设置类别</value>
+    <comment>CSH ID 211008003</comment>
+  </data>
+  <data name="IC_Categories_Screen" xml:space="preserve">
+    <value>存货控制类别屏幕</value>
+    <comment>CSH ID 211008001</comment>
+  </data>
+  <data name="IC_Locations_Article1" xml:space="preserve">
+    <value>关于设置地点</value>
+    <comment>CSH ID 211007002</comment>
+  </data>
+  <data name="IC_Locations_Article2" xml:space="preserve">
+    <value>关于删除地点</value>
+    <comment>CSH ID 211007003</comment>
+  </data>
+  <data name="IC_Locations_Screen" xml:space="preserve">
+    <value>存货控制地点屏幕</value>
+    <comment>CSH ID 211007001</comment>
+  </data>
+  <data name="IC_PriceListCodes_Article1" xml:space="preserve">
+    <value>关于价目表</value>
+    <comment>CSH ID 211011002</comment>
+  </data>
+  <data name="IC_PriceListCodes_Article2" xml:space="preserve">
+    <value>添加价目表代码</value>
+    <comment>CSH ID 211011003</comment>
+  </data>
+  <data name="IC_PriceListCodes_Screen" xml:space="preserve">
+    <value>存货控制价目表代码屏幕</value>
+    <comment>CSH ID 211011001</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211019002</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Article2" xml:space="preserve">
+    <value>打印交易统计报表</value>
+    <comment>CSH ID 211019003</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Screen" xml:space="preserve">
+    <value>存货控制交易统计报表</value>
+    <comment>CSH ID 211019001</comment>
+  </data>
+  <data name="OE_GL_Integration_Article1" xml:space="preserve">
+    <value>销售订单使用的总帐科目</value>
+    <comment>CSH ID 369007002</comment>
+  </data>
+  <data name="OE_GL_Integration_Article2" xml:space="preserve">
+    <value>总帐整合选项</value>
+    <comment>CSH ID 369007003</comment>
+  </data>
+  <data name="OE_GL_Integration_Screen" xml:space="preserve">
+    <value>销售订单总帐整合屏幕</value>
+    <comment>CSH ID 369007001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Article1" xml:space="preserve">
+    <value>关于设置发运经由代码</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Article2" xml:space="preserve">
+    <value>添加发运经由代码</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Screen" xml:space="preserve">
+    <value>采购订单发运经由代码屏幕</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="IC_Module" xml:space="preserve">
+    <value>浏览存货控制文章</value>
+    <comment>CSH ID 211000001</comment>
+  </data>
+  <data name="OE_Module" xml:space="preserve">
+    <value>浏览销售订单文章</value>
+    <comment>CSH ID 369000001</comment>
+  </data>
+  <data name="PO_Module" xml:space="preserve">
+    <value>浏览采购订单文章</value>
+    <comment>CSH ID 405000001</comment>
+  </data>
+  <data name="IC_CustomerDetails_Article1" xml:space="preserve">
+    <value>添加客户货品编号</value>
+    <comment>CSH ID 211032002</comment>
+  </data>
+  <data name="IC_CustomerDetails_Article2" xml:space="preserve">
+    <value>存货控制供应商明细屏幕</value>
+    <comment>CSH ID 211032003</comment>
+  </data>
+  <data name="IC_CustomerDetails_Screen" xml:space="preserve">
+    <value>存货控制客户明细屏幕</value>
+    <comment>CSH ID 211032001</comment>
+  </data>
+  <data name="IC_InventoryCounts_Article1" xml:space="preserve">
+    <value>输入实物盘存数量</value>
+    <comment>CSH ID 211044002</comment>
+  </data>
+  <data name="IC_InventoryCounts_Article2" xml:space="preserve">
+    <value>为库存盘点生成盘存工作表</value>
+    <comment>CSH ID 211044003</comment>
+  </data>
+  <data name="IC_InventoryCounts_Screen" xml:space="preserve">
+    <value>存货控制存货计数屏幕。</value>
+    <comment>CSH ID 211044001</comment>
+  </data>
+  <data name="IC_Receipts_Article1" xml:space="preserve">
+    <value>关于进货</value>
+    <comment>CSH ID 211017002</comment>
+  </data>
+  <data name="IC_Receipts_Article2" xml:space="preserve">
+    <value>输入调整到现有进货</value>
+    <comment>CSH ID 211017003</comment>
+  </data>
+  <data name="IC_Receipts_Screen" xml:space="preserve">
+    <value>存货控制进货屏幕</value>
+    <comment>CSH ID 211017001</comment>
+  </data>
+  <data name="IC_Shipments_Article1" xml:space="preserve">
+    <value>关于发货</value>
+    <comment>CSH ID 211018002</comment>
+  </data>
+  <data name="IC_Shipments_Article2" xml:space="preserve">
+    <value>向客户发运货物</value>
+    <comment>CSH ID 211018003</comment>
+  </data>
+  <data name="IC_Shipments_Screen" xml:space="preserve">
+    <value>存货控制发货屏幕</value>
+    <comment>CSH ID 211018001</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405025002</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405025003</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Screen" xml:space="preserve">
+    <value>采购订单可发运延期交货报表</value>
+    <comment>CSH ID 405025001</comment>
+  </data>
+  <data name="PO_ClearHistory_Article1" xml:space="preserve">
+    <value>关于采购订单中的定期处理</value>
+    <comment>CSH ID 405018002</comment>
+  </data>
+  <data name="PO_ClearHistory_Article2" xml:space="preserve">
+    <value>清除采购订单历史数据</value>
+    <comment>CSH ID 405018003</comment>
+  </data>
+  <data name="PO_ClearHistory_Screen" xml:space="preserve">
+    <value>采购订单清除历史屏幕</value>
+    <comment>CSH ID 405018001</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Article1" xml:space="preserve">
+    <value>关于替代货品</value>
+    <comment>CSH ID 211052002</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Article2" xml:space="preserve">
+    <value>打印替代货品报表</value>
+    <comment>CSH ID 211052003</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Screen" xml:space="preserve">
+    <value>存货控制替代货品报表</value>
+    <comment>CSH ID 211052001</comment>
+  </data>
+  <data name="IC_Reorder_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211056002</comment>
+  </data>
+  <data name="IC_Reorder_Report_Article2" xml:space="preserve">
+    <value>打印再订购报表</value>
+    <comment>CSH ID 211056003</comment>
+  </data>
+  <data name="IC_Reorder_Report_Screen" xml:space="preserve">
+    <value>存货控制再订购报表</value>
+    <comment>CSH ID 211056001</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369031002</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369031003</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>销售订单总帐交易报表</value>
+    <comment>CSH ID 369031001</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405035002</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405035003</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>采购订单总帐交易报表</value>
+    <comment>CSH ID 405035001</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405036002</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405036003</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Screen" xml:space="preserve">
+    <value>采购订单应付款清算审计清单报表</value>
+    <comment>CSH ID 405036001</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211045002</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Article2" xml:space="preserve">
+    <value>打印价目表报表</value>
+    <comment>CSH ID 211045003</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Screen" xml:space="preserve">
+    <value>存货控制价目表报表</value>
+    <comment>CSH ID 211045001</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369032002</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369032003</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Screen" xml:space="preserve">
+    <value>销售订单业务员佣金报表</value>
+    <comment>CSH ID 369032001</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369030002</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369030003</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Screen" xml:space="preserve">
+    <value>销售订单销售统计报表</value>
+    <comment>CSH ID 369030001</comment>
+  </data>
+  <data name="IC_SalesStatistics_Article1" xml:space="preserve">
+    <value>查看销售统计</value>
+    <comment>CSH ID 211015002</comment>
+  </data>
+  <data name="IC_SalesStatistics_Article2" xml:space="preserve">
+    <value>添加当前销售和退货统计</value>
+    <comment>CSH ID 211015003</comment>
+  </data>
+  <data name="IC_SalesStatistics_Screen" xml:space="preserve">
+    <value>存货控制销售统计屏幕</value>
+    <comment>CSH ID 211015001</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Article1" xml:space="preserve">
+    <value>关于销售订单客户表格</value>
+    <comment>CSH ID 369018002</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Article2" xml:space="preserve">
+    <value>输入销货单</value>
+    <comment>CSH ID 369018003</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Screen" xml:space="preserve">
+    <value>销售订单销货确认单屏幕</value>
+    <comment>CSH ID 369018001</comment>
+  </data>
+  <data name="OE_Quotes_Article1" xml:space="preserve">
+    <value>输入报价</value>
+    <comment>CSH ID 369019002</comment>
+  </data>
+  <data name="OE_Quotes_Article2" xml:space="preserve">
+    <value>关于销售订单客户表格</value>
+    <comment>CSH ID 369019003</comment>
+  </data>
+  <data name="OE_Quotes_Screen" xml:space="preserve">
+    <value>销售订单报价屏幕</value>
+    <comment>CSH ID 369019001</comment>
+  </data>
+  <data name="OE_Templates_Article1" xml:space="preserve">
+    <value>关于模板</value>
+    <comment>CSH ID 369002002</comment>
+  </data>
+  <data name="OE_Templates_Article2" xml:space="preserve">
+    <value>创建模板</value>
+    <comment>CSH ID 369002002</comment>
+  </data>
+  <data name="OE_Templates_Screen" xml:space="preserve">
+    <value>销售订单模板屏幕</value>
+    <comment>CSH ID 369002001</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Article1" xml:space="preserve">
+    <value>关于自动创建订购单</value>
+    <comment>CSH ID 405015002</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Article2" xml:space="preserve">
+    <value>从存货控制再订购数量创建订购单</value>
+    <comment>CSH ID 405015003</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Screen" xml:space="preserve">
+    <value>采购订单从存货控制创建订购单屏幕</value>
+    <comment>CSH ID 405015001</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211061002</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Article2" xml:space="preserve">
+    <value>打印已帐析存货报表</value>
+    <comment>CSH ID 211061003</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Screen" xml:space="preserve">
+    <value>存货控制已帐析存货报表</value>
+    <comment>CSH ID 211061001</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211060002</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Article2" xml:space="preserve">
+    <value>打印存货移动报表</value>
+    <comment>CSH ID 211060003</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Screen" xml:space="preserve">
+    <value>存货控制存货移动报表</value>
+    <comment>CSH ID 211060001</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Article1" xml:space="preserve">
+    <value>为库存盘点生成盘存工作表</value>
+    <comment>CSH ID 211040002</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Article2" xml:space="preserve">
+    <value>打印盘存工作表</value>
+    <comment>CSH ID 211040003</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Screen" xml:space="preserve">
+    <value>存货控制盘存工作表报表</value>
+    <comment>CSH ID 211040001</comment>
+  </data>
+  <data name="IC_PostingJournals_Article1" xml:space="preserve">
+    <value>关于过帐日志</value>
+    <comment>CSH ID 211051002</comment>
+  </data>
+  <data name="IC_PostingJournals_Article2" xml:space="preserve">
+    <value>过帐存货交易</value>
+    <comment>CSH ID 211051003</comment>
+  </data>
+  <data name="IC_PostingJournals_Screen" xml:space="preserve">
+    <value>存货控制过帐日志屏幕</value>
+    <comment>CSH ID 211051001</comment>
+  </data>
+  <data name="OE_ClearHistory_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 369011002</comment>
+  </data>
+  <data name="OE_ClearHistory_Article2" xml:space="preserve">
+    <value>实施日终处理</value>
+    <comment>CSH ID 369011003</comment>
+  </data>
+  <data name="OE_ClearHistory_Screen" xml:space="preserve">
+    <value>销售订单清除历史屏幕</value>
+    <comment>CSH ID 369011001</comment>
+  </data>
+  <data name="OE_OrderEntry_Article1" xml:space="preserve">
+    <value>关于销货单完成</value>
+    <comment>CSH ID 369008002</comment>
+  </data>
+  <data name="OE_OrderEntry_Article2" xml:space="preserve">
+    <value>输入销货单</value>
+    <comment>CSH ID 369008003</comment>
+  </data>
+  <data name="OE_OrderEntry_Screen" xml:space="preserve">
+    <value>销售订单销货单分录屏幕</value>
+    <comment>CSH ID 369008001</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369027002</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369027002</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>销售订单过帐日志报表</value>
+    <comment>CSH ID 369027001</comment>
+  </data>
+  <data name="PO_OptionalFields_Article1" xml:space="preserve">
+    <value>关于可选字段</value>
+    <comment>CSH ID 405007002</comment>
+  </data>
+  <data name="PO_OptionalFields_Article2" xml:space="preserve">
+    <value>设置可选字段</value>
+    <comment>CSH ID 405007003</comment>
+  </data>
+  <data name="PO_OptionalFields_Screen" xml:space="preserve">
+    <value>采购订单可选字段屏幕</value>
+    <comment>CSH ID 405007001</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Article1" xml:space="preserve">
+    <value>关于存货控制中的交易处理</value>
+    <comment>CSH ID 211025002</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Article2" xml:space="preserve">
+    <value>查看交易历史</value>
+    <comment>CSH ID 211025003</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Screen" xml:space="preserve">
+    <value>存货控制交易历史查询屏幕</value>
+    <comment>CSH ID 211025001</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+    <comment>CSH ID 405027002</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Article2" xml:space="preserve">
+    <value>打印订购单</value>
+    <comment>CSH ID 405027002</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Screen" xml:space="preserve">
+    <value>采购订单订购单屏幕</value>
+    <comment>CSH ID 405027001</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Article1" xml:space="preserve">
+    <value>关于添加采购统计</value>
+    <comment>CSH ID 405022002</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Article2" xml:space="preserve">
+    <value>添加和管理统计</value>
+    <comment>CSH ID 405022003</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Screen" xml:space="preserve">
+    <value>采购订单采购统计屏幕</value>
+    <comment>CSH ID 405022001</comment>
+  </data>
+  <data name="PO_Templates_Article1" xml:space="preserve">
+    <value>关于模板</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="PO_Templates_Article2" xml:space="preserve">
+    <value>添加模板</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="PO_Templates_Screen" xml:space="preserve">
+    <value>采购订单模板屏幕</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Article1" xml:space="preserve">
+    <value>关于杂项收费</value>
+    <comment>CSH ID 369003002</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Article2" xml:space="preserve">
+    <value>创建杂项收费</value>
+    <comment>CSH ID 369003003</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Screen" xml:space="preserve">
+    <value>销售订单杂项收费屏幕</value>
+    <comment>CSH ID 369003001</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369023002</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Article2" xml:space="preserve">
+    <value>打印销售订单分析和设置报表</value>
+    <comment>CSH ID 369023003</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Screen" xml:space="preserve">
+    <value>销售订单销货单操作报表</value>
+    <comment>CSH ID 369023001</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Article1" xml:space="preserve">
+    <value>管理发运经由代码</value>
+    <comment>CSH ID 369004002</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Article2" xml:space="preserve">
+    <value>创建发运经由代码</value>
+    <comment>CSH ID 369004003</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Screen" xml:space="preserve">
+    <value>销售订单发运经由代码屏幕</value>
+    <comment>CSH ID 369004001</comment>
+  </data>
+  <data name="PO_EmailMessages_Article1" xml:space="preserve">
+    <value>创建电邮讯息</value>
+    <comment>CSH ID 405006002</comment>
+  </data>
+  <data name="PO_EmailMessages_Article2" xml:space="preserve">
+    <value>电邮讯息变量</value>
+    <comment>CSH ID 405006003</comment>
+  </data>
+  <data name="PO_EmailMessages_Screen" xml:space="preserve">
+    <value>采购订单电邮讯息屏幕</value>
+    <comment>CSH ID 405006001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405031002</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405031003</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Screen" xml:space="preserve">
+    <value>采购订单采购历史报表</value>
+    <comment>CSH ID 405031001</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405030002</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405030003</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Screen" xml:space="preserve">
+    <value>采购订单订购单操作报表</value>
+    <comment>CSH ID 405030001</comment>
+  </data>
+  <data name="IC_KittingItems_Article1" xml:space="preserve">
+    <value>关于配套货品</value>
+    <comment>CSH ID  211037002</comment>
+  </data>
+  <data name="IC_KittingItems_Article2" xml:space="preserve">
+    <value>添加配套货品</value>
+    <comment>CSH ID  211037003</comment>
+  </data>
+  <data name="IC_KittingItems_Screen" xml:space="preserve">
+    <value>存货控制配套货品屏幕</value>
+    <comment>CSH ID  211037001</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Article1" xml:space="preserve">
+    <value>关于先进先出和后进先出成本计算方法</value>
+    <comment>CSH ID  211026002</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Article2" xml:space="preserve">
+    <value>查看后进先出和先进先出货品的成本</value>
+    <comment>CSH ID  211026003</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Screen" xml:space="preserve">
+    <value>存货控制后进先出/先进先出查询屏幕</value>
+    <comment>CSH ID  211026001</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Article1" xml:space="preserve">
+    <value>关于贷项和借项通知单</value>
+    <comment>CSH ID  369009002</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Article2" xml:space="preserve">
+    <value>贷记一个发票</value>
+    <comment>CSH ID  369009003</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Screen" xml:space="preserve">
+    <value>销售订单贷项/借项通知单分录屏幕</value>
+    <comment>CSH ID  369009001</comment>
+  </data>
+  <data name="PO_Options_Article1" xml:space="preserve">
+    <value>关于更改采购订单选项</value>
+    <comment>CSH ID 405001002</comment>
+  </data>
+  <data name="PO_Options_Article2" xml:space="preserve">
+    <value>设置采购订单</value>
+    <comment>CSH ID 405001002</comment>
+  </data>
+  <data name="PO_Options_Screen" xml:space="preserve">
+    <value>采购订单选项屏幕</value>
+    <comment>CSH ID 405001001</comment>
+  </data>
+  <data name="OE_EmailMessages_Article1" xml:space="preserve">
+    <value>电邮讯息变量</value>
+    <comment>CSH ID 369005002</comment>
+  </data>
+  <data name="OE_EmailMessages_Article2" xml:space="preserve">
+    <value>创建电邮讯息</value>
+    <comment>CSH ID 369005002</comment>
+  </data>
+  <data name="OE_EmailMessages_Screen" xml:space="preserve">
+    <value>销售订单电邮讯息屏幕</value>
+    <comment>CSH ID 369005001</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405032002</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405032003</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Screen" xml:space="preserve">
+    <value>采购订单已帐析订购单报表</value>
+    <comment>CSH ID 405032001</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Article1" xml:space="preserve">
+    <value>关于自动创建订购单</value>
+    <comment>CSH ID 405016002</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Article2" xml:space="preserve">
+    <value>从销售订单销货单创建订购单</value>
+    <comment>CSH ID 405016003</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Screen" xml:space="preserve">
+    <value>采购订单从销售订单创建订购单屏幕</value>
+    <comment>CSH ID 405016001</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211054002</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Article2" xml:space="preserve">
+    <value>打印货品估价报表</value>
+    <comment>CSH ID 211054003</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Screen" xml:space="preserve">
+    <value>存货控制货品估价报表</value>
+    <comment>CSH ID 211054001</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Article1" xml:space="preserve">
+    <value>关于处理申购单</value>
+    <comment>CSH ID 405010002</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Article2" xml:space="preserve">
+    <value>创建一个新的采购申购单</value>
+    <comment>CSH ID 405010003</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Screen" xml:space="preserve">
+    <value>采购订单申购单分录屏幕</value>
+    <comment>CSH ID 405010001</comment>
+  </data>
+  <data name="OE_OptionalFields_Article1" xml:space="preserve">
+    <value>关于可选字段</value>
+    <comment>CSH ID 369006002</comment>
+  </data>
+  <data name="OE_OptionalFields_Article2" xml:space="preserve">
+    <value>添加可选字段到交易分录屏幕</value>
+    <comment>CSH ID 369006003</comment>
+  </data>
+  <data name="OE_OptionalFields_Screen" xml:space="preserve">
+    <value>销售订单可选字段屏幕</value>
+    <comment>CSH ID 369006001</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211057002</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Article2" xml:space="preserve">
+    <value>打印滞销货品报表</value>
+    <comment>CSH ID 211057003</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Screen" xml:space="preserve">
+    <value>存货控制滞销货品报表屏幕</value>
+    <comment>CSH ID 211057001</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Article1" xml:space="preserve">
+    <value>关于自动创建订购单</value>
+    <comment>CSH ID 405014002</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Article2" xml:space="preserve">
+    <value>从申购单创建订购单</value>
+    <comment>CSH ID 405014003</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Screen" xml:space="preserve">
+    <value>采购订单从申购单创建订购单屏幕</value>
+    <comment>CSH ID 405014001</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Article1" xml:space="preserve">
+    <value>管理供应商合约成本</value>
+    <comment>CSH ID 405003002</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Article2" xml:space="preserve">
+    <value>设置供应商合约成本</value>
+    <comment>CSH ID 405003003</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Screen" xml:space="preserve">
+    <value>采购订单供应商合约成本屏幕</value>
+    <comment>CSH ID 405003001</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211050002</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Article2" xml:space="preserve">
+    <value>打印交易历史报表</value>
+    <comment>CSH ID 211050003</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Screen" xml:space="preserve">
+    <value>存货控制交易历史报表屏幕</value>
+    <comment>CSH ID 211050001</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405033002</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405033003</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Screen" xml:space="preserve">
+    <value>采购订单采购统计报表屏幕</value>
+    <comment>CSH ID 405033001</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405024002</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405024003</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Screen" xml:space="preserve">
+    <value>采购订单交易清单报表屏幕</value>
+    <comment>CSH ID 405024001</comment>
+  </data>
+  <data name="IC_ItemPricing_Article1" xml:space="preserve">
+    <value>关于价目表</value>
+    <comment>CSH ID 211023002</comment>
+  </data>
+  <data name="IC_ItemPricing_Article2" xml:space="preserve">
+    <value>添加货品到价目表</value>
+    <comment>CSH ID 211023003</comment>
+  </data>
+  <data name="IC_ItemPricing_Screen" xml:space="preserve">
+    <value>存货控制货品定价屏幕</value>
+    <comment>CSH ID 211023001</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Article1" xml:space="preserve">
+    <value>关于存货控制中的交易处理</value>
+    <comment>CSH ID 211028002</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Article2" xml:space="preserve">
+    <value>查看交易历史</value>
+    <comment>CSH ID 211028003</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Screen" xml:space="preserve">
+    <value>存货控制库存交易查询屏幕</value>
+    <comment>CSH ID 211028001</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Article1" xml:space="preserve">
+    <value>关于附加成本代码</value>
+    <comment>CSH ID 405005002</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Article2" xml:space="preserve">
+    <value>添加附加成本记录</value>
+    <comment>CSH ID 405005003</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Screen" xml:space="preserve">
+    <value>采购订单附加成本屏幕</value>
+    <comment>CSH ID 405005001</comment>
+  </data>
+  <data name="OE_Invoices_Article1" xml:space="preserve">
+    <value>打印一个发票范围</value>
+    <comment>CSH ID 369022002</comment>
+  </data>
+  <data name="OE_Invoices_Article2" xml:space="preserve">
+    <value>关于销售订单客户表格</value>
+    <comment>CSH ID 369022003</comment>
+  </data>
+  <data name="OE_Invoices_Screen" xml:space="preserve">
+    <value>销售订单发票屏幕</value>
+    <comment>CSH ID 369022001</comment>
+  </data>
+  <data name="OE_ShippingLabels_Article1" xml:space="preserve">
+    <value>关于销售订单客户表格</value>
+    <comment>CSH ID 369021002</comment>
+  </data>
+  <data name="OE_ShippingLabels_Article2" xml:space="preserve">
+    <value>打印发货标签</value>
+    <comment>CSH ID 369021003</comment>
+  </data>
+  <data name="OE_ShippingLabels_Screen" xml:space="preserve">
+    <value>销售订单发货标签屏幕</value>
+    <comment>CSH ID 369021001</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Article1" xml:space="preserve">
+    <value>关于添加订购单明细</value>
+    <comment>CSH ID 405021002</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Screen" xml:space="preserve">
+    <value>采购订单复制订购单屏幕</value>
+    <comment>CSH ID 405021001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Article2" xml:space="preserve">
+    <value>查看存货控制中的交易历史</value>
+    <comment>CSH ID 405021003</comment>
+  </data>
+  <data name="PO_Returns_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+    <comment>CSH ID 405028002</comment>
+  </data>
+  <data name="PO_Returns_Article2" xml:space="preserve">
+    <value>打印退货</value>
+    <comment>CSH ID 405028003</comment>
+  </data>
+  <data name="PO_Returns_Screen" xml:space="preserve">
+    <value>采购订单退货屏幕</value>
+    <comment>CSH ID 405028001</comment>
+  </data>
+  <data name="OE_SalesStatistics_Article1" xml:space="preserve">
+    <value>关于销售统计</value>
+    <comment>CSHID 369016002</comment>
+  </data>
+  <data name="OE_SalesStatistics_Article2" xml:space="preserve">
+    <value>查看销售统计</value>
+    <comment>CSHID 369016003</comment>
+  </data>
+  <data name="OE_SalesStatistics_Screen" xml:space="preserve">
+    <value>销售订单销售统计屏幕</value>
+    <comment>CSHID 369016001</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Article1" xml:space="preserve">
+    <value>关于处理贷项通知单和借项通知单</value>
+    <comment>CSH ID 405019002</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Article2" xml:space="preserve">
+    <value>为退货或发票输入贷项或借项通知单</value>
+    <comment>CSH ID 405019003</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Screen" xml:space="preserve">
+    <value>采购订单贷项/借项通知单分录屏幕</value>
+    <comment>CSH ID 405019001</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211048002</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Article2" xml:space="preserve">
+    <value>打印加成分析报表</value>
+    <comment>CSH ID 211048003</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Screen" xml:space="preserve">
+    <value>存货控制加成分析报表屏幕</value>
+    <comment>CSH ID 211048001</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211030002</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Article2" xml:space="preserve">
+    <value>打印交易列表</value>
+    <comment>CSH ID 211030003</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Screen" xml:space="preserve">
+    <value>存货控制交易列表报表屏幕</value>
+    <comment>CSH ID 211030001</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Article1" xml:space="preserve">
+    <value>关于销售历史</value>
+    <comment>CSH ID 369017002</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Article2" xml:space="preserve">
+    <value>查看货品或客户的销售历史</value>
+    <comment>CSH ID 369017003</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Screen" xml:space="preserve">
+    <value>销售订单业务员查询屏幕</value>
+    <comment>CSH ID 369017001</comment>
+  </data>
+  <data name="IC_PostTransactions_Article1" xml:space="preserve">
+    <value>关于存货控制中的交易处理</value>
+    <comment>CSH ID 211013002</comment>
+  </data>
+  <data name="IC_PostTransactions_Article2" xml:space="preserve">
+    <value>过帐存货交易</value>
+    <comment>CSH ID 211013003</comment>
+  </data>
+  <data name="IC_PostTransactions_Screen" xml:space="preserve">
+    <value>存货控制过帐交易屏幕</value>
+    <comment>CSH ID 211013001</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Article1" xml:space="preserve">
+    <value>关于实物盘存</value>
+    <comment>CSH ID 211027002</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Article2" xml:space="preserve">
+    <value>查看交易历史</value>
+    <comment>CSH ID 211027003</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Screen" xml:space="preserve">
+    <value>存货控制货品地点明细数量查询屏幕</value>
+    <comment>CSH ID 211027001</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405034002</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405034003</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Screen" xml:space="preserve">
+    <value>采购订单过帐日志报表屏幕</value>
+    <comment>CSH ID 405034001</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Article1" xml:space="preserve">
+    <value>为库存盘点生成盘存工作表</value>
+    <comment>CSH ID 211039002</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Article2" xml:space="preserve">
+    <value>打印盘存工作表</value>
+    <comment>CSH ID 211039003</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Screen" xml:space="preserve">
+    <value>存货控制生成盘存工作表屏幕</value>
+    <comment>CSH ID 211039001</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Article1" xml:space="preserve">
+    <value>关于从申购单创建订购单</value>
+    <comment>CSH ID 405011002</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Article2" xml:space="preserve">
+    <value>输入订购单</value>
+    <comment>CSH ID 405011003</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Screen" xml:space="preserve">
+    <value>采购订单订购单分录屏幕</value>
+    <comment>CSH ID 405011001</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211058002</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Article2" xml:space="preserve">
+    <value>打印货柜/货架标签</value>
+    <comment>CSH ID 211058003</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Screen" xml:space="preserve">
+    <value>存货控制货柜/货架标签报表屏幕</value>
+    <comment>CSH ID 211058001</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Article1" xml:space="preserve">
+    <value>清点和调节存货数量</value>
+    <comment>CSH ID 211042002</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Article2" xml:space="preserve">
+    <value>打印存货调节报表</value>
+    <comment>CSH ID 211042003</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Screen" xml:space="preserve">
+    <value>存货控制存货调节报表屏幕</value>
+    <comment>CSH ID 211042001</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211062002</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Article2" xml:space="preserve">
+    <value>查看库存交易</value>
+    <comment>CSH ID 211062003</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Screen" xml:space="preserve">
+    <value>打印库存交易报表</value>
+    <comment>CSH ID 211062001</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Article1" xml:space="preserve">
+    <value>关于处理发票</value>
+    <comment>CSH ID 405009002</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Article2" xml:space="preserve">
+    <value>在发票上输入附加成本</value>
+    <comment>CSH ID 405009003</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Screen" xml:space="preserve">
+    <value>采购订单发票分录屏幕</value>
+    <comment>CSH ID 405009001</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Article1" xml:space="preserve">
+    <value>关于输入进货</value>
+    <comment>CSH ID 405012002</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Article2" xml:space="preserve">
+    <value>输入进货</value>
+    <comment>CSH ID 405012003</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Screen" xml:space="preserve">
+    <value>采购订单进货分录屏幕</value>
+    <comment>CSH ID 405012001</comment>
+  </data>
+  <data name="PO_ReturnEntry_Article1" xml:space="preserve">
+    <value>关于处理退货</value>
+    <comment>CSH ID 405013002</comment>
+  </data>
+  <data name="PO_ReturnEntry_Article2" xml:space="preserve">
+    <value>输入退货</value>
+    <comment>CSH ID 405013003</comment>
+  </data>
+  <data name="PO_ReturnEntry_Screen" xml:space="preserve">
+    <value>采购订单退货分录屏幕</value>
+    <comment>CSH ID 405013001</comment>
+  </data>
+  <data name="IC_Adjustments_Article1" xml:space="preserve">
+    <value>关于调整明细</value>
+    <comment>CSH ID 211021002</comment>
+  </data>
+  <data name="IC_Adjustments_Article2" xml:space="preserve">
+    <value>调整货品数量和成本</value>
+    <comment>CSH ID 211021003</comment>
+  </data>
+  <data name="IC_Adjustments_Screen" xml:space="preserve">
+    <value>存货控制调整屏幕</value>
+    <comment>CSH ID 211021001</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211055002</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Article2" xml:space="preserve">
+    <value>打印超储货品报表</value>
+    <comment>CSH ID 211055003</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Screen" xml:space="preserve">
+    <value>存货控制超储货品报表屏幕</value>
+    <comment>CSH ID 211055001</comment>
+  </data>
+  <data name="OE_Options_Article1" xml:space="preserve">
+    <value>设置销售订单</value>
+    <comment>CSH ID 369001002</comment>
+  </data>
+  <data name="OE_Options_Article2" xml:space="preserve">
+    <value>销售订单可选字段屏幕</value>
+    <comment>CSH ID 369001003</comment>
+  </data>
+  <data name="OE_Options_Screen" xml:space="preserve">
+    <value>销售订单选项屏幕</value>
+    <comment>CSH ID 369001001</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211053002</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Article2" xml:space="preserve">
+    <value>打印货品状态报表</value>
+    <comment>CSH ID 211053003</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Screen" xml:space="preserve">
+    <value>存货控制货品状态报表屏幕</value>
+    <comment>CSH ID 211053001</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Article1" xml:space="preserve">
+    <value>打印存货控制工作表</value>
+    <comment>CSH ID 211041002</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Article2" xml:space="preserve">
+    <value>输入实物盘存数量</value>
+    <comment>CSH ID 211041003</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Screen" xml:space="preserve">
+    <value>存货控制实物盘存数量屏幕</value>
+    <comment>CSH ID 211041001</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Article1" xml:space="preserve">
+    <value>关于再订购信息</value>
+    <comment>CSH ID 211036002</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Article2" xml:space="preserve">
+    <value>添加货品再订购数量</value>
+    <comment>CSH ID 211036003</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Screen" xml:space="preserve">
+    <value>存货控制再订购数量屏幕</value>
+    <comment>CSH ID 211036001</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Article1" xml:space="preserve">
+    <value>关于价目表</value>
+    <comment>CSH ID 211033002</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Article2" xml:space="preserve">
+    <value>更新货品群组的定价信息</value>
+    <comment>CSH ID 211033003</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Screen" xml:space="preserve">
+    <value>存货控制更新货品定价屏幕</value>
+    <comment>CSH ID 211033001</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211059002</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Article2" xml:space="preserve">
+    <value>打印货品标签</value>
+    <comment>CSH ID 211059003</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Screen" xml:space="preserve">
+    <value>存货控制货品标签屏幕</value>
+    <comment>CSH ID 211059001</comment>
+  </data>
+  <data name="OE_PickingSlips_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369020002</comment>
+  </data>
+  <data name="OE_PickingSlips_Article2" xml:space="preserve">
+    <value>打印取货单</value>
+    <comment>CSH ID 369020003</comment>
+  </data>
+  <data name="OE_PickingSlips_Screen" xml:space="preserve">
+    <value>销售订单取货单屏幕</value>
+    <comment>CSH ID 369020001</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Article1" xml:space="preserve">
+    <value>查看待处理进货</value>
+    <comment>CSH ID 405023002</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Article2" xml:space="preserve">
+    <value>查看存货控制中的交易历史</value>
+    <comment>CSH ID 405023003</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Screen" xml:space="preserve">
+    <value>采购订单待处理进货查询屏幕</value>
+    <comment>CSH ID 405023001</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Article1" xml:space="preserve">
+    <value>过帐存货调节</value>
+    <comment>CSH ID 211043002</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Article2" xml:space="preserve">
+    <value>为库存盘点生成盘存工作表</value>
+    <comment>CSH ID 211043003</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Screen" xml:space="preserve">
+    <value>存货控制过帐存货调节屏幕</value>
+    <comment>CSH ID 211043001</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211049002</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Article2" xml:space="preserve">
+    <value>打印销售统计报表</value>
+    <comment>CSH ID 211049003</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Screen" xml:space="preserve">
+    <value>存货控制销售统计报表屏幕</value>
+    <comment>CSH ID 211049001</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211063002</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Article2" xml:space="preserve">
+    <value>打印转移单报表</value>
+    <comment>CSH ID 211063003</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Screen" xml:space="preserve">
+    <value>存货控制转移单报表屏幕</value>
+    <comment>CSH ID 211063001</comment>
+  </data>
+  <data name="PO_Requisitions_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+    <comment>CSH ID 405026002</comment>
+  </data>
+  <data name="PO_Requisitions_Article2" xml:space="preserve">
+    <value>打印申购单</value>
+    <comment>CSH ID 405026003</comment>
+  </data>
+  <data name="PO_Requisitions_Screen" xml:space="preserve">
+    <value>采购订单申购单屏幕</value>
+    <comment>CSH ID 405026001</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Article1" xml:space="preserve">
+    <value>关于销售订单客户表格</value>
+    <comment>CSH ID 369024002</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Article2" xml:space="preserve">
+    <value>关于贷项和借项通知单</value>
+    <comment>CSH ID 369024003</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Screen" xml:space="preserve">
+    <value>销售订单贷项/借项通知单屏幕</value>
+    <comment>CSH ID 369024001</comment>
+  </data>
+  <data name="IC_Transfers_Article1" xml:space="preserve">
+    <value>关于转移</value>
+    <comment>CSH ID 211029002</comment>
+  </data>
+  <data name="IC_Transfers_Article2" xml:space="preserve">
+    <value>在两个存货地点之间转移货物</value>
+    <comment>CSH ID 211029003</comment>
+  </data>
+  <data name="IC_Transfers_Screen" xml:space="preserve">
+    <value>存货控制转移屏幕</value>
+    <comment>CSH ID 211029001</comment>
+  </data>
+  <data name="PO_MailingLabels_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+    <comment>CSH ID 405029002</comment>
+  </data>
+  <data name="PO_MailingLabels_Article2" xml:space="preserve">
+    <value>打印邮寄标签</value>
+    <comment>CSH ID 405029003</comment>
+  </data>
+  <data name="PO_MailingLabels_Screen" xml:space="preserve">
+    <value>采购订单邮寄标签屏幕</value>
+    <comment>CSH ID 405029001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Article1" xml:space="preserve">
+    <value>查看采购历史</value>
+    <comment>CSH ID 405021002</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Screen" xml:space="preserve">
+    <value>采购订单采购历史屏幕</value>
+    <comment>CSH ID 405021001</comment>
+  </data>
+  <data name="OE_SalesHistory_Article1" xml:space="preserve">
+    <value>关于销售历史</value>
+    <comment>CSH ID 369015002</comment>
+  </data>
+  <data name="OE_SalesHistory_Article2" xml:space="preserve">
+    <value>查看货品或客户的销售历史</value>
+    <comment>CSH ID 369015003</comment>
+  </data>
+  <data name="OE_SalesHistory_Screen" xml:space="preserve">
+    <value>销售订单销售历史屏幕</value>
+    <comment>CSH ID 369015001</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Article1" xml:space="preserve">
+    <value>关于销货单，发货，和发票</value>
+    <comment>CSH ID 369014002</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Article2" xml:space="preserve">
+    <value>发运销货单和货品</value>
+    <comment>CSH ID 369014003</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Screen" xml:space="preserve">
+    <value>销售订单待处理发货查询屏幕</value>
+    <comment>CSH ID 369014001</comment>
+  </data>
+  <data name="IC_LocationDetails_Article1" xml:space="preserve">
+    <value>关于修改地点明细</value>
+    <comment>CSH ID 211034002</comment>
+  </data>
+  <data name="IC_LocationDetails_Article2" xml:space="preserve">
+    <value>分派货品到地点</value>
+    <comment>CSH ID 211034003</comment>
+  </data>
+  <data name="IC_LocationDetails_Screen" xml:space="preserve">
+    <value>存货控制地点明细屏幕</value>
+    <comment>CSH ID 211034001</comment>
+  </data>
+  <data name="IC_InternalUsage_Article1" xml:space="preserve">
+    <value>关于存货控制中的交易处理</value>
+    <comment>CSH ID 211020002</comment>
+  </data>
+  <data name="IC_InternalUsage_Article2" xml:space="preserve">
+    <value>内部使用货物</value>
+    <comment>CSH ID 211020003</comment>
+  </data>
+  <data name="IC_InternalUsage_Screen" xml:space="preserve">
+    <value>存货控制内部使用屏幕</value>
+    <comment>CSH ID 211020001</comment>
+  </data>
+  <data name="GL_ClearHistory_Article1" xml:space="preserve">
+    <value>期末步骤</value>
+    <comment>CSH ID 168030002</comment>
+  </data>
+  <data name="GL_ClearHistory_Article2" xml:space="preserve">
+    <value>清除总帐历史</value>
+    <comment>CSH ID 168030003</comment>
+  </data>
+  <data name="GL_ClearHistory_Screen" xml:space="preserve">
+    <value>总帐清除历史屏幕</value>
+    <comment>CSH ID 168030001</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
+    <value>关于销售订单报表</value>
+    <comment>CSH ID 369036002</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
+    <value>打印销售订单报表</value>
+    <comment>CSH ID 369036003</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
+    <value>销售订单电邮讯息报表屏幕</value>
+    <comment>CSH ID 369036001</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Article1" xml:space="preserve">
+    <value>关于采购订单报表</value>
+    <comment>CSH ID 405038002</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Article2" xml:space="preserve">
+    <value>打印采购订单分析和设置报表</value>
+    <comment>CSH ID 405038003</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Screen" xml:space="preserve">
+    <value>采购订单电邮讯息报表屏幕</value>
+    <comment>CSH ID 405038001</comment>
+  </data>
+  <data name="AP_Revaluation_Article1" xml:space="preserve">
+    <value>关于重估多币种交易</value>
+    <comment>CSH ID 16043002</comment>
+  </data>
+  <data name="AP_Revaluation_Article2" xml:space="preserve">
+    <value>以其它币种重估交易</value>
+    <comment>CSH ID 16043003</comment>
+  </data>
+  <data name="AP_Revaluation_Screen" xml:space="preserve">
+    <value>应付帐款重估屏幕</value>
+    <comment>CSH ID 16043001</comment>
+  </data>
+  <data name="AR_Revaluation_Article1" xml:space="preserve">
+    <value>关于重估多币种交易</value>
+    <comment>CSH ID 18042002</comment>
+  </data>
+  <data name="AR_Revaluation_Article2" xml:space="preserve">
+    <value>以其它币种重估交易</value>
+    <comment>CSH ID 18042003</comment>
+  </data>
+  <data name="AR_Revaluation_Screen" xml:space="preserve">
+    <value>应收帐款重估屏幕</value>
+    <comment>CSH ID 18042001</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Article1" xml:space="preserve">
+    <value>查看已过帐凭证</value>
+    <comment>CSH ID 369013002</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Article2" xml:space="preserve">
+    <value>销货单类型</value>
+    <comment>CSH ID 369013003</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Screen" xml:space="preserve">
+    <value>销售订单当前销货单查询屏幕</value>
+    <comment>CSH ID 369013001</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Article1" xml:space="preserve">
+    <value>关于应付帐款报表</value>
+    <comment>CSH ID 16052002</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Article2" xml:space="preserve">
+    <value>打印经常性应付款报表</value>
+    <comment>CSH ID 16052003</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Screen" xml:space="preserve">
+    <value>应付帐款经常性应付款报表屏幕</value>
+    <comment>CSH ID 16052001</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18056002</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款存款单报表</value>
+    <comment>CSH ID 18056003</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Screen" xml:space="preserve">
+    <value>应收帐款存款单报表屏幕</value>
+    <comment>CSH ID 18056001</comment>
+  </data>
+  <data name="OE_CopyOrders_Article1" xml:space="preserve">
+    <value>关于销货单，发货，和发票</value>
+    <comment>CSH ID 369010002</comment>
+  </data>
+  <data name="OE_CopyOrders_Article2" xml:space="preserve">
+    <value>复制销货单</value>
+    <comment>CSH ID 369010003</comment>
+  </data>
+  <data name="OE_CopyOrders_Screen" xml:space="preserve">
+    <value>销售订单复制销货单屏幕</value>
+    <comment>CSH ID 369010001</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Article1" xml:space="preserve">
+    <value>添加保修代码</value>
+    <comment>CSH ID 211105002</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Article2" xml:space="preserve">
+    <value>打印保修/合约清单报表</value>
+    <comment>CSH ID 211105003</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
+    <value>存货控制保修/合约清单报表屏幕</value>
+    <comment>CSH ID 211105001</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
+    <value>关于存货控制中的交易处理</value>
+    <comment>CSH ID 211024002</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Article2" xml:space="preserve">
+    <value>查看交易统计</value>
+    <comment>CSH ID 211024003</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Screen" xml:space="preserve">
+    <value>存货控制当前交易查询屏幕</value>
+    <comment>CSH ID 211024001</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Article2" xml:space="preserve">
+    <value>复制订购单</value>
+    <comment>CSH ID 405020003</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>关于应付帐款报表</value>
+    <comment>CSH ID 16049002</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>打印过帐日志</value>
+    <comment>CSH ID 16049003</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>应付帐款过帐日志报表屏幕</value>
+    <comment>CSH ID 16049001</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211099002</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Article2" xml:space="preserve">
+    <value>打印隔离报表</value>
+    <comment>CSH ID 211099003</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
+    <value>存货控制检疫报表屏幕</value>
+    <comment>CSH ID 211099001</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168039002</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Article2" xml:space="preserve">
+    <value>打印总帐来源日志概览报表</value>
+    <comment>CSH ID 168039003</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Screen" xml:space="preserve">
+    <value>总帐来源日志概览报表</value>
+    <comment>CSH ID 168039001</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+    <comment>CSH ID 405037002</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Article2" xml:space="preserve">
+    <value>打印进货单</value>
+    <comment>CSH ID 405037003</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Screen" xml:space="preserve">
+    <value>采购订单进货单屏幕</value>
+    <comment>CSH ID 405037001</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>关于应付帐款报表</value>
+    <comment>CSH ID 16048002</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>打印批次状态报表</value>
+    <comment>CSH ID 16048003</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>应付帐款批次状态报表屏幕</value>
+    <comment>CSH ID 16048001</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Article1" xml:space="preserve">
+    <value>关于应付帐款报表</value>
+    <comment>CSH ID 16054002</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Article2" xml:space="preserve">
+    <value>打印供应商群组清单</value>
+    <comment>CSH ID 16054003</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Screen" xml:space="preserve">
+    <value>应付帐款供应商群组报表屏幕</value>
+    <comment>CSH ID 16054001</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211104002</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Article2" xml:space="preserve">
+    <value>打印系列/批别交易报表</value>
+    <comment>CSH ID 211104003</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
+    <value>存货控制系列/批别交易报表屏幕</value>
+    <comment>CSH ID 211104001</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211098002</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
+    <value>查看系列编号信息</value>
+    <comment>CSH ID 211098003</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
+    <value>存货控制系列编号查询屏幕</value>
+    <comment>CSH ID 211098001</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>关于删除闲置记录</value>
+    <comment>CSH ID 16047002</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>从应付帐款中移除闲置记录</value>
+    <comment>CSH ID 16047003</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>应付帐款删除闲置记录屏幕</value>
+    <comment>CSH ID 16047001</comment>
+  </data>
+  <data name="IC_Recall_Report_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211100002</comment>
+  </data>
+  <data name="IC_Recall_Report_Article2" xml:space="preserve">
+    <value>打印召回报表</value>
+    <comment>CSH ID 211100003</comment>
+  </data>
+  <data name="IC_Recall_Report_Screen" xml:space="preserve">
+    <value>存货控制召回报表屏幕</value>
+    <comment>CSH ID 211100001</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
+    <value>期末步骤</value>
+    <comment>CSH ID 168032002</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Article2" xml:space="preserve">
+    <value>创建一个分配批次</value>
+    <comment>CSH ID 168032003</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Screen" xml:space="preserve">
+    <value>总帐创建分配批次屏幕</value>
+    <comment>CSH ID 168032001</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
+    <value>存货控制报表</value>
+    <comment>CSH ID 211087002</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
+    <value>打印客户明细报表</value>
+    <comment>CSH ID 211087003</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
+    <value>存货控制客户明细报表屏幕</value>
+    <comment>CSH ID 211087001</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Article1" xml:space="preserve">
+    <value>关于科目集合</value>
+    <comment>CSH ID 211084002</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Article2" xml:space="preserve">
+    <value>打印科目集合报表</value>
+    <comment>CSH ID 211084003</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Screen" xml:space="preserve">
+    <value>存货控制科目集合报表屏幕</value>
+    <comment>CSH ID 211084001</comment>
+  </data>
+  <data name="IC_Categories_Report_Article1" xml:space="preserve">
+    <value>关于类别</value>
+    <comment>CSH ID 211086002</comment>
+  </data>
+  <data name="IC_Categories_Report_Article2" xml:space="preserve">
+    <value>打印类别报表</value>
+    <comment>CSH ID 211086003</comment>
+  </data>
+  <data name="IC_Categories_Report_Screen" xml:space="preserve">
+    <value>存货控制类别报表</value>
+    <comment>CSH ID 211086001</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
+    <value>关于配套货品</value>
+    <comment>CSH ID 211088002</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
+    <value>打印配套货品报表</value>
+    <comment>CSH ID 211088003</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
+    <value>存货控制配套货品报表屏幕</value>
+    <comment>CSH ID 211088001</comment>
+  </data>
+  <data name="IC_Locations_Report_Article1" xml:space="preserve">
+    <value>关于设置地点</value>
+    <comment>CSH ID 211090002</comment>
+  </data>
+  <data name="IC_Locations_Report_Article2" xml:space="preserve">
+    <value>打印地点报表</value>
+    <comment>CSH ID 211090003</comment>
+  </data>
+  <data name="IC_Locations_Report_Screen" xml:space="preserve">
+    <value>存货控制召回报表屏幕</value>
+    <comment>CSH ID 211090001</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
+    <value>关于价目表</value>
+    <comment>CSH ID 211092002</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
+    <value>打印价目表代码报表</value>
+    <comment>CSH ID 211092003</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
+    <value>存货控制价目表代码报表屏幕</value>
+    <comment>CSH ID 211092001</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
+    <value>关于再订购信息</value>
+    <comment>CSH ID 211093002</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
+    <value>打印再订购数量报表</value>
+    <comment>CSH ID 211093003</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
+    <value>存货控制再订购数量报表屏幕</value>
+    <comment>CSH ID 211093001</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Article1" xml:space="preserve">
+    <value>关于应付帐款报表</value>
+    <comment>CSH ID 16053002</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Article2" xml:space="preserve">
+    <value>打印汇款至地点报表</value>
+    <comment>CSH ID 16053003</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Screen" xml:space="preserve">
+    <value>应付帐款汇款至地点报表屏幕</value>
+    <comment>CSH ID 16053001</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18055002</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款批次状态报表</value>
+    <comment>CSH ID 18055003</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>应收帐款批次状态报表屏幕</value>
+    <comment>CSH ID 18055001</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Article1" xml:space="preserve">
+    <value>关于处理调整</value>
+    <comment>CSH ID 211076002</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Article2" xml:space="preserve">
+    <value>自动处理调整</value>
+    <comment>CSH ID 211076003</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Screen" xml:space="preserve">
+    <value>存货控制处理调整屏幕</value>
+    <comment>CSH ID 211076001</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Article1" xml:space="preserve">
+    <value>关于经常性收费批次</value>
+    <comment>CSH ID 18040002</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Article2" xml:space="preserve">
+    <value>手动开经常性收费发票</value>
+    <comment>CSH ID 18040003</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Screen" xml:space="preserve">
+    <value>应收帐款创建经常性收费批次屏幕</value>
+    <comment>CSH ID 18040001</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 211074002</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Article2" xml:space="preserve">
+    <value>存货控制批别编号交易查询屏幕</value>
+    <comment>CSH ID 211074003</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Screen" xml:space="preserve">
+    <value>存货控制批别召回/放行屏幕</value>
+    <comment>CSH ID 211074001</comment>
+  </data>
+  <data name="AR_RefundBatchList_Article1" xml:space="preserve">
+    <value>关于处理退款</value>
+    <comment>CSH ID 18063002</comment>
+  </data>
+  <data name="AR_RefundBatchList_Article2" xml:space="preserve">
+    <value>添加，编辑，或删除退款批次</value>
+    <comment>CSH ID 18063003</comment>
+  </data>
+  <data name="AR_RefundBatchList_Screen" xml:space="preserve">
+    <value>应收帐款退款批次清单屏幕</value>
+    <comment>CSH ID 18063001</comment>
+  </data>
+  <data name="CS_Schedules_Article1" xml:space="preserve">
+    <value>创建经常性交易的排程</value>
+    <comment>CSH ID 71036002</comment>
+  </data>
+  <data name="CS_Schedules_Article2" xml:space="preserve">
+    <value>行政管理屏幕</value>
+    <comment>CSH ID 71036003</comment>
+  </data>
+  <data name="CS_Schedules_Screen" xml:space="preserve">
+    <value>排程屏幕</value>
+    <comment>CSH ID 71036001</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168035002</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>打印总帐过帐日志报表</value>
+    <comment>CSH ID 168035003</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>总帐过帐日志报表屏幕</value>
+    <comment>CSH ID 168035001</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Article1" xml:space="preserve">
+    <value>关于来源代码</value>
+    <comment>CSH ID 168037002</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Article2" xml:space="preserve">
+    <value>打印总帐来源代码报表</value>
+    <comment>CSH ID 168037003</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Screen" xml:space="preserve">
+    <value>总帐来源代码报表屏幕</value>
+    <comment>CSH ID 168037001</comment>
+  </data>
+  <data name="IC_ClearHistory_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 211072002</comment>
+  </data>
+  <data name="IC_ClearHistory_Article2" xml:space="preserve">
+    <value>清除历史</value>
+    <comment>CSH ID 211072003</comment>
+  </data>
+  <data name="IC_ClearHistory_Screen" xml:space="preserve">
+    <value>存货控制清除历史屏幕</value>
+    <comment>CSH ID 211072001</comment>
+  </data>
+  <data name="IC_ContractPricing_Article1" xml:space="preserve">
+    <value>合约定价</value>
+    <comment>CSH ID 211065002</comment>
+  </data>
+  <data name="IC_ContractPricing_Article2" xml:space="preserve">
+    <value>为客户添加合约价格</value>
+    <comment>CSH ID 211065003</comment>
+  </data>
+  <data name="IC_ContractPricing_Screen" xml:space="preserve">
+    <value>存货控制合约定价屏幕</value>
+    <comment>CSH ID 211065001</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Article1" xml:space="preserve">
+    <value>关于用料单</value>
+    <comment>CSH ID 211066002</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Article2" xml:space="preserve">
+    <value>复制用料单</value>
+    <comment>CSH ID 211066003</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Screen" xml:space="preserve">
+    <value>存货控制复制用料单屏幕</value>
+    <comment>CSH ID 211066001</comment>
+  </data>
+  <data name="IC_ItemsWizard_Article1" xml:space="preserve">
+    <value>使用货品向导添加存货货品</value>
+    <comment>CSH ID 211068002</comment>
+  </data>
+  <data name="IC_ItemsWizard_Article2" xml:space="preserve">
+    <value>使用货品向导更改存货货品描述</value>
+    <comment>CSH ID 211068003</comment>
+  </data>
+  <data name="IC_ItemsWizard_Screen" xml:space="preserve">
+    <value>存货控制货品向导屏幕</value>
+    <comment>CSH ID 211068001</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
+    <value>关于供应商明细</value>
+    <comment>CSH ID 211094002</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
+    <value>打印供应商明细报表</value>
+    <comment>CSH ID 211094003</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
+    <value>存货控制供应商明细报表屏幕</value>
+    <comment>CSH ID 211094001</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Article1" xml:space="preserve">
+    <value>关于重估</value>
+    <comment>CSH ID 168040002</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Article2" xml:space="preserve">
+    <value>添加重估代码</value>
+    <comment>CSH ID 168040003</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Screen" xml:space="preserve">
+    <value>总帐重估代码屏幕</value>
+    <comment>CSH ID 168040001</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Article1" xml:space="preserve">
+    <value>关于来源日志</value>
+    <comment>CSH ID 168041002</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Article2" xml:space="preserve">
+    <value>添加来源日志概览</value>
+    <comment>CSH ID 168041003</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Screen" xml:space="preserve">
+    <value>总帐来源日志概览屏幕</value>
+    <comment>CSH ID 168041001</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 211073002</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>删除闲置记录</value>
+    <comment>CSH ID 211073003</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>存货控制删除闲置记录屏幕</value>
+    <comment>CSH ID 211073001</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211101002</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Article2" xml:space="preserve">
+    <value>打印系列/批别编号清单报表</value>
+    <comment>CSH ID 211101003</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
+    <value>存货控制系列/批别编号清单报表屏幕</value>
+    <comment>CSH ID 211101001</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211102002</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Article2" xml:space="preserve">
+    <value>打印系列/批别编号在手数量报表</value>
+    <comment>CSH ID 211102003</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
+    <value>存货控制系列/批别编号现有数量报表屏幕</value>
+    <comment>CSH ID 211102001</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18045002</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款客户群组清单报表</value>
+    <comment>CSH ID 18045003</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Screen" xml:space="preserve">
+    <value>应收帐款客户群组报表屏幕</value>
+    <comment>CSH ID 18045001</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Article1" xml:space="preserve">
+    <value>关于客户查询</value>
+    <comment>CSH ID 18044002</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Article2" xml:space="preserve">
+    <value>检查客户的信贷状态</value>
+    <comment>CSH ID 18044003</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Screen" xml:space="preserve">
+    <value>应收帐款客户查询屏幕</value>
+    <comment>CSH ID 18044001</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18057002</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款过帐日志</value>
+    <comment>CSH ID 18057003</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>应收帐款过帐日志报表屏幕</value>
+    <comment>CSH ID 18057001</comment>
+  </data>
+  <data name="IC_LotNumbers_Article1" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+    <comment>CSH ID 211069002</comment>
+  </data>
+  <data name="IC_LotNumbers_Article2" xml:space="preserve">
+    <value>查看或编辑一个批别编号的明细</value>
+    <comment>CSH ID 211069003</comment>
+  </data>
+  <data name="IC_LotNumbers_Screen" xml:space="preserve">
+    <value>存货控制批别编号屏幕</value>
+    <comment>CSH ID 211069001</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
+    <value>关于销货单，发货，和发票</value>
+    <comment>CSH ID 369034002</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Article2" xml:space="preserve">
+    <value>对发货开发票</value>
+    <comment>CSH ID 369034003</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Screen" xml:space="preserve">
+    <value>销售订单发票分录屏幕</value>
+    <comment>CSH ID 369034001</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
+    <value>关于从交易屏幕查询客户和凭证</value>
+    <comment>CSH ID 18062002</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
+    <value>查看收款</value>
+    <comment>CSH ID 18062003</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
+    <value>应收帐款收款查询屏幕</value>
+    <comment>CSH ID 18062001</comment>
+  </data>
+  <data name="AR_RefundInquiry_Article1" xml:space="preserve">
+    <value>关于处理退款</value>
+    <comment>CSH ID 18065002</comment>
+  </data>
+  <data name="AR_RefundInquiry_Article2" xml:space="preserve">
+    <value>查看退款</value>
+    <comment>CSH ID 18065003</comment>
+  </data>
+  <data name="AR_RefundInquiry_Screen" xml:space="preserve">
+    <value>应收帐款退款查询屏幕</value>
+    <comment>CSH ID 18065001</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168034002</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>打印总帐批次状态报表</value>
+    <comment>CSH ID 168034003</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>总帐批次状态报表屏幕</value>
+    <comment>CSH ID 168034001</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Article1" xml:space="preserve">
+    <value>关于财务集</value>
+    <comment>CSH ID 168029002</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Article2" xml:space="preserve">
+    <value>比较两个财务集</value>
+    <comment>CSH ID 168029003</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Screen" xml:space="preserve">
+    <value>总帐财务数据集比较</value>
+    <comment>CSH ID 168029001</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Article1" xml:space="preserve">
+    <value>关于用料单</value>
+    <comment>CSH ID 211064002</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Article2" xml:space="preserve">
+    <value>添加用料单</value>
+    <comment>CSH ID 211064003</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Screen" xml:space="preserve">
+    <value>存货控制用料单屏幕</value>
+    <comment>CSH ID 211064001</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Article1" xml:space="preserve">
+    <value>关于价目表</value>
+    <comment>CSH ID 211067002</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Article2" xml:space="preserve">
+    <value>复制定价信息到其它价目表或币种</value>
+    <comment>CSH ID 211067003</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Screen" xml:space="preserve">
+    <value>存货控制复制货品定价屏幕</value>
+    <comment>CSH ID 211067001</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Article1" xml:space="preserve">
+    <value>关于应付帐款中的处理保留款</value>
+    <comment>CSH ID 16046002</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Article2" xml:space="preserve">
+    <value>处理未结清保留款</value>
+    <comment>CSH ID 16046003</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Screen" xml:space="preserve">
+    <value>应付帐款创建保留款批次屏幕</value>
+    <comment>CSH ID 16046001</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Article1" xml:space="preserve">
+    <value>关于处理保留款</value>
+    <comment>CSH ID 18051002</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Article2" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 18051003</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Screen" xml:space="preserve">
+    <value>应收帐款创建保留款批次屏幕</value>
+    <comment>CSH ID 18051001</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Article1" xml:space="preserve">
+    <value>关于从交易屏幕查询客户和凭证</value>
+    <comment>CSH ID 18060002</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Article2" xml:space="preserve">
+    <value>为当前客户过滤凭证查询结果</value>
+    <comment>CSH ID 18060003</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Screen" xml:space="preserve">
+    <value>应收帐款凭证查询屏幕</value>
+    <comment>CSH ID 18060001</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Article1" xml:space="preserve">
+    <value>关于用料单</value>
+    <comment>CSH ID 211085002</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Article2" xml:space="preserve">
+    <value>打印用料单报表</value>
+    <comment>CSH ID 211085003</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Screen" xml:space="preserve">
+    <value>存货控制用料单报表屏幕</value>
+    <comment>CSH ID 211085001</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Article1" xml:space="preserve">
+    <value>关于处理调整</value>
+    <comment>CSH ID 16050002</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Article2" xml:space="preserve">
+    <value>创建或修改调整批次</value>
+    <comment>CSH ID 16050003</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Screen" xml:space="preserve">
+    <value>应付帐款调整批次清单屏幕</value>
+    <comment>CSH ID 16050001</comment>
+  </data>
+  <data name="AP_RemitToLocations_Article1" xml:space="preserve">
+    <value>关于汇款至地点</value>
+    <comment>CSH ID 16055002</comment>
+  </data>
+  <data name="AP_RemitToLocations_Article2" xml:space="preserve">
+    <value>添加，修改，或删除供应商的汇款至地点</value>
+    <comment>CSH ID 16055003</comment>
+  </data>
+  <data name="AP_RemitToLocations_Screen" xml:space="preserve">
+    <value>应付帐款汇款至地点屏幕</value>
+    <comment>CSH ID 16055001</comment>
+  </data>
+  <data name="AR_ClearHistory_Article1" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 18049002</comment>
+  </data>
+  <data name="AR_ClearHistory_Article2" xml:space="preserve">
+    <value>清除应收帐款历史</value>
+    <comment>CSH ID 18049003</comment>
+  </data>
+  <data name="AR_ClearHistory_Screen" xml:space="preserve">
+    <value>应收帐款清除历史屏幕</value>
+    <comment>CSH ID 18049001</comment>
+  </data>
+  <data name="AR_ClearStatistics_Article1" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 18050002</comment>
+  </data>
+  <data name="AR_ClearStatistics_Article2" xml:space="preserve">
+    <value>清除统计</value>
+    <comment>CSH ID 18050003</comment>
+  </data>
+  <data name="AR_ClearStatistics_Screen" xml:space="preserve">
+    <value>应收帐款清除统计屏幕</value>
+    <comment>CSH ID 18050001</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Article1" xml:space="preserve">
+    <value>关于处理进货</value>
+    <comment>CSH ID 18061002</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Article2" xml:space="preserve">
+    <value>为快速存款添加收款到存款单</value>
+    <comment>CSH ID 18061003</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Screen" xml:space="preserve">
+    <value>应收帐款快速收款分录屏幕</value>
+    <comment>CSH ID 18061001</comment>
+  </data>
+  <data name="IC_ContractCodes_Article1" xml:space="preserve">
+    <value>合约代码</value>
+    <comment>CSH ID 211081002</comment>
+  </data>
+  <data name="IC_ContractCodes_Article2" xml:space="preserve">
+    <value>添加合约代码</value>
+    <comment>CSH ID 211081003</comment>
+  </data>
+  <data name="IC_ContractCodes_Screen" xml:space="preserve">
+    <value>存货控制合约代码屏幕</value>
+    <comment>CSH ID 211081001</comment>
+  </data>
+  <data name="AP_ClearHistory_Article1" xml:space="preserve">
+    <value>从应付帐款中清除过时数据</value>
+    <comment>CSH ID 16044002</comment>
+  </data>
+  <data name="AP_ClearHistory_Article2" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 16044003</comment>
+  </data>
+  <data name="AP_ClearHistory_Screen" xml:space="preserve">
+    <value>应付帐款清除历史屏幕</value>
+    <comment>CSH ID 16044001</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 18053002</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>从应收帐款中删除闲置记录</value>
+    <comment>CSH ID 18053003</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>应收帐款删除闲置记录屏幕</value>
+    <comment>CSH ID 18053001</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Article1" xml:space="preserve">
+    <value>关于批次处理</value>
+    <comment>CSH ID 18058002</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Article2" xml:space="preserve">
+    <value>过帐调整批次</value>
+    <comment>CSH ID 18058003</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Screen" xml:space="preserve">
+    <value>应收帐款调整批次清单屏幕</value>
+    <comment>CSH ID 18058001</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Article1" xml:space="preserve">
+    <value>关于调整分录</value>
+    <comment>CSH ID 18059002</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Article2" xml:space="preserve">
+    <value>调整已过帐交易</value>
+    <comment>CSH ID 18059003</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Screen" xml:space="preserve">
+    <value>应收帐款调整分录屏幕</value>
+    <comment>CSH ID 18059001</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18046002</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款统一帐户报表</value>
+    <comment>CSH ID 18046003</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Screen" xml:space="preserve">
+    <value>应收帐款统一帐户报表屏幕</value>
+    <comment>CSH ID 18046001</comment>
+  </data>
+  <data name="AR_RefundEntry_Article1" xml:space="preserve">
+    <value>关于处理退款</value>
+    <comment>CSH ID 18064002</comment>
+  </data>
+  <data name="AR_RefundEntry_Article2" xml:space="preserve">
+    <value>向客户退款</value>
+    <comment>CSH ID 18064003</comment>
+  </data>
+  <data name="AR_RefundEntry_Screen" xml:space="preserve">
+    <value>应收帐款退款分录屏幕</value>
+    <comment>CSH ID 18064001</comment>
+  </data>
+  <data name="CS_ReminderList_Article1" xml:space="preserve">
+    <value>创建经常性交易的排程</value>
+    <comment>CSH ID 71035002</comment>
+  </data>
+  <data name="CS_ReminderList_Article2" xml:space="preserve">
+    <value>排程屏幕</value>
+    <comment>CSH ID 71035003</comment>
+  </data>
+  <data name="CS_ReminderList_Screen" xml:space="preserve">
+    <value>提示清单屏幕</value>
+    <comment>CSH ID 71035001</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Article1" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168036002</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Article2" xml:space="preserve">
+    <value>打印总帐经常性分录报表</value>
+    <comment>CSH ID 168036003</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Screen" xml:space="preserve">
+    <value>总帐经常性分录报表屏幕</value>
+    <comment>CSH ID 168036001</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Article1" xml:space="preserve">
+    <value>关于总帐报表</value>
+    <comment>CSH ID 168038002</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Article2" xml:space="preserve">
+    <value>打印总帐来源日志报表</value>
+    <comment>CSH ID 168038003</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Screen" xml:space="preserve">
+    <value>总帐来源日志报表屏幕</value>
+    <comment>CSH ID 168038001</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Article1" xml:space="preserve">
+    <value>关于用料单</value>
+    <comment>CSH ID 211071002</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Article2" xml:space="preserve">
+    <value>更新用料单</value>
+    <comment>CSH ID 211071003</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Screen" xml:space="preserve">
+    <value>存货控制更新用料单屏幕</value>
+    <comment>CSH ID 211071001</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Article1" xml:space="preserve">
+    <value>关于销货单，发货，和发票</value>
+    <comment>CSH ID 369035002</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Article2" xml:space="preserve">
+    <value>对发货开发票</value>
+    <comment>CSH ID 369035003</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Screen" xml:space="preserve">
+    <value>销售订单发货分录屏幕</value>
+    <comment>CSH ID 369035001</comment>
+  </data>
+  <data name="AR_Items_Article1" xml:space="preserve">
+    <value>关于应收帐款货品</value>
+    <comment>CSH ID 18054002</comment>
+  </data>
+  <data name="AR_Items_Article2" xml:space="preserve">
+    <value>添加或修改货品</value>
+    <comment>CSH ID 18054003</comment>
+  </data>
+  <data name="AR_Items_Screen" xml:space="preserve">
+    <value>应收帐款货品屏幕</value>
+    <comment>CSH ID 18054001</comment>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Article1" xml:space="preserve">
+    <value>关于冲销调整的可选字段</value>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Article2" xml:space="preserve">
+    <value>冲销交易</value>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Screen" xml:space="preserve">
+    <value>应收帐款创建冲销批次屏幕</value>
+    <comment>CSH ID 18052001</comment>
+  </data>
+  <data name="IC_SerialRegistration_Article1" xml:space="preserve">
+    <value>有关定期处理</value>
+    <comment>CSH ID 211079002</comment>
+  </data>
+  <data name="IC_SerialRegistration_Article2" xml:space="preserve">
+    <value>为客户保修注册系列编号</value>
+    <comment>CSH ID 211079003</comment>
+  </data>
+  <data name="IC_SerialRegistration_Screen" xml:space="preserve">
+    <value>存货控制系列注册屏幕</value>
+    <comment>CSH ID 211079001</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
+    <value>保修代码</value>
+    <comment>CSH ID 211083002</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Article2" xml:space="preserve">
+    <value>添加保修代码</value>
+    <comment>CSH ID 211083003</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
+    <value>存货控制保修代码屏幕</value>
+    <comment>CSH ID 211083001</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
+    <value>关于应收帐款报表</value>
+    <comment>CSH ID 18048002</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Article2" xml:space="preserve">
+    <value>打印应收帐款发货至地点报表</value>
+    <comment>CSH ID 18048003</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Screen" xml:space="preserve">
+    <value>应收帐款发货至地点报表屏幕</value>
+    <comment>CSH ID 18048001</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Article1" xml:space="preserve">
+    <value>关于处理调整</value>
+    <comment>CSH ID 16051002</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Article2" xml:space="preserve">
+    <value>删除调整</value>
+    <comment>CSH ID 16051003</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Screen" xml:space="preserve">
+    <value>应付帐款调整分录屏幕</value>
+    <comment>CSH ID 16051001</comment>
+  </data>
+  <data name="AP_ClearStatistics_Article1" xml:space="preserve">
+    <value>清除统计</value>
+    <comment>CSH ID 16045002</comment>
+  </data>
+  <data name="AP_ClearStatistics_Article2" xml:space="preserve">
+    <value>定期处理步骤</value>
+    <comment>CSH ID 16045003</comment>
+  </data>
+  <data name="AP_ClearStatistics_Screen" xml:space="preserve">
+    <value>应付帐款清除统计屏幕</value>
+    <comment>CSH ID 16045001</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Article1" xml:space="preserve">
+    <value>关于合并交易</value>
+    <comment>CSH ID 168031002</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Article2" xml:space="preserve">
+    <value>合并交易</value>
+    <comment>CSH ID 168031003</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Screen" xml:space="preserve">
+    <value>总帐合并已过帐交易屏幕</value>
+    <comment>CSH ID 168031001</comment>
+  </data>
+  <data name="GL_CreateAccounts_Article1" xml:space="preserve">
+    <value>添加一个新科目</value>
+    <comment>CSH ID 168028002</comment>
+  </data>
+  <data name="GL_CreateAccounts_Article2" xml:space="preserve">
+    <value>总帐创建科目预览屏幕</value>
+    <comment>CSH ID 168028003</comment>
+  </data>
+  <data name="GL_CreateAccounts_Screen" xml:space="preserve">
+    <value>总帐创建科目屏幕</value>
+    <comment>CSH ID 168028001</comment>
+  </data>
+  <data name="AS_NavigationMenu_Article1" xml:space="preserve">
+    <value>自定义导航菜单</value>
+    <comment>19007002</comment>
+  </data>
+  <data name="AS_NavigationMenu_Article2" xml:space="preserve">
+    <value>管理服务安全授权</value>
+    <comment>19007003</comment>
+  </data>
+  <data name="AS_NavigationMenu_Screen" xml:space="preserve">
+    <value>自定义导航菜单屏幕</value>
+    <comment>19007001</comment>
+  </data>
+  <data name="AR_RecurringCharges_Article1" xml:space="preserve">
+    <value>关于经常性收费</value>
+    <comment>CSH ID 18039002</comment>
+  </data>
+  <data name="AR_RecurringCharges_Article2" xml:space="preserve">
+    <value>为客户设置经常性收费</value>
+    <comment>CSH ID 18039003</comment>
+  </data>
+  <data name="AR_RecurringCharges_Screen" xml:space="preserve">
+    <value>应收帐款经常性收费屏幕</value>
+    <comment>CSH ID 18039001</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Article1" xml:space="preserve">
+    <value>关于经常性收费</value>
+    <comment>CSH ID 18041002</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Article2" xml:space="preserve">
+    <value>自动更新经常性收费</value>
+    <comment>CSH ID 18041003</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Screen" xml:space="preserve">
+    <value>应收帐款更新经常性收费屏幕</value>
+    <comment>CSH ID 18041001</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Article1" xml:space="preserve">
+    <value>添加信用卡类型</value>
+    <comment>37035002</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Article2" xml:space="preserve">
+    <value>设置银行服务</value>
+    <comment>37035003</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Screen" xml:space="preserve">
+    <value>银行信用卡类型屏幕</value>
+    <comment>37035001</comment>
+  </data>
+  <data name="GL_TransactionHistory_Article1" xml:space="preserve">
+    <value>关于总帐中的交易处理</value>
+  </data>
+  <data name="GL_TransactionHistory_Article2" xml:space="preserve">
+    <value>查看已过帐到总帐科目的交易</value>
+  </data>
+  <data name="GL_TransactionHistory_Screen" xml:space="preserve">
+    <value>总帐交易历史屏幕</value>
+  </data>
+  <data name="TX_TaxClearHistory_Article1" xml:space="preserve">
+    <value>清除税务历史</value>
+    <comment>CSH ID 497006002</comment>
+  </data>
+  <data name="TX_TaxClearHistory_Article2" xml:space="preserve">
+    <value>打印税务追踪报表</value>
+    <comment>CSH ID 497006003 </comment>
+  </data>
+  <data name="TX_TaxClearHistory_Screen" xml:space="preserve">
+    <value>税务清除历史屏幕</value>
+    <comment>CSH ID 497006001</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Article1" xml:space="preserve">
+    <value>处理多个信用卡付款</value>
+    <comment>CSH ID 18066002</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Article2" xml:space="preserve">
+    <value>关于处理进货</value>
+    <comment>CSH ID 18066003</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Screen" xml:space="preserve">
+    <value>应收帐款处理信用卡付款屏幕</value>
+    <comment>CSH ID 18066001</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Article1" xml:space="preserve">
+    <value>关于重估</value>
+    <comment>CSH ID 168033002</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Article2" xml:space="preserve">
+    <value>创建重估批次</value>
+    <comment>CSH ID 168033003</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Screen" xml:space="preserve">
+    <value>总帐创建重估批次屏幕</value>
+    <comment>CSH ID 168033001</comment>
+  </data>
+  <data name="AS_WorkProfile_Article1" xml:space="preserve">
+    <value>添加和管理报表快捷键</value>
+    <comment>19008002</comment>
+  </data>
+  <data name="AS_WorkProfile_Article2" xml:space="preserve">
+    <value>自定义网页屏幕上的字段和控件</value>
+    <comment>19008003</comment>
+  </data>
+  <data name="AS_WorkProfile_Screen" xml:space="preserve">
+    <value>添加和管理用户界面概览</value>
+    <comment>19008001</comment>
+  </data>
+  <data name="GL_AccountPermissions_Article1" xml:space="preserve">
+    <value>关于总帐安全控制</value>
+    <comment>CSH ID 168027002</comment>
+  </data>
+  <data name="GL_AccountPermissions_Article2" xml:space="preserve">
+    <value>设置科目权限</value>
+    <comment>CSH ID 168027003</comment>
+  </data>
+  <data name="GL_AccountPermissions_Screen" xml:space="preserve">
+    <value>总帐科目权限屏幕</value>
+    <comment>CSH ID 168027001</comment>
+  </data>
+  <data name="Portal_Inquiry_Article1" xml:space="preserve">
+    <value>使用查询工具查找信息</value>
+    <comment>CSH ID 677005002</comment>
+  </data>
+  <data name="Portal_Inquiry_Article2" xml:space="preserve">
+    <value>创建一个自定义查询</value>
+    <comment>CSH ID 677005003</comment>
+  </data>
+  <data name="Portal_Inquiry_Screen" xml:space="preserve">
+    <value>关于查询工具</value>
+    <comment>CSH ID 677005001</comment>
+  </data>
+  <data name="Portal_Help" xml:space="preserve">
+    <value>帮助和文档</value>
+  </data>
+  <data name="Portal_ProductDocuments" xml:space="preserve">
+    <value>产品文档</value>
+  </data>
+  <data name="Portal_WhatsNew" xml:space="preserve">
+    <value>有何新内容</value>
+  </data>
+  <data name="Resources_OnlineCommunity" xml:space="preserve">
+    <value>在线社区</value>
+  </data>
+  <data name="Resources_OrderChecksForms" xml:space="preserve">
+    <value>订购支票和表格</value>
+  </data>
+  <data name="Resources_Sage300Home" xml:space="preserve">
+    <value>Sage 300主页</value>
+  </data>
+  <data name="Resources_SubmitIdea" xml:space="preserve">
+    <value>提交产品构想</value>
+  </data>
+  <data name="SageSupport" xml:space="preserve">
+    <value>Sage支持</value>
+  </data>
+  <data name="SageSupport_Knowledgebase" xml:space="preserve">
+    <value>知识库</value>
+  </data>
+  <data name="SageSupport_LiveChat" xml:space="preserve">
+    <value>即时交谈</value>
+  </data>
+  <data name="SageSupport_Remote" xml:space="preserve">
+    <value>远程支持会话</value>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Article1" xml:space="preserve">
+    <value>关于预授权，捕获，和强制信用卡付款</value>
+    <comment>CSH ID 369033002</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Article2" xml:space="preserve">
+    <value>捕获和开发票预授权信用卡付款</value>
+    <comment>CSH ID 369033003</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Screen" xml:space="preserve">
+    <value>销售订单捕获有发票的付款屏幕</value>
+    <comment>CSH ID 369033001</comment>
+  </data>
+  <data name="Portal_GlobalSearch_Article1" xml:space="preserve">
+    <value>使用全局搜索查找信息</value>
+  </data>
+  <data name="Portal_GlobalSearch_Screen" xml:space="preserve">
+    <value>关于全局搜索</value>
+  </data>
+  <data name="Portal_GlobalSearch_Article2" xml:space="preserve">
+    <value>常见问题</value>
+  </data>
+</root>

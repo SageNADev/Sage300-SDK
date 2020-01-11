@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AsCurrent" xml:space="preserve">
+    <value>Courant</value>
+  </data>
+  <data name="AsPerTaxAuthority" xml:space="preserve">
+    <value>Selon autorité fiscale</value>
+  </data>
+  <data name="AtTimeofOriginalDocument" xml:space="preserve">
+    <value>Au moment du document original</value>
+  </data>
+  <data name="ByDate" xml:space="preserve">
+    <value>Par date</value>
+  </data>
+  <data name="DocumentTotalAfterTaxes" xml:space="preserve">
+    <value>Total document après taxes</value>
+  </data>
+  <data name="DocumentTotalBeforeTaxes" xml:space="preserve">
+    <value>Total document avant taxes</value>
+  </data>
+  <data name="CheckforDuplicateChecks_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="CheckforDuplicateChecks_None" xml:space="preserve">
+    <value>Nil</value>
+  </data>
+  <data name="CheckforDuplicateChecks_Warning" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="DefaultInvoiceType_Item" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="DefaultOrderofOpenDocuments_OriginalDocNo" xml:space="preserve">
+    <value>Numéro document original</value>
+  </data>
+  <data name="DefaultPostingDate_SessionDate" xml:space="preserve">
+    <value>Date de session</value>
+  </data>
+  <data name="IncludePendingTransactions_AllTransactions" xml:space="preserve">
+    <value>Toutes les transactions</value>
+  </data>
+  <data name="IncludePendingTransactions_None" xml:space="preserve">
+    <value>Nil</value>
+  </data>
+  <data name="IncludePendingTransactions_Receipts" xml:space="preserve">
+    <value>Encaissements</value>
+  </data>
+  <data name="IncludePendingTransactions_ReceiptsandAdjustments" xml:space="preserve">
+    <value>Encaissements et ajustements</value>
+  </data>
+  <data name="SortChecksBy_CustomerNumber" xml:space="preserve">
+    <value>Numéro du client</value>
+  </data>
+  <data name="SortChecksBy_PayeeCountry" xml:space="preserve">
+    <value>Pays du bénéficiaire</value>
+  </data>
+  <data name="SortChecksBy_PayeeName" xml:space="preserve">
+    <value>Nom du bénéficiaire</value>
+  </data>
+  <data name="SortChecksBy_PayeeZipOrPostalCode" xml:space="preserve">
+    <value>Code postal du bénéficiaire</value>
+  </data>
+  <data name="SortChecksBy_TransactionEntryNumber" xml:space="preserve">
+    <value>Numéro saisie de transaction</value>
+  </data>
+  <data name="StatisticsAccumulate_CalendarYear" xml:space="preserve">
+    <value>Année civile</value>
+  </data>
+  <data name="StatisticsAccumulate_FiscalYear" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="StatisticsPeriod_Bimonthly" xml:space="preserve">
+    <value>Bimensuel</value>
+  </data>
+  <data name="StatisticsPeriod_Biweekly" xml:space="preserve">
+    <value>Aux 2 semaines</value>
+  </data>
+  <data name="StatisticsPeriod_FiscalPeriod" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="StatisticsPeriod_Fourweeks" xml:space="preserve">
+    <value>Quatre semaines</value>
+  </data>
+  <data name="StatisticsPeriod_Monthly" xml:space="preserve">
+    <value>Mensuel</value>
+  </data>
+  <data name="StatisticsPeriod_Quarterly" xml:space="preserve">
+    <value>Trimestriel</value>
+  </data>
+  <data name="StatisticsPeriod_Semiannually" xml:space="preserve">
+    <value>Semestriel</value>
+  </data>
+  <data name="StatisticsPeriod_Sevendays" xml:space="preserve">
+    <value>Sept jours</value>
+  </data>
+  <data name="StatisticsPeriod_Weekly" xml:space="preserve">
+    <value>Hebdomadaire</value>
+  </data>
+  <data name="UseCurrentExchangeRate" xml:space="preserve">
+    <value>Utiliser cours change courant</value>
+  </data>
+  <data name="UseOriginalDocumentExchangeRate" xml:space="preserve">
+    <value>Utiliser cours change du document original</value>
+  </data>
+  <data name="DayofNextMonth" xml:space="preserve">
+    <value>Jour du mois suivant</value>
+  </data>
+  <data name="DaysFromDayofNextMonth" xml:space="preserve">
+    <value>Jours à partir jour du mois prochain</value>
+  </data>
+  <data name="DaysFromInvoiceDate" xml:space="preserve">
+    <value>Jours à partir de la date de facture</value>
+  </data>
+  <data name="DiscountDateTable" xml:space="preserve">
+    <value>Table date de remise</value>
+  </data>
+  <data name="DueDateTable" xml:space="preserve">
+    <value>Table date d&apos;échéance</value>
+  </data>
+  <data name="EndofNextMonth" xml:space="preserve">
+    <value>Fin du mois prochain</value>
+  </data>
+  <data name="Excluded" xml:space="preserve">
+    <value>Exclu</value>
+  </data>
+  <data name="Included" xml:space="preserve">
+    <value>Inclus</value>
+  </data>
+  <data name="BatchStatus_Deleted" xml:space="preserve">
+    <value>Supprimé</value>
+  </data>
+  <data name="BatchStatus_Open" xml:space="preserve">
+    <value>Ouvert</value>
+  </data>
+  <data name="BatchStatus_Posted" xml:space="preserve">
+    <value>Reporté</value>
+  </data>
+  <data name="BatchStatus_PostInProgress" xml:space="preserve">
+    <value>Report en cours</value>
+  </data>
+  <data name="BatchStatus_ReadyToPost" xml:space="preserve">
+    <value>Prêt à reporter</value>
+  </data>
+  <data name="BatchTypeClass_Adjustment" xml:space="preserve">
+    <value>Ajustement</value>
+  </data>
+  <data name="BatchTypeClass_Payment" xml:space="preserve">
+    <value>Paiement</value>
+  </data>
+  <data name="BatchTypeClass_WriteOff" xml:space="preserve">
+    <value>Annulation</value>
+  </data>
+  <data name="BatchType_Entered" xml:space="preserve">
+    <value>Saisi</value>
+  </data>
+  <data name="BatchType_External" xml:space="preserve">
+    <value>Externe</value>
+  </data>
+  <data name="BatchType_Generated" xml:space="preserve">
+    <value>Créé</value>
+  </data>
+  <data name="BatchType_Imported" xml:space="preserve">
+    <value>Importé</value>
+  </data>
+  <data name="DepositSlipPrinted_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="DepositSlipPrinted_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="ProcessCommand_CreateNewDepositSlip" xml:space="preserve">
+    <value>Créer nouveau bordereau de dépôt</value>
+  </data>
+  <data name="ProcessCommand_LockBatchResourceExclusive" xml:space="preserve">
+    <value>Verrouiller lot de ressources exclusif</value>
+  </data>
+  <data name="ProcessCommand_LockBatchResourceShared" xml:space="preserve">
+    <value>Verrouiller lot de ressources commun</value>
+  </data>
+  <data name="ProcessCommand_UnlockBatchResource" xml:space="preserve">
+    <value>Déverrouiller lot de ressources</value>
+  </data>
+  <data name="BankRateOperator_Divide" xml:space="preserve">
+    <value>Diviser</value>
+  </data>
+  <data name="BankRateOperator_Multiply" xml:space="preserve">
+    <value>Multiplier</value>
+  </data>
+  <data name="ProcessCommandCode_LockBatchResourceExclusive" xml:space="preserve">
+    <value>Verrouiller lot de ressources exclusif</value>
+  </data>
+  <data name="ProcessCommandCode_LockBatchResourceShared" xml:space="preserve">
+    <value>Verrouiller lot de ressources commun</value>
+  </data>
+  <data name="ProcessCommandCode_UnlockBatchResource" xml:space="preserve">
+    <value>Déverrouiller lot de ressources</value>
+  </data>
+  <data name="BatchPrintedFlag_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="BatchPrintedFlag_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="AdjustmentDetail" xml:space="preserve">
+    <value>Détail ajustement</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ApplyByDocumentType" xml:space="preserve">
+    <value>Imputer par type document</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="ApplyDocumentDetail" xml:space="preserve">
+    <value>Détail imputer document</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ApplyToDocumentNumber" xml:space="preserve">
+    <value>Appliquer à numéro document</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Date du chèque</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="CheckOrReceiptNumber" xml:space="preserve">
+    <value>Numéro chèque ou encaissement</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="CreditNoteDetail" xml:space="preserve">
+    <value>Détail note de crédit</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="CustomerShortName" xml:space="preserve">
+    <value>Nom abrégé du client</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="DebitNoteDetail" xml:space="preserve">
+    <value>Détail note de débit</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="DetailDescription" xml:space="preserve">
+    <value>Description détail</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="DetailReference" xml:space="preserve">
+    <value>Référence détail</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="InvoiceDetail" xml:space="preserve">
+    <value>Détail facture</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ItemNumberOrDistributionCode" xml:space="preserve">
+    <value>Numéro article ou code ventilation</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="MiscellaneousAdjustment" xml:space="preserve">
+    <value>Ajustement divers</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="MiscellaneousAdjustmentDetail" xml:space="preserve">
+    <value>Détail ajustement divers</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="MiscellaneousReceiptDetail" xml:space="preserve">
+    <value>Détail encaissement divers</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projet</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="PurchaseOrderNumber" xml:space="preserve">
+    <value>Numéro bon de commande</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="ReceiptAdvanceCreditClaim" xml:space="preserve">
+    <value>Encaissement de crédit anticipé</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ReceiptDetail" xml:space="preserve">
+    <value>Détail encaissement</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="RefundDetail" xml:space="preserve">
+    <value>Détail remboursement</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ReturnCustomerCheck" xml:space="preserve">
+    <value>Retourner chèque client</value>
+    <comment>GLIntegration-Transactions - Table Column</comment>
+  </data>
+  <data name="ReversalDate" xml:space="preserve">
+    <value>Date d&apos;extourne</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="ReversalDescription" xml:space="preserve">
+    <value>Description extourne</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="ShipToLocation" xml:space="preserve">
+    <value>Adresse d’expédition</value>
+    <comment>GLIntegration- Included Segment List Options</comment>
+  </data>
+  <data name="DocumentType_CreditNote" xml:space="preserve">
+    <value>Note de crédit</value>
+  </data>
+  <data name="DocumentType_DebitNote" xml:space="preserve">
+    <value>Note de débit</value>
+  </data>
+  <data name="DocumentType_Interest" xml:space="preserve">
+    <value>Intérêt</value>
+  </data>
+  <data name="DocumentType_Invoice" xml:space="preserve">
+    <value>Facture</value>
+  </data>
+  <data name="DocumentType_RetainageCreditNote" xml:space="preserve">
+    <value>Note crédit de retenue</value>
+  </data>
+  <data name="DocumentType_RetainageDebitNote" xml:space="preserve">
+    <value>Note débit de retenue</value>
+  </data>
+  <data name="DocumentType_RetainageInvoice" xml:space="preserve">
+    <value>Facture de retenue</value>
+  </data>
+  <data name="BatchType_Recurring" xml:space="preserve">
+    <value>Récurrent</value>
+  </data>
+  <data name="BatchType_Retainage" xml:space="preserve">
+    <value>Retenue</value>
+  </data>
+  <data name="DeliveryMethod_ContactsEmail" xml:space="preserve">
+    <value>Courriel (contact)</value>
+  </data>
+  <data name="DeliveryMethod_Email" xml:space="preserve">
+    <value>Courriel (client)</value>
+  </data>
+  <data name="DeliveryMethod_EmailNationalAccount" xml:space="preserve">
+    <value>Courriel (compte national)</value>
+  </data>
+  <data name="DeliveryMethod_Mail" xml:space="preserve">
+    <value>Courrier</value>
+  </data>
+  <data name="DeliveryMethod_ContactList" xml:space="preserve">
+    <value>Courriel (contacts multiples)</value>
+  </data>
+  <data name="JobApplyMethod_ProratebyAmount" xml:space="preserve">
+    <value>Ventiler par montant</value>
+  </data>
+  <data name="JobApplyMethod_TopDown" xml:space="preserve">
+    <value>Imputer intégralement</value>
+  </data>
+  <data name="AUS" xml:space="preserve">
+    <value>AUS</value>
+  </data>
+  <data name="CHN" xml:space="preserve">
+    <value>CHN</value>
+  </data>
+  <data name="CHT" xml:space="preserve">
+    <value>CHT</value>
+  </data>
+  <data name="ENG" xml:space="preserve">
+    <value>ENG</value>
+  </data>
+  <data name="ESN" xml:space="preserve">
+    <value>ESN</value>
+  </data>
+  <data name="FRA" xml:space="preserve">
+    <value>FRA</value>
+  </data>
+  <data name="MEX" xml:space="preserve">
+    <value>MEX</value>
+  </data>
+  <data name="BatchStatus_CheckCreationInProgress" xml:space="preserve">
+    <value>Création de chèque en cours</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insérer champs optionnels</value>
+    <comment>National Account - Process Command Code Enum</comment>
+  </data>
+  <data name="NormalMode" xml:space="preserve">
+    <value>Mode normal</value>
+  </data>
+  <data name="UnconditionalInsertsOrUpdates" xml:space="preserve">
+    <value>Insertions/mises à jour inconditionnelles</value>
+  </data>
+  <data name="CreditNoteItemEntered" xml:space="preserve">
+    <value>Note de crédit - Article entré</value>
+  </data>
+  <data name="CreditNoteItemIssued" xml:space="preserve">
+    <value>Note de crédit - Article créé</value>
+  </data>
+  <data name="CreditNoteSummaryEntered" xml:space="preserve">
+    <value>Note de crédit - Sommaire entré</value>
+  </data>
+  <data name="CreditNoteSummaryIssued" xml:space="preserve">
+    <value>Note de crédit - Sommaire créé</value>
+  </data>
+  <data name="DebitNoteAdvanceCreditClaim" xml:space="preserve">
+    <value>Note de débit - Demande crédit anticipé</value>
+  </data>
+  <data name="DebitNoteItemEntered" xml:space="preserve">
+    <value>Note de débit - Article entré</value>
+  </data>
+  <data name="DebitNoteItemIssued" xml:space="preserve">
+    <value>Note de débit - Article créé</value>
+  </data>
+  <data name="DebitNoteSummaryEntered" xml:space="preserve">
+    <value>Note de débit - Sommaire entré</value>
+  </data>
+  <data name="DebitNoteSummaryIssued" xml:space="preserve">
+    <value>Note de débit - Sommaire créé</value>
+  </data>
+  <data name="InterestCharge" xml:space="preserve">
+    <value>Frais d'intérêt</value>
+  </data>
+  <data name="InvoiceItemEntered" xml:space="preserve">
+    <value>Facture - Article entré</value>
+  </data>
+  <data name="InvoiceItemIssued" xml:space="preserve">
+    <value>Facture - Article créé</value>
+  </data>
+  <data name="InvoiceRecurringCharge" xml:space="preserve">
+    <value>Facture - Frais périodique</value>
+  </data>
+  <data name="InvoiceSummaryEntered" xml:space="preserve">
+    <value>Facture - Sommaire entré</value>
+  </data>
+  <data name="InvoiceSummaryIssued" xml:space="preserve">
+    <value>Facture - Sommaire créé</value>
+  </data>
+  <data name="PrepaymentPosted" xml:space="preserve">
+    <value>Paiement anticipé - Reporté</value>
+  </data>
+  <data name="ReceiptPosted" xml:space="preserve">
+    <value>Encaissement - Reporté</value>
+  </data>
+  <data name="RefundPosted" xml:space="preserve">
+    <value>Remboursement - Reporté</value>
+  </data>
+  <data name="UnappliedCashPosted" xml:space="preserve">
+    <value>Comptant non imputé - Reporté</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>En suspens</value>
+  </data>
+  <data name="DocumentType_AdjustmentPosted" xml:space="preserve">
+    <value>Ajustement - Reporté</value>
+  </data>
+  <data name="DocumentType_AdjustmentReversed" xml:space="preserve">
+    <value>Ajustement - Extourné</value>
+  </data>
+  <data name="DocumentType_AppliedCreditNote" xml:space="preserve">
+    <value>Imputée - Note crédit</value>
+  </data>
+  <data name="DocumentType_AppliedDebitNote" xml:space="preserve">
+    <value>Imputée - Note débit</value>
+  </data>
+  <data name="DocumentType_CreditNoteAppliedTo" xml:space="preserve">
+    <value>Note crédit - Imputée à</value>
+  </data>
+  <data name="DocumentType_DebitNoteAppliedTo" xml:space="preserve">
+    <value>Note débit - Imputée à</value>
+  </data>
+  <data name="DocumentType_DiscountPosted" xml:space="preserve">
+    <value>Remise - Reportée</value>
+  </data>
+  <data name="DocumentType_DiscountReversed" xml:space="preserve">
+    <value>Remise - Extournée</value>
+  </data>
+  <data name="DocumentType_ExchangeGainLossPosted" xml:space="preserve">
+    <value>Gain/Perte de change - Reporté</value>
+  </data>
+  <data name="DocumentType_ExchangeGainLossReversed" xml:space="preserve">
+    <value>Gain/Perte de change - Extourné</value>
+  </data>
+  <data name="DocumentType_PrepaymentApplied" xml:space="preserve">
+    <value>Paiement anticipé - Imputé</value>
+  </data>
+  <data name="DocumentType_PrepaymentReversed" xml:space="preserve">
+    <value>Paiement anticipé - Extourné</value>
+  </data>
+  <data name="DocumentType_ReceiptApplied" xml:space="preserve">
+    <value>Encaissement - Imputé</value>
+  </data>
+  <data name="DocumentType_ReceiptInvoiceReversed" xml:space="preserve">
+    <value>Encaissement facture extourné</value>
+  </data>
+  <data name="DocumentType_ReceiptPosted" xml:space="preserve">
+    <value>Encaissement - Reporté</value>
+  </data>
+  <data name="DocumentType_ReceiptReversed" xml:space="preserve">
+    <value>Encaissement - Extourné</value>
+  </data>
+  <data name="DocumentType_RetainageAdjusted" xml:space="preserve">
+    <value>Retenue - Ajustée</value>
+  </data>
+  <data name="DocumentType_RetainageExchangeGainLoss" xml:space="preserve">
+    <value>Retenue - Gain/Perte de change</value>
+  </data>
+  <data name="DocumentType_RetainageInvoiced" xml:space="preserve">
+    <value>Retenue - Facturée</value>
+  </data>
+  <data name="DocumentType_RetainageRevalued" xml:space="preserve">
+    <value>Retenue - Réévaluée</value>
+  </data>
+  <data name="DocumentType_RetainageRounding" xml:space="preserve">
+    <value>Retenue - Arrondi</value>
+  </data>
+  <data name="DocumentType_RoundingPosted" xml:space="preserve">
+    <value>Arrondi - Reporté</value>
+  </data>
+  <data name="DocumentType_RoundingReversed" xml:space="preserve">
+    <value>Arrondi - Extourné</value>
+  </data>
+  <data name="DocumentType_UnappliedCashApplied" xml:space="preserve">
+    <value>Comptant non imputé - Imputé</value>
+  </data>
+  <data name="DocumentType_UnappliedCashReversed" xml:space="preserve">
+    <value>Comptant non imputé - Extourné</value>
+  </data>
+  <data name="DocumentType_UnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>Gain/Perte de change - non réalisé</value>
+  </data>
+  <data name="DocumentType_WriteOffPosted" xml:space="preserve">
+    <value>Annulation - Reportée</value>
+  </data>
+  <data name="PaymentType_AppliedCreditNote" xml:space="preserve">
+    <value>Note crédit imputée</value>
+  </data>
+  <data name="PaymentType_AppliedDebitNote" xml:space="preserve">
+    <value>Note débit imputée</value>
+  </data>
+  <data name="PaymentType_CreditNoteAppliedTo" xml:space="preserve">
+    <value>Note crédit imputée à</value>
+  </data>
+  <data name="PaymentType_DebitNoteAppliedTo" xml:space="preserve">
+    <value>Note débit imputée à</value>
+  </data>
+  <data name="PaymentType_ExchangeGainLoss" xml:space="preserve">
+    <value>Gain/Perte de change</value>
+  </data>
+  <data name="BatchCreationType_Default" xml:space="preserve">
+    <value>Par défaut</value>
+  </data>
+  <data name="RangeType_CustomerGroup" xml:space="preserve">
+    <value>Groupe de clients</value>
+  </data>
+  <data name="RangeType_CustomerNumber" xml:space="preserve">
+    <value>Numéro client</value>
+  </data>
+  <data name="RangeType_NationalAccount" xml:space="preserve">
+    <value>Numéro compte national</value>
+  </data>
+  <data name="RangeType_RecurringChargeCode" xml:space="preserve">
+    <value>Code frais divers</value>
+  </data>
+  <data name="DocumentType_RefundPosted" xml:space="preserve">
+    <value>Remboursement - Reporté</value>
+  </data>
+  <data name="DocumentType_RefundReversed" xml:space="preserve">
+    <value>Remboursement - Extourné</value>
+  </data>
+  <data name="BatchCreationType_AddtoanExistingBatch" xml:space="preserve">
+    <value>Ajouter à un lot existant</value>
+  </data>
+  <data name="BatchCreationType_CreateaNewBatch" xml:space="preserve">
+    <value>Créer un nouveau lot</value>
+  </data>
+  <data name="Future" xml:space="preserve">
+    <value>À terme</value>
+    <comment>Used in Customer inquiry order tab</comment>
+  </data>
+  <data name="Quote" xml:space="preserve">
+    <value>Devis</value>
+    <comment>Used in Customer inquiry order tab</comment>
+  </data>
+  <data name="Standing" xml:space="preserve">
+    <value>Permanente</value>
+    <comment>Used in Customer inquiry order tab</comment>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sommaire</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="RangeType_ScheduleLink" xml:space="preserve">
+    <value>Lien planification</value>
+  </data>
+  <data name="RangeType_SpecificRecurringChargeCode" xml:space="preserve">
+    <value>Code spécifique frais récurrents</value>
+  </data>
+</root>

@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DefaultItemStructure" xml:space="preserve">
+    <value>Usar como Estructura Predeterminada de Artículos</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción de Estructura</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI - Estructuras de Artículos</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="IC0320" xml:space="preserve">
+    <value>Estructuras de Artículos</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ItemStructure" xml:space="preserve">
+    <value>Estructura de Artículo</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Prefijo</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Segment1" xml:space="preserve">
+    <value>Segmento 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment10" xml:space="preserve">
+    <value>Segmento 10</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment10Length" xml:space="preserve">
+    <value>Longitud del Segmento 10</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment10Offset" xml:space="preserve">
+    <value>Desfase Segmento 10</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment1Length" xml:space="preserve">
+    <value>Longitud del Segmento 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment1Offset" xml:space="preserve">
+    <value>Desfase Segmento 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment2" xml:space="preserve">
+    <value>Segmento 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment2Length" xml:space="preserve">
+    <value>Longitud del Segmento 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment2Offset" xml:space="preserve">
+    <value>Desfase Segmento 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment3" xml:space="preserve">
+    <value>Segmento 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment3Length" xml:space="preserve">
+    <value>Longitud del Segmento 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment3Offset" xml:space="preserve">
+    <value>Desfase Segmento 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment4" xml:space="preserve">
+    <value>Segmento 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment4Length" xml:space="preserve">
+    <value>Longitud del Segmento 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment4Offset" xml:space="preserve">
+    <value>Desfase Segmento 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment5" xml:space="preserve">
+    <value>Segmento 5</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment5Length" xml:space="preserve">
+    <value>Longitud del Segmento 5</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment5Offset" xml:space="preserve">
+    <value>Desfase Segmento 5</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment6" xml:space="preserve">
+    <value>Segmento 6</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment6Length" xml:space="preserve">
+    <value>Longitud del Segmento 6</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment6Offset" xml:space="preserve">
+    <value>Desfase Segmento 6</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment7" xml:space="preserve">
+    <value>Segmento 7</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment7Length" xml:space="preserve">
+    <value>Longitud del Segmento 7</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment7Offset" xml:space="preserve">
+    <value>Desfase Segmento 7</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment8" xml:space="preserve">
+    <value>Segmento 8</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment8Length" xml:space="preserve">
+    <value>Longitud del Segmento 8</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment8Offset" xml:space="preserve">
+    <value>Desfase Segmento 8</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment9" xml:space="preserve">
+    <value>Segmento 9</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment9Length" xml:space="preserve">
+    <value>Longitud del Segmento 9</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Segment9Offset" xml:space="preserve">
+    <value>Desfase Segmento 9</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentLength" xml:space="preserve">
+    <value>Longitud del Segmento</value>
+    <comment>Grid Column</comment>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nombre del Segmento</value>
+    <comment>Grid Column</comment>
+  </data>
+  <data name="SegmentSeparator" xml:space="preserve">
+    <value>Separador de Segmento</value>
+    <comment>Grid Column</comment>
+  </data>
+  <data name="SegmentSeparator1" xml:space="preserve">
+    <value>Separador de Segmento 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator10" xml:space="preserve">
+    <value>Separador de Segmento 10</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator2" xml:space="preserve">
+    <value>Separador de Segmento 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator3" xml:space="preserve">
+    <value>Separador de Segmento 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator4" xml:space="preserve">
+    <value>Separador de Segmento 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator5" xml:space="preserve">
+    <value>Separador de Segmento 5</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator6" xml:space="preserve">
+    <value>Separador de Segmento 6</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator7" xml:space="preserve">
+    <value>Separador de Segmento 7</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator8" xml:space="preserve">
+    <value>Separador de Segmento 8</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SegmentSeparator9" xml:space="preserve">
+    <value>Separador de Segmento 9</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>Código de Estructura</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalLength" xml:space="preserve">
+    <value>Longitud Total</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ValidateSegment1" xml:space="preserve">
+    <value>Validar Segmento 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment10" xml:space="preserve">
+    <value>Validar Segmento 10</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment2" xml:space="preserve">
+    <value>Validar Segmento 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment3" xml:space="preserve">
+    <value>Validar Segmento 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment4" xml:space="preserve">
+    <value>Validar Segmento 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment5" xml:space="preserve">
+    <value>Validar Segmento 5</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment6" xml:space="preserve">
+    <value>Validar Segmento 6</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment7" xml:space="preserve">
+    <value>Validar Segmento 7</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment8" xml:space="preserve">
+    <value>Validar Segmento 8</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValidateSegment9" xml:space="preserve">
+    <value>Validar Segmento 9</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+</root>

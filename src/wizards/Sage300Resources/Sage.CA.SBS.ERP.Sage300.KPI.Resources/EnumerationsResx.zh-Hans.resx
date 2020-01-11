@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="AgeAsOf" xml:space="preserve">
+    <value>帐析日期</value>
+  </data>
+  <data name="AgeAsOfdateValidation" xml:space="preserve">
+    <value>帐析至日期格式无效。</value>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>帐析期间：</value>
+  </data>
+  <data name="AgingPeriodValidation" xml:space="preserve">
+    <value>必须以升序指定帐析期间。</value>
+  </data>
+  <data name="Between" xml:space="preserve">
+    <value>之间</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>编辑设置...</value>
+  </data>
+  <data name="ConfigureAPSnapshot" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>贷项通知单</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>当前</value>
+  </data>
+  <data name="CustomerGroup" xml:space="preserve">
+    <value>客户群组</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客户编号</value>
+  </data>
+  <data name="days" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借项通知单</value>
+  </data>
+  <data name="DiscardChangesMessage" xml:space="preserve">
+    <value>是否不保存更改而关闭？</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>凭证日期</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>编辑标题...</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>筛选器</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="IncludeTransactionType" xml:space="preserve">
+    <value>包括交易类型</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>利息</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="Is" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="KPISetting" xml:space="preserve">
+    <value>挂件设置</value>
+  </data>
+  <data name="NationalAccount" xml:space="preserve">
+    <value>统一帐户</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="OpenReport" xml:space="preserve">
+    <value>打开报表</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>天数</value>
+  </data>
+  <data name="PayablesAging" xml:space="preserve">
+    <value>应付款帐析</value>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>预付款</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>恢复默认值</value>
+  </data>
+  <data name="RestoreDefaultsMessage" xml:space="preserve">
+    <value>清除您的选择并恢复默认值？</value>
+  </data>
+  <data name="Salesperson" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="SelectTransactionBy" xml:space="preserve">
+    <value>选择交易按</value>
+  </data>
+  <data name="SetAging" xml:space="preserve">
+    <value>设置帐析</value>
+  </data>
+  <data name="Showthecurrentcolumn" xml:space="preserve">
+    <value>显示当前期间</value>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>条款代码</value>
+  </data>
+  <data name="Territory" xml:space="preserve">
+    <value>地区</value>
+  </data>
+  <data name="TransactionTypeValidation" xml:space="preserve">
+    <value>您必须选择至少一个交易类型。</value>
+  </data>
+  <data name="VendorGroup" xml:space="preserve">
+    <value>供应商群组</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供应商编号</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>收款</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>未核销现金</value>
+  </data>
+  <data name="CashPosition" xml:space="preserve">
+    <value>现金头寸</value>
+  </data>
+  <data name="LessCurrentLiabilities" xml:space="preserve">
+    <value>减流动负债</value>
+  </data>
+  <data name="Receivables" xml:space="preserve">
+    <value>应收款</value>
+  </data>
+  <data name="TotalCash" xml:space="preserve">
+    <value>合计现金</value>
+  </data>
+  <data name="AsOf" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="CostOfSales" xml:space="preserve">
+    <value>销售成本</value>
+  </data>
+  <data name="DepreciationExpenses" xml:space="preserve">
+    <value>折旧费用</value>
+  </data>
+  <data name="IncomeFromOperations" xml:space="preserve">
+    <value>来自营运的收入</value>
+  </data>
+  <data name="OperatingIncome" xml:space="preserve">
+    <value>营运收入</value>
+  </data>
+  <data name="OtherExpenses" xml:space="preserve">
+    <value>其它费用</value>
+  </data>
+  <data name="AllCashAccount" xml:space="preserve">
+    <value>所有其它现金帐户</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期间</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
+  </data>
+  <data name="Period1" xml:space="preserve">
+    <value>期间1</value>
+  </data>
+  <data name="Period11" xml:space="preserve">
+    <value>期间11</value>
+  </data>
+  <data name="Period3" xml:space="preserve">
+    <value>期间3</value>
+  </data>
+  <data name="Period5" xml:space="preserve">
+    <value>期间5</value>
+  </data>
+  <data name="Period7" xml:space="preserve">
+    <value>期间7</value>
+  </data>
+  <data name="Period9" xml:space="preserve">
+    <value>期间9</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>按</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>财务年度</value>
+  </data>
+  <data name="Period13" xml:space="preserve">
+    <value>期间13</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>费用</value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>收入</value>
+  </data>
+  <data name="WidgetTitle" xml:space="preserve">
+    <value>挂件标题</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>科目编号</value>
+  </data>
+  <data name="AccountSetCode" xml:space="preserve">
+    <value>科目集合代码</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>客户名称</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="GroupCode" xml:space="preserve">
+    <value>群组代码</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="NationalAccountName" xml:space="preserve">
+    <value>统一帐户名称</value>
+  </data>
+  <data name="NationalAccountNumber" xml:space="preserve">
+    <value>统一帐户编号</value>
+  </data>
+  <data name="SalesPersonCode" xml:space="preserve">
+    <value>业务员代码</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供应商名称</value>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>财务年度/期间</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>下周</value>
+  </data>
+  <data name="ThisWeek" xml:space="preserve">
+    <value>本周</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>期间</value>
+  </data>
+  <data name="ConfigureARSnapshot" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="RenameWidget" xml:space="preserve">
+    <value>重命名挂件</value>
+  </data>
+  <data name="WidgetName" xml:space="preserve">
+    <value>挂件标题</value>
+  </data>
+  <data name="CashAccounts" xml:space="preserve">
+    <value>现金帐户</value>
+  </data>
+  <data name="IncomeLossFromOperations" xml:space="preserve">
+    <value>来自营运的收益（损失）</value>
+  </data>
+  <data name="FiscalYearAsOf" xml:space="preserve">
+    <value>财务年度至</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>销售</value>
+  </data>
+  <data name="EditTitleModalTitle" xml:space="preserve">
+    <value>编辑标题</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>首个</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>末个</value>
+  </data>
+  <data name="AccountGroupCode" xml:space="preserve">
+    <value>科目群组代码</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="PagetitleInManager" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="ReportNameTemplate" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="FromFiscalYearPeriod" xml:space="preserve">
+    <value>从财务年度/期间</value>
+  </data>
+  <data name="ToFiscalYearPeriod" xml:space="preserve">
+    <value>到财务年度/期间</value>
+  </data>
+</root>

@@ -1,0 +1,1729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>IO - Ingreso Notas de Crédito/Débito</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="BtnAutoGen" xml:space="preserve">
+    <value>Autogenerar</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ExtendedAmount" xml:space="preserve">
+    <value>Monto Total</value>
+    <comment>Credit - Table Column</comment>
+  </data>
+  <data name="MiscChargeTotal" xml:space="preserve">
+    <value>Total de Cargos Varios</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>Devuelto</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AutoGenerateFrom" xml:space="preserve">
+    <value>Autogenerar Desde</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ItemsTaxes" xml:space="preserve">
+    <value>Impuestos de Detalle</value>
+    <comment>Button</comment>
+  </data>
+  <data name="InformationNeededMessage" xml:space="preserve">
+    <value>La información necesaria para configurar el precio unitario no existe para lista de precios {0}, artículo {1} en moneda {2}. Tal vez no existe el registro de listo de precios o no se ingresaron los detalles para calcular el precio de unidades de medida múltiples.</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DebitDate" xml:space="preserve">
+    <value>Fecha Nota de Débito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="DebitType" xml:space="preserve">
+    <value>Tipo de Débito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="DebitNoteExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Nota de Débito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="DebitRateType" xml:space="preserve">
+    <value>Tipo de Tasa Nota de Débito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="DebitRateDate" xml:space="preserve">
+    <value>Fecha de Tasa Nota de Débito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="DebitSubtotal" xml:space="preserve">
+    <value>Subtotal Nota de Débito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="DebitAmount" xml:space="preserve">
+    <value>Monto Nota de Débito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Nota de Débito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Crédito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Débito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditDate" xml:space="preserve">
+    <value>Fecha Nota de Crédito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="CreditType" xml:space="preserve">
+    <value>Tipo de Crédito</value>
+    <comment>Credit - Table Column</comment>
+  </data>
+  <data name="CreditNoteExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Nota de Crédito</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="CreditRateType" xml:space="preserve">
+    <value>Tipo de Tasa Nota de Crédito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditRateDate" xml:space="preserve">
+    <value>Fecha de Tasa Nota de Crédito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditSubtotal" xml:space="preserve">
+    <value>Subtotal Nota de Crédito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="CreditAmount" xml:space="preserve">
+    <value>Monto Nota de Crédito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Nota de Crédito</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditNoteDtlOptFlds" xml:space="preserve">
+    <value>IO – Campos Opcionales de Detalle de Notas de Crédito/Débito</value>
+    <comment>Modal title</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="PostCreditDebitNote" xml:space="preserve">
+    <value>{0} {1} no ha sido asentado/a. Si continúa, se desecharán los cambios realizados. ¿Desea continuar?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDone" xml:space="preserve">
+    <value>Asentamiento concluido. Número de {0}: ¿{1} Desea imprimir esta {0}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneNoPrint" xml:space="preserve">
+    <value>Asentamiento concluido. Número de {0}: {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ExchangeNegInventory" xml:space="preserve">
+    <value>El intercambio reducirá la cantidad de artículos en esta ubicación por debajo de cero.  ¿Desea continuar?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ExchangeNegInventoryForKit" xml:space="preserve">
+    <value>El intercambio reducirá la cantidad de artículos en esta ubicación para uno de los componentes por debajo de cero. ¿Desea continuar?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReplaceCrdNoteDetails" xml:space="preserve">
+    <value>¿Desea reemplazar la información de nota de {0} que ingresó por la información de la factura {1}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReturnExistingSN" xml:space="preserve">
+    <value>Ya existe este número de serie. ¿Desea devolverlo?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateNextSerialNumber" xml:space="preserve">
+    <value>Ya existe el número inicial. ¿Desea crear el siguiente número de serie disponible?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxCalculation" xml:space="preserve">
+    <value>La clase fiscal de artículo o cliente no es válida para esta nota de {0}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CrdPostingFailed" xml:space="preserve">
+    <value>Falló el asentamiento. Debe ingresar la nota de crédito/débito nuevamente.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BlankCustomerNumber" xml:space="preserve">
+    <value>Debe ingresar un número de cliente antes de ingresar información de nota de crédito.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ToggleSerialNumber" xml:space="preserve">
+    <value>Debe seleccionar la opción Generar Automáticamente Número RMA Iniciando Desde en Opciones de CI, para poder recibir un número de serie en RMA durante el procesamiento de la nota de crédito.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReturnTooManySN" xml:space="preserve">
+    <value>Ha devuelto demasiados números de serie.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DupSerialNumberNotAlled" xml:space="preserve">
+    <value>No se permiten números de serie duplicados.</value>
+  </data>
+  <data name="SingleNotMultipleOfMessage" xml:space="preserve">
+    <value>La cantidad de números de serie asignados debe ser un múltiplo de {0}. Ha asignado 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PluralNotMultipleOf" xml:space="preserve">
+    <value>La cantidad de números de serie asignados debe ser un múltiplo de {0}. Ha generado {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Descripción Autoridad Fiscal</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Artículo</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToAddress1" xml:space="preserve">
+    <value>Dirección de Facturación 1</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToAddress2" xml:space="preserve">
+    <value>Dirección de Facturación 2</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToAddress3" xml:space="preserve">
+    <value>Dirección de Facturación 3</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToAddress4" xml:space="preserve">
+    <value>Dirección de Facturación 4</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToContactFax" xml:space="preserve">
+    <value>Fax del Contacto (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToContactPhone" xml:space="preserve">
+    <value>Teléfono del Contacto (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToCountry" xml:space="preserve">
+    <value>País (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToEmail" xml:space="preserve">
+    <value>Correo-E (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToFax" xml:space="preserve">
+    <value>Fax (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToPhone" xml:space="preserve">
+    <value>Teléfono (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToState" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToZipCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNUniquifier" xml:space="preserve">
+    <value>Número Singular de NC</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CustomerDiscountLevel" xml:space="preserve">
+    <value>Nivel de Descuento del Cliente</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DefaultPriceListCode" xml:space="preserve">
+    <value>Descripción Moneda</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="ICDayEndTransNumber" xml:space="preserve">
+    <value>CI - Número de Transacción de Final de Día</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ApprovedLimit" xml:space="preserve">
+    <value>Límite Aprobado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNDiscountAmountOverride" xml:space="preserve">
+    <value>Sustitución Monto de Descuento de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNDiscountonMiscCharges" xml:space="preserve">
+    <value>Descuento de NC/ND en Cargos Varios</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNExcludedTaxTotalAmount" xml:space="preserve">
+    <value>Monto Total de NC/ND Excluido Impuestos</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNIncludedTaxTotalAmt" xml:space="preserve">
+    <value>Monto Total de NC/ND Incluido Impuestos</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNRateDateMatching" xml:space="preserve">
+    <value>Coincidencia de Fecha de Tasa de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNRateOverrideFlag" xml:space="preserve">
+    <value>Indicador de Sustitución de Tasa de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNTotalMiscCharges" xml:space="preserve">
+    <value>Total de Cargos Varios de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNTotalWithCNDiscount" xml:space="preserve">
+    <value>Total de NC/ND con Descuento de NC</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompletionDate" xml:space="preserve">
+    <value>Fecha de Culminación</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteAmountDue" xml:space="preserve">
+    <value>Mto. de Nota de Crédito/Débito a Pagar</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteDate" xml:space="preserve">
+    <value>Fecha de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteDiscountAmt" xml:space="preserve">
+    <value>Monto de Descuento de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteDiscountBase" xml:space="preserve">
+    <value>Base de Descuento de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteDiscountPerce" xml:space="preserve">
+    <value>% de Descuento de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteFiscalPeriod" xml:space="preserve">
+    <value>Período Fiscal de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteFiscalYear" xml:space="preserve">
+    <value>Año Fiscal de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteHomeCurrency" xml:space="preserve">
+    <value>Moneda Local de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteItemTotalAmt" xml:space="preserve">
+    <value>Monto Total de Artículos de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNotePrinted" xml:space="preserve">
+    <value>Nota de Crédito/Débito Impresa</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRate" xml:space="preserve">
+    <value>Tasa de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRateDate" xml:space="preserve">
+    <value>Fecha de Tasa de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRateOperator" xml:space="preserve">
+    <value>Operador de Tasa de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteSourceCurr" xml:space="preserve">
+    <value>Moneda de Origen de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteSpread" xml:space="preserve">
+    <value>Margen de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteStatus" xml:space="preserve">
+    <value>Estado de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteSubtotalAmt" xml:space="preserve">
+    <value>Monto Subtotal de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteTotal" xml:space="preserve">
+    <value>Total de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteTotBeforeTax" xml:space="preserve">
+    <value>Total de Nota de Crédito/Débito Antes de Impuestos</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteTotEstWeight" xml:space="preserve">
+    <value>Peso Estimado Total de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CRItemSubtotal" xml:space="preserve">
+    <value>Subtotal de Artículos de NC</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CRMiscChargesSubtotal" xml:space="preserve">
+    <value>Subtotal de Cargos Varios de NC</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DefaultLocationCode" xml:space="preserve">
+    <value>Código de Ubicación Predeterminada</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DOSConversion" xml:space="preserve">
+    <value>Conversión a DOS</value>
+  </data>
+  <data name="FreeOnBoardPoint" xml:space="preserve">
+    <value>Punto Franco a Bordo</value>
+  </data>
+  <data name="FromInvoice" xml:space="preserve">
+    <value>Desde Factura</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="InvoiceFiscalPeriod" xml:space="preserve">
+    <value>Período Fiscal de Factura</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="InvoiceFiscalYear" xml:space="preserve">
+    <value>Año Fiscal de Factura</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LocationCodeDescription" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="NoOfLinesInCreditDebitNote" xml:space="preserve">
+    <value>Número de Líneas en Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="OECommand" xml:space="preserve">
+    <value>Comando IO</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="OverCreditLimit" xml:space="preserve">
+    <value>Límite de Crédito Excedido</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PostDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+  </data>
+  <data name="PriceListCodeDescription" xml:space="preserve">
+    <value>Descripción de Lista de Precios</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ReturnDate" xml:space="preserve">
+    <value>Fecha de Devolución</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToAddressLine1" xml:space="preserve">
+    <value>Línea Dirección de Envío 1</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToAddressLine2" xml:space="preserve">
+    <value>Línea Dirección de Envío 2</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToAddressLine3" xml:space="preserve">
+    <value>Línea Dirección de Envío 3</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToAddressLine4" xml:space="preserve">
+    <value>Línea Dirección de Envío 4</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToContactFax" xml:space="preserve">
+    <value>Fax de Contacto (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToContactPhone" xml:space="preserve">
+    <value>Teléfono de Contacto (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToCountry" xml:space="preserve">
+    <value>País (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToEmail" xml:space="preserve">
+    <value>Correo-E (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToLocationCode" xml:space="preserve">
+    <value>Dirección de Envío</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipToZIPPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipViaCode" xml:space="preserve">
+    <value>Código de Vía de Envío</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipViaCodeDescription" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipViaName" xml:space="preserve">
+    <value>Nombre de Vía de Envío</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxAuthority1Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 1</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxAuthority2Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 2</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxAuthority3Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 3</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxAuthority4Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 4</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxAuthority5Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 5</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxGroupCodeDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxReportingInvoiceTRCurr" xml:space="preserve">
+    <value>Moneda de Reporte Fiscal (RF) de Factura</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxVersion" xml:space="preserve">
+    <value>Versión Fiscal</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillToContactEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Facturación)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="InvoiceExists" xml:space="preserve">
+    <value>La factura existe</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Varios</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="BillTo" xml:space="preserve">
+    <value>Facturación</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DamagedItems" xml:space="preserve">
+    <value>Artículos Dañados</value>
+    <comment>Enum Item</comment>
+  </data>
+  <data name="ItemsReturnedToInventory" xml:space="preserve">
+    <value>Artículos Devueltos a Inventario</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PriceAdjustment" xml:space="preserve">
+    <value>Ajuste de Precio</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Peso</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PriceListNotExist" xml:space="preserve">
+    <value>La información necesaria para configurar el precio unitario no existe para lista de precios {0}, artículo {1} en moneda {2}. Tal vez no existe el registro de listo de precios o no se ingresaron los detalles para calcular el precio de unidades de medida múltiples.</value>
+    <comment>Warning Message</comment>
+  </data>
+  <data name="CNDNHomeCurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda Local de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CNDNSourceCurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda de Origen de NC/ND</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRateType" xml:space="preserve">
+    <value>Tipo de Tasa Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CreditDebitNoteRunningTotal" xml:space="preserve">
+    <value>Total Corriente de Nota de Crédito/Débito</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PerformDistributionOfManTax" xml:space="preserve">
+    <value>Realizar Distribución de Impuesto Manual</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipmentTrackingNumber" xml:space="preserve">
+    <value>Número de Seguimiento de Envío</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DocumentCosted" xml:space="preserve">
+    <value>Documento Costeado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DocumentShippedNotCosted" xml:space="preserve">
+    <value>Documento Enviado Sin Costear</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>Año y Período Fiscal</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ItemRemovedFromInventory" xml:space="preserve">
+    <value>Artículo Quitado del Inventario</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ItemNotSelectedWarning" xml:space="preserve">
+    <value>El artículo {1} existe en inventario como {2}, pero también es un número de artículo del cliente para {3}. El programa no seleccionará {3} para usted si ingresa {1}.</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CustomerNumberWarning" xml:space="preserve">
+    <value>El Número de cliente {0} no existe.  Debe especificar un grupo fiscal para este documento en la ficha Cliente antes de ingresar detalles del artículo. La moneda del grupo fiscal especificado será también la moneda del documento, de la moneda de reporte fiscal y del cliente cuando se agrega el registro del cliente en Cuentas por Cobrar. Si desea que la moneda del grupo fiscal sea diferente de la moneda de reporte fiscal o de la moneda del documento, primero tiene que agregar el registro del cliente en C/C. No se pueden ingresar detalles relacionados con el trabajo.</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CustomerAccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas del Cliente</value>
+  </data>
+  <data name="AccountSetDescription" xml:space="preserve">
+    <value>Descripción Grupo de Cuentas</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="CustomerAccountSetDescription" xml:space="preserve">
+    <value>Descripción Grupo de Cuentas del Cliente</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Número de Fax</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Teléfono</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShipViaEmail" xml:space="preserve">
+    <value>Correo-E (Vía de Envío)</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxCalculationMethod" xml:space="preserve">
+    <value>Método de Cálculo de Impuestos</value>
+  </data>
+  <data name="TaxReportingCurrency" xml:space="preserve">
+    <value>Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TrackingNumber" xml:space="preserve">
+    <value>Número de Seguimiento</value>
+  </data>
+  <data name="CurrentCreditDebitNoteAmount" xml:space="preserve">
+    <value>Monto Nota de Crédito/Débito Actual</value>
+  </data>
+  <data name="UnitNotDefined" xml:space="preserve">
+    <value>No se define la unidad {0} para el artículo {1}.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="TemplateNotExists" xml:space="preserve">
+    <value>No se encuentra el Código de Plantilla {0}.</value>
+  </data>
+  <data name="PriceListDescription" xml:space="preserve">
+    <value>Descripción de Lista de Precios</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="TaxRepCurrInvoiceExchRate" xml:space="preserve">
+    <value>Tipo Cambio de Factura Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxRepCurrOrderExchRate" xml:space="preserve">
+    <value>Tipo Cambio de Notas de Crédito Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingCurrencyDesc" xml:space="preserve">
+    <value>Descripción Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>Tasa de Moneda</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="CustomerDoesNotExistMessage" xml:space="preserve">
+    <value>No puede encontrar el Número de Cliente {0}. Debe especificar un grupo fiscal para este documento en la ficha Cliente antes de ingresar detalles del artículo. La moneda del grupo fiscal especificado será también la moneda del documento, de la moneda de reporte fiscal y del cliente cuando se agrega el registro del cliente en Cuentas por Cobrar. Si desea que la moneda del grupo fiscal sea diferente de la moneda de reporte fiscal o de la moneda del documento, primero tiene que agregar el registro del cliente en C/C. No se pueden ingresar detalles relacionados con el trabajo.</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="KittingItem" xml:space="preserve">
+    <value>Artículo Compuesto</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Teléfono</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="POReceipts1" xml:space="preserve">
+    <value>Recibo de OC...</value>
+    <comment>PO - Button</comment>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Método Contable</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>Asignar desde N° Lote</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>Asignar desde N° Serie</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AlternateUnitCost1" xml:space="preserve">
+    <value>Costo Unitario Alternativo 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AlternateUnitCost2" xml:space="preserve">
+    <value>Costo Unitario Alternativo 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AverageUnitCost" xml:space="preserve">
+    <value>Costo Unitario Promedio</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="BOMBuildQty" xml:space="preserve">
+    <value>Cantidad Completa de BOM</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="BOMBuildUnit" xml:space="preserve">
+    <value>Unidad Completa de BOM</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="BOMBuildUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad Completa de BOM</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Código de Categoría</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Descripción de Categoría</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CloseLt" xml:space="preserve">
+    <value>Cerrar LT</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CloseSn" xml:space="preserve">
+    <value>Cerrar SN</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CommentsInstructionsType" xml:space="preserve">
+    <value>Tipo de Comentarios/Instrucciones</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Código de Contrato</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CostingUnit" xml:space="preserve">
+    <value>Unidad de Cálculo de Costos</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CostingUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad de Cálculo de Costos</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CostingUnitCost" xml:space="preserve">
+    <value>Costo Unitario de Cálculo de Costos</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CostOfGoods" xml:space="preserve">
+    <value>Costo de Bienes</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CreditDebitNoteUom" xml:space="preserve">
+    <value>UM de Nota Crédito/Débito</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CreditNoteDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento de Nota de Crédito</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="Default_OE_Price" xml:space="preserve">
+    <value>Precio de IO Predet.</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="DefWeightUomExtUnitWeight" xml:space="preserve">
+    <value>Peso Unitario Total UM de Peso Predeterminado</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="DefWeightUomUnitWeight" xml:space="preserve">
+    <value>Peso Unitario UM de Peso Predeterminado</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Número de Detalle</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>Porcentaje de Descuento</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="EPosPromotionId" xml:space="preserve">
+    <value>ID de Promoción de ePOS</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedAmountMiscCharge" xml:space="preserve">
+    <value>Monto Total/Cargos Varios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedAmountNetOfTax" xml:space="preserve">
+    <value>Mto Total Neto de Impuesto</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedAmountOverride" xml:space="preserve">
+    <value>Sustitución de Monto Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedDetailCost" xml:space="preserve">
+    <value>Costo de Detalle Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedDiscountedPrice" xml:space="preserve">
+    <value>Precio Descontado Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ForcePopupLt" xml:space="preserve">
+    <value>Forzar LT Emergente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ForcePopupSn" xml:space="preserve">
+    <value>Forzar SN Emergente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="HaveCommentsInstructions" xml:space="preserve">
+    <value>Tienen Comentarios/Instrucciones</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="HeaderDiscount" xml:space="preserve">
+    <value>Descuento de Cabecera</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InterprocessCommId" xml:space="preserve">
+    <value>ID Comando Inter-proceso</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoiceCurrentQtyOutstanding" xml:space="preserve">
+    <value>Cantidad Actual Pendiente de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoiceExtendedCost" xml:space="preserve">
+    <value>Costo Total de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoiceLineNumber" xml:space="preserve">
+    <value>Número de Línea de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoicesShipmentDetailNumber" xml:space="preserve">
+    <value>Número de Detalle de Envío de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoicesShipmentNumber" xml:space="preserve">
+    <value>Número de Envío de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoiceUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvoiceUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Factura</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ItemAccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas del Artículo</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ItemSerializedLotted" xml:space="preserve">
+    <value>¿Artículo Serializado/Designado?</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="KitBomNumber" xml:space="preserve">
+    <value>Juego/Número de BOM</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="KittingBom" xml:space="preserve">
+    <value>Compuesto/BOM</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LastUnitCost" xml:space="preserve">
+    <value>Último Costo Unitario</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="Level1Name" xml:space="preserve">
+    <value>Nombre del Nivel 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="Level2Name" xml:space="preserve">
+    <value>Nombre del Nivel 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="Level3Name" xml:space="preserve">
+    <value>Nombre del Nivel 3</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>Cantidad N° Lote</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LtSetId" xml:space="preserve">
+    <value>ID de Grupo LT</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="MiscellaneousChargesCode" xml:space="preserve">
+    <value>Código de Cargos Varios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="MostRecentUnitCost" xml:space="preserve">
+    <value>Costo Unitario Más Reciente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="NextComponentNumber" xml:space="preserve">
+    <value>Número Componente Próximo</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="NonstockClearingAcctDesc" xml:space="preserve">
+    <value>Descripción Cuenta No Almacenables a Compensar</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>Cantidad de N° Lote a Generar</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderQuantityBackordered" xml:space="preserve">
+    <value>Cantidad de Órdenes en Espera</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderQuantityCommitted" xml:space="preserve">
+    <value>Cantidad de Órdenes Comprometidas</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderQuantityOrdered" xml:space="preserve">
+    <value>Cantidad de Órdenes Solicitadas</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderQuantityShippedtodate" xml:space="preserve">
+    <value>Cantidad de Órdenes Enviadas a la Fecha</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderUnitConversion" xml:space="preserve">
+    <value>Conversión de la Unidad de Orden</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OrderUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de la Orden</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PickingSequence" xml:space="preserve">
+    <value>Secuencia de Selección</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PopupLt" xml:space="preserve">
+    <value>LT Emergente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PopupSn" xml:space="preserve">
+    <value>IS Emergente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PriceDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento del Precio</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PriceDiscountPercentage" xml:space="preserve">
+    <value>Porcentaje de Descuento del Precio</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PriceOverride" xml:space="preserve">
+    <value>Sustitución de Precio</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingBaseUnit" xml:space="preserve">
+    <value>Unidad Base de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingBaseUnitConversion" xml:space="preserve">
+    <value>Conversión Unitaria Base de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingBaseUnitPrice" xml:space="preserve">
+    <value>Precio Unitario Base de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingBaseWeightConvFactor" xml:space="preserve">
+    <value>Factor Conversión de Peso Base - Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingBaseWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso Base - Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingUnit" xml:space="preserve">
+    <value>Unidad de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingUnitPrice" xml:space="preserve">
+    <value>Precio Unitario de Cálc. Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingWeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Peso - Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="PricingWeightUom" xml:space="preserve">
+    <value>UM de Peso de Cálculo de Precios</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Código de Proyecto</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>Estilo de Proyecto</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Tipo de Proyecto</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="QuantityPerLot" xml:space="preserve">
+    <value>Cantidad por N° Lote</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RecordCosted" xml:space="preserve">
+    <value>Costo de Registro Calculado</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RetainageAmountOverride" xml:space="preserve">
+    <value>Sustitución de Monto de Retención</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RetainageDays" xml:space="preserve">
+    <value>Días de Retención</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RetainageDueDate" xml:space="preserve">
+    <value>Plazo de Retención</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RetainageDueDateOverride" xml:space="preserve">
+    <value>Sustitución del Plazo de Retención</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ReturnType" xml:space="preserve">
+    <value>Tipo de Devolución</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="RevenueBillingAccount" xml:space="preserve">
+    <value>Cuenta de Ingresos/Facturación</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>Cantidad de N° Lote/Serie a Procesar</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>Identificador de Ventana – N° Serie/Lote</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Cantidad de N° Serie</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ShipViaCodesDescription" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="StandardUnitCost" xml:space="preserve">
+    <value>Costo Unitario Estándar</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>Artículo en Almacén</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto 3</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto 4</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto 5</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Impuesto Incluido 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Impuesto Incluido 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Impuesto Incluido 3</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Impuesto Incluido 4</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Impuesto Incluido 5</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tasa Fiscal 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tasa Fiscal 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tasa Fiscal 3</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tasa Fiscal 4</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tasa Fiscal 5</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TaxTotal" xml:space="preserve">
+    <value>Impuesto Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrAverageCost" xml:space="preserve">
+    <value>Costo Promedio de NC Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrCost1" xml:space="preserve">
+    <value>Costo de NC Total 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrCost2" xml:space="preserve">
+    <value>Costo de NC Total 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrLastCost" xml:space="preserve">
+    <value>Último Costo de NC Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrMostRecentCost" xml:space="preserve">
+    <value>Costo Más Reciente de NC Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TotalCrStandardCost" xml:space="preserve">
+    <value>Costo Estándar de NC Total</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>Código de Contrato Sin Formato</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="UnformattedItemNumber" xml:space="preserve">
+    <value>N° Artículo Sin Formato</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="Uniquifier" xml:space="preserve">
+    <value>Número Singular</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="UnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="UnitPriceNoOfDecimals" xml:space="preserve">
+    <value>Cantidad de Decimales en Precio Unitario</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="UserSpecifiedCostingMethod" xml:space="preserve">
+    <value>Método de Cálculo de Costos Especificado por el Usuario</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="WeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Peso</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AlternateComponentCost1" xml:space="preserve">
+    <value>Costo Alternativo de Componente 1</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AlternateComponentCost2" xml:space="preserve">
+    <value>Costo Alternativo de Componente 2</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AverageComponentCost" xml:space="preserve">
+    <value>Costo Promedio de Componente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CalculateTaxes" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CcomponentSerialized" xml:space="preserve">
+    <value>Componente Serializado</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ComponentLineNumber" xml:space="preserve">
+    <value>Número de Línea de Componente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ComponentLotted" xml:space="preserve">
+    <value>Componente Designado</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ComponentUnitCost" xml:space="preserve">
+    <value>Costo Unitario del Componente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CreditDebitKittingItem" xml:space="preserve">
+    <value>Artículo Compuesto de Crédito/Débito</value>
+  </data>
+  <data name="CreditDebitTaxes" xml:space="preserve">
+    <value>Impuestos de Débito/Crédito</value>
+  </data>
+  <data name="DistributeTaxes" xml:space="preserve">
+    <value>Distribuir Impuestos</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ExtendedOrderCost" xml:space="preserve">
+    <value>Costo Total de la Orden</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ItemTax" xml:space="preserve">
+    <value>Impuesto de Artículo</value>
+  </data>
+  <data name="KittingNumber" xml:space="preserve">
+    <value>Número de Compuesto</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LastComponentCost" xml:space="preserve">
+    <value>Último Costo de Componente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="MostRecentComponentCost" xml:space="preserve">
+    <value>Costo de Componente Más Reciente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>el</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentComponentNumber" xml:space="preserve">
+    <value>Número Componente de Nivel Superior</value>
+  </data>
+  <data name="ParentQuantityReturned" xml:space="preserve">
+    <value>Cantidad de Nivel Superior Devuelta</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentUnitConversion" xml:space="preserve">
+    <value>Conversión de Unidad de Nivel Superior</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Nivel Superior</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentWeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Peso de Nivel Superior</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentWeightUomUnitWeight" xml:space="preserve">
+    <value>Peso Unit. - UM Peso de Nivel Superior</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ParentWUomExtendedUnitWeight" xml:space="preserve">
+    <value>Peso Unit. Total - UMP de Nivel Superior</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>Cantidad Devuelta</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de Serie</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="ShipmentDetailLineNumber" xml:space="preserve">
+    <value>Número de Línea de Detalle de Envío</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="StandardComponentCost" xml:space="preserve">
+    <value>Costo Estándar de Componente</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+  </data>
+  <data name="ComponentNumber" xml:space="preserve">
+    <value>Número Componente</value>
+  </data>
+  <data name="ComponentQuantity" xml:space="preserve">
+    <value>Cantidad Componente</value>
+  </data>
+  <data name="ComponentsBOMBuildQty" xml:space="preserve">
+    <value>Cantidad Completa L.MAT de Componente</value>
+  </data>
+  <data name="ComponentsBOMBuildUnit" xml:space="preserve">
+    <value>Unidad Completa L.MAT de Componente</value>
+  </data>
+  <data name="ComponentsBOMBuildUnitConv" xml:space="preserve">
+    <value>Conv. de Unidad Completa L.MAT de Componente</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+  </data>
+  <data name="DetailLineNumber" xml:space="preserve">
+    <value>Número de Línea de Detalle</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valor Texto</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Valor Sí/No</value>
+  </data>
+  <data name="CreditNoteUniquifier" xml:space="preserve">
+    <value>Número Singular Nota de Crédito</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="InvQtyInStockingUom" xml:space="preserve">
+    <value>Cantidad Facturada en UM de Almacenamiento</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Número de Lote</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="QuantityInStockingUom" xml:space="preserve">
+    <value>Cantidad en UM de Almacenamiento</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>Cantidad de Transacción</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="OE0240" xml:space="preserve">
+    <value>Notas de Débito/Crédito</value>
+  </data>
+  <data name="OE0140" xml:space="preserve">
+    <value>Comentarios Instrucciones NC ND</value>
+  </data>
+  <data name="OE0220" xml:space="preserve">
+    <value>Detalles de Crédito Débito</value>
+  </data>
+  <data name="OE0221" xml:space="preserve">
+    <value>Campos Opc. de Detalle de Crédito Débito</value>
+  </data>
+  <data name="OE0226" xml:space="preserve">
+    <value>Números de Lote de Detalle de Crédito Débito</value>
+  </data>
+  <data name="OE0227" xml:space="preserve">
+    <value>N° de Serie de Detalle de Crédito Débito</value>
+  </data>
+  <data name="OE0242" xml:space="preserve">
+    <value>Campos Opc. de Nota de Crédito Débito</value>
+  </data>
+  <data name="AverageCost" xml:space="preserve">
+    <value>Costo Promedio</value>
+  </data>
+  <data name="BaseConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión Base</value>
+  </data>
+  <data name="BasePrice" xml:space="preserve">
+    <value>Precio Base</value>
+  </data>
+  <data name="BaseUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Base</value>
+  </data>
+  <data name="BaseWeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Precio Base</value>
+  </data>
+  <data name="BaseWeightUOM" xml:space="preserve">
+    <value>UM de Peso Base</value>
+  </data>
+  <data name="Cost1" xml:space="preserve">
+    <value>Costo 1</value>
+  </data>
+  <data name="Cost2" xml:space="preserve">
+    <value>Costo 2</value>
+  </data>
+  <data name="CustomerTaxClass1" xml:space="preserve">
+    <value>Clase Fiscal del Cliente 1</value>
+  </data>
+  <data name="CustomerTaxClass2" xml:space="preserve">
+    <value>Clase Fiscal del Cliente 2</value>
+  </data>
+  <data name="CustomerTaxClass3" xml:space="preserve">
+    <value>Clase Fiscal del Cliente 3</value>
+  </data>
+  <data name="CustomerTaxClass4" xml:space="preserve">
+    <value>Clase Fiscal del Cliente 4</value>
+  </data>
+  <data name="CustomerTaxClass5" xml:space="preserve">
+    <value>Clase Fiscal del Cliente 5</value>
+  </data>
+  <data name="DefaultWeightUOM" xml:space="preserve">
+    <value>UM de Peso Predeterminado</value>
+  </data>
+  <data name="ItemTaxClass1" xml:space="preserve">
+    <value>Clase Fiscal del Artículo 1</value>
+  </data>
+  <data name="ItemTaxClass2" xml:space="preserve">
+    <value>Clase Fiscal del Artículo 2</value>
+  </data>
+  <data name="ItemTaxClass3" xml:space="preserve">
+    <value>Clase Fiscal del Artículo 3</value>
+  </data>
+  <data name="ItemTaxClass4" xml:space="preserve">
+    <value>Clase Fiscal del Artículo 4</value>
+  </data>
+  <data name="ItemTaxClass5" xml:space="preserve">
+    <value>Clase Fiscal del Artículo 5</value>
+  </data>
+  <data name="ItemTaxIncluded1" xml:space="preserve">
+    <value>Impuesto del Artículo Incluido 1</value>
+  </data>
+  <data name="ItemTaxIncluded2" xml:space="preserve">
+    <value>Impuesto del Artículo Incluido 2</value>
+  </data>
+  <data name="ItemTaxIncluded3" xml:space="preserve">
+    <value>Impuesto del Artículo Incluido 3</value>
+  </data>
+  <data name="ItemTaxIncluded4" xml:space="preserve">
+    <value>Impuesto del Artículo Incluido 4</value>
+  </data>
+  <data name="ItemTaxIncluded5" xml:space="preserve">
+    <value>Impuesto del Artículo Incluido 5</value>
+  </data>
+  <data name="KeyOrderUnit" xml:space="preserve">
+    <value>Unidad de Orden Clave</value>
+  </data>
+  <data name="KeyOrderWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso de Orden Clave</value>
+  </data>
+  <data name="KeyPrice" xml:space="preserve">
+    <value>Precio Clave</value>
+  </data>
+  <data name="KeyUnit" xml:space="preserve">
+    <value>Unidad Clave</value>
+  </data>
+  <data name="KeyWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso Clave</value>
+  </data>
+  <data name="LastCost" xml:space="preserve">
+    <value>Último Costo</value>
+  </data>
+  <data name="MostRecentCost" xml:space="preserve">
+    <value>Costo Más Reciente</value>
+  </data>
+  <data name="OrderQuantity" xml:space="preserve">
+    <value>Cantidad de Orden</value>
+  </data>
+  <data name="OrderWeight" xml:space="preserve">
+    <value>Peso de Orden</value>
+  </data>
+  <data name="PriceBase" xml:space="preserve">
+    <value>Base de Precio</value>
+  </data>
+  <data name="PriceConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Precios</value>
+  </data>
+  <data name="PriceDecimals" xml:space="preserve">
+    <value>Decimales en Precio</value>
+  </data>
+  <data name="PriceFormat" xml:space="preserve">
+    <value>Formato de Precio</value>
+  </data>
+  <data name="PriceType" xml:space="preserve">
+    <value>Tipo de Precio</value>
+  </data>
+  <data name="PriceWeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Peso - Precio</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selección</value>
+  </data>
+  <data name="SetTaxIncluded" xml:space="preserve">
+    <value>Fijar Impuesto Incluido</value>
+  </data>
+  <data name="ShowErrors" xml:space="preserve">
+    <value>Mostrar Errores</value>
+  </data>
+  <data name="StandardCost" xml:space="preserve">
+    <value>Costo Estándar</value>
+  </data>
+  <data name="StockingUnit" xml:space="preserve">
+    <value>Unidad de Almacenamiento</value>
+  </data>
+  <data name="UnitPriceOrderUOM" xml:space="preserve">
+    <value>Precio Unitario (UM de Orden)</value>
+  </data>
+  <data name="CreditNoteDescription" xml:space="preserve">
+    <value>Descripción Nota de Crédito</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="DebitNoteDescription" xml:space="preserve">
+    <value>Descripción Nota de Débito</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="MiscellaneousError" xml:space="preserve">
+    <value>Primero debe ingresar un artículo o un cargo vario.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BlankCreditDebitNoteNumberMsg" xml:space="preserve">
+    <value>El número {0} no puede estar en blanco.</value>
+    <comment>Display Name - Field</comment>
+  </data>
+  <data name="CustomerWithDifferentTaxGroup" xml:space="preserve">
+    <value>No puede cambiar a un cliente que utilice un grupo fiscal diferente después de ingresar los detalles.</value>
+    <comment>Error Message</comment>
+  </data>
+</root>

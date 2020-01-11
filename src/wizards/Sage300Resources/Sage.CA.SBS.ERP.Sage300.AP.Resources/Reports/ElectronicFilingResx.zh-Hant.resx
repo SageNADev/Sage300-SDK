@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddrStreet" xml:space="preserve">
+    <value>街道</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="ControlCodeTCC" xml:space="preserve">
+    <value>控制代碼 (TCC)</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CounterOverflow" xml:space="preserve">
+    <value>輸出檔案不能包括超過99,999,999條記錄。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>電郵</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>應付帳款1099 電子申報</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FedTaxWithHd" xml:space="preserve">
+    <value>聯邦所得稅扣繳相對於收入金額似乎過多。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FinalFiling" xml:space="preserve">
+    <value>最終填報</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="ForeignAddrSize" xml:space="preserve">
+    <value>總地址長度將超過檔案中可用的空間。重新輸入市縣，省市區，郵編代碼，和/或國家。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ForeignEnt" xml:space="preserve">
+    <value>外國實體</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="FrameXmitInfo" xml:space="preserve">
+    <value>傳送者資訊</value>
+    <comment>Group</comment>
+  </data>
+  <data name="InvState" xml:space="preserve">
+    <value>輸入由美國郵政總局定義的有效的國家代碼。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvTaxIDno" xml:space="preserve">
+    <value>稅務編號必須正好是9位數，並且只能包含數位，破折號，和空格。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvTaxYear" xml:space="preserve">
+    <value>付款年度不能遲於目前年度。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvTaxYrTest" xml:space="preserve">
+    <value>指定的付款年度僅可用於測驗檔案。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvTCC" xml:space="preserve">
+    <value>發送器控制代碼（TCC）必須是IRS/MCC分派的五字元字母數位代碼。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvZIPcode" xml:space="preserve">
+    <value>郵遞區號必須僅包含數位或五個數位後的單一破折號。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NameControl" xml:space="preserve">
+    <value>名稱控制</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="NameLine1" xml:space="preserve">
+    <value>名稱行1</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="NameLine2" xml:space="preserve">
+    <value>名稱行2</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="OfficeBranch" xml:space="preserve">
+    <value>辦公室分部</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="OutputFile" xml:space="preserve">
+    <value>輸出檔案</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentYear" xml:space="preserve">
+    <value>付款年度</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TestFile" xml:space="preserve">
+    <value>測驗檔案</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="TransferAgent" xml:space="preserve">
+    <value>轉帳代理</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="TransmitterTaxNumber" xml:space="preserve">
+    <value>傳送者稅務編號</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="Payer" xml:space="preserve">
+    <value>付款者</value>
+  </data>
+  <data name="Transmitter" xml:space="preserve">
+    <value>傳送者</value>
+  </data>
+  <data name="FormatEmptyMessage" xml:space="preserve">
+    <value>請去到供應商螢幕作相關的變更。</value>
+  </data>
+  <data name="InvalidAddressLength" xml:space="preserve">
+    <value>外國地址的總長度將超過檔案中可用的空間。請重新輸入以下一個或多個欄位：市縣，省市縣，郵遞區號，國家。</value>
+  </data>
+  <data name="InvalidMessage" xml:space="preserve">
+    <value>{0} &apos;{1}&apos;無效。</value>
+  </data>
+  <data name="TotalErrorsCount" xml:space="preserve">
+    <value>供應商中共發生{0}個錯誤，但僅前{1}個錯誤在此列出。請檢查其它供應商記錄。</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>沒有記錄符合您的搜尋條件。因此沒有產生輸出檔案。</value>
+  </data>
+  <data name="StateCode" xml:space="preserve">
+    <value>國家代碼</value>
+  </data>
+  <data name="InvalidInputUnknown" xml:space="preserve">
+    <value>{0} &apos;{1}&apos;不明。{2}</value>
+  </data>
+  <data name="MaxLengthError" xml:space="preserve">
+    <value>&apos;{0} {1}&apos;不能超過{2}個字元。</value>
+  </data>
+  <data name="VendorMessage" xml:space="preserve">
+    <value>供應商{0}</value>
+  </data>
+</root>

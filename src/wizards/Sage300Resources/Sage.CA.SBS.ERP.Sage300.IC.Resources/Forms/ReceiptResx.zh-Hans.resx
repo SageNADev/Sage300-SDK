@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalCostAllocationType" xml:space="preserve">
+    <value>附加成本分配类型</value>
+  </data>
+  <data name="AdditionalCostCurrency" xml:space="preserve">
+    <value>附加成本币种</value>
+  </data>
+  <data name="AdditionalCostFunctional" xml:space="preserve">
+    <value>合计成本 - 功能币种</value>
+  </data>
+  <data name="AdditionalCostCurrDesc" xml:space="preserve">
+    <value>附加成本币种描述</value>
+  </data>
+  <data name="AdjustedCost" xml:space="preserve">
+    <value>调整后成本</value>
+  </data>
+  <data name="AdjustedCostFunctional" xml:space="preserve">
+    <value>调整后成本 - 功能币种</value>
+  </data>
+  <data name="AdjustedExtCostFuncToDate" xml:space="preserve">
+    <value>累计调整后总成本 - 功能币种</value>
+  </data>
+  <data name="AdjustedExtCostToDate" xml:space="preserve">
+    <value>累计调整后总成本</value>
+  </data>
+  <data name="AdjustedUnitCost" xml:space="preserve">
+    <value>调整后单位成本</value>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>关闭LT</value>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>关闭SN</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="CostingDate" xml:space="preserve">
+    <value>计算成本日期</value>
+  </data>
+  <data name="CostingSequenceNo" xml:space="preserve">
+    <value>计算成本序列号</value>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>输入者</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>存货控制进货</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ForcePopupLT" xml:space="preserve">
+    <value>强制弹出LT</value>
+  </data>
+  <data name="ForcePopupSN" xml:space="preserve">
+    <value>强制弹出SN</value>
+  </data>
+  <data name="IC0580" xml:space="preserve">
+    <value>进货明细</value>
+  </data>
+  <data name="IC0582" xml:space="preserve">
+    <value>进货明细批别编号</value>
+  </data>
+  <data name="IC0585" xml:space="preserve">
+    <value>进货明细可选字段</value>
+  </data>
+  <data name="IC0587" xml:space="preserve">
+    <value>进货明细系列编号</value>
+  </data>
+  <data name="IC0590" xml:space="preserve">
+    <value>进货标头</value>
+  </data>
+  <data name="IC0595" xml:space="preserve">
+    <value>进货可选字段</value>
+  </data>
+  <data name="ICUniqueDocumentNumber" xml:space="preserve">
+    <value>存货控制 - 唯一凭证编号</value>
+  </data>
+  <data name="InterprocessCommID" xml:space="preserve">
+    <value>进程间指令标识</value>
+  </data>
+  <data name="LTSetID" xml:space="preserve">
+    <value>LT集合标识</value>
+  </data>
+  <data name="NextDetailLineNumber" xml:space="preserve">
+    <value>下一明细行编号</value>
+  </data>
+  <data name="NumberOfDetailswithCost" xml:space="preserve">
+    <value>含成本明细数量</value>
+  </data>
+  <data name="OriginalTotalCostFunctional" xml:space="preserve">
+    <value>原始合计成本 - 功能币种</value>
+  </data>
+  <data name="OriginalTotalCostSource" xml:space="preserve">
+    <value>原始合计成本 - 客户币种</value>
+  </data>
+  <data name="PopupLT" xml:space="preserve">
+    <value>弹出LT</value>
+  </data>
+  <data name="PopupSN" xml:space="preserve">
+    <value>弹出SN</value>
+  </data>
+  <data name="PostSequenceNumber" xml:space="preserve">
+    <value>过帐序列编号</value>
+  </data>
+  <data name="PreviousDayEndExtCost" xml:space="preserve">
+    <value>先前日终处理总成本</value>
+  </data>
+  <data name="PreviousDayEndExtCostFunc" xml:space="preserve">
+    <value>先前日终处理总成本 - 功能币种</value>
+  </data>
+  <data name="PreviousDayEndReceiptQty" xml:space="preserve">
+    <value>先前日终处理进货数量</value>
+  </data>
+  <data name="PreviousDayEndUnitCost" xml:space="preserve">
+    <value>先前日终处理单位成本</value>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>处理指令</value>
+  </data>
+  <data name="ProratedAddlCostFunc" xml:space="preserve">
+    <value>已分摊附加成本 - 功能币种</value>
+  </data>
+  <data name="ProratedAddlCostSrc" xml:space="preserve">
+    <value>已分摊附加成本 - 客户币种</value>
+  </data>
+  <data name="QuantityReturnedToDate" xml:space="preserve">
+    <value>累计退回数量</value>
+  </data>
+  <data name="ReceiptCurrency" xml:space="preserve">
+    <value>收款币种</value>
+  </data>
+  <data name="ReceiptCurrencyDecimals" xml:space="preserve">
+    <value>进货币种小数位</value>
+  </data>
+  <data name="ReceiptCurrencyDesc" xml:space="preserve">
+    <value>进货币种描述</value>
+  </data>
+  <data name="ReceiptDate" xml:space="preserve">
+    <value>收款日期</value>
+  </data>
+  <data name="RecordDeleted" xml:space="preserve">
+    <value>记录已删除</value>
+  </data>
+  <data name="RecordPrinted" xml:space="preserve">
+    <value>记录已打印</value>
+  </data>
+  <data name="RecordStatus" xml:space="preserve">
+    <value>记录状态</value>
+  </data>
+  <data name="RequireLabels" xml:space="preserve">
+    <value>要求标签</value>
+  </data>
+  <data name="ReturnCost" xml:space="preserve">
+    <value>退回成本</value>
+  </data>
+  <data name="ReturnedExtCostFuncToDate" xml:space="preserve">
+    <value>累计已退回总成本 - 功能币种</value>
+  </data>
+  <data name="ReturnedExtCostToDate" xml:space="preserve">
+    <value>累计已退回总成本</value>
+  </data>
+  <data name="RevisionListLineNumber" xml:space="preserve">
+    <value>修订清单行号</value>
+  </data>
+  <data name="TotalAdjCostReceiptAddl" xml:space="preserve">
+    <value>合计调整成本 - 进货和附加</value>
+  </data>
+  <data name="TotalAdjusted" xml:space="preserve">
+    <value>调整合计</value>
+  </data>
+  <data name="TotalCostReceiptAdditional" xml:space="preserve">
+    <value>合计成本 - 进货和附加</value>
+  </data>
+  <data name="TotalExtendedCost" xml:space="preserve">
+    <value>合计总成本</value>
+  </data>
+  <data name="TotalExtendedCostFunctional" xml:space="preserve">
+    <value>合计总成本 - 功能币种</value>
+  </data>
+  <data name="TotalExtendedCostSource" xml:space="preserve">
+    <value>合计总成本 - 客户币种</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易编号</value>
+  </data>
+  <data name="VendorExists" xml:space="preserve">
+    <value>供应商存在</value>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>供应商描述</value>
+  </data>
+  <data name="VendorShortName" xml:space="preserve">
+    <value>供应商简称</value>
+  </data>
+  <data name="LocationQuantities" xml:space="preserve">
+    <value>地点数量</value>
+  </data>
+  <data name="ReceiptHeaders" xml:space="preserve">
+    <value>进货标头</value>
+  </data>
+  <data name="ReturnedCost" xml:space="preserve">
+    <value>退货成本</value>
+  </data>
+  <data name="OrigAdditionalCostFunc" xml:space="preserve">
+    <value>原始附加成本 - 功能币种</value>
+  </data>
+  <data name="OrigAdditionalCostSource" xml:space="preserve">
+    <value>原始附加成本 - 客户币种</value>
+  </data>
+  <data name="TotalAdjustedCostFunctional" xml:space="preserve">
+    <value>合计调整后成本 - 功能币种</value>
+  </data>
+  <data name="TotalExtendedCostAdjusted" xml:space="preserve">
+    <value>合计总成本 - 调整后</value>
+  </data>
+  <data name="TotalReturnCost" xml:space="preserve">
+    <value>合计退货成本</value>
+  </data>
+  <data name="ReceiptDescription" xml:space="preserve">
+    <value>收款描述</value>
+  </data>
+</root>
