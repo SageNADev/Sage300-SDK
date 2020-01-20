@@ -144,7 +144,10 @@
     },
     {
       "FieldName": "COMMENTS",
-      "IsEditable": true
+      "IsEditable": false,
+      "CustomFunctions": [
+        { "columnBeforeDisplay": "receiptUI.showGridCommentColumn" }
+      ]
     },
     {
       "FieldName": "RETURNQTY",
