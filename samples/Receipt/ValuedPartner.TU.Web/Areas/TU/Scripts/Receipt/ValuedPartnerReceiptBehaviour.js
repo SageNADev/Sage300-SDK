@@ -214,6 +214,15 @@ receiptUI = {
         column.Template = '#=receiptUI.convertIntToTime(data.RECPQTY)#';
     },
 
+    //Custom function to set column template used in Grid JSON configuration
+    showGridCommentColumn: function (e, column) {
+        column.Template = '#:receiptUI.showCommentBasedOnItem(data.COMMENTS, data.ITEMNO)#';
+    },
+    //Show comments column based on item value. If item value is start 'A', show comments as comment value + "The item name is starts 'A', other wise just show empty
+    showCommentBasedOnItem: function (comments, itemNo) {
+        return itemNo.startsWith("A") ? comments + " The item name is starts with 'A'" : "";
+    },
+
     updateFinderFilter: function (record, finder) {
         //finder.Filter = "RECPQTY=111";
     },
