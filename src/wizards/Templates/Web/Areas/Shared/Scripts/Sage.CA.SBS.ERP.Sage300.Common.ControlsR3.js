@@ -1,44 +1,22 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 (function () {
-    $(this).parent().addClass("cBox-disabled");
+    //$(this).parent().addClass("cBox-disabled");
     sg.controls = {
         ApplyCheckboxStyle: function (checkboxHtml) {
-            return "<span class='icon checkBox'>" + checkboxHtml + "</span>";
+            return "<label class='checkbox-container'><span>" + checkboxHtml + "<span class='checkmark'></span></span></label>";
         },
         ApplyRadioboxStyle: function (radioboxHtml) {
-            return "<span class='icon radioBox'>" + radioboxHtml + "</span>";
+            return "<label class='radio-container'><span>" + radioboxHtml + "<span class='checkmark'></span></span></label>";
         },
         ApplyCheckboxRadioButtonStyle: function (element) {
             sg.controls.ApplyCheckBoxRadioButtonDisable(element);
         },
         ApplyCheckBoxRadioButtonDisable: function (element) {
             sg.controls.RemoveCheckBoxRadioButtonStyle(element);
-            if (element.disabled) {
-                if (element.checked) {
-                    $(element).parent().addClass("checked-disabled");
-                } else {
-                    if (element.type === "checkbox") {
-                        $(element).parent().addClass("cBox-disabled");
-                    }
-                    else if (element.type === "radio") {
-                        $(element).parent().addClass("rBox-disabled");
-                    }
-                }
-            } else {
-                if (element.checked) {
-                    $(element).parent().addClass("selected");
-                }
-            }
         },
         RemoveCheckBoxRadioButtonStyle: function (element) {
-            if (element.type === "checkbox") {
-                $(element).parent().removeClass("cBox-disabled selected checked-disabled");
-            }
-            else if (element.type === "radio") {
-                $(element).parent().removeClass("rBox-disabled selected checked-disabled");
-            }
         },
         Focus: function (element) {
             element.focus();
@@ -73,9 +51,7 @@
             }
         },
         KendoEnableDisable: function (element, currentModelValue) {
-            if (element.type === "radio" || element.type === "checkbox") {
-                sg.controls.ApplyCheckBoxRadioButtonDisable(element);
-            } else if (element.type === "text" && element.className.indexOf("datepicker") > -1) {
+            if (element.type === "text" && element.className.indexOf("datepicker") > -1) {
                 var datePicker = $(element).data('kendoDatePicker');
                 if (datePicker) {
                     datePicker.enable(currentModelValue);
@@ -113,9 +89,9 @@ $(function () {
         applyCheckboxStyle: function () {
             return this.each(function () {
                 if ($(this).is(':checked')) {
-                    $(this).parent().addClass("selected");
+                    $(this).prop('checked', true);
                 } else {
-                    $(this).parent().removeClass("selected");
+                    $(this).prop('checked', false);
                 }
             });
         }
@@ -123,21 +99,11 @@ $(function () {
     $(document).on('change', 'input[type="checkbox"]', function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
     });
-    $(document).on('mouseenter', 'input[type="checkbox"]', function () {
-        $(this).parent().addClass("cBox-hover");
-    });
-    $(document).on('mouseleave', 'input[type="checkbox"]', function () {
-        $(this).parent().removeClass("cBox-hover");
-    });
+
     $(document).on('change', 'input[type="radio"]', function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
     });
-    $(document).on('mouseenter', 'input[type="radio"]', function () {
-        $(this).parent().addClass("radioBox-hover");
-    });
-    $(document).on('mouseleave', 'input[type="radio"]', function () {
-        $(this).parent().removeClass("radioBox-hover");
-    });
+
     $(document).on('focus', 'input', function () {
         var $this = $(this)
             .one('mouseup.mouseupSelect', function () {
@@ -152,14 +118,11 @@ $(function () {
 
 
     $(document).on("focus", 'input[type="checkbox"], input[type="radio"]', function () {
-        $(this).parent().addClass("focus");
+        $(this).parent().parent().addClass("focus");
     });
 
     $(document).on("blur", 'input[type="checkbox"], input[type="radio"]', function () {
-        $(this).parent().removeClass("focus");
+        $(this).parent().parent().removeClass("focus");
     });
-
-
-
 });
 
