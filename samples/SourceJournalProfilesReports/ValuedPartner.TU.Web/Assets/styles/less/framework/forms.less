@@ -146,7 +146,7 @@ label {
   margin-bottom: 5px;
 
   &.disabled {
-    color: @gray-light;
+    color: @sage-gray;
   }
 
   &.flag-status {
@@ -815,7 +815,7 @@ input[type="checkbox"] {
     padding: 0;
     float: left;
     text-align: center;
-    background-color: #fff;
+    background-color: @white;
     border-color: @input-border;
 
     &:focus {
@@ -1092,7 +1092,11 @@ input.numeric {
 .numeric-group {
   span.k-numerictextbox {
     padding: 0;
-  }  
+  }
+
+  &.with-select {
+    width: 240px;
+  }
 }
 
 /* input field sizes */
@@ -1325,7 +1329,7 @@ textarea {
   }
 
   &.k-state-default {
-    background-color: #fff;
+    background-color: @white;
     border-color: @sage-mid-gray;
 
     .k-select {
@@ -1448,7 +1452,7 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-n,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-up  { 
-  background-position: -708px -5px;
+  background-position: -708px -3px;
   text-indent: -9999px;
 
   &:before {
@@ -1458,7 +1462,7 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-s,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-down  { 
-  background-position: -83px -6px;
+  background-position: -83px -5px;
   text-indent: -9999px;
 }
 
@@ -1695,7 +1699,7 @@ td.k-state-focused.k-state-selected {
 }
 
 .k-state-selected > .k-link {
-  color: #fff;
+  color: @white;
 }
 
 .k-calendar-container .k-calendar .k-header .k-state-hover.k-nav-fast, 
@@ -1730,7 +1734,7 @@ td.k-state-focused.k-state-selected {
 /* fiscal calendar related */
 .calendar-heading {
   padding: 10px 10px 12px 10px;
-  color: #fff;
+  color: @white;
   font-weight: 700;
   background-color: #686c76;
   background-image: none;
@@ -1806,7 +1810,7 @@ td.k-state-focused.k-state-selected {
     border: 1px solid @sage-mid-gray;  
     min-width: 150px;  
     z-index: 99999;  
-    background: #fff;  
+    background: @white;  
     list-style: none;  
     left: 14px;
     top: 14px; 
@@ -1922,7 +1926,7 @@ td.k-state-focused.k-state-selected {
 }
 .form-validation {
   background: #2a3456;
-  color: #ffffff;
+  color: @white;
   width: 160px;
   padding: 8px 10px;
   min-height: 33px;
@@ -2092,7 +2096,7 @@ div.k-treeview {
     padding: 0px;
     height: 550px;
     overflow: auto;
-    background: #fff;
+    background: @white;
 
     .k-icon:before {
       content: none;
@@ -2211,7 +2215,7 @@ div.k-treeview {
 
 //Treeview alternate row colors for two levels
 #exportTreeView li:nth-child(odd) {
-    background: #fff; /* default colour */
+    background: @white; /* default colour */
 }
 #exportTreeView li:nth-child(even) {
     background: #f5f5f5; /* alternative colour */
@@ -2220,10 +2224,10 @@ div.k-treeview {
     background: #f5f5f5;
 }
 #exportTreeView li:nth-child(odd) ul li:nth-child(even) {
-    background: #fff;
+    background: @white;
 }
 #exportTreeView li:nth-child(even) ul li:nth-child(odd) {
-    background: #fff;
+    background: @white;
 }
 #exportTreeView li:nth-child(even) ul li:nth-child(even) {
     background: #f5f5f5;
@@ -2298,7 +2302,7 @@ div.k-treeview {
     display: block;
     padding: 5px;
     font-size: 12px;
-    color: #fff;
+    color: @white;
     line-height: 1.5;
     box-shadow: 2px 2px 5px 1px #aaa;
 
@@ -2372,25 +2376,26 @@ div.k-treeview {
 // Kendo checkbox styles override
 
 .k-checkbox:checked+.k-checkbox-label:before,
+.k-checkbox+.k-checkbox-label:before,
 .k-checkbox.selected+.k-checkbox-label:before {
-    background-color: #fff;
-    border-color: #cacaca;
-    color: #4fa835;
-    font: normal normal normal 13px/1 FontAwesome;
+  background-color: @white;
+  border-color: @sage-mid-gray;
+  color: rgba(0,0,0,0.9);
+  font: normal normal normal 13px/1 FontAwesome;
+  border-radius: 0;
 }
 
 .k-checkbox:focus+.k-checkbox-label:before {
-  box-shadow: 0 0 4px 0 #4fa835;
-  -webkit-box-shadow: 0 0 4px 0 #4fa835;
   border-color: #9a9b9c;
+  outline: 3px solid @input-border-focus;
 }
 
 .k-checkbox:indeterminate+.k-checkbox-label:after,
 .k-checkbox:indeterminate:hover+.k-checkbox-label:after { 
-  background-color: #4fa835;
+  background-color: rgba(0,0,0,0.9);
   background-image: none;
-  border-color: #4fa835;
-  border-radius: 2px;
+  border: 0;
+  border-radius: 0;
 }
 
 .k-checkbox:checked+.k-checkbox-label:before,
@@ -2400,9 +2405,8 @@ div.k-treeview {
 
 .k-checkbox-label:hover:before, 
 .k-checkbox:checked+.k-checkbox-label:hover:before {
-    border-color: #9a9b9c;
-    -webkit-box-shadow: 0 0 4px 0 #4fa835;
-    box-shadow: 0 0 4px 0 #4fa835;
+  border-color: @sage-mid-gray;
+  outline: 3px solid @input-border-focus;
 }
 
 .export-required {
@@ -2428,3 +2432,219 @@ div.k-treeview {
   }
 }
 
+// Sage Design System - New Checkbox and Radio Button Styles (2020.2)
+
+/* The checkbox/radio button container */
+
+.checkbox-container,
+.radio-container {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 14px;
+  color: rgba(0,0,0,.9);
+  margin-bottom: 0;
+
+  /* Create a custom checkbox */
+
+  .checkmark {
+    background-color: @white;
+    border: 1px solid @sage-mid-gray;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 1px;
+    width: 16px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  /* Show the checkmark when checked */
+
+  input:checked ~ .checkmark:after{
+    display: block;
+  }
+
+  input:disabled ~ .checkmark {
+    background-color: @input-bg-disabled;
+    border-color: @input-border-disabled;
+    cursor: not-allowed;
+
+    &:after {
+      border-color: @sage-gray;
+    }
+  }
+}
+
+.ctrl-group,
+.input-group.with-checkbox {
+  
+  .checkbox-container,
+  .radio-container {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 14px;
+    color: rgba(0,0,0,.9);
+    margin-bottom: 0;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      top: -10px;
+      left: 0px;
+    }
+
+    label{
+      cursor: pointer;
+    }
+
+    ~ label{
+      padding-left: 28px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    /* Create a custom checkbox */
+
+    .checkmark {
+      background-color: @white;
+      border: 1px solid @sage-mid-gray;
+      height: 16px;
+      left: 2px;
+      position: absolute;
+      top: 1px;
+      width: 16px;
+    }
+
+    input:disabled ~ .checkmark {
+      background-color: @input-bg-disabled;
+      border-color: @input-border-disabled;
+      cursor: not-allowed;
+
+      &:after {
+        border-color: @sage-gray;
+      }
+    }
+  }
+
+  &.ctrl-group-inline {
+
+    .checkbox-container,
+    .radio-container {
+      display: inline-block;
+      min-width: 180px;
+
+      ~ label {
+        display: block;
+        position: relative;
+        top: -8px;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        + .label-menu {
+          position: absolute;
+          top: 8px;
+          right: -30px;
+        }
+      }
+    }
+
+    &.no-label {
+      top: 10px;
+    }
+  }
+
+  &.ctrl-group-inline-lg {
+
+    .checkbox-container,
+    .radio-container {
+      min-width: 220px;
+    }
+  }
+}
+
+.checkbox-container {
+  
+  &.focus input:not(:disabled) ~ input ~ .checkmark,
+  input:not(:disabled):hover ~ .checkmark,
+  input:not(:disabled):focus ~ .checkmark,
+  &:hover input:not(:disabled) ~ input ~ .checkmark,
+  &:focus input:not(:disabled) ~ input ~ .checkmark {
+    outline: 3px solid @input-border-focus;
+  }
+
+  /* Style the checkmark/indicator */
+
+  .checkmark:after {
+    border: 1px solid;
+    border-width: 0px 3px 3px 0;
+    content: "";
+    display: none;
+    height: 11px;
+    left: 4px;
+    position: absolute;
+    top: 0px;
+    transform: rotate(45deg);
+    width: 7px;
+  }
+}
+
+.radio-container {
+
+  &.focus input:not(:disabled) ~ .checkmark,
+  &:hover input:not(:disabled) ~ .checkmark,
+  &:focus input:not(:disabled) ~ .checkmark {
+    box-shadow: 0 0 0 3px @input-border-focus;
+  }
+
+  .checkmark {
+    background-color: @white;
+    border: 1px solid @sage-mid-gray;
+    border-radius: 50%;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 1px;
+    width: 16px;
+
+    &:after {
+      border-radius: 50%;
+      content: "";
+      display: none;
+      height: 8px;
+      left: 3px;
+      position: absolute;
+      top: 3px;
+      width: 8px;
+      background-color: rgba(0,0,0,.9);
+    }
+  }
+
+  input:checked:disabled ~ .checkmark:after {
+    background-color: @sage-gray;
+    border-color: @input-border-disabled;
+  }
+}
+
+.k-grid .k-grid-content label.checkbox-container {
+  height: 22px;
+}

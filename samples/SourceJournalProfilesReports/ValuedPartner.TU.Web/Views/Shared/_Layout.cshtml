@@ -76,7 +76,7 @@
                 return port;
             }
         }
-        var SIRCPort = '@GetSIRCPort(Server.MapPath("~") + ConfigurationHelper.GetConfigValue("SIRCPortFileInfo"))';
+        var SIRCPort = '@GetSIRCPort(Path.Combine(Server.MapPath("~"), "..", "..", "SIRC", "site", "sslPort.txt"))';
     </script>
 </head>
 
@@ -218,9 +218,10 @@
                                     {
                                         var checkBoxId = "chk" + item.Data.WidgetId;
                                         <li class="widgetItem">
-                                            <span class="icon checkBox omega">
+                                            <label class="checkbox-container">
                                                 <input type="checkbox" class="chkWidget" id="@checkBoxId" widgetid="@item.Data.WidgetId" />
-                                            </span>
+                                                <span class="checkmark"></span>
+                                            </label>
                                             <label for="@checkBoxId">@item.Data.MenuName</label>
                                         </li>
                                     }

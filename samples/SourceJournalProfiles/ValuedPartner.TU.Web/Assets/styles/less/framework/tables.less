@@ -608,19 +608,16 @@ table {
           .checkBox {
             top: 2px;
             height: 20px;
-
-          input[type=checkbox] {
-            margin-bottom: -6px;
-          }
         }
       }
 
-      &.k-header span.checkBox {
-        top: 2px;
-        height: 20px;
+      .checkbox-container {
+        padding-left: 0;
+        top: -3px;
 
         input[type=checkbox] {
-          margin-bottom: -6px;
+          width: 16px;
+          height: 16px;
         }
       }
     }
@@ -653,15 +650,30 @@ table {
         max-width: 55px;
         min-width: 20px;
         text-overflow: clip;
-      }
+     }
 
       input {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-left: 10px; 
 
         &.icon:disabled {
           border: 1px solid transparent;
+        }
+      }
+
+      .checkbox-container {
+        padding-left: 0;
+        display: inline-block;
+
+        input[type=checkbox] {
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          z-index: 2;
+          cursor: pointer;
+
+          ~ .checkmark {
+            z-index: 1;
+            top: 3px;
+          }
         }
       }     
     }
@@ -1248,6 +1260,18 @@ table {
       display: inline-block;
       font-size: 12px;
       width: 170px;
+
+      &.checkbox-container {
+        width: auto;
+        padding: 0;
+        margin: 0 4px 0 0;
+        top: 5px;
+
+        input[type=checkbox], 
+        input[type=radio] {
+          margin: 0;
+        }
+      }
     }
 
     .ctrl-group > div {
@@ -1820,8 +1844,9 @@ div.spreadsheet {
   .lockedtext {
     position: relative;
     display: inline-block;
-    top: -3px;
+    top: 3px;
     white-space: nowrap;
+    padding-left: 24px;
   }
 }
 

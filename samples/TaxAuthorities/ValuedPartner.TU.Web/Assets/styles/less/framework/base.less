@@ -2480,6 +2480,226 @@ k-ie .child .checkBox + label + .label-link{
   top: -7px;
 }
 
+// Sage Design System - New Checkbox and Radio Button Styles (2020.2)
+
+/* The checkbox/radio button container */
+
+.checkbox-container,
+.radio-container {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 14px;
+  color: rgba(0,0,0,.9);
+  margin-bottom: 0;
+
+
+  /* Create a custom checkbox */
+
+  .checkmark {
+    background-color: @white;
+    border: 1px solid @sage-mid-gray;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 1px;
+    width: 16px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  /* Show the checkmark when checked */
+
+  input:checked ~ .checkmark:after{
+    display: block;
+  }
+
+  input:disabled ~ .checkmark {
+    background-color: @input-bg-disabled;
+    border-color: @input-border-disabled;
+    cursor: not-allowed;
+
+    &:after {
+      border-color: @sage-gray;
+    }
+  }
+}
+
+.ctrl-group,
+.input-group.with-checkbox {
+
+  >div {
+    padding: 0;
+  }
+  
+  .checkbox-container,
+  .radio-container {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 14px;
+    color: rgba(0,0,0,.9);
+    margin-bottom: 0;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      top: -1px;
+      width: 22px;
+      height: 22px;
+      left: 0px;
+      z-index: 1;
+    }
+
+    label{
+      cursor: pointer;
+    }
+
+    ~ label{
+      padding-left: 28px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    /* Create a custom checkbox */
+
+    .checkmark {
+      background-color: @white;
+      border: 1px solid @sage-mid-gray;
+      height: 16px;
+      left: 2px;
+      position: absolute;
+      top: 1px;
+      width: 16px;
+    }
+
+    input:disabled ~ .checkmark {
+      background-color: @input-bg-disabled;
+      border-color: @input-border-disabled;
+      cursor: not-allowed;
+
+      &:after {
+        border-color: @sage-gray;
+      }
+    }
+  }
+
+  &.ctrl-group-inline {
+
+    .checkbox-container,
+    .radio-container {
+      display: inline-block;
+      min-width: 180px;
+
+      ~ label {
+        display: block;
+        position: relative;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+
+    &.no-label {
+      top: 10px;
+    }
+  }
+
+  &.ctrl-group-inline-lg {
+
+    .checkbox-container,
+    .radio-container {
+      min-width: 220px;
+    }
+  }
+}
+
+.checkbox-container {
+  
+  &.focus input:not(:disabled) ~ input ~ .checkmark,
+  &:hover input:not(:disabled) ~ input ~ .checkmark,
+  &:focus input:not(:disabled) ~ input ~ .checkmark,
+  &.focus input:not(:disabled) ~ .checkmark,
+  &:hover input:not(:disabled) ~ .checkmark,
+  &:focus input:not(:disabled) ~ .checkmark {
+    outline: 3px solid @input-border-focus;
+  }
+
+  /* Style the checkmark/indicator */
+
+  .checkmark:after {
+    border: 1px solid;
+    border-width: 0px 3px 3px 0;
+    content: "";
+    display: none;
+    height: 11px;
+    left: 4px;
+    position: absolute;
+    top: 0px;
+    transform: rotate(45deg);
+    width: 7px;
+  }
+}
+
+.radio-container {
+
+  ~ label {
+    top: -3px;
+  }
+
+  &.focus input:not(:disabled) ~ .checkmark,
+  &:hover input:not(:disabled) ~ .checkmark,
+  &:focus input:not(:disabled) ~ .checkmark {
+    box-shadow: 0 0 0 3px @input-border-focus;
+  }
+
+  .checkmark {
+    background-color: @white;
+    border: 1px solid @sage-mid-gray;
+    border-radius: 50%;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 1px;
+    width: 16px;
+
+    &:after {
+      border-radius: 50%;
+      content: "";
+      display: none;
+      height: 8px;
+      left: 3px;
+      position: absolute;
+      top: 3px;
+      width: 8px;
+      background-color: rgba(0,0,0,.9);
+    }
+  }
+
+  input:checked:disabled ~ .checkmark:after {
+    background-color: @sage-gray;
+    border-color: @input-border-disabled;
+  }
+}
+
+
 /* Label link */
 
 .label-link,
@@ -4034,7 +4254,7 @@ textarea,
   }
   
   &.success-msg .title,
-  &.multiInfo-msg .msg-content {
+  &.success-msg .msg-content {
     border-color: @sage-green;
   }
 
