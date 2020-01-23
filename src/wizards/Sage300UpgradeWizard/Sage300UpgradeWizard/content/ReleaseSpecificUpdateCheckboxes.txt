@@ -1,10 +1,11 @@
-In additional, as part of the framework changes in Sage 300c 2020.2, checkboxes
+In addition, as part of the framework changes in Sage 300c 2020.2, checkboxes
 and radio buttons also had a visual upgrade.
 
-The updated elements will display correctly if they are created using the Sage
-300 HtmlHelperExtension. For customized elements that are not using the
-HtmlHelperExtension, please make use of the utility so that the elements will
-have the same visual style.
+The updated elements will inherit the new visual upgrade correctly if they are
+created using the Sage 300 HtmlHelperExtension. For customized elements that 
+are not using the HtmlHelperExtension, you may make use of the utility so that
+the elements will have the same visual style and benefit from the visual
+upgrade.
 
 Please refer to the 'Checkboxes and Radio Buttons changes' subsection in the
 Sage 300 Upgrade Guide for 2020.1 to 2020.2 in the docs folder of the Web SDK
