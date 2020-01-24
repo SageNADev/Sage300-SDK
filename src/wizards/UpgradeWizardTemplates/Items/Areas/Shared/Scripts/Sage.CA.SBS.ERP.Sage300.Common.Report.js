@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 var reportsUI = {
     Init: function () {
@@ -13,8 +13,6 @@ var reportsUI = {
             sg.utls.kndoUI.datePicker($(this).attr("id"));
         });
     },
-
-    BaseUrl: $("#hdnReportBaseUrl").val(),
 
     InitFinders: function () {
         var inputs = $('[data-ControlType="Finder"]');

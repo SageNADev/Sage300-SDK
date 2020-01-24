@@ -201,6 +201,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     Resources.ReleaseSpecificDescUpdateThemeColor,
                     Resources.ReleaseSpecificUpdateThemeColor);
 
+            AddStep(Resources.ReleaseSpecificTitleUpdateCheckboxes,
+                    Resources.ReleaseSpecificDescUpdateCheckboxes,
+                    Resources.ReleaseSpecificUpdateCheckboxes);
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -247,6 +251,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
 
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateThemeColor}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateCheckboxes}");
 
             // End - Specific to release
 

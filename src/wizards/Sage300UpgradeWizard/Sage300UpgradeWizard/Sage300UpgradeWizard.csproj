@@ -179,6 +179,7 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
+    <Content Include="content\ReleaseSpecificUpdateCheckboxes.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
     <Content Include="content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt" />
     <Content Include="content\ReleaseSpecificUpdateThemeColor.txt" />

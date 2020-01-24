@@ -413,19 +413,28 @@
       display: inline-block;
 
       &:hover {
-        color: @sage-link;
-        text-decoration: underline;
         cursor: pointer;
       }
     }
 
-    span {
+    label.checkbox-container {
       position: absolute;
-      margin-top: -2px;
+      margin-top: -3px;
+
+      input[type=checkbox] {
+        opacity: 0;
+      }
     }
 
-    label { 
+    label ~ label { 
       margin-left: 28px;
+    }
+
+    &.focus .checkbox-container {
+  
+    input:not(:disabled) ~ .checkmark {
+      outline: 3px solid @input-border-focus;
+      }
     }
   }
 

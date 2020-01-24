@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 var sg = sg || {};
@@ -390,6 +390,8 @@ sg.optionalFieldControl = function () {
         switch (model.TYPE) {
             case ValueTypeEnum.Date:
                 finder.displayFieldNames = ["VALIFDATE", "VDESC"];
+                //convert the value to specified format for finder query
+                model.VALUE = kendo.toString(model.VALUE, 'yyyyMMdd');
                 break;
             case ValueTypeEnum.Integer:
                 finder.displayFieldNames = ["VALIFLONG", "VDESC"];

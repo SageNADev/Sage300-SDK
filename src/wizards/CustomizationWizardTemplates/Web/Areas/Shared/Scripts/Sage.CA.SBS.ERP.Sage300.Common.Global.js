@@ -3277,7 +3277,23 @@ $.extend(sg.utls, {
                 element.addClass("dark-bg");
             }
         }
+    },
+    /**
+     * @name getMenuLabelFromMenuItemId
+     * @description Get the current menu item text based on it's menu item id
+     * @param {string} menuItemId - The menuItemId
+     * @returns {string} The menu item label text
+     */
+    getMenuLabelFromMenuItemId: function (menuItemId) {
 
+        var menuItemText = '';
+        try {
+            var menuItem = $('li').find('[data-menuid="' + menuItemId + '"]');
+            menuItemText = portalBehaviourResources.PagetitleInManager.format(menuItem.attr("data-modulename"), menuItem[0].text.trim());
+        } catch (e) {
+            menuItemText = '';
+        }
+        return menuItemText;
     }
 
     //initBackgroundImageCycling: function () {

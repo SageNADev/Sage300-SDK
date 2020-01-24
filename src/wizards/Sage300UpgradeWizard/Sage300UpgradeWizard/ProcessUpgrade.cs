@@ -125,6 +125,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         UpdateThemeColor(title);
                         break;
 
+                    case 4:
+                        LogSpacerLine('-');
+                        UpdateCheckboxes(title);
+                        break;
+
                         #endregion
                 }
             }
@@ -363,6 +368,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Nothing to do. This is a manual partner step :)
             var msg = Resources.UpdatesToSupportThemeColorAreAManualStep;
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Checkboxes visual update
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateCheckboxes(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToSupportCheckboxesAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);

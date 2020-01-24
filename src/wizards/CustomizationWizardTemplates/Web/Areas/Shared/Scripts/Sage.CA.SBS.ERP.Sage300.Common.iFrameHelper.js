@@ -11,7 +11,7 @@ $.extend(sg.utls.iFrameHelper = {
 
     postDataToParent: function (data) {
         var sourceFrameId = window.frameElement.getAttribute('data-parentiFrameId');
-        var childUrl = $(location).attr('href');
+        var childUrl = window.location.origin;        
 
         if (sourceFrameId) {
             var isContentWindow = sg.utls.isChrome() || sg.utls.isMozillaFirefox() || sg.utls.isSafari();
