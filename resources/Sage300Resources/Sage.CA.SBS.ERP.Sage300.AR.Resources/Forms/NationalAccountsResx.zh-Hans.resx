@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+    <comment>Processing - Row</comment>
+  </data>
+  <data name="Add1" xml:space="preserve">
+    <value>地址行1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add2" xml:space="preserve">
+    <value>地址行2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add3" xml:space="preserve">
+    <value>地址行3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add4" xml:space="preserve">
+    <value>地址行4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>允许空置</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="AmountRetainedCustCurr" xml:space="preserve">
+    <value>留存金额－客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AmountRetainedFuncCurr" xml:space="preserve">
+    <value>留存金额－功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>金额值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="AutocashProfile" xml:space="preserve">
+    <value>自动现金概览</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AverageDaystoPay" xml:space="preserve">
+    <value>平均付款天数</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceDueinCustCurr" xml:space="preserve">
+    <value>客户币种到期余额</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceDueinFuncCurr" xml:space="preserve">
+    <value>功能币种到期余额</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceForwardCustCurr" xml:space="preserve">
+    <value>客户币种余额承前</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceForwardFuncCurr" xml:space="preserve">
+    <value>功能币种余额承前</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="CheckCreditLimit" xml:space="preserve">
+    <value>检查信贷限额</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="CheckOverdueAmounts" xml:space="preserve">
+    <value>检查逾期金额</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代码</value>
+    <comment>Processing - Column</comment>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>币种描述</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>币种类型</value>
+    <comment>Statistics - Field</comment>
+  </data>
+  <data name="DateBalanceForwardBegins" xml:space="preserve">
+    <value>余额承前开始日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>上一维护日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofHighestBalance" xml:space="preserve">
+    <value>最高余额日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofHighestBalLastYr" xml:space="preserve">
+    <value>去年最高余额日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLargestInvoice" xml:space="preserve">
+    <value>最大发票日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLargestInvoiceLastYr" xml:space="preserve">
+    <value>去年最大发票日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastActivity" xml:space="preserve">
+    <value>上一活动日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastAdjustment" xml:space="preserve">
+    <value>上一调整日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastCreditNote" xml:space="preserve">
+    <value>上一贷项通知单日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastDebitNote" xml:space="preserve">
+    <value>上一借项通知单日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastDiscount" xml:space="preserve">
+    <value>上一折扣日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastInterestCharge" xml:space="preserve">
+    <value>上一利息收费日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastInvoice" xml:space="preserve">
+    <value>上一发票日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastReceipt" xml:space="preserve">
+    <value>上一收款日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastRefund" xml:space="preserve">
+    <value>上一退款日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastRefund1" xml:space="preserve">
+    <value>上一退款日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastReturnedCheck" xml:space="preserve">
+    <value>上一退回支票日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastStatement" xml:space="preserve">
+    <value>上一对帐单日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastStatement1" xml:space="preserve">
+    <value>上一对帐单日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastWriteOff" xml:space="preserve">
+    <value>上一冲销日期</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>日期值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="DaysUntilARTransAreOverdue" xml:space="preserve">
+    <value>交易逾期（天数）</value>
+    <comment>Processing - Group Check Box</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>小数位数</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="EnableYTDCalculations" xml:space="preserve">
+    <value>启动年度至今计算</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应收帐款统一帐户</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GroupCodeDesc" xml:space="preserve">
+    <value>群组代码描述</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="HighBalLastYrCustCurr" xml:space="preserve">
+    <value>去年最高余额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighBalLastYrFuncCurr" xml:space="preserve">
+    <value>去年最高余额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighestBalanceCustCurr" xml:space="preserve">
+    <value>最高余额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighestBalanceFuncCurr" xml:space="preserve">
+    <value>最高余额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>整数值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="LargestInvoiceCustCurr" xml:space="preserve">
+    <value>最大发票 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceFuncCurr" xml:space="preserve">
+    <value>最大发票 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceNumber" xml:space="preserve">
+    <value>最大发票编号</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceNumberLastYr" xml:space="preserve">
+    <value>去年最大发票编号</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastAdjAmtCustCurr" xml:space="preserve">
+    <value>上一调整金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastAdjAmtFuncCurr" xml:space="preserve">
+    <value>上一调整金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastCrNoteAmtCustCurr" xml:space="preserve">
+    <value>上一贷项通知单金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastCrNoteAmtFuncCurr" xml:space="preserve">
+    <value>上一贷项通知单金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDiscountAmtCustCurr" xml:space="preserve">
+    <value>上一折扣金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDiscountAmtFuncCurr" xml:space="preserve">
+    <value>上一折扣金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDrNoteAmtCustCurr" xml:space="preserve">
+    <value>上一借项通知单金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDrNoteAmtFuncCurr" xml:space="preserve">
+    <value>上一借项通知单金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastIntChargeCustCurr" xml:space="preserve">
+    <value>上一利息收费 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastIntChargeFuncCurr" xml:space="preserve">
+    <value>上一利息收费 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastInvoiceAmtCustCurr" xml:space="preserve">
+    <value>上一发票金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastInvoiceAmtFuncCurr" xml:space="preserve">
+    <value>上一发票金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastReceiptCustCurr" xml:space="preserve">
+    <value>最大收款 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastReceiptFuncCurr" xml:space="preserve">
+    <value>最大收款 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtCustCurr" xml:space="preserve">
+    <value>上一退款金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtCustCurr1" xml:space="preserve">
+    <value>上一退款金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtFuncCurr" xml:space="preserve">
+    <value>上一退款金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtFuncCurr1" xml:space="preserve">
+    <value>上一退款金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRetdChkAmtCustCurr" xml:space="preserve">
+    <value>上一退回支票金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRetdChkAmtFuncCurr" xml:space="preserve">
+    <value>上一退回支票金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastStatementTotalCustCurr" xml:space="preserve">
+    <value>上一对帐单合计 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastStatementTotalFuncCurr" xml:space="preserve">
+    <value>上一对帐单合计 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastWriteOffAmtCustCurr" xml:space="preserve">
+    <value>上一冲销金额 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastWriteOffAmtFuncCurr" xml:space="preserve">
+    <value>上一冲销金额 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LgstInvLastYrCustCurr" xml:space="preserve">
+    <value>去年最大发票 - 客户币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LgstInvLastYrFuncCurr" xml:space="preserve">
+    <value>去年最大发票 - 功能币种</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NationalAccountName" xml:space="preserve">
+    <value>统一帐户名称</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NationalAccountNo1" xml:space="preserve">
+    <value>统一帐户编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NationalAccountStatus" xml:space="preserve">
+    <value>统一帐户状态</value>
+    <comment>Activity - Group</comment>
+  </data>
+  <data name="NumberofAdjustments" xml:space="preserve">
+    <value>调整数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofCreditNotes" xml:space="preserve">
+    <value>贷项通知单数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofDaystoPay" xml:space="preserve">
+    <value>付款天数</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofDebitNotes" xml:space="preserve">
+    <value>借项通知单数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofDiscounts" xml:space="preserve">
+    <value>折扣数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInterestCharges" xml:space="preserve">
+    <value>利息收费次数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>发票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInvoicesPaid" xml:space="preserve">
+    <value>已付发票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofOpenDocuments" xml:space="preserve">
+    <value>未结凭证数目</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofPaidInvoices" xml:space="preserve">
+    <value>已付发票数</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofReceipts" xml:space="preserve">
+    <value>收款数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofRefunds" xml:space="preserve">
+    <value>退款数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofReturnedChecks" xml:space="preserve">
+    <value>退回支票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofWriteOffs" xml:space="preserve">
+    <value>冲销数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>数字值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="OpenInvoiceCount" xml:space="preserve">
+    <value>开放发票计数</value>
+    <comment>Activity - Group Field</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>可选字段描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="OverdueLimitOverdueDays" xml:space="preserve">
+    <value>有合计金额超过</value>
+    <comment>Processing - Group Field</comment>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>小数点</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>汇率类型描述</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>文本值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>时间值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="TotalAdjustmentsinCustCurr" xml:space="preserve">
+    <value>客户币种合计调整</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计调整</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalCreditsinCustCurr" xml:space="preserve">
+    <value>客户币种合计贷项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalCreditsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计贷项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDebitsinCustCurr" xml:space="preserve">
+    <value>客户币种合计借项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDebitsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计借项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDiscountsinCustCurr" xml:space="preserve">
+    <value>客户币种合计折扣</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDiscountsinFuncCurr" xml:space="preserve">
+    <value>合计功能币种折扣</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInterestinCustCurr" xml:space="preserve">
+    <value>客户币种合计利息</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInterestinFuncCurr" xml:space="preserve">
+    <value>功能币种合计利息</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesinCustCurr" xml:space="preserve">
+    <value>客户币种合计发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesinFuncCurr" xml:space="preserve">
+    <value>功能币种合计发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesPaidCustCurr" xml:space="preserve">
+    <value>客户币种合计已付发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesPaidFuncCurr" xml:space="preserve">
+    <value>合计功能币种已付发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalReceiptsinCustCurr" xml:space="preserve">
+    <value>客户币种合计收款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalReceiptsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计收款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRefundsinCustCurr" xml:space="preserve">
+    <value>客户币种合计退款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRefundsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计退款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRetdChecksCustCurr" xml:space="preserve">
+    <value>客户币种合计退回支票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRetdChecksFuncCurr" xml:space="preserve">
+    <value>功能币种合计退回支票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalWriteOffsinCustCurr" xml:space="preserve">
+    <value>客户币种合计冲销</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalWriteOffsinFuncCurr" xml:space="preserve">
+    <value>功能币种合计冲销</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>键入的值字段索引</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>验证</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>值描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已设</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YesOrNoValue" xml:space="preserve">
+    <value>是/否值</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="YTDAdjustmentsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今调整</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今调整</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDAverageDaystoPay" xml:space="preserve">
+    <value>年度至今平均付款天数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDCreditsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今贷项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDCreditsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今贷项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDebitsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今借项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDebitsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今借项</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDIscountsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今折扣</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDiscountsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今折扣</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInterestinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今利息</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInterestinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今利息</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesPdinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今已付发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesPdinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今已付发票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofAdjustments" xml:space="preserve">
+    <value>年度至今调整数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofCredits" xml:space="preserve">
+    <value>年度至今贷项数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDaystoPay" xml:space="preserve">
+    <value>年度至今付款天数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDebits" xml:space="preserve">
+    <value>年度至今借项数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDiscounts" xml:space="preserve">
+    <value>年度至今折扣数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInterestChanges" xml:space="preserve">
+    <value>年度至今利息收费数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInvoices" xml:space="preserve">
+    <value>年度至今发票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInvoicesPaid" xml:space="preserve">
+    <value>年度至今已付发票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofReceipts" xml:space="preserve">
+    <value>年度至今收款数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofRefunds" xml:space="preserve">
+    <value>年度至今退款数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofReturnedChecks" xml:space="preserve">
+    <value>年度至今退回支票数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofWriteOffs" xml:space="preserve">
+    <value>年度至今冲销数</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDReceiptsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今收款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDReceiptsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今收款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRefundsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今退款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRefundsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今退款</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRetdChecksinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今退回支票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRetdChecksinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今退回支票</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDWriteOffsinCustCurr" xml:space="preserve">
+    <value>客户币种年度至今冲销</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDWriteOffsinFuncCurr" xml:space="preserve">
+    <value>功能币种年度至今冲销</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>联系人</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>联系人电邮</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsFax" xml:space="preserve">
+    <value>联系人传真</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsPhone" xml:space="preserve">
+    <value>联系人电话</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="CreditBureauDate" xml:space="preserve">
+    <value>征信所日期</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="CreditBureauNumber" xml:space="preserve">
+    <value>征信所编号</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>传真</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>电话</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>处理指令代码</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>网址</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>无法找到期间{0}。</value>
+    <comment>Validation message</comment>
+  </data>
+  <data name="AR0028" xml:space="preserve">
+    <value>统一帐户</value>
+  </data>
+  <data name="AR0029" xml:space="preserve">
+    <value>统一帐户统计</value>
+  </data>
+  <data name="AR0411" xml:space="preserve">
+    <value>统一帐户可选字段</value>
+  </data>
+</root>

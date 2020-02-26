@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BaseUnitCostForMultipleUnitsOfMeasure" xml:space="preserve">
+    <value>Coût unitaire de base pour plusieurs unités de mesure</value>
+    <comment>Base Cost Type Enum</comment>
+  </data>
+  <data name="BaseUnitCostForSingleUnitOfMeasure" xml:space="preserve">
+    <value>Coût unitaire de base pour une unité de mesure</value>
+    <comment>Base Cost Type Enum</comment>
+  </data>
+  <data name="BaseUnitCostMinusanAmount" xml:space="preserve">
+    <value>Coût unitaire de base moins un montant</value>
+    <comment>Sale Cost Based On Enum</comment>
+  </data>
+  <data name="BaseUnitCostMinusaPercentage" xml:space="preserve">
+    <value>Coût unitaire de base moins un pourcentage</value>
+    <comment>Sale Cost Based On Enum</comment>
+  </data>
+  <data name="ColBAMOUNT" xml:space="preserve">
+    <value>Coût unitaire de base</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColBCOSTTYPE" xml:space="preserve">
+    <value>Type coût unitaire de base</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColCOSTFMT" xml:space="preserve">
+    <value>Ristournes sur coût unitaire de base par</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColDEFSUNIT" xml:space="preserve">
+    <value>Unité mesure de vente</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColROUNDAMT" xml:space="preserve">
+    <value>Arrondir à un multiple de</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColROUNDMETHD" xml:space="preserve">
+    <value>Méthode d'arrondi</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColSALEEND" xml:space="preserve">
+    <value>Vente termine</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColSALESTART" xml:space="preserve">
+    <value>Vente débute</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColSAMOUNT" xml:space="preserve">
+    <value>Coût unitaire de vente</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColSCOSTTYPE" xml:space="preserve">
+    <value>Type coût unitaire de vente</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColSDEFUSING" xml:space="preserve">
+    <value>Coût unitaire de vente basé sur</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ColVDCURR" xml:space="preserve">
+    <value>Code de devise</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DeleteItemMessage" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer le coût de l'article {0}, {1}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Contrat d'achat avec fournisseur de CmF</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Montant fixe</value>
+    <comment>Sale Cost Based On Enum</comment>
+  </data>
+  <data name="InvalidITEMMessage" xml:space="preserve">
+    <value>Le numéro d'article {0} est introuvable.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvalidVENDORMessage" xml:space="preserve">
+    <value>Le numéro de fournisseur {0} est introuvable.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="KittingITEMMessage" xml:space="preserve">
+    <value>L'article de trousse {0} n'est pas autorisé.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nouveau...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="NoRounding" xml:space="preserve">
+    <value>Aucun arrondi</value>
+    <comment>Rounding Method Enum </comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ouvrir...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>Pourcentage</value>
+    <comment>Discount Based On Enum</comment>
+  </data>
+  <data name="RoundDown" xml:space="preserve">
+    <value>Arrondir en moins</value>
+    <comment>Rounding Method Enum</comment>
+  </data>
+  <data name="RoundUp" xml:space="preserve">
+    <value>Arrondir en plus</value>
+    <comment>Rounding Method Enum</comment>
+  </data>
+  <data name="SaleUnitCostForMultipleUnitsOfMeasure" xml:space="preserve">
+    <value>Coût unitaire de vente pour plusieurs unités de mesure</value>
+    <comment>Sale Cost Type Enum</comment>
+  </data>
+  <data name="SaleUnitCostForSingleUnitOfMeasure" xml:space="preserve">
+    <value>Coût unitaire de vente pour une unité de mesure</value>
+    <comment>Sale Cost Type Enum</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Pourcentage remise</value>
+    <comment>Discounts Tab Title</comment>
+  </data>
+  <data name="AmountLevel0" xml:space="preserve">
+    <value>Niveau montant 0</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel1" xml:space="preserve">
+    <value>Niveau montant 1</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel2" xml:space="preserve">
+    <value>Niveau montant 2</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel3" xml:space="preserve">
+    <value>Niveau montant 3</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel4" xml:space="preserve">
+    <value>Niveau montant 4</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel5" xml:space="preserve">
+    <value>Niveau montant 5</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel6" xml:space="preserve">
+    <value>Niveau montant 6</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel7" xml:space="preserve">
+    <value>Niveau montant 7</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel8" xml:space="preserve">
+    <value>Niveau montant 8</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="AmountLevel9" xml:space="preserve">
+    <value>Niveau montant 9</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="BaseUnit" xml:space="preserve">
+    <value>Unité de mesure de base</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BaseUnitConversion" xml:space="preserve">
+    <value>Conversion unité de base</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="ContractCostDescription" xml:space="preserve">
+    <value>Description contrat d'achat avec fournisseur</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DiscountedAmount0" xml:space="preserve">
+    <value>Montant réduit 0</value>
+  </data>
+  <data name="DiscountedAmount1" xml:space="preserve">
+    <value>Montant réduit 1</value>
+  </data>
+  <data name="DiscountedAmount2" xml:space="preserve">
+    <value>Montant réduit 2</value>
+  </data>
+  <data name="DiscountedAmount3" xml:space="preserve">
+    <value>Montant réduit 3</value>
+  </data>
+  <data name="DiscountedAmount4" xml:space="preserve">
+    <value>Montant réduit 4</value>
+  </data>
+  <data name="DiscountedAmount5" xml:space="preserve">
+    <value>Montant réduit 5</value>
+  </data>
+  <data name="DiscountedAmount6" xml:space="preserve">
+    <value>Montant réduit 6</value>
+  </data>
+  <data name="DiscountedAmount7" xml:space="preserve">
+    <value>Montant réduit 7</value>
+  </data>
+  <data name="DiscountedAmount8" xml:space="preserve">
+    <value>Montant réduit 8</value>
+  </data>
+  <data name="DiscountedAmount9" xml:space="preserve">
+    <value>Montant réduit 9</value>
+  </data>
+  <data name="FormattedItemNumber" xml:space="preserve">
+    <value>Numéro article formaté</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="LevelUsed0" xml:space="preserve">
+    <value>Niveau utilisé 0</value>
+  </data>
+  <data name="LevelUsed1" xml:space="preserve">
+    <value>Niveau utilisé 1</value>
+  </data>
+  <data name="LevelUsed2" xml:space="preserve">
+    <value>Niveau utilisé 2</value>
+  </data>
+  <data name="LevelUsed3" xml:space="preserve">
+    <value>Niveau utilisé 3</value>
+  </data>
+  <data name="LevelUsed4" xml:space="preserve">
+    <value>Niveau utilisé 4</value>
+  </data>
+  <data name="LevelUsed5" xml:space="preserve">
+    <value>Niveau utilisé 5</value>
+  </data>
+  <data name="LevelUsed6" xml:space="preserve">
+    <value>Niveau utilisé 6</value>
+  </data>
+  <data name="LevelUsed7" xml:space="preserve">
+    <value>Niveau utilisé 7</value>
+  </data>
+  <data name="LevelUsed8" xml:space="preserve">
+    <value>Niveau utilisé 8</value>
+  </data>
+  <data name="LevelUsed9" xml:space="preserve">
+    <value>Niveau utilisé 9</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Description numéro fournisseur</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PercentageLevel0" xml:space="preserve">
+    <value>Niveau pourcentage 0</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel1" xml:space="preserve">
+    <value>Niveau pourcentage 1</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel2" xml:space="preserve">
+    <value>Niveau pourcentage 2</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel3" xml:space="preserve">
+    <value>Niveau pourcentage 3</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel4" xml:space="preserve">
+    <value>Niveau pourcentage 4</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel5" xml:space="preserve">
+    <value>Niveau pourcentage 5</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel6" xml:space="preserve">
+    <value>Niveau pourcentage 6</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel7" xml:space="preserve">
+    <value>Niveau pourcentage 7</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel8" xml:space="preserve">
+    <value>Niveau pourcentage 8</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PercentageLevel9" xml:space="preserve">
+    <value>Niveau pourcentage 9</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityIncrement" xml:space="preserve">
+    <value>Quantité augmentée</value>
+  </data>
+  <data name="QuantityLevel0" xml:space="preserve">
+    <value>Niveau de quantité 0</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel1" xml:space="preserve">
+    <value>Niveau de quantité 1</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel2" xml:space="preserve">
+    <value>Niveau de quantité 2</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel3" xml:space="preserve">
+    <value>Niveau de quantité 3</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel4" xml:space="preserve">
+    <value>Niveau de quantité 4</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel5" xml:space="preserve">
+    <value>Niveau de quantité 5</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel6" xml:space="preserve">
+    <value>Niveau de quantité 6</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel7" xml:space="preserve">
+    <value>Niveau de quantité 7</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel8" xml:space="preserve">
+    <value>Niveau de quantité 8</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityLevel9" xml:space="preserve">
+    <value>Niveau de quantité 9</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="QuantityMaximum" xml:space="preserve">
+    <value>Quantité maximum</value>
+  </data>
+  <data name="QuantityNext0" xml:space="preserve">
+    <value>Quantité suivante 0</value>
+  </data>
+  <data name="QuantityNext1" xml:space="preserve">
+    <value>Quantité suivante 1</value>
+  </data>
+  <data name="QuantityNext2" xml:space="preserve">
+    <value>Quantité suivante 2</value>
+  </data>
+  <data name="QuantityNext3" xml:space="preserve">
+    <value>Quantité suivante 3</value>
+  </data>
+  <data name="QuantityNext4" xml:space="preserve">
+    <value>Quantité suivante 4</value>
+  </data>
+  <data name="QuantityNext5" xml:space="preserve">
+    <value>Quantité suivante 5</value>
+  </data>
+  <data name="QuantityNext6" xml:space="preserve">
+    <value>Quantité suivante 6</value>
+  </data>
+  <data name="QuantityNext7" xml:space="preserve">
+    <value>Quantité suivante 7</value>
+  </data>
+  <data name="QuantityNext8" xml:space="preserve">
+    <value>Quantité suivante 8</value>
+  </data>
+  <data name="QuantityNext9" xml:space="preserve">
+    <value>Quantité suivante 9</value>
+  </data>
+  <data name="QuantityTo0" xml:space="preserve">
+    <value>Quantité à 0</value>
+  </data>
+  <data name="QuantityTo1" xml:space="preserve">
+    <value>Quantité à 1</value>
+  </data>
+  <data name="QuantityTo2" xml:space="preserve">
+    <value>Quantité à 2</value>
+  </data>
+  <data name="QuantityTo3" xml:space="preserve">
+    <value>Quantité à 3</value>
+  </data>
+  <data name="QuantityTo4" xml:space="preserve">
+    <value>Quantité à 4</value>
+  </data>
+  <data name="QuantityTo5" xml:space="preserve">
+    <value>Quantité à 5</value>
+  </data>
+  <data name="QuantityTo6" xml:space="preserve">
+    <value>Quantité à 6</value>
+  </data>
+  <data name="QuantityTo7" xml:space="preserve">
+    <value>Quantité à 7</value>
+  </data>
+  <data name="QuantityTo8" xml:space="preserve">
+    <value>Quantité à 8</value>
+  </data>
+  <data name="QuantityTo9" xml:space="preserve">
+    <value>Quantité à 9</value>
+  </data>
+  <data name="SaleUnit" xml:space="preserve">
+    <value>Unité de mesure vente</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaleUnitConversion" xml:space="preserve">
+    <value>Conversion unité de vente</value>
+    <comment>Model Property</comment>
+  </data>
+  <data name="PO0181" xml:space="preserve">
+    <value>Contrat d'achat avec fournisseur</value>
+    <comment>For Export / Import Label Name</comment>
+  </data>
+  <data name="PO0183" xml:space="preserve">
+    <value>Contrat d'achat taxes incluses</value>
+    <comment>For Export / Import Label Name</comment>
+  </data>
+  <data name="Discounts" xml:space="preserve">
+    <value>Remises</value>
+    <comment>Vendor Contract Costs Tab Name</comment>
+  </data>
+  <data name="PO0191" xml:space="preserve">
+    <value>Coûts unitaires de base contrat d'achat</value>
+    <comment>For Export / Import Label Name</comment>
+  </data>
+  <data name="PO0192" xml:space="preserve">
+    <value>Unités de vente contrat d'achat</value>
+    <comment>For Export / Import Label Name</comment>
+  </data>
+  <data name="BaseCostAmount" xml:space="preserve">
+    <value>Montant coût de base</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="BaseCostType" xml:space="preserve">
+    <value>Type coût de base</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="BaseUnitLabel" xml:space="preserve">
+    <value>Unité de base</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="DiscountBasedOn" xml:space="preserve">
+    <value>Remise basée sur</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="PercentageOfBase" xml:space="preserve">
+    <value>Pourcentage de base</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="SaleCostBasedOn" xml:space="preserve">
+    <value>Prix de vente basé sur</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="SaleCostType" xml:space="preserve">
+    <value>Type prix de vente</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="SaleUnitLabel" xml:space="preserve">
+    <value>Unité de vente</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="UiHelper" xml:space="preserve">
+    <value>Assistant IU</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="BaseAmount" xml:space="preserve">
+    <value>Montant de base</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ConversionFactorToStocking" xml:space="preserve">
+    <value>Facteur conversion à unité stockage</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DefaultUnitOfMeasure" xml:space="preserve">
+    <value>Unité mesure implicite</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DeleteDefaultUnitMessage" xml:space="preserve">
+    <value>Impossible de supprimer l'unité de mesure par défaut.</value>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>Pourcentage de remise</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaleCost" xml:space="preserve">
+    <value>Prix de vente</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaleCostCalculatedUsing" xml:space="preserve">
+    <value>Prix de vente calculé en utilisant</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaleDateValidationMessage" xml:space="preserve">
+    <value>La date de fin de vente doit être postérieure à celle de début de vente.</value>
+  </data>
+  <data name="SaleEndDate" xml:space="preserve">
+    <value>Date fin vente</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaleStartDate" xml:space="preserve">
+    <value>Date début vente</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Description autorité fiscale</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unité de mesure</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CalculatedSaleCost" xml:space="preserve">
+    <value>Prix de vente calculé</value>
+    <comment>FinderLabel</comment>
+  </data>
+  <data name="QuantityPurchased" xml:space="preserve">
+    <value>Quantité achetée (Unité: {0})</value>
+  </data>
+  <data name="VolumeDiscountsOnUnitCostBy" xml:space="preserve">
+    <value>Ristournes sur coût unitaire par</value>
+  </data>
+  <data name="DeleteVendorCostMessage" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer ce contrat d'achat?</value>
+    <comment>Delete Message</comment>
+  </data>
+  <data name="VendorContractCost" xml:space="preserve">
+    <value>Contrat d'achat avec fournisseur</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Nom article</value>
+    <comment>Finder header</comment>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>Classe taxe du fournisseur</value>
+    <comment>Tax Grid Column Title</comment>
+  </data>
+</root>

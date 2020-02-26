@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calcular</value>
+    <comment>Used in enum for Tax Amount Control</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="CurrentAmount" xml:space="preserve">
+    <value>Monto Actual</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Fecha Último Mantenimiento</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detalle</value>
+    <comment>Used in tabs</comment>
+  </data>
+  <data name="Distribute" xml:space="preserve">
+    <value>Distribuir</value>
+    <comment>Used in enum for Tax Amount Control</comment>
+  </data>
+  <data name="DistributedTotalBeforeTaxes" xml:space="preserve">
+    <value>Total Distribuido Antes de Impuestos</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="DistributionAmount" xml:space="preserve">
+    <value>Monto de Distribución</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="DistributionAmountDesc" xml:space="preserve">
+    <value>Monto de Distribución</value>
+    <comment>Used in detail tab</comment>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>Grupo de Distribución</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="DistributionSetDesc" xml:space="preserve">
+    <value>Descripción Grupo de Distribución</value>
+    <comment>Used in detail tab</comment>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>Fecha de Entrada en Vigor</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="EffectiveDateDesc" xml:space="preserve">
+    <value>Fecha de Entrada en Vigor </value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Ingresar</value>
+    <comment>Used in enum for Tax Amount Control</comment>
+  </data>
+  <data name="ExpirationAmount" xml:space="preserve">
+    <value>Monto Caducado</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Fecha de Caducidad</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="ExpirationType" xml:space="preserve">
+    <value>Tipo de Caducidad</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Inactiveasof" xml:space="preserve">
+    <value>Inactivo (al)</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Fecha de Inactividad</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Factura</value>
+    <comment>Used in tabs</comment>
+  </data>
+  <data name="InvoiceDescription" xml:space="preserve">
+    <value>Descripción de Factura</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="InvoiceSubtotal" xml:space="preserve">
+    <value>Subtotal de Factura</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastGenerated" xml:space="preserve">
+    <value>Última Generación</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="LastInvoiceAmountPosted" xml:space="preserve">
+    <value>Monto de Última Factura Asentada</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastInvoiceDatePosted" xml:space="preserve">
+    <value>Fecha de Última Factura Asentada</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Último Mantenimiento</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="MaximumAmount" xml:space="preserve">
+    <value>Monto Máximo</value>
+    <comment>Used in enum for ExpirationType</comment>
+  </data>
+  <data name="MaximumNumberofInvoices" xml:space="preserve">
+    <value>Cantidad Máxima de Facturas</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="MaximumTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total Máximo de Facturas</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="NextInvoiceDate" xml:space="preserve">
+    <value>Fecha Factura Siguiente</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="NoExpiration" xml:space="preserve">
+    <value>Sin Caducidad</value>
+    <comment>Used in enum for ExpirationType</comment>
+  </data>
+  <data name="Num1099OrCPRSCode" xml:space="preserve">
+    <value>Código 1099/CPRS</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas</value>
+    <comment>Used in enum for ExpirationType</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Campos Opcionales</value>
+    <comment>Used in tabs</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Número de Orden</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>Número de OC</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="RecurringPayable" xml:space="preserve">
+    <value>Efecto a Pagar Recurrente de C/P</value>
+    <comment>Used in Exception Messages</comment>
+  </data>
+  <data name="RecurringPayableCode" xml:space="preserve">
+    <value>Código Efecto a Pagar Recurrente</value>
+    <comment>Used in Recurring Payable Screen</comment>
+  </data>
+  <data name="RemitTo" xml:space="preserve">
+    <value>Enviar Pago a</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="RemitToDesc" xml:space="preserve">
+    <value>Descripción de Envío de Pago</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="RemitToLocation" xml:space="preserve">
+    <value>Dirección de Pago</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Programa</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="ScheduleCode" xml:space="preserve">
+    <value>Código de Programa</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="ScheduleCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Programa</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="SpecificDate" xml:space="preserve">
+    <value>Fecha Específica</value>
+    <comment>Used in enum for ExpirationType</comment>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Estadísticas</value>
+    <comment>Used in tabs</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto 1</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto 2</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto 3</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto 4</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto 5</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmountControl" xml:space="preserve">
+    <value>Control de Monto de Impuesto</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autoridad Fiscal 1</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autoridad Fiscal 2</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autoridad Fiscal 3</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autoridad Fiscal 4</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autoridad Fiscal 5</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>Base de Impuesto</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Grupo Fiscal</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxGroupDesc" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="TaxInclusive1" xml:space="preserve">
+    <value>Impuesto Inclusivo 1</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxInclusive2" xml:space="preserve">
+    <value>Impuesto Inclusivo 2</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxInclusive3" xml:space="preserve">
+    <value>Impuesto Inclusivo 3</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxInclusive4" xml:space="preserve">
+    <value>Impuesto Inclusivo 4</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxInclusive5" xml:space="preserve">
+    <value>Impuesto Inclusivo 5</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxTotals" xml:space="preserve">
+    <value>Impuesto/Totales</value>
+    <comment>Used in tabs</comment>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>Condiciones</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TermsDesc" xml:space="preserve">
+    <value>Descripción de Condiciones</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>Descripción del Proveedor</value>
+    <comment>Used in recurrent payable screen</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="YearToDateNumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas YTD</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="YearToDateTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas YTD</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="CalculateTaxes" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="DistributeTaxes" xml:space="preserve">
+    <value>Distribuir Impuestos</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="AddEdit" xml:space="preserve">
+    <value>Agregar/Editar</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+    <comment>Used in Recurring Payable screen</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="AP0064" xml:space="preserve">
+    <value>Efectos a Pagar Recurrentes</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AP0065" xml:space="preserve">
+    <value>Detalles de Efectos a Pagar Recurrentes</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AP0404" xml:space="preserve">
+    <value>Campos de Detalle de Efecto a Pagar Recurrente</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AP0405" xml:space="preserve">
+    <value>Campos Opc. Efecto a Pagar Recurrente</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Código de Categoría</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Código de Contrato</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="DistributedAmount" xml:space="preserve">
+    <value>Monto Distribuido</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="DistributedAmountBeforeTaxes" xml:space="preserve">
+    <value>Monto Distribuido Antes de los Impuestos</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="DistributionDescription" xml:space="preserve">
+    <value>Descripción de la Distribución</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="DistTaxexcludedfromPrice" xml:space="preserve">
+    <value>Impuesto Excluido del Precio Distribuido</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="DistTaxincludedinPrice" xml:space="preserve">
+    <value>Impuesto Incluido en el Precio Distribuido</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="InvoiceTaxable" xml:space="preserve">
+    <value>Factura Gravable</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Número de Artículo</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Trabajo</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastBatchNumberPosted" xml:space="preserve">
+    <value>Último Número de Lote Asentado</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastDetailSeqNo" xml:space="preserve">
+    <value>Último Número Secuencia de Detalle</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastEntryNumberPosted" xml:space="preserve">
+    <value>Último Número de Asiento Asentado</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastInvoiceDateGenerated" xml:space="preserve">
+    <value>Fecha de Última Factura Generada</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastInvoiceNumberPosted" xml:space="preserve">
+    <value>Último Número de Factura Asentado</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="LastPostingSequenceNumber" xml:space="preserve">
+    <value>Último Número Secuencia de Asentamiento</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="NextScheduledDate" xml:space="preserve">
+    <value>Fecha de Programa Siguiente</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="PostedNumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Asentadas</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="PostedTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas Asentadas</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Procesar Código de Comando</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Código de Proyecto</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="ProjectOrCategoryResource" xml:space="preserve">
+    <value>Recurso de Proyecto/Categoría</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="ScheduleLink" xml:space="preserve">
+    <value>Vínculo de Programa</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxAmountTotal" xml:space="preserve">
+    <value>Monto Total de Impuestos</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Base de Impuesto 1</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Base de Impuesto 2</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Base de Impuesto 3</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Base de Impuesto 4</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Base de Impuesto 5</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TaxBaseControl" xml:space="preserve">
+    <value>Control de Base de Impuesto</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valor Texto</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="TotalDistTaxexclfromPrice" xml:space="preserve">
+    <value>Total de Impuesto Excluido del Precio Distribuido</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TotalDistTaxinclinPrice" xml:space="preserve">
+    <value>Total de Impuesto Incluido en el Precio Distribuido</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>Monto Total de Impuestos</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="UnitofMeasure" xml:space="preserve">
+    <value>Unidad de Medida</value>
+    <comment>Used for recurring payable detail model in Export/Import</comment>
+  </data>
+  <data name="UnpostedNumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Sin Asentar</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="UnpostedTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Total de Facturas Sin Asentar</value>
+    <comment>Used for recurring payable model in Export/Import</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="YesOrNoValue" xml:space="preserve">
+    <value>Valor Sí/No</value>
+    <comment>Used for recurring payable optional field model in Export/Import</comment>
+  </data>
+  <data name="InvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura</value>
+    <comment>Used in Statistics tab</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Fecha de factura</value>
+    <comment>Used in Statistics tab</comment>
+  </data>
+  <data name="TotalInvoiced" xml:space="preserve">
+    <value>Total Facturado</value>
+    <comment>Used in Statistics tab</comment>
+  </data>
+  <data name="Unposted" xml:space="preserve">
+    <value>Sin Asentar</value>
+    <comment>Used in Statistics tab</comment>
+  </data>
+  <data name="YearToDate" xml:space="preserve">
+    <value>Año hasta la fecha</value>
+    <comment>Used in Statistics tab</comment>
+  </data>
+  <data name="CurrentCount" xml:space="preserve">
+    <value>Conteo Actual</value>
+    <comment>Used in Invoice tab</comment>
+  </data>
+  <data name="CurrentTotalInvoiceAmount" xml:space="preserve">
+    <value>Monto Actual Total de Facturas</value>
+    <comment>Used in Invoice tab</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="Num1099OrCPRSCodeDesc" xml:space="preserve">
+    <value>Descripción Código de 1099/CPRS</value>
+    <comment>Used in invoicing tab</comment>
+  </data>
+  <data name="CreateaNewBatch" xml:space="preserve">
+    <value>Crear un Nuevo Lote</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="InvoiceBatch" xml:space="preserve">
+    <value>Lote de Facturas</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="NextScheduled" xml:space="preserve">
+    <value>Programa Siguiente</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otro</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="AddToAnExistingBatch" xml:space="preserve">
+    <value>Agregar a un Lote Existente</value>
+    <comment>Used in Create Invoice screen</comment>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Used in Detail Grid column</comment>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Used in Detail Grid column</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>Cuenta del LM</value>
+    <comment>Used in Detail Grid column</comment>
+  </data>
+  <data name="GLAccountDescription" xml:space="preserve">
+    <value>Descripción de Cuenta</value>
+    <comment>Used in Detail Grid column</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+    <comment>Used in detail grid column</comment>
+  </data>
+  <data name="Discountable" xml:space="preserve">
+    <value>Descontable</value>
+    <comment>Used in detail grid column</comment>
+  </data>
+  <data name="CreateInvoice" xml:space="preserve">
+    <value>Crear Factura</value>
+    <comment>Used for create invoice button</comment>
+  </data>
+  <data name="CreateDistribution" xml:space="preserve">
+    <value>Crear Distribución</value>
+    <comment>Used in Detail tab for button</comment>
+  </data>
+  <data name="ProcessSuccessMessage" xml:space="preserve">
+    <value>Procesamiento concluido.  {1} factura(s) creadas y agregadas al lote {0}.</value>
+    <comment>Used for Create Recurring batch screen process success message</comment>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Total de Documento</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insertar Campos Opcionales</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="Num1099OrCprsAmount" xml:space="preserve">
+    <value>Monto 1099/CPRS</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="GenerateVendorDistribution" xml:space="preserve">
+    <value>Generar Distribución de Proveedor</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="CreateDistributions" xml:space="preserve">
+    <value>Crear Distribuciones</value>
+    <comment>Used in Detail tab for button</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Línea de Dirección 1</value>
+    <comment>Used in Vendor pop up</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Línea de Dirección 2</value>
+    <comment>Used in Vendor pop up</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Línea de Dirección 3</value>
+    <comment>Used in Vendor pop up</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Línea de Dirección 4</value>
+    <comment>Used in Vendor pop up</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/P - Efectos a Pagar Recurrentes</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="RecurringPayableDescription" xml:space="preserve">
+    <value>Descripción de Efecto a Pagar Recurrente</value>
+  </data>
+  <data name="TaxCannotBeDistributed" xml:space="preserve">
+    <value>No se pueden distribuir impuestos cuando todos los impuestos son calculados.</value>
+    <comment>Used in Tax Totals tab</comment>
+  </data>
+  <data name="VendorOnHold" xml:space="preserve">
+    <value>El proveedor seleccionado {0} está retenido.</value>
+  </data>
+  <data name="TaxClassNotDefinedInTaxServices" xml:space="preserve">
+    <value>La clase fiscal del proveedor {0} para la autoridad fiscal {1} no está definida en Servicios Fiscales. Seleccione otro valor o agregue la clase fiscal que desea utilizar en Servicios Fiscales.</value>
+    <comment>Used in Tax/Totals tab - Vendor Tax Class validation.</comment>
+  </data>
+  <data name="RemitToInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Detalles de Pago</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="ScheduleInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Detalles del Programa</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+  <data name="VendorInfoHamburgerMenuItemText" xml:space="preserve">
+    <value>Detalles del Proveedor</value>
+    <comment>Hamburger Menu Item Text</comment>
+  </data>
+</root>

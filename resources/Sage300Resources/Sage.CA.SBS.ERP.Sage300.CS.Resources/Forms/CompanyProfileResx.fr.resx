@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>Adresse ligne 3</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>Adresse ligne 4</value>
+  </data>
+  <data name="CS0001" xml:space="preserve">
+    <value>Profil de l'entreprise</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Agence</value>
+  </data>
+  <data name="BusinessAsLABEL" xml:space="preserve">
+    <value>Faire affaire comme</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BusinessRegistrationNumber" xml:space="preserve">
+    <value>Numéro inscription entreprise</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="ContactFax" xml:space="preserve">
+    <value>Fax </value>
+  </data>
+  <data name="ContactFRAME" xml:space="preserve">
+    <value>Coordonnées du contact</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactNAME" xml:space="preserve">
+    <value>Nom du contact</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>Code pays</value>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Description devise</value>
+  </data>
+  <data name="DatabaseID" xml:space="preserve">
+    <value>Code base de données</value>
+  </data>
+  <data name="DefaultRateType" xml:space="preserve">
+    <value>Type taux par défaut</value>
+  </data>
+  <data name="DoingBussinessAs" xml:space="preserve">
+    <value>Faire affaire comme</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Profil de l'entreprise</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Euro" xml:space="preserve">
+    <value>Euro</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="FormatPhone" xml:space="preserve">
+    <value>Formater numéros téléphone et fax</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+  </data>
+  <data name="GainLossAcctMethod" xml:space="preserve">
+    <value>Méthode comptable de gain/perte</value>
+  </data>
+  <data name="GnLssMthdOneWayChg" xml:space="preserve">
+    <value>Le changement de méthode comptable Gain/Perte pour "Gain/Perte constaté" est permanent. Vous serez incapable de revenir à 'Gain/Perte réalisé et non réalisé' après avoir sauvegardé le profil de l'entreprise.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InactiveAccount" xml:space="preserve">
+    <value>Compte GL dormant</value>
+  </data>
+  <data name="InvalidDefaultRateType" xml:space="preserve">
+    <value>Le type de taux {0} est introuvable.</value>
+  </data>
+  <data name="LegalName" xml:space="preserve">
+    <value>Nom commercial</value>
+  </data>
+  <data name="LocationCode" xml:space="preserve">
+    <value>Code d'emplacement</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>Type d'emplacement</value>
+  </data>
+  <data name="LockedFiscalPeriod" xml:space="preserve">
+    <value>Période verrouillée</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>Multidevise</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+    <comment>For Export </comment>
+  </data>
+  <data name="NoExistAccount" xml:space="preserve">
+    <value>Compte GL inexistant</value>
+  </data>
+  <data name="NumFiscalPeriods" xml:space="preserve">
+    <value>Nombre de périodes comptables</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Qtr4Periods" xml:space="preserve">
+    <value>Trimestre de 4 périodes</value>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Description type taux</value>
+  </data>
+  <data name="ReportingCurrency" xml:space="preserve">
+    <value>Monnaie de publication</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="StateProv" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="TabAddress" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="TabOptions" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="TaxNumber" xml:space="preserve">
+    <value>Numéro entreprise</value>
+  </data>
+  <data name="WarningDateRange" xml:space="preserve">
+    <value>Délai pour avertir</value>
+  </data>
+  <data name="ZpPostal" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="CompanyLogo" xml:space="preserve">
+    <value>Logo de l'entreprise</value>
+  </data>
+  <data name="SelectLogo" xml:space="preserve">
+    <value>Sélectionner le logo de l'entreprise</value>
+  </data>
+  <data name="UpLoad" xml:space="preserve">
+    <value>Téléverser</value>
+  </data>
+  <data name="FileFormatError" xml:space="preserve">
+    <value>Sélectionnez un type d'image pris en charge (JPEG ou PNG).</value>
+  </data>
+  <data name="UpLoadMessage" xml:space="preserve">
+    <value>Logo de l'entreprise téléversé avec succès.</value>
+  </data>
+  <data name="DeleteLogoMessage" xml:space="preserve">
+    <value>Logo de l'entreprise supprimé avec succès.</value>
+  </data>
+  <data name="FileSizeError" xml:space="preserve">
+    <value>La taille maximale de l'image est de 100 Ko. Veuillez sélectionner une image plus petite.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="SendTestEmail" xml:space="preserve">
+    <value>Envoyer message de test</value>
+  </data>
+  <data name="SendTo" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ServerName" xml:space="preserve">
+    <value>Nom du serveur</value>
+  </data>
+  <data name="ServerPort" xml:space="preserve">
+    <value>Port du serveur</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="UseSSL" xml:space="preserve">
+    <value>Utiliser SSL</value>
+  </data>
+  <data name="EmailBody" xml:space="preserve">
+    <value>Il s'agit d'un message de test envoyé à partir de Sage 300.</value>
+  </data>
+  <data name="EmailSendMessage" xml:space="preserve">
+    <value>Courriel envoyé avec succès.</value>
+  </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Message de test depuis Sage 300</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Depuis l'adresse courriel</value>
+  </data>
+  <data name="EmailAuthenticatedFailed" xml:space="preserve">
+    <value>Le serveur SMTP requiert une connexion sécurisée ou le client n'a pas été authentifié.</value>
+  </data>
+  <data name="EmailBoxBusy" xml:space="preserve">
+    <value>La boîte aux lettres est occupée, réessayez plus tard.</value>
+  </data>
+  <data name="EmailDeliveryFailed" xml:space="preserve">
+    <value>Les paramètres de messagerie sont incomplets ou incorrects. Vérifiez les paramètres dans l'onglet Courriel de l'écran Profil de l'entreprise.</value>
+  </data>
+  <data name="EmailInfoMessage" xml:space="preserve">
+    <value>Vous devez remplir les champs dans l'onglet Courriel si vous souhaitez utiliser la messagerie électronique comme mode d'envoi pour les clients et fournisseurs.</value>
+  </data>
+  <data name="EmailQueuedMessage" xml:space="preserve">
+    <value>Les messages électroniques ont été correctement créés et ajoutés à la file d'attente d'impression pour envoi.</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Adresse courriel non valide.</value>
+  </data>
+  <data name="SendCopyTo" xml:space="preserve">
+    <value>Envoyer des copies à</value>
+  </data>
+  <data name="BccEmailAddress" xml:space="preserve">
+    <value>Adresse courriel Cci</value>
+  </data>
+  <data name="BccEmailMessageHelp" xml:space="preserve">
+    <value>Si vous saisissez plusieurs adresses courriel, séparez-les à l'aide d'un point-virgule (;).</value>
+  </data>
+</root>

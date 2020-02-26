@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CreditNoteAmount" xml:space="preserve">
+    <value>贷项通知单金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CreditNoteDAmount" xml:space="preserve">
+    <value>贷项通知单调整</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CreditNoteQuantityAdjustment" xml:space="preserve">
+    <value>贷项通知单数量调整</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DebitNoteAmount" xml:space="preserve">
+    <value>借贷项通知单金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DefaultPickingSequence" xml:space="preserve">
+    <value>默认取货序列</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DefaultPriceList" xml:space="preserve">
+    <value>默认价目表</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>明细...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>采购订单采购历史</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FrmDetailZoom" xml:space="preserve">
+    <value>采购订单采购历史明细</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="FuncAdjustedonInvoices" xml:space="preserve">
+    <value>调整于发票 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncCreditNoteAmount" xml:space="preserve">
+    <value>贷项通知单金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncDebitNoteAmount" xml:space="preserve">
+    <value>借项通知单金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncReturnAmount" xml:space="preserve">
+    <value>退货金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalCredited" xml:space="preserve">
+    <value>合计已贷记 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalDebited" xml:space="preserve">
+    <value>合计已借记 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalInvoiced" xml:space="preserve">
+    <value>合计已开发票 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalReceived" xml:space="preserve">
+    <value>合计已进货 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="InvoiceAmount" xml:space="preserve">
+    <value>发票金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="InvoiceDAmount" xml:space="preserve">
+    <value>发票调整</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="InvoiceQuantityAdjustment" xml:space="preserve">
+    <value>发票数量调整</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>批别编号</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="NoOfCreditNotes" xml:space="preserve">
+    <value>贷项通知单数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="NoOfDebitNotes" xml:space="preserve">
+    <value>借项通知单数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="NoOfInvoices" xml:space="preserve">
+    <value>发票数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="NoofReceipts" xml:space="preserve">
+    <value>收款数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="NoOfReturns" xml:space="preserve">
+    <value>退回次数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="NumberOfCreditNotes" xml:space="preserve">
+    <value>贷项通知单数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="NumberOfDebitNotes" xml:space="preserve">
+    <value>借项通知单数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="NumberOfInvoices" xml:space="preserve">
+    <value>发票数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="NumberOfReturns" xml:space="preserve">
+    <value>退回次数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="QuantityAdjustedonInvoices" xml:space="preserve">
+    <value>发票调整数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="QuantityCredited" xml:space="preserve">
+    <value>贷记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="QuantityDebited" xml:space="preserve">
+    <value>借记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="ReceiptAmount" xml:space="preserve">
+    <value>收款金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ReturnAmount" xml:space="preserve">
+    <value>退货金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>选择按</value>
+    <comment>Drop Down Title</comment>
+  </data>
+  <data name="Sellable" xml:space="preserve">
+    <value>可售</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>系列编号</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="SrceAdjustedonInvoices" xml:space="preserve">
+    <value>调整于发票 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceCreditNoteAmount" xml:space="preserve">
+    <value>贷项通知单金额 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceDebitNoteAmount" xml:space="preserve">
+    <value>借项通知单金额 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceReturnAmount" xml:space="preserve">
+    <value>退货金额 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalCredited" xml:space="preserve">
+    <value>合计已贷记 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalDebited" xml:space="preserve">
+    <value>合计已借记 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalInvoiced" xml:space="preserve">
+    <value>合计已开发票 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalReceived" xml:space="preserve">
+    <value>合计已进货 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>库存货品</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>结构代码</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="TotalCreditedQuantity" xml:space="preserve">
+    <value>贷记数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalDebitedQuantity" xml:space="preserve">
+    <value>借记数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供应商编号</value>
+    <comment>For Select By drop down</comment>
+  </data>
+  <data name="InvoiceAdjustment" xml:space="preserve">
+    <value>发票调整</value>
+    <comment>Used in Grid Title</comment>
+  </data>
+  <data name="FiscalCalendar" xml:space="preserve">
+    <value>财务日历</value>
+    <comment>Used in Fiscal Calendar Title</comment>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>货品</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="PeriodInvalid" xml:space="preserve">
+    <value>指定一个有效期间。</value>
+    <comment>Used in Display Error Message</comment>
+  </data>
+  <data name="ConversionFactor" xml:space="preserve">
+    <value>转换系数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="CostCategory" xml:space="preserve">
+    <value>（成本）类别</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="DaysToReceive" xml:space="preserve">
+    <value>进货天数</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>明细编号</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryQuantityAdjonInvoices" xml:space="preserve">
+    <value>分录发票调整数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryQuantityDebited" xml:space="preserve">
+    <value>分录借记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryQuantityReceived" xml:space="preserve">
+    <value>分录进货数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryTotalQuantityCredited" xml:space="preserve">
+    <value>分录贷记数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryTotalQuantityDebited" xml:space="preserve">
+    <value>分录借记数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryTotalQuantityInvoiced" xml:space="preserve">
+    <value>分录已开发票数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncCost" xml:space="preserve">
+    <value>成本 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncCreditNoteTotal" xml:space="preserve">
+    <value>贷项通知单合计 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncDebitNoteTotal" xml:space="preserve">
+    <value>借项通知单合计 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncDiscountAmount" xml:space="preserve">
+    <value>折扣金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncInvoiceTotal" xml:space="preserve">
+    <value>发票合计 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncNetExtendedAmount" xml:space="preserve">
+    <value>净总金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncReceivedAmount" xml:space="preserve">
+    <value>已进货金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>金额 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FunctionalTotalDiscount" xml:space="preserve">
+    <value>合计折扣 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalCost" xml:space="preserve">
+    <value>合计成本 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="FuncTotalNetCost" xml:space="preserve">
+    <value>合计净成本 - 功能币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="HeaderSequence" xml:space="preserve">
+    <value>标头序列</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>项目</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SourceAmount" xml:space="preserve">
+    <value>来源币种金额</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceCost" xml:space="preserve">
+    <value>成本 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceCreditNoteTotal" xml:space="preserve">
+    <value>贷项通知单合计 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceDebitNoteTotal" xml:space="preserve">
+    <value>借项通知单合计 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceInvoiceTotal" xml:space="preserve">
+    <value>发票合计 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceNetExtendedAmount" xml:space="preserve">
+    <value>净总金额 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceReceivedAmount" xml:space="preserve">
+    <value>已进货金额 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalCost" xml:space="preserve">
+    <value>合计成本 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="SrceTotalNetCost" xml:space="preserve">
+    <value>合计净成本 - 客户币种</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="StockingTotalQuantity" xml:space="preserve">
+    <value>库存合计数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalDiscount" xml:space="preserve">
+    <value>合计折扣</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalQuantity" xml:space="preserve">
+    <value>合计数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalQuantityCredited" xml:space="preserve">
+    <value>合计贷记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalQuantityDebited" xml:space="preserve">
+    <value>合计借记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TotalQuantityInvoiced" xml:space="preserve">
+    <value>已开发票数量合计</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TransactionSequence" xml:space="preserve">
+    <value>交易序列</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>交易类型</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="PurchaseHistoryDetail" xml:space="preserve">
+    <value>采购历史明细</value>
+    <comment>Used in Pop Title</comment>
+  </data>
+  <data name="PO0380" xml:space="preserve">
+    <value>采购历史</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="PO0384" xml:space="preserve">
+    <value>采购历史明细</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="StockingQuantity" xml:space="preserve">
+    <value>库存数量</value>
+    <comment>User in Export</comment>
+  </data>
+  <data name="EntryQuantityCredited" xml:space="preserve">
+    <value>分录贷记数量</value>
+    <comment>Used in Export</comment>
+  </data>
+  <data name="EntryQuantityReturned" xml:space="preserve">
+    <value>分录退货数量</value>
+    <comment>Used in Export</comment>
+  </data>
+</root>

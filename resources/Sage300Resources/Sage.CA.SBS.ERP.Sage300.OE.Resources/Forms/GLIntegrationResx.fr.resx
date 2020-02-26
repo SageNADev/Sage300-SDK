@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingToExistingBatch" xml:space="preserve">
+    <value>Ajoutant à un lot existant</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="ChooseSegmentsFromList" xml:space="preserve">
+    <value>Choisir les segments dans la liste</value>
+    <comment>Modal - List</comment>
+  </data>
+  <data name="ConsolidateAccountFiscalPeriod" xml:space="preserve">
+    <value>Consolider par compte et période</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="ConsolidateAccountFiscalSource" xml:space="preserve">
+    <value>Consolider par compte, période et source</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="ConsolidateGLBatches" xml:space="preserve">
+    <value>Consolider lots du GL</value>
+    <comment>Integration - List</comment>
+  </data>
+  <data name="ConsolidateTransactionByAccount" xml:space="preserve">
+    <value>Consolider détails de transaction par compte</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreateGLTransactions" xml:space="preserve">
+    <value>Créer transactions GL</value>
+    <comment>Integration - List</comment>
+  </data>
+  <data name="CreateGLTransactionsBy" xml:space="preserve">
+    <value>Créer transactions GL en</value>
+    <comment>Integration - List</comment>
+  </data>
+  <data name="CreatingNewBatch" xml:space="preserve">
+    <value>Créant un nouveau lot</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreatingPostingNewBatch" xml:space="preserve">
+    <value>Créant et reportant un nouveau lot</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="DoNotConsolidate" xml:space="preserve">
+    <value>Ne pas consolider</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="DuringPosting" xml:space="preserve">
+    <value>Pendant le report</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Intégration GL de CmC</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Exemple</value>
+    <comment>Modal - Field</comment>
+  </data>
+  <data name="Exclude1" xml:space="preserve">
+    <value>Exclure</value>
+    <comment>Button</comment>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>Commentaire détail GL</value>
+    <comment>Transactions - Column</comment>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>Description détail GL</value>
+    <comment>Transactions - Column</comment>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>Référence détail GL</value>
+    <comment>Transactions - Column</comment>
+  </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>Description écriture GL</value>
+    <comment>Transactions - Column</comment>
+  </data>
+  <data name="GLIntegrationDetailTitle" xml:space="preserve">
+    <value>Détails intégration GL</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="GLSourceCodes" xml:space="preserve">
+    <value>Codes sources GL</value>
+    <comment>Integration - List</comment>
+  </data>
+  <data name="GLSrcTypeCO" xml:space="preserve">
+    <value>Écriture consolidée</value>
+    <comment>Integration - Row</comment>
+  </data>
+  <data name="GLTransactionField" xml:space="preserve">
+    <value>Champ transaction GL</value>
+    <comment>Modal - List</comment>
+  </data>
+  <data name="GLTransGeneratedThroughDayEndNum" xml:space="preserve">
+    <value>Transactions GL créées jusqu'à numéro clôture journalière</value>
+    <comment>Integration - Field</comment>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Intégration</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OnRequestUsingCreateBatchIcon" xml:space="preserve">
+    <value>Sur demande en utilisant l'écran Créer un lot</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Open1" xml:space="preserve">
+    <value>Ouvrir...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="SegmentCurrentlyUsed" xml:space="preserve">
+    <value>Segments présentement utilisés</value>
+    <comment>Modal - List</comment>
+  </data>
+  <data name="SegmentSeparator" xml:space="preserve">
+    <value>Séparateur de segment</value>
+    <comment>Modal - List</comment>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>Livre auxiliaire source</value>
+    <comment>Integration - Column</comment>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>Type source</value>
+    <comment>Integration - Column</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Type transaction</value>
+    <comment>Integration - Column</comment>
+  </data>
+  <data name="ConsolidatedEntry" xml:space="preserve">
+    <value>Écriture consolidée</value>
+    <comment>Source Codes - Column Value</comment>
+  </data>
+  <data name="CreditDebitNote" xml:space="preserve">
+    <value>Note crédit/débit</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="CreditDebitNoteDetail" xml:space="preserve">
+    <value>Détail note crédit/débit</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="DuringDayEnd" xml:space="preserve">
+    <value>Pendant traitement clôture journalière</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="InvoiceDetail" xml:space="preserve">
+    <value>Détail facture</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="Shipment" xml:space="preserve">
+    <value>Expédition</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="ShipmentDetail" xml:space="preserve">
+    <value>Détail expédition</value>
+    <comment>Transactions - Column Value</comment>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Code source</value>
+    <comment>Integration - Label</comment>
+  </data>
+</root>

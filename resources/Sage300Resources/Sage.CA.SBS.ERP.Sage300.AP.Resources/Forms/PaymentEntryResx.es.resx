@@ -1,0 +1,1670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AccountTax" xml:space="preserve">
+    <value>Impuesto del Detalle...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ActivationDate" xml:space="preserve">
+    <value>Fecha de Activación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Línea de Dirección 1</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Línea de Dirección 2</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Línea de Dirección 3</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Línea de Dirección 4</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Adjust" xml:space="preserve">
+    <value>Ajuste...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="AdjustmentAmount" xml:space="preserve">
+    <value>Monto de Ajuste</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="AdvanceCredit" xml:space="preserve">
+    <value>Crédito Anticipado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AppliedAmount" xml:space="preserve">
+    <value>Monto Aplicado</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicar</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="ApplyBy" xml:space="preserve">
+    <value>Aplicar Por</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ApplyMethod" xml:space="preserve">
+    <value>Método a Aplicar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ApplyTo" xml:space="preserve">
+    <value>Aplicar a</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Código de Banco</value>
+    <comment>Field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BankRate" xml:space="preserve">
+    <value>Tasa Bancaria</value>
+    <comment>on Bank Override screen</comment>
+  </data>
+  <data name="BatchDate" xml:space="preserve">
+    <value>Fecha de Lote</value>
+    <comment>Field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Descripción de Lote</value>
+    <comment>Field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BatchInformation" xml:space="preserve">
+    <value>Información de Lote</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Número de Lote</value>
+    <comment>Field and Prepayment screen</comment>
+  </data>
+  <data name="BatchPrinted" xml:space="preserve">
+    <value>Lote Impreso</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="BatchSummary" xml:space="preserve">
+    <value>Resumen de Lote</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BatchType" xml:space="preserve">
+    <value>Tipo de Lote</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="CalcTaxes" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CashAccount" xml:space="preserve">
+    <value>Cuenta de Caja</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CashAccountDescription" xml:space="preserve">
+    <value>Descripción Cuenta de Caja</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>Idioma del Cheque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckNumber" xml:space="preserve">
+    <value>Número de Cheque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nombre de Contacto</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Field and Batch Information screen</comment>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Descripción de Moneda</value>
+    <comment>Field and Batch Information screen</comment>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>Saldo Actual</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DiscountAvailable" xml:space="preserve">
+    <value>Descuento Disponible</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DiscountDate" xml:space="preserve">
+    <value>Fecha de Descuento</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DiscountTaken" xml:space="preserve">
+    <value>Descuento Aceptado</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DistTaxes" xml:space="preserve">
+    <value>Distribuir Impuestos</value>
+    <comment>Button</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Número de Documento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Detalles a Aplicar</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="DocumentTaxes1" xml:space="preserve">
+    <value>Impuestos del Documento</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DueDateActivationDate" xml:space="preserve">
+    <value>Plazo / Fecha de Activación</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Correo Electrónico</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/P - Registro de Pago</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="Entries" xml:space="preserve">
+    <value>Asientos</value>
+    <comment>Header label</comment>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Descripción de Asiento </value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Número de Asiento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="FilterDocuments" xml:space="preserve">
+    <value>Filtrar Documentos</value>
+    <comment>Check box</comment>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>Año - Período Fiscal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historial...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Número de Factura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NetBalance" xml:space="preserve">
+    <value>Saldo Neto</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="NoOfChecksPrinted" xml:space="preserve">
+    <value>Cantidad de Cheques Impresos</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="NoPrepayments" xml:space="preserve">
+    <value>No hay anticipos para esta factura.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>Ordenar Por</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Número de Orden</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="OriginalAmount" xml:space="preserve">
+    <value>Monto Original</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="OriginalDocument" xml:space="preserve">
+    <value>Documento Original</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="OtherAccount" xml:space="preserve">
+    <value>Otra Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OtherAccountDescription" xml:space="preserve">
+    <value>Descripción de Otra Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>Monto de Pago</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentAmounts" xml:space="preserve">
+    <value>Montos de Pago</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>Código de Pago</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Fecha de pago</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="PaymentNumber" xml:space="preserve">
+    <value>Número de Pago</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="PendingAdjustmentTotal" xml:space="preserve">
+    <value>Total de Ajustes Pendientes</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="PendingBalance" xml:space="preserve">
+    <value>Saldo Pendiente</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="PendingDiscountTotal" xml:space="preserve">
+    <value>Descuento Pendiente Total</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="PendingPaymentTotal" xml:space="preserve">
+    <value>Pago Pendiente Total</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Teléfono</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>Número de OC</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="PPDeleted" xml:space="preserve">
+    <value>Se eliminó el anticipo para esta factura.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrintCheck" xml:space="preserve">
+    <value>Imprimir Cheque</value>
+    <comment>Check box</comment>
+  </data>
+  <data name="PrintCheckButton" xml:space="preserve">
+    <value>Imprimir Cheque...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fecha de Tasa</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>Sustitución de Tasa</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="RatesButton" xml:space="preserve">
+    <value>Tasas...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemittanceAndPayment" xml:space="preserve">
+    <value>Remesa y Pago</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="RemitToDescription" xml:space="preserve">
+    <value>Descripción Beneficiario de Pago</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemitToInformation" xml:space="preserve">
+    <value>Información Beneficiario de Pago</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="RemitToLocation" xml:space="preserve">
+    <value>Dirección de Pago</value>
+    <comment>Field and Remit-To Information screen</comment>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Aplicación de Origen</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="StartingDocNo" xml:space="preserve">
+    <value>Número de Documento Inicial</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>Estado/Provincia</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthorities" xml:space="preserve">
+    <value>Autoridades Fiscales</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Autoridad Fiscal</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>Base de Impuesto</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>Clase Fiscal</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impuestos...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Grupo Fiscal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>Impuesto Incluido</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Monto Total</value>
+    <comment>Field and Batch Information screen</comment>
+  </data>
+  <data name="TotalTax" xml:space="preserve">
+    <value>Impuesto Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionInformation" xml:space="preserve">
+    <value>Información de Transacción</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+    <comment>Header label</comment>
+  </data>
+  <data name="UnappliedAmount" xml:space="preserve">
+    <value>Monto sin Aplicar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VendorAmount" xml:space="preserve">
+    <value>Monto del Proveedor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VendorAndAccount" xml:space="preserve">
+    <value>Proveedor y Cuenta</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>Descripción del Proveedor</value>
+    <comment>Field and Vendor Information screen</comment>
+  </data>
+  <data name="VendorInformation" xml:space="preserve">
+    <value>Información del Proveedor</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>Field and Vendor Information screen</comment>
+  </data>
+  <data name="VendorRate" xml:space="preserve">
+    <value>Tasa del Proveedor</value>
+    <comment>on Rate Override screen</comment>
+  </data>
+  <data name="VoidCheck" xml:space="preserve">
+    <value>Anular Cheque</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ZIPPostalCode" xml:space="preserve">
+    <value>Código Postal</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="BankDescription" xml:space="preserve">
+    <value>Descripción Banco</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Crear Nuevo Asiento</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Crear Lote Nuevo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ClaimAmount" xml:space="preserve">
+    <value>Monto de Petición</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjCreditAmtVendorCurr" xml:space="preserve">
+    <value>Monto de Crédito Ajustado Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="AdjDebitAmtVendorCurr" xml:space="preserve">
+    <value>Monto de Débito Ajustado Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="APVersionCreatedIn" xml:space="preserve">
+    <value>Creada en Versión de C/P</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="BankCurrencyCode" xml:space="preserve">
+    <value>Código Moneda del Banco</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="BankRateOperator" xml:space="preserve">
+    <value>Operador de Tasa Bancaria</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CalculateTaxAmountControl" xml:space="preserve">
+    <value>Control Calcular Monto de Impuesto</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CalculateTaxBaseControl" xml:space="preserve">
+    <value>Control Calcular Base de Impuesto</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DistAmountNetofTaxes" xml:space="preserve">
+    <value>Monto Distribución Neto de Impuestos</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>Búsqueda Detallada Origen de Aplicación</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Búsqueda Detallada Número de Vínculo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Búsqueda Detallada Tipo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ErrorBatch" xml:space="preserve">
+    <value>Lote de Errores</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ErrorEntry" xml:space="preserve">
+    <value>Ingreso de Error</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncDistAmountNetofTaxes" xml:space="preserve">
+    <value>Monto de Distribución Funcional Neto de Impuestos</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAllocatedTotal" xml:space="preserve">
+    <value>Total de Impuesto Asignado Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxBase1" xml:space="preserve">
+    <value>Base de Impuesto Funcional 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxBase2" xml:space="preserve">
+    <value>Base de Impuesto Funcional 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxBase3" xml:space="preserve">
+    <value>Base de Impuesto Funcional 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxBase4" xml:space="preserve">
+    <value>Base de Impuesto Funcional 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxBase5" xml:space="preserve">
+    <value>Base de Impuesto Funcional 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxExpensedTotal" xml:space="preserve">
+    <value>Total de Impuestos No Recuperable Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxRecoverableTotal" xml:space="preserve">
+    <value>Total de Impuestos Recuperable Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTaxTotal" xml:space="preserve">
+    <value>Impuesto Total Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FuncTotalAdvanceCreditClaim" xml:space="preserve">
+    <value>Petición de Crédito Anticipado Total Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="JobApplyMethod" xml:space="preserve">
+    <value>Método a Aplicar del Trabajo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Trabajo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="MatchingDocumentNumber" xml:space="preserve">
+    <value>Número de Documento Coincidente</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="NumberofAdvanceCreditClaims" xml:space="preserve">
+    <value>N° de Peticiones de Crédito Anticipado</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentLanguage" xml:space="preserve">
+    <value>Idioma de Pago</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PrepayActivationDate" xml:space="preserve">
+    <value>Fecha de Activación del Anticipo</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Código de Comando Procesar</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAllocatedTotal" xml:space="preserve">
+    <value>Total de Impuestos Asignado</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto Impuesto 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto Impuesto 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto Impuesto 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto Impuesto 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto Impuesto 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autoridad Fiscal 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autoridad Fiscal 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autoridad Fiscal 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autoridad Fiscal 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autoridad Fiscal 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Base de Impuesto 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Base de Impuesto 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Base de Impuesto 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Base de Impuesto 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Base de Impuesto 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxExpensedTotal" xml:space="preserve">
+    <value>Total de Impuestos No Recuperable</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Impuesto Incluido 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Impuesto Incluido 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Impuesto Incluido 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Impuesto Incluido 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Impuesto Incluido 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxRecoverableTotal" xml:space="preserve">
+    <value>Total de Impuestos Recuperable</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAllocatedTotal" xml:space="preserve">
+    <value>Total Asignado Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingCalculateMethod" xml:space="preserve">
+    <value>Método Cálculo Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>Código Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingExchangeRate" xml:space="preserve">
+    <value>Tipo Cambio Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingExpensedTotal" xml:space="preserve">
+    <value>Total No Recuperable Moneda Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>Fecha Tasa Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingRateOperator" xml:space="preserve">
+    <value>Operador Tasa Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingRateOverride" xml:space="preserve">
+    <value>Sustitución Tasa Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>Tipo Tasa Moneda de Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxReportingRecoverableTotal" xml:space="preserve">
+    <value>Total Recuperable Moneda Reporte Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TaxStateVersion" xml:space="preserve">
+    <value>Versión Estado Fiscal</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalAdvanceCreditClaim" xml:space="preserve">
+    <value>Petición de Crédito Anticipado Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalDiscountFuncCurr" xml:space="preserve">
+    <value>Descuento Total Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalPrepayFuncCurr" xml:space="preserve">
+    <value>Anticipo Total Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalReapplyRemainingFuncCu" xml:space="preserve">
+    <value>Reaplicar Restante Total en Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorRateOperator" xml:space="preserve">
+    <value>Operador de Tasa del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="AdjCreditAmtFuncCurr" xml:space="preserve">
+    <value>Monto de Crédito Ajustado Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="AdjDebitAmtFuncCurr" xml:space="preserve">
+    <value>Monto de Débito Ajustado Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="BankExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Bancario</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="BankRateOverridden" xml:space="preserve">
+    <value>Tasa Bancaria Sustituida</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CheckAmountFuncCurr" xml:space="preserve">
+    <value>Monto Cheque Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CheckAmountinBankCurr" xml:space="preserve">
+    <value>Monto Cheque en Moneda del Banco</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CheckAmountinVendorCurr" xml:space="preserve">
+    <value>Monto Cheque en Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CheckPrintedStatus" xml:space="preserve">
+    <value>Estado de Cheque Impreso</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CheckPrintRequired" xml:space="preserve">
+    <value>Impresión de Cheque Requerida</value>
+    <comment>Export</comment>
+  </data>
+  <data name="CheckSequenceNo" xml:space="preserve">
+    <value>Número Secuencia de Cheque</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="EntryReference" xml:space="preserve">
+    <value>Referencia de Asiento</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="LastLineNumber" xml:space="preserve">
+    <value>Último N° de Línea</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="NumberofPaymentsEntered" xml:space="preserve">
+    <value>Cantidad de Pagos Ingresados</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentDateOrAdjustmentDate" xml:space="preserve">
+    <value>Fecha de Pago / Fecha de Ajuste</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentEdited" xml:space="preserve">
+    <value>Pago Editado</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentTransType" xml:space="preserve">
+    <value>Tipo de Transacción de Pago</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalAdjAmtFuncCurr" xml:space="preserve">
+    <value>Monto Total de Ajuste Moneda Funcional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalDiscountVendorCurr" xml:space="preserve">
+    <value>Descuento Total Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalPaymentAdjVendorCurr" xml:space="preserve">
+    <value>Ajuste de Pago Total Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalPrepayVendorCurr" xml:space="preserve">
+    <value>Anticipo Total Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalReapplyRemainingVendorC" xml:space="preserve">
+    <value>Reaplicar Restante Total Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorCurrencyCode" xml:space="preserve">
+    <value>Código de Moneda del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorOrPayeeName" xml:space="preserve">
+    <value>Nombre Proveedor / Beneficiario</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorRateDate" xml:space="preserve">
+    <value>Fecha Tasa del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorRateOverridden" xml:space="preserve">
+    <value>Tasa de Proveedor Sustituida</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorRateType" xml:space="preserve">
+    <value>Tipo Tasa del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="VendorRemitToLocation" xml:space="preserve">
+    <value>Dirección de Pago del Proveedor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calcular</value>
+  </data>
+  <data name="Distribute" xml:space="preserve">
+    <value>Distribuir</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="PaymentEntry" xml:space="preserve">
+    <value>Registro de Pago</value>
+  </data>
+  <data name="DocumentHistory" xml:space="preserve">
+    <value>Historial de Documento</value>
+  </data>
+  <data name="CannotFindExchangeRateMessage" xml:space="preserve">
+    <value>No se puede encontrar información de la tasa de cambio para convertir {0} a {1} con el tipo de tasa {2} y fecha de tasa {3}.</value>
+  </data>
+  <data name="AdvanceCreditZeroNegative" xml:space="preserve">
+    <value>El monto de petición de crédito anticipado no puede ser cero ni negativo.</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="AllocatedTaxAccount" xml:space="preserve">
+    <value>Cuenta de Impuesto Asignado</value>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Código de Contrato</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+  </data>
+  <data name="DateRetainageDue" xml:space="preserve">
+    <value>Plazo de Retención</value>
+  </data>
+  <data name="FunctionalCurrencyencyAmountDue" xml:space="preserve">
+    <value>Monto a Pagar Moneda Funcional</value>
+  </data>
+  <data name="FunctionalCurrencyencyInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura Moneda Funcional</value>
+  </data>
+  <data name="FunctionalCurrencyOrigRtngAmt" xml:space="preserve">
+    <value>Monto de Retención Original Moneda Funcional</value>
+  </data>
+  <data name="FunctionalCurrencyRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Moneda Funcional</value>
+  </data>
+  <data name="FunctionalRetainageTaxAllocated" xml:space="preserve">
+    <value>Impuesto de Retención Asignado Funcional</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount1" xml:space="preserve">
+    <value>Monto Impuesto de Retención Funcional 1</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount2" xml:space="preserve">
+    <value>Monto Impuesto de Retención Funcional 2</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount3" xml:space="preserve">
+    <value>Monto Impuesto de Retención Funcional 3</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount4" xml:space="preserve">
+    <value>Monto Impuesto de Retención Funcional 4</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount5" xml:space="preserve">
+    <value>Monto Impuesto de Retención Funcional 5</value>
+  </data>
+  <data name="FunctionalRetainageTaxExpensed" xml:space="preserve">
+    <value>Impuesto de Retención No Recuperable Funcional</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Número de Artículo</value>
+  </data>
+  <data name="LastAppliedPaymentSeqNo" xml:space="preserve">
+    <value>Último Número de Secuencia de Pago Aplicado</value>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Código de Proyecto</value>
+  </data>
+  <data name="ProjectOrCategoryResource" xml:space="preserve">
+    <value>Recurso de Proyecto o Categoría</value>
+  </data>
+  <data name="RetainageDistributionAmount" xml:space="preserve">
+    <value>Monto Distribución de Retención</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tasa Fiscal 1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tasa Fiscal 2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tasa Fiscal 3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tasa Fiscal 4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tasa Fiscal 5</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Número de Transacción</value>
+  </data>
+  <data name="UnitofMeasure" xml:space="preserve">
+    <value>Unidad de Medida</value>
+  </data>
+  <data name="VendorCurrencyencyAmountDue" xml:space="preserve">
+    <value>Monto a Pagar Moneda del Proveedor</value>
+  </data>
+  <data name="VendorCurrencyencyInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura Moneda del Proveedor</value>
+  </data>
+  <data name="VendorCurrencyOrigRtngAmt" xml:space="preserve">
+    <value>Monto de Retención Original Moneda del Proveedor</value>
+  </data>
+  <data name="VendorCurrencyRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Moneda del Proveedor</value>
+  </data>
+  <data name="VendorRetainageTaxAllocated" xml:space="preserve">
+    <value>Impuesto de Retención Asignado Moneda del Proveedor</value>
+  </data>
+  <data name="VendorRetainageTaxAmount1" xml:space="preserve">
+    <value>Monto Impuesto de Retención Moneda del Proveedor 1</value>
+  </data>
+  <data name="VendorRetainageTaxAmount2" xml:space="preserve">
+    <value>Monto Impuesto de Retención Moneda del Proveedor 2</value>
+  </data>
+  <data name="VendorRetainageTaxAmount3" xml:space="preserve">
+    <value>Monto Impuesto de Retención Moneda del Proveedor 3</value>
+  </data>
+  <data name="VendorRetainageTaxAmount4" xml:space="preserve">
+    <value>Monto Impuesto de Retención Moneda del Proveedor 4</value>
+  </data>
+  <data name="VendorRetainageTaxAmount5" xml:space="preserve">
+    <value>Monto Impuesto de Retención Moneda del Proveedor 5</value>
+  </data>
+  <data name="VendorRetainageTaxBase1" xml:space="preserve">
+    <value>Base de Impuesto de Retención Moneda del Proveedor 1</value>
+  </data>
+  <data name="VendorRetainageTaxBase2" xml:space="preserve">
+    <value>Base de Impuesto de Retención Moneda del Proveedor 2</value>
+  </data>
+  <data name="VendorRetainageTaxBase3" xml:space="preserve">
+    <value>Base de Impuesto de Retención Moneda del Proveedor 3</value>
+  </data>
+  <data name="VendorRetainageTaxBase4" xml:space="preserve">
+    <value>Base de Impuesto de Retención Moneda del Proveedor 4</value>
+  </data>
+  <data name="VendorRetainageTaxBase5" xml:space="preserve">
+    <value>Base de Impuesto de Retención Moneda del Proveedor 5</value>
+  </data>
+  <data name="VendorRetainageTaxExpensed" xml:space="preserve">
+    <value>Impuesto de Retención No Recuperable Moneda del Proveedor</value>
+  </data>
+  <data name="StartingBalance" xml:space="preserve">
+    <value>Saldo Inicial</value>
+  </data>
+  <data name="StartingDocDate" xml:space="preserve">
+    <value>Fecha Documento Inicial</value>
+  </data>
+  <data name="StartingDueDate" xml:space="preserve">
+    <value>Plazo Inicial</value>
+  </data>
+  <data name="StartingOrderNo" xml:space="preserve">
+    <value>Número Inicial de Orden</value>
+  </data>
+  <data name="StartingOriginalDocNo" xml:space="preserve">
+    <value>Número Inicial Documento Original</value>
+  </data>
+  <data name="StartingPONumber" xml:space="preserve">
+    <value>Número Inicial de OC</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pendiente</value>
+    <comment>Drop down value</comment>
+  </data>
+  <data name="SelectPONumberFrom" xml:space="preserve">
+    <value>Seleccionar OC de</value>
+  </data>
+  <data name="AccountsPayable" xml:space="preserve">
+    <value>Cuentas por Pagar</value>
+  </data>
+  <data name="PurchaseOrders" xml:space="preserve">
+    <value>Órdenes de Compra</value>
+  </data>
+  <data name="DocumentDetailNotExist" xml:space="preserve">
+    <value>No se puede encontrar la Línea de Detalle del Documento {0} para documento {1} y proveedor {2}.</value>
+    <comment>ErrorMessage</comment>
+  </data>
+  <data name="OpenDocumentDetail" xml:space="preserve">
+    <value>Detalle de Documento Abierto</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="AP0031" xml:space="preserve">
+    <value>Ajustes de Pago</value>
+  </data>
+  <data name="AP0032" xml:space="preserve">
+    <value>Pagos Varios</value>
+  </data>
+  <data name="AP0033" xml:space="preserve">
+    <value>Pagos Aplicados</value>
+  </data>
+  <data name="AP0034" xml:space="preserve">
+    <value>Distribuciones de Ajustes del LM</value>
+  </data>
+  <data name="AP0170" xml:space="preserve">
+    <value>Créditos Anticipados</value>
+  </data>
+  <data name="AP0406" xml:space="preserve">
+    <value>Ajuste de Pago Campos Opcionales</value>
+  </data>
+  <data name="AdjCreditAmtVendCurr" xml:space="preserve">
+    <value>Monto de Crédito Ajustado Moneda del Proveedor</value>
+  </data>
+  <data name="AdjDebitAmtVendCurr" xml:space="preserve">
+    <value>Monto de Débito Ajustado Moneda del Proveedor</value>
+  </data>
+  <data name="AdjustmentsTotal" xml:space="preserve">
+    <value>Total de Ajustes</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Código de Categoría</value>
+  </data>
+  <data name="CreditAmount" xml:space="preserve">
+    <value>Monto de Crédito</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+  </data>
+  <data name="DebitAmount" xml:space="preserve">
+    <value>Monto de Débito</value>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento</value>
+  </data>
+  <data name="DiscountAmountAvailable" xml:space="preserve">
+    <value>Monto de Descuento Disponible</value>
+  </data>
+  <data name="DiscountAmountTaken" xml:space="preserve">
+    <value>Monto de Descuento Aceptado</value>
+  </data>
+  <data name="DistributionGLAccount" xml:space="preserve">
+    <value>Cuenta de Distribución del LM</value>
+  </data>
+  <data name="DocDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+  </data>
+  <data name="DocumentAmountDue" xml:space="preserve">
+    <value>Monto de Documento a Pagar</value>
+  </data>
+  <data name="DocumentLineNumber" xml:space="preserve">
+    <value>N° Línea de Documento</value>
+  </data>
+  <data name="DocumentNetBalance" xml:space="preserve">
+    <value>Saldo Neto del Documento</value>
+  </data>
+  <data name="DocVersionCreatedIn" xml:space="preserve">
+    <value>Creada en Versión de Documento</value>
+  </data>
+  <data name="FuncAdjustmentsTotal" xml:space="preserve">
+    <value>Total de Ajustes Funcionales</value>
+  </data>
+  <data name="FuncAppliedAmount" xml:space="preserve">
+    <value>Monto Aplicado Funcional</value>
+  </data>
+  <data name="FuncClaimAmount" xml:space="preserve">
+    <value>Monto de Petición Funcional</value>
+  </data>
+  <data name="FuncDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento Funcional</value>
+  </data>
+  <data name="FuncDistAmount" xml:space="preserve">
+    <value>Monto de Distribución Funcional</value>
+  </data>
+  <data name="FuncDistributionAmount" xml:space="preserve">
+    <value>Monto de Distribución Funcional</value>
+  </data>
+  <data name="FuncPaymentAmount" xml:space="preserve">
+    <value>Monto de Pago Funcional</value>
+  </data>
+  <data name="FuncRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Funcional</value>
+  </data>
+  <data name="FuncTaxAllocatedAmount1" xml:space="preserve">
+    <value>Monto Asignado de Impuesto Funcional 1</value>
+  </data>
+  <data name="FuncTaxAllocatedAmount2" xml:space="preserve">
+    <value>Monto Asignado de Impuesto Funcional 2</value>
+  </data>
+  <data name="FuncTaxAllocatedAmount3" xml:space="preserve">
+    <value>Monto Asignado de Impuesto Funcional 3</value>
+  </data>
+  <data name="FuncTaxAllocatedAmount4" xml:space="preserve">
+    <value>Monto Asignado de Impuesto Funcional 4</value>
+  </data>
+  <data name="FuncTaxAllocatedAmount5" xml:space="preserve">
+    <value>Monto Asignado de Impuesto Funcional 5</value>
+  </data>
+  <data name="FuncTaxExpensed1" xml:space="preserve">
+    <value>Impuesto No Recuperable Funcional 1</value>
+  </data>
+  <data name="FuncTaxExpensed2" xml:space="preserve">
+    <value>Impuesto No Recuperable Funcional 2</value>
+  </data>
+  <data name="FuncTaxExpensed3" xml:space="preserve">
+    <value>Impuesto No Recuperable Funcional 3</value>
+  </data>
+  <data name="FuncTaxExpensed4" xml:space="preserve">
+    <value>Impuesto No Recuperable Funcional 4</value>
+  </data>
+  <data name="FuncTaxExpensed5" xml:space="preserve">
+    <value>Impuesto No Recuperable Funcional 5</value>
+  </data>
+  <data name="FuncTaxRecoverable1" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional 1</value>
+  </data>
+  <data name="FuncTaxRecoverable2" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional 2</value>
+  </data>
+  <data name="FuncTaxRecoverable3" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional 3</value>
+  </data>
+  <data name="FuncTaxRecoverable4" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional 4</value>
+  </data>
+  <data name="FuncTaxRecoverable5" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional 5</value>
+  </data>
+  <data name="GeneratedAdjustmentNumber" xml:space="preserve">
+    <value>Número de Ajuste Generado</value>
+  </data>
+  <data name="GeneratedPPNo" xml:space="preserve">
+    <value>Número de Anticipo Generado</value>
+  </data>
+  <data name="GLDescription" xml:space="preserve">
+    <value>Descripción del LM</value>
+  </data>
+  <data name="GLReference" xml:space="preserve">
+    <value>Referencia del LM</value>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>Tiene Retención</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+  </data>
+  <data name="JobTotalDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento Total del Trabajo</value>
+  </data>
+  <data name="JobTotalPaymentAmount" xml:space="preserve">
+    <value>Monto de Pago Total del Trabajo</value>
+  </data>
+  <data name="NextAdjSeqNo" xml:space="preserve">
+    <value>Siguiente Número de Secuencia de Ajuste</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+  </data>
+  <data name="PaymentResolution" xml:space="preserve">
+    <value>Resolución de Pago</value>
+  </data>
+  <data name="PendingAdjustmentAmount" xml:space="preserve">
+    <value>Monto de Ajuste Pendiente</value>
+  </data>
+  <data name="PendingDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento Pendiente</value>
+  </data>
+  <data name="PendingPaymentAmount" xml:space="preserve">
+    <value>Monto de Pago Pendiente</value>
+  </data>
+  <data name="PPMatchingDocNo" xml:space="preserve">
+    <value>Número de Documento de Anticipo Coincidente</value>
+  </data>
+  <data name="PPMatchingDocType" xml:space="preserve">
+    <value>Tipo de Documento de Anticipo Coincidente</value>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>Código de Condiciones de Retención</value>
+  </data>
+  <data name="RtgCreditAmtVendCurr" xml:space="preserve">
+    <value>Monto de Crédito de Retención Moneda del Proveedor</value>
+  </data>
+  <data name="RtgDebitAmtVendCurr" xml:space="preserve">
+    <value>Monto de Débito de Retención Moneda del Proveedor</value>
+  </data>
+  <data name="SequenceNo" xml:space="preserve">
+    <value>Número de Secuencia</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de Serie</value>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>Monto Impuesto Asignado 1</value>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>Monto Impuesto Asignado 2</value>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>Monto Impuesto Asignado 3</value>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>Monto Impuesto Asignado 4</value>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>Monto Impuesto Asignado 5</value>
+  </data>
+  <data name="TaxExpensed1" xml:space="preserve">
+    <value>Impuesto No Recuperable 1</value>
+  </data>
+  <data name="TaxExpensed2" xml:space="preserve">
+    <value>Impuesto No Recuperable 2</value>
+  </data>
+  <data name="TaxExpensed3" xml:space="preserve">
+    <value>Impuesto No Recuperable 3</value>
+  </data>
+  <data name="TaxExpensed4" xml:space="preserve">
+    <value>Impuesto No Recuperable 4</value>
+  </data>
+  <data name="TaxExpensed5" xml:space="preserve">
+    <value>Impuesto No Recuperable 5</value>
+  </data>
+  <data name="TaxRecoverable1" xml:space="preserve">
+    <value>Impuesto Recuperable 1</value>
+  </data>
+  <data name="TaxRecoverable2" xml:space="preserve">
+    <value>Impuesto Recuperable 2</value>
+  </data>
+  <data name="TaxRecoverable3" xml:space="preserve">
+    <value>Impuesto Recuperable 3</value>
+  </data>
+  <data name="TaxRecoverable4" xml:space="preserve">
+    <value>Impuesto Recuperable 4</value>
+  </data>
+  <data name="TaxRecoverable5" xml:space="preserve">
+    <value>Impuesto Recuperable 5</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingExpensedAmount1" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingExpensedAmount2" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingExpensedAmount3" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingExpensedAmount4" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingExpensedAmount5" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt1" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt2" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt3" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt4" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt5" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valor Texto</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+  </data>
+  <data name="UnappliedJobDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento del Trabajo No Aplicado</value>
+  </data>
+  <data name="UnappliedJobPaymentAmount" xml:space="preserve">
+    <value>Monto de Pago del Trabajo No Aplicado</value>
+  </data>
+  <data name="VendCurrencyAmountDue" xml:space="preserve">
+    <value>Monto a Pagar Moneda del Proveedor</value>
+  </data>
+  <data name="YesOrNoValue" xml:space="preserve">
+    <value>Valor Sí o No</value>
+  </data>
+  <data name="ExchangeRateError" xml:space="preserve">
+    <value>El tipo de cambio no puede ser negativo o cero.</value>
+  </data>
+  <data name="PaymentAdjustment" xml:space="preserve">
+    <value>Pago/Ajuste</value>
+  </data>
+  <data name="DocumentSchedPayments" xml:space="preserve">
+    <value>Registrar Pago Programado</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="InvalidBatchNumber" xml:space="preserve">
+    <value>Seleccione un número de lote válido.</value>
+  </data>
+  <data name="CurrencyCodeMisMatch" xml:space="preserve">
+    <value>El pago al proveedor {0} se hará en moneda {1} la cual es diferente de la moneda del proveedor {2}.</value>
+  </data>
+  <data name="DetailAccountTax" xml:space="preserve">
+    <value>Impuestos Detalle</value>
+  </data>
+  <data name="MiscellaneousAdjustmentEntry" xml:space="preserve">
+    <value>Asiento de Ajustes Varios</value>
+  </data>
+  <data name="EntryDoesNotExistsForBatch" xml:space="preserve">
+    <value>El asiento {0} no existe en este lote.</value>
+  </data>
+  <data name="BatchStatusWarningMessage" xml:space="preserve">
+    <value>El lote {0} está fijado en {1}. Podría ver su contenido pero no modificarlo.</value>
+  </data>
+  <data name="DuplicateCheck" xml:space="preserve">
+    <value>El número de cheque {0} ya se asentó.</value>
+  </data>
+  <data name="SystemGeneratedBatchWarningMessage" xml:space="preserve">
+    <value>El lote {0} es un lote generado y la opción de Admitir Edición de Lotes Generados por el Sistema en C/P - Opciones. Podría ver su contenido pero no modificarlo. </value>
+  </data>
+  <data name="VendorNoCannotBeBlank" xml:space="preserve">
+    <value>El número de proveedor no puede estar en blanco.</value>
+  </data>
+  <data name="TaxReportCurrencymismatch" xml:space="preserve">
+    <value>La moneda del documento {0} difiere de la moneda de reporte fiscal {1} para el grupo fiscal {2}.</value>
+  </data>
+  <data name="TaxGroupVendorNotFound" xml:space="preserve">
+    <value>El grupo fiscal no puede estar en blanco.</value>
+  </data>
+  <data name="DateValidate" xml:space="preserve">
+    <value>La fecha ingresada no está comprendida por el rango especificado en el perfil de la empresa. ¿Aceptar esta fecha?</value>
+  </data>
+  <data name="CPRSDescription" xml:space="preserve">
+    <value>Descripción de CPRS </value>
+  </data>
+  <data name="_1099Description" xml:space="preserve">
+    <value>Descripción del 1099</value>
+  </data>
+  <data name="VendorWarningMessage" xml:space="preserve">
+    <value>El proveedor {0} está retenido.</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="DeleteWithPrintedChecks" xml:space="preserve">
+    <value>El asiento {0} tiene uno o más cheques impresos. Todos los cheques impresos se marcarán como nulos en Servicios Bancarios. ¿Seguro que quiere eliminar este asiento?</value>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Fecha de factura</value>
+  </data>
+  <data name="NumberofPaymentsScheduled" xml:space="preserve">
+    <value>Cantidad de Pagos Programados</value>
+  </data>
+  <data name="NumberOfReapplies" xml:space="preserve">
+    <value>Cantidad de Reaplicaciones</value>
+  </data>
+  <data name="OriginalApply" xml:space="preserve">
+    <value>Aplicación Original</value>
+  </data>
+  <data name="OriginalDocNo" xml:space="preserve">
+    <value>Número Documento Original</value>
+  </data>
+  <data name="OriginalDocumentTotal" xml:space="preserve">
+    <value>Total del Documento Original</value>
+  </data>
+  <data name="PaymentSchedDiscountAvail" xml:space="preserve">
+    <value>Descuento de Pago Programado Disponible</value>
+  </data>
+  <data name="PaymentScheduleAmountDisc" xml:space="preserve">
+    <value>Monto de Descuento de Pago Programado</value>
+  </data>
+  <data name="PaymentScheduleAmountDue" xml:space="preserve">
+    <value>Montos a Pagar del Programa de Pagos</value>
+  </data>
+  <data name="PaymentScheduleAmountNet" xml:space="preserve">
+    <value>Monto Neto del Programa de Pagos</value>
+  </data>
+  <data name="RemitAmount" xml:space="preserve">
+    <value>Monto de Remisión</value>
+  </data>
+  <data name="StartingAmount" xml:space="preserve">
+    <value>Monto Inicial</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Fecha de Inicio</value>
+  </data>
+  <data name="StartingDocumentNumber" xml:space="preserve">
+    <value>Número de Documento Inicial</value>
+  </data>
+  <data name="StartingVendorNumber" xml:space="preserve">
+    <value>Número de Proveedor Inicial</value>
+  </data>
+  <data name="TCPLineNumber" xml:space="preserve">
+    <value>Número de Línea de TCP</value>
+  </data>
+  <data name="GreaterThanOne" xml:space="preserve">
+    <value>{0} debe ser 1 o mayor.</value>
+  </data>
+  <data name="CheckVoidMessage" xml:space="preserve">
+    <value>El cheque {0} del banco {1} se marcó como anulado.</value>
+  </data>
+  <data name="TaxDeriveRateInvalid" xml:space="preserve">
+    <value>Falló Derivar Tasa porque se obtiene un tipo de cambio inválido al usar el total de impuesto actual y el total en moneda de reporte fiscal. Ingrese la tasa manualmente.</value>
+  </data>
+  <data name="CannotOpenBatches" xml:space="preserve">
+    <value>No puede abrir lotes con estado de Asentamiento en Progreso o Eliminado.</value>
+  </data>
+  <data name="MarkVoidCheck" xml:space="preserve">
+    <value>No se registró un Asiento para cheque {0} de Banco {1} en Servicios Bancarios. ¿Desea crear un asiento para este cheque en Servicios Bancarios y marcarlo como anulado?</value>
+  </data>
+  <data name="PostPaymentEntry" xml:space="preserve">
+    <value>C/C - Asentar Asiento de Pago</value>
+  </data>
+</root>

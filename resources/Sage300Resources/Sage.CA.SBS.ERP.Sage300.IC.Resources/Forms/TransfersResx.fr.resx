@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>Transferts de GS</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="DetailZoomForm" xml:space="preserve">
+    <value>Détails des transferts de GS</value>
+    <comment>Modal Screen Title</comment>
+  </data>
+  <data name="TransferDate" xml:space="preserve">
+    <value>Date du transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProrationMethod" xml:space="preserve">
+    <value>Méthode ventilation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferQty" xml:space="preserve">
+    <value>Quantité transférée</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferUnit" xml:space="preserve">
+    <value>Unité de transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ManualProration" xml:space="preserve">
+    <value>Ventilation manuelle</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedWeight" xml:space="preserve">
+    <value>Poids total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Date document</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromLoc" xml:space="preserve">
+    <value>D'emplacement</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToLoc" xml:space="preserve">
+    <value>À emplacement</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GITLoc" xml:space="preserve">
+    <value>Article en transit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnHand" xml:space="preserve">
+    <value>Quantité en stock</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnSO" xml:space="preserve">
+    <value>Qté sur bordereau vente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOnPO" xml:space="preserve">
+    <value>Quantité sur bon commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyAvailable" xml:space="preserve">
+    <value>Quantité disponible</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StockingUOM" xml:space="preserve">
+    <value>UdeM stockage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GITLocation" xml:space="preserve">
+    <value>Article en transit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequestedQty" xml:space="preserve">
+    <value>Quantité demandée</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceivedQty" xml:space="preserve">
+    <value>Quantité reçue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferedQty" xml:space="preserve">
+    <value>Quantité transférée</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OutstandingQty" xml:space="preserve">
+    <value>Quantité en attente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferedToDate" xml:space="preserve">
+    <value>Transférée à ce jour</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceivedToDate" xml:space="preserve">
+    <value>Reçue à ce jour</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Conclu</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptQty" xml:space="preserve">
+    <value>Quantité reçue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptUnit" xml:space="preserve">
+    <value>Unité de réception</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TranHdrOptFlds" xml:space="preserve">
+    <value>Champs optionnels en-tête de transfert de GS</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TranDtlOptFlds" xml:space="preserve">
+    <value>Champs optionnels détail de transfert de GS</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferSlipPrinted" xml:space="preserve">
+    <value>Bordereau de transfert imprimé</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>Date report</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpectedArrivalDate" xml:space="preserve">
+    <value>Arrivée prévue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostInsufficentQty" xml:space="preserve">
+    <value>Ce transfert réduira la quantité de l'article en-dessous de zéro à l'emplacement de départ. Poursuivre?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DeleteTransfer" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer le transfert {0}?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PostInsufficentGITQty" xml:space="preserve">
+    <value>Ce transfert réduira la quantité de l'article en-dessous de zéro à l'emplacement des articles en transit. Poursuivre?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PromptToDeleteTransfer" xml:space="preserve">
+    <value>FF</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostedDoPrint" xml:space="preserve">
+    <value>Imprimer le bordereau de transfert?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="TransferNumberBalnk" xml:space="preserve">
+    <value>Le numéro de transfert ne peut pas être en blanc pour le type de document de réception en transit.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FromTransferNumber" xml:space="preserve">
+    <value>De numéro transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromTransferSequenceNo" xml:space="preserve">
+    <value>De numéro séquence de transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0730" xml:space="preserve">
+    <value>Détails transfert</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0733" xml:space="preserve">
+    <value>Numéros lot détails transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0735" xml:space="preserve">
+    <value>Champs optionnels détails transfert</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0738" xml:space="preserve">
+    <value>Numéros série détails transfert</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0740" xml:space="preserve">
+    <value>En-tête transfert</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="IC0741" xml:space="preserve">
+    <value>Champs optionnels transfert</value>
+    <comment>Export /Import</comment>
+  </data>
+  <data name="ConversionFactorQtyRequested" xml:space="preserve">
+    <value>Facteur conversion quantité demandée</value>
+    <comment>Transfer Details Field</comment>
+  </data>
+  <data name="FromTransferDetailLineNo" xml:space="preserve">
+    <value>De numéro ligne détail de transfert</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GLControlAmount" xml:space="preserve">
+    <value>Montant contrôle GL</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LineCompleted" xml:space="preserve">
+    <value>Ligne remplie</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotQuantityReceived" xml:space="preserve">
+    <value>Quantité numéros lot reçue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProratedAdditionalCost" xml:space="preserve">
+    <value>Coût additionnel ventilé</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialQuantityReceived" xml:space="preserve">
+    <value>Quantité numéros série reçue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialReceived" xml:space="preserve">
+    <value>Numéros série reçus</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostInsufficentQtyError" xml:space="preserve">
+    <value>La quantité est insuffisante pour être transférée.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityTransferError" xml:space="preserve">
+    <value>La quantité transférée doit être inférieure ou égale à la quantité demandée.</value>
+    <comment>Error</comment>
+  </data>
+</root>

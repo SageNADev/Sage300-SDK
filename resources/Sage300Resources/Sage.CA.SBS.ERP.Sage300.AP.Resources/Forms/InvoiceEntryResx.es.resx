@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Descripción de Cuenta</value>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="ActivationDate" xml:space="preserve">
+    <value>Fecha de Activación</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Línea de Dirección 1</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Línea de Dirección 2</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Línea de Dirección 3</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Línea de Dirección 4</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AllocatedTax" xml:space="preserve">
+    <value>Impuesto Asignado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllocatedTaxC" xml:space="preserve">
+    <value>Impuesto Asignado:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Monto</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="AmountDue" xml:space="preserve">
+    <value>Monto a Pagar</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="ApplyToDocOrigExchRate" xml:space="preserve">
+    <value>Tipo de Cambio Original de Documento a Aplicar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApplyToDocument" xml:space="preserve">
+    <value>Documento a Aplicar</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Código de Banco</value>
+    <comment>on Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BankDescription" xml:space="preserve">
+    <value>Descripción de Banco</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="BatchDate" xml:space="preserve">
+    <value>Fecha de Lote</value>
+    <comment>Header field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Descripción de Lote</value>
+    <comment>Header field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="BatchInformation" xml:space="preserve">
+    <value>Información de Lote</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Número de Lote</value>
+    <comment>Header field and Prepayment screen</comment>
+  </data>
+  <data name="BatchPrinted" xml:space="preserve">
+    <value>Lote Impreso</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="BatchReadyToPost" xml:space="preserve">
+    <value>El lote no se fijó en Listo para Asentar. Puede ver el contenido del lote, pero no puede editar los asientos diarios.</value>
+  </data>
+  <data name="BatchStatus" xml:space="preserve">
+    <value>Estado de Lote</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="BatchSummary" xml:space="preserve">
+    <value>Resumen de Lote</value>
+    <comment>Header field</comment>
+  </data>
+  <data name="BatchType" xml:space="preserve">
+    <value>Tipo de Lote</value>
+    <comment>on Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="CalcTaxes" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CashAccount" xml:space="preserve">
+    <value>Cuenta de Caja</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="CashAccountDescription" xml:space="preserve">
+    <value>Descripción Cuenta de Caja</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>Idioma del Cheque</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Borrar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contacto</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nombre de Contacto</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="CreateDist" xml:space="preserve">
+    <value>Crear Distribución</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Crear Lote Nuevo</value>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Crear Nuevo Asiento</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>on Rates tab and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda</value>
+    <comment>on Rates tab and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="DefaultFromInvoice" xml:space="preserve">
+    <value>Predet. Desde Factura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeletedBatch" xml:space="preserve">
+    <value>Se eliminó el lote y no se puede editar.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción de Lote</value>
+  </data>
+  <data name="Discountable" xml:space="preserve">
+    <value>Descontable</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="DiscountAvailable" xml:space="preserve">
+    <value>Descuento Disponible</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="DiscountBase" xml:space="preserve">
+    <value>Base de Descuento</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="DiscountDate" xml:space="preserve">
+    <value>Fecha de Descuento</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>% Descuento</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="DistCode" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DistNetOfTax" xml:space="preserve">
+    <value>Distribución Neta de Impuesto</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DistributionAmount" xml:space="preserve">
+    <value>Monto de Distribución</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Descripción de Código de Distribución</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="DistributionDetails" xml:space="preserve">
+    <value>Detalles de Distribución</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>Grupo de Distribución</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="DistributionSetDescription" xml:space="preserve">
+    <value>Descripción Grupo de Distribución</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="DistributionTotalC" xml:space="preserve">
+    <value>Total de Distribución:</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistTaxes" xml:space="preserve">
+    <value>Distribuir Impuestos</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Documento</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="DocumentDetails" xml:space="preserve">
+    <value>Detalles a Aplicar</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Número de Documento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Total del Documento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="DocumentTotalC" xml:space="preserve">
+    <value>Total de Documento:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Plazo</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Correo Electrónico</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/P Ingreso Facturas</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Descripción Asiento </value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Número de Asiento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="EstimatedTax" xml:space="preserve">
+    <value>Impuesto Estimado:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+    <comment>on Rates tab and Batch Information screen</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Año - Período Fiscal</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>Cuenta del LM</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="GLDistAmount" xml:space="preserve">
+    <value>Monto de Distribución del LM</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="IncludedTaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto Incluido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceBatch" xml:space="preserve">
+    <value>Lote de Facturas</value>
+  </data>
+  <data name="InvoiceEntry" xml:space="preserve">
+    <value>Ingreso de Factura</value>
+  </data>
+  <data name="LessDiscountC" xml:space="preserve">
+    <value>Menos Descuento:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="LessPrepaymentC" xml:space="preserve">
+    <value>Menos Anticipo:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="LessRetainageC" xml:space="preserve">
+    <value>Menos Retención:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de Línea</value>
+  </data>
+  <data name="NetPayableC" xml:space="preserve">
+    <value>Ef. a Pagar Neto:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="NoOfChecksPrinted" xml:space="preserve">
+    <value>Cantidad de Cheques Impresos</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="NoOfEntries" xml:space="preserve">
+    <value>Número de Asientos</value>
+    <comment>Header field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="NoPrepayments" xml:space="preserve">
+    <value>No hay anticipos para esta factura.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>Retenido</value>
+    <comment>Check box</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Número de Orden</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="OriginalDocument" xml:space="preserve">
+    <value>Documento Original</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="OtherAccount" xml:space="preserve">
+    <value>Otra Cuenta</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="OtherAccountDescription" xml:space="preserve">
+    <value>Descripción de Otra Cuenta</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="OutOfBalanceC" xml:space="preserve">
+    <value>Fuera de Balance:</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>Monto de Pago</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>Código de Pago</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Fecha de pago</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Teléfono</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>Número de OC</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="PPDeleted" xml:space="preserve">
+    <value>Se eliminó el anticipo para esta factura.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Prepay" xml:space="preserve">
+    <value>Anticipo...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Anticipo</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="PrepaymentDocNo" xml:space="preserve">
+    <value>Número de Documento de Anticipo</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="PrintCheck" xml:space="preserve">
+    <value>Imprimir Cheque</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="PrintCheckButton" xml:space="preserve">
+    <value>Imprimir Cheque...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fecha de Tasa</value>
+    <comment>on Rates tab and Batch Information screen</comment>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>Sustitución de Tasa</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="Rates" xml:space="preserve">
+    <value>Tasas</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RatesButton" xml:space="preserve">
+    <value>Tasas...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+    <comment>on Rates tab and Batch Information screen</comment>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+    <comment>on Rates tab and Batch Information screen</comment>
+  </data>
+  <data name="RecoverableTaxC" xml:space="preserve">
+    <value>Impuesto Recuperable:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="RemainingAmount" xml:space="preserve">
+    <value>Monto Restante</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RemitToDescription" xml:space="preserve">
+    <value>Descripción Beneficiario de Pago</value>
+    <comment>on Document tab and modal screens</comment>
+  </data>
+  <data name="RemitToInformation" xml:space="preserve">
+    <value>Información Beneficiario de Pago</value>
+    <comment>on Remit-To Information screen</comment>
+  </data>
+  <data name="RemitToLocation" xml:space="preserve">
+    <value>Dirección de Pago</value>
+    <comment>on Document tab and modal screens</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>Retención</value>
+    <comment>Tab and check box</comment>
+  </data>
+  <data name="RetainageAmount" xml:space="preserve">
+    <value>Monto de Retención</value>
+    <comment>on Retainage tab and Prepayment screen</comment>
+  </data>
+  <data name="RetainagePercent" xml:space="preserve">
+    <value>% Retención</value>
+    <comment>on Retainage tab</comment>
+  </data>
+  <data name="RetainageRate" xml:space="preserve">
+    <value>Tasa de Retención</value>
+    <comment>on Retainage tab</comment>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>Código Condiciones de Retención</value>
+    <comment>on Retainage tab</comment>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Aplicación de Origen</value>
+    <comment>on Batch Information screen</comment>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>Estado/Provincia</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto</value>
+    <comment>on Taxes tab and table column</comment>
+  </data>
+  <data name="TaxAuthorities" xml:space="preserve">
+    <value>Autoridades Fiscales</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Autoridad Fiscal</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>Base de Impuesto</value>
+    <comment>on Taxes tab and table column</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impuestos</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TaxesC" xml:space="preserve">
+    <value>Impuestos:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="TaxExpSeparatelyC" xml:space="preserve">
+    <value>Impuesto Desembolsado por Separado:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Grupo Fiscal</value>
+    <comment>on Taxes tab</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+    <comment>on Taxes tab</comment>
+  </data>
+  <data name="TaxReportingCurrencyRate" xml:space="preserve">
+    <value>Tasa de Moneda de Reporte Fiscal</value>
+    <comment>Used in Taxes Tab</comment>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>Condiciones</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>Código de Condiciones</value>
+    <comment>on Terms tab</comment>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Condiciones</value>
+    <comment>on Retainage tab</comment>
+  </data>
+  <data name="ToBeAllocatedC" xml:space="preserve">
+    <value>A Ser Asignado:</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Monto Total</value>
+    <comment>Header field and Prepayment/Batch Information screens</comment>
+  </data>
+  <data name="TotalDistAmountC" xml:space="preserve">
+    <value>Monto Total de Distribución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalDistNetOfTaxC" xml:space="preserve">
+    <value>Distribución Total Neta de Impuestos:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="TotalRetainageTax" xml:space="preserve">
+    <value>Impuesto de Retención Total</value>
+    <comment>on Taxes tab and Tax Authorities screen</comment>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totales</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Totals1" xml:space="preserve">
+    <value>Totales</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TotalTax" xml:space="preserve">
+    <value>Impuesto Total</value>
+    <comment>on Taxes tab and Tax Authorities screen</comment>
+  </data>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>Monto Total de Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalTaxC" xml:space="preserve">
+    <value>Impuesto Total:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="UnappliedAmount" xml:space="preserve">
+    <value>Monto sin Aplicar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UndistributedAmount" xml:space="preserve">
+    <value>Monto sin Distribuir</value>
+    <comment>on Document tab</comment>
+  </data>
+  <data name="UndistributedAmountC" xml:space="preserve">
+    <value>Monto sin Distribuir:</value>
+    <comment>on Totals tab</comment>
+  </data>
+  <data name="VendorAmount" xml:space="preserve">
+    <value>Monto del Proveedor</value>
+    <comment>on Prepayment screen</comment>
+  </data>
+  <data name="VendorAndRemittance" xml:space="preserve">
+    <value>Proveedor y Remesa</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>Moneda del Proveedor</value>
+    <comment>on Document tab and Prepayment screen</comment>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>Descripción Proveedor</value>
+    <comment>on Document tab and modal screens</comment>
+  </data>
+  <data name="VendorInformation" xml:space="preserve">
+    <value>Información del Proveedor</value>
+    <comment>Screen title</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>on Document tab and modal screens</comment>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>Clase Fiscal del Proveedor</value>
+    <comment>Table column</comment>
+  </data>
+  <data name="VoidCheck" xml:space="preserve">
+    <value>Anular Cheque</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ZIPPostalCode" xml:space="preserve">
+    <value>Código Postal</value>
+    <comment>on modal screens</comment>
+  </data>
+  <data name="AP0021" xml:space="preserve">
+    <value>Facturas</value>
+    <comment>Added for Export Import</comment>
+  </data>
+  <data name="AP0022" xml:space="preserve">
+    <value>Detalles de Factura</value>
+    <comment>Added for Export Import</comment>
+  </data>
+  <data name="AP0023" xml:space="preserve">
+    <value>Programas de Pagos de Facturas</value>
+    <comment>Added for Export Import</comment>
+  </data>
+  <data name="AP0401" xml:space="preserve">
+    <value>Campos Opcionales de Detalle de Factura</value>
+    <comment>Added for Export Import</comment>
+  </data>
+  <data name="AP0402" xml:space="preserve">
+    <value>Campos Opcionales de Factura</value>
+    <comment>Added for Export Import</comment>
+  </data>
+  <data name="TaxReportingDetails" xml:space="preserve">
+    <value>Detalles de Reporte Fiscal</value>
+    <comment>on document Tab</comment>
+  </data>
+  <data name="PostInvoiceEntry" xml:space="preserve">
+    <value>C/P - Asentar Asiento de Factura</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido Estimado</value>
+  </data>
+  <data name="ReverseChargeBase" xml:space="preserve">
+    <value>Base de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="ReverseCharges" xml:space="preserve">
+    <value>Importe de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="LessEstTaxWithhedld" xml:space="preserve">
+    <value>Menos Impuesto Retenido Estimado</value>
+  </data>
+  <data name="LessReverseCharges" xml:space="preserve">
+    <value>Menos Inversión del Sujeto Pasivo</value>
+  </data>
+</root>

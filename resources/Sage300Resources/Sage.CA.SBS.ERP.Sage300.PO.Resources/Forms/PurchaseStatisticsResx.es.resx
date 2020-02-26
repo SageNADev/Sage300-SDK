@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddMC" xml:space="preserve">
+    <value>¿Desea agregar las estadísticas de compras del año {0}, período {1} y moneda {2}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddSC" xml:space="preserve">
+    <value>¿Desea agregar las estadísticas de compras del año {0}, período {1}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ColtitelDbNotesFunctionalCurr" xml:space="preserve">
+    <value>Notas de Débito - Moneda Funcional</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ColtitleCrNotesFunctionalCurr" xml:space="preserve">
+    <value>Notas de Crédito - Moneda Funcional</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ColtitleCrNotesVendorCurr" xml:space="preserve">
+    <value>Notas de Crédito - Moneda del Proveedor</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ColtitleDbNotesVendorCurr" xml:space="preserve">
+    <value>Notas de Débito - Moneda del Proveedor</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ColtitleInvoiceFunctioalCurr" xml:space="preserve">
+    <value>Factura - Moneda Funcional</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ColtitleInvoiceVendorCurr" xml:space="preserve">
+    <value>Factura - Moneda del Proveedor</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="ConsolidateCurrency" xml:space="preserve">
+    <value>Consolidar Monedas</value>
+    <comment>Report</comment>
+  </data>
+  <data name="DeleteMC" xml:space="preserve">
+    <value>¿Desea eliminar las estadísticas de compras del año {0}, período {1} y moneda {2}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeleteSC" xml:space="preserve">
+    <value>¿Desea eliminar las estadísticas de compras del año {0}, período {1}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>OC – Estadísticas de Compras</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FuncAverageCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Promedio - Moneda Funcional</value>
+  </data>
+  <data name="FuncAverageDebitNote" xml:space="preserve">
+    <value>Notas de Débito Promedio - Moneda Funcional</value>
+  </data>
+  <data name="FuncAverageInvoice" xml:space="preserve">
+    <value>Factura Promedio - Moneda Funcional</value>
+  </data>
+  <data name="FuncCreditNoteAmount" xml:space="preserve">
+    <value>Monto de Nota de Crédito - Moneda Funcional</value>
+  </data>
+  <data name="FuncDebitNoteAmount" xml:space="preserve">
+    <value>Monto de Nota de Débito - Moneda Funcional</value>
+  </data>
+  <data name="FuncInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura - Moneda Funcional</value>
+  </data>
+  <data name="FuncLargestCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Mayor - Moneda Funcional</value>
+  </data>
+  <data name="FuncLargestDebitNote" xml:space="preserve">
+    <value>Notas de Débito Mayor - Moneda Funcional</value>
+  </data>
+  <data name="FuncLargestInvoice" xml:space="preserve">
+    <value>Factura Mayor - Moneda Funcional</value>
+  </data>
+  <data name="FuncNetPurchaseAmount" xml:space="preserve">
+    <value>Monto Neto de Compra - Moneda Funcional</value>
+  </data>
+  <data name="FuncSmallestCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Menor - Moneda Funcional</value>
+  </data>
+  <data name="FuncSmallestDebitNote" xml:space="preserve">
+    <value>Nota de Débito Menor - Moneda Funcional</value>
+  </data>
+  <data name="FuncSmallestInvoice" xml:space="preserve">
+    <value>Factura Menor - Moneda Funcional</value>
+  </data>
+  <data name="InvoiceCrtDbNotes" xml:space="preserve">
+    <value>Facturas y Notas de Crédito/Débito</value>
+    <comment>Table Header</comment>
+  </data>
+  <data name="LargestCreditNoteVendor" xml:space="preserve">
+    <value>Proveedor de Nota de Crédito Mayor</value>
+  </data>
+  <data name="LargestDebitNoteVendor" xml:space="preserve">
+    <value>Proveedor de Nota de Débito Mayor</value>
+  </data>
+  <data name="LargestInvoiceVendor" xml:space="preserve">
+    <value>Proveedor de Factura Mayor</value>
+  </data>
+  <data name="NumberOfReceipts" xml:space="preserve">
+    <value>Número de Recibos</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="PO0800" xml:space="preserve">
+    <value>Estadísticas de Compras</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Compras</value>
+    <comment>Table Header</comment>
+  </data>
+  <data name="RowtitleAverage" xml:space="preserve">
+    <value>Promedio</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleLargest" xml:space="preserve">
+    <value>Mayor</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleNetPurchaseAmt" xml:space="preserve">
+    <value>Monto Neto de Compra</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleNetQtyPurchased" xml:space="preserve">
+    <value>Cantidad Neta Comprada</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleNewInvoiceAmt" xml:space="preserve">
+    <value>Monto Neto de Factura</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleNubmer" xml:space="preserve">
+    <value>Número</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleNumberOfPOs" xml:space="preserve">
+    <value>Cantidad de OC</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="RowtitleSmallest" xml:space="preserve">
+    <value>Menor</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="SaveMC" xml:space="preserve">
+    <value>¿Desea guardar las estadísticas de compras del año {0}, período {1} y moneda {2}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SaveSC" xml:space="preserve">
+    <value>¿Desea guardar las estadísticas de compras del año {0}, período {1}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SmallestCreditNoteVendor" xml:space="preserve">
+    <value>Proveedor de Nota de Crédito Menor</value>
+  </data>
+  <data name="SmallestDebitNoteVendor" xml:space="preserve">
+    <value>Proveedor de Nota de Débito Menor</value>
+  </data>
+  <data name="SmallestInvoiceVendor" xml:space="preserve">
+    <value>Proveedor de Factura Menor</value>
+  </data>
+  <data name="SrceAverageCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Promedio Moneda de Origen</value>
+  </data>
+  <data name="SrceAverageDebitNote" xml:space="preserve">
+    <value>Nota de Débito Promedio - Moneda de Origen</value>
+  </data>
+  <data name="SrceAverageInvoice" xml:space="preserve">
+    <value>Factura Promedio - Moneda de Origen</value>
+  </data>
+  <data name="SrceCreditNoteAmount" xml:space="preserve">
+    <value>Monto de Nota de Crédito - Moneda de Origen</value>
+  </data>
+  <data name="SrceDebitNoteAmount" xml:space="preserve">
+    <value>Monto de Nota de Débito - Moneda de Origen</value>
+  </data>
+  <data name="SrceInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura - Moneda de Origen</value>
+  </data>
+  <data name="SrceLargestCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Mayor - Moneda de Origen</value>
+  </data>
+  <data name="SrceLargestDebitNote" xml:space="preserve">
+    <value>Nota de Débito Mayor - Moneda de Origen</value>
+  </data>
+  <data name="SrceLargestInvoice" xml:space="preserve">
+    <value>Factura Mayor - Moneda de Origen</value>
+  </data>
+  <data name="SrceNetPurchaseAmount" xml:space="preserve">
+    <value>Monto Neto de Compra - Moneda de Origen</value>
+  </data>
+  <data name="SrceSmallestCreditNote" xml:space="preserve">
+    <value>Nota de Crédito Menor - Moneda de Origen</value>
+  </data>
+  <data name="SrceSmallestDebitNote" xml:space="preserve">
+    <value>Nota de Débito Menor - Moneda de Origen</value>
+  </data>
+  <data name="SrceSmallestInvoice" xml:space="preserve">
+    <value>Factura Menor - Moneda de Origen</value>
+  </data>
+</root>

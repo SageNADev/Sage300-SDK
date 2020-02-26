@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>Options de GL</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Entreprise</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowPostingPrevYr" xml:space="preserve">
+    <value>Permettre report aux exercices précédents</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowProvPosting" xml:space="preserve">
+    <value>Permettre report provisoire</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetSet5" xml:space="preserve">
+    <value>Budget 5</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetSet4" xml:space="preserve">
+    <value>Budget 4</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetSet3" xml:space="preserve">
+    <value>Budget 3</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetSet2" xml:space="preserve">
+    <value>Budget 2</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetSet1" xml:space="preserve">
+    <value>Budget 1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nom du contact</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EditImportEnt" xml:space="preserve">
+    <value>Modifier saisies importées</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DecimalPlaces" xml:space="preserve">
+    <value>Décimales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultClosingAcct" xml:space="preserve">
+    <value>Compte clôture par défaut</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultRateType" xml:space="preserve">
+    <value>Type taux par défaut</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForceBatchListing" xml:space="preserve">
+    <value>Forcer la liste des lots</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LastBatch" xml:space="preserve">
+    <value>Dernier lot</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longueur</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LockBudgetSets" xml:space="preserve">
+    <value>Verrouiller les budgets</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextPostingSeq" xml:space="preserve">
+    <value>Séquence de report suivante</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextProvPostSeq" xml:space="preserve">
+    <value>Séquence de report provisoire suivante</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OldestYearFS" xml:space="preserve">
+    <value>Le plus ancien exercice de séries financières</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OldestYearTrans" xml:space="preserve">
+    <value>Le plus ancien exercice de détail transaction</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingStats" xml:space="preserve">
+    <value>Statistiques de report</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SegmentDelim" xml:space="preserve">
+    <value>Séparateur de segment</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultStructureCode" xml:space="preserve">
+    <value>Code structure par défaut</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseAcctGroup" xml:space="preserve">
+    <value>Utiliser groupes de comptes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseInClosing" xml:space="preserve">
+    <value>Utiliser dans clôture</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YearsOfTransDetail" xml:space="preserve">
+    <value>ans de détails de transactions</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YearsOfFiscalSets" xml:space="preserve">
+    <value>ans de séries financières</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultSourceCode" xml:space="preserve">
+    <value>Code source par défaut</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseSecurity" xml:space="preserve">
+    <value>Utiliser sécurité de GL</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultAccess" xml:space="preserve">
+    <value>Accès par défaut</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountTab" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="CompanyFaxNumber" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="CompanyPhoneNumber" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="CurrentYear" xml:space="preserve">
+    <value>Exercice courant</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+  </data>
+  <data name="MainAcctSegmentId" xml:space="preserve">
+    <value>Segment de compte</value>
+  </data>
+  <data name="MulticurrencyActivatedSwitch" xml:space="preserve">
+    <value>Multidevise</value>
+  </data>
+  <data name="PostingTab" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="QuantityHistoryAllowed" xml:space="preserve">
+    <value>Gérer les quantités</value>
+  </data>
+  <data name="SegmentDescription" xml:space="preserve">
+    <value>Nom du segment</value>
+  </data>
+  <data name="SegmentNumber" xml:space="preserve">
+    <value>Numéro segment</value>
+  </data>
+  <data name="SegmentTab" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="ValidationDecimalMessage" xml:space="preserve">
+    <value>Vous ne pouvez pas remplacer les décimales autorisées pour Gérer les quantités par une valeur plus petite.</value>
+  </data>
+  <data name="Keep" xml:space="preserve">
+    <value>Conserver</value>
+  </data>
+  <data name="GLOptionKey" xml:space="preserve">
+    <value>Clé option de GL</value>
+    <comment>Added for display in Options model</comment>
+  </data>
+  <data name="ReservedAcctHistoryClearingAcct" xml:space="preserve">
+    <value>Compte provisoire d'historique de compte réservé</value>
+    <comment>Added for display in Options model</comment>
+  </data>
+  <data name="TransitionRoundingAccount" xml:space="preserve">
+    <value>Compte d'arrondi monnaie publication</value>
+    <comment>Added for display in Options model</comment>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+    <comment>Added for display in Browser Navigation</comment>
+  </data>
+  <data name="NumberOfYearsValidation" xml:space="preserve">
+    <value>Impossible de conserver les détails de transactions pendant un nombre d'années supérieur aux séries financières.</value>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>Code de structure</value>
+  </data>
+  <data name="SegmentOrderMessage" xml:space="preserve">
+    <value>Les segments doivent être définis par ordre de numéro de segment consécutif.</value>
+    <comment>Added for display in Options Segment tab</comment>
+  </data>
+  <data name="DefaultValueValidationForBlank" xml:space="preserve">
+    <value>La valeur implicite ne peut pas être en blanc pour le champ optionnel {0}.</value>
+  </data>
+  <data name="SelectRetainedEarningsAcct" xml:space="preserve">
+    <value>Le compte de clôture par défaut {0} n'est pas un compte de bénéfices non répartis. Vous devez sélectionner un compte de bénéfices non répartis.</value>
+    <comment>{0} = Account Number</comment>
+  </data>
+  <data name="SegmentLength" xml:space="preserve">
+    <value>Longueur du segment</value>
+    <comment>SegmentLength</comment>
+  </data>
+</root>

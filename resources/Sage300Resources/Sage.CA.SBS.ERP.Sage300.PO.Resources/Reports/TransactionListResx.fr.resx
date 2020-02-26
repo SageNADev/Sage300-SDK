@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Addresses" xml:space="preserve">
+    <value>Adresses</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Blanket" xml:space="preserve">
+    <value>Global</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNoteDetails" xml:space="preserve">
+    <value>Détails note de crédit</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNoteInfo" xml:space="preserve">
+    <value>Information note de crédit</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNotes" xml:space="preserve">
+    <value>Notes de crédit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditNotesNumber" xml:space="preserve">
+    <value>Numéro note de crédit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Devise</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DebitNoteDetails" xml:space="preserve">
+    <value>Détails note de débit</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DebitNoteInfo" xml:space="preserve">
+    <value>Information note de débit</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DebitNotes" xml:space="preserve">
+    <value>Notes de débit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DebitNotesNumber" xml:space="preserve">
+    <value>Numéro note de débit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentDetails" xml:space="preserve">
+    <value>Détails document</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentInformation" xml:space="preserve">
+    <value>Information document</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentNever" xml:space="preserve">
+    <value>Jamais créé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentPartially" xml:space="preserve">
+    <value>Partiellement créé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentPrinted" xml:space="preserve">
+    <value>Document imprimé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Liste des transactions de CmF</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>Liste des transactions de CmF</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Future" xml:space="preserve">
+    <value>À terme</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Internet" xml:space="preserve">
+    <value>Internet</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoiceDetails" xml:space="preserve">
+    <value>Détails facture</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoiceInfo" xml:space="preserve">
+    <value>Information facture</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoicesNumber" xml:space="preserve">
+    <value>Numéro factures</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Détails de tâche</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Type de commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseOrderDetails" xml:space="preserve">
+    <value>Détails bon de commande</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderInfo" xml:space="preserve">
+    <value>Information bon de commande</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderNever" xml:space="preserve">
+    <value>Jamais reçu</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderPartially" xml:space="preserve">
+    <value>Partiellement reçu</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderPrinted" xml:space="preserve">
+    <value>Bon de commande imprimé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrders" xml:space="preserve">
+    <value>Bons de commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseOrdersNumber" xml:space="preserve">
+    <value>Numéro bon de commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptDetails" xml:space="preserve">
+    <value>Détails réception</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReceiptInfo" xml:space="preserve">
+    <value>Information réception</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReceiptsNumber" xml:space="preserve">
+    <value>Numéro réception</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionDetails" xml:space="preserve">
+    <value>Détails demande d'achat</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionInfo" xml:space="preserve">
+    <value>Information demande d'achat</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionNever" xml:space="preserve">
+    <value>Bon de commande jamais créé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionNumber" xml:space="preserve">
+    <value>Numéros demande d'achat</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionPartially" xml:space="preserve">
+    <value>Bon de commande partiellement créé</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionPrinted" xml:space="preserve">
+    <value>Demande d'achat imprimée</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Requisitions" xml:space="preserve">
+    <value>Demandes d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionsNumber" xml:space="preserve">
+    <value>Numéro demandes d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReturnDetails" xml:space="preserve">
+    <value>Détails retour</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReturnInfo" xml:space="preserve">
+    <value>Information retour</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>Retours</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReturnsNumber" xml:space="preserve">
+    <value>Numéro retour</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialLotNumbers" xml:space="preserve">
+    <value>Numéros série/lot</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SortDebitNote" xml:space="preserve">
+    <value>Numéro note de débit</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Standing" xml:space="preserve">
+    <value>Permanent</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>État</value>
+    <comment>Fieldset</comment>
+  </data>
+  <data name="TaxReportingInformation" xml:space="preserve">
+    <value>Information monnaie de publication</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Numéro fournisseur</value>
+    <comment>Finder</comment>
+  </data>
+</root>

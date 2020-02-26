@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InWebStore" xml:space="preserve">
+    <value>Allow Item in Web Store</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="AltItemNoDesc" xml:space="preserve">
+    <value>Alternate Item Description</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="AltItemNo" xml:space="preserve">
+    <value>Alternate Item </value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="AltItemSetNo" xml:space="preserve">
+    <value>Alternate Item Set Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Amount Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Comment1" xml:space="preserve">
+    <value>Comment 1</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Comment2" xml:space="preserve">
+    <value>Comment 2</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Comment3" xml:space="preserve">
+    <value>Comment 3</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Comment4" xml:space="preserve">
+    <value>Comment 4</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="CommodIm" xml:space="preserve">
+    <value>Commodity Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Conversion" xml:space="preserve">
+    <value>Conversion Factor</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Date Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="DefaultBOMNo" xml:space="preserve">
+    <value>Default BOM Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="DefaultKitNo" xml:space="preserve">
+    <value>Default Kit Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="PickingSeq" xml:space="preserve">
+    <value>Default Picking Sequence</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>I/C Items</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Factor" xml:space="preserve">
+    <value>Factor</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IC0310" xml:space="preserve">
+    <value>Items</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IC0313" xml:space="preserve">
+    <value>Item Optional Fields</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IC0330" xml:space="preserve">
+    <value>Item Tax Authorities</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IC0750" xml:space="preserve">
+    <value>Units Of Measure</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Integer Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="IsBOMComponent" xml:space="preserve">
+    <value>Is Item a BOM Component</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Kitting" xml:space="preserve">
+    <value>Kitting Item</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Number Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Process Command</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="PurchaseTaxClassDesc" xml:space="preserve">
+    <value>Purchase Tax Class Description</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SalesTaxClassDesc" xml:space="preserve">
+    <value>Sales Tax Class Description</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Sellable" xml:space="preserve">
+    <value>Sellable</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="SIAPreferredVendType" xml:space="preserve">
+    <value>SIA Preferred Vendor Type</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>Stock Item</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Text Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Time Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Typed Value Field Index</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="UnformattedAltItemNo" xml:space="preserve">
+    <value>Unformatted Alternate Item No.</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="UnformattedItemNo" xml:space="preserve">
+    <value>Unformatted Item Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Units</value>
+    <comment>Tab Title</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Yes/No Value</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="CategoryDesc" xml:space="preserve">
+    <value>Category Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DefaultPriceListDesc" xml:space="preserve">
+    <value>Default Price List Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="WeightUnitofMeasureDesc" xml:space="preserve">
+    <value>Weight Unit of Measure Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+    <comment>Grid Header</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Grid Header</comment>
+  </data>
+  <data name="WeightUnitsOfMeasure" xml:space="preserve">
+    <value>Weight Units of Measure</value>
+    <comment>Added for Finder title</comment>
+  </data>
+  <data name="ConversionErrorMessage" xml:space="preserve">
+    <value>The conversion factor for stocking unit of measure must be 1.</value>
+    <comment>Added Error Message</comment>
+  </data>
+  <data name="AccountSetConfirmationMessage" xml:space="preserve">
+    <value>Account set has been changed. This will affect all future postings related to this item. Do you really want to change this account set? </value>
+  </data>
+  <data name="AlternateItemMessage" xml:space="preserve">
+    <value>Item cannot be its own alternate item.</value>
+  </data>
+  <data name="NonStockItemMessage" xml:space="preserve">
+    <value>Non-stock items must use the user-specified costing method.</value>
+  </data>
+  <data name="ConstructItemNumber" xml:space="preserve">
+    <value>Construct Item Number</value>
+  </data>
+  <data name="SegmentErrorMessage" xml:space="preserve">
+    <value>Segment is not defined in Inventory Control. You must add the segment in the I/C Segment Codes window before you can use it in an item number.</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+    <comment>Tab Title</comment>
+  </data>
+  <data name="AltItemNumber" xml:space="preserve">
+    <value>Alternate Item Number</value>
+    <comment>Used for Export/Import</comment>
+  </data>
+  <data name="InvalidCharacter" xml:space="preserve">
+    <value>Item number contains an invalid character (").</value>
+  </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value>Allow Different Lot Qty</value>
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value>Allow Different Serial Qty</value>
+  </data>
+  <data name="AutogenLotNumber" xml:space="preserve">
+    <value>Auto-gen Lot Number</value>
+  </data>
+  <data name="AutogenSerialNumber" xml:space="preserve">
+    <value>Auto-gen Serial Number</value>
+  </data>
+  <data name="DefaultLotContractCode" xml:space="preserve">
+    <value>Default Lot Contract Code</value>
+  </data>
+  <data name="DefaultLotWarrantyCode" xml:space="preserve">
+    <value>Default Lot Warranty Code</value>
+  </data>
+  <data name="DefaultSerialContractCode" xml:space="preserve">
+    <value>Default Serial Contract Code</value>
+  </data>
+  <data name="DefaultSerialWarrantyCode" xml:space="preserve">
+    <value>Default Serial Warranty Code</value>
+  </data>
+  <data name="FirstGeneratedLot" xml:space="preserve">
+    <value>First Generated Lot</value>
+  </data>
+  <data name="FirstGeneratedSerial" xml:space="preserve">
+    <value>First Generated Serial</value>
+  </data>
+  <data name="LastGeneratedLot" xml:space="preserve">
+    <value>Last Generated Lot</value>
+  </data>
+  <data name="LastGeneratedSerial" xml:space="preserve">
+    <value>Last Generated Serial</value>
+  </data>
+  <data name="LotIsonContWhenReceivedString" xml:space="preserve">
+    <value>Lot is on Contract When Received</value>
+  </data>
+  <data name="LotIsonWarrWhenSoldString" xml:space="preserve">
+    <value>Lot is on Warranty When Sold</value>
+  </data>
+  <data name="LotMaskDescription" xml:space="preserve">
+    <value>Lot Mask Description</value>
+  </data>
+  <data name="LotMaskStructure" xml:space="preserve">
+    <value>Lot Mask Structure</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Lot Number</value>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>Lot Number Mask</value>
+  </data>
+  <data name="LotNumbersInUse" xml:space="preserve">
+    <value>Lot Numbers in Use</value>
+  </data>
+  <data name="LotNumbersString" xml:space="preserve">
+    <value>Lot Numbers</value>
+  </data>
+  <data name="LotsDaysonQuarantine" xml:space="preserve">
+    <value>Lots Days on Quarantine</value>
+  </data>
+  <data name="LotsDaysToExpire" xml:space="preserve">
+    <value>Lots Days to Expire</value>
+  </data>
+  <data name="LotsOptionalFields" xml:space="preserve">
+    <value>Lots Optional Fields</value>
+  </data>
+  <data name="NextLotNumber" xml:space="preserve">
+    <value>Next Lot Number</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>Next Serial Number</value>
+  </data>
+  <data name="NumberOfLotsnotGenerated" xml:space="preserve">
+    <value>Number of Lots not Generated</value>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>Number of Lots to Generate</value>
+  </data>
+  <data name="NumberOfSerialsnotGenerated" xml:space="preserve">
+    <value>Number of Serials not Generated</value>
+  </data>
+  <data name="NumberOfSerialsToGenerate" xml:space="preserve">
+    <value>Number of Serials to Generate</value>
+  </data>
+  <data name="SerialIsonContWhenReceivedString" xml:space="preserve">
+    <value>Serial is on Contract When Received</value>
+  </data>
+  <data name="SerialIsonWarrWhenRegisterString" xml:space="preserve">
+    <value>Serial is on Warranty When Registered</value>
+  </data>
+  <data name="SerialIsonWarrWhenSoldString" xml:space="preserve">
+    <value>Serial is on Warranty When Sold</value>
+  </data>
+  <data name="SerialMaskDescription" xml:space="preserve">
+    <value>Serial Mask Description</value>
+  </data>
+  <data name="SerialMaskStructure" xml:space="preserve">
+    <value>Serial Mask Structure</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>Serial Number Mask</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>Serial Numbers</value>
+  </data>
+  <data name="SerialNumbersInUse" xml:space="preserve">
+    <value>Serial Numbers in Use</value>
+  </data>
+  <data name="SerialsDaysToExpire" xml:space="preserve">
+    <value>Serials Days to Expire</value>
+  </data>
+  <data name="SerialsOptionalFields" xml:space="preserve">
+    <value>Serials Optional Fields</value>
+  </data>
+  <data name="UnformattedLotNumber" xml:space="preserve">
+    <value>Unformatted Lot Number</value>
+  </data>
+  <data name="UnformattedSerialNumber" xml:space="preserve">
+    <value>Unformatted Serial Number</value>
+  </data>
+  <data name="UseLotsDaysonQuarantine" xml:space="preserve">
+    <value>Use Lots Days on Quarantine</value>
+  </data>
+  <data name="UseLotsDaysToExpire" xml:space="preserve">
+    <value>Use Lots Days to Expire</value>
+  </data>
+  <data name="UseSerialsDaysToExpire" xml:space="preserve">
+    <value>Use Serials Days to Expire</value>
+  </data>
+  <data name="PreferredVendor" xml:space="preserve">
+    <value>Preferred Vendor</value>
+  </data>
+  <data name="PreferredVendorItem" xml:space="preserve">
+    <value>Preferred Vendor Item</value>
+  </data>
+  <data name="QtyAvailable" xml:space="preserve">
+    <value>Qty. Available</value>
+  </data>
+  <data name="QtyCommitted" xml:space="preserve">
+    <value>Qty. Committed</value>
+  </data>
+  <data name="QtyonHand" xml:space="preserve">
+    <value>Qty. on Hand</value>
+  </data>
+  <data name="QtyonPurchaseOrder" xml:space="preserve">
+    <value>Qty. on Purchase Order</value>
+  </data>
+  <data name="QtyonSalesOrder" xml:space="preserve">
+    <value>Qty. on Sales Order</value>
+  </data>
+</root>

@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingToExistingBatch" xml:space="preserve">
+    <value>添加到一个现有批次</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>调整</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="ChooseSegmentsFromList" xml:space="preserve">
+    <value>从清单中选择节段</value>
+    <comment>Detail Screen - Label</comment>
+  </data>
+  <data name="ConsolidateByPostAccFisc" xml:space="preserve">
+    <value>按过帐序列，科目，和财务期间合并</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="ConsolidateByPostAccFiscSource" xml:space="preserve">
+    <value>按过帐序列，科目，财务期间，和来源合并</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Consolidation" xml:space="preserve">
+    <value>合并</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreatingandPostingNewBatch" xml:space="preserve">
+    <value>创建并过帐一个新批次</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreatingNewBatch" xml:space="preserve">
+    <value>创建一个新批次</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>贷项通知单</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借项通知单</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>折扣</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="DoNotConsolidate" xml:space="preserve">
+    <value>不合并</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="DuringPosting" xml:space="preserve">
+    <value>在过帐期间</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>示例</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>总帐明细备注</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>总帐明细描述</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>总帐明细参考</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>总帐分录描述</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLIntegrationDetail" xml:space="preserve">
+    <value>总帐整合明细</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GLSourceCodes" xml:space="preserve">
+    <value>总帐/来源代码</value>
+    <comment>Integration - Table Header</comment>
+  </data>
+  <data name="GLTransactionField" xml:space="preserve">
+    <value>总帐交易字段</value>
+    <comment>ReferenceIntegration - Field</comment>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>利息</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>发票</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="OnRequestGLBatch" xml:space="preserve">
+    <value>按请求使用《创建总帐批次》图标</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>付款</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="PaymentReversal" xml:space="preserve">
+    <value>付款回转</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>预付款</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Revaluation" xml:space="preserve">
+    <value>重估</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Rounding" xml:space="preserve">
+    <value>舍入</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="SegmentCurrentlyUsed" xml:space="preserve">
+    <value>当前使用的节段</value>
+    <comment>Detail Screen - Label</comment>
+  </data>
+  <data name="SegmentSeparator" xml:space="preserve">
+    <value>分隔符</value>
+    <comment>ReferenceIntegration - Field</comment>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>来源分类帐</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>来源类型</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="WarningApglrefInvalid" xml:space="preserve">
+    <value>无法合并交易类型&quot;{0}&quot;和总帐交易字段&quot;{1}&quot;。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AdjustmentPostingSequence" xml:space="preserve">
+    <value>调整过帐序列</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="ConsolidateGLBatches" xml:space="preserve">
+    <value>合并总帐批次</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreateGLTransactions" xml:space="preserve">
+    <value>创建总帐交易</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreateGLTransactionsBy" xml:space="preserve">
+    <value>创建总帐交易方式</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="InvoicePostingSequence" xml:space="preserve">
+    <value>发票过帐序列</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="OnRequestUsingCreateGOrLBatchIcon" xml:space="preserve">
+    <value>按请求使用《创建总帐批次》图标</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="RevaluationPostingSequence" xml:space="preserve">
+    <value>重估过帐序列</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>过帐序列</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="PostingSequenceNo" xml:space="preserve">
+    <value>过帐序列编号</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>系列编号</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>交易类型</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="BtnExclude" xml:space="preserve">
+    <value>排除</value>
+    <comment>GLIntegration-Detail Button Text</comment>
+  </data>
+  <data name="BtnInclude" xml:space="preserve">
+    <value>包括</value>
+    <comment>GLIntegration-Detail Button Text</comment>
+  </data>
+  <data name="TransactionGeneratedThrough" xml:space="preserve">
+    <value>总帐交易生成至</value>
+    <comment>Integration - Table Header Label</comment>
+  </data>
+  <data name="SourceTypeEmptyWarning" xml:space="preserve">
+    <value>总帐来源类型</value>
+    <comment>Source Type Empty Warining</comment>
+  </data>
+</root>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="AnnualSalesTarget" xml:space="preserve">
+    <value>Annual Sales Target</value>
+    <comment>Field</comment>
+  </data>
+  <data name="COMMBASE" xml:space="preserve">
+    <value>The commission amount for each commission rate must be greater than the commission amount for the previous rate.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Commission</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Count</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Deleting a salesperson may take a few minutes if you have a large customer list. Are you sure you want to delete this salesperson?</value>
+    <comment>Warning</comment>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R Salespersons</value>
+    <comment>Screen Name</comment>
+  </data>
+  <data name="Value5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Value4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NumberofCommissionRates" xml:space="preserve">
+    <value>Number of Commission Rates</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Value1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OnSalesof" xml:space="preserve">
+    <value>On Sales Of</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PaidCommissions" xml:space="preserve">
+    <value>Paid Commissions</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate %</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SalespersonCode" xml:space="preserve">
+    <value>Salesperson Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Value3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+    <comment>Table Value</comment>
+  </data>
+  <data name="TransactionTypes" xml:space="preserve">
+    <value>Transaction Types</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Value2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="YTDAmount" xml:space="preserve">
+    <value>YTD Amount</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="YTDCount" xml:space="preserve">
+    <value>YTD Count</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CommissionableSales" xml:space="preserve">
+    <value>Commissionable Sales</value>
+  </data>
+  <data name="CommissionRate1" xml:space="preserve">
+    <value>Commission Rate 1</value>
+  </data>
+  <data name="CommissionRate2" xml:space="preserve">
+    <value>Commission Rate 2</value>
+  </data>
+  <data name="CommissionRate3" xml:space="preserve">
+    <value>Commission Rate 3</value>
+  </data>
+  <data name="CommissionRate4" xml:space="preserve">
+    <value>Commission Rate 4</value>
+  </data>
+  <data name="CommissionRate5" xml:space="preserve">
+    <value>Commission Rate 5</value>
+  </data>
+  <data name="CommissionsPaid" xml:space="preserve">
+    <value>Commissions Paid</value>
+  </data>
+  <data name="CostofCommissionableSales" xml:space="preserve">
+    <value>Cost of Commissionable Sales</value>
+  </data>
+  <data name="DateLastCleared" xml:space="preserve">
+    <value>Date Last Cleared</value>
+  </data>
+  <data name="MaximumSalesforRate1" xml:space="preserve">
+    <value>Maximum Sales for Rate 1</value>
+  </data>
+  <data name="MaximumSalesforRate2" xml:space="preserve">
+    <value>Maximum Sales for Rate 2</value>
+  </data>
+  <data name="MaximumSalesforRate3" xml:space="preserve">
+    <value>Maximum Sales for Rate 3</value>
+  </data>
+  <data name="MaximumSalesforRate4" xml:space="preserve">
+    <value>Maximum Sales for Rate 4</value>
+  </data>
+  <data name="CannotExceedCommissionRateMessage" xml:space="preserve">
+    <value>Commission rate cannot exceed 100 percent.</value>
+  </data>
+  <data name="AR0018" xml:space="preserve">
+    <value>Salespersons</value>
+  </data>
+  <data name="AR0030" xml:space="preserve">
+    <value>Salesperson Statistics</value>
+  </data>
+  <data name="EnableYtdCalculations" xml:space="preserve">
+    <value>Enable YTD Calculations</value>
+  </data>
+  <data name="NumberofCreditNotes" xml:space="preserve">
+    <value>Number of Credit Notes</value>
+  </data>
+  <data name="NumberofDebitNotes" xml:space="preserve">
+    <value>Number of Debit Notes</value>
+  </data>
+  <data name="NumberofDiscounts" xml:space="preserve">
+    <value>Number of Discounts</value>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Number of Invoices</value>
+  </data>
+  <data name="NumberofReceipts" xml:space="preserve">
+    <value>Number of Receipts</value>
+  </data>
+  <data name="NumberofWriteOffs" xml:space="preserve">
+    <value>Number of Write-Offs</value>
+  </data>
+  <data name="TotalCreditNoteAmount" xml:space="preserve">
+    <value>Total Credit Note Amount</value>
+  </data>
+  <data name="TotalDebitNoteAmount" xml:space="preserve">
+    <value>Total Debit Note Amount</value>
+  </data>
+  <data name="TotalDiscountAmount" xml:space="preserve">
+    <value>Total Discount Amount</value>
+  </data>
+  <data name="TotalInvoiceAmount" xml:space="preserve">
+    <value>Total Invoice Amount</value>
+  </data>
+  <data name="TotalReceiptAmount" xml:space="preserve">
+    <value>Total Receipt Amount</value>
+  </data>
+  <data name="TotalWriteOffAmount" xml:space="preserve">
+    <value>Total Write-Off Amount</value>
+  </data>
+  <data name="YtdNumberofCreditNotes" xml:space="preserve">
+    <value>YTD Number of Credit Notes</value>
+  </data>
+  <data name="YtdNumberofDiscounts" xml:space="preserve">
+    <value>YTD Number of Discounts</value>
+  </data>
+  <data name="YtdNumberofInvoices" xml:space="preserve">
+    <value>YTD Number of Invoices</value>
+  </data>
+  <data name="YtdNumberofReceipts" xml:space="preserve">
+    <value>YTD Number of Receipts</value>
+  </data>
+  <data name="YtdNumberofWriteOffs" xml:space="preserve">
+    <value>YTD Number of Write-Offs</value>
+  </data>
+  <data name="YtdTotalCreditNoteAmount" xml:space="preserve">
+    <value>YTD Total Credit Note Amount</value>
+  </data>
+  <data name="YtdTotalDebitNoteAmount" xml:space="preserve">
+    <value>YTD Total Debit Note Amount</value>
+  </data>
+  <data name="YtdTotalDiscountAmount" xml:space="preserve">
+    <value>YTD Total Discount Amount</value>
+  </data>
+  <data name="YtdTotalInvoiceAmount" xml:space="preserve">
+    <value>YTD Total Invoice Amount</value>
+  </data>
+  <data name="YtdTotalReceiptAmount" xml:space="preserve">
+    <value>YTD Total Receipt Amount</value>
+  </data>
+  <data name="YtdTotalWriteOffAmount" xml:space="preserve">
+    <value>YTD Total Write Off Amount</value>
+  </data>
+  <data name="YtdNumberofDebitNotes" xml:space="preserve">
+    <value>YTD Number of Debit Notes</value>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>Period {0} is invalid.</value>
+  </data>
+</root>

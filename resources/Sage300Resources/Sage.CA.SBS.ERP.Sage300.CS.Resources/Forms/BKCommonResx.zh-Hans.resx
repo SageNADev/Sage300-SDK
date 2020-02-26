@@ -1,0 +1,2281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alignment" xml:space="preserve">
+    <value>对齐</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>应用程序</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>银行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BankFLD" xml:space="preserve">
+    <value>银行代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BKDCI2DCNumberCap" xml:space="preserve">
+    <value>从存款编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BklibErrorSPREAD" xml:space="preserve">
+    <value>输入的金额超出为该银行科目定义的分布范围。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BKTFRHDsamountCap" xml:space="preserve">
+    <value>存入金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtchnbrFLD" xml:space="preserve">
+    <value>批次编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnCalculateCap" xml:space="preserve">
+    <value>计算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalcTaxes" xml:space="preserve">
+    <value>计算税费</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckAmount" xml:space="preserve">
+    <value>支票金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckNumber" xml:space="preserve">
+    <value>支票编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckStockInUse" xml:space="preserve">
+    <value>支票簿</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ChkformFLD" xml:space="preserve">
+    <value>支票簿代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ChkInTrans" xml:space="preserve">
+    <value>未结清提款剩余</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ChkrevincFLD" xml:space="preserve">
+    <value>回转发票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearAllPrintedJournals" xml:space="preserve">
+    <value>清除所有已打印的日志</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Cleared" xml:space="preserve">
+    <value>已清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearedamountNotEqual" xml:space="preserve">
+    <value>合计已清算收款金额不等于已清算存款金额。是否将已清算存款金额设为{0}？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearedWithBankError" xml:space="preserve">
+    <value>已容差清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearedWithCreditCardCharges" xml:space="preserve">
+    <value>已含信用卡收费清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearedWithExchangeRateDifference" xml:space="preserve">
+    <value>已含汇差清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearedWithWriteOff" xml:space="preserve">
+    <value>已含冲销清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CloseBracket" xml:space="preserve">
+    <value>]</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClrAmount" xml:space="preserve">
+    <value>调节已清算金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CmdRatesCap" xml:space="preserve">
+    <value>汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ColAUTHDESC" xml:space="preserve">
+    <value>税务机构描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ColITEMCLASDSC" xml:space="preserve">
+    <value>货品税级描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ColVENDORCLSDSC" xml:space="preserve">
+    <value>供应商税级描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Continuation" xml:space="preserve">
+    <value>延续</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurfuncFLD" xml:space="preserve">
+    <value>功能币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurstmtFLD" xml:space="preserve">
+    <value>对帐单币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DateremitFLD" xml:space="preserve">
+    <value>交易日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultReconciliation" xml:space="preserve">
+    <value>默认调节</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>已删除</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepamtFLD" xml:space="preserve">
+    <value>功能币种收款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepClrAmount" xml:space="preserve">
+    <value>调节已清算金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepcommentFLD" xml:space="preserve">
+    <value>存款描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepdateFLD" xml:space="preserve">
+    <value>存款日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepdcommentFLD" xml:space="preserve">
+    <value>交易描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepDetail" xml:space="preserve">
+    <value>明细...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepdreferenceFLD" xml:space="preserve">
+    <value>交易参考</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepdstatusFLD" xml:space="preserve">
+    <value>收款状态</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepInTrans" xml:space="preserve">
+    <value>仍然在途的存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepInTransAmt" xml:space="preserve">
+    <value>在途金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepositFLD" xml:space="preserve">
+    <value>存款编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Deposits" xml:space="preserve">
+    <value>存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeprecclearedFLD" xml:space="preserve">
+    <value>调节已清算金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepreccommentFLD" xml:space="preserve">
+    <value>默认调节描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeprecdateFLD" xml:space="preserve">
+    <value>默认调节日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeprecpendingFLD" xml:space="preserve">
+    <value>剩余在途金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeprecstatusFLD" xml:space="preserve">
+    <value>默认调节状态</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepreferenceFLD" xml:space="preserve">
+    <value>存款参考</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeprevincFLD" xml:space="preserve">
+    <value>退回发票</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepsrcecurnFLD" xml:space="preserve">
+    <value>收款币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DepTot" xml:space="preserve">
+    <value>存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeriveTaxRate" xml:space="preserve">
+    <value>得出汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EndingValueNonNeg" xml:space="preserve">
+    <value>截止值不能为负数。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntAmtcrFLD" xml:space="preserve">
+    <value>贷项金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntAmtdrFLD" xml:space="preserve">
+    <value>借项金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntBigcommentFLD" xml:space="preserve">
+    <value>备注</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntCommentFLD" xml:space="preserve">
+    <value>描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntDateFLD" xml:space="preserve">
+    <value>银行分录日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>银行服务</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntReferenceFLD" xml:space="preserve">
+    <value>参考</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntriesTABCap" xml:space="preserve">
+    <value>数目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntrynbrFLD" xml:space="preserve">
+    <value>分录编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntSrceatcrFLD" xml:space="preserve">
+    <value>来源币种贷方金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntSrcecamtdrFLD" xml:space="preserve">
+    <value>来源币种借方金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntTranstypeFLD" xml:space="preserve">
+    <value>银行分录类型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromBank" xml:space="preserve">
+    <value>从银行代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromCheckNumber" xml:space="preserve">
+    <value>从提款编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>从过帐序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FscperiodFLD" xml:space="preserve">
+    <value>财务期间</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FscyearFLD" xml:space="preserve">
+    <value>财务年度</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FuncDepTot" xml:space="preserve">
+    <value>功能币种存款合计</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GlaccountdFLD" xml:space="preserve">
+    <value>总帐科目描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GlaccountFLD" xml:space="preserve">
+    <value>总帐科目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GrdBKTFRHColAcctdescCap" xml:space="preserve">
+    <value>科目描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IEExportTxt" xml:space="preserve">
+    <value>导出</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IEImpOFXTxt" xml:space="preserve">
+    <value>下载的银行对帐单</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IEImportTxt" xml:space="preserve">
+    <value>导入</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IETransactTxt" xml:space="preserve">
+    <value>交易</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeTaxInfo" xml:space="preserve">
+    <value>包括税务信息</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IntErrInvIEChoice" xml:space="preserve">
+    <value>{0}是一个无效的导入/导出选择。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InTransit" xml:space="preserve">
+    <value>在途</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidReportName" xml:space="preserve">
+    <value>输入一个有效的Crystal报表文件的名称，或浏览选择要使用的文件。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemTaxClss" xml:space="preserve">
+    <value>货品税级</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblAdjbaldiffCap" xml:space="preserve">
+    <value>差额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblAdjbookbalCap" xml:space="preserve">
+    <value>调整后帐面余额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblAdjstmtbalCap" xml:space="preserve">
+    <value>调整后对帐单余额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblAllCap" xml:space="preserve">
+    <value>所有</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblAmountCap" xml:space="preserve">
+    <value>金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblBankAmountCap" xml:space="preserve">
+    <value>银行金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblClearAmtCap" xml:space="preserve">
+    <value>已清算金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblClearDepositCap" xml:space="preserve">
+    <value>已清算存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblClearedTransCap" xml:space="preserve">
+    <value>已清算交易</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblClearPaymentCap" xml:space="preserve">
+    <value>已清算的提款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblDepositCap" xml:space="preserve">
+    <value>存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblDisplayCap" xml:space="preserve">
+    <value>显示</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblDocDateCap" xml:space="preserve">
+    <value>凭证日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblExchangeGainCap" xml:space="preserve">
+    <value>汇兑收益</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblExchangeLossCap" xml:space="preserve">
+    <value>汇兑损失</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblMiscCap" xml:space="preserve">
+    <value>银行分录…</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblMiscEntriesCap" xml:space="preserve">
+    <value>银行分录</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblNumberCap" xml:space="preserve">
+    <value>编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblPaymentCap" xml:space="preserve">
+    <value>付款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblQuickClearCap" xml:space="preserve">
+    <value>快速清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecbkentCap" xml:space="preserve">
+    <value>未过帐银行分录</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecbkerrCap" xml:space="preserve">
+    <value>冲销</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecbkerrpnCap" xml:space="preserve">
+    <value>银行误差</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecbookbalCap" xml:space="preserve">
+    <value>帐面余额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblReccommentCap" xml:space="preserve">
+    <value>调节描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecdperrCap" xml:space="preserve">
+    <value>存款银行误差</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecfcchkosCap" xml:space="preserve">
+    <value>未结清提款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecfcdepitCap" xml:space="preserve">
+    <value>未结清存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecpcccCap" xml:space="preserve">
+    <value>信用卡收费</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblRecwperrCap" xml:space="preserve">
+    <value>提款银行误差</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblServiceChargesCap" xml:space="preserve">
+    <value>服务收费</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblStatusCap" xml:space="preserve">
+    <value>状态...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblstmtbalCap" xml:space="preserve">
+    <value>对帐单余额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblTransNumCap" xml:space="preserve">
+    <value>交易编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblTransTypeCap" xml:space="preserve">
+    <value>交易类型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblVarianceCap" xml:space="preserve">
+    <value>差异</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LineFLD" xml:space="preserve">
+    <value>存款明细行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LinesjourFLD" xml:space="preserve">
+    <value>行已日志</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LinespurFLD" xml:space="preserve">
+    <value>已清除的行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MenuSettingCap" xml:space="preserve">
+    <value>设置</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MenuSettingClearCap" xml:space="preserve">
+    <value>清除保存的设置</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoBankCodeExport" xml:space="preserve">
+    <value>您必须指定从其导出交易的银行。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoBankCodeImport" xml:space="preserve">
+    <value>您必须选择一个银行来接收导入的交易。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NonNegotiable" xml:space="preserve">
+    <value>不可议付</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoOFXRecDate" xml:space="preserve">
+    <value>调节OFX交易之前您必须输入调节日期。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoStmRecDates" xml:space="preserve">
+    <value>输入调节信息之前您必须输入对帐单和调节过帐日期。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotPosted" xml:space="preserve">
+    <value>未过帐</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NsfRecstatusFLD" xml:space="preserve">
+    <value>调节状态</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NsfTransamountFLD" xml:space="preserve">
+    <value>交易金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NxtlineFLD" xml:space="preserve">
+    <value>下一存款明细行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OFXTrxs" xml:space="preserve">
+    <value>已下载OFX交易的清单</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenBracket" xml:space="preserve">
+    <value>[</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenReportFile" xml:space="preserve">
+    <value>打开报表文件</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>未结清</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OutstdAmt" xml:space="preserve">
+    <value>未结清金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayeeidFLD" xml:space="preserve">
+    <value>收款者代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayeenameFLD" xml:space="preserve">
+    <value>收款者名称</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayoridFLD" xml:space="preserve">
+    <value>付款者代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayornameFLD" xml:space="preserve">
+    <value>付款者名称</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFDepDetail" xml:space="preserve">
+    <value>存款明细</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHDfamountCap" xml:space="preserve">
+    <value>功能币种存款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHDsamountCap" xml:space="preserve">
+    <value>存款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHOfamountCap" xml:space="preserve">
+    <value>功能币种转帐金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHOrateCap" xml:space="preserve">
+    <value>汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHOratetypeCap" xml:space="preserve">
+    <value>汇率类型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHTrateCap" xml:space="preserve">
+    <value>按</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKTFRHTrateopCap" xml:space="preserve">
+    <value>转帐 - 存款转换</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRFrmCapTFRH" xml:space="preserve">
+    <value>银行转帐汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRLblFromRateCap" xml:space="preserve">
+    <value>从银行汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRLblToRateCap" xml:space="preserve">
+    <value>到银行汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PopBtnDocument" xml:space="preserve">
+    <value>凭证...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>过帐</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostBANK" xml:space="preserve">
+    <value>发生一个问题，无法完成银行{0}的过帐。请再次过帐调节修复问题。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostdateFLD" xml:space="preserve">
+    <value>过帐日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Postingdate1FLD" xml:space="preserve">
+    <value>过帐日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingdateFLD" xml:space="preserve">
+    <value>调节过帐日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingError" xml:space="preserve">
+    <value>过帐错误</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostMsg" xml:space="preserve">
+    <value>当前的转帐尚未过帐。是否过帐转帐？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostseqFLD" xml:space="preserve">
+    <value>过帐序列编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintDepositDetails" xml:space="preserve">
+    <value>打印存款明细</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>已打印</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintedFLD" xml:space="preserve">
+    <value>存款单已打印</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintEntryTaxInfo" xml:space="preserve">
+    <value>打印分录税务信息</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintGLSummary" xml:space="preserve">
+    <value>打印总帐汇总</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RatecomboWARNING" xml:space="preserve">
+    <value>币种汇率表没有为来源币种代码{0}，汇率类型{1}，和汇率日期{2}定义的相符的汇率。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RatedateFLD" xml:space="preserve">
+    <value>汇率日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateFLD" xml:space="preserve">
+    <value>汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateopFLD" xml:space="preserve">
+    <value>汇率运算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RatespreadFLD" xml:space="preserve">
+    <value>汇率差额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RatetypeFLD" xml:space="preserve">
+    <value>汇率类型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecclearedFLD" xml:space="preserve">
+    <value>调节已清算金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReccommentFLD" xml:space="preserve">
+    <value>调节描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecdateFLD" xml:space="preserve">
+    <value>调节日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecdeltaFLD" xml:space="preserve">
+    <value>调节金额 Delta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecdepositFLD" xml:space="preserve">
+    <value>存款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecerrFLD" xml:space="preserve">
+    <value>调节错误</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecerrpendFLD" xml:space="preserve">
+    <value>调节错误待处理</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecexgainFLD" xml:space="preserve">
+    <value>调节汇兑收益</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecexlossFLD" xml:space="preserve">
+    <value>调节汇兑损失</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecfclrFLD" xml:space="preserve">
+    <value>在未来期间清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecfuncamtFLD" xml:space="preserve">
+    <value>功能币种存款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Reconcile" xml:space="preserve">
+    <value>调节</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReconciledFLD" xml:space="preserve">
+    <value>已调节</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReconciliationDate" xml:space="preserve">
+    <value>默认调节日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecoutstndFLD" xml:space="preserve">
+    <value>未结清金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecperiodFLD" xml:space="preserve">
+    <value>调节期间</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecrclrFLD" xml:space="preserve">
+    <value>在当前期间清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecstatchgFLD" xml:space="preserve">
+    <value>状态更改日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecstatusFLD" xml:space="preserve">
+    <value>调节状态</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecsuggestFLD" xml:space="preserve">
+    <value>调节建议</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RectargetFLD" xml:space="preserve">
+    <value>调节目标</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecyearFLD" xml:space="preserve">
+    <value>调节年度</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportExt" xml:space="preserve">
+    <value>选择一个RPT文件。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportFilter" xml:space="preserve">
+    <value>Crystal Reports (*.RPT)|*.RPT|所有文件 (*.*)|*.*||</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReprintPreviouslyPrintedJournals" xml:space="preserve">
+    <value>重新打印已打印的日志</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>已退回</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReturnsTABCap" xml:space="preserve">
+    <value>退货</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>已回转</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SameTDBanks" xml:space="preserve">
+    <value>转帐和存款银行相同。是否仍然过帐转帐？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SdepamtFLD" xml:space="preserve">
+    <value>收款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerialFLD" xml:space="preserve">
+    <value>系列编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SissuedFLD" xml:space="preserve">
+    <value>提款金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序按</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SrceappFLD" xml:space="preserve">
+    <value>来源应用程序</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SrcecurnFLD" xml:space="preserve">
+    <value>退款币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StatusRecByDepDet" xml:space="preserve">
+    <value>按已调节明细调节</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SummaryFLD" xml:space="preserve">
+    <value>存款已在汇总中记录</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SummaryTABCap" xml:space="preserve">
+    <value>汇总</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Taxable" xml:space="preserve">
+    <value>应税</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>税额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxAuth" xml:space="preserve">
+    <value>税务机构</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>税基</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxBaseCalc" xml:space="preserve">
+    <value>计算税基</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxCalcAmount" xml:space="preserve">
+    <value>计算税额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxCurn" xml:space="preserve">
+    <value>币种代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxExcluded" xml:space="preserve">
+    <value>未含税</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxGrossAmt" xml:space="preserve">
+    <value>毛分配税额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>税组</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxInclude" xml:space="preserve">
+    <value>已含税</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxNet" xml:space="preserve">
+    <value>税后净额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxPopUp" xml:space="preserve">
+    <value>税费</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxRate" xml:space="preserve">
+    <value>汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxRateDate" xml:space="preserve">
+    <value>汇率日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxRateType" xml:space="preserve">
+    <value>汇率类型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxRCAmount" xml:space="preserve">
+    <value>税务报告金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxRCCurFrm" xml:space="preserve">
+    <value>税务报告币种汇率</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReptCalc" xml:space="preserve">
+    <value>计算税务报告币种</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxTotal" xml:space="preserve">
+    <value>合计税费</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxTotalRC" xml:space="preserve">
+    <value>税务报告合计</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToBank" xml:space="preserve">
+    <value>到银行代码</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToclearfFLD" xml:space="preserve">
+    <value>在未来期间清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToclearFLD" xml:space="preserve">
+    <value>要清算的金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToclearrFLD" xml:space="preserve">
+    <value>在当前期间清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>到过帐序列</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>合计</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotclearedFLD" xml:space="preserve">
+    <value>合计清算</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotdepositFLD" xml:space="preserve">
+    <value>存款合计</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotfuncamtFLD" xml:space="preserve">
+    <value>功能币种存款财务</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TottransitFLD" xml:space="preserve">
+    <value>仍然在途的存款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransferAmount" xml:space="preserve">
+    <value>转帐金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransferDate" xml:space="preserve">
+    <value>转移日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransYearPeriod" xml:space="preserve">
+    <value>年度/期间</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TtypedFLD" xml:space="preserve">
+    <value>交易类型描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendornameFLD" xml:space="preserve">
+    <value>供应商名称</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VenTaxClss" xml:space="preserve">
+    <value>供应商税级</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Void" xml:space="preserve">
+    <value>作废</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Withdrawals" xml:space="preserve">
+    <value>提款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WOAmount" xml:space="preserve">
+    <value>冲销金额</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WomethodFLD" xml:space="preserve">
+    <value>冲销方法</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ZeroTransfer" xml:space="preserve">
+    <value>转帐和存款金额其中之一或二者均为零。是否仍然过帐转帐？</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>地址行1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>地址行2</value>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>地址行3</value>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>地址行4</value>
+  </data>
+  <data name="BankAccount" xml:space="preserve">
+    <value>银行帐户</value>
+  </data>
+  <data name="BankAccountNumber" xml:space="preserve">
+    <value>银行科目编号</value>
+  </data>
+  <data name="Banks" xml:space="preserve">
+    <value>银行</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>市/县</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>联系人</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>国家</value>
+  </data>
+  <data name="CreditCardChargesAccount" xml:space="preserve">
+    <value>信用卡收费科目</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>凭证类型</value>
+  </data>
+  <data name="LastReconciliationDate" xml:space="preserve">
+    <value>上一调节日期</value>
+  </data>
+  <data name="ErrorSpread" xml:space="preserve">
+    <value>误差范围</value>
+  </data>
+  <data name="TransitNumber" xml:space="preserve">
+    <value>分行编号</value>
+  </data>
+  <data name="WOAccount" xml:space="preserve">
+    <value>冲销科目</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>税组描述</value>
+  </data>
+  <data name="NextCheckNumber" xml:space="preserve">
+    <value>下一支票编号</value>
+  </data>
+  <data name="AdviceForm" xml:space="preserve">
+    <value>通知表格</value>
+  </data>
+  <data name="AdviceLinesPerPage" xml:space="preserve">
+    <value>通知每页行数</value>
+  </data>
+  <data name="CheckForm" xml:space="preserve">
+    <value>支票表格</value>
+  </data>
+  <data name="StockType" xml:space="preserve">
+    <value>支票簿类型</value>
+  </data>
+  <data name="CheckRateType" xml:space="preserve">
+    <value>支票汇率类型</value>
+  </data>
+  <data name="BankErrorPendingToFiscalPer" xml:space="preserve">
+    <value>对财务期间待处理的银行误差</value>
+  </data>
+  <data name="BankErrorToFiscalPeriod" xml:space="preserve">
+    <value>银行误差到财务期间</value>
+  </data>
+  <data name="BankReconciliationBalanced" xml:space="preserve">
+    <value>银行调节已平衡</value>
+  </data>
+  <data name="BankStatementType" xml:space="preserve">
+    <value>银行对帐单类型</value>
+  </data>
+  <data name="CalculateFiscalPeriodData" xml:space="preserve">
+    <value>†计算财务期间数据</value>
+  </data>
+  <data name="ChecksOutstanding" xml:space="preserve">
+    <value>未结清支票</value>
+  </data>
+  <data name="ChecksOutstandingToFiscPer" xml:space="preserve">
+    <value>对财务期间未结清的支票</value>
+  </data>
+  <data name="ChecksToFiscalPeriod" xml:space="preserve">
+    <value>支票到财务期间</value>
+  </data>
+  <data name="CreditCardChargeSpread" xml:space="preserve">
+    <value>信用卡收费误差范围</value>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>当前余额</value>
+  </data>
+  <data name="DepositClearedwithExchangeRa" xml:space="preserve">
+    <value>存款已含汇差清算</value>
+  </data>
+  <data name="DepositFunctionalTotal" xml:space="preserve">
+    <value>存款功能币种合计</value>
+  </data>
+  <data name="DepositsinTransit" xml:space="preserve">
+    <value>存款在途</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>除</value>
+  </data>
+  <data name="DepositsInTransitToFiscPer" xml:space="preserve">
+    <value>存款在途到财务期间</value>
+  </data>
+  <data name="DepositsToFiscalPeriod" xml:space="preserve">
+    <value>存款到财务期间</value>
+  </data>
+  <data name="DepositTotal" xml:space="preserve">
+    <value>存款合计</value>
+  </data>
+  <data name="ExchangeGainAccount" xml:space="preserve">
+    <value>汇兑收益科目</value>
+  </data>
+  <data name="DifferenceofBankEntriesToFi" xml:space="preserve">
+    <value>银行分录的差异到财务期间</value>
+  </data>
+  <data name="ExchangeGain" xml:space="preserve">
+    <value>汇兑收益</value>
+  </data>
+  <data name="ExchangeLossAccount" xml:space="preserve">
+    <value>汇兑损失科目</value>
+  </data>
+  <data name="ExchangeGainToFiscalPeriod" xml:space="preserve">
+    <value>汇兑收益到财务期间</value>
+  </data>
+  <data name="ExchangeLoss" xml:space="preserve">
+    <value>汇兑损失</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>乘</value>
+  </data>
+  <data name="ExchangeLossToFiscalPeriod" xml:space="preserve">
+    <value>汇兑损失到财务期间</value>
+  </data>
+  <data name="ExchangeRateDifferenceSpread" xml:space="preserve">
+    <value>汇率差异分布范围</value>
+  </data>
+  <data name="FiscalDepositBankErrors" xml:space="preserve">
+    <value>财务存款银行误差</value>
+  </data>
+  <data name="FiscalDepositCleared" xml:space="preserve">
+    <value>财务存款已清算</value>
+  </data>
+  <data name="FiscalDepositClearedToCurren" xml:space="preserve">
+    <value>财务存款已清算到币种</value>
+  </data>
+  <data name="FiscalDepositClearedToFuture" xml:space="preserve">
+    <value>财务存款已清算到未来</value>
+  </data>
+  <data name="FiscalDepositCreditCardCharge" xml:space="preserve">
+    <value>财务存款信用卡收费</value>
+  </data>
+  <data name="FiscalDepositExchangeGain" xml:space="preserve">
+    <value>财务存款汇兑收益</value>
+  </data>
+  <data name="FiscalDepositExchangeLoss" xml:space="preserve">
+    <value>财务存款汇兑损失</value>
+  </data>
+  <data name="FiscalDepositFunctionalTotal" xml:space="preserve">
+    <value>财务存款功能币种合计</value>
+  </data>
+  <data name="FiscalDepositTotal" xml:space="preserve">
+    <value>财务存款财务</value>
+  </data>
+  <data name="FiscalDepositWriteOffs" xml:space="preserve">
+    <value>财务存款冲销</value>
+  </data>
+  <data name="FiscalPeriodCreditCardCharge" xml:space="preserve">
+    <value>财务期间信用卡收费</value>
+  </data>
+  <data name="FiscalPeriodWriteOff" xml:space="preserve">
+    <value>财务期间冲销</value>
+  </data>
+  <data name="FiscalRemainingInTransit" xml:space="preserve">
+    <value>财务剩余在途</value>
+  </data>
+  <data name="FiscalRemainingOutStanding" xml:space="preserve">
+    <value>财务剩余未结清</value>
+  </data>
+  <data name="FiscalWithdrawalBankErrors" xml:space="preserve">
+    <value>财务提款银行误差</value>
+  </data>
+  <data name="FiscalWithdrawalCleared" xml:space="preserve">
+    <value>已清算财务提款</value>
+  </data>
+  <data name="FiscalWithdrawalClearedToCur" xml:space="preserve">
+    <value>财务提款已清算到币种</value>
+  </data>
+  <data name="FiscalWithdrawalClearedToFuture" xml:space="preserve">
+    <value>财务提款已清算到未来</value>
+  </data>
+  <data name="FiscalWithdrawalCreditCardChange" xml:space="preserve">
+    <value>财务提款信用卡收费</value>
+  </data>
+  <data name="FiscalWithdrawalExchangeGain" xml:space="preserve">
+    <value>财务提款汇兑收益</value>
+  </data>
+  <data name="FiscalWithdrawalExchangeLoss" xml:space="preserve">
+    <value>财务提款汇兑损失</value>
+  </data>
+  <data name="FiscalWithdrawalFunctionalTot" xml:space="preserve">
+    <value>财务提款功能币种合计</value>
+  </data>
+  <data name="FiscalWithdrawalTotal" xml:space="preserve">
+    <value>财务提款合计</value>
+  </data>
+  <data name="FiscalWithdrawalWriteOffs" xml:space="preserve">
+    <value>财务提款合计</value>
+  </data>
+  <data name="LastAvailableStatementBalance" xml:space="preserve">
+    <value>上一可用对帐单余额</value>
+  </data>
+  <data name="LastReconciliationPeriod" xml:space="preserve">
+    <value>上一调节期间</value>
+  </data>
+  <data name="LastReconciliationYear" xml:space="preserve">
+    <value>上一调节年度</value>
+  </data>
+  <data name="LastStatementDate" xml:space="preserve">
+    <value>上一对帐单日期</value>
+  </data>
+  <data name="NextCheckSerialNumber" xml:space="preserve">
+    <value>下一支票系列编号</value>
+  </data>
+  <data name="NextDepositSlipNumber" xml:space="preserve">
+    <value>下一存款单编号</value>
+  </data>
+  <data name="NextDepositUniquifier" xml:space="preserve">
+    <value>下一存款唯一标识符</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>下一系列编号</value>
+  </data>
+  <data name="StatementDate" xml:space="preserve">
+    <value>对帐单日期</value>
+  </data>
+  <data name="SumofDepositFiscalWriteOffs" xml:space="preserve">
+    <value>存款财务冲销的总计</value>
+  </data>
+  <data name="SumofDepositTotalWriteOffs" xml:space="preserve">
+    <value>存款合计冲销的总计</value>
+  </data>
+  <data name="SumofWithdrawalFiscalWriteO" xml:space="preserve">
+    <value>提款财务冲销的总计</value>
+  </data>
+  <data name="SumofWithdrawalTotalWriteOf" xml:space="preserve">
+    <value>提款合计冲销的总计</value>
+  </data>
+  <data name="TaxAuthorization1" xml:space="preserve">
+    <value>税务机构1</value>
+  </data>
+  <data name="TaxAuthorization2" xml:space="preserve">
+    <value>税务机构2</value>
+  </data>
+  <data name="TaxAuthorization3" xml:space="preserve">
+    <value>税务机构3</value>
+  </data>
+  <data name="TaxAuthorization4" xml:space="preserve">
+    <value>税务机构4</value>
+  </data>
+  <data name="TaxAuthorization5" xml:space="preserve">
+    <value>税务机构5</value>
+  </data>
+  <data name="TaxAuthorizationDescription1" xml:space="preserve">
+    <value>税务机构描述1</value>
+  </data>
+  <data name="TaxAuthorizationDescription2" xml:space="preserve">
+    <value>税务机构描述2</value>
+  </data>
+  <data name="TaxAuthorizationDescription3" xml:space="preserve">
+    <value>税务机构描述3</value>
+  </data>
+  <data name="TaxAuthorizationDescription4" xml:space="preserve">
+    <value>税务机构描述4</value>
+  </data>
+  <data name="TaxAuthorizationDescription5" xml:space="preserve">
+    <value>税务机构描述5</value>
+  </data>
+  <data name="TaxGroupCode" xml:space="preserve">
+    <value>税组代码</value>
+  </data>
+  <data name="TotalChecks" xml:space="preserve">
+    <value>合计支票</value>
+  </data>
+  <data name="TotalCreditCardCharges" xml:space="preserve">
+    <value>合计信用卡收费</value>
+  </data>
+  <data name="TotalDepositBankErrors" xml:space="preserve">
+    <value>合计存款银行误差</value>
+  </data>
+  <data name="TotalDepositCleared" xml:space="preserve">
+    <value>合计已清算存款</value>
+  </data>
+  <data name="TotalDepositCreditCardCharge" xml:space="preserve">
+    <value>合计存款信用卡收费</value>
+  </data>
+  <data name="TotalDepositExchangeGain" xml:space="preserve">
+    <value>合计存款汇兑收益</value>
+  </data>
+  <data name="TotalDepositExchangeLoss" xml:space="preserve">
+    <value>合计存款汇兑损失</value>
+  </data>
+  <data name="TotalDeposits" xml:space="preserve">
+    <value>合计存款</value>
+  </data>
+  <data name="RoundingAccount" xml:space="preserve">
+    <value>舍入科目</value>
+  </data>
+  <data name="TotalDepositWriteOffs" xml:space="preserve">
+    <value>合计存款冲销</value>
+  </data>
+  <data name="TotalNotPostedBankEntries" xml:space="preserve">
+    <value>合计未过帐银行分录</value>
+  </data>
+  <data name="TotalNotPostedBankEntriesTo" xml:space="preserve">
+    <value>合计未过帐银行分录到</value>
+  </data>
+  <data name="TotalRemainingInTransit" xml:space="preserve">
+    <value>合计仍然在途</value>
+  </data>
+  <data name="TotalRemainingOutStanding" xml:space="preserve">
+    <value>财务仍然未结清</value>
+  </data>
+  <data name="TotalWithdrawalBankErrors" xml:space="preserve">
+    <value>合计提款银行误差</value>
+  </data>
+  <data name="TotalWithdrawalCleared" xml:space="preserve">
+    <value>合计已清算提款</value>
+  </data>
+  <data name="TotalWithdrawalCreditCardChange" xml:space="preserve">
+    <value>合计提款信用卡收费</value>
+  </data>
+  <data name="TotalWithdrawalExchangeGain" xml:space="preserve">
+    <value>合计提款汇兑收益</value>
+  </data>
+  <data name="TotalWithdrawalExchangeLoss" xml:space="preserve">
+    <value>合计提款汇兑损失</value>
+  </data>
+  <data name="TotalWithdrawalWriteOffs" xml:space="preserve">
+    <value>合计提款冲销</value>
+  </data>
+  <data name="TotalWriteOffs" xml:space="preserve">
+    <value>合计冲销</value>
+  </data>
+  <data name="VendorTaxClass1" xml:space="preserve">
+    <value>供应商税级1</value>
+  </data>
+  <data name="VendorTaxClass2" xml:space="preserve">
+    <value>供应商税级2</value>
+  </data>
+  <data name="VendorTaxClass3" xml:space="preserve">
+    <value>供应商税级3</value>
+  </data>
+  <data name="VendorTaxClass4" xml:space="preserve">
+    <value>供应商税级4</value>
+  </data>
+  <data name="VendorTaxClass5" xml:space="preserve">
+    <value>供应商税级5</value>
+  </data>
+  <data name="VendorTaxClassDescription1" xml:space="preserve">
+    <value>供应商税级描述1</value>
+  </data>
+  <data name="VendorTaxClassDescription2" xml:space="preserve">
+    <value>供应商税级描述2</value>
+  </data>
+  <data name="VendorTaxClassDescription3" xml:space="preserve">
+    <value>供应商税级描述3</value>
+  </data>
+  <data name="VendorTaxClassDescription4" xml:space="preserve">
+    <value>供应商税级描述4</value>
+  </data>
+  <data name="VendorTaxClassDescription5" xml:space="preserve">
+    <value>供应商税级描述5</value>
+  </data>
+  <data name="WithdrawalFunctionalTotal" xml:space="preserve">
+    <value>提款功能币种合计</value>
+  </data>
+  <data name="WithdrawalsClearedwithExchR" xml:space="preserve">
+    <value>提款已含汇差清算</value>
+  </data>
+  <data name="WithdrawalTotal" xml:space="preserve">
+    <value>提款合计</value>
+  </data>
+  <data name="WriteOffs" xml:space="preserve">
+    <value>冲销</value>
+  </data>
+  <data name="BankEntryHeader" xml:space="preserve">
+    <value>银行分录标头</value>
+  </data>
+  <data name="DepositRateType" xml:space="preserve">
+    <value>存款汇率类型</value>
+  </data>
+  <data name="LastClosingStatementBalance" xml:space="preserve">
+    <value>上一对帐单期末余额</value>
+  </data>
+  <data name="Fiscalbalancesareuptodate" xml:space="preserve">
+    <value>财务余额为最新。</value>
+  </data>
+  <data name="Fiscalbalancesneedtoberecalculated" xml:space="preserve">
+    <value>必须重新计算财务余额。</value>
+  </data>
+  <data name="BankPostingJournal" xml:space="preserve">
+    <value>银行过帐日志</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>现金</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>支票</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>信用卡</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>转帐</value>
+  </data>
+  <data name="DistCode1" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="DistCode1Desc" xml:space="preserve">
+    <value>分布代码描述</value>
+  </data>
+  <data name="GLAccountDesc" xml:space="preserve">
+    <value>总帐科目描述</value>
+  </data>
+  <data name="BankSequence" xml:space="preserve">
+    <value>银行序列</value>
+  </data>
+  <data name="ConsolidateGorLBatches" xml:space="preserve">
+    <value>合并总帐批次</value>
+  </data>
+  <data name="CreateGorLBatches" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="CreateGorLTransactionsBy" xml:space="preserve">
+    <value>创建总帐交易方式</value>
+  </data>
+  <data name="DatePostedToGL" xml:space="preserve">
+    <value>已过帐到总帐日期</value>
+  </data>
+  <data name="GorLBatchNumber" xml:space="preserve">
+    <value>总帐批次编号</value>
+  </data>
+  <data name="GorLBatchTransferred" xml:space="preserve">
+    <value>总帐批次已转移</value>
+  </data>
+  <data name="LastDateJournalPrinted" xml:space="preserve">
+    <value>上一日志已打印日期</value>
+  </data>
+  <data name="PostingType" xml:space="preserve">
+    <value>过帐类型</value>
+  </data>
+  <data name="PostingUser" xml:space="preserve">
+    <value>过帐用户</value>
+  </data>
+  <data name="Pendingprint" xml:space="preserve">
+    <value>待处理打印</value>
+  </data>
+  <data name="Pendingpurge" xml:space="preserve">
+    <value>待处理清除</value>
+  </data>
+  <data name="PostingStatus" xml:space="preserve">
+    <value>待处理状态</value>
+  </data>
+  <data name="Purging" xml:space="preserve">
+    <value>正在清除</value>
+  </data>
+  <data name="BKPRFUNEntity" xml:space="preserve">
+    <value>银行支票打印功能</value>
+  </data>
+  <data name="CheckCurrency" xml:space="preserve">
+    <value>支票币种</value>
+  </data>
+  <data name="CheckType" xml:space="preserve">
+    <value>支票类型</value>
+  </data>
+  <data name="Line" xml:space="preserve">
+    <value>行</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>银行名称</value>
+  </data>
+  <data name="TaxSummary" xml:space="preserve">
+    <value>税务汇总</value>
+  </data>
+  <data name="GrossAmount" xml:space="preserve">
+    <value>毛金额</value>
+  </data>
+  <data name="GrossSourceAmount" xml:space="preserve">
+    <value>毛来源币种金额</value>
+  </data>
+  <data name="StatementAmount" xml:space="preserve">
+    <value>对帐单金额</value>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>税额1</value>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>税额2</value>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>税额3</value>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>税额4</value>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>税额5</value>
+  </data>
+  <data name="TaxBaseAmount1" xml:space="preserve">
+    <value>税基金额1</value>
+  </data>
+  <data name="TaxBaseAmount2" xml:space="preserve">
+    <value>税基金额2</value>
+  </data>
+  <data name="TaxBaseAmount3" xml:space="preserve">
+    <value>税基金额3</value>
+  </data>
+  <data name="TaxBaseAmount4" xml:space="preserve">
+    <value>税基金额4</value>
+  </data>
+  <data name="TaxBaseAmount5" xml:space="preserve">
+    <value>税基金额5</value>
+  </data>
+  <data name="TaxBaseCalculationMethod" xml:space="preserve">
+    <value>税基计算方法</value>
+  </data>
+  <data name="TaxCalculationReportingMethod" xml:space="preserve">
+    <value>税务计算报告方法</value>
+  </data>
+  <data name="TaxExpenseAccount1" xml:space="preserve">
+    <value>税金计费科目1</value>
+  </data>
+  <data name="TaxExpenseAccount2" xml:space="preserve">
+    <value>税金计费科目2</value>
+  </data>
+  <data name="TaxExpenseAccount3" xml:space="preserve">
+    <value>税金计费科目3</value>
+  </data>
+  <data name="TaxExpenseAccount4" xml:space="preserve">
+    <value>税金计费科目4</value>
+  </data>
+  <data name="TaxExpenseAccount5" xml:space="preserve">
+    <value>税金计费科目5</value>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>已含税1</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>已含税2</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>已含税3</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>已含税4</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>已含税5</value>
+  </data>
+  <data name="TaxItemClass1" xml:space="preserve">
+    <value>货品税级1</value>
+  </data>
+  <data name="TaxItemClass2" xml:space="preserve">
+    <value>货品税级2</value>
+  </data>
+  <data name="TaxItemClass3" xml:space="preserve">
+    <value>货品税级3</value>
+  </data>
+  <data name="TaxItemClass4" xml:space="preserve">
+    <value>货品税级4</value>
+  </data>
+  <data name="TaxItemClass5" xml:space="preserve">
+    <value>货品税级5</value>
+  </data>
+  <data name="TaxProcessCommand" xml:space="preserve">
+    <value>税金处理指令</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>税率1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>税率2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>税率3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>税率4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>税率5</value>
+  </data>
+  <data name="TaxRecoverableAccount1" xml:space="preserve">
+    <value>可抵扣税金科目1</value>
+  </data>
+  <data name="TaxRecoverableAccount2" xml:space="preserve">
+    <value>可抵扣税金科目2</value>
+  </data>
+  <data name="TaxRecoverableAccount3" xml:space="preserve">
+    <value>可抵扣税金科目3</value>
+  </data>
+  <data name="TaxRecoverableAccount4" xml:space="preserve">
+    <value>可抵扣税金科目4</value>
+  </data>
+  <data name="TaxRecoverableAccount5" xml:space="preserve">
+    <value>可抵扣税金科目5</value>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>税务报告金额1</value>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>税务报告金额2</value>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>税务报告金额3</value>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>税务报告金额4</value>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>税务报告金额5</value>
+  </data>
+  <data name="TaxVendorClass1" xml:space="preserve">
+    <value>供应商税级1</value>
+  </data>
+  <data name="TaxVendorClass2" xml:space="preserve">
+    <value>供应商税级2</value>
+  </data>
+  <data name="TaxVendorClass3" xml:space="preserve">
+    <value>供应商税级3</value>
+  </data>
+  <data name="TaxVendorClass4" xml:space="preserve">
+    <value>供应商税级4</value>
+  </data>
+  <data name="TaxVendorClass5" xml:space="preserve">
+    <value>供应商税级5</value>
+  </data>
+  <data name="TaxAmountCalculation" xml:space="preserve">
+    <value>税额计算</value>
+  </data>
+  <data name="TaxReportingRate" xml:space="preserve">
+    <value>税务报告汇率</value>
+  </data>
+  <data name="TotalStatementAmount" xml:space="preserve">
+    <value>合计对帐单金额</value>
+  </data>
+  <data name="DocumentTotalBeforeTax" xml:space="preserve">
+    <value>税前凭证合计</value>
+  </data>
+  <data name="DocumentTotalIncludingTax" xml:space="preserve">
+    <value>含税凭证合计</value>
+  </data>
+  <data name="FunctionalAllocatedAmount1" xml:space="preserve">
+    <value>功能币种已分配金额1</value>
+  </data>
+  <data name="FunctionalAllocatedAmount2" xml:space="preserve">
+    <value>功能币种已分配金额2</value>
+  </data>
+  <data name="FunctionalAllocatedAmount3" xml:space="preserve">
+    <value>功能币种已分配金额3</value>
+  </data>
+  <data name="FunctionalAllocatedAmount4" xml:space="preserve">
+    <value>功能币种已分配金额4</value>
+  </data>
+  <data name="FunctionalAllocatedAmount5" xml:space="preserve">
+    <value>功能币种已分配金额5</value>
+  </data>
+  <data name="FunctionalExpensedAmount1" xml:space="preserve">
+    <value>功能币种已计费金额1</value>
+  </data>
+  <data name="FunctionalExpensedAmount2" xml:space="preserve">
+    <value>功能币种已计费金额2</value>
+  </data>
+  <data name="FunctionalExpensedAmount3" xml:space="preserve">
+    <value>功能币种已计费金额3</value>
+  </data>
+  <data name="FunctionalExpensedAmount4" xml:space="preserve">
+    <value>功能币种已计费金额4</value>
+  </data>
+  <data name="FunctionalExpensedAmount5" xml:space="preserve">
+    <value>功能币种已计费金额5</value>
+  </data>
+  <data name="FunctionalGrossDistributionAmount" xml:space="preserve">
+    <value>功能币种毛分布金额</value>
+  </data>
+  <data name="FunctionalNetofTax" xml:space="preserve">
+    <value>功能币种税后净额</value>
+  </data>
+  <data name="FunctionalRecoverableAmount1" xml:space="preserve">
+    <value>功能币种可退税额1</value>
+  </data>
+  <data name="FunctionalRecoverableAmount2" xml:space="preserve">
+    <value>功能币种可退税额2</value>
+  </data>
+  <data name="FunctionalRecoverableAmount3" xml:space="preserve">
+    <value>功能币种可退税额3</value>
+  </data>
+  <data name="FunctionalRecoverableAmount4" xml:space="preserve">
+    <value>功能币种可退税额4</value>
+  </data>
+  <data name="FunctionalRecoverableAmount5" xml:space="preserve">
+    <value>功能币种可退税额5</value>
+  </data>
+  <data name="FunctionalTaxAmount1" xml:space="preserve">
+    <value>功能币种税额1</value>
+  </data>
+  <data name="FunctionalTaxAmount2" xml:space="preserve">
+    <value>功能币种税额2</value>
+  </data>
+  <data name="FunctionalTaxAmount3" xml:space="preserve">
+    <value>功能币种税额3</value>
+  </data>
+  <data name="FunctionalTaxAmount4" xml:space="preserve">
+    <value>功能币种税额4</value>
+  </data>
+  <data name="FunctionalTaxAmount5" xml:space="preserve">
+    <value>功能币种税额5</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount1" xml:space="preserve">
+    <value>功能币种税基金额 1</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount2" xml:space="preserve">
+    <value>功能币种税基金额 2</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount3" xml:space="preserve">
+    <value>功能币种税基金额 3</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount4" xml:space="preserve">
+    <value>功能币种税基金额 4</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount5" xml:space="preserve">
+    <value>功能币种税基金额 5</value>
+  </data>
+  <data name="FunctionalTaxTotal" xml:space="preserve">
+    <value>功能币种税费合计</value>
+  </data>
+  <data name="FunctionalTotalTaxAllocated" xml:space="preserve">
+    <value>功能币种合计已分配税金</value>
+  </data>
+  <data name="ItemTaxClassDescription1" xml:space="preserve">
+    <value>货品税级描述1</value>
+  </data>
+  <data name="ItemTaxClassDescription2" xml:space="preserve">
+    <value>货品税级描述2</value>
+  </data>
+  <data name="ItemTaxClassDescription3" xml:space="preserve">
+    <value>货品税级描述3</value>
+  </data>
+  <data name="ItemTaxClassDescription4" xml:space="preserve">
+    <value>货品税级描述4</value>
+  </data>
+  <data name="ItemTaxClassDescription5" xml:space="preserve">
+    <value>货品税级描述5</value>
+  </data>
+  <data name="NonTaxableAmount" xml:space="preserve">
+    <value>非应税金额</value>
+  </data>
+  <data name="TaxableAmount" xml:space="preserve">
+    <value>应税金额</value>
+  </data>
+  <data name="TaxAuthorityDescription1" xml:space="preserve">
+    <value>税务机构描述1</value>
+  </data>
+  <data name="TaxAuthorityDescription2" xml:space="preserve">
+    <value>税务机构描述2</value>
+  </data>
+  <data name="TaxAuthorityDescription3" xml:space="preserve">
+    <value>税务机构描述3</value>
+  </data>
+  <data name="TaxAuthorityDescription4" xml:space="preserve">
+    <value>税务机构描述4</value>
+  </data>
+  <data name="TaxAuthorityDescription5" xml:space="preserve">
+    <value>税务机构描述5</value>
+  </data>
+  <data name="TaxDistributionAmount" xml:space="preserve">
+    <value>税务分布金额</value>
+  </data>
+  <data name="TaxExpenseAmount1" xml:space="preserve">
+    <value>税务计费金额1</value>
+  </data>
+  <data name="TaxExpenseAmount2" xml:space="preserve">
+    <value>税务计费金额2</value>
+  </data>
+  <data name="TaxExpenseAmount3" xml:space="preserve">
+    <value>税务计费金额3</value>
+  </data>
+  <data name="TaxExpenseAmount4" xml:space="preserve">
+    <value>税务计费金额4</value>
+  </data>
+  <data name="TaxExpenseAmount5" xml:space="preserve">
+    <value>税务计费金额5</value>
+  </data>
+  <data name="TaxNetDistributionAmount" xml:space="preserve">
+    <value>净分配税额</value>
+  </data>
+  <data name="TaxRecoverableAmount1" xml:space="preserve">
+    <value>可退回税额1</value>
+  </data>
+  <data name="TaxRecoverableAmount2" xml:space="preserve">
+    <value>可退回税额2</value>
+  </data>
+  <data name="TaxRecoverableAmount3" xml:space="preserve">
+    <value>可退回税额3</value>
+  </data>
+  <data name="TaxRecoverableAmount4" xml:space="preserve">
+    <value>可退回税额4</value>
+  </data>
+  <data name="TaxRecoverableAmount5" xml:space="preserve">
+    <value>可退回税额5</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount1" xml:space="preserve">
+    <value>税务报告已分配金额1</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount2" xml:space="preserve">
+    <value>税务报告已分配金额2</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount3" xml:space="preserve">
+    <value>税务报告已分配金额3</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount4" xml:space="preserve">
+    <value>税务报告已分配金额4</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount5" xml:space="preserve">
+    <value>税务报告已分配金额5</value>
+  </data>
+  <data name="TaxReportingCurrencyDescripti" xml:space="preserve">
+    <value>税务报告币种描述</value>
+  </data>
+  <data name="TaxReportingExpensed1" xml:space="preserve">
+    <value>税务报告已计费1</value>
+  </data>
+  <data name="TaxReportingExpensed2" xml:space="preserve">
+    <value>税务报告已计费2</value>
+  </data>
+  <data name="TaxReportingExpensed3" xml:space="preserve">
+    <value>税务报告已计费3</value>
+  </data>
+  <data name="TaxReportingExpensed4" xml:space="preserve">
+    <value>税务报告已计费4</value>
+  </data>
+  <data name="TaxReportingExpensed5" xml:space="preserve">
+    <value>税务报告已计费5</value>
+  </data>
+  <data name="TaxReportingRateOperation" xml:space="preserve">
+    <value>税务报告汇率运算</value>
+  </data>
+  <data name="TaxReportingRateTypeDescripti" xml:space="preserve">
+    <value>税务报告汇率类型描述</value>
+  </data>
+  <data name="TaxReportingRecoverableAmount" xml:space="preserve">
+    <value>税务报告可退回金额</value>
+  </data>
+  <data name="TaxVersion" xml:space="preserve">
+    <value>税务版本</value>
+  </data>
+  <data name="TotalExcludedAmount" xml:space="preserve">
+    <value>合计未含税金额</value>
+  </data>
+  <data name="TotalIncludedAmount" xml:space="preserve">
+    <value>合计已含税金额</value>
+  </data>
+  <data name="TotalTaxAllocatedAmount" xml:space="preserve">
+    <value>合计已分配税额</value>
+  </data>
+  <data name="TotalTaxReportingAllocatedAmount" xml:space="preserve">
+    <value>合计税务报告币种已分配税额</value>
+  </data>
+  <data name="TotalTaxReportingAmount" xml:space="preserve">
+    <value>合计税务报告金额</value>
+  </data>
+  <data name="StatementsPrintedOk" xml:space="preserve">
+    <value>对帐单是否打印成功？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="StockCode" xml:space="preserve">
+    <value>支票簿</value>
+  </data>
+  <data name="AmountCleared" xml:space="preserve">
+    <value>金额已清算</value>
+  </data>
+  <data name="BankEntryTransferNumber" xml:space="preserve">
+    <value>银行分录/转帐编号</value>
+  </data>
+  <data name="BankTransactionHeader" xml:space="preserve">
+    <value>银行交易标头</value>
+  </data>
+  <data name="ChecksClearedwithExchangeRateDifference" xml:space="preserve">
+    <value>支票已含汇差清算</value>
+  </data>
+  <data name="ClearToFuturePeriod" xml:space="preserve">
+    <value>清算到未来期间</value>
+  </data>
+  <data name="ClearToReconcilationPeriod" xml:space="preserve">
+    <value>清算到调节期间</value>
+  </data>
+  <data name="CurrentPeriodsWriteOff" xml:space="preserve">
+    <value>当前期间的冲销</value>
+  </data>
+  <data name="DepositMiscellaneousEntriesToFiscal" xml:space="preserve">
+    <value>存款杂项分录到财务</value>
+  </data>
+  <data name="DepositMiscellaneousEntriesToFuture" xml:space="preserve">
+    <value>存款杂项分录到未来</value>
+  </data>
+  <data name="DetailAccessPortal" xml:space="preserve">
+    <value>明细访问门户</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>分录类型</value>
+  </data>
+  <data name="FiscalClearedToCurrent" xml:space="preserve">
+    <value>财务已清算到当前</value>
+  </data>
+  <data name="FiscalClearedToFuture" xml:space="preserve">
+    <value>财务已清算到未来</value>
+  </data>
+  <data name="FiscalDepositBookAmount" xml:space="preserve">
+    <value>财务存款帐面金额</value>
+  </data>
+  <data name="FiscalDepositWriteOffToThis" xml:space="preserve">
+    <value>财务存款冲销到这一期间</value>
+  </data>
+  <data name="FiscalMiscellaneousEntry" xml:space="preserve">
+    <value>财务杂项分录</value>
+  </data>
+  <data name="FiscalTransactionTotal" xml:space="preserve">
+    <value>财务交易合计</value>
+  </data>
+  <data name="FiscalWithdrawalBookAmount" xml:space="preserve">
+    <value>财务提款帐面金额</value>
+  </data>
+  <data name="FiscalWithdrawalWriteOffToThis" xml:space="preserve">
+    <value>财务提款冲销到这一期间</value>
+  </data>
+  <data name="FiscalWriteOffToThisPeriod" xml:space="preserve">
+    <value>财务冲销到这一期间</value>
+  </data>
+  <data name="FunctionalTransactionAmount" xml:space="preserve">
+    <value>功能币种交易金额</value>
+  </data>
+  <data name="FunctionalTransactionTotal" xml:space="preserve">
+    <value>功能币种交易合计</value>
+  </data>
+  <data name="Lines" xml:space="preserve">
+    <value>行</value>
+  </data>
+  <data name="LinesCanReverseInvoice" xml:space="preserve">
+    <value>行可以回转发票</value>
+  </data>
+  <data name="LinesCreditCard" xml:space="preserve">
+    <value>行信用卡</value>
+  </data>
+  <data name="LinesExchangeDifference" xml:space="preserve">
+    <value>行汇兑差异</value>
+  </data>
+  <data name="LinesOutstanding" xml:space="preserve">
+    <value>行未结清</value>
+  </data>
+  <data name="LinesProcessed" xml:space="preserve">
+    <value>行已处理</value>
+  </data>
+  <data name="LinesReconciled" xml:space="preserve">
+    <value>行已调节</value>
+  </data>
+  <data name="NextTransactionDetailLine" xml:space="preserve">
+    <value>下一交易明细行</value>
+  </data>
+  <data name="OldSerialNumber" xml:space="preserve">
+    <value>旧系列编号</value>
+  </data>
+  <data name="PaymentMiscellaneouEntriesToFiscal" xml:space="preserve">
+    <value>付款杂项分录到财务</value>
+  </data>
+  <data name="PaymentMiscellaneousEntriesToFuture" xml:space="preserve">
+    <value>付款杂项分录到未来</value>
+  </data>
+  <data name="PaymentPayeeName" xml:space="preserve">
+    <value>付款收款者名称</value>
+  </data>
+  <data name="PaymentVendorName" xml:space="preserve">
+    <value>付款供应商名称</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>处理指令代码</value>
+  </data>
+  <data name="ReconcilebyDetailOutstanding" xml:space="preserve">
+    <value>调节按明细未结清</value>
+  </data>
+  <data name="ReconciledandJournaledTransaction" xml:space="preserve">
+    <value>已清算和已日志交易</value>
+  </data>
+  <data name="ReconciliationAmount" xml:space="preserve">
+    <value>调节金额</value>
+  </data>
+  <data name="ReconciliationCreditCardCharg" xml:space="preserve">
+    <value>调节信用卡收费</value>
+  </data>
+  <data name="ReconciliationDelta" xml:space="preserve">
+    <value>调节 Delta</value>
+  </data>
+  <data name="ReconciliationOutstandingAmount" xml:space="preserve">
+    <value>调节未结清金额</value>
+  </data>
+  <data name="ReconciliationPostingPeriod" xml:space="preserve">
+    <value>调节过帐期间</value>
+  </data>
+  <data name="ReconciliationPostingYear" xml:space="preserve">
+    <value>调节过帐年度</value>
+  </data>
+  <data name="ReconciliationWriteOffSum" xml:space="preserve">
+    <value>调节冲销总计</value>
+  </data>
+  <data name="TotalDeltaBankErrors" xml:space="preserve">
+    <value>合计 Delta 银行误差</value>
+  </data>
+  <data name="TotalDeltaCleared" xml:space="preserve">
+    <value>合计 Delta 已清算</value>
+  </data>
+  <data name="TotalDeltaCreditCardCharge" xml:space="preserve">
+    <value>合计 Delta 信用卡收费</value>
+  </data>
+  <data name="TotalDeltaExchangeGain" xml:space="preserve">
+    <value>合计 Delta 汇兑收益</value>
+  </data>
+  <data name="TotalDeltaExchangeLoss" xml:space="preserve">
+    <value>合计 Delta 汇兑损失</value>
+  </data>
+  <data name="TotalDeltaFunctionalAmount" xml:space="preserve">
+    <value>合计 Delta 功能币种金额</value>
+  </data>
+  <data name="TotalDeltaWriteOffs" xml:space="preserve">
+    <value>合计Delta冲销</value>
+  </data>
+  <data name="TransactionHeaderSerial" xml:space="preserve">
+    <value>交易标头明细</value>
+  </data>
+  <data name="TransactionRecordedinSummary" xml:space="preserve">
+    <value>已记录于汇总的交易</value>
+  </data>
+  <data name="TransactionSlipPrinted" xml:space="preserve">
+    <value>交易单已打印</value>
+  </data>
+  <data name="TransactionStatus" xml:space="preserve">
+    <value>交易状态</value>
+  </data>
+  <data name="TransactionTotal" xml:space="preserve">
+    <value>交易合计</value>
+  </data>
+  <data name="TransactionTotalinStatement" xml:space="preserve">
+    <value>对帐单交易合计</value>
+  </data>
+  <data name="VarianceType" xml:space="preserve">
+    <value>差异类型</value>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>已分配税金额1</value>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>已分配税金额2</value>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>已分配税金额3</value>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>已分配税金额4</value>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>已分配税金额5</value>
+  </data>
+  <data name="PrintConfirmation" xml:space="preserve">
+    <value>是否把这些过帐日志的状态设为已打印？（如果您这样做，您可以选择“重新打印先前已打印的日志”，之后再打印它们。）</value>
+  </data>
+  <data name="DaysBeforeEligibleForClearing" xml:space="preserve">
+    <value>合格于清算之前天数</value>
+    <comment>For Finder</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>税费</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易编号</value>
+  </data>
+  <data name="BankTransactionDetail" xml:space="preserve">
+    <value>银行交易明细</value>
+  </data>
+  <data name="Reversed" xml:space="preserve">
+    <value>回转</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="BankErrors" xml:space="preserve">
+    <value>银行误差</value>
+  </data>
+  <data name="LastPostedDate" xml:space="preserve">
+    <value>上一已过帐日期</value>
+  </data>
+</root>
