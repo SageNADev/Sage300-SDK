@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNTSPAYABLE" xml:space="preserve">
+    <value>應付帳款</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="ACCOUNTSRECEIVABLE" xml:space="preserve">
+    <value>應收帳款</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>所有</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="BANKACCOUNTNUMBER" xml:space="preserve">
+    <value>銀行帳戶</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BANKCODE" xml:space="preserve">
+    <value>銀行代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BANKCODEDESC" xml:space="preserve">
+    <value>銀行描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BANKENTRYAMOUNT" xml:space="preserve">
+    <value>銀行分錄金額</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BANKENTRYDATE" xml:space="preserve">
+    <value>銀行分錄日期</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="BANKENTRYNUMBER" xml:space="preserve">
+    <value>銀行分錄編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="BANKSERVICES" xml:space="preserve">
+    <value>銀行服務</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="BankTransactionDetail" xml:space="preserve">
+    <value>銀行交易明細</value>
+    <comment>finder title</comment>
+  </data>
+  <data name="CHECKPAYMENTNO" xml:space="preserve">
+    <value>支票/付款編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="CHECKRECEIPTNO" xml:space="preserve">
+    <value>支票/收款編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="CURRENCY" xml:space="preserve">
+    <value>幣別</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CUSTOMERNAME" xml:space="preserve">
+    <value>客戶名稱</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="CUSTOMERNO" xml:space="preserve">
+    <value>客戶編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DEPOSITS" xml:space="preserve">
+    <value>存款</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="DESC" xml:space="preserve">
+    <value>銀行分錄描述</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DOCUMENTTYPE" xml:space="preserve">
+    <value>憑證類型</value>
+    <comment>List</comment>
+  </data>
+  <data name="EMPLOYEENAME" xml:space="preserve">
+    <value>雇員姓名</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="EMPLOYEENO" xml:space="preserve">
+    <value>雇員編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>交易歷史查詢</value>
+    <comment>Screen - Title</comment>
+  </data>
+  <data name="NoSelectionOfPayment" xml:space="preserve">
+    <value>選擇一個付款。</value>
+  </data>
+  <data name="OTHERS" xml:space="preserve">
+    <value>其它</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="OUTSTANDING" xml:space="preserve">
+    <value>未結清</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="PAYMENTAMT" xml:space="preserve">
+    <value>付款金額</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="PAYMENTDATE" xml:space="preserve">
+    <value>付款日期</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="PAYMENTS" xml:space="preserve">
+    <value>付款</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="PAYROLL" xml:space="preserve">
+    <value>薪資</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="RECEIPTAMT" xml:space="preserve">
+    <value>收款金額</value>
+    <comment>Receipts - Field</comment>
+  </data>
+  <data name="RECEIPTDATE" xml:space="preserve">
+    <value>收款日期</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="RECEIPTS" xml:space="preserve">
+    <value>收款</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="RECONCILED" xml:space="preserve">
+    <value>已調節</value>
+    <comment>List - Option</comment>
+  </data>
+  <data name="RECONCILIATIONDATE" xml:space="preserve">
+    <value>調節日期</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="RECONCILIATIONDESC" xml:space="preserve">
+    <value>調節描述</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="RECONCILIATIONSTATUS" xml:space="preserve">
+    <value>調節狀態</value>
+    <comment>List</comment>
+  </data>
+  <data name="SOURCEAMT" xml:space="preserve">
+    <value>來源幣別金額</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="SOURCECUR" xml:space="preserve">
+    <value>來源幣別</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="SPECIFYCRITERIA" xml:space="preserve">
+    <value>指定標準</value>
+    <comment>Panel - Heading</comment>
+  </data>
+  <data name="SRCEAPP" xml:space="preserve">
+    <value>來源應用程式</value>
+    <comment>List</comment>
+  </data>
+  <data name="VENDORNAME" xml:space="preserve">
+    <value>供應商名稱</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="VENDORNO" xml:space="preserve">
+    <value>供應商編號</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="WITHDRAWALS" xml:space="preserve">
+    <value>提款</value>
+    <comment>List - Option</comment>
+  </data>
+</root>

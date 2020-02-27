@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>Print Checks</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidBankMsg" xml:space="preserve">
+    <value>Bank Code is missing or invalid.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidSrceAppMsg" xml:space="preserve">
+    <value>Source Client Application ID is missing or invalid.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidAppRunNumMsg" xml:space="preserve">
+    <value>Application Run Number is missing or invalid.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidChkStockMsg" xml:space="preserve">
+    <value>Check Stock Code is invalid.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IntErrChkStkPrefMsg" xml:space="preserve">
+    <value>Check Stock Code is invalid.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoCheckStocksMsg" xml:space="preserve">
+    <value>There are either no check stocks or they are all in use by other users.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BlankChkAdvForm" xml:space="preserve">
+    <value>Check/Advice Form cannot be blank.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QAdvPrinted" xml:space="preserve">
+    <value>Were all advices printed successfully?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QAllPrintedOK" xml:space="preserve">
+    <value>You did not mark any checks to be reprinted. Have all checks printed successfully?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QChkPrinted" xml:space="preserve">
+    <value>Were all checks printed successfully?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Endserial" xml:space="preserve">
+    <value>Report Spec Error. Cannot set ENDSERIAL parameter.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Startserial" xml:space="preserve">
+    <value>Report Spec Error. Cannot set STARTSERIAL parameter.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FormidNotExist" xml:space="preserve">
+    <value>Cannot find the specified Check Stock Code.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdvPrinting" xml:space="preserve">
+    <value>Printing advice. Insert advice stock in printer and press OK.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ChkPrinting" xml:space="preserve">
+    <value>Printing checks. Insert check stock in printer and press OK.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QCancelChkRun" xml:space="preserve">
+    <value>Not all checks have been printed. Do you want to cancel the check run (voiding all previously printed checks)?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VlsBKREGColSrcecurnCap" xml:space="preserve">
+    <value>Check Currency</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CUSTLeadingNumCap" xml:space="preserve">
+    <value>Number of Leading Checks</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BKFORMCheckAdviceCap" xml:space="preserve">
+    <value>Check/Advice Form</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CmdBrowseAdvCap" xml:space="preserve">
+    <value>Browse...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CmdAlignCap" xml:space="preserve">
+    <value>Preview</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CmdReprintCap" xml:space="preserve">
+    <value>Select Reprint Range...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrReprint" xml:space="preserve">
+    <value>Reprint</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="HIDEPRINT" xml:space="preserve">
+    <value>Show Printed Checks</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TOTUNPRCHK" xml:space="preserve">
+    <value>Number of Unprinted Checks</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BANUNPRCHK" xml:space="preserve">
+    <value>Unprinted Checks for This Bank</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRFrmCap" xml:space="preserve">
+    <value>Select Reprint Range</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRLblInstructionCap" xml:space="preserve">
+    <value>Specify a range of checks and select a status to apply. Checks with "Not Printed" status will be included in the next print run.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRBKPRFUNStatusCap" xml:space="preserve">
+    <value>Set Status To</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRFrmSetupFailTxt" xml:space="preserve">
+    <value>Failed to set up the</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PFRNoFormHelpMsg" xml:space="preserve">
+    <value>Cannot find help for the</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromCheckNumber" xml:space="preserve">
+    <value>From Check Number</value>
+  </data>
+  <data name="ToCheckNumber" xml:space="preserve">
+    <value>To Check Number</value>
+  </data>
+  <data name="ReprintRangeError" xml:space="preserve">
+    <value>Starting value cannot be greater than ending value.</value>
+  </data>
+  <data name="SelectReportFile" xml:space="preserve">
+    <value>Select Report File</value>
+  </data>
+  <data name="StockDescription" xml:space="preserve">
+    <value>Stock Description</value>
+  </data>
+  <data name="InstalledReports" xml:space="preserve">
+    <value>Installed Reports</value>
+  </data>
+  <data name="PrintCheck" xml:space="preserve">
+    <value>Print Check</value>
+  </data>
+  <data name="SelectChecksReprint" xml:space="preserve">
+    <value>Select checks to reprint.</value>
+  </data>
+  <data name="CheckStockInUse" xml:space="preserve">
+    <value>Check stock "{0}" is in use by another user.</value>
+    <comment>Used when check stock is locked</comment>
+  </data>
+</root>

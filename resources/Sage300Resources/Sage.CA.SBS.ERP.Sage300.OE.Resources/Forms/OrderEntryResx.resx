@@ -1,0 +1,3006 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSetDesc" xml:space="preserve">
+    <value>Account Set Description</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="ActivateTAXCAL" xml:space="preserve">
+    <value>Automatic tax calculation is turned off. The manual tax amounts may not reflect this partial/over shipment. Do you want Order Entry to recalculate taxes before posting? (Note that tax will always be recalculated on the remaining order.)</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Address Line 1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Address Line 2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Address Line 3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Address Line 4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Afeoeordhordpayment8LEFTLABEL" xml:space="preserve">
+    <value>Less Total Prepayments</value>
+    <comment>Totals - Row</comment>
+  </data>
+  <data name="Afeoeordhterms3LEFTLABEL" xml:space="preserve">
+    <value>Terms Code</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="AutoAllocateSerialNoMessage" xml:space="preserve">
+    <value>Serial numbers have expired and cannot be automatically allocated.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BatchDesc" xml:space="preserve">
+    <value>Batch Description</value>
+    <comment>Prepayment - Field</comment>
+  </data>
+  <data name="CalculateTaxes" xml:space="preserve">
+    <value>Calculate Taxes</value>
+    <comment>Taxes - Button</comment>
+  </data>
+  <data name="CheckReceiptNo1" xml:space="preserve">
+    <value>Check/Receipt Number</value>
+    <comment>Prepayment - Field</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="ContactEmail1" xml:space="preserve">
+    <value>Contact Email</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Create New Batch</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Create New</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CreateOrderFromQUOTES" xml:space="preserve">
+    <value>Create Order from Quotes</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Currency Description</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="CustomerAccountSet" xml:space="preserve">
+    <value>Customer Account Set</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="Detail1" xml:space="preserve">
+    <value>Detail…</value>
+    <comment>PO - Button</comment>
+  </data>
+  <data name="DiscountedExtAmt" xml:space="preserve">
+    <value>Discounted Extended Amount</value>
+    <comment>Order - Table Column</comment>
+  </data>
+  <data name="DistributeTaxes" xml:space="preserve">
+    <value>Distribute Taxes</value>
+    <comment>Taxes - Button</comment>
+  </data>
+  <data name="EnterCustomerMessage" xml:space="preserve">
+    <value>Before entering order information, enter a customer number for a new order or select an existing order number.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Entered By</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>O/E Order Entry</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EstWeight" xml:space="preserve">
+    <value>Estimated Weight</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="ExcludeQuoteFromORDER" xml:space="preserve">
+    <value>Exclude this quote from the order?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="ExpectedArrivalDate" xml:space="preserve">
+    <value>Expected Arrival Date</value>
+    <comment>PO - Table Column</comment>
+  </data>
+  <data name="ExpectedShipDate" xml:space="preserve">
+    <value>Expected Ship Date</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="FromMultipleQUOTES" xml:space="preserve">
+    <value>From Multiple Quotes</value>
+    <comment>Order - Check Box</comment>
+  </data>
+  <data name="LastInvoiceNumber" xml:space="preserve">
+    <value>Last Invoice Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastShipmentNo1" xml:space="preserve">
+    <value>Last Shipment Number</value>
+    <comment>Fieldset Row</comment>
+  </data>
+  <data name="LessOrderDISCOUNT" xml:space="preserve">
+    <value>Less Order Discount</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="LessTermsDiscount1" xml:space="preserve">
+    <value>Less Terms Discount Available</value>
+    <comment>Totals - Row</comment>
+  </data>
+  <data name="LocationDesc" xml:space="preserve">
+    <value>Location Description</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="MiscellaneousChargesTotal" xml:space="preserve">
+    <value>Miscellaneous Charges Total</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="MissingDetailMessage" xml:space="preserve">
+    <value>Cannot find the specified row.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="MustInvoiceShipmentBeforeAddingPreAuth" xml:space="preserve">
+    <value>One or more shipments created from this order have not been invoiced. Before you can pre-authorize a credit card payment, you must close the Order Entry screen and then invoice all shipments created from this order.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoItemMessage" xml:space="preserve">
+    <value>Select an item or miscellaneous charge.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoShipWithPreauthMessage" xml:space="preserve">
+    <value>A credit card payment has been pre-authorized for this order. Before you can process a payment, you must specify a quantity shipped or a miscellaneous charge, and then select the Create Invoice option.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotAllowCapturePreauthWithIncompleteShipment" xml:space="preserve">
+    <value>A shipment has been created from pre-authorized order {0}. You must use the Shipment Entry or Invoice Entry window to capture the pre-authorized payment for {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OnHoldClearSerialsLots" xml:space="preserve">
+    <value>Putting the order on hold clears all the allocated serial and lot numbers. Do you still want to proceed?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OnHoldWithPreauthMessage" xml:space="preserve">
+    <value>A credit card payment has been pre-authorized for this order, but you cannot process a payment if the order is on hold.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="OrderDetails" xml:space="preserve">
+    <value>Order Details</value>
+    <comment>Order - Title</comment>
+  </data>
+  <data name="OrderNotExistMessage" xml:space="preserve">
+    <value>Cannot find the specified order.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="OrderSummary" xml:space="preserve">
+    <value>Order Summary</value>
+    <comment>Fieldset Head</comment>
+  </data>
+  <data name="OutstandingOrderAmt" xml:space="preserve">
+    <value>Outstanding Order Amount</value>
+    <comment>Totals - Row</comment>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Payment Type</value>
+    <comment>Prepayment - Field</comment>
+  </data>
+  <data name="POReceipts1" xml:space="preserve">
+    <value>P/O Receipts…</value>
+    <comment>PO - Button</comment>
+  </data>
+  <data name="PostConfirmMessage" xml:space="preserve">
+    <value>Are you sure you want to post this order?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneINVOICE" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Invoice Number:{1} Do you want to print the invoice?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneInvoiceNP" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Invoice Number: {1}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneORDER" xml:space="preserve">
+    <value>Posting completed. Order Number: {0}. Do you want to print the order confirmation?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneOrderNP" xml:space="preserve">
+    <value>Posting completed. Order Number: {0}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostDoneQUOTE" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Do you want to print the quote?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostingFAILED" xml:space="preserve">
+    <value>Posting failed. If this is a new order, you must enter it again. If modifying an existing order, you must reenter your changes.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostingFailedWithSPSCharge" xml:space="preserve">
+    <value>A credit card transaction has already been processed in Sage Payment Solutions for this order. Sign in to Sage Virtual Terminal to review transaction status.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostINVOICE" xml:space="preserve">
+    <value>Do you want to produce an invoice?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PreauthForNonActiveOrderMessage" xml:space="preserve">
+    <value>Before you can pre-authorize a credit card payment, you must set Order Type to Active.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PreauthForNonARCustomerMessage" xml:space="preserve">
+    <value>You cannot pre-authorize a credit card payment because customer {0} cannot be found.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PreauthForNonSPSCurrencyMessage" xml:space="preserve">
+    <value>You cannot pre-authorize a credit card payment because customer currency {0} is not specified as the currency for any processing code.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PreauthWithProjectINVOICING" xml:space="preserve">
+    <value>If you pre-authorize a credit card payment for a job-related order with Project Invoicing selected, you will have to void the pre-authorization to post the order. Are you sure you want to continue and pre-authorize a credit card payment?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Prepayment1" xml:space="preserve">
+    <value>Prepayment</value>
+    <comment>Modal - Title</comment>
+  </data>
+  <data name="PreTransactionCreditCheck" xml:space="preserve">
+    <value>Pre-Transaction Credit Check</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="PriceListDesc" xml:space="preserve">
+    <value>Price List Description</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="PrintArPREPAYMENT" xml:space="preserve">
+    <value>Do you want to print the A/R Prepayment Receipt?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="PrintFormPrompt" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Shipment Number: {1} Invoice Number: {2} Do you want to print:</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrintFormPromptNoInvoice" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Shipment Number: {1} Do you want to print:</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrintFormPromptOrder" xml:space="preserve">
+    <value>Posting completed. Order Number: {0} Do you want to print:</value>
+    <comment>Message</comment>
+  </data>
+  <data name="QuantityEA" xml:space="preserve">
+    <value>Quantity (Each)</value>
+    <comment>PO - Table Column</comment>
+  </data>
+  <data name="QuantityOnPO" xml:space="preserve">
+    <value>Quantity on P/O</value>
+    <comment>Modal - Title</comment>
+  </data>
+  <data name="QuoteNUMBER" xml:space="preserve">
+    <value>Quote Number</value>
+    <comment>Modal - Column</comment>
+  </data>
+  <data name="Rates1" xml:space="preserve">
+    <value>Rates…</value>
+    <comment>Prepayment - Button</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Rate Type Description</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="RecalculateTermsDates" xml:space="preserve">
+    <value>Do you want to recalculate schedule dates?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="ShipmentActivateTAXCAL" xml:space="preserve">
+    <value>Automatic tax calculation is turned off but the order is being partially shipped. Manual tax amounts cannot be entered for a partial shipment from Order Entry. Do you want to proceed? If you choose Yes, any manual tax amounts will be ignored and a shipment will be created with automatic tax calculation turned on. The order will then have its taxes recalculated. If you choose No, you can continue editing the order.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ShipmentActivateTAXRPTCAL" xml:space="preserve">
+    <value>Automatic tax reporting calculation is turned off but the order is being partially shipped. Manual tax reporting amounts cannot be entered for a partial shipment from Order Entry. Do you want to proceed? If you choose Yes, any manual tax amounts will be ignored and a shipment will be created with automatic tax calculation turned on. The order will then have its taxes recalculated. If you choose No, you can continue editing the order.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ShipmentDetails" xml:space="preserve">
+    <value>Shipment Details</value>
+    <comment>Order - Field Head</comment>
+  </data>
+  <data name="ShipmentsInvoices" xml:space="preserve">
+    <value>Shipments/Invoices</value>
+    <comment>Modal - Title</comment>
+  </data>
+  <data name="ShipmentTotal" xml:space="preserve">
+    <value>Shipment Total</value>
+    <comment>Prepayment - Field</comment>
+  </data>
+  <data name="ShipViaCode" xml:space="preserve">
+    <value>Ship-Via Code</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="ShipViaName" xml:space="preserve">
+    <value>Ship-Via Name</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="SystemBUSY" xml:space="preserve">
+    <value>System file temporarily in use. Order Entry will be closed. Try again later.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxCalculationMessage" xml:space="preserve">
+    <value>Order Entry could not calculate taxes. Check your tax settings.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxGroupDesc" xml:space="preserve">
+    <value>Tax Group Description</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="TermPageNoDetailMessage" xml:space="preserve">
+    <value>No details found. You must first enter details before you can edit the terms information.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TermPageNoTermsMessage" xml:space="preserve">
+    <value>You must select a terms code before you can edit the terms information.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TermsCodeDesc" xml:space="preserve">
+    <value>Terms Description</value>
+    <comment>Customer - Field</comment>
+  </data>
+  <data name="TrackingNumber" xml:space="preserve">
+    <value>Tracking Number</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Vendor Name</value>
+    <comment>PO - Table Column</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Vendor Number</value>
+    <comment>PO - Table Column</comment>
+  </data>
+  <data name="VoidCheck" xml:space="preserve">
+    <value>Void Check</value>
+    <comment>Prepayment - Button</comment>
+  </data>
+  <data name="BillToAddress1" xml:space="preserve">
+    <value>Bill-To Address Line 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToAddress2" xml:space="preserve">
+    <value>Bill-To Address Line 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToAddress3" xml:space="preserve">
+    <value>Bill-To Address Line 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToAddress4" xml:space="preserve">
+    <value>Bill-To Address Line 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BilltoCity" xml:space="preserve">
+    <value>Bill-To City</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BilltoContact" xml:space="preserve">
+    <value>Bill-To Contact</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BilltoCountry" xml:space="preserve">
+    <value>Bill-To Country</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BilltoFax" xml:space="preserve">
+    <value>Bill-To Fax</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BilltoPhone" xml:space="preserve">
+    <value>Bill-To Phone</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToState" xml:space="preserve">
+    <value>Bill-To State/Province</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToZip" xml:space="preserve">
+    <value>Bill-To ZIP/Postal Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerDiscount" xml:space="preserve">
+    <value>Customer Discount Level</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerGroupcode" xml:space="preserve">
+    <value>Customer Group Code</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DefaultPriceListCode" xml:space="preserve">
+    <value>Default Price List Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderUniquifier" xml:space="preserve">
+    <value>Order Uniquifier</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ShiptoAddress1" xml:space="preserve">
+    <value>Ship-To Address Line 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoAddress2" xml:space="preserve">
+    <value>Ship-To Address Line 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoAddress3" xml:space="preserve">
+    <value>Ship-To Address Line 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoAddress4" xml:space="preserve">
+    <value>Ship-To Address Line 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoCity" xml:space="preserve">
+    <value>Ship-To City</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoContact" xml:space="preserve">
+    <value>Ship-To Contact</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoCountry" xml:space="preserve">
+    <value>Ship-To Country</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoFax" xml:space="preserve">
+    <value>Ship-To Fax</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoLocation" xml:space="preserve">
+    <value>Ship-To Location Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoPhone" xml:space="preserve">
+    <value>Ship-To Phone</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoState" xml:space="preserve">
+    <value>Ship-To State/Province</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiptoZip" xml:space="preserve">
+    <value>Ship-To ZIP/Postal Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountAvailable" xml:space="preserve">
+    <value>Discount Available</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderFiscalPeriod" xml:space="preserve">
+    <value>Order Fiscal Period</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderFiscalYear" xml:space="preserve">
+    <value>Order Fiscal Year</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuoteExpirationDate" xml:space="preserve">
+    <value>Quote Expiration Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipViaCodeDescription" xml:space="preserve">
+    <value>Ship-Via Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>Terms Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TermsRateOverride" xml:space="preserve">
+    <value>Terms Rate Override</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTermsAmountDue" xml:space="preserve">
+    <value>Total Terms Amount Due</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Allowpartialshipments" xml:space="preserve">
+    <value>Allow Partial Shipments</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AmountDueLessCurrPrepayment" xml:space="preserve">
+    <value>Amount Due Less Current Prepayment</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ApprovedLimit" xml:space="preserve">
+    <value>Approved Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ARPendingBalance" xml:space="preserve">
+    <value>A/R Pending Balance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ARPendingTransIncluded" xml:space="preserve">
+    <value>A/R Pending Transactions Included</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="AuthorizingUserID" xml:space="preserve">
+    <value>Authorizing User ID</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AuthorizingUserPassword" xml:space="preserve">
+    <value>Authorizing User Password</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AutoCalcTaxReportingAmounts" xml:space="preserve">
+    <value>Auto-Calculate Tax Reporting Amounts</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AutoTaxCalculationStatus" xml:space="preserve">
+    <value>Auto Tax Calculation Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Bank Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToContactEmail" xml:space="preserve">
+    <value>Bill-To Contact Email</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToContactFax" xml:space="preserve">
+    <value>Bill-To Contact Fax</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToContactPhone" xml:space="preserve">
+    <value>Bill-To Contact Phone</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillToEmail" xml:space="preserve">
+    <value>Bill-To Email</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Check Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckFiscalPeriod" xml:space="preserve">
+    <value>Check Fiscal Period</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckFiscalYear" xml:space="preserve">
+    <value>Check Fiscal Year</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckingCustomerAgingLimit" xml:space="preserve">
+    <value>Checking Customer Aging Limit</value>
+    <comment>Status</comment>
+  </data>
+  <data name="CheckingCustomerCreditLimit" xml:space="preserve">
+    <value>Checking Customer Credit Limit</value>
+    <comment>Status</comment>
+  </data>
+  <data name="CheckingNatAcctCreditLimit" xml:space="preserve">
+    <value>Checking National Account Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckNumber" xml:space="preserve">
+    <value>Check Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerBalanceOverdue" xml:space="preserve">
+    <value>Customer Balance Overdue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerBalancePosted" xml:space="preserve">
+    <value>Customer Balance Posted</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerCreditLimit" xml:space="preserve">
+    <value>Customer Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerDaysOverdue" xml:space="preserve">
+    <value>Customer Days Overdue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerExists" xml:space="preserve">
+    <value>Customer Exists</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerIsOverAgingLimit" xml:space="preserve">
+    <value>Customer Is Over Aging Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerIsOverCreditLimit" xml:space="preserve">
+    <value>Customer Is Over Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerLimitExceeded" xml:space="preserve">
+    <value>Customer Limit Exceeded</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerLimitLeft" xml:space="preserve">
+    <value>Customer Limit Left</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerOverdueLimit" xml:space="preserve">
+    <value>Customer Overdue Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerTotalOutstanding" xml:space="preserve">
+    <value>Customer Total Outstanding</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultLocationCode" xml:space="preserve">
+    <value>Default Location Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DetailDiscountPercentage" xml:space="preserve">
+    <value>Detail Discount Percentage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DetailDiscountTotal" xml:space="preserve">
+    <value>Detail Discount Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DisplayRateWarning" xml:space="preserve">
+    <value>Display Rate Warning</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentNetOfDetailDisc" xml:space="preserve">
+    <value>Document Net of Detail Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DosConversionInProgress" xml:space="preserve">
+    <value>DOS Conversion In Progress</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DrillDownToInvoice" xml:space="preserve">
+    <value>View Invoice</value>
+    <comment>Drill Down button tooltip</comment>
+  </data>
+  <data name="DrivenbyUI" xml:space="preserve">
+    <value>Driven by UI</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExcludedTaxAmount1" xml:space="preserve">
+    <value>Excluded Tax Amount 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExcludedTaxAmount2" xml:space="preserve">
+    <value>Excluded Tax Amount 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExcludedTaxAmount3" xml:space="preserve">
+    <value>Excluded Tax Amount 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExcludedTaxAmount4" xml:space="preserve">
+    <value>Excluded Tax Amount 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExcludedTaxAmount5" xml:space="preserve">
+    <value>Excluded Tax Amount 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="FreeOnBoardPoint" xml:space="preserve">
+    <value>Free On Board Point</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>Has Retainage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IncludedTaxAmount1" xml:space="preserve">
+    <value>Included Tax Amount 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IncludedTaxAmount2" xml:space="preserve">
+    <value>Included Tax Amount 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IncludedTaxAmount3" xml:space="preserve">
+    <value>Included Tax Amount 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IncludedTaxAmount4" xml:space="preserve">
+    <value>Included Tax Amount 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IncludedTaxAmount5" xml:space="preserve">
+    <value>Included Tax Amount 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inhomecurr" xml:space="preserve">
+    <value>Invoice Functional Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Inrate" xml:space="preserve">
+    <value>Invoice Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inratedate" xml:space="preserve">
+    <value>Invoice Rate Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inratetype" xml:space="preserve">
+    <value>Invoice Rate Type Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Insourcurr" xml:space="preserve">
+    <value>Invoice Source Currency Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inspread" xml:space="preserve">
+    <value>Invoice Spread</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceableDetailLines" xml:space="preserve">
+    <value>Invoiceable Detail Lines</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Invoice Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceDiscMiscCharges" xml:space="preserve">
+    <value>Invoice Discount Misc. Charges</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="InvoiceFiscalPeriod" xml:space="preserve">
+    <value>Invoice Fiscal Period</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceFiscalYear" xml:space="preserve">
+    <value>Invoice Fiscal Year</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceHomeCurrencyDesc" xml:space="preserve">
+    <value>Invoice Functional Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="InvoiceNoOfPrepayments" xml:space="preserve">
+    <value>Invoice Number of Prepayments</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Invoice Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceRateTypeDesc" xml:space="preserve">
+    <value>Invoice Rate Type Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceSourceCurrDesc" xml:space="preserve">
+    <value>Invoice Source Currency Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceTotalTermsDisc" xml:space="preserve">
+    <value>Invoice Total Terms Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoiceWillBeProduced" xml:space="preserve">
+    <value>Invoice Will Be Produced</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemDetailDiscountTotal" xml:space="preserve">
+    <value>Item Detail Discount Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Job Related</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobRelatedDetailLines" xml:space="preserve">
+    <value>Job Related Detail Lines</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceAmount" xml:space="preserve">
+    <value>Last Invoice Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastInvoiceDate" xml:space="preserve">
+    <value>Last Invoice Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPaymentAmount" xml:space="preserve">
+    <value>Last Payment Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPaymentDate" xml:space="preserve">
+    <value>Last Payment Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPostingDate" xml:space="preserve">
+    <value>Last Posting Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LocationCodeDesc" xml:space="preserve">
+    <value>Location Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MiscChargeDetailDiscountTot" xml:space="preserve">
+    <value>Misc. Charge Detail Discount Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="MultipleQuotes" xml:space="preserve">
+    <value>Multiple Quotes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctBalance" xml:space="preserve">
+    <value>National Account Balance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctBalanceOverdue" xml:space="preserve">
+    <value>National Account Balance Overdue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctCreditLimit" xml:space="preserve">
+    <value>National Account Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctDaysOverdue" xml:space="preserve">
+    <value>National Account Days Overdue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctIsOverAgingLimit" xml:space="preserve">
+    <value>National Account Is Over Aging Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctIsOverCreditLimit" xml:space="preserve">
+    <value>National Account Is Over Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctLimitExceeded" xml:space="preserve">
+    <value>National Account Limit Exceeded</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctLimitLeft" xml:space="preserve">
+    <value>National Account Limit Left</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctOverdueLimit" xml:space="preserve">
+    <value>National Account Overdue Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NatAcctTotalOutstanding" xml:space="preserve">
+    <value>National Account Total Outstanding</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>Next Detail Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NoLinesQtyShipped" xml:space="preserve">
+    <value>Number Lines Quantity Shipped</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NoMiscChargesLines" xml:space="preserve">
+    <value>Number of Miscellaneous Charges Lines</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NoOfTermsPayments" xml:space="preserve">
+    <value>Number of Terms Payments</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfInvoices" xml:space="preserve">
+    <value>Number of Invoices</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfLabels" xml:space="preserve">
+    <value>Number of Labels</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfLinesonOrder" xml:space="preserve">
+    <value>Number of Lines on Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfQuotes" xml:space="preserve">
+    <value>Number of Quotes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfShipments" xml:space="preserve">
+    <value>Number of Shipments</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OePendingBalance" xml:space="preserve">
+    <value>O/E Pending Balance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OePendingTransIncluded" xml:space="preserve">
+    <value>O/E Pending Transactions Included</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderAmountDue" xml:space="preserve">
+    <value>Order Amount Due</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderComment" xml:space="preserve">
+    <value>Order Comment</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderCompleted" xml:space="preserve">
+    <value>Order Completed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderCompletionDate" xml:space="preserve">
+    <value>Order Completion Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDiscountAmount" xml:space="preserve">
+    <value>Order Discount Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDiscountAmountOverride" xml:space="preserve">
+    <value>Order Discount Amount Override</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDiscountBase" xml:space="preserve">
+    <value>Order Discount Base</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDiscountPercentage" xml:space="preserve">
+    <value>Order Discount Percentage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderExclTaxTotal" xml:space="preserve">
+    <value>Order Excluding Tax Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderHomeCurrencyDesc" xml:space="preserve">
+    <value>Order Functional Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="OrderInclTaxTotal" xml:space="preserve">
+    <value>Order Including Tax Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderItemTotalAmount" xml:space="preserve">
+    <value>Order Item Total Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderNoOfPrepayments" xml:space="preserve">
+    <value>Order Number of Prepayments</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderPartiallyShipped" xml:space="preserve">
+    <value>Order Partially Shipped</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderPrintStatus" xml:space="preserve">
+    <value>Order Print Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderRateTypeDescription" xml:space="preserve">
+    <value>Order Rate Type Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderRunningTotal" xml:space="preserve">
+    <value>Order Running Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderSource" xml:space="preserve">
+    <value>Order Source</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderSourceCurrencyDesc" xml:space="preserve">
+    <value>Order Source Currency Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderSubtotalAmount" xml:space="preserve">
+    <value>Order Subtotal Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTotalBeforeTax" xml:space="preserve">
+    <value>Order Total Before Tax</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTotalEstWeight" xml:space="preserve">
+    <value>Order Total Estimated Weight</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTotalMiscCharges" xml:space="preserve">
+    <value>Order Total Misc. Charges</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="OrderTotalPayment" xml:space="preserve">
+    <value>Order Total Payment</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTotalPaymentDisc" xml:space="preserve">
+    <value>Order Total Payment Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderTotalWithInvDisc" xml:space="preserve">
+    <value>Order Total With Invoice Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orhomecurr" xml:space="preserve">
+    <value>Order Functional Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OriginatingQuoteNumber" xml:space="preserve">
+    <value>Originating Quote Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orrate" xml:space="preserve">
+    <value>Order Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orratedate" xml:space="preserve">
+    <value>Order Rate Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orrateover" xml:space="preserve">
+    <value>Order Rate Override Flag</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orraterep" xml:space="preserve">
+    <value>Order Rate Date Matching</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orratetype" xml:space="preserve">
+    <value>Order Rate Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orsourcurr" xml:space="preserve">
+    <value>Order Source Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Orspread" xml:space="preserve">
+    <value>Order Spread</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OtherPendingBalance" xml:space="preserve">
+    <value>Other Pending Balance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OtherPendingTransIncluded" xml:space="preserve">
+    <value>Other Pending Transactions Included</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OverCreditLimit" xml:space="preserve">
+    <value>Over Credit Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentAppliedTo" xml:space="preserve">
+    <value>Payment Applied To</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentHomeCurrency" xml:space="preserve">
+    <value>Payment Home Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentHomeCurrencyDesc" xml:space="preserve">
+    <value>Payment Home Currency Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentInBankCurrency" xml:space="preserve">
+    <value>Payment in Bank Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentInCustCurrency" xml:space="preserve">
+    <value>Payment in Customer Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRate" xml:space="preserve">
+    <value>Payment Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRateDate" xml:space="preserve">
+    <value>Payment Rate Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRateDateMatching" xml:space="preserve">
+    <value>Payment Rate Date Matching</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRateOperator" xml:space="preserve">
+    <value>Payment Rate Operator</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRateType" xml:space="preserve">
+    <value>Payment Rate Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentRateTypeDesc" xml:space="preserve">
+    <value>Payment Rate Type Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentSourceCurrDesc" xml:space="preserve">
+    <value>Payment Source Currrency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentSourceCurrency" xml:space="preserve">
+    <value>Payment Source Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentSpread" xml:space="preserve">
+    <value>Payment Spread</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PendingPrepaymentAmount" xml:space="preserve">
+    <value>Pending Prepayment Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformCreditLimitCheck" xml:space="preserve">
+    <value>Perform Credit Limit Check</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformManualTaxDistribution" xml:space="preserve">
+    <value>Perform Manual Tax Distribution</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformMultipleQuotesToOrder" xml:space="preserve">
+    <value>Perform Multiple Quotes to Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformShipAll" xml:space="preserve">
+    <value>Perform Ship All</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformTaxCalculation" xml:space="preserve">
+    <value>Perform Tax Calculation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostInvoiceS" xml:space="preserve">
+    <value>Post Invoice</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostSequenceNumber" xml:space="preserve">
+    <value>Post Sequence Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PredecessorNumber" xml:space="preserve">
+    <value>Predecessor Number</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PredecessorUniquifier" xml:space="preserve">
+    <value>Predecessor Uniquifier</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PrevPaymentDiscTotal" xml:space="preserve">
+    <value>Previous Payment Discount Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrevPaymentsTotal" xml:space="preserve">
+    <value>Previous Payments Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceListCodeDesc" xml:space="preserve">
+    <value>Price List Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessOeCommand" xml:space="preserve">
+    <value>Process O/E Command</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ProcessOipCommand" xml:space="preserve">
+    <value>Process OIP Command</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ProjectInvoicing" xml:space="preserve">
+    <value>Project Invoicing</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecalcMultiPaymentDates" xml:space="preserve">
+    <value>Recalculate Multiple Payment Dates</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecalculateTax" xml:space="preserve">
+    <value>Recalculate Tax</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ReceiptBatchNumber" xml:space="preserve">
+    <value>Receipt Batch Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>Receipt Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Registration1" xml:space="preserve">
+    <value>Registration 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Registration2" xml:space="preserve">
+    <value>Registration 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Registration3" xml:space="preserve">
+    <value>Registration 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Registration4" xml:space="preserve">
+    <value>Registration 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Registration5" xml:space="preserve">
+    <value>Registration 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequiresShippingLabels" xml:space="preserve">
+    <value>Requires Shipping Labels</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainageExchangeRate" xml:space="preserve">
+    <value>Retainage Exchange Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainageTerms" xml:space="preserve">
+    <value>Retainage Terms</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainageTermsDescription" xml:space="preserve">
+    <value>Retainage Terms Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesPercentage1" xml:space="preserve">
+    <value>Sales Percentage 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesPercentage2" xml:space="preserve">
+    <value>Sales Percentage 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesPercentage3" xml:space="preserve">
+    <value>Sales Percentage 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesPercentage4" xml:space="preserve">
+    <value>Sales Percentage 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesPercentage5" xml:space="preserve">
+    <value>Sales Percentage 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesperson1" xml:space="preserve">
+    <value>Salesperson 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesperson2" xml:space="preserve">
+    <value>Salesperson 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesperson3" xml:space="preserve">
+    <value>Salesperson 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesperson4" xml:space="preserve">
+    <value>Salesperson 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesperson5" xml:space="preserve">
+    <value>Salesperson 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalespersonName1" xml:space="preserve">
+    <value>Salesperson Name 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalespersonName2" xml:space="preserve">
+    <value>Salesperson Name 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalespersonName3" xml:space="preserve">
+    <value>Salesperson Name 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalespersonName4" xml:space="preserve">
+    <value>Salesperson Name 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalespersonName5" xml:space="preserve">
+    <value>Salesperson Name 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>Security Enabled</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Shidate" xml:space="preserve">
+    <value>Shipment Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentDateMatch" xml:space="preserve">
+    <value>Shipment Date Match</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentHomeCurrency" xml:space="preserve">
+    <value>Shipment Home Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentHomeCurrencyDesc" xml:space="preserve">
+    <value>Shipment Home Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ShipmentNumber" xml:space="preserve">
+    <value>Shipment Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRate" xml:space="preserve">
+    <value>Shipment Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRateDate" xml:space="preserve">
+    <value>Shipment Rate Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRateOperator" xml:space="preserve">
+    <value>Shipment Rate Operator</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRateOverrideFlag" xml:space="preserve">
+    <value>Shipment Rate Override Flag</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRateType" xml:space="preserve">
+    <value>Shipment Rate Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentRateTypeDescription" xml:space="preserve">
+    <value>Shipment Rate Type Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentSourceCurrency" xml:space="preserve">
+    <value>Shipment Source Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentSourceCurrencyDesc" xml:space="preserve">
+    <value>Shipment Source Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ShipmentSpread" xml:space="preserve">
+    <value>Shipment Spread</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentTrackingNumber" xml:space="preserve">
+    <value>Shipment Tracking Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentUniquifier" xml:space="preserve">
+    <value>Shipment Uniquifier</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ShippingLabelsPrinted" xml:space="preserve">
+    <value>Shipping Labels Printed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipToContactEmail" xml:space="preserve">
+    <value>Ship-To Contact Email</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipToContactFax" xml:space="preserve">
+    <value>Ship-To Contact Fax</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipToContactPhone" xml:space="preserve">
+    <value>Ship-To Contact Phone</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipToEmail" xml:space="preserve">
+    <value>Ship-To Email</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Tax Authority 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority1Desc" xml:space="preserve">
+    <value>Tax Authority 1 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Tax Authority 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority2Desc" xml:space="preserve">
+    <value>Tax Authority 2 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Tax Authority 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority3Desc" xml:space="preserve">
+    <value>Tax Authority 3 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Tax Authority 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority4Desc" xml:space="preserve">
+    <value>Tax Authority 4 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Tax Authority 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAuthority5Desc" xml:space="preserve">
+    <value>Tax Authority 5 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Tax Base 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Tax Base 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Tax Base 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Tax Base 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Tax Base 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxCalculationInProgress" xml:space="preserve">
+    <value>Tax Calculation In Progress</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Tax Class 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass1Description" xml:space="preserve">
+    <value>Tax Class 1 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Tax Class 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass2Description" xml:space="preserve">
+    <value>Tax Class 2 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Tax Class 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass3Description" xml:space="preserve">
+    <value>Tax Class 3 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Tax Class 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass4Description" xml:space="preserve">
+    <value>Tax Class 4 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Tax Class 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxClass5Description" xml:space="preserve">
+    <value>Tax Class 5 Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Tax Group</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxGroupCodeDesc" xml:space="preserve">
+    <value>Tax Group Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxOverridden" xml:space="preserve">
+    <value>Tax Overridden</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxReportingInvoiceTRCurre" xml:space="preserve">
+    <value>Tax Reporting Invoice TR Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxReportingShipmentTRCurr" xml:space="preserve">
+    <value>Tax Reporting Shipment TR Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxReportingTrCurrency" xml:space="preserve">
+    <value>Tax Reporting (TR) Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TemplateCode" xml:space="preserve">
+    <value>Template Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>Terms Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TermsPaymentsAsOfDate" xml:space="preserve">
+    <value>Terms Payments As Of Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalAmtItems" xml:space="preserve">
+    <value>Total Amount  Items</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalAmtMiscCharges" xml:space="preserve">
+    <value>Total Amount Misc. Charges</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>Total Tax Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTaxAmount1" xml:space="preserve">
+    <value>Total Tax Amount 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTaxAmount2" xml:space="preserve">
+    <value>Total Tax Amount 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTaxAmount3" xml:space="preserve">
+    <value>Total Tax Amount 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTaxAmount4" xml:space="preserve">
+    <value>Total Tax Amount 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTaxAmount5" xml:space="preserve">
+    <value>Total Tax Amount 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TRCurrencyDescription" xml:space="preserve">
+    <value>TR Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrExcludedTaxAmount1" xml:space="preserve">
+    <value>TR Excluded Tax Amount 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrExcludedTaxAmount2" xml:space="preserve">
+    <value>TR Excluded Tax Amount 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRExcludedTaxAmount3" xml:space="preserve">
+    <value>TR Excluded Tax Amount 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRExcludedTaxAmount4" xml:space="preserve">
+    <value>TR Excluded Tax Amount 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRExcludedTaxAmount5" xml:space="preserve">
+    <value>TR Excluded Tax Amount 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRExcludedTaxTotal" xml:space="preserve">
+    <value>TR Excluded Tax Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxAmount1" xml:space="preserve">
+    <value>TR Included Tax Amount 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxAmount2" xml:space="preserve">
+    <value>TR Included Tax Amount 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxAmount3" xml:space="preserve">
+    <value>TR Included Tax Amount 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxAmount4" xml:space="preserve">
+    <value>TR Included Tax Amount 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxAmount5" xml:space="preserve">
+    <value>TR Included Tax Amount 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRIncludedTaxTotal" xml:space="preserve">
+    <value>TR Included Tax Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceCurrencyDescription" xml:space="preserve">
+    <value>TR Invoice Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRate" xml:space="preserve">
+    <value>TR Invoice Rate</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateDate" xml:space="preserve">
+    <value>TR Invoice Rate Date</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateDateMatching" xml:space="preserve">
+    <value>TR Invoice Rate Date Matching</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateOperator" xml:space="preserve">
+    <value>TR Invoice Rate Operator</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateOverrideFlag" xml:space="preserve">
+    <value>TR Invoice Rate Override Flag</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateType" xml:space="preserve">
+    <value>TR Invoice Rate Type</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceRateTypeDescription" xml:space="preserve">
+    <value>TR Invoice Rate Type Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRInvoiceSpread" xml:space="preserve">
+    <value>TR Invoice Spread</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRate" xml:space="preserve">
+    <value>TR Rate</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRateDate" xml:space="preserve">
+    <value>TR Rate Date</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRateDateMatching" xml:space="preserve">
+    <value>TR Rate Date Matching</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRateOperator" xml:space="preserve">
+    <value>TR Rate Operator</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRateOverrideFlag" xml:space="preserve">
+    <value>TR Rate Override Flag</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrRateType" xml:space="preserve">
+    <value>TR Rate Type</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRRateTypeDescription" xml:space="preserve">
+    <value>TR Rate Type Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentCurrencyDescription" xml:space="preserve">
+    <value>TR Shipment Currency Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRate" xml:space="preserve">
+    <value>TR Shipment Rate</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateDate" xml:space="preserve">
+    <value>TR Shipment Rate Date</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateDateMatching" xml:space="preserve">
+    <value>TR Shipment Rate Date Matching</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateOperator" xml:space="preserve">
+    <value>TR Shipment Rate Operator</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateOverrideFlag" xml:space="preserve">
+    <value>TR Shipment Rate Override Flag</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateType" xml:space="preserve">
+    <value>TR Shipment Rate Type</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentRateTypeDescriptio" xml:space="preserve">
+    <value>TR Shipment Rate Type Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRShipmentSpread" xml:space="preserve">
+    <value>TR Shipment Spread</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TrSpread" xml:space="preserve">
+    <value>TR Spread</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxAmount1" xml:space="preserve">
+    <value>TR Tax Amount 1</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxAmount2" xml:space="preserve">
+    <value>TR Tax Amount 2</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxAmount3" xml:space="preserve">
+    <value>TR Tax Amount 3</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxAmount4" xml:space="preserve">
+    <value>TR Tax Amount 4</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxAmount5" xml:space="preserve">
+    <value>TR Tax Amount 5</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="TRTaxTotal" xml:space="preserve">
+    <value>TR Tax Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UserCanApproveCreditLift" xml:space="preserve">
+    <value>User Can Approve Credit Lift</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UserEnteredApprovalAmount" xml:space="preserve">
+    <value>User Entered Approval Amount</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CustomerAccountSetDescription" xml:space="preserve">
+    <value>Customer Account Set Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateRequested" xml:space="preserve">
+    <value>Date Requested</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ePOSSegmentLength" xml:space="preserve">
+    <value>ePOS Segment Length</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="IncludeInCRMOpportunityTotal" xml:space="preserve">
+    <value>Include In CRM Opportunity Total</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="IncompleteShipExistForOrder" xml:space="preserve">
+    <value>Incomplete Shipment Exists for Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvoicePostingDate" xml:space="preserve">
+    <value>Invoice Posting Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OnholdReason" xml:space="preserve">
+    <value>On Hold Reason</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderHasPreAuthorization" xml:space="preserve">
+    <value>Order Has Pre-authorization</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderNumberActivatedFromQuot" xml:space="preserve">
+    <value>Order Number Activated from Quote</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderUniqActivatedFromQuote" xml:space="preserve">
+    <value>Order Uniquifier Activated from Quote</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PaymentCardID" xml:space="preserve">
+    <value>Payment Card ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentCodeOnOrder" xml:space="preserve">
+    <value>Payment Code on Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentTypeOnOrder" xml:space="preserve">
+    <value>Payment Type on Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrepaymentDistributedAmount" xml:space="preserve">
+    <value>Prepayment Distributed Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrepaymentUnappliedAmount" xml:space="preserve">
+    <value>Prepayment Unapplied Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PromotedCustomerNumber" xml:space="preserve">
+    <value>Promoted Customer Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuoteExpired" xml:space="preserve">
+    <value>Quote Expired</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SageCRMCompanyID" xml:space="preserve">
+    <value>Sage CRM Company ID</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="SageCRMOpportunityID" xml:space="preserve">
+    <value>Sage CRM Opportunity ID</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="SageCRMPersonID" xml:space="preserve">
+    <value>Sage CRM Person ID</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ShipmentPostingDate" xml:space="preserve">
+    <value>Shipment Posting Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PerformForcedTaxCalculation" xml:space="preserve">
+    <value>Perform Forced Tax Calculation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CheckingNatAcctAgingLimit" xml:space="preserve">
+    <value>Checking National Account Aging Limit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastShipmentNumber" xml:space="preserve">
+    <value>Last Shipment Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRepCurrInvoiceExchRate" xml:space="preserve">
+    <value>Tax Reporting Currency Invoice Exchange Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRepCurrOrderExchRate" xml:space="preserve">
+    <value>Tax Reporting Currency Order Exchange Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRepCurrShipmentExchRate" xml:space="preserve">
+    <value>Tax Reporting Currency Shipment Exchange Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxReportingCurrency" xml:space="preserve">
+    <value>Tax Reporting Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxReportingCurrencyDesc" xml:space="preserve">
+    <value>Tax Reporting Currency Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeliverBy" xml:space="preserve">
+    <value>Deliver By</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Ordatemtch" xml:space="preserve">
+    <value>Order Date Match</value>
+    <comment>Field</comment>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemTaxes" xml:space="preserve">
+    <value>Detail Taxes</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>Currency Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerPriceList" xml:space="preserve">
+    <value>Customer Price List</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuotePrinted" xml:space="preserve">
+    <value>Quote Printed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemNotSelectedWarning" xml:space="preserve">
+    <value>Item {1} exists in inventory as {2}, but is also a customer's item number for {3}. If you enter {1}, {3} will not be selected automatically.</value>
+    <comment>Warning</comment>
+  </data>
+  <data name="OEPrepayments" xml:space="preserve">
+    <value>O/E Prepayments</value>
+    <comment>Prepayment-Title</comment>
+  </data>
+  <data name="BankCurrency" xml:space="preserve">
+    <value>Bank Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankRateSpread" xml:space="preserve">
+    <value>Bank Rate Spread</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Batch Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CapturePreauthorization" xml:space="preserve">
+    <value>Capture Pre-authorization</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CaptureTransactionID" xml:space="preserve">
+    <value>Capture Transaction ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditCardChargeStatus" xml:space="preserve">
+    <value>Credit Card Charge Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustRate" xml:space="preserve">
+    <value>Customer Rate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustRateDate" xml:space="preserve">
+    <value>Customer Rate Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustRateType" xml:space="preserve">
+    <value>Customer Rate Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OperCustCurnToFunc" xml:space="preserve">
+    <value>Operating Customer Currency to Functional</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PreauthCurrency" xml:space="preserve">
+    <value>Pre-authorization Currency</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PreauthTransactionID" xml:space="preserve">
+    <value>Pre-authorization Transaction ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrepaymentID" xml:space="preserve">
+    <value>Prepayment ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptDescription" xml:space="preserve">
+    <value>Receipt Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VoidTransactionID" xml:space="preserve">
+    <value>Void Transaction ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YPProcessCode" xml:space="preserve">
+    <value>Processing Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CardDeclined" xml:space="preserve">
+    <value>Card Declined</value>
+    <comment>Status</comment>
+  </data>
+  <data name="CardError" xml:space="preserve">
+    <value>Card Error</value>
+    <comment>Status</comment>
+  </data>
+  <data name="Charged" xml:space="preserve">
+    <value>Charged</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Voided" xml:space="preserve">
+    <value>Voided</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedAmount" xml:space="preserve">
+    <value>Extended Price</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedOrderCost" xml:space="preserve">
+    <value>Extended Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingUnitOfMeasure" xml:space="preserve">
+    <value>Pricing UOM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerNoDesc" xml:space="preserve">
+    <value>Customer Number Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Preauthorization" xml:space="preserve">
+    <value>O/E Pre-authorization</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankDescription" xml:space="preserve">
+    <value>Bank Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerDoesNotExist" xml:space="preserve">
+    <value>You cannot pre-authorize a credit card payment because customer {0} does not exist.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DifferentCustomerCurrency" xml:space="preserve">
+    <value>You cannot pre-authorize a credit card payment because customer currency {0} is not specified as the currency for any processing code.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OrderTypeError" xml:space="preserve">
+    <value>Before you can pre-authorize a credit card payment, you must set Order Type to Active.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ShipmentsCreatedError" xml:space="preserve">
+    <value>One or more shipments created from this order have not been invoiced. Before you can pre-authorize a credit card payment, you must close the Order Entry screen and then invoice all shipments created from this order.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankTransactionHeader" xml:space="preserve">
+    <value>Bank Transaction Header</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PreAuthAmountError" xml:space="preserve">
+    <value>Pre-authorization amount must be greater than zero.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillingDetails" xml:space="preserve">
+    <value>Billing Details</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessPreauthorization" xml:space="preserve">
+    <value>Process Preauthorization</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionDetails" xml:space="preserve">
+    <value>Transaction Details</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionInfo" xml:space="preserve">
+    <value>Transaction Info</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Credit Card</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPSUnknownIndicator" xml:space="preserve">
+    <value>Sage Payment Solutions returned an unknown response indicator. Contact Sage Payment Solutions for assistance. Error: {0}</value>
+    <comment>Error</comment>
+  </data>
+  <data name="TaxGroupChanged" xml:space="preserve">
+    <value>You have changed the tax group for this document. Before proceeding, verify the tax information.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxReportCurrencymismatch" xml:space="preserve">
+    <value>Document currency {0} differs from tax reporting currency {1} for tax group {2}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CustomerChangemsg" xml:space="preserve">
+    <value>You cannot change to a customer with a different tax group after entering details.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BatchNotOpen" xml:space="preserve">
+    <value>The specified batch is not open.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Are you sure you want to delete Order {0}?</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipAllMessage" xml:space="preserve">
+    <value>You have entered shipped quantities on at least one line. Do you still want to ship all items? If you choose Yes, the program will ship all available items when you post. If you choose No, you can continue editing the quantities.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderConfirmation" xml:space="preserve">
+    <value>Order Confirmation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostingCompleted" xml:space="preserve">
+    <value>Posting Completed</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrepaymentReceipt" xml:space="preserve">
+    <value>Prepayment Receipt</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PrintConfirmation" xml:space="preserve">
+    <value>Do you want to print?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="ShipmentPickingSlip" xml:space="preserve">
+    <value>Shipment Picking Slip</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0180" xml:space="preserve">
+    <value>Order Comments Instructions</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0500" xml:space="preserve">
+    <value>Order Details</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0501" xml:space="preserve">
+    <value>Order Detail Optional Fields</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0507" xml:space="preserve">
+    <value>Order Detail Lot Numbers</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0508" xml:space="preserve">
+    <value>Order Detail Serial Numbers</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0520" xml:space="preserve">
+    <value>Orders</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0522" xml:space="preserve">
+    <value>Order Optional Fields</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OE0740" xml:space="preserve">
+    <value>Order Payment Schedules</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Accounting Method</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>Allocate from Lot</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>Allocate from Serial</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Allow Blank</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AlternateItemNumber" xml:space="preserve">
+    <value>Alternate Item Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AlternateItemSetNumber" xml:space="preserve">
+    <value>Alternate Item Set Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AlternateUnitCost1" xml:space="preserve">
+    <value>Alternate Unit Cost 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AlternateUnitCost2" xml:space="preserve">
+    <value>Alternate Unit Cost 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AmountDueBase" xml:space="preserve">
+    <value>Amount Due Base</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Amount Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>A/R Item Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ARItemUnit" xml:space="preserve">
+    <value>A/R Item Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AverageUnitCost" xml:space="preserve">
+    <value>Average Unit Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>Billing Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BOMBuildQty" xml:space="preserve">
+    <value>BOM Build Quantity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BOMBuildUnit" xml:space="preserve">
+    <value>BOM Build Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BOMBuildUnitConversion" xml:space="preserve">
+    <value>BOM Build Unit Conversion</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Category Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Category Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>Close LT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>Close SN</value>
+    <comment>Field</comment>
+  </data>
+  <data name="COGSWIPAccount" xml:space="preserve">
+    <value>COGS WIP Account</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CommentsInstructionsType" xml:space="preserve">
+    <value>Comments/Instructions Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Contract Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Cost Class</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostingUnitConversion" xml:space="preserve">
+    <value>Costing Unit Conversion</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostingUnitCost" xml:space="preserve">
+    <value>Costing Unit Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Date Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultOEPrice" xml:space="preserve">
+    <value>Default O/E Price</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefWeightUOMExtUnitWeight" xml:space="preserve">
+    <value>Default Weight UOM Extended Unit Weight</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DefWeightUOMUnitWeight" xml:space="preserve">
+    <value>Default Weight UOM Unit Weight</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Detail Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Discount Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountBase" xml:space="preserve">
+    <value>Discount Base</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Discount Percentage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ePOSPromotionID" xml:space="preserve">
+    <value>ePOS Promotion ID</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExtendedAmountNetOfTax" xml:space="preserve">
+    <value>Extended Amount Net of Tax</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExtendedDiscountedPrice" xml:space="preserve">
+    <value>Extended Discounted Price</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedOrderAmount" xml:space="preserve">
+    <value>Extended Order Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExtendedShippedAmtOverride" xml:space="preserve">
+    <value>Extended Shipped Amt. Override</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ExtPriceNetOfDiscIncTax" xml:space="preserve">
+    <value>Extended Price Net of Discount Included Tax</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ForcePopupLTonQtyOrdered" xml:space="preserve">
+    <value>Force Popup LT on Quantity Ordered</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ForcePopupLTonQtyShipped" xml:space="preserve">
+    <value>Force Popup LT on Quantity Shipped</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ForcePopupSNonQtyOrdered" xml:space="preserve">
+    <value>Force Popup SN on Quantity Ordered</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="ForcePopupSNonQtyShipped" xml:space="preserve">
+    <value>Force Popup SN on Quantity Shipped</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="HeaderDiscount" xml:space="preserve">
+    <value>Header Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Indatemtch" xml:space="preserve">
+    <value>Invoice Rate Date Matching</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inrateover" xml:space="preserve">
+    <value>Invoice Rate Override Flag</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Inraterep" xml:space="preserve">
+    <value>Invoice Rate Operator</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Integer Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InterprocessCommID" xml:space="preserve">
+    <value>Inter-process Command ID</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemAccountSet" xml:space="preserve">
+    <value>Item Account Set</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemSerialized" xml:space="preserve">
+    <value>Item Serialized</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemSerializedLotted" xml:space="preserve">
+    <value>Item Serialized/Lotted</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KittingBOM" xml:space="preserve">
+    <value>Kitting BOM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastUnitCost" xml:space="preserve">
+    <value>Last Unit Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Level1Name" xml:space="preserve">
+    <value>Level 1 Name</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Level2Name" xml:space="preserve">
+    <value>Level 2 Name</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Level3Name" xml:space="preserve">
+    <value>Level 3 Name</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Location Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LostSalesAmount" xml:space="preserve">
+    <value>Lost Sales Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Lot Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotQtyShipped" xml:space="preserve">
+    <value>Lot Quantity Shipped</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>Lot Quantity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LTSetID" xml:space="preserve">
+    <value>LT Set ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MiscellaneousChargesCode" xml:space="preserve">
+    <value>Miscellaneous Charges Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MostRecentUnitCost" xml:space="preserve">
+    <value>Most Recent Unit Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextComponentNumber" xml:space="preserve">
+    <value>Next Component Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NonstockClearingAcctDesc" xml:space="preserve">
+    <value>Non-stock Clearing Account Description</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>Number of Lots to Generate</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Number Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderUnitConversion" xml:space="preserve">
+    <value>Order Unit Conversion</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderWeightConversionFactor" xml:space="preserve">
+    <value>Order Weight Conversion Factor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PercentageDue" xml:space="preserve">
+    <value>Percentage Due</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PickingSequence" xml:space="preserve">
+    <value>Picking Sequence</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PickingSlipPrinted" xml:space="preserve">
+    <value>Picking Slip Printed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PopupLT" xml:space="preserve">
+    <value>Pop-up LT</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PopupSN" xml:space="preserve">
+    <value>Pop-up SN</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="POQuantityOrdered" xml:space="preserve">
+    <value>P/O Quantity Ordered</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PredecessorLineNumber" xml:space="preserve">
+    <value>Predecessor Line Number</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PrepaymentDistributed" xml:space="preserve">
+    <value>Prepayment Distributed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceApprovedBy" xml:space="preserve">
+    <value>Price Approved By</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceDiscountAmount" xml:space="preserve">
+    <value>Price Discount Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceDiscountPercentage" xml:space="preserve">
+    <value>Price Discount Percentage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceListDescription" xml:space="preserve">
+    <value>Price List Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PriceOverride" xml:space="preserve">
+    <value>Price Override</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingBaseUnit" xml:space="preserve">
+    <value>Pricing Base Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingBaseUnitConversion" xml:space="preserve">
+    <value>Pricing Base Unit Conversion</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingBaseUnitPrice" xml:space="preserve">
+    <value>Pricing Base Unit Price</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingBaseWeightConvFactor" xml:space="preserve">
+    <value>Pricing Base Weight Conversion Factor</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PricingBaseWeightUnit" xml:space="preserve">
+    <value>Pricing Base Weight Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingUnitConversion" xml:space="preserve">
+    <value>Pricing Unit Conversion</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingUnitPrice" xml:space="preserve">
+    <value>Pricing Unit Price</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingWeightConversionFactor" xml:space="preserve">
+    <value>Pricing Weight Conversion Factor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PricingWeightUOM" xml:space="preserve">
+    <value>Pricing Weight UOM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Process Command</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Project Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>Project Style</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Project Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyShippedInStockingUOM" xml:space="preserve">
+    <value>Quantity Shipped In Stocking UOM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityInStockingUOM" xml:space="preserve">
+    <value>Quantity In Stocking UOM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityperLot" xml:space="preserve">
+    <value>Quantity per Lot</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuoteDetailLineNumber" xml:space="preserve">
+    <value>Quote Detail Line Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecognizedInItemLocation" xml:space="preserve">
+    <value>Recognized in Item Location</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainageDays" xml:space="preserve">
+    <value>Retainage Days</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RetainagePercent" xml:space="preserve">
+    <value>Retainage Percent</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RevenueBillingAccount" xml:space="preserve">
+    <value>Revenue Billing Account</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>Serial Lot Quantity to Process</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>Serial Lot Window Handle</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialQtyShipped" xml:space="preserve">
+    <value>Serial Quantity Shipped</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Serial Quantity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StandardUnitCost" xml:space="preserve">
+    <value>Standard Unit Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>Stock Item</value>
+    <comment>Field</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Quote Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Predecessor Number</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Predecessor Uniquifier</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Job Related</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Tax Amount 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Tax Amount 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Tax Amount 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Tax Amount 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Tax Amount 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Tax Included 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Tax Included 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Tax Included 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Tax Included 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Tax Included 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tax Rate 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tax Rate 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tax Rate 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tax Rate 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tax Rate 5</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TaxTotal" xml:space="preserve">
+    <value>Tax Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Text Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Time Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceAverageCost" xml:space="preserve">
+    <value>Total Invoice Average Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceCost1" xml:space="preserve">
+    <value>Total Invoice Cost 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceCost2" xml:space="preserve">
+    <value>Total Invoice Cost 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceLastCost" xml:space="preserve">
+    <value>Total Invoice Last Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceMostRecentCost" xml:space="preserve">
+    <value>Total Invoice Most Recent Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalInvoiceStandardCost" xml:space="preserve">
+    <value>Total Invoice Standard Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderAverageCost" xml:space="preserve">
+    <value>Total Order Average Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderCost1" xml:space="preserve">
+    <value>Total Order Cost 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderCost2" xml:space="preserve">
+    <value>Total Order Cost 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderLastCost" xml:space="preserve">
+    <value>Total Order Last Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderMostRecentCost" xml:space="preserve">
+    <value>Total Order Most Recent Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOrderStandardCost" xml:space="preserve">
+    <value>Total Order Standard Cost</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>Transaction Quantity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TrueQuantityCommitted" xml:space="preserve">
+    <value>True Quantity Committed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Typed Value Field Index</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>Unformatted Contract Code</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UnformattedItemNumber" xml:space="preserve">
+    <value>Unformatted Item Number</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Uniquifier" xml:space="preserve">
+    <value>Uniquifier</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UnitPriceNoOfDecimals" xml:space="preserve">
+    <value>Unit Price No. of Decimals</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UseCommentsInstructions" xml:space="preserve">
+    <value>Use Comments Instructions</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="UserSpecifiedCostingMethod" xml:space="preserve">
+    <value>User-Specified Costing Method</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="WeightUOMDescription" xml:space="preserve">
+    <value>Weight UOM Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Yes/No Value</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BlankOrderNumberMsg" xml:space="preserve">
+    <value>Order Number cannot be blank.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemNoNotExists" xml:space="preserve">
+    <value>Cannot find Item Number {0}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ReceiptAndAdjustmentBatch" xml:space="preserve">
+    <value>Receipt And Adjustment Batch</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="ProcessCreditCardCapturePreAuth" xml:space="preserve">
+    <value>Process Credit Card - Capture Pre-authorization</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="ProcessCreditCardPreAuth" xml:space="preserve">
+    <value>Process Credit Card - Pre-authorization</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="ProcessCreditCardSale" xml:space="preserve">
+    <value>Process Credit Card - Sale</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="ProcessCreditCardVoidPreAuth" xml:space="preserve">
+    <value>Process Credit Card - Void Pre-authorization</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="ProcessCreditCardVoidSale" xml:space="preserve">
+    <value>Process Credit Card - Void Sale</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="InvalidMsg" xml:space="preserve">
+    <value>{0} is invalid.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="MustSavePrepayWithChargedCreditCard" xml:space="preserve">
+    <value>You must post this document because a credit card prepayment has already been processed in Sage Payment Solutions. If you do not post the document, you must void the prepayment in Sage Exchange Virtual Terminal.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OrderConfirmationPrinted" xml:space="preserve">
+    <value>Order Confirmation Printed</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NegativeInventoryWarning" xml:space="preserve">
+    <value>Shipment will reduce the item quantity in this location below zero. Do you want to proceed?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeliverByDateConfirmation" xml:space="preserve">
+    <value>The Deliver By date is earlier than the expected ship date. Do you want to continue?</value>
+  </data>
+  <data name="ExpectedShipDateConfirmation" xml:space="preserve">
+    <value>The expected ship date is later than the Deliver By date. Do you want to continue?</value>
+  </data>
+  <data name="MustSavePreauthorization" xml:space="preserve">
+    <value>You must post this order because a pre-authorization has already been processed in Sage Payment Solutions. If you do not post the document, you must void the prepayment in Sage Exchange Virtual Terminal.</value>
+  </data>
+  <data name="CreateInvoiceErrorMsg" xml:space="preserve">
+    <value>You cannot create an invoice if you don’t ship any items or you don’t have a miscellaneous charges line.</value>
+  </data>
+  <data name="ItemPricing" xml:space="preserve">
+    <value>Item Pricing</value>
+  </data>
+  <data name="btnOneClickPreAuth" xml:space="preserve">
+    <value>Quick Pre-authorize</value>
+  </data>
+</root>

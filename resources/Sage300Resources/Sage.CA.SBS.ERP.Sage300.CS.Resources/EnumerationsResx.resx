@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alternateamount1" xml:space="preserve">
+    <value>Alternate Amount 1</value>
+  </data>
+  <data name="Alternateamount2" xml:space="preserve">
+    <value>Alternate Amount 2</value>
+  </data>
+  <data name="Atinvoicelevel" xml:space="preserve">
+    <value>At Invoice Level</value>
+    <comment>List option on Tax Authorities screen</comment>
+  </data>
+  <data name="AtTimeofOriginalDocument" xml:space="preserve">
+    <value>At Time of Original Document</value>
+    <comment>List option on Tax Authorities screen</comment>
+  </data>
+  <data name="AtTimeofRetainageDocument" xml:space="preserve">
+    <value>At Time of Retainage Document</value>
+    <comment>List option on Tax Authorities screen</comment>
+  </data>
+  <data name="BankDocumentType_Entry" xml:space="preserve">
+    <value>Bank Entry</value>
+  </data>
+  <data name="BankDocumentType_Transfer" xml:space="preserve">
+    <value>Bank Transfer</value>
+  </data>
+  <data name="DayofMonth_Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="DayofMonth_Num10th" xml:space="preserve">
+    <value>10th</value>
+  </data>
+  <data name="DayofMonth_Num11th" xml:space="preserve">
+    <value>11th</value>
+  </data>
+  <data name="DayofMonth_Num12th" xml:space="preserve">
+    <value>12th</value>
+  </data>
+  <data name="DayofMonth_Num13th" xml:space="preserve">
+    <value>13th</value>
+  </data>
+  <data name="DayofMonth_Num14th" xml:space="preserve">
+    <value>14th</value>
+  </data>
+  <data name="DayofMonth_Num15th" xml:space="preserve">
+    <value>15th</value>
+  </data>
+  <data name="DayofMonth_Num16th" xml:space="preserve">
+    <value>16th</value>
+  </data>
+  <data name="DayofMonth_Num17th" xml:space="preserve">
+    <value>17th</value>
+  </data>
+  <data name="DayofMonth_Num18th" xml:space="preserve">
+    <value>18th</value>
+  </data>
+  <data name="DayofMonth_Num19th" xml:space="preserve">
+    <value>19th</value>
+  </data>
+  <data name="DayofMonth_Num1st" xml:space="preserve">
+    <value>1st</value>
+  </data>
+  <data name="DayofMonth_Num20th" xml:space="preserve">
+    <value>20th</value>
+  </data>
+  <data name="DayofMonth_Num21st" xml:space="preserve">
+    <value>21st</value>
+  </data>
+  <data name="DayofMonth_Num22nd" xml:space="preserve">
+    <value>22nd</value>
+  </data>
+  <data name="DayofMonth_Num23rd" xml:space="preserve">
+    <value>23rd</value>
+  </data>
+  <data name="DayofMonth_Num24th" xml:space="preserve">
+    <value>24th</value>
+  </data>
+  <data name="DayofMonth_Num25th" xml:space="preserve">
+    <value>25th</value>
+  </data>
+  <data name="DayofMonth_Num26th" xml:space="preserve">
+    <value>26th</value>
+  </data>
+  <data name="DayofMonth_Num27th" xml:space="preserve">
+    <value>27th</value>
+  </data>
+  <data name="DayofMonth_Num28th" xml:space="preserve">
+    <value>28th</value>
+  </data>
+  <data name="DayofMonth_Num29th" xml:space="preserve">
+    <value>29th</value>
+  </data>
+  <data name="DayofMonth_Num2nd" xml:space="preserve">
+    <value>2nd</value>
+  </data>
+  <data name="DayofMonth_Num30th" xml:space="preserve">
+    <value>30th</value>
+  </data>
+  <data name="DayofMonth_Num31st" xml:space="preserve">
+    <value>31st</value>
+  </data>
+  <data name="DayofMonth_Num3rd" xml:space="preserve">
+    <value>3rd</value>
+  </data>
+  <data name="DayofMonth_Num4th" xml:space="preserve">
+    <value>4th</value>
+  </data>
+  <data name="DayofMonth_Num5th" xml:space="preserve">
+    <value>5th</value>
+  </data>
+  <data name="DayofMonth_Num6th" xml:space="preserve">
+    <value>6th</value>
+  </data>
+  <data name="DayofMonth_Num7th" xml:space="preserve">
+    <value>7th</value>
+  </data>
+  <data name="DayofMonth_Num8th" xml:space="preserve">
+    <value>8th</value>
+  </data>
+  <data name="DayofMonth_Num9th" xml:space="preserve">
+    <value>9th</value>
+  </data>
+  <data name="DecimalPlaces_Num0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DecimalPlaces_Num1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DecimalPlaces_Num2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DecimalPlaces_Num3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Filtration_AllAssignedSchedules" xml:space="preserve">
+    <value>All Assigned Schedules</value>
+  </data>
+  <data name="Filtration_AllPersonalSchedules" xml:space="preserve">
+    <value>All Personal Schedules</value>
+  </data>
+  <data name="Filtration_DueAssignedSchedules" xml:space="preserve">
+    <value>Due Assigned Schedules</value>
+  </data>
+  <data name="Filtration_DuePersonalSchedules" xml:space="preserve">
+    <value>Due Personal Schedules</value>
+  </data>
+  <data name="FiscalPeriodError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FiscalPeriodNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="FiscalPeriodWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Frequency_DateandLast" xml:space="preserve">
+    <value>Date and Last</value>
+  </data>
+  <data name="Frequency_Every" xml:space="preserve">
+    <value>Every</value>
+  </data>
+  <data name="Frequency_FirstandDate" xml:space="preserve">
+    <value>First and Date</value>
+  </data>
+  <data name="Frequency_Weekdays" xml:space="preserve">
+    <value>Weekdays</value>
+  </data>
+  <data name="Frequency_Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="Interval_Annual" xml:space="preserve">
+    <value>Yearly</value>
+  </data>
+  <data name="Interval_Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Interval_Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="Interval_Once" xml:space="preserve">
+    <value>Once</value>
+  </data>
+  <data name="Interval_Semimonthly" xml:space="preserve">
+    <value>Semi-monthly</value>
+  </data>
+  <data name="Interval_Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="Month_April" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="Month_August" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="Month_December" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="Month_February" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="Month_January" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="Month_July" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="Month_June" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="Month_March" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="Month_May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Month_November" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="Month_October" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="Month_September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="Mostrecentcost" xml:space="preserve">
+    <value>Most recent cost</value>
+  </data>
+  <data name="NegativeDisplay_Brackets" xml:space="preserve">
+    <value>Brackets ()</value>
+  </data>
+  <data name="NegativeDisplay_Leading" xml:space="preserve">
+    <value>Leading -</value>
+  </data>
+  <data name="NegativeDisplay_Trailing" xml:space="preserve">
+    <value>Trailing -</value>
+  </data>
+  <data name="Noreporting" xml:space="preserve">
+    <value>No Reporting</value>
+    <comment>List option on Tax Authorities screen</comment>
+  </data>
+  <data name="Num1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Num10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Num11" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Num2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Num3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Num4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Num5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Num6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Num7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Num8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Num9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="NumberOfFiscalPeriod12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="NumberOfFiscalPeriod13" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Operation_GetNextScheduledRun" xml:space="preserve">
+    <value>Get Next Scheduled Run</value>
+  </data>
+  <data name="OptionalFieldTypeAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="OptionalFieldTypeDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OptionalFieldTypeInteger" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="OptionalFieldTypeNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="OptionalFieldTypeText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="OptionalFieldTypeTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="OptionalFieldTypeYesNo" xml:space="preserve">
+    <value>Yes/No</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="RealizedandUnrealizedGainOrLoss" xml:space="preserve">
+    <value>Realized and Unrealized Gain or Loss</value>
+  </data>
+  <data name="RecognizedGainOrLoss" xml:space="preserve">
+    <value>Recognized Gain or Loss</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="Sellingprice" xml:space="preserve">
+    <value>Selling price</value>
+  </data>
+  <data name="Standardcost" xml:space="preserve">
+    <value>Standard cost</value>
+  </data>
+  <data name="SundayCall_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SundayCall_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="SymbolPosition_Afterwithoutspace" xml:space="preserve">
+    <value>After without Space</value>
+  </data>
+  <data name="SymbolPosition_Afterwithspace" xml:space="preserve">
+    <value>After with Space</value>
+  </data>
+  <data name="SymbolPosition_Beforewithoutspace" xml:space="preserve">
+    <value>Before without space</value>
+  </data>
+  <data name="SymbolPosition_Beforewithspace" xml:space="preserve">
+    <value>Before with space</value>
+  </data>
+  <data name="ThousandsSeparator_Comma" xml:space="preserve">
+    <value>Comma</value>
+  </data>
+  <data name="ThousandsSeparator_Period" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="ThousandsSeparator_Space" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="UserMode_AllUsers" xml:space="preserve">
+    <value>All Users</value>
+  </data>
+  <data name="UserMode_NoUsers" xml:space="preserve">
+    <value>No Users</value>
+  </data>
+  <data name="UserMode_SpecificUser" xml:space="preserve">
+    <value>Specific User</value>
+  </data>
+  <data name="Weekday_Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="Weekday_Monday" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="Weekday_Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="Weekday_Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Weekday_Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="Weekday_Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="Weekday_Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="WeekinMonth_First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="WeekinMonth_Fourth" xml:space="preserve">
+    <value>Fourth</value>
+  </data>
+  <data name="WeekinMonth_Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="WeekinMonth_Second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="WeekinMonth_Third" xml:space="preserve">
+    <value>Third</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="CheckStatus_AdviceNotPrinted" xml:space="preserve">
+    <value>Advice Not Printed</value>
+  </data>
+  <data name="CheckStatus_NotPrinted" xml:space="preserve">
+    <value>Not Printed</value>
+  </data>
+  <data name="Num12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="NotCompleted" xml:space="preserve">
+    <value>Not Completed</value>
+  </data>
+  <data name="UnmatchedOFX" xml:space="preserve">
+    <value>Unmatched OFX</value>
+  </data>
+  <data name="UnmatchedOFXCorrection" xml:space="preserve">
+    <value>Unmatched OFX correction</value>
+  </data>
+  <data name="UnmatchedOFXError" xml:space="preserve">
+    <value>Unmatched OFX error</value>
+  </data>
+  <data name="UserEntered" xml:space="preserve">
+    <value>User-entered</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DetailsAndSummary" xml:space="preserve">
+    <value>Details and Summary</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="PaymentNumber" xml:space="preserve">
+    <value>Payment Number</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="DataCheck_Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="DataCheck_DontCheck" xml:space="preserve">
+    <value>Don't Check</value>
+  </data>
+  <data name="DataCheck_Fix" xml:space="preserve">
+    <value>Fix</value>
+  </data>
+  <data name="StockType_AdvicesOnly" xml:space="preserve">
+    <value>Advices Only</value>
+  </data>
+  <data name="StockType_ChecksOnly" xml:space="preserve">
+    <value>Checks Only</value>
+  </data>
+  <data name="StockType_ChecksThenAdvices" xml:space="preserve">
+    <value>Checks Then Advices</value>
+  </data>
+  <data name="StockType_CombinedCheckandAdvice" xml:space="preserve">
+    <value>Combined Check and Advice</value>
+  </data>
+  <data name="VendorOrPayeeCode" xml:space="preserve">
+    <value>Vendor/Payee Code</value>
+  </data>
+  <data name="AccountFiscalPeriod" xml:space="preserve">
+    <value>Account/Fiscal Period</value>
+  </data>
+  <data name="AccountFiscalPeriodSourceCode" xml:space="preserve">
+    <value>Account/Fiscal Period/Source Code</value>
+  </data>
+  <data name="AddingtoanExistingBatch" xml:space="preserve">
+    <value>Adding to an Existing Batch</value>
+  </data>
+  <data name="CreatingandPostingaNewBatch" xml:space="preserve">
+    <value>Creating and Posting a New Batch</value>
+  </data>
+  <data name="CreatingaNewBatch" xml:space="preserve">
+    <value>Creating a New Batch</value>
+  </data>
+  <data name="DuringPosting" xml:space="preserve">
+    <value>During Posting</value>
+  </data>
+  <data name="OnRequestUsingCreateGLBatchIcon" xml:space="preserve">
+    <value>On Request Using Create G/L Batch Screen</value>
+  </data>
+  <data name="PostAllDetails" xml:space="preserve">
+    <value>Post All Details</value>
+  </data>
+  <data name="ConsolidateByAccFisc" xml:space="preserve">
+    <value>Consolidate by  Account and Fiscal Period</value>
+    <comment>GL Integration - Options List</comment>
+  </data>
+  <data name="ConsolidateByAccFiscSource" xml:space="preserve">
+    <value>Consolidate by Account, Fiscal Period and Source</value>
+    <comment>GL Integation -Options List</comment>
+  </data>
+  <data name="BankEntry" xml:space="preserve">
+    <value>Bank Entry</value>
+    <comment>GL Integration Transaction Tab SourceTransactionType</comment>
+  </data>
+  <data name="BankEntryDetail" xml:space="preserve">
+    <value>Bank Entry Detail</value>
+    <comment>GL Integration Transaction Tab SourceTransactionType</comment>
+  </data>
+  <data name="BankReconciliation" xml:space="preserve">
+    <value>Bank Reconciliation</value>
+    <comment>GL Integration Transaction Tab SourceTransactionType</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Bank Code</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="BankEntryType" xml:space="preserve">
+    <value>Bank Entry Type</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Batch Number</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="DepositNumber" xml:space="preserve">
+    <value>Deposit Number</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Distribution Code</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Entry Description</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Entry Number</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="FromBank" xml:space="preserve">
+    <value>From Bank</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="FromBankAccount" xml:space="preserve">
+    <value>From Bank Account</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="PayeeID" xml:space="preserve">
+    <value>Payee ID</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="PayeeName" xml:space="preserve">
+    <value>Payee Name</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Posting Sequence</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="ReconciliationDescription" xml:space="preserve">
+    <value>Reconciliation Description</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="ReconciliationStatus" xml:space="preserve">
+    <value>Reconciliation Status</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="ToBank" xml:space="preserve">
+    <value>To Bank</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="ToBankAccount" xml:space="preserve">
+    <value>To Bank Account</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="TransferNumber" xml:space="preserve">
+    <value>Transfer Number</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="WithdrawalNumber" xml:space="preserve">
+    <value>Withdrawal Number</value>
+    <comment>InclidedSegment1 Enum</comment>
+  </data>
+  <data name="SymbolLeftParenthesis" xml:space="preserve">
+    <value>{ Left Parenthesis</value>
+    <comment>GLIntegration-Segment Seperator List Options</comment>
+  </data>
+  <data name="SymbolRightParenthesis" xml:space="preserve">
+    <value>} Right Parenthesis</value>
+    <comment>GLIntegration-Segment Seperator List Options</comment>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="Reversed" xml:space="preserve">
+    <value>Reversed</value>
+  </data>
+  <data name="Amounttowriteoff" xml:space="preserve">
+    <value>Amount to Write-Off</value>
+  </data>
+  <data name="ApplyDetailsCleared" xml:space="preserve">
+    <value>Apply Details Cleared</value>
+  </data>
+  <data name="ApplyDetailsOutstanding" xml:space="preserve">
+    <value>Apply Details Outstanding</value>
+  </data>
+  <data name="BankEntered" xml:space="preserve">
+    <value>Bank Entered</value>
+  </data>
+  <data name="Bankerror" xml:space="preserve">
+    <value>Bank Error</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Exchangeratedifference" xml:space="preserve">
+    <value>Exchange Rate Difference</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="PartiallyOutstanding" xml:space="preserve">
+    <value>Partially Outstanding</value>
+  </data>
+  <data name="PartiallyReconciled" xml:space="preserve">
+    <value>Partially Reconciled</value>
+  </data>
+  <data name="PendingJournal" xml:space="preserve">
+    <value>Pending Journal</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="Purged" xml:space="preserve">
+    <value>Purged</value>
+  </data>
+  <data name="ReturnedCustomerCheck" xml:space="preserve">
+    <value>Returned Customer Check</value>
+  </data>
+  <data name="Subledger" xml:space="preserve">
+    <value>Subledger</value>
+  </data>
+  <data name="SumDetails" xml:space="preserve">
+    <value>Sum Details</value>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>Transfers</value>
+    <comment>SourceTransactionType</comment>
+  </data>
+  <data name="Equivalent" xml:space="preserve">
+    <value>Equivalent</value>
+  </data>
+  <data name="Functional" xml:space="preserve">
+    <value>Functional</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>Reporting</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Actuals" xml:space="preserve">
+    <value>Actuals</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget1" xml:space="preserve">
+    <value>Budget 1</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget2" xml:space="preserve">
+    <value>Budget 2</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget3" xml:space="preserve">
+    <value>Budget 3</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget4" xml:space="preserve">
+    <value>Budget 4</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget5" xml:space="preserve">
+    <value>Budget 5</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="ProvisionalActuals" xml:space="preserve">
+    <value>Provisional Actuals</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="ProvisionalQuantity" xml:space="preserve">
+    <value>Provisional Quantity</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="ProvisionalReporting" xml:space="preserve">
+    <value>Provisional Reporting</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Reporting1" xml:space="preserve">
+    <value>Reporting</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Num13" xml:space="preserve">
+    <value>13</value>
+  </data>
+</root>

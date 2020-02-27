@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActEntryRestartWarn" xml:space="preserve">
+    <value>Un enregistrement de reprise de report d'opération existe pour la banque {0}. Vous devez terminer le report d'opération avant de procéder aux modifications des opérations de cette banque.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ActRecRestartErr" xml:space="preserve">
+    <value>Un enregistrement de reprise de report de rapprochement existe pour la banque {0}.  Utilisez l'écran Reporter le rapprochement pour terminer le report de rapprochement avant de procéder aux modifications des opérations de cette banque.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BankAcct" xml:space="preserve">
+    <value>Compte bancaire</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Code banque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankCodeDesc" xml:space="preserve">
+    <value>Description banque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankEntryType" xml:space="preserve">
+    <value>Type opération bancaire</value>
+    <comment>List</comment>
+  </data>
+  <data name="BankInactive" xml:space="preserve">
+    <value>La banque {0} est inactive.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BANKNOTEXISTNOTEDITABLE" xml:space="preserve">
+    <value>Un problème est survenu lors de l'extraction des données de la banque {0} et l'opération bancaire n'a pas pu être sauvegardée. Veuillez vérifier les informations de configuration de la banque {1}.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="BankRequiredInDetail" xml:space="preserve">
+    <value>Saisissez un code de banque avant de créer une ligne de détail.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="CREATEDIST" xml:space="preserve">
+    <value>Créer ventilation</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Devise</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Code de devise</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Description de devise</value>
+    <comment>Table Row</comment>
+  </data>
+  <data name="DepositAmt" xml:space="preserve">
+    <value>Montant dépôt</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DISTCODE" xml:space="preserve">
+    <value>Code ventilation</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DISTCODEDESC" xml:space="preserve">
+    <value>Description code de ventilation</value>
+    <comment>Table - Column</comment>
+  </data>
+  <data name="DISTSet" xml:space="preserve">
+    <value>Série ventilation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DistSetDesc" xml:space="preserve">
+    <value>Description série de ventilation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Opération bancaire</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EntryDesc" xml:space="preserve">
+    <value>Description opération</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EntryNo" xml:space="preserve">
+    <value>Numéro opération</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ErrorCreateDist" xml:space="preserve">
+    <value>Un problème est survenu pendant la création de la ventilation. Veuillez réessayer.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFACCOUNT" xml:space="preserve">
+    <value>Impossible de créer une nouvelle opération bancaire car le compte de GL {0} n'est pas valide. Vérifiez l'intégrité des données pour déterminer la cause de l'erreur.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFBANK" xml:space="preserve">
+    <value>Impossible de créer une nouvelle opération bancaire car un paramètre de la banque {0} n'est pas valide ou aucun code de banque par défaut n'a été configuré. Vérifiez l'intégrité des données pour trouver l'erreur, puis corrigez le paramètre de la banque {1} ou modifiez le code de banque par défaut dans Options de banque.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ErrorDEFDISTCODE" xml:space="preserve">
+    <value>Impossible de créer une nouvelle opération bancaire car un paramètre du code de ventilation {0} n'est pas valide ou aucun code de ventilation par défaut n'a été configuré. Vérifiez l'intégrité des données pour trouver l'erreur, puis corrigez le paramètre dans l'enregistrement du code de ventilation {1} ou modifiez le code de ventilation par défaut dans Options de banque.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Taux de change</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="FroBankRate" xml:space="preserve">
+    <value>De taux bancaire</value>
+    <comment>Rates - Table Column</comment>
+  </data>
+  <data name="FuncDepositAm" xml:space="preserve">
+    <value>Montant dépôt devise fonctionnelle</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="FuncTransferAm" xml:space="preserve">
+    <value>Montant virement devise fonctionnelle</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Type paiement</value>
+    <comment>List</comment>
+  </data>
+  <data name="POSTINGDATE" xml:space="preserve">
+    <value>Date opération bancaire</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Date taux</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="RATEOVERRIDE" xml:space="preserve">
+    <value>Remplacement taux</value>
+    <comment>Panel</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Type taux</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Description type de taux</value>
+    <comment>Rates - Table Row</comment>
+  </data>
+  <data name="SaveBeforeChangePostDate" xml:space="preserve">
+    <value>Le changement apporté à la date d'opération bancaire pour une entreprise utilisant plusieurs devises peut modifier le taux de change ou le taux de la monnaie de publication de taxe. Vous devez d'abord sauvegarder l'opération bancaire afin de poursuivre. Voulez-vous poursuivre?</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="ToBankRate" xml:space="preserve">
+    <value>À taux bancaire</value>
+    <comment>Rates - Table Column</comment>
+  </data>
+  <data name="TransferAm" xml:space="preserve">
+    <value>Montant virement</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="TransferDepCon" xml:space="preserve">
+    <value>Conversion du virement - dépôt</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="WarnBlankTaxGroup" xml:space="preserve">
+    <value>Sélectionnez un groupe de taxe pour les détails d'opération taxables.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Numéro séquence</value>
+  </data>
+  <data name="BankEntryAmount" xml:space="preserve">
+    <value>Montant opération bancaire</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BankEntryTotalFuncCurrency" xml:space="preserve">
+    <value>Total opération bancaire (devise fonctionnelle)</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BankEntryTotalSourceCurrency" xml:space="preserve">
+    <value>Total opération bancaire (devise transaction)</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>Montant devise fonctionnelle</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AgingRecondays" xml:space="preserve">
+    <value>Jours âgés rapprochement</value>
+  </data>
+  <data name="BankEntryCurrency" xml:space="preserve">
+    <value>Devise opération bancaire</value>
+  </data>
+  <data name="CompletedStatus" xml:space="preserve">
+    <value>État Complet</value>
+  </data>
+  <data name="DateCreated" xml:space="preserve">
+    <value>Créé le</value>
+  </data>
+  <data name="DefaultNewDocumentNumber" xml:space="preserve">
+    <value>Nouveau numéro document par défaut</value>
+  </data>
+  <data name="EntryTotalWithoutTax" xml:space="preserve">
+    <value>Total opération hors taxe</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Type opération</value>
+  </data>
+  <data name="FiscalEntryAmount" xml:space="preserve">
+    <value>Montant opération période</value>
+  </data>
+  <data name="FuncEntryTotalWithoutTax" xml:space="preserve">
+    <value>Total opération hors taxe devise fonctionnelle</value>
+  </data>
+  <data name="NumberofLines" xml:space="preserve">
+    <value>Nombre de lignes</value>
+  </data>
+  <data name="OFXTransactionID" xml:space="preserve">
+    <value>Code transaction OFX</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Séquence de report</value>
+  </data>
+  <data name="ReconciledEntryAmount" xml:space="preserve">
+    <value>Montant opération rapproché</value>
+  </data>
+  <data name="RunId" xml:space="preserve">
+    <value>Code exécution</value>
+  </data>
+  <data name="BankEntryTotFunc" xml:space="preserve">
+    <value>Total opération devise fonctionnelle</value>
+  </data>
+  <data name="BankEntryTotSour" xml:space="preserve">
+    <value>Total opération</value>
+  </data>
+  <data name="DepositType" xml:space="preserve">
+    <value>Type de dépôt</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BankEntrySerialNumber" xml:space="preserve">
+    <value>Numéro série opération bancaire</value>
+    <comment>field</comment>
+  </data>
+  <data name="BankEntryCurrencyDesc" xml:space="preserve">
+    <value>Description devise opération bancaire</value>
+    <comment>Finder field</comment>
+  </data>
+  <data name="BankEntryPeriod" xml:space="preserve">
+    <value>Période opération bancaire</value>
+    <comment>Finder - field</comment>
+  </data>
+  <data name="BankEntryYear" xml:space="preserve">
+    <value>Exercice opération bancaire</value>
+    <comment>Finder - field</comment>
+  </data>
+  <data name="BankStatementCurrency" xml:space="preserve">
+    <value>Devise relevé bancaire</value>
+    <comment>finder field</comment>
+  </data>
+  <data name="BK0450" xml:space="preserve">
+    <value>En-tête opération bancaire</value>
+  </data>
+  <data name="BK0460" xml:space="preserve">
+    <value>Détail opération bancaire</value>
+  </data>
+  <data name="BankEntryCurrencyDesc1" xml:space="preserve">
+    <value>Description devise d'opération bancaire</value>
+  </data>
+  <data name="WarnTaxGroupBlank" xml:space="preserve">
+    <value>Le détail de l'opération est taxable mais le groupe de taxes est en blanc.</value>
+  </data>
+  <data name="NoMatchingRateInCurrencyTable" xml:space="preserve">
+    <value>Le taux de la table Serveur devise n'a pas de taux correspondant défini pour le code de devise de transaction {0}, type de taux {1} et date de taux {2}.</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="EntryRateInformationRequired" xml:space="preserve">
+    <value>Vous devez enregistrer les mises à jour de votre opération bancaire avant de changer les informations sur le taux de l'opération. Voulez-vous continuer?</value>
+    <comment>Confirmation message</comment>
+  </data>
+</root>

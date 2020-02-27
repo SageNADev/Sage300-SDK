@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>排程</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="SchedRecType" xml:space="preserve">
+    <value>排程</value>
+    <comment>Field</comment>
+  </data>
+  <data name="REMINDERS" xml:space="preserve">
+    <value>提示</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RECPER" xml:space="preserve">
+    <value>重复周期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DAILY" xml:space="preserve">
+    <value>每日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WEEKLY" xml:space="preserve">
+    <value>每周</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SEMIMON" xml:space="preserve">
+    <value>每半月</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MONTHLY" xml:space="preserve">
+    <value>每月</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YEARLY" xml:space="preserve">
+    <value>每年</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>频率</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EVERY" xml:space="preserve">
+    <value>每</value>
+    <comment>Field</comment>
+  </data>
+  <data name="THESEWORK" xml:space="preserve">
+    <value>下列工作日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DAYS" xml:space="preserve">
+    <value>日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FIRSTAND" xml:space="preserve">
+    <value>当月第 1 及</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DOM" xml:space="preserve">
+    <value>月中某日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="THE" xml:space="preserve">
+    <value>当月</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LDOM" xml:space="preserve">
+    <value>及末日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WEEKS" xml:space="preserve">
+    <value>周</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DOW" xml:space="preserve">
+    <value>下列工作日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MONTHS" xml:space="preserve">
+    <value>个月</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ONTHE" xml:space="preserve">
+    <value>于</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DAY" xml:space="preserve">
+    <value>日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DETAILS" xml:space="preserve">
+    <value>明细</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SchedNotEXIST" xml:space="preserve">
+    <value>无法找到指定的排程。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="PFSDFrmCap" xml:space="preserve">
+    <value>排程明细</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PFSDFrmSetupFailTxt" xml:space="preserve">
+    <value>发生一个问题，无法创建排程明细。请重试。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>应用程序</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobTypes" xml:space="preserve">
+    <value>作业类型</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextRun" xml:space="preserve">
+    <value>下一运行</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemindAdvance" xml:space="preserve">
+    <value>提前提醒</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleCode" xml:space="preserve">
+    <value>排程代码</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleCodeDesc" xml:space="preserve">
+    <value>排程描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleDetailDesc" xml:space="preserve">
+    <value>描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ScheduleStartDate" xml:space="preserve">
+    <value>排程起始日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用户标识</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UserMode" xml:space="preserve">
+    <value>银行模式</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrentRun" xml:space="preserve">
+    <value>当前运行</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>筛选器</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FilterDate" xml:space="preserve">
+    <value>筛选器日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Filtration" xml:space="preserve">
+    <value>筛选</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FridayCall" xml:space="preserve">
+    <value>周五呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>间隔</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsDue" xml:space="preserve">
+    <value>到期？</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastRunDate" xml:space="preserve">
+    <value>上一运行日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MondayCall" xml:space="preserve">
+    <value>周一呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>月份</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextPossibleRunDate" xml:space="preserve">
+    <value>下一可能的运行日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>运算</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>阶段</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Processed" xml:space="preserve">
+    <value>已处理</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemindersTo" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="RunDate" xml:space="preserve">
+    <value>运行日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SaturdayCall" xml:space="preserve">
+    <value>周六呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SuggestedRunDate" xml:space="preserve">
+    <value>建议的运行日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SundayCall" xml:space="preserve">
+    <value>周日呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ThursdayCall" xml:space="preserve">
+    <value>周四呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TuesdayCall" xml:space="preserve">
+    <value>周二呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>用户名称</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WednesdayCall" xml:space="preserve">
+    <value>周三呼叫</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Weekday" xml:space="preserve">
+    <value>平日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WeekinMonth" xml:space="preserve">
+    <value>月中某周</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReminderTo" xml:space="preserve">
+    <value>提示</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>星期五</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>星期一</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>星期六</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>星期日</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>星期四</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>星期二</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>星期三</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UserDoesNotExist" xml:space="preserve">
+    <value>无法找到指定的用户标识。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CS0030" xml:space="preserve">
+    <value>排程</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextRunDate" xml:space="preserve">
+    <value>下一运行日期</value>
+  </data>
+</root>

@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address1" xml:space="preserve">
+    <value>Línea de Dirección 1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Línea de Dirección 2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>Línea de Dirección 3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>Línea de Dirección 4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="ARCustomer" xml:space="preserve">
+    <value>C/C - Clientes</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Código de Banco</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nombre de Contacto</value>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+  </data>
+  <data name="ContactsFax" xml:space="preserve">
+    <value>Fax de Contacto</value>
+  </data>
+  <data name="ContactsPhone" xml:space="preserve">
+    <value>Teléfono de Contacto</value>
+  </data>
+  <data name="CreditLimit" xml:space="preserve">
+    <value>Límite de Crédito</value>
+  </data>
+  <data name="GenSepPmntForEachInv" xml:space="preserve">
+    <value>Generar Pagos Separados para cada Factura</value>
+  </data>
+  <data name="LegalName" xml:space="preserve">
+    <value>Nombre Legal</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>Estado/Provincia</value>
+  </data>
+  <data name="AllowBackorderQuantities" xml:space="preserve">
+    <value>Admitir Cantidades de Órdenes en Espera</value>
+    <comment>Invoicing - Check Box</comment>
+  </data>
+  <data name="AllowPartialShipments" xml:space="preserve">
+    <value>Admitir Envíos Parciales</value>
+    <comment>Invoicing - Check Box</comment>
+  </data>
+  <data name="AllowWebStoreShopping" xml:space="preserve">
+    <value>Admitir Compras en la Tienda Web</value>
+    <comment>Invoicing - Check Box</comment>
+  </data>
+  <data name="AverageDaystoPay" xml:space="preserve">
+    <value>Promedio de Días para Pagar</value>
+  </data>
+  <data name="CheckforDuplicatePOs" xml:space="preserve">
+    <value>Buscar OC Duplicados</value>
+    <comment>Invoicing - List</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+    <comment>Processing - Column</comment>
+  </data>
+  <data name="DaysUntilARTransactionsAreOverdue" xml:space="preserve">
+    <value>Transacciones Vencidas por (Días)</value>
+    <comment>Processing - Group Check Box</comment>
+  </data>
+  <data name="NumberofPayments" xml:space="preserve">
+    <value>Cantidad de Pagos</value>
+  </data>
+  <data name="OpenInvoiceCountOut" xml:space="preserve">
+    <value>Cantidad de Facturas Abiertas</value>
+  </data>
+  <data name="OverdueLimitforOverdueDays" xml:space="preserve">
+    <value>Tienen Monto Total Excediendo</value>
+    <comment>Processing - Group Field</comment>
+  </data>
+  <data name="PrepaymentAmount" xml:space="preserve">
+    <value>Monto de Anticipo</value>
+  </data>
+  <data name="PrepaymentCount" xml:space="preserve">
+    <value>Conteo de Anticipos</value>
+  </data>
+  <data name="RetentionPeriodDays" xml:space="preserve">
+    <value>Período de Retención (Días)</value>
+    <comment>Invoicing - Field</comment>
+  </data>
+  <data name="SageBillingPaymentCustomer" xml:space="preserve">
+    <value>Cliente de Sage Billing and Payment</value>
+    <comment>Processing - Check Box</comment>
+  </data>
+  <data name="A" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="OpenInvoiceCount" xml:space="preserve">
+    <value>Conteo Facturas Abiertas</value>
+    <comment>Activity - Group Field</comment>
+  </data>
+  <data name="AmountPastDue" xml:space="preserve">
+    <value>Monto a Pagar Vencido</value>
+  </data>
+  <data name="AmountPrepaidCustCurr" xml:space="preserve">
+    <value>Monto Anticipo - Moneda del Cliente</value>
+  </data>
+  <data name="AmountPrepaidFuncCurr" xml:space="preserve">
+    <value>Monto Anticipo - Moneda Funcional</value>
+  </data>
+  <data name="AOrRVersion" xml:space="preserve">
+    <value>Versión de C/C</value>
+  </data>
+  <data name="BeginningBalonLastStatement" xml:space="preserve">
+    <value>Saldo Inicial en Último Estado de Cuenta</value>
+  </data>
+  <data name="BillingMethod" xml:space="preserve">
+    <value>Método de Facturación</value>
+  </data>
+  <data name="CreditLimitCustCurr" xml:space="preserve">
+    <value>Límite de Crédito - Moneda del Cliente</value>
+  </data>
+  <data name="CustomerDiscountType" xml:space="preserve">
+    <value>Tipo de Descuento de Cliente</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Base de Datos</value>
+  </data>
+  <data name="DateofHighestBalanceLastYr" xml:space="preserve">
+    <value>Fecha de Saldo Mayor del Año Pasado</value>
+  </data>
+  <data name="DateofLastBalFwdStatement" xml:space="preserve">
+    <value>Fecha de Último Estado de Cuenta de Traspaso de Saldo</value>
+  </data>
+  <data name="DaysRetained" xml:space="preserve">
+    <value>Días Retenidos</value>
+  </data>
+  <data name="FreeOnBoard" xml:space="preserve">
+    <value>Franco a Bordo</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="NextClientUniqueID" xml:space="preserve">
+    <value>ID de Cliente Único Siguiente</value>
+  </data>
+  <data name="NumberofOpenPrepayments" xml:space="preserve">
+    <value>Número de Anticipos Abiertos</value>
+  </data>
+  <data name="PrimaryShipToLocation" xml:space="preserve">
+    <value>Dirección de Envío Principal</value>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>Código Condiciones de Retención</value>
+  </data>
+  <data name="ShipViaCode" xml:space="preserve">
+    <value>Código de Vía de Envío</value>
+    <comment>Invoicing - Field</comment>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+  </data>
+  <data name="SuppressIntegration" xml:space="preserve">
+    <value>Suprimir Integración</value>
+  </data>
+  <data name="TaxRegistrationNo1" xml:space="preserve">
+    <value>Número de Registro Fiscal 1</value>
+  </data>
+  <data name="TaxRegistrationNo2" xml:space="preserve">
+    <value>Número de Registro Fiscal 2</value>
+  </data>
+  <data name="TaxRegistrationNo3" xml:space="preserve">
+    <value>Número de Registro Fiscal 3</value>
+  </data>
+  <data name="TaxRegistrationNo4" xml:space="preserve">
+    <value>Número de Registro Fiscal 4</value>
+  </data>
+  <data name="TaxRegistrationNo5" xml:space="preserve">
+    <value>Número de Registro Fiscal 5</value>
+  </data>
+  <data name="TerritoryCode" xml:space="preserve">
+    <value>Código Territorial</value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>El porcentaje de retención debe estar comprendido entre 0 y 100.</value>
+  </data>
+  <data name="SalesPercent" xml:space="preserve">
+    <value>Porcentaje de Ventas</value>
+  </data>
+  <data name="RetainageDescription" xml:space="preserve">
+    <value>Descripción de Retención</value>
+  </data>
+  <data name="DeleteCard" xml:space="preserve">
+    <value>Eliminar Tarjeta</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/C - Clientes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="CustomerAccountStatus" xml:space="preserve">
+    <value>Estado de Cuenta del Cliente</value>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Tipo de Cliente</value>
+  </data>
+  <data name="GroupCodeDesc" xml:space="preserve">
+    <value>Descripción Código de Grupo</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="LastRevaluationBalance" xml:space="preserve">
+    <value>Saldo de Última Revaluación</value>
+  </data>
+  <data name="NationalAccountDescription" xml:space="preserve">
+    <value>Descripción de Cuenta Nacional</value>
+  </data>
+  <data name="RetainagePer" xml:space="preserve">
+    <value>% Retención</value>
+  </data>
+  <data name="CreateNewCreditCard" xml:space="preserve">
+    <value>Crear Nueva Tarjeta de Crédito...</value>
+    <comment>Credit Cards - Button</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ShipViaCodeName" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+    <comment>Invoicing - Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="CustomerCurrencyMismatch" xml:space="preserve">
+    <value>No se puede cambiar al grupo de cuentas {0}. Sólo puede cambiar a un grupo de cuentas con el mismo código de moneda que el grupo de cuentas actual del cliente.</value>
+    <comment>Processing -AccountSet</comment>
+  </data>
+  <data name="TaxReportingCurMisMatch" xml:space="preserve">
+    <value>El grupo fiscal {0} tiene una moneda de reporte fiscal de {1} que difiere de la moneda del grupo de cuentas {2}.</value>
+    <comment>Processing -AccountSet</comment>
+  </data>
+  <data name="NoOeExist" xml:space="preserve">
+    <value>No se puede encontrar el Código de Vía de Envío de IO.</value>
+  </data>
+  <data name="AR0021" xml:space="preserve">
+    <value>Comentarios del Cliente</value>
+  </data>
+  <data name="AR0022" xml:space="preserve">
+    <value>Estadísticas de Cliente</value>
+  </data>
+  <data name="AR0024" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="AR0400" xml:space="preserve">
+    <value>Valores de Campos Opcionales del Cliente</value>
+  </data>
+  <data name="CommentNumber" xml:space="preserve">
+    <value>Número de Comentario</value>
+  </data>
+  <data name="NumberOfCredits" xml:space="preserve">
+    <value>Cantidad de Créditos</value>
+  </data>
+  <data name="NumberOfDebits" xml:space="preserve">
+    <value>Cantidad de Débitos</value>
+  </data>
+  <data name="NumberOfInvoicesPaid" xml:space="preserve">
+    <value>Cantidad de Facturas Pagadas</value>
+  </data>
+  <data name="RevaluationBalInFuncCurr" xml:space="preserve">
+    <value>Saldo de Revalucación en Moneda Funcional</value>
+  </data>
+  <data name="ReverseCount" xml:space="preserve">
+    <value>Revertir Conteo</value>
+  </data>
+  <data name="TotalAdjustmentsInCustCurr" xml:space="preserve">
+    <value>Total de Ajustes en Moneda del Cliente</value>
+  </data>
+  <data name="TotalAdjustmentsInFuncCurr" xml:space="preserve">
+    <value>Total de Ajustes en Moneda Funcional</value>
+  </data>
+  <data name="TotalCreditsInCustCurr" xml:space="preserve">
+    <value>Total de Créditos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalCreditsInFuncCurr" xml:space="preserve">
+    <value>Total de Créditos en Moneda Funcional</value>
+  </data>
+  <data name="TotalDebitsInCustCurr" xml:space="preserve">
+    <value>Total de Débitos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalDebitsInFuncCurr" xml:space="preserve">
+    <value>Total de Débitos en Moneda Funcional</value>
+  </data>
+  <data name="TotalDiscountsInCustCurr" xml:space="preserve">
+    <value>Total de Descuentos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalDiscountsInFuncCurr" xml:space="preserve">
+    <value>Total de Descuentos en Moneda Funcional</value>
+  </data>
+  <data name="TotalInterestInCustCurr" xml:space="preserve">
+    <value>Total de Interés en Moneda del Cliente</value>
+  </data>
+  <data name="TotalInterestInFuncCurr" xml:space="preserve">
+    <value>Total de Interés en Moneda Funcional</value>
+  </data>
+  <data name="TotalInvoicesInCustCurr" xml:space="preserve">
+    <value>Total de Facturas en Moneda del Cliente</value>
+  </data>
+  <data name="TotalInvoicesInFuncCurr" xml:space="preserve">
+    <value>Total de Facturas en Moneda Funcional</value>
+  </data>
+  <data name="TotalInvoicesPdInCustCurr" xml:space="preserve">
+    <value>Total de Facturas Pagadas en Moneda del Cliente</value>
+  </data>
+  <data name="TotalInvoicesPdInFuncCurr" xml:space="preserve">
+    <value>Total de Facturas Pagadas en Moneda Funcional</value>
+  </data>
+  <data name="TotalReceiptsInCustCurr" xml:space="preserve">
+    <value>Total de Recibos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalReceiptsInFuncCurr" xml:space="preserve">
+    <value>Total de Recibos en Moneda Funcional</value>
+  </data>
+  <data name="TotalRefundsInCustCurr" xml:space="preserve">
+    <value>Total de Reembolsos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalRefundsInFuncCurr" xml:space="preserve">
+    <value>Total de Reembolsos en Moneda Funcional</value>
+  </data>
+  <data name="TotalRetdChecksInCustCurr" xml:space="preserve">
+    <value>Total de Cheques Devueltos en Moneda del Cliente</value>
+  </data>
+  <data name="TotalRetdChecksInFuncCurr" xml:space="preserve">
+    <value>Total de Cheques Dev. en Moneda Funcional</value>
+  </data>
+  <data name="TotalWriteOffsInCustCurr" xml:space="preserve">
+    <value>Total de Cancelaciones en Libro en Moneda del Cliente</value>
+  </data>
+  <data name="TotalWriteOffsInFuncCurr" xml:space="preserve">
+    <value>Total de Cancelaciones en Libro en Moneda Funcional</value>
+  </data>
+  <data name="YTDAdjustmentsInCustCurr" xml:space="preserve">
+    <value>Ajustes YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDCreditsInCustCurr" xml:space="preserve">
+    <value>Créditos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDDebitsInCustCurr" xml:space="preserve">
+    <value>Débitos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDDiscountsInCustCurr" xml:space="preserve">
+    <value>Descuentos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDInterestInCustCurr" xml:space="preserve">
+    <value>Interés YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDInvoicesInCustCurr" xml:space="preserve">
+    <value>Facturas YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDInvoicesPdInCustCurr" xml:space="preserve">
+    <value>Facturas Pagadas YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDNumberOfDaysToPay" xml:space="preserve">
+    <value>Número de Días para Pagar YTD</value>
+  </data>
+  <data name="YTDReceiptsInCustCurr" xml:space="preserve">
+    <value>Recibos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDRefundsInCustCurr" xml:space="preserve">
+    <value>Reembolsos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDRetdChecksInCustCurr" xml:space="preserve">
+    <value>Cheques Devueltos YTD en Moneda del Cliente</value>
+  </data>
+  <data name="YTDWriteOffsInCustCurr" xml:space="preserve">
+    <value>Cancelaciones en Libro YTD en Moneda del Cliente</value>
+  </data>
+  <data name="SageBillingandPaymentCustomer" xml:space="preserve">
+    <value>Cliente de Sage Billing and Payment</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Número de Cliente</value>
+  </data>
+  <data name="CustomerPriceList" xml:space="preserve">
+    <value>Lista de Precios del Cliente</value>
+  </data>
+  <data name="InventoryLocation" xml:space="preserve">
+    <value>Ubicación de Inventario</value>
+  </data>
+  <data name="InventoryLocationDescription" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+  </data>
+  <data name="ProceesingCodeSetupWarning" xml:space="preserve">
+    <value>Debe configurar un código de procesamiento antes de ingresar detalles de tarjeta de crédito.</value>
+  </data>
+  <data name="BusinessRegistrationNumber" xml:space="preserve">
+    <value>Número Registro de Empresa</value>
+  </data>
+  <data name="ChangeNatAcct" xml:space="preserve">
+    <value>Si usted cambia la cuenta nacional del cliente, las transacciones relacionadas con cada una podrían estar separadas, debido a que las transacciones asentadas se quedan con la cuenta nacional antigua pero las transacciones pendientes se muevan a la nueva cuenta nacional. ¿Desea cambiar la cuenta nacional?</value>
+  </data>
+  <data name="AgingRangeMessage" xml:space="preserve">
+    <value>Los períodos de vencimiento deben estar en orden ascendente.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateNewContact" xml:space="preserve">
+    <value>Crear Nuevo Contacto</value>
+  </data>
+  <data name="ViewContactDetails" xml:space="preserve">
+    <value>Ver Detalles de Contacto</value>
+  </data>
+  <data name="ShowDocFor" xml:space="preserve">
+    <value>Mostrar Documento Para</value>
+  </data>
+  <data name="AccountReceivable" xml:space="preserve">
+    <value>Cuentas por Cobrar</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="OrderEntry" xml:space="preserve">
+    <value>Ingreso de Órdenes</value>
+  </data>
+</root>

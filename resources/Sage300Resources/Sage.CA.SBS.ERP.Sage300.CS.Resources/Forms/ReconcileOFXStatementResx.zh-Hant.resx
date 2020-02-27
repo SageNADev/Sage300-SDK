@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ClrComplete" xml:space="preserve">
+    <value>交易已清算。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmClrRateDiff" xml:space="preserve">
+    <value>OFX對帳單金額不同於銀行服務金額。是否確要清算此一交易？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmClrWriteOff" xml:space="preserve">
+    <value>OFX對帳單金額不同於銀行服務金額。是否確要清算此一交易？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmExitAddTrx" xml:space="preserve">
+    <value>此一交易尚未增加到銀行分錄。是否增加此一交易？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmProcess" xml:space="preserve">
+    <value>您已經做了尚未被處理的變更。是否處理{0}的OFX調節？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CutOffDate" xml:space="preserve">
+    <value>調節截止日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DepSlip" xml:space="preserve">
+    <value>存款單</value>
+    <comment>Option toggle</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>匹配OFX交易到銀行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EMPTYLIST" xml:space="preserve">
+    <value>清單中沒有OFX交易。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>調節OFX對帳單</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>銀行分錄{0}不在會計年曆中。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MatchDepositBy" xml:space="preserve">
+    <value>匹配存款按</value>
+    <comment>Option Heading</comment>
+  </data>
+  <data name="MatchedTrx" xml:space="preserve">
+    <value>交易已清算。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MiscellaneousCreated" xml:space="preserve">
+    <value>OFX交易增加到銀行分錄並過帳。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NORECORD" xml:space="preserve">
+    <value>選擇一個記錄。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotInCalendar" xml:space="preserve">
+    <value>所選會計期間在會計年曆中為銀行服務鎖定。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NOTRXMATCH" xml:space="preserve">
+    <value>沒有{0}符合所選交易。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OfxdateInvalid" xml:space="preserve">
+    <value>不能建立銀行分錄，因為OFX交易日期不在會計年曆中。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OFXEXIST" xml:space="preserve">
+    <value>此一交易已經存在於銀行分錄中。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Reconcile" xml:space="preserve">
+    <value>調節</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ReconciliationDate" xml:space="preserve">
+    <value>調節日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StmtProcessInfo" xml:space="preserve">
+    <value>處理了{0}個對帳單，{1}個匹配，{2}個清算。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Transaction" xml:space="preserve">
+    <value>交易</value>
+    <comment>Option toggle</comment>
+  </data>
+  <data name="YearInactive" xml:space="preserve">
+    <value>所選會計年度在會計年曆中對銀行服務為閒置。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ZeroAmount" xml:space="preserve">
+    <value>此一分錄含有一個零金額。是否繼續並建立該分錄？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>銀行代碼</value>
+  </data>
+  <data name="BankEntry" xml:space="preserve">
+    <value>銀行分錄</value>
+  </data>
+  <data name="BankCodeDescription" xml:space="preserve">
+    <value>銀行描述</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>交易金額</value>
+  </data>
+  <data name="BankClearedDate" xml:space="preserve">
+    <value>銀行清算日期</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>匯率</value>
+  </data>
+  <data name="SourceAmount" xml:space="preserve">
+    <value>來源幣別金額</value>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>來源幣別</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易編號</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>交易類型</value>
+  </data>
+  <data name="StatementCurrency" xml:space="preserve">
+    <value>對帳單幣別</value>
+  </data>
+  <data name="AutoDeleteMatchedTransactions" xml:space="preserve">
+    <value>自動清除調節的交易</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="NoOFXRecDate" xml:space="preserve">
+    <value>調節OFX交易之前您必須輸入調節日期。</value>
+  </data>
+  <data name="NoBankCode" xml:space="preserve">
+    <value>無法找到銀行帳戶{0}。</value>
+  </data>
+  <data name="ClrTransaction" xml:space="preserve">
+    <value>是否確要清算此一交易？</value>
+  </data>
+  <data name="ReceiptAmount" xml:space="preserve">
+    <value>收款金額</value>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>收款編號</value>
+  </data>
+  <data name="LblTransactionCurrency" xml:space="preserve">
+    <value>交易幣別</value>
+  </data>
+  <data name="OFXInvalidDate" xml:space="preserve">
+    <value>不能建立銀行分錄，因為OFX交易日期不在會計年曆中。</value>
+  </data>
+  <data name="RecDateEmpty" xml:space="preserve">
+    <value>調節日期不能空置。</value>
+  </data>
+  <data name="StatementProcess" xml:space="preserve">
+    <value>對帳單：處理了{0}個，{1}個匹配，{2}個清算。</value>
+  </data>
+  <data name="LastRecDate" xml:space="preserve">
+    <value>您不能輸入一個早於先前調節日期的調節日期。</value>
+  </data>
+  <data name="ProcessCofirm" xml:space="preserve">
+    <value>是否調節OFX對帳單？</value>
+  </data>
+  <data name="TransactionClr" xml:space="preserve">
+    <value>交易已清算。</value>
+  </data>
+  <data name="InvalidRecDate" xml:space="preserve">
+    <value>輸入的調節日期不在公共服務的會計年曆中。</value>
+  </data>
+  <data name="Withdrawals" xml:space="preserve">
+    <value>提款</value>
+  </data>
+  <data name="Withdrawal" xml:space="preserve">
+    <value>提款</value>
+  </data>
+  <data name="OFXPosting" xml:space="preserve">
+    <value>OFX交易已成功增加到銀行分錄並過帳。</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>備註2</value>
+  </data>
+</root>

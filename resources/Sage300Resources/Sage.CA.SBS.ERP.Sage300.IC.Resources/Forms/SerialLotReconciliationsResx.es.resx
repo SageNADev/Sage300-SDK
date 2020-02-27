@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplyToDoc" xml:space="preserve">
+    <value>Documento a Aplicar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AutoAllocateFrom" xml:space="preserve">
+    <value>Auto-asignar Desde</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>Autogenerar</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ConfirmClearLots" xml:space="preserve">
+    <value>¿Seguro que desea borrar todos los números de lote de la lista?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmClearSerials" xml:space="preserve">
+    <value>¿Seguro que desea borrar todos los números de serie de la lista?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmDeleteLot" xml:space="preserve">
+    <value>¿Seguro que desea eliminar el número de lote?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmDeleteSerial" xml:space="preserve">
+    <value>¿Seguro que desea eliminar el número de serie?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmPost" xml:space="preserve">
+    <value>¿Desea asentar este/a {0}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha de Uso Interno</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EachLotHas" xml:space="preserve">
+    <value>Cada Lote Tiene</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI – Conciliaciones de N° Serie/Lote</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KITITEMINVOICE" xml:space="preserve">
+    <value>¿Desea mostrar los artículos componentes del juego?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LOCATIONINACTIVE" xml:space="preserve">
+    <value>La ubicación {0} no está activa.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LOCATIONNOTALLOWED" xml:space="preserve">
+    <value>El artículo de N° Serie/Lote no está admitido en esta ubicación.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LotNotAvailable" xml:space="preserve">
+    <value>El número de lote {0} no está disponible.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LOTNUMWRONGFORMAT" xml:space="preserve">
+    <value>El número de lote no es válido para la máscara de número de lote actual.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LotQtyRequired" xml:space="preserve">
+    <value>Cantidad de Lotes Requerida</value>
+    <comment>Group Item</comment>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>Hacer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NeedApplyToDoc" xml:space="preserve">
+    <value>Debe seleccionar un número de factura antes de especificar un número de artículo.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NextLotNumber" xml:space="preserve">
+    <value>Número Lote Siguiente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>Número Serie Siguiente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NOLOCATIONFORITEM" xml:space="preserve">
+    <value>No se encontró la ubicación {0} para el artículo {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OEInvoice" xml:space="preserve">
+    <value>IO - Factura</value>
+    <comment>Dropdown Item</comment>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>O</value>
+    <comment>Label</comment>
+  </data>
+  <data name="POInvoice" xml:space="preserve">
+    <value>OC - Factura</value>
+    <comment>Dropdown Item</comment>
+  </data>
+  <data name="QtyOverflow" xml:space="preserve">
+    <value>La cantidad excede la cantidad máxima permitida.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="QuantityExceedsLocation" xml:space="preserve">
+    <value>La cantidad no puede exceder la cantidad disponible en la ubicación especificada.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="QuantityNeg" xml:space="preserve">
+    <value>Las cantidades no pueden ser menores que cero.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Recall" xml:space="preserve">
+    <value>Retirada</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Reconciliation" xml:space="preserve">
+    <value>Conciliación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Release" xml:space="preserve">
+    <value>Salida</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialNumsRequired" xml:space="preserve">
+    <value>Números de Serie Requeridos</value>
+    <comment>Group Item</comment>
+  </data>
+  <data name="StartupWarning" xml:space="preserve">
+    <value>Debe asentar todas las transacciones que afectan al inventario y ejecutar Procesamiento de Final de Día antes de usar esta transacción.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UOM" xml:space="preserve">
+    <value>UM</value>
+    <comment>Column</comment>
+  </data>
+  <data name="UsedBy" xml:space="preserve">
+    <value>Usado Por</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Advertencia</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ApplyToInvoiceNumber" xml:space="preserve">
+    <value>Aplicar a Número de Factura</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="StockUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Almacenamiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReconciliationHeaders" xml:space="preserve">
+    <value>Cabeceras de Conciliación</value>
+  </data>
+</root>

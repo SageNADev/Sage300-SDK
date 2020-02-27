@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CntDefaultOptions" xml:space="preserve">
+    <value>預設選項從</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CreateAccountsAccessDeniedMessage" xml:space="preserve">
+    <value>另一進程已鎖定總帳建立科目窗口。等待該進程完成後再試。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CreateAccountsCompleted" xml:space="preserve">
+    <value>科目已建立。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateAccountsInProgress" xml:space="preserve">
+    <value>正在建立科目...</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateTempCompleted" xml:space="preserve">
+    <value>工作資料已產生。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateTempInProgress" xml:space="preserve">
+    <value>正在產生工作資料...</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CrStructure" xml:space="preserve">
+    <value>建立有結構代碼的科目</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultCurrency" xml:space="preserve">
+    <value>預設幣別明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DefaultSubledger" xml:space="preserve">
+    <value>預設輔助分類帳明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DelTablesAfterFullyProcessed" xml:space="preserve">
+    <value>已處理產生的預覽記錄。是否現在清除它們？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTablesFullyProcessed" xml:space="preserve">
+    <value>已處理產生的預覽記錄。是否確要清除它們？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTablesPartiallyProcessed" xml:space="preserve">
+    <value>僅部分處理產生的預覽記錄。是否確要清除它們？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTempRecordsFullyCreated" xml:space="preserve">
+    <value>是否確要清除產生的預覽資料？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTempRecordsPartiallyCreated" xml:space="preserve">
+    <value>僅部分建立產生的預覽記錄。是否確要清除它們？</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>總帳/建立科目</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FrStructure" xml:space="preserve">
+    <value>從有結構代碼的科目</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InclExistAccount" xml:space="preserve">
+    <value>包括現有科目</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>節段名稱</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SegNotInCreateStructureMessage" xml:space="preserve">
+    <value>節段{0}未包括在科目結構{1}中。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="SelectAccountRange" xml:space="preserve">
+    <value>選擇科目範圍</value>
+    <comment>Header</comment>
+  </data>
+  <data name="SelectAccountStruct" xml:space="preserve">
+    <value>選擇科目結構</value>
+    <comment>Header</comment>
+  </data>
+  <data name="SelectCreateSegment" xml:space="preserve">
+    <value>指定要建立的節段</value>
+    <comment>Header</comment>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>結構代碼描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SubsetAccountStructuresMessage" xml:space="preserve">
+    <value>科目結構{0}必須包含所有用於科目結構{1}中的節段。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FromAccountGroup" xml:space="preserve">
+    <value>從科目群組</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromAccountNumber" xml:space="preserve">
+    <value>從科目編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromSortCode" xml:space="preserve">
+    <value>從排序代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToAccountGroup" xml:space="preserve">
+    <value>到科目群組</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToAccountNumber" xml:space="preserve">
+    <value>到科目編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToSortCode" xml:space="preserve">
+    <value>到排序代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>結構代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>科目</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreateAccounts" xml:space="preserve">
+    <value>建立有結構代碼的科目。</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvalidStructureCode" xml:space="preserve">
+    <value>未在科目結構中定義科目結構代碼”{0}”。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="BlankAccountStructures" xml:space="preserve">
+    <value>您必須在“從有結構代碼的科目”和“建立有結構代碼的科目”欄位中指定結構代碼。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CreateStructureCodeErrorMessage" xml:space="preserve">
+    <value>您必須在“建立有結構代碼的科目”欄位中指定一個包含至少兩個節段的結構。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="IdenticalStructureErrorMessage" xml:space="preserve">
+    <value>“從有結構代碼的科目”和“建立有結構代碼的科目”欄位中的科目結構完全一樣。您必須為至少一個節段把新建設為是。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AccountGroupSortCode" xml:space="preserve">
+    <value>科目群組排序代碼</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ClearedSuccessfully" xml:space="preserve">
+    <value>預覽資料已清除。</value>
+    <comment>Message</comment>
+  </data>
+</root>

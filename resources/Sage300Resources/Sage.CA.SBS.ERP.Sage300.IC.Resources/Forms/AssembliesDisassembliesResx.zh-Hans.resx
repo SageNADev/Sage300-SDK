@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>分配从系列</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>分配从批别</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AssemblyDetails" xml:space="preserve">
+    <value>存货控制组装明细</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="AssemblyOptFields" xml:space="preserve">
+    <value>存货控制组装可选字段</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="AssemblyQuantityRemaining" xml:space="preserve">
+    <value>组装数量剩余</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AssignMaster" xml:space="preserve">
+    <value>任何当前分派给这一组件系列的主系列将被覆盖。是否继续？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BtnSerialsLots" xml:space="preserve">
+    <value>系列/批别...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="BtnVerifyQuantities" xml:space="preserve">
+    <value>核对数量</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CancelAssembly" xml:space="preserve">
+    <value>是否确定要取消这一{0}的保存/过帐？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ChangeDeletesSerialsLots" xml:space="preserve">
+    <value>继续这一行动将清除所有您可能已经为主货品和/或部件输入的系列和批别。是否继续这一行动？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>关闭LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>关闭SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompAssemblyNumber" xml:space="preserve">
+    <value>部件组装编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompIDCurrentlyProcessed" xml:space="preserve">
+    <value>当前处理的部件标识</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompItemNumber" xml:space="preserve">
+    <value>部件货品编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompMasterItemNumber" xml:space="preserve">
+    <value>部件主货品编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ComponentAssMethod" xml:space="preserve">
+    <value>部件组装方法</value>
+    <comment>List</comment>
+  </data>
+  <data name="ComponentDasMethod" xml:space="preserve">
+    <value>部件拆卸方法</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ComponentofItemAndBomNo" xml:space="preserve">
+    <value>{1}, {2}之{0}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ComponentsMasterItemNo" xml:space="preserve">
+    <value>部件主货品编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>过帐日期</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeleteMasterSerial" xml:space="preserve">
+    <value>如果您删除主货品的一个系列，属于主系列的部件的所有系列也将被删除。是否确定要删除该系列？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>明细...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="DisallowSavePost" xml:space="preserve">
+    <value>不允许保存/过帐</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DisassembledQuantity" xml:space="preserve">
+    <value>拆卸数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DisassemblyCost" xml:space="preserve">
+    <value>拆卸成本</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>输入者</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="EnterXForMaster" xml:space="preserve">
+    <value>往下进行到部件之前输入主货品的系列和/或批别。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>存货控制组装/拆卸</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ErrorWarning" xml:space="preserve">
+    <value>错误/警告</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EstimatedCost" xml:space="preserve">
+    <value>预估成本</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ForcePopUpLT" xml:space="preserve">
+    <value>强制弹出LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ForcePopUpSN" xml:space="preserve">
+    <value>强制弹出SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FormattedCompMasterItemNo" xml:space="preserve">
+    <value>格式化部件主货品编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FormattedItemNumber" xml:space="preserve">
+    <value>格式化货品编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FromAssembly" xml:space="preserve">
+    <value>从组装编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromAssemblySeq" xml:space="preserve">
+    <value>从组装序列</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="GL_BatchID" xml:space="preserve">
+    <value>总帐批次标识</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="IC_UniqueDocumentNumber" xml:space="preserve">
+    <value>存货控制 - 唯一凭证编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="Insufficientitems" xml:space="preserve">
+    <value>不足组装数量的部件货品：</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InsufficientMaster" xml:space="preserve">
+    <value>没有足够的数量可用于主货品{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InterProcessCommID" xml:space="preserve">
+    <value>进程间指令标识</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ItemxofX" xml:space="preserve">
+    <value>{1}之货品{0}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>地点描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotItems" xml:space="preserve">
+    <value>批别化货品</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="LotItemsInAssembly" xml:space="preserve">
+    <value>组装中的批别货品</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>批别数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LotQuantityRequired" xml:space="preserve">
+    <value>要求的批别数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LTSetID" xml:space="preserve">
+    <value>LT集合标识</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MasterAssNumber" xml:space="preserve">
+    <value>主组装编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterDasNumber" xml:space="preserve">
+    <value>主拆卸编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MasterItemNumber" xml:space="preserve">
+    <value>主货品编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterItemNumberDesc" xml:space="preserve">
+    <value>主货品编号描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterSerialNumber" xml:space="preserve">
+    <value>主系列编号</value>
+    <comment>FInder</comment>
+  </data>
+  <data name="MasterSerialProcessAction" xml:space="preserve">
+    <value>主系列处理行动</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelLevel" xml:space="preserve">
+    <value>多层级水平</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelParentAssemblyNo" xml:space="preserve">
+    <value>多层级母体组装编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelParentSeqNo" xml:space="preserve">
+    <value>多层级母体序列编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelSeqNo" xml:space="preserve">
+    <value>多层级序列编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="NoBillsDefinedMessage" xml:space="preserve">
+    <value>未为这一货品编号定义用料单。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoGenerateMasterSerialPost" xml:space="preserve">
+    <value>您尚未生成一个主系列号。是否继续过帐？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ParentSerialLotComponent" xml:space="preserve">
+    <value>父系列/批别部件</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PopUpLT" xml:space="preserve">
+    <value>弹出LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PopUpSN" xml:space="preserve">
+    <value>弹出SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PostSequenceNumber" xml:space="preserve">
+    <value>过帐序列编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>处理指令</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="QtyNeededStockingUOM" xml:space="preserve">
+    <value>需要数量（库存计量单位）</value>
+  </data>
+  <data name="QuantityDescription" xml:space="preserve">
+    <value>数量描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityPerLot" xml:space="preserve">
+    <value>数量每批别</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="QuantityUsed" xml:space="preserve">
+    <value>使用的数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordDeleted" xml:space="preserve">
+    <value>记录已删除</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordPrinted" xml:space="preserve">
+    <value>记录已打印</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordStatus" xml:space="preserve">
+    <value>记录状态</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>序列编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialItems" xml:space="preserve">
+    <value>系列化货品</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SerialItemsInAssembly" xml:space="preserve">
+    <value>组装中的系列货品</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotBOMNumber" xml:space="preserve">
+    <value>系列/批别用料单编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotItem" xml:space="preserve">
+    <value>系列/批别货品</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotItemUOM" xml:space="preserve">
+    <value>系列/批别货品计量单位</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>要处理的系列/批别数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>系列/批别窗口句柄</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialMasterItem" xml:space="preserve">
+    <value>系列主货品</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>系列数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialQuantityRequired" xml:space="preserve">
+    <value>要求的系列数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialsLotsNotProcessed" xml:space="preserve">
+    <value>未处理的系列和批别货品</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易编号</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="UsedQuantity" xml:space="preserve">
+    <value>使用数量</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="VerifyQTYOK" xml:space="preserve">
+    <value>有足够数量可用{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ComponentID" xml:space="preserve">
+    <value>部件标识</value>
+  </data>
+  <data name="FromAssemblyQuantity" xml:space="preserve">
+    <value>从组装数量</value>
+  </data>
+  <data name="MasterItemLotNumber" xml:space="preserve">
+    <value>主货品批别编号</value>
+  </data>
+  <data name="MasterItemSerialNumber" xml:space="preserve">
+    <value>主货品系列编号</value>
+  </data>
+  <data name="ParentComponentID" xml:space="preserve">
+    <value>父件标识</value>
+  </data>
+  <data name="ParentSerialLotComponentID" xml:space="preserve">
+    <value>父系列/批别部件标识</value>
+  </data>
+  <data name="AllComponentMasterItems" xml:space="preserve">
+    <value>所有部件主货品</value>
+    <comment>Enum</comment>
+  </data>
+  <data name="ComponentMasterItemswithInsufficientQuantity" xml:space="preserve">
+    <value>数量不足的部件主货品</value>
+    <comment>Enum</comment>
+  </data>
+  <data name="BillsOfMaterial" xml:space="preserve">
+    <value>用料单</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="AssemblyQuantity" xml:space="preserve">
+    <value>组装数量</value>
+  </data>
+</root>

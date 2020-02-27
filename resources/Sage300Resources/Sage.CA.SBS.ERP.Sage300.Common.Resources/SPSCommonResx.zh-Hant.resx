@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>增加卡明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>銀行</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotChargeZeroAmount" xml:space="preserve">
+    <value>交易金額必須大於零。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLocatePreviousTransaction" xml:space="preserve">
+    <value>無法在信用卡交易歷史中定位該交易。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CardHolderName" xml:space="preserve">
+    <value>持卡人名稱</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CardID" xml:space="preserve">
+    <value>卡代號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCBilling" xml:space="preserve">
+    <value>帳單明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCDetails" xml:space="preserve">
+    <value>信用卡明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCExpiryDate" xml:space="preserve">
+    <value>失效日期</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CCNumber" xml:space="preserve">
+    <value>卡號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>市/縣</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>備註</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>國家</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditCardInfo" xml:space="preserve">
+    <value>信用卡資訊</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>幣別</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardCurrencyNotExists" xml:space="preserve">
+    <value>客戶編號{1}的卡代號{0}不存在{2}幣別。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardInactive" xml:space="preserve">
+    <value>卡代號{0}對於客戶編號{1}為閒置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardNotExists" xml:space="preserve">
+    <value>無法找到客戶編號{1}的卡代號{0}。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerCreditCardProcessingCodeNotExists" xml:space="preserve">
+    <value>無法找到客戶編號{1}處理代碼{2}的卡代號{0}。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerID" xml:space="preserve">
+    <value>客戶編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>客戶名稱</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultBillingAddress" xml:space="preserve">
+    <value>與客戶地址相同</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCard" xml:space="preserve">
+    <value>使用此卡作為預設卡</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCardFlag" xml:space="preserve">
+    <value>預設卡</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>信用卡描述</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編輯卡明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>付款處理</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrReportExt" xml:space="preserve">
+    <value>選擇一個.RPT檔案。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MerchantIDForProcessingCodeNotDefined" xml:space="preserve">
+    <value>處理一個信用卡交易之前必須設定一個使用處理代碼{0}的商家帳戶。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MerchantIDNotDefined" xml:space="preserve">
+    <value>您必須在輸入信用卡明細之前設定一個處理代碼。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenReportFile" xml:space="preserve">
+    <value>開啟報表檔案</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ProcessingCode" xml:space="preserve">
+    <value>處理代碼</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportFilter" xml:space="preserve">
+    <value>Crystal Reports (*.RPT)|*.RPT|所有檔案 (*.*)|*.*||</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode000000" xml:space="preserve">
+    <value>連接到Sage Payment Solutions時發生一個伺服器錯誤。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900000" xml:space="preserve">
+    <value>輸入一個有效訂單編號。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900001" xml:space="preserve">
+    <value>輸入一個有效名稱。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900002" xml:space="preserve">
+    <value>輸入一個有效地址。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900003" xml:space="preserve">
+    <value>輸入一個有效城市/縣。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900004" xml:space="preserve">
+    <value>輸入一個有效省/市/區。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900005" xml:space="preserve">
+    <value>輸入一個有效郵遞區號。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900006" xml:space="preserve">
+    <value>輸入一個有效國家。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900007" xml:space="preserve">
+    <value>輸入一個有效電話號碼。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900008" xml:space="preserve">
+    <value>輸入一個有效傳真號碼。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900009" xml:space="preserve">
+    <value>輸入一個有效電郵地址。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900010" xml:space="preserve">
+    <value>輸入一個發運地址名稱。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900011" xml:space="preserve">
+    <value>輸入一個發運地址。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900012" xml:space="preserve">
+    <value>輸入一個發運市/縣。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900013" xml:space="preserve">
+    <value>輸入一個有效省/市/區。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900014" xml:space="preserve">
+    <value>輸入一個有效f發運郵遞區號。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900015" xml:space="preserve">
+    <value>輸入一個發運國家。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900016" xml:space="preserve">
+    <value>輸入一個有效信用卡號碼。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900017" xml:space="preserve">
+    <value>輸入一個有效失效日期。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900018" xml:space="preserve">
+    <value>輸入一個有效CVV（卡驗證值）。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900019" xml:space="preserve">
+    <value>總計不能為零。檢查小計、發貨、和稅金的金額。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900020" xml:space="preserve">
+    <value>交易代碼格式無效或空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900021" xml:space="preserve">
+    <value>預授權代碼格式無效或空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900022" xml:space="preserve">
+    <value>輸入一個有效參考。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900023" xml:space="preserve">
+    <value>追蹤資料格式無效或空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900024" xml:space="preserve">
+    <value>追蹤編號格式無效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900025" xml:space="preserve">
+    <value>輸入一個有效客戶編號。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900026" xml:space="preserve">
+    <value>輸入一個發運公司。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900027" xml:space="preserve">
+    <value>週期性值必須為0或1。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900028" xml:space="preserve">
+    <value>週期性值格式無效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900029" xml:space="preserve">
+    <value>週期性間隔值必須為數位。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900030" xml:space="preserve">
+    <value>週期性永久值格式無效或空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900031" xml:space="preserve">
+    <value>週期性處理次數值必須為數位。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900032" xml:space="preserve">
+    <value>週期性非營業日值格式無效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900033" xml:space="preserve">
+    <value>週期性群組空置或找不到該群組。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900034" xml:space="preserve">
+    <value>週期性起始日期值格式無效或空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900035" xml:space="preserve">
+    <value>輸入的密碼不正確。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode900100" xml:space="preserve">
+    <value>不明的資料驗證錯誤。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910000" xml:space="preserve">
+    <value>您試圖提交的交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910001" xml:space="preserve">
+    <value>Visa卡類型交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910002" xml:space="preserve">
+    <value>MasterCard卡類型交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910003" xml:space="preserve">
+    <value>American Express卡類型交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910004" xml:space="preserve">
+    <value>Discover卡類型交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode910005" xml:space="preserve">
+    <value>卡類型交易不被允許。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode911911" xml:space="preserve">
+    <value>商家代號或商家鍵碼不正確。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920000" xml:space="preserve">
+    <value>無法找到請求的記錄。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920001" xml:space="preserve">
+    <value>無法發出信貸因為Sage Payment Solutions找不到一個過去6個月中相應的銷售。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920002" xml:space="preserve">
+    <value>地址驗證服務無法驗證地址。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCode920050" xml:space="preserve">
+    <value>不能作廢一個借項交易。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsGatewayErrorCodeUNKNOWN" xml:space="preserve">
+    <value>發生一個Visanet錯誤。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsInvalidSPSRequestXML" xml:space="preserve">
+    <value>處理過程中發生一個問題因為請求XML空置。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsInvalidSPSResponseXML" xml:space="preserve">
+    <value>Sage Payment Solutions返回了一個無效的XML反應。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunication" xml:space="preserve">
+    <value>連接到Sage Payment Solutions時發生一個錯誤。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunicationRecovery" xml:space="preserve">
+    <value>無法從一個Sage Payment Solutions交流錯誤中恢復。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessCommunicationStartup" xml:space="preserve">
+    <value>無法初始化與Sage Payment Solutions的交流。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessInternet" xml:space="preserve">
+    <value>網際網路連接錯誤。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessInvalidRequestData" xml:space="preserve">
+    <value>這一請求資料無效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessModuleConfigurationNotFound" xml:space="preserve">
+    <value>無法找到系Sage Payment Solutions模組配置。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessSuccess" xml:space="preserve">
+    <value>Sage Payment Solutions已成功處理這一交易。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessTimeout" xml:space="preserve">
+    <value>Sage Payment Solutions操作已超時。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessUnknown" xml:space="preserve">
+    <value>發生一個不明錯誤。連絡Sage Payment Solutions獲取幫助。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsProcessUserCanceled" xml:space="preserve">
+    <value>交易已取消。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpsSpsResponse" xml:space="preserve">
+    <value>來自Sage Payment Solutions的原始訊息：</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>省/市/區</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>卡類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Zipcode" xml:space="preserve">
+    <value>郵遞區號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultCardWarning" xml:space="preserve">
+    <value>預設卡不能旗標為閒置。是否繼續？</value>
+  </data>
+  <data name="ProcessingCodeChangeWarning" xml:space="preserve">
+    <value>如果您變更了此卡的處理代碼，信用卡明細將會被清除而需要重新輸入。是否變更處理代碼並清除信用卡明細？</value>
+  </data>
+  <data name="SageExchangeVault" xml:space="preserve">
+    <value>Sage Exchange - 保險庫</value>
+  </data>
+  <data name="CannotVoidSettledTransaction" xml:space="preserve">
+    <value>不能作廢這一交易因為它已在Sage Payment Solutions中清償。</value>
+  </data>
+  <data name="ExpectingYPTRAN_Record" xml:space="preserve">
+    <value>處理過程中發生一個問題。錯誤明細：期待一個現有的待處理YTRAN記錄。</value>
+  </data>
+  <data name="InvalidTransactionStatus" xml:space="preserve">
+    <value>處理過程中發生一個問題。錯誤明細：交易{0}有一個無效的交易狀態{1}。</value>
+  </data>
+  <data name="InvalidXMLRequestResponse" xml:space="preserve">
+    <value>處理過程中發生一個問題。錯誤明細：無效的XML請求/回應操作代碼。</value>
+  </data>
+  <data name="NotAuthorizedYP" xml:space="preserve">
+    <value>您無權使用付款處理。</value>
+  </data>
+  <data name="PreauthExpired" xml:space="preserve">
+    <value>預授權已失效。</value>
+  </data>
+  <data name="PreviousTransactionNotApproved" xml:space="preserve">
+    <value>先前的交易未獲批准。</value>
+  </data>
+  <data name="PreviousTransNotApproved" xml:space="preserve">
+    <value>先前的交易未獲批准。</value>
+  </data>
+  <data name="TransactionVoided" xml:space="preserve">
+    <value>該交易已在Sage Payment Solutions中作廢。</value>
+  </data>
+  <data name="PaymentNotSettled" xml:space="preserve">
+    <value>不能核銷退款因為該交易尚未在Sage Payment Solutions中清償。您必須登入到Sage Virtual Terminal並清償該交易之後方可核銷退款。</value>
+  </data>
+  <data name="OriginalTransVoided" xml:space="preserve">
+    <value>不能核銷退款因為原始交易已在Sage Payment Solutions中作廢。</value>
+  </data>
+  <data name="ApprovedForAutomaticPayments" xml:space="preserve">
+    <value>已批准自動付款</value>
+  </data>
+  <data name="PreauthorizationAdjusted" xml:space="preserve">
+    <value>此預授權已在Sage Payment Solutions中調整，或先前已捕獲。</value>
+  </data>
+  <data name="PreauthorizationSettled" xml:space="preserve">
+    <value>此預授權已在Sage Payment Solutions中清算。</value>
+  </data>
+  <data name="PreauthorizationVoided" xml:space="preserve">
+    <value>此預授權已在Sage Payment Solutions中作廢。</value>
+  </data>
+</root>
